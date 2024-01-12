@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Returns a list of DbSystems.
+        /// Returns a list of database systems.
         /// 
         /// 
         /// {{% examples %}}
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Returns a list of DbSystems.
+        /// Returns a list of database systems.
         /// 
         /// 
         /// {{% examples %}}
@@ -104,13 +104,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -144,13 +144,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDbSystemsResult
     {
         /// <summary>
-        /// Compartment identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -174,16 +174,16 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionResult> DbSystemCollections;
         /// <summary>
-        /// Display name of the DbInstance.
+        /// A user-friendly display name for the database instance node. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDbSystemsFilterResult> Filters;
         /// <summary>
-        /// Unique identifier that is immutable on creation.
+        /// A unique identifier for the database instance node. Immutable on creation.
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// The current state of the DbSystem.
+        /// The current state of the database system.
         /// </summary>
         public readonly string? State;
 

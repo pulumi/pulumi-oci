@@ -20,14 +20,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
     public static final BackupArgs Empty = new BackupArgs();
 
     /**
-     * (Updatable) Compartment identifier
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * 
      */
     public Output<String> compartmentId() {
@@ -35,14 +35,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Posgresql DbSystem identifier
+     * The ID of the database system.
      * 
      */
     @Import(name="dbSystemId", required=true)
     private Output<String> dbSystemId;
 
     /**
-     * @return Posgresql DbSystem identifier
+     * @return The ID of the database system.
      * 
      */
     public Output<String> dbSystemId() {
@@ -65,14 +65,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Backup description
+     * (Updatable) A description for the backup.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Backup description
+     * @return (Updatable) A description for the backup.
      * 
      */
     public Optional<Output<String>> description() {
@@ -80,14 +80,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Backup display name.
+     * (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Backup display name.
+     * @return (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -161,7 +161,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment identifier
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment identifier
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbSystemId Posgresql DbSystem identifier
+         * @param dbSystemId The ID of the database system.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbSystemId Posgresql DbSystem identifier
+         * @param dbSystemId The ID of the database system.
          * 
          * @return builder
          * 
@@ -224,7 +224,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) Backup description
+         * @param description (Updatable) A description for the backup.
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) Backup description
+         * @param description (Updatable) A description for the backup.
          * 
          * @return builder
          * 
@@ -245,7 +245,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Backup display name.
+         * @param displayName (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Backup display name.
+         * @param displayName (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
          * 
          * @return builder
          * 

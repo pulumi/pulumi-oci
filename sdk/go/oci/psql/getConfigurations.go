@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
 //
-// Returns a list of Configurations.
+// Returns a list of configurations.
 //
 // ## Example Usage
 //
@@ -59,36 +59,36 @@ func GetConfigurations(ctx *pulumi.Context, args *GetConfigurationsArgs, opts ..
 type GetConfigurationsArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// unique Configuration identifier
+	// A unique identifier for the configuration.
 	ConfigurationId *string `pulumi:"configurationId"`
-	// Verison of the Postgresql DB like 14.5
+	// Verison of the PostgreSQL database, such as 14.9.
 	DbVersion *string `pulumi:"dbVersion"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                   `pulumi:"displayName"`
 	Filters     []GetConfigurationsFilter `pulumi:"filters"`
-	// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape *string `pulumi:"shape"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getConfigurations.
 type GetConfigurationsResult struct {
-	// Config compartment identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The list of configuration_collection.
 	ConfigurationCollections []GetConfigurationsConfigurationCollection `pulumi:"configurationCollections"`
 	ConfigurationId          *string                                    `pulumi:"configurationId"`
-	// Version of the Postgresql DB
+	// Version of the PostgreSQL database.
 	DbVersion *string `pulumi:"dbVersion"`
-	// Config display name
+	// A user-friendly display name for the configuration. Avoid entering confidential information.
 	DisplayName *string                   `pulumi:"displayName"`
 	Filters     []GetConfigurationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Compute Shape Name like VM.Standard3.Flex.
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape *string `pulumi:"shape"`
-	// The current state of the Configuration.
+	// The current state of the configuration.
 	State *string `pulumi:"state"`
 }
 
@@ -109,16 +109,16 @@ func GetConfigurationsOutput(ctx *pulumi.Context, args GetConfigurationsOutputAr
 type GetConfigurationsOutputArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// unique Configuration identifier
+	// A unique identifier for the configuration.
 	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
-	// Verison of the Postgresql DB like 14.5
+	// Verison of the PostgreSQL database, such as 14.9.
 	DbVersion pulumi.StringPtrInput `pulumi:"dbVersion"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput             `pulumi:"displayName"`
 	Filters     GetConfigurationsFilterArrayInput `pulumi:"filters"`
-	// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -141,7 +141,7 @@ func (o GetConfigurationsResultOutput) ToGetConfigurationsResultOutputWithContex
 	return o
 }
 
-// Config compartment identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 func (o GetConfigurationsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConfigurationsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -157,12 +157,12 @@ func (o GetConfigurationsResultOutput) ConfigurationId() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v GetConfigurationsResult) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
 }
 
-// Version of the Postgresql DB
+// Version of the PostgreSQL database.
 func (o GetConfigurationsResultOutput) DbVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConfigurationsResult) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
 
-// Config display name
+// A user-friendly display name for the configuration. Avoid entering confidential information.
 func (o GetConfigurationsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConfigurationsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -176,12 +176,12 @@ func (o GetConfigurationsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Compute Shape Name like VM.Standard3.Flex.
+// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 func (o GetConfigurationsResultOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConfigurationsResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the Configuration.
+// The current state of the configuration.
 func (o GetConfigurationsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConfigurationsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

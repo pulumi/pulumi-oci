@@ -15,14 +15,14 @@ public final class GetDefaultConfigurationArgs extends com.pulumi.resources.Invo
     public static final GetDefaultConfigurationArgs Empty = new GetDefaultConfigurationArgs();
 
     /**
-     * unique Configuration identifier
+     * A unique identifier for the configuration.
      * 
      */
     @Import(name="defaultConfigurationId", required=true)
     private Output<String> defaultConfigurationId;
 
     /**
-     * @return unique Configuration identifier
+     * @return A unique identifier for the configuration.
      * 
      */
     public Output<String> defaultConfigurationId() {
@@ -54,7 +54,7 @@ public final class GetDefaultConfigurationArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param defaultConfigurationId unique Configuration identifier
+         * @param defaultConfigurationId A unique identifier for the configuration.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetDefaultConfigurationArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param defaultConfigurationId unique Configuration identifier
+         * @param defaultConfigurationId A unique identifier for the configuration.
          * 
          * @return builder
          * 

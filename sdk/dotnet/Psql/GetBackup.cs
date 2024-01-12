@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Gets a Backup by identifier
+        /// Gets a backup by identifier.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Gets a Backup by identifier
+        /// Gets a backup by identifier.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetBackupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Backup identifier
+        /// A unique identifier for the backup.
         /// </summary>
         [Input("backupId", required: true)]
         public string BackupId { get; set; } = null!;
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.Psql
     public sealed class GetBackupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Backup identifier
+        /// A unique identifier for the backup.
         /// </summary>
         [Input("backupId", required: true)]
         public Input<string> BackupId { get; set; } = null!;
@@ -107,19 +107,19 @@ namespace Pulumi.Oci.Psql
     {
         public readonly string BackupId;
         /// <summary>
-        /// Backup size in GB.
+        /// The size of the backup, in gigabytes.
         /// </summary>
         public readonly int BackupSize;
         /// <summary>
-        /// Backup compartment identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Information about the DbSystem associated to a backup.
+        /// Information about the database system associated with a backup.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackupDbSystemDetailResult> DbSystemDetails;
         /// <summary>
-        /// The source DbSystem OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
         /// </summary>
         public readonly string DbSystemId;
         /// <summary>
@@ -127,11 +127,11 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Backup description
+        /// A description for the backup.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Backup display name
+        /// A user-friendly display name for the backup. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -159,11 +159,11 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly int RetentionPeriod;
         /// <summary>
-        /// Specifies whether the backup was created manually, or via scheduled backup policy
+        /// Specifies whether the backup was created manually, or by a management policy.
         /// </summary>
         public readonly string SourceType;
         /// <summary>
-        /// The current state of the Backup.
+        /// The current state of the backup.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -171,11 +171,11 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the the Backup was created. An RFC3339 formatted datetime string
+        /// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the Backup was updated. An RFC3339 formatted datetime string
+        /// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
 

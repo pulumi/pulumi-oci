@@ -36,7 +36,7 @@ class GetDbSystemPrimaryDbInstanceResult:
     @pulumi.getter(name="dbInstanceId")
     def db_instance_id(self) -> str:
         """
-        Unique identifier of the DbInstance.
+        A unique identifier for the primary database instance node.
         """
         return pulumi.get(self, "db_instance_id")
 
@@ -70,7 +70,7 @@ def get_db_system_primary_db_instance(db_system_id: Optional[str] = None,
     """
     This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets the primary DbInstance details.
+    Gets the primary database instance node details.
 
     ## Example Usage
 
@@ -82,7 +82,7 @@ def get_db_system_primary_db_instance(db_system_id: Optional[str] = None,
     ```
 
 
-    :param str db_system_id: unique DbSystem identifier
+    :param str db_system_id: A unique identifier for the database system.
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
@@ -101,7 +101,7 @@ def get_db_system_primary_db_instance_output(db_system_id: Optional[pulumi.Input
     """
     This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets the primary DbInstance details.
+    Gets the primary database instance node details.
 
     ## Example Usage
 
@@ -113,6 +113,6 @@ def get_db_system_primary_db_instance_output(db_system_id: Optional[pulumi.Input
     ```
 
 
-    :param str db_system_id: unique DbSystem identifier
+    :param str db_system_id: A unique identifier for the database system.
     """
     ...

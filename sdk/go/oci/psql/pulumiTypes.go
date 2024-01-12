@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type BackupDbSystemDetail struct {
-	// The major and minor versions of the DbSystem software.
+	// The major and minor versions of the database system software.
 	DbVersion *string `pulumi:"dbVersion"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType *string `pulumi:"systemType"`
 }
 
@@ -32,9 +32,9 @@ type BackupDbSystemDetailInput interface {
 }
 
 type BackupDbSystemDetailArgs struct {
-	// The major and minor versions of the DbSystem software.
+	// The major and minor versions of the database system software.
 	DbVersion pulumi.StringPtrInput `pulumi:"dbVersion"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType pulumi.StringPtrInput `pulumi:"systemType"`
 }
 
@@ -89,12 +89,12 @@ func (o BackupDbSystemDetailOutput) ToBackupDbSystemDetailOutputWithContext(ctx 
 	return o
 }
 
-// The major and minor versions of the DbSystem software.
+// The major and minor versions of the database system software.
 func (o BackupDbSystemDetailOutput) DbVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackupDbSystemDetail) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
 
-// Type of the DbSystem.
+// Type of the database system.
 func (o BackupDbSystemDetailOutput) SystemType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackupDbSystemDetail) *string { return v.SystemType }).(pulumi.StringPtrOutput)
 }
@@ -120,7 +120,7 @@ func (o BackupDbSystemDetailArrayOutput) Index(i pulumi.IntInput) BackupDbSystem
 }
 
 type ConfigurationConfigurationDetail struct {
-	// List of configuration overriden values
+	// List of configuration overridden values.
 	Items []ConfigurationConfigurationDetailItem `pulumi:"items"`
 }
 
@@ -136,7 +136,7 @@ type ConfigurationConfigurationDetailInput interface {
 }
 
 type ConfigurationConfigurationDetailArgs struct {
-	// List of configuration overriden values
+	// List of configuration overridden values.
 	Items ConfigurationConfigurationDetailItemArrayInput `pulumi:"items"`
 }
 
@@ -191,7 +191,7 @@ func (o ConfigurationConfigurationDetailOutput) ToConfigurationConfigurationDeta
 	return o
 }
 
-// List of configuration overriden values
+// List of configuration overridden values.
 func (o ConfigurationConfigurationDetailOutput) Items() ConfigurationConfigurationDetailItemArrayOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetail) []ConfigurationConfigurationDetailItem { return v.Items }).(ConfigurationConfigurationDetailItemArrayOutput)
 }
@@ -217,21 +217,21 @@ func (o ConfigurationConfigurationDetailArrayOutput) Index(i pulumi.IntInput) Co
 }
 
 type ConfigurationConfigurationDetailItem struct {
-	// Range or list of allowed values
+	// Range or list of allowed values.
 	AllowedValues *string `pulumi:"allowedValues"`
-	// Key is the configuration key.
+	// Configuration variable name.
 	ConfigKey *string `pulumi:"configKey"`
-	// Describes about the Datatype value.
+	// Data type of the variable.
 	DataType *string `pulumi:"dataType"`
-	// Default value
+	// Default value for the configuration variable.
 	DefaultConfigValue *string `pulumi:"defaultConfigValue"`
-	// (Updatable) Details about the Configuration Set.
+	// (Updatable) Details about the configuration set.
 	Description *string `pulumi:"description"`
-	// This flags tells whether the value is overridable or not.
+	// Whether the value can be overridden or not.
 	IsOverridable *bool `pulumi:"isOverridable"`
-	// If true, modfying this configuration value will requires restart.
+	// If true, modifying this configuration value will require a restart of the database.
 	IsRestartRequired *bool `pulumi:"isRestartRequired"`
-	// User selected configuration value
+	// User-selected variable value.
 	OverridenConfigValue *string `pulumi:"overridenConfigValue"`
 }
 
@@ -247,21 +247,21 @@ type ConfigurationConfigurationDetailItemInput interface {
 }
 
 type ConfigurationConfigurationDetailItemArgs struct {
-	// Range or list of allowed values
+	// Range or list of allowed values.
 	AllowedValues pulumi.StringPtrInput `pulumi:"allowedValues"`
-	// Key is the configuration key.
+	// Configuration variable name.
 	ConfigKey pulumi.StringPtrInput `pulumi:"configKey"`
-	// Describes about the Datatype value.
+	// Data type of the variable.
 	DataType pulumi.StringPtrInput `pulumi:"dataType"`
-	// Default value
+	// Default value for the configuration variable.
 	DefaultConfigValue pulumi.StringPtrInput `pulumi:"defaultConfigValue"`
-	// (Updatable) Details about the Configuration Set.
+	// (Updatable) Details about the configuration set.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// This flags tells whether the value is overridable or not.
+	// Whether the value can be overridden or not.
 	IsOverridable pulumi.BoolPtrInput `pulumi:"isOverridable"`
-	// If true, modfying this configuration value will requires restart.
+	// If true, modifying this configuration value will require a restart of the database.
 	IsRestartRequired pulumi.BoolPtrInput `pulumi:"isRestartRequired"`
-	// User selected configuration value
+	// User-selected variable value.
 	OverridenConfigValue pulumi.StringPtrInput `pulumi:"overridenConfigValue"`
 }
 
@@ -316,42 +316,42 @@ func (o ConfigurationConfigurationDetailItemOutput) ToConfigurationConfiguration
 	return o
 }
 
-// Range or list of allowed values
+// Range or list of allowed values.
 func (o ConfigurationConfigurationDetailItemOutput) AllowedValues() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *string { return v.AllowedValues }).(pulumi.StringPtrOutput)
 }
 
-// Key is the configuration key.
+// Configuration variable name.
 func (o ConfigurationConfigurationDetailItemOutput) ConfigKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *string { return v.ConfigKey }).(pulumi.StringPtrOutput)
 }
 
-// Describes about the Datatype value.
+// Data type of the variable.
 func (o ConfigurationConfigurationDetailItemOutput) DataType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
-// Default value
+// Default value for the configuration variable.
 func (o ConfigurationConfigurationDetailItemOutput) DefaultConfigValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *string { return v.DefaultConfigValue }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Details about the Configuration Set.
+// (Updatable) Details about the configuration set.
 func (o ConfigurationConfigurationDetailItemOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// This flags tells whether the value is overridable or not.
+// Whether the value can be overridden or not.
 func (o ConfigurationConfigurationDetailItemOutput) IsOverridable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *bool { return v.IsOverridable }).(pulumi.BoolPtrOutput)
 }
 
-// If true, modfying this configuration value will requires restart.
+// If true, modifying this configuration value will require a restart of the database.
 func (o ConfigurationConfigurationDetailItemOutput) IsRestartRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *bool { return v.IsRestartRequired }).(pulumi.BoolPtrOutput)
 }
 
-// User selected configuration value
+// User-selected variable value.
 func (o ConfigurationConfigurationDetailItemOutput) OverridenConfigValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *string { return v.OverridenConfigValue }).(pulumi.StringPtrOutput)
 }
@@ -377,7 +377,7 @@ func (o ConfigurationConfigurationDetailItemArrayOutput) Index(i pulumi.IntInput
 }
 
 type ConfigurationDbConfigurationOverrides struct {
-	// List of configuration overriden values
+	// List of configuration overridden values.
 	Items []ConfigurationDbConfigurationOverridesItem `pulumi:"items"`
 }
 
@@ -393,7 +393,7 @@ type ConfigurationDbConfigurationOverridesInput interface {
 }
 
 type ConfigurationDbConfigurationOverridesArgs struct {
-	// List of configuration overriden values
+	// List of configuration overridden values.
 	Items ConfigurationDbConfigurationOverridesItemArrayInput `pulumi:"items"`
 }
 
@@ -474,7 +474,7 @@ func (o ConfigurationDbConfigurationOverridesOutput) ToConfigurationDbConfigurat
 	}).(ConfigurationDbConfigurationOverridesPtrOutput)
 }
 
-// List of configuration overriden values
+// List of configuration overridden values.
 func (o ConfigurationDbConfigurationOverridesOutput) Items() ConfigurationDbConfigurationOverridesItemArrayOutput {
 	return o.ApplyT(func(v ConfigurationDbConfigurationOverrides) []ConfigurationDbConfigurationOverridesItem {
 		return v.Items
@@ -505,7 +505,7 @@ func (o ConfigurationDbConfigurationOverridesPtrOutput) Elem() ConfigurationDbCo
 	}).(ConfigurationDbConfigurationOverridesOutput)
 }
 
-// List of configuration overriden values
+// List of configuration overridden values.
 func (o ConfigurationDbConfigurationOverridesPtrOutput) Items() ConfigurationDbConfigurationOverridesItemArrayOutput {
 	return o.ApplyT(func(v *ConfigurationDbConfigurationOverrides) []ConfigurationDbConfigurationOverridesItem {
 		if v == nil {
@@ -516,9 +516,9 @@ func (o ConfigurationDbConfigurationOverridesPtrOutput) Items() ConfigurationDbC
 }
 
 type ConfigurationDbConfigurationOverridesItem struct {
-	// Key is the configuration key.
+	// Configuration variable name.
 	ConfigKey string `pulumi:"configKey"`
-	// User selected configuration value
+	// User-selected variable value.
 	OverridenConfigValue string `pulumi:"overridenConfigValue"`
 }
 
@@ -534,9 +534,9 @@ type ConfigurationDbConfigurationOverridesItemInput interface {
 }
 
 type ConfigurationDbConfigurationOverridesItemArgs struct {
-	// Key is the configuration key.
+	// Configuration variable name.
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
-	// User selected configuration value
+	// User-selected variable value.
 	OverridenConfigValue pulumi.StringInput `pulumi:"overridenConfigValue"`
 }
 
@@ -591,12 +591,12 @@ func (o ConfigurationDbConfigurationOverridesItemOutput) ToConfigurationDbConfig
 	return o
 }
 
-// Key is the configuration key.
+// Configuration variable name.
 func (o ConfigurationDbConfigurationOverridesItemOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v ConfigurationDbConfigurationOverridesItem) string { return v.ConfigKey }).(pulumi.StringOutput)
 }
 
-// User selected configuration value
+// User-selected variable value.
 func (o ConfigurationDbConfigurationOverridesItemOutput) OverridenConfigValue() pulumi.StringOutput {
 	return o.ApplyT(func(v ConfigurationDbConfigurationOverridesItem) string { return v.OverridenConfigValue }).(pulumi.StringOutput)
 }
@@ -622,9 +622,9 @@ func (o ConfigurationDbConfigurationOverridesItemArrayOutput) Index(i pulumi.Int
 }
 
 type DbSystemCredentials struct {
-	// Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+	// Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
 	PasswordDetails DbSystemCredentialsPasswordDetails `pulumi:"passwordDetails"`
-	// The DB system username.
+	// The database system administrator username.
 	Username string `pulumi:"username"`
 }
 
@@ -640,9 +640,9 @@ type DbSystemCredentialsInput interface {
 }
 
 type DbSystemCredentialsArgs struct {
-	// Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+	// Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
 	PasswordDetails DbSystemCredentialsPasswordDetailsInput `pulumi:"passwordDetails"`
-	// The DB system username.
+	// The database system administrator username.
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -723,12 +723,12 @@ func (o DbSystemCredentialsOutput) ToDbSystemCredentialsPtrOutputWithContext(ctx
 	}).(DbSystemCredentialsPtrOutput)
 }
 
-// Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+// Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
 func (o DbSystemCredentialsOutput) PasswordDetails() DbSystemCredentialsPasswordDetailsOutput {
 	return o.ApplyT(func(v DbSystemCredentials) DbSystemCredentialsPasswordDetails { return v.PasswordDetails }).(DbSystemCredentialsPasswordDetailsOutput)
 }
 
-// The DB system username.
+// The database system administrator username.
 func (o DbSystemCredentialsOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v DbSystemCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -757,7 +757,7 @@ func (o DbSystemCredentialsPtrOutput) Elem() DbSystemCredentialsOutput {
 	}).(DbSystemCredentialsOutput)
 }
 
-// Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+// Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
 func (o DbSystemCredentialsPtrOutput) PasswordDetails() DbSystemCredentialsPasswordDetailsPtrOutput {
 	return o.ApplyT(func(v *DbSystemCredentials) *DbSystemCredentialsPasswordDetails {
 		if v == nil {
@@ -767,7 +767,7 @@ func (o DbSystemCredentialsPtrOutput) PasswordDetails() DbSystemCredentialsPassw
 	}).(DbSystemCredentialsPasswordDetailsPtrOutput)
 }
 
-// The DB system username.
+// The database system administrator username.
 func (o DbSystemCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemCredentials) *string {
 		if v == nil {
@@ -778,13 +778,13 @@ func (o DbSystemCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
 }
 
 type DbSystemCredentialsPasswordDetails struct {
-	// The dbSystem password.
+	// The database system password.
 	Password *string `pulumi:"password"`
-	// Password type
+	// The password type.
 	PasswordType string `pulumi:"passwordType"`
-	// The OCID of secret where the password is stored.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
 	SecretId *string `pulumi:"secretId"`
-	// The secret version where the password is stored.
+	// The secret version of the stored password.
 	SecretVersion *string `pulumi:"secretVersion"`
 }
 
@@ -800,13 +800,13 @@ type DbSystemCredentialsPasswordDetailsInput interface {
 }
 
 type DbSystemCredentialsPasswordDetailsArgs struct {
-	// The dbSystem password.
+	// The database system password.
 	Password pulumi.StringPtrInput `pulumi:"password"`
-	// Password type
+	// The password type.
 	PasswordType pulumi.StringInput `pulumi:"passwordType"`
-	// The OCID of secret where the password is stored.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
 	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
-	// The secret version where the password is stored.
+	// The secret version of the stored password.
 	SecretVersion pulumi.StringPtrInput `pulumi:"secretVersion"`
 }
 
@@ -887,22 +887,22 @@ func (o DbSystemCredentialsPasswordDetailsOutput) ToDbSystemCredentialsPasswordD
 	}).(DbSystemCredentialsPasswordDetailsPtrOutput)
 }
 
-// The dbSystem password.
+// The database system password.
 func (o DbSystemCredentialsPasswordDetailsOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemCredentialsPasswordDetails) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-// Password type
+// The password type.
 func (o DbSystemCredentialsPasswordDetailsOutput) PasswordType() pulumi.StringOutput {
 	return o.ApplyT(func(v DbSystemCredentialsPasswordDetails) string { return v.PasswordType }).(pulumi.StringOutput)
 }
 
-// The OCID of secret where the password is stored.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
 func (o DbSystemCredentialsPasswordDetailsOutput) SecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemCredentialsPasswordDetails) *string { return v.SecretId }).(pulumi.StringPtrOutput)
 }
 
-// The secret version where the password is stored.
+// The secret version of the stored password.
 func (o DbSystemCredentialsPasswordDetailsOutput) SecretVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemCredentialsPasswordDetails) *string { return v.SecretVersion }).(pulumi.StringPtrOutput)
 }
@@ -931,7 +931,7 @@ func (o DbSystemCredentialsPasswordDetailsPtrOutput) Elem() DbSystemCredentialsP
 	}).(DbSystemCredentialsPasswordDetailsOutput)
 }
 
-// The dbSystem password.
+// The database system password.
 func (o DbSystemCredentialsPasswordDetailsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemCredentialsPasswordDetails) *string {
 		if v == nil {
@@ -941,7 +941,7 @@ func (o DbSystemCredentialsPasswordDetailsPtrOutput) Password() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// Password type
+// The password type.
 func (o DbSystemCredentialsPasswordDetailsPtrOutput) PasswordType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemCredentialsPasswordDetails) *string {
 		if v == nil {
@@ -951,7 +951,7 @@ func (o DbSystemCredentialsPasswordDetailsPtrOutput) PasswordType() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of secret where the password is stored.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
 func (o DbSystemCredentialsPasswordDetailsPtrOutput) SecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemCredentialsPasswordDetails) *string {
 		if v == nil {
@@ -961,7 +961,7 @@ func (o DbSystemCredentialsPasswordDetailsPtrOutput) SecretId() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// The secret version where the password is stored.
+// The secret version of the stored password.
 func (o DbSystemCredentialsPasswordDetailsPtrOutput) SecretVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemCredentialsPasswordDetails) *string {
 		if v == nil {
@@ -972,21 +972,21 @@ func (o DbSystemCredentialsPasswordDetailsPtrOutput) SecretVersion() pulumi.Stri
 }
 
 type DbSystemInstance struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// Description of the DbInstance. This field should be input by the user.
+	// A user-provided description of the database instance node.
 	Description *string `pulumi:"description"`
-	// Display name of the DbInstance.
+	// Display name of the database instance node. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// Unique identifier that is immutable on creation.
+	// A unique identifier for the database instance node. Immutable on creation.
 	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The current state of the DbSystem.
+	// The current state of the database system.
 	State *string `pulumi:"state"`
-	// The time the the DbSystem was created. An RFC3339 formatted datetime string
+	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the DbSystem was updated. An RFC3339 formatted datetime string
+	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
@@ -1002,21 +1002,21 @@ type DbSystemInstanceInput interface {
 }
 
 type DbSystemInstanceArgs struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
-	// Description of the DbInstance. This field should be input by the user.
+	// A user-provided description of the database instance node.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// Display name of the DbInstance.
+	// Display name of the database instance node. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// Unique identifier that is immutable on creation.
+	// A unique identifier for the database instance node. Immutable on creation.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
-	// The current state of the DbSystem.
+	// The current state of the database system.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// The time the the DbSystem was created. An RFC3339 formatted datetime string
+	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// The time the DbSystem was updated. An RFC3339 formatted datetime string
+	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
@@ -1071,22 +1071,22 @@ func (o DbSystemInstanceOutput) ToDbSystemInstanceOutputWithContext(ctx context.
 	return o
 }
 
-// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o DbSystemInstanceOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
-// Description of the DbInstance. This field should be input by the user.
+// A user-provided description of the database instance node.
 func (o DbSystemInstanceOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// Display name of the DbInstance.
+// Display name of the database instance node. Avoid entering confidential information.
 func (o DbSystemInstanceOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// Unique identifier that is immutable on creation.
+// A unique identifier for the database instance node. Immutable on creation.
 func (o DbSystemInstanceOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -1096,17 +1096,17 @@ func (o DbSystemInstanceOutput) LifecycleDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the DbSystem.
+// The current state of the database system.
 func (o DbSystemInstanceOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// The time the the DbSystem was created. An RFC3339 formatted datetime string
+// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o DbSystemInstanceOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-// The time the DbSystem was updated. An RFC3339 formatted datetime string
+// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o DbSystemInstanceOutput) TimeUpdated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
@@ -1132,11 +1132,11 @@ func (o DbSystemInstanceArrayOutput) Index(i pulumi.IntInput) DbSystemInstanceOu
 }
 
 type DbSystemInstancesDetail struct {
-	// Description of the DbInstance. This field should be input by the user.
+	// A user-provided description of the database instance node.
 	Description *string `pulumi:"description"`
-	// Display name of the DbInstance.
+	// Display name of the database instance node. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+	// Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
 	PrivateIp *string `pulumi:"privateIp"`
 }
 
@@ -1152,11 +1152,11 @@ type DbSystemInstancesDetailInput interface {
 }
 
 type DbSystemInstancesDetailArgs struct {
-	// Description of the DbInstance. This field should be input by the user.
+	// A user-provided description of the database instance node.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// Display name of the DbInstance.
+	// Display name of the database instance node. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+	// Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
 	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
 }
 
@@ -1211,17 +1211,17 @@ func (o DbSystemInstancesDetailOutput) ToDbSystemInstancesDetailOutputWithContex
 	return o
 }
 
-// Description of the DbInstance. This field should be input by the user.
+// A user-provided description of the database instance node.
 func (o DbSystemInstancesDetailOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstancesDetail) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// Display name of the DbInstance.
+// Display name of the database instance node. Avoid entering confidential information.
 func (o DbSystemInstancesDetailOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstancesDetail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+// Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
 func (o DbSystemInstancesDetailOutput) PrivateIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstancesDetail) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
@@ -1247,7 +1247,7 @@ func (o DbSystemInstancesDetailArrayOutput) Index(i pulumi.IntInput) DbSystemIns
 }
 
 type DbSystemManagementPolicy struct {
-	// (Updatable) Posgresql DB system backup policy
+	// (Updatable) PostgreSQL database system backup policy.
 	BackupPolicy *DbSystemManagementPolicyBackupPolicy `pulumi:"backupPolicy"`
 	// (Updatable) The start of the maintenance window.
 	MaintenanceWindowStart *string `pulumi:"maintenanceWindowStart"`
@@ -1265,7 +1265,7 @@ type DbSystemManagementPolicyInput interface {
 }
 
 type DbSystemManagementPolicyArgs struct {
-	// (Updatable) Posgresql DB system backup policy
+	// (Updatable) PostgreSQL database system backup policy.
 	BackupPolicy DbSystemManagementPolicyBackupPolicyPtrInput `pulumi:"backupPolicy"`
 	// (Updatable) The start of the maintenance window.
 	MaintenanceWindowStart pulumi.StringPtrInput `pulumi:"maintenanceWindowStart"`
@@ -1348,7 +1348,7 @@ func (o DbSystemManagementPolicyOutput) ToDbSystemManagementPolicyPtrOutputWithC
 	}).(DbSystemManagementPolicyPtrOutput)
 }
 
-// (Updatable) Posgresql DB system backup policy
+// (Updatable) PostgreSQL database system backup policy.
 func (o DbSystemManagementPolicyOutput) BackupPolicy() DbSystemManagementPolicyBackupPolicyPtrOutput {
 	return o.ApplyT(func(v DbSystemManagementPolicy) *DbSystemManagementPolicyBackupPolicy { return v.BackupPolicy }).(DbSystemManagementPolicyBackupPolicyPtrOutput)
 }
@@ -1382,7 +1382,7 @@ func (o DbSystemManagementPolicyPtrOutput) Elem() DbSystemManagementPolicyOutput
 	}).(DbSystemManagementPolicyOutput)
 }
 
-// (Updatable) Posgresql DB system backup policy
+// (Updatable) PostgreSQL database system backup policy.
 func (o DbSystemManagementPolicyPtrOutput) BackupPolicy() DbSystemManagementPolicyBackupPolicyPtrOutput {
 	return o.ApplyT(func(v *DbSystemManagementPolicy) *DbSystemManagementPolicyBackupPolicy {
 		if v == nil {
@@ -1403,15 +1403,15 @@ func (o DbSystemManagementPolicyPtrOutput) MaintenanceWindowStart() pulumi.Strin
 }
 
 type DbSystemManagementPolicyBackupPolicy struct {
-	// (Updatable) Hour of the day when backup starts.
+	// (Updatable) Hour of the day when the backup starts.
 	BackupStart *string `pulumi:"backupStart"`
-	// (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+	// (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths []int `pulumi:"daysOfTheMonths"`
-	// (Updatable) Weekly days
+	// (Updatable) The day of the week that the backup starts.
 	DaysOfTheWeeks []string `pulumi:"daysOfTheWeeks"`
-	// (Updatable) Backup policy kind
+	// (Updatable) The kind of backup policy.
 	Kind *string `pulumi:"kind"`
-	// (Updatable) How many days the customers data should be stored after the db system deletion.
+	// (Updatable) How many days the data should be stored after the database system deletion.
 	RetentionDays *int `pulumi:"retentionDays"`
 }
 
@@ -1427,15 +1427,15 @@ type DbSystemManagementPolicyBackupPolicyInput interface {
 }
 
 type DbSystemManagementPolicyBackupPolicyArgs struct {
-	// (Updatable) Hour of the day when backup starts.
+	// (Updatable) Hour of the day when the backup starts.
 	BackupStart pulumi.StringPtrInput `pulumi:"backupStart"`
-	// (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+	// (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths pulumi.IntArrayInput `pulumi:"daysOfTheMonths"`
-	// (Updatable) Weekly days
+	// (Updatable) The day of the week that the backup starts.
 	DaysOfTheWeeks pulumi.StringArrayInput `pulumi:"daysOfTheWeeks"`
-	// (Updatable) Backup policy kind
+	// (Updatable) The kind of backup policy.
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
-	// (Updatable) How many days the customers data should be stored after the db system deletion.
+	// (Updatable) How many days the data should be stored after the database system deletion.
 	RetentionDays pulumi.IntPtrInput `pulumi:"retentionDays"`
 }
 
@@ -1516,27 +1516,27 @@ func (o DbSystemManagementPolicyBackupPolicyOutput) ToDbSystemManagementPolicyBa
 	}).(DbSystemManagementPolicyBackupPolicyPtrOutput)
 }
 
-// (Updatable) Hour of the day when backup starts.
+// (Updatable) Hour of the day when the backup starts.
 func (o DbSystemManagementPolicyBackupPolicyOutput) BackupStart() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicy) *string { return v.BackupStart }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+// (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 func (o DbSystemManagementPolicyBackupPolicyOutput) DaysOfTheMonths() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicy) []int { return v.DaysOfTheMonths }).(pulumi.IntArrayOutput)
 }
 
-// (Updatable) Weekly days
+// (Updatable) The day of the week that the backup starts.
 func (o DbSystemManagementPolicyBackupPolicyOutput) DaysOfTheWeeks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicy) []string { return v.DaysOfTheWeeks }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Backup policy kind
+// (Updatable) The kind of backup policy.
 func (o DbSystemManagementPolicyBackupPolicyOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicy) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) How many days the customers data should be stored after the db system deletion.
+// (Updatable) How many days the data should be stored after the database system deletion.
 func (o DbSystemManagementPolicyBackupPolicyOutput) RetentionDays() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicy) *int { return v.RetentionDays }).(pulumi.IntPtrOutput)
 }
@@ -1565,7 +1565,7 @@ func (o DbSystemManagementPolicyBackupPolicyPtrOutput) Elem() DbSystemManagement
 	}).(DbSystemManagementPolicyBackupPolicyOutput)
 }
 
-// (Updatable) Hour of the day when backup starts.
+// (Updatable) Hour of the day when the backup starts.
 func (o DbSystemManagementPolicyBackupPolicyPtrOutput) BackupStart() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicy) *string {
 		if v == nil {
@@ -1575,7 +1575,7 @@ func (o DbSystemManagementPolicyBackupPolicyPtrOutput) BackupStart() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+// (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 func (o DbSystemManagementPolicyBackupPolicyPtrOutput) DaysOfTheMonths() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicy) []int {
 		if v == nil {
@@ -1585,7 +1585,7 @@ func (o DbSystemManagementPolicyBackupPolicyPtrOutput) DaysOfTheMonths() pulumi.
 	}).(pulumi.IntArrayOutput)
 }
 
-// (Updatable) Weekly days
+// (Updatable) The day of the week that the backup starts.
 func (o DbSystemManagementPolicyBackupPolicyPtrOutput) DaysOfTheWeeks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicy) []string {
 		if v == nil {
@@ -1595,7 +1595,7 @@ func (o DbSystemManagementPolicyBackupPolicyPtrOutput) DaysOfTheWeeks() pulumi.S
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Backup policy kind
+// (Updatable) The kind of backup policy.
 func (o DbSystemManagementPolicyBackupPolicyPtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicy) *string {
 		if v == nil {
@@ -1605,7 +1605,7 @@ func (o DbSystemManagementPolicyBackupPolicyPtrOutput) Kind() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) How many days the customers data should be stored after the db system deletion.
+// (Updatable) How many days the data should be stored after the database system deletion.
 func (o DbSystemManagementPolicyBackupPolicyPtrOutput) RetentionDays() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicy) *int {
 		if v == nil {
@@ -1616,11 +1616,11 @@ func (o DbSystemManagementPolicyBackupPolicyPtrOutput) RetentionDays() pulumi.In
 }
 
 type DbSystemNetworkDetails struct {
-	// List of customer NetworkSecurityGroup identifiers
+	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds []string `pulumi:"nsgIds"`
-	// Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 	PrimaryDbEndpointPrivateIp *string `pulumi:"primaryDbEndpointPrivateIp"`
-	// Customer Subnet identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -1636,11 +1636,11 @@ type DbSystemNetworkDetailsInput interface {
 }
 
 type DbSystemNetworkDetailsArgs struct {
-	// List of customer NetworkSecurityGroup identifiers
+	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
-	// Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 	PrimaryDbEndpointPrivateIp pulumi.StringPtrInput `pulumi:"primaryDbEndpointPrivateIp"`
-	// Customer Subnet identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -1721,17 +1721,17 @@ func (o DbSystemNetworkDetailsOutput) ToDbSystemNetworkDetailsPtrOutputWithConte
 	}).(DbSystemNetworkDetailsPtrOutput)
 }
 
-// List of customer NetworkSecurityGroup identifiers
+// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 func (o DbSystemNetworkDetailsOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DbSystemNetworkDetails) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
-// Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 func (o DbSystemNetworkDetailsOutput) PrimaryDbEndpointPrivateIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemNetworkDetails) *string { return v.PrimaryDbEndpointPrivateIp }).(pulumi.StringPtrOutput)
 }
 
-// Customer Subnet identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
 func (o DbSystemNetworkDetailsOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v DbSystemNetworkDetails) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -1760,7 +1760,7 @@ func (o DbSystemNetworkDetailsPtrOutput) Elem() DbSystemNetworkDetailsOutput {
 	}).(DbSystemNetworkDetailsOutput)
 }
 
-// List of customer NetworkSecurityGroup identifiers
+// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 func (o DbSystemNetworkDetailsPtrOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DbSystemNetworkDetails) []string {
 		if v == nil {
@@ -1770,7 +1770,7 @@ func (o DbSystemNetworkDetailsPtrOutput) NsgIds() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
-// Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 func (o DbSystemNetworkDetailsPtrOutput) PrimaryDbEndpointPrivateIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemNetworkDetails) *string {
 		if v == nil {
@@ -1780,7 +1780,7 @@ func (o DbSystemNetworkDetailsPtrOutput) PrimaryDbEndpointPrivateIp() pulumi.Str
 	}).(pulumi.StringPtrOutput)
 }
 
-// Customer Subnet identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
 func (o DbSystemNetworkDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemNetworkDetails) *string {
 		if v == nil {
@@ -1790,10 +1790,143 @@ func (o DbSystemNetworkDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type DbSystemPatchOperation struct {
+	From *string `pulumi:"from"`
+	// The operation can be one of these values: `INSERT`, `REMOVE`.
+	Operation    string  `pulumi:"operation"`
+	Position     *string `pulumi:"position"`
+	SelectedItem *string `pulumi:"selectedItem"`
+	// In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
+	Selection string `pulumi:"selection"`
+	// Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
+	Value map[string]interface{} `pulumi:"value"`
+}
+
+// DbSystemPatchOperationInput is an input type that accepts DbSystemPatchOperationArgs and DbSystemPatchOperationOutput values.
+// You can construct a concrete instance of `DbSystemPatchOperationInput` via:
+//
+//	DbSystemPatchOperationArgs{...}
+type DbSystemPatchOperationInput interface {
+	pulumi.Input
+
+	ToDbSystemPatchOperationOutput() DbSystemPatchOperationOutput
+	ToDbSystemPatchOperationOutputWithContext(context.Context) DbSystemPatchOperationOutput
+}
+
+type DbSystemPatchOperationArgs struct {
+	From pulumi.StringPtrInput `pulumi:"from"`
+	// The operation can be one of these values: `INSERT`, `REMOVE`.
+	Operation    pulumi.StringInput    `pulumi:"operation"`
+	Position     pulumi.StringPtrInput `pulumi:"position"`
+	SelectedItem pulumi.StringPtrInput `pulumi:"selectedItem"`
+	// In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
+	Selection pulumi.StringInput `pulumi:"selection"`
+	// Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
+	Value pulumi.MapInput `pulumi:"value"`
+}
+
+func (DbSystemPatchOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemPatchOperation)(nil)).Elem()
+}
+
+func (i DbSystemPatchOperationArgs) ToDbSystemPatchOperationOutput() DbSystemPatchOperationOutput {
+	return i.ToDbSystemPatchOperationOutputWithContext(context.Background())
+}
+
+func (i DbSystemPatchOperationArgs) ToDbSystemPatchOperationOutputWithContext(ctx context.Context) DbSystemPatchOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemPatchOperationOutput)
+}
+
+// DbSystemPatchOperationArrayInput is an input type that accepts DbSystemPatchOperationArray and DbSystemPatchOperationArrayOutput values.
+// You can construct a concrete instance of `DbSystemPatchOperationArrayInput` via:
+//
+//	DbSystemPatchOperationArray{ DbSystemPatchOperationArgs{...} }
+type DbSystemPatchOperationArrayInput interface {
+	pulumi.Input
+
+	ToDbSystemPatchOperationArrayOutput() DbSystemPatchOperationArrayOutput
+	ToDbSystemPatchOperationArrayOutputWithContext(context.Context) DbSystemPatchOperationArrayOutput
+}
+
+type DbSystemPatchOperationArray []DbSystemPatchOperationInput
+
+func (DbSystemPatchOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemPatchOperation)(nil)).Elem()
+}
+
+func (i DbSystemPatchOperationArray) ToDbSystemPatchOperationArrayOutput() DbSystemPatchOperationArrayOutput {
+	return i.ToDbSystemPatchOperationArrayOutputWithContext(context.Background())
+}
+
+func (i DbSystemPatchOperationArray) ToDbSystemPatchOperationArrayOutputWithContext(ctx context.Context) DbSystemPatchOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemPatchOperationArrayOutput)
+}
+
+type DbSystemPatchOperationOutput struct{ *pulumi.OutputState }
+
+func (DbSystemPatchOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemPatchOperation)(nil)).Elem()
+}
+
+func (o DbSystemPatchOperationOutput) ToDbSystemPatchOperationOutput() DbSystemPatchOperationOutput {
+	return o
+}
+
+func (o DbSystemPatchOperationOutput) ToDbSystemPatchOperationOutputWithContext(ctx context.Context) DbSystemPatchOperationOutput {
+	return o
+}
+
+func (o DbSystemPatchOperationOutput) From() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemPatchOperation) *string { return v.From }).(pulumi.StringPtrOutput)
+}
+
+// The operation can be one of these values: `INSERT`, `REMOVE`.
+func (o DbSystemPatchOperationOutput) Operation() pulumi.StringOutput {
+	return o.ApplyT(func(v DbSystemPatchOperation) string { return v.Operation }).(pulumi.StringOutput)
+}
+
+func (o DbSystemPatchOperationOutput) Position() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemPatchOperation) *string { return v.Position }).(pulumi.StringPtrOutput)
+}
+
+func (o DbSystemPatchOperationOutput) SelectedItem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemPatchOperation) *string { return v.SelectedItem }).(pulumi.StringPtrOutput)
+}
+
+// In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
+func (o DbSystemPatchOperationOutput) Selection() pulumi.StringOutput {
+	return o.ApplyT(func(v DbSystemPatchOperation) string { return v.Selection }).(pulumi.StringOutput)
+}
+
+// Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
+func (o DbSystemPatchOperationOutput) Value() pulumi.MapOutput {
+	return o.ApplyT(func(v DbSystemPatchOperation) map[string]interface{} { return v.Value }).(pulumi.MapOutput)
+}
+
+type DbSystemPatchOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (DbSystemPatchOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemPatchOperation)(nil)).Elem()
+}
+
+func (o DbSystemPatchOperationArrayOutput) ToDbSystemPatchOperationArrayOutput() DbSystemPatchOperationArrayOutput {
+	return o
+}
+
+func (o DbSystemPatchOperationArrayOutput) ToDbSystemPatchOperationArrayOutputWithContext(ctx context.Context) DbSystemPatchOperationArrayOutput {
+	return o
+}
+
+func (o DbSystemPatchOperationArrayOutput) Index(i pulumi.IntInput) DbSystemPatchOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbSystemPatchOperation {
+		return vs[0].([]DbSystemPatchOperation)[vs[1].(int)]
+	}).(DbSystemPatchOperationOutput)
+}
+
 type DbSystemSource struct {
-	// DbSystem backup identifier.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId *string `pulumi:"backupId"`
-	// Restore the DB config overrides from backup. Default is false
+	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides *bool `pulumi:"isHavingRestoreConfigOverrides"`
 	// The source descriminator.
 	SourceType string `pulumi:"sourceType"`
@@ -1811,9 +1944,9 @@ type DbSystemSourceInput interface {
 }
 
 type DbSystemSourceArgs struct {
-	// DbSystem backup identifier.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
-	// Restore the DB config overrides from backup. Default is false
+	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides pulumi.BoolPtrInput `pulumi:"isHavingRestoreConfigOverrides"`
 	// The source descriminator.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
@@ -1896,12 +2029,12 @@ func (o DbSystemSourceOutput) ToDbSystemSourcePtrOutputWithContext(ctx context.C
 	}).(DbSystemSourcePtrOutput)
 }
 
-// DbSystem backup identifier.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 func (o DbSystemSourceOutput) BackupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemSource) *string { return v.BackupId }).(pulumi.StringPtrOutput)
 }
 
-// Restore the DB config overrides from backup. Default is false
+// Deprecated. Don't use.
 func (o DbSystemSourceOutput) IsHavingRestoreConfigOverrides() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DbSystemSource) *bool { return v.IsHavingRestoreConfigOverrides }).(pulumi.BoolPtrOutput)
 }
@@ -1935,7 +2068,7 @@ func (o DbSystemSourcePtrOutput) Elem() DbSystemSourceOutput {
 	}).(DbSystemSourceOutput)
 }
 
-// DbSystem backup identifier.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 func (o DbSystemSourcePtrOutput) BackupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemSource) *string {
 		if v == nil {
@@ -1945,7 +2078,7 @@ func (o DbSystemSourcePtrOutput) BackupId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Restore the DB config overrides from backup. Default is false
+// Deprecated. Don't use.
 func (o DbSystemSourcePtrOutput) IsHavingRestoreConfigOverrides() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DbSystemSource) *bool {
 		if v == nil {
@@ -1966,13 +2099,13 @@ func (o DbSystemSourcePtrOutput) SourceType() pulumi.StringPtrOutput {
 }
 
 type DbSystemStorageDetails struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// (Updatable) DbSystem Performance Unit
+	// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
 	Iops *string `pulumi:"iops"`
-	// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable bool `pulumi:"isRegionallyDurable"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1991,13 +2124,13 @@ type DbSystemStorageDetailsInput interface {
 }
 
 type DbSystemStorageDetailsArgs struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
-	// (Updatable) DbSystem Performance Unit
+	// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
 	Iops pulumi.StringPtrInput `pulumi:"iops"`
-	// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable pulumi.BoolInput `pulumi:"isRegionallyDurable"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2081,22 +2214,22 @@ func (o DbSystemStorageDetailsOutput) ToDbSystemStorageDetailsPtrOutputWithConte
 	}).(DbSystemStorageDetailsPtrOutput)
 }
 
-// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o DbSystemStorageDetailsOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemStorageDetails) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) DbSystem Performance Unit
+// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
 func (o DbSystemStorageDetailsOutput) Iops() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemStorageDetails) *string { return v.Iops }).(pulumi.StringPtrOutput)
 }
 
-// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o DbSystemStorageDetailsOutput) IsRegionallyDurable() pulumi.BoolOutput {
 	return o.ApplyT(func(v DbSystemStorageDetails) bool { return v.IsRegionallyDurable }).(pulumi.BoolOutput)
 }
 
-// Type of the DbSystem.
+// Type of the database system.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2128,7 +2261,7 @@ func (o DbSystemStorageDetailsPtrOutput) Elem() DbSystemStorageDetailsOutput {
 	}).(DbSystemStorageDetailsOutput)
 }
 
-// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o DbSystemStorageDetailsPtrOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemStorageDetails) *string {
 		if v == nil {
@@ -2138,7 +2271,7 @@ func (o DbSystemStorageDetailsPtrOutput) AvailabilityDomain() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) DbSystem Performance Unit
+// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
 func (o DbSystemStorageDetailsPtrOutput) Iops() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemStorageDetails) *string {
 		if v == nil {
@@ -2148,7 +2281,7 @@ func (o DbSystemStorageDetailsPtrOutput) Iops() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o DbSystemStorageDetailsPtrOutput) IsRegionallyDurable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DbSystemStorageDetails) *bool {
 		if v == nil {
@@ -2158,7 +2291,7 @@ func (o DbSystemStorageDetailsPtrOutput) IsRegionallyDurable() pulumi.BoolPtrOut
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Type of the DbSystem.
+// Type of the database system.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2172,9 +2305,9 @@ func (o DbSystemStorageDetailsPtrOutput) SystemType() pulumi.StringPtrOutput {
 }
 
 type GetBackupDbSystemDetail struct {
-	// The major and minor versions of the DbSystem software.
+	// The major and minor versions of the database system software.
 	DbVersion string `pulumi:"dbVersion"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType string `pulumi:"systemType"`
 }
 
@@ -2190,9 +2323,9 @@ type GetBackupDbSystemDetailInput interface {
 }
 
 type GetBackupDbSystemDetailArgs struct {
-	// The major and minor versions of the DbSystem software.
+	// The major and minor versions of the database system software.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType pulumi.StringInput `pulumi:"systemType"`
 }
 
@@ -2247,12 +2380,12 @@ func (o GetBackupDbSystemDetailOutput) ToGetBackupDbSystemDetailOutputWithContex
 	return o
 }
 
-// The major and minor versions of the DbSystem software.
+// The major and minor versions of the database system software.
 func (o GetBackupDbSystemDetailOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupDbSystemDetail) string { return v.DbVersion }).(pulumi.StringOutput)
 }
 
-// Type of the DbSystem.
+// Type of the database system.
 func (o GetBackupDbSystemDetailOutput) SystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupDbSystemDetail) string { return v.SystemType }).(pulumi.StringOutput)
 }
@@ -2372,23 +2505,23 @@ func (o GetBackupsBackupCollectionArrayOutput) Index(i pulumi.IntInput) GetBacku
 }
 
 type GetBackupsBackupCollectionItem struct {
-	// Backup size in GB.
+	// The size of the backup, in gigabytes.
 	BackupSize int `pulumi:"backupSize"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Information about the DbSystem associated to a backup.
+	// Information about the database system associated with a backup.
 	DbSystemDetails []GetBackupsBackupCollectionItemDbSystemDetail `pulumi:"dbSystemDetails"`
-	// The source DbSystem OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Backup description
+	// A description for the backup.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	Id string `pulumi:"id"`
 	// lastAcceptedRequestToken from MP.
 	LastAcceptedRequestToken string `pulumi:"lastAcceptedRequestToken"`
@@ -2398,15 +2531,15 @@ type GetBackupsBackupCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Backup retention period in days.
 	RetentionPeriod int `pulumi:"retentionPeriod"`
-	// Specifies whether the backup was created manually, or via scheduled backup policy
+	// Specifies whether the backup was created manually, or by a management policy.
 	SourceType string `pulumi:"sourceType"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the Backup was created. An RFC3339 formatted datetime string
+	// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the Backup was updated. An RFC3339 formatted datetime string
+	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -2422,23 +2555,23 @@ type GetBackupsBackupCollectionItemInput interface {
 }
 
 type GetBackupsBackupCollectionItemArgs struct {
-	// Backup size in GB.
+	// The size of the backup, in gigabytes.
 	BackupSize pulumi.IntInput `pulumi:"backupSize"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Information about the DbSystem associated to a backup.
+	// Information about the database system associated with a backup.
 	DbSystemDetails GetBackupsBackupCollectionItemDbSystemDetailArrayInput `pulumi:"dbSystemDetails"`
-	// The source DbSystem OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// Backup description
+	// A description for the backup.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	Id pulumi.StringInput `pulumi:"id"`
 	// lastAcceptedRequestToken from MP.
 	LastAcceptedRequestToken pulumi.StringInput `pulumi:"lastAcceptedRequestToken"`
@@ -2448,15 +2581,15 @@ type GetBackupsBackupCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Backup retention period in days.
 	RetentionPeriod pulumi.IntInput `pulumi:"retentionPeriod"`
-	// Specifies whether the backup was created manually, or via scheduled backup policy
+	// Specifies whether the backup was created manually, or by a management policy.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The time the the Backup was created. An RFC3339 formatted datetime string
+	// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the Backup was updated. An RFC3339 formatted datetime string
+	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -2511,7 +2644,7 @@ func (o GetBackupsBackupCollectionItemOutput) ToGetBackupsBackupCollectionItemOu
 	return o
 }
 
-// Backup size in GB.
+// The size of the backup, in gigabytes.
 func (o GetBackupsBackupCollectionItemOutput) BackupSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) int { return v.BackupSize }).(pulumi.IntOutput)
 }
@@ -2521,14 +2654,14 @@ func (o GetBackupsBackupCollectionItemOutput) CompartmentId() pulumi.StringOutpu
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Information about the DbSystem associated to a backup.
+// Information about the database system associated with a backup.
 func (o GetBackupsBackupCollectionItemOutput) DbSystemDetails() GetBackupsBackupCollectionItemDbSystemDetailArrayOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) []GetBackupsBackupCollectionItemDbSystemDetail {
 		return v.DbSystemDetails
 	}).(GetBackupsBackupCollectionItemDbSystemDetailArrayOutput)
 }
 
-// The source DbSystem OCID.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
 func (o GetBackupsBackupCollectionItemOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
@@ -2538,7 +2671,7 @@ func (o GetBackupsBackupCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Backup description
+// A description for the backup.
 func (o GetBackupsBackupCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -2553,7 +2686,7 @@ func (o GetBackupsBackupCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// unique DbSystem identifier
+// A unique identifier for the database system.
 func (o GetBackupsBackupCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -2578,12 +2711,12 @@ func (o GetBackupsBackupCollectionItemOutput) RetentionPeriod() pulumi.IntOutput
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) int { return v.RetentionPeriod }).(pulumi.IntOutput)
 }
 
-// Specifies whether the backup was created manually, or via scheduled backup policy
+// Specifies whether the backup was created manually, or by a management policy.
 func (o GetBackupsBackupCollectionItemOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.SourceType }).(pulumi.StringOutput)
 }
 
-// A filter to return only resources their lifecycleState matches the given lifecycleState.
+// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 func (o GetBackupsBackupCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
@@ -2593,12 +2726,12 @@ func (o GetBackupsBackupCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the the Backup was created. An RFC3339 formatted datetime string
+// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetBackupsBackupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Backup was updated. An RFC3339 formatted datetime string
+// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetBackupsBackupCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -2624,9 +2757,9 @@ func (o GetBackupsBackupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetB
 }
 
 type GetBackupsBackupCollectionItemDbSystemDetail struct {
-	// The major and minor versions of the DbSystem software.
+	// The major and minor versions of the database system software.
 	DbVersion string `pulumi:"dbVersion"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType string `pulumi:"systemType"`
 }
 
@@ -2642,9 +2775,9 @@ type GetBackupsBackupCollectionItemDbSystemDetailInput interface {
 }
 
 type GetBackupsBackupCollectionItemDbSystemDetailArgs struct {
-	// The major and minor versions of the DbSystem software.
+	// The major and minor versions of the database system software.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType pulumi.StringInput `pulumi:"systemType"`
 }
 
@@ -2699,12 +2832,12 @@ func (o GetBackupsBackupCollectionItemDbSystemDetailOutput) ToGetBackupsBackupCo
 	return o
 }
 
-// The major and minor versions of the DbSystem software.
+// The major and minor versions of the database system software.
 func (o GetBackupsBackupCollectionItemDbSystemDetailOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItemDbSystemDetail) string { return v.DbVersion }).(pulumi.StringOutput)
 }
 
-// Type of the DbSystem.
+// Type of the database system.
 func (o GetBackupsBackupCollectionItemDbSystemDetailOutput) SystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItemDbSystemDetail) string { return v.SystemType }).(pulumi.StringOutput)
 }
@@ -2933,21 +3066,21 @@ func (o GetConfigurationConfigurationDetailArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetConfigurationConfigurationDetailItem struct {
-	// Range or list of allowed values
+	// Range or list of allowed values.
 	AllowedValues string `pulumi:"allowedValues"`
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey string `pulumi:"configKey"`
-	// Describes about the Datatype value.
+	// Data type of the variable.
 	DataType string `pulumi:"dataType"`
-	// Default value
+	// Default value for the configuration variable.
 	DefaultConfigValue string `pulumi:"defaultConfigValue"`
-	// Config description
+	// A description for the configuration.
 	Description string `pulumi:"description"`
-	// This flags tells whether the value is overridable or not.
+	// Whether the value can be overridden or not.
 	IsOverridable bool `pulumi:"isOverridable"`
-	// If true, modfying this configuration value will requires restart.
+	// If true, modifying this configuration value will require a restart of the database.
 	IsRestartRequired bool `pulumi:"isRestartRequired"`
-	// User selected configuration value
+	// User-selected configuration variable value.
 	OverridenConfigValue string `pulumi:"overridenConfigValue"`
 }
 
@@ -2963,21 +3096,21 @@ type GetConfigurationConfigurationDetailItemInput interface {
 }
 
 type GetConfigurationConfigurationDetailItemArgs struct {
-	// Range or list of allowed values
+	// Range or list of allowed values.
 	AllowedValues pulumi.StringInput `pulumi:"allowedValues"`
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
-	// Describes about the Datatype value.
+	// Data type of the variable.
 	DataType pulumi.StringInput `pulumi:"dataType"`
-	// Default value
+	// Default value for the configuration variable.
 	DefaultConfigValue pulumi.StringInput `pulumi:"defaultConfigValue"`
-	// Config description
+	// A description for the configuration.
 	Description pulumi.StringInput `pulumi:"description"`
-	// This flags tells whether the value is overridable or not.
+	// Whether the value can be overridden or not.
 	IsOverridable pulumi.BoolInput `pulumi:"isOverridable"`
-	// If true, modfying this configuration value will requires restart.
+	// If true, modifying this configuration value will require a restart of the database.
 	IsRestartRequired pulumi.BoolInput `pulumi:"isRestartRequired"`
-	// User selected configuration value
+	// User-selected configuration variable value.
 	OverridenConfigValue pulumi.StringInput `pulumi:"overridenConfigValue"`
 }
 
@@ -3032,42 +3165,42 @@ func (o GetConfigurationConfigurationDetailItemOutput) ToGetConfigurationConfigu
 	return o
 }
 
-// Range or list of allowed values
+// Range or list of allowed values.
 func (o GetConfigurationConfigurationDetailItemOutput) AllowedValues() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationConfigurationDetailItem) string { return v.AllowedValues }).(pulumi.StringOutput)
 }
 
-// Key is the configuration key.
+// The configuration variable name.
 func (o GetConfigurationConfigurationDetailItemOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationConfigurationDetailItem) string { return v.ConfigKey }).(pulumi.StringOutput)
 }
 
-// Describes about the Datatype value.
+// Data type of the variable.
 func (o GetConfigurationConfigurationDetailItemOutput) DataType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationConfigurationDetailItem) string { return v.DataType }).(pulumi.StringOutput)
 }
 
-// Default value
+// Default value for the configuration variable.
 func (o GetConfigurationConfigurationDetailItemOutput) DefaultConfigValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationConfigurationDetailItem) string { return v.DefaultConfigValue }).(pulumi.StringOutput)
 }
 
-// Config description
+// A description for the configuration.
 func (o GetConfigurationConfigurationDetailItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationConfigurationDetailItem) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// This flags tells whether the value is overridable or not.
+// Whether the value can be overridden or not.
 func (o GetConfigurationConfigurationDetailItemOutput) IsOverridable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConfigurationConfigurationDetailItem) bool { return v.IsOverridable }).(pulumi.BoolOutput)
 }
 
-// If true, modfying this configuration value will requires restart.
+// If true, modifying this configuration value will require a restart of the database.
 func (o GetConfigurationConfigurationDetailItemOutput) IsRestartRequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConfigurationConfigurationDetailItem) bool { return v.IsRestartRequired }).(pulumi.BoolOutput)
 }
 
-// User selected configuration value
+// User-selected configuration variable value.
 func (o GetConfigurationConfigurationDetailItemOutput) OverridenConfigValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationConfigurationDetailItem) string { return v.OverridenConfigValue }).(pulumi.StringOutput)
 }
@@ -3192,9 +3325,9 @@ func (o GetConfigurationDbConfigurationOverrideArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetConfigurationDbConfigurationOverrideItem struct {
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey string `pulumi:"configKey"`
-	// User selected configuration value
+	// User-selected configuration variable value.
 	OverridenConfigValue string `pulumi:"overridenConfigValue"`
 }
 
@@ -3210,9 +3343,9 @@ type GetConfigurationDbConfigurationOverrideItemInput interface {
 }
 
 type GetConfigurationDbConfigurationOverrideItemArgs struct {
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
-	// User selected configuration value
+	// User-selected configuration variable value.
 	OverridenConfigValue pulumi.StringInput `pulumi:"overridenConfigValue"`
 }
 
@@ -3267,12 +3400,12 @@ func (o GetConfigurationDbConfigurationOverrideItemOutput) ToGetConfigurationDbC
 	return o
 }
 
-// Key is the configuration key.
+// The configuration variable name.
 func (o GetConfigurationDbConfigurationOverrideItemOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationDbConfigurationOverrideItem) string { return v.ConfigKey }).(pulumi.StringOutput)
 }
 
-// User selected configuration value
+// User-selected configuration variable value.
 func (o GetConfigurationDbConfigurationOverrideItemOutput) OverridenConfigValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationDbConfigurationOverrideItem) string { return v.OverridenConfigValue }).(pulumi.StringOutput)
 }
@@ -3399,34 +3532,34 @@ func (o GetConfigurationsConfigurationCollectionArrayOutput) Index(i pulumi.IntI
 type GetConfigurationsConfigurationCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// List of DB Configuration Values.
+	// List of configuration details.
 	ConfigurationDetails     []GetConfigurationsConfigurationCollectionItemConfigurationDetail     `pulumi:"configurationDetails"`
 	DbConfigurationOverrides []GetConfigurationsConfigurationCollectionItemDbConfigurationOverride `pulumi:"dbConfigurationOverrides"`
-	// Verison of the Postgresql DB like 14.5
+	// Verison of the PostgreSQL database, such as 14.9.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Config description
+	// A description for the configuration.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier for the configuration. Immutable on creation.
 	Id string `pulumi:"id"`
-	// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+	// Memory size in gigabytes with 1GB increment.
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
-	// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+	// CPU core count.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time Configuration was created. An RFC3339 formatted datetime string
+	// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
 
@@ -3444,34 +3577,34 @@ type GetConfigurationsConfigurationCollectionItemInput interface {
 type GetConfigurationsConfigurationCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// List of DB Configuration Values.
+	// List of configuration details.
 	ConfigurationDetails     GetConfigurationsConfigurationCollectionItemConfigurationDetailArrayInput     `pulumi:"configurationDetails"`
 	DbConfigurationOverrides GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideArrayInput `pulumi:"dbConfigurationOverrides"`
-	// Verison of the Postgresql DB like 14.5
+	// Verison of the PostgreSQL database, such as 14.9.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// Config description
+	// A description for the configuration.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier for the configuration. Immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+	// Memory size in gigabytes with 1GB increment.
 	InstanceMemorySizeInGbs pulumi.IntInput `pulumi:"instanceMemorySizeInGbs"`
-	// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+	// CPU core count.
 	InstanceOcpuCount pulumi.IntInput `pulumi:"instanceOcpuCount"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The time Configuration was created. An RFC3339 formatted datetime string
+	// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
 
@@ -3531,7 +3664,7 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) CompartmentId() pulu
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// List of DB Configuration Values.
+// List of configuration details.
 func (o GetConfigurationsConfigurationCollectionItemOutput) ConfigurationDetails() GetConfigurationsConfigurationCollectionItemConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) []GetConfigurationsConfigurationCollectionItemConfigurationDetail {
 		return v.ConfigurationDetails
@@ -3544,7 +3677,7 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) DbConfigurationOverr
 	}).(GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideArrayOutput)
 }
 
-// Verison of the Postgresql DB like 14.5
+// Verison of the PostgreSQL database, such as 14.9.
 func (o GetConfigurationsConfigurationCollectionItemOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -3554,7 +3687,7 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) DefinedTags() pulumi
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Config description
+// A description for the configuration.
 func (o GetConfigurationsConfigurationCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -3569,17 +3702,17 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) FreeformTags() pulum
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Unique identifier that is immutable on creation
+// A unique identifier for the configuration. Immutable on creation.
 func (o GetConfigurationsConfigurationCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+// Memory size in gigabytes with 1GB increment.
 func (o GetConfigurationsConfigurationCollectionItemOutput) InstanceMemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) int { return v.InstanceMemorySizeInGbs }).(pulumi.IntOutput)
 }
 
-// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+// CPU core count.
 func (o GetConfigurationsConfigurationCollectionItemOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
 }
@@ -3589,12 +3722,12 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) LifecycleDetails() p
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 func (o GetConfigurationsConfigurationCollectionItemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// A filter to return only resources their lifecycleState matches the given lifecycleState.
+// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 func (o GetConfigurationsConfigurationCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
@@ -3604,7 +3737,7 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) SystemTags() pulumi.
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time Configuration was created. An RFC3339 formatted datetime string
+// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetConfigurationsConfigurationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -3729,21 +3862,21 @@ func (o GetConfigurationsConfigurationCollectionItemConfigurationDetailArrayOutp
 }
 
 type GetConfigurationsConfigurationCollectionItemConfigurationDetailItem struct {
-	// Range or list of allowed values
+	// Range or list of allowed values.
 	AllowedValues string `pulumi:"allowedValues"`
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey string `pulumi:"configKey"`
-	// Describes about the Datatype value.
+	// Data type of the variable.
 	DataType string `pulumi:"dataType"`
-	// Default value
+	// Default value for the configuration variable.
 	DefaultConfigValue string `pulumi:"defaultConfigValue"`
-	// Config description
+	// A description for the configuration.
 	Description string `pulumi:"description"`
-	// This flags tells whether the value is overridable or not.
+	// Whether the value can be overridden or not.
 	IsOverridable bool `pulumi:"isOverridable"`
-	// If true, modfying this configuration value will requires restart.
+	// If true, modifying this configuration value will require a restart of the database.
 	IsRestartRequired bool `pulumi:"isRestartRequired"`
-	// User selected configuration value
+	// User-selected configuration variable value.
 	OverridenConfigValue string `pulumi:"overridenConfigValue"`
 }
 
@@ -3759,21 +3892,21 @@ type GetConfigurationsConfigurationCollectionItemConfigurationDetailItemInput in
 }
 
 type GetConfigurationsConfigurationCollectionItemConfigurationDetailItemArgs struct {
-	// Range or list of allowed values
+	// Range or list of allowed values.
 	AllowedValues pulumi.StringInput `pulumi:"allowedValues"`
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
-	// Describes about the Datatype value.
+	// Data type of the variable.
 	DataType pulumi.StringInput `pulumi:"dataType"`
-	// Default value
+	// Default value for the configuration variable.
 	DefaultConfigValue pulumi.StringInput `pulumi:"defaultConfigValue"`
-	// Config description
+	// A description for the configuration.
 	Description pulumi.StringInput `pulumi:"description"`
-	// This flags tells whether the value is overridable or not.
+	// Whether the value can be overridden or not.
 	IsOverridable pulumi.BoolInput `pulumi:"isOverridable"`
-	// If true, modfying this configuration value will requires restart.
+	// If true, modifying this configuration value will require a restart of the database.
 	IsRestartRequired pulumi.BoolInput `pulumi:"isRestartRequired"`
-	// User selected configuration value
+	// User-selected configuration variable value.
 	OverridenConfigValue pulumi.StringInput `pulumi:"overridenConfigValue"`
 }
 
@@ -3828,52 +3961,52 @@ func (o GetConfigurationsConfigurationCollectionItemConfigurationDetailItemOutpu
 	return o
 }
 
-// Range or list of allowed values
+// Range or list of allowed values.
 func (o GetConfigurationsConfigurationCollectionItemConfigurationDetailItemOutput) AllowedValues() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItemConfigurationDetailItem) string {
 		return v.AllowedValues
 	}).(pulumi.StringOutput)
 }
 
-// Key is the configuration key.
+// The configuration variable name.
 func (o GetConfigurationsConfigurationCollectionItemConfigurationDetailItemOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItemConfigurationDetailItem) string { return v.ConfigKey }).(pulumi.StringOutput)
 }
 
-// Describes about the Datatype value.
+// Data type of the variable.
 func (o GetConfigurationsConfigurationCollectionItemConfigurationDetailItemOutput) DataType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItemConfigurationDetailItem) string { return v.DataType }).(pulumi.StringOutput)
 }
 
-// Default value
+// Default value for the configuration variable.
 func (o GetConfigurationsConfigurationCollectionItemConfigurationDetailItemOutput) DefaultConfigValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItemConfigurationDetailItem) string {
 		return v.DefaultConfigValue
 	}).(pulumi.StringOutput)
 }
 
-// Config description
+// A description for the configuration.
 func (o GetConfigurationsConfigurationCollectionItemConfigurationDetailItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItemConfigurationDetailItem) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// This flags tells whether the value is overridable or not.
+// Whether the value can be overridden or not.
 func (o GetConfigurationsConfigurationCollectionItemConfigurationDetailItemOutput) IsOverridable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItemConfigurationDetailItem) bool {
 		return v.IsOverridable
 	}).(pulumi.BoolOutput)
 }
 
-// If true, modfying this configuration value will requires restart.
+// If true, modifying this configuration value will require a restart of the database.
 func (o GetConfigurationsConfigurationCollectionItemConfigurationDetailItemOutput) IsRestartRequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItemConfigurationDetailItem) bool {
 		return v.IsRestartRequired
 	}).(pulumi.BoolOutput)
 }
 
-// User selected configuration value
+// User-selected configuration variable value.
 func (o GetConfigurationsConfigurationCollectionItemConfigurationDetailItemOutput) OverridenConfigValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItemConfigurationDetailItem) string {
 		return v.OverridenConfigValue
@@ -4000,9 +4133,9 @@ func (o GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideArray
 }
 
 type GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideItem struct {
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey string `pulumi:"configKey"`
-	// User selected configuration value
+	// User-selected configuration variable value.
 	OverridenConfigValue string `pulumi:"overridenConfigValue"`
 }
 
@@ -4018,9 +4151,9 @@ type GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideItemInpu
 }
 
 type GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideItemArgs struct {
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
-	// User selected configuration value
+	// User-selected configuration variable value.
 	OverridenConfigValue pulumi.StringInput `pulumi:"overridenConfigValue"`
 }
 
@@ -4075,14 +4208,14 @@ func (o GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideItemO
 	return o
 }
 
-// Key is the configuration key.
+// The configuration variable name.
 func (o GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideItemOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideItem) string {
 		return v.ConfigKey
 	}).(pulumi.StringOutput)
 }
 
-// User selected configuration value
+// User-selected configuration variable value.
 func (o GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideItemOutput) OverridenConfigValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideItem) string {
 		return v.OverridenConfigValue
@@ -4216,9 +4349,9 @@ func (o GetConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetConfigur
 }
 
 type GetDbSystemConnectionDetailInstanceEndpoint struct {
-	// Unique identifier of the DbInstance.
+	// Unique identifier of the database instance node.
 	DbInstanceId string `pulumi:"dbInstanceId"`
-	// The node endpoint information.
+	// Information about the database instance node endpoint.
 	Endpoints []GetDbSystemConnectionDetailInstanceEndpointEndpoint `pulumi:"endpoints"`
 }
 
@@ -4234,9 +4367,9 @@ type GetDbSystemConnectionDetailInstanceEndpointInput interface {
 }
 
 type GetDbSystemConnectionDetailInstanceEndpointArgs struct {
-	// Unique identifier of the DbInstance.
+	// Unique identifier of the database instance node.
 	DbInstanceId pulumi.StringInput `pulumi:"dbInstanceId"`
-	// The node endpoint information.
+	// Information about the database instance node endpoint.
 	Endpoints GetDbSystemConnectionDetailInstanceEndpointEndpointArrayInput `pulumi:"endpoints"`
 }
 
@@ -4291,12 +4424,12 @@ func (o GetDbSystemConnectionDetailInstanceEndpointOutput) ToGetDbSystemConnecti
 	return o
 }
 
-// Unique identifier of the DbInstance.
+// Unique identifier of the database instance node.
 func (o GetDbSystemConnectionDetailInstanceEndpointOutput) DbInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailInstanceEndpoint) string { return v.DbInstanceId }).(pulumi.StringOutput)
 }
 
-// The node endpoint information.
+// Information about the database instance node endpoint.
 func (o GetDbSystemConnectionDetailInstanceEndpointOutput) Endpoints() GetDbSystemConnectionDetailInstanceEndpointEndpointArrayOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailInstanceEndpoint) []GetDbSystemConnectionDetailInstanceEndpointEndpoint {
 		return v.Endpoints
@@ -4324,11 +4457,11 @@ func (o GetDbSystemConnectionDetailInstanceEndpointArrayOutput) Index(i pulumi.I
 }
 
 type GetDbSystemConnectionDetailInstanceEndpointEndpoint struct {
-	// The FQDN of the endpoint
+	// The FQDN of the endpoint.
 	Fqdn string `pulumi:"fqdn"`
-	// The IP Address of the endpoint
+	// The IP address of the endpoint.
 	IpAddress string `pulumi:"ipAddress"`
-	// The port Address of the endpoint
+	// The port address of the endpoint.
 	Port int `pulumi:"port"`
 }
 
@@ -4344,11 +4477,11 @@ type GetDbSystemConnectionDetailInstanceEndpointEndpointInput interface {
 }
 
 type GetDbSystemConnectionDetailInstanceEndpointEndpointArgs struct {
-	// The FQDN of the endpoint
+	// The FQDN of the endpoint.
 	Fqdn pulumi.StringInput `pulumi:"fqdn"`
-	// The IP Address of the endpoint
+	// The IP address of the endpoint.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// The port Address of the endpoint
+	// The port address of the endpoint.
 	Port pulumi.IntInput `pulumi:"port"`
 }
 
@@ -4403,17 +4536,17 @@ func (o GetDbSystemConnectionDetailInstanceEndpointEndpointOutput) ToGetDbSystem
 	return o
 }
 
-// The FQDN of the endpoint
+// The FQDN of the endpoint.
 func (o GetDbSystemConnectionDetailInstanceEndpointEndpointOutput) Fqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailInstanceEndpointEndpoint) string { return v.Fqdn }).(pulumi.StringOutput)
 }
 
-// The IP Address of the endpoint
+// The IP address of the endpoint.
 func (o GetDbSystemConnectionDetailInstanceEndpointEndpointOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailInstanceEndpointEndpoint) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// The port Address of the endpoint
+// The port address of the endpoint.
 func (o GetDbSystemConnectionDetailInstanceEndpointEndpointOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailInstanceEndpointEndpoint) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -4439,11 +4572,11 @@ func (o GetDbSystemConnectionDetailInstanceEndpointEndpointArrayOutput) Index(i 
 }
 
 type GetDbSystemConnectionDetailPrimaryDbEndpoint struct {
-	// The FQDN of the endpoint
+	// The FQDN of the endpoint.
 	Fqdn string `pulumi:"fqdn"`
-	// The IP Address of the endpoint
+	// The IP address of the endpoint.
 	IpAddress string `pulumi:"ipAddress"`
-	// The port Address of the endpoint
+	// The port address of the endpoint.
 	Port int `pulumi:"port"`
 }
 
@@ -4459,11 +4592,11 @@ type GetDbSystemConnectionDetailPrimaryDbEndpointInput interface {
 }
 
 type GetDbSystemConnectionDetailPrimaryDbEndpointArgs struct {
-	// The FQDN of the endpoint
+	// The FQDN of the endpoint.
 	Fqdn pulumi.StringInput `pulumi:"fqdn"`
-	// The IP Address of the endpoint
+	// The IP address of the endpoint.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// The port Address of the endpoint
+	// The port address of the endpoint.
 	Port pulumi.IntInput `pulumi:"port"`
 }
 
@@ -4518,17 +4651,17 @@ func (o GetDbSystemConnectionDetailPrimaryDbEndpointOutput) ToGetDbSystemConnect
 	return o
 }
 
-// The FQDN of the endpoint
+// The FQDN of the endpoint.
 func (o GetDbSystemConnectionDetailPrimaryDbEndpointOutput) Fqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailPrimaryDbEndpoint) string { return v.Fqdn }).(pulumi.StringOutput)
 }
 
-// The IP Address of the endpoint
+// The IP address of the endpoint.
 func (o GetDbSystemConnectionDetailPrimaryDbEndpointOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailPrimaryDbEndpoint) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// The port Address of the endpoint
+// The port address of the endpoint.
 func (o GetDbSystemConnectionDetailPrimaryDbEndpointOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemConnectionDetailPrimaryDbEndpoint) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -4766,21 +4899,21 @@ func (o GetDbSystemCredentialPasswordDetailArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetDbSystemInstance struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// Description of the DbInstance.
+	// Description of the database instance node.
 	Description string `pulumi:"description"`
-	// Display name of the DbInstance.
+	// A user-friendly display name for the database instance node. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// Unique identifier that is immutable on creation.
+	// A unique identifier for the database instance node. Immutable on creation.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The current state of the DbSystem.
+	// The current state of the database system.
 	State string `pulumi:"state"`
-	// The time the the DbSystem was created. An RFC3339 formatted datetime string
+	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DbSystem was updated. An RFC3339 formatted datetime string
+	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -4796,21 +4929,21 @@ type GetDbSystemInstanceInput interface {
 }
 
 type GetDbSystemInstanceArgs struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// Description of the DbInstance.
+	// Description of the database instance node.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Display name of the DbInstance.
+	// A user-friendly display name for the database instance node. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Unique identifier that is immutable on creation.
+	// A unique identifier for the database instance node. Immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The current state of the DbSystem.
+	// The current state of the database system.
 	State pulumi.StringInput `pulumi:"state"`
-	// The time the the DbSystem was created. An RFC3339 formatted datetime string
+	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the DbSystem was updated. An RFC3339 formatted datetime string
+	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -4865,22 +4998,22 @@ func (o GetDbSystemInstanceOutput) ToGetDbSystemInstanceOutputWithContext(ctx co
 	return o
 }
 
-// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o GetDbSystemInstanceOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemInstance) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// Description of the DbInstance.
+// Description of the database instance node.
 func (o GetDbSystemInstanceOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemInstance) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Display name of the DbInstance.
+// A user-friendly display name for the database instance node. Avoid entering confidential information.
 func (o GetDbSystemInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemInstance) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Unique identifier that is immutable on creation.
+// A unique identifier for the database instance node. Immutable on creation.
 func (o GetDbSystemInstanceOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemInstance) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -4890,17 +5023,17 @@ func (o GetDbSystemInstanceOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemInstance) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The current state of the DbSystem.
+// The current state of the database system.
 func (o GetDbSystemInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemInstance) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The time the the DbSystem was created. An RFC3339 formatted datetime string
+// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetDbSystemInstanceOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemInstance) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the DbSystem was updated. An RFC3339 formatted datetime string
+// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetDbSystemInstanceOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemInstance) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -4926,9 +5059,9 @@ func (o GetDbSystemInstanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemInst
 }
 
 type GetDbSystemInstancesDetail struct {
-	// Description of the DbInstance.
+	// Description of the database instance node.
 	Description string `pulumi:"description"`
-	// Display name of the DbInstance.
+	// A user-friendly display name for the database instance node. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	PrivateIp   string `pulumi:"privateIp"`
 }
@@ -4945,9 +5078,9 @@ type GetDbSystemInstancesDetailInput interface {
 }
 
 type GetDbSystemInstancesDetailArgs struct {
-	// Description of the DbInstance.
+	// Description of the database instance node.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Display name of the DbInstance.
+	// A user-friendly display name for the database instance node. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	PrivateIp   pulumi.StringInput `pulumi:"privateIp"`
 }
@@ -5003,12 +5136,12 @@ func (o GetDbSystemInstancesDetailOutput) ToGetDbSystemInstancesDetailOutputWith
 	return o
 }
 
-// Description of the DbInstance.
+// Description of the database instance node.
 func (o GetDbSystemInstancesDetailOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemInstancesDetail) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Display name of the DbInstance.
+// A user-friendly display name for the database instance node. Avoid entering confidential information.
 func (o GetDbSystemInstancesDetailOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemInstancesDetail) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -5038,7 +5171,7 @@ func (o GetDbSystemInstancesDetailArrayOutput) Index(i pulumi.IntInput) GetDbSys
 }
 
 type GetDbSystemManagementPolicy struct {
-	// Posgresql DB system backup policy
+	// PostgreSQL database system backup policy.
 	BackupPolicies []GetDbSystemManagementPolicyBackupPolicy `pulumi:"backupPolicies"`
 	// The start of the maintenance window.
 	MaintenanceWindowStart string `pulumi:"maintenanceWindowStart"`
@@ -5056,7 +5189,7 @@ type GetDbSystemManagementPolicyInput interface {
 }
 
 type GetDbSystemManagementPolicyArgs struct {
-	// Posgresql DB system backup policy
+	// PostgreSQL database system backup policy.
 	BackupPolicies GetDbSystemManagementPolicyBackupPolicyArrayInput `pulumi:"backupPolicies"`
 	// The start of the maintenance window.
 	MaintenanceWindowStart pulumi.StringInput `pulumi:"maintenanceWindowStart"`
@@ -5113,7 +5246,7 @@ func (o GetDbSystemManagementPolicyOutput) ToGetDbSystemManagementPolicyOutputWi
 	return o
 }
 
-// Posgresql DB system backup policy
+// PostgreSQL database system backup policy.
 func (o GetDbSystemManagementPolicyOutput) BackupPolicies() GetDbSystemManagementPolicyBackupPolicyArrayOutput {
 	return o.ApplyT(func(v GetDbSystemManagementPolicy) []GetDbSystemManagementPolicyBackupPolicy { return v.BackupPolicies }).(GetDbSystemManagementPolicyBackupPolicyArrayOutput)
 }
@@ -5144,15 +5277,15 @@ func (o GetDbSystemManagementPolicyArrayOutput) Index(i pulumi.IntInput) GetDbSy
 }
 
 type GetDbSystemManagementPolicyBackupPolicy struct {
-	// Hour of the day when backup starts.
+	// Hour of the day when the backup starts.
 	BackupStart string `pulumi:"backupStart"`
-	// Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+	// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths []int `pulumi:"daysOfTheMonths"`
-	// Weekly days
+	// The day of the week that the backup starts.
 	DaysOfTheWeeks []string `pulumi:"daysOfTheWeeks"`
-	// Backup policy kind
+	// The kind of backup policy.
 	Kind string `pulumi:"kind"`
-	// How many days the customers data should be stored after the db system deletion.
+	// How many days the data should be stored after the database system deletion.
 	RetentionDays int `pulumi:"retentionDays"`
 }
 
@@ -5168,15 +5301,15 @@ type GetDbSystemManagementPolicyBackupPolicyInput interface {
 }
 
 type GetDbSystemManagementPolicyBackupPolicyArgs struct {
-	// Hour of the day when backup starts.
+	// Hour of the day when the backup starts.
 	BackupStart pulumi.StringInput `pulumi:"backupStart"`
-	// Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+	// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths pulumi.IntArrayInput `pulumi:"daysOfTheMonths"`
-	// Weekly days
+	// The day of the week that the backup starts.
 	DaysOfTheWeeks pulumi.StringArrayInput `pulumi:"daysOfTheWeeks"`
-	// Backup policy kind
+	// The kind of backup policy.
 	Kind pulumi.StringInput `pulumi:"kind"`
-	// How many days the customers data should be stored after the db system deletion.
+	// How many days the data should be stored after the database system deletion.
 	RetentionDays pulumi.IntInput `pulumi:"retentionDays"`
 }
 
@@ -5231,27 +5364,27 @@ func (o GetDbSystemManagementPolicyBackupPolicyOutput) ToGetDbSystemManagementPo
 	return o
 }
 
-// Hour of the day when backup starts.
+// Hour of the day when the backup starts.
 func (o GetDbSystemManagementPolicyBackupPolicyOutput) BackupStart() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicy) string { return v.BackupStart }).(pulumi.StringOutput)
 }
 
-// Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 func (o GetDbSystemManagementPolicyBackupPolicyOutput) DaysOfTheMonths() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicy) []int { return v.DaysOfTheMonths }).(pulumi.IntArrayOutput)
 }
 
-// Weekly days
+// The day of the week that the backup starts.
 func (o GetDbSystemManagementPolicyBackupPolicyOutput) DaysOfTheWeeks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicy) []string { return v.DaysOfTheWeeks }).(pulumi.StringArrayOutput)
 }
 
-// Backup policy kind
+// The kind of backup policy.
 func (o GetDbSystemManagementPolicyBackupPolicyOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicy) string { return v.Kind }).(pulumi.StringOutput)
 }
 
-// How many days the customers data should be stored after the db system deletion.
+// How many days the data should be stored after the database system deletion.
 func (o GetDbSystemManagementPolicyBackupPolicyOutput) RetentionDays() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicy) int { return v.RetentionDays }).(pulumi.IntOutput)
 }
@@ -5277,11 +5410,11 @@ func (o GetDbSystemManagementPolicyBackupPolicyArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetDbSystemNetworkDetail struct {
-	// List of customer NetworkSecurityGroup identifiers
+	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds []string `pulumi:"nsgIds"`
-	// Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 	PrimaryDbEndpointPrivateIp string `pulumi:"primaryDbEndpointPrivateIp"`
-	// Customer Subnet identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -5297,11 +5430,11 @@ type GetDbSystemNetworkDetailInput interface {
 }
 
 type GetDbSystemNetworkDetailArgs struct {
-	// List of customer NetworkSecurityGroup identifiers
+	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
-	// Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 	PrimaryDbEndpointPrivateIp pulumi.StringInput `pulumi:"primaryDbEndpointPrivateIp"`
-	// Customer Subnet identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -5356,17 +5489,17 @@ func (o GetDbSystemNetworkDetailOutput) ToGetDbSystemNetworkDetailOutputWithCont
 	return o
 }
 
-// List of customer NetworkSecurityGroup identifiers
+// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 func (o GetDbSystemNetworkDetailOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbSystemNetworkDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
-// Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 func (o GetDbSystemNetworkDetailOutput) PrimaryDbEndpointPrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemNetworkDetail) string { return v.PrimaryDbEndpointPrivateIp }).(pulumi.StringOutput)
 }
 
-// Customer Subnet identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
 func (o GetDbSystemNetworkDetailOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemNetworkDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -5391,10 +5524,134 @@ func (o GetDbSystemNetworkDetailArrayOutput) Index(i pulumi.IntInput) GetDbSyste
 	}).(GetDbSystemNetworkDetailOutput)
 }
 
+type GetDbSystemPatchOperation struct {
+	From         string                 `pulumi:"from"`
+	Operation    string                 `pulumi:"operation"`
+	Position     string                 `pulumi:"position"`
+	SelectedItem string                 `pulumi:"selectedItem"`
+	Selection    string                 `pulumi:"selection"`
+	Value        map[string]interface{} `pulumi:"value"`
+}
+
+// GetDbSystemPatchOperationInput is an input type that accepts GetDbSystemPatchOperationArgs and GetDbSystemPatchOperationOutput values.
+// You can construct a concrete instance of `GetDbSystemPatchOperationInput` via:
+//
+//	GetDbSystemPatchOperationArgs{...}
+type GetDbSystemPatchOperationInput interface {
+	pulumi.Input
+
+	ToGetDbSystemPatchOperationOutput() GetDbSystemPatchOperationOutput
+	ToGetDbSystemPatchOperationOutputWithContext(context.Context) GetDbSystemPatchOperationOutput
+}
+
+type GetDbSystemPatchOperationArgs struct {
+	From         pulumi.StringInput `pulumi:"from"`
+	Operation    pulumi.StringInput `pulumi:"operation"`
+	Position     pulumi.StringInput `pulumi:"position"`
+	SelectedItem pulumi.StringInput `pulumi:"selectedItem"`
+	Selection    pulumi.StringInput `pulumi:"selection"`
+	Value        pulumi.MapInput    `pulumi:"value"`
+}
+
+func (GetDbSystemPatchOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemPatchOperation)(nil)).Elem()
+}
+
+func (i GetDbSystemPatchOperationArgs) ToGetDbSystemPatchOperationOutput() GetDbSystemPatchOperationOutput {
+	return i.ToGetDbSystemPatchOperationOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemPatchOperationArgs) ToGetDbSystemPatchOperationOutputWithContext(ctx context.Context) GetDbSystemPatchOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemPatchOperationOutput)
+}
+
+// GetDbSystemPatchOperationArrayInput is an input type that accepts GetDbSystemPatchOperationArray and GetDbSystemPatchOperationArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemPatchOperationArrayInput` via:
+//
+//	GetDbSystemPatchOperationArray{ GetDbSystemPatchOperationArgs{...} }
+type GetDbSystemPatchOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemPatchOperationArrayOutput() GetDbSystemPatchOperationArrayOutput
+	ToGetDbSystemPatchOperationArrayOutputWithContext(context.Context) GetDbSystemPatchOperationArrayOutput
+}
+
+type GetDbSystemPatchOperationArray []GetDbSystemPatchOperationInput
+
+func (GetDbSystemPatchOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemPatchOperation)(nil)).Elem()
+}
+
+func (i GetDbSystemPatchOperationArray) ToGetDbSystemPatchOperationArrayOutput() GetDbSystemPatchOperationArrayOutput {
+	return i.ToGetDbSystemPatchOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemPatchOperationArray) ToGetDbSystemPatchOperationArrayOutputWithContext(ctx context.Context) GetDbSystemPatchOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemPatchOperationArrayOutput)
+}
+
+type GetDbSystemPatchOperationOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemPatchOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemPatchOperation)(nil)).Elem()
+}
+
+func (o GetDbSystemPatchOperationOutput) ToGetDbSystemPatchOperationOutput() GetDbSystemPatchOperationOutput {
+	return o
+}
+
+func (o GetDbSystemPatchOperationOutput) ToGetDbSystemPatchOperationOutputWithContext(ctx context.Context) GetDbSystemPatchOperationOutput {
+	return o
+}
+
+func (o GetDbSystemPatchOperationOutput) From() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchOperation) string { return v.From }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemPatchOperationOutput) Operation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchOperation) string { return v.Operation }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemPatchOperationOutput) Position() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchOperation) string { return v.Position }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemPatchOperationOutput) SelectedItem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchOperation) string { return v.SelectedItem }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemPatchOperationOutput) Selection() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPatchOperation) string { return v.Selection }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemPatchOperationOutput) Value() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDbSystemPatchOperation) map[string]interface{} { return v.Value }).(pulumi.MapOutput)
+}
+
+type GetDbSystemPatchOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemPatchOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemPatchOperation)(nil)).Elem()
+}
+
+func (o GetDbSystemPatchOperationArrayOutput) ToGetDbSystemPatchOperationArrayOutput() GetDbSystemPatchOperationArrayOutput {
+	return o
+}
+
+func (o GetDbSystemPatchOperationArrayOutput) ToGetDbSystemPatchOperationArrayOutputWithContext(ctx context.Context) GetDbSystemPatchOperationArrayOutput {
+	return o
+}
+
+func (o GetDbSystemPatchOperationArrayOutput) Index(i pulumi.IntInput) GetDbSystemPatchOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemPatchOperation {
+		return vs[0].([]GetDbSystemPatchOperation)[vs[1].(int)]
+	}).(GetDbSystemPatchOperationOutput)
+}
+
 type GetDbSystemSource struct {
-	// DbSystem backup identifier.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId string `pulumi:"backupId"`
-	// Restore the DB config overrides from backup. Default is false
+	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides bool `pulumi:"isHavingRestoreConfigOverrides"`
 	// The source descriminator.
 	SourceType string `pulumi:"sourceType"`
@@ -5412,9 +5669,9 @@ type GetDbSystemSourceInput interface {
 }
 
 type GetDbSystemSourceArgs struct {
-	// DbSystem backup identifier.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId pulumi.StringInput `pulumi:"backupId"`
-	// Restore the DB config overrides from backup. Default is false
+	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides pulumi.BoolInput `pulumi:"isHavingRestoreConfigOverrides"`
 	// The source descriminator.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
@@ -5471,12 +5728,12 @@ func (o GetDbSystemSourceOutput) ToGetDbSystemSourceOutputWithContext(ctx contex
 	return o
 }
 
-// DbSystem backup identifier.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 func (o GetDbSystemSourceOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemSource) string { return v.BackupId }).(pulumi.StringOutput)
 }
 
-// Restore the DB config overrides from backup. Default is false
+// Deprecated. Don't use.
 func (o GetDbSystemSourceOutput) IsHavingRestoreConfigOverrides() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemSource) bool { return v.IsHavingRestoreConfigOverrides }).(pulumi.BoolOutput)
 }
@@ -5507,13 +5764,13 @@ func (o GetDbSystemSourceArrayOutput) Index(i pulumi.IntInput) GetDbSystemSource
 }
 
 type GetDbSystemStorageDetail struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// DbSystem Performance Unit
+	// Guaranteed input/output storage requests per second (IOPS) available to the database system.
 	Iops string `pulumi:"iops"`
-	// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable bool `pulumi:"isRegionallyDurable"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType string `pulumi:"systemType"`
 }
 
@@ -5529,13 +5786,13 @@ type GetDbSystemStorageDetailInput interface {
 }
 
 type GetDbSystemStorageDetailArgs struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// DbSystem Performance Unit
+	// Guaranteed input/output storage requests per second (IOPS) available to the database system.
 	Iops pulumi.StringInput `pulumi:"iops"`
-	// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable pulumi.BoolInput `pulumi:"isRegionallyDurable"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType pulumi.StringInput `pulumi:"systemType"`
 }
 
@@ -5590,22 +5847,22 @@ func (o GetDbSystemStorageDetailOutput) ToGetDbSystemStorageDetailOutputWithCont
 	return o
 }
 
-// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o GetDbSystemStorageDetailOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemStorageDetail) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// DbSystem Performance Unit
+// Guaranteed input/output storage requests per second (IOPS) available to the database system.
 func (o GetDbSystemStorageDetailOutput) Iops() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemStorageDetail) string { return v.Iops }).(pulumi.StringOutput)
 }
 
-// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o GetDbSystemStorageDetailOutput) IsRegionallyDurable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemStorageDetail) bool { return v.IsRegionallyDurable }).(pulumi.BoolOutput)
 }
 
-// Type of the DbSystem.
+// Type of the database system.
 func (o GetDbSystemStorageDetailOutput) SystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemStorageDetail) string { return v.SystemType }).(pulumi.StringOutput)
 }
@@ -5725,55 +5982,57 @@ func (o GetDbSystemsDbSystemCollectionArrayOutput) Index(i pulumi.IntInput) GetD
 }
 
 type GetDbSystemsDbSystemCollectionItem struct {
-	// The DB system username.
+	// The database system administrator username.
 	AdminUsername string `pulumi:"adminUsername"`
+	ApplyConfig   string `pulumi:"applyConfig"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Configuration identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
 	ConfigId    string                                         `pulumi:"configId"`
 	Credentials []GetDbSystemsDbSystemCollectionItemCredential `pulumi:"credentials"`
-	// The major and minor versions of the DbSystem software.
+	// The major and minor versions of the database system software.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Description of the DbInstance.
+	// Description of the database instance node.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	Id string `pulumi:"id"`
-	// Count of DbInstances in the DbSystem.
+	// Count of instances, or nodes, in the database system.
 	InstanceCount int `pulumi:"instanceCount"`
-	// The total amount of memory available to each DbInstance, in gigabytes.
+	// The total amount of memory available to each database instance node, in gigabytes.
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
-	// The total number of OCPUs available to each DbInstance.
+	// The total number of OCPUs available to each database instance node.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
-	// The list of DbInstances in the DbSystem.
+	// The list of instances, or nodes, in the database system.
 	Instances        []GetDbSystemsDbSystemCollectionItemInstance        `pulumi:"instances"`
 	InstancesDetails []GetDbSystemsDbSystemCollectionItemInstancesDetail `pulumi:"instancesDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// PostgreSQL DB system management policy
+	// PostgreSQL database system management policy.
 	ManagementPolicies []GetDbSystemsDbSystemCollectionItemManagementPolicy `pulumi:"managementPolicies"`
-	// DbSystem network details.
-	NetworkDetails []GetDbSystemsDbSystemCollectionItemNetworkDetail `pulumi:"networkDetails"`
-	// Shape of dbInstance.
+	// Network details for the database system.
+	NetworkDetails  []GetDbSystemsDbSystemCollectionItemNetworkDetail  `pulumi:"networkDetails"`
+	PatchOperations []GetDbSystemsDbSystemCollectionItemPatchOperation `pulumi:"patchOperations"`
+	// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
-	// New source is used to restore the DB system.
+	// The source used to restore the database system.
 	Sources []GetDbSystemsDbSystemCollectionItemSource `pulumi:"sources"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
-	// Storage details of the DbSystem.
+	// Storage details of the database system.
 	StorageDetails []GetDbSystemsDbSystemCollectionItemStorageDetail `pulumi:"storageDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType string `pulumi:"systemType"`
-	// The time the the DbSystem was created. An RFC3339 formatted datetime string
+	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DbSystem was updated. An RFC3339 formatted datetime string
+	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -5789,55 +6048,57 @@ type GetDbSystemsDbSystemCollectionItemInput interface {
 }
 
 type GetDbSystemsDbSystemCollectionItemArgs struct {
-	// The DB system username.
+	// The database system administrator username.
 	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
+	ApplyConfig   pulumi.StringInput `pulumi:"applyConfig"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Configuration identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
 	ConfigId    pulumi.StringInput                                     `pulumi:"configId"`
 	Credentials GetDbSystemsDbSystemCollectionItemCredentialArrayInput `pulumi:"credentials"`
-	// The major and minor versions of the DbSystem software.
+	// The major and minor versions of the database system software.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// Description of the DbInstance.
+	// Description of the database instance node.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Count of DbInstances in the DbSystem.
+	// Count of instances, or nodes, in the database system.
 	InstanceCount pulumi.IntInput `pulumi:"instanceCount"`
-	// The total amount of memory available to each DbInstance, in gigabytes.
+	// The total amount of memory available to each database instance node, in gigabytes.
 	InstanceMemorySizeInGbs pulumi.IntInput `pulumi:"instanceMemorySizeInGbs"`
-	// The total number of OCPUs available to each DbInstance.
+	// The total number of OCPUs available to each database instance node.
 	InstanceOcpuCount pulumi.IntInput `pulumi:"instanceOcpuCount"`
-	// The list of DbInstances in the DbSystem.
+	// The list of instances, or nodes, in the database system.
 	Instances        GetDbSystemsDbSystemCollectionItemInstanceArrayInput        `pulumi:"instances"`
 	InstancesDetails GetDbSystemsDbSystemCollectionItemInstancesDetailArrayInput `pulumi:"instancesDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// PostgreSQL DB system management policy
+	// PostgreSQL database system management policy.
 	ManagementPolicies GetDbSystemsDbSystemCollectionItemManagementPolicyArrayInput `pulumi:"managementPolicies"`
-	// DbSystem network details.
-	NetworkDetails GetDbSystemsDbSystemCollectionItemNetworkDetailArrayInput `pulumi:"networkDetails"`
-	// Shape of dbInstance.
+	// Network details for the database system.
+	NetworkDetails  GetDbSystemsDbSystemCollectionItemNetworkDetailArrayInput  `pulumi:"networkDetails"`
+	PatchOperations GetDbSystemsDbSystemCollectionItemPatchOperationArrayInput `pulumi:"patchOperations"`
+	// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// New source is used to restore the DB system.
+	// The source used to restore the database system.
 	Sources GetDbSystemsDbSystemCollectionItemSourceArrayInput `pulumi:"sources"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
-	// Storage details of the DbSystem.
+	// Storage details of the database system.
 	StorageDetails GetDbSystemsDbSystemCollectionItemStorageDetailArrayInput `pulumi:"storageDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType pulumi.StringInput `pulumi:"systemType"`
-	// The time the the DbSystem was created. An RFC3339 formatted datetime string
+	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the DbSystem was updated. An RFC3339 formatted datetime string
+	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -5892,9 +6153,13 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) ToGetDbSystemsDbSystemCollecti
 	return o
 }
 
-// The DB system username.
+// The database system administrator username.
 func (o GetDbSystemsDbSystemCollectionItemOutput) AdminUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.AdminUsername }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemCollectionItemOutput) ApplyConfig() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.ApplyConfig }).(pulumi.StringOutput)
 }
 
 // The ID of the compartment in which to list resources.
@@ -5902,7 +6167,7 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) CompartmentId() pulumi.StringO
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Configuration identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
 func (o GetDbSystemsDbSystemCollectionItemOutput) ConfigId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.ConfigId }).(pulumi.StringOutput)
 }
@@ -5913,7 +6178,7 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) Credentials() GetDbSystemsDbSy
 	}).(GetDbSystemsDbSystemCollectionItemCredentialArrayOutput)
 }
 
-// The major and minor versions of the DbSystem software.
+// The major and minor versions of the database system software.
 func (o GetDbSystemsDbSystemCollectionItemOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -5923,7 +6188,7 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) DefinedTags() pulumi.MapOutput
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Description of the DbInstance.
+// Description of the database instance node.
 func (o GetDbSystemsDbSystemCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -5938,27 +6203,27 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) FreeformTags() pulumi.MapOutpu
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// unique DbSystem identifier
+// A unique identifier for the database system.
 func (o GetDbSystemsDbSystemCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Count of DbInstances in the DbSystem.
+// Count of instances, or nodes, in the database system.
 func (o GetDbSystemsDbSystemCollectionItemOutput) InstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) int { return v.InstanceCount }).(pulumi.IntOutput)
 }
 
-// The total amount of memory available to each DbInstance, in gigabytes.
+// The total amount of memory available to each database instance node, in gigabytes.
 func (o GetDbSystemsDbSystemCollectionItemOutput) InstanceMemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) int { return v.InstanceMemorySizeInGbs }).(pulumi.IntOutput)
 }
 
-// The total number of OCPUs available to each DbInstance.
+// The total number of OCPUs available to each database instance node.
 func (o GetDbSystemsDbSystemCollectionItemOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
 }
 
-// The list of DbInstances in the DbSystem.
+// The list of instances, or nodes, in the database system.
 func (o GetDbSystemsDbSystemCollectionItemOutput) Instances() GetDbSystemsDbSystemCollectionItemInstanceArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemInstance {
 		return v.Instances
@@ -5976,38 +6241,44 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) LifecycleDetails() pulumi.Stri
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// PostgreSQL DB system management policy
+// PostgreSQL database system management policy.
 func (o GetDbSystemsDbSystemCollectionItemOutput) ManagementPolicies() GetDbSystemsDbSystemCollectionItemManagementPolicyArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemManagementPolicy {
 		return v.ManagementPolicies
 	}).(GetDbSystemsDbSystemCollectionItemManagementPolicyArrayOutput)
 }
 
-// DbSystem network details.
+// Network details for the database system.
 func (o GetDbSystemsDbSystemCollectionItemOutput) NetworkDetails() GetDbSystemsDbSystemCollectionItemNetworkDetailArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemNetworkDetail {
 		return v.NetworkDetails
 	}).(GetDbSystemsDbSystemCollectionItemNetworkDetailArrayOutput)
 }
 
-// Shape of dbInstance.
+func (o GetDbSystemsDbSystemCollectionItemOutput) PatchOperations() GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemPatchOperation {
+		return v.PatchOperations
+	}).(GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput)
+}
+
+// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
 func (o GetDbSystemsDbSystemCollectionItemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// New source is used to restore the DB system.
+// The source used to restore the database system.
 func (o GetDbSystemsDbSystemCollectionItemOutput) Sources() GetDbSystemsDbSystemCollectionItemSourceArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemSource {
 		return v.Sources
 	}).(GetDbSystemsDbSystemCollectionItemSourceArrayOutput)
 }
 
-// A filter to return only resources their lifecycleState matches the given lifecycleState.
+// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 func (o GetDbSystemsDbSystemCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Storage details of the DbSystem.
+// Storage details of the database system.
 func (o GetDbSystemsDbSystemCollectionItemOutput) StorageDetails() GetDbSystemsDbSystemCollectionItemStorageDetailArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemStorageDetail {
 		return v.StorageDetails
@@ -6019,17 +6290,17 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) SystemTags() pulumi.MapOutput 
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Type of the DbSystem.
+// Type of the database system.
 func (o GetDbSystemsDbSystemCollectionItemOutput) SystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.SystemType }).(pulumi.StringOutput)
 }
 
-// The time the the DbSystem was created. An RFC3339 formatted datetime string
+// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetDbSystemsDbSystemCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the DbSystem was updated. An RFC3339 formatted datetime string
+// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetDbSystemsDbSystemCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -6269,21 +6540,21 @@ func (o GetDbSystemsDbSystemCollectionItemCredentialPasswordDetailArrayOutput) I
 }
 
 type GetDbSystemsDbSystemCollectionItemInstance struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// Description of the DbInstance.
+	// Description of the database instance node.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
-	// The time the the DbSystem was created. An RFC3339 formatted datetime string
+	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DbSystem was updated. An RFC3339 formatted datetime string
+	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -6299,21 +6570,21 @@ type GetDbSystemsDbSystemCollectionItemInstanceInput interface {
 }
 
 type GetDbSystemsDbSystemCollectionItemInstanceArgs struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// Description of the DbInstance.
+	// Description of the database instance node.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
-	// The time the the DbSystem was created. An RFC3339 formatted datetime string
+	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the DbSystem was updated. An RFC3339 formatted datetime string
+	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -6368,12 +6639,12 @@ func (o GetDbSystemsDbSystemCollectionItemInstanceOutput) ToGetDbSystemsDbSystem
 	return o
 }
 
-// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o GetDbSystemsDbSystemCollectionItemInstanceOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemInstance) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// Description of the DbInstance.
+// Description of the database instance node.
 func (o GetDbSystemsDbSystemCollectionItemInstanceOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemInstance) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -6383,7 +6654,7 @@ func (o GetDbSystemsDbSystemCollectionItemInstanceOutput) DisplayName() pulumi.S
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemInstance) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// unique DbSystem identifier
+// A unique identifier for the database system.
 func (o GetDbSystemsDbSystemCollectionItemInstanceOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemInstance) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -6393,17 +6664,17 @@ func (o GetDbSystemsDbSystemCollectionItemInstanceOutput) LifecycleDetails() pul
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemInstance) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// A filter to return only resources their lifecycleState matches the given lifecycleState.
+// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 func (o GetDbSystemsDbSystemCollectionItemInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemInstance) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The time the the DbSystem was created. An RFC3339 formatted datetime string
+// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetDbSystemsDbSystemCollectionItemInstanceOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemInstance) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the DbSystem was updated. An RFC3339 formatted datetime string
+// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetDbSystemsDbSystemCollectionItemInstanceOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemInstance) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -6429,7 +6700,7 @@ func (o GetDbSystemsDbSystemCollectionItemInstanceArrayOutput) Index(i pulumi.In
 }
 
 type GetDbSystemsDbSystemCollectionItemInstancesDetail struct {
-	// Description of the DbInstance.
+	// Description of the database instance node.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
@@ -6448,7 +6719,7 @@ type GetDbSystemsDbSystemCollectionItemInstancesDetailInput interface {
 }
 
 type GetDbSystemsDbSystemCollectionItemInstancesDetailArgs struct {
-	// Description of the DbInstance.
+	// Description of the database instance node.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -6506,7 +6777,7 @@ func (o GetDbSystemsDbSystemCollectionItemInstancesDetailOutput) ToGetDbSystemsD
 	return o
 }
 
-// Description of the DbInstance.
+// Description of the database instance node.
 func (o GetDbSystemsDbSystemCollectionItemInstancesDetailOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemInstancesDetail) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -6541,7 +6812,7 @@ func (o GetDbSystemsDbSystemCollectionItemInstancesDetailArrayOutput) Index(i pu
 }
 
 type GetDbSystemsDbSystemCollectionItemManagementPolicy struct {
-	// Posgresql DB system backup policy
+	// PostgreSQL database system backup policy.
 	BackupPolicies []GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy `pulumi:"backupPolicies"`
 	// The start of the maintenance window.
 	MaintenanceWindowStart string `pulumi:"maintenanceWindowStart"`
@@ -6559,7 +6830,7 @@ type GetDbSystemsDbSystemCollectionItemManagementPolicyInput interface {
 }
 
 type GetDbSystemsDbSystemCollectionItemManagementPolicyArgs struct {
-	// Posgresql DB system backup policy
+	// PostgreSQL database system backup policy.
 	BackupPolicies GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayInput `pulumi:"backupPolicies"`
 	// The start of the maintenance window.
 	MaintenanceWindowStart pulumi.StringInput `pulumi:"maintenanceWindowStart"`
@@ -6616,7 +6887,7 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyOutput) ToGetDbSystems
 	return o
 }
 
-// Posgresql DB system backup policy
+// PostgreSQL database system backup policy.
 func (o GetDbSystemsDbSystemCollectionItemManagementPolicyOutput) BackupPolicies() GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicy) []GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy {
 		return v.BackupPolicies
@@ -6649,15 +6920,15 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyArrayOutput) Index(i p
 }
 
 type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy struct {
-	// Hour of the day when backup starts.
+	// Hour of the day when the backup starts.
 	BackupStart string `pulumi:"backupStart"`
-	// Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+	// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths []int `pulumi:"daysOfTheMonths"`
-	// Weekly days
+	// The day of the week that the backup starts.
 	DaysOfTheWeeks []string `pulumi:"daysOfTheWeeks"`
-	// Backup policy kind
+	// The kind of backup policy.
 	Kind string `pulumi:"kind"`
-	// How many days the customers data should be stored after the db system deletion.
+	// How many days the data should be stored after the database system deletion.
 	RetentionDays int `pulumi:"retentionDays"`
 }
 
@@ -6673,15 +6944,15 @@ type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyInput interfa
 }
 
 type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArgs struct {
-	// Hour of the day when backup starts.
+	// Hour of the day when the backup starts.
 	BackupStart pulumi.StringInput `pulumi:"backupStart"`
-	// Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+	// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 	DaysOfTheMonths pulumi.IntArrayInput `pulumi:"daysOfTheMonths"`
-	// Weekly days
+	// The day of the week that the backup starts.
 	DaysOfTheWeeks pulumi.StringArrayInput `pulumi:"daysOfTheWeeks"`
-	// Backup policy kind
+	// The kind of backup policy.
 	Kind pulumi.StringInput `pulumi:"kind"`
-	// How many days the customers data should be stored after the db system deletion.
+	// How many days the data should be stored after the database system deletion.
 	RetentionDays pulumi.IntInput `pulumi:"retentionDays"`
 }
 
@@ -6736,29 +7007,29 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput) To
 	return o
 }
 
-// Hour of the day when backup starts.
+// Hour of the day when the backup starts.
 func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput) BackupStart() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy) string { return v.BackupStart }).(pulumi.StringOutput)
 }
 
-// Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput) DaysOfTheMonths() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy) []int { return v.DaysOfTheMonths }).(pulumi.IntArrayOutput)
 }
 
-// Weekly days
+// The day of the week that the backup starts.
 func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput) DaysOfTheWeeks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy) []string {
 		return v.DaysOfTheWeeks
 	}).(pulumi.StringArrayOutput)
 }
 
-// Backup policy kind
+// The kind of backup policy.
 func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy) string { return v.Kind }).(pulumi.StringOutput)
 }
 
-// How many days the customers data should be stored after the db system deletion.
+// How many days the data should be stored after the database system deletion.
 func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput) RetentionDays() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy) int { return v.RetentionDays }).(pulumi.IntOutput)
 }
@@ -6784,11 +7055,11 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayOutpu
 }
 
 type GetDbSystemsDbSystemCollectionItemNetworkDetail struct {
-	// List of customer NetworkSecurityGroup identifiers
+	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds []string `pulumi:"nsgIds"`
-	// Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 	PrimaryDbEndpointPrivateIp string `pulumi:"primaryDbEndpointPrivateIp"`
-	// Customer Subnet identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -6804,11 +7075,11 @@ type GetDbSystemsDbSystemCollectionItemNetworkDetailInput interface {
 }
 
 type GetDbSystemsDbSystemCollectionItemNetworkDetailArgs struct {
-	// List of customer NetworkSecurityGroup identifiers
+	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
-	// Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 	PrimaryDbEndpointPrivateIp pulumi.StringInput `pulumi:"primaryDbEndpointPrivateIp"`
-	// Customer Subnet identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -6863,17 +7134,17 @@ func (o GetDbSystemsDbSystemCollectionItemNetworkDetailOutput) ToGetDbSystemsDbS
 	return o
 }
 
-// List of customer NetworkSecurityGroup identifiers
+// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 func (o GetDbSystemsDbSystemCollectionItemNetworkDetailOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemNetworkDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
-// Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 func (o GetDbSystemsDbSystemCollectionItemNetworkDetailOutput) PrimaryDbEndpointPrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemNetworkDetail) string { return v.PrimaryDbEndpointPrivateIp }).(pulumi.StringOutput)
 }
 
-// Customer Subnet identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
 func (o GetDbSystemsDbSystemCollectionItemNetworkDetailOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemNetworkDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -6898,10 +7169,134 @@ func (o GetDbSystemsDbSystemCollectionItemNetworkDetailArrayOutput) Index(i pulu
 	}).(GetDbSystemsDbSystemCollectionItemNetworkDetailOutput)
 }
 
+type GetDbSystemsDbSystemCollectionItemPatchOperation struct {
+	From         string                 `pulumi:"from"`
+	Operation    string                 `pulumi:"operation"`
+	Position     string                 `pulumi:"position"`
+	SelectedItem string                 `pulumi:"selectedItem"`
+	Selection    string                 `pulumi:"selection"`
+	Value        map[string]interface{} `pulumi:"value"`
+}
+
+// GetDbSystemsDbSystemCollectionItemPatchOperationInput is an input type that accepts GetDbSystemsDbSystemCollectionItemPatchOperationArgs and GetDbSystemsDbSystemCollectionItemPatchOperationOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemPatchOperationInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemPatchOperationArgs{...}
+type GetDbSystemsDbSystemCollectionItemPatchOperationInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemPatchOperationOutput() GetDbSystemsDbSystemCollectionItemPatchOperationOutput
+	ToGetDbSystemsDbSystemCollectionItemPatchOperationOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemPatchOperationOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemPatchOperationArgs struct {
+	From         pulumi.StringInput `pulumi:"from"`
+	Operation    pulumi.StringInput `pulumi:"operation"`
+	Position     pulumi.StringInput `pulumi:"position"`
+	SelectedItem pulumi.StringInput `pulumi:"selectedItem"`
+	Selection    pulumi.StringInput `pulumi:"selection"`
+	Value        pulumi.MapInput    `pulumi:"value"`
+}
+
+func (GetDbSystemsDbSystemCollectionItemPatchOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemPatchOperation)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemPatchOperationArgs) ToGetDbSystemsDbSystemCollectionItemPatchOperationOutput() GetDbSystemsDbSystemCollectionItemPatchOperationOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemPatchOperationOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemPatchOperationArgs) ToGetDbSystemsDbSystemCollectionItemPatchOperationOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemPatchOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemPatchOperationOutput)
+}
+
+// GetDbSystemsDbSystemCollectionItemPatchOperationArrayInput is an input type that accepts GetDbSystemsDbSystemCollectionItemPatchOperationArray and GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemPatchOperationArrayInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemPatchOperationArray{ GetDbSystemsDbSystemCollectionItemPatchOperationArgs{...} }
+type GetDbSystemsDbSystemCollectionItemPatchOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput() GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput
+	ToGetDbSystemsDbSystemCollectionItemPatchOperationArrayOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemPatchOperationArray []GetDbSystemsDbSystemCollectionItemPatchOperationInput
+
+func (GetDbSystemsDbSystemCollectionItemPatchOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemPatchOperation)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemPatchOperationArray) ToGetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput() GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemPatchOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemPatchOperationArray) ToGetDbSystemsDbSystemCollectionItemPatchOperationArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemPatchOperationOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemPatchOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemPatchOperation)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationOutput) ToGetDbSystemsDbSystemCollectionItemPatchOperationOutput() GetDbSystemsDbSystemCollectionItemPatchOperationOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationOutput) ToGetDbSystemsDbSystemCollectionItemPatchOperationOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemPatchOperationOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationOutput) From() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemPatchOperation) string { return v.From }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationOutput) Operation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemPatchOperation) string { return v.Operation }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationOutput) Position() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemPatchOperation) string { return v.Position }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationOutput) SelectedItem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemPatchOperation) string { return v.SelectedItem }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationOutput) Selection() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemPatchOperation) string { return v.Selection }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationOutput) Value() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemPatchOperation) map[string]interface{} { return v.Value }).(pulumi.MapOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemPatchOperation)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput) ToGetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput() GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput) ToGetDbSystemsDbSystemCollectionItemPatchOperationArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemCollectionItemPatchOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemCollectionItemPatchOperation {
+		return vs[0].([]GetDbSystemsDbSystemCollectionItemPatchOperation)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemCollectionItemPatchOperationOutput)
+}
+
 type GetDbSystemsDbSystemCollectionItemSource struct {
-	// DbSystem backup identifier.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId string `pulumi:"backupId"`
-	// Restore the DB config overrides from backup. Default is false
+	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides bool `pulumi:"isHavingRestoreConfigOverrides"`
 	// The source descriminator.
 	SourceType string `pulumi:"sourceType"`
@@ -6919,9 +7314,9 @@ type GetDbSystemsDbSystemCollectionItemSourceInput interface {
 }
 
 type GetDbSystemsDbSystemCollectionItemSourceArgs struct {
-	// DbSystem backup identifier.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId pulumi.StringInput `pulumi:"backupId"`
-	// Restore the DB config overrides from backup. Default is false
+	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides pulumi.BoolInput `pulumi:"isHavingRestoreConfigOverrides"`
 	// The source descriminator.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
@@ -6978,12 +7373,12 @@ func (o GetDbSystemsDbSystemCollectionItemSourceOutput) ToGetDbSystemsDbSystemCo
 	return o
 }
 
-// DbSystem backup identifier.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 func (o GetDbSystemsDbSystemCollectionItemSourceOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemSource) string { return v.BackupId }).(pulumi.StringOutput)
 }
 
-// Restore the DB config overrides from backup. Default is false
+// Deprecated. Don't use.
 func (o GetDbSystemsDbSystemCollectionItemSourceOutput) IsHavingRestoreConfigOverrides() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemSource) bool { return v.IsHavingRestoreConfigOverrides }).(pulumi.BoolOutput)
 }
@@ -7014,13 +7409,13 @@ func (o GetDbSystemsDbSystemCollectionItemSourceArrayOutput) Index(i pulumi.IntI
 }
 
 type GetDbSystemsDbSystemCollectionItemStorageDetail struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// DbSystem Performance Unit
+	// Guaranteed input/output storage requests per second (IOPS) available to the database system.
 	Iops string `pulumi:"iops"`
-	// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable bool `pulumi:"isRegionallyDurable"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType string `pulumi:"systemType"`
 }
 
@@ -7036,13 +7431,13 @@ type GetDbSystemsDbSystemCollectionItemStorageDetailInput interface {
 }
 
 type GetDbSystemsDbSystemCollectionItemStorageDetailArgs struct {
-	// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// DbSystem Performance Unit
+	// Guaranteed input/output storage requests per second (IOPS) available to the database system.
 	Iops pulumi.StringInput `pulumi:"iops"`
-	// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable pulumi.BoolInput `pulumi:"isRegionallyDurable"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType pulumi.StringInput `pulumi:"systemType"`
 }
 
@@ -7097,22 +7492,22 @@ func (o GetDbSystemsDbSystemCollectionItemStorageDetailOutput) ToGetDbSystemsDbS
 	return o
 }
 
-// Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o GetDbSystemsDbSystemCollectionItemStorageDetailOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemStorageDetail) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// DbSystem Performance Unit
+// Guaranteed input/output storage requests per second (IOPS) available to the database system.
 func (o GetDbSystemsDbSystemCollectionItemStorageDetailOutput) Iops() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemStorageDetail) string { return v.Iops }).(pulumi.StringOutput)
 }
 
-// Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o GetDbSystemsDbSystemCollectionItemStorageDetailOutput) IsRegionallyDurable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemStorageDetail) bool { return v.IsRegionallyDurable }).(pulumi.BoolOutput)
 }
 
-// Type of the DbSystem.
+// Type of the database system.
 func (o GetDbSystemsDbSystemCollectionItemStorageDetailOutput) SystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemStorageDetail) string { return v.SystemType }).(pulumi.StringOutput)
 }
@@ -7343,19 +7738,19 @@ func (o GetDefaultConfigurationConfigurationDetailArrayOutput) Index(i pulumi.In
 }
 
 type GetDefaultConfigurationConfigurationDetailItem struct {
-	// Range or list of allowed values
+	// Range or list of allowed values.
 	AllowedValues string `pulumi:"allowedValues"`
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey string `pulumi:"configKey"`
-	// Describes about the Datatype value.
+	// Data type of the variable.
 	DataType string `pulumi:"dataType"`
-	// Default value
+	// Default value for the variable.
 	DefaultConfigValue string `pulumi:"defaultConfigValue"`
-	// Config description
+	// A description for the configuration.
 	Description string `pulumi:"description"`
-	// This flags tells whether the value is overridable or not.
+	// Whether the value can be overridden or not.
 	IsOverridable bool `pulumi:"isOverridable"`
-	// If true, modfying this configuration value will requires restart.
+	// If true, modifying this configuration value will require a restart.
 	IsRestartRequired bool `pulumi:"isRestartRequired"`
 }
 
@@ -7371,19 +7766,19 @@ type GetDefaultConfigurationConfigurationDetailItemInput interface {
 }
 
 type GetDefaultConfigurationConfigurationDetailItemArgs struct {
-	// Range or list of allowed values
+	// Range or list of allowed values.
 	AllowedValues pulumi.StringInput `pulumi:"allowedValues"`
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
-	// Describes about the Datatype value.
+	// Data type of the variable.
 	DataType pulumi.StringInput `pulumi:"dataType"`
-	// Default value
+	// Default value for the variable.
 	DefaultConfigValue pulumi.StringInput `pulumi:"defaultConfigValue"`
-	// Config description
+	// A description for the configuration.
 	Description pulumi.StringInput `pulumi:"description"`
-	// This flags tells whether the value is overridable or not.
+	// Whether the value can be overridden or not.
 	IsOverridable pulumi.BoolInput `pulumi:"isOverridable"`
-	// If true, modfying this configuration value will requires restart.
+	// If true, modifying this configuration value will require a restart.
 	IsRestartRequired pulumi.BoolInput `pulumi:"isRestartRequired"`
 }
 
@@ -7438,37 +7833,37 @@ func (o GetDefaultConfigurationConfigurationDetailItemOutput) ToGetDefaultConfig
 	return o
 }
 
-// Range or list of allowed values
+// Range or list of allowed values.
 func (o GetDefaultConfigurationConfigurationDetailItemOutput) AllowedValues() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationConfigurationDetailItem) string { return v.AllowedValues }).(pulumi.StringOutput)
 }
 
-// Key is the configuration key.
+// The configuration variable name.
 func (o GetDefaultConfigurationConfigurationDetailItemOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationConfigurationDetailItem) string { return v.ConfigKey }).(pulumi.StringOutput)
 }
 
-// Describes about the Datatype value.
+// Data type of the variable.
 func (o GetDefaultConfigurationConfigurationDetailItemOutput) DataType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationConfigurationDetailItem) string { return v.DataType }).(pulumi.StringOutput)
 }
 
-// Default value
+// Default value for the variable.
 func (o GetDefaultConfigurationConfigurationDetailItemOutput) DefaultConfigValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationConfigurationDetailItem) string { return v.DefaultConfigValue }).(pulumi.StringOutput)
 }
 
-// Config description
+// A description for the configuration.
 func (o GetDefaultConfigurationConfigurationDetailItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationConfigurationDetailItem) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// This flags tells whether the value is overridable or not.
+// Whether the value can be overridden or not.
 func (o GetDefaultConfigurationConfigurationDetailItemOutput) IsOverridable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationConfigurationDetailItem) bool { return v.IsOverridable }).(pulumi.BoolOutput)
 }
 
-// If true, modfying this configuration value will requires restart.
+// If true, modifying this configuration value will require a restart.
 func (o GetDefaultConfigurationConfigurationDetailItemOutput) IsRestartRequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationConfigurationDetailItem) bool { return v.IsRestartRequired }).(pulumi.BoolOutput)
 }
@@ -7593,27 +7988,27 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionArrayOutput) Index
 }
 
 type GetDefaultConfigurationsDefaultConfigurationCollectionItem struct {
-	// List of DB default Configuration Values.
+	// List of default configuration values for databases.
 	ConfigurationDetails []GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail `pulumi:"configurationDetails"`
-	// Verison of the Postgresql DB like 14.5
+	// Verison of the PostgreSQL database, such as 14.9.
 	DbVersion string `pulumi:"dbVersion"`
-	// Config description
+	// A description for the configuration.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier for the configuration.
 	Id string `pulumi:"id"`
-	// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+	// Memory size in gigabytes with 1GB increment.
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
-	// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+	// CPU core count. Minimum value is 1.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
-	// The time Configuration was created. An RFC3339 formatted datetime string
+	// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
 
@@ -7629,27 +8024,27 @@ type GetDefaultConfigurationsDefaultConfigurationCollectionItemInput interface {
 }
 
 type GetDefaultConfigurationsDefaultConfigurationCollectionItemArgs struct {
-	// List of DB default Configuration Values.
+	// List of default configuration values for databases.
 	ConfigurationDetails GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailArrayInput `pulumi:"configurationDetails"`
-	// Verison of the Postgresql DB like 14.5
+	// Verison of the PostgreSQL database, such as 14.9.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
-	// Config description
+	// A description for the configuration.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier for the configuration.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+	// Memory size in gigabytes with 1GB increment.
 	InstanceMemorySizeInGbs pulumi.IntInput `pulumi:"instanceMemorySizeInGbs"`
-	// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+	// CPU core count. Minimum value is 1.
 	InstanceOcpuCount pulumi.IntInput `pulumi:"instanceOcpuCount"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
-	// The time Configuration was created. An RFC3339 formatted datetime string
+	// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
 
@@ -7704,19 +8099,19 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) ToGetD
 	return o
 }
 
-// List of DB default Configuration Values.
+// List of default configuration values for databases.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) ConfigurationDetails() GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) []GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail {
 		return v.ConfigurationDetails
 	}).(GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailArrayOutput)
 }
 
-// Verison of the Postgresql DB like 14.5
+// Verison of the PostgreSQL database, such as 14.9.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.DbVersion }).(pulumi.StringOutput)
 }
 
-// Config description
+// A description for the configuration.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -7726,19 +8121,19 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) Displa
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Unique identifier that is immutable on creation
+// A unique identifier for the configuration.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+// Memory size in gigabytes with 1GB increment.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) InstanceMemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) int {
 		return v.InstanceMemorySizeInGbs
 	}).(pulumi.IntOutput)
 }
 
-// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+// CPU core count. Minimum value is 1.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
 }
@@ -7748,17 +8143,17 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) Lifecy
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// A filter to return only resources their lifecycleState matches the given lifecycleState.
+// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The time Configuration was created. An RFC3339 formatted datetime string
+// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -7883,19 +8278,19 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationD
 }
 
 type GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItem struct {
-	// Range or list of allowed values
+	// Range or list of allowed values.
 	AllowedValues string `pulumi:"allowedValues"`
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey string `pulumi:"configKey"`
-	// Describes about the Datatype value.
+	// Data type of the variable.
 	DataType string `pulumi:"dataType"`
-	// Default value
+	// Default value for the variable.
 	DefaultConfigValue string `pulumi:"defaultConfigValue"`
-	// Config description
+	// A description for the configuration.
 	Description string `pulumi:"description"`
-	// This flags tells whether the value is overridable or not.
+	// Whether the value can be overridden or not.
 	IsOverridable bool `pulumi:"isOverridable"`
-	// If true, modfying this configuration value will requires restart.
+	// If true, modifying this configuration value will require a restart.
 	IsRestartRequired bool `pulumi:"isRestartRequired"`
 }
 
@@ -7911,19 +8306,19 @@ type GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDeta
 }
 
 type GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemArgs struct {
-	// Range or list of allowed values
+	// Range or list of allowed values.
 	AllowedValues pulumi.StringInput `pulumi:"allowedValues"`
-	// Key is the configuration key.
+	// The configuration variable name.
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
-	// Describes about the Datatype value.
+	// Data type of the variable.
 	DataType pulumi.StringInput `pulumi:"dataType"`
-	// Default value
+	// Default value for the variable.
 	DefaultConfigValue pulumi.StringInput `pulumi:"defaultConfigValue"`
-	// Config description
+	// A description for the configuration.
 	Description pulumi.StringInput `pulumi:"description"`
-	// This flags tells whether the value is overridable or not.
+	// Whether the value can be overridden or not.
 	IsOverridable pulumi.BoolInput `pulumi:"isOverridable"`
-	// If true, modfying this configuration value will requires restart.
+	// If true, modifying this configuration value will require a restart.
 	IsRestartRequired pulumi.BoolInput `pulumi:"isRestartRequired"`
 }
 
@@ -7978,49 +8373,49 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationD
 	return o
 }
 
-// Range or list of allowed values
+// Range or list of allowed values.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemOutput) AllowedValues() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItem) string {
 		return v.AllowedValues
 	}).(pulumi.StringOutput)
 }
 
-// Key is the configuration key.
+// The configuration variable name.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItem) string {
 		return v.ConfigKey
 	}).(pulumi.StringOutput)
 }
 
-// Describes about the Datatype value.
+// Data type of the variable.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemOutput) DataType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItem) string {
 		return v.DataType
 	}).(pulumi.StringOutput)
 }
 
-// Default value
+// Default value for the variable.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemOutput) DefaultConfigValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItem) string {
 		return v.DefaultConfigValue
 	}).(pulumi.StringOutput)
 }
 
-// Config description
+// A description for the configuration.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItem) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// This flags tells whether the value is overridable or not.
+// Whether the value can be overridden or not.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemOutput) IsOverridable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItem) bool {
 		return v.IsOverridable
 	}).(pulumi.BoolOutput)
 }
 
-// If true, modfying this configuration value will requires restart.
+// If true, modifying this configuration value will require a restart.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemOutput) IsRestartRequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItem) bool {
 		return v.IsRestartRequired
@@ -8260,7 +8655,7 @@ func (o GetShapesFilterArrayOutput) Index(i pulumi.IntInput) GetShapesFilterOutp
 }
 
 type GetShapesShapeCollection struct {
-	// List of dbSystems.
+	// List of supported shapes.
 	Items []GetShapesShapeCollectionItem `pulumi:"items"`
 }
 
@@ -8276,7 +8671,7 @@ type GetShapesShapeCollectionInput interface {
 }
 
 type GetShapesShapeCollectionArgs struct {
-	// List of dbSystems.
+	// List of supported shapes.
 	Items GetShapesShapeCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -8331,7 +8726,7 @@ func (o GetShapesShapeCollectionOutput) ToGetShapesShapeCollectionOutputWithCont
 	return o
 }
 
-// List of dbSystems.
+// List of supported shapes.
 func (o GetShapesShapeCollectionOutput) Items() GetShapesShapeCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetShapesShapeCollection) []GetShapesShapeCollectionItem { return v.Items }).(GetShapesShapeCollectionItemArrayOutput)
 }
@@ -8359,11 +8754,11 @@ func (o GetShapesShapeCollectionArrayOutput) Index(i pulumi.IntInput) GetShapesS
 type GetShapesShapeCollectionItem struct {
 	// A filter to return the feature by the shape name.
 	Id string `pulumi:"id"`
-	// The amount of memory in GB
+	// The amount of memory in gigabytes.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
-	// The number of OCPUs
+	// The number of OCPUs.
 	OcpuCount int `pulumi:"ocpuCount"`
-	// The Compute Shape Name like VM.Standard.E4.Flex
+	// The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
 }
 
@@ -8381,11 +8776,11 @@ type GetShapesShapeCollectionItemInput interface {
 type GetShapesShapeCollectionItemArgs struct {
 	// A filter to return the feature by the shape name.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The amount of memory in GB
+	// The amount of memory in gigabytes.
 	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
-	// The number of OCPUs
+	// The number of OCPUs.
 	OcpuCount pulumi.IntInput `pulumi:"ocpuCount"`
-	// The Compute Shape Name like VM.Standard.E4.Flex
+	// The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringInput `pulumi:"shape"`
 }
 
@@ -8445,17 +8840,17 @@ func (o GetShapesShapeCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetShapesShapeCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The amount of memory in GB
+// The amount of memory in gigabytes.
 func (o GetShapesShapeCollectionItemOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetShapesShapeCollectionItem) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
 }
 
-// The number of OCPUs
+// The number of OCPUs.
 func (o GetShapesShapeCollectionItemOutput) OcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetShapesShapeCollectionItem) int { return v.OcpuCount }).(pulumi.IntOutput)
 }
 
-// The Compute Shape Name like VM.Standard.E4.Flex
+// The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
 func (o GetShapesShapeCollectionItemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetShapesShapeCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
 }
@@ -8505,6 +8900,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyPtrInput)(nil)).Elem(), DbSystemManagementPolicyBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemNetworkDetailsInput)(nil)).Elem(), DbSystemNetworkDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemNetworkDetailsPtrInput)(nil)).Elem(), DbSystemNetworkDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemPatchOperationInput)(nil)).Elem(), DbSystemPatchOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemPatchOperationArrayInput)(nil)).Elem(), DbSystemPatchOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemSourceInput)(nil)).Elem(), DbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemSourcePtrInput)(nil)).Elem(), DbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemStorageDetailsInput)(nil)).Elem(), DbSystemStorageDetailsArgs{})
@@ -8561,6 +8958,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyArrayInput)(nil)).Elem(), GetDbSystemManagementPolicyBackupPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemNetworkDetailInput)(nil)).Elem(), GetDbSystemNetworkDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemNetworkDetailArrayInput)(nil)).Elem(), GetDbSystemNetworkDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchOperationInput)(nil)).Elem(), GetDbSystemPatchOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchOperationArrayInput)(nil)).Elem(), GetDbSystemPatchOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemSourceInput)(nil)).Elem(), GetDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemSourceArrayInput)(nil)).Elem(), GetDbSystemSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStorageDetailInput)(nil)).Elem(), GetDbSystemStorageDetailArgs{})
@@ -8583,6 +8982,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemNetworkDetailInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemNetworkDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemNetworkDetailArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemNetworkDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemPatchOperationInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemPatchOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemPatchOperationArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemPatchOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemSourceInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemSourceArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemStorageDetailInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemStorageDetailArgs{})
@@ -8633,6 +9034,8 @@ func init() {
 	pulumi.RegisterOutputType(DbSystemManagementPolicyBackupPolicyPtrOutput{})
 	pulumi.RegisterOutputType(DbSystemNetworkDetailsOutput{})
 	pulumi.RegisterOutputType(DbSystemNetworkDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DbSystemPatchOperationOutput{})
+	pulumi.RegisterOutputType(DbSystemPatchOperationArrayOutput{})
 	pulumi.RegisterOutputType(DbSystemSourceOutput{})
 	pulumi.RegisterOutputType(DbSystemSourcePtrOutput{})
 	pulumi.RegisterOutputType(DbSystemStorageDetailsOutput{})
@@ -8689,6 +9092,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemManagementPolicyBackupPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemNetworkDetailOutput{})
 	pulumi.RegisterOutputType(GetDbSystemNetworkDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemPatchOperationOutput{})
+	pulumi.RegisterOutputType(GetDbSystemPatchOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(GetDbSystemSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemStorageDetailOutput{})
@@ -8711,6 +9116,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemNetworkDetailOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemNetworkDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemPatchOperationOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemSourceOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemStorageDetailOutput{})

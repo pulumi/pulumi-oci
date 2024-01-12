@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbSystemCredentialsPasswordDetails {
     /**
-     * @return The dbSystem password.
+     * @return The database system password.
      * 
      */
     private @Nullable String password;
     /**
-     * @return Password type
+     * @return The password type.
      * 
      */
     private String passwordType;
     /**
-     * @return The OCID of secret where the password is stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
      * 
      */
     private @Nullable String secretId;
     /**
-     * @return The secret version where the password is stored.
+     * @return The secret version of the stored password.
      * 
      */
     private @Nullable String secretVersion;
 
     private DbSystemCredentialsPasswordDetails() {}
     /**
-     * @return The dbSystem password.
+     * @return The database system password.
      * 
      */
     public Optional<String> password() {
         return Optional.ofNullable(this.password);
     }
     /**
-     * @return Password type
+     * @return The password type.
      * 
      */
     public String passwordType() {
         return this.passwordType;
     }
     /**
-     * @return The OCID of secret where the password is stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
      * 
      */
     public Optional<String> secretId() {
         return Optional.ofNullable(this.secretId);
     }
     /**
-     * @return The secret version where the password is stored.
+     * @return The secret version of the stored password.
      * 
      */
     public Optional<String> secretVersion() {

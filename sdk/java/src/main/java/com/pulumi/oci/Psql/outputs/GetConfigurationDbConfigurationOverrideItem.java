@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetConfigurationDbConfigurationOverrideItem {
     /**
-     * @return Key is the configuration key.
+     * @return The configuration variable name.
      * 
      */
     private String configKey;
     /**
-     * @return User selected configuration value
+     * @return User-selected configuration variable value.
      * 
      */
     private String overridenConfigValue;
 
     private GetConfigurationDbConfigurationOverrideItem() {}
     /**
-     * @return Key is the configuration key.
+     * @return The configuration variable name.
      * 
      */
     public String configKey() {
         return this.configKey;
     }
     /**
-     * @return User selected configuration value
+     * @return User-selected configuration variable value.
      * 
      */
     public String overridenConfigValue() {

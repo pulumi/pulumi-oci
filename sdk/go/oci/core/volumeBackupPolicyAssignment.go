@@ -14,8 +14,8 @@ import (
 
 // This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
 //
-// Assigns a volume backup policy to the specified volume. Note that a given volume can
-// only have one backup policy assigned to it. If this operation is used for a volume that already
+// Assigns a volume backup policy to the specified volume or volume group. Note that a given volume or volume group can
+// only have one backup policy assigned to it. If this operation is used for a volume or volume group that already
 // has a different backup policy assigned, the prior backup policy will be silently unassigned.
 //
 // ## Example Usage
@@ -57,7 +57,7 @@ import (
 type VolumeBackupPolicyAssignment struct {
 	pulumi.CustomResourceState
 
-	// The OCID of the volume to assign the policy to.
+	// The OCID of the volume or volume group to assign the policy to.
 	AssetId pulumi.StringOutput `pulumi:"assetId"`
 	// The OCID of the volume backup policy to assign to the volume.
 	//
@@ -104,7 +104,7 @@ func GetVolumeBackupPolicyAssignment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VolumeBackupPolicyAssignment resources.
 type volumeBackupPolicyAssignmentState struct {
-	// The OCID of the volume to assign the policy to.
+	// The OCID of the volume or volume group to assign the policy to.
 	AssetId *string `pulumi:"assetId"`
 	// The OCID of the volume backup policy to assign to the volume.
 	//
@@ -116,7 +116,7 @@ type volumeBackupPolicyAssignmentState struct {
 }
 
 type VolumeBackupPolicyAssignmentState struct {
-	// The OCID of the volume to assign the policy to.
+	// The OCID of the volume or volume group to assign the policy to.
 	AssetId pulumi.StringPtrInput
 	// The OCID of the volume backup policy to assign to the volume.
 	//
@@ -132,7 +132,7 @@ func (VolumeBackupPolicyAssignmentState) ElementType() reflect.Type {
 }
 
 type volumeBackupPolicyAssignmentArgs struct {
-	// The OCID of the volume to assign the policy to.
+	// The OCID of the volume or volume group to assign the policy to.
 	AssetId string `pulumi:"assetId"`
 	// The OCID of the volume backup policy to assign to the volume.
 	//
@@ -143,7 +143,7 @@ type volumeBackupPolicyAssignmentArgs struct {
 
 // The set of arguments for constructing a VolumeBackupPolicyAssignment resource.
 type VolumeBackupPolicyAssignmentArgs struct {
-	// The OCID of the volume to assign the policy to.
+	// The OCID of the volume or volume group to assign the policy to.
 	AssetId pulumi.StringInput
 	// The OCID of the volume backup policy to assign to the volume.
 	//
@@ -239,7 +239,7 @@ func (o VolumeBackupPolicyAssignmentOutput) ToVolumeBackupPolicyAssignmentOutput
 	return o
 }
 
-// The OCID of the volume to assign the policy to.
+// The OCID of the volume or volume group to assign the policy to.
 func (o VolumeBackupPolicyAssignmentOutput) AssetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeBackupPolicyAssignment) pulumi.StringOutput { return v.AssetId }).(pulumi.StringOutput)
 }

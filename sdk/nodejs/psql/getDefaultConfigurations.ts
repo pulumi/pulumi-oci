@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
  *
- * Returns a list of Default Configurations.
+ * Returns a list of default configurations.
  *
  * ## Example Usage
  *
@@ -45,11 +45,11 @@ export function getDefaultConfigurations(args?: GetDefaultConfigurationsArgs, op
  */
 export interface GetDefaultConfigurationsArgs {
     /**
-     * unique Configuration identifier
+     * A unique identifier for the configuration.
      */
     configurationId?: string;
     /**
-     * Verison of the Postgresql DB like 14.5
+     * Verison of the PostgreSQL database, such as 14.9.
      */
     dbVersion?: string;
     /**
@@ -58,11 +58,11 @@ export interface GetDefaultConfigurationsArgs {
     displayName?: string;
     filters?: inputs.Psql.GetDefaultConfigurationsFilter[];
     /**
-     * Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      */
     shape?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
     state?: string;
 }
@@ -73,7 +73,7 @@ export interface GetDefaultConfigurationsArgs {
 export interface GetDefaultConfigurationsResult {
     readonly configurationId?: string;
     /**
-     * Version of the Postgresql DB
+     * Version of the PostgreSQL database.
      */
     readonly dbVersion?: string;
     /**
@@ -81,7 +81,7 @@ export interface GetDefaultConfigurationsResult {
      */
     readonly defaultConfigurationCollections: outputs.Psql.GetDefaultConfigurationsDefaultConfigurationCollection[];
     /**
-     * Config display name
+     * A user-friendly display name for the configuration.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Psql.GetDefaultConfigurationsFilter[];
@@ -90,18 +90,18 @@ export interface GetDefaultConfigurationsResult {
      */
     readonly id: string;
     /**
-     * Compute Shape Name like VM.Standard3.Flex.
+     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      */
     readonly shape?: string;
     /**
-     * The current state of the Configuration.
+     * The current state of the configuration.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
  *
- * Returns a list of Default Configurations.
+ * Returns a list of default configurations.
  *
  * ## Example Usage
  *
@@ -127,11 +127,11 @@ export function getDefaultConfigurationsOutput(args?: GetDefaultConfigurationsOu
  */
 export interface GetDefaultConfigurationsOutputArgs {
     /**
-     * unique Configuration identifier
+     * A unique identifier for the configuration.
      */
     configurationId?: pulumi.Input<string>;
     /**
-     * Verison of the Postgresql DB like 14.5
+     * Verison of the PostgreSQL database, such as 14.9.
      */
     dbVersion?: pulumi.Input<string>;
     /**
@@ -140,11 +140,11 @@ export interface GetDefaultConfigurationsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetDefaultConfigurationsFilterArgs>[]>;
     /**
-     * Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      */
     shape?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
     state?: pulumi.Input<string>;
 }

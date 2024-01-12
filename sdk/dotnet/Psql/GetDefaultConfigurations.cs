@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Returns a list of Default Configurations.
+        /// Returns a list of default configurations.
         /// 
         /// 
         /// {{% examples %}}
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Returns a list of Default Configurations.
+        /// Returns a list of default configurations.
         /// 
         /// 
         /// {{% examples %}}
@@ -86,13 +86,13 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDefaultConfigurationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Configuration identifier
+        /// A unique identifier for the configuration.
         /// </summary>
         [Input("configurationId")]
         public string? ConfigurationId { get; set; }
 
         /// <summary>
-        /// Verison of the Postgresql DB like 14.5
+        /// Verison of the PostgreSQL database, such as 14.9.
         /// </summary>
         [Input("dbVersion")]
         public string? DbVersion { get; set; }
@@ -112,13 +112,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Input("shape")]
         public string? Shape { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -132,13 +132,13 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDefaultConfigurationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Configuration identifier
+        /// A unique identifier for the configuration.
         /// </summary>
         [Input("configurationId")]
         public Input<string>? ConfigurationId { get; set; }
 
         /// <summary>
-        /// Verison of the Postgresql DB like 14.5
+        /// Verison of the PostgreSQL database, such as 14.9.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
@@ -158,13 +158,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Psql
     {
         public readonly string? ConfigurationId;
         /// <summary>
-        /// Version of the Postgresql DB
+        /// Version of the PostgreSQL database.
         /// </summary>
         public readonly string? DbVersion;
         /// <summary>
@@ -189,7 +189,7 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDefaultConfigurationsDefaultConfigurationCollectionResult> DefaultConfigurationCollections;
         /// <summary>
-        /// Config display name
+        /// A user-friendly display name for the configuration.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDefaultConfigurationsFilterResult> Filters;
@@ -198,11 +198,11 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Compute Shape Name like VM.Standard3.Flex.
+        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         /// </summary>
         public readonly string? Shape;
         /// <summary>
-        /// The current state of the Configuration.
+        /// The current state of the configuration.
         /// </summary>
         public readonly string? State;
 

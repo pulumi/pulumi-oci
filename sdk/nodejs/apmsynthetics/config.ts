@@ -50,7 +50,9 @@ import * as utilities from "../utilities";
  *         isCertificateValidationEnabled: _var.monitor_configuration_is_certificate_validation_enabled,
  *         isDefaultSnapshotEnabled: _var.monitor_configuration_is_default_snapshot_enabled,
  *         isFailureRetried: _var.monitor_configuration_is_failure_retried,
+ *         isQueryRecursive: _var.monitor_configuration_is_query_recursive,
  *         isRedirectionEnabled: _var.monitor_configuration_is_redirection_enabled,
+ *         nameServer: _var.monitor_configuration_name_server,
  *         networkConfiguration: {
  *             numberOfHops: _var.monitor_configuration_network_configuration_number_of_hops,
  *             probeMode: _var.monitor_configuration_network_configuration_probe_mode,
@@ -58,6 +60,8 @@ import * as utilities from "../utilities";
  *             protocol: _var.monitor_configuration_network_configuration_protocol,
  *             transmissionRate: _var.monitor_configuration_network_configuration_transmission_rate,
  *         },
+ *         protocol: _var.monitor_configuration_protocol,
+ *         recordType: _var.monitor_configuration_record_type,
  *         reqAuthenticationDetails: {
  *             authHeaders: [{
  *                 headerName: _var.monitor_configuration_req_authentication_details_auth_headers_header_name,
@@ -217,7 +221,7 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly status!: pulumi.Output<string>;
     /**
-     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      */
     public readonly target!: pulumi.Output<string>;
     /**
@@ -400,7 +404,7 @@ export interface ConfigState {
      */
     status?: pulumi.Input<string>;
     /**
-     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      */
     target?: pulumi.Input<string>;
     /**
@@ -502,7 +506,7 @@ export interface ConfigArgs {
      */
     status?: pulumi.Input<string>;
     /**
-     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      */
     target?: pulumi.Input<string>;
     /**

@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Psql.Inputs
     public sealed class DbSystemSourceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// DbSystem backup identifier.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         /// </summary>
         [Input("backupId")]
         public Input<string>? BackupId { get; set; }
 
         /// <summary>
-        /// Restore the DB config overrides from backup. Default is false
+        /// Deprecated. Don't use.
         /// </summary>
         [Input("isHavingRestoreConfigOverrides")]
         public Input<bool>? IsHavingRestoreConfigOverrides { get; set; }

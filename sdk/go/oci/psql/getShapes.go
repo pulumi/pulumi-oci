@@ -64,7 +64,7 @@ type GetShapesArgs struct {
 type GetShapesResult struct {
 	CompartmentId *string           `pulumi:"compartmentId"`
 	Filters       []GetShapesFilter `pulumi:"filters"`
-	// Unique identifier for the shape
+	// A unique identifier for the shape.
 	Id *string `pulumi:"id"`
 	// The list of shape_collection.
 	ShapeCollections []GetShapesShapeCollection `pulumi:"shapeCollections"`
@@ -119,7 +119,7 @@ func (o GetShapesResultOutput) Filters() GetShapesFilterArrayOutput {
 	return o.ApplyT(func(v GetShapesResult) []GetShapesFilter { return v.Filters }).(GetShapesFilterArrayOutput)
 }
 
-// Unique identifier for the shape
+// A unique identifier for the shape.
 func (o GetShapesResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }

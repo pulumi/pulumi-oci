@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
  *
- * Returns a list of DbSystems.
+ * Returns a list of database systems.
  *
  * ## Example Usage
  *
@@ -52,11 +52,11 @@ export interface GetDbSystemsArgs {
     displayName?: string;
     filters?: inputs.Psql.GetDbSystemsFilter[];
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      */
     id?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
     state?: string;
 }
@@ -66,7 +66,7 @@ export interface GetDbSystemsArgs {
  */
 export interface GetDbSystemsResult {
     /**
-     * Compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      */
     readonly compartmentId?: string;
     /**
@@ -74,23 +74,23 @@ export interface GetDbSystemsResult {
      */
     readonly dbSystemCollections: outputs.Psql.GetDbSystemsDbSystemCollection[];
     /**
-     * Display name of the DbInstance.
+     * A user-friendly display name for the database instance node. Avoid entering confidential information.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Psql.GetDbSystemsFilter[];
     /**
-     * Unique identifier that is immutable on creation.
+     * A unique identifier for the database instance node. Immutable on creation.
      */
     readonly id?: string;
     /**
-     * The current state of the DbSystem.
+     * The current state of the database system.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
  *
- * Returns a list of DbSystems.
+ * Returns a list of database systems.
  *
  * ## Example Usage
  *
@@ -124,11 +124,11 @@ export interface GetDbSystemsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetDbSystemsFilterArgs>[]>;
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
     state?: pulumi.Input<string>;
 }

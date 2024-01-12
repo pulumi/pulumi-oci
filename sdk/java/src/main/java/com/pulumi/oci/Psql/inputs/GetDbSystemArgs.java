@@ -17,14 +17,14 @@ public final class GetDbSystemArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetDbSystemArgs Empty = new GetDbSystemArgs();
 
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      * 
      */
     @Import(name="dbSystemId", required=true)
     private Output<String> dbSystemId;
 
     /**
-     * @return unique DbSystem identifier
+     * @return A unique identifier for the database system.
      * 
      */
     public Output<String> dbSystemId() {
@@ -32,14 +32,14 @@ public final class GetDbSystemArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to exclude DB config  when this query param is set to OverrideDbConfig
+     * A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
      * 
      */
     @Import(name="excludedFields")
     private @Nullable Output<String> excludedFields;
 
     /**
-     * @return A filter to exclude DB config  when this query param is set to OverrideDbConfig
+     * @return A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
      * 
      */
     public Optional<Output<String>> excludedFields() {
@@ -72,7 +72,7 @@ public final class GetDbSystemArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param dbSystemId unique DbSystem identifier
+         * @param dbSystemId A unique identifier for the database system.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class GetDbSystemArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param dbSystemId unique DbSystem identifier
+         * @param dbSystemId A unique identifier for the database system.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class GetDbSystemArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param excludedFields A filter to exclude DB config  when this query param is set to OverrideDbConfig
+         * @param excludedFields A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class GetDbSystemArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param excludedFields A filter to exclude DB config  when this query param is set to OverrideDbConfig
+         * @param excludedFields A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
          * 
          * @return builder
          * 

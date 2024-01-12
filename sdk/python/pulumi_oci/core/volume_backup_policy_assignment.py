@@ -18,7 +18,7 @@ class VolumeBackupPolicyAssignmentArgs:
                  policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a VolumeBackupPolicyAssignment resource.
-        :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
+        :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
                
                
@@ -32,7 +32,7 @@ class VolumeBackupPolicyAssignmentArgs:
     @pulumi.getter(name="assetId")
     def asset_id(self) -> pulumi.Input[str]:
         """
-        The OCID of the volume to assign the policy to.
+        The OCID of the volume or volume group to assign the policy to.
         """
         return pulumi.get(self, "asset_id")
 
@@ -65,7 +65,7 @@ class _VolumeBackupPolicyAssignmentState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VolumeBackupPolicyAssignment resources.
-        :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
+        :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
                
                
@@ -84,7 +84,7 @@ class _VolumeBackupPolicyAssignmentState:
     @pulumi.getter(name="assetId")
     def asset_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the volume to assign the policy to.
+        The OCID of the volume or volume group to assign the policy to.
         """
         return pulumi.get(self, "asset_id")
 
@@ -132,8 +132,8 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         """
         This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
 
-        Assigns a volume backup policy to the specified volume. Note that a given volume can
-        only have one backup policy assigned to it. If this operation is used for a volume that already
+        Assigns a volume backup policy to the specified volume or volume group. Note that a given volume or volume group can
+        only have one backup policy assigned to it. If this operation is used for a volume or volume group that already
         has a different backup policy assigned, the prior backup policy will be silently unassigned.
 
         ## Example Usage
@@ -157,7 +157,7 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
+        :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
                
                
@@ -173,8 +173,8 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         """
         This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
 
-        Assigns a volume backup policy to the specified volume. Note that a given volume can
-        only have one backup policy assigned to it. If this operation is used for a volume that already
+        Assigns a volume backup policy to the specified volume or volume group. Note that a given volume or volume group can
+        only have one backup policy assigned to it. If this operation is used for a volume or volume group that already
         has a different backup policy assigned, the prior backup policy will be silently unassigned.
 
         ## Example Usage
@@ -249,7 +249,7 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
+        :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
                
                
@@ -270,7 +270,7 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
     @pulumi.getter(name="assetId")
     def asset_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the volume to assign the policy to.
+        The OCID of the volume or volume group to assign the policy to.
         """
         return pulumi.get(self, "asset_id")
 

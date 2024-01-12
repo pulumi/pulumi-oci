@@ -14,14 +14,14 @@ public final class GetDefaultConfigurationPlainArgs extends com.pulumi.resources
     public static final GetDefaultConfigurationPlainArgs Empty = new GetDefaultConfigurationPlainArgs();
 
     /**
-     * unique Configuration identifier
+     * A unique identifier for the configuration.
      * 
      */
     @Import(name="defaultConfigurationId", required=true)
     private String defaultConfigurationId;
 
     /**
-     * @return unique Configuration identifier
+     * @return A unique identifier for the configuration.
      * 
      */
     public String defaultConfigurationId() {
@@ -53,7 +53,7 @@ public final class GetDefaultConfigurationPlainArgs extends com.pulumi.resources
         }
 
         /**
-         * @param defaultConfigurationId unique Configuration identifier
+         * @param defaultConfigurationId A unique identifier for the configuration.
          * 
          * @return builder
          * 

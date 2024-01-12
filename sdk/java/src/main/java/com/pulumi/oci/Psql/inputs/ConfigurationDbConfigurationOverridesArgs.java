@@ -16,14 +16,14 @@ public final class ConfigurationDbConfigurationOverridesArgs extends com.pulumi.
     public static final ConfigurationDbConfigurationOverridesArgs Empty = new ConfigurationDbConfigurationOverridesArgs();
 
     /**
-     * List of configuration overriden values
+     * List of configuration overridden values.
      * 
      */
     @Import(name="items", required=true)
     private Output<List<ConfigurationDbConfigurationOverridesItemArgs>> items;
 
     /**
-     * @return List of configuration overriden values
+     * @return List of configuration overridden values.
      * 
      */
     public Output<List<ConfigurationDbConfigurationOverridesItemArgs>> items() {
@@ -55,7 +55,7 @@ public final class ConfigurationDbConfigurationOverridesArgs extends com.pulumi.
         }
 
         /**
-         * @param items List of configuration overriden values
+         * @param items List of configuration overridden values.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ConfigurationDbConfigurationOverridesArgs extends com.pulumi.
         }
 
         /**
-         * @param items List of configuration overriden values
+         * @param items List of configuration overridden values.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class ConfigurationDbConfigurationOverridesArgs extends com.pulumi.
         }
 
         /**
-         * @param items List of configuration overriden values
+         * @param items List of configuration overridden values.
          * 
          * @return builder
          * 

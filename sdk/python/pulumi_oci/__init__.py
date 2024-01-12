@@ -613,6 +613,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "ApmSynthetics/onPremiseVantagePoint",
+  "fqn": "pulumi_oci.apmsynthetics",
+  "classes": {
+   "oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint": "OnPremiseVantagePoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ApmSynthetics/onPremiseVantagePointWorker",
+  "fqn": "pulumi_oci.apmsynthetics",
+  "classes": {
+   "oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker": "OnPremiseVantagePointWorker"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ApmSynthetics/script",
   "fqn": "pulumi_oci.apmsynthetics",
   "classes": {

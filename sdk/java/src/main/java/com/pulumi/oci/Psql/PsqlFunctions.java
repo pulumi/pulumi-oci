@@ -47,7 +47,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Backup by identifier
+     * Gets a backup by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -86,7 +86,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Backup by identifier
+     * Gets a backup by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -125,7 +125,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Backup by identifier
+     * Gets a backup by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -164,7 +164,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Backup by identifier
+     * Gets a backup by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -203,7 +203,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Backup.
+     * Returns a list of backups.
      * 
      * ## Example Usage
      * ```java
@@ -248,7 +248,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Backup.
+     * Returns a list of backups.
      * 
      * ## Example Usage
      * ```java
@@ -293,7 +293,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Backup.
+     * Returns a list of backups.
      * 
      * ## Example Usage
      * ```java
@@ -338,7 +338,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Backup.
+     * Returns a list of backups.
      * 
      * ## Example Usage
      * ```java
@@ -383,7 +383,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Backup.
+     * Returns a list of backups.
      * 
      * ## Example Usage
      * ```java
@@ -428,7 +428,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Backup.
+     * Returns a list of backups.
      * 
      * ## Example Usage
      * ```java
@@ -473,7 +473,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Configuration by identifier
+     * Gets a configuration by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -512,7 +512,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Configuration by identifier
+     * Gets a configuration by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -551,7 +551,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Configuration by identifier
+     * Gets a configuration by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -590,7 +590,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Configuration by identifier
+     * Gets a configuration by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -629,7 +629,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Configurations.
+     * Returns a list of configurations.
      * 
      * ## Example Usage
      * ```java
@@ -673,7 +673,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Configurations.
+     * Returns a list of configurations.
      * 
      * ## Example Usage
      * ```java
@@ -717,7 +717,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Configurations.
+     * Returns a list of configurations.
      * 
      * ## Example Usage
      * ```java
@@ -761,7 +761,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Configurations.
+     * Returns a list of configurations.
      * 
      * ## Example Usage
      * ```java
@@ -805,7 +805,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Configurations.
+     * Returns a list of configurations.
      * 
      * ## Example Usage
      * ```java
@@ -849,7 +849,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Configurations.
+     * Returns a list of configurations.
      * 
      * ## Example Usage
      * ```java
@@ -893,7 +893,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a DbSystem by identifier
+     * Gets a database system by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -933,7 +933,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a DbSystem by identifier
+     * Gets a database system by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -973,7 +973,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a DbSystem by identifier
+     * Gets a database system by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -1013,7 +1013,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a DbSystem by identifier
+     * Gets a database system by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -1053,7 +1053,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets the DbSystem connection details.
+     * Gets the database system connection details.
      * 
      * ## Example Usage
      * ```java
@@ -1092,7 +1092,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets the DbSystem connection details.
+     * Gets the database system connection details.
      * 
      * ## Example Usage
      * ```java
@@ -1131,7 +1131,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets the DbSystem connection details.
+     * Gets the database system connection details.
      * 
      * ## Example Usage
      * ```java
@@ -1170,7 +1170,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets the DbSystem connection details.
+     * Gets the database system connection details.
      * 
      * ## Example Usage
      * ```java
@@ -1209,7 +1209,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets the primary DbInstance details.
+     * Gets the primary database instance node details.
      * 
      * ## Example Usage
      * ```java
@@ -1248,7 +1248,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets the primary DbInstance details.
+     * Gets the primary database instance node details.
      * 
      * ## Example Usage
      * ```java
@@ -1287,7 +1287,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets the primary DbInstance details.
+     * Gets the primary database instance node details.
      * 
      * ## Example Usage
      * ```java
@@ -1326,7 +1326,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets the primary DbInstance details.
+     * Gets the primary database instance node details.
      * 
      * ## Example Usage
      * ```java
@@ -1365,7 +1365,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of DbSystems.
+     * Returns a list of database systems.
      * 
      * ## Example Usage
      * ```java
@@ -1407,7 +1407,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of DbSystems.
+     * Returns a list of database systems.
      * 
      * ## Example Usage
      * ```java
@@ -1449,7 +1449,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of DbSystems.
+     * Returns a list of database systems.
      * 
      * ## Example Usage
      * ```java
@@ -1491,7 +1491,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of DbSystems.
+     * Returns a list of database systems.
      * 
      * ## Example Usage
      * ```java
@@ -1533,7 +1533,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of DbSystems.
+     * Returns a list of database systems.
      * 
      * ## Example Usage
      * ```java
@@ -1575,7 +1575,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of DbSystems.
+     * Returns a list of database systems.
      * 
      * ## Example Usage
      * ```java
@@ -1617,7 +1617,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Default Configuration by identifier
+     * Gets a default configuration by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -1656,7 +1656,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Default Configuration by identifier
+     * Gets a default configuration by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -1695,7 +1695,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Default Configuration by identifier
+     * Gets a default configuration by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -1734,7 +1734,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
      * 
-     * Gets a Default Configuration by identifier
+     * Gets a default configuration by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -1773,7 +1773,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Default Configurations.
+     * Returns a list of default configurations.
      * 
      * ## Example Usage
      * ```java
@@ -1816,7 +1816,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Default Configurations.
+     * Returns a list of default configurations.
      * 
      * ## Example Usage
      * ```java
@@ -1859,7 +1859,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Default Configurations.
+     * Returns a list of default configurations.
      * 
      * ## Example Usage
      * ```java
@@ -1902,7 +1902,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Default Configurations.
+     * Returns a list of default configurations.
      * 
      * ## Example Usage
      * ```java
@@ -1945,7 +1945,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Default Configurations.
+     * Returns a list of default configurations.
      * 
      * ## Example Usage
      * ```java
@@ -1988,7 +1988,7 @@ public final class PsqlFunctions {
     /**
      * This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
      * 
-     * Returns a list of Default Configurations.
+     * Returns a list of default configurations.
      * 
      * ## Example Usage
      * ```java

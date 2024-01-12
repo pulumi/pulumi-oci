@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemPrimaryDbInstanceResult {
     /**
-     * @return Unique identifier of the DbInstance.
+     * @return A unique identifier for the primary database instance node.
      * 
      */
     private String dbInstanceId;
@@ -24,7 +24,7 @@ public final class GetDbSystemPrimaryDbInstanceResult {
 
     private GetDbSystemPrimaryDbInstanceResult() {}
     /**
-     * @return Unique identifier of the DbInstance.
+     * @return A unique identifier for the primary database instance node.
      * 
      */
     public String dbInstanceId() {

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
  *
- * Gets a Configuration by identifier
+ * Gets a configuration by identifier.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getConfiguration(args: GetConfigurationArgs, opts?: pulumi.Invok
  */
 export interface GetConfigurationArgs {
     /**
-     * unique Configuration identifier
+     * A unique identifier for the configuration.
      */
     configurationId: string;
 }
@@ -45,17 +45,17 @@ export interface GetConfigurationArgs {
  */
 export interface GetConfigurationResult {
     /**
-     * Config compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      */
     readonly compartmentId: string;
     /**
-     * List of DB Configuration Values.
+     * List of configuration details.
      */
     readonly configurationDetails: outputs.Psql.GetConfigurationConfigurationDetail[];
     readonly configurationId: string;
     readonly dbConfigurationOverrides: outputs.Psql.GetConfigurationDbConfigurationOverride[];
     /**
-     * Version of the Postgresql DB
+     * Version of the PostgreSQL database.
      */
     readonly dbVersion: string;
     /**
@@ -63,11 +63,11 @@ export interface GetConfigurationResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * Config description
+     * A description for the configuration.
      */
     readonly description: string;
     /**
-     * Config display name
+     * A user-friendly display name for the configuration. Avoid entering confidential information.
      */
     readonly displayName: string;
     /**
@@ -75,15 +75,15 @@ export interface GetConfigurationResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier for the configuration. Immutable on creation.
      */
     readonly id: string;
     /**
-     * Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+     * Memory size in gigabytes with 1GB increment.
      */
     readonly instanceMemorySizeInGbs: number;
     /**
-     * CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * CPU core count.
      */
     readonly instanceOcpuCount: number;
     /**
@@ -91,11 +91,11 @@ export interface GetConfigurationResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * Compute Shape Name like VM.Standard3.Flex.
+     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      */
     readonly shape: string;
     /**
-     * The current state of the Configuration.
+     * The current state of the configuration.
      */
     readonly state: string;
     /**
@@ -103,14 +103,14 @@ export interface GetConfigurationResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time Configuration was created. An RFC3339 formatted datetime string
+     * The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
 }
 /**
  * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
  *
- * Gets a Configuration by identifier
+ * Gets a configuration by identifier.
  *
  * ## Example Usage
  *
@@ -132,7 +132,7 @@ export function getConfigurationOutput(args: GetConfigurationOutputArgs, opts?: 
  */
 export interface GetConfigurationOutputArgs {
     /**
-     * unique Configuration identifier
+     * A unique identifier for the configuration.
      */
     configurationId: pulumi.Input<string>;
 }

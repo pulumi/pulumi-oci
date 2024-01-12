@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
  *
- * Gets the DbSystem connection details.
+ * Gets the database system connection details.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getDbSystemConnectionDetail(args: GetDbSystemConnectionDetailArg
  */
 export interface GetDbSystemConnectionDetailArgs {
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      */
     dbSystemId: string;
 }
@@ -45,7 +45,7 @@ export interface GetDbSystemConnectionDetailArgs {
  */
 export interface GetDbSystemConnectionDetailResult {
     /**
-     * The CA certificate to be used by the Posgresql client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
+     * The CA certificate to be used by the PosgreSQL client to connect to the database. The CA certificate is used to authenticate the server identity.  It is issued by PostgreSQL Service Private CA.
      */
     readonly caCertificate: string;
     readonly dbSystemId: string;
@@ -54,18 +54,18 @@ export interface GetDbSystemConnectionDetailResult {
      */
     readonly id: string;
     /**
-     * The list of DbInstance endpoints in the DbSystem.
+     * The list of database instance node endpoints in the database system.
      */
     readonly instanceEndpoints: outputs.Psql.GetDbSystemConnectionDetailInstanceEndpoint[];
     /**
-     * The node endpoint information.
+     * Information about the database instance node endpoint.
      */
     readonly primaryDbEndpoints: outputs.Psql.GetDbSystemConnectionDetailPrimaryDbEndpoint[];
 }
 /**
  * This data source provides details about a specific Db System Connection Detail resource in Oracle Cloud Infrastructure Psql service.
  *
- * Gets the DbSystem connection details.
+ * Gets the database system connection details.
  *
  * ## Example Usage
  *
@@ -87,7 +87,7 @@ export function getDbSystemConnectionDetailOutput(args: GetDbSystemConnectionDet
  */
 export interface GetDbSystemConnectionDetailOutputArgs {
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      */
     dbSystemId: pulumi.Input<string>;
 }

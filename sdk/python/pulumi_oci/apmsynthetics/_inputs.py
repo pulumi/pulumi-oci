@@ -28,11 +28,18 @@ __all__ = [
     'ConfigVantagePointArgs',
     'DedicatedVantagePointDvpStackDetailsArgs',
     'DedicatedVantagePointMonitorStatusCountMapArgs',
+    'OnPremiseVantagePointWorkerIdentityInfoArgs',
+    'OnPremiseVantagePointWorkerMonitorListArgs',
+    'OnPremiseVantagePointWorkerVersionDetailArgs',
+    'OnPremiseVantagePointWorkersSummaryArgs',
+    'OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs',
     'ScriptMonitorStatusCountMapArgs',
     'ScriptParameterArgs',
     'ScriptParameterScriptParameterArgs',
     'GetDedicatedVantagePointsFilterArgs',
     'GetMonitorsFilterArgs',
+    'GetOnPremiseVantagePointWorkersFilterArgs',
+    'GetOnPremiseVantagePointsFilterArgs',
     'GetScriptsFilterArgs',
     'GetVantagePointsFilterArgs',
 ]
@@ -85,8 +92,12 @@ class ConfigConfigurationArgs:
                  is_certificate_validation_enabled: Optional[pulumi.Input[bool]] = None,
                  is_default_snapshot_enabled: Optional[pulumi.Input[bool]] = None,
                  is_failure_retried: Optional[pulumi.Input[bool]] = None,
+                 is_query_recursive: Optional[pulumi.Input[bool]] = None,
                  is_redirection_enabled: Optional[pulumi.Input[bool]] = None,
+                 name_server: Optional[pulumi.Input[str]] = None,
                  network_configuration: Optional[pulumi.Input['ConfigConfigurationNetworkConfigurationArgs']] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 record_type: Optional[pulumi.Input[str]] = None,
                  req_authentication_details: Optional[pulumi.Input['ConfigConfigurationReqAuthenticationDetailsArgs']] = None,
                  req_authentication_scheme: Optional[pulumi.Input[str]] = None,
                  request_headers: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestHeaderArgs']]]] = None,
@@ -103,8 +114,12 @@ class ConfigConfigurationArgs:
         :param pulumi.Input[bool] is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
         :param pulumi.Input[bool] is_default_snapshot_enabled: (Updatable) If disabled, auto snapshots are not collected.
         :param pulumi.Input[bool] is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
+        :param pulumi.Input[bool] is_query_recursive: (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
         :param pulumi.Input[bool] is_redirection_enabled: (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
-        :param pulumi.Input['ConfigConfigurationNetworkConfigurationArgs'] network_configuration: (Updatable) Details of the network configuration.
+        :param pulumi.Input[str] name_server: (Updatable) Name of the server that will be used to perform DNS lookup.
+        :param pulumi.Input['ConfigConfigurationNetworkConfigurationArgs'] network_configuration: (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
+        :param pulumi.Input[str] protocol: (Updatable) Type of protocol.
+        :param pulumi.Input[str] record_type: (Updatable) DNS record type.
         :param pulumi.Input['ConfigConfigurationReqAuthenticationDetailsArgs'] req_authentication_details: (Updatable) Details for request HTTP authentication.
         :param pulumi.Input[str] req_authentication_scheme: (Updatable) Request HTTP authentication scheme.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestHeaderArgs']]] request_headers: (Updatable) List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
@@ -127,10 +142,18 @@ class ConfigConfigurationArgs:
             pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
         if is_failure_retried is not None:
             pulumi.set(__self__, "is_failure_retried", is_failure_retried)
+        if is_query_recursive is not None:
+            pulumi.set(__self__, "is_query_recursive", is_query_recursive)
         if is_redirection_enabled is not None:
             pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
+        if name_server is not None:
+            pulumi.set(__self__, "name_server", name_server)
         if network_configuration is not None:
             pulumi.set(__self__, "network_configuration", network_configuration)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if record_type is not None:
+            pulumi.set(__self__, "record_type", record_type)
         if req_authentication_details is not None:
             pulumi.set(__self__, "req_authentication_details", req_authentication_details)
         if req_authentication_scheme is not None:
@@ -223,6 +246,18 @@ class ConfigConfigurationArgs:
         pulumi.set(self, "is_failure_retried", value)
 
     @property
+    @pulumi.getter(name="isQueryRecursive")
+    def is_query_recursive(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+        """
+        return pulumi.get(self, "is_query_recursive")
+
+    @is_query_recursive.setter
+    def is_query_recursive(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_query_recursive", value)
+
+    @property
     @pulumi.getter(name="isRedirectionEnabled")
     def is_redirection_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -235,16 +270,52 @@ class ConfigConfigurationArgs:
         pulumi.set(self, "is_redirection_enabled", value)
 
     @property
+    @pulumi.getter(name="nameServer")
+    def name_server(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the server that will be used to perform DNS lookup.
+        """
+        return pulumi.get(self, "name_server")
+
+    @name_server.setter
+    def name_server(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name_server", value)
+
+    @property
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> Optional[pulumi.Input['ConfigConfigurationNetworkConfigurationArgs']]:
         """
-        (Updatable) Details of the network configuration.
+        (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
         """
         return pulumi.get(self, "network_configuration")
 
     @network_configuration.setter
     def network_configuration(self, value: Optional[pulumi.Input['ConfigConfigurationNetworkConfigurationArgs']]):
         pulumi.set(self, "network_configuration", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Type of protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter(name="recordType")
+    def record_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) DNS record type.
+        """
+        return pulumi.get(self, "record_type")
+
+    @record_type.setter
+    def record_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "record_type", value)
 
     @property
     @pulumi.getter(name="reqAuthenticationDetails")
@@ -1213,6 +1284,345 @@ class DedicatedVantagePointMonitorStatusCountMapArgs:
 
 
 @pulumi.input_type
+class OnPremiseVantagePointWorkerIdentityInfoArgs:
+    def __init__(__self__, *,
+                 apm_short_id: Optional[pulumi.Input[str]] = None,
+                 collector_end_point: Optional[pulumi.Input[str]] = None,
+                 region_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] apm_short_id: Domain short id of the On-premise VP worker.
+        :param pulumi.Input[str] collector_end_point: Collector endpoint of the On-premise VP worker.
+        :param pulumi.Input[str] region_name: Domain region of the On-premise VP worker.
+        """
+        if apm_short_id is not None:
+            pulumi.set(__self__, "apm_short_id", apm_short_id)
+        if collector_end_point is not None:
+            pulumi.set(__self__, "collector_end_point", collector_end_point)
+        if region_name is not None:
+            pulumi.set(__self__, "region_name", region_name)
+
+    @property
+    @pulumi.getter(name="apmShortId")
+    def apm_short_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Domain short id of the On-premise VP worker.
+        """
+        return pulumi.get(self, "apm_short_id")
+
+    @apm_short_id.setter
+    def apm_short_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apm_short_id", value)
+
+    @property
+    @pulumi.getter(name="collectorEndPoint")
+    def collector_end_point(self) -> Optional[pulumi.Input[str]]:
+        """
+        Collector endpoint of the On-premise VP worker.
+        """
+        return pulumi.get(self, "collector_end_point")
+
+    @collector_end_point.setter
+    def collector_end_point(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "collector_end_point", value)
+
+    @property
+    @pulumi.getter(name="regionName")
+    def region_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Domain region of the On-premise VP worker.
+        """
+        return pulumi.get(self, "region_name")
+
+    @region_name.setter
+    def region_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "region_name", value)
+
+
+@pulumi.input_type
+class OnPremiseVantagePointWorkerMonitorListArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 is_run_now: Optional[pulumi.Input[bool]] = None,
+                 monitor_type: Optional[pulumi.Input[str]] = None,
+                 time_assigned: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        :param pulumi.Input[bool] is_run_now: If isRunNow is enabled, then the monitor will run immediately.
+        :param pulumi.Input[str] monitor_type: Type of monitor.
+        :param pulumi.Input[str] time_assigned: The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_run_now is not None:
+            pulumi.set(__self__, "is_run_now", is_run_now)
+        if monitor_type is not None:
+            pulumi.set(__self__, "monitor_type", monitor_type)
+        if time_assigned is not None:
+            pulumi.set(__self__, "time_assigned", time_assigned)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique name that can be edited. The name should not contain any confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isRunNow")
+    def is_run_now(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If isRunNow is enabled, then the monitor will run immediately.
+        """
+        return pulumi.get(self, "is_run_now")
+
+    @is_run_now.setter
+    def is_run_now(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_run_now", value)
+
+    @property
+    @pulumi.getter(name="monitorType")
+    def monitor_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of monitor.
+        """
+        return pulumi.get(self, "monitor_type")
+
+    @monitor_type.setter
+    def monitor_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "monitor_type", value)
+
+    @property
+    @pulumi.getter(name="timeAssigned")
+    def time_assigned(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_assigned")
+
+    @time_assigned.setter
+    def time_assigned(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_assigned", value)
+
+
+@pulumi.input_type
+class OnPremiseVantagePointWorkerVersionDetailArgs:
+    def __init__(__self__, *,
+                 latest_version: Optional[pulumi.Input[str]] = None,
+                 min_supported_version: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] latest_version: Latest image version of the On-premise VP worker.
+        :param pulumi.Input[str] min_supported_version: Minimum supported image version of the On-premise VP worker.
+        :param pulumi.Input[str] version: Image version of the On-premise VP worker.
+        """
+        if latest_version is not None:
+            pulumi.set(__self__, "latest_version", latest_version)
+        if min_supported_version is not None:
+            pulumi.set(__self__, "min_supported_version", min_supported_version)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="latestVersion")
+    def latest_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Latest image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "latest_version")
+
+    @latest_version.setter
+    def latest_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "latest_version", value)
+
+    @property
+    @pulumi.getter(name="minSupportedVersion")
+    def min_supported_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Minimum supported image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "min_supported_version")
+
+    @min_supported_version.setter
+    def min_supported_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "min_supported_version", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Image version of the On-premise VP worker.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class OnPremiseVantagePointWorkersSummaryArgs:
+    def __init__(__self__, *,
+                 available: Optional[pulumi.Input[int]] = None,
+                 available_capabilities: Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs']]]] = None,
+                 disabled: Optional[pulumi.Input[int]] = None,
+                 min_version: Optional[pulumi.Input[str]] = None,
+                 total: Optional[pulumi.Input[int]] = None,
+                 used: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] available: Number of available workers in a specific On-premise vantage point.
+        :param pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs']]] available_capabilities: List of available capabilities in a specific On-premise vantage point.
+        :param pulumi.Input[int] disabled: Number of disabled workers in a specific On-premise vantage point.
+        :param pulumi.Input[str] min_version: Minimum version among the workers in a specific On-premise vantage point.
+        :param pulumi.Input[int] total: Total number of workers in a specific On-premise vantage point.
+        :param pulumi.Input[int] used: Number of occupied workers in a specific On-premise vantage point.
+        """
+        if available is not None:
+            pulumi.set(__self__, "available", available)
+        if available_capabilities is not None:
+            pulumi.set(__self__, "available_capabilities", available_capabilities)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if min_version is not None:
+            pulumi.set(__self__, "min_version", min_version)
+        if total is not None:
+            pulumi.set(__self__, "total", total)
+        if used is not None:
+            pulumi.set(__self__, "used", used)
+
+    @property
+    @pulumi.getter
+    def available(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of available workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "available")
+
+    @available.setter
+    def available(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "available", value)
+
+    @property
+    @pulumi.getter(name="availableCapabilities")
+    def available_capabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs']]]]:
+        """
+        List of available capabilities in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "available_capabilities")
+
+    @available_capabilities.setter
+    def available_capabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs']]]]):
+        pulumi.set(self, "available_capabilities", value)
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of disabled workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "disabled")
+
+    @disabled.setter
+    def disabled(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "disabled", value)
+
+    @property
+    @pulumi.getter(name="minVersion")
+    def min_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Minimum version among the workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "min_version")
+
+    @min_version.setter
+    def min_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "min_version", value)
+
+    @property
+    @pulumi.getter
+    def total(self) -> Optional[pulumi.Input[int]]:
+        """
+        Total number of workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "total")
+
+    @total.setter
+    def total(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "total", value)
+
+    @property
+    @pulumi.getter
+    def used(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of occupied workers in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "used")
+
+    @used.setter
+    def used(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "used", value)
+
+
+@pulumi.input_type
+class OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs:
+    def __init__(__self__, *,
+                 capability: Optional[pulumi.Input[str]] = None,
+                 on_premise_vantage_point_count: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] capability: Capability of an On-premise vantage point worker.
+        :param pulumi.Input[int] on_premise_vantage_point_count: Count of available capability in a specific On-premise vantage point.
+        """
+        if capability is not None:
+            pulumi.set(__self__, "capability", capability)
+        if on_premise_vantage_point_count is not None:
+            pulumi.set(__self__, "on_premise_vantage_point_count", on_premise_vantage_point_count)
+
+    @property
+    @pulumi.getter
+    def capability(self) -> Optional[pulumi.Input[str]]:
+        """
+        Capability of an On-premise vantage point worker.
+        """
+        return pulumi.get(self, "capability")
+
+    @capability.setter
+    def capability(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "capability", value)
+
+    @property
+    @pulumi.getter(name="onPremiseVantagePointCount")
+    def on_premise_vantage_point_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        Count of available capability in a specific On-premise vantage point.
+        """
+        return pulumi.get(self, "on_premise_vantage_point_count")
+
+    @on_premise_vantage_point_count.setter
+    def on_premise_vantage_point_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "on_premise_vantage_point_count", value)
+
+
+@pulumi.input_type
 class ScriptMonitorStatusCountMapArgs:
     def __init__(__self__, *,
                  disabled: Optional[pulumi.Input[int]] = None,
@@ -1504,6 +1914,96 @@ class GetMonitorsFilterArgs:
     def name(self) -> str:
         """
         Name of the vantage point.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetOnPremiseVantagePointWorkersFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only the resources that match the entire name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only the resources that match the entire name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetOnPremiseVantagePointsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only the resources that match the entire name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only the resources that match the entire name.
         """
         return pulumi.get(self, "name")
 

@@ -22,10 +22,13 @@ class GetDbSystemResult:
     """
     A collection of values returned by getDbSystem.
     """
-    def __init__(__self__, admin_username=None, compartment_id=None, config_id=None, credentials=None, db_system_id=None, db_version=None, defined_tags=None, description=None, display_name=None, excluded_fields=None, freeform_tags=None, id=None, instance_count=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, instances=None, instances_details=None, lifecycle_details=None, management_policies=None, network_details=None, shape=None, sources=None, state=None, storage_details=None, system_tags=None, system_type=None, time_created=None, time_updated=None):
+    def __init__(__self__, admin_username=None, apply_config=None, compartment_id=None, config_id=None, credentials=None, db_system_id=None, db_version=None, defined_tags=None, description=None, display_name=None, excluded_fields=None, freeform_tags=None, id=None, instance_count=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, instances=None, instances_details=None, lifecycle_details=None, management_policies=None, network_details=None, patch_operations=None, shape=None, sources=None, state=None, storage_details=None, system_tags=None, system_type=None, time_created=None, time_updated=None):
         if admin_username and not isinstance(admin_username, str):
             raise TypeError("Expected argument 'admin_username' to be a str")
         pulumi.set(__self__, "admin_username", admin_username)
+        if apply_config and not isinstance(apply_config, str):
+            raise TypeError("Expected argument 'apply_config' to be a str")
+        pulumi.set(__self__, "apply_config", apply_config)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -83,6 +86,9 @@ class GetDbSystemResult:
         if network_details and not isinstance(network_details, list):
             raise TypeError("Expected argument 'network_details' to be a list")
         pulumi.set(__self__, "network_details", network_details)
+        if patch_operations and not isinstance(patch_operations, list):
+            raise TypeError("Expected argument 'patch_operations' to be a list")
+        pulumi.set(__self__, "patch_operations", patch_operations)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -112,15 +118,20 @@ class GetDbSystemResult:
     @pulumi.getter(name="adminUsername")
     def admin_username(self) -> str:
         """
-        The DB system username.
+        The database system administrator username.
         """
         return pulumi.get(self, "admin_username")
+
+    @property
+    @pulumi.getter(name="applyConfig")
+    def apply_config(self) -> str:
+        return pulumi.get(self, "apply_config")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -128,7 +139,7 @@ class GetDbSystemResult:
     @pulumi.getter(name="configId")
     def config_id(self) -> str:
         """
-        Configuration identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         """
         return pulumi.get(self, "config_id")
 
@@ -146,7 +157,7 @@ class GetDbSystemResult:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        The major and minor versions of the DbSystem software.
+        The major and minor versions of the database system software.
         """
         return pulumi.get(self, "db_version")
 
@@ -162,7 +173,7 @@ class GetDbSystemResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        Description of the DbInstance.
+        Description of the database instance node.
         """
         return pulumi.get(self, "description")
 
@@ -170,7 +181,7 @@ class GetDbSystemResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Display name of the DbInstance.
+        A user-friendly display name for the database instance node. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -191,7 +202,7 @@ class GetDbSystemResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation.
+        A unique identifier for the database instance node. Immutable on creation.
         """
         return pulumi.get(self, "id")
 
@@ -199,7 +210,7 @@ class GetDbSystemResult:
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> int:
         """
-        Count of DbInstances in the DbSystem.
+        Count of instances, or nodes, in the database system.
         """
         return pulumi.get(self, "instance_count")
 
@@ -207,7 +218,7 @@ class GetDbSystemResult:
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> int:
         """
-        The total amount of memory available to each DbInstance, in gigabytes.
+        The total amount of memory available to each database instance node, in gigabytes.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -215,7 +226,7 @@ class GetDbSystemResult:
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> int:
         """
-        The total number of OCPUs available to each DbInstance.
+        The total number of OCPUs available to each database instance node.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -223,7 +234,7 @@ class GetDbSystemResult:
     @pulumi.getter
     def instances(self) -> Sequence['outputs.GetDbSystemInstanceResult']:
         """
-        The list of DbInstances in the DbSystem.
+        The list of instances, or nodes, in the database system.
         """
         return pulumi.get(self, "instances")
 
@@ -244,7 +255,7 @@ class GetDbSystemResult:
     @pulumi.getter(name="managementPolicies")
     def management_policies(self) -> Sequence['outputs.GetDbSystemManagementPolicyResult']:
         """
-        PostgreSQL DB system management policy
+        PostgreSQL database system management policy.
         """
         return pulumi.get(self, "management_policies")
 
@@ -252,15 +263,20 @@ class GetDbSystemResult:
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> Sequence['outputs.GetDbSystemNetworkDetailResult']:
         """
-        DbSystem network details.
+        Network details for the database system.
         """
         return pulumi.get(self, "network_details")
+
+    @property
+    @pulumi.getter(name="patchOperations")
+    def patch_operations(self) -> Sequence['outputs.GetDbSystemPatchOperationResult']:
+        return pulumi.get(self, "patch_operations")
 
     @property
     @pulumi.getter
     def shape(self) -> str:
         """
-        Shape of dbInstance.
+        The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -268,7 +284,7 @@ class GetDbSystemResult:
     @pulumi.getter
     def sources(self) -> Sequence['outputs.GetDbSystemSourceResult']:
         """
-        New source is used to restore the DB system.
+        The source used to restore the database system.
         """
         return pulumi.get(self, "sources")
 
@@ -276,7 +292,7 @@ class GetDbSystemResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the DbSystem.
+        The current state of the database system.
         """
         return pulumi.get(self, "state")
 
@@ -284,7 +300,7 @@ class GetDbSystemResult:
     @pulumi.getter(name="storageDetails")
     def storage_details(self) -> Sequence['outputs.GetDbSystemStorageDetailResult']:
         """
-        Storage details of the DbSystem.
+        Storage details of the database system.
         """
         return pulumi.get(self, "storage_details")
 
@@ -300,7 +316,7 @@ class GetDbSystemResult:
     @pulumi.getter(name="systemType")
     def system_type(self) -> str:
         """
-        Type of the DbSystem.
+        Type of the database system.
         """
         return pulumi.get(self, "system_type")
 
@@ -308,7 +324,7 @@ class GetDbSystemResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the DbSystem was created. An RFC3339 formatted datetime string
+        The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -316,7 +332,7 @@ class GetDbSystemResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the DbSystem was updated. An RFC3339 formatted datetime string
+        The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -328,6 +344,7 @@ class AwaitableGetDbSystemResult(GetDbSystemResult):
             yield self
         return GetDbSystemResult(
             admin_username=self.admin_username,
+            apply_config=self.apply_config,
             compartment_id=self.compartment_id,
             config_id=self.config_id,
             credentials=self.credentials,
@@ -347,6 +364,7 @@ class AwaitableGetDbSystemResult(GetDbSystemResult):
             lifecycle_details=self.lifecycle_details,
             management_policies=self.management_policies,
             network_details=self.network_details,
+            patch_operations=self.patch_operations,
             shape=self.shape,
             sources=self.sources,
             state=self.state,
@@ -363,7 +381,7 @@ def get_db_system(db_system_id: Optional[str] = None,
     """
     This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets a DbSystem by identifier
+    Gets a database system by identifier.
 
     ## Example Usage
 
@@ -376,8 +394,8 @@ def get_db_system(db_system_id: Optional[str] = None,
     ```
 
 
-    :param str db_system_id: unique DbSystem identifier
-    :param str excluded_fields: A filter to exclude DB config  when this query param is set to OverrideDbConfig
+    :param str db_system_id: A unique identifier for the database system.
+    :param str excluded_fields: A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
@@ -387,6 +405,7 @@ def get_db_system(db_system_id: Optional[str] = None,
 
     return AwaitableGetDbSystemResult(
         admin_username=pulumi.get(__ret__, 'admin_username'),
+        apply_config=pulumi.get(__ret__, 'apply_config'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         config_id=pulumi.get(__ret__, 'config_id'),
         credentials=pulumi.get(__ret__, 'credentials'),
@@ -406,6 +425,7 @@ def get_db_system(db_system_id: Optional[str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         management_policies=pulumi.get(__ret__, 'management_policies'),
         network_details=pulumi.get(__ret__, 'network_details'),
+        patch_operations=pulumi.get(__ret__, 'patch_operations'),
         shape=pulumi.get(__ret__, 'shape'),
         sources=pulumi.get(__ret__, 'sources'),
         state=pulumi.get(__ret__, 'state'),
@@ -423,7 +443,7 @@ def get_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets a DbSystem by identifier
+    Gets a database system by identifier.
 
     ## Example Usage
 
@@ -436,7 +456,7 @@ def get_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str db_system_id: unique DbSystem identifier
-    :param str excluded_fields: A filter to exclude DB config  when this query param is set to OverrideDbConfig
+    :param str db_system_id: A unique identifier for the database system.
+    :param str excluded_fields: A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
     """
     ...

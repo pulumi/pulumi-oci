@@ -17,19 +17,19 @@ import java.util.Objects;
 @CustomType
 public final class GetConfigurationResult {
     /**
-     * @return Config compartment identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      * 
      */
     private String compartmentId;
     /**
-     * @return List of DB Configuration Values.
+     * @return List of configuration details.
      * 
      */
     private List<GetConfigurationConfigurationDetail> configurationDetails;
     private String configurationId;
     private List<GetConfigurationDbConfigurationOverride> dbConfigurationOverrides;
     /**
-     * @return Version of the Postgresql DB
+     * @return Version of the PostgreSQL database.
      * 
      */
     private String dbVersion;
@@ -39,12 +39,12 @@ public final class GetConfigurationResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Config description
+     * @return A description for the configuration.
      * 
      */
     private String description;
     /**
-     * @return Config display name
+     * @return A user-friendly display name for the configuration. Avoid entering confidential information.
      * 
      */
     private String displayName;
@@ -54,17 +54,17 @@ public final class GetConfigurationResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier for the configuration. Immutable on creation.
      * 
      */
     private String id;
     /**
-     * @return Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+     * @return Memory size in gigabytes with 1GB increment.
      * 
      */
     private Integer instanceMemorySizeInGbs;
     /**
-     * @return CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * @return CPU core count.
      * 
      */
     private Integer instanceOcpuCount;
@@ -74,12 +74,12 @@ public final class GetConfigurationResult {
      */
     private String lifecycleDetails;
     /**
-     * @return Compute Shape Name like VM.Standard3.Flex.
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     private String shape;
     /**
-     * @return The current state of the Configuration.
+     * @return The current state of the configuration.
      * 
      */
     private String state;
@@ -89,21 +89,21 @@ public final class GetConfigurationResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time Configuration was created. An RFC3339 formatted datetime string
+     * @return The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
 
     private GetConfigurationResult() {}
     /**
-     * @return Config compartment identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return List of DB Configuration Values.
+     * @return List of configuration details.
      * 
      */
     public List<GetConfigurationConfigurationDetail> configurationDetails() {
@@ -116,7 +116,7 @@ public final class GetConfigurationResult {
         return this.dbConfigurationOverrides;
     }
     /**
-     * @return Version of the Postgresql DB
+     * @return Version of the PostgreSQL database.
      * 
      */
     public String dbVersion() {
@@ -130,14 +130,14 @@ public final class GetConfigurationResult {
         return this.definedTags;
     }
     /**
-     * @return Config description
+     * @return A description for the configuration.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Config display name
+     * @return A user-friendly display name for the configuration. Avoid entering confidential information.
      * 
      */
     public String displayName() {
@@ -151,21 +151,21 @@ public final class GetConfigurationResult {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier for the configuration. Immutable on creation.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+     * @return Memory size in gigabytes with 1GB increment.
      * 
      */
     public Integer instanceMemorySizeInGbs() {
         return this.instanceMemorySizeInGbs;
     }
     /**
-     * @return CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * @return CPU core count.
      * 
      */
     public Integer instanceOcpuCount() {
@@ -179,14 +179,14 @@ public final class GetConfigurationResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return Compute Shape Name like VM.Standard3.Flex.
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     public String shape() {
         return this.shape;
     }
     /**
-     * @return The current state of the Configuration.
+     * @return The current state of the configuration.
      * 
      */
     public String state() {
@@ -200,7 +200,7 @@ public final class GetConfigurationResult {
         return this.systemTags;
     }
     /**
-     * @return The time Configuration was created. An RFC3339 formatted datetime string
+     * @return The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {

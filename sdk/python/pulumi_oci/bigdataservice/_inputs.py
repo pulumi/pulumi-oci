@@ -2249,6 +2249,7 @@ class BdsInstanceNodeArgs:
                  ip_address: Optional[pulumi.Input[str]] = None,
                  memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  node_type: Optional[pulumi.Input[str]] = None,
+                 nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[int]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  ssh_fingerprint: Optional[pulumi.Input[str]] = None,
@@ -2267,6 +2268,7 @@ class BdsInstanceNodeArgs:
         :param pulumi.Input[str] ip_address: IP address of the node
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param pulumi.Input[str] node_type: The Big Data Service cluster node type.
+        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2297,6 +2299,8 @@ class BdsInstanceNodeArgs:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if node_type is not None:
             pulumi.set(__self__, "node_type", node_type)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
         if shape is not None:
@@ -2431,6 +2435,18 @@ class BdsInstanceNodeArgs:
     @node_type.setter
     def node_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "node_type", value)
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @nvmes.setter
+    def nvmes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "nvmes", value)
 
     @property
     @pulumi.getter

@@ -2520,6 +2520,7 @@ class BdsInstanceNode(dict):
                  ip_address: Optional[str] = None,
                  memory_in_gbs: Optional[int] = None,
                  node_type: Optional[str] = None,
+                 nvmes: Optional[int] = None,
                  ocpus: Optional[int] = None,
                  shape: Optional[str] = None,
                  ssh_fingerprint: Optional[str] = None,
@@ -2538,6 +2539,7 @@ class BdsInstanceNode(dict):
         :param str ip_address: IP address of the node
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param str node_type: The Big Data Service cluster node type.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2568,6 +2570,8 @@ class BdsInstanceNode(dict):
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if node_type is not None:
             pulumi.set(__self__, "node_type", node_type)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
         if shape is not None:
@@ -2662,6 +2666,14 @@ class BdsInstanceNode(dict):
         The Big Data Service cluster node type.
         """
         return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[int]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -5795,6 +5807,7 @@ class GetBdsInstanceNodeResult(dict):
                  ip_address: str,
                  memory_in_gbs: int,
                  node_type: str,
+                 nvmes: int,
                  ocpus: int,
                  shape: str,
                  ssh_fingerprint: str,
@@ -5813,6 +5826,7 @@ class GetBdsInstanceNodeResult(dict):
         :param str ip_address: IP address of the node.
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param str node_type: Cluster node type.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         :param str shape: Shape of the node.
         :param str ssh_fingerprint: The fingerprint of the SSH key used for node access.
@@ -5831,6 +5845,7 @@ class GetBdsInstanceNodeResult(dict):
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "node_type", node_type)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "ssh_fingerprint", ssh_fingerprint)
@@ -5918,6 +5933,14 @@ class GetBdsInstanceNodeResult(dict):
         Cluster node type.
         """
         return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter
@@ -7398,6 +7421,7 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
                  ip_address: str,
                  memory_in_gbs: int,
                  node_type: str,
+                 nvmes: int,
                  ocpus: int,
                  shape: str,
                  ssh_fingerprint: str,
@@ -7416,6 +7440,7 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         :param str ip_address: IP address of the node.
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param str node_type: Cluster node type.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         :param str shape: Shape of the node.
         :param str ssh_fingerprint: The fingerprint of the SSH key used for node access.
@@ -7434,6 +7459,7 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "node_type", node_type)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "ssh_fingerprint", ssh_fingerprint)
@@ -7521,6 +7547,14 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         Cluster node type.
         """
         return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
 
     @property
     @pulumi.getter

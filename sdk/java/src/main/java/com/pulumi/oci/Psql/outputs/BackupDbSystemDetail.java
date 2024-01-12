@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BackupDbSystemDetail {
     /**
-     * @return The major and minor versions of the DbSystem software.
+     * @return The major and minor versions of the database system software.
      * 
      */
     private @Nullable String dbVersion;
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      */
     private @Nullable String systemType;
 
     private BackupDbSystemDetail() {}
     /**
-     * @return The major and minor versions of the DbSystem software.
+     * @return The major and minor versions of the database system software.
      * 
      */
     public Optional<String> dbVersion() {
         return Optional.ofNullable(this.dbVersion);
     }
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      */
     public Optional<String> systemType() {

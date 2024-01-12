@@ -13,49 +13,49 @@ namespace Pulumi.Oci.Psql.Inputs
     public sealed class ConfigurationConfigurationDetailItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Range or list of allowed values
+        /// Range or list of allowed values.
         /// </summary>
         [Input("allowedValues")]
         public Input<string>? AllowedValues { get; set; }
 
         /// <summary>
-        /// Key is the configuration key.
+        /// Configuration variable name.
         /// </summary>
         [Input("configKey")]
         public Input<string>? ConfigKey { get; set; }
 
         /// <summary>
-        /// Describes about the Datatype value.
+        /// Data type of the variable.
         /// </summary>
         [Input("dataType")]
         public Input<string>? DataType { get; set; }
 
         /// <summary>
-        /// Default value
+        /// Default value for the configuration variable.
         /// </summary>
         [Input("defaultConfigValue")]
         public Input<string>? DefaultConfigValue { get; set; }
 
         /// <summary>
-        /// (Updatable) Details about the Configuration Set.
+        /// (Updatable) Details about the configuration set.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// This flags tells whether the value is overridable or not.
+        /// Whether the value can be overridden or not.
         /// </summary>
         [Input("isOverridable")]
         public Input<bool>? IsOverridable { get; set; }
 
         /// <summary>
-        /// If true, modfying this configuration value will requires restart.
+        /// If true, modifying this configuration value will require a restart of the database.
         /// </summary>
         [Input("isRestartRequired")]
         public Input<bool>? IsRestartRequired { get; set; }
 
         /// <summary>
-        /// User selected configuration value
+        /// User-selected variable value.
         /// </summary>
         [Input("overridenConfigValue")]
         public Input<string>? OverridenConfigValue { get; set; }

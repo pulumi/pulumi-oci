@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
 //
-// Returns a list of Default Configurations.
+// Returns a list of default configurations.
 //
 // ## Example Usage
 //
@@ -56,34 +56,34 @@ func GetDefaultConfigurations(ctx *pulumi.Context, args *GetDefaultConfiguration
 
 // A collection of arguments for invoking getDefaultConfigurations.
 type GetDefaultConfigurationsArgs struct {
-	// unique Configuration identifier
+	// A unique identifier for the configuration.
 	ConfigurationId *string `pulumi:"configurationId"`
-	// Verison of the Postgresql DB like 14.5
+	// Verison of the PostgreSQL database, such as 14.9.
 	DbVersion *string `pulumi:"dbVersion"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                          `pulumi:"displayName"`
 	Filters     []GetDefaultConfigurationsFilter `pulumi:"filters"`
-	// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape *string `pulumi:"shape"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getDefaultConfigurations.
 type GetDefaultConfigurationsResult struct {
 	ConfigurationId *string `pulumi:"configurationId"`
-	// Version of the Postgresql DB
+	// Version of the PostgreSQL database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// The list of default_configuration_collection.
 	DefaultConfigurationCollections []GetDefaultConfigurationsDefaultConfigurationCollection `pulumi:"defaultConfigurationCollections"`
-	// Config display name
+	// A user-friendly display name for the configuration.
 	DisplayName *string                          `pulumi:"displayName"`
 	Filters     []GetDefaultConfigurationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Compute Shape Name like VM.Standard3.Flex.
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape *string `pulumi:"shape"`
-	// The current state of the Configuration.
+	// The current state of the configuration.
 	State *string `pulumi:"state"`
 }
 
@@ -102,16 +102,16 @@ func GetDefaultConfigurationsOutput(ctx *pulumi.Context, args GetDefaultConfigur
 
 // A collection of arguments for invoking getDefaultConfigurations.
 type GetDefaultConfigurationsOutputArgs struct {
-	// unique Configuration identifier
+	// A unique identifier for the configuration.
 	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
-	// Verison of the Postgresql DB like 14.5
+	// Verison of the PostgreSQL database, such as 14.9.
 	DbVersion pulumi.StringPtrInput `pulumi:"dbVersion"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput                    `pulumi:"displayName"`
 	Filters     GetDefaultConfigurationsFilterArrayInput `pulumi:"filters"`
-	// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -138,7 +138,7 @@ func (o GetDefaultConfigurationsResultOutput) ConfigurationId() pulumi.StringPtr
 	return o.ApplyT(func(v GetDefaultConfigurationsResult) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
 }
 
-// Version of the Postgresql DB
+// Version of the PostgreSQL database.
 func (o GetDefaultConfigurationsResultOutput) DbVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsResult) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
@@ -150,7 +150,7 @@ func (o GetDefaultConfigurationsResultOutput) DefaultConfigurationCollections() 
 	}).(GetDefaultConfigurationsDefaultConfigurationCollectionArrayOutput)
 }
 
-// Config display name
+// A user-friendly display name for the configuration.
 func (o GetDefaultConfigurationsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -164,12 +164,12 @@ func (o GetDefaultConfigurationsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Compute Shape Name like VM.Standard3.Flex.
+// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 func (o GetDefaultConfigurationsResultOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the Configuration.
+// The current state of the configuration.
 func (o GetDefaultConfigurationsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
  *
- * Gets a Backup by identifier
+ * Gets a backup by identifier.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getBackup(args: GetBackupArgs, opts?: pulumi.InvokeOptions): Pro
  */
 export interface GetBackupArgs {
     /**
-     * unique Backup identifier
+     * A unique identifier for the backup.
      */
     backupId: string;
 }
@@ -46,19 +46,19 @@ export interface GetBackupArgs {
 export interface GetBackupResult {
     readonly backupId: string;
     /**
-     * Backup size in GB.
+     * The size of the backup, in gigabytes.
      */
     readonly backupSize: number;
     /**
-     * Backup compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      */
     readonly compartmentId: string;
     /**
-     * Information about the DbSystem associated to a backup.
+     * Information about the database system associated with a backup.
      */
     readonly dbSystemDetails: outputs.Psql.GetBackupDbSystemDetail[];
     /**
-     * The source DbSystem OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
      */
     readonly dbSystemId: string;
     /**
@@ -66,11 +66,11 @@ export interface GetBackupResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * Backup description
+     * A description for the backup.
      */
     readonly description: string;
     /**
-     * Backup display name
+     * A user-friendly display name for the backup. Avoid entering confidential information.
      */
     readonly displayName: string;
     /**
@@ -78,7 +78,7 @@ export interface GetBackupResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Unique identifier that is immutable on creation
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
      */
     readonly id: string;
     /**
@@ -98,11 +98,11 @@ export interface GetBackupResult {
      */
     readonly retentionPeriod: number;
     /**
-     * Specifies whether the backup was created manually, or via scheduled backup policy
+     * Specifies whether the backup was created manually, or by a management policy.
      */
     readonly sourceType: string;
     /**
-     * The current state of the Backup.
+     * The current state of the backup.
      */
     readonly state: string;
     /**
@@ -110,18 +110,18 @@ export interface GetBackupResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the the Backup was created. An RFC3339 formatted datetime string
+     * The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
     /**
-     * The time the Backup was updated. An RFC3339 formatted datetime string
+     * The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
  *
- * Gets a Backup by identifier
+ * Gets a backup by identifier.
  *
  * ## Example Usage
  *
@@ -143,7 +143,7 @@ export function getBackupOutput(args: GetBackupOutputArgs, opts?: pulumi.InvokeO
  */
 export interface GetBackupOutputArgs {
     /**
-     * unique Backup identifier
+     * A unique identifier for the backup.
      */
     backupId: pulumi.Input<string>;
 }

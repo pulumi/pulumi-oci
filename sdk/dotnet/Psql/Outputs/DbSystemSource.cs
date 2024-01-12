@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class DbSystemSource
     {
         /// <summary>
-        /// DbSystem backup identifier.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         /// </summary>
         public readonly string? BackupId;
         /// <summary>
-        /// Restore the DB config overrides from backup. Default is false
+        /// Deprecated. Don't use.
         /// </summary>
         public readonly bool? IsHavingRestoreConfigOverrides;
         /// <summary>

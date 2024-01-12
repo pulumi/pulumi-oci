@@ -16,14 +16,14 @@ public final class BackupDbSystemDetailArgs extends com.pulumi.resources.Resourc
     public static final BackupDbSystemDetailArgs Empty = new BackupDbSystemDetailArgs();
 
     /**
-     * The major and minor versions of the DbSystem software.
+     * The major and minor versions of the database system software.
      * 
      */
     @Import(name="dbVersion")
     private @Nullable Output<String> dbVersion;
 
     /**
-     * @return The major and minor versions of the DbSystem software.
+     * @return The major and minor versions of the database system software.
      * 
      */
     public Optional<Output<String>> dbVersion() {
@@ -31,14 +31,14 @@ public final class BackupDbSystemDetailArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * Type of the DbSystem.
+     * Type of the database system.
      * 
      */
     @Import(name="systemType")
     private @Nullable Output<String> systemType;
 
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      */
     public Optional<Output<String>> systemType() {
@@ -71,7 +71,7 @@ public final class BackupDbSystemDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param dbVersion The major and minor versions of the DbSystem software.
+         * @param dbVersion The major and minor versions of the database system software.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class BackupDbSystemDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param dbVersion The major and minor versions of the DbSystem software.
+         * @param dbVersion The major and minor versions of the database system software.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class BackupDbSystemDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param systemType Type of the DbSystem.
+         * @param systemType Type of the database system.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class BackupDbSystemDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param systemType Type of the DbSystem.
+         * @param systemType Type of the database system.
          * 
          * @return builder
          * 

@@ -10,6 +10,7 @@ import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemInstance;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemInstancesDetail;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemManagementPolicy;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemNetworkDetail;
+import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemPatchOperation;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemSource;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemStorageDetail;
 import java.lang.Integer;
@@ -22,23 +23,24 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemsDbSystemCollectionItem {
     /**
-     * @return The DB system username.
+     * @return The database system administrator username.
      * 
      */
     private String adminUsername;
+    private String applyConfig;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
     /**
-     * @return Configuration identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      * 
      */
     private String configId;
     private List<GetDbSystemsDbSystemCollectionItemCredential> credentials;
     /**
-     * @return The major and minor versions of the DbSystem software.
+     * @return The major and minor versions of the database system software.
      * 
      */
     private String dbVersion;
@@ -48,7 +50,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Description of the DbInstance.
+     * @return Description of the database instance node.
      * 
      */
     private String description;
@@ -63,27 +65,27 @@ public final class GetDbSystemsDbSystemCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return unique DbSystem identifier
+     * @return A unique identifier for the database system.
      * 
      */
     private String id;
     /**
-     * @return Count of DbInstances in the DbSystem.
+     * @return Count of instances, or nodes, in the database system.
      * 
      */
     private Integer instanceCount;
     /**
-     * @return The total amount of memory available to each DbInstance, in gigabytes.
+     * @return The total amount of memory available to each database instance node, in gigabytes.
      * 
      */
     private Integer instanceMemorySizeInGbs;
     /**
-     * @return The total number of OCPUs available to each DbInstance.
+     * @return The total number of OCPUs available to each database instance node.
      * 
      */
     private Integer instanceOcpuCount;
     /**
-     * @return The list of DbInstances in the DbSystem.
+     * @return The list of instances, or nodes, in the database system.
      * 
      */
     private List<GetDbSystemsDbSystemCollectionItemInstance> instances;
@@ -94,32 +96,33 @@ public final class GetDbSystemsDbSystemCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return PostgreSQL DB system management policy
+     * @return PostgreSQL database system management policy.
      * 
      */
     private List<GetDbSystemsDbSystemCollectionItemManagementPolicy> managementPolicies;
     /**
-     * @return DbSystem network details.
+     * @return Network details for the database system.
      * 
      */
     private List<GetDbSystemsDbSystemCollectionItemNetworkDetail> networkDetails;
+    private List<GetDbSystemsDbSystemCollectionItemPatchOperation> patchOperations;
     /**
-     * @return Shape of dbInstance.
+     * @return The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
      * 
      */
     private String shape;
     /**
-     * @return New source is used to restore the DB system.
+     * @return The source used to restore the database system.
      * 
      */
     private List<GetDbSystemsDbSystemCollectionItemSource> sources;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     private String state;
     /**
-     * @return Storage details of the DbSystem.
+     * @return Storage details of the database system.
      * 
      */
     private List<GetDbSystemsDbSystemCollectionItemStorageDetail> storageDetails;
@@ -129,28 +132,31 @@ public final class GetDbSystemsDbSystemCollectionItem {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      */
     private String systemType;
     /**
-     * @return The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeUpdated;
 
     private GetDbSystemsDbSystemCollectionItem() {}
     /**
-     * @return The DB system username.
+     * @return The database system administrator username.
      * 
      */
     public String adminUsername() {
         return this.adminUsername;
+    }
+    public String applyConfig() {
+        return this.applyConfig;
     }
     /**
      * @return The ID of the compartment in which to list resources.
@@ -160,7 +166,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
         return this.compartmentId;
     }
     /**
-     * @return Configuration identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      * 
      */
     public String configId() {
@@ -170,7 +176,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
         return this.credentials;
     }
     /**
-     * @return The major and minor versions of the DbSystem software.
+     * @return The major and minor versions of the database system software.
      * 
      */
     public String dbVersion() {
@@ -184,7 +190,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return Description of the DbInstance.
+     * @return Description of the database instance node.
      * 
      */
     public String description() {
@@ -205,35 +211,35 @@ public final class GetDbSystemsDbSystemCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return unique DbSystem identifier
+     * @return A unique identifier for the database system.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Count of DbInstances in the DbSystem.
+     * @return Count of instances, or nodes, in the database system.
      * 
      */
     public Integer instanceCount() {
         return this.instanceCount;
     }
     /**
-     * @return The total amount of memory available to each DbInstance, in gigabytes.
+     * @return The total amount of memory available to each database instance node, in gigabytes.
      * 
      */
     public Integer instanceMemorySizeInGbs() {
         return this.instanceMemorySizeInGbs;
     }
     /**
-     * @return The total number of OCPUs available to each DbInstance.
+     * @return The total number of OCPUs available to each database instance node.
      * 
      */
     public Integer instanceOcpuCount() {
         return this.instanceOcpuCount;
     }
     /**
-     * @return The list of DbInstances in the DbSystem.
+     * @return The list of instances, or nodes, in the database system.
      * 
      */
     public List<GetDbSystemsDbSystemCollectionItemInstance> instances() {
@@ -250,42 +256,45 @@ public final class GetDbSystemsDbSystemCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return PostgreSQL DB system management policy
+     * @return PostgreSQL database system management policy.
      * 
      */
     public List<GetDbSystemsDbSystemCollectionItemManagementPolicy> managementPolicies() {
         return this.managementPolicies;
     }
     /**
-     * @return DbSystem network details.
+     * @return Network details for the database system.
      * 
      */
     public List<GetDbSystemsDbSystemCollectionItemNetworkDetail> networkDetails() {
         return this.networkDetails;
     }
+    public List<GetDbSystemsDbSystemCollectionItemPatchOperation> patchOperations() {
+        return this.patchOperations;
+    }
     /**
-     * @return Shape of dbInstance.
+     * @return The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
      * 
      */
     public String shape() {
         return this.shape;
     }
     /**
-     * @return New source is used to restore the DB system.
+     * @return The source used to restore the database system.
      * 
      */
     public List<GetDbSystemsDbSystemCollectionItemSource> sources() {
         return this.sources;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Storage details of the DbSystem.
+     * @return Storage details of the database system.
      * 
      */
     public List<GetDbSystemsDbSystemCollectionItemStorageDetail> storageDetails() {
@@ -299,21 +308,21 @@ public final class GetDbSystemsDbSystemCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      */
     public String systemType() {
         return this.systemType;
     }
     /**
-     * @return The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeUpdated() {
@@ -330,6 +339,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String adminUsername;
+        private String applyConfig;
         private String compartmentId;
         private String configId;
         private List<GetDbSystemsDbSystemCollectionItemCredential> credentials;
@@ -347,6 +357,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
         private String lifecycleDetails;
         private List<GetDbSystemsDbSystemCollectionItemManagementPolicy> managementPolicies;
         private List<GetDbSystemsDbSystemCollectionItemNetworkDetail> networkDetails;
+        private List<GetDbSystemsDbSystemCollectionItemPatchOperation> patchOperations;
         private String shape;
         private List<GetDbSystemsDbSystemCollectionItemSource> sources;
         private String state;
@@ -359,6 +370,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
         public Builder(GetDbSystemsDbSystemCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminUsername = defaults.adminUsername;
+    	      this.applyConfig = defaults.applyConfig;
     	      this.compartmentId = defaults.compartmentId;
     	      this.configId = defaults.configId;
     	      this.credentials = defaults.credentials;
@@ -376,6 +388,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managementPolicies = defaults.managementPolicies;
     	      this.networkDetails = defaults.networkDetails;
+    	      this.patchOperations = defaults.patchOperations;
     	      this.shape = defaults.shape;
     	      this.sources = defaults.sources;
     	      this.state = defaults.state;
@@ -392,6 +405,14 @@ public final class GetDbSystemsDbSystemCollectionItem {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "adminUsername");
             }
             this.adminUsername = adminUsername;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder applyConfig(String applyConfig) {
+            if (applyConfig == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "applyConfig");
+            }
+            this.applyConfig = applyConfig;
             return this;
         }
         @CustomType.Setter
@@ -546,6 +567,17 @@ public final class GetDbSystemsDbSystemCollectionItem {
             return networkDetails(List.of(networkDetails));
         }
         @CustomType.Setter
+        public Builder patchOperations(List<GetDbSystemsDbSystemCollectionItemPatchOperation> patchOperations) {
+            if (patchOperations == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "patchOperations");
+            }
+            this.patchOperations = patchOperations;
+            return this;
+        }
+        public Builder patchOperations(GetDbSystemsDbSystemCollectionItemPatchOperation... patchOperations) {
+            return patchOperations(List.of(patchOperations));
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "shape");
@@ -618,6 +650,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
         public GetDbSystemsDbSystemCollectionItem build() {
             final var _resultValue = new GetDbSystemsDbSystemCollectionItem();
             _resultValue.adminUsername = adminUsername;
+            _resultValue.applyConfig = applyConfig;
             _resultValue.compartmentId = compartmentId;
             _resultValue.configId = configId;
             _resultValue.credentials = credentials;
@@ -635,6 +668,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.managementPolicies = managementPolicies;
             _resultValue.networkDetails = networkDetails;
+            _resultValue.patchOperations = patchOperations;
             _resultValue.shape = shape;
             _resultValue.sources = sources;
             _resultValue.state = state;

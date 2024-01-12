@@ -16,14 +16,14 @@ public final class VolumeBackupPolicyAssignmentState extends com.pulumi.resource
     public static final VolumeBackupPolicyAssignmentState Empty = new VolumeBackupPolicyAssignmentState();
 
     /**
-     * The OCID of the volume to assign the policy to.
+     * The OCID of the volume or volume group to assign the policy to.
      * 
      */
     @Import(name="assetId")
     private @Nullable Output<String> assetId;
 
     /**
-     * @return The OCID of the volume to assign the policy to.
+     * @return The OCID of the volume or volume group to assign the policy to.
      * 
      */
     public Optional<Output<String>> assetId() {
@@ -93,7 +93,7 @@ public final class VolumeBackupPolicyAssignmentState extends com.pulumi.resource
         }
 
         /**
-         * @param assetId The OCID of the volume to assign the policy to.
+         * @param assetId The OCID of the volume or volume group to assign the policy to.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class VolumeBackupPolicyAssignmentState extends com.pulumi.resource
         }
 
         /**
-         * @param assetId The OCID of the volume to assign the policy to.
+         * @param assetId The OCID of the volume or volume group to assign the policy to.
          * 
          * @return builder
          * 

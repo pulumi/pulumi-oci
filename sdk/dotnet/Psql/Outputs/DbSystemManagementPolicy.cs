@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class DbSystemManagementPolicy
     {
         /// <summary>
-        /// (Updatable) Posgresql DB system backup policy
+        /// (Updatable) PostgreSQL database system backup policy.
         /// </summary>
         public readonly Outputs.DbSystemManagementPolicyBackupPolicy? BackupPolicy;
         /// <summary>

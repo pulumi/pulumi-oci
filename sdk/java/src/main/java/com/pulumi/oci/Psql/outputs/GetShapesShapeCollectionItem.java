@@ -17,17 +17,17 @@ public final class GetShapesShapeCollectionItem {
      */
     private String id;
     /**
-     * @return The amount of memory in GB
+     * @return The amount of memory in gigabytes.
      * 
      */
     private Integer memorySizeInGbs;
     /**
-     * @return The number of OCPUs
+     * @return The number of OCPUs.
      * 
      */
     private Integer ocpuCount;
     /**
-     * @return The Compute Shape Name like VM.Standard.E4.Flex
+     * @return The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
      * 
      */
     private String shape;
@@ -41,21 +41,21 @@ public final class GetShapesShapeCollectionItem {
         return this.id;
     }
     /**
-     * @return The amount of memory in GB
+     * @return The amount of memory in gigabytes.
      * 
      */
     public Integer memorySizeInGbs() {
         return this.memorySizeInGbs;
     }
     /**
-     * @return The number of OCPUs
+     * @return The number of OCPUs.
      * 
      */
     public Integer ocpuCount() {
         return this.ocpuCount;
     }
     /**
-     * @return The Compute Shape Name like VM.Standard.E4.Flex
+     * @return The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
      * 
      */
     public String shape() {

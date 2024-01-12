@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
  *
- * Returns a list of Backup.
+ * Returns a list of backups.
  *
  * ## Example Usage
  *
@@ -49,7 +49,7 @@ export function getBackups(args?: GetBackupsArgs, opts?: pulumi.InvokeOptions): 
  */
 export interface GetBackupsArgs {
     /**
-     * unique Backup identifier
+     * A unique identifier for the backup.
      */
     backupId?: string;
     /**
@@ -62,19 +62,19 @@ export interface GetBackupsArgs {
     displayName?: string;
     filters?: inputs.Psql.GetBackupsFilter[];
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      */
     id?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
     state?: string;
     /**
-     * The End date for getting  backups. An RFC3339 formatted datetime string.
+     * The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
      */
     timeEnded?: string;
     /**
-     * The start date for getting  backups. An RFC3339 formatted datetime string
+     * The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
      */
     timeStarted?: string;
 }
@@ -89,20 +89,20 @@ export interface GetBackupsResult {
     readonly backupCollections: outputs.Psql.GetBackupsBackupCollection[];
     readonly backupId?: string;
     /**
-     * Backup compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      */
     readonly compartmentId?: string;
     /**
-     * Backup display name
+     * A user-friendly display name for the backup. Avoid entering confidential information.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Psql.GetBackupsFilter[];
     /**
-     * Unique identifier that is immutable on creation
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
      */
     readonly id?: string;
     /**
-     * The current state of the Backup.
+     * The current state of the backup.
      */
     readonly state?: string;
     readonly timeEnded?: string;
@@ -111,7 +111,7 @@ export interface GetBackupsResult {
 /**
  * This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
  *
- * Returns a list of Backup.
+ * Returns a list of backups.
  *
  * ## Example Usage
  *
@@ -139,7 +139,7 @@ export function getBackupsOutput(args?: GetBackupsOutputArgs, opts?: pulumi.Invo
  */
 export interface GetBackupsOutputArgs {
     /**
-     * unique Backup identifier
+     * A unique identifier for the backup.
      */
     backupId?: pulumi.Input<string>;
     /**
@@ -152,19 +152,19 @@ export interface GetBackupsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetBackupsFilterArgs>[]>;
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
     state?: pulumi.Input<string>;
     /**
-     * The End date for getting  backups. An RFC3339 formatted datetime string.
+     * The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
      */
     timeEnded?: pulumi.Input<string>;
     /**
-     * The start date for getting  backups. An RFC3339 formatted datetime string
+     * The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted datetime string.
      */
     timeStarted?: pulumi.Input<string>;
 }

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetDbSystemInstancesDetailResult
     {
         /// <summary>
-        /// Description of the DbInstance.
+        /// Description of the database instance node.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Display name of the DbInstance.
+        /// A user-friendly display name for the database instance node. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
         public readonly string PrivateIp;

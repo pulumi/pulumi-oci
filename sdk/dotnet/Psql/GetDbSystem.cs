@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Gets a DbSystem by identifier
+        /// Gets a database system by identifier.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Psql
         /// <summary>
         /// This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
         /// 
-        /// Gets a DbSystem by identifier
+        /// Gets a database system by identifier.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -78,13 +78,13 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDbSystemArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         [Input("dbSystemId", required: true)]
         public string DbSystemId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to exclude DB config  when this query param is set to OverrideDbConfig
+        /// A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
         /// </summary>
         [Input("excludedFields")]
         public string? ExcludedFields { get; set; }
@@ -98,13 +98,13 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDbSystemInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique DbSystem identifier
+        /// A unique identifier for the database system.
         /// </summary>
         [Input("dbSystemId", required: true)]
         public Input<string> DbSystemId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to exclude DB config  when this query param is set to OverrideDbConfig
+        /// A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
         /// </summary>
         [Input("excludedFields")]
         public Input<string>? ExcludedFields { get; set; }
@@ -120,21 +120,22 @@ namespace Pulumi.Oci.Psql
     public sealed class GetDbSystemResult
     {
         /// <summary>
-        /// The DB system username.
+        /// The database system administrator username.
         /// </summary>
         public readonly string AdminUsername;
+        public readonly string ApplyConfig;
         /// <summary>
-        /// Compartment identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Configuration identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         /// </summary>
         public readonly string ConfigId;
         public readonly ImmutableArray<Outputs.GetDbSystemCredentialResult> Credentials;
         public readonly string DbSystemId;
         /// <summary>
-        /// The major and minor versions of the DbSystem software.
+        /// The major and minor versions of the database system software.
         /// </summary>
         public readonly string DbVersion;
         /// <summary>
@@ -142,11 +143,11 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Description of the DbInstance.
+        /// Description of the database instance node.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Display name of the DbInstance.
+        /// A user-friendly display name for the database instance node. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
         public readonly string? ExcludedFields;
@@ -155,23 +156,23 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique identifier that is immutable on creation.
+        /// A unique identifier for the database instance node. Immutable on creation.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Count of DbInstances in the DbSystem.
+        /// Count of instances, or nodes, in the database system.
         /// </summary>
         public readonly int InstanceCount;
         /// <summary>
-        /// The total amount of memory available to each DbInstance, in gigabytes.
+        /// The total amount of memory available to each database instance node, in gigabytes.
         /// </summary>
         public readonly int InstanceMemorySizeInGbs;
         /// <summary>
-        /// The total number of OCPUs available to each DbInstance.
+        /// The total number of OCPUs available to each database instance node.
         /// </summary>
         public readonly int InstanceOcpuCount;
         /// <summary>
-        /// The list of DbInstances in the DbSystem.
+        /// The list of instances, or nodes, in the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemInstanceResult> Instances;
         public readonly ImmutableArray<Outputs.GetDbSystemInstancesDetailResult> InstancesDetails;
@@ -180,27 +181,28 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// PostgreSQL DB system management policy
+        /// PostgreSQL database system management policy.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemManagementPolicyResult> ManagementPolicies;
         /// <summary>
-        /// DbSystem network details.
+        /// Network details for the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemNetworkDetailResult> NetworkDetails;
+        public readonly ImmutableArray<Outputs.GetDbSystemPatchOperationResult> PatchOperations;
         /// <summary>
-        /// Shape of dbInstance.
+        /// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
         /// </summary>
         public readonly string Shape;
         /// <summary>
-        /// New source is used to restore the DB system.
+        /// The source used to restore the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemSourceResult> Sources;
         /// <summary>
-        /// The current state of the DbSystem.
+        /// The current state of the database system.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Storage details of the DbSystem.
+        /// Storage details of the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemStorageDetailResult> StorageDetails;
         /// <summary>
@@ -208,21 +210,23 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// Type of the DbSystem.
+        /// Type of the database system.
         /// </summary>
         public readonly string SystemType;
         /// <summary>
-        /// The time the the DbSystem was created. An RFC3339 formatted datetime string
+        /// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the DbSystem was updated. An RFC3339 formatted datetime string
+        /// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
 
         [OutputConstructor]
         private GetDbSystemResult(
             string adminUsername,
+
+            string applyConfig,
 
             string compartmentId,
 
@@ -262,6 +266,8 @@ namespace Pulumi.Oci.Psql
 
             ImmutableArray<Outputs.GetDbSystemNetworkDetailResult> networkDetails,
 
+            ImmutableArray<Outputs.GetDbSystemPatchOperationResult> patchOperations,
+
             string shape,
 
             ImmutableArray<Outputs.GetDbSystemSourceResult> sources,
@@ -279,6 +285,7 @@ namespace Pulumi.Oci.Psql
             string timeUpdated)
         {
             AdminUsername = adminUsername;
+            ApplyConfig = applyConfig;
             CompartmentId = compartmentId;
             ConfigId = configId;
             Credentials = credentials;
@@ -298,6 +305,7 @@ namespace Pulumi.Oci.Psql
             LifecycleDetails = lifecycleDetails;
             ManagementPolicies = managementPolicies;
             NetworkDetails = networkDetails;
+            PatchOperations = patchOperations;
             Shape = shape;
             Sources = sources;
             State = state;

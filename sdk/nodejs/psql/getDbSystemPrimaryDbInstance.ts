@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
  *
- * Gets the primary DbInstance details.
+ * Gets the primary database instance node details.
  *
  * ## Example Usage
  *
@@ -33,7 +33,7 @@ export function getDbSystemPrimaryDbInstance(args: GetDbSystemPrimaryDbInstanceA
  */
 export interface GetDbSystemPrimaryDbInstanceArgs {
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      */
     dbSystemId: string;
 }
@@ -43,7 +43,7 @@ export interface GetDbSystemPrimaryDbInstanceArgs {
  */
 export interface GetDbSystemPrimaryDbInstanceResult {
     /**
-     * Unique identifier of the DbInstance.
+     * A unique identifier for the primary database instance node.
      */
     readonly dbInstanceId: string;
     readonly dbSystemId: string;
@@ -55,7 +55,7 @@ export interface GetDbSystemPrimaryDbInstanceResult {
 /**
  * This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
  *
- * Gets the primary DbInstance details.
+ * Gets the primary database instance node details.
  *
  * ## Example Usage
  *
@@ -77,7 +77,7 @@ export function getDbSystemPrimaryDbInstanceOutput(args: GetDbSystemPrimaryDbIns
  */
 export interface GetDbSystemPrimaryDbInstanceOutputArgs {
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      */
     dbSystemId: pulumi.Input<string>;
 }

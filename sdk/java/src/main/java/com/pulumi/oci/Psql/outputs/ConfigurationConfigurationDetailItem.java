@@ -13,98 +13,98 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigurationConfigurationDetailItem {
     /**
-     * @return Range or list of allowed values
+     * @return Range or list of allowed values.
      * 
      */
     private @Nullable String allowedValues;
     /**
-     * @return Key is the configuration key.
+     * @return Configuration variable name.
      * 
      */
     private @Nullable String configKey;
     /**
-     * @return Describes about the Datatype value.
+     * @return Data type of the variable.
      * 
      */
     private @Nullable String dataType;
     /**
-     * @return Default value
+     * @return Default value for the configuration variable.
      * 
      */
     private @Nullable String defaultConfigValue;
     /**
-     * @return (Updatable) Details about the Configuration Set.
+     * @return (Updatable) Details about the configuration set.
      * 
      */
     private @Nullable String description;
     /**
-     * @return This flags tells whether the value is overridable or not.
+     * @return Whether the value can be overridden or not.
      * 
      */
     private @Nullable Boolean isOverridable;
     /**
-     * @return If true, modfying this configuration value will requires restart.
+     * @return If true, modifying this configuration value will require a restart of the database.
      * 
      */
     private @Nullable Boolean isRestartRequired;
     /**
-     * @return User selected configuration value
+     * @return User-selected variable value.
      * 
      */
     private @Nullable String overridenConfigValue;
 
     private ConfigurationConfigurationDetailItem() {}
     /**
-     * @return Range or list of allowed values
+     * @return Range or list of allowed values.
      * 
      */
     public Optional<String> allowedValues() {
         return Optional.ofNullable(this.allowedValues);
     }
     /**
-     * @return Key is the configuration key.
+     * @return Configuration variable name.
      * 
      */
     public Optional<String> configKey() {
         return Optional.ofNullable(this.configKey);
     }
     /**
-     * @return Describes about the Datatype value.
+     * @return Data type of the variable.
      * 
      */
     public Optional<String> dataType() {
         return Optional.ofNullable(this.dataType);
     }
     /**
-     * @return Default value
+     * @return Default value for the configuration variable.
      * 
      */
     public Optional<String> defaultConfigValue() {
         return Optional.ofNullable(this.defaultConfigValue);
     }
     /**
-     * @return (Updatable) Details about the Configuration Set.
+     * @return (Updatable) Details about the configuration set.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return This flags tells whether the value is overridable or not.
+     * @return Whether the value can be overridden or not.
      * 
      */
     public Optional<Boolean> isOverridable() {
         return Optional.ofNullable(this.isOverridable);
     }
     /**
-     * @return If true, modfying this configuration value will requires restart.
+     * @return If true, modifying this configuration value will require a restart of the database.
      * 
      */
     public Optional<Boolean> isRestartRequired() {
         return Optional.ofNullable(this.isRestartRequired);
     }
     /**
-     * @return User selected configuration value
+     * @return User-selected variable value.
      * 
      */
     public Optional<String> overridenConfigValue() {

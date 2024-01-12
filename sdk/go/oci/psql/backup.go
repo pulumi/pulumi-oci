@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
 //
-// Creates a new Backup.
+// Creates a new backup.
 //
 // ## Example Usage
 //
@@ -64,19 +64,19 @@ import (
 type Backup struct {
 	pulumi.CustomResourceState
 
-	// Backup size in GB.
+	// The size of the backup, in gigabytes.
 	BackupSize pulumi.IntOutput `pulumi:"backupSize"`
-	// (Updatable) Compartment identifier
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// Information about the DbSystem associated to a backup.
+	// Information about the database system associated with a backup.
 	DbSystemDetails BackupDbSystemDetailArrayOutput `pulumi:"dbSystemDetails"`
-	// Posgresql DbSystem identifier
+	// The ID of the database system.
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) Backup description
+	// (Updatable) A description for the backup.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) Backup display name.
+	// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -91,15 +91,15 @@ type Backup struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriod pulumi.IntOutput `pulumi:"retentionPeriod"`
-	// Specifies whether the backup was created manually, or via scheduled backup policy
+	// Specifies whether the backup was created manually, or by a management policy.
 	SourceType pulumi.StringOutput `pulumi:"sourceType"`
-	// The current state of the Backup.
+	// The current state of the backup.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time the the Backup was created. An RFC3339 formatted datetime string
+	// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the Backup was updated. An RFC3339 formatted datetime string
+	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
@@ -142,19 +142,19 @@ func GetBackup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Backup resources.
 type backupState struct {
-	// Backup size in GB.
+	// The size of the backup, in gigabytes.
 	BackupSize *int `pulumi:"backupSize"`
-	// (Updatable) Compartment identifier
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Information about the DbSystem associated to a backup.
+	// Information about the database system associated with a backup.
 	DbSystemDetails []BackupDbSystemDetail `pulumi:"dbSystemDetails"`
-	// Posgresql DbSystem identifier
+	// The ID of the database system.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Backup description
+	// (Updatable) A description for the backup.
 	Description *string `pulumi:"description"`
-	// (Updatable) Backup display name.
+	// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -169,32 +169,32 @@ type backupState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriod *int `pulumi:"retentionPeriod"`
-	// Specifies whether the backup was created manually, or via scheduled backup policy
+	// Specifies whether the backup was created manually, or by a management policy.
 	SourceType *string `pulumi:"sourceType"`
-	// The current state of the Backup.
+	// The current state of the backup.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the Backup was created. An RFC3339 formatted datetime string
+	// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the Backup was updated. An RFC3339 formatted datetime string
+	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type BackupState struct {
-	// Backup size in GB.
+	// The size of the backup, in gigabytes.
 	BackupSize pulumi.IntPtrInput
-	// (Updatable) Compartment identifier
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId pulumi.StringPtrInput
-	// Information about the DbSystem associated to a backup.
+	// Information about the database system associated with a backup.
 	DbSystemDetails BackupDbSystemDetailArrayInput
-	// Posgresql DbSystem identifier
+	// The ID of the database system.
 	DbSystemId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Backup description
+	// (Updatable) A description for the backup.
 	Description pulumi.StringPtrInput
-	// (Updatable) Backup display name.
+	// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -209,15 +209,15 @@ type BackupState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriod pulumi.IntPtrInput
-	// Specifies whether the backup was created manually, or via scheduled backup policy
+	// Specifies whether the backup was created manually, or by a management policy.
 	SourceType pulumi.StringPtrInput
-	// The current state of the Backup.
+	// The current state of the backup.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time the the Backup was created. An RFC3339 formatted datetime string
+	// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
-	// The time the Backup was updated. An RFC3339 formatted datetime string
+	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringPtrInput
 }
 
@@ -226,15 +226,15 @@ func (BackupState) ElementType() reflect.Type {
 }
 
 type backupArgs struct {
-	// (Updatable) Compartment identifier
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Posgresql DbSystem identifier
+	// The ID of the database system.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Backup description
+	// (Updatable) A description for the backup.
 	Description *string `pulumi:"description"`
-	// (Updatable) Backup display name.
+	// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -247,15 +247,15 @@ type backupArgs struct {
 
 // The set of arguments for constructing a Backup resource.
 type BackupArgs struct {
-	// (Updatable) Compartment identifier
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId pulumi.StringInput
-	// Posgresql DbSystem identifier
+	// The ID of the database system.
 	DbSystemId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Backup description
+	// (Updatable) A description for the backup.
 	Description pulumi.StringPtrInput
-	// (Updatable) Backup display name.
+	// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -353,22 +353,22 @@ func (o BackupOutput) ToBackupOutputWithContext(ctx context.Context) BackupOutpu
 	return o
 }
 
-// Backup size in GB.
+// The size of the backup, in gigabytes.
 func (o BackupOutput) BackupSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Backup) pulumi.IntOutput { return v.BackupSize }).(pulumi.IntOutput)
 }
 
-// (Updatable) Compartment identifier
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 func (o BackupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Information about the DbSystem associated to a backup.
+// Information about the database system associated with a backup.
 func (o BackupOutput) DbSystemDetails() BackupDbSystemDetailArrayOutput {
 	return o.ApplyT(func(v *Backup) BackupDbSystemDetailArrayOutput { return v.DbSystemDetails }).(BackupDbSystemDetailArrayOutput)
 }
 
-// Posgresql DbSystem identifier
+// The ID of the database system.
 func (o BackupOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.DbSystemId }).(pulumi.StringOutput)
 }
@@ -378,12 +378,12 @@ func (o BackupOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Backup) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Backup description
+// (Updatable) A description for the backup.
 func (o BackupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) Backup display name.
+// (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
 func (o BackupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -416,12 +416,12 @@ func (o BackupOutput) RetentionPeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v *Backup) pulumi.IntOutput { return v.RetentionPeriod }).(pulumi.IntOutput)
 }
 
-// Specifies whether the backup was created manually, or via scheduled backup policy
+// Specifies whether the backup was created manually, or by a management policy.
 func (o BackupOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.SourceType }).(pulumi.StringOutput)
 }
 
-// The current state of the Backup.
+// The current state of the backup.
 func (o BackupOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -431,12 +431,12 @@ func (o BackupOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Backup) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the the Backup was created. An RFC3339 formatted datetime string
+// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o BackupOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Backup was updated. An RFC3339 formatted datetime string
+// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o BackupOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

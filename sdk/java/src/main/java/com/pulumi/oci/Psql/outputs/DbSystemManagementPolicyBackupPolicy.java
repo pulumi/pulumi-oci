@@ -14,62 +14,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbSystemManagementPolicyBackupPolicy {
     /**
-     * @return (Updatable) Hour of the day when backup starts.
+     * @return (Updatable) Hour of the day when the backup starts.
      * 
      */
     private @Nullable String backupStart;
     /**
-     * @return (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+     * @return (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
      * 
      */
     private @Nullable List<Integer> daysOfTheMonths;
     /**
-     * @return (Updatable) Weekly days
+     * @return (Updatable) The day of the week that the backup starts.
      * 
      */
     private @Nullable List<String> daysOfTheWeeks;
     /**
-     * @return (Updatable) Backup policy kind
+     * @return (Updatable) The kind of backup policy.
      * 
      */
     private @Nullable String kind;
     /**
-     * @return (Updatable) How many days the customers data should be stored after the db system deletion.
+     * @return (Updatable) How many days the data should be stored after the database system deletion.
      * 
      */
     private @Nullable Integer retentionDays;
 
     private DbSystemManagementPolicyBackupPolicy() {}
     /**
-     * @return (Updatable) Hour of the day when backup starts.
+     * @return (Updatable) Hour of the day when the backup starts.
      * 
      */
     public Optional<String> backupStart() {
         return Optional.ofNullable(this.backupStart);
     }
     /**
-     * @return (Updatable) Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+     * @return (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
      * 
      */
     public List<Integer> daysOfTheMonths() {
         return this.daysOfTheMonths == null ? List.of() : this.daysOfTheMonths;
     }
     /**
-     * @return (Updatable) Weekly days
+     * @return (Updatable) The day of the week that the backup starts.
      * 
      */
     public List<String> daysOfTheWeeks() {
         return this.daysOfTheWeeks == null ? List.of() : this.daysOfTheWeeks;
     }
     /**
-     * @return (Updatable) Backup policy kind
+     * @return (Updatable) The kind of backup policy.
      * 
      */
     public Optional<String> kind() {
         return Optional.ofNullable(this.kind);
     }
     /**
-     * @return (Updatable) How many days the customers data should be stored after the db system deletion.
+     * @return (Updatable) How many days the data should be stored after the database system deletion.
      * 
      */
     public Optional<Integer> retentionDays() {

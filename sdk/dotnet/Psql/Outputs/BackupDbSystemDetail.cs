@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class BackupDbSystemDetail
     {
         /// <summary>
-        /// The major and minor versions of the DbSystem software.
+        /// The major and minor versions of the database system software.
         /// </summary>
         public readonly string? DbVersion;
         /// <summary>
-        /// Type of the DbSystem.
+        /// Type of the database system.
         /// </summary>
         public readonly string? SystemType;
 

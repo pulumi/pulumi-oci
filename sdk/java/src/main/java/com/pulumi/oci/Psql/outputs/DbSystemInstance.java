@@ -12,22 +12,22 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbSystemInstance {
     /**
-     * @return Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * @return Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     private @Nullable String availabilityDomain;
     /**
-     * @return Description of the DbInstance. This field should be input by the user.
+     * @return A user-provided description of the database instance node.
      * 
      */
     private @Nullable String description;
     /**
-     * @return Display name of the DbInstance.
+     * @return Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return Unique identifier that is immutable on creation.
+     * @return A unique identifier for the database instance node. Immutable on creation.
      * 
      */
     private @Nullable String id;
@@ -37,45 +37,45 @@ public final class DbSystemInstance {
      */
     private @Nullable String lifecycleDetails;
     /**
-     * @return The current state of the DbSystem.
+     * @return The current state of the database system.
      * 
      */
     private @Nullable String state;
     /**
-     * @return The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private @Nullable String timeCreated;
     /**
-     * @return The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private @Nullable String timeUpdated;
 
     private DbSystemInstance() {}
     /**
-     * @return Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * @return Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
     /**
-     * @return Description of the DbInstance. This field should be input by the user.
+     * @return A user-provided description of the database instance node.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return Display name of the DbInstance.
+     * @return Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return Unique identifier that is immutable on creation.
+     * @return A unique identifier for the database instance node. Immutable on creation.
      * 
      */
     public Optional<String> id() {
@@ -89,21 +89,21 @@ public final class DbSystemInstance {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
-     * @return The current state of the DbSystem.
+     * @return The current state of the database system.
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Optional<String> timeCreated() {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Optional<String> timeUpdated() {

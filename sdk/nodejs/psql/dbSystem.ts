@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
  *
- * Creates a new DbSystem.
+ * Creates a new database system.
  *
  * ## Example Usage
  *
@@ -34,6 +34,7 @@ import * as utilities from "../utilities";
  *         iops: _var.db_system_storage_details_iops,
  *     },
  *     configId: oci_apm_config_config.test_config.id,
+ *     applyConfig: _var.db_system_apply_config_type,
  *     credentials: {
  *         passwordDetails: {
  *             passwordType: _var.db_system_credentials_password_details_password_type,
@@ -74,6 +75,11 @@ import * as utilities from "../utilities";
  *         isHavingRestoreConfigOverrides: _var.db_system_source_is_having_restore_config_overrides,
  *     },
  *     systemType: _var.db_system_system_type,
+ *     patchOperations: [{
+ *         operation: _var.db_system_patch_operations_operation,
+ *         selection: _var.db_system_patch_operations_selection,
+ *         value: _var.db_system_patch_operations_value,
+ *     }],
  * });
  * ```
  *
@@ -114,23 +120,27 @@ export class DbSystem extends pulumi.CustomResource {
     }
 
     /**
-     * The DB system username.
+     * The database system administrator username.
      */
     public /*out*/ readonly adminUsername!: pulumi.Output<string>;
     /**
-     * (Updatable) Compartment identifier
+     * Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+     */
+    public readonly applyConfig!: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * Configuration identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      */
     public readonly configId!: pulumi.Output<string>;
     /**
-     * Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+     * Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
      */
     public readonly credentials!: pulumi.Output<outputs.Psql.DbSystemCredentials | undefined>;
     /**
-     * Version of DbSystem software.
+     * Version of database system software.
      */
     public readonly dbVersion!: pulumi.Output<string>;
     /**
@@ -138,11 +148,11 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Description of the DbInstance. This field should be input by the user.
+     * A user-provided description of the database instance node.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * Display name of the DbInstance.
+     * Display name of the database instance node. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -150,23 +160,23 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Count of DbInstances to be created in the DbSystem.
+     * (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
      */
     public readonly instanceCount!: pulumi.Output<number>;
     /**
-     * The total amount of memory available to each DbInstance, in gigabytes.
+     * The total amount of memory available to each database instance node, in gigabytes.
      */
     public readonly instanceMemorySizeInGbs!: pulumi.Output<number>;
     /**
-     * The total number of OCPUs available to each DbInstance.
+     * The total number of OCPUs available to each database instance node.
      */
     public readonly instanceOcpuCount!: pulumi.Output<number>;
     /**
-     * The list of DbInstances in the DbSystem.
+     * The list of instances, or nodes, in the database system.
      */
     public /*out*/ readonly instances!: pulumi.Output<outputs.Psql.DbSystemInstance[]>;
     /**
-     * Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+     * Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
      */
     public readonly instancesDetails!: pulumi.Output<outputs.Psql.DbSystemInstancesDetail[]>;
     /**
@@ -174,27 +184,31 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * (Updatable) Posgresql DB system management policy update details
+     * (Updatable) PostgreSQL database system management policy update details.
      */
     public readonly managementPolicy!: pulumi.Output<outputs.Psql.DbSystemManagementPolicy>;
     /**
-     * DbSystem network details.
+     * Network details for the database system.
      */
     public readonly networkDetails!: pulumi.Output<outputs.Psql.DbSystemNetworkDetails>;
     /**
-     * Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+     * (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
+     */
+    public readonly patchOperations!: pulumi.Output<outputs.Psql.DbSystemPatchOperation[] | undefined>;
+    /**
+     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      */
     public readonly shape!: pulumi.Output<string>;
     /**
-     * New source is used to restore the DB system.
+     * The source used to restore the database system.
      */
     public readonly source!: pulumi.Output<outputs.Psql.DbSystemSource>;
     /**
-     * The current state of the DbSystem.
+     * The current state of the database system.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * (Updatable) Storage details of the DbSystem.
+     * (Updatable) Storage details of the database system.
      */
     public readonly storageDetails!: pulumi.Output<outputs.Psql.DbSystemStorageDetails>;
     /**
@@ -202,7 +216,7 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Type of the DbSystem.
+     * Type of the database system.
      *
      *
      * ** IMPORTANT **
@@ -210,11 +224,11 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly systemType!: pulumi.Output<string>;
     /**
-     * The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
@@ -232,6 +246,7 @@ export class DbSystem extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as DbSystemState | undefined;
             resourceInputs["adminUsername"] = state ? state.adminUsername : undefined;
+            resourceInputs["applyConfig"] = state ? state.applyConfig : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["configId"] = state ? state.configId : undefined;
             resourceInputs["credentials"] = state ? state.credentials : undefined;
@@ -248,6 +263,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["managementPolicy"] = state ? state.managementPolicy : undefined;
             resourceInputs["networkDetails"] = state ? state.networkDetails : undefined;
+            resourceInputs["patchOperations"] = state ? state.patchOperations : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["source"] = state ? state.source : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -276,6 +292,7 @@ export class DbSystem extends pulumi.CustomResource {
             if ((!args || args.storageDetails === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'storageDetails'");
             }
+            resourceInputs["applyConfig"] = args ? args.applyConfig : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["configId"] = args ? args.configId : undefined;
             resourceInputs["credentials"] = args ? args.credentials : undefined;
@@ -290,6 +307,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["instancesDetails"] = args ? args.instancesDetails : undefined;
             resourceInputs["managementPolicy"] = args ? args.managementPolicy : undefined;
             resourceInputs["networkDetails"] = args ? args.networkDetails : undefined;
+            resourceInputs["patchOperations"] = args ? args.patchOperations : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["source"] = args ? args.source : undefined;
             resourceInputs["storageDetails"] = args ? args.storageDetails : undefined;
@@ -312,23 +330,27 @@ export class DbSystem extends pulumi.CustomResource {
  */
 export interface DbSystemState {
     /**
-     * The DB system username.
+     * The database system administrator username.
      */
     adminUsername?: pulumi.Input<string>;
     /**
-     * (Updatable) Compartment identifier
+     * Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+     */
+    applyConfig?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * Configuration identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      */
     configId?: pulumi.Input<string>;
     /**
-     * Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+     * Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
      */
     credentials?: pulumi.Input<inputs.Psql.DbSystemCredentials>;
     /**
-     * Version of DbSystem software.
+     * Version of database system software.
      */
     dbVersion?: pulumi.Input<string>;
     /**
@@ -336,11 +358,11 @@ export interface DbSystemState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Description of the DbInstance. This field should be input by the user.
+     * A user-provided description of the database instance node.
      */
     description?: pulumi.Input<string>;
     /**
-     * Display name of the DbInstance.
+     * Display name of the database instance node. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -348,23 +370,23 @@ export interface DbSystemState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Count of DbInstances to be created in the DbSystem.
+     * (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
      */
     instanceCount?: pulumi.Input<number>;
     /**
-     * The total amount of memory available to each DbInstance, in gigabytes.
+     * The total amount of memory available to each database instance node, in gigabytes.
      */
     instanceMemorySizeInGbs?: pulumi.Input<number>;
     /**
-     * The total number of OCPUs available to each DbInstance.
+     * The total number of OCPUs available to each database instance node.
      */
     instanceOcpuCount?: pulumi.Input<number>;
     /**
-     * The list of DbInstances in the DbSystem.
+     * The list of instances, or nodes, in the database system.
      */
     instances?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemInstance>[]>;
     /**
-     * Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+     * Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
      */
     instancesDetails?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemInstancesDetail>[]>;
     /**
@@ -372,27 +394,31 @@ export interface DbSystemState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) Posgresql DB system management policy update details
+     * (Updatable) PostgreSQL database system management policy update details.
      */
     managementPolicy?: pulumi.Input<inputs.Psql.DbSystemManagementPolicy>;
     /**
-     * DbSystem network details.
+     * Network details for the database system.
      */
     networkDetails?: pulumi.Input<inputs.Psql.DbSystemNetworkDetails>;
     /**
-     * Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+     * (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
+     */
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemPatchOperation>[]>;
+    /**
+     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      */
     shape?: pulumi.Input<string>;
     /**
-     * New source is used to restore the DB system.
+     * The source used to restore the database system.
      */
     source?: pulumi.Input<inputs.Psql.DbSystemSource>;
     /**
-     * The current state of the DbSystem.
+     * The current state of the database system.
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) Storage details of the DbSystem.
+     * (Updatable) Storage details of the database system.
      */
     storageDetails?: pulumi.Input<inputs.Psql.DbSystemStorageDetails>;
     /**
@@ -400,7 +426,7 @@ export interface DbSystemState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Type of the DbSystem.
+     * Type of the database system.
      *
      *
      * ** IMPORTANT **
@@ -408,11 +434,11 @@ export interface DbSystemState {
      */
     systemType?: pulumi.Input<string>;
     /**
-     * The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -422,19 +448,23 @@ export interface DbSystemState {
  */
 export interface DbSystemArgs {
     /**
-     * (Updatable) Compartment identifier
+     * Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+     */
+    applyConfig?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * Configuration identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      */
     configId?: pulumi.Input<string>;
     /**
-     * Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+     * Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
      */
     credentials?: pulumi.Input<inputs.Psql.DbSystemCredentials>;
     /**
-     * Version of DbSystem software.
+     * Version of database system software.
      */
     dbVersion: pulumi.Input<string>;
     /**
@@ -442,11 +472,11 @@ export interface DbSystemArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Description of the DbInstance. This field should be input by the user.
+     * A user-provided description of the database instance node.
      */
     description?: pulumi.Input<string>;
     /**
-     * Display name of the DbInstance.
+     * Display name of the database instance node. Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
     /**
@@ -454,43 +484,47 @@ export interface DbSystemArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Count of DbInstances to be created in the DbSystem.
+     * (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
      */
     instanceCount?: pulumi.Input<number>;
     /**
-     * The total amount of memory available to each DbInstance, in gigabytes.
+     * The total amount of memory available to each database instance node, in gigabytes.
      */
     instanceMemorySizeInGbs?: pulumi.Input<number>;
     /**
-     * The total number of OCPUs available to each DbInstance.
+     * The total number of OCPUs available to each database instance node.
      */
     instanceOcpuCount?: pulumi.Input<number>;
     /**
-     * Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+     * Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
      */
     instancesDetails?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemInstancesDetail>[]>;
     /**
-     * (Updatable) Posgresql DB system management policy update details
+     * (Updatable) PostgreSQL database system management policy update details.
      */
     managementPolicy?: pulumi.Input<inputs.Psql.DbSystemManagementPolicy>;
     /**
-     * DbSystem network details.
+     * Network details for the database system.
      */
     networkDetails: pulumi.Input<inputs.Psql.DbSystemNetworkDetails>;
     /**
-     * Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+     * (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
+     */
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemPatchOperation>[]>;
+    /**
+     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      */
     shape: pulumi.Input<string>;
     /**
-     * New source is used to restore the DB system.
+     * The source used to restore the database system.
      */
     source?: pulumi.Input<inputs.Psql.DbSystemSource>;
     /**
-     * (Updatable) Storage details of the DbSystem.
+     * (Updatable) Storage details of the database system.
      */
     storageDetails: pulumi.Input<inputs.Psql.DbSystemStorageDetails>;
     /**
-     * Type of the DbSystem.
+     * Type of the database system.
      *
      *
      * ** IMPORTANT **

@@ -18,14 +18,14 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
     public static final DbSystemStorageDetailsArgs Empty = new DbSystemStorageDetailsArgs();
 
     /**
-     * Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * @return Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -33,14 +33,14 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) DbSystem Performance Unit
+     * (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
      * 
      */
     @Import(name="iops")
     private @Nullable Output<String> iops;
 
     /**
-     * @return (Updatable) DbSystem Performance Unit
+     * @return (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
      * 
      */
     public Optional<Output<String>> iops() {
@@ -48,14 +48,14 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     @Import(name="isRegionallyDurable", required=true)
     private Output<Boolean> isRegionallyDurable;
 
     /**
-     * @return Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * @return Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     public Output<Boolean> isRegionallyDurable() {
@@ -63,7 +63,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Type of the DbSystem.
+     * Type of the database system.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -73,7 +73,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
     private Output<String> systemType;
 
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -111,7 +111,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param availabilityDomain Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+         * @param availabilityDomain Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
          * 
          * @return builder
          * 
@@ -122,7 +122,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param availabilityDomain Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+         * @param availabilityDomain Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param iops (Updatable) DbSystem Performance Unit
+         * @param iops (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param iops (Updatable) DbSystem Performance Unit
+         * @param iops (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param isRegionallyDurable Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+         * @param isRegionallyDurable Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param isRegionallyDurable Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+         * @param isRegionallyDurable Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param systemType Type of the DbSystem.
+         * @param systemType Type of the database system.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -188,7 +188,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param systemType Type of the DbSystem.
+         * @param systemType Type of the database system.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

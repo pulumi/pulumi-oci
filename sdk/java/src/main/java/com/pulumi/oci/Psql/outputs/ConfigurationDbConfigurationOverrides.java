@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class ConfigurationDbConfigurationOverrides {
     /**
-     * @return List of configuration overriden values
+     * @return List of configuration overridden values.
      * 
      */
     private List<ConfigurationDbConfigurationOverridesItem> items;
 
     private ConfigurationDbConfigurationOverrides() {}
     /**
-     * @return List of configuration overriden values
+     * @return List of configuration overridden values.
      * 
      */
     public List<ConfigurationDbConfigurationOverridesItem> items() {

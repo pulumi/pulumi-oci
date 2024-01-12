@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Psql.Inputs
     public sealed class DbSystemCredentialsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Details for the DbSystem password. Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+        /// Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
         /// </summary>
         [Input("passwordDetails", required: true)]
         public Input<Inputs.DbSystemCredentialsPasswordDetailsGetArgs> PasswordDetails { get; set; } = null!;
 
         /// <summary>
-        /// The DB system username.
+        /// The database system administrator username.
         /// </summary>
         [Input("username", required: true)]
         public Input<string> Username { get; set; } = null!;

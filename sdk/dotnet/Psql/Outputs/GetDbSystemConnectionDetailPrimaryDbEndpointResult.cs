@@ -14,15 +14,15 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetDbSystemConnectionDetailPrimaryDbEndpointResult
     {
         /// <summary>
-        /// The FQDN of the endpoint
+        /// The FQDN of the endpoint.
         /// </summary>
         public readonly string Fqdn;
         /// <summary>
-        /// The IP Address of the endpoint
+        /// The IP address of the endpoint.
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
-        /// The port Address of the endpoint
+        /// The port address of the endpoint.
         /// </summary>
         public readonly int Port;
 

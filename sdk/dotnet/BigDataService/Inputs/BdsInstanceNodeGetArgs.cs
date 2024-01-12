@@ -79,6 +79,12 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? NodeType { get; set; }
 
         /// <summary>
+        /// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        /// </summary>
+        [Input("nvmes")]
+        public Input<int>? Nvmes { get; set; }
+
+        /// <summary>
         /// The total number of OCPUs available to the node.
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

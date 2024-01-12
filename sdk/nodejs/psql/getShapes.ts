@@ -56,7 +56,7 @@ export interface GetShapesResult {
     readonly compartmentId?: string;
     readonly filters?: outputs.Psql.GetShapesFilter[];
     /**
-     * Unique identifier for the shape
+     * A unique identifier for the shape.
      */
     readonly id?: string;
     /**

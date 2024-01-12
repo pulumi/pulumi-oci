@@ -90,7 +90,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupSize")
     def backup_size(self) -> int:
         """
-        Backup size in GB.
+        The size of the backup, in gigabytes.
         """
         return pulumi.get(self, "backup_size")
 
@@ -98,7 +98,7 @@ class GetBackupResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Backup compartment identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -106,7 +106,7 @@ class GetBackupResult:
     @pulumi.getter(name="dbSystemDetails")
     def db_system_details(self) -> Sequence['outputs.GetBackupDbSystemDetailResult']:
         """
-        Information about the DbSystem associated to a backup.
+        Information about the database system associated with a backup.
         """
         return pulumi.get(self, "db_system_details")
 
@@ -114,7 +114,7 @@ class GetBackupResult:
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> str:
         """
-        The source DbSystem OCID.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -130,7 +130,7 @@ class GetBackupResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        Backup description
+        A description for the backup.
         """
         return pulumi.get(self, "description")
 
@@ -138,7 +138,7 @@ class GetBackupResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Backup display name
+        A user-friendly display name for the backup. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -154,7 +154,7 @@ class GetBackupResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
         """
         return pulumi.get(self, "id")
 
@@ -194,7 +194,7 @@ class GetBackupResult:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Specifies whether the backup was created manually, or via scheduled backup policy
+        Specifies whether the backup was created manually, or by a management policy.
         """
         return pulumi.get(self, "source_type")
 
@@ -202,7 +202,7 @@ class GetBackupResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the Backup.
+        The current state of the backup.
         """
         return pulumi.get(self, "state")
 
@@ -218,7 +218,7 @@ class GetBackupResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the Backup was created. An RFC3339 formatted datetime string
+        The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -226,7 +226,7 @@ class GetBackupResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the Backup was updated. An RFC3339 formatted datetime string
+        The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -263,7 +263,7 @@ def get_backup(backup_id: Optional[str] = None,
     """
     This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets a Backup by identifier
+    Gets a backup by identifier.
 
     ## Example Usage
 
@@ -275,7 +275,7 @@ def get_backup(backup_id: Optional[str] = None,
     ```
 
 
-    :param str backup_id: unique Backup identifier
+    :param str backup_id: A unique identifier for the backup.
     """
     __args__ = dict()
     __args__['backupId'] = backup_id
@@ -310,7 +310,7 @@ def get_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
 
-    Gets a Backup by identifier
+    Gets a backup by identifier.
 
     ## Example Usage
 
@@ -322,6 +322,6 @@ def get_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str backup_id: unique Backup identifier
+    :param str backup_id: A unique identifier for the backup.
     """
     ...

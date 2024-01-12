@@ -55,14 +55,14 @@ public final class GetDbSystemsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return unique DbSystem identifier
+     * @return A unique identifier for the database system.
      * 
      */
     public Optional<Output<String>> id() {
@@ -70,14 +70,14 @@ public final class GetDbSystemsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     public Optional<Output<String>> state() {
@@ -168,7 +168,7 @@ public final class GetDbSystemsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique DbSystem identifier
+         * @param id A unique identifier for the database system.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class GetDbSystemsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique DbSystem identifier
+         * @param id A unique identifier for the database system.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class GetDbSystemsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class GetDbSystemsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
          * 
          * @return builder
          * 

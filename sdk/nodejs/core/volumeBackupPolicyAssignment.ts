@@ -7,8 +7,8 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
  *
- * Assigns a volume backup policy to the specified volume. Note that a given volume can
- * only have one backup policy assigned to it. If this operation is used for a volume that already
+ * Assigns a volume backup policy to the specified volume or volume group. Note that a given volume or volume group can
+ * only have one backup policy assigned to it. If this operation is used for a volume or volume group that already
  * has a different backup policy assigned, the prior backup policy will be silently unassigned.
  *
  * ## Example Usage
@@ -60,7 +60,7 @@ export class VolumeBackupPolicyAssignment extends pulumi.CustomResource {
     }
 
     /**
-     * The OCID of the volume to assign the policy to.
+     * The OCID of the volume or volume group to assign the policy to.
      */
     public readonly assetId!: pulumi.Output<string>;
     /**
@@ -114,7 +114,7 @@ export class VolumeBackupPolicyAssignment extends pulumi.CustomResource {
  */
 export interface VolumeBackupPolicyAssignmentState {
     /**
-     * The OCID of the volume to assign the policy to.
+     * The OCID of the volume or volume group to assign the policy to.
      */
     assetId?: pulumi.Input<string>;
     /**
@@ -136,7 +136,7 @@ export interface VolumeBackupPolicyAssignmentState {
  */
 export interface VolumeBackupPolicyAssignmentArgs {
     /**
-     * The OCID of the volume to assign the policy to.
+     * The OCID of the volume or volume group to assign the policy to.
      */
     assetId: pulumi.Input<string>;
     /**

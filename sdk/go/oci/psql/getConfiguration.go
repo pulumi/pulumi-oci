@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
 //
-// # Gets a Configuration by identifier
+// Gets a configuration by identifier.
 //
 // ## Example Usage
 //
@@ -52,43 +52,43 @@ func LookupConfiguration(ctx *pulumi.Context, args *LookupConfigurationArgs, opt
 
 // A collection of arguments for invoking getConfiguration.
 type LookupConfigurationArgs struct {
-	// unique Configuration identifier
+	// A unique identifier for the configuration.
 	ConfigurationId string `pulumi:"configurationId"`
 }
 
 // A collection of values returned by getConfiguration.
 type LookupConfigurationResult struct {
-	// Config compartment identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId string `pulumi:"compartmentId"`
-	// List of DB Configuration Values.
+	// List of configuration details.
 	ConfigurationDetails     []GetConfigurationConfigurationDetail     `pulumi:"configurationDetails"`
 	ConfigurationId          string                                    `pulumi:"configurationId"`
 	DbConfigurationOverrides []GetConfigurationDbConfigurationOverride `pulumi:"dbConfigurationOverrides"`
-	// Version of the Postgresql DB
+	// Version of the PostgreSQL database.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Config description
+	// A description for the configuration.
 	Description string `pulumi:"description"`
-	// Config display name
+	// A user-friendly display name for the configuration. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier for the configuration. Immutable on creation.
 	Id string `pulumi:"id"`
-	// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+	// Memory size in gigabytes with 1GB increment.
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
-	// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+	// CPU core count.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Compute Shape Name like VM.Standard3.Flex.
+	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
-	// The current state of the Configuration.
+	// The current state of the configuration.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time Configuration was created. An RFC3339 formatted datetime string
+	// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
 
@@ -107,7 +107,7 @@ func LookupConfigurationOutput(ctx *pulumi.Context, args LookupConfigurationOutp
 
 // A collection of arguments for invoking getConfiguration.
 type LookupConfigurationOutputArgs struct {
-	// unique Configuration identifier
+	// A unique identifier for the configuration.
 	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
 }
 
@@ -130,12 +130,12 @@ func (o LookupConfigurationResultOutput) ToLookupConfigurationResultOutputWithCo
 	return o
 }
 
-// Config compartment identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 func (o LookupConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// List of DB Configuration Values.
+// List of configuration details.
 func (o LookupConfigurationResultOutput) ConfigurationDetails() GetConfigurationConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) []GetConfigurationConfigurationDetail { return v.ConfigurationDetails }).(GetConfigurationConfigurationDetailArrayOutput)
 }
@@ -150,7 +150,7 @@ func (o LookupConfigurationResultOutput) DbConfigurationOverrides() GetConfigura
 	}).(GetConfigurationDbConfigurationOverrideArrayOutput)
 }
 
-// Version of the Postgresql DB
+// Version of the PostgreSQL database.
 func (o LookupConfigurationResultOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -160,12 +160,12 @@ func (o LookupConfigurationResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Config description
+// A description for the configuration.
 func (o LookupConfigurationResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Config display name
+// A user-friendly display name for the configuration. Avoid entering confidential information.
 func (o LookupConfigurationResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -175,17 +175,17 @@ func (o LookupConfigurationResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Unique identifier that is immutable on creation
+// A unique identifier for the configuration. Immutable on creation.
 func (o LookupConfigurationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+// Memory size in gigabytes with 1GB increment.
 func (o LookupConfigurationResultOutput) InstanceMemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) int { return v.InstanceMemorySizeInGbs }).(pulumi.IntOutput)
 }
 
-// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+// CPU core count.
 func (o LookupConfigurationResultOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
 }
@@ -195,12 +195,12 @@ func (o LookupConfigurationResultOutput) LifecycleDetails() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Compute Shape Name like VM.Standard3.Flex.
+// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 func (o LookupConfigurationResultOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The current state of the Configuration.
+// The current state of the configuration.
 func (o LookupConfigurationResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -210,7 +210,7 @@ func (o LookupConfigurationResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time Configuration was created. An RFC3339 formatted datetime string
+// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupConfigurationResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }

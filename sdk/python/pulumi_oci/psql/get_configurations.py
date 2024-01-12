@@ -56,7 +56,7 @@ class GetConfigurationsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        Config compartment identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -77,7 +77,7 @@ class GetConfigurationsResult:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[str]:
         """
-        Version of the Postgresql DB
+        Version of the PostgreSQL database.
         """
         return pulumi.get(self, "db_version")
 
@@ -85,7 +85,7 @@ class GetConfigurationsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        Config display name
+        A user-friendly display name for the configuration. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -106,7 +106,7 @@ class GetConfigurationsResult:
     @pulumi.getter
     def shape(self) -> Optional[str]:
         """
-        Compute Shape Name like VM.Standard3.Flex.
+        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -114,7 +114,7 @@ class GetConfigurationsResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the Configuration.
+        The current state of the configuration.
         """
         return pulumi.get(self, "state")
 
@@ -147,7 +147,7 @@ def get_configurations(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
 
-    Returns a list of Configurations.
+    Returns a list of configurations.
 
     ## Example Usage
 
@@ -165,11 +165,11 @@ def get_configurations(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str configuration_id: unique Configuration identifier
-    :param str db_version: Verison of the Postgresql DB like 14.5
+    :param str configuration_id: A unique identifier for the configuration.
+    :param str db_version: Verison of the PostgreSQL database, such as 14.9.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str shape: Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+    :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -206,7 +206,7 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
     """
     This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
 
-    Returns a list of Configurations.
+    Returns a list of configurations.
 
     ## Example Usage
 
@@ -224,10 +224,10 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str configuration_id: unique Configuration identifier
-    :param str db_version: Verison of the Postgresql DB like 14.5
+    :param str configuration_id: A unique identifier for the configuration.
+    :param str db_version: Verison of the PostgreSQL database, such as 14.9.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str shape: Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+    :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
     """
     ...

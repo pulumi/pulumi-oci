@@ -14,23 +14,23 @@ import java.util.Objects;
 @CustomType
 public final class GetDefaultConfigurationResult {
     /**
-     * @return List of DB default Configuration Values.
+     * @return List of default configuration values for databases.
      * 
      */
     private List<GetDefaultConfigurationConfigurationDetail> configurationDetails;
     /**
-     * @return Version of the Postgresql DB
+     * @return Version of the PostgreSQL database.
      * 
      */
     private String dbVersion;
     private String defaultConfigurationId;
     /**
-     * @return Config description
+     * @return A description for the configuration.
      * 
      */
     private String description;
     /**
-     * @return Config display name
+     * @return A user-friendly display name for the configuration.
      * 
      */
     private String displayName;
@@ -40,12 +40,12 @@ public final class GetDefaultConfigurationResult {
      */
     private String id;
     /**
-     * @return Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+     * @return Memory size in gigabytes with 1GB increment.
      * 
      */
     private Integer instanceMemorySizeInGbs;
     /**
-     * @return CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * @return CPU core count. Minimum value is 1.
      * 
      */
     private Integer instanceOcpuCount;
@@ -55,31 +55,31 @@ public final class GetDefaultConfigurationResult {
      */
     private String lifecycleDetails;
     /**
-     * @return Compute Shape Name like VM.Standard3.Flex.
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     private String shape;
     /**
-     * @return The current state of the Configuration.
+     * @return The current state of the configuration.
      * 
      */
     private String state;
     /**
-     * @return The time Configuration was created. An RFC3339 formatted datetime string
+     * @return The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
 
     private GetDefaultConfigurationResult() {}
     /**
-     * @return List of DB default Configuration Values.
+     * @return List of default configuration values for databases.
      * 
      */
     public List<GetDefaultConfigurationConfigurationDetail> configurationDetails() {
         return this.configurationDetails;
     }
     /**
-     * @return Version of the Postgresql DB
+     * @return Version of the PostgreSQL database.
      * 
      */
     public String dbVersion() {
@@ -89,14 +89,14 @@ public final class GetDefaultConfigurationResult {
         return this.defaultConfigurationId;
     }
     /**
-     * @return Config description
+     * @return A description for the configuration.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Config display name
+     * @return A user-friendly display name for the configuration.
      * 
      */
     public String displayName() {
@@ -110,14 +110,14 @@ public final class GetDefaultConfigurationResult {
         return this.id;
     }
     /**
-     * @return Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+     * @return Memory size in gigabytes with 1GB increment.
      * 
      */
     public Integer instanceMemorySizeInGbs() {
         return this.instanceMemorySizeInGbs;
     }
     /**
-     * @return CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * @return CPU core count. Minimum value is 1.
      * 
      */
     public Integer instanceOcpuCount() {
@@ -131,21 +131,21 @@ public final class GetDefaultConfigurationResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return Compute Shape Name like VM.Standard3.Flex.
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     public String shape() {
         return this.shape;
     }
     /**
-     * @return The current state of the Configuration.
+     * @return The current state of the configuration.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return The time Configuration was created. An RFC3339 formatted datetime string
+     * @return The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {

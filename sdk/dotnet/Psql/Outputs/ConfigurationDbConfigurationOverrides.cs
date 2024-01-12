@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class ConfigurationDbConfigurationOverrides
     {
         /// <summary>
-        /// List of configuration overriden values
+        /// List of configuration overridden values.
         /// </summary>
         public readonly ImmutableArray<Outputs.ConfigurationDbConfigurationOverridesItem> Items;
 

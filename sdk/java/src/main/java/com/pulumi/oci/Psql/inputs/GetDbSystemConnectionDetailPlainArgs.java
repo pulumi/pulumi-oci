@@ -14,14 +14,14 @@ public final class GetDbSystemConnectionDetailPlainArgs extends com.pulumi.resou
     public static final GetDbSystemConnectionDetailPlainArgs Empty = new GetDbSystemConnectionDetailPlainArgs();
 
     /**
-     * unique DbSystem identifier
+     * A unique identifier for the database system.
      * 
      */
     @Import(name="dbSystemId", required=true)
     private String dbSystemId;
 
     /**
-     * @return unique DbSystem identifier
+     * @return A unique identifier for the database system.
      * 
      */
     public String dbSystemId() {
@@ -53,7 +53,7 @@ public final class GetDbSystemConnectionDetailPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dbSystemId unique DbSystem identifier
+         * @param dbSystemId A unique identifier for the database system.
          * 
          * @return builder
          * 

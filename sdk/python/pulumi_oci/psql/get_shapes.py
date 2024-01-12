@@ -51,7 +51,7 @@ class GetShapesResult:
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        Unique identifier for the shape
+        A unique identifier for the shape.
         """
         return pulumi.get(self, "id")
 

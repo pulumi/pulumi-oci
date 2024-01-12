@@ -182,10 +182,18 @@ type ConfigConfiguration struct {
 	IsDefaultSnapshotEnabled *bool `pulumi:"isDefaultSnapshotEnabled"`
 	// (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried *bool `pulumi:"isFailureRetried"`
+	// (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+	IsQueryRecursive *bool `pulumi:"isQueryRecursive"`
 	// (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled *bool `pulumi:"isRedirectionEnabled"`
-	// (Updatable) Details of the network configuration.
+	// (Updatable) Name of the server that will be used to perform DNS lookup.
+	NameServer *string `pulumi:"nameServer"`
+	// (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
 	NetworkConfiguration *ConfigConfigurationNetworkConfiguration `pulumi:"networkConfiguration"`
+	// (Updatable) Type of protocol.
+	Protocol *string `pulumi:"protocol"`
+	// (Updatable) DNS record type.
+	RecordType *string `pulumi:"recordType"`
 	// (Updatable) Details for request HTTP authentication.
 	ReqAuthenticationDetails *ConfigConfigurationReqAuthenticationDetails `pulumi:"reqAuthenticationDetails"`
 	// (Updatable) Request HTTP authentication scheme.
@@ -230,10 +238,18 @@ type ConfigConfigurationArgs struct {
 	IsDefaultSnapshotEnabled pulumi.BoolPtrInput `pulumi:"isDefaultSnapshotEnabled"`
 	// (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried pulumi.BoolPtrInput `pulumi:"isFailureRetried"`
+	// (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+	IsQueryRecursive pulumi.BoolPtrInput `pulumi:"isQueryRecursive"`
 	// (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled pulumi.BoolPtrInput `pulumi:"isRedirectionEnabled"`
-	// (Updatable) Details of the network configuration.
+	// (Updatable) Name of the server that will be used to perform DNS lookup.
+	NameServer pulumi.StringPtrInput `pulumi:"nameServer"`
+	// (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
 	NetworkConfiguration ConfigConfigurationNetworkConfigurationPtrInput `pulumi:"networkConfiguration"`
+	// (Updatable) Type of protocol.
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+	// (Updatable) DNS record type.
+	RecordType pulumi.StringPtrInput `pulumi:"recordType"`
 	// (Updatable) Details for request HTTP authentication.
 	ReqAuthenticationDetails ConfigConfigurationReqAuthenticationDetailsPtrInput `pulumi:"reqAuthenticationDetails"`
 	// (Updatable) Request HTTP authentication scheme.
@@ -363,14 +379,34 @@ func (o ConfigConfigurationOutput) IsFailureRetried() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *bool { return v.IsFailureRetried }).(pulumi.BoolPtrOutput)
 }
 
+// (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+func (o ConfigConfigurationOutput) IsQueryRecursive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *bool { return v.IsQueryRecursive }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
 func (o ConfigConfigurationOutput) IsRedirectionEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *bool { return v.IsRedirectionEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Details of the network configuration.
+// (Updatable) Name of the server that will be used to perform DNS lookup.
+func (o ConfigConfigurationOutput) NameServer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *string { return v.NameServer }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
 func (o ConfigConfigurationOutput) NetworkConfiguration() ConfigConfigurationNetworkConfigurationPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *ConfigConfigurationNetworkConfiguration { return v.NetworkConfiguration }).(ConfigConfigurationNetworkConfigurationPtrOutput)
+}
+
+// (Updatable) Type of protocol.
+func (o ConfigConfigurationOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) DNS record type.
+func (o ConfigConfigurationOutput) RecordType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *string { return v.RecordType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Details for request HTTP authentication.
@@ -504,6 +540,16 @@ func (o ConfigConfigurationPtrOutput) IsFailureRetried() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+func (o ConfigConfigurationPtrOutput) IsQueryRecursive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsQueryRecursive
+	}).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
 func (o ConfigConfigurationPtrOutput) IsRedirectionEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) *bool {
@@ -514,7 +560,17 @@ func (o ConfigConfigurationPtrOutput) IsRedirectionEnabled() pulumi.BoolPtrOutpu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Details of the network configuration.
+// (Updatable) Name of the server that will be used to perform DNS lookup.
+func (o ConfigConfigurationPtrOutput) NameServer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NameServer
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
 func (o ConfigConfigurationPtrOutput) NetworkConfiguration() ConfigConfigurationNetworkConfigurationPtrOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) *ConfigConfigurationNetworkConfiguration {
 		if v == nil {
@@ -522,6 +578,26 @@ func (o ConfigConfigurationPtrOutput) NetworkConfiguration() ConfigConfiguration
 		}
 		return v.NetworkConfiguration
 	}).(ConfigConfigurationNetworkConfigurationPtrOutput)
+}
+
+// (Updatable) Type of protocol.
+func (o ConfigConfigurationPtrOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Protocol
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) DNS record type.
+func (o ConfigConfigurationPtrOutput) RecordType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RecordType
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Details for request HTTP authentication.
@@ -2963,6 +3039,621 @@ func (o DedicatedVantagePointMonitorStatusCountMapArrayOutput) Index(i pulumi.In
 	}).(DedicatedVantagePointMonitorStatusCountMapOutput)
 }
 
+type OnPremiseVantagePointWorkerIdentityInfo struct {
+	// Domain short id of the On-premise VP worker.
+	ApmShortId *string `pulumi:"apmShortId"`
+	// Collector endpoint of the On-premise VP worker.
+	CollectorEndPoint *string `pulumi:"collectorEndPoint"`
+	// Domain region of the On-premise VP worker.
+	RegionName *string `pulumi:"regionName"`
+}
+
+// OnPremiseVantagePointWorkerIdentityInfoInput is an input type that accepts OnPremiseVantagePointWorkerIdentityInfoArgs and OnPremiseVantagePointWorkerIdentityInfoOutput values.
+// You can construct a concrete instance of `OnPremiseVantagePointWorkerIdentityInfoInput` via:
+//
+//	OnPremiseVantagePointWorkerIdentityInfoArgs{...}
+type OnPremiseVantagePointWorkerIdentityInfoInput interface {
+	pulumi.Input
+
+	ToOnPremiseVantagePointWorkerIdentityInfoOutput() OnPremiseVantagePointWorkerIdentityInfoOutput
+	ToOnPremiseVantagePointWorkerIdentityInfoOutputWithContext(context.Context) OnPremiseVantagePointWorkerIdentityInfoOutput
+}
+
+type OnPremiseVantagePointWorkerIdentityInfoArgs struct {
+	// Domain short id of the On-premise VP worker.
+	ApmShortId pulumi.StringPtrInput `pulumi:"apmShortId"`
+	// Collector endpoint of the On-premise VP worker.
+	CollectorEndPoint pulumi.StringPtrInput `pulumi:"collectorEndPoint"`
+	// Domain region of the On-premise VP worker.
+	RegionName pulumi.StringPtrInput `pulumi:"regionName"`
+}
+
+func (OnPremiseVantagePointWorkerIdentityInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OnPremiseVantagePointWorkerIdentityInfo)(nil)).Elem()
+}
+
+func (i OnPremiseVantagePointWorkerIdentityInfoArgs) ToOnPremiseVantagePointWorkerIdentityInfoOutput() OnPremiseVantagePointWorkerIdentityInfoOutput {
+	return i.ToOnPremiseVantagePointWorkerIdentityInfoOutputWithContext(context.Background())
+}
+
+func (i OnPremiseVantagePointWorkerIdentityInfoArgs) ToOnPremiseVantagePointWorkerIdentityInfoOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerIdentityInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OnPremiseVantagePointWorkerIdentityInfoOutput)
+}
+
+// OnPremiseVantagePointWorkerIdentityInfoArrayInput is an input type that accepts OnPremiseVantagePointWorkerIdentityInfoArray and OnPremiseVantagePointWorkerIdentityInfoArrayOutput values.
+// You can construct a concrete instance of `OnPremiseVantagePointWorkerIdentityInfoArrayInput` via:
+//
+//	OnPremiseVantagePointWorkerIdentityInfoArray{ OnPremiseVantagePointWorkerIdentityInfoArgs{...} }
+type OnPremiseVantagePointWorkerIdentityInfoArrayInput interface {
+	pulumi.Input
+
+	ToOnPremiseVantagePointWorkerIdentityInfoArrayOutput() OnPremiseVantagePointWorkerIdentityInfoArrayOutput
+	ToOnPremiseVantagePointWorkerIdentityInfoArrayOutputWithContext(context.Context) OnPremiseVantagePointWorkerIdentityInfoArrayOutput
+}
+
+type OnPremiseVantagePointWorkerIdentityInfoArray []OnPremiseVantagePointWorkerIdentityInfoInput
+
+func (OnPremiseVantagePointWorkerIdentityInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OnPremiseVantagePointWorkerIdentityInfo)(nil)).Elem()
+}
+
+func (i OnPremiseVantagePointWorkerIdentityInfoArray) ToOnPremiseVantagePointWorkerIdentityInfoArrayOutput() OnPremiseVantagePointWorkerIdentityInfoArrayOutput {
+	return i.ToOnPremiseVantagePointWorkerIdentityInfoArrayOutputWithContext(context.Background())
+}
+
+func (i OnPremiseVantagePointWorkerIdentityInfoArray) ToOnPremiseVantagePointWorkerIdentityInfoArrayOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerIdentityInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OnPremiseVantagePointWorkerIdentityInfoArrayOutput)
+}
+
+type OnPremiseVantagePointWorkerIdentityInfoOutput struct{ *pulumi.OutputState }
+
+func (OnPremiseVantagePointWorkerIdentityInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OnPremiseVantagePointWorkerIdentityInfo)(nil)).Elem()
+}
+
+func (o OnPremiseVantagePointWorkerIdentityInfoOutput) ToOnPremiseVantagePointWorkerIdentityInfoOutput() OnPremiseVantagePointWorkerIdentityInfoOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkerIdentityInfoOutput) ToOnPremiseVantagePointWorkerIdentityInfoOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerIdentityInfoOutput {
+	return o
+}
+
+// Domain short id of the On-premise VP worker.
+func (o OnPremiseVantagePointWorkerIdentityInfoOutput) ApmShortId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkerIdentityInfo) *string { return v.ApmShortId }).(pulumi.StringPtrOutput)
+}
+
+// Collector endpoint of the On-premise VP worker.
+func (o OnPremiseVantagePointWorkerIdentityInfoOutput) CollectorEndPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkerIdentityInfo) *string { return v.CollectorEndPoint }).(pulumi.StringPtrOutput)
+}
+
+// Domain region of the On-premise VP worker.
+func (o OnPremiseVantagePointWorkerIdentityInfoOutput) RegionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkerIdentityInfo) *string { return v.RegionName }).(pulumi.StringPtrOutput)
+}
+
+type OnPremiseVantagePointWorkerIdentityInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (OnPremiseVantagePointWorkerIdentityInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OnPremiseVantagePointWorkerIdentityInfo)(nil)).Elem()
+}
+
+func (o OnPremiseVantagePointWorkerIdentityInfoArrayOutput) ToOnPremiseVantagePointWorkerIdentityInfoArrayOutput() OnPremiseVantagePointWorkerIdentityInfoArrayOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkerIdentityInfoArrayOutput) ToOnPremiseVantagePointWorkerIdentityInfoArrayOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerIdentityInfoArrayOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkerIdentityInfoArrayOutput) Index(i pulumi.IntInput) OnPremiseVantagePointWorkerIdentityInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OnPremiseVantagePointWorkerIdentityInfo {
+		return vs[0].([]OnPremiseVantagePointWorkerIdentityInfo)[vs[1].(int)]
+	}).(OnPremiseVantagePointWorkerIdentityInfoOutput)
+}
+
+type OnPremiseVantagePointWorkerMonitorList struct {
+	// Unique name that can be edited. The name should not contain any confidential information.
+	DisplayName *string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+	Id *string `pulumi:"id"`
+	// If isRunNow is enabled, then the monitor will run immediately.
+	IsRunNow *bool `pulumi:"isRunNow"`
+	// Type of monitor.
+	MonitorType *string `pulumi:"monitorType"`
+	// The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeAssigned *string `pulumi:"timeAssigned"`
+}
+
+// OnPremiseVantagePointWorkerMonitorListInput is an input type that accepts OnPremiseVantagePointWorkerMonitorListArgs and OnPremiseVantagePointWorkerMonitorListOutput values.
+// You can construct a concrete instance of `OnPremiseVantagePointWorkerMonitorListInput` via:
+//
+//	OnPremiseVantagePointWorkerMonitorListArgs{...}
+type OnPremiseVantagePointWorkerMonitorListInput interface {
+	pulumi.Input
+
+	ToOnPremiseVantagePointWorkerMonitorListOutput() OnPremiseVantagePointWorkerMonitorListOutput
+	ToOnPremiseVantagePointWorkerMonitorListOutputWithContext(context.Context) OnPremiseVantagePointWorkerMonitorListOutput
+}
+
+type OnPremiseVantagePointWorkerMonitorListArgs struct {
+	// Unique name that can be edited. The name should not contain any confidential information.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// If isRunNow is enabled, then the monitor will run immediately.
+	IsRunNow pulumi.BoolPtrInput `pulumi:"isRunNow"`
+	// Type of monitor.
+	MonitorType pulumi.StringPtrInput `pulumi:"monitorType"`
+	// The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeAssigned pulumi.StringPtrInput `pulumi:"timeAssigned"`
+}
+
+func (OnPremiseVantagePointWorkerMonitorListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OnPremiseVantagePointWorkerMonitorList)(nil)).Elem()
+}
+
+func (i OnPremiseVantagePointWorkerMonitorListArgs) ToOnPremiseVantagePointWorkerMonitorListOutput() OnPremiseVantagePointWorkerMonitorListOutput {
+	return i.ToOnPremiseVantagePointWorkerMonitorListOutputWithContext(context.Background())
+}
+
+func (i OnPremiseVantagePointWorkerMonitorListArgs) ToOnPremiseVantagePointWorkerMonitorListOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerMonitorListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OnPremiseVantagePointWorkerMonitorListOutput)
+}
+
+// OnPremiseVantagePointWorkerMonitorListArrayInput is an input type that accepts OnPremiseVantagePointWorkerMonitorListArray and OnPremiseVantagePointWorkerMonitorListArrayOutput values.
+// You can construct a concrete instance of `OnPremiseVantagePointWorkerMonitorListArrayInput` via:
+//
+//	OnPremiseVantagePointWorkerMonitorListArray{ OnPremiseVantagePointWorkerMonitorListArgs{...} }
+type OnPremiseVantagePointWorkerMonitorListArrayInput interface {
+	pulumi.Input
+
+	ToOnPremiseVantagePointWorkerMonitorListArrayOutput() OnPremiseVantagePointWorkerMonitorListArrayOutput
+	ToOnPremiseVantagePointWorkerMonitorListArrayOutputWithContext(context.Context) OnPremiseVantagePointWorkerMonitorListArrayOutput
+}
+
+type OnPremiseVantagePointWorkerMonitorListArray []OnPremiseVantagePointWorkerMonitorListInput
+
+func (OnPremiseVantagePointWorkerMonitorListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OnPremiseVantagePointWorkerMonitorList)(nil)).Elem()
+}
+
+func (i OnPremiseVantagePointWorkerMonitorListArray) ToOnPremiseVantagePointWorkerMonitorListArrayOutput() OnPremiseVantagePointWorkerMonitorListArrayOutput {
+	return i.ToOnPremiseVantagePointWorkerMonitorListArrayOutputWithContext(context.Background())
+}
+
+func (i OnPremiseVantagePointWorkerMonitorListArray) ToOnPremiseVantagePointWorkerMonitorListArrayOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerMonitorListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OnPremiseVantagePointWorkerMonitorListArrayOutput)
+}
+
+type OnPremiseVantagePointWorkerMonitorListOutput struct{ *pulumi.OutputState }
+
+func (OnPremiseVantagePointWorkerMonitorListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OnPremiseVantagePointWorkerMonitorList)(nil)).Elem()
+}
+
+func (o OnPremiseVantagePointWorkerMonitorListOutput) ToOnPremiseVantagePointWorkerMonitorListOutput() OnPremiseVantagePointWorkerMonitorListOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkerMonitorListOutput) ToOnPremiseVantagePointWorkerMonitorListOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerMonitorListOutput {
+	return o
+}
+
+// Unique name that can be edited. The name should not contain any confidential information.
+func (o OnPremiseVantagePointWorkerMonitorListOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkerMonitorList) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+func (o OnPremiseVantagePointWorkerMonitorListOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkerMonitorList) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// If isRunNow is enabled, then the monitor will run immediately.
+func (o OnPremiseVantagePointWorkerMonitorListOutput) IsRunNow() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkerMonitorList) *bool { return v.IsRunNow }).(pulumi.BoolPtrOutput)
+}
+
+// Type of monitor.
+func (o OnPremiseVantagePointWorkerMonitorListOutput) MonitorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkerMonitorList) *string { return v.MonitorType }).(pulumi.StringPtrOutput)
+}
+
+// The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o OnPremiseVantagePointWorkerMonitorListOutput) TimeAssigned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkerMonitorList) *string { return v.TimeAssigned }).(pulumi.StringPtrOutput)
+}
+
+type OnPremiseVantagePointWorkerMonitorListArrayOutput struct{ *pulumi.OutputState }
+
+func (OnPremiseVantagePointWorkerMonitorListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OnPremiseVantagePointWorkerMonitorList)(nil)).Elem()
+}
+
+func (o OnPremiseVantagePointWorkerMonitorListArrayOutput) ToOnPremiseVantagePointWorkerMonitorListArrayOutput() OnPremiseVantagePointWorkerMonitorListArrayOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkerMonitorListArrayOutput) ToOnPremiseVantagePointWorkerMonitorListArrayOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerMonitorListArrayOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkerMonitorListArrayOutput) Index(i pulumi.IntInput) OnPremiseVantagePointWorkerMonitorListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OnPremiseVantagePointWorkerMonitorList {
+		return vs[0].([]OnPremiseVantagePointWorkerMonitorList)[vs[1].(int)]
+	}).(OnPremiseVantagePointWorkerMonitorListOutput)
+}
+
+type OnPremiseVantagePointWorkerVersionDetail struct {
+	// Latest image version of the On-premise VP worker.
+	LatestVersion *string `pulumi:"latestVersion"`
+	// Minimum supported image version of the On-premise VP worker.
+	MinSupportedVersion *string `pulumi:"minSupportedVersion"`
+	// Image version of the On-premise VP worker.
+	Version *string `pulumi:"version"`
+}
+
+// OnPremiseVantagePointWorkerVersionDetailInput is an input type that accepts OnPremiseVantagePointWorkerVersionDetailArgs and OnPremiseVantagePointWorkerVersionDetailOutput values.
+// You can construct a concrete instance of `OnPremiseVantagePointWorkerVersionDetailInput` via:
+//
+//	OnPremiseVantagePointWorkerVersionDetailArgs{...}
+type OnPremiseVantagePointWorkerVersionDetailInput interface {
+	pulumi.Input
+
+	ToOnPremiseVantagePointWorkerVersionDetailOutput() OnPremiseVantagePointWorkerVersionDetailOutput
+	ToOnPremiseVantagePointWorkerVersionDetailOutputWithContext(context.Context) OnPremiseVantagePointWorkerVersionDetailOutput
+}
+
+type OnPremiseVantagePointWorkerVersionDetailArgs struct {
+	// Latest image version of the On-premise VP worker.
+	LatestVersion pulumi.StringPtrInput `pulumi:"latestVersion"`
+	// Minimum supported image version of the On-premise VP worker.
+	MinSupportedVersion pulumi.StringPtrInput `pulumi:"minSupportedVersion"`
+	// Image version of the On-premise VP worker.
+	Version pulumi.StringPtrInput `pulumi:"version"`
+}
+
+func (OnPremiseVantagePointWorkerVersionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OnPremiseVantagePointWorkerVersionDetail)(nil)).Elem()
+}
+
+func (i OnPremiseVantagePointWorkerVersionDetailArgs) ToOnPremiseVantagePointWorkerVersionDetailOutput() OnPremiseVantagePointWorkerVersionDetailOutput {
+	return i.ToOnPremiseVantagePointWorkerVersionDetailOutputWithContext(context.Background())
+}
+
+func (i OnPremiseVantagePointWorkerVersionDetailArgs) ToOnPremiseVantagePointWorkerVersionDetailOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerVersionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OnPremiseVantagePointWorkerVersionDetailOutput)
+}
+
+// OnPremiseVantagePointWorkerVersionDetailArrayInput is an input type that accepts OnPremiseVantagePointWorkerVersionDetailArray and OnPremiseVantagePointWorkerVersionDetailArrayOutput values.
+// You can construct a concrete instance of `OnPremiseVantagePointWorkerVersionDetailArrayInput` via:
+//
+//	OnPremiseVantagePointWorkerVersionDetailArray{ OnPremiseVantagePointWorkerVersionDetailArgs{...} }
+type OnPremiseVantagePointWorkerVersionDetailArrayInput interface {
+	pulumi.Input
+
+	ToOnPremiseVantagePointWorkerVersionDetailArrayOutput() OnPremiseVantagePointWorkerVersionDetailArrayOutput
+	ToOnPremiseVantagePointWorkerVersionDetailArrayOutputWithContext(context.Context) OnPremiseVantagePointWorkerVersionDetailArrayOutput
+}
+
+type OnPremiseVantagePointWorkerVersionDetailArray []OnPremiseVantagePointWorkerVersionDetailInput
+
+func (OnPremiseVantagePointWorkerVersionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OnPremiseVantagePointWorkerVersionDetail)(nil)).Elem()
+}
+
+func (i OnPremiseVantagePointWorkerVersionDetailArray) ToOnPremiseVantagePointWorkerVersionDetailArrayOutput() OnPremiseVantagePointWorkerVersionDetailArrayOutput {
+	return i.ToOnPremiseVantagePointWorkerVersionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i OnPremiseVantagePointWorkerVersionDetailArray) ToOnPremiseVantagePointWorkerVersionDetailArrayOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerVersionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OnPremiseVantagePointWorkerVersionDetailArrayOutput)
+}
+
+type OnPremiseVantagePointWorkerVersionDetailOutput struct{ *pulumi.OutputState }
+
+func (OnPremiseVantagePointWorkerVersionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OnPremiseVantagePointWorkerVersionDetail)(nil)).Elem()
+}
+
+func (o OnPremiseVantagePointWorkerVersionDetailOutput) ToOnPremiseVantagePointWorkerVersionDetailOutput() OnPremiseVantagePointWorkerVersionDetailOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkerVersionDetailOutput) ToOnPremiseVantagePointWorkerVersionDetailOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerVersionDetailOutput {
+	return o
+}
+
+// Latest image version of the On-premise VP worker.
+func (o OnPremiseVantagePointWorkerVersionDetailOutput) LatestVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkerVersionDetail) *string { return v.LatestVersion }).(pulumi.StringPtrOutput)
+}
+
+// Minimum supported image version of the On-premise VP worker.
+func (o OnPremiseVantagePointWorkerVersionDetailOutput) MinSupportedVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkerVersionDetail) *string { return v.MinSupportedVersion }).(pulumi.StringPtrOutput)
+}
+
+// Image version of the On-premise VP worker.
+func (o OnPremiseVantagePointWorkerVersionDetailOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkerVersionDetail) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+type OnPremiseVantagePointWorkerVersionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (OnPremiseVantagePointWorkerVersionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OnPremiseVantagePointWorkerVersionDetail)(nil)).Elem()
+}
+
+func (o OnPremiseVantagePointWorkerVersionDetailArrayOutput) ToOnPremiseVantagePointWorkerVersionDetailArrayOutput() OnPremiseVantagePointWorkerVersionDetailArrayOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkerVersionDetailArrayOutput) ToOnPremiseVantagePointWorkerVersionDetailArrayOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkerVersionDetailArrayOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkerVersionDetailArrayOutput) Index(i pulumi.IntInput) OnPremiseVantagePointWorkerVersionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OnPremiseVantagePointWorkerVersionDetail {
+		return vs[0].([]OnPremiseVantagePointWorkerVersionDetail)[vs[1].(int)]
+	}).(OnPremiseVantagePointWorkerVersionDetailOutput)
+}
+
+type OnPremiseVantagePointWorkersSummary struct {
+	// Number of available workers in a specific On-premise vantage point.
+	Available *int `pulumi:"available"`
+	// List of available capabilities in a specific On-premise vantage point.
+	AvailableCapabilities []OnPremiseVantagePointWorkersSummaryAvailableCapability `pulumi:"availableCapabilities"`
+	// Number of disabled workers in a specific On-premise vantage point.
+	Disabled *int `pulumi:"disabled"`
+	// Minimum version among the workers in a specific On-premise vantage point.
+	MinVersion *string `pulumi:"minVersion"`
+	// Total number of workers in a specific On-premise vantage point.
+	Total *int `pulumi:"total"`
+	// Number of occupied workers in a specific On-premise vantage point.
+	Used *int `pulumi:"used"`
+}
+
+// OnPremiseVantagePointWorkersSummaryInput is an input type that accepts OnPremiseVantagePointWorkersSummaryArgs and OnPremiseVantagePointWorkersSummaryOutput values.
+// You can construct a concrete instance of `OnPremiseVantagePointWorkersSummaryInput` via:
+//
+//	OnPremiseVantagePointWorkersSummaryArgs{...}
+type OnPremiseVantagePointWorkersSummaryInput interface {
+	pulumi.Input
+
+	ToOnPremiseVantagePointWorkersSummaryOutput() OnPremiseVantagePointWorkersSummaryOutput
+	ToOnPremiseVantagePointWorkersSummaryOutputWithContext(context.Context) OnPremiseVantagePointWorkersSummaryOutput
+}
+
+type OnPremiseVantagePointWorkersSummaryArgs struct {
+	// Number of available workers in a specific On-premise vantage point.
+	Available pulumi.IntPtrInput `pulumi:"available"`
+	// List of available capabilities in a specific On-premise vantage point.
+	AvailableCapabilities OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayInput `pulumi:"availableCapabilities"`
+	// Number of disabled workers in a specific On-premise vantage point.
+	Disabled pulumi.IntPtrInput `pulumi:"disabled"`
+	// Minimum version among the workers in a specific On-premise vantage point.
+	MinVersion pulumi.StringPtrInput `pulumi:"minVersion"`
+	// Total number of workers in a specific On-premise vantage point.
+	Total pulumi.IntPtrInput `pulumi:"total"`
+	// Number of occupied workers in a specific On-premise vantage point.
+	Used pulumi.IntPtrInput `pulumi:"used"`
+}
+
+func (OnPremiseVantagePointWorkersSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OnPremiseVantagePointWorkersSummary)(nil)).Elem()
+}
+
+func (i OnPremiseVantagePointWorkersSummaryArgs) ToOnPremiseVantagePointWorkersSummaryOutput() OnPremiseVantagePointWorkersSummaryOutput {
+	return i.ToOnPremiseVantagePointWorkersSummaryOutputWithContext(context.Background())
+}
+
+func (i OnPremiseVantagePointWorkersSummaryArgs) ToOnPremiseVantagePointWorkersSummaryOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkersSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OnPremiseVantagePointWorkersSummaryOutput)
+}
+
+// OnPremiseVantagePointWorkersSummaryArrayInput is an input type that accepts OnPremiseVantagePointWorkersSummaryArray and OnPremiseVantagePointWorkersSummaryArrayOutput values.
+// You can construct a concrete instance of `OnPremiseVantagePointWorkersSummaryArrayInput` via:
+//
+//	OnPremiseVantagePointWorkersSummaryArray{ OnPremiseVantagePointWorkersSummaryArgs{...} }
+type OnPremiseVantagePointWorkersSummaryArrayInput interface {
+	pulumi.Input
+
+	ToOnPremiseVantagePointWorkersSummaryArrayOutput() OnPremiseVantagePointWorkersSummaryArrayOutput
+	ToOnPremiseVantagePointWorkersSummaryArrayOutputWithContext(context.Context) OnPremiseVantagePointWorkersSummaryArrayOutput
+}
+
+type OnPremiseVantagePointWorkersSummaryArray []OnPremiseVantagePointWorkersSummaryInput
+
+func (OnPremiseVantagePointWorkersSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OnPremiseVantagePointWorkersSummary)(nil)).Elem()
+}
+
+func (i OnPremiseVantagePointWorkersSummaryArray) ToOnPremiseVantagePointWorkersSummaryArrayOutput() OnPremiseVantagePointWorkersSummaryArrayOutput {
+	return i.ToOnPremiseVantagePointWorkersSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i OnPremiseVantagePointWorkersSummaryArray) ToOnPremiseVantagePointWorkersSummaryArrayOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkersSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OnPremiseVantagePointWorkersSummaryArrayOutput)
+}
+
+type OnPremiseVantagePointWorkersSummaryOutput struct{ *pulumi.OutputState }
+
+func (OnPremiseVantagePointWorkersSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OnPremiseVantagePointWorkersSummary)(nil)).Elem()
+}
+
+func (o OnPremiseVantagePointWorkersSummaryOutput) ToOnPremiseVantagePointWorkersSummaryOutput() OnPremiseVantagePointWorkersSummaryOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkersSummaryOutput) ToOnPremiseVantagePointWorkersSummaryOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkersSummaryOutput {
+	return o
+}
+
+// Number of available workers in a specific On-premise vantage point.
+func (o OnPremiseVantagePointWorkersSummaryOutput) Available() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkersSummary) *int { return v.Available }).(pulumi.IntPtrOutput)
+}
+
+// List of available capabilities in a specific On-premise vantage point.
+func (o OnPremiseVantagePointWorkersSummaryOutput) AvailableCapabilities() OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkersSummary) []OnPremiseVantagePointWorkersSummaryAvailableCapability {
+		return v.AvailableCapabilities
+	}).(OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput)
+}
+
+// Number of disabled workers in a specific On-premise vantage point.
+func (o OnPremiseVantagePointWorkersSummaryOutput) Disabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkersSummary) *int { return v.Disabled }).(pulumi.IntPtrOutput)
+}
+
+// Minimum version among the workers in a specific On-premise vantage point.
+func (o OnPremiseVantagePointWorkersSummaryOutput) MinVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkersSummary) *string { return v.MinVersion }).(pulumi.StringPtrOutput)
+}
+
+// Total number of workers in a specific On-premise vantage point.
+func (o OnPremiseVantagePointWorkersSummaryOutput) Total() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkersSummary) *int { return v.Total }).(pulumi.IntPtrOutput)
+}
+
+// Number of occupied workers in a specific On-premise vantage point.
+func (o OnPremiseVantagePointWorkersSummaryOutput) Used() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkersSummary) *int { return v.Used }).(pulumi.IntPtrOutput)
+}
+
+type OnPremiseVantagePointWorkersSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (OnPremiseVantagePointWorkersSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OnPremiseVantagePointWorkersSummary)(nil)).Elem()
+}
+
+func (o OnPremiseVantagePointWorkersSummaryArrayOutput) ToOnPremiseVantagePointWorkersSummaryArrayOutput() OnPremiseVantagePointWorkersSummaryArrayOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkersSummaryArrayOutput) ToOnPremiseVantagePointWorkersSummaryArrayOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkersSummaryArrayOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkersSummaryArrayOutput) Index(i pulumi.IntInput) OnPremiseVantagePointWorkersSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OnPremiseVantagePointWorkersSummary {
+		return vs[0].([]OnPremiseVantagePointWorkersSummary)[vs[1].(int)]
+	}).(OnPremiseVantagePointWorkersSummaryOutput)
+}
+
+type OnPremiseVantagePointWorkersSummaryAvailableCapability struct {
+	// Capability of an On-premise vantage point worker.
+	Capability *string `pulumi:"capability"`
+	// Count of available capability in a specific On-premise vantage point.
+	OnPremiseVantagePointCount *int `pulumi:"onPremiseVantagePointCount"`
+}
+
+// OnPremiseVantagePointWorkersSummaryAvailableCapabilityInput is an input type that accepts OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs and OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput values.
+// You can construct a concrete instance of `OnPremiseVantagePointWorkersSummaryAvailableCapabilityInput` via:
+//
+//	OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs{...}
+type OnPremiseVantagePointWorkersSummaryAvailableCapabilityInput interface {
+	pulumi.Input
+
+	ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput() OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput
+	ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutputWithContext(context.Context) OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput
+}
+
+type OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs struct {
+	// Capability of an On-premise vantage point worker.
+	Capability pulumi.StringPtrInput `pulumi:"capability"`
+	// Count of available capability in a specific On-premise vantage point.
+	OnPremiseVantagePointCount pulumi.IntPtrInput `pulumi:"onPremiseVantagePointCount"`
+}
+
+func (OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OnPremiseVantagePointWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (i OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs) ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput() OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput {
+	return i.ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutputWithContext(context.Background())
+}
+
+func (i OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs) ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput)
+}
+
+// OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayInput is an input type that accepts OnPremiseVantagePointWorkersSummaryAvailableCapabilityArray and OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput values.
+// You can construct a concrete instance of `OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayInput` via:
+//
+//	OnPremiseVantagePointWorkersSummaryAvailableCapabilityArray{ OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs{...} }
+type OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayInput interface {
+	pulumi.Input
+
+	ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput() OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput
+	ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutputWithContext(context.Context) OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput
+}
+
+type OnPremiseVantagePointWorkersSummaryAvailableCapabilityArray []OnPremiseVantagePointWorkersSummaryAvailableCapabilityInput
+
+func (OnPremiseVantagePointWorkersSummaryAvailableCapabilityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OnPremiseVantagePointWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (i OnPremiseVantagePointWorkersSummaryAvailableCapabilityArray) ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput() OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput {
+	return i.ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutputWithContext(context.Background())
+}
+
+func (i OnPremiseVantagePointWorkersSummaryAvailableCapabilityArray) ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput)
+}
+
+type OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput struct{ *pulumi.OutputState }
+
+func (OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OnPremiseVantagePointWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (o OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput) ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput() OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput) ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput {
+	return o
+}
+
+// Capability of an On-premise vantage point worker.
+func (o OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput) Capability() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkersSummaryAvailableCapability) *string { return v.Capability }).(pulumi.StringPtrOutput)
+}
+
+// Count of available capability in a specific On-premise vantage point.
+func (o OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput) OnPremiseVantagePointCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v OnPremiseVantagePointWorkersSummaryAvailableCapability) *int {
+		return v.OnPremiseVantagePointCount
+	}).(pulumi.IntPtrOutput)
+}
+
+type OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput struct{ *pulumi.OutputState }
+
+func (OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OnPremiseVantagePointWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (o OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput) ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput() OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput) ToOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutputWithContext(ctx context.Context) OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput {
+	return o
+}
+
+func (o OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput) Index(i pulumi.IntInput) OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OnPremiseVantagePointWorkersSummaryAvailableCapability {
+		return vs[0].([]OnPremiseVantagePointWorkersSummaryAvailableCapability)[vs[1].(int)]
+	}).(OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput)
+}
+
 type ScriptMonitorStatusCountMap struct {
 	// Number of disabled monitors using the script.
 	Disabled *int `pulumi:"disabled"`
@@ -4393,10 +5084,18 @@ type GetMonitorConfiguration struct {
 	IsDefaultSnapshotEnabled bool `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried bool `pulumi:"isFailureRetried"`
+	// If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+	IsQueryRecursive bool `pulumi:"isQueryRecursive"`
 	// If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled bool `pulumi:"isRedirectionEnabled"`
-	// Details of the network configuration.
+	// Name of the server that will be used to perform DNS lookup.
+	NameServer string `pulumi:"nameServer"`
+	// Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
 	NetworkConfigurations []GetMonitorConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
+	// Type of protocol.
+	Protocol string `pulumi:"protocol"`
+	// DNS record type.
+	RecordType string `pulumi:"recordType"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails []GetMonitorConfigurationReqAuthenticationDetail `pulumi:"reqAuthenticationDetails"`
 	// Request HTTP authentication scheme.
@@ -4441,10 +5140,18 @@ type GetMonitorConfigurationArgs struct {
 	IsDefaultSnapshotEnabled pulumi.BoolInput `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried pulumi.BoolInput `pulumi:"isFailureRetried"`
+	// If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+	IsQueryRecursive pulumi.BoolInput `pulumi:"isQueryRecursive"`
 	// If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled pulumi.BoolInput `pulumi:"isRedirectionEnabled"`
-	// Details of the network configuration.
+	// Name of the server that will be used to perform DNS lookup.
+	NameServer pulumi.StringInput `pulumi:"nameServer"`
+	// Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
 	NetworkConfigurations GetMonitorConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
+	// Type of protocol.
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// DNS record type.
+	RecordType pulumi.StringInput `pulumi:"recordType"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails GetMonitorConfigurationReqAuthenticationDetailArrayInput `pulumi:"reqAuthenticationDetails"`
 	// Request HTTP authentication scheme.
@@ -4548,16 +5255,36 @@ func (o GetMonitorConfigurationOutput) IsFailureRetried() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsFailureRetried }).(pulumi.BoolOutput)
 }
 
+// If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+func (o GetMonitorConfigurationOutput) IsQueryRecursive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsQueryRecursive }).(pulumi.BoolOutput)
+}
+
 // If redirection is enabled, then redirects will be allowed while accessing target URL.
 func (o GetMonitorConfigurationOutput) IsRedirectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsRedirectionEnabled }).(pulumi.BoolOutput)
 }
 
-// Details of the network configuration.
+// Name of the server that will be used to perform DNS lookup.
+func (o GetMonitorConfigurationOutput) NameServer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.NameServer }).(pulumi.StringOutput)
+}
+
+// Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
 func (o GetMonitorConfigurationOutput) NetworkConfigurations() GetMonitorConfigurationNetworkConfigurationArrayOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) []GetMonitorConfigurationNetworkConfiguration {
 		return v.NetworkConfigurations
 	}).(GetMonitorConfigurationNetworkConfigurationArrayOutput)
+}
+
+// Type of protocol.
+func (o GetMonitorConfigurationOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// DNS record type.
+func (o GetMonitorConfigurationOutput) RecordType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.RecordType }).(pulumi.StringOutput)
 }
 
 // Details for request HTTP authentication.
@@ -6446,7 +7173,7 @@ type GetMonitorsMonitorCollectionItem struct {
 	IsRunOnce bool `pulumi:"isRunOnce"`
 	// Details required to schedule maintenance window.
 	MaintenanceWindowSchedules []GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedules"`
-	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
 	MonitorType string `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
@@ -6460,7 +7187,7 @@ type GetMonitorsMonitorCollectionItem struct {
 	ScriptParameters []GetMonitorsMonitorCollectionItemScriptParameter `pulumi:"scriptParameters"`
 	// A filter to return only monitors that match the status given.
 	Status string `pulumi:"status"`
-	// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+	// Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 	Target string `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated string `pulumi:"timeCreated"`
@@ -6508,7 +7235,7 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	IsRunOnce pulumi.BoolInput `pulumi:"isRunOnce"`
 	// Details required to schedule maintenance window.
 	MaintenanceWindowSchedules GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayInput `pulumi:"maintenanceWindowSchedules"`
-	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
 	MonitorType pulumi.StringInput `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds pulumi.IntInput `pulumi:"repeatIntervalInSeconds"`
@@ -6522,7 +7249,7 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	ScriptParameters GetMonitorsMonitorCollectionItemScriptParameterArrayInput `pulumi:"scriptParameters"`
 	// A filter to return only monitors that match the status given.
 	Status pulumi.StringInput `pulumi:"status"`
-	// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+	// Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 	Target pulumi.StringInput `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
@@ -6648,7 +7375,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) MaintenanceWindowSchedules() Get
 	}).(GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput)
 }
 
-// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
+// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
 func (o GetMonitorsMonitorCollectionItemOutput) MonitorType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.MonitorType }).(pulumi.StringOutput)
 }
@@ -6685,7 +7412,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+// Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 func (o GetMonitorsMonitorCollectionItemOutput) Target() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Target }).(pulumi.StringOutput)
 }
@@ -6860,10 +7587,18 @@ type GetMonitorsMonitorCollectionItemConfiguration struct {
 	IsDefaultSnapshotEnabled bool `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried bool `pulumi:"isFailureRetried"`
+	// If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+	IsQueryRecursive bool `pulumi:"isQueryRecursive"`
 	// If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled bool `pulumi:"isRedirectionEnabled"`
-	// Details of the network configuration.
+	// Name of the server that will be used to perform DNS lookup.
+	NameServer string `pulumi:"nameServer"`
+	// Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
 	NetworkConfigurations []GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
+	// Type of protocol.
+	Protocol string `pulumi:"protocol"`
+	// DNS record type.
+	RecordType string `pulumi:"recordType"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails []GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail `pulumi:"reqAuthenticationDetails"`
 	// Request HTTP authentication scheme.
@@ -6908,10 +7643,18 @@ type GetMonitorsMonitorCollectionItemConfigurationArgs struct {
 	IsDefaultSnapshotEnabled pulumi.BoolInput `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried pulumi.BoolInput `pulumi:"isFailureRetried"`
+	// If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+	IsQueryRecursive pulumi.BoolInput `pulumi:"isQueryRecursive"`
 	// If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled pulumi.BoolInput `pulumi:"isRedirectionEnabled"`
-	// Details of the network configuration.
+	// Name of the server that will be used to perform DNS lookup.
+	NameServer pulumi.StringInput `pulumi:"nameServer"`
+	// Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
 	NetworkConfigurations GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
+	// Type of protocol.
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// DNS record type.
+	RecordType pulumi.StringInput `pulumi:"recordType"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayInput `pulumi:"reqAuthenticationDetails"`
 	// Request HTTP authentication scheme.
@@ -7017,16 +7760,36 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsFailureRetried() 
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsFailureRetried }).(pulumi.BoolOutput)
 }
 
+// If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsQueryRecursive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsQueryRecursive }).(pulumi.BoolOutput)
+}
+
 // If redirection is enabled, then redirects will be allowed while accessing target URL.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsRedirectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsRedirectionEnabled }).(pulumi.BoolOutput)
 }
 
-// Details of the network configuration.
+// Name of the server that will be used to perform DNS lookup.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) NameServer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.NameServer }).(pulumi.StringOutput)
+}
+
+// Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) NetworkConfigurations() GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) []GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration {
 		return v.NetworkConfigurations
 	}).(GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOutput)
+}
+
+// Type of protocol.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// DNS record type.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) RecordType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.RecordType }).(pulumi.StringOutput)
 }
 
 // Details for request HTTP authentication.
@@ -8721,6 +9484,2157 @@ func (o GetMonitorsMonitorCollectionItemVantagePointArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemVantagePoint {
 		return vs[0].([]GetMonitorsMonitorCollectionItemVantagePoint)[vs[1].(int)]
 	}).(GetMonitorsMonitorCollectionItemVantagePointOutput)
+}
+
+type GetOnPremiseVantagePointWorkerIdentityInfo struct {
+	// Domain short id of the On-premise VP worker.
+	ApmShortId string `pulumi:"apmShortId"`
+	// Collector endpoint of the On-premise VP worker.
+	CollectorEndPoint string `pulumi:"collectorEndPoint"`
+	// Domain region of the On-premise VP worker.
+	RegionName string `pulumi:"regionName"`
+}
+
+// GetOnPremiseVantagePointWorkerIdentityInfoInput is an input type that accepts GetOnPremiseVantagePointWorkerIdentityInfoArgs and GetOnPremiseVantagePointWorkerIdentityInfoOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkerIdentityInfoInput` via:
+//
+//	GetOnPremiseVantagePointWorkerIdentityInfoArgs{...}
+type GetOnPremiseVantagePointWorkerIdentityInfoInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkerIdentityInfoOutput() GetOnPremiseVantagePointWorkerIdentityInfoOutput
+	ToGetOnPremiseVantagePointWorkerIdentityInfoOutputWithContext(context.Context) GetOnPremiseVantagePointWorkerIdentityInfoOutput
+}
+
+type GetOnPremiseVantagePointWorkerIdentityInfoArgs struct {
+	// Domain short id of the On-premise VP worker.
+	ApmShortId pulumi.StringInput `pulumi:"apmShortId"`
+	// Collector endpoint of the On-premise VP worker.
+	CollectorEndPoint pulumi.StringInput `pulumi:"collectorEndPoint"`
+	// Domain region of the On-premise VP worker.
+	RegionName pulumi.StringInput `pulumi:"regionName"`
+}
+
+func (GetOnPremiseVantagePointWorkerIdentityInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkerIdentityInfo)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkerIdentityInfoArgs) ToGetOnPremiseVantagePointWorkerIdentityInfoOutput() GetOnPremiseVantagePointWorkerIdentityInfoOutput {
+	return i.ToGetOnPremiseVantagePointWorkerIdentityInfoOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkerIdentityInfoArgs) ToGetOnPremiseVantagePointWorkerIdentityInfoOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerIdentityInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkerIdentityInfoOutput)
+}
+
+// GetOnPremiseVantagePointWorkerIdentityInfoArrayInput is an input type that accepts GetOnPremiseVantagePointWorkerIdentityInfoArray and GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkerIdentityInfoArrayInput` via:
+//
+//	GetOnPremiseVantagePointWorkerIdentityInfoArray{ GetOnPremiseVantagePointWorkerIdentityInfoArgs{...} }
+type GetOnPremiseVantagePointWorkerIdentityInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkerIdentityInfoArrayOutput() GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput
+	ToGetOnPremiseVantagePointWorkerIdentityInfoArrayOutputWithContext(context.Context) GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput
+}
+
+type GetOnPremiseVantagePointWorkerIdentityInfoArray []GetOnPremiseVantagePointWorkerIdentityInfoInput
+
+func (GetOnPremiseVantagePointWorkerIdentityInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkerIdentityInfo)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkerIdentityInfoArray) ToGetOnPremiseVantagePointWorkerIdentityInfoArrayOutput() GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput {
+	return i.ToGetOnPremiseVantagePointWorkerIdentityInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkerIdentityInfoArray) ToGetOnPremiseVantagePointWorkerIdentityInfoArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkerIdentityInfoOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkerIdentityInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkerIdentityInfo)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkerIdentityInfoOutput) ToGetOnPremiseVantagePointWorkerIdentityInfoOutput() GetOnPremiseVantagePointWorkerIdentityInfoOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkerIdentityInfoOutput) ToGetOnPremiseVantagePointWorkerIdentityInfoOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerIdentityInfoOutput {
+	return o
+}
+
+// Domain short id of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkerIdentityInfoOutput) ApmShortId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkerIdentityInfo) string { return v.ApmShortId }).(pulumi.StringOutput)
+}
+
+// Collector endpoint of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkerIdentityInfoOutput) CollectorEndPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkerIdentityInfo) string { return v.CollectorEndPoint }).(pulumi.StringOutput)
+}
+
+// Domain region of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkerIdentityInfoOutput) RegionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkerIdentityInfo) string { return v.RegionName }).(pulumi.StringOutput)
+}
+
+type GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkerIdentityInfo)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput) ToGetOnPremiseVantagePointWorkerIdentityInfoArrayOutput() GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput) ToGetOnPremiseVantagePointWorkerIdentityInfoArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointWorkerIdentityInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointWorkerIdentityInfo {
+		return vs[0].([]GetOnPremiseVantagePointWorkerIdentityInfo)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointWorkerIdentityInfoOutput)
+}
+
+type GetOnPremiseVantagePointWorkerMonitorList struct {
+	// Unique name that can be edited. The name should not contain any confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+	Id string `pulumi:"id"`
+	// If isRunNow is enabled, then the monitor will run immediately.
+	IsRunNow bool `pulumi:"isRunNow"`
+	// Type of monitor.
+	MonitorType string `pulumi:"monitorType"`
+	// The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeAssigned string `pulumi:"timeAssigned"`
+}
+
+// GetOnPremiseVantagePointWorkerMonitorListInput is an input type that accepts GetOnPremiseVantagePointWorkerMonitorListArgs and GetOnPremiseVantagePointWorkerMonitorListOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkerMonitorListInput` via:
+//
+//	GetOnPremiseVantagePointWorkerMonitorListArgs{...}
+type GetOnPremiseVantagePointWorkerMonitorListInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkerMonitorListOutput() GetOnPremiseVantagePointWorkerMonitorListOutput
+	ToGetOnPremiseVantagePointWorkerMonitorListOutputWithContext(context.Context) GetOnPremiseVantagePointWorkerMonitorListOutput
+}
+
+type GetOnPremiseVantagePointWorkerMonitorListArgs struct {
+	// Unique name that can be edited. The name should not contain any confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If isRunNow is enabled, then the monitor will run immediately.
+	IsRunNow pulumi.BoolInput `pulumi:"isRunNow"`
+	// Type of monitor.
+	MonitorType pulumi.StringInput `pulumi:"monitorType"`
+	// The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeAssigned pulumi.StringInput `pulumi:"timeAssigned"`
+}
+
+func (GetOnPremiseVantagePointWorkerMonitorListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkerMonitorList)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkerMonitorListArgs) ToGetOnPremiseVantagePointWorkerMonitorListOutput() GetOnPremiseVantagePointWorkerMonitorListOutput {
+	return i.ToGetOnPremiseVantagePointWorkerMonitorListOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkerMonitorListArgs) ToGetOnPremiseVantagePointWorkerMonitorListOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerMonitorListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkerMonitorListOutput)
+}
+
+// GetOnPremiseVantagePointWorkerMonitorListArrayInput is an input type that accepts GetOnPremiseVantagePointWorkerMonitorListArray and GetOnPremiseVantagePointWorkerMonitorListArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkerMonitorListArrayInput` via:
+//
+//	GetOnPremiseVantagePointWorkerMonitorListArray{ GetOnPremiseVantagePointWorkerMonitorListArgs{...} }
+type GetOnPremiseVantagePointWorkerMonitorListArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkerMonitorListArrayOutput() GetOnPremiseVantagePointWorkerMonitorListArrayOutput
+	ToGetOnPremiseVantagePointWorkerMonitorListArrayOutputWithContext(context.Context) GetOnPremiseVantagePointWorkerMonitorListArrayOutput
+}
+
+type GetOnPremiseVantagePointWorkerMonitorListArray []GetOnPremiseVantagePointWorkerMonitorListInput
+
+func (GetOnPremiseVantagePointWorkerMonitorListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkerMonitorList)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkerMonitorListArray) ToGetOnPremiseVantagePointWorkerMonitorListArrayOutput() GetOnPremiseVantagePointWorkerMonitorListArrayOutput {
+	return i.ToGetOnPremiseVantagePointWorkerMonitorListArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkerMonitorListArray) ToGetOnPremiseVantagePointWorkerMonitorListArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerMonitorListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkerMonitorListArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkerMonitorListOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkerMonitorListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkerMonitorList)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkerMonitorListOutput) ToGetOnPremiseVantagePointWorkerMonitorListOutput() GetOnPremiseVantagePointWorkerMonitorListOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkerMonitorListOutput) ToGetOnPremiseVantagePointWorkerMonitorListOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerMonitorListOutput {
+	return o
+}
+
+// Unique name that can be edited. The name should not contain any confidential information.
+func (o GetOnPremiseVantagePointWorkerMonitorListOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkerMonitorList) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+func (o GetOnPremiseVantagePointWorkerMonitorListOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkerMonitorList) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If isRunNow is enabled, then the monitor will run immediately.
+func (o GetOnPremiseVantagePointWorkerMonitorListOutput) IsRunNow() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkerMonitorList) bool { return v.IsRunNow }).(pulumi.BoolOutput)
+}
+
+// Type of monitor.
+func (o GetOnPremiseVantagePointWorkerMonitorListOutput) MonitorType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkerMonitorList) string { return v.MonitorType }).(pulumi.StringOutput)
+}
+
+// The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o GetOnPremiseVantagePointWorkerMonitorListOutput) TimeAssigned() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkerMonitorList) string { return v.TimeAssigned }).(pulumi.StringOutput)
+}
+
+type GetOnPremiseVantagePointWorkerMonitorListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkerMonitorListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkerMonitorList)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkerMonitorListArrayOutput) ToGetOnPremiseVantagePointWorkerMonitorListArrayOutput() GetOnPremiseVantagePointWorkerMonitorListArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkerMonitorListArrayOutput) ToGetOnPremiseVantagePointWorkerMonitorListArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerMonitorListArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkerMonitorListArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointWorkerMonitorListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointWorkerMonitorList {
+		return vs[0].([]GetOnPremiseVantagePointWorkerMonitorList)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointWorkerMonitorListOutput)
+}
+
+type GetOnPremiseVantagePointWorkerVersionDetail struct {
+	// Latest image version of the On-premise VP worker.
+	LatestVersion string `pulumi:"latestVersion"`
+	// Minimum supported image version of the On-premise VP worker.
+	MinSupportedVersion string `pulumi:"minSupportedVersion"`
+	// Current image version of the On-premise VP worker.
+	Version string `pulumi:"version"`
+}
+
+// GetOnPremiseVantagePointWorkerVersionDetailInput is an input type that accepts GetOnPremiseVantagePointWorkerVersionDetailArgs and GetOnPremiseVantagePointWorkerVersionDetailOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkerVersionDetailInput` via:
+//
+//	GetOnPremiseVantagePointWorkerVersionDetailArgs{...}
+type GetOnPremiseVantagePointWorkerVersionDetailInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkerVersionDetailOutput() GetOnPremiseVantagePointWorkerVersionDetailOutput
+	ToGetOnPremiseVantagePointWorkerVersionDetailOutputWithContext(context.Context) GetOnPremiseVantagePointWorkerVersionDetailOutput
+}
+
+type GetOnPremiseVantagePointWorkerVersionDetailArgs struct {
+	// Latest image version of the On-premise VP worker.
+	LatestVersion pulumi.StringInput `pulumi:"latestVersion"`
+	// Minimum supported image version of the On-premise VP worker.
+	MinSupportedVersion pulumi.StringInput `pulumi:"minSupportedVersion"`
+	// Current image version of the On-premise VP worker.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetOnPremiseVantagePointWorkerVersionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkerVersionDetail)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkerVersionDetailArgs) ToGetOnPremiseVantagePointWorkerVersionDetailOutput() GetOnPremiseVantagePointWorkerVersionDetailOutput {
+	return i.ToGetOnPremiseVantagePointWorkerVersionDetailOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkerVersionDetailArgs) ToGetOnPremiseVantagePointWorkerVersionDetailOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerVersionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkerVersionDetailOutput)
+}
+
+// GetOnPremiseVantagePointWorkerVersionDetailArrayInput is an input type that accepts GetOnPremiseVantagePointWorkerVersionDetailArray and GetOnPremiseVantagePointWorkerVersionDetailArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkerVersionDetailArrayInput` via:
+//
+//	GetOnPremiseVantagePointWorkerVersionDetailArray{ GetOnPremiseVantagePointWorkerVersionDetailArgs{...} }
+type GetOnPremiseVantagePointWorkerVersionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkerVersionDetailArrayOutput() GetOnPremiseVantagePointWorkerVersionDetailArrayOutput
+	ToGetOnPremiseVantagePointWorkerVersionDetailArrayOutputWithContext(context.Context) GetOnPremiseVantagePointWorkerVersionDetailArrayOutput
+}
+
+type GetOnPremiseVantagePointWorkerVersionDetailArray []GetOnPremiseVantagePointWorkerVersionDetailInput
+
+func (GetOnPremiseVantagePointWorkerVersionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkerVersionDetail)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkerVersionDetailArray) ToGetOnPremiseVantagePointWorkerVersionDetailArrayOutput() GetOnPremiseVantagePointWorkerVersionDetailArrayOutput {
+	return i.ToGetOnPremiseVantagePointWorkerVersionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkerVersionDetailArray) ToGetOnPremiseVantagePointWorkerVersionDetailArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerVersionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkerVersionDetailArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkerVersionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkerVersionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkerVersionDetail)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkerVersionDetailOutput) ToGetOnPremiseVantagePointWorkerVersionDetailOutput() GetOnPremiseVantagePointWorkerVersionDetailOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkerVersionDetailOutput) ToGetOnPremiseVantagePointWorkerVersionDetailOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerVersionDetailOutput {
+	return o
+}
+
+// Latest image version of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkerVersionDetailOutput) LatestVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkerVersionDetail) string { return v.LatestVersion }).(pulumi.StringOutput)
+}
+
+// Minimum supported image version of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkerVersionDetailOutput) MinSupportedVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkerVersionDetail) string { return v.MinSupportedVersion }).(pulumi.StringOutput)
+}
+
+// Current image version of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkerVersionDetailOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkerVersionDetail) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetOnPremiseVantagePointWorkerVersionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkerVersionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkerVersionDetail)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkerVersionDetailArrayOutput) ToGetOnPremiseVantagePointWorkerVersionDetailArrayOutput() GetOnPremiseVantagePointWorkerVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkerVersionDetailArrayOutput) ToGetOnPremiseVantagePointWorkerVersionDetailArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkerVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkerVersionDetailArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointWorkerVersionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointWorkerVersionDetail {
+		return vs[0].([]GetOnPremiseVantagePointWorkerVersionDetail)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointWorkerVersionDetailOutput)
+}
+
+type GetOnPremiseVantagePointWorkersFilter struct {
+	// A filter to return only the resources that match the entire name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOnPremiseVantagePointWorkersFilterInput is an input type that accepts GetOnPremiseVantagePointWorkersFilterArgs and GetOnPremiseVantagePointWorkersFilterOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersFilterInput` via:
+//
+//	GetOnPremiseVantagePointWorkersFilterArgs{...}
+type GetOnPremiseVantagePointWorkersFilterInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersFilterOutput() GetOnPremiseVantagePointWorkersFilterOutput
+	ToGetOnPremiseVantagePointWorkersFilterOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersFilterOutput
+}
+
+type GetOnPremiseVantagePointWorkersFilterArgs struct {
+	// A filter to return only the resources that match the entire name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOnPremiseVantagePointWorkersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersFilter)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersFilterArgs) ToGetOnPremiseVantagePointWorkersFilterOutput() GetOnPremiseVantagePointWorkersFilterOutput {
+	return i.ToGetOnPremiseVantagePointWorkersFilterOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersFilterArgs) ToGetOnPremiseVantagePointWorkersFilterOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersFilterOutput)
+}
+
+// GetOnPremiseVantagePointWorkersFilterArrayInput is an input type that accepts GetOnPremiseVantagePointWorkersFilterArray and GetOnPremiseVantagePointWorkersFilterArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersFilterArrayInput` via:
+//
+//	GetOnPremiseVantagePointWorkersFilterArray{ GetOnPremiseVantagePointWorkersFilterArgs{...} }
+type GetOnPremiseVantagePointWorkersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersFilterArrayOutput() GetOnPremiseVantagePointWorkersFilterArrayOutput
+	ToGetOnPremiseVantagePointWorkersFilterArrayOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersFilterArrayOutput
+}
+
+type GetOnPremiseVantagePointWorkersFilterArray []GetOnPremiseVantagePointWorkersFilterInput
+
+func (GetOnPremiseVantagePointWorkersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersFilter)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersFilterArray) ToGetOnPremiseVantagePointWorkersFilterArrayOutput() GetOnPremiseVantagePointWorkersFilterArrayOutput {
+	return i.ToGetOnPremiseVantagePointWorkersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersFilterArray) ToGetOnPremiseVantagePointWorkersFilterArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersFilterArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersFilter)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersFilterOutput) ToGetOnPremiseVantagePointWorkersFilterOutput() GetOnPremiseVantagePointWorkersFilterOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersFilterOutput) ToGetOnPremiseVantagePointWorkersFilterOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersFilterOutput {
+	return o
+}
+
+// A filter to return only the resources that match the entire name.
+func (o GetOnPremiseVantagePointWorkersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOnPremiseVantagePointWorkersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOnPremiseVantagePointWorkersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersFilter)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersFilterArrayOutput) ToGetOnPremiseVantagePointWorkersFilterArrayOutput() GetOnPremiseVantagePointWorkersFilterArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersFilterArrayOutput) ToGetOnPremiseVantagePointWorkersFilterArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersFilterArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersFilterArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointWorkersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointWorkersFilter {
+		return vs[0].([]GetOnPremiseVantagePointWorkersFilter)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointWorkersFilterOutput)
+}
+
+type GetOnPremiseVantagePointWorkersSummary struct {
+	// Number of available workers in a specific On-premise vantage point.
+	Available int `pulumi:"available"`
+	// List of available capabilities in a specific On-premise vantage point.
+	AvailableCapabilities []GetOnPremiseVantagePointWorkersSummaryAvailableCapability `pulumi:"availableCapabilities"`
+	// Number of disabled workers in a specific On-premise vantage point.
+	Disabled int `pulumi:"disabled"`
+	// Minimum version among the workers in a specific On-premise vantage point.
+	MinVersion string `pulumi:"minVersion"`
+	// Total number of workers in a specific On-premise vantage point.
+	Total int `pulumi:"total"`
+	// Number of occupied workers in a specific On-premise vantage point.
+	Used int `pulumi:"used"`
+}
+
+// GetOnPremiseVantagePointWorkersSummaryInput is an input type that accepts GetOnPremiseVantagePointWorkersSummaryArgs and GetOnPremiseVantagePointWorkersSummaryOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersSummaryInput` via:
+//
+//	GetOnPremiseVantagePointWorkersSummaryArgs{...}
+type GetOnPremiseVantagePointWorkersSummaryInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersSummaryOutput() GetOnPremiseVantagePointWorkersSummaryOutput
+	ToGetOnPremiseVantagePointWorkersSummaryOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersSummaryOutput
+}
+
+type GetOnPremiseVantagePointWorkersSummaryArgs struct {
+	// Number of available workers in a specific On-premise vantage point.
+	Available pulumi.IntInput `pulumi:"available"`
+	// List of available capabilities in a specific On-premise vantage point.
+	AvailableCapabilities GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayInput `pulumi:"availableCapabilities"`
+	// Number of disabled workers in a specific On-premise vantage point.
+	Disabled pulumi.IntInput `pulumi:"disabled"`
+	// Minimum version among the workers in a specific On-premise vantage point.
+	MinVersion pulumi.StringInput `pulumi:"minVersion"`
+	// Total number of workers in a specific On-premise vantage point.
+	Total pulumi.IntInput `pulumi:"total"`
+	// Number of occupied workers in a specific On-premise vantage point.
+	Used pulumi.IntInput `pulumi:"used"`
+}
+
+func (GetOnPremiseVantagePointWorkersSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersSummary)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersSummaryArgs) ToGetOnPremiseVantagePointWorkersSummaryOutput() GetOnPremiseVantagePointWorkersSummaryOutput {
+	return i.ToGetOnPremiseVantagePointWorkersSummaryOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersSummaryArgs) ToGetOnPremiseVantagePointWorkersSummaryOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersSummaryOutput)
+}
+
+// GetOnPremiseVantagePointWorkersSummaryArrayInput is an input type that accepts GetOnPremiseVantagePointWorkersSummaryArray and GetOnPremiseVantagePointWorkersSummaryArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersSummaryArrayInput` via:
+//
+//	GetOnPremiseVantagePointWorkersSummaryArray{ GetOnPremiseVantagePointWorkersSummaryArgs{...} }
+type GetOnPremiseVantagePointWorkersSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersSummaryArrayOutput() GetOnPremiseVantagePointWorkersSummaryArrayOutput
+	ToGetOnPremiseVantagePointWorkersSummaryArrayOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersSummaryArrayOutput
+}
+
+type GetOnPremiseVantagePointWorkersSummaryArray []GetOnPremiseVantagePointWorkersSummaryInput
+
+func (GetOnPremiseVantagePointWorkersSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersSummary)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersSummaryArray) ToGetOnPremiseVantagePointWorkersSummaryArrayOutput() GetOnPremiseVantagePointWorkersSummaryArrayOutput {
+	return i.ToGetOnPremiseVantagePointWorkersSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersSummaryArray) ToGetOnPremiseVantagePointWorkersSummaryArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersSummaryArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkersSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersSummary)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersSummaryOutput) ToGetOnPremiseVantagePointWorkersSummaryOutput() GetOnPremiseVantagePointWorkersSummaryOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersSummaryOutput) ToGetOnPremiseVantagePointWorkersSummaryOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersSummaryOutput {
+	return o
+}
+
+// Number of available workers in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointWorkersSummaryOutput) Available() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersSummary) int { return v.Available }).(pulumi.IntOutput)
+}
+
+// List of available capabilities in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointWorkersSummaryOutput) AvailableCapabilities() GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersSummary) []GetOnPremiseVantagePointWorkersSummaryAvailableCapability {
+		return v.AvailableCapabilities
+	}).(GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput)
+}
+
+// Number of disabled workers in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointWorkersSummaryOutput) Disabled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersSummary) int { return v.Disabled }).(pulumi.IntOutput)
+}
+
+// Minimum version among the workers in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointWorkersSummaryOutput) MinVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersSummary) string { return v.MinVersion }).(pulumi.StringOutput)
+}
+
+// Total number of workers in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointWorkersSummaryOutput) Total() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersSummary) int { return v.Total }).(pulumi.IntOutput)
+}
+
+// Number of occupied workers in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointWorkersSummaryOutput) Used() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersSummary) int { return v.Used }).(pulumi.IntOutput)
+}
+
+type GetOnPremiseVantagePointWorkersSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersSummary)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersSummaryArrayOutput) ToGetOnPremiseVantagePointWorkersSummaryArrayOutput() GetOnPremiseVantagePointWorkersSummaryArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersSummaryArrayOutput) ToGetOnPremiseVantagePointWorkersSummaryArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersSummaryArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersSummaryArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointWorkersSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointWorkersSummary {
+		return vs[0].([]GetOnPremiseVantagePointWorkersSummary)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointWorkersSummaryOutput)
+}
+
+type GetOnPremiseVantagePointWorkersSummaryAvailableCapability struct {
+	// Capability of an On-premise vantage point worker.
+	Capability string `pulumi:"capability"`
+	// Count of available capability in a specific On-premise vantage point.
+	OnPremiseVantagePointCount int `pulumi:"onPremiseVantagePointCount"`
+}
+
+// GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityInput is an input type that accepts GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs and GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityInput` via:
+//
+//	GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs{...}
+type GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput() GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput
+	ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput
+}
+
+type GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs struct {
+	// Capability of an On-premise vantage point worker.
+	Capability pulumi.StringInput `pulumi:"capability"`
+	// Count of available capability in a specific On-premise vantage point.
+	OnPremiseVantagePointCount pulumi.IntInput `pulumi:"onPremiseVantagePointCount"`
+}
+
+func (GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs) ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput() GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput {
+	return i.ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs) ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput)
+}
+
+// GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayInput is an input type that accepts GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArray and GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayInput` via:
+//
+//	GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArray{ GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs{...} }
+type GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput() GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput
+	ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput
+}
+
+type GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArray []GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityInput
+
+func (GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArray) ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput() GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput {
+	return i.ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArray) ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput) ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput() GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput) ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput {
+	return o
+}
+
+// Capability of an On-premise vantage point worker.
+func (o GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput) Capability() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersSummaryAvailableCapability) string { return v.Capability }).(pulumi.StringOutput)
+}
+
+// Count of available capability in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput) OnPremiseVantagePointCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersSummaryAvailableCapability) int {
+		return v.OnPremiseVantagePointCount
+	}).(pulumi.IntOutput)
+}
+
+type GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput) ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput() GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput) ToGetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointWorkersSummaryAvailableCapability {
+		return vs[0].([]GetOnPremiseVantagePointWorkersSummaryAvailableCapability)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollection struct {
+	Items []GetOnPremiseVantagePointWorkersWorkerCollectionItem `pulumi:"items"`
+}
+
+// GetOnPremiseVantagePointWorkersWorkerCollectionInput is an input type that accepts GetOnPremiseVantagePointWorkersWorkerCollectionArgs and GetOnPremiseVantagePointWorkersWorkerCollectionOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersWorkerCollectionInput` via:
+//
+//	GetOnPremiseVantagePointWorkersWorkerCollectionArgs{...}
+type GetOnPremiseVantagePointWorkersWorkerCollectionInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionOutput() GetOnPremiseVantagePointWorkersWorkerCollectionOutput
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionOutput
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionArgs struct {
+	Items GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollection)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionArgs) ToGetOnPremiseVantagePointWorkersWorkerCollectionOutput() GetOnPremiseVantagePointWorkersWorkerCollectionOutput {
+	return i.ToGetOnPremiseVantagePointWorkersWorkerCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionArgs) ToGetOnPremiseVantagePointWorkersWorkerCollectionOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersWorkerCollectionOutput)
+}
+
+// GetOnPremiseVantagePointWorkersWorkerCollectionArrayInput is an input type that accepts GetOnPremiseVantagePointWorkersWorkerCollectionArray and GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersWorkerCollectionArrayInput` via:
+//
+//	GetOnPremiseVantagePointWorkersWorkerCollectionArray{ GetOnPremiseVantagePointWorkersWorkerCollectionArgs{...} }
+type GetOnPremiseVantagePointWorkersWorkerCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionArrayOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionArray []GetOnPremiseVantagePointWorkersWorkerCollectionInput
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersWorkerCollection)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionArray) ToGetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput {
+	return i.ToGetOnPremiseVantagePointWorkersWorkerCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionArray) ToGetOnPremiseVantagePointWorkersWorkerCollectionArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollection)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionOutput() GetOnPremiseVantagePointWorkersWorkerCollectionOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionOutput) Items() GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollection) []GetOnPremiseVantagePointWorkersWorkerCollectionItem {
+		return v.Items
+	}).(GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersWorkerCollection)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointWorkersWorkerCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointWorkersWorkerCollection {
+		return vs[0].([]GetOnPremiseVantagePointWorkersWorkerCollection)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointWorkersWorkerCollectionOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItem struct {
+	// The APM domain ID the request is intended for.
+	ApmDomainId string `pulumi:"apmDomainId"`
+	// Configuration details of the On-premise VP worker.
+	ConfigurationDetails string `pulumi:"configurationDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only the resources that match the entire display name.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Geographical information of the On-premise VP worker.
+	GeoInfo string `pulumi:"geoInfo"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+	Id string `pulumi:"id"`
+	// Domain details of the On-premise VP worker.
+	IdentityInfos []GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo `pulumi:"identityInfos"`
+	// Monitors list assigned to the On-premise VP worker.
+	MonitorLists []GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList `pulumi:"monitorLists"`
+	// A filter to return only the resources that match the entire name.
+	Name string `pulumi:"name"`
+	// The OCID of the On-premise vantage point.
+	OnPremiseVantagePointId string `pulumi:"onPremiseVantagePointId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
+	OpvpId string `pulumi:"opvpId"`
+	// On-premise vantage point name.
+	OpvpName string `pulumi:"opvpName"`
+	// Priority of the On-premise VP worker to schedule monitors.
+	Priority                        int    `pulumi:"priority"`
+	ResourcePrincipalTokenPublicKey string `pulumi:"resourcePrincipalTokenPublicKey"`
+	// The runtime assigned id of the On-premise VP worker.
+	RuntimeId string `pulumi:"runtimeId"`
+	// A filter to return only On-premise VP workers that match the status given.
+	Status string `pulumi:"status"`
+	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeLastSyncUp string `pulumi:"timeLastSyncUp"`
+	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Current image version of the On-premise VP worker.
+	Version string `pulumi:"version"`
+	// Image version details of the On-premise VP worker.
+	VersionDetails []GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail `pulumi:"versionDetails"`
+	// Type of the On-premise VP worker.
+	WorkerType string `pulumi:"workerType"`
+}
+
+// GetOnPremiseVantagePointWorkersWorkerCollectionItemInput is an input type that accepts GetOnPremiseVantagePointWorkersWorkerCollectionItemArgs and GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersWorkerCollectionItemInput` via:
+//
+//	GetOnPremiseVantagePointWorkersWorkerCollectionItemArgs{...}
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemArgs struct {
+	// The APM domain ID the request is intended for.
+	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	// Configuration details of the On-premise VP worker.
+	ConfigurationDetails pulumi.StringInput `pulumi:"configurationDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only the resources that match the entire display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Geographical information of the On-premise VP worker.
+	GeoInfo pulumi.StringInput `pulumi:"geoInfo"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Domain details of the On-premise VP worker.
+	IdentityInfos GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayInput `pulumi:"identityInfos"`
+	// Monitors list assigned to the On-premise VP worker.
+	MonitorLists GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayInput `pulumi:"monitorLists"`
+	// A filter to return only the resources that match the entire name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The OCID of the On-premise vantage point.
+	OnPremiseVantagePointId pulumi.StringInput `pulumi:"onPremiseVantagePointId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
+	OpvpId pulumi.StringInput `pulumi:"opvpId"`
+	// On-premise vantage point name.
+	OpvpName pulumi.StringInput `pulumi:"opvpName"`
+	// Priority of the On-premise VP worker to schedule monitors.
+	Priority                        pulumi.IntInput    `pulumi:"priority"`
+	ResourcePrincipalTokenPublicKey pulumi.StringInput `pulumi:"resourcePrincipalTokenPublicKey"`
+	// The runtime assigned id of the On-premise VP worker.
+	RuntimeId pulumi.StringInput `pulumi:"runtimeId"`
+	// A filter to return only On-premise VP workers that match the status given.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeLastSyncUp pulumi.StringInput `pulumi:"timeLastSyncUp"`
+	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Current image version of the On-premise VP worker.
+	Version pulumi.StringInput `pulumi:"version"`
+	// Image version details of the On-premise VP worker.
+	VersionDetails GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayInput `pulumi:"versionDetails"`
+	// Type of the On-premise VP worker.
+	WorkerType pulumi.StringInput `pulumi:"workerType"`
+}
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItem)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemArgs) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput {
+	return i.ToGetOnPremiseVantagePointWorkersWorkerCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemArgs) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput)
+}
+
+// GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayInput is an input type that accepts GetOnPremiseVantagePointWorkersWorkerCollectionItemArray and GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayInput` via:
+//
+//	GetOnPremiseVantagePointWorkersWorkerCollectionItemArray{ GetOnPremiseVantagePointWorkersWorkerCollectionItemArgs{...} }
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemArray []GetOnPremiseVantagePointWorkersWorkerCollectionItemInput
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersWorkerCollectionItem)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemArray) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput {
+	return i.ToGetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemArray) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItem)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput {
+	return o
+}
+
+// The APM domain ID the request is intended for.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) ApmDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
+}
+
+// Configuration details of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) ConfigurationDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.ConfigurationDetails }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only the resources that match the entire display name.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Geographical information of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) GeoInfo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.GeoInfo }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Domain details of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) IdentityInfos() GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) []GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo {
+		return v.IdentityInfos
+	}).(GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput)
+}
+
+// Monitors list assigned to the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) MonitorLists() GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) []GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList {
+		return v.MonitorLists
+	}).(GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput)
+}
+
+// A filter to return only the resources that match the entire name.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The OCID of the On-premise vantage point.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) OnPremiseVantagePointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.OnPremiseVantagePointId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) OpvpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.OpvpId }).(pulumi.StringOutput)
+}
+
+// On-premise vantage point name.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) OpvpName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.OpvpName }).(pulumi.StringOutput)
+}
+
+// Priority of the On-premise VP worker to schedule monitors.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) Priority() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) int { return v.Priority }).(pulumi.IntOutput)
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) ResourcePrincipalTokenPublicKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string {
+		return v.ResourcePrincipalTokenPublicKey
+	}).(pulumi.StringOutput)
+}
+
+// The runtime assigned id of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) RuntimeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.RuntimeId }).(pulumi.StringOutput)
+}
+
+// A filter to return only On-premise VP workers that match the status given.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) TimeLastSyncUp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.TimeLastSyncUp }).(pulumi.StringOutput)
+}
+
+// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Current image version of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+}
+
+// Image version details of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) VersionDetails() GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) []GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail {
+		return v.VersionDetails
+	}).(GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput)
+}
+
+// Type of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) WorkerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) string { return v.WorkerType }).(pulumi.StringOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersWorkerCollectionItem)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointWorkersWorkerCollectionItem {
+		return vs[0].([]GetOnPremiseVantagePointWorkersWorkerCollectionItem)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo struct {
+	// Domain short id of the On-premise VP worker.
+	ApmShortId string `pulumi:"apmShortId"`
+	// Collector endpoint of the On-premise VP worker.
+	CollectorEndPoint string `pulumi:"collectorEndPoint"`
+	// Domain region of the On-premise VP worker.
+	RegionName string `pulumi:"regionName"`
+}
+
+// GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoInput is an input type that accepts GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArgs and GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoInput` via:
+//
+//	GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArgs{...}
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArgs struct {
+	// Domain short id of the On-premise VP worker.
+	ApmShortId pulumi.StringInput `pulumi:"apmShortId"`
+	// Collector endpoint of the On-premise VP worker.
+	CollectorEndPoint pulumi.StringInput `pulumi:"collectorEndPoint"`
+	// Domain region of the On-premise VP worker.
+	RegionName pulumi.StringInput `pulumi:"regionName"`
+}
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArgs) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput {
+	return i.ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArgs) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput)
+}
+
+// GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayInput is an input type that accepts GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArray and GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayInput` via:
+//
+//	GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArray{ GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArgs{...} }
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArray []GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoInput
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArray) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput {
+	return i.ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArray) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput {
+	return o
+}
+
+// Domain short id of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput) ApmShortId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo) string { return v.ApmShortId }).(pulumi.StringOutput)
+}
+
+// Collector endpoint of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput) CollectorEndPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo) string {
+		return v.CollectorEndPoint
+	}).(pulumi.StringOutput)
+}
+
+// Domain region of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput) RegionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo) string { return v.RegionName }).(pulumi.StringOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo {
+		return vs[0].([]GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfo)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList struct {
+	// A filter to return only the resources that match the entire display name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+	Id string `pulumi:"id"`
+	// If isRunNow is enabled, then the monitor will run immediately.
+	IsRunNow bool `pulumi:"isRunNow"`
+	// Type of monitor.
+	MonitorType string `pulumi:"monitorType"`
+	// The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeAssigned string `pulumi:"timeAssigned"`
+}
+
+// GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListInput is an input type that accepts GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArgs and GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListInput` via:
+//
+//	GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArgs{...}
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArgs struct {
+	// A filter to return only the resources that match the entire display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If isRunNow is enabled, then the monitor will run immediately.
+	IsRunNow pulumi.BoolInput `pulumi:"isRunNow"`
+	// Type of monitor.
+	MonitorType pulumi.StringInput `pulumi:"monitorType"`
+	// The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeAssigned pulumi.StringInput `pulumi:"timeAssigned"`
+}
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArgs) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput {
+	return i.ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArgs) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput)
+}
+
+// GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayInput is an input type that accepts GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArray and GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayInput` via:
+//
+//	GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArray{ GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArgs{...} }
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArray []GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListInput
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArray) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput {
+	return i.ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArray) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput {
+	return o
+}
+
+// A filter to return only the resources that match the entire display name.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If isRunNow is enabled, then the monitor will run immediately.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput) IsRunNow() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList) bool { return v.IsRunNow }).(pulumi.BoolOutput)
+}
+
+// Type of monitor.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput) MonitorType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList) string { return v.MonitorType }).(pulumi.StringOutput)
+}
+
+// The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput) TimeAssigned() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList) string { return v.TimeAssigned }).(pulumi.StringOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList {
+		return vs[0].([]GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorList)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail struct {
+	// Latest image version of the On-premise VP worker.
+	LatestVersion string `pulumi:"latestVersion"`
+	// Minimum supported image version of the On-premise VP worker.
+	MinSupportedVersion string `pulumi:"minSupportedVersion"`
+	// Current image version of the On-premise VP worker.
+	Version string `pulumi:"version"`
+}
+
+// GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailInput is an input type that accepts GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArgs and GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailInput` via:
+//
+//	GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArgs{...}
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArgs struct {
+	// Latest image version of the On-premise VP worker.
+	LatestVersion pulumi.StringInput `pulumi:"latestVersion"`
+	// Minimum supported image version of the On-premise VP worker.
+	MinSupportedVersion pulumi.StringInput `pulumi:"minSupportedVersion"`
+	// Current image version of the On-premise VP worker.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArgs) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput {
+	return i.ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArgs) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput)
+}
+
+// GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayInput is an input type that accepts GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArray and GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayInput` via:
+//
+//	GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArray{ GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArgs{...} }
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput
+	ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutputWithContext(context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArray []GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailInput
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArray) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput {
+	return i.ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArray) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput {
+	return o
+}
+
+// Latest image version of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput) LatestVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail) string {
+		return v.LatestVersion
+	}).(pulumi.StringOutput)
+}
+
+// Minimum supported image version of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput) MinSupportedVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail) string {
+		return v.MinSupportedVersion
+	}).(pulumi.StringOutput)
+}
+
+// Current image version of the On-premise VP worker.
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput() GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput) ToGetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail {
+		return vs[0].([]GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetail)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput)
+}
+
+type GetOnPremiseVantagePointsFilter struct {
+	// A filter to return only the resources that match the entire name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOnPremiseVantagePointsFilterInput is an input type that accepts GetOnPremiseVantagePointsFilterArgs and GetOnPremiseVantagePointsFilterOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointsFilterInput` via:
+//
+//	GetOnPremiseVantagePointsFilterArgs{...}
+type GetOnPremiseVantagePointsFilterInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointsFilterOutput() GetOnPremiseVantagePointsFilterOutput
+	ToGetOnPremiseVantagePointsFilterOutputWithContext(context.Context) GetOnPremiseVantagePointsFilterOutput
+}
+
+type GetOnPremiseVantagePointsFilterArgs struct {
+	// A filter to return only the resources that match the entire name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOnPremiseVantagePointsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointsFilter)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointsFilterArgs) ToGetOnPremiseVantagePointsFilterOutput() GetOnPremiseVantagePointsFilterOutput {
+	return i.ToGetOnPremiseVantagePointsFilterOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointsFilterArgs) ToGetOnPremiseVantagePointsFilterOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointsFilterOutput)
+}
+
+// GetOnPremiseVantagePointsFilterArrayInput is an input type that accepts GetOnPremiseVantagePointsFilterArray and GetOnPremiseVantagePointsFilterArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointsFilterArrayInput` via:
+//
+//	GetOnPremiseVantagePointsFilterArray{ GetOnPremiseVantagePointsFilterArgs{...} }
+type GetOnPremiseVantagePointsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointsFilterArrayOutput() GetOnPremiseVantagePointsFilterArrayOutput
+	ToGetOnPremiseVantagePointsFilterArrayOutputWithContext(context.Context) GetOnPremiseVantagePointsFilterArrayOutput
+}
+
+type GetOnPremiseVantagePointsFilterArray []GetOnPremiseVantagePointsFilterInput
+
+func (GetOnPremiseVantagePointsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointsFilter)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointsFilterArray) ToGetOnPremiseVantagePointsFilterArrayOutput() GetOnPremiseVantagePointsFilterArrayOutput {
+	return i.ToGetOnPremiseVantagePointsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointsFilterArray) ToGetOnPremiseVantagePointsFilterArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointsFilterArrayOutput)
+}
+
+type GetOnPremiseVantagePointsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointsFilter)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointsFilterOutput) ToGetOnPremiseVantagePointsFilterOutput() GetOnPremiseVantagePointsFilterOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsFilterOutput) ToGetOnPremiseVantagePointsFilterOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsFilterOutput {
+	return o
+}
+
+// A filter to return only the resources that match the entire name.
+func (o GetOnPremiseVantagePointsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOnPremiseVantagePointsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOnPremiseVantagePointsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOnPremiseVantagePointsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointsFilter)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointsFilterArrayOutput) ToGetOnPremiseVantagePointsFilterArrayOutput() GetOnPremiseVantagePointsFilterArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsFilterArrayOutput) ToGetOnPremiseVantagePointsFilterArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsFilterArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsFilterArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointsFilter {
+		return vs[0].([]GetOnPremiseVantagePointsFilter)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointsFilterOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollection struct {
+	Items []GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem `pulumi:"items"`
+}
+
+// GetOnPremiseVantagePointsOnPremiseVantagePointCollectionInput is an input type that accepts GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArgs and GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointsOnPremiseVantagePointCollectionInput` via:
+//
+//	GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArgs{...}
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutputWithContext(context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArgs struct {
+	Items GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollection)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArgs) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput {
+	return i.ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArgs) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput)
+}
+
+// GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayInput is an input type that accepts GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArray and GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayInput` via:
+//
+//	GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArray{ GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArgs{...} }
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutputWithContext(context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArray []GetOnPremiseVantagePointsOnPremiseVantagePointCollectionInput
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointsOnPremiseVantagePointCollection)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArray) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput {
+	return i.ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArray) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollection)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput) Items() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollection) []GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem {
+		return v.Items
+	}).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointsOnPremiseVantagePointCollection)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointsOnPremiseVantagePointCollection {
+		return vs[0].([]GetOnPremiseVantagePointsOnPremiseVantagePointCollection)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem struct {
+	// The APM domain ID the request is intended for.
+	ApmDomainId string `pulumi:"apmDomainId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A short description about the On-premise vantage point.
+	Description string `pulumi:"description"`
+	// A filter to return only the resources that match the entire display name.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
+	Id string `pulumi:"id"`
+	// A filter to return only the resources that match the entire name.
+	Name string `pulumi:"name"`
+	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Type of On-premise vantage point.
+	Type string `pulumi:"type"`
+	// Details of the workers in a specific On-premise vantage point.
+	WorkersSummaries []GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary `pulumi:"workersSummaries"`
+}
+
+// GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemInput is an input type that accepts GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArgs and GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemInput` via:
+//
+//	GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArgs{...}
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutputWithContext(context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArgs struct {
+	// The APM domain ID the request is intended for.
+	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A short description about the On-premise vantage point.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only the resources that match the entire display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only the resources that match the entire name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Type of On-premise vantage point.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Details of the workers in a specific On-premise vantage point.
+	WorkersSummaries GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayInput `pulumi:"workersSummaries"`
+}
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArgs) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput {
+	return i.ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArgs) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput)
+}
+
+// GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayInput is an input type that accepts GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArray and GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayInput` via:
+//
+//	GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArray{ GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArgs{...} }
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutputWithContext(context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArray []GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemInput
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArray) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput {
+	return i.ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArray) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput {
+	return o
+}
+
+// The APM domain ID the request is intended for.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) ApmDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A short description about the On-premise vantage point.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the entire display name.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the entire name.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Type of On-premise vantage point.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Details of the workers in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) WorkersSummaries() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) []GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary {
+		return v.WorkersSummaries
+	}).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem {
+		return vs[0].([]GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary struct {
+	// Number of available workers in a specific On-premise vantage point.
+	Available int `pulumi:"available"`
+	// List of available capabilities in a specific On-premise vantage point.
+	AvailableCapabilities []GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapability `pulumi:"availableCapabilities"`
+	// Number of disabled workers in a specific On-premise vantage point.
+	Disabled int `pulumi:"disabled"`
+	// Minimum version among the workers in a specific On-premise vantage point.
+	MinVersion string `pulumi:"minVersion"`
+	// Total number of workers in a specific On-premise vantage point.
+	Total int `pulumi:"total"`
+	// Number of occupied workers in a specific On-premise vantage point.
+	Used int `pulumi:"used"`
+}
+
+// GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryInput is an input type that accepts GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArgs and GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryInput` via:
+//
+//	GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArgs{...}
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutputWithContext(context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArgs struct {
+	// Number of available workers in a specific On-premise vantage point.
+	Available pulumi.IntInput `pulumi:"available"`
+	// List of available capabilities in a specific On-premise vantage point.
+	AvailableCapabilities GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayInput `pulumi:"availableCapabilities"`
+	// Number of disabled workers in a specific On-premise vantage point.
+	Disabled pulumi.IntInput `pulumi:"disabled"`
+	// Minimum version among the workers in a specific On-premise vantage point.
+	MinVersion pulumi.StringInput `pulumi:"minVersion"`
+	// Total number of workers in a specific On-premise vantage point.
+	Total pulumi.IntInput `pulumi:"total"`
+	// Number of occupied workers in a specific On-premise vantage point.
+	Used pulumi.IntInput `pulumi:"used"`
+}
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArgs) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput {
+	return i.ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArgs) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput)
+}
+
+// GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayInput is an input type that accepts GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArray and GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayInput` via:
+//
+//	GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArray{ GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArgs{...} }
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutputWithContext(context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArray []GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryInput
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArray) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput {
+	return i.ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArray) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput {
+	return o
+}
+
+// Number of available workers in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput) Available() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary) int {
+		return v.Available
+	}).(pulumi.IntOutput)
+}
+
+// List of available capabilities in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput) AvailableCapabilities() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary) []GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapability {
+		return v.AvailableCapabilities
+	}).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput)
+}
+
+// Number of disabled workers in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput) Disabled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary) int {
+		return v.Disabled
+	}).(pulumi.IntOutput)
+}
+
+// Minimum version among the workers in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput) MinVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary) string {
+		return v.MinVersion
+	}).(pulumi.StringOutput)
+}
+
+// Total number of workers in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput) Total() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary) int { return v.Total }).(pulumi.IntOutput)
+}
+
+// Number of occupied workers in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput) Used() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary) int { return v.Used }).(pulumi.IntOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary {
+		return vs[0].([]GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummary)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapability struct {
+	// Capability of an On-premise vantage point worker.
+	Capability string `pulumi:"capability"`
+	// Count of available capability in a specific On-premise vantage point.
+	OnPremiseVantagePointCount int `pulumi:"onPremiseVantagePointCount"`
+}
+
+// GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityInput is an input type that accepts GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArgs and GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityInput` via:
+//
+//	GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArgs{...}
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutputWithContext(context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArgs struct {
+	// Capability of an On-premise vantage point worker.
+	Capability pulumi.StringInput `pulumi:"capability"`
+	// Count of available capability in a specific On-premise vantage point.
+	OnPremiseVantagePointCount pulumi.IntInput `pulumi:"onPremiseVantagePointCount"`
+}
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArgs) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput {
+	return i.ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArgs) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput)
+}
+
+// GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayInput is an input type that accepts GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArray and GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput values.
+// You can construct a concrete instance of `GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayInput` via:
+//
+//	GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArray{ GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArgs{...} }
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayInput interface {
+	pulumi.Input
+
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput
+	ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutputWithContext(context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArray []GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityInput
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArray) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput {
+	return i.ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutputWithContext(context.Background())
+}
+
+func (i GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArray) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput {
+	return o
+}
+
+// Capability of an On-premise vantage point worker.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput) Capability() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapability) string {
+		return v.Capability
+	}).(pulumi.StringOutput)
+}
+
+// Count of available capability in a specific On-premise vantage point.
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput) OnPremiseVantagePointCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapability) int {
+		return v.OnPremiseVantagePointCount
+	}).(pulumi.IntOutput)
+}
+
+type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapability)(nil)).Elem()
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput() GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput) ToGetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutputWithContext(ctx context.Context) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput {
+	return o
+}
+
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput) Index(i pulumi.IntInput) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapability {
+		return vs[0].([]GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapability)[vs[1].(int)]
+	}).(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput)
 }
 
 type GetResultResultDataSet struct {
@@ -10770,6 +13684,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedVantagePointDvpStackDetailsPtrInput)(nil)).Elem(), DedicatedVantagePointDvpStackDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedVantagePointMonitorStatusCountMapInput)(nil)).Elem(), DedicatedVantagePointMonitorStatusCountMapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedVantagePointMonitorStatusCountMapArrayInput)(nil)).Elem(), DedicatedVantagePointMonitorStatusCountMapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OnPremiseVantagePointWorkerIdentityInfoInput)(nil)).Elem(), OnPremiseVantagePointWorkerIdentityInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OnPremiseVantagePointWorkerIdentityInfoArrayInput)(nil)).Elem(), OnPremiseVantagePointWorkerIdentityInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OnPremiseVantagePointWorkerMonitorListInput)(nil)).Elem(), OnPremiseVantagePointWorkerMonitorListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OnPremiseVantagePointWorkerMonitorListArrayInput)(nil)).Elem(), OnPremiseVantagePointWorkerMonitorListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OnPremiseVantagePointWorkerVersionDetailInput)(nil)).Elem(), OnPremiseVantagePointWorkerVersionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OnPremiseVantagePointWorkerVersionDetailArrayInput)(nil)).Elem(), OnPremiseVantagePointWorkerVersionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OnPremiseVantagePointWorkersSummaryInput)(nil)).Elem(), OnPremiseVantagePointWorkersSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OnPremiseVantagePointWorkersSummaryArrayInput)(nil)).Elem(), OnPremiseVantagePointWorkersSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OnPremiseVantagePointWorkersSummaryAvailableCapabilityInput)(nil)).Elem(), OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayInput)(nil)).Elem(), OnPremiseVantagePointWorkersSummaryAvailableCapabilityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScriptMonitorStatusCountMapInput)(nil)).Elem(), ScriptMonitorStatusCountMapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScriptMonitorStatusCountMapArrayInput)(nil)).Elem(), ScriptMonitorStatusCountMapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScriptParameterInput)(nil)).Elem(), ScriptParameterArgs{})
@@ -10860,6 +13784,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemVantagePointInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemVantagePointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemVantagePointArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemVantagePointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkerIdentityInfoInput)(nil)).Elem(), GetOnPremiseVantagePointWorkerIdentityInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkerIdentityInfoArrayInput)(nil)).Elem(), GetOnPremiseVantagePointWorkerIdentityInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkerMonitorListInput)(nil)).Elem(), GetOnPremiseVantagePointWorkerMonitorListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkerMonitorListArrayInput)(nil)).Elem(), GetOnPremiseVantagePointWorkerMonitorListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkerVersionDetailInput)(nil)).Elem(), GetOnPremiseVantagePointWorkerVersionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkerVersionDetailArrayInput)(nil)).Elem(), GetOnPremiseVantagePointWorkerVersionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersFilterInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersFilterArrayInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersSummaryInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersSummaryArrayInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersWorkerCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionArrayInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersWorkerCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersWorkerCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersWorkerCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayInput)(nil)).Elem(), GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointsFilterInput)(nil)).Elem(), GetOnPremiseVantagePointsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointsFilterArrayInput)(nil)).Elem(), GetOnPremiseVantagePointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionInput)(nil)).Elem(), GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayInput)(nil)).Elem(), GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemInput)(nil)).Elem(), GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayInput)(nil)).Elem(), GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryInput)(nil)).Elem(), GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayInput)(nil)).Elem(), GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityInput)(nil)).Elem(), GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayInput)(nil)).Elem(), GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResultResultDataSetInput)(nil)).Elem(), GetResultResultDataSetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResultResultDataSetArrayInput)(nil)).Elem(), GetResultResultDataSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScriptMonitorStatusCountMapInput)(nil)).Elem(), GetScriptMonitorStatusCountMapArgs{})
@@ -10928,6 +13884,16 @@ func init() {
 	pulumi.RegisterOutputType(DedicatedVantagePointDvpStackDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DedicatedVantagePointMonitorStatusCountMapOutput{})
 	pulumi.RegisterOutputType(DedicatedVantagePointMonitorStatusCountMapArrayOutput{})
+	pulumi.RegisterOutputType(OnPremiseVantagePointWorkerIdentityInfoOutput{})
+	pulumi.RegisterOutputType(OnPremiseVantagePointWorkerIdentityInfoArrayOutput{})
+	pulumi.RegisterOutputType(OnPremiseVantagePointWorkerMonitorListOutput{})
+	pulumi.RegisterOutputType(OnPremiseVantagePointWorkerMonitorListArrayOutput{})
+	pulumi.RegisterOutputType(OnPremiseVantagePointWorkerVersionDetailOutput{})
+	pulumi.RegisterOutputType(OnPremiseVantagePointWorkerVersionDetailArrayOutput{})
+	pulumi.RegisterOutputType(OnPremiseVantagePointWorkersSummaryOutput{})
+	pulumi.RegisterOutputType(OnPremiseVantagePointWorkersSummaryArrayOutput{})
+	pulumi.RegisterOutputType(OnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput{})
+	pulumi.RegisterOutputType(OnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput{})
 	pulumi.RegisterOutputType(ScriptMonitorStatusCountMapOutput{})
 	pulumi.RegisterOutputType(ScriptMonitorStatusCountMapArrayOutput{})
 	pulumi.RegisterOutputType(ScriptParameterOutput{})
@@ -11018,6 +13984,38 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemVantagePointOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemVantagePointArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkerIdentityInfoOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkerIdentityInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkerMonitorListOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkerMonitorListArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkerVersionDetailOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkerVersionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersFilterOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersSummaryOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersSummaryAvailableCapabilityArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersWorkerCollectionOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersWorkerCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersWorkerCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersWorkerCollectionItemMonitorListArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointWorkersWorkerCollectionItemVersionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointsFilterOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityOutput{})
+	pulumi.RegisterOutputType(GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryAvailableCapabilityArrayOutput{})
 	pulumi.RegisterOutputType(GetResultResultDataSetOutput{})
 	pulumi.RegisterOutputType(GetResultResultDataSetArrayOutput{})
 	pulumi.RegisterOutputType(GetScriptMonitorStatusCountMapOutput{})

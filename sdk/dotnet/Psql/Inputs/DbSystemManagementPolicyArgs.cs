@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Psql.Inputs
     public sealed class DbSystemManagementPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Posgresql DB system backup policy
+        /// (Updatable) PostgreSQL database system backup policy.
         /// </summary>
         [Input("backupPolicy")]
         public Input<Inputs.DbSystemManagementPolicyBackupPolicyArgs>? BackupPolicy { get; set; }

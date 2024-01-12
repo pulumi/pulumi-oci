@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemsDbSystemCollectionItemManagementPolicy {
     /**
-     * @return Posgresql DB system backup policy
+     * @return PostgreSQL database system backup policy.
      * 
      */
     private List<GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy> backupPolicies;
@@ -25,7 +25,7 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicy {
 
     private GetDbSystemsDbSystemCollectionItemManagementPolicy() {}
     /**
-     * @return Posgresql DB system backup policy
+     * @return PostgreSQL database system backup policy.
      * 
      */
     public List<GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy> backupPolicies() {

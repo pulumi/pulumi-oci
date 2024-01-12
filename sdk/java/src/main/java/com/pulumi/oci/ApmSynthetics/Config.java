@@ -94,7 +94,9 @@ import javax.annotation.Nullable;
  *                 .isCertificateValidationEnabled(var_.monitor_configuration_is_certificate_validation_enabled())
  *                 .isDefaultSnapshotEnabled(var_.monitor_configuration_is_default_snapshot_enabled())
  *                 .isFailureRetried(var_.monitor_configuration_is_failure_retried())
+ *                 .isQueryRecursive(var_.monitor_configuration_is_query_recursive())
  *                 .isRedirectionEnabled(var_.monitor_configuration_is_redirection_enabled())
+ *                 .nameServer(var_.monitor_configuration_name_server())
  *                 .networkConfiguration(ConfigConfigurationNetworkConfigurationArgs.builder()
  *                     .numberOfHops(var_.monitor_configuration_network_configuration_number_of_hops())
  *                     .probeMode(var_.monitor_configuration_network_configuration_probe_mode())
@@ -102,6 +104,8 @@ import javax.annotation.Nullable;
  *                     .protocol(var_.monitor_configuration_network_configuration_protocol())
  *                     .transmissionRate(var_.monitor_configuration_network_configuration_transmission_rate())
  *                     .build())
+ *                 .protocol(var_.monitor_configuration_protocol())
+ *                 .recordType(var_.monitor_configuration_record_type())
  *                 .reqAuthenticationDetails(ConfigConfigurationReqAuthenticationDetailsArgs.builder()
  *                     .authHeaders(ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs.builder()
  *                         .headerName(var_.monitor_configuration_req_authentication_details_auth_headers_header_name())
@@ -405,14 +409,14 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.status;
     }
     /**
-     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      * 
      */
     @Export(name="target", refs={String.class}, tree="[0]")
     private Output<String> target;
 
     /**
-     * @return (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * @return (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      * 
      */
     public Output<String> target() {

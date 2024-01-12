@@ -18,7 +18,7 @@ public final class GetShapesResult {
     private @Nullable String compartmentId;
     private @Nullable List<GetShapesFilter> filters;
     /**
-     * @return Unique identifier for the shape
+     * @return A unique identifier for the shape.
      * 
      */
     private @Nullable String id;
@@ -36,7 +36,7 @@ public final class GetShapesResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return Unique identifier for the shape
+     * @return A unique identifier for the shape.
      * 
      */
     public Optional<String> id() {

@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Psql.Inputs
     public sealed class ConfigurationDbConfigurationOverridesItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Key is the configuration key.
+        /// Configuration variable name.
         /// </summary>
         [Input("configKey", required: true)]
         public Input<string> ConfigKey { get; set; } = null!;
 
         /// <summary>
-        /// User selected configuration value
+        /// User-selected variable value.
         /// </summary>
         [Input("overridenConfigValue", required: true)]
         public Input<string> OverridenConfigValue { get; set; } = null!;

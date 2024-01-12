@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetConfigurationsResult {
     /**
-     * @return Config compartment identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      * 
      */
     private @Nullable String compartmentId;
@@ -27,12 +27,12 @@ public final class GetConfigurationsResult {
     private List<GetConfigurationsConfigurationCollection> configurationCollections;
     private @Nullable String configurationId;
     /**
-     * @return Version of the Postgresql DB
+     * @return Version of the PostgreSQL database.
      * 
      */
     private @Nullable String dbVersion;
     /**
-     * @return Config display name
+     * @return A user-friendly display name for the configuration. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -43,19 +43,19 @@ public final class GetConfigurationsResult {
      */
     private String id;
     /**
-     * @return Compute Shape Name like VM.Standard3.Flex.
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     private @Nullable String shape;
     /**
-     * @return The current state of the Configuration.
+     * @return The current state of the configuration.
      * 
      */
     private @Nullable String state;
 
     private GetConfigurationsResult() {}
     /**
-     * @return Config compartment identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      * 
      */
     public Optional<String> compartmentId() {
@@ -72,14 +72,14 @@ public final class GetConfigurationsResult {
         return Optional.ofNullable(this.configurationId);
     }
     /**
-     * @return Version of the Postgresql DB
+     * @return Version of the PostgreSQL database.
      * 
      */
     public Optional<String> dbVersion() {
         return Optional.ofNullable(this.dbVersion);
     }
     /**
-     * @return Config display name
+     * @return A user-friendly display name for the configuration. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -96,14 +96,14 @@ public final class GetConfigurationsResult {
         return this.id;
     }
     /**
-     * @return Compute Shape Name like VM.Standard3.Flex.
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     public Optional<String> shape() {
         return Optional.ofNullable(this.shape);
     }
     /**
-     * @return The current state of the Configuration.
+     * @return The current state of the configuration.
      * 
      */
     public Optional<String> state() {

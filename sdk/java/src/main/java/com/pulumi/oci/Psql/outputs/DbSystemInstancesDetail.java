@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbSystemInstancesDetail {
     /**
-     * @return Description of the DbInstance. This field should be input by the user.
+     * @return A user-provided description of the database instance node.
      * 
      */
     private @Nullable String description;
     /**
-     * @return Display name of the DbInstance.
+     * @return Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+     * @return Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
      * 
      */
     private @Nullable String privateIp;
 
     private DbSystemInstancesDetail() {}
     /**
-     * @return Description of the DbInstance. This field should be input by the user.
+     * @return A user-provided description of the database instance node.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return Display name of the DbInstance.
+     * @return Display name of the database instance node. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return Private IP in customer subnet that will be assigned to the DbInstance. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+     * @return Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
      * 
      */
     public Optional<String> privateIp() {

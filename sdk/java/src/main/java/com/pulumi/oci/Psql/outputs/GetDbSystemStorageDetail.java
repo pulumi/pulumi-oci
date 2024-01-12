@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemStorageDetail {
     /**
-     * @return Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * @return Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     private String availabilityDomain;
     /**
-     * @return DbSystem Performance Unit
+     * @return Guaranteed input/output storage requests per second (IOPS) available to the database system.
      * 
      */
     private String iops;
     /**
-     * @return Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * @return Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     private Boolean isRegionallyDurable;
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      */
     private String systemType;
 
     private GetDbSystemStorageDetail() {}
     /**
-     * @return Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * @return Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
     /**
-     * @return DbSystem Performance Unit
+     * @return Guaranteed input/output storage requests per second (IOPS) available to the database system.
      * 
      */
     public String iops() {
         return this.iops;
     }
     /**
-     * @return Specifies if the block volume used for the DbSystem is regional or AD-local. If not specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * @return Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     public Boolean isRegionallyDurable() {
         return this.isRegionallyDurable;
     }
     /**
-     * @return Type of the DbSystem.
+     * @return Type of the database system.
      * 
      */
     public String systemType() {

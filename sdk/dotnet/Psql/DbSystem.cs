@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Psql
     /// <summary>
     /// This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
     /// 
-    /// Creates a new DbSystem.
+    /// Creates a new database system.
     /// 
     /// ## Example Usage
     /// 
@@ -44,6 +44,7 @@ namespace Pulumi.Oci.Psql
     ///             Iops = @var.Db_system_storage_details_iops,
     ///         },
     ///         ConfigId = oci_apm_config_config.Test_config.Id,
+    ///         ApplyConfig = @var.Db_system_apply_config_type,
     ///         Credentials = new Oci.Psql.Inputs.DbSystemCredentialsArgs
     ///         {
     ///             PasswordDetails = new Oci.Psql.Inputs.DbSystemCredentialsPasswordDetailsArgs
@@ -95,6 +96,15 @@ namespace Pulumi.Oci.Psql
     ///             IsHavingRestoreConfigOverrides = @var.Db_system_source_is_having_restore_config_overrides,
     ///         },
     ///         SystemType = @var.Db_system_system_type,
+    ///         PatchOperations = new[]
+    ///         {
+    ///             new Oci.Psql.Inputs.DbSystemPatchOperationArgs
+    ///             {
+    ///                 Operation = @var.Db_system_patch_operations_operation,
+    ///                 Selection = @var.Db_system_patch_operations_selection,
+    ///                 Value = @var.Db_system_patch_operations_value,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -112,31 +122,37 @@ namespace Pulumi.Oci.Psql
     public partial class DbSystem : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The DB system username.
+        /// The database system administrator username.
         /// </summary>
         [Output("adminUsername")]
         public Output<string> AdminUsername { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment identifier
+        /// Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+        /// </summary>
+        [Output("applyConfig")]
+        public Output<string?> ApplyConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Configuration identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         /// </summary>
         [Output("configId")]
         public Output<string> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        /// Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         /// </summary>
         [Output("credentials")]
         public Output<Outputs.DbSystemCredentials?> Credentials { get; private set; } = null!;
 
         /// <summary>
-        /// Version of DbSystem software.
+        /// Version of database system software.
         /// </summary>
         [Output("dbVersion")]
         public Output<string> DbVersion { get; private set; } = null!;
@@ -148,13 +164,13 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// Description of the DbInstance. This field should be input by the user.
+        /// A user-provided description of the database instance node.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Display name of the DbInstance.
+        /// Display name of the database instance node. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -166,31 +182,31 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Count of DbInstances to be created in the DbSystem.
+        /// (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
         /// </summary>
         [Output("instanceCount")]
         public Output<int> InstanceCount { get; private set; } = null!;
 
         /// <summary>
-        /// The total amount of memory available to each DbInstance, in gigabytes.
+        /// The total amount of memory available to each database instance node, in gigabytes.
         /// </summary>
         [Output("instanceMemorySizeInGbs")]
         public Output<int> InstanceMemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
-        /// The total number of OCPUs available to each DbInstance.
+        /// The total number of OCPUs available to each database instance node.
         /// </summary>
         [Output("instanceOcpuCount")]
         public Output<int> InstanceOcpuCount { get; private set; } = null!;
 
         /// <summary>
-        /// The list of DbInstances in the DbSystem.
+        /// The list of instances, or nodes, in the database system.
         /// </summary>
         [Output("instances")]
         public Output<ImmutableArray<Outputs.DbSystemInstance>> Instances { get; private set; } = null!;
 
         /// <summary>
-        /// Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+        /// Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         /// </summary>
         [Output("instancesDetails")]
         public Output<ImmutableArray<Outputs.DbSystemInstancesDetail>> InstancesDetails { get; private set; } = null!;
@@ -202,37 +218,43 @@ namespace Pulumi.Oci.Psql
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Posgresql DB system management policy update details
+        /// (Updatable) PostgreSQL database system management policy update details.
         /// </summary>
         [Output("managementPolicy")]
         public Output<Outputs.DbSystemManagementPolicy> ManagementPolicy { get; private set; } = null!;
 
         /// <summary>
-        /// DbSystem network details.
+        /// Network details for the database system.
         /// </summary>
         [Output("networkDetails")]
         public Output<Outputs.DbSystemNetworkDetails> NetworkDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+        /// (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        /// </summary>
+        [Output("patchOperations")]
+        public Output<ImmutableArray<Outputs.DbSystemPatchOperation>> PatchOperations { get; private set; } = null!;
+
+        /// <summary>
+        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
 
         /// <summary>
-        /// New source is used to restore the DB system.
+        /// The source used to restore the database system.
         /// </summary>
         [Output("source")]
         public Output<Outputs.DbSystemSource> Source { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the DbSystem.
+        /// The current state of the database system.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Storage details of the DbSystem.
+        /// (Updatable) Storage details of the database system.
         /// </summary>
         [Output("storageDetails")]
         public Output<Outputs.DbSystemStorageDetails> StorageDetails { get; private set; } = null!;
@@ -244,7 +266,7 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// Type of the DbSystem.
+        /// Type of the database system.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -254,13 +276,13 @@ namespace Pulumi.Oci.Psql
         public Output<string> SystemType { get; private set; } = null!;
 
         /// <summary>
-        /// The time the the DbSystem was created. An RFC3339 formatted datetime string
+        /// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time the DbSystem was updated. An RFC3339 formatted datetime string
+        /// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -312,25 +334,31 @@ namespace Pulumi.Oci.Psql
     public sealed class DbSystemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment identifier
+        /// Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+        /// </summary>
+        [Input("applyConfig")]
+        public Input<string>? ApplyConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Configuration identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         /// </summary>
         [Input("configId")]
         public Input<string>? ConfigId { get; set; }
 
         /// <summary>
-        /// Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        /// Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         /// </summary>
         [Input("credentials")]
         public Input<Inputs.DbSystemCredentialsArgs>? Credentials { get; set; }
 
         /// <summary>
-        /// Version of DbSystem software.
+        /// Version of database system software.
         /// </summary>
         [Input("dbVersion", required: true)]
         public Input<string> DbVersion { get; set; } = null!;
@@ -348,13 +376,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// Description of the DbInstance. This field should be input by the user.
+        /// A user-provided description of the database instance node.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Display name of the DbInstance.
+        /// Display name of the database instance node. Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -372,19 +400,19 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// Count of DbInstances to be created in the DbSystem.
+        /// (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
         /// </summary>
         [Input("instanceCount")]
         public Input<int>? InstanceCount { get; set; }
 
         /// <summary>
-        /// The total amount of memory available to each DbInstance, in gigabytes.
+        /// The total amount of memory available to each database instance node, in gigabytes.
         /// </summary>
         [Input("instanceMemorySizeInGbs")]
         public Input<int>? InstanceMemorySizeInGbs { get; set; }
 
         /// <summary>
-        /// The total number of OCPUs available to each DbInstance.
+        /// The total number of OCPUs available to each database instance node.
         /// </summary>
         [Input("instanceOcpuCount")]
         public Input<int>? InstanceOcpuCount { get; set; }
@@ -393,7 +421,7 @@ namespace Pulumi.Oci.Psql
         private InputList<Inputs.DbSystemInstancesDetailArgs>? _instancesDetails;
 
         /// <summary>
-        /// Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+        /// Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         /// </summary>
         public InputList<Inputs.DbSystemInstancesDetailArgs> InstancesDetails
         {
@@ -402,37 +430,49 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// (Updatable) Posgresql DB system management policy update details
+        /// (Updatable) PostgreSQL database system management policy update details.
         /// </summary>
         [Input("managementPolicy")]
         public Input<Inputs.DbSystemManagementPolicyArgs>? ManagementPolicy { get; set; }
 
         /// <summary>
-        /// DbSystem network details.
+        /// Network details for the database system.
         /// </summary>
         [Input("networkDetails", required: true)]
         public Input<Inputs.DbSystemNetworkDetailsArgs> NetworkDetails { get; set; } = null!;
 
+        [Input("patchOperations")]
+        private InputList<Inputs.DbSystemPatchOperationArgs>? _patchOperations;
+
         /// <summary>
-        /// Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+        /// (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        /// </summary>
+        public InputList<Inputs.DbSystemPatchOperationArgs> PatchOperations
+        {
+            get => _patchOperations ?? (_patchOperations = new InputList<Inputs.DbSystemPatchOperationArgs>());
+            set => _patchOperations = value;
+        }
+
+        /// <summary>
+        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
 
         /// <summary>
-        /// New source is used to restore the DB system.
+        /// The source used to restore the database system.
         /// </summary>
         [Input("source")]
         public Input<Inputs.DbSystemSourceArgs>? Source { get; set; }
 
         /// <summary>
-        /// (Updatable) Storage details of the DbSystem.
+        /// (Updatable) Storage details of the database system.
         /// </summary>
         [Input("storageDetails", required: true)]
         public Input<Inputs.DbSystemStorageDetailsArgs> StorageDetails { get; set; } = null!;
 
         /// <summary>
-        /// Type of the DbSystem.
+        /// Type of the database system.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -450,31 +490,37 @@ namespace Pulumi.Oci.Psql
     public sealed class DbSystemState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The DB system username.
+        /// The database system administrator username.
         /// </summary>
         [Input("adminUsername")]
         public Input<string>? AdminUsername { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment identifier
+        /// Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
+        /// </summary>
+        [Input("applyConfig")]
+        public Input<string>? ApplyConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// Configuration identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         /// </summary>
         [Input("configId")]
         public Input<string>? ConfigId { get; set; }
 
         /// <summary>
-        /// Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        /// Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         /// </summary>
         [Input("credentials")]
         public Input<Inputs.DbSystemCredentialsGetArgs>? Credentials { get; set; }
 
         /// <summary>
-        /// Version of DbSystem software.
+        /// Version of database system software.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
@@ -492,13 +538,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// Description of the DbInstance. This field should be input by the user.
+        /// A user-provided description of the database instance node.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Display name of the DbInstance.
+        /// Display name of the database instance node. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -516,19 +562,19 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// Count of DbInstances to be created in the DbSystem.
+        /// (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
         /// </summary>
         [Input("instanceCount")]
         public Input<int>? InstanceCount { get; set; }
 
         /// <summary>
-        /// The total amount of memory available to each DbInstance, in gigabytes.
+        /// The total amount of memory available to each database instance node, in gigabytes.
         /// </summary>
         [Input("instanceMemorySizeInGbs")]
         public Input<int>? InstanceMemorySizeInGbs { get; set; }
 
         /// <summary>
-        /// The total number of OCPUs available to each DbInstance.
+        /// The total number of OCPUs available to each database instance node.
         /// </summary>
         [Input("instanceOcpuCount")]
         public Input<int>? InstanceOcpuCount { get; set; }
@@ -537,7 +583,7 @@ namespace Pulumi.Oci.Psql
         private InputList<Inputs.DbSystemInstanceGetArgs>? _instances;
 
         /// <summary>
-        /// The list of DbInstances in the DbSystem.
+        /// The list of instances, or nodes, in the database system.
         /// </summary>
         public InputList<Inputs.DbSystemInstanceGetArgs> Instances
         {
@@ -549,7 +595,7 @@ namespace Pulumi.Oci.Psql
         private InputList<Inputs.DbSystemInstancesDetailGetArgs>? _instancesDetails;
 
         /// <summary>
-        /// Details of DbInstances to be created. Optional parameter. If specified, its size must match instanceCount.
+        /// Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         /// </summary>
         public InputList<Inputs.DbSystemInstancesDetailGetArgs> InstancesDetails
         {
@@ -564,37 +610,49 @@ namespace Pulumi.Oci.Psql
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Posgresql DB system management policy update details
+        /// (Updatable) PostgreSQL database system management policy update details.
         /// </summary>
         [Input("managementPolicy")]
         public Input<Inputs.DbSystemManagementPolicyGetArgs>? ManagementPolicy { get; set; }
 
         /// <summary>
-        /// DbSystem network details.
+        /// Network details for the database system.
         /// </summary>
         [Input("networkDetails")]
         public Input<Inputs.DbSystemNetworkDetailsGetArgs>? NetworkDetails { get; set; }
 
+        [Input("patchOperations")]
+        private InputList<Inputs.DbSystemPatchOperationGetArgs>? _patchOperations;
+
         /// <summary>
-        /// Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+        /// (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        /// </summary>
+        public InputList<Inputs.DbSystemPatchOperationGetArgs> PatchOperations
+        {
+            get => _patchOperations ?? (_patchOperations = new InputList<Inputs.DbSystemPatchOperationGetArgs>());
+            set => _patchOperations = value;
+        }
+
+        /// <summary>
+        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
 
         /// <summary>
-        /// New source is used to restore the DB system.
+        /// The source used to restore the database system.
         /// </summary>
         [Input("source")]
         public Input<Inputs.DbSystemSourceGetArgs>? Source { get; set; }
 
         /// <summary>
-        /// The current state of the DbSystem.
+        /// The current state of the database system.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) Storage details of the DbSystem.
+        /// (Updatable) Storage details of the database system.
         /// </summary>
         [Input("storageDetails")]
         public Input<Inputs.DbSystemStorageDetailsGetArgs>? StorageDetails { get; set; }
@@ -612,7 +670,7 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// Type of the DbSystem.
+        /// Type of the database system.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -622,13 +680,13 @@ namespace Pulumi.Oci.Psql
         public Input<string>? SystemType { get; set; }
 
         /// <summary>
-        /// The time the the DbSystem was created. An RFC3339 formatted datetime string
+        /// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the DbSystem was updated. An RFC3339 formatted datetime string
+        /// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

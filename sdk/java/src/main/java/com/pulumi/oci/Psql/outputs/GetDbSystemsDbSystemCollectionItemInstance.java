@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemsDbSystemCollectionItemInstance {
     /**
-     * @return Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * @return Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     private String availabilityDomain;
     /**
-     * @return Description of the DbInstance.
+     * @return Description of the database instance node.
      * 
      */
     private String description;
@@ -26,7 +26,7 @@ public final class GetDbSystemsDbSystemCollectionItemInstance {
      */
     private String displayName;
     /**
-     * @return unique DbSystem identifier
+     * @return A unique identifier for the database system.
      * 
      */
     private String id;
@@ -36,31 +36,31 @@ public final class GetDbSystemsDbSystemCollectionItemInstance {
      */
     private String lifecycleDetails;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     private String state;
     /**
-     * @return The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeUpdated;
 
     private GetDbSystemsDbSystemCollectionItemInstance() {}
     /**
-     * @return Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true, availabilityDomain should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be specified.
+     * @return Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
      * 
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
     /**
-     * @return Description of the DbInstance.
+     * @return Description of the database instance node.
      * 
      */
     public String description() {
@@ -74,7 +74,7 @@ public final class GetDbSystemsDbSystemCollectionItemInstance {
         return this.displayName;
     }
     /**
-     * @return unique DbSystem identifier
+     * @return A unique identifier for the database system.
      * 
      */
     public String id() {
@@ -88,21 +88,21 @@ public final class GetDbSystemsDbSystemCollectionItemInstance {
         return this.lifecycleDetails;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * @return The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeUpdated() {

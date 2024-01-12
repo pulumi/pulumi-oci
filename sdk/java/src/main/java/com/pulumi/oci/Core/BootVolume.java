@@ -138,7 +138,7 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
         return this.availabilityDomain;
     }
     /**
-     * If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
+     * If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
      * 
      * @deprecated
      * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
@@ -149,7 +149,7 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
     private Output<String> backupPolicyId;
 
     /**
-     * @return If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
+     * @return If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
      * 
      */
     public Output<String> backupPolicyId() {

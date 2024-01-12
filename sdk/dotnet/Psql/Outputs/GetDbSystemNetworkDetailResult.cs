@@ -14,15 +14,15 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetDbSystemNetworkDetailResult
     {
         /// <summary>
-        /// List of customer NetworkSecurityGroup identifiers
+        /// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
-        /// Private IP in customer subnet. The value is optional. If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+        /// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         /// </summary>
         public readonly string PrimaryDbEndpointPrivateIp;
         /// <summary>
-        /// Customer Subnet identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
         /// </summary>
         public readonly string SubnetId;
 

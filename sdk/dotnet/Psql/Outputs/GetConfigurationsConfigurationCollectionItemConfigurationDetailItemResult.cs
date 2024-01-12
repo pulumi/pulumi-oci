@@ -14,35 +14,35 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetConfigurationsConfigurationCollectionItemConfigurationDetailItemResult
     {
         /// <summary>
-        /// Range or list of allowed values
+        /// Range or list of allowed values.
         /// </summary>
         public readonly string AllowedValues;
         /// <summary>
-        /// Key is the configuration key.
+        /// The configuration variable name.
         /// </summary>
         public readonly string ConfigKey;
         /// <summary>
-        /// Describes about the Datatype value.
+        /// Data type of the variable.
         /// </summary>
         public readonly string DataType;
         /// <summary>
-        /// Default value
+        /// Default value for the configuration variable.
         /// </summary>
         public readonly string DefaultConfigValue;
         /// <summary>
-        /// Config description
+        /// A description for the configuration.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// This flags tells whether the value is overridable or not.
+        /// Whether the value can be overridden or not.
         /// </summary>
         public readonly bool IsOverridable;
         /// <summary>
-        /// If true, modfying this configuration value will requires restart.
+        /// If true, modifying this configuration value will require a restart of the database.
         /// </summary>
         public readonly bool IsRestartRequired;
         /// <summary>
-        /// User selected configuration value
+        /// User-selected configuration variable value.
         /// </summary>
         public readonly string OverridenConfigValue;
 

@@ -16,8 +16,8 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
  * 
- * Assigns a volume backup policy to the specified volume. Note that a given volume can
- * only have one backup policy assigned to it. If this operation is used for a volume that already
+ * Assigns a volume backup policy to the specified volume or volume group. Note that a given volume or volume group can
+ * only have one backup policy assigned to it. If this operation is used for a volume or volume group that already
  * has a different backup policy assigned, the prior backup policy will be silently unassigned.
  * 
  * ## Example Usage
@@ -63,14 +63,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment")
 public class VolumeBackupPolicyAssignment extends com.pulumi.resources.CustomResource {
     /**
-     * The OCID of the volume to assign the policy to.
+     * The OCID of the volume or volume group to assign the policy to.
      * 
      */
     @Export(name="assetId", refs={String.class}, tree="[0]")
     private Output<String> assetId;
 
     /**
-     * @return The OCID of the volume to assign the policy to.
+     * @return The OCID of the volume or volume group to assign the policy to.
      * 
      */
     public Output<String> assetId() {

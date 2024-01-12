@@ -15,14 +15,14 @@ public final class ConfigurationDbConfigurationOverridesItemArgs extends com.pul
     public static final ConfigurationDbConfigurationOverridesItemArgs Empty = new ConfigurationDbConfigurationOverridesItemArgs();
 
     /**
-     * Key is the configuration key.
+     * Configuration variable name.
      * 
      */
     @Import(name="configKey", required=true)
     private Output<String> configKey;
 
     /**
-     * @return Key is the configuration key.
+     * @return Configuration variable name.
      * 
      */
     public Output<String> configKey() {
@@ -30,14 +30,14 @@ public final class ConfigurationDbConfigurationOverridesItemArgs extends com.pul
     }
 
     /**
-     * User selected configuration value
+     * User-selected variable value.
      * 
      */
     @Import(name="overridenConfigValue", required=true)
     private Output<String> overridenConfigValue;
 
     /**
-     * @return User selected configuration value
+     * @return User-selected variable value.
      * 
      */
     public Output<String> overridenConfigValue() {
@@ -70,7 +70,7 @@ public final class ConfigurationDbConfigurationOverridesItemArgs extends com.pul
         }
 
         /**
-         * @param configKey Key is the configuration key.
+         * @param configKey Configuration variable name.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class ConfigurationDbConfigurationOverridesItemArgs extends com.pul
         }
 
         /**
-         * @param configKey Key is the configuration key.
+         * @param configKey Configuration variable name.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class ConfigurationDbConfigurationOverridesItemArgs extends com.pul
         }
 
         /**
-         * @param overridenConfigValue User selected configuration value
+         * @param overridenConfigValue User-selected variable value.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class ConfigurationDbConfigurationOverridesItemArgs extends com.pul
         }
 
         /**
-         * @param overridenConfigValue User selected configuration value
+         * @param overridenConfigValue User-selected variable value.
          * 
          * @return builder
          * 

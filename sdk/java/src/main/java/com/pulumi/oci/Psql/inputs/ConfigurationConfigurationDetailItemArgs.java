@@ -17,14 +17,14 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
     public static final ConfigurationConfigurationDetailItemArgs Empty = new ConfigurationConfigurationDetailItemArgs();
 
     /**
-     * Range or list of allowed values
+     * Range or list of allowed values.
      * 
      */
     @Import(name="allowedValues")
     private @Nullable Output<String> allowedValues;
 
     /**
-     * @return Range or list of allowed values
+     * @return Range or list of allowed values.
      * 
      */
     public Optional<Output<String>> allowedValues() {
@@ -32,14 +32,14 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
     }
 
     /**
-     * Key is the configuration key.
+     * Configuration variable name.
      * 
      */
     @Import(name="configKey")
     private @Nullable Output<String> configKey;
 
     /**
-     * @return Key is the configuration key.
+     * @return Configuration variable name.
      * 
      */
     public Optional<Output<String>> configKey() {
@@ -47,14 +47,14 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
     }
 
     /**
-     * Describes about the Datatype value.
+     * Data type of the variable.
      * 
      */
     @Import(name="dataType")
     private @Nullable Output<String> dataType;
 
     /**
-     * @return Describes about the Datatype value.
+     * @return Data type of the variable.
      * 
      */
     public Optional<Output<String>> dataType() {
@@ -62,14 +62,14 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
     }
 
     /**
-     * Default value
+     * Default value for the configuration variable.
      * 
      */
     @Import(name="defaultConfigValue")
     private @Nullable Output<String> defaultConfigValue;
 
     /**
-     * @return Default value
+     * @return Default value for the configuration variable.
      * 
      */
     public Optional<Output<String>> defaultConfigValue() {
@@ -77,14 +77,14 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Details about the Configuration Set.
+     * (Updatable) Details about the configuration set.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Details about the Configuration Set.
+     * @return (Updatable) Details about the configuration set.
      * 
      */
     public Optional<Output<String>> description() {
@@ -92,14 +92,14 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
     }
 
     /**
-     * This flags tells whether the value is overridable or not.
+     * Whether the value can be overridden or not.
      * 
      */
     @Import(name="isOverridable")
     private @Nullable Output<Boolean> isOverridable;
 
     /**
-     * @return This flags tells whether the value is overridable or not.
+     * @return Whether the value can be overridden or not.
      * 
      */
     public Optional<Output<Boolean>> isOverridable() {
@@ -107,14 +107,14 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
     }
 
     /**
-     * If true, modfying this configuration value will requires restart.
+     * If true, modifying this configuration value will require a restart of the database.
      * 
      */
     @Import(name="isRestartRequired")
     private @Nullable Output<Boolean> isRestartRequired;
 
     /**
-     * @return If true, modfying this configuration value will requires restart.
+     * @return If true, modifying this configuration value will require a restart of the database.
      * 
      */
     public Optional<Output<Boolean>> isRestartRequired() {
@@ -122,14 +122,14 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
     }
 
     /**
-     * User selected configuration value
+     * User-selected variable value.
      * 
      */
     @Import(name="overridenConfigValue")
     private @Nullable Output<String> overridenConfigValue;
 
     /**
-     * @return User selected configuration value
+     * @return User-selected variable value.
      * 
      */
     public Optional<Output<String>> overridenConfigValue() {
@@ -168,7 +168,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param allowedValues Range or list of allowed values
+         * @param allowedValues Range or list of allowed values.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param allowedValues Range or list of allowed values
+         * @param allowedValues Range or list of allowed values.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param configKey Key is the configuration key.
+         * @param configKey Configuration variable name.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param configKey Key is the configuration key.
+         * @param configKey Configuration variable name.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param dataType Describes about the Datatype value.
+         * @param dataType Data type of the variable.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param dataType Describes about the Datatype value.
+         * @param dataType Data type of the variable.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param defaultConfigValue Default value
+         * @param defaultConfigValue Default value for the configuration variable.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param defaultConfigValue Default value
+         * @param defaultConfigValue Default value for the configuration variable.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param description (Updatable) Details about the Configuration Set.
+         * @param description (Updatable) Details about the configuration set.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param description (Updatable) Details about the Configuration Set.
+         * @param description (Updatable) Details about the configuration set.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param isOverridable This flags tells whether the value is overridable or not.
+         * @param isOverridable Whether the value can be overridden or not.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param isOverridable This flags tells whether the value is overridable or not.
+         * @param isOverridable Whether the value can be overridden or not.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param isRestartRequired If true, modfying this configuration value will requires restart.
+         * @param isRestartRequired If true, modifying this configuration value will require a restart of the database.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param isRestartRequired If true, modfying this configuration value will requires restart.
+         * @param isRestartRequired If true, modifying this configuration value will require a restart of the database.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param overridenConfigValue User selected configuration value
+         * @param overridenConfigValue User-selected variable value.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param overridenConfigValue User selected configuration value
+         * @param overridenConfigValue User-selected variable value.
          * 
          * @return builder
          * 

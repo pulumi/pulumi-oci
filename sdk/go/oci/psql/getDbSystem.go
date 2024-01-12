@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
 //
-// # Gets a DbSystem by identifier
+// Gets a database system by identifier.
 //
 // ## Example Usage
 //
@@ -53,65 +53,67 @@ func LookupDbSystem(ctx *pulumi.Context, args *LookupDbSystemArgs, opts ...pulum
 
 // A collection of arguments for invoking getDbSystem.
 type LookupDbSystemArgs struct {
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	DbSystemId string `pulumi:"dbSystemId"`
-	// A filter to exclude DB config  when this query param is set to OverrideDbConfig
+	// A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
 	ExcludedFields *string `pulumi:"excludedFields"`
 }
 
 // A collection of values returned by getDbSystem.
 type LookupDbSystemResult struct {
-	// The DB system username.
+	// The database system administrator username.
 	AdminUsername string `pulumi:"adminUsername"`
-	// Compartment identifier
+	ApplyConfig   string `pulumi:"applyConfig"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Configuration identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
 	ConfigId    string                  `pulumi:"configId"`
 	Credentials []GetDbSystemCredential `pulumi:"credentials"`
 	DbSystemId  string                  `pulumi:"dbSystemId"`
-	// The major and minor versions of the DbSystem software.
+	// The major and minor versions of the database system software.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Description of the DbInstance.
+	// Description of the database instance node.
 	Description string `pulumi:"description"`
-	// Display name of the DbInstance.
+	// A user-friendly display name for the database instance node. Avoid entering confidential information.
 	DisplayName    string  `pulumi:"displayName"`
 	ExcludedFields *string `pulumi:"excludedFields"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation.
+	// A unique identifier for the database instance node. Immutable on creation.
 	Id string `pulumi:"id"`
-	// Count of DbInstances in the DbSystem.
+	// Count of instances, or nodes, in the database system.
 	InstanceCount int `pulumi:"instanceCount"`
-	// The total amount of memory available to each DbInstance, in gigabytes.
+	// The total amount of memory available to each database instance node, in gigabytes.
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
-	// The total number of OCPUs available to each DbInstance.
+	// The total number of OCPUs available to each database instance node.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
-	// The list of DbInstances in the DbSystem.
+	// The list of instances, or nodes, in the database system.
 	Instances        []GetDbSystemInstance        `pulumi:"instances"`
 	InstancesDetails []GetDbSystemInstancesDetail `pulumi:"instancesDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// PostgreSQL DB system management policy
+	// PostgreSQL database system management policy.
 	ManagementPolicies []GetDbSystemManagementPolicy `pulumi:"managementPolicies"`
-	// DbSystem network details.
-	NetworkDetails []GetDbSystemNetworkDetail `pulumi:"networkDetails"`
-	// Shape of dbInstance.
+	// Network details for the database system.
+	NetworkDetails  []GetDbSystemNetworkDetail  `pulumi:"networkDetails"`
+	PatchOperations []GetDbSystemPatchOperation `pulumi:"patchOperations"`
+	// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
-	// New source is used to restore the DB system.
+	// The source used to restore the database system.
 	Sources []GetDbSystemSource `pulumi:"sources"`
-	// The current state of the DbSystem.
+	// The current state of the database system.
 	State string `pulumi:"state"`
-	// Storage details of the DbSystem.
+	// Storage details of the database system.
 	StorageDetails []GetDbSystemStorageDetail `pulumi:"storageDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Type of the DbSystem.
+	// Type of the database system.
 	SystemType string `pulumi:"systemType"`
-	// The time the the DbSystem was created. An RFC3339 formatted datetime string
+	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DbSystem was updated. An RFC3339 formatted datetime string
+	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -130,9 +132,9 @@ func LookupDbSystemOutput(ctx *pulumi.Context, args LookupDbSystemOutputArgs, op
 
 // A collection of arguments for invoking getDbSystem.
 type LookupDbSystemOutputArgs struct {
-	// unique DbSystem identifier
+	// A unique identifier for the database system.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
-	// A filter to exclude DB config  when this query param is set to OverrideDbConfig
+	// A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
 	ExcludedFields pulumi.StringPtrInput `pulumi:"excludedFields"`
 }
 
@@ -155,17 +157,21 @@ func (o LookupDbSystemResultOutput) ToLookupDbSystemResultOutputWithContext(ctx 
 	return o
 }
 
-// The DB system username.
+// The database system administrator username.
 func (o LookupDbSystemResultOutput) AdminUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.AdminUsername }).(pulumi.StringOutput)
 }
 
-// Compartment identifier
+func (o LookupDbSystemResultOutput) ApplyConfig() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) string { return v.ApplyConfig }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
 func (o LookupDbSystemResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Configuration identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
 func (o LookupDbSystemResultOutput) ConfigId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.ConfigId }).(pulumi.StringOutput)
 }
@@ -178,7 +184,7 @@ func (o LookupDbSystemResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
-// The major and minor versions of the DbSystem software.
+// The major and minor versions of the database system software.
 func (o LookupDbSystemResultOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -188,12 +194,12 @@ func (o LookupDbSystemResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Description of the DbInstance.
+// Description of the database instance node.
 func (o LookupDbSystemResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Display name of the DbInstance.
+// A user-friendly display name for the database instance node. Avoid entering confidential information.
 func (o LookupDbSystemResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -207,27 +213,27 @@ func (o LookupDbSystemResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Unique identifier that is immutable on creation.
+// A unique identifier for the database instance node. Immutable on creation.
 func (o LookupDbSystemResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Count of DbInstances in the DbSystem.
+// Count of instances, or nodes, in the database system.
 func (o LookupDbSystemResultOutput) InstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) int { return v.InstanceCount }).(pulumi.IntOutput)
 }
 
-// The total amount of memory available to each DbInstance, in gigabytes.
+// The total amount of memory available to each database instance node, in gigabytes.
 func (o LookupDbSystemResultOutput) InstanceMemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) int { return v.InstanceMemorySizeInGbs }).(pulumi.IntOutput)
 }
 
-// The total number of OCPUs available to each DbInstance.
+// The total number of OCPUs available to each database instance node.
 func (o LookupDbSystemResultOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
 }
 
-// The list of DbInstances in the DbSystem.
+// The list of instances, or nodes, in the database system.
 func (o LookupDbSystemResultOutput) Instances() GetDbSystemInstanceArrayOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemInstance { return v.Instances }).(GetDbSystemInstanceArrayOutput)
 }
@@ -241,32 +247,36 @@ func (o LookupDbSystemResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// PostgreSQL DB system management policy
+// PostgreSQL database system management policy.
 func (o LookupDbSystemResultOutput) ManagementPolicies() GetDbSystemManagementPolicyArrayOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemManagementPolicy { return v.ManagementPolicies }).(GetDbSystemManagementPolicyArrayOutput)
 }
 
-// DbSystem network details.
+// Network details for the database system.
 func (o LookupDbSystemResultOutput) NetworkDetails() GetDbSystemNetworkDetailArrayOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemNetworkDetail { return v.NetworkDetails }).(GetDbSystemNetworkDetailArrayOutput)
 }
 
-// Shape of dbInstance.
+func (o LookupDbSystemResultOutput) PatchOperations() GetDbSystemPatchOperationArrayOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemPatchOperation { return v.PatchOperations }).(GetDbSystemPatchOperationArrayOutput)
+}
+
+// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
 func (o LookupDbSystemResultOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// New source is used to restore the DB system.
+// The source used to restore the database system.
 func (o LookupDbSystemResultOutput) Sources() GetDbSystemSourceArrayOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemSource { return v.Sources }).(GetDbSystemSourceArrayOutput)
 }
 
-// The current state of the DbSystem.
+// The current state of the database system.
 func (o LookupDbSystemResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Storage details of the DbSystem.
+// Storage details of the database system.
 func (o LookupDbSystemResultOutput) StorageDetails() GetDbSystemStorageDetailArrayOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemStorageDetail { return v.StorageDetails }).(GetDbSystemStorageDetailArrayOutput)
 }
@@ -276,17 +286,17 @@ func (o LookupDbSystemResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Type of the DbSystem.
+// Type of the database system.
 func (o LookupDbSystemResultOutput) SystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.SystemType }).(pulumi.StringOutput)
 }
 
-// The time the the DbSystem was created. An RFC3339 formatted datetime string
+// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupDbSystemResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the DbSystem was updated. An RFC3339 formatted datetime string
+// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupDbSystemResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

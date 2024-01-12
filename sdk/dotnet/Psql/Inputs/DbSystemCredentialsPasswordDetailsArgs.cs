@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Psql.Inputs
         private Input<string>? _password;
 
         /// <summary>
-        /// The dbSystem password.
+        /// The database system password.
         /// </summary>
         public Input<string>? Password
         {
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Psql.Inputs
         private Input<string>? _passwordType;
 
         /// <summary>
-        /// Password type
+        /// The password type.
         /// </summary>
         public Input<string>? PasswordType
         {
@@ -45,13 +45,13 @@ namespace Pulumi.Oci.Psql.Inputs
         }
 
         /// <summary>
-        /// The OCID of secret where the password is stored.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
         /// </summary>
         [Input("secretId")]
         public Input<string>? SecretId { get; set; }
 
         /// <summary>
-        /// The secret version where the password is stored.
+        /// The secret version of the stored password.
         /// </summary>
         [Input("secretVersion")]
         public Input<string>? SecretVersion { get; set; }

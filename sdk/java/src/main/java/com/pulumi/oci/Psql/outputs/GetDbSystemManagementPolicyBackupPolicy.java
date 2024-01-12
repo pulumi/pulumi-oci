@@ -13,62 +13,62 @@ import java.util.Objects;
 @CustomType
 public final class GetDbSystemManagementPolicyBackupPolicy {
     /**
-     * @return Hour of the day when backup starts.
+     * @return Hour of the day when the backup starts.
      * 
      */
     private String backupStart;
     /**
-     * @return Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+     * @return Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
      * 
      */
     private List<Integer> daysOfTheMonths;
     /**
-     * @return Weekly days
+     * @return The day of the week that the backup starts.
      * 
      */
     private List<String> daysOfTheWeeks;
     /**
-     * @return Backup policy kind
+     * @return The kind of backup policy.
      * 
      */
     private String kind;
     /**
-     * @return How many days the customers data should be stored after the db system deletion.
+     * @return How many days the data should be stored after the database system deletion.
      * 
      */
     private Integer retentionDays;
 
     private GetDbSystemManagementPolicyBackupPolicy() {}
     /**
-     * @return Hour of the day when backup starts.
+     * @return Hour of the day when the backup starts.
      * 
      */
     public String backupStart() {
         return this.backupStart;
     }
     /**
-     * @return Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+     * @return Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
      * 
      */
     public List<Integer> daysOfTheMonths() {
         return this.daysOfTheMonths;
     }
     /**
-     * @return Weekly days
+     * @return The day of the week that the backup starts.
      * 
      */
     public List<String> daysOfTheWeeks() {
         return this.daysOfTheWeeks;
     }
     /**
-     * @return Backup policy kind
+     * @return The kind of backup policy.
      * 
      */
     public String kind() {
         return this.kind;
     }
     /**
-     * @return How many days the customers data should be stored after the db system deletion.
+     * @return How many days the data should be stored after the database system deletion.
      * 
      */
     public Integer retentionDays() {

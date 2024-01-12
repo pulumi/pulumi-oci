@@ -111,7 +111,7 @@ export class Volume extends pulumi.CustomResource {
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
-     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume.
      *
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
@@ -275,7 +275,7 @@ export interface VolumeState {
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
-     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume.
      *
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
@@ -365,7 +365,7 @@ export interface VolumeArgs {
      */
     availabilityDomain: pulumi.Input<string>;
     /**
-     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+     * If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume.
      *
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */

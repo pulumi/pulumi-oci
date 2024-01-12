@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
  * 
- * Creates a new Backup.
+ * Creates a new backup.
  * 
  * ## Example Usage
  * ```java
@@ -71,56 +71,56 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Psql/backup:Backup")
 public class Backup extends com.pulumi.resources.CustomResource {
     /**
-     * Backup size in GB.
+     * The size of the backup, in gigabytes.
      * 
      */
     @Export(name="backupSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupSize;
 
     /**
-     * @return Backup size in GB.
+     * @return The size of the backup, in gigabytes.
      * 
      */
     public Output<Integer> backupSize() {
         return this.backupSize;
     }
     /**
-     * (Updatable) Compartment identifier
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * Information about the DbSystem associated to a backup.
+     * Information about the database system associated with a backup.
      * 
      */
     @Export(name="dbSystemDetails", refs={List.class,BackupDbSystemDetail.class}, tree="[0,1]")
     private Output<List<BackupDbSystemDetail>> dbSystemDetails;
 
     /**
-     * @return Information about the DbSystem associated to a backup.
+     * @return Information about the database system associated with a backup.
      * 
      */
     public Output<List<BackupDbSystemDetail>> dbSystemDetails() {
         return this.dbSystemDetails;
     }
     /**
-     * Posgresql DbSystem identifier
+     * The ID of the database system.
      * 
      */
     @Export(name="dbSystemId", refs={String.class}, tree="[0]")
     private Output<String> dbSystemId;
 
     /**
-     * @return Posgresql DbSystem identifier
+     * @return The ID of the database system.
      * 
      */
     public Output<String> dbSystemId() {
@@ -141,28 +141,28 @@ public class Backup extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Backup description
+     * (Updatable) A description for the backup.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) Backup description
+     * @return (Updatable) A description for the backup.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) Backup display name.
+     * (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Backup display name.
+     * @return (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -245,28 +245,28 @@ public class Backup extends com.pulumi.resources.CustomResource {
         return this.retentionPeriod;
     }
     /**
-     * Specifies whether the backup was created manually, or via scheduled backup policy
+     * Specifies whether the backup was created manually, or by a management policy.
      * 
      */
     @Export(name="sourceType", refs={String.class}, tree="[0]")
     private Output<String> sourceType;
 
     /**
-     * @return Specifies whether the backup was created manually, or via scheduled backup policy
+     * @return Specifies whether the backup was created manually, or by a management policy.
      * 
      */
     public Output<String> sourceType() {
         return this.sourceType;
     }
     /**
-     * The current state of the Backup.
+     * The current state of the backup.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Backup.
+     * @return The current state of the backup.
      * 
      */
     public Output<String> state() {
@@ -287,28 +287,28 @@ public class Backup extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time the the Backup was created. An RFC3339 formatted datetime string
+     * The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the the Backup was created. An RFC3339 formatted datetime string
+     * @return The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the Backup was updated. An RFC3339 formatted datetime string
+     * The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the Backup was updated. An RFC3339 formatted datetime string
+     * @return The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeUpdated() {

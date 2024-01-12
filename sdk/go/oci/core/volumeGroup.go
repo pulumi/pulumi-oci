@@ -73,7 +73,9 @@ type VolumeGroup struct {
 
 	// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
-	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
+	//
+	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId pulumi.StringOutput `pulumi:"backupPolicyId"`
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -147,7 +149,9 @@ func GetVolumeGroup(ctx *pulumi.Context,
 type volumeGroupState struct {
 	// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
+	//
+	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId *string `pulumi:"backupPolicyId"`
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -183,7 +187,9 @@ type volumeGroupState struct {
 type VolumeGroupState struct {
 	// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
-	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
+	//
+	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId pulumi.StringPtrInput
@@ -223,7 +229,9 @@ func (VolumeGroupState) ElementType() reflect.Type {
 type volumeGroupArgs struct {
 	// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
+	//
+	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId *string `pulumi:"backupPolicyId"`
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -250,7 +258,9 @@ type volumeGroupArgs struct {
 type VolumeGroupArgs struct {
 	// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput
-	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
+	//
+	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId pulumi.StringInput
@@ -365,7 +375,9 @@ func (o VolumeGroupOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
+// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
+//
+// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 func (o VolumeGroupOutput) BackupPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.BackupPolicyId }).(pulumi.StringOutput)
 }

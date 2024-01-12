@@ -17,14 +17,14 @@ public final class GetDefaultConfigurationsPlainArgs extends com.pulumi.resource
     public static final GetDefaultConfigurationsPlainArgs Empty = new GetDefaultConfigurationsPlainArgs();
 
     /**
-     * unique Configuration identifier
+     * A unique identifier for the configuration.
      * 
      */
     @Import(name="configurationId")
     private @Nullable String configurationId;
 
     /**
-     * @return unique Configuration identifier
+     * @return A unique identifier for the configuration.
      * 
      */
     public Optional<String> configurationId() {
@@ -32,14 +32,14 @@ public final class GetDefaultConfigurationsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * Verison of the Postgresql DB like 14.5
+     * Verison of the PostgreSQL database, such as 14.9.
      * 
      */
     @Import(name="dbVersion")
     private @Nullable String dbVersion;
 
     /**
-     * @return Verison of the Postgresql DB like 14.5
+     * @return Verison of the PostgreSQL database, such as 14.9.
      * 
      */
     public Optional<String> dbVersion() {
@@ -69,14 +69,14 @@ public final class GetDefaultConfigurationsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     @Import(name="shape")
     private @Nullable String shape;
 
     /**
-     * @return Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      * 
      */
     public Optional<String> shape() {
@@ -84,14 +84,14 @@ public final class GetDefaultConfigurationsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      * 
      */
     public Optional<String> state() {
@@ -128,7 +128,7 @@ public final class GetDefaultConfigurationsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param configurationId unique Configuration identifier
+         * @param configurationId A unique identifier for the configuration.
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class GetDefaultConfigurationsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param dbVersion Verison of the Postgresql DB like 14.5
+         * @param dbVersion Verison of the PostgreSQL database, such as 14.9.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class GetDefaultConfigurationsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param shape Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+         * @param shape The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class GetDefaultConfigurationsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
          * 
          * @return builder
          * 

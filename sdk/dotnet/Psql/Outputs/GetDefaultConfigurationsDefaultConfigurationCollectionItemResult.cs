@@ -14,15 +14,15 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult
     {
         /// <summary>
-        /// List of DB default Configuration Values.
+        /// List of default configuration values for databases.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailResult> ConfigurationDetails;
         /// <summary>
-        /// Verison of the Postgresql DB like 14.5
+        /// Verison of the PostgreSQL database, such as 14.9.
         /// </summary>
         public readonly string DbVersion;
         /// <summary>
-        /// Config description
+        /// A description for the configuration.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -30,15 +30,15 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// A unique identifier for the configuration.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        /// Memory size in gigabytes with 1GB increment.
         /// </summary>
         public readonly int InstanceMemorySizeInGbs;
         /// <summary>
-        /// CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        /// CPU core count. Minimum value is 1.
         /// </summary>
         public readonly int InstanceOcpuCount;
         /// <summary>
@@ -46,15 +46,15 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         /// </summary>
         public readonly string Shape;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The time Configuration was created. An RFC3339 formatted datetime string
+        /// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
 

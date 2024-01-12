@@ -14,23 +14,23 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult
     {
         /// <summary>
-        /// Hour of the day when backup starts.
+        /// Hour of the day when the backup starts.
         /// </summary>
         public readonly string BackupStart;
         /// <summary>
-        /// Days of the month when backup should start. If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+        /// Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         /// </summary>
         public readonly ImmutableArray<int> DaysOfTheMonths;
         /// <summary>
-        /// Weekly days
+        /// The day of the week that the backup starts.
         /// </summary>
         public readonly ImmutableArray<string> DaysOfTheWeeks;
         /// <summary>
-        /// Backup policy kind
+        /// The kind of backup policy.
         /// </summary>
         public readonly string Kind;
         /// <summary>
-        /// How many days the customers data should be stored after the db system deletion.
+        /// How many days the data should be stored after the database system deletion.
         /// </summary>
         public readonly int RetentionDays;
 

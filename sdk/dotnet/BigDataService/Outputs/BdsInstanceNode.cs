@@ -54,6 +54,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? NodeType;
         /// <summary>
+        /// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        /// </summary>
+        public readonly int? Nvmes;
+        /// <summary>
         /// The total number of OCPUs available to the node.
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -106,6 +110,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string? nodeType,
 
+            int? nvmes,
+
             int? ocpus,
 
             string? shape,
@@ -130,6 +136,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             IpAddress = ipAddress;
             MemoryInGbs = memoryInGbs;
             NodeType = nodeType;
+            Nvmes = nvmes;
             Ocpus = ocpus;
             Shape = shape;
             SshFingerprint = sshFingerprint;

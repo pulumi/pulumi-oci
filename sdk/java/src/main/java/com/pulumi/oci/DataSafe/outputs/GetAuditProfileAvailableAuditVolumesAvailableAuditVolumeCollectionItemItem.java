@@ -16,6 +16,16 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
      */
     private String auditProfileId;
     /**
+     * @return The OCID of the audit trail.
+     * 
+     */
+    private String auditTrailId;
+    /**
+     * @return Unique name of the database associated to the peer target database.
+     * 
+     */
+    private String databaseUniqueName;
+    /**
      * @return Represents the month under consideration for which aggregated audit data volume available at the target is computed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
      * 
      */
@@ -38,6 +48,20 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
      */
     public String auditProfileId() {
         return this.auditProfileId;
+    }
+    /**
+     * @return The OCID of the audit trail.
+     * 
+     */
+    public String auditTrailId() {
+        return this.auditTrailId;
+    }
+    /**
+     * @return Unique name of the database associated to the peer target database.
+     * 
+     */
+    public String databaseUniqueName() {
+        return this.databaseUniqueName;
     }
     /**
      * @return Represents the month under consideration for which aggregated audit data volume available at the target is computed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
@@ -71,6 +95,8 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
     @CustomType.Builder
     public static final class Builder {
         private String auditProfileId;
+        private String auditTrailId;
+        private String databaseUniqueName;
         private String monthInConsideration;
         private String trailLocation;
         private String volume;
@@ -78,6 +104,8 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
         public Builder(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditProfileId = defaults.auditProfileId;
+    	      this.auditTrailId = defaults.auditTrailId;
+    	      this.databaseUniqueName = defaults.databaseUniqueName;
     	      this.monthInConsideration = defaults.monthInConsideration;
     	      this.trailLocation = defaults.trailLocation;
     	      this.volume = defaults.volume;
@@ -89,6 +117,22 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
               throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem", "auditProfileId");
             }
             this.auditProfileId = auditProfileId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder auditTrailId(String auditTrailId) {
+            if (auditTrailId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem", "auditTrailId");
+            }
+            this.auditTrailId = auditTrailId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseUniqueName(String databaseUniqueName) {
+            if (databaseUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem", "databaseUniqueName");
+            }
+            this.databaseUniqueName = databaseUniqueName;
             return this;
         }
         @CustomType.Setter
@@ -118,6 +162,8 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
         public GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem build() {
             final var _resultValue = new GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem();
             _resultValue.auditProfileId = auditProfileId;
+            _resultValue.auditTrailId = auditTrailId;
+            _resultValue.databaseUniqueName = databaseUniqueName;
             _resultValue.monthInConsideration = monthInConsideration;
             _resultValue.trailLocation = trailLocation;
             _resultValue.volume = volume;

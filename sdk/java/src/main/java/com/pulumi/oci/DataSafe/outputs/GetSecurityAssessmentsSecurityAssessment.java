@@ -56,7 +56,7 @@ public final class GetSecurityAssessmentsSecurityAssessment {
      */
     private List<String> ignoredTargets;
     /**
-     * @return A filter to return only security assessments that are set as baseline.
+     * @return A filter to return only the security assessments that are set as a baseline.
      * 
      */
     private Boolean isBaseline;
@@ -121,17 +121,17 @@ public final class GetSecurityAssessmentsSecurityAssessment {
      */
     private String targetVersion;
     /**
-     * @return The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeLastAssessed;
     /**
-     * @return The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeUpdated;
@@ -204,7 +204,7 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         return this.ignoredTargets;
     }
     /**
-     * @return A filter to return only security assessments that are set as baseline.
+     * @return A filter to return only the security assessments that are set as a baseline.
      * 
      */
     public Boolean isBaseline() {
@@ -295,21 +295,21 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         return this.targetVersion;
     }
     /**
-     * @return The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeLastAssessed() {
         return this.timeLastAssessed;
     }
     /**
-     * @return The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeUpdated() {

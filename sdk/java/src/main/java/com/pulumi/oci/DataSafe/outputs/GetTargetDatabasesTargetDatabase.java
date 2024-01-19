@@ -8,6 +8,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabaseConnectionOption;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabaseCredential;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabaseDatabaseDetail;
+import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabase;
+import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTargetDatabaseTlsConfig;
 import java.lang.Object;
 import java.lang.String;
@@ -48,7 +50,7 @@ public final class GetTargetDatabasesTargetDatabase {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The description of the target database in Data Safe.
+     * @return The description of the peer target database in Data Safe.
      * 
      */
     private String description;
@@ -68,10 +70,16 @@ public final class GetTargetDatabasesTargetDatabase {
      */
     private String id;
     /**
-     * @return Details about the current state of the target database in Data Safe.
+     * @return Details about the current state of the peer target database in Data Safe.
      * 
      */
     private String lifecycleDetails;
+    private List<GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail> peerTargetDatabaseDetails;
+    /**
+     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * 
+     */
+    private List<GetTargetDatabasesTargetDatabasePeerTargetDatabase> peerTargetDatabases;
     /**
      * @return A filter to return only target databases that match the specified lifecycle state.
      * 
@@ -142,7 +150,7 @@ public final class GetTargetDatabasesTargetDatabase {
         return this.definedTags;
     }
     /**
-     * @return The description of the target database in Data Safe.
+     * @return The description of the peer target database in Data Safe.
      * 
      */
     public String description() {
@@ -170,11 +178,21 @@ public final class GetTargetDatabasesTargetDatabase {
         return this.id;
     }
     /**
-     * @return Details about the current state of the target database in Data Safe.
+     * @return Details about the current state of the peer target database in Data Safe.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public List<GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail> peerTargetDatabaseDetails() {
+        return this.peerTargetDatabaseDetails;
+    }
+    /**
+     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * 
+     */
+    public List<GetTargetDatabasesTargetDatabasePeerTargetDatabase> peerTargetDatabases() {
+        return this.peerTargetDatabases;
     }
     /**
      * @return A filter to return only target databases that match the specified lifecycle state.
@@ -232,6 +250,8 @@ public final class GetTargetDatabasesTargetDatabase {
         private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleDetails;
+        private List<GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail> peerTargetDatabaseDetails;
+        private List<GetTargetDatabasesTargetDatabasePeerTargetDatabase> peerTargetDatabases;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
@@ -251,6 +271,8 @@ public final class GetTargetDatabasesTargetDatabase {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.peerTargetDatabaseDetails = defaults.peerTargetDatabaseDetails;
+    	      this.peerTargetDatabases = defaults.peerTargetDatabases;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -359,6 +381,28 @@ public final class GetTargetDatabasesTargetDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder peerTargetDatabaseDetails(List<GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail> peerTargetDatabaseDetails) {
+            if (peerTargetDatabaseDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "peerTargetDatabaseDetails");
+            }
+            this.peerTargetDatabaseDetails = peerTargetDatabaseDetails;
+            return this;
+        }
+        public Builder peerTargetDatabaseDetails(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail... peerTargetDatabaseDetails) {
+            return peerTargetDatabaseDetails(List.of(peerTargetDatabaseDetails));
+        }
+        @CustomType.Setter
+        public Builder peerTargetDatabases(List<GetTargetDatabasesTargetDatabasePeerTargetDatabase> peerTargetDatabases) {
+            if (peerTargetDatabases == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "peerTargetDatabases");
+            }
+            this.peerTargetDatabases = peerTargetDatabases;
+            return this;
+        }
+        public Builder peerTargetDatabases(GetTargetDatabasesTargetDatabasePeerTargetDatabase... peerTargetDatabases) {
+            return peerTargetDatabases(List.of(peerTargetDatabases));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetTargetDatabasesTargetDatabase", "state");
@@ -414,6 +458,8 @@ public final class GetTargetDatabasesTargetDatabase {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.peerTargetDatabaseDetails = peerTargetDatabaseDetails;
+            _resultValue.peerTargetDatabases = peerTargetDatabases;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

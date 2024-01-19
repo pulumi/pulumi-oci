@@ -17,7 +17,7 @@ import java.util.Objects;
 public final class GetAlarmResult {
     private String alarmId;
     /**
-     * @return The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+     * @return The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
      * 
      */
     private String body;
@@ -32,7 +32,7 @@ public final class GetAlarmResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+     * @return A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
      * 
      */
     private List<String> destinations;
@@ -57,7 +57,7 @@ public final class GetAlarmResult {
      */
     private Boolean isEnabled;
     /**
-     * @return When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
+     * @return Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `true`
      * 
      */
     private Boolean isNotificationsPerMetricDimensionEnabled;
@@ -122,12 +122,12 @@ public final class GetAlarmResult {
      */
     private List<GetAlarmSuppression> suppressions;
     /**
-     * @return The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+     * @return The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
+     * @return The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
      * 
      */
     private String timeUpdated;
@@ -137,7 +137,7 @@ public final class GetAlarmResult {
         return this.alarmId;
     }
     /**
-     * @return The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+     * @return The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
      * 
      */
     public String body() {
@@ -158,7 +158,7 @@ public final class GetAlarmResult {
         return this.definedTags;
     }
     /**
-     * @return A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+     * @return A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
      * 
      */
     public List<String> destinations() {
@@ -193,7 +193,7 @@ public final class GetAlarmResult {
         return this.isEnabled;
     }
     /**
-     * @return When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
+     * @return Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `true`
      * 
      */
     public Boolean isNotificationsPerMetricDimensionEnabled() {
@@ -284,14 +284,14 @@ public final class GetAlarmResult {
         return this.suppressions;
     }
     /**
-     * @return The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+     * @return The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
+     * @return The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
      * 
      */
     public String timeUpdated() {

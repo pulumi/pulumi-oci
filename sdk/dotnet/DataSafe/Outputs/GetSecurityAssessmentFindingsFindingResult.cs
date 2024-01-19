@@ -22,9 +22,33 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Details;
         /// <summary>
+        /// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        /// </summary>
+        public readonly bool HasTargetDbRiskLevelChanged;
+        /// <summary>
+        /// Determines if this risk level was modified by user.
+        /// </summary>
+        public readonly bool IsRiskModified;
+        /// <summary>
+        /// A filter to return only the findings that are marked as top findings.
+        /// </summary>
+        public readonly bool IsTopFinding;
+        /// <summary>
+        /// User provided reason for accepting or modifying this finding if they choose to do so.
+        /// </summary>
+        public readonly string Justification;
+        /// <summary>
         /// The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
         /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// Details about the current state of the finding.
+        /// </summary>
+        public readonly string LifecycleDetails;
+        /// <summary>
+        /// The severity of the finding as determined by security assessment. This cannot be modified by user.
+        /// </summary>
+        public readonly string OracleDefinedSeverity;
         /// <summary>
         /// An optional filter to return only findings containing the specified reference.
         /// </summary>
@@ -38,6 +62,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string Severity;
         /// <summary>
+        /// A filter to return only the findings that match the specified lifecycle states.
+        /// </summary>
+        public readonly string State;
+        /// <summary>
         /// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         /// </summary>
         public readonly string Summary;
@@ -45,6 +73,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// The OCID of the target database.
         /// </summary>
         public readonly string TargetId;
+        /// <summary>
+        /// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        public readonly string TimeUpdated;
+        /// <summary>
+        /// The time until which the change in severity(deferred / modified) of this finding is valid.
+        /// </summary>
+        public readonly string TimeValidUntil;
         /// <summary>
         /// The short title for the finding.
         /// </summary>
@@ -56,7 +92,19 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<string> details,
 
+            bool hasTargetDbRiskLevelChanged,
+
+            bool isRiskModified,
+
+            bool isTopFinding,
+
+            string justification,
+
             string key,
+
+            string lifecycleDetails,
+
+            string oracleDefinedSeverity,
 
             ImmutableArray<Outputs.GetSecurityAssessmentFindingsFindingReferenceResult> references,
 
@@ -64,20 +112,35 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string severity,
 
+            string state,
+
             string summary,
 
             string targetId,
+
+            string timeUpdated,
+
+            string timeValidUntil,
 
             string title)
         {
             AssessmentId = assessmentId;
             Details = details;
+            HasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;
+            IsRiskModified = isRiskModified;
+            IsTopFinding = isTopFinding;
+            Justification = justification;
             Key = key;
+            LifecycleDetails = lifecycleDetails;
+            OracleDefinedSeverity = oracleDefinedSeverity;
             References = references;
             Remarks = remarks;
             Severity = severity;
+            State = state;
             Summary = summary;
             TargetId = targetId;
+            TimeUpdated = timeUpdated;
+            TimeValidUntil = timeValidUntil;
             Title = title;
         }
     }

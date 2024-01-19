@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Monitoring
         private Dictionary<string, object>? _dimensionFilters;
 
         /// <summary>
-        /// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
+        /// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         /// </summary>
         public Dictionary<string, object> DimensionFilters
         {
@@ -193,7 +193,7 @@ namespace Pulumi.Oci.Monitoring
         private InputMap<object>? _dimensionFilters;
 
         /// <summary>
-        /// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
+        /// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         /// </summary>
         public InputMap<object> DimensionFilters
         {

@@ -64,7 +64,7 @@ export interface GetMetricsArgs {
      */
     compartmentIdInSubtree?: boolean;
     /**
-     * Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
+     * Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
      */
     dimensionFilters?: {[key: string]: any};
     filters?: inputs.Monitoring.GetMetricsFilter[];
@@ -168,7 +168,7 @@ export interface GetMetricsOutputArgs {
      */
     compartmentIdInSubtree?: pulumi.Input<boolean>;
     /**
-     * Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
+     * Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
      */
     dimensionFilters?: pulumi.Input<{[key: string]: any}>;
     filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetMetricsFilterArgs>[]>;

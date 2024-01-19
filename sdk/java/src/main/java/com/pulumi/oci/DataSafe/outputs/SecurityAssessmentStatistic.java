@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.SecurityAssessmentStatisticAdvisory;
+import com.pulumi.oci.DataSafe.outputs.SecurityAssessmentStatisticDeferred;
 import com.pulumi.oci.DataSafe.outputs.SecurityAssessmentStatisticEvaluate;
 import com.pulumi.oci.DataSafe.outputs.SecurityAssessmentStatisticHighRisk;
 import com.pulumi.oci.DataSafe.outputs.SecurityAssessmentStatisticLowRisk;
@@ -23,6 +24,11 @@ public final class SecurityAssessmentStatistic {
      * 
      */
     private @Nullable List<SecurityAssessmentStatisticAdvisory> advisories;
+    /**
+     * @return Statistics showing the number of findings with a particular risk level for each category.
+     * 
+     */
+    private @Nullable List<SecurityAssessmentStatisticDeferred> deferreds;
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
@@ -61,6 +67,13 @@ public final class SecurityAssessmentStatistic {
      */
     public List<SecurityAssessmentStatisticAdvisory> advisories() {
         return this.advisories == null ? List.of() : this.advisories;
+    }
+    /**
+     * @return Statistics showing the number of findings with a particular risk level for each category.
+     * 
+     */
+    public List<SecurityAssessmentStatisticDeferred> deferreds() {
+        return this.deferreds == null ? List.of() : this.deferreds;
     }
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
@@ -115,6 +128,7 @@ public final class SecurityAssessmentStatistic {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<SecurityAssessmentStatisticAdvisory> advisories;
+        private @Nullable List<SecurityAssessmentStatisticDeferred> deferreds;
         private @Nullable List<SecurityAssessmentStatisticEvaluate> evaluates;
         private @Nullable List<SecurityAssessmentStatisticHighRisk> highRisks;
         private @Nullable List<SecurityAssessmentStatisticLowRisk> lowRisks;
@@ -125,6 +139,7 @@ public final class SecurityAssessmentStatistic {
         public Builder(SecurityAssessmentStatistic defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.advisories = defaults.advisories;
+    	      this.deferreds = defaults.deferreds;
     	      this.evaluates = defaults.evaluates;
     	      this.highRisks = defaults.highRisks;
     	      this.lowRisks = defaults.lowRisks;
@@ -141,6 +156,15 @@ public final class SecurityAssessmentStatistic {
         }
         public Builder advisories(SecurityAssessmentStatisticAdvisory... advisories) {
             return advisories(List.of(advisories));
+        }
+        @CustomType.Setter
+        public Builder deferreds(@Nullable List<SecurityAssessmentStatisticDeferred> deferreds) {
+
+            this.deferreds = deferreds;
+            return this;
+        }
+        public Builder deferreds(SecurityAssessmentStatisticDeferred... deferreds) {
+            return deferreds(List.of(deferreds));
         }
         @CustomType.Setter
         public Builder evaluates(@Nullable List<SecurityAssessmentStatisticEvaluate> evaluates) {
@@ -196,6 +220,7 @@ public final class SecurityAssessmentStatistic {
         public SecurityAssessmentStatistic build() {
             final var _resultValue = new SecurityAssessmentStatistic();
             _resultValue.advisories = advisories;
+            _resultValue.deferreds = deferreds;
             _resultValue.evaluates = evaluates;
             _resultValue.highRisks = highRisks;
             _resultValue.lowRisks = lowRisks;

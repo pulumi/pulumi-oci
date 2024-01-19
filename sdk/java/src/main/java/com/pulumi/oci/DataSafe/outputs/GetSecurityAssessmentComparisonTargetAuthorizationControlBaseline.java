@@ -6,6 +6,7 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -13,15 +14,45 @@ import java.util.Objects;
 @CustomType
 public final class GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline {
     /**
+     * @return The OCID of the assessment that generated this finding.
+     * 
+     */
+    private String assessmentId;
+    /**
      * @return The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      * 
      */
     private List<String> details;
     /**
+     * @return Determines if this risk level has changed on the target database since the last time &#39;severity&#39; was modified by user.
+     * 
+     */
+    private Boolean hasTargetDbRiskLevelChanged;
+    /**
+     * @return Determines if this risk level was modified by user.
+     * 
+     */
+    private Boolean isRiskModified;
+    /**
+     * @return User provided reason for accepting or modifying this finding if they choose to do so.
+     * 
+     */
+    private String justification;
+    /**
      * @return A unique identifier for the finding. This is common for the finding across targets.
      * 
      */
     private String key;
+    /**
+     * @return Details about the current state of the finding.
+     * 
+     */
+    private String lifecycleDetails;
+    /**
+     * @return The severity of the finding as determined by security assessment. This cannot be modified by user.
+     * 
+     */
+    private String oracleDefinedSeverity;
     /**
      * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
      * 
@@ -38,10 +69,30 @@ public final class GetSecurityAssessmentComparisonTargetAuthorizationControlBase
      */
     private String severity;
     /**
+     * @return The current state of the finding.
+     * 
+     */
+    private String state;
+    /**
      * @return The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      * 
      */
     private String summary;
+    /**
+     * @return The OCID of the target database.
+     * 
+     */
+    private String targetId;
+    /**
+     * @return The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    private String timeUpdated;
+    /**
+     * @return The time until which the change in severity(deferred/modified) of this finding is valid.
+     * 
+     */
+    private String timeValidUntil;
     /**
      * @return The short title for the finding.
      * 
@@ -50,6 +101,13 @@ public final class GetSecurityAssessmentComparisonTargetAuthorizationControlBase
 
     private GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline() {}
     /**
+     * @return The OCID of the assessment that generated this finding.
+     * 
+     */
+    public String assessmentId() {
+        return this.assessmentId;
+    }
+    /**
      * @return The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      * 
      */
@@ -57,11 +115,46 @@ public final class GetSecurityAssessmentComparisonTargetAuthorizationControlBase
         return this.details;
     }
     /**
+     * @return Determines if this risk level has changed on the target database since the last time &#39;severity&#39; was modified by user.
+     * 
+     */
+    public Boolean hasTargetDbRiskLevelChanged() {
+        return this.hasTargetDbRiskLevelChanged;
+    }
+    /**
+     * @return Determines if this risk level was modified by user.
+     * 
+     */
+    public Boolean isRiskModified() {
+        return this.isRiskModified;
+    }
+    /**
+     * @return User provided reason for accepting or modifying this finding if they choose to do so.
+     * 
+     */
+    public String justification() {
+        return this.justification;
+    }
+    /**
      * @return A unique identifier for the finding. This is common for the finding across targets.
      * 
      */
     public String key() {
         return this.key;
+    }
+    /**
+     * @return Details about the current state of the finding.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
+     * @return The severity of the finding as determined by security assessment. This cannot be modified by user.
+     * 
+     */
+    public String oracleDefinedSeverity() {
+        return this.oracleDefinedSeverity;
     }
     /**
      * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -85,11 +178,39 @@ public final class GetSecurityAssessmentComparisonTargetAuthorizationControlBase
         return this.severity;
     }
     /**
+     * @return The current state of the finding.
+     * 
+     */
+    public String state() {
+        return this.state;
+    }
+    /**
      * @return The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      * 
      */
     public String summary() {
         return this.summary;
+    }
+    /**
+     * @return The OCID of the target database.
+     * 
+     */
+    public String targetId() {
+        return this.targetId;
+    }
+    /**
+     * @return The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public String timeUpdated() {
+        return this.timeUpdated;
+    }
+    /**
+     * @return The time until which the change in severity(deferred/modified) of this finding is valid.
+     * 
+     */
+    public String timeValidUntil() {
+        return this.timeValidUntil;
     }
     /**
      * @return The short title for the finding.
@@ -108,25 +229,53 @@ public final class GetSecurityAssessmentComparisonTargetAuthorizationControlBase
     }
     @CustomType.Builder
     public static final class Builder {
+        private String assessmentId;
         private List<String> details;
+        private Boolean hasTargetDbRiskLevelChanged;
+        private Boolean isRiskModified;
+        private String justification;
         private String key;
+        private String lifecycleDetails;
+        private String oracleDefinedSeverity;
         private List<GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference> references;
         private String remarks;
         private String severity;
+        private String state;
         private String summary;
+        private String targetId;
+        private String timeUpdated;
+        private String timeValidUntil;
         private String title;
         public Builder() {}
         public Builder(GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.assessmentId = defaults.assessmentId;
     	      this.details = defaults.details;
+    	      this.hasTargetDbRiskLevelChanged = defaults.hasTargetDbRiskLevelChanged;
+    	      this.isRiskModified = defaults.isRiskModified;
+    	      this.justification = defaults.justification;
     	      this.key = defaults.key;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.oracleDefinedSeverity = defaults.oracleDefinedSeverity;
     	      this.references = defaults.references;
     	      this.remarks = defaults.remarks;
     	      this.severity = defaults.severity;
+    	      this.state = defaults.state;
     	      this.summary = defaults.summary;
+    	      this.targetId = defaults.targetId;
+    	      this.timeUpdated = defaults.timeUpdated;
+    	      this.timeValidUntil = defaults.timeValidUntil;
     	      this.title = defaults.title;
         }
 
+        @CustomType.Setter
+        public Builder assessmentId(String assessmentId) {
+            if (assessmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "assessmentId");
+            }
+            this.assessmentId = assessmentId;
+            return this;
+        }
         @CustomType.Setter
         public Builder details(List<String> details) {
             if (details == null) {
@@ -139,11 +288,51 @@ public final class GetSecurityAssessmentComparisonTargetAuthorizationControlBase
             return details(List.of(details));
         }
         @CustomType.Setter
+        public Builder hasTargetDbRiskLevelChanged(Boolean hasTargetDbRiskLevelChanged) {
+            if (hasTargetDbRiskLevelChanged == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "hasTargetDbRiskLevelChanged");
+            }
+            this.hasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRiskModified(Boolean isRiskModified) {
+            if (isRiskModified == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "isRiskModified");
+            }
+            this.isRiskModified = isRiskModified;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder justification(String justification) {
+            if (justification == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "justification");
+            }
+            this.justification = justification;
+            return this;
+        }
+        @CustomType.Setter
         public Builder key(String key) {
             if (key == null) {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "key");
             }
             this.key = key;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder oracleDefinedSeverity(String oracleDefinedSeverity) {
+            if (oracleDefinedSeverity == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "oracleDefinedSeverity");
+            }
+            this.oracleDefinedSeverity = oracleDefinedSeverity;
             return this;
         }
         @CustomType.Setter
@@ -174,11 +363,43 @@ public final class GetSecurityAssessmentComparisonTargetAuthorizationControlBase
             return this;
         }
         @CustomType.Setter
+        public Builder state(String state) {
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "state");
+            }
+            this.state = state;
+            return this;
+        }
+        @CustomType.Setter
         public Builder summary(String summary) {
             if (summary == null) {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "summary");
             }
             this.summary = summary;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetId(String targetId) {
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "targetId");
+            }
+            this.targetId = targetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeUpdated(String timeUpdated) {
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeValidUntil(String timeValidUntil) {
+            if (timeValidUntil == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline", "timeValidUntil");
+            }
+            this.timeValidUntil = timeValidUntil;
             return this;
         }
         @CustomType.Setter
@@ -191,12 +412,22 @@ public final class GetSecurityAssessmentComparisonTargetAuthorizationControlBase
         }
         public GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline build() {
             final var _resultValue = new GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline();
+            _resultValue.assessmentId = assessmentId;
             _resultValue.details = details;
+            _resultValue.hasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;
+            _resultValue.isRiskModified = isRiskModified;
+            _resultValue.justification = justification;
             _resultValue.key = key;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.oracleDefinedSeverity = oracleDefinedSeverity;
             _resultValue.references = references;
             _resultValue.remarks = remarks;
             _resultValue.severity = severity;
+            _resultValue.state = state;
             _resultValue.summary = summary;
+            _resultValue.targetId = targetId;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.timeValidUntil = timeValidUntil;
             _resultValue.title = title;
             return _resultValue;
         }

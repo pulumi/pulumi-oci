@@ -37,6 +37,12 @@ namespace Pulumi.Oci.Adm.Inputs
         public Input<double>? MaxPermissibleCvssV3score { get; set; }
 
         /// <summary>
+        /// (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+        /// </summary>
+        [Input("maxPermissibleSeverity")]
+        public Input<string>? MaxPermissibleSeverity { get; set; }
+
+        /// <summary>
         /// (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
         /// </summary>
         [Input("upgradePolicy")]

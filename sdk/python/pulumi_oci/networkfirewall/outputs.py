@@ -196,11 +196,11 @@ class NetworkFirewallPolicySecurityRuleCondition(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 applications: Sequence[str],
-                 destination_addresses: Sequence[str],
-                 services: Sequence[str],
-                 source_addresses: Sequence[str],
-                 urls: Sequence[str]):
+                 applications: Optional[Sequence[str]] = None,
+                 destination_addresses: Optional[Sequence[str]] = None,
+                 services: Optional[Sequence[str]] = None,
+                 source_addresses: Optional[Sequence[str]] = None,
+                 urls: Optional[Sequence[str]] = None):
         """
         :param Sequence[str] applications: (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
         :param Sequence[str] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
@@ -208,15 +208,20 @@ class NetworkFirewallPolicySecurityRuleCondition(dict):
         :param Sequence[str] source_addresses: (Updatable) An array of address list names to be evaluated against the traffic source address.
         :param Sequence[str] urls: (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
         """
-        pulumi.set(__self__, "applications", applications)
-        pulumi.set(__self__, "destination_addresses", destination_addresses)
-        pulumi.set(__self__, "services", services)
-        pulumi.set(__self__, "source_addresses", source_addresses)
-        pulumi.set(__self__, "urls", urls)
+        if applications is not None:
+            pulumi.set(__self__, "applications", applications)
+        if destination_addresses is not None:
+            pulumi.set(__self__, "destination_addresses", destination_addresses)
+        if services is not None:
+            pulumi.set(__self__, "services", services)
+        if source_addresses is not None:
+            pulumi.set(__self__, "source_addresses", source_addresses)
+        if urls is not None:
+            pulumi.set(__self__, "urls", urls)
 
     @property
     @pulumi.getter
-    def applications(self) -> Sequence[str]:
+    def applications(self) -> Optional[Sequence[str]]:
         """
         (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
         """
@@ -224,7 +229,7 @@ class NetworkFirewallPolicySecurityRuleCondition(dict):
 
     @property
     @pulumi.getter(name="destinationAddresses")
-    def destination_addresses(self) -> Sequence[str]:
+    def destination_addresses(self) -> Optional[Sequence[str]]:
         """
         (Updatable) An array of address list names to be evaluated against the traffic destination address.
         """
@@ -232,7 +237,7 @@ class NetworkFirewallPolicySecurityRuleCondition(dict):
 
     @property
     @pulumi.getter
-    def services(self) -> Sequence[str]:
+    def services(self) -> Optional[Sequence[str]]:
         """
         (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
         """
@@ -240,7 +245,7 @@ class NetworkFirewallPolicySecurityRuleCondition(dict):
 
     @property
     @pulumi.getter(name="sourceAddresses")
-    def source_addresses(self) -> Sequence[str]:
+    def source_addresses(self) -> Optional[Sequence[str]]:
         """
         (Updatable) An array of address list names to be evaluated against the traffic source address.
         """
@@ -248,7 +253,7 @@ class NetworkFirewallPolicySecurityRuleCondition(dict):
 
     @property
     @pulumi.getter
-    def urls(self) -> Sequence[str]:
+    def urls(self) -> Optional[Sequence[str]]:
         """
         (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
         """
@@ -1720,11 +1725,11 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemResu
 @pulumi.output_type
 class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemConditionResult(dict):
     def __init__(__self__, *,
-                 applications: Sequence[str],
-                 destination_addresses: Sequence[str],
-                 services: Sequence[str],
-                 source_addresses: Sequence[str],
-                 urls: Sequence[str]):
+                 applications: Optional[Sequence[str]] = None,
+                 destination_addresses: Optional[Sequence[str]] = None,
+                 services: Optional[Sequence[str]] = None,
+                 source_addresses: Optional[Sequence[str]] = None,
+                 urls: Optional[Sequence[str]] = None):
         """
         :param Sequence[str] applications: An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
         :param Sequence[str] destination_addresses: An array of IP address list names to be evaluated against the traffic destination address.
@@ -1732,15 +1737,20 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCond
         :param Sequence[str] source_addresses: An array of IP address list names to be evaluated against the traffic source address.
         :param Sequence[str] urls: An array of URL pattern list names to be evaluated against the HTTP(S) request target.
         """
-        pulumi.set(__self__, "applications", applications)
-        pulumi.set(__self__, "destination_addresses", destination_addresses)
-        pulumi.set(__self__, "services", services)
-        pulumi.set(__self__, "source_addresses", source_addresses)
-        pulumi.set(__self__, "urls", urls)
+        if applications is not None:
+            pulumi.set(__self__, "applications", applications)
+        if destination_addresses is not None:
+            pulumi.set(__self__, "destination_addresses", destination_addresses)
+        if services is not None:
+            pulumi.set(__self__, "services", services)
+        if source_addresses is not None:
+            pulumi.set(__self__, "source_addresses", source_addresses)
+        if urls is not None:
+            pulumi.set(__self__, "urls", urls)
 
     @property
     @pulumi.getter
-    def applications(self) -> Sequence[str]:
+    def applications(self) -> Optional[Sequence[str]]:
         """
         An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
         """
@@ -1748,7 +1758,7 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCond
 
     @property
     @pulumi.getter(name="destinationAddresses")
-    def destination_addresses(self) -> Sequence[str]:
+    def destination_addresses(self) -> Optional[Sequence[str]]:
         """
         An array of IP address list names to be evaluated against the traffic destination address.
         """
@@ -1756,7 +1766,7 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCond
 
     @property
     @pulumi.getter
-    def services(self) -> Sequence[str]:
+    def services(self) -> Optional[Sequence[str]]:
         """
         An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
         """
@@ -1764,7 +1774,7 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCond
 
     @property
     @pulumi.getter(name="sourceAddresses")
-    def source_addresses(self) -> Sequence[str]:
+    def source_addresses(self) -> Optional[Sequence[str]]:
         """
         An array of IP address list names to be evaluated against the traffic source address.
         """
@@ -1772,7 +1782,7 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCond
 
     @property
     @pulumi.getter
-    def urls(self) -> Sequence[str]:
+    def urls(self) -> Optional[Sequence[str]]:
         """
         An array of URL pattern list names to be evaluated against the HTTP(S) request target.
         """

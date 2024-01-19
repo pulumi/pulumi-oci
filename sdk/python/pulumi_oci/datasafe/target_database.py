@@ -24,17 +24,19 @@ class TargetDatabaseArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]] = None,
                  tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None):
         """
         The set of arguments for constructing a TargetDatabase resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
-        :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
+        :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: Details of the database for the registration in Data Safe.
         :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input['TargetDatabaseCredentialsArgs'] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        :param pulumi.Input[str] description: The description of the peer target database in Data Safe.
+        :param pulumi.Input[str] display_name: The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]] peer_target_database_details: The details of the database to be registered as a peer target database.
         :param pulumi.Input['TargetDatabaseTlsConfigArgs'] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -51,6 +53,8 @@ class TargetDatabaseArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if peer_target_database_details is not None:
+            pulumi.set(__self__, "peer_target_database_details", peer_target_database_details)
         if tls_config is not None:
             pulumi.set(__self__, "tls_config", tls_config)
 
@@ -70,7 +74,7 @@ class TargetDatabaseArgs:
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> pulumi.Input['TargetDatabaseDatabaseDetailsArgs']:
         """
-        (Updatable) Details of the database for the registration in Data Safe.
+        Details of the database for the registration in Data Safe.
         """
         return pulumi.get(self, "database_details")
 
@@ -118,7 +122,7 @@ class TargetDatabaseArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The description of the target database in Data Safe.
+        The description of the peer target database in Data Safe.
         """
         return pulumi.get(self, "description")
 
@@ -130,7 +134,7 @@ class TargetDatabaseArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -149,6 +153,18 @@ class TargetDatabaseArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="peerTargetDatabaseDetails")
+    def peer_target_database_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]:
+        """
+        The details of the database to be registered as a peer target database.
+        """
+        return pulumi.get(self, "peer_target_database_details")
+
+    @peer_target_database_details.setter
+    def peer_target_database_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]):
+        pulumi.set(self, "peer_target_database_details", value)
 
     @property
     @pulumi.getter(name="tlsConfig")
@@ -176,6 +192,8 @@ class _TargetDatabaseState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]] = None,
+                 peer_target_databases: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -187,12 +205,14 @@ class _TargetDatabaseState:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
         :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input['TargetDatabaseCredentialsArgs'] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
+        :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: Details of the database for the registration in Data Safe.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        :param pulumi.Input[str] description: The description of the peer target database in Data Safe.
+        :param pulumi.Input[str] display_name: The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the target database in Data Safe.
+        :param pulumi.Input[str] lifecycle_details: Details about the current state of the peer target database in Data Safe.
+        :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]] peer_target_database_details: The details of the database to be registered as a peer target database.
+        :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]] peer_target_databases: The OCIDs of associated resources like Database, Data Safe private endpoint etc.
         :param pulumi.Input[str] state: The current state of the target database in Data Safe.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
@@ -219,6 +239,10 @@ class _TargetDatabaseState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if peer_target_database_details is not None:
+            pulumi.set(__self__, "peer_target_database_details", peer_target_database_details)
+        if peer_target_databases is not None:
+            pulumi.set(__self__, "peer_target_databases", peer_target_databases)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -282,7 +306,7 @@ class _TargetDatabaseState:
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> Optional[pulumi.Input['TargetDatabaseDatabaseDetailsArgs']]:
         """
-        (Updatable) Details of the database for the registration in Data Safe.
+        Details of the database for the registration in Data Safe.
         """
         return pulumi.get(self, "database_details")
 
@@ -306,7 +330,7 @@ class _TargetDatabaseState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The description of the target database in Data Safe.
+        The description of the peer target database in Data Safe.
         """
         return pulumi.get(self, "description")
 
@@ -318,7 +342,7 @@ class _TargetDatabaseState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -342,13 +366,37 @@ class _TargetDatabaseState:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
-        Details about the current state of the target database in Data Safe.
+        Details about the current state of the peer target database in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter(name="peerTargetDatabaseDetails")
+    def peer_target_database_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]:
+        """
+        The details of the database to be registered as a peer target database.
+        """
+        return pulumi.get(self, "peer_target_database_details")
+
+    @peer_target_database_details.setter
+    def peer_target_database_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]):
+        pulumi.set(self, "peer_target_database_details", value)
+
+    @property
+    @pulumi.getter(name="peerTargetDatabases")
+    def peer_target_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]]]:
+        """
+        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        """
+        return pulumi.get(self, "peer_target_databases")
+
+    @peer_target_databases.setter
+    def peer_target_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]]]):
+        pulumi.set(self, "peer_target_databases", value)
 
     @property
     @pulumi.getter
@@ -424,6 +472,7 @@ class TargetDatabase(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetDatabasePeerTargetDatabaseDetailArgs']]]]] = None,
                  tls_config: Optional[pulumi.Input[pulumi.InputType['TargetDatabaseTlsConfigArgs']]] = None,
                  __props__=None):
         """
@@ -467,6 +516,29 @@ class TargetDatabase(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            peer_target_database_details=[oci.data_safe.TargetDatabasePeerTargetDatabaseDetailArgs(
+                database_details=oci.data_safe.TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs(
+                    database_type=var["target_database_peer_target_database_details_database_details_database_type"],
+                    infrastructure_type=var["target_database_peer_target_database_details_database_details_infrastructure_type"],
+                    autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
+                    db_system_id=oci_database_db_system["test_db_system"]["id"],
+                    instance_id=oci_core_instance["test_instance"]["id"],
+                    ip_addresses=var["target_database_peer_target_database_details_database_details_ip_addresses"],
+                    listener_port=var["target_database_peer_target_database_details_database_details_listener_port"],
+                    service_name=oci_core_service["test_service"]["name"],
+                    vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"],
+                ),
+                dataguard_association_id=oci_certificates_management_association["test_association"]["id"],
+                description=var["target_database_peer_target_database_details_description"],
+                display_name=var["target_database_peer_target_database_details_display_name"],
+                tls_config=oci.data_safe.TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs(
+                    status=var["target_database_peer_target_database_details_tls_config_status"],
+                    certificate_store_type=var["target_database_peer_target_database_details_tls_config_certificate_store_type"],
+                    key_store_content=var["target_database_peer_target_database_details_tls_config_key_store_content"],
+                    store_password=var["target_database_peer_target_database_details_tls_config_store_password"],
+                    trust_store_content=var["target_database_peer_target_database_details_tls_config_trust_store_content"],
+                ),
+            )],
             tls_config=oci.data_safe.TargetDatabaseTlsConfigArgs(
                 status=var["target_database_tls_config_status"],
                 certificate_store_type=var["target_database_tls_config_certificate_store_type"],
@@ -489,11 +561,12 @@ class TargetDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
         :param pulumi.Input[pulumi.InputType['TargetDatabaseConnectionOptionArgs']] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input[pulumi.InputType['TargetDatabaseCredentialsArgs']] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseDatabaseDetailsArgs']] database_details: (Updatable) Details of the database for the registration in Data Safe.
+        :param pulumi.Input[pulumi.InputType['TargetDatabaseDatabaseDetailsArgs']] database_details: Details of the database for the registration in Data Safe.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        :param pulumi.Input[str] description: The description of the peer target database in Data Safe.
+        :param pulumi.Input[str] display_name: The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetDatabasePeerTargetDatabaseDetailArgs']]]] peer_target_database_details: The details of the database to be registered as a peer target database.
         :param pulumi.Input[pulumi.InputType['TargetDatabaseTlsConfigArgs']] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
         ...
@@ -543,6 +616,29 @@ class TargetDatabase(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            peer_target_database_details=[oci.data_safe.TargetDatabasePeerTargetDatabaseDetailArgs(
+                database_details=oci.data_safe.TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs(
+                    database_type=var["target_database_peer_target_database_details_database_details_database_type"],
+                    infrastructure_type=var["target_database_peer_target_database_details_database_details_infrastructure_type"],
+                    autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
+                    db_system_id=oci_database_db_system["test_db_system"]["id"],
+                    instance_id=oci_core_instance["test_instance"]["id"],
+                    ip_addresses=var["target_database_peer_target_database_details_database_details_ip_addresses"],
+                    listener_port=var["target_database_peer_target_database_details_database_details_listener_port"],
+                    service_name=oci_core_service["test_service"]["name"],
+                    vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"],
+                ),
+                dataguard_association_id=oci_certificates_management_association["test_association"]["id"],
+                description=var["target_database_peer_target_database_details_description"],
+                display_name=var["target_database_peer_target_database_details_display_name"],
+                tls_config=oci.data_safe.TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs(
+                    status=var["target_database_peer_target_database_details_tls_config_status"],
+                    certificate_store_type=var["target_database_peer_target_database_details_tls_config_certificate_store_type"],
+                    key_store_content=var["target_database_peer_target_database_details_tls_config_key_store_content"],
+                    store_password=var["target_database_peer_target_database_details_tls_config_store_password"],
+                    trust_store_content=var["target_database_peer_target_database_details_tls_config_trust_store_content"],
+                ),
+            )],
             tls_config=oci.data_safe.TargetDatabaseTlsConfigArgs(
                 status=var["target_database_tls_config_status"],
                 certificate_store_type=var["target_database_tls_config_certificate_store_type"],
@@ -583,6 +679,7 @@ class TargetDatabase(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetDatabasePeerTargetDatabaseDetailArgs']]]]] = None,
                  tls_config: Optional[pulumi.Input[pulumi.InputType['TargetDatabaseTlsConfigArgs']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -605,9 +702,11 @@ class TargetDatabase(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["peer_target_database_details"] = peer_target_database_details
             __props__.__dict__["tls_config"] = tls_config
             __props__.__dict__["associated_resource_ids"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["peer_target_databases"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -632,6 +731,8 @@ class TargetDatabase(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetDatabasePeerTargetDatabaseDetailArgs']]]]] = None,
+            peer_target_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetDatabasePeerTargetDatabaseArgs']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -648,12 +749,14 @@ class TargetDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
         :param pulumi.Input[pulumi.InputType['TargetDatabaseConnectionOptionArgs']] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input[pulumi.InputType['TargetDatabaseCredentialsArgs']] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseDatabaseDetailsArgs']] database_details: (Updatable) Details of the database for the registration in Data Safe.
+        :param pulumi.Input[pulumi.InputType['TargetDatabaseDatabaseDetailsArgs']] database_details: Details of the database for the registration in Data Safe.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        :param pulumi.Input[str] description: The description of the peer target database in Data Safe.
+        :param pulumi.Input[str] display_name: The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the target database in Data Safe.
+        :param pulumi.Input[str] lifecycle_details: Details about the current state of the peer target database in Data Safe.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetDatabasePeerTargetDatabaseDetailArgs']]]] peer_target_database_details: The details of the database to be registered as a peer target database.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetDatabasePeerTargetDatabaseArgs']]]] peer_target_databases: The OCIDs of associated resources like Database, Data Safe private endpoint etc.
         :param pulumi.Input[str] state: The current state of the target database in Data Safe.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
@@ -674,6 +777,8 @@ class TargetDatabase(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["peer_target_database_details"] = peer_target_database_details
+        __props__.__dict__["peer_target_databases"] = peer_target_databases
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -717,7 +822,7 @@ class TargetDatabase(pulumi.CustomResource):
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> pulumi.Output['outputs.TargetDatabaseDatabaseDetails']:
         """
-        (Updatable) Details of the database for the registration in Data Safe.
+        Details of the database for the registration in Data Safe.
         """
         return pulumi.get(self, "database_details")
 
@@ -733,7 +838,7 @@ class TargetDatabase(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) The description of the target database in Data Safe.
+        The description of the peer target database in Data Safe.
         """
         return pulumi.get(self, "description")
 
@@ -741,7 +846,7 @@ class TargetDatabase(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -757,9 +862,25 @@ class TargetDatabase(pulumi.CustomResource):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
-        Details about the current state of the target database in Data Safe.
+        Details about the current state of the peer target database in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="peerTargetDatabaseDetails")
+    def peer_target_database_details(self) -> pulumi.Output[Sequence['outputs.TargetDatabasePeerTargetDatabaseDetail']]:
+        """
+        The details of the database to be registered as a peer target database.
+        """
+        return pulumi.get(self, "peer_target_database_details")
+
+    @property
+    @pulumi.getter(name="peerTargetDatabases")
+    def peer_target_databases(self) -> pulumi.Output[Sequence['outputs.TargetDatabasePeerTargetDatabase']]:
+        """
+        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        """
+        return pulumi.get(self, "peer_target_databases")
 
     @property
     @pulumi.getter

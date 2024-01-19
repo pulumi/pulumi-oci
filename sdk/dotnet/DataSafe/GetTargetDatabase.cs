@@ -132,11 +132,11 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// The description of the target database in Data Safe.
+        /// The description of the peer target database in Data Safe.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The display name of the target database in Data Safe.
+        /// The display name of the peer target database in Data Safe.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -148,9 +148,14 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Details about the current state of the target database in Data Safe.
+        /// Details about the current state of the peer target database in Data Safe.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly ImmutableArray<Outputs.GetTargetDatabasePeerTargetDatabaseDetailResult> PeerTargetDatabaseDetails;
+        /// <summary>
+        /// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetTargetDatabasePeerTargetDatabaseResult> PeerTargetDatabases;
         /// <summary>
         /// The current state of the target database in Data Safe.
         /// </summary>
@@ -197,6 +202,10 @@ namespace Pulumi.Oci.DataSafe
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetTargetDatabasePeerTargetDatabaseDetailResult> peerTargetDatabaseDetails,
+
+            ImmutableArray<Outputs.GetTargetDatabasePeerTargetDatabaseResult> peerTargetDatabases,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -220,6 +229,8 @@ namespace Pulumi.Oci.DataSafe
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            PeerTargetDatabaseDetails = peerTargetDatabaseDetails;
+            PeerTargetDatabases = peerTargetDatabases;
             State = state;
             SystemTags = systemTags;
             TargetDatabaseId = targetDatabaseId;

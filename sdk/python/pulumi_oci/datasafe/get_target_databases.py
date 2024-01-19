@@ -96,7 +96,7 @@ class GetTargetDatabasesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The display name of the target database in Data Safe.
+        The display name of the peer target database in Data Safe.
         """
         return pulumi.get(self, "display_name")
 

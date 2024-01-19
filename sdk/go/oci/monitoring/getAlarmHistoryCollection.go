@@ -67,9 +67,9 @@ type GetAlarmHistoryCollectionArgs struct {
 	AlarmHistorytype *string `pulumi:"alarmHistorytype"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
 	AlarmId string `pulumi:"alarmId"`
-	// A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2019-01-01T01:00:00.789Z`
+	// A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2023-01-01T01:00:00.789Z`
 	TimestampGreaterThanOrEqualTo *string `pulumi:"timestampGreaterThanOrEqualTo"`
-	// A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2019-01-02T01:00:00.789Z`
+	// A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2023-01-02T01:00:00.789Z`
 	TimestampLessThan *string `pulumi:"timestampLessThan"`
 }
 
@@ -107,9 +107,9 @@ type GetAlarmHistoryCollectionOutputArgs struct {
 	AlarmHistorytype pulumi.StringPtrInput `pulumi:"alarmHistorytype"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
 	AlarmId pulumi.StringInput `pulumi:"alarmId"`
-	// A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2019-01-01T01:00:00.789Z`
+	// A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2023-01-01T01:00:00.789Z`
 	TimestampGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timestampGreaterThanOrEqualTo"`
-	// A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2019-01-02T01:00:00.789Z`
+	// A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2023-01-02T01:00:00.789Z`
 	TimestampLessThan pulumi.StringPtrInput `pulumi:"timestampLessThan"`
 }
 

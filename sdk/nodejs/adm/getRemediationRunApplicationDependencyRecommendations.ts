@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testRemediationRunApplicationDependencyRecommendations = oci.Adm.getRemediationRunApplicationDependencyRecommendations({
  *     remediationRunId: oci_adm_remediation_run.test_remediation_run.id,
  *     gav: _var.remediation_run_application_dependency_recommendation_gav,
+ *     purl: _var.remediation_run_application_dependency_recommendation_purl,
  * });
  * ```
  */
@@ -29,6 +30,7 @@ export function getRemediationRunApplicationDependencyRecommendations(args: GetR
     return pulumi.runtime.invoke("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", {
         "filters": args.filters,
         "gav": args.gav,
+        "purl": args.purl,
         "remediationRunId": args.remediationRunId,
     }, opts);
 }
@@ -42,6 +44,10 @@ export interface GetRemediationRunApplicationDependencyRecommendationsArgs {
      * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
      */
     gav?: string;
+    /**
+     * A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     */
+    purl?: string;
     /**
      * Unique Remediation Run identifier path parameter.
      */
@@ -65,6 +71,10 @@ export interface GetRemediationRunApplicationDependencyRecommendationsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     */
+    readonly purl?: string;
     readonly remediationRunId: string;
 }
 /**
@@ -81,6 +91,7 @@ export interface GetRemediationRunApplicationDependencyRecommendationsResult {
  * const testRemediationRunApplicationDependencyRecommendations = oci.Adm.getRemediationRunApplicationDependencyRecommendations({
  *     remediationRunId: oci_adm_remediation_run.test_remediation_run.id,
  *     gav: _var.remediation_run_application_dependency_recommendation_gav,
+ *     purl: _var.remediation_run_application_dependency_recommendation_purl,
  * });
  * ```
  */
@@ -97,6 +108,10 @@ export interface GetRemediationRunApplicationDependencyRecommendationsOutputArgs
      * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
      */
     gav?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     */
+    purl?: pulumi.Input<string>;
     /**
      * Unique Remediation Run identifier path parameter.
      */

@@ -50,6 +50,21 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
     }
 
     /**
+     * A filter to return only items that match the criteria that all schemas can be accessed by a user.
+     * 
+     */
+    @Import(name="areAllSchemasAccessible")
+    private @Nullable Output<Boolean> areAllSchemasAccessible;
+
+    /**
+     * @return A filter to return only items that match the criteria that all schemas can be accessed by a user.
+     * 
+     */
+    public Optional<Output<Boolean>> areAllSchemasAccessible() {
+        return Optional.ofNullable(this.areAllSchemasAccessible);
+    }
+
+    /**
      * A filter to return only items that match the specified authentication type.
      * 
      */
@@ -84,6 +99,21 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
 
     public Optional<Output<List<GetUserAssessmentUsersFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A filter to return items that contain the specified schema list.
+     * 
+     */
+    @Import(name="schemaLists")
+    private @Nullable Output<List<String>> schemaLists;
+
+    /**
+     * @return A filter to return items that contain the specified schema list.
+     * 
+     */
+    public Optional<Output<List<String>>> schemaLists() {
+        return Optional.ofNullable(this.schemaLists);
     }
 
     /**
@@ -323,9 +353,11 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
     private GetUserAssessmentUsersArgs(GetUserAssessmentUsersArgs $) {
         this.accessLevel = $.accessLevel;
         this.accountStatus = $.accountStatus;
+        this.areAllSchemasAccessible = $.areAllSchemasAccessible;
         this.authenticationType = $.authenticationType;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
+        this.schemaLists = $.schemaLists;
         this.targetId = $.targetId;
         this.timeLastLoginGreaterThanOrEqualTo = $.timeLastLoginGreaterThanOrEqualTo;
         this.timeLastLoginLessThan = $.timeLastLoginLessThan;
@@ -403,6 +435,27 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
         }
 
         /**
+         * @param areAllSchemasAccessible A filter to return only items that match the criteria that all schemas can be accessed by a user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areAllSchemasAccessible(@Nullable Output<Boolean> areAllSchemasAccessible) {
+            $.areAllSchemasAccessible = areAllSchemasAccessible;
+            return this;
+        }
+
+        /**
+         * @param areAllSchemasAccessible A filter to return only items that match the criteria that all schemas can be accessed by a user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areAllSchemasAccessible(Boolean areAllSchemasAccessible) {
+            return areAllSchemasAccessible(Output.of(areAllSchemasAccessible));
+        }
+
+        /**
          * @param authenticationType A filter to return only items that match the specified authentication type.
          * 
          * @return builder
@@ -455,6 +508,37 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
 
         public Builder filters(GetUserAssessmentUsersFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param schemaLists A filter to return items that contain the specified schema list.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder schemaLists(@Nullable Output<List<String>> schemaLists) {
+            $.schemaLists = schemaLists;
+            return this;
+        }
+
+        /**
+         * @param schemaLists A filter to return items that contain the specified schema list.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder schemaLists(List<String> schemaLists) {
+            return schemaLists(Output.of(schemaLists));
+        }
+
+        /**
+         * @param schemaLists A filter to return items that contain the specified schema list.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder schemaLists(String... schemaLists) {
+            return schemaLists(List.of(schemaLists));
         }
 
         /**

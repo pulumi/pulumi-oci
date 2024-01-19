@@ -475,6 +475,21 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * Operating system version of the image.
+     * 
+     */
+    @Import(name="systemVersion")
+    private @Nullable Output<String> systemVersion;
+
+    /**
+     * @return Operating system version of the image.
+     * 
+     */
+    public Optional<Output<String>> systemVersion() {
+        return Optional.ofNullable(this.systemVersion);
+    }
+
+    /**
      * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      * ** IMPORTANT **
@@ -527,6 +542,7 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.scanListenerPortTcpSsl = $.scanListenerPortTcpSsl;
         this.sshPublicKeys = $.sshPublicKeys;
         this.subnetId = $.subnetId;
+        this.systemVersion = $.systemVersion;
         this.timeZone = $.timeZone;
     }
 
@@ -1208,6 +1224,27 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param systemVersion Operating system version of the image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemVersion(@Nullable Output<String> systemVersion) {
+            $.systemVersion = systemVersion;
+            return this;
+        }
+
+        /**
+         * @param systemVersion Operating system version of the image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemVersion(String systemVersion) {
+            return systemVersion(Output.of(systemVersion));
         }
 
         /**

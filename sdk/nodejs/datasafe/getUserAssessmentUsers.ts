@@ -24,8 +24,10 @@ import * as utilities from "../utilities";
  *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
  *     accessLevel: _var.user_assessment_user_access_level,
  *     accountStatus: _var.user_assessment_user_account_status,
+ *     areAllSchemasAccessible: _var.user_assessment_user_are_all_schemas_accessible,
  *     authenticationType: _var.user_assessment_user_authentication_type,
  *     compartmentIdInSubtree: _var.user_assessment_user_compartment_id_in_subtree,
+ *     schemaLists: _var.user_assessment_user_schema_list,
  *     targetId: oci_cloud_guard_target.test_target.id,
  *     timeLastLoginGreaterThanOrEqualTo: _var.user_assessment_user_time_last_login_greater_than_or_equal_to,
  *     timeLastLoginLessThan: _var.user_assessment_user_time_last_login_less_than,
@@ -48,9 +50,11 @@ export function getUserAssessmentUsers(args: GetUserAssessmentUsersArgs, opts?: 
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessmentUsers:getUserAssessmentUsers", {
         "accessLevel": args.accessLevel,
         "accountStatus": args.accountStatus,
+        "areAllSchemasAccessible": args.areAllSchemasAccessible,
         "authenticationType": args.authenticationType,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
+        "schemaLists": args.schemaLists,
         "targetId": args.targetId,
         "timeLastLoginGreaterThanOrEqualTo": args.timeLastLoginGreaterThanOrEqualTo,
         "timeLastLoginLessThan": args.timeLastLoginLessThan,
@@ -81,6 +85,10 @@ export interface GetUserAssessmentUsersArgs {
      */
     accountStatus?: string;
     /**
+     * A filter to return only items that match the criteria that all schemas can be accessed by a user.
+     */
+    areAllSchemasAccessible?: boolean;
+    /**
      * A filter to return only items that match the specified authentication type.
      */
     authenticationType?: string;
@@ -89,6 +97,10 @@ export interface GetUserAssessmentUsersArgs {
      */
     compartmentIdInSubtree?: boolean;
     filters?: inputs.DataSafe.GetUserAssessmentUsersFilter[];
+    /**
+     * A filter to return items that contain the specified schema list.
+     */
+    schemaLists?: string[];
     /**
      * A filter to return only items related to a specific target OCID.
      */
@@ -164,9 +176,13 @@ export interface GetUserAssessmentUsersArgs {
 export interface GetUserAssessmentUsersResult {
     readonly accessLevel?: string;
     /**
-     * The user account status.
+     * The status of the user account.
      */
     readonly accountStatus?: string;
+    /**
+     * Indicates whether the user has access to all the schemas.
+     */
+    readonly areAllSchemasAccessible?: boolean;
     /**
      * The user authentication method.
      */
@@ -177,6 +193,10 @@ export interface GetUserAssessmentUsersResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The list of database schemas current user can access.
+     */
+    readonly schemaLists?: string[];
     /**
      * The OCID of the target database.
      */
@@ -226,8 +246,10 @@ export interface GetUserAssessmentUsersResult {
  *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
  *     accessLevel: _var.user_assessment_user_access_level,
  *     accountStatus: _var.user_assessment_user_account_status,
+ *     areAllSchemasAccessible: _var.user_assessment_user_are_all_schemas_accessible,
  *     authenticationType: _var.user_assessment_user_authentication_type,
  *     compartmentIdInSubtree: _var.user_assessment_user_compartment_id_in_subtree,
+ *     schemaLists: _var.user_assessment_user_schema_list,
  *     targetId: oci_cloud_guard_target.test_target.id,
  *     timeLastLoginGreaterThanOrEqualTo: _var.user_assessment_user_time_last_login_greater_than_or_equal_to,
  *     timeLastLoginLessThan: _var.user_assessment_user_time_last_login_less_than,
@@ -261,6 +283,10 @@ export interface GetUserAssessmentUsersOutputArgs {
      */
     accountStatus?: pulumi.Input<string>;
     /**
+     * A filter to return only items that match the criteria that all schemas can be accessed by a user.
+     */
+    areAllSchemasAccessible?: pulumi.Input<boolean>;
+    /**
      * A filter to return only items that match the specified authentication type.
      */
     authenticationType?: pulumi.Input<string>;
@@ -269,6 +295,10 @@ export interface GetUserAssessmentUsersOutputArgs {
      */
     compartmentIdInSubtree?: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUserAssessmentUsersFilterArgs>[]>;
+    /**
+     * A filter to return items that contain the specified schema list.
+     */
+    schemaLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A filter to return only items related to a specific target OCID.
      */

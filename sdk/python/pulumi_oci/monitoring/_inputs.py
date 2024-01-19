@@ -11,7 +11,9 @@ from .. import _utilities
 
 __all__ = [
     'AlarmSuppressionArgs',
+    'AlarmSuppressionAlarmSuppressionTargetArgs',
     'GetAlarmStatusesFilterArgs',
+    'GetAlarmSuppressionsFilterArgs',
     'GetAlarmsFilterArgs',
     'GetMetricDataFilterArgs',
     'GetMetricsFilterArgs',
@@ -24,8 +26,8 @@ class AlarmSuppressionArgs:
                  time_suppress_until: pulumi.Input[str],
                  description: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] time_suppress_from: (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        :param pulumi.Input[str] time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
+        :param pulumi.Input[str] time_suppress_from: (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
+        :param pulumi.Input[str] time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
                
                
                ** IMPORTANT **
@@ -45,7 +47,7 @@ class AlarmSuppressionArgs:
     @pulumi.getter(name="timeSuppressFrom")
     def time_suppress_from(self) -> pulumi.Input[str]:
         """
-        (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+        (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         """
         return pulumi.get(self, "time_suppress_from")
 
@@ -57,7 +59,7 @@ class AlarmSuppressionArgs:
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> pulumi.Input[str]:
         """
-        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
+        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
 
 
         ** IMPORTANT **
@@ -87,7 +89,83 @@ class AlarmSuppressionArgs:
 
 
 @pulumi.input_type
+class AlarmSuppressionAlarmSuppressionTargetArgs:
+    def __init__(__self__, *,
+                 alarm_id: pulumi.Input[str],
+                 target_type: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] alarm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
+        :param pulumi.Input[str] target_type: The type of the alarm suppression target.
+        """
+        pulumi.set(__self__, "alarm_id", alarm_id)
+        pulumi.set(__self__, "target_type", target_type)
+
+    @property
+    @pulumi.getter(name="alarmId")
+    def alarm_id(self) -> pulumi.Input[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
+        """
+        return pulumi.get(self, "alarm_id")
+
+    @alarm_id.setter
+    def alarm_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "alarm_id", value)
+
+    @property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> pulumi.Input[str]:
+        """
+        The type of the alarm suppression target.
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "target_type", value)
+
+
+@pulumi.input_type
 class GetAlarmStatusesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetAlarmSuppressionsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

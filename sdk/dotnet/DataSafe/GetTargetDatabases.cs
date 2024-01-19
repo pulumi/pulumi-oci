@@ -247,7 +247,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string? DatabaseType;
         /// <summary>
-        /// The display name of the target database in Data Safe.
+        /// The display name of the peer target database in Data Safe.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetTargetDatabasesFilterResult> Filters;

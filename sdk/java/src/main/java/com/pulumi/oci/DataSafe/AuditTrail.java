@@ -175,6 +175,62 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
+     * The secondary id assigned for the peer database registered with Data Safe.
+     * 
+     */
+    @Export(name="peerTargetDatabaseKey", refs={Integer.class}, tree="[0]")
+    private Output<Integer> peerTargetDatabaseKey;
+
+    /**
+     * @return The secondary id assigned for the peer database registered with Data Safe.
+     * 
+     */
+    public Output<Integer> peerTargetDatabaseKey() {
+        return this.peerTargetDatabaseKey;
+    }
+    /**
+     * The details of the audit trail purge job that ran on the &#34;purgeJobTime&#34;.
+     * 
+     */
+    @Export(name="purgeJobDetails", refs={String.class}, tree="[0]")
+    private Output<String> purgeJobDetails;
+
+    /**
+     * @return The details of the audit trail purge job that ran on the &#34;purgeJobTime&#34;.
+     * 
+     */
+    public Output<String> purgeJobDetails() {
+        return this.purgeJobDetails;
+    }
+    /**
+     * The current status of the audit trail purge job.
+     * 
+     */
+    @Export(name="purgeJobStatus", refs={String.class}, tree="[0]")
+    private Output<String> purgeJobStatus;
+
+    /**
+     * @return The current status of the audit trail purge job.
+     * 
+     */
+    public Output<String> purgeJobStatus() {
+        return this.purgeJobStatus;
+    }
+    /**
+     * The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database&#39;s audit trail does not become too large. In the format defined by RFC3339.
+     * 
+     */
+    @Export(name="purgeJobTime", refs={String.class}, tree="[0]")
+    private Output<String> purgeJobTime;
+
+    /**
+     * @return The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database&#39;s audit trail does not become too large. In the format defined by RFC3339.
+     * 
+     */
+    public Output<String> purgeJobTime() {
+        return this.purgeJobTime;
+    }
+    /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
      * 
      * ** IMPORTANT **
@@ -305,6 +361,20 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      */
     public Output<String> trailLocation() {
         return this.trailLocation;
+    }
+    /**
+     * The underlying source of unified audit trail.
+     * 
+     */
+    @Export(name="trailSource", refs={String.class}, tree="[0]")
+    private Output<String> trailSource;
+
+    /**
+     * @return The underlying source of unified audit trail.
+     * 
+     */
+    public Output<String> trailSource() {
+        return this.trailSource;
     }
     /**
      * The OCID of the workrequest for audit trail which collects audit records.

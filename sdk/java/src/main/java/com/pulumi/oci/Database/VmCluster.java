@@ -70,6 +70,7 @@ import javax.annotation.Nullable;
  *             .isSparseDiskgroupEnabled(var_.vm_cluster_is_sparse_diskgroup_enabled())
  *             .licenseModel(var_.vm_cluster_license_model())
  *             .memorySizeInGbs(var_.vm_cluster_memory_size_in_gbs())
+ *             .systemVersion(var_.vm_cluster_system_version())
  *             .timeZone(var_.vm_cluster_time_zone())
  *             .build());
  * 

@@ -6,6 +6,7 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -87,6 +88,11 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String databaseType;
     /**
+     * @return Unique name of the database associated to the peer target database.
+     * 
+     */
+    private String databaseUniqueName;
+    /**
      * @return The name of the database user whose actions were audited.
      * 
      */
@@ -167,6 +173,11 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String osUserName;
     /**
+     * @return The secondary id assigned for the peer database registered with Data Safe.
+     * 
+     */
+    private Integer peerTargetDatabaseKey;
+    /**
      * @return The class of the target that was audited.
      * 
      */
@@ -186,6 +197,11 @@ public final class GetAuditEventsAuditEventCollectionItem {
      * 
      */
     private String timeCollected;
+    /**
+     * @return The underlying source of unified audit trail.
+     * 
+     */
+    private String trailSource;
 
     private GetAuditEventsAuditEventCollectionItem() {}
     /**
@@ -288,6 +304,13 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     public String databaseType() {
         return this.databaseType;
+    }
+    /**
+     * @return Unique name of the database associated to the peer target database.
+     * 
+     */
+    public String databaseUniqueName() {
+        return this.databaseUniqueName;
     }
     /**
      * @return The name of the database user whose actions were audited.
@@ -402,6 +425,13 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.osUserName;
     }
     /**
+     * @return The secondary id assigned for the peer database registered with Data Safe.
+     * 
+     */
+    public Integer peerTargetDatabaseKey() {
+        return this.peerTargetDatabaseKey;
+    }
+    /**
      * @return The class of the target that was audited.
      * 
      */
@@ -429,6 +459,13 @@ public final class GetAuditEventsAuditEventCollectionItem {
     public String timeCollected() {
         return this.timeCollected;
     }
+    /**
+     * @return The underlying source of unified audit trail.
+     * 
+     */
+    public String trailSource() {
+        return this.trailSource;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -453,6 +490,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         private String commandText;
         private String compartmentId;
         private String databaseType;
+        private String databaseUniqueName;
         private String dbUserName;
         private Map<String,Object> definedTags;
         private String errorCode;
@@ -469,10 +507,12 @@ public final class GetAuditEventsAuditEventCollectionItem {
         private String operationStatus;
         private String osTerminal;
         private String osUserName;
+        private Integer peerTargetDatabaseKey;
         private String targetClass;
         private String targetId;
         private String targetName;
         private String timeCollected;
+        private String trailSource;
         public Builder() {}
         public Builder(GetAuditEventsAuditEventCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -490,6 +530,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
     	      this.commandText = defaults.commandText;
     	      this.compartmentId = defaults.compartmentId;
     	      this.databaseType = defaults.databaseType;
+    	      this.databaseUniqueName = defaults.databaseUniqueName;
     	      this.dbUserName = defaults.dbUserName;
     	      this.definedTags = defaults.definedTags;
     	      this.errorCode = defaults.errorCode;
@@ -506,10 +547,12 @@ public final class GetAuditEventsAuditEventCollectionItem {
     	      this.operationStatus = defaults.operationStatus;
     	      this.osTerminal = defaults.osTerminal;
     	      this.osUserName = defaults.osUserName;
+    	      this.peerTargetDatabaseKey = defaults.peerTargetDatabaseKey;
     	      this.targetClass = defaults.targetClass;
     	      this.targetId = defaults.targetId;
     	      this.targetName = defaults.targetName;
     	      this.timeCollected = defaults.timeCollected;
+    	      this.trailSource = defaults.trailSource;
         }
 
         @CustomType.Setter
@@ -622,6 +665,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
               throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "databaseType");
             }
             this.databaseType = databaseType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseUniqueName(String databaseUniqueName) {
+            if (databaseUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "databaseUniqueName");
+            }
+            this.databaseUniqueName = databaseUniqueName;
             return this;
         }
         @CustomType.Setter
@@ -753,6 +804,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder peerTargetDatabaseKey(Integer peerTargetDatabaseKey) {
+            if (peerTargetDatabaseKey == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "peerTargetDatabaseKey");
+            }
+            this.peerTargetDatabaseKey = peerTargetDatabaseKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetClass(String targetClass) {
             if (targetClass == null) {
               throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "targetClass");
@@ -784,6 +843,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
             this.timeCollected = timeCollected;
             return this;
         }
+        @CustomType.Setter
+        public Builder trailSource(String trailSource) {
+            if (trailSource == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "trailSource");
+            }
+            this.trailSource = trailSource;
+            return this;
+        }
         public GetAuditEventsAuditEventCollectionItem build() {
             final var _resultValue = new GetAuditEventsAuditEventCollectionItem();
             _resultValue.actionTaken = actionTaken;
@@ -800,6 +867,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
             _resultValue.commandText = commandText;
             _resultValue.compartmentId = compartmentId;
             _resultValue.databaseType = databaseType;
+            _resultValue.databaseUniqueName = databaseUniqueName;
             _resultValue.dbUserName = dbUserName;
             _resultValue.definedTags = definedTags;
             _resultValue.errorCode = errorCode;
@@ -816,10 +884,12 @@ public final class GetAuditEventsAuditEventCollectionItem {
             _resultValue.operationStatus = operationStatus;
             _resultValue.osTerminal = osTerminal;
             _resultValue.osUserName = osUserName;
+            _resultValue.peerTargetDatabaseKey = peerTargetDatabaseKey;
             _resultValue.targetClass = targetClass;
             _resultValue.targetId = targetId;
             _resultValue.targetName = targetName;
             _resultValue.timeCollected = timeCollected;
+            _resultValue.trailSource = trailSource;
             return _resultValue;
         }
     }

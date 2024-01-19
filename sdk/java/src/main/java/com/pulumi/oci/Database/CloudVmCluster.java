@@ -83,6 +83,7 @@ import javax.annotation.Nullable;
  *             .privateZoneId(oci_dns_zone.test_zone().id())
  *             .scanListenerPortTcp(var_.cloud_vm_cluster_scan_listener_port_tcp())
  *             .scanListenerPortTcpSsl(var_.cloud_vm_cluster_scan_listener_port_tcp_ssl())
+ *             .systemVersion(var_.cloud_vm_cluster_system_version())
  *             .timeZone(var_.cloud_vm_cluster_time_zone())
  *             .build());
  * 

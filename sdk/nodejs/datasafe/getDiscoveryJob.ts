@@ -72,7 +72,7 @@ export interface GetDiscoveryJobResult {
      */
     readonly isAppDefinedRelationDiscoveryEnabled: boolean;
     /**
-     * Indicates if all the schemas in the associated target database are used for data discovery. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used.
+     * Indicates if all the schemas in the associated target database are used for data discovery. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
      */
     readonly isIncludeAllSchemas: boolean;
     /**

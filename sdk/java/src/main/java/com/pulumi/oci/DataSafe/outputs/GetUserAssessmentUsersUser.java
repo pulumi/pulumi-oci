@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -22,6 +23,11 @@ public final class GetUserAssessmentUsersUser {
      */
     private List<String> adminRoles;
     /**
+     * @return A filter to return only items that match the criteria that all schemas can be accessed by a user.
+     * 
+     */
+    private Boolean areAllSchemasAccessible;
+    /**
      * @return A filter to return only items that match the specified authentication type.
      * 
      */
@@ -32,22 +38,27 @@ public final class GetUserAssessmentUsersUser {
      */
     private String key;
     /**
+     * @return A filter to return items that contain the specified schema list.
+     * 
+     */
+    private List<String> schemaLists;
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
     private String targetId;
     /**
-     * @return The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeLastLogin;
     /**
-     * @return The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timePasswordChanged;
     /**
-     * @return The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeUserCreated;
@@ -88,6 +99,13 @@ public final class GetUserAssessmentUsersUser {
         return this.adminRoles;
     }
     /**
+     * @return A filter to return only items that match the criteria that all schemas can be accessed by a user.
+     * 
+     */
+    public Boolean areAllSchemasAccessible() {
+        return this.areAllSchemasAccessible;
+    }
+    /**
      * @return A filter to return only items that match the specified authentication type.
      * 
      */
@@ -102,6 +120,13 @@ public final class GetUserAssessmentUsersUser {
         return this.key;
     }
     /**
+     * @return A filter to return items that contain the specified schema list.
+     * 
+     */
+    public List<String> schemaLists() {
+        return this.schemaLists;
+    }
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
@@ -109,21 +134,21 @@ public final class GetUserAssessmentUsersUser {
         return this.targetId;
     }
     /**
-     * @return The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeLastLogin() {
         return this.timeLastLogin;
     }
     /**
-     * @return The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timePasswordChanged() {
         return this.timePasswordChanged;
     }
     /**
-     * @return The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeUserCreated() {
@@ -169,8 +194,10 @@ public final class GetUserAssessmentUsersUser {
     public static final class Builder {
         private String accountStatus;
         private List<String> adminRoles;
+        private Boolean areAllSchemasAccessible;
         private String authenticationType;
         private String key;
+        private List<String> schemaLists;
         private String targetId;
         private String timeLastLogin;
         private String timePasswordChanged;
@@ -184,8 +211,10 @@ public final class GetUserAssessmentUsersUser {
     	      Objects.requireNonNull(defaults);
     	      this.accountStatus = defaults.accountStatus;
     	      this.adminRoles = defaults.adminRoles;
+    	      this.areAllSchemasAccessible = defaults.areAllSchemasAccessible;
     	      this.authenticationType = defaults.authenticationType;
     	      this.key = defaults.key;
+    	      this.schemaLists = defaults.schemaLists;
     	      this.targetId = defaults.targetId;
     	      this.timeLastLogin = defaults.timeLastLogin;
     	      this.timePasswordChanged = defaults.timePasswordChanged;
@@ -216,6 +245,14 @@ public final class GetUserAssessmentUsersUser {
             return adminRoles(List.of(adminRoles));
         }
         @CustomType.Setter
+        public Builder areAllSchemasAccessible(Boolean areAllSchemasAccessible) {
+            if (areAllSchemasAccessible == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "areAllSchemasAccessible");
+            }
+            this.areAllSchemasAccessible = areAllSchemasAccessible;
+            return this;
+        }
+        @CustomType.Setter
         public Builder authenticationType(String authenticationType) {
             if (authenticationType == null) {
               throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "authenticationType");
@@ -230,6 +267,17 @@ public final class GetUserAssessmentUsersUser {
             }
             this.key = key;
             return this;
+        }
+        @CustomType.Setter
+        public Builder schemaLists(List<String> schemaLists) {
+            if (schemaLists == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "schemaLists");
+            }
+            this.schemaLists = schemaLists;
+            return this;
+        }
+        public Builder schemaLists(String... schemaLists) {
+            return schemaLists(List.of(schemaLists));
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
@@ -302,8 +350,10 @@ public final class GetUserAssessmentUsersUser {
             final var _resultValue = new GetUserAssessmentUsersUser();
             _resultValue.accountStatus = accountStatus;
             _resultValue.adminRoles = adminRoles;
+            _resultValue.areAllSchemasAccessible = areAllSchemasAccessible;
             _resultValue.authenticationType = authenticationType;
             _resultValue.key = key;
+            _resultValue.schemaLists = schemaLists;
             _resultValue.targetId = targetId;
             _resultValue.timeLastLogin = timeLastLogin;
             _resultValue.timePasswordChanged = timePasswordChanged;

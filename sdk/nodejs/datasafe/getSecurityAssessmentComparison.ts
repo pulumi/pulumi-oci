@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Gets the details of the comparison report on the security assessments submitted for comparison.
+ * Gets the details of the comparison report for the security assessments submitted for comparison.
  *
  * ## Example Usage
  *
@@ -37,7 +37,7 @@ export function getSecurityAssessmentComparison(args: GetSecurityAssessmentCompa
  */
 export interface GetSecurityAssessmentComparisonArgs {
     /**
-     * The OCID of the baseline security assessment.
+     * The OCID of the security assessment baseline.
      */
     comparisonSecurityAssessmentId: string;
     /**
@@ -61,7 +61,7 @@ export interface GetSecurityAssessmentComparisonResult {
     readonly id: string;
     readonly securityAssessmentId: string;
     /**
-     * The current state of the security assessment comparison.
+     * The current state of the finding.
      */
     readonly state: string;
     /**
@@ -76,7 +76,7 @@ export interface GetSecurityAssessmentComparisonResult {
 /**
  * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Gets the details of the comparison report on the security assessments submitted for comparison.
+ * Gets the details of the comparison report for the security assessments submitted for comparison.
  *
  * ## Example Usage
  *
@@ -99,7 +99,7 @@ export function getSecurityAssessmentComparisonOutput(args: GetSecurityAssessmen
  */
 export interface GetSecurityAssessmentComparisonOutputArgs {
     /**
-     * The OCID of the baseline security assessment.
+     * The OCID of the security assessment baseline.
      */
     comparisonSecurityAssessmentId: pulumi.Input<string>;
     /**

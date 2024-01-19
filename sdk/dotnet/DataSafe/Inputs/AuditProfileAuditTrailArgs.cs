@@ -85,6 +85,30 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
+        /// The secondary id assigned for the peer database registered with Data Safe.
+        /// </summary>
+        [Input("peerTargetDatabaseKey")]
+        public Input<int>? PeerTargetDatabaseKey { get; set; }
+
+        /// <summary>
+        /// The details of the audit trail purge job that ran on the "purgeJobTime".
+        /// </summary>
+        [Input("purgeJobDetails")]
+        public Input<string>? PurgeJobDetails { get; set; }
+
+        /// <summary>
+        /// The current status of the audit trail purge job.
+        /// </summary>
+        [Input("purgeJobStatus")]
+        public Input<string>? PurgeJobStatus { get; set; }
+
+        /// <summary>
+        /// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        /// </summary>
+        [Input("purgeJobTime")]
+        public Input<string>? PurgeJobTime { get; set; }
+
+        /// <summary>
         /// The current state of the audit profile.
         /// </summary>
         [Input("state")]
@@ -137,6 +161,12 @@ namespace Pulumi.Oci.DataSafe.Inputs
         /// </summary>
         [Input("trailLocation")]
         public Input<string>? TrailLocation { get; set; }
+
+        /// <summary>
+        /// The underlying source of unified audit trail.
+        /// </summary>
+        [Input("trailSource")]
+        public Input<string>? TrailSource { get; set; }
 
         /// <summary>
         /// The OCID of the workrequest for audit trail which collects audit records.

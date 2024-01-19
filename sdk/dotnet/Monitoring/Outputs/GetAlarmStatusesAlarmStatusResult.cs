@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The configured severity of the alarm.  Example: `CRITICAL`
+        /// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         /// </summary>
         public readonly string Severity;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAlarmStatusesAlarmStatusSuppressionResult> Suppressions;
         /// <summary>
-        /// Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
+        /// Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2023-02-01T01:02:29.600Z`
         /// </summary>
         public readonly string TimestampTriggered;
 

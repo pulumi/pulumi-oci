@@ -26,9 +26,11 @@ public final class GetSecurityAssessmentFindingResult {
      * 
      */
     private String id;
+    private @Nullable Boolean isTopFinding;
     private @Nullable String references;
     private String securityAssessmentId;
     private @Nullable String severity;
+    private @Nullable String state;
 
     private GetSecurityAssessmentFindingResult() {}
     public Optional<String> accessLevel() {
@@ -53,6 +55,9 @@ public final class GetSecurityAssessmentFindingResult {
     public String id() {
         return this.id;
     }
+    public Optional<Boolean> isTopFinding() {
+        return Optional.ofNullable(this.isTopFinding);
+    }
     public Optional<String> references() {
         return Optional.ofNullable(this.references);
     }
@@ -61,6 +66,9 @@ public final class GetSecurityAssessmentFindingResult {
     }
     public Optional<String> severity() {
         return Optional.ofNullable(this.severity);
+    }
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -78,9 +86,11 @@ public final class GetSecurityAssessmentFindingResult {
         private @Nullable String findingKey;
         private List<GetSecurityAssessmentFindingFinding> findings;
         private String id;
+        private @Nullable Boolean isTopFinding;
         private @Nullable String references;
         private String securityAssessmentId;
         private @Nullable String severity;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetSecurityAssessmentFindingResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -90,9 +100,11 @@ public final class GetSecurityAssessmentFindingResult {
     	      this.findingKey = defaults.findingKey;
     	      this.findings = defaults.findings;
     	      this.id = defaults.id;
+    	      this.isTopFinding = defaults.isTopFinding;
     	      this.references = defaults.references;
     	      this.securityAssessmentId = defaults.securityAssessmentId;
     	      this.severity = defaults.severity;
+    	      this.state = defaults.state;
         }
 
         @CustomType.Setter
@@ -142,6 +154,12 @@ public final class GetSecurityAssessmentFindingResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isTopFinding(@Nullable Boolean isTopFinding) {
+
+            this.isTopFinding = isTopFinding;
+            return this;
+        }
+        @CustomType.Setter
         public Builder references(@Nullable String references) {
 
             this.references = references;
@@ -161,6 +179,12 @@ public final class GetSecurityAssessmentFindingResult {
             this.severity = severity;
             return this;
         }
+        @CustomType.Setter
+        public Builder state(@Nullable String state) {
+
+            this.state = state;
+            return this;
+        }
         public GetSecurityAssessmentFindingResult build() {
             final var _resultValue = new GetSecurityAssessmentFindingResult();
             _resultValue.accessLevel = accessLevel;
@@ -169,9 +193,11 @@ public final class GetSecurityAssessmentFindingResult {
             _resultValue.findingKey = findingKey;
             _resultValue.findings = findings;
             _resultValue.id = id;
+            _resultValue.isTopFinding = isTopFinding;
             _resultValue.references = references;
             _resultValue.securityAssessmentId = securityAssessmentId;
             _resultValue.severity = severity;
+            _resultValue.state = state;
             return _resultValue;
         }
     }

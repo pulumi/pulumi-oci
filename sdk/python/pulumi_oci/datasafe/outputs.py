@@ -32,6 +32,7 @@ __all__ = [
     'ReportDefinitionSummary',
     'SecurityAssessmentStatistic',
     'SecurityAssessmentStatisticAdvisory',
+    'SecurityAssessmentStatisticDeferred',
     'SecurityAssessmentStatisticEvaluate',
     'SecurityAssessmentStatisticHighRisk',
     'SecurityAssessmentStatisticLowRisk',
@@ -40,6 +41,13 @@ __all__ = [
     'TargetDatabaseConnectionOption',
     'TargetDatabaseCredentials',
     'TargetDatabaseDatabaseDetails',
+    'TargetDatabasePeerTargetDatabase',
+    'TargetDatabasePeerTargetDatabaseDatabaseDetail',
+    'TargetDatabasePeerTargetDatabaseDatabaseDetails',
+    'TargetDatabasePeerTargetDatabaseDetail',
+    'TargetDatabasePeerTargetDatabaseDetailDatabaseDetails',
+    'TargetDatabasePeerTargetDatabaseDetailTlsConfig',
+    'TargetDatabasePeerTargetDatabaseTlsConfig',
     'TargetDatabaseTlsConfig',
     'UserAssessmentIgnoredTarget',
     'GetAlertAnalyticItemResult',
@@ -208,14 +216,29 @@ __all__ = [
     'GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult',
     'GetSecurityAssessmentComparisonTargetUserAccountCurrentResult',
     'GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult',
+    'GetSecurityAssessmentFindingAnalyticsFilterResult',
+    'GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionResult',
+    'GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemResult',
+    'GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionResult',
     'GetSecurityAssessmentFindingFilterResult',
     'GetSecurityAssessmentFindingFindingResult',
     'GetSecurityAssessmentFindingFindingReferenceResult',
+    'GetSecurityAssessmentFindingsChangeAuditLogsFilterResult',
+    'GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionResult',
+    'GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemResult',
     'GetSecurityAssessmentFindingsFilterResult',
     'GetSecurityAssessmentFindingsFindingResult',
     'GetSecurityAssessmentFindingsFindingReferenceResult',
+    'GetSecurityAssessmentSecurityFeatureAnalyticsFilterResult',
+    'GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionResult',
+    'GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemResult',
+    'GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionResult',
+    'GetSecurityAssessmentSecurityFeaturesFilterResult',
+    'GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionResult',
+    'GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemResult',
     'GetSecurityAssessmentStatisticResult',
     'GetSecurityAssessmentStatisticAdvisoryResult',
+    'GetSecurityAssessmentStatisticDeferredResult',
     'GetSecurityAssessmentStatisticEvaluateResult',
     'GetSecurityAssessmentStatisticHighRiskResult',
     'GetSecurityAssessmentStatisticLowRiskResult',
@@ -225,11 +248,35 @@ __all__ = [
     'GetSecurityAssessmentsSecurityAssessmentResult',
     'GetSecurityAssessmentsSecurityAssessmentStatisticResult',
     'GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryResult',
+    'GetSecurityAssessmentsSecurityAssessmentStatisticDeferredResult',
     'GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateResult',
     'GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskResult',
     'GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskResult',
     'GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskResult',
     'GetSecurityAssessmentsSecurityAssessmentStatisticPassResult',
+    'GetSecurityPoliciesFilterResult',
+    'GetSecurityPoliciesSecurityPolicyCollectionResult',
+    'GetSecurityPoliciesSecurityPolicyCollectionItemResult',
+    'GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailResult',
+    'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterResult',
+    'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionResult',
+    'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemResult',
+    'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailResult',
+    'GetSecurityPolicyDeploymentsFilterResult',
+    'GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionResult',
+    'GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemResult',
+    'GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionResult',
+    'GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemResult',
+    'GetSecurityPolicyReportDatabaseTableAccessEntriesFilterResult',
+    'GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionResult',
+    'GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemResult',
+    'GetSecurityPolicyReportDatabaseViewAccessEntriesFilterResult',
+    'GetSecurityPolicyReportRoleGrantPathsFilterResult',
+    'GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionResult',
+    'GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemResult',
+    'GetSecurityPolicyReportsFilterResult',
+    'GetSecurityPolicyReportsSecurityPolicyReportCollectionResult',
+    'GetSecurityPolicyReportsSecurityPolicyReportCollectionItemResult',
     'GetSensitiveDataModelSensitiveObjectsFilterResult',
     'GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionResult',
     'GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult',
@@ -251,6 +298,17 @@ __all__ = [
     'GetTargetDatabaseConnectionOptionResult',
     'GetTargetDatabaseCredentialResult',
     'GetTargetDatabaseDatabaseDetailResult',
+    'GetTargetDatabasePeerTargetDatabaseResult',
+    'GetTargetDatabasePeerTargetDatabaseDatabaseDetailResult',
+    'GetTargetDatabasePeerTargetDatabaseDetailResult',
+    'GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailResult',
+    'GetTargetDatabasePeerTargetDatabaseDetailTlsConfigResult',
+    'GetTargetDatabasePeerTargetDatabaseTlsConfigResult',
+    'GetTargetDatabasePeerTargetDatabasesFilterResult',
+    'GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionResult',
+    'GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemResult',
+    'GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsResult',
+    'GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigResult',
     'GetTargetDatabaseRoleFilterResult',
     'GetTargetDatabaseRoleRoleResult',
     'GetTargetDatabaseRolesFilterResult',
@@ -267,6 +325,12 @@ __all__ = [
     'GetTargetDatabasesTargetDatabaseConnectionOptionResult',
     'GetTargetDatabasesTargetDatabaseCredentialResult',
     'GetTargetDatabasesTargetDatabaseDatabaseDetailResult',
+    'GetTargetDatabasesTargetDatabasePeerTargetDatabaseResult',
+    'GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailResult',
+    'GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailResult',
+    'GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailResult',
+    'GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigResult',
+    'GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigResult',
     'GetTargetDatabasesTargetDatabaseTlsConfigResult',
     'GetUserAssessmentComparisonSummaryResult',
     'GetUserAssessmentComparisonSummaryBaselineResult',
@@ -276,6 +340,9 @@ __all__ = [
     'GetUserAssessmentProfileAnalyticsProfileAggregationResult',
     'GetUserAssessmentProfilesFilterResult',
     'GetUserAssessmentProfilesProfileResult',
+    'GetUserAssessmentUserAccessAnalyticsFilterResult',
+    'GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionResult',
+    'GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemResult',
     'GetUserAssessmentUserAnalyticsFilterResult',
     'GetUserAssessmentUserAnalyticsUserAggregationResult',
     'GetUserAssessmentUserAnalyticsUserAggregationItemResult',
@@ -990,6 +1057,14 @@ class AuditProfileAuditTrail(dict):
             suggest = "is_auto_purge_enabled"
         elif key == "lifecycleDetails":
             suggest = "lifecycle_details"
+        elif key == "peerTargetDatabaseKey":
+            suggest = "peer_target_database_key"
+        elif key == "purgeJobDetails":
+            suggest = "purge_job_details"
+        elif key == "purgeJobStatus":
+            suggest = "purge_job_status"
+        elif key == "purgeJobTime":
+            suggest = "purge_job_time"
         elif key == "systemTags":
             suggest = "system_tags"
         elif key == "targetId":
@@ -1002,6 +1077,8 @@ class AuditProfileAuditTrail(dict):
             suggest = "time_updated"
         elif key == "trailLocation":
             suggest = "trail_location"
+        elif key == "trailSource":
+            suggest = "trail_source"
         elif key == "workRequestId":
             suggest = "work_request_id"
 
@@ -1027,6 +1104,10 @@ class AuditProfileAuditTrail(dict):
                  id: Optional[str] = None,
                  is_auto_purge_enabled: Optional[bool] = None,
                  lifecycle_details: Optional[str] = None,
+                 peer_target_database_key: Optional[int] = None,
+                 purge_job_details: Optional[str] = None,
+                 purge_job_status: Optional[str] = None,
+                 purge_job_time: Optional[str] = None,
                  state: Optional[str] = None,
                  status: Optional[str] = None,
                  system_tags: Optional[Mapping[str, Any]] = None,
@@ -1035,6 +1116,7 @@ class AuditProfileAuditTrail(dict):
                  time_last_collected: Optional[str] = None,
                  time_updated: Optional[str] = None,
                  trail_location: Optional[str] = None,
+                 trail_source: Optional[str] = None,
                  work_request_id: Optional[str] = None):
         """
         :param str audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -1047,6 +1129,10 @@ class AuditProfileAuditTrail(dict):
         :param str id: The OCID of the audit profile.
         :param bool is_auto_purge_enabled: Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param str lifecycle_details: Details about the current state of the audit profile in Data Safe.
+        :param int peer_target_database_key: The secondary id assigned for the peer database registered with Data Safe.
+        :param str purge_job_details: The details of the audit trail purge job that ran on the "purgeJobTime".
+        :param str purge_job_status: The current status of the audit trail purge job.
+        :param str purge_job_time: The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
         :param str state: The current state of the audit profile.
         :param str status: The current sub-state of the audit trail.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1055,6 +1141,7 @@ class AuditProfileAuditTrail(dict):
         :param str time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+        :param str trail_source: The underlying source of unified audit trail.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
         if audit_collection_start_time is not None:
@@ -1077,6 +1164,14 @@ class AuditProfileAuditTrail(dict):
             pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if peer_target_database_key is not None:
+            pulumi.set(__self__, "peer_target_database_key", peer_target_database_key)
+        if purge_job_details is not None:
+            pulumi.set(__self__, "purge_job_details", purge_job_details)
+        if purge_job_status is not None:
+            pulumi.set(__self__, "purge_job_status", purge_job_status)
+        if purge_job_time is not None:
+            pulumi.set(__self__, "purge_job_time", purge_job_time)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if status is not None:
@@ -1093,6 +1188,8 @@ class AuditProfileAuditTrail(dict):
             pulumi.set(__self__, "time_updated", time_updated)
         if trail_location is not None:
             pulumi.set(__self__, "trail_location", trail_location)
+        if trail_source is not None:
+            pulumi.set(__self__, "trail_source", trail_source)
         if work_request_id is not None:
             pulumi.set(__self__, "work_request_id", work_request_id)
 
@@ -1177,6 +1274,38 @@ class AuditProfileAuditTrail(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="peerTargetDatabaseKey")
+    def peer_target_database_key(self) -> Optional[int]:
+        """
+        The secondary id assigned for the peer database registered with Data Safe.
+        """
+        return pulumi.get(self, "peer_target_database_key")
+
+    @property
+    @pulumi.getter(name="purgeJobDetails")
+    def purge_job_details(self) -> Optional[str]:
+        """
+        The details of the audit trail purge job that ran on the "purgeJobTime".
+        """
+        return pulumi.get(self, "purge_job_details")
+
+    @property
+    @pulumi.getter(name="purgeJobStatus")
+    def purge_job_status(self) -> Optional[str]:
+        """
+        The current status of the audit trail purge job.
+        """
+        return pulumi.get(self, "purge_job_status")
+
+    @property
+    @pulumi.getter(name="purgeJobTime")
+    def purge_job_time(self) -> Optional[str]:
+        """
+        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        """
+        return pulumi.get(self, "purge_job_time")
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
@@ -1239,6 +1368,14 @@ class AuditProfileAuditTrail(dict):
         An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         """
         return pulumi.get(self, "trail_location")
+
+    @property
+    @pulumi.getter(name="trailSource")
+    def trail_source(self) -> Optional[str]:
+        """
+        The underlying source of unified audit trail.
+        """
+        return pulumi.get(self, "trail_source")
 
     @property
     @pulumi.getter(name="workRequestId")
@@ -2702,6 +2839,7 @@ class SecurityAssessmentStatistic(dict):
 
     def __init__(__self__, *,
                  advisories: Optional[Sequence['outputs.SecurityAssessmentStatisticAdvisory']] = None,
+                 deferreds: Optional[Sequence['outputs.SecurityAssessmentStatisticDeferred']] = None,
                  evaluates: Optional[Sequence['outputs.SecurityAssessmentStatisticEvaluate']] = None,
                  high_risks: Optional[Sequence['outputs.SecurityAssessmentStatisticHighRisk']] = None,
                  low_risks: Optional[Sequence['outputs.SecurityAssessmentStatisticLowRisk']] = None,
@@ -2710,6 +2848,7 @@ class SecurityAssessmentStatistic(dict):
                  targets_count: Optional[int] = None):
         """
         :param Sequence['SecurityAssessmentStatisticAdvisoryArgs'] advisories: Statistics showing the number of findings with a particular risk level for each category.
+        :param Sequence['SecurityAssessmentStatisticDeferredArgs'] deferreds: Statistics showing the number of findings with a particular risk level for each category.
         :param Sequence['SecurityAssessmentStatisticEvaluateArgs'] evaluates: Statistics showing the number of findings with a particular risk level for each category.
         :param Sequence['SecurityAssessmentStatisticHighRiskArgs'] high_risks: Statistics showing the number of findings with a particular risk level for each category.
         :param Sequence['SecurityAssessmentStatisticLowRiskArgs'] low_risks: Statistics showing the number of findings with a particular risk level for each category.
@@ -2719,6 +2858,8 @@ class SecurityAssessmentStatistic(dict):
         """
         if advisories is not None:
             pulumi.set(__self__, "advisories", advisories)
+        if deferreds is not None:
+            pulumi.set(__self__, "deferreds", deferreds)
         if evaluates is not None:
             pulumi.set(__self__, "evaluates", evaluates)
         if high_risks is not None:
@@ -2739,6 +2880,14 @@ class SecurityAssessmentStatistic(dict):
         Statistics showing the number of findings with a particular risk level for each category.
         """
         return pulumi.get(self, "advisories")
+
+    @property
+    @pulumi.getter
+    def deferreds(self) -> Optional[Sequence['outputs.SecurityAssessmentStatisticDeferred']]:
+        """
+        Statistics showing the number of findings with a particular risk level for each category.
+        """
+        return pulumi.get(self, "deferreds")
 
     @property
     @pulumi.getter
@@ -2820,6 +2969,140 @@ class SecurityAssessmentStatisticAdvisory(dict):
 
     def get(self, key: str, default = None) -> Any:
         SecurityAssessmentStatisticAdvisory.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 auditing_findings_count: Optional[int] = None,
+                 authorization_control_findings_count: Optional[int] = None,
+                 data_encryption_findings_count: Optional[int] = None,
+                 db_configuration_findings_count: Optional[int] = None,
+                 fine_grained_access_control_findings_count: Optional[int] = None,
+                 privileges_and_roles_findings_count: Optional[int] = None,
+                 targets_count: Optional[int] = None,
+                 user_accounts_findings_count: Optional[int] = None):
+        """
+        :param int auditing_findings_count: The number of findings in the Auditing category.
+        :param int authorization_control_findings_count: The number of findings in the Authorization Control category.
+        :param int data_encryption_findings_count: The number of findings in the Data Encryption category.
+        :param int db_configuration_findings_count: The number of findings in the Database Configuration category.
+        :param int fine_grained_access_control_findings_count: The number of findings in the Fine-Grained Access Control category.
+        :param int privileges_and_roles_findings_count: The number of findings in the Privileges and Roles category.
+        :param int targets_count: The total number of targets in this security assessment.
+        :param int user_accounts_findings_count: The number of findings in the User Accounts category.
+        """
+        if auditing_findings_count is not None:
+            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        if authorization_control_findings_count is not None:
+            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        if data_encryption_findings_count is not None:
+            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        if db_configuration_findings_count is not None:
+            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        if fine_grained_access_control_findings_count is not None:
+            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        if privileges_and_roles_findings_count is not None:
+            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        if targets_count is not None:
+            pulumi.set(__self__, "targets_count", targets_count)
+        if user_accounts_findings_count is not None:
+            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+
+    @property
+    @pulumi.getter(name="auditingFindingsCount")
+    def auditing_findings_count(self) -> Optional[int]:
+        """
+        The number of findings in the Auditing category.
+        """
+        return pulumi.get(self, "auditing_findings_count")
+
+    @property
+    @pulumi.getter(name="authorizationControlFindingsCount")
+    def authorization_control_findings_count(self) -> Optional[int]:
+        """
+        The number of findings in the Authorization Control category.
+        """
+        return pulumi.get(self, "authorization_control_findings_count")
+
+    @property
+    @pulumi.getter(name="dataEncryptionFindingsCount")
+    def data_encryption_findings_count(self) -> Optional[int]:
+        """
+        The number of findings in the Data Encryption category.
+        """
+        return pulumi.get(self, "data_encryption_findings_count")
+
+    @property
+    @pulumi.getter(name="dbConfigurationFindingsCount")
+    def db_configuration_findings_count(self) -> Optional[int]:
+        """
+        The number of findings in the Database Configuration category.
+        """
+        return pulumi.get(self, "db_configuration_findings_count")
+
+    @property
+    @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
+    def fine_grained_access_control_findings_count(self) -> Optional[int]:
+        """
+        The number of findings in the Fine-Grained Access Control category.
+        """
+        return pulumi.get(self, "fine_grained_access_control_findings_count")
+
+    @property
+    @pulumi.getter(name="privilegesAndRolesFindingsCount")
+    def privileges_and_roles_findings_count(self) -> Optional[int]:
+        """
+        The number of findings in the Privileges and Roles category.
+        """
+        return pulumi.get(self, "privileges_and_roles_findings_count")
+
+    @property
+    @pulumi.getter(name="targetsCount")
+    def targets_count(self) -> Optional[int]:
+        """
+        The total number of targets in this security assessment.
+        """
+        return pulumi.get(self, "targets_count")
+
+    @property
+    @pulumi.getter(name="userAccountsFindingsCount")
+    def user_accounts_findings_count(self) -> Optional[int]:
+        """
+        The number of findings in the User Accounts category.
+        """
+        return pulumi.get(self, "user_accounts_findings_count")
+
+
+@pulumi.output_type
+class SecurityAssessmentStatisticDeferred(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "auditingFindingsCount":
+            suggest = "auditing_findings_count"
+        elif key == "authorizationControlFindingsCount":
+            suggest = "authorization_control_findings_count"
+        elif key == "dataEncryptionFindingsCount":
+            suggest = "data_encryption_findings_count"
+        elif key == "dbConfigurationFindingsCount":
+            suggest = "db_configuration_findings_count"
+        elif key == "fineGrainedAccessControlFindingsCount":
+            suggest = "fine_grained_access_control_findings_count"
+        elif key == "privilegesAndRolesFindingsCount":
+            suggest = "privileges_and_roles_findings_count"
+        elif key == "targetsCount":
+            suggest = "targets_count"
+        elif key == "userAccountsFindingsCount":
+            suggest = "user_accounts_findings_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SecurityAssessmentStatisticDeferred. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SecurityAssessmentStatisticDeferred.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SecurityAssessmentStatisticDeferred.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -3752,6 +4035,468 @@ class TargetDatabaseDatabaseDetails(dict):
                  service_name: Optional[str] = None,
                  vm_cluster_id: Optional[str] = None):
         """
+        :param str database_type: The database type.
+        :param str infrastructure_type: The infrastructure type the database is running on.
+        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param str instance_id: The OCID of the compute instance on which the database is running.
+        :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param int listener_port: The port number of the database listener.
+        :param str service_name: The service name of the database registered as target database.
+        :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        """
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        if autonomous_database_id is not None:
+            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if ip_addresses is not None:
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
+        if listener_port is not None:
+            pulumi.set(__self__, "listener_port", listener_port)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> str:
+        """
+        The database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> str:
+        """
+        The infrastructure type the database is running on.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseId")
+    def autonomous_database_id(self) -> Optional[str]:
+        """
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[str]:
+        """
+        The OCID of the cloud database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[str]:
+        """
+        The OCID of the compute instance on which the database is running.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Optional[Sequence[str]]:
+        """
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> Optional[int]:
+        """
+        The port number of the database listener.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[str]:
+        """
+        The service name of the database registered as target database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[str]:
+        """
+        The OCID of the VM cluster in which the database is running.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class TargetDatabasePeerTargetDatabase(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "databaseDetails":
+            suggest = "database_details"
+        elif key == "databaseUniqueName":
+            suggest = "database_unique_name"
+        elif key == "dataguardAssociationId":
+            suggest = "dataguard_association_id"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "tlsConfigs":
+            suggest = "tls_configs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TargetDatabasePeerTargetDatabase. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TargetDatabasePeerTargetDatabase.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TargetDatabasePeerTargetDatabase.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 database_details: Optional[Sequence['outputs.TargetDatabasePeerTargetDatabaseDatabaseDetail']] = None,
+                 database_unique_name: Optional[str] = None,
+                 dataguard_association_id: Optional[str] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 key: Optional[int] = None,
+                 lifecycle_details: Optional[str] = None,
+                 role: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 tls_configs: Optional[Sequence['outputs.TargetDatabasePeerTargetDatabaseTlsConfig']] = None):
+        """
+        :param Sequence['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs'] database_details: Details of the database for the registration in Data Safe.
+        :param str database_unique_name: Unique name of the database associated to the peer target database.
+        :param str dataguard_association_id: The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+        :param str description: The description of the peer target database in Data Safe.
+        :param str display_name: The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        :param int key: The secondary key assigned for the peer target database in Data Safe.
+        :param str lifecycle_details: Details about the current state of the peer target database in Data Safe.
+        :param str role: Role of the database associated to the peer target database.
+        :param str state: The current state of the target database in Data Safe.
+        :param str time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+        :param Sequence['TargetDatabasePeerTargetDatabaseTlsConfigArgs'] tls_configs: (Updatable) The details required to establish a TLS enabled connection.
+        """
+        if database_details is not None:
+            pulumi.set(__self__, "database_details", database_details)
+        if database_unique_name is not None:
+            pulumi.set(__self__, "database_unique_name", database_unique_name)
+        if dataguard_association_id is not None:
+            pulumi.set(__self__, "dataguard_association_id", dataguard_association_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if tls_configs is not None:
+            pulumi.set(__self__, "tls_configs", tls_configs)
+
+    @property
+    @pulumi.getter(name="databaseDetails")
+    def database_details(self) -> Optional[Sequence['outputs.TargetDatabasePeerTargetDatabaseDatabaseDetail']]:
+        """
+        Details of the database for the registration in Data Safe.
+        """
+        return pulumi.get(self, "database_details")
+
+    @property
+    @pulumi.getter(name="databaseUniqueName")
+    def database_unique_name(self) -> Optional[str]:
+        """
+        Unique name of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "database_unique_name")
+
+    @property
+    @pulumi.getter(name="dataguardAssociationId")
+    def dataguard_association_id(self) -> Optional[str]:
+        """
+        The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+        """
+        return pulumi.get(self, "dataguard_association_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        The description of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[int]:
+        """
+        The secondary key assigned for the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        Details about the current state of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[str]:
+        """
+        Role of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the target database in Data Safe.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="tlsConfigs")
+    def tls_configs(self) -> Optional[Sequence['outputs.TargetDatabasePeerTargetDatabaseTlsConfig']]:
+        """
+        (Updatable) The details required to establish a TLS enabled connection.
+        """
+        return pulumi.get(self, "tls_configs")
+
+
+@pulumi.output_type
+class TargetDatabasePeerTargetDatabaseDatabaseDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autonomousDatabaseId":
+            suggest = "autonomous_database_id"
+        elif key == "databaseType":
+            suggest = "database_type"
+        elif key == "dbSystemId":
+            suggest = "db_system_id"
+        elif key == "infrastructureType":
+            suggest = "infrastructure_type"
+        elif key == "instanceId":
+            suggest = "instance_id"
+        elif key == "ipAddresses":
+            suggest = "ip_addresses"
+        elif key == "listenerPort":
+            suggest = "listener_port"
+        elif key == "serviceName":
+            suggest = "service_name"
+        elif key == "vmClusterId":
+            suggest = "vm_cluster_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TargetDatabasePeerTargetDatabaseDatabaseDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TargetDatabasePeerTargetDatabaseDatabaseDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TargetDatabasePeerTargetDatabaseDatabaseDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 autonomous_database_id: Optional[str] = None,
+                 database_type: Optional[str] = None,
+                 db_system_id: Optional[str] = None,
+                 infrastructure_type: Optional[str] = None,
+                 instance_id: Optional[str] = None,
+                 ip_addresses: Optional[Sequence[str]] = None,
+                 listener_port: Optional[int] = None,
+                 service_name: Optional[str] = None,
+                 vm_cluster_id: Optional[str] = None):
+        """
+        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str database_type: The database type.
+        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param str infrastructure_type: The infrastructure type the database is running on.
+        :param str instance_id: The OCID of the compute instance on which the database is running.
+        :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param int listener_port: The port number of the database listener.
+        :param str service_name: The service name of the database registered as target database.
+        :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        """
+        if autonomous_database_id is not None:
+            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if database_type is not None:
+            pulumi.set(__self__, "database_type", database_type)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if infrastructure_type is not None:
+            pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if ip_addresses is not None:
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
+        if listener_port is not None:
+            pulumi.set(__self__, "listener_port", listener_port)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseId")
+    def autonomous_database_id(self) -> Optional[str]:
+        """
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> Optional[str]:
+        """
+        The database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[str]:
+        """
+        The OCID of the cloud database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> Optional[str]:
+        """
+        The infrastructure type the database is running on.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[str]:
+        """
+        The OCID of the compute instance on which the database is running.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Optional[Sequence[str]]:
+        """
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> Optional[int]:
+        """
+        The port number of the database listener.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[str]:
+        """
+        The service name of the database registered as target database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[str]:
+        """
+        The OCID of the VM cluster in which the database is running.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class TargetDatabasePeerTargetDatabaseDatabaseDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "databaseType":
+            suggest = "database_type"
+        elif key == "infrastructureType":
+            suggest = "infrastructure_type"
+        elif key == "autonomousDatabaseId":
+            suggest = "autonomous_database_id"
+        elif key == "dbSystemId":
+            suggest = "db_system_id"
+        elif key == "instanceId":
+            suggest = "instance_id"
+        elif key == "ipAddresses":
+            suggest = "ip_addresses"
+        elif key == "listenerPort":
+            suggest = "listener_port"
+        elif key == "serviceName":
+            suggest = "service_name"
+        elif key == "vmClusterId":
+            suggest = "vm_cluster_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TargetDatabasePeerTargetDatabaseDatabaseDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TargetDatabasePeerTargetDatabaseDatabaseDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TargetDatabasePeerTargetDatabaseDatabaseDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 database_type: str,
+                 infrastructure_type: str,
+                 autonomous_database_id: Optional[str] = None,
+                 db_system_id: Optional[str] = None,
+                 instance_id: Optional[str] = None,
+                 ip_addresses: Optional[Sequence[str]] = None,
+                 listener_port: Optional[int] = None,
+                 service_name: Optional[str] = None,
+                 vm_cluster_id: Optional[str] = None):
+        """
         :param str database_type: (Updatable) The database type.
         :param str infrastructure_type: (Updatable) The infrastructure type the database is running on.
         :param str autonomous_database_id: (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
@@ -3850,6 +4595,435 @@ class TargetDatabaseDatabaseDetails(dict):
         (Updatable) The OCID of the VM cluster in which the database is running.
         """
         return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class TargetDatabasePeerTargetDatabaseDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "databaseDetails":
+            suggest = "database_details"
+        elif key == "dataguardAssociationId":
+            suggest = "dataguard_association_id"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "tlsConfig":
+            suggest = "tls_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TargetDatabasePeerTargetDatabaseDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TargetDatabasePeerTargetDatabaseDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TargetDatabasePeerTargetDatabaseDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 database_details: 'outputs.TargetDatabasePeerTargetDatabaseDetailDatabaseDetails',
+                 dataguard_association_id: Optional[str] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 tls_config: Optional['outputs.TargetDatabasePeerTargetDatabaseDetailTlsConfig'] = None):
+        """
+        :param 'TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs' database_details: Details of the database for the registration in Data Safe.
+        :param str dataguard_association_id: The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+        :param str description: The description of the peer target database in Data Safe.
+        :param str display_name: The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        :param 'TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs' tls_config: (Updatable) The details required to establish a TLS enabled connection.
+        """
+        pulumi.set(__self__, "database_details", database_details)
+        if dataguard_association_id is not None:
+            pulumi.set(__self__, "dataguard_association_id", dataguard_association_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if tls_config is not None:
+            pulumi.set(__self__, "tls_config", tls_config)
+
+    @property
+    @pulumi.getter(name="databaseDetails")
+    def database_details(self) -> 'outputs.TargetDatabasePeerTargetDatabaseDetailDatabaseDetails':
+        """
+        Details of the database for the registration in Data Safe.
+        """
+        return pulumi.get(self, "database_details")
+
+    @property
+    @pulumi.getter(name="dataguardAssociationId")
+    def dataguard_association_id(self) -> Optional[str]:
+        """
+        The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+        """
+        return pulumi.get(self, "dataguard_association_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        The description of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="tlsConfig")
+    def tls_config(self) -> Optional['outputs.TargetDatabasePeerTargetDatabaseDetailTlsConfig']:
+        """
+        (Updatable) The details required to establish a TLS enabled connection.
+        """
+        return pulumi.get(self, "tls_config")
+
+
+@pulumi.output_type
+class TargetDatabasePeerTargetDatabaseDetailDatabaseDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "databaseType":
+            suggest = "database_type"
+        elif key == "infrastructureType":
+            suggest = "infrastructure_type"
+        elif key == "autonomousDatabaseId":
+            suggest = "autonomous_database_id"
+        elif key == "dbSystemId":
+            suggest = "db_system_id"
+        elif key == "instanceId":
+            suggest = "instance_id"
+        elif key == "ipAddresses":
+            suggest = "ip_addresses"
+        elif key == "listenerPort":
+            suggest = "listener_port"
+        elif key == "serviceName":
+            suggest = "service_name"
+        elif key == "vmClusterId":
+            suggest = "vm_cluster_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TargetDatabasePeerTargetDatabaseDetailDatabaseDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TargetDatabasePeerTargetDatabaseDetailDatabaseDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TargetDatabasePeerTargetDatabaseDetailDatabaseDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 database_type: str,
+                 infrastructure_type: str,
+                 autonomous_database_id: Optional[str] = None,
+                 db_system_id: Optional[str] = None,
+                 instance_id: Optional[str] = None,
+                 ip_addresses: Optional[Sequence[str]] = None,
+                 listener_port: Optional[int] = None,
+                 service_name: Optional[str] = None,
+                 vm_cluster_id: Optional[str] = None):
+        """
+        :param str database_type: The database type.
+        :param str infrastructure_type: The infrastructure type the database is running on.
+        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param str instance_id: The OCID of the compute instance on which the database is running.
+        :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param int listener_port: The port number of the database listener.
+        :param str service_name: The service name of the database registered as target database.
+        :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        """
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        if autonomous_database_id is not None:
+            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if ip_addresses is not None:
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
+        if listener_port is not None:
+            pulumi.set(__self__, "listener_port", listener_port)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> str:
+        """
+        The database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> str:
+        """
+        The infrastructure type the database is running on.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseId")
+    def autonomous_database_id(self) -> Optional[str]:
+        """
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[str]:
+        """
+        The OCID of the cloud database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[str]:
+        """
+        The OCID of the compute instance on which the database is running.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Optional[Sequence[str]]:
+        """
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> Optional[int]:
+        """
+        The port number of the database listener.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[str]:
+        """
+        The service name of the database registered as target database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[str]:
+        """
+        The OCID of the VM cluster in which the database is running.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class TargetDatabasePeerTargetDatabaseDetailTlsConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certificateStoreType":
+            suggest = "certificate_store_type"
+        elif key == "keyStoreContent":
+            suggest = "key_store_content"
+        elif key == "storePassword":
+            suggest = "store_password"
+        elif key == "trustStoreContent":
+            suggest = "trust_store_content"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TargetDatabasePeerTargetDatabaseDetailTlsConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TargetDatabasePeerTargetDatabaseDetailTlsConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TargetDatabasePeerTargetDatabaseDetailTlsConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 status: str,
+                 certificate_store_type: Optional[str] = None,
+                 key_store_content: Optional[str] = None,
+                 store_password: Optional[str] = None,
+                 trust_store_content: Optional[str] = None):
+        """
+        :param str status: (Updatable) Status to represent whether the database connection is TLS enabled or not.
+        :param str certificate_store_type: (Updatable) The format of the certificate store.
+        :param str key_store_content: (Updatable) Base64 encoded string of key store file content.
+        :param str store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
+        :param str trust_store_content: (Updatable) Base64 encoded string of trust store file content.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "status", status)
+        if certificate_store_type is not None:
+            pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+        if key_store_content is not None:
+            pulumi.set(__self__, "key_store_content", key_store_content)
+        if store_password is not None:
+            pulumi.set(__self__, "store_password", store_password)
+        if trust_store_content is not None:
+            pulumi.set(__self__, "trust_store_content", trust_store_content)
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        (Updatable) Status to represent whether the database connection is TLS enabled or not.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="certificateStoreType")
+    def certificate_store_type(self) -> Optional[str]:
+        """
+        (Updatable) The format of the certificate store.
+        """
+        return pulumi.get(self, "certificate_store_type")
+
+    @property
+    @pulumi.getter(name="keyStoreContent")
+    def key_store_content(self) -> Optional[str]:
+        """
+        (Updatable) Base64 encoded string of key store file content.
+        """
+        return pulumi.get(self, "key_store_content")
+
+    @property
+    @pulumi.getter(name="storePassword")
+    def store_password(self) -> Optional[str]:
+        """
+        (Updatable) The password to read the trust store and key store files, if they are password protected.
+        """
+        return pulumi.get(self, "store_password")
+
+    @property
+    @pulumi.getter(name="trustStoreContent")
+    def trust_store_content(self) -> Optional[str]:
+        """
+        (Updatable) Base64 encoded string of trust store file content.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "trust_store_content")
+
+
+@pulumi.output_type
+class TargetDatabasePeerTargetDatabaseTlsConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certificateStoreType":
+            suggest = "certificate_store_type"
+        elif key == "keyStoreContent":
+            suggest = "key_store_content"
+        elif key == "storePassword":
+            suggest = "store_password"
+        elif key == "trustStoreContent":
+            suggest = "trust_store_content"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TargetDatabasePeerTargetDatabaseTlsConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TargetDatabasePeerTargetDatabaseTlsConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TargetDatabasePeerTargetDatabaseTlsConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 status: str,
+                 certificate_store_type: Optional[str] = None,
+                 key_store_content: Optional[str] = None,
+                 store_password: Optional[str] = None,
+                 trust_store_content: Optional[str] = None):
+        """
+        :param str status: (Updatable) Status to represent whether the database connection is TLS enabled or not.
+        :param str certificate_store_type: (Updatable) The format of the certificate store.
+        :param str key_store_content: (Updatable) Base64 encoded string of key store file content.
+        :param str store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
+        :param str trust_store_content: (Updatable) Base64 encoded string of trust store file content.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "status", status)
+        if certificate_store_type is not None:
+            pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+        if key_store_content is not None:
+            pulumi.set(__self__, "key_store_content", key_store_content)
+        if store_password is not None:
+            pulumi.set(__self__, "store_password", store_password)
+        if trust_store_content is not None:
+            pulumi.set(__self__, "trust_store_content", trust_store_content)
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        (Updatable) Status to represent whether the database connection is TLS enabled or not.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="certificateStoreType")
+    def certificate_store_type(self) -> Optional[str]:
+        """
+        (Updatable) The format of the certificate store.
+        """
+        return pulumi.get(self, "certificate_store_type")
+
+    @property
+    @pulumi.getter(name="keyStoreContent")
+    def key_store_content(self) -> Optional[str]:
+        """
+        (Updatable) Base64 encoded string of key store file content.
+        """
+        return pulumi.get(self, "key_store_content")
+
+    @property
+    @pulumi.getter(name="storePassword")
+    def store_password(self) -> Optional[str]:
+        """
+        (Updatable) The password to read the trust store and key store files, if they are password protected.
+        """
+        return pulumi.get(self, "store_password")
+
+    @property
+    @pulumi.getter(name="trustStoreContent")
+    def trust_store_content(self) -> Optional[str]:
+        """
+        (Updatable) Base64 encoded string of trust store file content.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "trust_store_content")
 
 
 @pulumi.output_type
@@ -5558,6 +6732,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
                  command_text: str,
                  compartment_id: str,
                  database_type: str,
+                 database_unique_name: str,
                  db_user_name: str,
                  defined_tags: Mapping[str, Any],
                  error_code: str,
@@ -5574,10 +6749,12 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
                  operation_status: str,
                  os_terminal: str,
                  os_user_name: str,
+                 peer_target_database_key: int,
                  target_class: str,
                  target_id: str,
                  target_name: str,
-                 time_collected: str):
+                 time_collected: str,
+                 trail_source: str):
         """
         :param str action_taken: The action taken for this audit event.
         :param str audit_event_time: The time that the audit event occurs in the target database.
@@ -5596,6 +6773,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
                * DATABASE_CLOUD_SERVICE - Represents Oracle Database Cloud Services.
                * AUTONOMOUS_DATABASE - Represents Oracle Autonomous Databases.
                * INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
+        :param str database_unique_name: Unique name of the database associated to the peer target database.
         :param str db_user_name: The name of the database user whose actions were audited.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param str error_code: Oracle Error code generated by the action. Zero indicates the action was successful.
@@ -5612,10 +6790,12 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         :param str operation_status: Indicates whether the operation was a success or a failure.
         :param str os_terminal: The operating system terminal of the user session.
         :param str os_user_name: The name of the operating system user for the database session.
+        :param int peer_target_database_key: The secondary id assigned for the peer database registered with Data Safe.
         :param str target_class: The class of the target that was audited.
         :param str target_id: The OCID of the target database that was audited.
         :param str target_name: The name of the target database that was audited.
         :param str time_collected: The timestamp when this audit event was collected from the target database by Data Safe.
+        :param str trail_source: The underlying source of unified audit trail.
         """
         pulumi.set(__self__, "action_taken", action_taken)
         pulumi.set(__self__, "audit_event_time", audit_event_time)
@@ -5631,6 +6811,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         pulumi.set(__self__, "command_text", command_text)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "database_unique_name", database_unique_name)
         pulumi.set(__self__, "db_user_name", db_user_name)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "error_code", error_code)
@@ -5647,10 +6828,12 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         pulumi.set(__self__, "operation_status", operation_status)
         pulumi.set(__self__, "os_terminal", os_terminal)
         pulumi.set(__self__, "os_user_name", os_user_name)
+        pulumi.set(__self__, "peer_target_database_key", peer_target_database_key)
         pulumi.set(__self__, "target_class", target_class)
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "target_name", target_name)
         pulumi.set(__self__, "time_collected", time_collected)
+        pulumi.set(__self__, "trail_source", trail_source)
 
     @property
     @pulumi.getter(name="actionTaken")
@@ -5766,6 +6949,14 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         * INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
         """
         return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="databaseUniqueName")
+    def database_unique_name(self) -> str:
+        """
+        Unique name of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "database_unique_name")
 
     @property
     @pulumi.getter(name="dbUserName")
@@ -5896,6 +7087,14 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         return pulumi.get(self, "os_user_name")
 
     @property
+    @pulumi.getter(name="peerTargetDatabaseKey")
+    def peer_target_database_key(self) -> int:
+        """
+        The secondary id assigned for the peer database registered with Data Safe.
+        """
+        return pulumi.get(self, "peer_target_database_key")
+
+    @property
     @pulumi.getter(name="targetClass")
     def target_class(self) -> str:
         """
@@ -5926,6 +7125,14 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         The timestamp when this audit event was collected from the target database by Data Safe.
         """
         return pulumi.get(self, "time_collected")
+
+    @property
+    @pulumi.getter(name="trailSource")
+    def trail_source(self) -> str:
+        """
+        The underlying source of unified audit trail.
+        """
+        return pulumi.get(self, "trail_source")
 
 
 @pulumi.output_type
@@ -6733,6 +7940,10 @@ class GetAuditProfileAuditTrailResult(dict):
                  id: str,
                  is_auto_purge_enabled: bool,
                  lifecycle_details: str,
+                 peer_target_database_key: int,
+                 purge_job_details: str,
+                 purge_job_status: str,
+                 purge_job_time: str,
                  state: str,
                  status: str,
                  system_tags: Mapping[str, Any],
@@ -6741,6 +7952,7 @@ class GetAuditProfileAuditTrailResult(dict):
                  time_last_collected: str,
                  time_updated: str,
                  trail_location: str,
+                 trail_source: str,
                  work_request_id: str):
         """
         :param str audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -6753,6 +7965,10 @@ class GetAuditProfileAuditTrailResult(dict):
         :param str id: The OCID of the audit profile.
         :param bool is_auto_purge_enabled: Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param str lifecycle_details: Details about the current state of the audit profile in Data Safe.
+        :param int peer_target_database_key: The secondary id assigned for the peer database registered with Data Safe.
+        :param str purge_job_details: The details of the audit trail purge job that ran on the "purgeJobTime".
+        :param str purge_job_status: The current status of the audit trail purge job.
+        :param str purge_job_time: The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
         :param str state: The current state of the audit profile.
         :param str status: The current sub-state of the audit trail.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -6761,6 +7977,7 @@ class GetAuditProfileAuditTrailResult(dict):
         :param str time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+        :param str trail_source: The underlying source of unified audit trail.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
         pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
@@ -6773,6 +7990,10 @@ class GetAuditProfileAuditTrailResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "peer_target_database_key", peer_target_database_key)
+        pulumi.set(__self__, "purge_job_details", purge_job_details)
+        pulumi.set(__self__, "purge_job_status", purge_job_status)
+        pulumi.set(__self__, "purge_job_time", purge_job_time)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -6781,6 +8002,7 @@ class GetAuditProfileAuditTrailResult(dict):
         pulumi.set(__self__, "time_last_collected", time_last_collected)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "trail_location", trail_location)
+        pulumi.set(__self__, "trail_source", trail_source)
         pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
@@ -6864,6 +8086,38 @@ class GetAuditProfileAuditTrailResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="peerTargetDatabaseKey")
+    def peer_target_database_key(self) -> int:
+        """
+        The secondary id assigned for the peer database registered with Data Safe.
+        """
+        return pulumi.get(self, "peer_target_database_key")
+
+    @property
+    @pulumi.getter(name="purgeJobDetails")
+    def purge_job_details(self) -> str:
+        """
+        The details of the audit trail purge job that ran on the "purgeJobTime".
+        """
+        return pulumi.get(self, "purge_job_details")
+
+    @property
+    @pulumi.getter(name="purgeJobStatus")
+    def purge_job_status(self) -> str:
+        """
+        The current status of the audit trail purge job.
+        """
+        return pulumi.get(self, "purge_job_status")
+
+    @property
+    @pulumi.getter(name="purgeJobTime")
+    def purge_job_time(self) -> str:
+        """
+        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        """
+        return pulumi.get(self, "purge_job_time")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -6926,6 +8180,14 @@ class GetAuditProfileAuditTrailResult(dict):
         An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         """
         return pulumi.get(self, "trail_location")
+
+    @property
+    @pulumi.getter(name="trailSource")
+    def trail_source(self) -> str:
+        """
+        The underlying source of unified audit trail.
+        """
+        return pulumi.get(self, "trail_source")
 
     @property
     @pulumi.getter(name="workRequestId")
@@ -7027,16 +8289,22 @@ class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResu
 class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemResult(dict):
     def __init__(__self__, *,
                  audit_profile_id: str,
+                 audit_trail_id: str,
+                 database_unique_name: str,
                  month_in_consideration: str,
                  trail_location: str,
                  volume: str):
         """
         :param str audit_profile_id: The OCID of the audit.
+        :param str audit_trail_id: The OCID of the audit trail.
+        :param str database_unique_name: Unique name of the database associated to the peer target database.
         :param str month_in_consideration: Represents the month under consideration for which aggregated audit data volume available at the target is computed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
         :param str trail_location: The audit trail location.
         :param str volume: Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
         """
         pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        pulumi.set(__self__, "audit_trail_id", audit_trail_id)
+        pulumi.set(__self__, "database_unique_name", database_unique_name)
         pulumi.set(__self__, "month_in_consideration", month_in_consideration)
         pulumi.set(__self__, "trail_location", trail_location)
         pulumi.set(__self__, "volume", volume)
@@ -7048,6 +8316,22 @@ class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem
         The OCID of the audit.
         """
         return pulumi.get(self, "audit_profile_id")
+
+    @property
+    @pulumi.getter(name="auditTrailId")
+    def audit_trail_id(self) -> str:
+        """
+        The OCID of the audit trail.
+        """
+        return pulumi.get(self, "audit_trail_id")
+
+    @property
+    @pulumi.getter(name="databaseUniqueName")
+    def database_unique_name(self) -> str:
+        """
+        Unique name of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "database_unique_name")
 
     @property
     @pulumi.getter(name="monthInConsideration")
@@ -7514,6 +8798,10 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
                  id: str,
                  is_auto_purge_enabled: bool,
                  lifecycle_details: str,
+                 peer_target_database_key: int,
+                 purge_job_details: str,
+                 purge_job_status: str,
+                 purge_job_time: str,
                  state: str,
                  status: str,
                  system_tags: Mapping[str, Any],
@@ -7522,6 +8810,7 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
                  time_last_collected: str,
                  time_updated: str,
                  trail_location: str,
+                 trail_source: str,
                  work_request_id: str):
         """
         :param str audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -7534,6 +8823,10 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         :param str id: The OCID of the audit profile.
         :param bool is_auto_purge_enabled: Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param str lifecycle_details: Details about the current state of the audit profile in Data Safe.
+        :param int peer_target_database_key: The secondary id assigned for the peer database registered with Data Safe.
+        :param str purge_job_details: The details of the audit trail purge job that ran on the "purgeJobTime".
+        :param str purge_job_status: The current status of the audit trail purge job.
+        :param str purge_job_time: The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
         :param str state: A optional filter to return only resources that match the specified lifecycle state.
         :param str status: The current sub-state of the audit trail.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7542,6 +8835,7 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         :param str time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+        :param str trail_source: The underlying source of unified audit trail.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
         pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
@@ -7554,6 +8848,10 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "peer_target_database_key", peer_target_database_key)
+        pulumi.set(__self__, "purge_job_details", purge_job_details)
+        pulumi.set(__self__, "purge_job_status", purge_job_status)
+        pulumi.set(__self__, "purge_job_time", purge_job_time)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -7562,6 +8860,7 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         pulumi.set(__self__, "time_last_collected", time_last_collected)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "trail_location", trail_location)
+        pulumi.set(__self__, "trail_source", trail_source)
         pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
@@ -7645,6 +8944,38 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="peerTargetDatabaseKey")
+    def peer_target_database_key(self) -> int:
+        """
+        The secondary id assigned for the peer database registered with Data Safe.
+        """
+        return pulumi.get(self, "peer_target_database_key")
+
+    @property
+    @pulumi.getter(name="purgeJobDetails")
+    def purge_job_details(self) -> str:
+        """
+        The details of the audit trail purge job that ran on the "purgeJobTime".
+        """
+        return pulumi.get(self, "purge_job_details")
+
+    @property
+    @pulumi.getter(name="purgeJobStatus")
+    def purge_job_status(self) -> str:
+        """
+        The current status of the audit trail purge job.
+        """
+        return pulumi.get(self, "purge_job_status")
+
+    @property
+    @pulumi.getter(name="purgeJobTime")
+    def purge_job_time(self) -> str:
+        """
+        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        """
+        return pulumi.get(self, "purge_job_time")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -7707,6 +9038,14 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         """
         return pulumi.get(self, "trail_location")
+
+    @property
+    @pulumi.getter(name="trailSource")
+    def trail_source(self) -> str:
+        """
+        The underlying source of unified audit trail.
+        """
+        return pulumi.get(self, "trail_source")
 
     @property
     @pulumi.getter(name="workRequestId")
@@ -7850,6 +9189,10 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
                  id: str,
                  is_auto_purge_enabled: bool,
                  lifecycle_details: str,
+                 peer_target_database_key: int,
+                 purge_job_details: str,
+                 purge_job_status: str,
+                 purge_job_time: str,
                  resume_trigger: int,
                  state: str,
                  status: str,
@@ -7859,6 +9202,7 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
                  time_last_collected: str,
                  time_updated: str,
                  trail_location: str,
+                 trail_source: str,
                  work_request_id: str):
         """
         :param str audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -7872,6 +9216,10 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         :param str id: The OCID of the audit trail.
         :param bool is_auto_purge_enabled: Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param str lifecycle_details: Details about the current state of the audit trail in Data Safe.
+        :param int peer_target_database_key: The secondary id assigned for the peer database registered with Data Safe.
+        :param str purge_job_details: The details of the audit trail purge job that ran on the "purgeJobTime".
+        :param str purge_job_status: The current status of the audit trail purge job.
+        :param str purge_job_time: The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
         :param str state: A optional filter to return only resources that match the specified lifecycle state.
         :param str status: A optional filter to return only resources that match the specified sub-state of audit trail.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7880,6 +9228,7 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         :param str time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit trail was updated, in the format defined by RFC3339.
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+        :param str trail_source: The underlying source of unified audit trail.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
         pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
@@ -7893,6 +9242,10 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "peer_target_database_key", peer_target_database_key)
+        pulumi.set(__self__, "purge_job_details", purge_job_details)
+        pulumi.set(__self__, "purge_job_status", purge_job_status)
+        pulumi.set(__self__, "purge_job_time", purge_job_time)
         pulumi.set(__self__, "resume_trigger", resume_trigger)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "status", status)
@@ -7902,6 +9255,7 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         pulumi.set(__self__, "time_last_collected", time_last_collected)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "trail_location", trail_location)
+        pulumi.set(__self__, "trail_source", trail_source)
         pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
@@ -7993,6 +9347,38 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="peerTargetDatabaseKey")
+    def peer_target_database_key(self) -> int:
+        """
+        The secondary id assigned for the peer database registered with Data Safe.
+        """
+        return pulumi.get(self, "peer_target_database_key")
+
+    @property
+    @pulumi.getter(name="purgeJobDetails")
+    def purge_job_details(self) -> str:
+        """
+        The details of the audit trail purge job that ran on the "purgeJobTime".
+        """
+        return pulumi.get(self, "purge_job_details")
+
+    @property
+    @pulumi.getter(name="purgeJobStatus")
+    def purge_job_status(self) -> str:
+        """
+        The current status of the audit trail purge job.
+        """
+        return pulumi.get(self, "purge_job_status")
+
+    @property
+    @pulumi.getter(name="purgeJobTime")
+    def purge_job_time(self) -> str:
+        """
+        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        """
+        return pulumi.get(self, "purge_job_time")
+
+    @property
     @pulumi.getter(name="resumeTrigger")
     def resume_trigger(self) -> int:
         return pulumi.get(self, "resume_trigger")
@@ -8060,6 +9446,14 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         """
         return pulumi.get(self, "trail_location")
+
+    @property
+    @pulumi.getter(name="trailSource")
+    def trail_source(self) -> str:
+        """
+        The underlying source of unified audit trail.
+        """
+        return pulumi.get(self, "trail_source")
 
     @property
     @pulumi.getter(name="workRequestId")
@@ -10911,7 +12305,7 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
         :param str parallel_degree: Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
         :param str post_masking_script: A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
         :param str pre_masking_script: A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-        :param str recompile: Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
+        :param str recompile: Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
         :param str state: A filter to return only the resources that match the specified lifecycle states.
         :param str time_created: The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
@@ -11048,7 +12442,7 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
     @pulumi.getter
     def recompile(self) -> str:
         """
-        Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
+        Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
         """
         return pulumi.get(self, "recompile")
 
@@ -12878,6 +14272,7 @@ class GetReportsReportCollectionItemResult(dict):
                  id: str,
                  mime_type: str,
                  report_definition_id: str,
+                 report_id: str,
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_generated: str,
@@ -12904,6 +14299,7 @@ class GetReportsReportCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "mime_type", mime_type)
         pulumi.set(__self__, "report_definition_id", report_definition_id)
+        pulumi.set(__self__, "report_id", report_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_generated", time_generated)
@@ -12972,6 +14368,11 @@ class GetReportsReportCollectionItemResult(dict):
         The ID of the report definition to filter the list of reports
         """
         return pulumi.get(self, "report_definition_id")
+
+    @property
+    @pulumi.getter(name="reportId")
+    def report_id(self) -> str:
+        return pulumi.get(self, "report_id")
 
     @property
     @pulumi.getter
@@ -13533,29 +14934,67 @@ class GetSecurityAssessmentComparisonTargetAuditingResult(dict):
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetAuditingBaselineResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -13566,12 +15005,52 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineResult(dict):
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -13599,11 +15078,43 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineResult(dict):
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -13657,29 +15168,67 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult(dict)
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetAuditingCurrentResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -13690,12 +15239,52 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentResult(dict):
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -13723,11 +15312,43 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentResult(dict):
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -13854,29 +15475,67 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlResult(dict):
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -13887,12 +15546,52 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineResult(di
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -13920,11 +15619,43 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineResult(di
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -13978,29 +15709,67 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -14011,12 +15780,52 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentResult(dic
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -14044,11 +15853,43 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentResult(dic
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -14175,29 +16016,67 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionResult(dict):
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -14208,12 +16087,52 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineResult(dict):
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -14241,11 +16160,43 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineResult(dict):
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -14299,29 +16250,67 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -14332,12 +16321,52 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentResult(dict):
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -14365,11 +16394,43 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentResult(dict):
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -14496,29 +16557,67 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationResult(dict):
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -14529,12 +16628,52 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineResult(dict):
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -14562,11 +16701,43 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineResult(dict):
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -14620,29 +16791,67 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResul
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -14653,12 +16862,52 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentResult(dict):
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -14686,11 +16935,43 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentResult(dict):
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -14817,29 +17098,67 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlResult(dict):
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -14850,12 +17169,52 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineResul
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -14883,11 +17242,43 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineResul
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -14941,29 +17332,67 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRefer
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -14974,12 +17403,52 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentResult
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -15007,11 +17476,43 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentResult
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -15138,29 +17639,67 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleResult(dict):
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -15171,12 +17710,52 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineResult(dict)
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -15204,11 +17783,43 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineResult(dict)
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -15262,29 +17873,67 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceRes
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -15295,12 +17944,52 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentResult(dict):
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -15328,11 +18017,43 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentResult(dict):
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -15459,29 +18180,67 @@ class GetSecurityAssessmentComparisonTargetUserAccountResult(dict):
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetUserAccountBaselineResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -15492,12 +18251,52 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineResult(dict):
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -15525,11 +18324,43 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineResult(dict):
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -15583,29 +18414,67 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult(di
 @pulumi.output_type
 class GetSecurityAssessmentComparisonTargetUserAccountCurrentResult(dict):
     def __init__(__self__, *,
+                 assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
+        :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: A unique identifier for the finding. This is common for the finding across targets.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArgs'] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: The severity of this diff.
+        :param str state: The current state of the finding.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred/modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
+        pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generated this finding.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @property
     @pulumi.getter
@@ -15616,12 +18485,52 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentResult(dict):
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         A unique identifier for the finding. This is common for the finding across targets.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -15649,11 +18558,43 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentResult(dict):
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred/modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -15705,6 +18646,164 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult(dic
 
 
 @pulumi.output_type
+class GetSecurityAssessmentFindingAnalyticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemResult']):
+        """
+        :param Sequence['GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArgs'] items: The array of the summary objects of the analytics data of findings or top findings.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemResult']:
+        """
+        The array of the summary objects of the analytics data of findings or top findings.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 dimensions: Sequence['outputs.GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionResult'],
+                 metric_name: str,
+                 security_assessment_finding_analytic_count: str):
+        """
+        :param Sequence['GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArgs'] dimensions: The scope of analytics data.
+        :param str metric_name: The name of the aggregation metric.
+        :param str security_assessment_finding_analytic_count: The total count for the aggregation metric.
+        """
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "security_assessment_finding_analytic_count", security_assessment_finding_analytic_count)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionResult']:
+        """
+        The scope of analytics data.
+        """
+        return pulumi.get(self, "dimensions")
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> str:
+        """
+        The name of the aggregation metric.
+        """
+        return pulumi.get(self, "metric_name")
+
+    @property
+    @pulumi.getter(name="securityAssessmentFindingAnalyticCount")
+    def security_assessment_finding_analytic_count(self) -> str:
+        """
+        The total count for the aggregation metric.
+        """
+        return pulumi.get(self, "security_assessment_finding_analytic_count")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 severity: str,
+                 target_id: str,
+                 title: str,
+                 top_finding_category: str,
+                 top_finding_status: str):
+        """
+        :param str key: Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+        :param str severity: A filter to return only findings of a particular risk level.
+        :param str target_id: The OCID of the target database.
+        :param str title: The short title of the finding.
+        :param str top_finding_category: The category of the top finding.
+        :param str top_finding_status: An optional filter to return only the top finding that match the specified status.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "title", title)
+        pulumi.set(__self__, "top_finding_category", top_finding_category)
+        pulumi.set(__self__, "top_finding_status", top_finding_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> str:
+        """
+        A filter to return only findings of a particular risk level.
+        """
+        return pulumi.get(self, "severity")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter
+    def title(self) -> str:
+        """
+        The short title of the finding.
+        """
+        return pulumi.get(self, "title")
+
+    @property
+    @pulumi.getter(name="topFindingCategory")
+    def top_finding_category(self) -> str:
+        """
+        The category of the top finding.
+        """
+        return pulumi.get(self, "top_finding_category")
+
+    @property
+    @pulumi.getter(name="topFindingStatus")
+    def top_finding_status(self) -> str:
+        """
+        An optional filter to return only the top finding that match the specified status.
+        """
+        return pulumi.get(self, "top_finding_status")
+
+
+@pulumi.output_type
 class GetSecurityAssessmentFindingFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -15736,21 +18835,39 @@ class GetSecurityAssessmentFindingFindingResult(dict):
     def __init__(__self__, *,
                  assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 is_top_finding: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentFindingFindingReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
                  target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "is_top_finding", is_top_finding)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
         pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
 
     @property
@@ -15764,9 +18881,39 @@ class GetSecurityAssessmentFindingFindingResult(dict):
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter(name="isTopFinding")
+    def is_top_finding(self) -> bool:
+        return pulumi.get(self, "is_top_finding")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -15785,6 +18932,11 @@ class GetSecurityAssessmentFindingFindingResult(dict):
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         return pulumi.get(self, "summary")
 
@@ -15792,6 +18944,16 @@ class GetSecurityAssessmentFindingFindingResult(dict):
     @pulumi.getter(name="targetId")
     def target_id(self) -> str:
         return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -15826,6 +18988,201 @@ class GetSecurityAssessmentFindingFindingReferenceResult(dict):
 
 
 @pulumi.output_type
+class GetSecurityAssessmentFindingsChangeAuditLogsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemResult']):
+        """
+        :param Sequence['GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArgs'] items: An array of finding risk change audit log summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemResult']:
+        """
+        An array of finding risk change audit log summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 assessment_id: str,
+                 finding_key: str,
+                 finding_title: str,
+                 is_risk_deferred: bool,
+                 justification: str,
+                 key: str,
+                 modified_by: str,
+                 oracle_defined_severity: str,
+                 previous_severity: str,
+                 severity: str,
+                 target_id: str,
+                 time_updated: str,
+                 time_valid_until: str):
+        """
+        :param str assessment_id: The OCID of the latest security assessment.
+        :param str finding_key: The unique key that identifies the finding. It is a string and unique within a security assessment.
+        :param str finding_title: The unique title that identifies the finding. It is a string and unique within a security assessment.
+        :param bool is_risk_deferred: A filter to check findings whose risks were deferred by the user.
+        :param str justification: The justification given by the user for accepting or modifying the risk level.
+        :param str key: The unique key that identifies the finding risk change.
+        :param str modified_by: A filter to check which user modified the risk level of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment by Oracle.
+        :param str previous_severity: If the risk level is changed more than once, the previous modified value.
+        :param str severity: A filter to return only findings of a particular risk level.
+        :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the risk level change as updated by user is valid until. After this date passes, the risk level will be that of what is determined by the latest security assessment.
+        """
+        pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "finding_key", finding_key)
+        pulumi.set(__self__, "finding_title", finding_title)
+        pulumi.set(__self__, "is_risk_deferred", is_risk_deferred)
+        pulumi.set(__self__, "justification", justification)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "modified_by", modified_by)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
+        pulumi.set(__self__, "previous_severity", previous_severity)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the latest security assessment.
+        """
+        return pulumi.get(self, "assessment_id")
+
+    @property
+    @pulumi.getter(name="findingKey")
+    def finding_key(self) -> str:
+        """
+        The unique key that identifies the finding. It is a string and unique within a security assessment.
+        """
+        return pulumi.get(self, "finding_key")
+
+    @property
+    @pulumi.getter(name="findingTitle")
+    def finding_title(self) -> str:
+        """
+        The unique title that identifies the finding. It is a string and unique within a security assessment.
+        """
+        return pulumi.get(self, "finding_title")
+
+    @property
+    @pulumi.getter(name="isRiskDeferred")
+    def is_risk_deferred(self) -> bool:
+        """
+        A filter to check findings whose risks were deferred by the user.
+        """
+        return pulumi.get(self, "is_risk_deferred")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        The justification given by the user for accepting or modifying the risk level.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The unique key that identifies the finding risk change.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modifiedBy")
+    def modified_by(self) -> str:
+        """
+        A filter to check which user modified the risk level of the finding.
+        """
+        return pulumi.get(self, "modified_by")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment by Oracle.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
+
+    @property
+    @pulumi.getter(name="previousSeverity")
+    def previous_severity(self) -> str:
+        """
+        If the risk level is changed more than once, the previous modified value.
+        """
+        return pulumi.get(self, "previous_severity")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> str:
+        """
+        A filter to return only findings of a particular risk level.
+        """
+        return pulumi.get(self, "severity")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the target database.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the risk level change as updated by user is valid until. After this date passes, the risk level will be that of what is determined by the latest security assessment.
+        """
+        return pulumi.get(self, "time_valid_until")
+
+
+@pulumi.output_type
 class GetSecurityAssessmentFindingsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -15857,32 +19214,59 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
     def __init__(__self__, *,
                  assessment_id: str,
                  details: Sequence[str],
+                 has_target_db_risk_level_changed: bool,
+                 is_risk_modified: bool,
+                 is_top_finding: bool,
+                 justification: str,
                  key: str,
+                 lifecycle_details: str,
+                 oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentFindingsFindingReferenceResult'],
                  remarks: str,
                  severity: str,
+                 state: str,
                  summary: str,
                  target_id: str,
+                 time_updated: str,
+                 time_valid_until: str,
                  title: str):
         """
         :param str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        :param bool is_risk_modified: Determines if this risk level was modified by user.
+        :param bool is_top_finding: A filter to return only the findings that are marked as top findings.
+        :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
+        :param str lifecycle_details: Details about the current state of the finding.
+        :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentFindingsFindingReferenceArgs'] references: An optional filter to return only findings containing the specified reference.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: A filter to return only findings of a particular risk level.
+        :param str state: A filter to return only the findings that match the specified lifecycle states.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str target_id: The OCID of the target database.
+        :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_valid_until: The time until which the change in severity(deferred / modified) of this finding is valid.
         :param str title: The short title for the finding.
         """
         pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
+        pulumi.set(__self__, "is_risk_modified", is_risk_modified)
+        pulumi.set(__self__, "is_top_finding", is_top_finding)
+        pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
         pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "summary", summary)
         pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_valid_until", time_valid_until)
         pulumi.set(__self__, "title", title)
 
     @property
@@ -15902,12 +19286,60 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         return pulumi.get(self, "details")
 
     @property
+    @pulumi.getter(name="hasTargetDbRiskLevelChanged")
+    def has_target_db_risk_level_changed(self) -> bool:
+        """
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+        """
+        return pulumi.get(self, "has_target_db_risk_level_changed")
+
+    @property
+    @pulumi.getter(name="isRiskModified")
+    def is_risk_modified(self) -> bool:
+        """
+        Determines if this risk level was modified by user.
+        """
+        return pulumi.get(self, "is_risk_modified")
+
+    @property
+    @pulumi.getter(name="isTopFinding")
+    def is_top_finding(self) -> bool:
+        """
+        A filter to return only the findings that are marked as top findings.
+        """
+        return pulumi.get(self, "is_top_finding")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> str:
+        """
+        User provided reason for accepting or modifying this finding if they choose to do so.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
     @pulumi.getter
     def key(self) -> str:
         """
         The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the finding.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oracleDefinedSeverity")
+    def oracle_defined_severity(self) -> str:
+        """
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+        """
+        return pulumi.get(self, "oracle_defined_severity")
 
     @property
     @pulumi.getter
@@ -15935,6 +19367,14 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
 
     @property
     @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only the findings that match the specified lifecycle states.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
     def summary(self) -> str:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
@@ -15948,6 +19388,22 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         The OCID of the target database.
         """
         return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidUntil")
+    def time_valid_until(self) -> str:
+        """
+        The time until which the change in severity(deferred / modified) of this finding is valid.
+        """
+        return pulumi.get(self, "time_valid_until")
 
     @property
     @pulumi.getter
@@ -15999,9 +19455,341 @@ class GetSecurityAssessmentFindingsFindingReferenceResult(dict):
 
 
 @pulumi.output_type
+class GetSecurityAssessmentSecurityFeatureAnalyticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemResult']):
+        """
+        :param Sequence['GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArgs'] items: The array of database security feature analytics summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemResult']:
+        """
+        The array of database security feature analytics summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 dimensions: Sequence['outputs.GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionResult'],
+                 metric_name: str,
+                 security_assessment_security_feature_analytic_count: str):
+        """
+        :param Sequence['GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArgs'] dimensions: The scope of analytics data.
+        :param str metric_name: The name of the aggregation metric.
+        :param str security_assessment_security_feature_analytic_count: The total count for the aggregation metric.
+        """
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "security_assessment_security_feature_analytic_count", security_assessment_security_feature_analytic_count)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionResult']:
+        """
+        The scope of analytics data.
+        """
+        return pulumi.get(self, "dimensions")
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> str:
+        """
+        The name of the aggregation metric.
+        """
+        return pulumi.get(self, "metric_name")
+
+    @property
+    @pulumi.getter(name="securityAssessmentSecurityFeatureAnalyticCount")
+    def security_assessment_security_feature_analytic_count(self) -> str:
+        """
+        The total count for the aggregation metric.
+        """
+        return pulumi.get(self, "security_assessment_security_feature_analytic_count")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionResult(dict):
+    def __init__(__self__, *,
+                 security_feature: str):
+        """
+        :param str security_feature: The name of the security feature.
+        """
+        pulumi.set(__self__, "security_feature", security_feature)
+
+    @property
+    @pulumi.getter(name="securityFeature")
+    def security_feature(self) -> str:
+        """
+        The name of the security feature.
+        """
+        return pulumi.get(self, "security_feature")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentSecurityFeaturesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemResult']):
+        """
+        :param Sequence['GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArgs'] items: Array of database security feature summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemResult']:
+        """
+        Array of database security feature summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 assessment_id: str,
+                 column_encryption: str,
+                 compartment_id: str,
+                 database_vault: str,
+                 defined_tags: Mapping[str, Any],
+                 external_authentication: str,
+                 fine_grained_audit: str,
+                 freeform_tags: Mapping[str, Any],
+                 global_authentication: str,
+                 network_encryption: str,
+                 password_authentication: str,
+                 privilege_analysis: str,
+                 tablespace_encryption: str,
+                 target_id: str,
+                 traditional_audit: str,
+                 unified_audit: str):
+        """
+        :param str assessment_id: The OCID of the assessment that generates this security feature usage result.
+        :param str column_encryption: The usage of security feature - Column Encryption.
+        :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param str database_vault: The usage of security feature - Database Vault.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param str external_authentication: The usage of security feature - External Authentication.
+        :param str fine_grained_audit: The usage of security feature - Fine Grained Audit.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param str global_authentication: The usage of security feature - Global Authentication.
+        :param str network_encryption: The usage of security feature - Network Encryption.
+        :param str password_authentication: The usage of security feature - Password Authentication.
+        :param str privilege_analysis: The usage of security feature - Privilege Analysis.
+        :param str tablespace_encryption: The usage of security feature - Tablespace Encryption.
+        :param str target_id: A filter to return only items related to a specific target OCID.
+        :param str traditional_audit: The usage of security feature - Traditional Audit.
+        :param str unified_audit: The usage of security feature - Unified Audit.
+        """
+        pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "column_encryption", column_encryption)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_vault", database_vault)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "external_authentication", external_authentication)
+        pulumi.set(__self__, "fine_grained_audit", fine_grained_audit)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "global_authentication", global_authentication)
+        pulumi.set(__self__, "network_encryption", network_encryption)
+        pulumi.set(__self__, "password_authentication", password_authentication)
+        pulumi.set(__self__, "privilege_analysis", privilege_analysis)
+        pulumi.set(__self__, "tablespace_encryption", tablespace_encryption)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "traditional_audit", traditional_audit)
+        pulumi.set(__self__, "unified_audit", unified_audit)
+
+    @property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> str:
+        """
+        The OCID of the assessment that generates this security feature usage result.
+        """
+        return pulumi.get(self, "assessment_id")
+
+    @property
+    @pulumi.getter(name="columnEncryption")
+    def column_encryption(self) -> str:
+        """
+        The usage of security feature - Column Encryption.
+        """
+        return pulumi.get(self, "column_encryption")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="databaseVault")
+    def database_vault(self) -> str:
+        """
+        The usage of security feature - Database Vault.
+        """
+        return pulumi.get(self, "database_vault")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="externalAuthentication")
+    def external_authentication(self) -> str:
+        """
+        The usage of security feature - External Authentication.
+        """
+        return pulumi.get(self, "external_authentication")
+
+    @property
+    @pulumi.getter(name="fineGrainedAudit")
+    def fine_grained_audit(self) -> str:
+        """
+        The usage of security feature - Fine Grained Audit.
+        """
+        return pulumi.get(self, "fine_grained_audit")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="globalAuthentication")
+    def global_authentication(self) -> str:
+        """
+        The usage of security feature - Global Authentication.
+        """
+        return pulumi.get(self, "global_authentication")
+
+    @property
+    @pulumi.getter(name="networkEncryption")
+    def network_encryption(self) -> str:
+        """
+        The usage of security feature - Network Encryption.
+        """
+        return pulumi.get(self, "network_encryption")
+
+    @property
+    @pulumi.getter(name="passwordAuthentication")
+    def password_authentication(self) -> str:
+        """
+        The usage of security feature - Password Authentication.
+        """
+        return pulumi.get(self, "password_authentication")
+
+    @property
+    @pulumi.getter(name="privilegeAnalysis")
+    def privilege_analysis(self) -> str:
+        """
+        The usage of security feature - Privilege Analysis.
+        """
+        return pulumi.get(self, "privilege_analysis")
+
+    @property
+    @pulumi.getter(name="tablespaceEncryption")
+    def tablespace_encryption(self) -> str:
+        """
+        The usage of security feature - Tablespace Encryption.
+        """
+        return pulumi.get(self, "tablespace_encryption")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="traditionalAudit")
+    def traditional_audit(self) -> str:
+        """
+        The usage of security feature - Traditional Audit.
+        """
+        return pulumi.get(self, "traditional_audit")
+
+    @property
+    @pulumi.getter(name="unifiedAudit")
+    def unified_audit(self) -> str:
+        """
+        The usage of security feature - Unified Audit.
+        """
+        return pulumi.get(self, "unified_audit")
+
+
+@pulumi.output_type
 class GetSecurityAssessmentStatisticResult(dict):
     def __init__(__self__, *,
                  advisories: Sequence['outputs.GetSecurityAssessmentStatisticAdvisoryResult'],
+                 deferreds: Sequence['outputs.GetSecurityAssessmentStatisticDeferredResult'],
                  evaluates: Sequence['outputs.GetSecurityAssessmentStatisticEvaluateResult'],
                  high_risks: Sequence['outputs.GetSecurityAssessmentStatisticHighRiskResult'],
                  low_risks: Sequence['outputs.GetSecurityAssessmentStatisticLowRiskResult'],
@@ -16010,6 +19798,7 @@ class GetSecurityAssessmentStatisticResult(dict):
                  targets_count: int):
         """
         :param Sequence['GetSecurityAssessmentStatisticAdvisoryArgs'] advisories: Statistics showing the number of findings with a particular risk level for each category.
+        :param Sequence['GetSecurityAssessmentStatisticDeferredArgs'] deferreds: Statistics showing the number of findings with a particular risk level for each category.
         :param Sequence['GetSecurityAssessmentStatisticEvaluateArgs'] evaluates: Statistics showing the number of findings with a particular risk level for each category.
         :param Sequence['GetSecurityAssessmentStatisticHighRiskArgs'] high_risks: Statistics showing the number of findings with a particular risk level for each category.
         :param Sequence['GetSecurityAssessmentStatisticLowRiskArgs'] low_risks: Statistics showing the number of findings with a particular risk level for each category.
@@ -16018,6 +19807,7 @@ class GetSecurityAssessmentStatisticResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         """
         pulumi.set(__self__, "advisories", advisories)
+        pulumi.set(__self__, "deferreds", deferreds)
         pulumi.set(__self__, "evaluates", evaluates)
         pulumi.set(__self__, "high_risks", high_risks)
         pulumi.set(__self__, "low_risks", low_risks)
@@ -16032,6 +19822,14 @@ class GetSecurityAssessmentStatisticResult(dict):
         Statistics showing the number of findings with a particular risk level for each category.
         """
         return pulumi.get(self, "advisories")
+
+    @property
+    @pulumi.getter
+    def deferreds(self) -> Sequence['outputs.GetSecurityAssessmentStatisticDeferredResult']:
+        """
+        Statistics showing the number of findings with a particular risk level for each category.
+        """
+        return pulumi.get(self, "deferreds")
 
     @property
     @pulumi.getter
@@ -16084,6 +19882,101 @@ class GetSecurityAssessmentStatisticResult(dict):
 
 @pulumi.output_type
 class GetSecurityAssessmentStatisticAdvisoryResult(dict):
+    def __init__(__self__, *,
+                 auditing_findings_count: int,
+                 authorization_control_findings_count: int,
+                 data_encryption_findings_count: int,
+                 db_configuration_findings_count: int,
+                 fine_grained_access_control_findings_count: int,
+                 privileges_and_roles_findings_count: int,
+                 targets_count: int,
+                 user_accounts_findings_count: int):
+        """
+        :param int auditing_findings_count: The number of findings in the Auditing category.
+        :param int authorization_control_findings_count: The number of findings in the Authorization Control category.
+        :param int data_encryption_findings_count: The number of findings in the Data Encryption category.
+        :param int db_configuration_findings_count: The number of findings in the Database Configuration category.
+        :param int fine_grained_access_control_findings_count: The number of findings in the Fine-Grained Access Control category.
+        :param int privileges_and_roles_findings_count: The number of findings in the Privileges and Roles category.
+        :param int targets_count: The total number of targets in this security assessment.
+        :param int user_accounts_findings_count: The number of findings in the User Accounts category.
+        """
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+
+    @property
+    @pulumi.getter(name="auditingFindingsCount")
+    def auditing_findings_count(self) -> int:
+        """
+        The number of findings in the Auditing category.
+        """
+        return pulumi.get(self, "auditing_findings_count")
+
+    @property
+    @pulumi.getter(name="authorizationControlFindingsCount")
+    def authorization_control_findings_count(self) -> int:
+        """
+        The number of findings in the Authorization Control category.
+        """
+        return pulumi.get(self, "authorization_control_findings_count")
+
+    @property
+    @pulumi.getter(name="dataEncryptionFindingsCount")
+    def data_encryption_findings_count(self) -> int:
+        """
+        The number of findings in the Data Encryption category.
+        """
+        return pulumi.get(self, "data_encryption_findings_count")
+
+    @property
+    @pulumi.getter(name="dbConfigurationFindingsCount")
+    def db_configuration_findings_count(self) -> int:
+        """
+        The number of findings in the Database Configuration category.
+        """
+        return pulumi.get(self, "db_configuration_findings_count")
+
+    @property
+    @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
+    def fine_grained_access_control_findings_count(self) -> int:
+        """
+        The number of findings in the Fine-Grained Access Control category.
+        """
+        return pulumi.get(self, "fine_grained_access_control_findings_count")
+
+    @property
+    @pulumi.getter(name="privilegesAndRolesFindingsCount")
+    def privileges_and_roles_findings_count(self) -> int:
+        """
+        The number of findings in the Privileges and Roles category.
+        """
+        return pulumi.get(self, "privileges_and_roles_findings_count")
+
+    @property
+    @pulumi.getter(name="targetsCount")
+    def targets_count(self) -> int:
+        """
+        The total number of targets in this security assessment.
+        """
+        return pulumi.get(self, "targets_count")
+
+    @property
+    @pulumi.getter(name="userAccountsFindingsCount")
+    def user_accounts_findings_count(self) -> int:
+        """
+        The number of findings in the User Accounts category.
+        """
+        return pulumi.get(self, "user_accounts_findings_count")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentStatisticDeferredResult(dict):
     def __init__(__self__, *,
                  auditing_findings_count: int,
                  authorization_control_findings_count: int,
@@ -16717,7 +20610,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
         :param str id: The OCID of the security assessment.
         :param Sequence[str] ignored_assessment_ids: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         :param Sequence[str] ignored_targets: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        :param bool is_baseline: A filter to return only security assessments that are set as baseline.
+        :param bool is_baseline: A filter to return only the security assessments that are set as a baseline.
         :param bool is_deviated_from_baseline: Indicates whether or not the security assessment deviates from the baseline.
         :param str last_compared_baseline_id: The OCID of the baseline against which the latest security assessment was compared.
         :param str lifecycle_details: Details about the current state of the security assessment.
@@ -16730,9 +20623,9 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param Sequence[str] target_ids: Array of database target OCIDs.
         :param str target_version: The version of the target database.
-        :param str time_created: The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_last_assessed: The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_updated: The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_created: The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_last_assessed: The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_updated: The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str triggered_by: A filter to return only security asessments that were created by either user or system.
         :param str type: A filter to return only items that match the specified security assessment type.
         """
@@ -16831,7 +20724,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
     @pulumi.getter(name="isBaseline")
     def is_baseline(self) -> bool:
         """
-        A filter to return only security assessments that are set as baseline.
+        A filter to return only the security assessments that are set as a baseline.
         """
         return pulumi.get(self, "is_baseline")
 
@@ -16935,7 +20828,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -16943,7 +20836,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
     @pulumi.getter(name="timeLastAssessed")
     def time_last_assessed(self) -> str:
         """
-        The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_last_assessed")
 
@@ -16951,7 +20844,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
@@ -16976,6 +20869,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
 class GetSecurityAssessmentsSecurityAssessmentStatisticResult(dict):
     def __init__(__self__, *,
                  advisories: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryResult'],
+                 deferreds: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticDeferredResult'],
                  evaluates: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateResult'],
                  high_risks: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskResult'],
                  low_risks: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskResult'],
@@ -16984,6 +20878,7 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticResult(dict):
                  targets_count: int):
         """
         :param Sequence['GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArgs'] advisories: Statistics showing the number of findings with a particular risk level for each category.
+        :param Sequence['GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArgs'] deferreds: Statistics showing the number of findings with a particular risk level for each category.
         :param Sequence['GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArgs'] evaluates: Statistics showing the number of findings with a particular risk level for each category.
         :param Sequence['GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArgs'] high_risks: Statistics showing the number of findings with a particular risk level for each category.
         :param Sequence['GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArgs'] low_risks: Statistics showing the number of findings with a particular risk level for each category.
@@ -16992,6 +20887,7 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         """
         pulumi.set(__self__, "advisories", advisories)
+        pulumi.set(__self__, "deferreds", deferreds)
         pulumi.set(__self__, "evaluates", evaluates)
         pulumi.set(__self__, "high_risks", high_risks)
         pulumi.set(__self__, "low_risks", low_risks)
@@ -17006,6 +20902,14 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticResult(dict):
         Statistics showing the number of findings with a particular risk level for each category.
         """
         return pulumi.get(self, "advisories")
+
+    @property
+    @pulumi.getter
+    def deferreds(self) -> Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticDeferredResult']:
+        """
+        Statistics showing the number of findings with a particular risk level for each category.
+        """
+        return pulumi.get(self, "deferreds")
 
     @property
     @pulumi.getter
@@ -17058,6 +20962,101 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticResult(dict):
 
 @pulumi.output_type
 class GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryResult(dict):
+    def __init__(__self__, *,
+                 auditing_findings_count: int,
+                 authorization_control_findings_count: int,
+                 data_encryption_findings_count: int,
+                 db_configuration_findings_count: int,
+                 fine_grained_access_control_findings_count: int,
+                 privileges_and_roles_findings_count: int,
+                 targets_count: int,
+                 user_accounts_findings_count: int):
+        """
+        :param int auditing_findings_count: The number of findings in the Auditing category.
+        :param int authorization_control_findings_count: The number of findings in the Authorization Control category.
+        :param int data_encryption_findings_count: The number of findings in the Data Encryption category.
+        :param int db_configuration_findings_count: The number of findings in the Database Configuration category.
+        :param int fine_grained_access_control_findings_count: The number of findings in the Fine-Grained Access Control category.
+        :param int privileges_and_roles_findings_count: The number of findings in the Privileges and Roles category.
+        :param int targets_count: The total number of targets in this security assessment.
+        :param int user_accounts_findings_count: The number of findings in the User Accounts category.
+        """
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+
+    @property
+    @pulumi.getter(name="auditingFindingsCount")
+    def auditing_findings_count(self) -> int:
+        """
+        The number of findings in the Auditing category.
+        """
+        return pulumi.get(self, "auditing_findings_count")
+
+    @property
+    @pulumi.getter(name="authorizationControlFindingsCount")
+    def authorization_control_findings_count(self) -> int:
+        """
+        The number of findings in the Authorization Control category.
+        """
+        return pulumi.get(self, "authorization_control_findings_count")
+
+    @property
+    @pulumi.getter(name="dataEncryptionFindingsCount")
+    def data_encryption_findings_count(self) -> int:
+        """
+        The number of findings in the Data Encryption category.
+        """
+        return pulumi.get(self, "data_encryption_findings_count")
+
+    @property
+    @pulumi.getter(name="dbConfigurationFindingsCount")
+    def db_configuration_findings_count(self) -> int:
+        """
+        The number of findings in the Database Configuration category.
+        """
+        return pulumi.get(self, "db_configuration_findings_count")
+
+    @property
+    @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
+    def fine_grained_access_control_findings_count(self) -> int:
+        """
+        The number of findings in the Fine-Grained Access Control category.
+        """
+        return pulumi.get(self, "fine_grained_access_control_findings_count")
+
+    @property
+    @pulumi.getter(name="privilegesAndRolesFindingsCount")
+    def privileges_and_roles_findings_count(self) -> int:
+        """
+        The number of findings in the Privileges and Roles category.
+        """
+        return pulumi.get(self, "privileges_and_roles_findings_count")
+
+    @property
+    @pulumi.getter(name="targetsCount")
+    def targets_count(self) -> int:
+        """
+        The total number of targets in this security assessment.
+        """
+        return pulumi.get(self, "targets_count")
+
+    @property
+    @pulumi.getter(name="userAccountsFindingsCount")
+    def user_accounts_findings_count(self) -> int:
+        """
+        The number of findings in the User Accounts category.
+        """
+        return pulumi.get(self, "user_accounts_findings_count")
+
+
+@pulumi.output_type
+class GetSecurityAssessmentsSecurityAssessmentStatisticDeferredResult(dict):
     def __init__(__self__, *,
                  auditing_findings_count: int,
                  authorization_control_findings_count: int,
@@ -17627,6 +21626,1397 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticPassResult(dict):
 
 
 @pulumi.output_type
+class GetSecurityPoliciesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSecurityPoliciesSecurityPolicyCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSecurityPoliciesSecurityPolicyCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSecurityPoliciesSecurityPolicyCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSecurityPoliciesSecurityPolicyCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 lifecycle_details: str,
+                 security_policy_id: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: The description of the security policy.
+        :param str display_name: A filter to return only resources that match the specified display name.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the security policy.
+        :param str lifecycle_details: Details about the current state of the security policy in Data Safe.
+        :param str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
+        :param str state: The current state of the security policy.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time that the security policy was created, in the format defined by RFC3339.
+        :param str time_updated: The last date and time the security policy was updated, in the format defined by RFC3339.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the security policy.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the security policy.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the security policy in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="securityPolicyId")
+    def security_policy_id(self) -> str:
+        """
+        An optional filter to return only resources that match the specified OCID of the security policy resource.
+        """
+        return pulumi.get(self, "security_policy_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the security policy.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time that the security policy was created, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last date and time the security policy was updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailResult(dict):
+    def __init__(__self__, *,
+                 entry_type: str,
+                 time_generated: str,
+                 time_status_updated: str):
+        """
+        :param str entry_type: The security policy entry type. Allowed values:
+               * FIREWALL_POLICY - The SQL Firewall policy entry type.
+        :param str time_generated: The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+        :param str time_status_updated: The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+        """
+        pulumi.set(__self__, "entry_type", entry_type)
+        pulumi.set(__self__, "time_generated", time_generated)
+        pulumi.set(__self__, "time_status_updated", time_status_updated)
+
+    @property
+    @pulumi.getter(name="entryType")
+    def entry_type(self) -> str:
+        """
+        The security policy entry type. Allowed values:
+        * FIREWALL_POLICY - The SQL Firewall policy entry type.
+        """
+        return pulumi.get(self, "entry_type")
+
+    @property
+    @pulumi.getter(name="timeGenerated")
+    def time_generated(self) -> str:
+        """
+        The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_generated")
+
+    @property
+    @pulumi.getter(name="timeStatusUpdated")
+    def time_status_updated(self) -> str:
+        """
+        The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_status_updated")
+
+
+@pulumi.output_type
+class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 deployment_status: str,
+                 entry_details: Sequence['outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailResult'],
+                 id: str,
+                 security_policy_deployment_id: str,
+                 security_policy_entry_id: str):
+        """
+        :param str deployment_status: The current state of the security policy deployment.
+        :param Sequence['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs'] entry_details: Details specific to the security policy entry.
+        :param str id: Unique id of the security policy entry state.
+        :param str security_policy_deployment_id: The OCID of the security policy deployment resource.
+        :param str security_policy_entry_id: An optional filter to return only resources that match the specified security policy entry OCID.
+        """
+        pulumi.set(__self__, "deployment_status", deployment_status)
+        pulumi.set(__self__, "entry_details", entry_details)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "security_policy_deployment_id", security_policy_deployment_id)
+        pulumi.set(__self__, "security_policy_entry_id", security_policy_entry_id)
+
+    @property
+    @pulumi.getter(name="deploymentStatus")
+    def deployment_status(self) -> str:
+        """
+        The current state of the security policy deployment.
+        """
+        return pulumi.get(self, "deployment_status")
+
+    @property
+    @pulumi.getter(name="entryDetails")
+    def entry_details(self) -> Sequence['outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailResult']:
+        """
+        Details specific to the security policy entry.
+        """
+        return pulumi.get(self, "entry_details")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique id of the security policy entry state.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="securityPolicyDeploymentId")
+    def security_policy_deployment_id(self) -> str:
+        """
+        The OCID of the security policy deployment resource.
+        """
+        return pulumi.get(self, "security_policy_deployment_id")
+
+    @property
+    @pulumi.getter(name="securityPolicyEntryId")
+    def security_policy_entry_id(self) -> str:
+        """
+        An optional filter to return only resources that match the specified security policy entry OCID.
+        """
+        return pulumi.get(self, "security_policy_entry_id")
+
+
+@pulumi.output_type
+class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailResult(dict):
+    def __init__(__self__, *,
+                 entry_type: str,
+                 time_generated: str,
+                 time_status_updated: str):
+        """
+        :param str entry_type: The security policy entry type. Allowed values:
+               * FIREWALL_POLICY - The SQL Firewall policy entry type.
+        :param str time_generated: The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+        :param str time_status_updated: The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+        """
+        pulumi.set(__self__, "entry_type", entry_type)
+        pulumi.set(__self__, "time_generated", time_generated)
+        pulumi.set(__self__, "time_status_updated", time_status_updated)
+
+    @property
+    @pulumi.getter(name="entryType")
+    def entry_type(self) -> str:
+        """
+        The security policy entry type. Allowed values:
+        * FIREWALL_POLICY - The SQL Firewall policy entry type.
+        """
+        return pulumi.get(self, "entry_type")
+
+    @property
+    @pulumi.getter(name="timeGenerated")
+    def time_generated(self) -> str:
+        """
+        The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_generated")
+
+    @property
+    @pulumi.getter(name="timeStatusUpdated")
+    def time_status_updated(self) -> str:
+        """
+        The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_status_updated")
+
+
+@pulumi.output_type
+class GetSecurityPolicyDeploymentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 lifecycle_details: str,
+                 security_policy_deployment_id: str,
+                 security_policy_id: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 target_id: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: The description of the security policy deployment.
+        :param str display_name: A filter to return only resources that match the specified display name.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the security policy deployment.
+        :param str lifecycle_details: Details about the current state of the security policy deployment in Data Safe.
+        :param str security_policy_deployment_id: An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
+        :param str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
+        :param str state: The current state of the security policy deployment.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str target_id: A filter to return only items related to a specific target OCID.
+        :param str time_created: The time that the security policy deployment was created, in the format defined by RFC3339.
+        :param str time_updated: The last date and time the security policy deployment was updated, in the format defined by RFC3339.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "security_policy_deployment_id", security_policy_deployment_id)
+        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the security policy deployment.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the security policy deployment.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the security policy deployment in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="securityPolicyDeploymentId")
+    def security_policy_deployment_id(self) -> str:
+        """
+        An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
+        """
+        return pulumi.get(self, "security_policy_deployment_id")
+
+    @property
+    @pulumi.getter(name="securityPolicyId")
+    def security_policy_id(self) -> str:
+        """
+        An optional filter to return only resources that match the specified OCID of the security policy resource.
+        """
+        return pulumi.get(self, "security_policy_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the security policy deployment.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time that the security policy deployment was created, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last date and time the security policy deployment was updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 access_through_object: str,
+                 access_type: str,
+                 are_all_tables_accessible: bool,
+                 column_name: str,
+                 grant_from_role: str,
+                 grantee: str,
+                 grantor: str,
+                 is_access_constrained_by_database_vault: bool,
+                 is_access_constrained_by_label_security: bool,
+                 is_access_constrained_by_real_application_security: bool,
+                 is_access_constrained_by_redaction: bool,
+                 is_access_constrained_by_sql_firewall: bool,
+                 is_access_constrained_by_view: bool,
+                 is_access_constrained_by_virtual_private_database: bool,
+                 is_sensitive: bool,
+                 key: str,
+                 privilege: str,
+                 privilege_grantable: str,
+                 privilege_type: str,
+                 table_name: str,
+                 table_schema: str,
+                 target_id: str):
+        """
+        :param str access_through_object: A non-null value in this field indicates the object through which user has access to table, possible values could be table or view.
+        :param str access_type: The type of the access the user has on the table, there can be one or more from SELECT, UPDATE, INSERT, OWNER or DELETE.
+        :param bool are_all_tables_accessible: Indicates whether the user has access to all the tables in the schema.
+        :param str column_name: If there are column level privileges on a table or view.
+        :param str grant_from_role: This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the  role which is granted to the user though which the user has access to the table.
+        :param str grantee: Grantee is the user who can access the table
+        :param str grantor: The one who granted this privilege.
+        :param bool is_access_constrained_by_database_vault: Indicates whether the table access is constrained via Oracle Database Vault.
+        :param bool is_access_constrained_by_label_security: Indicates whether the table access is constrained via Oracle Label Security.
+        :param bool is_access_constrained_by_real_application_security: Indicates whether the table access is constrained via Real Application Security.
+        :param bool is_access_constrained_by_redaction: Indicates whether the table access is constrained via Oracle Data Redaction.
+        :param bool is_access_constrained_by_sql_firewall: Indicates whether the table access is constrained via Oracle Database SQL Firewall.
+        :param bool is_access_constrained_by_view: Indicates whether the access is constrained on a table via a view.
+        :param bool is_access_constrained_by_virtual_private_database: Indicates whether the table access is constrained via Virtual Private Database.
+        :param bool is_sensitive: Indicates whether the table is marked as sensitive.
+        :param str key: The unique key that identifies the table access report. It is numeric and unique within a security policy report.
+        :param str privilege: Name of the privilege.
+        :param str privilege_grantable: Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with  GRANT_OPTION or ADMIN_OPTION
+        :param str privilege_type: Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+        :param str table_name: The name of the database table the user has access to.
+        :param str table_schema: The name of the schema the table belongs to.
+        :param str target_id: The OCID of the of the  target database.
+        """
+        pulumi.set(__self__, "access_through_object", access_through_object)
+        pulumi.set(__self__, "access_type", access_type)
+        pulumi.set(__self__, "are_all_tables_accessible", are_all_tables_accessible)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "grant_from_role", grant_from_role)
+        pulumi.set(__self__, "grantee", grantee)
+        pulumi.set(__self__, "grantor", grantor)
+        pulumi.set(__self__, "is_access_constrained_by_database_vault", is_access_constrained_by_database_vault)
+        pulumi.set(__self__, "is_access_constrained_by_label_security", is_access_constrained_by_label_security)
+        pulumi.set(__self__, "is_access_constrained_by_real_application_security", is_access_constrained_by_real_application_security)
+        pulumi.set(__self__, "is_access_constrained_by_redaction", is_access_constrained_by_redaction)
+        pulumi.set(__self__, "is_access_constrained_by_sql_firewall", is_access_constrained_by_sql_firewall)
+        pulumi.set(__self__, "is_access_constrained_by_view", is_access_constrained_by_view)
+        pulumi.set(__self__, "is_access_constrained_by_virtual_private_database", is_access_constrained_by_virtual_private_database)
+        pulumi.set(__self__, "is_sensitive", is_sensitive)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "privilege", privilege)
+        pulumi.set(__self__, "privilege_grantable", privilege_grantable)
+        pulumi.set(__self__, "privilege_type", privilege_type)
+        pulumi.set(__self__, "table_name", table_name)
+        pulumi.set(__self__, "table_schema", table_schema)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @property
+    @pulumi.getter(name="accessThroughObject")
+    def access_through_object(self) -> str:
+        """
+        A non-null value in this field indicates the object through which user has access to table, possible values could be table or view.
+        """
+        return pulumi.get(self, "access_through_object")
+
+    @property
+    @pulumi.getter(name="accessType")
+    def access_type(self) -> str:
+        """
+        The type of the access the user has on the table, there can be one or more from SELECT, UPDATE, INSERT, OWNER or DELETE.
+        """
+        return pulumi.get(self, "access_type")
+
+    @property
+    @pulumi.getter(name="areAllTablesAccessible")
+    def are_all_tables_accessible(self) -> bool:
+        """
+        Indicates whether the user has access to all the tables in the schema.
+        """
+        return pulumi.get(self, "are_all_tables_accessible")
+
+    @property
+    @pulumi.getter(name="columnName")
+    def column_name(self) -> str:
+        """
+        If there are column level privileges on a table or view.
+        """
+        return pulumi.get(self, "column_name")
+
+    @property
+    @pulumi.getter(name="grantFromRole")
+    def grant_from_role(self) -> str:
+        """
+        This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the  role which is granted to the user though which the user has access to the table.
+        """
+        return pulumi.get(self, "grant_from_role")
+
+    @property
+    @pulumi.getter
+    def grantee(self) -> str:
+        """
+        Grantee is the user who can access the table
+        """
+        return pulumi.get(self, "grantee")
+
+    @property
+    @pulumi.getter
+    def grantor(self) -> str:
+        """
+        The one who granted this privilege.
+        """
+        return pulumi.get(self, "grantor")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedByDatabaseVault")
+    def is_access_constrained_by_database_vault(self) -> bool:
+        """
+        Indicates whether the table access is constrained via Oracle Database Vault.
+        """
+        return pulumi.get(self, "is_access_constrained_by_database_vault")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedByLabelSecurity")
+    def is_access_constrained_by_label_security(self) -> bool:
+        """
+        Indicates whether the table access is constrained via Oracle Label Security.
+        """
+        return pulumi.get(self, "is_access_constrained_by_label_security")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedByRealApplicationSecurity")
+    def is_access_constrained_by_real_application_security(self) -> bool:
+        """
+        Indicates whether the table access is constrained via Real Application Security.
+        """
+        return pulumi.get(self, "is_access_constrained_by_real_application_security")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedByRedaction")
+    def is_access_constrained_by_redaction(self) -> bool:
+        """
+        Indicates whether the table access is constrained via Oracle Data Redaction.
+        """
+        return pulumi.get(self, "is_access_constrained_by_redaction")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedBySqlFirewall")
+    def is_access_constrained_by_sql_firewall(self) -> bool:
+        """
+        Indicates whether the table access is constrained via Oracle Database SQL Firewall.
+        """
+        return pulumi.get(self, "is_access_constrained_by_sql_firewall")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedByView")
+    def is_access_constrained_by_view(self) -> bool:
+        """
+        Indicates whether the access is constrained on a table via a view.
+        """
+        return pulumi.get(self, "is_access_constrained_by_view")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedByVirtualPrivateDatabase")
+    def is_access_constrained_by_virtual_private_database(self) -> bool:
+        """
+        Indicates whether the table access is constrained via Virtual Private Database.
+        """
+        return pulumi.get(self, "is_access_constrained_by_virtual_private_database")
+
+    @property
+    @pulumi.getter(name="isSensitive")
+    def is_sensitive(self) -> bool:
+        """
+        Indicates whether the table is marked as sensitive.
+        """
+        return pulumi.get(self, "is_sensitive")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The unique key that identifies the table access report. It is numeric and unique within a security policy report.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def privilege(self) -> str:
+        """
+        Name of the privilege.
+        """
+        return pulumi.get(self, "privilege")
+
+    @property
+    @pulumi.getter(name="privilegeGrantable")
+    def privilege_grantable(self) -> str:
+        """
+        Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with  GRANT_OPTION or ADMIN_OPTION
+        """
+        return pulumi.get(self, "privilege_grantable")
+
+    @property
+    @pulumi.getter(name="privilegeType")
+    def privilege_type(self) -> str:
+        """
+        Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+        """
+        return pulumi.get(self, "privilege_type")
+
+    @property
+    @pulumi.getter(name="tableName")
+    def table_name(self) -> str:
+        """
+        The name of the database table the user has access to.
+        """
+        return pulumi.get(self, "table_name")
+
+    @property
+    @pulumi.getter(name="tableSchema")
+    def table_schema(self) -> str:
+        """
+        The name of the schema the table belongs to.
+        """
+        return pulumi.get(self, "table_schema")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The OCID of the of the  target database.
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportDatabaseTableAccessEntriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 access_type: str,
+                 column_name: str,
+                 grant_from_role: str,
+                 grantee: str,
+                 grantor: str,
+                 is_access_constrained_by_database_vault: bool,
+                 is_access_constrained_by_real_application_security: bool,
+                 is_access_constrained_by_redaction: bool,
+                 is_access_constrained_by_sql_firewall: bool,
+                 is_access_constrained_by_virtual_private_database: bool,
+                 key: str,
+                 privilege: str,
+                 privilege_grantable: str,
+                 privilege_type: str,
+                 table_name: str,
+                 table_schema: str,
+                 target_id: str,
+                 view_name: str,
+                 view_schema: str,
+                 view_text: str):
+        """
+        :param str access_type: The type of the access the user has on the table, there can be one or more from SELECT, UPDATE, INSERT or DELETE.
+        :param str column_name: If there are column level privileges on a table or view.
+        :param str grant_from_role: This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the  role which is granted to the user though which the user has access to the table.
+        :param str grantee: Grantee is the user who can access the table or view
+        :param str grantor: The user who granted the privilege.
+        :param bool is_access_constrained_by_database_vault: Indicates whether the table access is constrained via Oracle Database Vault.
+        :param bool is_access_constrained_by_real_application_security: Indicates whether the view access is constrained via Real Application Security.
+        :param bool is_access_constrained_by_redaction: Indicates whether the view access is constrained via Oracle Data Redaction.
+        :param bool is_access_constrained_by_sql_firewall: Indicates whether the view access is constrained via Oracle Database SQL Firewall.
+        :param bool is_access_constrained_by_virtual_private_database: Indicates whether the view access is constrained via Virtual Private Database.
+        :param str key: The unique key that identifies the table access report. It is numeric and unique within a security policy report.
+        :param str privilege: The name of the privilege.
+        :param str privilege_grantable: Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with  GRANT_OPTION or ADMIN_OPTION
+        :param str privilege_type: Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+        :param str table_name: The name of the database table the user has access to.
+        :param str table_schema: The name of the schema the table belongs to.
+        :param str target_id: A filter to return only items related to a specific target OCID.
+        :param str view_name: The name of the view.
+        :param str view_schema: The name of the schema.
+        :param str view_text: Definition of the view.
+        """
+        pulumi.set(__self__, "access_type", access_type)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "grant_from_role", grant_from_role)
+        pulumi.set(__self__, "grantee", grantee)
+        pulumi.set(__self__, "grantor", grantor)
+        pulumi.set(__self__, "is_access_constrained_by_database_vault", is_access_constrained_by_database_vault)
+        pulumi.set(__self__, "is_access_constrained_by_real_application_security", is_access_constrained_by_real_application_security)
+        pulumi.set(__self__, "is_access_constrained_by_redaction", is_access_constrained_by_redaction)
+        pulumi.set(__self__, "is_access_constrained_by_sql_firewall", is_access_constrained_by_sql_firewall)
+        pulumi.set(__self__, "is_access_constrained_by_virtual_private_database", is_access_constrained_by_virtual_private_database)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "privilege", privilege)
+        pulumi.set(__self__, "privilege_grantable", privilege_grantable)
+        pulumi.set(__self__, "privilege_type", privilege_type)
+        pulumi.set(__self__, "table_name", table_name)
+        pulumi.set(__self__, "table_schema", table_schema)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "view_name", view_name)
+        pulumi.set(__self__, "view_schema", view_schema)
+        pulumi.set(__self__, "view_text", view_text)
+
+    @property
+    @pulumi.getter(name="accessType")
+    def access_type(self) -> str:
+        """
+        The type of the access the user has on the table, there can be one or more from SELECT, UPDATE, INSERT or DELETE.
+        """
+        return pulumi.get(self, "access_type")
+
+    @property
+    @pulumi.getter(name="columnName")
+    def column_name(self) -> str:
+        """
+        If there are column level privileges on a table or view.
+        """
+        return pulumi.get(self, "column_name")
+
+    @property
+    @pulumi.getter(name="grantFromRole")
+    def grant_from_role(self) -> str:
+        """
+        This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the  role which is granted to the user though which the user has access to the table.
+        """
+        return pulumi.get(self, "grant_from_role")
+
+    @property
+    @pulumi.getter
+    def grantee(self) -> str:
+        """
+        Grantee is the user who can access the table or view
+        """
+        return pulumi.get(self, "grantee")
+
+    @property
+    @pulumi.getter
+    def grantor(self) -> str:
+        """
+        The user who granted the privilege.
+        """
+        return pulumi.get(self, "grantor")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedByDatabaseVault")
+    def is_access_constrained_by_database_vault(self) -> bool:
+        """
+        Indicates whether the table access is constrained via Oracle Database Vault.
+        """
+        return pulumi.get(self, "is_access_constrained_by_database_vault")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedByRealApplicationSecurity")
+    def is_access_constrained_by_real_application_security(self) -> bool:
+        """
+        Indicates whether the view access is constrained via Real Application Security.
+        """
+        return pulumi.get(self, "is_access_constrained_by_real_application_security")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedByRedaction")
+    def is_access_constrained_by_redaction(self) -> bool:
+        """
+        Indicates whether the view access is constrained via Oracle Data Redaction.
+        """
+        return pulumi.get(self, "is_access_constrained_by_redaction")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedBySqlFirewall")
+    def is_access_constrained_by_sql_firewall(self) -> bool:
+        """
+        Indicates whether the view access is constrained via Oracle Database SQL Firewall.
+        """
+        return pulumi.get(self, "is_access_constrained_by_sql_firewall")
+
+    @property
+    @pulumi.getter(name="isAccessConstrainedByVirtualPrivateDatabase")
+    def is_access_constrained_by_virtual_private_database(self) -> bool:
+        """
+        Indicates whether the view access is constrained via Virtual Private Database.
+        """
+        return pulumi.get(self, "is_access_constrained_by_virtual_private_database")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The unique key that identifies the table access report. It is numeric and unique within a security policy report.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def privilege(self) -> str:
+        """
+        The name of the privilege.
+        """
+        return pulumi.get(self, "privilege")
+
+    @property
+    @pulumi.getter(name="privilegeGrantable")
+    def privilege_grantable(self) -> str:
+        """
+        Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with  GRANT_OPTION or ADMIN_OPTION
+        """
+        return pulumi.get(self, "privilege_grantable")
+
+    @property
+    @pulumi.getter(name="privilegeType")
+    def privilege_type(self) -> str:
+        """
+        Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+        """
+        return pulumi.get(self, "privilege_type")
+
+    @property
+    @pulumi.getter(name="tableName")
+    def table_name(self) -> str:
+        """
+        The name of the database table the user has access to.
+        """
+        return pulumi.get(self, "table_name")
+
+    @property
+    @pulumi.getter(name="tableSchema")
+    def table_schema(self) -> str:
+        """
+        The name of the schema the table belongs to.
+        """
+        return pulumi.get(self, "table_schema")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="viewName")
+    def view_name(self) -> str:
+        """
+        The name of the view.
+        """
+        return pulumi.get(self, "view_name")
+
+    @property
+    @pulumi.getter(name="viewSchema")
+    def view_schema(self) -> str:
+        """
+        The name of the schema.
+        """
+        return pulumi.get(self, "view_schema")
+
+    @property
+    @pulumi.getter(name="viewText")
+    def view_text(self) -> str:
+        """
+        Definition of the view.
+        """
+        return pulumi.get(self, "view_text")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportDatabaseViewAccessEntriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportRoleGrantPathsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemResult']):
+        """
+        :param Sequence['GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArgs'] items: An array of grant path summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemResult']:
+        """
+        An array of grant path summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 depth_level: int,
+                 granted_role: str,
+                 grantee: str,
+                 key: str):
+        """
+        :param int depth_level: The grant depth level of the indirect grant. An indirectly granted role/privilege is granted to the user through another role. The depth level indicates how deep a privilege is within the grant hierarchy.
+        :param str granted_role: A filter to return only items that match the specified role.
+        :param str grantee: A filter to return only items that match the specified grantee.
+        :param str key: The unique key of a role grant.
+        """
+        pulumi.set(__self__, "depth_level", depth_level)
+        pulumi.set(__self__, "granted_role", granted_role)
+        pulumi.set(__self__, "grantee", grantee)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="depthLevel")
+    def depth_level(self) -> int:
+        """
+        The grant depth level of the indirect grant. An indirectly granted role/privilege is granted to the user through another role. The depth level indicates how deep a privilege is within the grant hierarchy.
+        """
+        return pulumi.get(self, "depth_level")
+
+    @property
+    @pulumi.getter(name="grantedRole")
+    def granted_role(self) -> str:
+        """
+        A filter to return only items that match the specified role.
+        """
+        return pulumi.get(self, "granted_role")
+
+    @property
+    @pulumi.getter
+    def grantee(self) -> str:
+        """
+        A filter to return only items that match the specified grantee.
+        """
+        return pulumi.get(self, "grantee")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The unique key of a role grant.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportsSecurityPolicyReportCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSecurityPolicyReportsSecurityPolicyReportCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSecurityPolicyReportsSecurityPolicyReportCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSecurityPolicyReportsSecurityPolicyReportCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 lifecycle_details: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 target_id: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: The description of the security policy report.
+        :param str display_name: A filter to return only resources that match the specified display name.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the security policy report.
+        :param str lifecycle_details: Details about the current state of the security policy report.
+        :param str state: The current state of the security policy report.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str target_id: A filter to return only items related to a specific target OCID.
+        :param str time_created: The date and time the security policy report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_updated: The date and time the security policy report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the security policy report.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the security policy report.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the security policy report.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the security policy report.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the security policy report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the security policy report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
 class GetSensitiveDataModelSensitiveObjectsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -18131,7 +23521,7 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the sensitive data model.
         :param bool is_app_defined_relation_discovery_enabled: Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-        :param bool is_include_all_schemas: Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
+        :param bool is_include_all_schemas: Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
         :param bool is_include_all_sensitive_types: Indicates if all the existing sensitive types should be used by data discovery jobs.If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
         :param bool is_sample_data_collection_enabled: Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         :param Sequence[str] schemas_for_discoveries: The schemas to be scanned by data discovery jobs.
@@ -18229,7 +23619,7 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
     @pulumi.getter(name="isIncludeAllSchemas")
     def is_include_all_schemas(self) -> bool:
         """
-        Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
+        Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
         """
         return pulumi.get(self, "is_include_all_schemas")
 
@@ -18941,6 +24331,885 @@ class GetTargetDatabaseDatabaseDetailResult(dict):
 
 
 @pulumi.output_type
+class GetTargetDatabasePeerTargetDatabaseResult(dict):
+    def __init__(__self__, *,
+                 database_details: Sequence['outputs.GetTargetDatabasePeerTargetDatabaseDatabaseDetailResult'],
+                 database_unique_name: str,
+                 dataguard_association_id: str,
+                 description: str,
+                 display_name: str,
+                 key: int,
+                 lifecycle_details: str,
+                 role: str,
+                 state: str,
+                 time_created: str,
+                 tls_configs: Sequence['outputs.GetTargetDatabasePeerTargetDatabaseTlsConfigResult']):
+        """
+        :param Sequence['GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs'] database_details: Details of the database for the registration in Data Safe.
+        :param str database_unique_name: Unique name of the database associated to the peer target database.
+        :param str dataguard_association_id: The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+        :param str description: The description of the peer target database in Data Safe.
+        :param str display_name: The display name of the peer target database in Data Safe.
+        :param int key: The secondary key assigned for the peer target database in Data Safe.
+        :param str lifecycle_details: Details about the current state of the peer target database in Data Safe.
+        :param str role: Role of the database associated to the peer target database.
+        :param str state: The current state of the target database in Data Safe.
+        :param str time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+        :param Sequence['GetTargetDatabasePeerTargetDatabaseTlsConfigArgs'] tls_configs: The details required to establish a TLS enabled connection.
+        """
+        pulumi.set(__self__, "database_details", database_details)
+        pulumi.set(__self__, "database_unique_name", database_unique_name)
+        pulumi.set(__self__, "dataguard_association_id", dataguard_association_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "tls_configs", tls_configs)
+
+    @property
+    @pulumi.getter(name="databaseDetails")
+    def database_details(self) -> Sequence['outputs.GetTargetDatabasePeerTargetDatabaseDatabaseDetailResult']:
+        """
+        Details of the database for the registration in Data Safe.
+        """
+        return pulumi.get(self, "database_details")
+
+    @property
+    @pulumi.getter(name="databaseUniqueName")
+    def database_unique_name(self) -> str:
+        """
+        Unique name of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "database_unique_name")
+
+    @property
+    @pulumi.getter(name="dataguardAssociationId")
+    def dataguard_association_id(self) -> str:
+        """
+        The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+        """
+        return pulumi.get(self, "dataguard_association_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The display name of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def key(self) -> int:
+        """
+        The secondary key assigned for the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        Role of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the target database in Data Safe.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="tlsConfigs")
+    def tls_configs(self) -> Sequence['outputs.GetTargetDatabasePeerTargetDatabaseTlsConfigResult']:
+        """
+        The details required to establish a TLS enabled connection.
+        """
+        return pulumi.get(self, "tls_configs")
+
+
+@pulumi.output_type
+class GetTargetDatabasePeerTargetDatabaseDatabaseDetailResult(dict):
+    def __init__(__self__, *,
+                 autonomous_database_id: str,
+                 database_type: str,
+                 db_system_id: str,
+                 infrastructure_type: str,
+                 instance_id: str,
+                 ip_addresses: Sequence[str],
+                 listener_port: int,
+                 service_name: str,
+                 vm_cluster_id: str):
+        """
+        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str database_type: The database type.
+        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param str infrastructure_type: The infrastructure type the database is running on.
+        :param str instance_id: The OCID of the compute instance on which the database is running.
+        :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param int listener_port: The port number of the database listener.
+        :param str service_name: The service name of the database registered as target database.
+        :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        """
+        pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "listener_port", listener_port)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseId")
+    def autonomous_database_id(self) -> str:
+        """
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> str:
+        """
+        The database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> str:
+        """
+        The OCID of the cloud database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> str:
+        """
+        The infrastructure type the database is running on.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> str:
+        """
+        The OCID of the compute instance on which the database is running.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Sequence[str]:
+        """
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> int:
+        """
+        The port number of the database listener.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        """
+        The service name of the database registered as target database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> str:
+        """
+        The OCID of the VM cluster in which the database is running.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class GetTargetDatabasePeerTargetDatabaseDetailResult(dict):
+    def __init__(__self__, *,
+                 database_details: Sequence['outputs.GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailResult'],
+                 dataguard_association_id: str,
+                 description: str,
+                 display_name: str,
+                 tls_configs: Sequence['outputs.GetTargetDatabasePeerTargetDatabaseDetailTlsConfigResult']):
+        """
+        :param Sequence['GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs'] database_details: Details of the database for the registration in Data Safe.
+        :param str dataguard_association_id: The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+        :param str description: The description of the peer target database in Data Safe.
+        :param str display_name: The display name of the peer target database in Data Safe.
+        :param Sequence['GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs'] tls_configs: The details required to establish a TLS enabled connection.
+        """
+        pulumi.set(__self__, "database_details", database_details)
+        pulumi.set(__self__, "dataguard_association_id", dataguard_association_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "tls_configs", tls_configs)
+
+    @property
+    @pulumi.getter(name="databaseDetails")
+    def database_details(self) -> Sequence['outputs.GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailResult']:
+        """
+        Details of the database for the registration in Data Safe.
+        """
+        return pulumi.get(self, "database_details")
+
+    @property
+    @pulumi.getter(name="dataguardAssociationId")
+    def dataguard_association_id(self) -> str:
+        """
+        The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+        """
+        return pulumi.get(self, "dataguard_association_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The display name of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="tlsConfigs")
+    def tls_configs(self) -> Sequence['outputs.GetTargetDatabasePeerTargetDatabaseDetailTlsConfigResult']:
+        """
+        The details required to establish a TLS enabled connection.
+        """
+        return pulumi.get(self, "tls_configs")
+
+
+@pulumi.output_type
+class GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailResult(dict):
+    def __init__(__self__, *,
+                 autonomous_database_id: str,
+                 database_type: str,
+                 db_system_id: str,
+                 infrastructure_type: str,
+                 instance_id: str,
+                 ip_addresses: Sequence[str],
+                 listener_port: int,
+                 service_name: str,
+                 vm_cluster_id: str):
+        """
+        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str database_type: The database type.
+        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param str infrastructure_type: The infrastructure type the database is running on.
+        :param str instance_id: The OCID of the compute instance on which the database is running.
+        :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param int listener_port: The port number of the database listener.
+        :param str service_name: The service name of the database registered as target database.
+        :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        """
+        pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "listener_port", listener_port)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseId")
+    def autonomous_database_id(self) -> str:
+        """
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> str:
+        """
+        The database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> str:
+        """
+        The OCID of the cloud database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> str:
+        """
+        The infrastructure type the database is running on.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> str:
+        """
+        The OCID of the compute instance on which the database is running.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Sequence[str]:
+        """
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> int:
+        """
+        The port number of the database listener.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        """
+        The service name of the database registered as target database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> str:
+        """
+        The OCID of the VM cluster in which the database is running.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class GetTargetDatabasePeerTargetDatabaseDetailTlsConfigResult(dict):
+    def __init__(__self__, *,
+                 certificate_store_type: str,
+                 key_store_content: str,
+                 status: str,
+                 store_password: str,
+                 trust_store_content: str):
+        """
+        :param str certificate_store_type: The format of the certificate store.
+        :param str key_store_content: Base64 encoded string of key store file content.
+        :param str status: Status to represent whether the database connection is TLS enabled or not.
+        :param str store_password: The password to read the trust store and key store files, if they are password protected.
+        :param str trust_store_content: Base64 encoded string of trust store file content.
+        """
+        pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+        pulumi.set(__self__, "key_store_content", key_store_content)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "store_password", store_password)
+        pulumi.set(__self__, "trust_store_content", trust_store_content)
+
+    @property
+    @pulumi.getter(name="certificateStoreType")
+    def certificate_store_type(self) -> str:
+        """
+        The format of the certificate store.
+        """
+        return pulumi.get(self, "certificate_store_type")
+
+    @property
+    @pulumi.getter(name="keyStoreContent")
+    def key_store_content(self) -> str:
+        """
+        Base64 encoded string of key store file content.
+        """
+        return pulumi.get(self, "key_store_content")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Status to represent whether the database connection is TLS enabled or not.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="storePassword")
+    def store_password(self) -> str:
+        """
+        The password to read the trust store and key store files, if they are password protected.
+        """
+        return pulumi.get(self, "store_password")
+
+    @property
+    @pulumi.getter(name="trustStoreContent")
+    def trust_store_content(self) -> str:
+        """
+        Base64 encoded string of trust store file content.
+        """
+        return pulumi.get(self, "trust_store_content")
+
+
+@pulumi.output_type
+class GetTargetDatabasePeerTargetDatabaseTlsConfigResult(dict):
+    def __init__(__self__, *,
+                 certificate_store_type: str,
+                 key_store_content: str,
+                 status: str,
+                 store_password: str,
+                 trust_store_content: str):
+        """
+        :param str certificate_store_type: The format of the certificate store.
+        :param str key_store_content: Base64 encoded string of key store file content.
+        :param str status: Status to represent whether the database connection is TLS enabled or not.
+        :param str store_password: The password to read the trust store and key store files, if they are password protected.
+        :param str trust_store_content: Base64 encoded string of trust store file content.
+        """
+        pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+        pulumi.set(__self__, "key_store_content", key_store_content)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "store_password", store_password)
+        pulumi.set(__self__, "trust_store_content", trust_store_content)
+
+    @property
+    @pulumi.getter(name="certificateStoreType")
+    def certificate_store_type(self) -> str:
+        """
+        The format of the certificate store.
+        """
+        return pulumi.get(self, "certificate_store_type")
+
+    @property
+    @pulumi.getter(name="keyStoreContent")
+    def key_store_content(self) -> str:
+        """
+        Base64 encoded string of key store file content.
+        """
+        return pulumi.get(self, "key_store_content")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Status to represent whether the database connection is TLS enabled or not.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="storePassword")
+    def store_password(self) -> str:
+        """
+        The password to read the trust store and key store files, if they are password protected.
+        """
+        return pulumi.get(self, "store_password")
+
+    @property
+    @pulumi.getter(name="trustStoreContent")
+    def trust_store_content(self) -> str:
+        """
+        Base64 encoded string of trust store file content.
+        """
+        return pulumi.get(self, "trust_store_content")
+
+
+@pulumi.output_type
+class GetTargetDatabasePeerTargetDatabasesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 items: Sequence['outputs.GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemResult']):
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 database_details: 'outputs.GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsResult',
+                 database_unique_name: str,
+                 dataguard_association_id: str,
+                 description: str,
+                 display_name: str,
+                 key: int,
+                 lifecycle_details: str,
+                 role: str,
+                 state: str,
+                 target_database_id: str,
+                 time_created: str,
+                 tls_config: 'outputs.GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigResult'):
+        """
+        :param 'GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs' database_details: Details of the database for the registration in Data Safe.
+        :param str database_unique_name: Unique name of the database associated to the peer target database.
+        :param str dataguard_association_id: The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+        :param str description: The description of the peer target database in Data Safe.
+        :param str display_name: The display name of the peer target database in Data Safe.
+        :param int key: The secondary key assigned for the peer target database in Data Safe.
+        :param str lifecycle_details: Details about the current state of the peer target database in Data Safe.
+        :param str role: Role of the database associated to the peer target database.
+        :param str state: The current state of the peer target database in Data Safe.
+        :param str target_database_id: The OCID of the Data Safe target database.
+        :param str time_created: The date and time of the peer target database registration in Data Safe.
+        :param 'GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs' tls_config: The details required to establish a TLS enabled connection.
+        """
+        pulumi.set(__self__, "database_details", database_details)
+        pulumi.set(__self__, "database_unique_name", database_unique_name)
+        pulumi.set(__self__, "dataguard_association_id", dataguard_association_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "target_database_id", target_database_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "tls_config", tls_config)
+
+    @property
+    @pulumi.getter(name="databaseDetails")
+    def database_details(self) -> 'outputs.GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsResult':
+        """
+        Details of the database for the registration in Data Safe.
+        """
+        return pulumi.get(self, "database_details")
+
+    @property
+    @pulumi.getter(name="databaseUniqueName")
+    def database_unique_name(self) -> str:
+        """
+        Unique name of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "database_unique_name")
+
+    @property
+    @pulumi.getter(name="dataguardAssociationId")
+    def dataguard_association_id(self) -> str:
+        """
+        The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+        """
+        return pulumi.get(self, "dataguard_association_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The display name of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def key(self) -> int:
+        """
+        The secondary key assigned for the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        Role of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="targetDatabaseId")
+    def target_database_id(self) -> str:
+        """
+        The OCID of the Data Safe target database.
+        """
+        return pulumi.get(self, "target_database_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time of the peer target database registration in Data Safe.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="tlsConfig")
+    def tls_config(self) -> 'outputs.GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigResult':
+        """
+        The details required to establish a TLS enabled connection.
+        """
+        return pulumi.get(self, "tls_config")
+
+
+@pulumi.output_type
+class GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsResult(dict):
+    def __init__(__self__, *,
+                 autonomous_database_id: str,
+                 database_type: str,
+                 db_system_id: str,
+                 infrastructure_type: str,
+                 instance_id: str,
+                 ip_addresses: Sequence[str],
+                 listener_port: int,
+                 service_name: str,
+                 vm_cluster_id: str):
+        """
+        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str database_type: The database type.
+        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param str infrastructure_type: The infrastructure type the database is running on.
+        :param str instance_id: The OCID of the compute instance on which the database is running.
+        :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param int listener_port: The port number of the database listener.
+        :param str service_name: The service name of the database registered as target database.
+        :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        """
+        pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "listener_port", listener_port)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseId")
+    def autonomous_database_id(self) -> str:
+        """
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> str:
+        """
+        The database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> str:
+        """
+        The OCID of the cloud database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> str:
+        """
+        The infrastructure type the database is running on.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> str:
+        """
+        The OCID of the compute instance on which the database is running.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Sequence[str]:
+        """
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> int:
+        """
+        The port number of the database listener.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        """
+        The service name of the database registered as target database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> str:
+        """
+        The OCID of the VM cluster in which the database is running.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigResult(dict):
+    def __init__(__self__, *,
+                 certificate_store_type: str,
+                 key_store_content: str,
+                 status: str,
+                 store_password: str,
+                 trust_store_content: str):
+        """
+        :param str certificate_store_type: The format of the certificate store.
+        :param str key_store_content: Base64 encoded string of key store file content.
+        :param str status: Status to represent whether the database connection is TLS enabled or not.
+        :param str store_password: The password to read the trust store and key store files, if they are password protected.
+        :param str trust_store_content: Base64 encoded string of trust store file content.
+        """
+        pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+        pulumi.set(__self__, "key_store_content", key_store_content)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "store_password", store_password)
+        pulumi.set(__self__, "trust_store_content", trust_store_content)
+
+    @property
+    @pulumi.getter(name="certificateStoreType")
+    def certificate_store_type(self) -> str:
+        """
+        The format of the certificate store.
+        """
+        return pulumi.get(self, "certificate_store_type")
+
+    @property
+    @pulumi.getter(name="keyStoreContent")
+    def key_store_content(self) -> str:
+        """
+        Base64 encoded string of key store file content.
+        """
+        return pulumi.get(self, "key_store_content")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Status to represent whether the database connection is TLS enabled or not.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="storePassword")
+    def store_password(self) -> str:
+        """
+        The password to read the trust store and key store files, if they are password protected.
+        """
+        return pulumi.get(self, "store_password")
+
+    @property
+    @pulumi.getter(name="trustStoreContent")
+    def trust_store_content(self) -> str:
+        """
+        Base64 encoded string of trust store file content.
+        """
+        return pulumi.get(self, "trust_store_content")
+
+
+@pulumi.output_type
 class GetTargetDatabaseRoleFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -19469,6 +25738,8 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  lifecycle_details: str,
+                 peer_target_database_details: Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailResult'],
+                 peer_target_databases: Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseResult'],
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
@@ -19481,11 +25752,12 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
         :param Sequence['GetTargetDatabasesTargetDatabaseCredentialArgs'] credentials: The database credentials required for Data Safe to connect to the database.
         :param Sequence['GetTargetDatabasesTargetDatabaseDatabaseDetailArgs'] database_details: Details of the database for the registration in Data Safe.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param str description: The description of the target database in Data Safe.
+        :param str description: The description of the peer target database in Data Safe.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the Data Safe target database.
-        :param str lifecycle_details: Details about the current state of the target database in Data Safe.
+        :param str lifecycle_details: Details about the current state of the peer target database in Data Safe.
+        :param Sequence['GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs'] peer_target_databases: The OCIDs of associated resources like Database, Data Safe private endpoint etc.
         :param str state: A filter to return only target databases that match the specified lifecycle state.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
@@ -19503,6 +25775,8 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "peer_target_database_details", peer_target_database_details)
+        pulumi.set(__self__, "peer_target_databases", peer_target_databases)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -19561,7 +25835,7 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        The description of the target database in Data Safe.
+        The description of the peer target database in Data Safe.
         """
         return pulumi.get(self, "description")
 
@@ -19593,9 +25867,22 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        Details about the current state of the target database in Data Safe.
+        Details about the current state of the peer target database in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="peerTargetDatabaseDetails")
+    def peer_target_database_details(self) -> Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailResult']:
+        return pulumi.get(self, "peer_target_database_details")
+
+    @property
+    @pulumi.getter(name="peerTargetDatabases")
+    def peer_target_databases(self) -> Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseResult']:
+        """
+        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        """
+        return pulumi.get(self, "peer_target_databases")
 
     @property
     @pulumi.getter
@@ -19815,6 +26102,532 @@ class GetTargetDatabasesTargetDatabaseDatabaseDetailResult(dict):
         The OCID of the VM cluster in which the database is running.
         """
         return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class GetTargetDatabasesTargetDatabasePeerTargetDatabaseResult(dict):
+    def __init__(__self__, *,
+                 database_details: Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailResult'],
+                 database_unique_name: str,
+                 dataguard_association_id: str,
+                 description: str,
+                 display_name: str,
+                 key: int,
+                 lifecycle_details: str,
+                 role: str,
+                 state: str,
+                 time_created: str,
+                 tls_configs: Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigResult']):
+        """
+        :param Sequence['GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs'] database_details: Details of the database for the registration in Data Safe.
+        :param str database_unique_name: Unique name of the database associated to the peer target database.
+        :param str dataguard_association_id: The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+        :param str description: The description of the peer target database in Data Safe.
+        :param str display_name: A filter to return only resources that match the specified display name.
+        :param int key: The secondary key assigned for the peer target database in Data Safe.
+        :param str lifecycle_details: Details about the current state of the peer target database in Data Safe.
+        :param str role: Role of the database associated to the peer target database.
+        :param str state: A filter to return only target databases that match the specified lifecycle state.
+        :param str time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+        :param Sequence['GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs'] tls_configs: The details required to establish a TLS enabled connection.
+        """
+        pulumi.set(__self__, "database_details", database_details)
+        pulumi.set(__self__, "database_unique_name", database_unique_name)
+        pulumi.set(__self__, "dataguard_association_id", dataguard_association_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "tls_configs", tls_configs)
+
+    @property
+    @pulumi.getter(name="databaseDetails")
+    def database_details(self) -> Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailResult']:
+        """
+        Details of the database for the registration in Data Safe.
+        """
+        return pulumi.get(self, "database_details")
+
+    @property
+    @pulumi.getter(name="databaseUniqueName")
+    def database_unique_name(self) -> str:
+        """
+        Unique name of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "database_unique_name")
+
+    @property
+    @pulumi.getter(name="dataguardAssociationId")
+    def dataguard_association_id(self) -> str:
+        """
+        The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+        """
+        return pulumi.get(self, "dataguard_association_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def key(self) -> int:
+        """
+        The secondary key assigned for the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        Role of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only target databases that match the specified lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="tlsConfigs")
+    def tls_configs(self) -> Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigResult']:
+        """
+        The details required to establish a TLS enabled connection.
+        """
+        return pulumi.get(self, "tls_configs")
+
+
+@pulumi.output_type
+class GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailResult(dict):
+    def __init__(__self__, *,
+                 autonomous_database_id: str,
+                 database_type: str,
+                 db_system_id: str,
+                 infrastructure_type: str,
+                 instance_id: str,
+                 ip_addresses: Sequence[str],
+                 listener_port: int,
+                 service_name: str,
+                 vm_cluster_id: str):
+        """
+        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str database_type: A filter to return only target databases that match the specified database type.
+        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param str infrastructure_type: A filter to return only target databases that match the specified infrastructure type.
+        :param str instance_id: The OCID of the compute instance on which the database is running.
+        :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param int listener_port: The port number of the database listener.
+        :param str service_name: The service name of the database registered as target database.
+        :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        """
+        pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "listener_port", listener_port)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseId")
+    def autonomous_database_id(self) -> str:
+        """
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> str:
+        """
+        A filter to return only target databases that match the specified database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> str:
+        """
+        The OCID of the cloud database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> str:
+        """
+        A filter to return only target databases that match the specified infrastructure type.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> str:
+        """
+        The OCID of the compute instance on which the database is running.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Sequence[str]:
+        """
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> int:
+        """
+        The port number of the database listener.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        """
+        The service name of the database registered as target database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> str:
+        """
+        The OCID of the VM cluster in which the database is running.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailResult(dict):
+    def __init__(__self__, *,
+                 database_details: Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailResult'],
+                 dataguard_association_id: str,
+                 description: str,
+                 display_name: str,
+                 tls_configs: Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigResult']):
+        """
+        :param Sequence['GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs'] database_details: Details of the database for the registration in Data Safe.
+        :param str dataguard_association_id: The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+        :param str description: The description of the peer target database in Data Safe.
+        :param str display_name: A filter to return only resources that match the specified display name.
+        :param Sequence['GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs'] tls_configs: The details required to establish a TLS enabled connection.
+        """
+        pulumi.set(__self__, "database_details", database_details)
+        pulumi.set(__self__, "dataguard_association_id", dataguard_association_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "tls_configs", tls_configs)
+
+    @property
+    @pulumi.getter(name="databaseDetails")
+    def database_details(self) -> Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailResult']:
+        """
+        Details of the database for the registration in Data Safe.
+        """
+        return pulumi.get(self, "database_details")
+
+    @property
+    @pulumi.getter(name="dataguardAssociationId")
+    def dataguard_association_id(self) -> str:
+        """
+        The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+        """
+        return pulumi.get(self, "dataguard_association_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="tlsConfigs")
+    def tls_configs(self) -> Sequence['outputs.GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigResult']:
+        """
+        The details required to establish a TLS enabled connection.
+        """
+        return pulumi.get(self, "tls_configs")
+
+
+@pulumi.output_type
+class GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailResult(dict):
+    def __init__(__self__, *,
+                 autonomous_database_id: str,
+                 database_type: str,
+                 db_system_id: str,
+                 infrastructure_type: str,
+                 instance_id: str,
+                 ip_addresses: Sequence[str],
+                 listener_port: int,
+                 service_name: str,
+                 vm_cluster_id: str):
+        """
+        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str database_type: A filter to return only target databases that match the specified database type.
+        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param str infrastructure_type: A filter to return only target databases that match the specified infrastructure type.
+        :param str instance_id: The OCID of the compute instance on which the database is running.
+        :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param int listener_port: The port number of the database listener.
+        :param str service_name: The service name of the database registered as target database.
+        :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        """
+        pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "listener_port", listener_port)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseId")
+    def autonomous_database_id(self) -> str:
+        """
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> str:
+        """
+        A filter to return only target databases that match the specified database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> str:
+        """
+        The OCID of the cloud database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> str:
+        """
+        A filter to return only target databases that match the specified infrastructure type.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> str:
+        """
+        The OCID of the compute instance on which the database is running.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Sequence[str]:
+        """
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> int:
+        """
+        The port number of the database listener.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        """
+        The service name of the database registered as target database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> str:
+        """
+        The OCID of the VM cluster in which the database is running.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigResult(dict):
+    def __init__(__self__, *,
+                 certificate_store_type: str,
+                 key_store_content: str,
+                 status: str,
+                 store_password: str,
+                 trust_store_content: str):
+        """
+        :param str certificate_store_type: The format of the certificate store.
+        :param str key_store_content: Base64 encoded string of key store file content.
+        :param str status: Status to represent whether the database connection is TLS enabled or not.
+        :param str store_password: The password to read the trust store and key store files, if they are password protected.
+        :param str trust_store_content: Base64 encoded string of trust store file content.
+        """
+        pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+        pulumi.set(__self__, "key_store_content", key_store_content)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "store_password", store_password)
+        pulumi.set(__self__, "trust_store_content", trust_store_content)
+
+    @property
+    @pulumi.getter(name="certificateStoreType")
+    def certificate_store_type(self) -> str:
+        """
+        The format of the certificate store.
+        """
+        return pulumi.get(self, "certificate_store_type")
+
+    @property
+    @pulumi.getter(name="keyStoreContent")
+    def key_store_content(self) -> str:
+        """
+        Base64 encoded string of key store file content.
+        """
+        return pulumi.get(self, "key_store_content")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Status to represent whether the database connection is TLS enabled or not.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="storePassword")
+    def store_password(self) -> str:
+        """
+        The password to read the trust store and key store files, if they are password protected.
+        """
+        return pulumi.get(self, "store_password")
+
+    @property
+    @pulumi.getter(name="trustStoreContent")
+    def trust_store_content(self) -> str:
+        """
+        Base64 encoded string of trust store file content.
+        """
+        return pulumi.get(self, "trust_store_content")
+
+
+@pulumi.output_type
+class GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigResult(dict):
+    def __init__(__self__, *,
+                 certificate_store_type: str,
+                 key_store_content: str,
+                 status: str,
+                 store_password: str,
+                 trust_store_content: str):
+        """
+        :param str certificate_store_type: The format of the certificate store.
+        :param str key_store_content: Base64 encoded string of key store file content.
+        :param str status: Status to represent whether the database connection is TLS enabled or not.
+        :param str store_password: The password to read the trust store and key store files, if they are password protected.
+        :param str trust_store_content: Base64 encoded string of trust store file content.
+        """
+        pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+        pulumi.set(__self__, "key_store_content", key_store_content)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "store_password", store_password)
+        pulumi.set(__self__, "trust_store_content", trust_store_content)
+
+    @property
+    @pulumi.getter(name="certificateStoreType")
+    def certificate_store_type(self) -> str:
+        """
+        The format of the certificate store.
+        """
+        return pulumi.get(self, "certificate_store_type")
+
+    @property
+    @pulumi.getter(name="keyStoreContent")
+    def key_store_content(self) -> str:
+        """
+        Base64 encoded string of key store file content.
+        """
+        return pulumi.get(self, "key_store_content")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Status to represent whether the database connection is TLS enabled or not.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="storePassword")
+    def store_password(self) -> str:
+        """
+        The password to read the trust store and key store files, if they are password protected.
+        """
+        return pulumi.get(self, "store_password")
+
+    @property
+    @pulumi.getter(name="trustStoreContent")
+    def trust_store_content(self) -> str:
+        """
+        Base64 encoded string of trust store file content.
+        """
+        return pulumi.get(self, "trust_store_content")
 
 
 @pulumi.output_type
@@ -20138,7 +26951,7 @@ class GetUserAssessmentProfilesProfileResult(dict):
         :param str sessions_per_user: Specify the number of concurrent sessions to which you want to limit the user.
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param str user_assessment_id: The OCID of the user assessment.
-        :param int user_count: The number of users having a given profile.
+        :param int user_count: The number of users that have a given profile.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "composite_limit", composite_limit)
@@ -20380,9 +27193,83 @@ class GetUserAssessmentProfilesProfileResult(dict):
     @pulumi.getter(name="userCount")
     def user_count(self) -> int:
         """
-        The number of users having a given profile.
+        The number of users that have a given profile.
         """
         return pulumi.get(self, "user_count")
+
+
+@pulumi.output_type
+class GetUserAssessmentUserAccessAnalyticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemResult']):
+        """
+        :param Sequence['GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArgs'] items: An array of user access analytics summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemResult']:
+        """
+        An array of user access analytics summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 user_assessment_user_access_analytic_count: str,
+                 user_name: str):
+        """
+        :param str user_assessment_user_access_analytic_count: The total count of schemas a user can access
+        :param str user_name: Name of the user.
+        """
+        pulumi.set(__self__, "user_assessment_user_access_analytic_count", user_assessment_user_access_analytic_count)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="userAssessmentUserAccessAnalyticCount")
+    def user_assessment_user_access_analytic_count(self) -> str:
+        """
+        The total count of schemas a user can access
+        """
+        return pulumi.get(self, "user_assessment_user_access_analytic_count")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> str:
+        """
+        Name of the user.
+        """
+        return pulumi.get(self, "user_name")
 
 
 @pulumi.output_type
@@ -20468,8 +27355,10 @@ class GetUserAssessmentUsersUserResult(dict):
     def __init__(__self__, *,
                  account_status: str,
                  admin_roles: Sequence[str],
+                 are_all_schemas_accessible: bool,
                  authentication_type: str,
                  key: str,
+                 schema_lists: Sequence[str],
                  target_id: str,
                  time_last_login: str,
                  time_password_changed: str,
@@ -20481,12 +27370,14 @@ class GetUserAssessmentUsersUserResult(dict):
         """
         :param str account_status: A filter to return only items that match the specified account status.
         :param Sequence[str] admin_roles: The admin roles granted to the user.
+        :param bool are_all_schemas_accessible: A filter to return only items that match the criteria that all schemas can be accessed by a user.
         :param str authentication_type: A filter to return only items that match the specified authentication type.
         :param str key: The unique user key. This is a system-generated identifier. Use ListUsers to get the user key for a user.
+        :param Sequence[str] schema_lists: A filter to return items that contain the specified schema list.
         :param str target_id: A filter to return only items related to a specific target OCID.
-        :param str time_last_login: The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_password_changed: The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_user_created: The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_last_login: The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_password_changed: The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_user_created: The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str user_category: A filter to return only items that match the specified user category.
         :param str user_name: A filter to return only items that match the specified user name.
         :param str user_profile: A filter to return only items that match the specified user profile.
@@ -20494,8 +27385,10 @@ class GetUserAssessmentUsersUserResult(dict):
         """
         pulumi.set(__self__, "account_status", account_status)
         pulumi.set(__self__, "admin_roles", admin_roles)
+        pulumi.set(__self__, "are_all_schemas_accessible", are_all_schemas_accessible)
         pulumi.set(__self__, "authentication_type", authentication_type)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "schema_lists", schema_lists)
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "time_last_login", time_last_login)
         pulumi.set(__self__, "time_password_changed", time_password_changed)
@@ -20522,6 +27415,14 @@ class GetUserAssessmentUsersUserResult(dict):
         return pulumi.get(self, "admin_roles")
 
     @property
+    @pulumi.getter(name="areAllSchemasAccessible")
+    def are_all_schemas_accessible(self) -> bool:
+        """
+        A filter to return only items that match the criteria that all schemas can be accessed by a user.
+        """
+        return pulumi.get(self, "are_all_schemas_accessible")
+
+    @property
     @pulumi.getter(name="authenticationType")
     def authentication_type(self) -> str:
         """
@@ -20538,6 +27439,14 @@ class GetUserAssessmentUsersUserResult(dict):
         return pulumi.get(self, "key")
 
     @property
+    @pulumi.getter(name="schemaLists")
+    def schema_lists(self) -> Sequence[str]:
+        """
+        A filter to return items that contain the specified schema list.
+        """
+        return pulumi.get(self, "schema_lists")
+
+    @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> str:
         """
@@ -20549,7 +27458,7 @@ class GetUserAssessmentUsersUserResult(dict):
     @pulumi.getter(name="timeLastLogin")
     def time_last_login(self) -> str:
         """
-        The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_last_login")
 
@@ -20557,7 +27466,7 @@ class GetUserAssessmentUsersUserResult(dict):
     @pulumi.getter(name="timePasswordChanged")
     def time_password_changed(self) -> str:
         """
-        The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_password_changed")
 
@@ -20565,7 +27474,7 @@ class GetUserAssessmentUsersUserResult(dict):
     @pulumi.getter(name="timeUserCreated")
     def time_user_created(self) -> str:
         """
-        The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_user_created")
 
@@ -20708,9 +27617,9 @@ class GetUserAssessmentsUserAssessmentResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param Sequence[str] target_ids: Array of database target OCIDs.
-        :param str time_created: The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_last_assessed: The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_updated: The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_created: The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_last_assessed: The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_updated: The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str triggered_by: A filter to return user assessments that were created by either the system or by a user only.
         :param str type: A filter to return only items that match the specified assessment type.
         """
@@ -20895,7 +27804,7 @@ class GetUserAssessmentsUserAssessmentResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -20903,7 +27812,7 @@ class GetUserAssessmentsUserAssessmentResult(dict):
     @pulumi.getter(name="timeLastAssessed")
     def time_last_assessed(self) -> str:
         """
-        The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_last_assessed")
 
@@ -20911,7 +27820,7 @@ class GetUserAssessmentsUserAssessmentResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 

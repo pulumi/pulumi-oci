@@ -12,7 +12,7 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
 
     public sealed class NetworkFirewallPolicySecurityRuleConditionArgs : global::Pulumi.ResourceArgs
     {
-        [Input("applications", required: true)]
+        [Input("applications")]
         private InputList<string>? _applications;
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
             set => _applications = value;
         }
 
-        [Input("destinationAddresses", required: true)]
+        [Input("destinationAddresses")]
         private InputList<string>? _destinationAddresses;
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
             set => _destinationAddresses = value;
         }
 
-        [Input("services", required: true)]
+        [Input("services")]
         private InputList<string>? _services;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
             set => _services = value;
         }
 
-        [Input("sourceAddresses", required: true)]
+        [Input("sourceAddresses")]
         private InputList<string>? _sourceAddresses;
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
             set => _sourceAddresses = value;
         }
 
-        [Input("urls", required: true)]
+        [Input("urls")]
         private InputList<string>? _urls;
 
         /// <summary>

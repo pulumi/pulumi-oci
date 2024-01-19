@@ -112,13 +112,13 @@ namespace Pulumi.Oci.Monitoring
         public string AlarmId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2019-01-01T01:00:00.789Z`
+        /// A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2023-01-01T01:00:00.789Z`
         /// </summary>
         [Input("timestampGreaterThanOrEqualTo")]
         public string? TimestampGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
-        /// A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2019-01-02T01:00:00.789Z`
+        /// A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2023-01-02T01:00:00.789Z`
         /// </summary>
         [Input("timestampLessThan")]
         public string? TimestampLessThan { get; set; }
@@ -144,13 +144,13 @@ namespace Pulumi.Oci.Monitoring
         public Input<string> AlarmId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2019-01-01T01:00:00.789Z`
+        /// A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2023-01-01T01:00:00.789Z`
         /// </summary>
         [Input("timestampGreaterThanOrEqualTo")]
         public Input<string>? TimestampGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
-        /// A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2019-01-02T01:00:00.789Z`
+        /// A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2023-01-02T01:00:00.789Z`
         /// </summary>
         [Input("timestampLessThan")]
         public Input<string>? TimestampLessThan { get; set; }

@@ -18,14 +18,14 @@ public final class SetSecurityAssessmentBaselineArgs extends com.pulumi.resource
     public static final SetSecurityAssessmentBaselineArgs Empty = new SetSecurityAssessmentBaselineArgs();
 
     /**
-     * List of security assessment OCIDs that need to be updated while setting the baseline.
+     * The list of OCIDs for the security assessments that need to be updated while setting the baseline.
      * 
      */
     @Import(name="assessmentIds")
     private @Nullable Output<List<String>> assessmentIds;
 
     /**
-     * @return List of security assessment OCIDs that need to be updated while setting the baseline.
+     * @return The list of OCIDs for the security assessments that need to be updated while setting the baseline.
      * 
      */
     public Optional<Output<List<String>>> assessmentIds() {
@@ -79,7 +79,7 @@ public final class SetSecurityAssessmentBaselineArgs extends com.pulumi.resource
         }
 
         /**
-         * @param assessmentIds List of security assessment OCIDs that need to be updated while setting the baseline.
+         * @param assessmentIds The list of OCIDs for the security assessments that need to be updated while setting the baseline.
          * 
          * @return builder
          * 
@@ -90,7 +90,7 @@ public final class SetSecurityAssessmentBaselineArgs extends com.pulumi.resource
         }
 
         /**
-         * @param assessmentIds List of security assessment OCIDs that need to be updated while setting the baseline.
+         * @param assessmentIds The list of OCIDs for the security assessments that need to be updated while setting the baseline.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class SetSecurityAssessmentBaselineArgs extends com.pulumi.resource
         }
 
         /**
-         * @param assessmentIds List of security assessment OCIDs that need to be updated while setting the baseline.
+         * @param assessmentIds The list of OCIDs for the security assessments that need to be updated while setting the baseline.
          * 
          * @return builder
          * 

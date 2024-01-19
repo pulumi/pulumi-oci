@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *         exclusions: _var.remediation_recipe_detect_configuration_exclusions,
  *         maxPermissibleCvssV2score: _var.remediation_recipe_detect_configuration_max_permissible_cvss_v2score,
  *         maxPermissibleCvssV3score: _var.remediation_recipe_detect_configuration_max_permissible_cvss_v3score,
+ *         maxPermissibleSeverity: _var.remediation_recipe_detect_configuration_max_permissible_severity,
  *         upgradePolicy: _var.remediation_recipe_detect_configuration_upgrade_policy,
  *     },
  *     isRunTriggeredOnKbChange: _var.remediation_recipe_is_run_triggered_on_kb_change,

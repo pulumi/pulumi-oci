@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Adm
     ///             Exclusions = @var.Remediation_recipe_detect_configuration_exclusions,
     ///             MaxPermissibleCvssV2score = @var.Remediation_recipe_detect_configuration_max_permissible_cvss_v2score,
     ///             MaxPermissibleCvssV3score = @var.Remediation_recipe_detect_configuration_max_permissible_cvss_v3score,
+    ///             MaxPermissibleSeverity = @var.Remediation_recipe_detect_configuration_max_permissible_severity,
     ///             UpgradePolicy = @var.Remediation_recipe_detect_configuration_upgrade_policy,
     ///         },
     ///         IsRunTriggeredOnKbChange = @var.Remediation_recipe_is_run_triggered_on_kb_change,

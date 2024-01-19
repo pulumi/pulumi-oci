@@ -118,11 +118,11 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
 @pulumi.input_type
 class NetworkFirewallPolicySecurityRuleConditionArgs:
     def __init__(__self__, *,
-                 applications: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 destination_addresses: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 services: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 source_addresses: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 urls: pulumi.Input[Sequence[pulumi.Input[str]]]):
+                 applications: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 urls: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[str]]] applications: (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
@@ -130,70 +130,75 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] source_addresses: (Updatable) An array of address list names to be evaluated against the traffic source address.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] urls: (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
         """
-        pulumi.set(__self__, "applications", applications)
-        pulumi.set(__self__, "destination_addresses", destination_addresses)
-        pulumi.set(__self__, "services", services)
-        pulumi.set(__self__, "source_addresses", source_addresses)
-        pulumi.set(__self__, "urls", urls)
+        if applications is not None:
+            pulumi.set(__self__, "applications", applications)
+        if destination_addresses is not None:
+            pulumi.set(__self__, "destination_addresses", destination_addresses)
+        if services is not None:
+            pulumi.set(__self__, "services", services)
+        if source_addresses is not None:
+            pulumi.set(__self__, "source_addresses", source_addresses)
+        if urls is not None:
+            pulumi.set(__self__, "urls", urls)
 
     @property
     @pulumi.getter
-    def applications(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+    def applications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
         """
         return pulumi.get(self, "applications")
 
     @applications.setter
-    def applications(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+    def applications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "applications", value)
 
     @property
     @pulumi.getter(name="destinationAddresses")
-    def destination_addresses(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+    def destination_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) An array of address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
     @destination_addresses.setter
-    def destination_addresses(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+    def destination_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "destination_addresses", value)
 
     @property
     @pulumi.getter
-    def services(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+    def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
         """
         return pulumi.get(self, "services")
 
     @services.setter
-    def services(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+    def services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "services", value)
 
     @property
     @pulumi.getter(name="sourceAddresses")
-    def source_addresses(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+    def source_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) An array of address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
     @source_addresses.setter
-    def source_addresses(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+    def source_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "source_addresses", value)
 
     @property
     @pulumi.getter
-    def urls(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+    def urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
         """
         return pulumi.get(self, "urls")
 
     @urls.setter
-    def urls(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+    def urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "urls", value)
 
 

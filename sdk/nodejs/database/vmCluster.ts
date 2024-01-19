@@ -41,6 +41,7 @@ import * as utilities from "../utilities";
  *     isSparseDiskgroupEnabled: _var.vm_cluster_is_sparse_diskgroup_enabled,
  *     licenseModel: _var.vm_cluster_license_model,
  *     memorySizeInGbs: _var.vm_cluster_memory_size_in_gbs,
+ *     systemVersion: _var.vm_cluster_system_version,
  *     timeZone: _var.vm_cluster_time_zone,
  * });
  * ```
@@ -175,7 +176,7 @@ export class VmCluster extends pulumi.CustomResource {
     /**
      * Operating system version of the image.
      */
-    public /*out*/ readonly systemVersion!: pulumi.Output<string>;
+    public readonly systemVersion!: pulumi.Output<string>;
     /**
      * The date and time that the VM cluster was created.
      */
@@ -276,6 +277,7 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["memorySizeInGbs"] = args ? args.memorySizeInGbs : undefined;
             resourceInputs["ocpuCount"] = args ? args.ocpuCount : undefined;
             resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
+            resourceInputs["systemVersion"] = args ? args.systemVersion : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["vmClusterNetworkId"] = args ? args.vmClusterNetworkId : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
@@ -285,7 +287,6 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["ocpusEnabled"] = undefined /*out*/;
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
-            resourceInputs["systemVersion"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -480,6 +481,10 @@ export interface VmClusterArgs {
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
      */
     sshPublicKeys: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Operating system version of the image.
+     */
+    systemVersion?: pulumi.Input<string>;
     /**
      * The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */

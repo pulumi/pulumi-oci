@@ -27,9 +27,11 @@ type GetSecurityAssessmentFindingArgs struct {
 	CompartmentIdInSubtree *bool                                `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetSecurityAssessmentFindingFilter `pulumi:"filters"`
 	FindingKey             *string                              `pulumi:"findingKey"`
+	IsTopFinding           *bool                                `pulumi:"isTopFinding"`
 	References             *string                              `pulumi:"references"`
 	SecurityAssessmentId   string                               `pulumi:"securityAssessmentId"`
 	Severity               *string                              `pulumi:"severity"`
+	State                  *string                              `pulumi:"state"`
 }
 
 // A collection of values returned by getSecurityAssessmentFinding.
@@ -41,9 +43,11 @@ type GetSecurityAssessmentFindingResult struct {
 	Findings               []GetSecurityAssessmentFindingFinding `pulumi:"findings"`
 	// The provider-assigned unique ID for this managed resource.
 	Id                   string  `pulumi:"id"`
+	IsTopFinding         *bool   `pulumi:"isTopFinding"`
 	References           *string `pulumi:"references"`
 	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
 	Severity             *string `pulumi:"severity"`
+	State                *string `pulumi:"state"`
 }
 
 func GetSecurityAssessmentFindingOutput(ctx *pulumi.Context, args GetSecurityAssessmentFindingOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentFindingResultOutput {
@@ -65,9 +69,11 @@ type GetSecurityAssessmentFindingOutputArgs struct {
 	CompartmentIdInSubtree pulumi.BoolPtrInput                          `pulumi:"compartmentIdInSubtree"`
 	Filters                GetSecurityAssessmentFindingFilterArrayInput `pulumi:"filters"`
 	FindingKey             pulumi.StringPtrInput                        `pulumi:"findingKey"`
+	IsTopFinding           pulumi.BoolPtrInput                          `pulumi:"isTopFinding"`
 	References             pulumi.StringPtrInput                        `pulumi:"references"`
 	SecurityAssessmentId   pulumi.StringInput                           `pulumi:"securityAssessmentId"`
 	Severity               pulumi.StringPtrInput                        `pulumi:"severity"`
+	State                  pulumi.StringPtrInput                        `pulumi:"state"`
 }
 
 func (GetSecurityAssessmentFindingOutputArgs) ElementType() reflect.Type {
@@ -114,6 +120,10 @@ func (o GetSecurityAssessmentFindingResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetSecurityAssessmentFindingResultOutput) IsTopFinding() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *bool { return v.IsTopFinding }).(pulumi.BoolPtrOutput)
+}
+
 func (o GetSecurityAssessmentFindingResultOutput) References() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.References }).(pulumi.StringPtrOutput)
 }
@@ -124,6 +134,10 @@ func (o GetSecurityAssessmentFindingResultOutput) SecurityAssessmentId() pulumi.
 
 func (o GetSecurityAssessmentFindingResultOutput) Severity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.Severity }).(pulumi.StringPtrOutput)
+}
+
+func (o GetSecurityAssessmentFindingResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

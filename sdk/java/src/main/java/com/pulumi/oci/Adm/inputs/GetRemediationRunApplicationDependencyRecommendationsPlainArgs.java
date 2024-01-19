@@ -40,6 +40,21 @@ public final class GetRemediationRunApplicationDependencyRecommendationsPlainArg
     }
 
     /**
+     * A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * 
+     */
+    @Import(name="purl")
+    private @Nullable String purl;
+
+    /**
+     * @return A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * 
+     */
+    public Optional<String> purl() {
+        return Optional.ofNullable(this.purl);
+    }
+
+    /**
      * Unique Remediation Run identifier path parameter.
      * 
      */
@@ -59,6 +74,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsPlainArg
     private GetRemediationRunApplicationDependencyRecommendationsPlainArgs(GetRemediationRunApplicationDependencyRecommendationsPlainArgs $) {
         this.filters = $.filters;
         this.gav = $.gav;
+        this.purl = $.purl;
         this.remediationRunId = $.remediationRunId;
     }
 
@@ -97,6 +113,17 @@ public final class GetRemediationRunApplicationDependencyRecommendationsPlainArg
          */
         public Builder gav(@Nullable String gav) {
             $.gav = gav;
+            return this;
+        }
+
+        /**
+         * @param purl A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder purl(@Nullable String purl) {
+            $.purl = purl;
             return this;
         }
 

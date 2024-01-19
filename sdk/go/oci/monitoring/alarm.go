@@ -63,7 +63,7 @@ import (
 //				RepeatNotificationDuration:               pulumi.Any(_var.Alarm_repeat_notification_duration),
 //				Resolution:                               pulumi.Any(_var.Alarm_resolution),
 //				ResourceGroup:                            pulumi.Any(_var.Alarm_resource_group),
-//				Suppression: &monitoring.AlarmSuppressionArgs{
+//				Suppression: &monitoring.AlarmSuppressionTypeArgs{
 //					TimeSuppressFrom:  pulumi.Any(_var.Alarm_suppression_time_suppress_from),
 //					TimeSuppressUntil: pulumi.Any(_var.Alarm_suppression_time_suppress_until),
 //					Description:       pulumi.Any(_var.Alarm_suppression_description),
@@ -96,7 +96,7 @@ type Alarm struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+	// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
 	Destinations pulumi.StringArrayOutput `pulumi:"destinations"`
 	// (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
@@ -161,10 +161,10 @@ type Alarm struct {
 	// The current lifecycle state of the alarm.  Example: `DELETED`
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The configuration details for suppressing an alarm.
-	Suppression AlarmSuppressionOutput `pulumi:"suppression"`
-	// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+	Suppression AlarmSuppressionTypeOutput `pulumi:"suppression"`
+	// The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
+	// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
@@ -228,7 +228,7 @@ type alarmState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+	// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
 	Destinations []string `pulumi:"destinations"`
 	// (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
@@ -293,10 +293,10 @@ type alarmState struct {
 	// The current lifecycle state of the alarm.  Example: `DELETED`
 	State *string `pulumi:"state"`
 	// (Updatable) The configuration details for suppressing an alarm.
-	Suppression *AlarmSuppression `pulumi:"suppression"`
-	// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+	Suppression *AlarmSuppressionType `pulumi:"suppression"`
+	// The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
+	// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
@@ -307,7 +307,7 @@ type AlarmState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+	// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
 	Destinations pulumi.StringArrayInput
 	// (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
@@ -372,10 +372,10 @@ type AlarmState struct {
 	// The current lifecycle state of the alarm.  Example: `DELETED`
 	State pulumi.StringPtrInput
 	// (Updatable) The configuration details for suppressing an alarm.
-	Suppression AlarmSuppressionPtrInput
-	// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+	Suppression AlarmSuppressionTypePtrInput
+	// The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
 	TimeCreated pulumi.StringPtrInput
-	// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
+	// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
 	TimeUpdated pulumi.StringPtrInput
 }
 
@@ -390,7 +390,7 @@ type alarmArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+	// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
 	Destinations []string `pulumi:"destinations"`
 	// (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
@@ -453,7 +453,7 @@ type alarmArgs struct {
 	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity string `pulumi:"severity"`
 	// (Updatable) The configuration details for suppressing an alarm.
-	Suppression *AlarmSuppression `pulumi:"suppression"`
+	Suppression *AlarmSuppressionType `pulumi:"suppression"`
 }
 
 // The set of arguments for constructing a Alarm resource.
@@ -464,7 +464,7 @@ type AlarmArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+	// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
 	Destinations pulumi.StringArrayInput
 	// (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
@@ -527,7 +527,7 @@ type AlarmArgs struct {
 	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity pulumi.StringInput
 	// (Updatable) The configuration details for suppressing an alarm.
-	Suppression AlarmSuppressionPtrInput
+	Suppression AlarmSuppressionTypePtrInput
 }
 
 func (AlarmArgs) ElementType() reflect.Type {
@@ -632,7 +632,7 @@ func (o AlarmOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Alarm) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
 func (o AlarmOutput) Destinations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Alarm) pulumi.StringArrayOutput { return v.Destinations }).(pulumi.StringArrayOutput)
 }
@@ -745,16 +745,16 @@ func (o AlarmOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The configuration details for suppressing an alarm.
-func (o AlarmOutput) Suppression() AlarmSuppressionOutput {
-	return o.ApplyT(func(v *Alarm) AlarmSuppressionOutput { return v.Suppression }).(AlarmSuppressionOutput)
+func (o AlarmOutput) Suppression() AlarmSuppressionTypeOutput {
+	return o.ApplyT(func(v *Alarm) AlarmSuppressionTypeOutput { return v.Suppression }).(AlarmSuppressionTypeOutput)
 }
 
-// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+// The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
 func (o AlarmOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Alarm) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
+// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
 func (o AlarmOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Alarm) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

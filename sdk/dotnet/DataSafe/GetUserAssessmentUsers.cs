@@ -37,8 +37,10 @@ namespace Pulumi.Oci.DataSafe
         ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
         ///         AccessLevel = @var.User_assessment_user_access_level,
         ///         AccountStatus = @var.User_assessment_user_account_status,
+        ///         AreAllSchemasAccessible = @var.User_assessment_user_are_all_schemas_accessible,
         ///         AuthenticationType = @var.User_assessment_user_authentication_type,
         ///         CompartmentIdInSubtree = @var.User_assessment_user_compartment_id_in_subtree,
+        ///         SchemaLists = @var.User_assessment_user_schema_list,
         ///         TargetId = oci_cloud_guard_target.Test_target.Id,
         ///         TimeLastLoginGreaterThanOrEqualTo = @var.User_assessment_user_time_last_login_greater_than_or_equal_to,
         ///         TimeLastLoginLessThan = @var.User_assessment_user_time_last_login_less_than,
@@ -88,8 +90,10 @@ namespace Pulumi.Oci.DataSafe
         ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
         ///         AccessLevel = @var.User_assessment_user_access_level,
         ///         AccountStatus = @var.User_assessment_user_account_status,
+        ///         AreAllSchemasAccessible = @var.User_assessment_user_are_all_schemas_accessible,
         ///         AuthenticationType = @var.User_assessment_user_authentication_type,
         ///         CompartmentIdInSubtree = @var.User_assessment_user_compartment_id_in_subtree,
+        ///         SchemaLists = @var.User_assessment_user_schema_list,
         ///         TargetId = oci_cloud_guard_target.Test_target.Id,
         ///         TimeLastLoginGreaterThanOrEqualTo = @var.User_assessment_user_time_last_login_greater_than_or_equal_to,
         ///         TimeLastLoginLessThan = @var.User_assessment_user_time_last_login_less_than,
@@ -130,6 +134,12 @@ namespace Pulumi.Oci.DataSafe
         public string? AccountStatus { get; set; }
 
         /// <summary>
+        /// A filter to return only items that match the criteria that all schemas can be accessed by a user.
+        /// </summary>
+        [Input("areAllSchemasAccessible")]
+        public bool? AreAllSchemasAccessible { get; set; }
+
+        /// <summary>
         /// A filter to return only items that match the specified authentication type.
         /// </summary>
         [Input("authenticationType")]
@@ -147,6 +157,18 @@ namespace Pulumi.Oci.DataSafe
         {
             get => _filters ?? (_filters = new List<Inputs.GetUserAssessmentUsersFilterArgs>());
             set => _filters = value;
+        }
+
+        [Input("schemaLists")]
+        private List<string>? _schemaLists;
+
+        /// <summary>
+        /// A filter to return items that contain the specified schema list.
+        /// </summary>
+        public List<string> SchemaLists
+        {
+            get => _schemaLists ?? (_schemaLists = new List<string>());
+            set => _schemaLists = value;
         }
 
         /// <summary>
@@ -265,6 +287,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? AccountStatus { get; set; }
 
         /// <summary>
+        /// A filter to return only items that match the criteria that all schemas can be accessed by a user.
+        /// </summary>
+        [Input("areAllSchemasAccessible")]
+        public Input<bool>? AreAllSchemasAccessible { get; set; }
+
+        /// <summary>
         /// A filter to return only items that match the specified authentication type.
         /// </summary>
         [Input("authenticationType")]
@@ -282,6 +310,18 @@ namespace Pulumi.Oci.DataSafe
         {
             get => _filters ?? (_filters = new InputList<Inputs.GetUserAssessmentUsersFilterInputArgs>());
             set => _filters = value;
+        }
+
+        [Input("schemaLists")]
+        private InputList<string>? _schemaLists;
+
+        /// <summary>
+        /// A filter to return items that contain the specified schema list.
+        /// </summary>
+        public InputList<string> SchemaLists
+        {
+            get => _schemaLists ?? (_schemaLists = new InputList<string>());
+            set => _schemaLists = value;
         }
 
         /// <summary>
@@ -391,9 +431,13 @@ namespace Pulumi.Oci.DataSafe
     {
         public readonly string? AccessLevel;
         /// <summary>
-        /// The user account status.
+        /// The status of the user account.
         /// </summary>
         public readonly string? AccountStatus;
+        /// <summary>
+        /// Indicates whether the user has access to all the schemas.
+        /// </summary>
+        public readonly bool? AreAllSchemasAccessible;
         /// <summary>
         /// The user authentication method.
         /// </summary>
@@ -404,6 +448,10 @@ namespace Pulumi.Oci.DataSafe
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The list of database schemas current user can access.
+        /// </summary>
+        public readonly ImmutableArray<string> SchemaLists;
         /// <summary>
         /// The OCID of the target database.
         /// </summary>
@@ -441,6 +489,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? accountStatus,
 
+            bool? areAllSchemasAccessible,
+
             string? authenticationType,
 
             bool? compartmentIdInSubtree,
@@ -448,6 +498,8 @@ namespace Pulumi.Oci.DataSafe
             ImmutableArray<Outputs.GetUserAssessmentUsersFilterResult> filters,
 
             string id,
+
+            ImmutableArray<string> schemaLists,
 
             string? targetId,
 
@@ -481,10 +533,12 @@ namespace Pulumi.Oci.DataSafe
         {
             AccessLevel = accessLevel;
             AccountStatus = accountStatus;
+            AreAllSchemasAccessible = areAllSchemasAccessible;
             AuthenticationType = authenticationType;
             CompartmentIdInSubtree = compartmentIdInSubtree;
             Filters = filters;
             Id = id;
+            SchemaLists = schemaLists;
             TargetId = targetId;
             TimeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
             TimeLastLoginLessThan = timeLastLoginLessThan;

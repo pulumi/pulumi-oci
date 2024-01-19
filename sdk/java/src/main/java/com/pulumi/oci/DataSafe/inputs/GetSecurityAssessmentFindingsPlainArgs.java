@@ -56,18 +56,33 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
     }
 
     /**
-     * Each finding has a key. This key is same for the finding across targets
+     * Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      * 
      */
     @Import(name="findingKey")
     private @Nullable String findingKey;
 
     /**
-     * @return Each finding has a key. This key is same for the finding across targets
+     * @return Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      * 
      */
     public Optional<String> findingKey() {
         return Optional.ofNullable(this.findingKey);
+    }
+
+    /**
+     * A filter to return only the findings that are marked as top findings.
+     * 
+     */
+    @Import(name="isTopFinding")
+    private @Nullable Boolean isTopFinding;
+
+    /**
+     * @return A filter to return only the findings that are marked as top findings.
+     * 
+     */
+    public Optional<Boolean> isTopFinding() {
+        return Optional.ofNullable(this.isTopFinding);
     }
 
     /**
@@ -115,6 +130,21 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         return Optional.ofNullable(this.severity);
     }
 
+    /**
+     * A filter to return only the findings that match the specified lifecycle states.
+     * 
+     */
+    @Import(name="state")
+    private @Nullable String state;
+
+    /**
+     * @return A filter to return only the findings that match the specified lifecycle states.
+     * 
+     */
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
+    }
+
     private GetSecurityAssessmentFindingsPlainArgs() {}
 
     private GetSecurityAssessmentFindingsPlainArgs(GetSecurityAssessmentFindingsPlainArgs $) {
@@ -122,9 +152,11 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
+        this.isTopFinding = $.isTopFinding;
         this.references = $.references;
         this.securityAssessmentId = $.securityAssessmentId;
         this.severity = $.severity;
+        this.state = $.state;
     }
 
     public static Builder builder() {
@@ -177,13 +209,24 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         }
 
         /**
-         * @param findingKey Each finding has a key. This key is same for the finding across targets
+         * @param findingKey Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
          * 
          * @return builder
          * 
          */
         public Builder findingKey(@Nullable String findingKey) {
             $.findingKey = findingKey;
+            return this;
+        }
+
+        /**
+         * @param isTopFinding A filter to return only the findings that are marked as top findings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isTopFinding(@Nullable Boolean isTopFinding) {
+            $.isTopFinding = isTopFinding;
             return this;
         }
 
@@ -217,6 +260,17 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
          */
         public Builder severity(@Nullable String severity) {
             $.severity = severity;
+            return this;
+        }
+
+        /**
+         * @param state A filter to return only the findings that match the specified lifecycle states.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(@Nullable String state) {
+            $.state = state;
             return this;
         }
 

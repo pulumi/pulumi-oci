@@ -86,6 +86,22 @@ export class AuditTrail extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * The secondary id assigned for the peer database registered with Data Safe.
+     */
+    public /*out*/ readonly peerTargetDatabaseKey!: pulumi.Output<number>;
+    /**
+     * The details of the audit trail purge job that ran on the "purgeJobTime".
+     */
+    public /*out*/ readonly purgeJobDetails!: pulumi.Output<string>;
+    /**
+     * The current status of the audit trail purge job.
+     */
+    public /*out*/ readonly purgeJobStatus!: pulumi.Output<string>;
+    /**
+     * The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+     */
+    public /*out*/ readonly purgeJobTime!: pulumi.Output<string>;
+    /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
      *
      *
@@ -126,6 +142,10 @@ export class AuditTrail extends pulumi.CustomResource {
      */
     public /*out*/ readonly trailLocation!: pulumi.Output<string>;
     /**
+     * The underlying source of unified audit trail.
+     */
+    public /*out*/ readonly trailSource!: pulumi.Output<string>;
+    /**
      * The OCID of the workrequest for audit trail which collects audit records.
      */
     public /*out*/ readonly workRequestId!: pulumi.Output<string>;
@@ -153,6 +173,10 @@ export class AuditTrail extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isAutoPurgeEnabled"] = state ? state.isAutoPurgeEnabled : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["peerTargetDatabaseKey"] = state ? state.peerTargetDatabaseKey : undefined;
+            resourceInputs["purgeJobDetails"] = state ? state.purgeJobDetails : undefined;
+            resourceInputs["purgeJobStatus"] = state ? state.purgeJobStatus : undefined;
+            resourceInputs["purgeJobTime"] = state ? state.purgeJobTime : undefined;
             resourceInputs["resumeTrigger"] = state ? state.resumeTrigger : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
@@ -162,6 +186,7 @@ export class AuditTrail extends pulumi.CustomResource {
             resourceInputs["timeLastCollected"] = state ? state.timeLastCollected : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["trailLocation"] = state ? state.trailLocation : undefined;
+            resourceInputs["trailSource"] = state ? state.trailSource : undefined;
             resourceInputs["workRequestId"] = state ? state.workRequestId : undefined;
         } else {
             const args = argsOrState as AuditTrailArgs | undefined;
@@ -180,6 +205,10 @@ export class AuditTrail extends pulumi.CustomResource {
             resourceInputs["auditProfileId"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["peerTargetDatabaseKey"] = undefined /*out*/;
+            resourceInputs["purgeJobDetails"] = undefined /*out*/;
+            resourceInputs["purgeJobStatus"] = undefined /*out*/;
+            resourceInputs["purgeJobTime"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["targetId"] = undefined /*out*/;
@@ -187,6 +216,7 @@ export class AuditTrail extends pulumi.CustomResource {
             resourceInputs["timeLastCollected"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["trailLocation"] = undefined /*out*/;
+            resourceInputs["trailSource"] = undefined /*out*/;
             resourceInputs["workRequestId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -239,6 +269,22 @@ export interface AuditTrailState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
+     * The secondary id assigned for the peer database registered with Data Safe.
+     */
+    peerTargetDatabaseKey?: pulumi.Input<number>;
+    /**
+     * The details of the audit trail purge job that ran on the "purgeJobTime".
+     */
+    purgeJobDetails?: pulumi.Input<string>;
+    /**
+     * The current status of the audit trail purge job.
+     */
+    purgeJobStatus?: pulumi.Input<string>;
+    /**
+     * The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+     */
+    purgeJobTime?: pulumi.Input<string>;
+    /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
      *
      *
@@ -278,6 +324,10 @@ export interface AuditTrailState {
      * An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      */
     trailLocation?: pulumi.Input<string>;
+    /**
+     * The underlying source of unified audit trail.
+     */
+    trailSource?: pulumi.Input<string>;
     /**
      * The OCID of the workrequest for audit trail which collects audit records.
      */

@@ -1064,6 +1064,7 @@ public final class AdmFunctions {
      *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
      *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
      *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
+     *             .purl(var_.remediation_run_application_dependency_recommendation_purl())
      *             .build());
      * 
      *     }
@@ -1104,6 +1105,7 @@ public final class AdmFunctions {
      *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
      *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
      *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
+     *             .purl(var_.remediation_run_application_dependency_recommendation_purl())
      *             .build());
      * 
      *     }
@@ -1144,6 +1146,7 @@ public final class AdmFunctions {
      *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
      *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
      *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
+     *             .purl(var_.remediation_run_application_dependency_recommendation_purl())
      *             .build());
      * 
      *     }
@@ -1184,6 +1187,7 @@ public final class AdmFunctions {
      *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
      *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
      *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
+     *             .purl(var_.remediation_run_application_dependency_recommendation_purl())
      *             .build());
      * 
      *     }
@@ -1971,7 +1975,9 @@ public final class AdmFunctions {
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
      *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .purl(var_.vulnerability_audit_application_dependency_vulnerability_purl())
      *             .rootNodeId(oci_adm_root_node.test_root_node().id())
+     *             .severityGreaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_severity_greater_than_or_equal())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 
@@ -2016,7 +2022,9 @@ public final class AdmFunctions {
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
      *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .purl(var_.vulnerability_audit_application_dependency_vulnerability_purl())
      *             .rootNodeId(oci_adm_root_node.test_root_node().id())
+     *             .severityGreaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_severity_greater_than_or_equal())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 
@@ -2061,7 +2069,9 @@ public final class AdmFunctions {
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
      *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .purl(var_.vulnerability_audit_application_dependency_vulnerability_purl())
      *             .rootNodeId(oci_adm_root_node.test_root_node().id())
+     *             .severityGreaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_severity_greater_than_or_equal())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 
@@ -2106,7 +2116,9 @@ public final class AdmFunctions {
      *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
      *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
      *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .purl(var_.vulnerability_audit_application_dependency_vulnerability_purl())
      *             .rootNodeId(oci_adm_root_node.test_root_node().id())
+     *             .severityGreaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_severity_greater_than_or_equal())
      *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
      *             .build());
      * 
@@ -2332,7 +2344,10 @@ public final class AdmFunctions {
      *             .id(var_.vulnerability_audit_id())
      *             .isSuccess(var_.vulnerability_audit_is_success())
      *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
      *             .state(var_.vulnerability_audit_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
      *             .build());
      * 
      *     }
@@ -2377,7 +2392,10 @@ public final class AdmFunctions {
      *             .id(var_.vulnerability_audit_id())
      *             .isSuccess(var_.vulnerability_audit_is_success())
      *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
      *             .state(var_.vulnerability_audit_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
      *             .build());
      * 
      *     }
@@ -2422,7 +2440,10 @@ public final class AdmFunctions {
      *             .id(var_.vulnerability_audit_id())
      *             .isSuccess(var_.vulnerability_audit_is_success())
      *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
      *             .state(var_.vulnerability_audit_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
      *             .build());
      * 
      *     }
@@ -2467,7 +2488,10 @@ public final class AdmFunctions {
      *             .id(var_.vulnerability_audit_id())
      *             .isSuccess(var_.vulnerability_audit_is_success())
      *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
      *             .state(var_.vulnerability_audit_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
      *             .build());
      * 
      *     }
@@ -2512,7 +2536,10 @@ public final class AdmFunctions {
      *             .id(var_.vulnerability_audit_id())
      *             .isSuccess(var_.vulnerability_audit_is_success())
      *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
      *             .state(var_.vulnerability_audit_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
      *             .build());
      * 
      *     }
@@ -2557,7 +2584,10 @@ public final class AdmFunctions {
      *             .id(var_.vulnerability_audit_id())
      *             .isSuccess(var_.vulnerability_audit_is_success())
      *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
      *             .state(var_.vulnerability_audit_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
      *             .build());
      * 
      *     }

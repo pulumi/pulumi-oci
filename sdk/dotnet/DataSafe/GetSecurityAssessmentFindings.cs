@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// List all the findings from all the targets in the specified assessment.
+        /// List all the findings from all the targets in the specified compartment.
         /// </summary>
         public static Task<GetSecurityAssessmentFindingsResult> InvokeAsync(GetSecurityAssessmentFindingsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsArgs(), options.WithDefaults());
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// List all the findings from all the targets in the specified assessment.
+        /// List all the findings from all the targets in the specified compartment.
         /// </summary>
         public static Output<GetSecurityAssessmentFindingsResult> Invoke(GetSecurityAssessmentFindingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsInvokeArgs(), options.WithDefaults());
@@ -52,10 +52,16 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Each finding has a key. This key is same for the finding across targets
+        /// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
         /// </summary>
         [Input("findingKey")]
         public string? FindingKey { get; set; }
+
+        /// <summary>
+        /// A filter to return only the findings that are marked as top findings.
+        /// </summary>
+        [Input("isTopFinding")]
+        public bool? IsTopFinding { get; set; }
 
         /// <summary>
         /// An optional filter to return only findings containing the specified reference.
@@ -74,6 +80,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("severity")]
         public string? Severity { get; set; }
+
+        /// <summary>
+        /// A filter to return only the findings that match the specified lifecycle states.
+        /// </summary>
+        [Input("state")]
+        public string? State { get; set; }
 
         public GetSecurityAssessmentFindingsArgs()
         {
@@ -104,10 +116,16 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Each finding has a key. This key is same for the finding across targets
+        /// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
         /// </summary>
         [Input("findingKey")]
         public Input<string>? FindingKey { get; set; }
+
+        /// <summary>
+        /// A filter to return only the findings that are marked as top findings.
+        /// </summary>
+        [Input("isTopFinding")]
+        public Input<bool>? IsTopFinding { get; set; }
 
         /// <summary>
         /// An optional filter to return only findings containing the specified reference.
@@ -126,6 +144,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("severity")]
         public Input<string>? Severity { get; set; }
+
+        /// <summary>
+        /// A filter to return only the findings that match the specified lifecycle states.
+        /// </summary>
+        [Input("state")]
+        public Input<string>? State { get; set; }
 
         public GetSecurityAssessmentFindingsInvokeArgs()
         {
@@ -150,6 +174,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates whether a given finding is marked as topFinding or not.
+        /// </summary>
+        public readonly bool? IsTopFinding;
+        /// <summary>
         /// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
         /// </summary>
         public readonly string? References;
@@ -158,6 +186,10 @@ namespace Pulumi.Oci.DataSafe
         /// The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
         /// </summary>
         public readonly string? Severity;
+        /// <summary>
+        /// The current state of the finding.
+        /// </summary>
+        public readonly string? State;
 
         [OutputConstructor]
         private GetSecurityAssessmentFindingsResult(
@@ -173,11 +205,15 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            bool? isTopFinding,
+
             string? references,
 
             string securityAssessmentId,
 
-            string? severity)
+            string? severity,
+
+            string? state)
         {
             AccessLevel = accessLevel;
             CompartmentIdInSubtree = compartmentIdInSubtree;
@@ -185,9 +221,11 @@ namespace Pulumi.Oci.DataSafe
             FindingKey = findingKey;
             Findings = findings;
             Id = id;
+            IsTopFinding = isTopFinding;
             References = references;
             SecurityAssessmentId = securityAssessmentId;
             Severity = severity;
+            State = state;
         }
     }
 }

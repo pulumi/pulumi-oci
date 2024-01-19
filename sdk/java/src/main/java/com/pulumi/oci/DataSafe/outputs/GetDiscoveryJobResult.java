@@ -51,7 +51,7 @@ public final class GetDiscoveryJobResult {
      */
     private Boolean isAppDefinedRelationDiscoveryEnabled;
     /**
-     * @return Indicates if all the schemas in the associated target database are used for data discovery. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used.
+     * @return Indicates if all the schemas in the associated target database are used for data discovery. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
      * 
      */
     private Boolean isIncludeAllSchemas;
@@ -190,7 +190,7 @@ public final class GetDiscoveryJobResult {
         return this.isAppDefinedRelationDiscoveryEnabled;
     }
     /**
-     * @return Indicates if all the schemas in the associated target database are used for data discovery. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used.
+     * @return Indicates if all the schemas in the associated target database are used for data discovery. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
      * 
      */
     public Boolean isIncludeAllSchemas() {

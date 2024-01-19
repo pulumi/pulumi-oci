@@ -52,6 +52,7 @@ public final class GetReportsReportCollectionItem {
      * 
      */
     private String reportDefinitionId;
+    private String reportId;
     /**
      * @return An optional filter to return only resources that match the specified lifecycle state.
      * 
@@ -130,6 +131,9 @@ public final class GetReportsReportCollectionItem {
     public String reportDefinitionId() {
         return this.reportDefinitionId;
     }
+    public String reportId() {
+        return this.reportId;
+    }
     /**
      * @return An optional filter to return only resources that match the specified lifecycle state.
      * 
@@ -176,6 +180,7 @@ public final class GetReportsReportCollectionItem {
         private String id;
         private String mimeType;
         private String reportDefinitionId;
+        private String reportId;
         private String state;
         private Map<String,Object> systemTags;
         private String timeGenerated;
@@ -191,6 +196,7 @@ public final class GetReportsReportCollectionItem {
     	      this.id = defaults.id;
     	      this.mimeType = defaults.mimeType;
     	      this.reportDefinitionId = defaults.reportDefinitionId;
+    	      this.reportId = defaults.reportId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeGenerated = defaults.timeGenerated;
@@ -262,6 +268,14 @@ public final class GetReportsReportCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder reportId(String reportId) {
+            if (reportId == null) {
+              throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "reportId");
+            }
+            this.reportId = reportId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "state");
@@ -303,6 +317,7 @@ public final class GetReportsReportCollectionItem {
             _resultValue.id = id;
             _resultValue.mimeType = mimeType;
             _resultValue.reportDefinitionId = reportDefinitionId;
+            _resultValue.reportId = reportId;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeGenerated = timeGenerated;

@@ -106,7 +106,7 @@ class GetReportResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The provider-assigned unique ID for this managed resource.
+        The OCID of the report.
         """
         return pulumi.get(self, "id")
 

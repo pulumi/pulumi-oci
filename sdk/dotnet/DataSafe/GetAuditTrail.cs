@@ -146,6 +146,22 @@ namespace Pulumi.Oci.DataSafe
         /// Details about the current state of the audit trail in Data Safe.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// The secondary id assigned for the peer database registered with Data Safe.
+        /// </summary>
+        public readonly int PeerTargetDatabaseKey;
+        /// <summary>
+        /// The details of the audit trail purge job that ran on the "purgeJobTime".
+        /// </summary>
+        public readonly string PurgeJobDetails;
+        /// <summary>
+        /// The current status of the audit trail purge job.
+        /// </summary>
+        public readonly string PurgeJobStatus;
+        /// <summary>
+        /// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        /// </summary>
+        public readonly string PurgeJobTime;
         public readonly int ResumeTrigger;
         /// <summary>
         /// The current state of the audit trail.
@@ -180,6 +196,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string TrailLocation;
         /// <summary>
+        /// The underlying source of unified audit trail.
+        /// </summary>
+        public readonly string TrailSource;
+        /// <summary>
         /// The OCID of the workrequest for audit trail which collects audit records.
         /// </summary>
         public readonly string WorkRequestId;
@@ -208,6 +228,14 @@ namespace Pulumi.Oci.DataSafe
 
             string lifecycleDetails,
 
+            int peerTargetDatabaseKey,
+
+            string purgeJobDetails,
+
+            string purgeJobStatus,
+
+            string purgeJobTime,
+
             int resumeTrigger,
 
             string state,
@@ -226,6 +254,8 @@ namespace Pulumi.Oci.DataSafe
 
             string trailLocation,
 
+            string trailSource,
+
             string workRequestId)
         {
             AuditCollectionStartTime = auditCollectionStartTime;
@@ -239,6 +269,10 @@ namespace Pulumi.Oci.DataSafe
             Id = id;
             IsAutoPurgeEnabled = isAutoPurgeEnabled;
             LifecycleDetails = lifecycleDetails;
+            PeerTargetDatabaseKey = peerTargetDatabaseKey;
+            PurgeJobDetails = purgeJobDetails;
+            PurgeJobStatus = purgeJobStatus;
+            PurgeJobTime = purgeJobTime;
             ResumeTrigger = resumeTrigger;
             State = state;
             Status = status;
@@ -248,6 +282,7 @@ namespace Pulumi.Oci.DataSafe
             TimeLastCollected = timeLastCollected;
             TimeUpdated = timeUpdated;
             TrailLocation = trailLocation;
+            TrailSource = trailSource;
             WorkRequestId = workRequestId;
         }
     }

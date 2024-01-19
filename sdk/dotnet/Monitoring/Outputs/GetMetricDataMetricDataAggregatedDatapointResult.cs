@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
     public sealed class GetMetricDataMetricDataAggregatedDatapointResult
     {
         /// <summary>
-        /// The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+        /// The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         /// </summary>
         public readonly string Timestamp;
         /// <summary>

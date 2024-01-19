@@ -21,7 +21,7 @@ class GetAuditTrailResult:
     """
     A collection of values returned by getAuditTrail.
     """
-    def __init__(__self__, audit_collection_start_time=None, audit_profile_id=None, audit_trail_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_auto_purge_enabled=None, lifecycle_details=None, resume_trigger=None, state=None, status=None, system_tags=None, target_id=None, time_created=None, time_last_collected=None, time_updated=None, trail_location=None, work_request_id=None):
+    def __init__(__self__, audit_collection_start_time=None, audit_profile_id=None, audit_trail_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_auto_purge_enabled=None, lifecycle_details=None, peer_target_database_key=None, purge_job_details=None, purge_job_status=None, purge_job_time=None, resume_trigger=None, state=None, status=None, system_tags=None, target_id=None, time_created=None, time_last_collected=None, time_updated=None, trail_location=None, trail_source=None, work_request_id=None):
         if audit_collection_start_time and not isinstance(audit_collection_start_time, str):
             raise TypeError("Expected argument 'audit_collection_start_time' to be a str")
         pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
@@ -55,6 +55,18 @@ class GetAuditTrailResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if peer_target_database_key and not isinstance(peer_target_database_key, int):
+            raise TypeError("Expected argument 'peer_target_database_key' to be a int")
+        pulumi.set(__self__, "peer_target_database_key", peer_target_database_key)
+        if purge_job_details and not isinstance(purge_job_details, str):
+            raise TypeError("Expected argument 'purge_job_details' to be a str")
+        pulumi.set(__self__, "purge_job_details", purge_job_details)
+        if purge_job_status and not isinstance(purge_job_status, str):
+            raise TypeError("Expected argument 'purge_job_status' to be a str")
+        pulumi.set(__self__, "purge_job_status", purge_job_status)
+        if purge_job_time and not isinstance(purge_job_time, str):
+            raise TypeError("Expected argument 'purge_job_time' to be a str")
+        pulumi.set(__self__, "purge_job_time", purge_job_time)
         if resume_trigger and not isinstance(resume_trigger, int):
             raise TypeError("Expected argument 'resume_trigger' to be a int")
         pulumi.set(__self__, "resume_trigger", resume_trigger)
@@ -82,6 +94,9 @@ class GetAuditTrailResult:
         if trail_location and not isinstance(trail_location, str):
             raise TypeError("Expected argument 'trail_location' to be a str")
         pulumi.set(__self__, "trail_location", trail_location)
+        if trail_source and not isinstance(trail_source, str):
+            raise TypeError("Expected argument 'trail_source' to be a str")
+        pulumi.set(__self__, "trail_source", trail_source)
         if work_request_id and not isinstance(work_request_id, str):
             raise TypeError("Expected argument 'work_request_id' to be a str")
         pulumi.set(__self__, "work_request_id", work_request_id)
@@ -172,6 +187,38 @@ class GetAuditTrailResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="peerTargetDatabaseKey")
+    def peer_target_database_key(self) -> int:
+        """
+        The secondary id assigned for the peer database registered with Data Safe.
+        """
+        return pulumi.get(self, "peer_target_database_key")
+
+    @property
+    @pulumi.getter(name="purgeJobDetails")
+    def purge_job_details(self) -> str:
+        """
+        The details of the audit trail purge job that ran on the "purgeJobTime".
+        """
+        return pulumi.get(self, "purge_job_details")
+
+    @property
+    @pulumi.getter(name="purgeJobStatus")
+    def purge_job_status(self) -> str:
+        """
+        The current status of the audit trail purge job.
+        """
+        return pulumi.get(self, "purge_job_status")
+
+    @property
+    @pulumi.getter(name="purgeJobTime")
+    def purge_job_time(self) -> str:
+        """
+        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        """
+        return pulumi.get(self, "purge_job_time")
+
+    @property
     @pulumi.getter(name="resumeTrigger")
     def resume_trigger(self) -> int:
         return pulumi.get(self, "resume_trigger")
@@ -241,6 +288,14 @@ class GetAuditTrailResult:
         return pulumi.get(self, "trail_location")
 
     @property
+    @pulumi.getter(name="trailSource")
+    def trail_source(self) -> str:
+        """
+        The underlying source of unified audit trail.
+        """
+        return pulumi.get(self, "trail_source")
+
+    @property
     @pulumi.getter(name="workRequestId")
     def work_request_id(self) -> str:
         """
@@ -266,6 +321,10 @@ class AwaitableGetAuditTrailResult(GetAuditTrailResult):
             id=self.id,
             is_auto_purge_enabled=self.is_auto_purge_enabled,
             lifecycle_details=self.lifecycle_details,
+            peer_target_database_key=self.peer_target_database_key,
+            purge_job_details=self.purge_job_details,
+            purge_job_status=self.purge_job_status,
+            purge_job_time=self.purge_job_time,
             resume_trigger=self.resume_trigger,
             state=self.state,
             status=self.status,
@@ -275,6 +334,7 @@ class AwaitableGetAuditTrailResult(GetAuditTrailResult):
             time_last_collected=self.time_last_collected,
             time_updated=self.time_updated,
             trail_location=self.trail_location,
+            trail_source=self.trail_source,
             work_request_id=self.work_request_id)
 
 
@@ -314,6 +374,10 @@ def get_audit_trail(audit_trail_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_auto_purge_enabled=pulumi.get(__ret__, 'is_auto_purge_enabled'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        peer_target_database_key=pulumi.get(__ret__, 'peer_target_database_key'),
+        purge_job_details=pulumi.get(__ret__, 'purge_job_details'),
+        purge_job_status=pulumi.get(__ret__, 'purge_job_status'),
+        purge_job_time=pulumi.get(__ret__, 'purge_job_time'),
         resume_trigger=pulumi.get(__ret__, 'resume_trigger'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'),
@@ -323,6 +387,7 @@ def get_audit_trail(audit_trail_id: Optional[str] = None,
         time_last_collected=pulumi.get(__ret__, 'time_last_collected'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         trail_location=pulumi.get(__ret__, 'trail_location'),
+        trail_source=pulumi.get(__ret__, 'trail_source'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
 
 

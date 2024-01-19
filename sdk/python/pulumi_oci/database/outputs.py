@@ -521,6 +521,9 @@ __all__ = [
     'GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailResult',
     'GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigResult',
     'GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigResult',
+    'GetSystemVersionsFilterResult',
+    'GetSystemVersionsSystemVersionCollectionResult',
+    'GetSystemVersionsSystemVersionCollectionItemResult',
     'GetVmClusterDataCollectionOptionResult',
     'GetVmClusterNetworkDrScanResult',
     'GetVmClusterNetworkScanResult',
@@ -39417,6 +39420,91 @@ class GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigResult(dict):
         Indicates whether the Pluggable Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
+
+
+@pulumi.output_type
+class GetSystemVersionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSystemVersionsSystemVersionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSystemVersionsSystemVersionCollectionItemResult']):
+        """
+        :param Sequence['GetSystemVersionsSystemVersionCollectionItemArgs'] items: List of System versions.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSystemVersionsSystemVersionCollectionItemResult']:
+        """
+        List of System versions.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSystemVersionsSystemVersionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 gi_version: str,
+                 shape: str,
+                 system_versions: Sequence[str]):
+        """
+        :param str gi_version: Specifies gi version query parameter.
+        :param str shape: Specifies shape query parameter.
+        :param Sequence[str] system_versions: Compatible Exadata system versions for a given shape and GI version.
+        """
+        pulumi.set(__self__, "gi_version", gi_version)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "system_versions", system_versions)
+
+    @property
+    @pulumi.getter(name="giVersion")
+    def gi_version(self) -> str:
+        """
+        Specifies gi version query parameter.
+        """
+        return pulumi.get(self, "gi_version")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Specifies shape query parameter.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="systemVersions")
+    def system_versions(self) -> Sequence[str]:
+        """
+        Compatible Exadata system versions for a given shape and GI version.
+        """
+        return pulumi.get(self, "system_versions")
 
 
 @pulumi.output_type

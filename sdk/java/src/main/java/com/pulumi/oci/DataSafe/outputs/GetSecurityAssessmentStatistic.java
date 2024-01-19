@@ -6,6 +6,7 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentStatisticAdvisory;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentStatisticDeferred;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentStatisticEvaluate;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentStatisticHighRisk;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentStatisticLowRisk;
@@ -22,6 +23,11 @@ public final class GetSecurityAssessmentStatistic {
      * 
      */
     private List<GetSecurityAssessmentStatisticAdvisory> advisories;
+    /**
+     * @return Statistics showing the number of findings with a particular risk level for each category.
+     * 
+     */
+    private List<GetSecurityAssessmentStatisticDeferred> deferreds;
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
@@ -60,6 +66,13 @@ public final class GetSecurityAssessmentStatistic {
      */
     public List<GetSecurityAssessmentStatisticAdvisory> advisories() {
         return this.advisories;
+    }
+    /**
+     * @return Statistics showing the number of findings with a particular risk level for each category.
+     * 
+     */
+    public List<GetSecurityAssessmentStatisticDeferred> deferreds() {
+        return this.deferreds;
     }
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
@@ -114,6 +127,7 @@ public final class GetSecurityAssessmentStatistic {
     @CustomType.Builder
     public static final class Builder {
         private List<GetSecurityAssessmentStatisticAdvisory> advisories;
+        private List<GetSecurityAssessmentStatisticDeferred> deferreds;
         private List<GetSecurityAssessmentStatisticEvaluate> evaluates;
         private List<GetSecurityAssessmentStatisticHighRisk> highRisks;
         private List<GetSecurityAssessmentStatisticLowRisk> lowRisks;
@@ -124,6 +138,7 @@ public final class GetSecurityAssessmentStatistic {
         public Builder(GetSecurityAssessmentStatistic defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.advisories = defaults.advisories;
+    	      this.deferreds = defaults.deferreds;
     	      this.evaluates = defaults.evaluates;
     	      this.highRisks = defaults.highRisks;
     	      this.lowRisks = defaults.lowRisks;
@@ -142,6 +157,17 @@ public final class GetSecurityAssessmentStatistic {
         }
         public Builder advisories(GetSecurityAssessmentStatisticAdvisory... advisories) {
             return advisories(List.of(advisories));
+        }
+        @CustomType.Setter
+        public Builder deferreds(List<GetSecurityAssessmentStatisticDeferred> deferreds) {
+            if (deferreds == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentStatistic", "deferreds");
+            }
+            this.deferreds = deferreds;
+            return this;
+        }
+        public Builder deferreds(GetSecurityAssessmentStatisticDeferred... deferreds) {
+            return deferreds(List.of(deferreds));
         }
         @CustomType.Setter
         public Builder evaluates(List<GetSecurityAssessmentStatisticEvaluate> evaluates) {
@@ -209,6 +235,7 @@ public final class GetSecurityAssessmentStatistic {
         public GetSecurityAssessmentStatistic build() {
             final var _resultValue = new GetSecurityAssessmentStatistic();
             _resultValue.advisories = advisories;
+            _resultValue.deferreds = deferreds;
             _resultValue.evaluates = evaluates;
             _resultValue.highRisks = highRisks;
             _resultValue.lowRisks = lowRisks;

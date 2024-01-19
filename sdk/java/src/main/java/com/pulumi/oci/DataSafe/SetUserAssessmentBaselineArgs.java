@@ -18,14 +18,14 @@ public final class SetUserAssessmentBaselineArgs extends com.pulumi.resources.Re
     public static final SetUserAssessmentBaselineArgs Empty = new SetUserAssessmentBaselineArgs();
 
     /**
-     * The list of user assessment OCIDs that need to be updated while setting the baseline.
+     * The list of OCIDs for the user assessments that need to be updated while setting the baseline.
      * 
      */
     @Import(name="assessmentIds")
     private @Nullable Output<List<String>> assessmentIds;
 
     /**
-     * @return The list of user assessment OCIDs that need to be updated while setting the baseline.
+     * @return The list of OCIDs for the user assessments that need to be updated while setting the baseline.
      * 
      */
     public Optional<Output<List<String>>> assessmentIds() {
@@ -79,7 +79,7 @@ public final class SetUserAssessmentBaselineArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param assessmentIds The list of user assessment OCIDs that need to be updated while setting the baseline.
+         * @param assessmentIds The list of OCIDs for the user assessments that need to be updated while setting the baseline.
          * 
          * @return builder
          * 
@@ -90,7 +90,7 @@ public final class SetUserAssessmentBaselineArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param assessmentIds The list of user assessment OCIDs that need to be updated while setting the baseline.
+         * @param assessmentIds The list of OCIDs for the user assessments that need to be updated while setting the baseline.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class SetUserAssessmentBaselineArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param assessmentIds The list of user assessment OCIDs that need to be updated while setting the baseline.
+         * @param assessmentIds The list of OCIDs for the user assessments that need to be updated while setting the baseline.
          * 
          * @return builder
          * 

@@ -86,7 +86,7 @@ type LookupMaskingPolicyResult struct {
 	PostMaskingScript string `pulumi:"postMaskingScript"`
 	// A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
 	PreMaskingScript string `pulumi:"preMaskingScript"`
-	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
+	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
 	Recompile string `pulumi:"recompile"`
 	// The current state of the masking policy.
 	State string `pulumi:"state"`
@@ -207,7 +207,7 @@ func (o LookupMaskingPolicyResultOutput) PreMaskingScript() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupMaskingPolicyResult) string { return v.PreMaskingScript }).(pulumi.StringOutput)
 }
 
-// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
+// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
 func (o LookupMaskingPolicyResultOutput) Recompile() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMaskingPolicyResult) string { return v.Recompile }).(pulumi.StringOutput)
 }

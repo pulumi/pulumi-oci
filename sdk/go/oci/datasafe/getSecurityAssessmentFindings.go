@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
 //
-// List all the findings from all the targets in the specified assessment.
+// List all the findings from all the targets in the specified compartment.
 func GetSecurityAssessmentFindings(ctx *pulumi.Context, args *GetSecurityAssessmentFindingsArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentFindingsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecurityAssessmentFindingsResult
@@ -31,14 +31,18 @@ type GetSecurityAssessmentFindingsArgs struct {
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree *bool                                 `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetSecurityAssessmentFindingsFilter `pulumi:"filters"`
-	// Each finding has a key. This key is same for the finding across targets
+	// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
 	FindingKey *string `pulumi:"findingKey"`
+	// A filter to return only the findings that are marked as top findings.
+	IsTopFinding *bool `pulumi:"isTopFinding"`
 	// An optional filter to return only findings containing the specified reference.
 	References *string `pulumi:"references"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
 	// A filter to return only findings of a particular risk level.
 	Severity *string `pulumi:"severity"`
+	// A filter to return only the findings that match the specified lifecycle states.
+	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getSecurityAssessmentFindings.
@@ -51,11 +55,15 @@ type GetSecurityAssessmentFindingsResult struct {
 	Findings []GetSecurityAssessmentFindingsFinding `pulumi:"findings"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Indicates whether a given finding is marked as topFinding or not.
+	IsTopFinding *bool `pulumi:"isTopFinding"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
 	References           *string `pulumi:"references"`
 	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
 	// The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
 	Severity *string `pulumi:"severity"`
+	// The current state of the finding.
+	State *string `pulumi:"state"`
 }
 
 func GetSecurityAssessmentFindingsOutput(ctx *pulumi.Context, args GetSecurityAssessmentFindingsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentFindingsResultOutput {
@@ -78,14 +86,18 @@ type GetSecurityAssessmentFindingsOutputArgs struct {
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree pulumi.BoolPtrInput                           `pulumi:"compartmentIdInSubtree"`
 	Filters                GetSecurityAssessmentFindingsFilterArrayInput `pulumi:"filters"`
-	// Each finding has a key. This key is same for the finding across targets
+	// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
 	FindingKey pulumi.StringPtrInput `pulumi:"findingKey"`
+	// A filter to return only the findings that are marked as top findings.
+	IsTopFinding pulumi.BoolPtrInput `pulumi:"isTopFinding"`
 	// An optional filter to return only findings containing the specified reference.
 	References pulumi.StringPtrInput `pulumi:"references"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId pulumi.StringInput `pulumi:"securityAssessmentId"`
 	// A filter to return only findings of a particular risk level.
 	Severity pulumi.StringPtrInput `pulumi:"severity"`
+	// A filter to return only the findings that match the specified lifecycle states.
+	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetSecurityAssessmentFindingsOutputArgs) ElementType() reflect.Type {
@@ -133,6 +145,11 @@ func (o GetSecurityAssessmentFindingsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates whether a given finding is marked as topFinding or not.
+func (o GetSecurityAssessmentFindingsResultOutput) IsTopFinding() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *bool { return v.IsTopFinding }).(pulumi.BoolPtrOutput)
+}
+
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
 func (o GetSecurityAssessmentFindingsResultOutput) References() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.References }).(pulumi.StringPtrOutput)
@@ -145,6 +162,11 @@ func (o GetSecurityAssessmentFindingsResultOutput) SecurityAssessmentId() pulumi
 // The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
 func (o GetSecurityAssessmentFindingsResultOutput) Severity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.Severity }).(pulumi.StringPtrOutput)
+}
+
+// The current state of the finding.
+func (o GetSecurityAssessmentFindingsResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -30,7 +30,7 @@ public final class GetTargetDatabasesResult {
      */
     private @Nullable String databaseType;
     /**
-     * @return The display name of the target database in Data Safe.
+     * @return The display name of the peer target database in Data Safe.
      * 
      */
     private @Nullable String displayName;
@@ -82,7 +82,7 @@ public final class GetTargetDatabasesResult {
         return Optional.ofNullable(this.databaseType);
     }
     /**
-     * @return The display name of the target database in Data Safe.
+     * @return The display name of the peer target database in Data Safe.
      * 
      */
     public Optional<String> displayName() {

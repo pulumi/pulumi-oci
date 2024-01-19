@@ -23,7 +23,7 @@ class GetRemediationRunApplicationDependencyRecommendationsResult:
     """
     A collection of values returned by getRemediationRunApplicationDependencyRecommendations.
     """
-    def __init__(__self__, application_dependency_recommendation_collections=None, filters=None, gav=None, id=None, remediation_run_id=None):
+    def __init__(__self__, application_dependency_recommendation_collections=None, filters=None, gav=None, id=None, purl=None, remediation_run_id=None):
         if application_dependency_recommendation_collections and not isinstance(application_dependency_recommendation_collections, list):
             raise TypeError("Expected argument 'application_dependency_recommendation_collections' to be a list")
         pulumi.set(__self__, "application_dependency_recommendation_collections", application_dependency_recommendation_collections)
@@ -36,6 +36,9 @@ class GetRemediationRunApplicationDependencyRecommendationsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if purl and not isinstance(purl, str):
+            raise TypeError("Expected argument 'purl' to be a str")
+        pulumi.set(__self__, "purl", purl)
         if remediation_run_id and not isinstance(remediation_run_id, str):
             raise TypeError("Expected argument 'remediation_run_id' to be a str")
         pulumi.set(__self__, "remediation_run_id", remediation_run_id)
@@ -70,6 +73,14 @@ class GetRemediationRunApplicationDependencyRecommendationsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter
+    def purl(self) -> Optional[str]:
+        """
+        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        """
+        return pulumi.get(self, "purl")
+
+    @property
     @pulumi.getter(name="remediationRunId")
     def remediation_run_id(self) -> str:
         return pulumi.get(self, "remediation_run_id")
@@ -85,11 +96,13 @@ class AwaitableGetRemediationRunApplicationDependencyRecommendationsResult(GetRe
             filters=self.filters,
             gav=self.gav,
             id=self.id,
+            purl=self.purl,
             remediation_run_id=self.remediation_run_id)
 
 
 def get_remediation_run_application_dependency_recommendations(filters: Optional[Sequence[pulumi.InputType['GetRemediationRunApplicationDependencyRecommendationsFilterArgs']]] = None,
                                                                gav: Optional[str] = None,
+                                                               purl: Optional[str] = None,
                                                                remediation_run_id: Optional[str] = None,
                                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemediationRunApplicationDependencyRecommendationsResult:
     """
@@ -104,16 +117,19 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
     import pulumi_oci as oci
 
     test_remediation_run_application_dependency_recommendations = oci.Adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        gav=var["remediation_run_application_dependency_recommendation_gav"])
+        gav=var["remediation_run_application_dependency_recommendation_gav"],
+        purl=var["remediation_run_application_dependency_recommendation_purl"])
     ```
 
 
     :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+    :param str purl: A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
     :param str remediation_run_id: Unique Remediation Run identifier path parameter.
     """
     __args__ = dict()
     __args__['filters'] = filters
     __args__['gav'] = gav
+    __args__['purl'] = purl
     __args__['remediationRunId'] = remediation_run_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations', __args__, opts=opts, typ=GetRemediationRunApplicationDependencyRecommendationsResult).value
@@ -123,12 +139,14 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
         filters=pulumi.get(__ret__, 'filters'),
         gav=pulumi.get(__ret__, 'gav'),
         id=pulumi.get(__ret__, 'id'),
+        purl=pulumi.get(__ret__, 'purl'),
         remediation_run_id=pulumi.get(__ret__, 'remediation_run_id'))
 
 
 @_utilities.lift_output_func(get_remediation_run_application_dependency_recommendations)
 def get_remediation_run_application_dependency_recommendations_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRemediationRunApplicationDependencyRecommendationsFilterArgs']]]]] = None,
                                                                       gav: Optional[pulumi.Input[Optional[str]]] = None,
+                                                                      purl: Optional[pulumi.Input[Optional[str]]] = None,
                                                                       remediation_run_id: Optional[pulumi.Input[str]] = None,
                                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRunApplicationDependencyRecommendationsResult]:
     """
@@ -143,11 +161,13 @@ def get_remediation_run_application_dependency_recommendations_output(filters: O
     import pulumi_oci as oci
 
     test_remediation_run_application_dependency_recommendations = oci.Adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        gav=var["remediation_run_application_dependency_recommendation_gav"])
+        gav=var["remediation_run_application_dependency_recommendation_gav"],
+        purl=var["remediation_run_application_dependency_recommendation_purl"])
     ```
 
 
     :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+    :param str purl: A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
     :param str remediation_run_id: Unique Remediation Run identifier path parameter.
     """
     ...

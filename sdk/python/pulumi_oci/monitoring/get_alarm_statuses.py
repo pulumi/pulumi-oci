@@ -113,7 +113,7 @@ class GetAlarmStatusesResult:
     @pulumi.getter
     def status(self) -> Optional[str]:
         """
-        The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). Example: `FIRING`
+        The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`. Example: `FIRING`
         """
         return pulumi.get(self, "status")
 
@@ -151,6 +151,7 @@ def get_alarm_statuses(compartment_id: Optional[str] = None,
     List the status of each alarm in the specified compartment.
     Status is collective, across all metric streams in the alarm.
     To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+    The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
     For more information, see
     [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
     For important limits information, see
@@ -225,6 +226,7 @@ def get_alarm_statuses_output(compartment_id: Optional[pulumi.Input[str]] = None
     List the status of each alarm in the specified compartment.
     Status is collective, across all metric streams in the alarm.
     To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+    The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
     For more information, see
     [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
     For important limits information, see

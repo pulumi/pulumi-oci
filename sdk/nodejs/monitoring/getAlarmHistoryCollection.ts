@@ -57,11 +57,11 @@ export interface GetAlarmHistoryCollectionArgs {
      */
     alarmId: string;
     /**
-     * A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2019-01-01T01:00:00.789Z`
+     * A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2023-01-01T01:00:00.789Z`
      */
     timestampGreaterThanOrEqualTo?: string;
     /**
-     * A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2019-01-02T01:00:00.789Z`
+     * A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2023-01-02T01:00:00.789Z`
      */
     timestampLessThan?: string;
 }
@@ -134,11 +134,11 @@ export interface GetAlarmHistoryCollectionOutputArgs {
      */
     alarmId: pulumi.Input<string>;
     /**
-     * A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2019-01-01T01:00:00.789Z`
+     * A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2023-01-01T01:00:00.789Z`
      */
     timestampGreaterThanOrEqualTo?: pulumi.Input<string>;
     /**
-     * A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2019-01-02T01:00:00.789Z`
+     * A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2023-01-02T01:00:00.789Z`
      */
     timestampLessThan?: pulumi.Input<string>;
 }

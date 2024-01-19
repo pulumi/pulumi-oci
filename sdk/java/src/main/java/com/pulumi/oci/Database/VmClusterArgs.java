@@ -278,6 +278,21 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Operating system version of the image.
+     * 
+     */
+    @Import(name="systemVersion")
+    private @Nullable Output<String> systemVersion;
+
+    /**
+     * @return Operating system version of the image.
+     * 
+     */
+    public Optional<Output<String>> systemVersion() {
+        return Optional.ofNullable(this.systemVersion);
+    }
+
+    /**
      * The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
@@ -334,6 +349,7 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.memorySizeInGbs = $.memorySizeInGbs;
         this.ocpuCount = $.ocpuCount;
         this.sshPublicKeys = $.sshPublicKeys;
+        this.systemVersion = $.systemVersion;
         this.timeZone = $.timeZone;
         this.vmClusterNetworkId = $.vmClusterNetworkId;
     }
@@ -728,6 +744,27 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sshPublicKeys(String... sshPublicKeys) {
             return sshPublicKeys(List.of(sshPublicKeys));
+        }
+
+        /**
+         * @param systemVersion Operating system version of the image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemVersion(@Nullable Output<String> systemVersion) {
+            $.systemVersion = systemVersion;
+            return this;
+        }
+
+        /**
+         * @param systemVersion Operating system version of the image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemVersion(String systemVersion) {
+            return systemVersion(Output.of(systemVersion));
         }
 
         /**

@@ -25,7 +25,7 @@ public final class GetSecurityAssessmentComparisonResult {
     private String id;
     private String securityAssessmentId;
     /**
-     * @return The current state of the security assessment comparison.
+     * @return The current state of the finding.
      * 
      */
     private String state;
@@ -62,7 +62,7 @@ public final class GetSecurityAssessmentComparisonResult {
         return this.securityAssessmentId;
     }
     /**
-     * @return The current state of the security assessment comparison.
+     * @return The current state of the finding.
      * 
      */
     public String state() {

@@ -6,6 +6,7 @@ package com.pulumi.oci.DataSafe.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataSafe.inputs.SecurityAssessmentStatisticAdvisoryArgs;
+import com.pulumi.oci.DataSafe.inputs.SecurityAssessmentStatisticDeferredArgs;
 import com.pulumi.oci.DataSafe.inputs.SecurityAssessmentStatisticEvaluateArgs;
 import com.pulumi.oci.DataSafe.inputs.SecurityAssessmentStatisticHighRiskArgs;
 import com.pulumi.oci.DataSafe.inputs.SecurityAssessmentStatisticLowRiskArgs;
@@ -35,6 +36,21 @@ public final class SecurityAssessmentStatisticArgs extends com.pulumi.resources.
      */
     public Optional<Output<List<SecurityAssessmentStatisticAdvisoryArgs>>> advisories() {
         return Optional.ofNullable(this.advisories);
+    }
+
+    /**
+     * Statistics showing the number of findings with a particular risk level for each category.
+     * 
+     */
+    @Import(name="deferreds")
+    private @Nullable Output<List<SecurityAssessmentStatisticDeferredArgs>> deferreds;
+
+    /**
+     * @return Statistics showing the number of findings with a particular risk level for each category.
+     * 
+     */
+    public Optional<Output<List<SecurityAssessmentStatisticDeferredArgs>>> deferreds() {
+        return Optional.ofNullable(this.deferreds);
     }
 
     /**
@@ -131,6 +147,7 @@ public final class SecurityAssessmentStatisticArgs extends com.pulumi.resources.
 
     private SecurityAssessmentStatisticArgs(SecurityAssessmentStatisticArgs $) {
         this.advisories = $.advisories;
+        this.deferreds = $.deferreds;
         this.evaluates = $.evaluates;
         this.highRisks = $.highRisks;
         this.lowRisks = $.lowRisks;
@@ -186,6 +203,37 @@ public final class SecurityAssessmentStatisticArgs extends com.pulumi.resources.
          */
         public Builder advisories(SecurityAssessmentStatisticAdvisoryArgs... advisories) {
             return advisories(List.of(advisories));
+        }
+
+        /**
+         * @param deferreds Statistics showing the number of findings with a particular risk level for each category.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deferreds(@Nullable Output<List<SecurityAssessmentStatisticDeferredArgs>> deferreds) {
+            $.deferreds = deferreds;
+            return this;
+        }
+
+        /**
+         * @param deferreds Statistics showing the number of findings with a particular risk level for each category.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deferreds(List<SecurityAssessmentStatisticDeferredArgs> deferreds) {
+            return deferreds(Output.of(deferreds));
+        }
+
+        /**
+         * @param deferreds Statistics showing the number of findings with a particular risk level for each category.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deferreds(SecurityAssessmentStatisticDeferredArgs... deferreds) {
+            return deferreds(List.of(deferreds));
         }
 
         /**

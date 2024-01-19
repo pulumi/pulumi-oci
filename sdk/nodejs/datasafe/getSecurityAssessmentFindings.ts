@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
  *
- * List all the findings from all the targets in the specified assessment.
+ * List all the findings from all the targets in the specified compartment.
  */
 export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFindingsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentFindingsResult> {
 
@@ -19,9 +19,11 @@ export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFinding
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
         "findingKey": args.findingKey,
+        "isTopFinding": args.isTopFinding,
         "references": args.references,
         "securityAssessmentId": args.securityAssessmentId,
         "severity": args.severity,
+        "state": args.state,
     }, opts);
 }
 
@@ -39,9 +41,13 @@ export interface GetSecurityAssessmentFindingsArgs {
     compartmentIdInSubtree?: boolean;
     filters?: inputs.DataSafe.GetSecurityAssessmentFindingsFilter[];
     /**
-     * Each finding has a key. This key is same for the finding across targets
+     * Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      */
     findingKey?: string;
+    /**
+     * A filter to return only the findings that are marked as top findings.
+     */
+    isTopFinding?: boolean;
     /**
      * An optional filter to return only findings containing the specified reference.
      */
@@ -54,6 +60,10 @@ export interface GetSecurityAssessmentFindingsArgs {
      * A filter to return only findings of a particular risk level.
      */
     severity?: string;
+    /**
+     * A filter to return only the findings that match the specified lifecycle states.
+     */
+    state?: string;
 }
 
 /**
@@ -73,6 +83,10 @@ export interface GetSecurityAssessmentFindingsResult {
      */
     readonly id: string;
     /**
+     * Indicates whether a given finding is marked as topFinding or not.
+     */
+    readonly isTopFinding?: boolean;
+    /**
      * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
      */
     readonly references?: string;
@@ -81,11 +95,15 @@ export interface GetSecurityAssessmentFindingsResult {
      * The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
      */
     readonly severity?: string;
+    /**
+     * The current state of the finding.
+     */
+    readonly state?: string;
 }
 /**
  * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
  *
- * List all the findings from all the targets in the specified assessment.
+ * List all the findings from all the targets in the specified compartment.
  */
 export function getSecurityAssessmentFindingsOutput(args: GetSecurityAssessmentFindingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingsResult> {
     return pulumi.output(args).apply((a: any) => getSecurityAssessmentFindings(a, opts))
@@ -105,9 +123,13 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
     compartmentIdInSubtree?: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingsFilterArgs>[]>;
     /**
-     * Each finding has a key. This key is same for the finding across targets
+     * Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      */
     findingKey?: pulumi.Input<string>;
+    /**
+     * A filter to return only the findings that are marked as top findings.
+     */
+    isTopFinding?: pulumi.Input<boolean>;
     /**
      * An optional filter to return only findings containing the specified reference.
      */
@@ -120,4 +142,8 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
      * A filter to return only findings of a particular risk level.
      */
     severity?: pulumi.Input<string>;
+    /**
+     * A filter to return only the findings that match the specified lifecycle states.
+     */
+    state?: pulumi.Input<string>;
 }

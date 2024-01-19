@@ -785,6 +785,11 @@ export const getPluggableDatabases: typeof import("./getPluggableDatabases").get
 export const getPluggableDatabasesOutput: typeof import("./getPluggableDatabases").getPluggableDatabasesOutput = null as any;
 utilities.lazyLoad(exports, ["getPluggableDatabases","getPluggableDatabasesOutput"], () => require("./getPluggableDatabases"));
 
+export { GetSystemVersionsArgs, GetSystemVersionsResult, GetSystemVersionsOutputArgs } from "./getSystemVersions";
+export const getSystemVersions: typeof import("./getSystemVersions").getSystemVersions = null as any;
+export const getSystemVersionsOutput: typeof import("./getSystemVersions").getSystemVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSystemVersions","getSystemVersionsOutput"], () => require("./getSystemVersions"));
+
 export { GetVmClusterArgs, GetVmClusterResult, GetVmClusterOutputArgs } from "./getVmCluster";
 export const getVmCluster: typeof import("./getVmCluster").getVmCluster = null as any;
 export const getVmClusterOutput: typeof import("./getVmCluster").getVmClusterOutput = null as any;

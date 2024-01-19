@@ -161,6 +161,7 @@ from .get_oneoff_patch import *
 from .get_oneoff_patches import *
 from .get_pluggable_database import *
 from .get_pluggable_databases import *
+from .get_system_versions import *
 from .get_vm_cluster import *
 from .get_vm_cluster_network import *
 from .get_vm_cluster_network_download_config_file import *

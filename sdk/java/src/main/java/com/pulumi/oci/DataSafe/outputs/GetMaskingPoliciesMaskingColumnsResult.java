@@ -33,7 +33,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
      */
     private String id;
     /**
-     * @return Indicates if data masking is enabled for the masking column.
+     * @return Indicates whether data masking is enabled for the masking column.
      * 
      */
     private @Nullable Boolean isMaskingEnabled;
@@ -105,7 +105,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         return this.id;
     }
     /**
-     * @return Indicates if data masking is enabled for the masking column.
+     * @return Indicates whether data masking is enabled for the masking column.
      * 
      */
     public Optional<Boolean> isMaskingEnabled() {

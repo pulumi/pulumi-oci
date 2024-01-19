@@ -18,11 +18,11 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+        /// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         /// </summary>
         public readonly string TimeSuppressFrom;
         /// <summary>
-        /// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+        /// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
         /// </summary>
         public readonly string TimeSuppressUntil;
 

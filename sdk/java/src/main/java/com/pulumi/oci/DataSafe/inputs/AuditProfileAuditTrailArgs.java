@@ -6,6 +6,7 @@ package com.pulumi.oci.DataSafe.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -169,6 +170,66 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * The secondary id assigned for the peer database registered with Data Safe.
+     * 
+     */
+    @Import(name="peerTargetDatabaseKey")
+    private @Nullable Output<Integer> peerTargetDatabaseKey;
+
+    /**
+     * @return The secondary id assigned for the peer database registered with Data Safe.
+     * 
+     */
+    public Optional<Output<Integer>> peerTargetDatabaseKey() {
+        return Optional.ofNullable(this.peerTargetDatabaseKey);
+    }
+
+    /**
+     * The details of the audit trail purge job that ran on the &#34;purgeJobTime&#34;.
+     * 
+     */
+    @Import(name="purgeJobDetails")
+    private @Nullable Output<String> purgeJobDetails;
+
+    /**
+     * @return The details of the audit trail purge job that ran on the &#34;purgeJobTime&#34;.
+     * 
+     */
+    public Optional<Output<String>> purgeJobDetails() {
+        return Optional.ofNullable(this.purgeJobDetails);
+    }
+
+    /**
+     * The current status of the audit trail purge job.
+     * 
+     */
+    @Import(name="purgeJobStatus")
+    private @Nullable Output<String> purgeJobStatus;
+
+    /**
+     * @return The current status of the audit trail purge job.
+     * 
+     */
+    public Optional<Output<String>> purgeJobStatus() {
+        return Optional.ofNullable(this.purgeJobStatus);
+    }
+
+    /**
+     * The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database&#39;s audit trail does not become too large. In the format defined by RFC3339.
+     * 
+     */
+    @Import(name="purgeJobTime")
+    private @Nullable Output<String> purgeJobTime;
+
+    /**
+     * @return The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database&#39;s audit trail does not become too large. In the format defined by RFC3339.
+     * 
+     */
+    public Optional<Output<String>> purgeJobTime() {
+        return Optional.ofNullable(this.purgeJobTime);
+    }
+
+    /**
      * The current state of the audit profile.
      * 
      */
@@ -289,6 +350,21 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * The underlying source of unified audit trail.
+     * 
+     */
+    @Import(name="trailSource")
+    private @Nullable Output<String> trailSource;
+
+    /**
+     * @return The underlying source of unified audit trail.
+     * 
+     */
+    public Optional<Output<String>> trailSource() {
+        return Optional.ofNullable(this.trailSource);
+    }
+
+    /**
      * The OCID of the workrequest for audit trail which collects audit records.
      * 
      */
@@ -316,6 +392,10 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
         this.id = $.id;
         this.isAutoPurgeEnabled = $.isAutoPurgeEnabled;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.peerTargetDatabaseKey = $.peerTargetDatabaseKey;
+        this.purgeJobDetails = $.purgeJobDetails;
+        this.purgeJobStatus = $.purgeJobStatus;
+        this.purgeJobTime = $.purgeJobTime;
         this.state = $.state;
         this.status = $.status;
         this.systemTags = $.systemTags;
@@ -324,6 +404,7 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
         this.timeLastCollected = $.timeLastCollected;
         this.timeUpdated = $.timeUpdated;
         this.trailLocation = $.trailLocation;
+        this.trailSource = $.trailSource;
         this.workRequestId = $.workRequestId;
     }
 
@@ -556,6 +637,90 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
         }
 
         /**
+         * @param peerTargetDatabaseKey The secondary id assigned for the peer database registered with Data Safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerTargetDatabaseKey(@Nullable Output<Integer> peerTargetDatabaseKey) {
+            $.peerTargetDatabaseKey = peerTargetDatabaseKey;
+            return this;
+        }
+
+        /**
+         * @param peerTargetDatabaseKey The secondary id assigned for the peer database registered with Data Safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerTargetDatabaseKey(Integer peerTargetDatabaseKey) {
+            return peerTargetDatabaseKey(Output.of(peerTargetDatabaseKey));
+        }
+
+        /**
+         * @param purgeJobDetails The details of the audit trail purge job that ran on the &#34;purgeJobTime&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder purgeJobDetails(@Nullable Output<String> purgeJobDetails) {
+            $.purgeJobDetails = purgeJobDetails;
+            return this;
+        }
+
+        /**
+         * @param purgeJobDetails The details of the audit trail purge job that ran on the &#34;purgeJobTime&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder purgeJobDetails(String purgeJobDetails) {
+            return purgeJobDetails(Output.of(purgeJobDetails));
+        }
+
+        /**
+         * @param purgeJobStatus The current status of the audit trail purge job.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder purgeJobStatus(@Nullable Output<String> purgeJobStatus) {
+            $.purgeJobStatus = purgeJobStatus;
+            return this;
+        }
+
+        /**
+         * @param purgeJobStatus The current status of the audit trail purge job.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder purgeJobStatus(String purgeJobStatus) {
+            return purgeJobStatus(Output.of(purgeJobStatus));
+        }
+
+        /**
+         * @param purgeJobTime The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database&#39;s audit trail does not become too large. In the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder purgeJobTime(@Nullable Output<String> purgeJobTime) {
+            $.purgeJobTime = purgeJobTime;
+            return this;
+        }
+
+        /**
+         * @param purgeJobTime The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database&#39;s audit trail does not become too large. In the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder purgeJobTime(String purgeJobTime) {
+            return purgeJobTime(Output.of(purgeJobTime));
+        }
+
+        /**
          * @param state The current state of the audit profile.
          * 
          * @return builder
@@ -721,6 +886,27 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
          */
         public Builder trailLocation(String trailLocation) {
             return trailLocation(Output.of(trailLocation));
+        }
+
+        /**
+         * @param trailSource The underlying source of unified audit trail.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trailSource(@Nullable Output<String> trailSource) {
+            $.trailSource = trailSource;
+            return this;
+        }
+
+        /**
+         * @param trailSource The underlying source of unified audit trail.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trailSource(String trailSource) {
+            return trailSource(Output.of(trailSource));
         }
 
         /**

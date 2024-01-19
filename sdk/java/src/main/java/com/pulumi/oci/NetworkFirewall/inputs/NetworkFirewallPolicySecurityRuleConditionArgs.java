@@ -5,10 +5,11 @@ package com.pulumi.oci.NetworkFirewall.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pulumi.resources.ResourceArgs {
@@ -19,75 +20,75 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
      * (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    @Import(name="applications", required=true)
-    private Output<List<String>> applications;
+    @Import(name="applications")
+    private @Nullable Output<List<String>> applications;
 
     /**
      * @return (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    public Output<List<String>> applications() {
-        return this.applications;
+    public Optional<Output<List<String>>> applications() {
+        return Optional.ofNullable(this.applications);
     }
 
     /**
      * (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
-    @Import(name="destinationAddresses", required=true)
-    private Output<List<String>> destinationAddresses;
+    @Import(name="destinationAddresses")
+    private @Nullable Output<List<String>> destinationAddresses;
 
     /**
      * @return (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
-    public Output<List<String>> destinationAddresses() {
-        return this.destinationAddresses;
+    public Optional<Output<List<String>>> destinationAddresses() {
+        return Optional.ofNullable(this.destinationAddresses);
     }
 
     /**
      * (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    @Import(name="services", required=true)
-    private Output<List<String>> services;
+    @Import(name="services")
+    private @Nullable Output<List<String>> services;
 
     /**
      * @return (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    public Output<List<String>> services() {
-        return this.services;
+    public Optional<Output<List<String>>> services() {
+        return Optional.ofNullable(this.services);
     }
 
     /**
      * (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
-    @Import(name="sourceAddresses", required=true)
-    private Output<List<String>> sourceAddresses;
+    @Import(name="sourceAddresses")
+    private @Nullable Output<List<String>> sourceAddresses;
 
     /**
      * @return (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
-    public Output<List<String>> sourceAddresses() {
-        return this.sourceAddresses;
+    public Optional<Output<List<String>>> sourceAddresses() {
+        return Optional.ofNullable(this.sourceAddresses);
     }
 
     /**
      * (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
      * 
      */
-    @Import(name="urls", required=true)
-    private Output<List<String>> urls;
+    @Import(name="urls")
+    private @Nullable Output<List<String>> urls;
 
     /**
      * @return (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
      * 
      */
-    public Output<List<String>> urls() {
-        return this.urls;
+    public Optional<Output<List<String>>> urls() {
+        return Optional.ofNullable(this.urls);
     }
 
     private NetworkFirewallPolicySecurityRuleConditionArgs() {}
@@ -124,7 +125,7 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
          * @return builder
          * 
          */
-        public Builder applications(Output<List<String>> applications) {
+        public Builder applications(@Nullable Output<List<String>> applications) {
             $.applications = applications;
             return this;
         }
@@ -155,7 +156,7 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
          * @return builder
          * 
          */
-        public Builder destinationAddresses(Output<List<String>> destinationAddresses) {
+        public Builder destinationAddresses(@Nullable Output<List<String>> destinationAddresses) {
             $.destinationAddresses = destinationAddresses;
             return this;
         }
@@ -186,7 +187,7 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
          * @return builder
          * 
          */
-        public Builder services(Output<List<String>> services) {
+        public Builder services(@Nullable Output<List<String>> services) {
             $.services = services;
             return this;
         }
@@ -217,7 +218,7 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
          * @return builder
          * 
          */
-        public Builder sourceAddresses(Output<List<String>> sourceAddresses) {
+        public Builder sourceAddresses(@Nullable Output<List<String>> sourceAddresses) {
             $.sourceAddresses = sourceAddresses;
             return this;
         }
@@ -248,7 +249,7 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
          * @return builder
          * 
          */
-        public Builder urls(Output<List<String>> urls) {
+        public Builder urls(@Nullable Output<List<String>> urls) {
             $.urls = urls;
             return this;
         }
@@ -274,21 +275,6 @@ public final class NetworkFirewallPolicySecurityRuleConditionArgs extends com.pu
         }
 
         public NetworkFirewallPolicySecurityRuleConditionArgs build() {
-            if ($.applications == null) {
-                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleConditionArgs", "applications");
-            }
-            if ($.destinationAddresses == null) {
-                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleConditionArgs", "destinationAddresses");
-            }
-            if ($.services == null) {
-                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleConditionArgs", "services");
-            }
-            if ($.sourceAddresses == null) {
-                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleConditionArgs", "sourceAddresses");
-            }
-            if ($.urls == null) {
-                throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleConditionArgs", "urls");
-            }
             return $;
         }
     }

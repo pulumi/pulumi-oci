@@ -1,6 +1,5 @@
 provider: oci
 major-version: 1
-lint: true
 providerDefaultBranch: main
 parallel: 1
 timeout: 90
@@ -20,9 +19,6 @@ plugins:
   - name: random
     version: "4.4.1"
 goBuildParallelism: 1
-runner:
-  publish: pulumi-ubuntu-8core
-  buildSdk: pulumi-ubuntu-8core
 license:
   ignore:
     - github.com/oracle/terraform-provider-oci/shim

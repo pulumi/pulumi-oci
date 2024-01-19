@@ -26,9 +26,17 @@ namespace Pulumi.Oci.Adm.Outputs
         /// </summary>
         public readonly string NodeId;
         /// <summary>
+        /// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+        /// </summary>
+        public readonly string Purl;
+        /// <summary>
         /// Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
         /// </summary>
         public readonly string RecommendedGav;
+        /// <summary>
+        /// Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+        /// </summary>
+        public readonly string RecommendedPurl;
 
         [OutputConstructor]
         private GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemResult(
@@ -38,12 +46,18 @@ namespace Pulumi.Oci.Adm.Outputs
 
             string nodeId,
 
-            string recommendedGav)
+            string purl,
+
+            string recommendedGav,
+
+            string recommendedPurl)
         {
             ApplicationDependencyNodeIds = applicationDependencyNodeIds;
             Gav = gav;
             NodeId = nodeId;
+            Purl = purl;
             RecommendedGav = recommendedGav;
+            RecommendedPurl = recommendedPurl;
         }
     }
 }

@@ -73,6 +73,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string DatabaseType;
         /// <summary>
+        /// Unique name of the database associated to the peer target database.
+        /// </summary>
+        public readonly string DatabaseUniqueName;
+        /// <summary>
         /// The name of the database user whose actions were audited.
         /// </summary>
         public readonly string DbUserName;
@@ -137,6 +141,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string OsUserName;
         /// <summary>
+        /// The secondary id assigned for the peer database registered with Data Safe.
+        /// </summary>
+        public readonly int PeerTargetDatabaseKey;
+        /// <summary>
         /// The class of the target that was audited.
         /// </summary>
         public readonly string TargetClass;
@@ -152,6 +160,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// The timestamp when this audit event was collected from the target database by Data Safe.
         /// </summary>
         public readonly string TimeCollected;
+        /// <summary>
+        /// The underlying source of unified audit trail.
+        /// </summary>
+        public readonly string TrailSource;
 
         [OutputConstructor]
         private GetAuditEventsAuditEventCollectionItemResult(
@@ -182,6 +194,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
             string compartmentId,
 
             string databaseType,
+
+            string databaseUniqueName,
 
             string dbUserName,
 
@@ -215,13 +229,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string osUserName,
 
+            int peerTargetDatabaseKey,
+
             string targetClass,
 
             string targetId,
 
             string targetName,
 
-            string timeCollected)
+            string timeCollected,
+
+            string trailSource)
         {
             ActionTaken = actionTaken;
             AuditEventTime = auditEventTime;
@@ -237,6 +255,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             CommandText = commandText;
             CompartmentId = compartmentId;
             DatabaseType = databaseType;
+            DatabaseUniqueName = databaseUniqueName;
             DbUserName = dbUserName;
             DefinedTags = definedTags;
             ErrorCode = errorCode;
@@ -253,10 +272,12 @@ namespace Pulumi.Oci.DataSafe.Outputs
             OperationStatus = operationStatus;
             OsTerminal = osTerminal;
             OsUserName = osUserName;
+            PeerTargetDatabaseKey = peerTargetDatabaseKey;
             TargetClass = targetClass;
             TargetId = targetId;
             TargetName = targetName;
             TimeCollected = timeCollected;
+            TrailSource = trailSource;
         }
     }
 }

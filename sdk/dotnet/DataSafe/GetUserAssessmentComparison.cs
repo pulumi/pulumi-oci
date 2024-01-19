@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Gets the details of the comparison report for the user assessments provided.
+        /// Gets the details of the comparison report for the user assessments submitted for comparison.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Gets the details of the comparison report for the user assessments provided.
+        /// Gets the details of the comparison report for the user assessments submitted for comparison.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

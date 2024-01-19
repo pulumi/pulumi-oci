@@ -18,10 +18,15 @@ import javax.annotation.Nullable;
 public final class GetUserAssessmentUsersResult {
     private @Nullable String accessLevel;
     /**
-     * @return The user account status.
+     * @return The status of the user account.
      * 
      */
     private @Nullable String accountStatus;
+    /**
+     * @return Indicates whether the user has access to all the schemas.
+     * 
+     */
+    private @Nullable Boolean areAllSchemasAccessible;
     /**
      * @return The user authentication method.
      * 
@@ -34,6 +39,11 @@ public final class GetUserAssessmentUsersResult {
      * 
      */
     private String id;
+    /**
+     * @return The list of database schemas current user can access.
+     * 
+     */
+    private @Nullable List<String> schemaLists;
     /**
      * @return The OCID of the target database.
      * 
@@ -75,11 +85,18 @@ public final class GetUserAssessmentUsersResult {
         return Optional.ofNullable(this.accessLevel);
     }
     /**
-     * @return The user account status.
+     * @return The status of the user account.
      * 
      */
     public Optional<String> accountStatus() {
         return Optional.ofNullable(this.accountStatus);
+    }
+    /**
+     * @return Indicates whether the user has access to all the schemas.
+     * 
+     */
+    public Optional<Boolean> areAllSchemasAccessible() {
+        return Optional.ofNullable(this.areAllSchemasAccessible);
     }
     /**
      * @return The user authentication method.
@@ -100,6 +117,13 @@ public final class GetUserAssessmentUsersResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return The list of database schemas current user can access.
+     * 
+     */
+    public List<String> schemaLists() {
+        return this.schemaLists == null ? List.of() : this.schemaLists;
     }
     /**
      * @return The OCID of the target database.
@@ -178,10 +202,12 @@ public final class GetUserAssessmentUsersResult {
     public static final class Builder {
         private @Nullable String accessLevel;
         private @Nullable String accountStatus;
+        private @Nullable Boolean areAllSchemasAccessible;
         private @Nullable String authenticationType;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetUserAssessmentUsersFilter> filters;
         private String id;
+        private @Nullable List<String> schemaLists;
         private @Nullable String targetId;
         private @Nullable String timeLastLoginGreaterThanOrEqualTo;
         private @Nullable String timeLastLoginLessThan;
@@ -202,10 +228,12 @@ public final class GetUserAssessmentUsersResult {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
     	      this.accountStatus = defaults.accountStatus;
+    	      this.areAllSchemasAccessible = defaults.areAllSchemasAccessible;
     	      this.authenticationType = defaults.authenticationType;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.schemaLists = defaults.schemaLists;
     	      this.targetId = defaults.targetId;
     	      this.timeLastLoginGreaterThanOrEqualTo = defaults.timeLastLoginGreaterThanOrEqualTo;
     	      this.timeLastLoginLessThan = defaults.timeLastLoginLessThan;
@@ -236,6 +264,12 @@ public final class GetUserAssessmentUsersResult {
             return this;
         }
         @CustomType.Setter
+        public Builder areAllSchemasAccessible(@Nullable Boolean areAllSchemasAccessible) {
+
+            this.areAllSchemasAccessible = areAllSchemasAccessible;
+            return this;
+        }
+        @CustomType.Setter
         public Builder authenticationType(@Nullable String authenticationType) {
 
             this.authenticationType = authenticationType;
@@ -263,6 +297,15 @@ public final class GetUserAssessmentUsersResult {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder schemaLists(@Nullable List<String> schemaLists) {
+
+            this.schemaLists = schemaLists;
+            return this;
+        }
+        public Builder schemaLists(String... schemaLists) {
+            return schemaLists(List.of(schemaLists));
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
@@ -365,10 +408,12 @@ public final class GetUserAssessmentUsersResult {
             final var _resultValue = new GetUserAssessmentUsersResult();
             _resultValue.accessLevel = accessLevel;
             _resultValue.accountStatus = accountStatus;
+            _resultValue.areAllSchemasAccessible = areAllSchemasAccessible;
             _resultValue.authenticationType = authenticationType;
             _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.schemaLists = schemaLists;
             _resultValue.targetId = targetId;
             _resultValue.timeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
             _resultValue.timeLastLoginLessThan = timeLastLoginLessThan;

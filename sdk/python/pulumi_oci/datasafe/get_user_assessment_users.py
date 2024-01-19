@@ -23,13 +23,16 @@ class GetUserAssessmentUsersResult:
     """
     A collection of values returned by getUserAssessmentUsers.
     """
-    def __init__(__self__, access_level=None, account_status=None, authentication_type=None, compartment_id_in_subtree=None, filters=None, id=None, target_id=None, time_last_login_greater_than_or_equal_to=None, time_last_login_less_than=None, time_password_last_changed_greater_than_or_equal_to=None, time_password_last_changed_less_than=None, time_user_created_greater_than_or_equal_to=None, time_user_created_less_than=None, user_assessment_id=None, user_category=None, user_key=None, user_name=None, user_profile=None, user_role=None, user_type=None, users=None):
+    def __init__(__self__, access_level=None, account_status=None, are_all_schemas_accessible=None, authentication_type=None, compartment_id_in_subtree=None, filters=None, id=None, schema_lists=None, target_id=None, time_last_login_greater_than_or_equal_to=None, time_last_login_less_than=None, time_password_last_changed_greater_than_or_equal_to=None, time_password_last_changed_less_than=None, time_user_created_greater_than_or_equal_to=None, time_user_created_less_than=None, user_assessment_id=None, user_category=None, user_key=None, user_name=None, user_profile=None, user_role=None, user_type=None, users=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
         if account_status and not isinstance(account_status, str):
             raise TypeError("Expected argument 'account_status' to be a str")
         pulumi.set(__self__, "account_status", account_status)
+        if are_all_schemas_accessible and not isinstance(are_all_schemas_accessible, bool):
+            raise TypeError("Expected argument 'are_all_schemas_accessible' to be a bool")
+        pulumi.set(__self__, "are_all_schemas_accessible", are_all_schemas_accessible)
         if authentication_type and not isinstance(authentication_type, str):
             raise TypeError("Expected argument 'authentication_type' to be a str")
         pulumi.set(__self__, "authentication_type", authentication_type)
@@ -42,6 +45,9 @@ class GetUserAssessmentUsersResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if schema_lists and not isinstance(schema_lists, list):
+            raise TypeError("Expected argument 'schema_lists' to be a list")
+        pulumi.set(__self__, "schema_lists", schema_lists)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -97,9 +103,17 @@ class GetUserAssessmentUsersResult:
     @pulumi.getter(name="accountStatus")
     def account_status(self) -> Optional[str]:
         """
-        The user account status.
+        The status of the user account.
         """
         return pulumi.get(self, "account_status")
+
+    @property
+    @pulumi.getter(name="areAllSchemasAccessible")
+    def are_all_schemas_accessible(self) -> Optional[bool]:
+        """
+        Indicates whether the user has access to all the schemas.
+        """
+        return pulumi.get(self, "are_all_schemas_accessible")
 
     @property
     @pulumi.getter(name="authenticationType")
@@ -126,6 +140,14 @@ class GetUserAssessmentUsersResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="schemaLists")
+    def schema_lists(self) -> Optional[Sequence[str]]:
+        """
+        The list of database schemas current user can access.
+        """
+        return pulumi.get(self, "schema_lists")
 
     @property
     @pulumi.getter(name="targetId")
@@ -226,10 +248,12 @@ class AwaitableGetUserAssessmentUsersResult(GetUserAssessmentUsersResult):
         return GetUserAssessmentUsersResult(
             access_level=self.access_level,
             account_status=self.account_status,
+            are_all_schemas_accessible=self.are_all_schemas_accessible,
             authentication_type=self.authentication_type,
             compartment_id_in_subtree=self.compartment_id_in_subtree,
             filters=self.filters,
             id=self.id,
+            schema_lists=self.schema_lists,
             target_id=self.target_id,
             time_last_login_greater_than_or_equal_to=self.time_last_login_greater_than_or_equal_to,
             time_last_login_less_than=self.time_last_login_less_than,
@@ -249,9 +273,11 @@ class AwaitableGetUserAssessmentUsersResult(GetUserAssessmentUsersResult):
 
 def get_user_assessment_users(access_level: Optional[str] = None,
                               account_status: Optional[str] = None,
+                              are_all_schemas_accessible: Optional[bool] = None,
                               authentication_type: Optional[str] = None,
                               compartment_id_in_subtree: Optional[bool] = None,
                               filters: Optional[Sequence[pulumi.InputType['GetUserAssessmentUsersFilterArgs']]] = None,
+                              schema_lists: Optional[Sequence[str]] = None,
                               target_id: Optional[str] = None,
                               time_last_login_greater_than_or_equal_to: Optional[str] = None,
                               time_last_login_less_than: Optional[str] = None,
@@ -284,8 +310,10 @@ def get_user_assessment_users(access_level: Optional[str] = None,
     test_user_assessment_users = oci.DataSafe.get_user_assessment_users(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
         access_level=var["user_assessment_user_access_level"],
         account_status=var["user_assessment_user_account_status"],
+        are_all_schemas_accessible=var["user_assessment_user_are_all_schemas_accessible"],
         authentication_type=var["user_assessment_user_authentication_type"],
         compartment_id_in_subtree=var["user_assessment_user_compartment_id_in_subtree"],
+        schema_lists=var["user_assessment_user_schema_list"],
         target_id=oci_cloud_guard_target["test_target"]["id"],
         time_last_login_greater_than_or_equal_to=var["user_assessment_user_time_last_login_greater_than_or_equal_to"],
         time_last_login_less_than=var["user_assessment_user_time_last_login_less_than"],
@@ -304,8 +332,10 @@ def get_user_assessment_users(access_level: Optional[str] = None,
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param str account_status: A filter to return only items that match the specified account status.
+    :param bool are_all_schemas_accessible: A filter to return only items that match the criteria that all schemas can be accessed by a user.
     :param str authentication_type: A filter to return only items that match the specified authentication type.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+    :param Sequence[str] schema_lists: A filter to return items that contain the specified schema list.
     :param str target_id: A filter to return only items related to a specific target OCID.
     :param str time_last_login_greater_than_or_equal_to: A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
            
@@ -335,9 +365,11 @@ def get_user_assessment_users(access_level: Optional[str] = None,
     __args__ = dict()
     __args__['accessLevel'] = access_level
     __args__['accountStatus'] = account_status
+    __args__['areAllSchemasAccessible'] = are_all_schemas_accessible
     __args__['authenticationType'] = authentication_type
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
+    __args__['schemaLists'] = schema_lists
     __args__['targetId'] = target_id
     __args__['timeLastLoginGreaterThanOrEqualTo'] = time_last_login_greater_than_or_equal_to
     __args__['timeLastLoginLessThan'] = time_last_login_less_than
@@ -358,10 +390,12 @@ def get_user_assessment_users(access_level: Optional[str] = None,
     return AwaitableGetUserAssessmentUsersResult(
         access_level=pulumi.get(__ret__, 'access_level'),
         account_status=pulumi.get(__ret__, 'account_status'),
+        are_all_schemas_accessible=pulumi.get(__ret__, 'are_all_schemas_accessible'),
         authentication_type=pulumi.get(__ret__, 'authentication_type'),
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        schema_lists=pulumi.get(__ret__, 'schema_lists'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_last_login_greater_than_or_equal_to=pulumi.get(__ret__, 'time_last_login_greater_than_or_equal_to'),
         time_last_login_less_than=pulumi.get(__ret__, 'time_last_login_less_than'),
@@ -382,9 +416,11 @@ def get_user_assessment_users(access_level: Optional[str] = None,
 @_utilities.lift_output_func(get_user_assessment_users)
 def get_user_assessment_users_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                      account_status: Optional[pulumi.Input[Optional[str]]] = None,
+                                     are_all_schemas_accessible: Optional[pulumi.Input[Optional[bool]]] = None,
                                      authentication_type: Optional[pulumi.Input[Optional[str]]] = None,
                                      compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetUserAssessmentUsersFilterArgs']]]]] = None,
+                                     schema_lists: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                      target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      time_last_login_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                      time_last_login_less_than: Optional[pulumi.Input[Optional[str]]] = None,
@@ -417,8 +453,10 @@ def get_user_assessment_users_output(access_level: Optional[pulumi.Input[Optiona
     test_user_assessment_users = oci.DataSafe.get_user_assessment_users(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
         access_level=var["user_assessment_user_access_level"],
         account_status=var["user_assessment_user_account_status"],
+        are_all_schemas_accessible=var["user_assessment_user_are_all_schemas_accessible"],
         authentication_type=var["user_assessment_user_authentication_type"],
         compartment_id_in_subtree=var["user_assessment_user_compartment_id_in_subtree"],
+        schema_lists=var["user_assessment_user_schema_list"],
         target_id=oci_cloud_guard_target["test_target"]["id"],
         time_last_login_greater_than_or_equal_to=var["user_assessment_user_time_last_login_greater_than_or_equal_to"],
         time_last_login_less_than=var["user_assessment_user_time_last_login_less_than"],
@@ -437,8 +475,10 @@ def get_user_assessment_users_output(access_level: Optional[pulumi.Input[Optiona
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param str account_status: A filter to return only items that match the specified account status.
+    :param bool are_all_schemas_accessible: A filter to return only items that match the criteria that all schemas can be accessed by a user.
     :param str authentication_type: A filter to return only items that match the specified authentication type.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+    :param Sequence[str] schema_lists: A filter to return items that contain the specified schema list.
     :param str target_id: A filter to return only items related to a specific target OCID.
     :param str time_last_login_greater_than_or_equal_to: A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
            

@@ -60,6 +60,35 @@ namespace Pulumi.Oci.DataSafe
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         PeerTargetDatabaseDetails = new[]
+    ///         {
+    ///             new Oci.DataSafe.Inputs.TargetDatabasePeerTargetDatabaseDetailArgs
+    ///             {
+    ///                 DatabaseDetails = new Oci.DataSafe.Inputs.TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs
+    ///                 {
+    ///                     DatabaseType = @var.Target_database_peer_target_database_details_database_details_database_type,
+    ///                     InfrastructureType = @var.Target_database_peer_target_database_details_database_details_infrastructure_type,
+    ///                     AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+    ///                     DbSystemId = oci_database_db_system.Test_db_system.Id,
+    ///                     InstanceId = oci_core_instance.Test_instance.Id,
+    ///                     IpAddresses = @var.Target_database_peer_target_database_details_database_details_ip_addresses,
+    ///                     ListenerPort = @var.Target_database_peer_target_database_details_database_details_listener_port,
+    ///                     ServiceName = oci_core_service.Test_service.Name,
+    ///                     VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+    ///                 },
+    ///                 DataguardAssociationId = oci_certificates_management_association.Test_association.Id,
+    ///                 Description = @var.Target_database_peer_target_database_details_description,
+    ///                 DisplayName = @var.Target_database_peer_target_database_details_display_name,
+    ///                 TlsConfig = new Oci.DataSafe.Inputs.TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs
+    ///                 {
+    ///                     Status = @var.Target_database_peer_target_database_details_tls_config_status,
+    ///                     CertificateStoreType = @var.Target_database_peer_target_database_details_tls_config_certificate_store_type,
+    ///                     KeyStoreContent = @var.Target_database_peer_target_database_details_tls_config_key_store_content,
+    ///                     StorePassword = @var.Target_database_peer_target_database_details_tls_config_store_password,
+    ///                     TrustStoreContent = @var.Target_database_peer_target_database_details_tls_config_trust_store_content,
+    ///                 },
+    ///             },
+    ///         },
     ///         TlsConfig = new Oci.DataSafe.Inputs.TargetDatabaseTlsConfigArgs
     ///         {
     ///             Status = @var.Target_database_tls_config_status,
@@ -109,7 +138,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<Outputs.TargetDatabaseCredentials> Credentials { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Details of the database for the registration in Data Safe.
+        /// Details of the database for the registration in Data Safe.
         /// </summary>
         [Output("databaseDetails")]
         public Output<Outputs.TargetDatabaseDatabaseDetails> DatabaseDetails { get; private set; } = null!;
@@ -121,13 +150,13 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The description of the target database in Data Safe.
+        /// The description of the peer target database in Data Safe.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        /// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -139,10 +168,22 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Details about the current state of the target database in Data Safe.
+        /// Details about the current state of the peer target database in Data Safe.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The details of the database to be registered as a peer target database.
+        /// </summary>
+        [Output("peerTargetDatabaseDetails")]
+        public Output<ImmutableArray<Outputs.TargetDatabasePeerTargetDatabaseDetail>> PeerTargetDatabaseDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        /// </summary>
+        [Output("peerTargetDatabases")]
+        public Output<ImmutableArray<Outputs.TargetDatabasePeerTargetDatabase>> PeerTargetDatabases { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the target database in Data Safe.
@@ -239,7 +280,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<Inputs.TargetDatabaseCredentialsArgs>? Credentials { get; set; }
 
         /// <summary>
-        /// (Updatable) Details of the database for the registration in Data Safe.
+        /// Details of the database for the registration in Data Safe.
         /// </summary>
         [Input("databaseDetails", required: true)]
         public Input<Inputs.TargetDatabaseDatabaseDetailsArgs> DatabaseDetails { get; set; } = null!;
@@ -257,13 +298,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The description of the target database in Data Safe.
+        /// The description of the peer target database in Data Safe.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        /// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -278,6 +319,18 @@ namespace Pulumi.Oci.DataSafe
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
+        }
+
+        [Input("peerTargetDatabaseDetails")]
+        private InputList<Inputs.TargetDatabasePeerTargetDatabaseDetailArgs>? _peerTargetDatabaseDetails;
+
+        /// <summary>
+        /// The details of the database to be registered as a peer target database.
+        /// </summary>
+        public InputList<Inputs.TargetDatabasePeerTargetDatabaseDetailArgs> PeerTargetDatabaseDetails
+        {
+            get => _peerTargetDatabaseDetails ?? (_peerTargetDatabaseDetails = new InputList<Inputs.TargetDatabasePeerTargetDatabaseDetailArgs>());
+            set => _peerTargetDatabaseDetails = value;
         }
 
         /// <summary>
@@ -325,7 +378,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<Inputs.TargetDatabaseCredentialsGetArgs>? Credentials { get; set; }
 
         /// <summary>
-        /// (Updatable) Details of the database for the registration in Data Safe.
+        /// Details of the database for the registration in Data Safe.
         /// </summary>
         [Input("databaseDetails")]
         public Input<Inputs.TargetDatabaseDatabaseDetailsGetArgs>? DatabaseDetails { get; set; }
@@ -343,13 +396,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The description of the target database in Data Safe.
+        /// The description of the peer target database in Data Safe.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+        /// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -367,10 +420,34 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Details about the current state of the target database in Data Safe.
+        /// Details about the current state of the peer target database in Data Safe.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("peerTargetDatabaseDetails")]
+        private InputList<Inputs.TargetDatabasePeerTargetDatabaseDetailGetArgs>? _peerTargetDatabaseDetails;
+
+        /// <summary>
+        /// The details of the database to be registered as a peer target database.
+        /// </summary>
+        public InputList<Inputs.TargetDatabasePeerTargetDatabaseDetailGetArgs> PeerTargetDatabaseDetails
+        {
+            get => _peerTargetDatabaseDetails ?? (_peerTargetDatabaseDetails = new InputList<Inputs.TargetDatabasePeerTargetDatabaseDetailGetArgs>());
+            set => _peerTargetDatabaseDetails = value;
+        }
+
+        [Input("peerTargetDatabases")]
+        private InputList<Inputs.TargetDatabasePeerTargetDatabaseGetArgs>? _peerTargetDatabases;
+
+        /// <summary>
+        /// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        /// </summary>
+        public InputList<Inputs.TargetDatabasePeerTargetDatabaseGetArgs> PeerTargetDatabases
+        {
+            get => _peerTargetDatabases ?? (_peerTargetDatabases = new InputList<Inputs.TargetDatabasePeerTargetDatabaseGetArgs>());
+            set => _peerTargetDatabases = value;
+        }
 
         /// <summary>
         /// The current state of the target database in Data Safe.

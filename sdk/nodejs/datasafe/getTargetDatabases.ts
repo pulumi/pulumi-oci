@@ -106,7 +106,7 @@ export interface GetTargetDatabasesResult {
      */
     readonly databaseType?: string;
     /**
-     * The display name of the target database in Data Safe.
+     * The display name of the peer target database in Data Safe.
      */
     readonly displayName?: string;
     readonly filters?: outputs.DataSafe.GetTargetDatabasesFilter[];

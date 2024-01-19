@@ -67,13 +67,13 @@ type LookupAlarmArgs struct {
 // A collection of values returned by getAlarm.
 type LookupAlarmResult struct {
 	AlarmId string `pulumi:"alarmId"`
-	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
 	Body string `pulumi:"body"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+	// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
 	Destinations []string `pulumi:"destinations"`
 	// A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
 	DisplayName string `pulumi:"displayName"`
@@ -83,7 +83,7 @@ type LookupAlarmResult struct {
 	Id string `pulumi:"id"`
 	// Whether the alarm is enabled.  Example: `true`
 	IsEnabled bool `pulumi:"isEnabled"`
-	// When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
+	// Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `true`
 	IsNotificationsPerMetricDimensionEnabled bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// The format to use for alarm notifications. The formats are:
 	MessageFormat string `pulumi:"messageFormat"`
@@ -108,10 +108,10 @@ type LookupAlarmResult struct {
 	// The current lifecycle state of the alarm.  Example: `DELETED`
 	State string `pulumi:"state"`
 	// The configuration details for suppressing an alarm.
-	Suppressions []GetAlarmSuppression `pulumi:"suppressions"`
-	// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+	Suppressions []GetAlarmSuppressionType `pulumi:"suppressions"`
+	// The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
+	// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -157,7 +157,7 @@ func (o LookupAlarmResultOutput) AlarmId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlarmResult) string { return v.AlarmId }).(pulumi.StringOutput)
 }
 
-// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
 func (o LookupAlarmResultOutput) Body() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlarmResult) string { return v.Body }).(pulumi.StringOutput)
 }
@@ -172,7 +172,7 @@ func (o LookupAlarmResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupAlarmResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
 func (o LookupAlarmResultOutput) Destinations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAlarmResult) []string { return v.Destinations }).(pulumi.StringArrayOutput)
 }
@@ -197,7 +197,7 @@ func (o LookupAlarmResultOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAlarmResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
-// When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
+// Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `true`
 func (o LookupAlarmResultOutput) IsNotificationsPerMetricDimensionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAlarmResult) bool { return v.IsNotificationsPerMetricDimensionEnabled }).(pulumi.BoolOutput)
 }
@@ -258,16 +258,16 @@ func (o LookupAlarmResultOutput) State() pulumi.StringOutput {
 }
 
 // The configuration details for suppressing an alarm.
-func (o LookupAlarmResultOutput) Suppressions() GetAlarmSuppressionArrayOutput {
-	return o.ApplyT(func(v LookupAlarmResult) []GetAlarmSuppression { return v.Suppressions }).(GetAlarmSuppressionArrayOutput)
+func (o LookupAlarmResultOutput) Suppressions() GetAlarmSuppressionTypeArrayOutput {
+	return o.ApplyT(func(v LookupAlarmResult) []GetAlarmSuppressionType { return v.Suppressions }).(GetAlarmSuppressionTypeArrayOutput)
 }
 
-// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+// The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
 func (o LookupAlarmResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlarmResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
+// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
 func (o LookupAlarmResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlarmResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

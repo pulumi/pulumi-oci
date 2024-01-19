@@ -145,7 +145,7 @@ public final class GetUserAssessmentProfilesProfile {
      */
     private String userAssessmentId;
     /**
-     * @return The number of users having a given profile.
+     * @return The number of users that have a given profile.
      * 
      */
     private Integer userCount;
@@ -334,7 +334,7 @@ public final class GetUserAssessmentProfilesProfile {
         return this.userAssessmentId;
     }
     /**
-     * @return The number of users having a given profile.
+     * @return The number of users that have a given profile.
      * 
      */
     public Integer userCount() {

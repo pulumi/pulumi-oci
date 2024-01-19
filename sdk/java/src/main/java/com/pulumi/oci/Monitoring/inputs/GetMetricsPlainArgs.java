@@ -51,14 +51,14 @@ public final class GetMetricsPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
+     * Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
     @Import(name="dimensionFilters")
     private @Nullable Map<String,Object> dimensionFilters;
 
     /**
-     * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
+     * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
     public Optional<Map<String,Object>> dimensionFilters() {
@@ -190,7 +190,7 @@ public final class GetMetricsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param dimensionFilters Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
+         * @param dimensionFilters Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
          * 
          * @return builder
          * 

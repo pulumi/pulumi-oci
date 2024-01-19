@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Monitoring
     {
         public readonly string AlarmId;
         /// <summary>
-        /// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        /// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         /// </summary>
         public readonly string Body;
         /// <summary>
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+        /// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
         /// </summary>
         public readonly ImmutableArray<string> Destinations;
         /// <summary>
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>
-        /// When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
+        /// Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `true`
         /// </summary>
         public readonly bool IsNotificationsPerMetricDimensionEnabled;
         /// <summary>
@@ -209,11 +209,11 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAlarmSuppressionResult> Suppressions;
         /// <summary>
-        /// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+        /// The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
+        /// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
 

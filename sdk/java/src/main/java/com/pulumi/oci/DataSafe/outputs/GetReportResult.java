@@ -38,7 +38,7 @@ public final class GetReportResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The OCID of the report.
      * 
      */
     private String id;
@@ -111,7 +111,7 @@ public final class GetReportResult {
         return this.freeformTags;
     }
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The OCID of the report.
      * 
      */
     public String id() {

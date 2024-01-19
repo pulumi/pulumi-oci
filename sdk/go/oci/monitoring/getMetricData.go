@@ -71,24 +71,26 @@ type GetMetricDataArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
-	// The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
+	// The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2023-02-01T02:02:29.600Z`
 	EndTime *string               `pulumi:"endTime"`
 	Filters []GetMetricDataFilter `pulumi:"filters"`
 	// The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
 	Namespace string `pulumi:"namespace"`
-	// The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	// The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. When specifying a dimension value, surround it with double quotes, and escape each double quote with a backslash (`\`) character. Supported grouping functions: `grouping()`, `groupBy()`.
 	//
 	// Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
 	//
 	// For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
 	//
-	// Example: `CpuUtilization[1m].sum()`
+	// Example 1: `CpuUtilization[1m].sum()`
+	//
+	// Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = \"<var>&lt;instance_OCID&gt;</var>\"}.max()`
 	Query string `pulumi:"query"`
 	// The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
 	Resolution *string `pulumi:"resolution"`
 	// Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
 	ResourceGroup *string `pulumi:"resourceGroup"`
-	// The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
+	// The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2023-02-01T01:02:29.600Z`
 	StartTime *string `pulumi:"startTime"`
 }
 
@@ -132,24 +134,26 @@ type GetMetricDataOutputArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
 	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
-	// The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
+	// The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2023-02-01T02:02:29.600Z`
 	EndTime pulumi.StringPtrInput         `pulumi:"endTime"`
 	Filters GetMetricDataFilterArrayInput `pulumi:"filters"`
 	// The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	// The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. When specifying a dimension value, surround it with double quotes, and escape each double quote with a backslash (`\`) character. Supported grouping functions: `grouping()`, `groupBy()`.
 	//
 	// Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
 	//
 	// For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
 	//
-	// Example: `CpuUtilization[1m].sum()`
+	// Example 1: `CpuUtilization[1m].sum()`
+	//
+	// Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = \"<var>&lt;instance_OCID&gt;</var>\"}.max()`
 	Query pulumi.StringInput `pulumi:"query"`
 	// The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
 	Resolution pulumi.StringPtrInput `pulumi:"resolution"`
 	// Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
 	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
-	// The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
+	// The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2023-02-01T01:02:29.600Z`
 	StartTime pulumi.StringPtrInput `pulumi:"startTime"`
 }
 

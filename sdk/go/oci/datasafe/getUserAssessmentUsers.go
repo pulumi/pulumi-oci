@@ -36,8 +36,10 @@ import (
 //				UserAssessmentId:                  oci_data_safe_user_assessment.Test_user_assessment.Id,
 //				AccessLevel:                       pulumi.StringRef(_var.User_assessment_user_access_level),
 //				AccountStatus:                     pulumi.StringRef(_var.User_assessment_user_account_status),
+//				AreAllSchemasAccessible:           pulumi.BoolRef(_var.User_assessment_user_are_all_schemas_accessible),
 //				AuthenticationType:                pulumi.StringRef(_var.User_assessment_user_authentication_type),
 //				CompartmentIdInSubtree:            pulumi.BoolRef(_var.User_assessment_user_compartment_id_in_subtree),
+//				SchemaLists:                       _var.User_assessment_user_schema_list,
 //				TargetId:                          pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
 //				TimeLastLoginGreaterThanOrEqualTo: pulumi.StringRef(_var.User_assessment_user_time_last_login_greater_than_or_equal_to),
 //				TimeLastLoginLessThan:             pulumi.StringRef(_var.User_assessment_user_time_last_login_less_than),
@@ -76,11 +78,15 @@ type GetUserAssessmentUsersArgs struct {
 	AccessLevel *string `pulumi:"accessLevel"`
 	// A filter to return only items that match the specified account status.
 	AccountStatus *string `pulumi:"accountStatus"`
+	// A filter to return only items that match the criteria that all schemas can be accessed by a user.
+	AreAllSchemasAccessible *bool `pulumi:"areAllSchemasAccessible"`
 	// A filter to return only items that match the specified authentication type.
 	AuthenticationType *string `pulumi:"authenticationType"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree *bool                          `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetUserAssessmentUsersFilter `pulumi:"filters"`
+	// A filter to return items that contain the specified schema list.
+	SchemaLists []string `pulumi:"schemaLists"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 	// A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -125,14 +131,18 @@ type GetUserAssessmentUsersArgs struct {
 // A collection of values returned by getUserAssessmentUsers.
 type GetUserAssessmentUsersResult struct {
 	AccessLevel *string `pulumi:"accessLevel"`
-	// The user account status.
+	// The status of the user account.
 	AccountStatus *string `pulumi:"accountStatus"`
+	// Indicates whether the user has access to all the schemas.
+	AreAllSchemasAccessible *bool `pulumi:"areAllSchemasAccessible"`
 	// The user authentication method.
 	AuthenticationType     *string                        `pulumi:"authenticationType"`
 	CompartmentIdInSubtree *bool                          `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetUserAssessmentUsersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// The list of database schemas current user can access.
+	SchemaLists []string `pulumi:"schemaLists"`
 	// The OCID of the target database.
 	TargetId                                    *string `pulumi:"targetId"`
 	TimeLastLoginGreaterThanOrEqualTo           *string `pulumi:"timeLastLoginGreaterThanOrEqualTo"`
@@ -174,11 +184,15 @@ type GetUserAssessmentUsersOutputArgs struct {
 	AccessLevel pulumi.StringPtrInput `pulumi:"accessLevel"`
 	// A filter to return only items that match the specified account status.
 	AccountStatus pulumi.StringPtrInput `pulumi:"accountStatus"`
+	// A filter to return only items that match the criteria that all schemas can be accessed by a user.
+	AreAllSchemasAccessible pulumi.BoolPtrInput `pulumi:"areAllSchemasAccessible"`
 	// A filter to return only items that match the specified authentication type.
 	AuthenticationType pulumi.StringPtrInput `pulumi:"authenticationType"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree pulumi.BoolPtrInput                    `pulumi:"compartmentIdInSubtree"`
 	Filters                GetUserAssessmentUsersFilterArrayInput `pulumi:"filters"`
+	// A filter to return items that contain the specified schema list.
+	SchemaLists pulumi.StringArrayInput `pulumi:"schemaLists"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -243,9 +257,14 @@ func (o GetUserAssessmentUsersResultOutput) AccessLevel() pulumi.StringPtrOutput
 	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
 
-// The user account status.
+// The status of the user account.
 func (o GetUserAssessmentUsersResultOutput) AccountStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.AccountStatus }).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether the user has access to all the schemas.
+func (o GetUserAssessmentUsersResultOutput) AreAllSchemasAccessible() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentUsersResult) *bool { return v.AreAllSchemasAccessible }).(pulumi.BoolPtrOutput)
 }
 
 // The user authentication method.
@@ -264,6 +283,11 @@ func (o GetUserAssessmentUsersResultOutput) Filters() GetUserAssessmentUsersFilt
 // The provider-assigned unique ID for this managed resource.
 func (o GetUserAssessmentUsersResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The list of database schemas current user can access.
+func (o GetUserAssessmentUsersResultOutput) SchemaLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUserAssessmentUsersResult) []string { return v.SchemaLists }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the target database.

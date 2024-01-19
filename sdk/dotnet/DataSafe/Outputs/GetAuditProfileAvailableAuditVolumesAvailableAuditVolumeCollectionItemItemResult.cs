@@ -18,6 +18,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string AuditProfileId;
         /// <summary>
+        /// The OCID of the audit trail.
+        /// </summary>
+        public readonly string AuditTrailId;
+        /// <summary>
+        /// Unique name of the database associated to the peer target database.
+        /// </summary>
+        public readonly string DatabaseUniqueName;
+        /// <summary>
         /// Represents the month under consideration for which aggregated audit data volume available at the target is computed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
         /// </summary>
         public readonly string MonthInConsideration;
@@ -34,6 +42,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         private GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemResult(
             string auditProfileId,
 
+            string auditTrailId,
+
+            string databaseUniqueName,
+
             string monthInConsideration,
 
             string trailLocation,
@@ -41,6 +53,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
             string volume)
         {
             AuditProfileId = auditProfileId;
+            AuditTrailId = auditTrailId;
+            DatabaseUniqueName = databaseUniqueName;
             MonthInConsideration = monthInConsideration;
             TrailLocation = trailLocation;
             Volume = volume;

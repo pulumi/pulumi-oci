@@ -63,7 +63,7 @@ export interface GetReportResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The provider-assigned unique ID for this managed resource.
+     * The OCID of the report.
      */
     readonly id: string;
     /**

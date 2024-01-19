@@ -24,6 +24,18 @@ namespace Pulumi.Oci.DataSafe.Inputs
             set => _advisories = value;
         }
 
+        [Input("deferreds")]
+        private InputList<Inputs.SecurityAssessmentStatisticDeferredGetArgs>? _deferreds;
+
+        /// <summary>
+        /// Statistics showing the number of findings with a particular risk level for each category.
+        /// </summary>
+        public InputList<Inputs.SecurityAssessmentStatisticDeferredGetArgs> Deferreds
+        {
+            get => _deferreds ?? (_deferreds = new InputList<Inputs.SecurityAssessmentStatisticDeferredGetArgs>());
+            set => _deferreds = value;
+        }
+
         [Input("evaluates")]
         private InputList<Inputs.SecurityAssessmentStatisticEvaluateGetArgs>? _evaluates;
 

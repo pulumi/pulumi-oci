@@ -83,6 +83,22 @@ export interface GetAuditTrailResult {
      * Details about the current state of the audit trail in Data Safe.
      */
     readonly lifecycleDetails: string;
+    /**
+     * The secondary id assigned for the peer database registered with Data Safe.
+     */
+    readonly peerTargetDatabaseKey: number;
+    /**
+     * The details of the audit trail purge job that ran on the "purgeJobTime".
+     */
+    readonly purgeJobDetails: string;
+    /**
+     * The current status of the audit trail purge job.
+     */
+    readonly purgeJobStatus: string;
+    /**
+     * The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+     */
+    readonly purgeJobTime: string;
     readonly resumeTrigger: number;
     /**
      * The current state of the audit trail.
@@ -116,6 +132,10 @@ export interface GetAuditTrailResult {
      * An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      */
     readonly trailLocation: string;
+    /**
+     * The underlying source of unified audit trail.
+     */
+    readonly trailSource: string;
     /**
      * The OCID of the workrequest for audit trail which collects audit records.
      */

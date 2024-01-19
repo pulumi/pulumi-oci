@@ -23,7 +23,7 @@ public final class GetAlarmStatusesAlarmStatus {
      */
     private String id;
     /**
-     * @return The configured severity of the alarm.  Example: `CRITICAL`
+     * @return The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
      */
     private String severity;
@@ -38,7 +38,7 @@ public final class GetAlarmStatusesAlarmStatus {
      */
     private List<GetAlarmStatusesAlarmStatusSuppression> suppressions;
     /**
-     * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
+     * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2023-02-01T01:02:29.600Z`
      * 
      */
     private String timestampTriggered;
@@ -59,7 +59,7 @@ public final class GetAlarmStatusesAlarmStatus {
         return this.id;
     }
     /**
-     * @return The configured severity of the alarm.  Example: `CRITICAL`
+     * @return The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
      */
     public String severity() {
@@ -80,7 +80,7 @@ public final class GetAlarmStatusesAlarmStatus {
         return this.suppressions;
     }
     /**
-     * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
+     * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2023-02-01T01:02:29.600Z`
      * 
      */
     public String timestampTriggered() {

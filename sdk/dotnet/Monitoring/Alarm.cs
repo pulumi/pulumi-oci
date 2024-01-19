@@ -102,7 +102,7 @@ namespace Pulumi.Oci.Monitoring
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+        /// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
         /// </summary>
         [Output("destinations")]
         public Output<ImmutableArray<string>> Destinations { get; private set; } = null!;
@@ -236,13 +236,13 @@ namespace Pulumi.Oci.Monitoring
         public Output<Outputs.AlarmSuppression> Suppression { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+        /// The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
+        /// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -321,7 +321,7 @@ namespace Pulumi.Oci.Monitoring
         private InputList<string>? _destinations;
 
         /// <summary>
-        /// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+        /// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
         /// </summary>
         public InputList<string> Destinations
         {
@@ -493,7 +493,7 @@ namespace Pulumi.Oci.Monitoring
         private InputList<string>? _destinations;
 
         /// <summary>
-        /// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
+        /// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
         /// </summary>
         public InputList<string> Destinations
         {
@@ -636,13 +636,13 @@ namespace Pulumi.Oci.Monitoring
         public Input<Inputs.AlarmSuppressionGetArgs>? Suppression { get; set; }
 
         /// <summary>
-        /// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+        /// The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
+        /// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

@@ -70,16 +70,19 @@ type LookupTargetDatabaseResult struct {
 	DatabaseDetails []GetTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The description of the target database in Data Safe.
+	// The description of the peer target database in Data Safe.
 	Description string `pulumi:"description"`
-	// The display name of the target database in Data Safe.
+	// The display name of the peer target database in Data Safe.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Data Safe target database.
 	Id string `pulumi:"id"`
-	// Details about the current state of the target database in Data Safe.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails          string                                      `pulumi:"lifecycleDetails"`
+	PeerTargetDatabaseDetails []GetTargetDatabasePeerTargetDatabaseDetail `pulumi:"peerTargetDatabaseDetails"`
+	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+	PeerTargetDatabases []GetTargetDatabasePeerTargetDatabaseType `pulumi:"peerTargetDatabases"`
 	// The current state of the target database in Data Safe.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -161,12 +164,12 @@ func (o LookupTargetDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupTargetDatabaseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// The description of the target database in Data Safe.
+// The description of the peer target database in Data Safe.
 func (o LookupTargetDatabaseResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTargetDatabaseResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The display name of the target database in Data Safe.
+// The display name of the peer target database in Data Safe.
 func (o LookupTargetDatabaseResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTargetDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -181,9 +184,22 @@ func (o LookupTargetDatabaseResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTargetDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Details about the current state of the target database in Data Safe.
+// Details about the current state of the peer target database in Data Safe.
 func (o LookupTargetDatabaseResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTargetDatabaseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o LookupTargetDatabaseResultOutput) PeerTargetDatabaseDetails() GetTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v LookupTargetDatabaseResult) []GetTargetDatabasePeerTargetDatabaseDetail {
+		return v.PeerTargetDatabaseDetails
+	}).(GetTargetDatabasePeerTargetDatabaseDetailArrayOutput)
+}
+
+// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+func (o LookupTargetDatabaseResultOutput) PeerTargetDatabases() GetTargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return o.ApplyT(func(v LookupTargetDatabaseResult) []GetTargetDatabasePeerTargetDatabaseType {
+		return v.PeerTargetDatabases
+	}).(GetTargetDatabasePeerTargetDatabaseTypeArrayOutput)
 }
 
 // The current state of the target database in Data Safe.

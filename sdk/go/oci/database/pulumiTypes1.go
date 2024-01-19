@@ -1250,6 +1250,326 @@ func (o GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput)
 	}).(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput)
 }
 
+type GetSystemVersionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSystemVersionsFilterInput is an input type that accepts GetSystemVersionsFilterArgs and GetSystemVersionsFilterOutput values.
+// You can construct a concrete instance of `GetSystemVersionsFilterInput` via:
+//
+//	GetSystemVersionsFilterArgs{...}
+type GetSystemVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionsFilterOutput() GetSystemVersionsFilterOutput
+	ToGetSystemVersionsFilterOutputWithContext(context.Context) GetSystemVersionsFilterOutput
+}
+
+type GetSystemVersionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSystemVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionsFilter)(nil)).Elem()
+}
+
+func (i GetSystemVersionsFilterArgs) ToGetSystemVersionsFilterOutput() GetSystemVersionsFilterOutput {
+	return i.ToGetSystemVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionsFilterArgs) ToGetSystemVersionsFilterOutputWithContext(ctx context.Context) GetSystemVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionsFilterOutput)
+}
+
+// GetSystemVersionsFilterArrayInput is an input type that accepts GetSystemVersionsFilterArray and GetSystemVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSystemVersionsFilterArrayInput` via:
+//
+//	GetSystemVersionsFilterArray{ GetSystemVersionsFilterArgs{...} }
+type GetSystemVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionsFilterArrayOutput() GetSystemVersionsFilterArrayOutput
+	ToGetSystemVersionsFilterArrayOutputWithContext(context.Context) GetSystemVersionsFilterArrayOutput
+}
+
+type GetSystemVersionsFilterArray []GetSystemVersionsFilterInput
+
+func (GetSystemVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionsFilter)(nil)).Elem()
+}
+
+func (i GetSystemVersionsFilterArray) ToGetSystemVersionsFilterArrayOutput() GetSystemVersionsFilterArrayOutput {
+	return i.ToGetSystemVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionsFilterArray) ToGetSystemVersionsFilterArrayOutputWithContext(ctx context.Context) GetSystemVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionsFilterArrayOutput)
+}
+
+type GetSystemVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionsFilter)(nil)).Elem()
+}
+
+func (o GetSystemVersionsFilterOutput) ToGetSystemVersionsFilterOutput() GetSystemVersionsFilterOutput {
+	return o
+}
+
+func (o GetSystemVersionsFilterOutput) ToGetSystemVersionsFilterOutputWithContext(ctx context.Context) GetSystemVersionsFilterOutput {
+	return o
+}
+
+func (o GetSystemVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSystemVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSystemVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSystemVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSystemVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSystemVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSystemVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionsFilter)(nil)).Elem()
+}
+
+func (o GetSystemVersionsFilterArrayOutput) ToGetSystemVersionsFilterArrayOutput() GetSystemVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionsFilterArrayOutput) ToGetSystemVersionsFilterArrayOutputWithContext(ctx context.Context) GetSystemVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetSystemVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSystemVersionsFilter {
+		return vs[0].([]GetSystemVersionsFilter)[vs[1].(int)]
+	}).(GetSystemVersionsFilterOutput)
+}
+
+type GetSystemVersionsSystemVersionCollection struct {
+	// List of System versions.
+	Items []GetSystemVersionsSystemVersionCollectionItem `pulumi:"items"`
+}
+
+// GetSystemVersionsSystemVersionCollectionInput is an input type that accepts GetSystemVersionsSystemVersionCollectionArgs and GetSystemVersionsSystemVersionCollectionOutput values.
+// You can construct a concrete instance of `GetSystemVersionsSystemVersionCollectionInput` via:
+//
+//	GetSystemVersionsSystemVersionCollectionArgs{...}
+type GetSystemVersionsSystemVersionCollectionInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionsSystemVersionCollectionOutput() GetSystemVersionsSystemVersionCollectionOutput
+	ToGetSystemVersionsSystemVersionCollectionOutputWithContext(context.Context) GetSystemVersionsSystemVersionCollectionOutput
+}
+
+type GetSystemVersionsSystemVersionCollectionArgs struct {
+	// List of System versions.
+	Items GetSystemVersionsSystemVersionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSystemVersionsSystemVersionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionsSystemVersionCollection)(nil)).Elem()
+}
+
+func (i GetSystemVersionsSystemVersionCollectionArgs) ToGetSystemVersionsSystemVersionCollectionOutput() GetSystemVersionsSystemVersionCollectionOutput {
+	return i.ToGetSystemVersionsSystemVersionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionsSystemVersionCollectionArgs) ToGetSystemVersionsSystemVersionCollectionOutputWithContext(ctx context.Context) GetSystemVersionsSystemVersionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionsSystemVersionCollectionOutput)
+}
+
+// GetSystemVersionsSystemVersionCollectionArrayInput is an input type that accepts GetSystemVersionsSystemVersionCollectionArray and GetSystemVersionsSystemVersionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSystemVersionsSystemVersionCollectionArrayInput` via:
+//
+//	GetSystemVersionsSystemVersionCollectionArray{ GetSystemVersionsSystemVersionCollectionArgs{...} }
+type GetSystemVersionsSystemVersionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionsSystemVersionCollectionArrayOutput() GetSystemVersionsSystemVersionCollectionArrayOutput
+	ToGetSystemVersionsSystemVersionCollectionArrayOutputWithContext(context.Context) GetSystemVersionsSystemVersionCollectionArrayOutput
+}
+
+type GetSystemVersionsSystemVersionCollectionArray []GetSystemVersionsSystemVersionCollectionInput
+
+func (GetSystemVersionsSystemVersionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionsSystemVersionCollection)(nil)).Elem()
+}
+
+func (i GetSystemVersionsSystemVersionCollectionArray) ToGetSystemVersionsSystemVersionCollectionArrayOutput() GetSystemVersionsSystemVersionCollectionArrayOutput {
+	return i.ToGetSystemVersionsSystemVersionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionsSystemVersionCollectionArray) ToGetSystemVersionsSystemVersionCollectionArrayOutputWithContext(ctx context.Context) GetSystemVersionsSystemVersionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionsSystemVersionCollectionArrayOutput)
+}
+
+type GetSystemVersionsSystemVersionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionsSystemVersionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionsSystemVersionCollection)(nil)).Elem()
+}
+
+func (o GetSystemVersionsSystemVersionCollectionOutput) ToGetSystemVersionsSystemVersionCollectionOutput() GetSystemVersionsSystemVersionCollectionOutput {
+	return o
+}
+
+func (o GetSystemVersionsSystemVersionCollectionOutput) ToGetSystemVersionsSystemVersionCollectionOutputWithContext(ctx context.Context) GetSystemVersionsSystemVersionCollectionOutput {
+	return o
+}
+
+// List of System versions.
+func (o GetSystemVersionsSystemVersionCollectionOutput) Items() GetSystemVersionsSystemVersionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSystemVersionsSystemVersionCollection) []GetSystemVersionsSystemVersionCollectionItem {
+		return v.Items
+	}).(GetSystemVersionsSystemVersionCollectionItemArrayOutput)
+}
+
+type GetSystemVersionsSystemVersionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionsSystemVersionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionsSystemVersionCollection)(nil)).Elem()
+}
+
+func (o GetSystemVersionsSystemVersionCollectionArrayOutput) ToGetSystemVersionsSystemVersionCollectionArrayOutput() GetSystemVersionsSystemVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionsSystemVersionCollectionArrayOutput) ToGetSystemVersionsSystemVersionCollectionArrayOutputWithContext(ctx context.Context) GetSystemVersionsSystemVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionsSystemVersionCollectionArrayOutput) Index(i pulumi.IntInput) GetSystemVersionsSystemVersionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSystemVersionsSystemVersionCollection {
+		return vs[0].([]GetSystemVersionsSystemVersionCollection)[vs[1].(int)]
+	}).(GetSystemVersionsSystemVersionCollectionOutput)
+}
+
+type GetSystemVersionsSystemVersionCollectionItem struct {
+	// Specifies gi version query parameter.
+	GiVersion string `pulumi:"giVersion"`
+	// Specifies shape query parameter.
+	Shape string `pulumi:"shape"`
+	// Compatible Exadata system versions for a given shape and GI version.
+	SystemVersions []string `pulumi:"systemVersions"`
+}
+
+// GetSystemVersionsSystemVersionCollectionItemInput is an input type that accepts GetSystemVersionsSystemVersionCollectionItemArgs and GetSystemVersionsSystemVersionCollectionItemOutput values.
+// You can construct a concrete instance of `GetSystemVersionsSystemVersionCollectionItemInput` via:
+//
+//	GetSystemVersionsSystemVersionCollectionItemArgs{...}
+type GetSystemVersionsSystemVersionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionsSystemVersionCollectionItemOutput() GetSystemVersionsSystemVersionCollectionItemOutput
+	ToGetSystemVersionsSystemVersionCollectionItemOutputWithContext(context.Context) GetSystemVersionsSystemVersionCollectionItemOutput
+}
+
+type GetSystemVersionsSystemVersionCollectionItemArgs struct {
+	// Specifies gi version query parameter.
+	GiVersion pulumi.StringInput `pulumi:"giVersion"`
+	// Specifies shape query parameter.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// Compatible Exadata system versions for a given shape and GI version.
+	SystemVersions pulumi.StringArrayInput `pulumi:"systemVersions"`
+}
+
+func (GetSystemVersionsSystemVersionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetSystemVersionsSystemVersionCollectionItemArgs) ToGetSystemVersionsSystemVersionCollectionItemOutput() GetSystemVersionsSystemVersionCollectionItemOutput {
+	return i.ToGetSystemVersionsSystemVersionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionsSystemVersionCollectionItemArgs) ToGetSystemVersionsSystemVersionCollectionItemOutputWithContext(ctx context.Context) GetSystemVersionsSystemVersionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionsSystemVersionCollectionItemOutput)
+}
+
+// GetSystemVersionsSystemVersionCollectionItemArrayInput is an input type that accepts GetSystemVersionsSystemVersionCollectionItemArray and GetSystemVersionsSystemVersionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSystemVersionsSystemVersionCollectionItemArrayInput` via:
+//
+//	GetSystemVersionsSystemVersionCollectionItemArray{ GetSystemVersionsSystemVersionCollectionItemArgs{...} }
+type GetSystemVersionsSystemVersionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionsSystemVersionCollectionItemArrayOutput() GetSystemVersionsSystemVersionCollectionItemArrayOutput
+	ToGetSystemVersionsSystemVersionCollectionItemArrayOutputWithContext(context.Context) GetSystemVersionsSystemVersionCollectionItemArrayOutput
+}
+
+type GetSystemVersionsSystemVersionCollectionItemArray []GetSystemVersionsSystemVersionCollectionItemInput
+
+func (GetSystemVersionsSystemVersionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionsSystemVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetSystemVersionsSystemVersionCollectionItemArray) ToGetSystemVersionsSystemVersionCollectionItemArrayOutput() GetSystemVersionsSystemVersionCollectionItemArrayOutput {
+	return i.ToGetSystemVersionsSystemVersionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionsSystemVersionCollectionItemArray) ToGetSystemVersionsSystemVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetSystemVersionsSystemVersionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionsSystemVersionCollectionItemArrayOutput)
+}
+
+type GetSystemVersionsSystemVersionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionsSystemVersionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetSystemVersionsSystemVersionCollectionItemOutput) ToGetSystemVersionsSystemVersionCollectionItemOutput() GetSystemVersionsSystemVersionCollectionItemOutput {
+	return o
+}
+
+func (o GetSystemVersionsSystemVersionCollectionItemOutput) ToGetSystemVersionsSystemVersionCollectionItemOutputWithContext(ctx context.Context) GetSystemVersionsSystemVersionCollectionItemOutput {
+	return o
+}
+
+// Specifies gi version query parameter.
+func (o GetSystemVersionsSystemVersionCollectionItemOutput) GiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSystemVersionsSystemVersionCollectionItem) string { return v.GiVersion }).(pulumi.StringOutput)
+}
+
+// Specifies shape query parameter.
+func (o GetSystemVersionsSystemVersionCollectionItemOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSystemVersionsSystemVersionCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// Compatible Exadata system versions for a given shape and GI version.
+func (o GetSystemVersionsSystemVersionCollectionItemOutput) SystemVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSystemVersionsSystemVersionCollectionItem) []string { return v.SystemVersions }).(pulumi.StringArrayOutput)
+}
+
+type GetSystemVersionsSystemVersionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionsSystemVersionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionsSystemVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetSystemVersionsSystemVersionCollectionItemArrayOutput) ToGetSystemVersionsSystemVersionCollectionItemArrayOutput() GetSystemVersionsSystemVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionsSystemVersionCollectionItemArrayOutput) ToGetSystemVersionsSystemVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetSystemVersionsSystemVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionsSystemVersionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSystemVersionsSystemVersionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSystemVersionsSystemVersionCollectionItem {
+		return vs[0].([]GetSystemVersionsSystemVersionCollectionItem)[vs[1].(int)]
+	}).(GetSystemVersionsSystemVersionCollectionItemOutput)
+}
+
 type GetVmClusterDataCollectionOption struct {
 	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
 	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
@@ -5120,6 +5440,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsFilterInput)(nil)).Elem(), GetSystemVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsFilterArrayInput)(nil)).Elem(), GetSystemVersionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionInput)(nil)).Elem(), GetSystemVersionsSystemVersionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionArrayInput)(nil)).Elem(), GetSystemVersionsSystemVersionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionItemInput)(nil)).Elem(), GetSystemVersionsSystemVersionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionItemArrayInput)(nil)).Elem(), GetSystemVersionsSystemVersionCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClusterDataCollectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkDrScanInput)(nil)).Elem(), GetVmClusterNetworkDrScanArgs{})
@@ -5194,6 +5520,12 @@ func init() {
 	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionsSystemVersionCollectionOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionsSystemVersionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionsSystemVersionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionsSystemVersionCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterDataCollectionOptionOutput{})
 	pulumi.RegisterOutputType(GetVmClusterDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkDrScanOutput{})

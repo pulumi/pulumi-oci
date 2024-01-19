@@ -23,7 +23,7 @@ class GetSecurityAssessmentFindingsResult:
     """
     A collection of values returned by getSecurityAssessmentFindings.
     """
-    def __init__(__self__, access_level=None, compartment_id_in_subtree=None, filters=None, finding_key=None, findings=None, id=None, references=None, security_assessment_id=None, severity=None):
+    def __init__(__self__, access_level=None, compartment_id_in_subtree=None, filters=None, finding_key=None, findings=None, id=None, is_top_finding=None, references=None, security_assessment_id=None, severity=None, state=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -42,6 +42,9 @@ class GetSecurityAssessmentFindingsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_top_finding and not isinstance(is_top_finding, bool):
+            raise TypeError("Expected argument 'is_top_finding' to be a bool")
+        pulumi.set(__self__, "is_top_finding", is_top_finding)
         if references and not isinstance(references, str):
             raise TypeError("Expected argument 'references' to be a str")
         pulumi.set(__self__, "references", references)
@@ -51,6 +54,9 @@ class GetSecurityAssessmentFindingsResult:
         if severity and not isinstance(severity, str):
             raise TypeError("Expected argument 'severity' to be a str")
         pulumi.set(__self__, "severity", severity)
+        if state and not isinstance(state, str):
+            raise TypeError("Expected argument 'state' to be a str")
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="accessLevel")
@@ -89,6 +95,14 @@ class GetSecurityAssessmentFindingsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isTopFinding")
+    def is_top_finding(self) -> Optional[bool]:
+        """
+        Indicates whether a given finding is marked as topFinding or not.
+        """
+        return pulumi.get(self, "is_top_finding")
+
+    @property
     @pulumi.getter
     def references(self) -> Optional[str]:
         """
@@ -109,6 +123,14 @@ class GetSecurityAssessmentFindingsResult:
         """
         return pulumi.get(self, "severity")
 
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the finding.
+        """
+        return pulumi.get(self, "state")
+
 
 class AwaitableGetSecurityAssessmentFindingsResult(GetSecurityAssessmentFindingsResult):
     # pylint: disable=using-constant-test
@@ -122,40 +144,48 @@ class AwaitableGetSecurityAssessmentFindingsResult(GetSecurityAssessmentFindings
             finding_key=self.finding_key,
             findings=self.findings,
             id=self.id,
+            is_top_finding=self.is_top_finding,
             references=self.references,
             security_assessment_id=self.security_assessment_id,
-            severity=self.severity)
+            severity=self.severity,
+            state=self.state)
 
 
 def get_security_assessment_findings(access_level: Optional[str] = None,
                                      compartment_id_in_subtree: Optional[bool] = None,
                                      filters: Optional[Sequence[pulumi.InputType['GetSecurityAssessmentFindingsFilterArgs']]] = None,
                                      finding_key: Optional[str] = None,
+                                     is_top_finding: Optional[bool] = None,
                                      references: Optional[str] = None,
                                      security_assessment_id: Optional[str] = None,
                                      severity: Optional[str] = None,
+                                     state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentFindingsResult:
     """
     This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
 
-    List all the findings from all the targets in the specified assessment.
+    List all the findings from all the targets in the specified compartment.
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str finding_key: Each finding has a key. This key is same for the finding across targets
+    :param str finding_key: Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+    :param bool is_top_finding: A filter to return only the findings that are marked as top findings.
     :param str references: An optional filter to return only findings containing the specified reference.
     :param str security_assessment_id: The OCID of the security assessment.
     :param str severity: A filter to return only findings of a particular risk level.
+    :param str state: A filter to return only the findings that match the specified lifecycle states.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['findingKey'] = finding_key
+    __args__['isTopFinding'] = is_top_finding
     __args__['references'] = references
     __args__['securityAssessmentId'] = security_assessment_id
     __args__['severity'] = severity
+    __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings', __args__, opts=opts, typ=GetSecurityAssessmentFindingsResult).value
 
@@ -166,9 +196,11 @@ def get_security_assessment_findings(access_level: Optional[str] = None,
         finding_key=pulumi.get(__ret__, 'finding_key'),
         findings=pulumi.get(__ret__, 'findings'),
         id=pulumi.get(__ret__, 'id'),
+        is_top_finding=pulumi.get(__ret__, 'is_top_finding'),
         references=pulumi.get(__ret__, 'references'),
         security_assessment_id=pulumi.get(__ret__, 'security_assessment_id'),
-        severity=pulumi.get(__ret__, 'severity'))
+        severity=pulumi.get(__ret__, 'severity'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_security_assessment_findings)
@@ -176,21 +208,25 @@ def get_security_assessment_findings_output(access_level: Optional[pulumi.Input[
                                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityAssessmentFindingsFilterArgs']]]]] = None,
                                             finding_key: Optional[pulumi.Input[Optional[str]]] = None,
+                                            is_top_finding: Optional[pulumi.Input[Optional[bool]]] = None,
                                             references: Optional[pulumi.Input[Optional[str]]] = None,
                                             security_assessment_id: Optional[pulumi.Input[str]] = None,
                                             severity: Optional[pulumi.Input[Optional[str]]] = None,
+                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentFindingsResult]:
     """
     This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
 
-    List all the findings from all the targets in the specified assessment.
+    List all the findings from all the targets in the specified compartment.
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str finding_key: Each finding has a key. This key is same for the finding across targets
+    :param str finding_key: Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+    :param bool is_top_finding: A filter to return only the findings that are marked as top findings.
     :param str references: An optional filter to return only findings containing the specified reference.
     :param str security_assessment_id: The OCID of the security assessment.
     :param str severity: A filter to return only findings of a particular risk level.
+    :param str state: A filter to return only the findings that match the specified lifecycle states.
     """
     ...

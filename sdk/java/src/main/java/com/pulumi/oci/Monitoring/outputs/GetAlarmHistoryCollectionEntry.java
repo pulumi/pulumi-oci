@@ -16,12 +16,12 @@ public final class GetAlarmHistoryCollectionEntry {
      */
     private String summary;
     /**
-     * @return Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+     * @return Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      * 
      */
     private String timestamp;
     /**
-     * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
+     * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2023-02-01T0:59:00.789Z`
      * 
      */
     private String timestampTriggered;
@@ -35,14 +35,14 @@ public final class GetAlarmHistoryCollectionEntry {
         return this.summary;
     }
     /**
-     * @return Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+     * @return Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      * 
      */
     public String timestamp() {
         return this.timestamp;
     }
     /**
-     * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
+     * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2023-02-01T0:59:00.789Z`
      * 
      */
     public String timestampTriggered() {

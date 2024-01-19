@@ -69,11 +69,11 @@ export interface GetTargetDatabaseResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * The description of the target database in Data Safe.
+     * The description of the peer target database in Data Safe.
      */
     readonly description: string;
     /**
-     * The display name of the target database in Data Safe.
+     * The display name of the peer target database in Data Safe.
      */
     readonly displayName: string;
     /**
@@ -85,9 +85,14 @@ export interface GetTargetDatabaseResult {
      */
     readonly id: string;
     /**
-     * Details about the current state of the target database in Data Safe.
+     * Details about the current state of the peer target database in Data Safe.
      */
     readonly lifecycleDetails: string;
+    readonly peerTargetDatabaseDetails: outputs.DataSafe.GetTargetDatabasePeerTargetDatabaseDetail[];
+    /**
+     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     */
+    readonly peerTargetDatabases: outputs.DataSafe.GetTargetDatabasePeerTargetDatabase[];
     /**
      * The current state of the target database in Data Safe.
      */

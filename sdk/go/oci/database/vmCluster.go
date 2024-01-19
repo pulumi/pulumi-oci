@@ -54,6 +54,7 @@ import (
 //				IsSparseDiskgroupEnabled: pulumi.Any(_var.Vm_cluster_is_sparse_diskgroup_enabled),
 //				LicenseModel:             pulumi.Any(_var.Vm_cluster_license_model),
 //				MemorySizeInGbs:          pulumi.Any(_var.Vm_cluster_memory_size_in_gbs),
+//				SystemVersion:            pulumi.Any(_var.Vm_cluster_system_version),
 //				TimeZone:                 pulumi.Any(_var.Vm_cluster_time_zone),
 //			})
 //			if err != nil {
@@ -348,6 +349,8 @@ type vmClusterArgs struct {
 	OcpuCount       *float64 `pulumi:"ocpuCount"`
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
+	// Operating system version of the image.
+	SystemVersion *string `pulumi:"systemVersion"`
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -393,6 +396,8 @@ type VmClusterArgs struct {
 	OcpuCount       pulumi.Float64PtrInput
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys pulumi.StringArrayInput
+	// Operating system version of the image.
+	SystemVersion pulumi.StringPtrInput
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.

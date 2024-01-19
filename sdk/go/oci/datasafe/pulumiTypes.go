@@ -923,6 +923,14 @@ type AuditProfileAuditTrail struct {
 	IsAutoPurgeEnabled *bool `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit profile in Data Safe.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The secondary id assigned for the peer database registered with Data Safe.
+	PeerTargetDatabaseKey *int `pulumi:"peerTargetDatabaseKey"`
+	// The details of the audit trail purge job that ran on the "purgeJobTime".
+	PurgeJobDetails *string `pulumi:"purgeJobDetails"`
+	// The current status of the audit trail purge job.
+	PurgeJobStatus *string `pulumi:"purgeJobStatus"`
+	// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+	PurgeJobTime *string `pulumi:"purgeJobTime"`
 	// The current state of the audit profile.
 	State *string `pulumi:"state"`
 	// The current sub-state of the audit trail.
@@ -939,6 +947,8 @@ type AuditProfileAuditTrail struct {
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 	TrailLocation *string `pulumi:"trailLocation"`
+	// The underlying source of unified audit trail.
+	TrailSource *string `pulumi:"trailSource"`
 	// The OCID of the workrequest for audit trail which collects audit records.
 	WorkRequestId *string `pulumi:"workRequestId"`
 }
@@ -975,6 +985,14 @@ type AuditProfileAuditTrailArgs struct {
 	IsAutoPurgeEnabled pulumi.BoolPtrInput `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit profile in Data Safe.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// The secondary id assigned for the peer database registered with Data Safe.
+	PeerTargetDatabaseKey pulumi.IntPtrInput `pulumi:"peerTargetDatabaseKey"`
+	// The details of the audit trail purge job that ran on the "purgeJobTime".
+	PurgeJobDetails pulumi.StringPtrInput `pulumi:"purgeJobDetails"`
+	// The current status of the audit trail purge job.
+	PurgeJobStatus pulumi.StringPtrInput `pulumi:"purgeJobStatus"`
+	// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+	PurgeJobTime pulumi.StringPtrInput `pulumi:"purgeJobTime"`
 	// The current state of the audit profile.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// The current sub-state of the audit trail.
@@ -991,6 +1009,8 @@ type AuditProfileAuditTrailArgs struct {
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 	TrailLocation pulumi.StringPtrInput `pulumi:"trailLocation"`
+	// The underlying source of unified audit trail.
+	TrailSource pulumi.StringPtrInput `pulumi:"trailSource"`
 	// The OCID of the workrequest for audit trail which collects audit records.
 	WorkRequestId pulumi.StringPtrInput `pulumi:"workRequestId"`
 }
@@ -1096,6 +1116,26 @@ func (o AuditProfileAuditTrailOutput) LifecycleDetails() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
+// The secondary id assigned for the peer database registered with Data Safe.
+func (o AuditProfileAuditTrailOutput) PeerTargetDatabaseKey() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AuditProfileAuditTrail) *int { return v.PeerTargetDatabaseKey }).(pulumi.IntPtrOutput)
+}
+
+// The details of the audit trail purge job that ran on the "purgeJobTime".
+func (o AuditProfileAuditTrailOutput) PurgeJobDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.PurgeJobDetails }).(pulumi.StringPtrOutput)
+}
+
+// The current status of the audit trail purge job.
+func (o AuditProfileAuditTrailOutput) PurgeJobStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.PurgeJobStatus }).(pulumi.StringPtrOutput)
+}
+
+// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+func (o AuditProfileAuditTrailOutput) PurgeJobTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.PurgeJobTime }).(pulumi.StringPtrOutput)
+}
+
 // The current state of the audit profile.
 func (o AuditProfileAuditTrailOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.State }).(pulumi.StringPtrOutput)
@@ -1134,6 +1174,11 @@ func (o AuditProfileAuditTrailOutput) TimeUpdated() pulumi.StringPtrOutput {
 // An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 func (o AuditProfileAuditTrailOutput) TrailLocation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.TrailLocation }).(pulumi.StringPtrOutput)
+}
+
+// The underlying source of unified audit trail.
+func (o AuditProfileAuditTrailOutput) TrailSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.TrailSource }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the workrequest for audit trail which collects audit records.
@@ -3154,6 +3199,8 @@ type SecurityAssessmentStatistic struct {
 	// Statistics showing the number of findings with a particular risk level for each category.
 	Advisories []SecurityAssessmentStatisticAdvisory `pulumi:"advisories"`
 	// Statistics showing the number of findings with a particular risk level for each category.
+	Deferreds []SecurityAssessmentStatisticDeferred `pulumi:"deferreds"`
+	// Statistics showing the number of findings with a particular risk level for each category.
 	Evaluates []SecurityAssessmentStatisticEvaluate `pulumi:"evaluates"`
 	// Statistics showing the number of findings with a particular risk level for each category.
 	HighRisks []SecurityAssessmentStatisticHighRisk `pulumi:"highRisks"`
@@ -3181,6 +3228,8 @@ type SecurityAssessmentStatisticInput interface {
 type SecurityAssessmentStatisticArgs struct {
 	// Statistics showing the number of findings with a particular risk level for each category.
 	Advisories SecurityAssessmentStatisticAdvisoryArrayInput `pulumi:"advisories"`
+	// Statistics showing the number of findings with a particular risk level for each category.
+	Deferreds SecurityAssessmentStatisticDeferredArrayInput `pulumi:"deferreds"`
 	// Statistics showing the number of findings with a particular risk level for each category.
 	Evaluates SecurityAssessmentStatisticEvaluateArrayInput `pulumi:"evaluates"`
 	// Statistics showing the number of findings with a particular risk level for each category.
@@ -3249,6 +3298,11 @@ func (o SecurityAssessmentStatisticOutput) ToSecurityAssessmentStatisticOutputWi
 // Statistics showing the number of findings with a particular risk level for each category.
 func (o SecurityAssessmentStatisticOutput) Advisories() SecurityAssessmentStatisticAdvisoryArrayOutput {
 	return o.ApplyT(func(v SecurityAssessmentStatistic) []SecurityAssessmentStatisticAdvisory { return v.Advisories }).(SecurityAssessmentStatisticAdvisoryArrayOutput)
+}
+
+// Statistics showing the number of findings with a particular risk level for each category.
+func (o SecurityAssessmentStatisticOutput) Deferreds() SecurityAssessmentStatisticDeferredArrayOutput {
+	return o.ApplyT(func(v SecurityAssessmentStatistic) []SecurityAssessmentStatisticDeferred { return v.Deferreds }).(SecurityAssessmentStatisticDeferredArrayOutput)
 }
 
 // Statistics showing the number of findings with a particular risk level for each category.
@@ -3459,6 +3513,166 @@ func (o SecurityAssessmentStatisticAdvisoryArrayOutput) Index(i pulumi.IntInput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SecurityAssessmentStatisticAdvisory {
 		return vs[0].([]SecurityAssessmentStatisticAdvisory)[vs[1].(int)]
 	}).(SecurityAssessmentStatisticAdvisoryOutput)
+}
+
+type SecurityAssessmentStatisticDeferred struct {
+	// The number of findings in the Auditing category.
+	AuditingFindingsCount *int `pulumi:"auditingFindingsCount"`
+	// The number of findings in the Authorization Control category.
+	AuthorizationControlFindingsCount *int `pulumi:"authorizationControlFindingsCount"`
+	// The number of findings in the Data Encryption category.
+	DataEncryptionFindingsCount *int `pulumi:"dataEncryptionFindingsCount"`
+	// The number of findings in the Database Configuration category.
+	DbConfigurationFindingsCount *int `pulumi:"dbConfigurationFindingsCount"`
+	// The number of findings in the Fine-Grained Access Control category.
+	FineGrainedAccessControlFindingsCount *int `pulumi:"fineGrainedAccessControlFindingsCount"`
+	// The number of findings in the Privileges and Roles category.
+	PrivilegesAndRolesFindingsCount *int `pulumi:"privilegesAndRolesFindingsCount"`
+	// The total number of targets in this security assessment.
+	TargetsCount *int `pulumi:"targetsCount"`
+	// The number of findings in the User Accounts category.
+	UserAccountsFindingsCount *int `pulumi:"userAccountsFindingsCount"`
+}
+
+// SecurityAssessmentStatisticDeferredInput is an input type that accepts SecurityAssessmentStatisticDeferredArgs and SecurityAssessmentStatisticDeferredOutput values.
+// You can construct a concrete instance of `SecurityAssessmentStatisticDeferredInput` via:
+//
+//	SecurityAssessmentStatisticDeferredArgs{...}
+type SecurityAssessmentStatisticDeferredInput interface {
+	pulumi.Input
+
+	ToSecurityAssessmentStatisticDeferredOutput() SecurityAssessmentStatisticDeferredOutput
+	ToSecurityAssessmentStatisticDeferredOutputWithContext(context.Context) SecurityAssessmentStatisticDeferredOutput
+}
+
+type SecurityAssessmentStatisticDeferredArgs struct {
+	// The number of findings in the Auditing category.
+	AuditingFindingsCount pulumi.IntPtrInput `pulumi:"auditingFindingsCount"`
+	// The number of findings in the Authorization Control category.
+	AuthorizationControlFindingsCount pulumi.IntPtrInput `pulumi:"authorizationControlFindingsCount"`
+	// The number of findings in the Data Encryption category.
+	DataEncryptionFindingsCount pulumi.IntPtrInput `pulumi:"dataEncryptionFindingsCount"`
+	// The number of findings in the Database Configuration category.
+	DbConfigurationFindingsCount pulumi.IntPtrInput `pulumi:"dbConfigurationFindingsCount"`
+	// The number of findings in the Fine-Grained Access Control category.
+	FineGrainedAccessControlFindingsCount pulumi.IntPtrInput `pulumi:"fineGrainedAccessControlFindingsCount"`
+	// The number of findings in the Privileges and Roles category.
+	PrivilegesAndRolesFindingsCount pulumi.IntPtrInput `pulumi:"privilegesAndRolesFindingsCount"`
+	// The total number of targets in this security assessment.
+	TargetsCount pulumi.IntPtrInput `pulumi:"targetsCount"`
+	// The number of findings in the User Accounts category.
+	UserAccountsFindingsCount pulumi.IntPtrInput `pulumi:"userAccountsFindingsCount"`
+}
+
+func (SecurityAssessmentStatisticDeferredArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (i SecurityAssessmentStatisticDeferredArgs) ToSecurityAssessmentStatisticDeferredOutput() SecurityAssessmentStatisticDeferredOutput {
+	return i.ToSecurityAssessmentStatisticDeferredOutputWithContext(context.Background())
+}
+
+func (i SecurityAssessmentStatisticDeferredArgs) ToSecurityAssessmentStatisticDeferredOutputWithContext(ctx context.Context) SecurityAssessmentStatisticDeferredOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticDeferredOutput)
+}
+
+// SecurityAssessmentStatisticDeferredArrayInput is an input type that accepts SecurityAssessmentStatisticDeferredArray and SecurityAssessmentStatisticDeferredArrayOutput values.
+// You can construct a concrete instance of `SecurityAssessmentStatisticDeferredArrayInput` via:
+//
+//	SecurityAssessmentStatisticDeferredArray{ SecurityAssessmentStatisticDeferredArgs{...} }
+type SecurityAssessmentStatisticDeferredArrayInput interface {
+	pulumi.Input
+
+	ToSecurityAssessmentStatisticDeferredArrayOutput() SecurityAssessmentStatisticDeferredArrayOutput
+	ToSecurityAssessmentStatisticDeferredArrayOutputWithContext(context.Context) SecurityAssessmentStatisticDeferredArrayOutput
+}
+
+type SecurityAssessmentStatisticDeferredArray []SecurityAssessmentStatisticDeferredInput
+
+func (SecurityAssessmentStatisticDeferredArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (i SecurityAssessmentStatisticDeferredArray) ToSecurityAssessmentStatisticDeferredArrayOutput() SecurityAssessmentStatisticDeferredArrayOutput {
+	return i.ToSecurityAssessmentStatisticDeferredArrayOutputWithContext(context.Background())
+}
+
+func (i SecurityAssessmentStatisticDeferredArray) ToSecurityAssessmentStatisticDeferredArrayOutputWithContext(ctx context.Context) SecurityAssessmentStatisticDeferredArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticDeferredArrayOutput)
+}
+
+type SecurityAssessmentStatisticDeferredOutput struct{ *pulumi.OutputState }
+
+func (SecurityAssessmentStatisticDeferredOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (o SecurityAssessmentStatisticDeferredOutput) ToSecurityAssessmentStatisticDeferredOutput() SecurityAssessmentStatisticDeferredOutput {
+	return o
+}
+
+func (o SecurityAssessmentStatisticDeferredOutput) ToSecurityAssessmentStatisticDeferredOutputWithContext(ctx context.Context) SecurityAssessmentStatisticDeferredOutput {
+	return o
+}
+
+// The number of findings in the Auditing category.
+func (o SecurityAssessmentStatisticDeferredOutput) AuditingFindingsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SecurityAssessmentStatisticDeferred) *int { return v.AuditingFindingsCount }).(pulumi.IntPtrOutput)
+}
+
+// The number of findings in the Authorization Control category.
+func (o SecurityAssessmentStatisticDeferredOutput) AuthorizationControlFindingsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SecurityAssessmentStatisticDeferred) *int { return v.AuthorizationControlFindingsCount }).(pulumi.IntPtrOutput)
+}
+
+// The number of findings in the Data Encryption category.
+func (o SecurityAssessmentStatisticDeferredOutput) DataEncryptionFindingsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SecurityAssessmentStatisticDeferred) *int { return v.DataEncryptionFindingsCount }).(pulumi.IntPtrOutput)
+}
+
+// The number of findings in the Database Configuration category.
+func (o SecurityAssessmentStatisticDeferredOutput) DbConfigurationFindingsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SecurityAssessmentStatisticDeferred) *int { return v.DbConfigurationFindingsCount }).(pulumi.IntPtrOutput)
+}
+
+// The number of findings in the Fine-Grained Access Control category.
+func (o SecurityAssessmentStatisticDeferredOutput) FineGrainedAccessControlFindingsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SecurityAssessmentStatisticDeferred) *int { return v.FineGrainedAccessControlFindingsCount }).(pulumi.IntPtrOutput)
+}
+
+// The number of findings in the Privileges and Roles category.
+func (o SecurityAssessmentStatisticDeferredOutput) PrivilegesAndRolesFindingsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SecurityAssessmentStatisticDeferred) *int { return v.PrivilegesAndRolesFindingsCount }).(pulumi.IntPtrOutput)
+}
+
+// The total number of targets in this security assessment.
+func (o SecurityAssessmentStatisticDeferredOutput) TargetsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SecurityAssessmentStatisticDeferred) *int { return v.TargetsCount }).(pulumi.IntPtrOutput)
+}
+
+// The number of findings in the User Accounts category.
+func (o SecurityAssessmentStatisticDeferredOutput) UserAccountsFindingsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SecurityAssessmentStatisticDeferred) *int { return v.UserAccountsFindingsCount }).(pulumi.IntPtrOutput)
+}
+
+type SecurityAssessmentStatisticDeferredArrayOutput struct{ *pulumi.OutputState }
+
+func (SecurityAssessmentStatisticDeferredArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (o SecurityAssessmentStatisticDeferredArrayOutput) ToSecurityAssessmentStatisticDeferredArrayOutput() SecurityAssessmentStatisticDeferredArrayOutput {
+	return o
+}
+
+func (o SecurityAssessmentStatisticDeferredArrayOutput) ToSecurityAssessmentStatisticDeferredArrayOutputWithContext(ctx context.Context) SecurityAssessmentStatisticDeferredArrayOutput {
+	return o
+}
+
+func (o SecurityAssessmentStatisticDeferredArrayOutput) Index(i pulumi.IntInput) SecurityAssessmentStatisticDeferredOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SecurityAssessmentStatisticDeferred {
+		return vs[0].([]SecurityAssessmentStatisticDeferred)[vs[1].(int)]
+	}).(SecurityAssessmentStatisticDeferredOutput)
 }
 
 type SecurityAssessmentStatisticEvaluate struct {
@@ -4601,23 +4815,23 @@ func (o TargetDatabaseCredentialsPtrOutput) UserName() pulumi.StringPtrOutput {
 }
 
 type TargetDatabaseDatabaseDetails struct {
-	// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
-	// (Updatable) The database type.
+	// The database type.
 	DatabaseType string `pulumi:"databaseType"`
-	// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+	// The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId *string `pulumi:"dbSystemId"`
-	// (Updatable) The infrastructure type the database is running on.
+	// The infrastructure type the database is running on.
 	InfrastructureType string `pulumi:"infrastructureType"`
-	// (Updatable) The OCID of the compute instance on which the database is running.
+	// The OCID of the compute instance on which the database is running.
 	InstanceId *string `pulumi:"instanceId"`
-	// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 	IpAddresses []string `pulumi:"ipAddresses"`
-	// (Updatable) The port number of the database listener.
+	// The port number of the database listener.
 	ListenerPort *int `pulumi:"listenerPort"`
-	// (Updatable) The service name of the database registered as target database.
+	// The service name of the database registered as target database.
 	ServiceName *string `pulumi:"serviceName"`
-	// (Updatable) The OCID of the VM cluster in which the database is running.
+	// The OCID of the VM cluster in which the database is running.
 	VmClusterId *string `pulumi:"vmClusterId"`
 }
 
@@ -4633,23 +4847,23 @@ type TargetDatabaseDatabaseDetailsInput interface {
 }
 
 type TargetDatabaseDatabaseDetailsArgs struct {
-	// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId pulumi.StringPtrInput `pulumi:"autonomousDatabaseId"`
-	// (Updatable) The database type.
+	// The database type.
 	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
-	// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+	// The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
-	// (Updatable) The infrastructure type the database is running on.
+	// The infrastructure type the database is running on.
 	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
-	// (Updatable) The OCID of the compute instance on which the database is running.
+	// The OCID of the compute instance on which the database is running.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
-	// (Updatable) The port number of the database listener.
+	// The port number of the database listener.
 	ListenerPort pulumi.IntPtrInput `pulumi:"listenerPort"`
-	// (Updatable) The service name of the database registered as target database.
+	// The service name of the database registered as target database.
 	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
-	// (Updatable) The OCID of the VM cluster in which the database is running.
+	// The OCID of the VM cluster in which the database is running.
 	VmClusterId pulumi.StringPtrInput `pulumi:"vmClusterId"`
 }
 
@@ -4730,47 +4944,47 @@ func (o TargetDatabaseDatabaseDetailsOutput) ToTargetDatabaseDatabaseDetailsPtrO
 	}).(TargetDatabaseDatabaseDetailsPtrOutput)
 }
 
-// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.AutonomousDatabaseId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The database type.
+// The database type.
 func (o TargetDatabaseDatabaseDetailsOutput) DatabaseType() pulumi.StringOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+// The OCID of the cloud database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The infrastructure type the database is running on.
+// The infrastructure type the database is running on.
 func (o TargetDatabaseDatabaseDetailsOutput) InfrastructureType() pulumi.StringOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) string { return v.InfrastructureType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the compute instance on which the database is running.
+// The OCID of the compute instance on which the database is running.
 func (o TargetDatabaseDatabaseDetailsOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 func (o TargetDatabaseDatabaseDetailsOutput) IpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The port number of the database listener.
+// The port number of the database listener.
 func (o TargetDatabaseDatabaseDetailsOutput) ListenerPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *int { return v.ListenerPort }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The service name of the database registered as target database.
+// The service name of the database registered as target database.
 func (o TargetDatabaseDatabaseDetailsOutput) ServiceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the VM cluster in which the database is running.
+// The OCID of the VM cluster in which the database is running.
 func (o TargetDatabaseDatabaseDetailsOutput) VmClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.VmClusterId }).(pulumi.StringPtrOutput)
 }
@@ -4799,7 +5013,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) Elem() TargetDatabaseDatabaseDet
 	}).(TargetDatabaseDatabaseDetailsOutput)
 }
 
-// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -4809,7 +5023,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) AutonomousDatabaseId() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The database type.
+// The database type.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) DatabaseType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -4819,7 +5033,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) DatabaseType() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+// The OCID of the cloud database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -4829,7 +5043,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) DbSystemId() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The infrastructure type the database is running on.
+// The infrastructure type the database is running on.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) InfrastructureType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -4839,7 +5053,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) InfrastructureType() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the compute instance on which the database is running.
+// The OCID of the compute instance on which the database is running.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -4849,7 +5063,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) InstanceId() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) IpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) []string {
 		if v == nil {
@@ -4859,7 +5073,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) IpAddresses() pulumi.StringArray
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The port number of the database listener.
+// The port number of the database listener.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) ListenerPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *int {
 		if v == nil {
@@ -4869,7 +5083,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) ListenerPort() pulumi.IntPtrOutp
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The service name of the database registered as target database.
+// The service name of the database registered as target database.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) ServiceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -4879,7 +5093,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) ServiceName() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the VM cluster in which the database is running.
+// The OCID of the VM cluster in which the database is running.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) VmClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -4887,6 +5101,1411 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) VmClusterId() pulumi.StringPtrOu
 		}
 		return v.VmClusterId
 	}).(pulumi.StringPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseType struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails []TargetDatabasePeerTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName *string `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+	DataguardAssociationId *string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description *string `pulumi:"description"`
+	// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+	DisplayName *string `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key *int `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role *string `pulumi:"role"`
+	// The current state of the target database in Data Safe.
+	State *string `pulumi:"state"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// (Updatable) The details required to establish a TLS enabled connection.
+	TlsConfigs []TargetDatabasePeerTargetDatabaseTlsConfig `pulumi:"tlsConfigs"`
+}
+
+// TargetDatabasePeerTargetDatabaseTypeInput is an input type that accepts TargetDatabasePeerTargetDatabaseTypeArgs and TargetDatabasePeerTargetDatabaseTypeOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseTypeInput` via:
+//
+//	TargetDatabasePeerTargetDatabaseTypeArgs{...}
+type TargetDatabasePeerTargetDatabaseTypeInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseTypeOutput() TargetDatabasePeerTargetDatabaseTypeOutput
+	ToTargetDatabasePeerTargetDatabaseTypeOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseTypeOutput
+}
+
+type TargetDatabasePeerTargetDatabaseTypeArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails TargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName pulumi.StringPtrInput `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringPtrInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key pulumi.IntPtrInput `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role pulumi.StringPtrInput `pulumi:"role"`
+	// The current state of the target database in Data Safe.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// (Updatable) The details required to establish a TLS enabled connection.
+	TlsConfigs TargetDatabasePeerTargetDatabaseTlsConfigArrayInput `pulumi:"tlsConfigs"`
+}
+
+func (TargetDatabasePeerTargetDatabaseTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (i TargetDatabasePeerTargetDatabaseTypeArgs) ToTargetDatabasePeerTargetDatabaseTypeOutput() TargetDatabasePeerTargetDatabaseTypeOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseTypeOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseTypeArgs) ToTargetDatabasePeerTargetDatabaseTypeOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseTypeOutput)
+}
+
+// TargetDatabasePeerTargetDatabaseTypeArrayInput is an input type that accepts TargetDatabasePeerTargetDatabaseTypeArray and TargetDatabasePeerTargetDatabaseTypeArrayOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseTypeArrayInput` via:
+//
+//	TargetDatabasePeerTargetDatabaseTypeArray{ TargetDatabasePeerTargetDatabaseTypeArgs{...} }
+type TargetDatabasePeerTargetDatabaseTypeArrayInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseTypeArrayOutput() TargetDatabasePeerTargetDatabaseTypeArrayOutput
+	ToTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseTypeArrayOutput
+}
+
+type TargetDatabasePeerTargetDatabaseTypeArray []TargetDatabasePeerTargetDatabaseTypeInput
+
+func (TargetDatabasePeerTargetDatabaseTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (i TargetDatabasePeerTargetDatabaseTypeArray) ToTargetDatabasePeerTargetDatabaseTypeArrayOutput() TargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseTypeArray) ToTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseTypeArrayOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseTypeOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) ToTargetDatabasePeerTargetDatabaseTypeOutput() TargetDatabasePeerTargetDatabaseTypeOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) ToTargetDatabasePeerTargetDatabaseTypeOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTypeOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) DatabaseDetails() TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) []TargetDatabasePeerTargetDatabaseDatabaseDetail {
+		return v.DatabaseDetails
+	}).(TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+// Unique name of the database associated to the peer target database.
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) DatabaseUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.DatabaseUniqueName }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) DataguardAssociationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.DataguardAssociationId }).(pulumi.StringPtrOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The secondary key assigned for the peer target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) Key() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *int { return v.Key }).(pulumi.IntPtrOutput)
+}
+
+// Details about the current state of the peer target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// Role of the database associated to the peer target database.
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.Role }).(pulumi.StringPtrOutput)
+}
+
+// The current state of the target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The details required to establish a TLS enabled connection.
+func (o TargetDatabasePeerTargetDatabaseTypeOutput) TlsConfigs() TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) []TargetDatabasePeerTargetDatabaseTlsConfig {
+		return v.TlsConfigs
+	}).(TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseTypeArrayOutput) ToTargetDatabasePeerTargetDatabaseTypeArrayOutput() TargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseTypeArrayOutput) ToTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseTypeArrayOutput) Index(i pulumi.IntInput) TargetDatabasePeerTargetDatabaseTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetDatabasePeerTargetDatabaseType {
+		return vs[0].([]TargetDatabasePeerTargetDatabaseType)[vs[1].(int)]
+	}).(TargetDatabasePeerTargetDatabaseTypeOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDatabaseDetail struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType *string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId *string `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType *string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId *string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort *int `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName *string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId *string `pulumi:"vmClusterId"`
+}
+
+// TargetDatabasePeerTargetDatabaseDatabaseDetailInput is an input type that accepts TargetDatabasePeerTargetDatabaseDatabaseDetailArgs and TargetDatabasePeerTargetDatabaseDatabaseDetailOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseDatabaseDetailInput` via:
+//
+//	TargetDatabasePeerTargetDatabaseDatabaseDetailArgs{...}
+type TargetDatabasePeerTargetDatabaseDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailOutput
+	ToTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailOutput
+}
+
+type TargetDatabasePeerTargetDatabaseDatabaseDetailArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringPtrInput `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType pulumi.StringPtrInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType pulumi.StringPtrInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntPtrInput `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringPtrInput `pulumi:"vmClusterId"`
+}
+
+func (TargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i TargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ToTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ToTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseDatabaseDetailOutput)
+}
+
+// TargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput is an input type that accepts TargetDatabasePeerTargetDatabaseDatabaseDetailArray and TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput` via:
+//
+//	TargetDatabasePeerTargetDatabaseDatabaseDetailArray{ TargetDatabasePeerTargetDatabaseDatabaseDetailArgs{...} }
+type TargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput
+	ToTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput
+}
+
+type TargetDatabasePeerTargetDatabaseDatabaseDetailArray []TargetDatabasePeerTargetDatabaseDatabaseDetailInput
+
+func (TargetDatabasePeerTargetDatabaseDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i TargetDatabasePeerTargetDatabaseDatabaseDetailArray) ToTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseDatabaseDetailArray) ToTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ToTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ToTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.AutonomousDatabaseId }).(pulumi.StringPtrOutput)
+}
+
+// The database type.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DatabaseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.DatabaseType }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
+}
+
+// The infrastructure type the database is running on.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InfrastructureType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.InfrastructureType }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ListenerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *int { return v.ListenerPort }).(pulumi.IntPtrOutput)
+}
+
+// The service name of the database registered as target database.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) VmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.VmClusterId }).(pulumi.StringPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ToTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ToTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) Index(i pulumi.IntInput) TargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetDatabasePeerTargetDatabaseDatabaseDetail {
+		return vs[0].([]TargetDatabasePeerTargetDatabaseDatabaseDetail)[vs[1].(int)]
+	}).(TargetDatabasePeerTargetDatabaseDatabaseDetailOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDatabaseDetails struct {
+	// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
+	// (Updatable) The database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId *string `pulumi:"dbSystemId"`
+	// (Updatable) The infrastructure type the database is running on.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// (Updatable) The OCID of the compute instance on which the database is running.
+	InstanceId *string `pulumi:"instanceId"`
+	// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// (Updatable) The port number of the database listener.
+	ListenerPort *int `pulumi:"listenerPort"`
+	// (Updatable) The service name of the database registered as target database.
+	ServiceName *string `pulumi:"serviceName"`
+	// (Updatable) The OCID of the VM cluster in which the database is running.
+	VmClusterId *string `pulumi:"vmClusterId"`
+}
+
+// TargetDatabasePeerTargetDatabaseDatabaseDetailsInput is an input type that accepts TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs and TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseDatabaseDetailsInput` via:
+//
+//	TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs{...}
+type TargetDatabasePeerTargetDatabaseDatabaseDetailsInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseDatabaseDetailsOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput
+	ToTargetDatabasePeerTargetDatabaseDatabaseDetailsOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput
+}
+
+type TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs struct {
+	// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringPtrInput `pulumi:"autonomousDatabaseId"`
+	// (Updatable) The database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
+	// (Updatable) The infrastructure type the database is running on.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// (Updatable) The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// (Updatable) The port number of the database listener.
+	ListenerPort pulumi.IntPtrInput `pulumi:"listenerPort"`
+	// (Updatable) The service name of the database registered as target database.
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
+	// (Updatable) The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringPtrInput `pulumi:"vmClusterId"`
+}
+
+func (TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDatabaseDetails)(nil)).Elem()
+}
+
+func (i TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseDatabaseDetailsOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput)
+}
+
+func (i TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput).ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutputWithContext(ctx)
+}
+
+// TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrInput is an input type that accepts TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs, TargetDatabasePeerTargetDatabaseDatabaseDetailsPtr and TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrInput` via:
+//
+//	        TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput
+	ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput
+}
+
+type targetDatabasePeerTargetDatabaseDatabaseDetailsPtrType TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs
+
+func TargetDatabasePeerTargetDatabaseDatabaseDetailsPtr(v *TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs) TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrInput {
+	return (*targetDatabasePeerTargetDatabaseDatabaseDetailsPtrType)(v)
+}
+
+func (*targetDatabasePeerTargetDatabaseDatabaseDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TargetDatabasePeerTargetDatabaseDatabaseDetails)(nil)).Elem()
+}
+
+func (i *targetDatabasePeerTargetDatabaseDatabaseDetailsPtrType) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *targetDatabasePeerTargetDatabaseDatabaseDetailsPtrType) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDatabaseDetails)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput {
+	return o.ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetDatabasePeerTargetDatabaseDatabaseDetails) *TargetDatabasePeerTargetDatabaseDatabaseDetails {
+		return &v
+	}).(TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput)
+}
+
+// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetails) *string { return v.AutonomousDatabaseId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The database type.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetails) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetails) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The infrastructure type the database is running on.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetails) string { return v.InfrastructureType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the compute instance on which the database is running.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetails) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetails) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The port number of the database listener.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) ListenerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetails) *int { return v.ListenerPort }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The service name of the database registered as target database.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetails) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the VM cluster in which the database is running.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput) VmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetails) *string { return v.VmClusterId }).(pulumi.StringPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TargetDatabasePeerTargetDatabaseDatabaseDetails)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput() TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) ToTargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) Elem() TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDatabaseDetails) TargetDatabasePeerTargetDatabaseDatabaseDetails {
+		if v != nil {
+			return *v
+		}
+		var ret TargetDatabasePeerTargetDatabaseDatabaseDetails
+		return ret
+	}).(TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput)
+}
+
+// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDatabaseDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AutonomousDatabaseId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The database type.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) DatabaseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDatabaseDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DatabaseType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDatabaseDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DbSystemId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The infrastructure type the database is running on.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) InfrastructureType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDatabaseDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.InfrastructureType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the compute instance on which the database is running.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDatabaseDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDatabaseDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.IpAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The port number of the database listener.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) ListenerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDatabaseDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ListenerPort
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The service name of the database registered as target database.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDatabaseDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ServiceName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the VM cluster in which the database is running.
+func (o TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput) VmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDatabaseDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VmClusterId
+	}).(pulumi.StringPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDetail struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails TargetDatabasePeerTargetDatabaseDetailDatabaseDetails `pulumi:"databaseDetails"`
+	// The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+	DataguardAssociationId *string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description *string `pulumi:"description"`
+	// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) The details required to establish a TLS enabled connection.
+	TlsConfig *TargetDatabasePeerTargetDatabaseDetailTlsConfig `pulumi:"tlsConfig"`
+}
+
+// TargetDatabasePeerTargetDatabaseDetailInput is an input type that accepts TargetDatabasePeerTargetDatabaseDetailArgs and TargetDatabasePeerTargetDatabaseDetailOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseDetailInput` via:
+//
+//	TargetDatabasePeerTargetDatabaseDetailArgs{...}
+type TargetDatabasePeerTargetDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseDetailOutput() TargetDatabasePeerTargetDatabaseDetailOutput
+	ToTargetDatabasePeerTargetDatabaseDetailOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseDetailOutput
+}
+
+type TargetDatabasePeerTargetDatabaseDetailArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsInput `pulumi:"databaseDetails"`
+	// The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringPtrInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) The details required to establish a TLS enabled connection.
+	TlsConfig TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrInput `pulumi:"tlsConfig"`
+}
+
+func (TargetDatabasePeerTargetDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (i TargetDatabasePeerTargetDatabaseDetailArgs) ToTargetDatabasePeerTargetDatabaseDetailOutput() TargetDatabasePeerTargetDatabaseDetailOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseDetailArgs) ToTargetDatabasePeerTargetDatabaseDetailOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseDetailOutput)
+}
+
+// TargetDatabasePeerTargetDatabaseDetailArrayInput is an input type that accepts TargetDatabasePeerTargetDatabaseDetailArray and TargetDatabasePeerTargetDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseDetailArrayInput` via:
+//
+//	TargetDatabasePeerTargetDatabaseDetailArray{ TargetDatabasePeerTargetDatabaseDetailArgs{...} }
+type TargetDatabasePeerTargetDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseDetailArrayOutput() TargetDatabasePeerTargetDatabaseDetailArrayOutput
+	ToTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseDetailArrayOutput
+}
+
+type TargetDatabasePeerTargetDatabaseDetailArray []TargetDatabasePeerTargetDatabaseDetailInput
+
+func (TargetDatabasePeerTargetDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (i TargetDatabasePeerTargetDatabaseDetailArray) ToTargetDatabasePeerTargetDatabaseDetailArrayOutput() TargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseDetailArray) ToTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseDetailArrayOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailOutput) ToTargetDatabasePeerTargetDatabaseDetailOutput() TargetDatabasePeerTargetDatabaseDetailOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailOutput) ToTargetDatabasePeerTargetDatabaseDetailOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseDetailOutput) DatabaseDetails() TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetail) TargetDatabasePeerTargetDatabaseDetailDatabaseDetails {
+		return v.DatabaseDetails
+	}).(TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+func (o TargetDatabasePeerTargetDatabaseDetailOutput) DataguardAssociationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetail) *string { return v.DataguardAssociationId }).(pulumi.StringPtrOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseDetailOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetail) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+func (o TargetDatabasePeerTargetDatabaseDetailOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The details required to establish a TLS enabled connection.
+func (o TargetDatabasePeerTargetDatabaseDetailOutput) TlsConfig() TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetail) *TargetDatabasePeerTargetDatabaseDetailTlsConfig {
+		return v.TlsConfig
+	}).(TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailArrayOutput) ToTargetDatabasePeerTargetDatabaseDetailArrayOutput() TargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailArrayOutput) ToTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailArrayOutput) Index(i pulumi.IntInput) TargetDatabasePeerTargetDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetDatabasePeerTargetDatabaseDetail {
+		return vs[0].([]TargetDatabasePeerTargetDatabaseDetail)[vs[1].(int)]
+	}).(TargetDatabasePeerTargetDatabaseDetailOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDetailDatabaseDetails struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId *string `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId *string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort *int `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName *string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId *string `pulumi:"vmClusterId"`
+}
+
+// TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsInput is an input type that accepts TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs and TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsInput` via:
+//
+//	TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs{...}
+type TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput() TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput
+	ToTargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput
+}
+
+type TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringPtrInput `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntPtrInput `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringPtrInput `pulumi:"vmClusterId"`
+}
+
+func (TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDetailDatabaseDetails)(nil)).Elem()
+}
+
+func (i TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs) ToTargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput() TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs) ToTargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDetailDatabaseDetails)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) ToTargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput() TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) ToTargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailDatabaseDetails) *string { return v.AutonomousDatabaseId }).(pulumi.StringPtrOutput)
+}
+
+// The database type.
+func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailDatabaseDetails) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailDatabaseDetails) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
+}
+
+// The infrastructure type the database is running on.
+func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailDatabaseDetails) string { return v.InfrastructureType }).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailDatabaseDetails) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailDatabaseDetails) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) ListenerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailDatabaseDetails) *int { return v.ListenerPort }).(pulumi.IntPtrOutput)
+}
+
+// The service name of the database registered as target database.
+func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailDatabaseDetails) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) VmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailDatabaseDetails) *string { return v.VmClusterId }).(pulumi.StringPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDetailTlsConfig struct {
+	// (Updatable) The format of the certificate store.
+	CertificateStoreType *string `pulumi:"certificateStoreType"`
+	// (Updatable) Base64 encoded string of key store file content.
+	KeyStoreContent *string `pulumi:"keyStoreContent"`
+	// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// (Updatable) The password to read the trust store and key store files, if they are password protected.
+	StorePassword *string `pulumi:"storePassword"`
+	// (Updatable) Base64 encoded string of trust store file content.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TrustStoreContent *string `pulumi:"trustStoreContent"`
+}
+
+// TargetDatabasePeerTargetDatabaseDetailTlsConfigInput is an input type that accepts TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs and TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseDetailTlsConfigInput` via:
+//
+//	TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{...}
+type TargetDatabasePeerTargetDatabaseDetailTlsConfigInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput
+	ToTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput
+}
+
+type TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs struct {
+	// (Updatable) The format of the certificate store.
+	CertificateStoreType pulumi.StringPtrInput `pulumi:"certificateStoreType"`
+	// (Updatable) Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringPtrInput `pulumi:"keyStoreContent"`
+	// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// (Updatable) The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringPtrInput `pulumi:"storePassword"`
+	// (Updatable) Base64 encoded string of trust store file content.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TrustStoreContent pulumi.StringPtrInput `pulumi:"trustStoreContent"`
+}
+
+func (TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (i TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput)
+}
+
+func (i TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput() TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput).ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutputWithContext(ctx)
+}
+
+// TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrInput is an input type that accepts TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs, TargetDatabasePeerTargetDatabaseDetailTlsConfigPtr and TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrInput` via:
+//
+//	        TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput() TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput
+	ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput
+}
+
+type targetDatabasePeerTargetDatabaseDetailTlsConfigPtrType TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs
+
+func TargetDatabasePeerTargetDatabaseDetailTlsConfigPtr(v *TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrInput {
+	return (*targetDatabasePeerTargetDatabaseDetailTlsConfigPtrType)(v)
+}
+
+func (*targetDatabasePeerTargetDatabaseDetailTlsConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (i *targetDatabasePeerTargetDatabaseDetailTlsConfigPtrType) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput() TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *targetDatabasePeerTargetDatabaseDetailTlsConfigPtrType) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput() TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput {
+	return o.ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutputWithContext(context.Background())
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetDatabasePeerTargetDatabaseDetailTlsConfig) *TargetDatabasePeerTargetDatabaseDetailTlsConfig {
+		return &v
+	}).(TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput)
+}
+
+// (Updatable) The format of the certificate store.
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) CertificateStoreType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string { return v.CertificateStoreType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base64 encoded string of key store file content.
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) KeyStoreContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string { return v.KeyStoreContent }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// (Updatable) The password to read the trust store and key store files, if they are password protected.
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) StorePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string { return v.StorePassword }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base64 encoded string of trust store file content.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) TrustStoreContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string { return v.TrustStoreContent }).(pulumi.StringPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput() TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) ToTargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) Elem() TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDetailTlsConfig) TargetDatabasePeerTargetDatabaseDetailTlsConfig {
+		if v != nil {
+			return *v
+		}
+		var ret TargetDatabasePeerTargetDatabaseDetailTlsConfig
+		return ret
+	}).(TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput)
+}
+
+// (Updatable) The format of the certificate store.
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) CertificateStoreType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CertificateStoreType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base64 encoded string of key store file content.
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) KeyStoreContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyStoreContent
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The password to read the trust store and key store files, if they are password protected.
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) StorePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StorePassword
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base64 encoded string of trust store file content.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) TrustStoreContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TrustStoreContent
+	}).(pulumi.StringPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseTlsConfig struct {
+	// (Updatable) The format of the certificate store.
+	CertificateStoreType *string `pulumi:"certificateStoreType"`
+	// (Updatable) Base64 encoded string of key store file content.
+	KeyStoreContent *string `pulumi:"keyStoreContent"`
+	// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// (Updatable) The password to read the trust store and key store files, if they are password protected.
+	StorePassword *string `pulumi:"storePassword"`
+	// (Updatable) Base64 encoded string of trust store file content.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TrustStoreContent *string `pulumi:"trustStoreContent"`
+}
+
+// TargetDatabasePeerTargetDatabaseTlsConfigInput is an input type that accepts TargetDatabasePeerTargetDatabaseTlsConfigArgs and TargetDatabasePeerTargetDatabaseTlsConfigOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseTlsConfigInput` via:
+//
+//	TargetDatabasePeerTargetDatabaseTlsConfigArgs{...}
+type TargetDatabasePeerTargetDatabaseTlsConfigInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseTlsConfigOutput() TargetDatabasePeerTargetDatabaseTlsConfigOutput
+	ToTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseTlsConfigOutput
+}
+
+type TargetDatabasePeerTargetDatabaseTlsConfigArgs struct {
+	// (Updatable) The format of the certificate store.
+	CertificateStoreType pulumi.StringPtrInput `pulumi:"certificateStoreType"`
+	// (Updatable) Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringPtrInput `pulumi:"keyStoreContent"`
+	// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// (Updatable) The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringPtrInput `pulumi:"storePassword"`
+	// (Updatable) Base64 encoded string of trust store file content.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TrustStoreContent pulumi.StringPtrInput `pulumi:"trustStoreContent"`
+}
+
+func (TargetDatabasePeerTargetDatabaseTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i TargetDatabasePeerTargetDatabaseTlsConfigArgs) ToTargetDatabasePeerTargetDatabaseTlsConfigOutput() TargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseTlsConfigArgs) ToTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseTlsConfigOutput)
+}
+
+func (i TargetDatabasePeerTargetDatabaseTlsConfigArgs) ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutput() TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseTlsConfigArgs) ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseTlsConfigOutput).ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutputWithContext(ctx)
+}
+
+// TargetDatabasePeerTargetDatabaseTlsConfigPtrInput is an input type that accepts TargetDatabasePeerTargetDatabaseTlsConfigArgs, TargetDatabasePeerTargetDatabaseTlsConfigPtr and TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseTlsConfigPtrInput` via:
+//
+//	        TargetDatabasePeerTargetDatabaseTlsConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type TargetDatabasePeerTargetDatabaseTlsConfigPtrInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutput() TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput
+	ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput
+}
+
+type targetDatabasePeerTargetDatabaseTlsConfigPtrType TargetDatabasePeerTargetDatabaseTlsConfigArgs
+
+func TargetDatabasePeerTargetDatabaseTlsConfigPtr(v *TargetDatabasePeerTargetDatabaseTlsConfigArgs) TargetDatabasePeerTargetDatabaseTlsConfigPtrInput {
+	return (*targetDatabasePeerTargetDatabaseTlsConfigPtrType)(v)
+}
+
+func (*targetDatabasePeerTargetDatabaseTlsConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i *targetDatabasePeerTargetDatabaseTlsConfigPtrType) ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutput() TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *targetDatabasePeerTargetDatabaseTlsConfigPtrType) ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput)
+}
+
+// TargetDatabasePeerTargetDatabaseTlsConfigArrayInput is an input type that accepts TargetDatabasePeerTargetDatabaseTlsConfigArray and TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput values.
+// You can construct a concrete instance of `TargetDatabasePeerTargetDatabaseTlsConfigArrayInput` via:
+//
+//	TargetDatabasePeerTargetDatabaseTlsConfigArray{ TargetDatabasePeerTargetDatabaseTlsConfigArgs{...} }
+type TargetDatabasePeerTargetDatabaseTlsConfigArrayInput interface {
+	pulumi.Input
+
+	ToTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput
+	ToTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(context.Context) TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput
+}
+
+type TargetDatabasePeerTargetDatabaseTlsConfigArray []TargetDatabasePeerTargetDatabaseTlsConfigInput
+
+func (TargetDatabasePeerTargetDatabaseTlsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i TargetDatabasePeerTargetDatabaseTlsConfigArray) ToTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return i.ToTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i TargetDatabasePeerTargetDatabaseTlsConfigArray) ToTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseTlsConfigOutput) ToTargetDatabasePeerTargetDatabaseTlsConfigOutput() TargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseTlsConfigOutput) ToTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseTlsConfigOutput) ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutput() TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput {
+	return o.ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutputWithContext(context.Background())
+}
+
+func (o TargetDatabasePeerTargetDatabaseTlsConfigOutput) ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetDatabasePeerTargetDatabaseTlsConfig) *TargetDatabasePeerTargetDatabaseTlsConfig {
+		return &v
+	}).(TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput)
+}
+
+// (Updatable) The format of the certificate store.
+func (o TargetDatabasePeerTargetDatabaseTlsConfigOutput) CertificateStoreType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseTlsConfig) *string { return v.CertificateStoreType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base64 encoded string of key store file content.
+func (o TargetDatabasePeerTargetDatabaseTlsConfigOutput) KeyStoreContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseTlsConfig) *string { return v.KeyStoreContent }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+func (o TargetDatabasePeerTargetDatabaseTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// (Updatable) The password to read the trust store and key store files, if they are password protected.
+func (o TargetDatabasePeerTargetDatabaseTlsConfigOutput) StorePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseTlsConfig) *string { return v.StorePassword }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base64 encoded string of trust store file content.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o TargetDatabasePeerTargetDatabaseTlsConfigOutput) TrustStoreContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseTlsConfig) *string { return v.TrustStoreContent }).(pulumi.StringPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput) ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutput() TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput) ToTargetDatabasePeerTargetDatabaseTlsConfigPtrOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput) Elem() TargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseTlsConfig) TargetDatabasePeerTargetDatabaseTlsConfig {
+		if v != nil {
+			return *v
+		}
+		var ret TargetDatabasePeerTargetDatabaseTlsConfig
+		return ret
+	}).(TargetDatabasePeerTargetDatabaseTlsConfigOutput)
+}
+
+// (Updatable) The format of the certificate store.
+func (o TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput) CertificateStoreType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CertificateStoreType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base64 encoded string of key store file content.
+func (o TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput) KeyStoreContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyStoreContent
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+func (o TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The password to read the trust store and key store files, if they are password protected.
+func (o TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput) StorePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StorePassword
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base64 encoded string of trust store file content.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput) TrustStoreContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TrustStoreContent
+	}).(pulumi.StringPtrOutput)
+}
+
+type TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ToTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ToTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) Index(i pulumi.IntInput) TargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetDatabasePeerTargetDatabaseTlsConfig {
+		return vs[0].([]TargetDatabasePeerTargetDatabaseTlsConfig)[vs[1].(int)]
+	}).(TargetDatabasePeerTargetDatabaseTlsConfigOutput)
 }
 
 type TargetDatabaseTlsConfig struct {
@@ -8106,6 +9725,8 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	// * AUTONOMOUS_DATABASE - Represents Oracle Autonomous Databases.
 	// * INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
 	DatabaseType string `pulumi:"databaseType"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName string `pulumi:"databaseUniqueName"`
 	// The name of the database user whose actions were audited.
 	DbUserName string `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -8138,6 +9759,8 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	OsTerminal string `pulumi:"osTerminal"`
 	// The name of the operating system user for the database session.
 	OsUserName string `pulumi:"osUserName"`
+	// The secondary id assigned for the peer database registered with Data Safe.
+	PeerTargetDatabaseKey int `pulumi:"peerTargetDatabaseKey"`
 	// The class of the target that was audited.
 	TargetClass string `pulumi:"targetClass"`
 	// The OCID of the target database that was audited.
@@ -8146,6 +9769,8 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	TargetName string `pulumi:"targetName"`
 	// The timestamp when this audit event was collected from the target database by Data Safe.
 	TimeCollected string `pulumi:"timeCollected"`
+	// The underlying source of unified audit trail.
+	TrailSource string `pulumi:"trailSource"`
 }
 
 // GetAuditEventsAuditEventCollectionItemInput is an input type that accepts GetAuditEventsAuditEventCollectionItemArgs and GetAuditEventsAuditEventCollectionItemOutput values.
@@ -8191,6 +9816,8 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	// * AUTONOMOUS_DATABASE - Represents Oracle Autonomous Databases.
 	// * INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
 	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName pulumi.StringInput `pulumi:"databaseUniqueName"`
 	// The name of the database user whose actions were audited.
 	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -8223,6 +9850,8 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	OsTerminal pulumi.StringInput `pulumi:"osTerminal"`
 	// The name of the operating system user for the database session.
 	OsUserName pulumi.StringInput `pulumi:"osUserName"`
+	// The secondary id assigned for the peer database registered with Data Safe.
+	PeerTargetDatabaseKey pulumi.IntInput `pulumi:"peerTargetDatabaseKey"`
 	// The class of the target that was audited.
 	TargetClass pulumi.StringInput `pulumi:"targetClass"`
 	// The OCID of the target database that was audited.
@@ -8231,6 +9860,8 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	TargetName pulumi.StringInput `pulumi:"targetName"`
 	// The timestamp when this audit event was collected from the target database by Data Safe.
 	TimeCollected pulumi.StringInput `pulumi:"timeCollected"`
+	// The underlying source of unified audit trail.
+	TrailSource pulumi.StringInput `pulumi:"trailSource"`
 }
 
 func (GetAuditEventsAuditEventCollectionItemArgs) ElementType() reflect.Type {
@@ -8357,6 +9988,11 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) DatabaseType() pulumi.Stri
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
 
+// Unique name of the database associated to the peer target database.
+func (o GetAuditEventsAuditEventCollectionItemOutput) DatabaseUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.DatabaseUniqueName }).(pulumi.StringOutput)
+}
+
 // The name of the database user whose actions were audited.
 func (o GetAuditEventsAuditEventCollectionItemOutput) DbUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
@@ -8437,6 +10073,11 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) OsUserName() pulumi.String
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.OsUserName }).(pulumi.StringOutput)
 }
 
+// The secondary id assigned for the peer database registered with Data Safe.
+func (o GetAuditEventsAuditEventCollectionItemOutput) PeerTargetDatabaseKey() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) int { return v.PeerTargetDatabaseKey }).(pulumi.IntOutput)
+}
+
 // The class of the target that was audited.
 func (o GetAuditEventsAuditEventCollectionItemOutput) TargetClass() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.TargetClass }).(pulumi.StringOutput)
@@ -8455,6 +10096,11 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) TargetName() pulumi.String
 // The timestamp when this audit event was collected from the target database by Data Safe.
 func (o GetAuditEventsAuditEventCollectionItemOutput) TimeCollected() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.TimeCollected }).(pulumi.StringOutput)
+}
+
+// The underlying source of unified audit trail.
+func (o GetAuditEventsAuditEventCollectionItemOutput) TrailSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.TrailSource }).(pulumi.StringOutput)
 }
 
 type GetAuditEventsAuditEventCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -10169,6 +11815,14 @@ type GetAuditProfileAuditTrail struct {
 	IsAutoPurgeEnabled bool `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit profile in Data Safe.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The secondary id assigned for the peer database registered with Data Safe.
+	PeerTargetDatabaseKey int `pulumi:"peerTargetDatabaseKey"`
+	// The details of the audit trail purge job that ran on the "purgeJobTime".
+	PurgeJobDetails string `pulumi:"purgeJobDetails"`
+	// The current status of the audit trail purge job.
+	PurgeJobStatus string `pulumi:"purgeJobStatus"`
+	// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+	PurgeJobTime string `pulumi:"purgeJobTime"`
 	// The current state of the audit profile.
 	State string `pulumi:"state"`
 	// The current sub-state of the audit trail.
@@ -10185,6 +11839,8 @@ type GetAuditProfileAuditTrail struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 	TrailLocation string `pulumi:"trailLocation"`
+	// The underlying source of unified audit trail.
+	TrailSource string `pulumi:"trailSource"`
 	// The OCID of the workrequest for audit trail which collects audit records.
 	WorkRequestId string `pulumi:"workRequestId"`
 }
@@ -10221,6 +11877,14 @@ type GetAuditProfileAuditTrailArgs struct {
 	IsAutoPurgeEnabled pulumi.BoolInput `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit profile in Data Safe.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The secondary id assigned for the peer database registered with Data Safe.
+	PeerTargetDatabaseKey pulumi.IntInput `pulumi:"peerTargetDatabaseKey"`
+	// The details of the audit trail purge job that ran on the "purgeJobTime".
+	PurgeJobDetails pulumi.StringInput `pulumi:"purgeJobDetails"`
+	// The current status of the audit trail purge job.
+	PurgeJobStatus pulumi.StringInput `pulumi:"purgeJobStatus"`
+	// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+	PurgeJobTime pulumi.StringInput `pulumi:"purgeJobTime"`
 	// The current state of the audit profile.
 	State pulumi.StringInput `pulumi:"state"`
 	// The current sub-state of the audit trail.
@@ -10237,6 +11901,8 @@ type GetAuditProfileAuditTrailArgs struct {
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 	TrailLocation pulumi.StringInput `pulumi:"trailLocation"`
+	// The underlying source of unified audit trail.
+	TrailSource pulumi.StringInput `pulumi:"trailSource"`
 	// The OCID of the workrequest for audit trail which collects audit records.
 	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
 }
@@ -10342,6 +12008,26 @@ func (o GetAuditProfileAuditTrailOutput) LifecycleDetails() pulumi.StringOutput 
 	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// The secondary id assigned for the peer database registered with Data Safe.
+func (o GetAuditProfileAuditTrailOutput) PeerTargetDatabaseKey() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAuditProfileAuditTrail) int { return v.PeerTargetDatabaseKey }).(pulumi.IntOutput)
+}
+
+// The details of the audit trail purge job that ran on the "purgeJobTime".
+func (o GetAuditProfileAuditTrailOutput) PurgeJobDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.PurgeJobDetails }).(pulumi.StringOutput)
+}
+
+// The current status of the audit trail purge job.
+func (o GetAuditProfileAuditTrailOutput) PurgeJobStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.PurgeJobStatus }).(pulumi.StringOutput)
+}
+
+// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+func (o GetAuditProfileAuditTrailOutput) PurgeJobTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.PurgeJobTime }).(pulumi.StringOutput)
+}
+
 // The current state of the audit profile.
 func (o GetAuditProfileAuditTrailOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.State }).(pulumi.StringOutput)
@@ -10380,6 +12066,11 @@ func (o GetAuditProfileAuditTrailOutput) TimeUpdated() pulumi.StringOutput {
 // An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 func (o GetAuditProfileAuditTrailOutput) TrailLocation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.TrailLocation }).(pulumi.StringOutput)
+}
+
+// The underlying source of unified audit trail.
+func (o GetAuditProfileAuditTrailOutput) TrailSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.TrailSource }).(pulumi.StringOutput)
 }
 
 // The OCID of the workrequest for audit trail which collects audit records.
@@ -10732,6 +12423,10 @@ func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemAr
 type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem struct {
 	// The OCID of the audit.
 	AuditProfileId string `pulumi:"auditProfileId"`
+	// The OCID of the audit trail.
+	AuditTrailId string `pulumi:"auditTrailId"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName string `pulumi:"databaseUniqueName"`
 	// Represents the month under consideration for which aggregated audit data volume available at the target is computed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
 	MonthInConsideration string `pulumi:"monthInConsideration"`
 	// The audit trail location.
@@ -10754,6 +12449,10 @@ type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemI
 type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArgs struct {
 	// The OCID of the audit.
 	AuditProfileId pulumi.StringInput `pulumi:"auditProfileId"`
+	// The OCID of the audit trail.
+	AuditTrailId pulumi.StringInput `pulumi:"auditTrailId"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName pulumi.StringInput `pulumi:"databaseUniqueName"`
 	// Represents the month under consideration for which aggregated audit data volume available at the target is computed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
 	MonthInConsideration pulumi.StringInput `pulumi:"monthInConsideration"`
 	// The audit trail location.
@@ -10817,6 +12516,20 @@ func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemIt
 func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutput) AuditProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem) string {
 		return v.AuditProfileId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the audit trail.
+func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutput) AuditTrailId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem) string {
+		return v.AuditTrailId
+	}).(pulumi.StringOutput)
+}
+
+// Unique name of the database associated to the peer target database.
+func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutput) DatabaseUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem) string {
+		return v.DatabaseUniqueName
 	}).(pulumi.StringOutput)
 }
 
@@ -11911,6 +13624,14 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrail struct {
 	IsAutoPurgeEnabled bool `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit profile in Data Safe.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The secondary id assigned for the peer database registered with Data Safe.
+	PeerTargetDatabaseKey int `pulumi:"peerTargetDatabaseKey"`
+	// The details of the audit trail purge job that ran on the "purgeJobTime".
+	PurgeJobDetails string `pulumi:"purgeJobDetails"`
+	// The current status of the audit trail purge job.
+	PurgeJobStatus string `pulumi:"purgeJobStatus"`
+	// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+	PurgeJobTime string `pulumi:"purgeJobTime"`
 	// A optional filter to return only resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// The current sub-state of the audit trail.
@@ -11927,6 +13648,8 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrail struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 	TrailLocation string `pulumi:"trailLocation"`
+	// The underlying source of unified audit trail.
+	TrailSource string `pulumi:"trailSource"`
 	// The OCID of the workrequest for audit trail which collects audit records.
 	WorkRequestId string `pulumi:"workRequestId"`
 }
@@ -11963,6 +13686,14 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs struct {
 	IsAutoPurgeEnabled pulumi.BoolInput `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit profile in Data Safe.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The secondary id assigned for the peer database registered with Data Safe.
+	PeerTargetDatabaseKey pulumi.IntInput `pulumi:"peerTargetDatabaseKey"`
+	// The details of the audit trail purge job that ran on the "purgeJobTime".
+	PurgeJobDetails pulumi.StringInput `pulumi:"purgeJobDetails"`
+	// The current status of the audit trail purge job.
+	PurgeJobStatus pulumi.StringInput `pulumi:"purgeJobStatus"`
+	// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+	PurgeJobTime pulumi.StringInput `pulumi:"purgeJobTime"`
 	// A optional filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// The current sub-state of the audit trail.
@@ -11979,6 +13710,8 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs struct {
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 	TrailLocation pulumi.StringInput `pulumi:"trailLocation"`
+	// The underlying source of unified audit trail.
+	TrailSource pulumi.StringInput `pulumi:"trailSource"`
 	// The OCID of the workrequest for audit trail which collects audit records.
 	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
 }
@@ -12088,6 +13821,26 @@ func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) LifecycleDet
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// The secondary id assigned for the peer database registered with Data Safe.
+func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) PeerTargetDatabaseKey() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) int { return v.PeerTargetDatabaseKey }).(pulumi.IntOutput)
+}
+
+// The details of the audit trail purge job that ran on the "purgeJobTime".
+func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) PurgeJobDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.PurgeJobDetails }).(pulumi.StringOutput)
+}
+
+// The current status of the audit trail purge job.
+func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) PurgeJobStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.PurgeJobStatus }).(pulumi.StringOutput)
+}
+
+// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) PurgeJobTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.PurgeJobTime }).(pulumi.StringOutput)
+}
+
 // A optional filter to return only resources that match the specified lifecycle state.
 func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.State }).(pulumi.StringOutput)
@@ -12128,6 +13881,11 @@ func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) TimeUpdated(
 // An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) TrailLocation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.TrailLocation }).(pulumi.StringOutput)
+}
+
+// The underlying source of unified audit trail.
+func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) TrailSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.TrailSource }).(pulumi.StringOutput)
 }
 
 // The OCID of the workrequest for audit trail which collects audit records.
@@ -12608,7 +14366,15 @@ type GetAuditTrailsAuditTrailCollectionItem struct {
 	IsAutoPurgeEnabled bool `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit trail in Data Safe.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	ResumeTrigger    int    `pulumi:"resumeTrigger"`
+	// The secondary id assigned for the peer database registered with Data Safe.
+	PeerTargetDatabaseKey int `pulumi:"peerTargetDatabaseKey"`
+	// The details of the audit trail purge job that ran on the "purgeJobTime".
+	PurgeJobDetails string `pulumi:"purgeJobDetails"`
+	// The current status of the audit trail purge job.
+	PurgeJobStatus string `pulumi:"purgeJobStatus"`
+	// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+	PurgeJobTime  string `pulumi:"purgeJobTime"`
+	ResumeTrigger int    `pulumi:"resumeTrigger"`
 	// A optional filter to return only resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// A optional filter to return only resources that match the specified sub-state of audit trail.
@@ -12625,6 +14391,8 @@ type GetAuditTrailsAuditTrailCollectionItem struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 	TrailLocation string `pulumi:"trailLocation"`
+	// The underlying source of unified audit trail.
+	TrailSource string `pulumi:"trailSource"`
 	// The OCID of the workrequest for audit trail which collects audit records.
 	WorkRequestId string `pulumi:"workRequestId"`
 }
@@ -12663,7 +14431,15 @@ type GetAuditTrailsAuditTrailCollectionItemArgs struct {
 	IsAutoPurgeEnabled pulumi.BoolInput `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit trail in Data Safe.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	ResumeTrigger    pulumi.IntInput    `pulumi:"resumeTrigger"`
+	// The secondary id assigned for the peer database registered with Data Safe.
+	PeerTargetDatabaseKey pulumi.IntInput `pulumi:"peerTargetDatabaseKey"`
+	// The details of the audit trail purge job that ran on the "purgeJobTime".
+	PurgeJobDetails pulumi.StringInput `pulumi:"purgeJobDetails"`
+	// The current status of the audit trail purge job.
+	PurgeJobStatus pulumi.StringInput `pulumi:"purgeJobStatus"`
+	// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+	PurgeJobTime  pulumi.StringInput `pulumi:"purgeJobTime"`
+	ResumeTrigger pulumi.IntInput    `pulumi:"resumeTrigger"`
 	// A optional filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// A optional filter to return only resources that match the specified sub-state of audit trail.
@@ -12680,6 +14456,8 @@ type GetAuditTrailsAuditTrailCollectionItemArgs struct {
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 	TrailLocation pulumi.StringInput `pulumi:"trailLocation"`
+	// The underlying source of unified audit trail.
+	TrailSource pulumi.StringInput `pulumi:"trailSource"`
 	// The OCID of the workrequest for audit trail which collects audit records.
 	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
 }
@@ -12790,6 +14568,26 @@ func (o GetAuditTrailsAuditTrailCollectionItemOutput) LifecycleDetails() pulumi.
 	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// The secondary id assigned for the peer database registered with Data Safe.
+func (o GetAuditTrailsAuditTrailCollectionItemOutput) PeerTargetDatabaseKey() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) int { return v.PeerTargetDatabaseKey }).(pulumi.IntOutput)
+}
+
+// The details of the audit trail purge job that ran on the "purgeJobTime".
+func (o GetAuditTrailsAuditTrailCollectionItemOutput) PurgeJobDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) string { return v.PurgeJobDetails }).(pulumi.StringOutput)
+}
+
+// The current status of the audit trail purge job.
+func (o GetAuditTrailsAuditTrailCollectionItemOutput) PurgeJobStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) string { return v.PurgeJobStatus }).(pulumi.StringOutput)
+}
+
+// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+func (o GetAuditTrailsAuditTrailCollectionItemOutput) PurgeJobTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) string { return v.PurgeJobTime }).(pulumi.StringOutput)
+}
+
 func (o GetAuditTrailsAuditTrailCollectionItemOutput) ResumeTrigger() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) int { return v.ResumeTrigger }).(pulumi.IntOutput)
 }
@@ -12832,6 +14630,11 @@ func (o GetAuditTrailsAuditTrailCollectionItemOutput) TimeUpdated() pulumi.Strin
 // An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 func (o GetAuditTrailsAuditTrailCollectionItemOutput) TrailLocation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) string { return v.TrailLocation }).(pulumi.StringOutput)
+}
+
+// The underlying source of unified audit trail.
+func (o GetAuditTrailsAuditTrailCollectionItemOutput) TrailSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) string { return v.TrailSource }).(pulumi.StringOutput)
 }
 
 // The OCID of the workrequest for audit trail which collects audit records.
@@ -18739,7 +20542,7 @@ type GetMaskingPoliciesMaskingPolicyCollectionItem struct {
 	PostMaskingScript string `pulumi:"postMaskingScript"`
 	// A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
 	PreMaskingScript string `pulumi:"preMaskingScript"`
-	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
+	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
 	Recompile string `pulumi:"recompile"`
 	// A filter to return only the resources that match the specified lifecycle states.
 	State string `pulumi:"state"`
@@ -18788,7 +20591,7 @@ type GetMaskingPoliciesMaskingPolicyCollectionItemArgs struct {
 	PostMaskingScript pulumi.StringInput `pulumi:"postMaskingScript"`
 	// A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
 	PreMaskingScript pulumi.StringInput `pulumi:"preMaskingScript"`
-	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
+	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
 	Recompile pulumi.StringInput `pulumi:"recompile"`
 	// A filter to return only the resources that match the specified lifecycle states.
 	State pulumi.StringInput `pulumi:"state"`
@@ -18920,7 +20723,7 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) PreMaskingScript() 
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) string { return v.PreMaskingScript }).(pulumi.StringOutput)
 }
 
-// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
+// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) Recompile() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) string { return v.Recompile }).(pulumi.StringOutput)
 }
@@ -22951,6 +24754,7 @@ type GetReportsReportCollectionItem struct {
 	MimeType string `pulumi:"mimeType"`
 	// The ID of the report definition to filter the list of reports
 	ReportDefinitionId string `pulumi:"reportDefinitionId"`
+	ReportId           string `pulumi:"reportId"`
 	// An optional filter to return only resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -22989,6 +24793,7 @@ type GetReportsReportCollectionItemArgs struct {
 	MimeType pulumi.StringInput `pulumi:"mimeType"`
 	// The ID of the report definition to filter the list of reports
 	ReportDefinitionId pulumi.StringInput `pulumi:"reportDefinitionId"`
+	ReportId           pulumi.StringInput `pulumi:"reportId"`
 	// An optional filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -23088,6 +24893,10 @@ func (o GetReportsReportCollectionItemOutput) MimeType() pulumi.StringOutput {
 // The ID of the report definition to filter the list of reports
 func (o GetReportsReportCollectionItemOutput) ReportDefinitionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportsReportCollectionItem) string { return v.ReportDefinitionId }).(pulumi.StringOutput)
+}
+
+func (o GetReportsReportCollectionItemOutput) ReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportsReportCollectionItem) string { return v.ReportId }).(pulumi.StringOutput)
 }
 
 // An optional filter to return only resources that match the specified lifecycle state.
@@ -24289,18 +26098,38 @@ func (o GetSecurityAssessmentComparisonTargetAuditingArrayOutput) Index(i pulumi
 }
 
 type GetSecurityAssessmentComparisonTargetAuditingBaseline struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetAuditingBaselineReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -24317,18 +26146,38 @@ type GetSecurityAssessmentComparisonTargetAuditingBaselineInput interface {
 }
 
 type GetSecurityAssessmentComparisonTargetAuditingBaselineArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -24384,14 +26233,46 @@ func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) ToGetSecuri
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) string { return v.OracleDefinedSeverity }).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -24411,9 +26292,29 @@ func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) Severity() 
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaseline) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -24557,18 +26458,38 @@ func (o GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayOutpu
 }
 
 type GetSecurityAssessmentComparisonTargetAuditingCurrent struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetAuditingCurrentReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -24585,18 +26506,38 @@ type GetSecurityAssessmentComparisonTargetAuditingCurrentInput interface {
 }
 
 type GetSecurityAssessmentComparisonTargetAuditingCurrentArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -24652,14 +26593,46 @@ func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) ToGetSecurit
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) string { return v.OracleDefinedSeverity }).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -24679,9 +26652,29 @@ func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) Severity() p
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrent) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -24971,18 +26964,38 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlArrayOutput) In
 }
 
 type GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -24999,18 +27012,38 @@ type GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineInput inte
 }
 
 type GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -25066,14 +27099,56 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput)
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) string {
+		return v.AssessmentId
+	}).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) bool {
+		return v.IsRiskModified
+	}).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) string {
+		return v.Justification
+	}).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -25093,9 +27168,31 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput)
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline) string {
+		return v.TimeValidUntil
+	}).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -25245,18 +27342,38 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferen
 }
 
 type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -25273,18 +27390,38 @@ type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentInput inter
 }
 
 type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -25340,14 +27477,52 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) 
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) string {
+		return v.Justification
+	}).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -25367,9 +27542,31 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) 
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent) string {
+		return v.TimeValidUntil
+	}).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -25663,18 +27860,38 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionArrayOutput) Index(i 
 }
 
 type GetSecurityAssessmentComparisonTargetDataEncryptionBaseline struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -25691,18 +27908,38 @@ type GetSecurityAssessmentComparisonTargetDataEncryptionBaselineInput interface 
 }
 
 type GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -25758,14 +27995,48 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) ToGet
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -25785,9 +28056,29 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) Sever
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaseline) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -25931,18 +28222,38 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArra
 }
 
 type GetSecurityAssessmentComparisonTargetDataEncryptionCurrent struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -25959,18 +28270,38 @@ type GetSecurityAssessmentComparisonTargetDataEncryptionCurrentInput interface {
 }
 
 type GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -26026,14 +28357,48 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) ToGetS
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -26053,9 +28418,29 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) Severi
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrent) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -26345,18 +28730,38 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationArrayOutput) Index(i
 }
 
 type GetSecurityAssessmentComparisonTargetDbConfigurationBaseline struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -26373,18 +28778,38 @@ type GetSecurityAssessmentComparisonTargetDbConfigurationBaselineInput interface
 }
 
 type GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -26440,14 +28865,48 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) ToGe
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -26467,9 +28926,29 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) Seve
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaseline) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -26613,18 +29092,38 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArr
 }
 
 type GetSecurityAssessmentComparisonTargetDbConfigurationCurrent struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -26641,18 +29140,38 @@ type GetSecurityAssessmentComparisonTargetDbConfigurationCurrentInput interface 
 }
 
 type GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -26708,14 +29227,48 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) ToGet
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -26735,9 +29288,29 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) Sever
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrent) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -27027,18 +29600,38 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayOutput
 }
 
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -27055,18 +29648,38 @@ type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineInput 
 }
 
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -27122,6 +29735,13 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOut
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) string {
+		return v.AssessmentId
+	}).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) []string {
@@ -27129,9 +29749,44 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOut
 	}).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) bool {
+		return v.IsRiskModified
+	}).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) string {
+		return v.Justification
+	}).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -27153,9 +29808,35 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOut
 	}).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) string {
+		return v.TargetId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline) string {
+		return v.TimeValidUntil
+	}).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -27305,18 +29986,38 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRef
 }
 
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -27333,18 +30034,38 @@ type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentInput i
 }
 
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -27400,6 +30121,13 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutp
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) string {
+		return v.AssessmentId
+	}).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) []string {
@@ -27407,9 +30135,44 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutp
 	}).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) bool {
+		return v.IsRiskModified
+	}).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) string {
+		return v.Justification
+	}).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -27429,9 +30192,33 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutp
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent) string {
+		return v.TimeValidUntil
+	}).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -27727,18 +30514,38 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayOutput) Index
 }
 
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -27755,18 +30562,38 @@ type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineInput interfa
 }
 
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -27822,14 +30649,50 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) To
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -27849,9 +30712,29 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) Se
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -27995,18 +30878,38 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceA
 }
 
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -28023,18 +30926,38 @@ type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentInput interfac
 }
 
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -28090,14 +31013,50 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) ToG
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -28117,9 +31076,29 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) Sev
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -28409,18 +31388,38 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountArrayOutput) Index(i pul
 }
 
 type GetSecurityAssessmentComparisonTargetUserAccountBaseline struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetUserAccountBaselineReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -28437,18 +31436,38 @@ type GetSecurityAssessmentComparisonTargetUserAccountBaselineInput interface {
 }
 
 type GetSecurityAssessmentComparisonTargetUserAccountBaselineArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -28504,14 +31523,48 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) ToGetSec
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -28531,9 +31584,29 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) Severity
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaseline) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -28677,18 +31750,38 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayOu
 }
 
 type GetSecurityAssessmentComparisonTargetUserAccountCurrent struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References []GetSecurityAssessmentComparisonTargetUserAccountCurrentReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity string `pulumi:"severity"`
+	// The current state of the finding.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -28705,18 +31798,38 @@ type GetSecurityAssessmentComparisonTargetUserAccountCurrentInput interface {
 }
 
 type GetSecurityAssessmentComparisonTargetUserAccountCurrentArgs struct {
+	// The OCID of the assessment that generated this finding.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// A unique identifier for the finding. This is common for the finding across targets.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
 	References GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// The severity of this diff.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// The current state of the finding.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred/modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -28772,14 +31885,46 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) ToGetSecu
 	return o
 }
 
+// The OCID of the assessment that generated this finding.
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) bool {
+		return v.HasTargetDbRiskLevelChanged
+	}).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 // A unique identifier for the finding. This is common for the finding across targets.
 func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) string { return v.OracleDefinedSeverity }).(pulumi.StringOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
@@ -28799,9 +31944,29 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) Severity(
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The current state of the finding.
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred/modified) of this finding is valid.
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrent) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -28944,6 +32109,486 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOut
 	}).(GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput)
 }
 
+type GetSecurityAssessmentFindingAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityAssessmentFindingAnalyticsFilterInput is an input type that accepts GetSecurityAssessmentFindingAnalyticsFilterArgs and GetSecurityAssessmentFindingAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingAnalyticsFilterInput` via:
+//
+//	GetSecurityAssessmentFindingAnalyticsFilterArgs{...}
+type GetSecurityAssessmentFindingAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingAnalyticsFilterOutput() GetSecurityAssessmentFindingAnalyticsFilterOutput
+	ToGetSecurityAssessmentFindingAnalyticsFilterOutputWithContext(context.Context) GetSecurityAssessmentFindingAnalyticsFilterOutput
+}
+
+type GetSecurityAssessmentFindingAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityAssessmentFindingAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFilterArgs) ToGetSecurityAssessmentFindingAnalyticsFilterOutput() GetSecurityAssessmentFindingAnalyticsFilterOutput {
+	return i.ToGetSecurityAssessmentFindingAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFilterArgs) ToGetSecurityAssessmentFindingAnalyticsFilterOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingAnalyticsFilterOutput)
+}
+
+// GetSecurityAssessmentFindingAnalyticsFilterArrayInput is an input type that accepts GetSecurityAssessmentFindingAnalyticsFilterArray and GetSecurityAssessmentFindingAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingAnalyticsFilterArrayInput` via:
+//
+//	GetSecurityAssessmentFindingAnalyticsFilterArray{ GetSecurityAssessmentFindingAnalyticsFilterArgs{...} }
+type GetSecurityAssessmentFindingAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingAnalyticsFilterArrayOutput() GetSecurityAssessmentFindingAnalyticsFilterArrayOutput
+	ToGetSecurityAssessmentFindingAnalyticsFilterArrayOutputWithContext(context.Context) GetSecurityAssessmentFindingAnalyticsFilterArrayOutput
+}
+
+type GetSecurityAssessmentFindingAnalyticsFilterArray []GetSecurityAssessmentFindingAnalyticsFilterInput
+
+func (GetSecurityAssessmentFindingAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFilterArray) ToGetSecurityAssessmentFindingAnalyticsFilterArrayOutput() GetSecurityAssessmentFindingAnalyticsFilterArrayOutput {
+	return i.ToGetSecurityAssessmentFindingAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFilterArray) ToGetSecurityAssessmentFindingAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingAnalyticsFilterArrayOutput)
+}
+
+type GetSecurityAssessmentFindingAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFilterOutput) ToGetSecurityAssessmentFindingAnalyticsFilterOutput() GetSecurityAssessmentFindingAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFilterOutput) ToGetSecurityAssessmentFindingAnalyticsFilterOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityAssessmentFindingAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFilterArrayOutput) ToGetSecurityAssessmentFindingAnalyticsFilterArrayOutput() GetSecurityAssessmentFindingAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFilterArrayOutput) ToGetSecurityAssessmentFindingAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentFindingAnalyticsFilter {
+		return vs[0].([]GetSecurityAssessmentFindingAnalyticsFilter)[vs[1].(int)]
+	}).(GetSecurityAssessmentFindingAnalyticsFilterOutput)
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollection struct {
+	// The array of the summary objects of the analytics data of findings or top findings.
+	Items []GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionInput is an input type that accepts GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArgs and GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionInput` via:
+//
+//	GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArgs{...}
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutputWithContext(context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArgs struct {
+	// The array of the summary objects of the analytics data of findings or top findings.
+	Items GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArgs) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput {
+	return i.ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArgs) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput)
+}
+
+// GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayInput is an input type that accepts GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArray and GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayInput` via:
+//
+//	GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArray{ GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArgs{...} }
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutputWithContext(context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArray []GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionInput
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArray) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput {
+	return i.ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArray) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput)
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput {
+	return o
+}
+
+// The array of the summary objects of the analytics data of findings or top findings.
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput) Items() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollection) []GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem {
+		return v.Items
+	}).(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollection {
+		return vs[0].([]GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollection)[vs[1].(int)]
+	}).(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput)
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem struct {
+	// The scope of analytics data.
+	Dimensions []GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension `pulumi:"dimensions"`
+	// The name of the aggregation metric.
+	MetricName string `pulumi:"metricName"`
+	// The total count for the aggregation metric.
+	SecurityAssessmentFindingAnalyticCount string `pulumi:"securityAssessmentFindingAnalyticCount"`
+}
+
+// GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemInput is an input type that accepts GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArgs and GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemInput` via:
+//
+//	GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArgs{...}
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutputWithContext(context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArgs struct {
+	// The scope of analytics data.
+	Dimensions GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// The name of the aggregation metric.
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// The total count for the aggregation metric.
+	SecurityAssessmentFindingAnalyticCount pulumi.StringInput `pulumi:"securityAssessmentFindingAnalyticCount"`
+}
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArgs) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput {
+	return i.ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArgs) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput)
+}
+
+// GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayInput is an input type that accepts GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArray and GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayInput` via:
+//
+//	GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArray{ GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArgs{...} }
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArray []GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemInput
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArray) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput {
+	return i.ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArray) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput {
+	return o
+}
+
+// The scope of analytics data.
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput) Dimensions() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem) []GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+// The name of the aggregation metric.
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem) string {
+		return v.MetricName
+	}).(pulumi.StringOutput)
+}
+
+// The total count for the aggregation metric.
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput) SecurityAssessmentFindingAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem) string {
+		return v.SecurityAssessmentFindingAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem {
+		return vs[0].([]GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput)
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension struct {
+	// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+	Key string `pulumi:"key"`
+	// A filter to return only findings of a particular risk level.
+	Severity string `pulumi:"severity"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The short title of the finding.
+	Title string `pulumi:"title"`
+	// The category of the top finding.
+	TopFindingCategory string `pulumi:"topFindingCategory"`
+	// An optional filter to return only the top finding that match the specified status.
+	TopFindingStatus string `pulumi:"topFindingStatus"`
+}
+
+// GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionInput is an input type that accepts GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArgs and GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionInput` via:
+//
+//	GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArgs{...}
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutputWithContext(context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArgs struct {
+	// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+	Key pulumi.StringInput `pulumi:"key"`
+	// A filter to return only findings of a particular risk level.
+	Severity pulumi.StringInput `pulumi:"severity"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The short title of the finding.
+	Title pulumi.StringInput `pulumi:"title"`
+	// The category of the top finding.
+	TopFindingCategory pulumi.StringInput `pulumi:"topFindingCategory"`
+	// An optional filter to return only the top finding that match the specified status.
+	TopFindingStatus pulumi.StringInput `pulumi:"topFindingStatus"`
+}
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArgs) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput {
+	return i.ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArgs) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput)
+}
+
+// GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArray and GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayInput` via:
+//
+//	GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArray{ GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArgs{...} }
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput
+	ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArray []GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionInput
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArray) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput {
+	return i.ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArray) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only findings of a particular risk level.
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension) string {
+		return v.Severity
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension) string {
+		return v.TargetId
+	}).(pulumi.StringOutput)
+}
+
+// The short title of the finding.
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension) string {
+		return v.Title
+	}).(pulumi.StringOutput)
+}
+
+// The category of the top finding.
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput) TopFindingCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension) string {
+		return v.TopFindingCategory
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return only the top finding that match the specified status.
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput) TopFindingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension) string {
+		return v.TopFindingStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput() GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput) ToGetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension {
+		return vs[0].([]GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput)
+}
+
 type GetSecurityAssessmentFindingFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -29051,15 +32696,24 @@ func (o GetSecurityAssessmentFindingFilterArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetSecurityAssessmentFindingFinding struct {
-	AssessmentId string                                         `pulumi:"assessmentId"`
-	Details      []string                                       `pulumi:"details"`
-	Key          string                                         `pulumi:"key"`
-	References   []GetSecurityAssessmentFindingFindingReference `pulumi:"references"`
-	Remarks      string                                         `pulumi:"remarks"`
-	Severity     string                                         `pulumi:"severity"`
-	Summary      string                                         `pulumi:"summary"`
-	TargetId     string                                         `pulumi:"targetId"`
-	Title        string                                         `pulumi:"title"`
+	AssessmentId                string                                         `pulumi:"assessmentId"`
+	Details                     []string                                       `pulumi:"details"`
+	HasTargetDbRiskLevelChanged bool                                           `pulumi:"hasTargetDbRiskLevelChanged"`
+	IsRiskModified              bool                                           `pulumi:"isRiskModified"`
+	IsTopFinding                bool                                           `pulumi:"isTopFinding"`
+	Justification               string                                         `pulumi:"justification"`
+	Key                         string                                         `pulumi:"key"`
+	LifecycleDetails            string                                         `pulumi:"lifecycleDetails"`
+	OracleDefinedSeverity       string                                         `pulumi:"oracleDefinedSeverity"`
+	References                  []GetSecurityAssessmentFindingFindingReference `pulumi:"references"`
+	Remarks                     string                                         `pulumi:"remarks"`
+	Severity                    string                                         `pulumi:"severity"`
+	State                       string                                         `pulumi:"state"`
+	Summary                     string                                         `pulumi:"summary"`
+	TargetId                    string                                         `pulumi:"targetId"`
+	TimeUpdated                 string                                         `pulumi:"timeUpdated"`
+	TimeValidUntil              string                                         `pulumi:"timeValidUntil"`
+	Title                       string                                         `pulumi:"title"`
 }
 
 // GetSecurityAssessmentFindingFindingInput is an input type that accepts GetSecurityAssessmentFindingFindingArgs and GetSecurityAssessmentFindingFindingOutput values.
@@ -29074,15 +32728,24 @@ type GetSecurityAssessmentFindingFindingInput interface {
 }
 
 type GetSecurityAssessmentFindingFindingArgs struct {
-	AssessmentId pulumi.StringInput                                     `pulumi:"assessmentId"`
-	Details      pulumi.StringArrayInput                                `pulumi:"details"`
-	Key          pulumi.StringInput                                     `pulumi:"key"`
-	References   GetSecurityAssessmentFindingFindingReferenceArrayInput `pulumi:"references"`
-	Remarks      pulumi.StringInput                                     `pulumi:"remarks"`
-	Severity     pulumi.StringInput                                     `pulumi:"severity"`
-	Summary      pulumi.StringInput                                     `pulumi:"summary"`
-	TargetId     pulumi.StringInput                                     `pulumi:"targetId"`
-	Title        pulumi.StringInput                                     `pulumi:"title"`
+	AssessmentId                pulumi.StringInput                                     `pulumi:"assessmentId"`
+	Details                     pulumi.StringArrayInput                                `pulumi:"details"`
+	HasTargetDbRiskLevelChanged pulumi.BoolInput                                       `pulumi:"hasTargetDbRiskLevelChanged"`
+	IsRiskModified              pulumi.BoolInput                                       `pulumi:"isRiskModified"`
+	IsTopFinding                pulumi.BoolInput                                       `pulumi:"isTopFinding"`
+	Justification               pulumi.StringInput                                     `pulumi:"justification"`
+	Key                         pulumi.StringInput                                     `pulumi:"key"`
+	LifecycleDetails            pulumi.StringInput                                     `pulumi:"lifecycleDetails"`
+	OracleDefinedSeverity       pulumi.StringInput                                     `pulumi:"oracleDefinedSeverity"`
+	References                  GetSecurityAssessmentFindingFindingReferenceArrayInput `pulumi:"references"`
+	Remarks                     pulumi.StringInput                                     `pulumi:"remarks"`
+	Severity                    pulumi.StringInput                                     `pulumi:"severity"`
+	State                       pulumi.StringInput                                     `pulumi:"state"`
+	Summary                     pulumi.StringInput                                     `pulumi:"summary"`
+	TargetId                    pulumi.StringInput                                     `pulumi:"targetId"`
+	TimeUpdated                 pulumi.StringInput                                     `pulumi:"timeUpdated"`
+	TimeValidUntil              pulumi.StringInput                                     `pulumi:"timeValidUntil"`
+	Title                       pulumi.StringInput                                     `pulumi:"title"`
 }
 
 func (GetSecurityAssessmentFindingFindingArgs) ElementType() reflect.Type {
@@ -29144,8 +32807,32 @@ func (o GetSecurityAssessmentFindingFindingOutput) Details() pulumi.StringArrayO
 	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+func (o GetSecurityAssessmentFindingFindingOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) bool { return v.HasTargetDbRiskLevelChanged }).(pulumi.BoolOutput)
+}
+
+func (o GetSecurityAssessmentFindingFindingOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+func (o GetSecurityAssessmentFindingFindingOutput) IsTopFinding() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) bool { return v.IsTopFinding }).(pulumi.BoolOutput)
+}
+
+func (o GetSecurityAssessmentFindingFindingOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 func (o GetSecurityAssessmentFindingFindingOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityAssessmentFindingFindingOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityAssessmentFindingFindingOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) string { return v.OracleDefinedSeverity }).(pulumi.StringOutput)
 }
 
 func (o GetSecurityAssessmentFindingFindingOutput) References() GetSecurityAssessmentFindingFindingReferenceArrayOutput {
@@ -29162,12 +32849,24 @@ func (o GetSecurityAssessmentFindingFindingOutput) Severity() pulumi.StringOutpu
 	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+func (o GetSecurityAssessmentFindingFindingOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) string { return v.State }).(pulumi.StringOutput)
+}
+
 func (o GetSecurityAssessmentFindingFindingOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) string { return v.Summary }).(pulumi.StringOutput)
 }
 
 func (o GetSecurityAssessmentFindingFindingOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityAssessmentFindingFindingOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityAssessmentFindingFindingOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 func (o GetSecurityAssessmentFindingFindingOutput) Title() pulumi.StringOutput {
@@ -29300,6 +32999,442 @@ func (o GetSecurityAssessmentFindingFindingReferenceArrayOutput) Index(i pulumi.
 	}).(GetSecurityAssessmentFindingFindingReferenceOutput)
 }
 
+type GetSecurityAssessmentFindingsChangeAuditLogsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityAssessmentFindingsChangeAuditLogsFilterInput is an input type that accepts GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs and GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingsChangeAuditLogsFilterInput` via:
+//
+//	GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs{...}
+type GetSecurityAssessmentFindingsChangeAuditLogsFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFilterOutput() GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFilterOutputWithContext(context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs) ToGetSecurityAssessmentFindingsChangeAuditLogsFilterOutput() GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput {
+	return i.ToGetSecurityAssessmentFindingsChangeAuditLogsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs) ToGetSecurityAssessmentFindingsChangeAuditLogsFilterOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput)
+}
+
+// GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayInput is an input type that accepts GetSecurityAssessmentFindingsChangeAuditLogsFilterArray and GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayInput` via:
+//
+//	GetSecurityAssessmentFindingsChangeAuditLogsFilterArray{ GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs{...} }
+type GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput() GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutputWithContext(context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFilterArray []GetSecurityAssessmentFindingsChangeAuditLogsFilterInput
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingsChangeAuditLogsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFilterArray) ToGetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput() GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput {
+	return i.ToGetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFilterArray) ToGetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput)
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFilterOutput() GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFilterOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingsChangeAuditLogsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput() GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentFindingsChangeAuditLogsFilter {
+		return vs[0].([]GetSecurityAssessmentFindingsChangeAuditLogsFilter)[vs[1].(int)]
+	}).(GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput)
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollection struct {
+	// An array of finding risk change audit log summary objects.
+	Items []GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionInput is an input type that accepts GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArgs and GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionInput` via:
+//
+//	GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArgs{...}
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutputWithContext(context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArgs struct {
+	// An array of finding risk change audit log summary objects.
+	Items GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollection)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArgs) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput {
+	return i.ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArgs) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput)
+}
+
+// GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayInput is an input type that accepts GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArray and GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayInput` via:
+//
+//	GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArray{ GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArgs{...} }
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutputWithContext(context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArray []GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionInput
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollection)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArray) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput {
+	return i.ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArray) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput)
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollection)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput {
+	return o
+}
+
+// An array of finding risk change audit log summary objects.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput) Items() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollection) []GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem {
+		return v.Items
+	}).(GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput)
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollection)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollection {
+		return vs[0].([]GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollection)[vs[1].(int)]
+	}).(GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput)
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem struct {
+	// The OCID of the latest security assessment.
+	AssessmentId string `pulumi:"assessmentId"`
+	// The unique key that identifies the finding. It is a string and unique within a security assessment.
+	FindingKey string `pulumi:"findingKey"`
+	// The unique title that identifies the finding. It is a string and unique within a security assessment.
+	FindingTitle string `pulumi:"findingTitle"`
+	// A filter to check findings whose risks were deferred by the user.
+	IsRiskDeferred bool `pulumi:"isRiskDeferred"`
+	// The justification given by the user for accepting or modifying the risk level.
+	Justification string `pulumi:"justification"`
+	// The unique key that identifies the finding risk change.
+	Key string `pulumi:"key"`
+	// A filter to check which user modified the risk level of the finding.
+	ModifiedBy string `pulumi:"modifiedBy"`
+	// The severity of the finding as determined by security assessment by Oracle.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
+	// If the risk level is changed more than once, the previous modified value.
+	PreviousSeverity string `pulumi:"previousSeverity"`
+	// A filter to return only findings of a particular risk level.
+	Severity string `pulumi:"severity"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the risk level change as updated by user is valid until. After this date passes, the risk level will be that of what is determined by the latest security assessment.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
+}
+
+// GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemInput is an input type that accepts GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArgs and GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemInput` via:
+//
+//	GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArgs{...}
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutputWithContext(context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArgs struct {
+	// The OCID of the latest security assessment.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
+	// The unique key that identifies the finding. It is a string and unique within a security assessment.
+	FindingKey pulumi.StringInput `pulumi:"findingKey"`
+	// The unique title that identifies the finding. It is a string and unique within a security assessment.
+	FindingTitle pulumi.StringInput `pulumi:"findingTitle"`
+	// A filter to check findings whose risks were deferred by the user.
+	IsRiskDeferred pulumi.BoolInput `pulumi:"isRiskDeferred"`
+	// The justification given by the user for accepting or modifying the risk level.
+	Justification pulumi.StringInput `pulumi:"justification"`
+	// The unique key that identifies the finding risk change.
+	Key pulumi.StringInput `pulumi:"key"`
+	// A filter to check which user modified the risk level of the finding.
+	ModifiedBy pulumi.StringInput `pulumi:"modifiedBy"`
+	// The severity of the finding as determined by security assessment by Oracle.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
+	// If the risk level is changed more than once, the previous modified value.
+	PreviousSeverity pulumi.StringInput `pulumi:"previousSeverity"`
+	// A filter to return only findings of a particular risk level.
+	Severity pulumi.StringInput `pulumi:"severity"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the risk level change as updated by user is valid until. After this date passes, the risk level will be that of what is determined by the latest security assessment.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
+}
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArgs) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput {
+	return i.ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArgs) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput)
+}
+
+// GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayInput is an input type that accepts GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArray and GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayInput` via:
+//
+//	GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArray{ GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArgs{...} }
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput
+	ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutputWithContext(context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArray []GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemInput
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArray) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput {
+	return i.ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArray) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput)
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput {
+	return o
+}
+
+// The OCID of the latest security assessment.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.AssessmentId
+	}).(pulumi.StringOutput)
+}
+
+// The unique key that identifies the finding. It is a string and unique within a security assessment.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) FindingKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.FindingKey
+	}).(pulumi.StringOutput)
+}
+
+// The unique title that identifies the finding. It is a string and unique within a security assessment.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) FindingTitle() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.FindingTitle
+	}).(pulumi.StringOutput)
+}
+
+// A filter to check findings whose risks were deferred by the user.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) IsRiskDeferred() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) bool {
+		return v.IsRiskDeferred
+	}).(pulumi.BoolOutput)
+}
+
+// The justification given by the user for accepting or modifying the risk level.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.Justification
+	}).(pulumi.StringOutput)
+}
+
+// The unique key that identifies the finding risk change.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// A filter to check which user modified the risk level of the finding.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) ModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.ModifiedBy
+	}).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment by Oracle.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.OracleDefinedSeverity
+	}).(pulumi.StringOutput)
+}
+
+// If the risk level is changed more than once, the previous modified value.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) PreviousSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.PreviousSeverity
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only findings of a particular risk level.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.Severity
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.TargetId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the risk level change as updated by user is valid until. After this date passes, the risk level will be that of what is determined by the latest security assessment.
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem) string {
+		return v.TimeValidUntil
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput() GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput) ToGetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem {
+		return vs[0].([]GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItem)[vs[1].(int)]
+	}).(GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput)
+}
+
 type GetSecurityAssessmentFindingsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -29411,18 +33546,36 @@ type GetSecurityAssessmentFindingsFinding struct {
 	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified bool `pulumi:"isRiskModified"`
+	// A filter to return only the findings that are marked as top findings.
+	IsTopFinding bool `pulumi:"isTopFinding"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification string `pulumi:"justification"`
 	// The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
 	Key string `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity string `pulumi:"oracleDefinedSeverity"`
 	// An optional filter to return only findings containing the specified reference.
 	References []GetSecurityAssessmentFindingsFindingReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
 	// A filter to return only findings of a particular risk level.
 	Severity string `pulumi:"severity"`
+	// A filter to return only the findings that match the specified lifecycle states.
+	State string `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary string `pulumi:"summary"`
 	// The OCID of the target database.
 	TargetId string `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred / modified) of this finding is valid.
+	TimeValidUntil string `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title string `pulumi:"title"`
 }
@@ -29443,18 +33596,36 @@ type GetSecurityAssessmentFindingsFindingArgs struct {
 	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
+	// Determines if this risk level was modified by user.
+	IsRiskModified pulumi.BoolInput `pulumi:"isRiskModified"`
+	// A filter to return only the findings that are marked as top findings.
+	IsTopFinding pulumi.BoolInput `pulumi:"isTopFinding"`
+	// User provided reason for accepting or modifying this finding if they choose to do so.
+	Justification pulumi.StringInput `pulumi:"justification"`
 	// The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
 	Key pulumi.StringInput `pulumi:"key"`
+	// Details about the current state of the finding.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The severity of the finding as determined by security assessment. This cannot be modified by user.
+	OracleDefinedSeverity pulumi.StringInput `pulumi:"oracleDefinedSeverity"`
 	// An optional filter to return only findings containing the specified reference.
 	References GetSecurityAssessmentFindingsFindingReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
 	// A filter to return only findings of a particular risk level.
 	Severity pulumi.StringInput `pulumi:"severity"`
+	// A filter to return only the findings that match the specified lifecycle states.
+	State pulumi.StringInput `pulumi:"state"`
 	// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 	Summary pulumi.StringInput `pulumi:"summary"`
 	// The OCID of the target database.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time until which the change in severity(deferred / modified) of this finding is valid.
+	TimeValidUntil pulumi.StringInput `pulumi:"timeValidUntil"`
 	// The short title for the finding.
 	Title pulumi.StringInput `pulumi:"title"`
 }
@@ -29520,9 +33691,39 @@ func (o GetSecurityAssessmentFindingsFindingOutput) Details() pulumi.StringArray
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) []string { return v.Details }).(pulumi.StringArrayOutput)
 }
 
+// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+func (o GetSecurityAssessmentFindingsFindingOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) bool { return v.HasTargetDbRiskLevelChanged }).(pulumi.BoolOutput)
+}
+
+// Determines if this risk level was modified by user.
+func (o GetSecurityAssessmentFindingsFindingOutput) IsRiskModified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) bool { return v.IsRiskModified }).(pulumi.BoolOutput)
+}
+
+// A filter to return only the findings that are marked as top findings.
+func (o GetSecurityAssessmentFindingsFindingOutput) IsTopFinding() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) bool { return v.IsTopFinding }).(pulumi.BoolOutput)
+}
+
+// User provided reason for accepting or modifying this finding if they choose to do so.
+func (o GetSecurityAssessmentFindingsFindingOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.Justification }).(pulumi.StringOutput)
+}
+
 // The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
 func (o GetSecurityAssessmentFindingsFindingOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the finding.
+func (o GetSecurityAssessmentFindingsFindingOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The severity of the finding as determined by security assessment. This cannot be modified by user.
+func (o GetSecurityAssessmentFindingsFindingOutput) OracleDefinedSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.OracleDefinedSeverity }).(pulumi.StringOutput)
 }
 
 // An optional filter to return only findings containing the specified reference.
@@ -29542,6 +33743,11 @@ func (o GetSecurityAssessmentFindingsFindingOutput) Severity() pulumi.StringOutp
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// A filter to return only the findings that match the specified lifecycle states.
+func (o GetSecurityAssessmentFindingsFindingOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.State }).(pulumi.StringOutput)
+}
+
 // The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
 func (o GetSecurityAssessmentFindingsFindingOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.Summary }).(pulumi.StringOutput)
@@ -29550,6 +33756,16 @@ func (o GetSecurityAssessmentFindingsFindingOutput) Summary() pulumi.StringOutpu
 // The OCID of the target database.
 func (o GetSecurityAssessmentFindingsFindingOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityAssessmentFindingsFindingOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time until which the change in severity(deferred / modified) of this finding is valid.
+func (o GetSecurityAssessmentFindingsFindingOutput) TimeValidUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.TimeValidUntil }).(pulumi.StringOutput)
 }
 
 // The short title for the finding.
@@ -29692,9 +33908,903 @@ func (o GetSecurityAssessmentFindingsFindingReferenceArrayOutput) Index(i pulumi
 	}).(GetSecurityAssessmentFindingsFindingReferenceOutput)
 }
 
+type GetSecurityAssessmentSecurityFeatureAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityAssessmentSecurityFeatureAnalyticsFilterInput is an input type that accepts GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs and GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeatureAnalyticsFilterInput` via:
+//
+//	GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs{...}
+type GetSecurityAssessmentSecurityFeatureAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput() GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs) ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput() GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput {
+	return i.ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs) ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput)
+}
+
+// GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayInput is an input type that accepts GetSecurityAssessmentSecurityFeatureAnalyticsFilterArray and GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayInput` via:
+//
+//	GetSecurityAssessmentSecurityFeatureAnalyticsFilterArray{ GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs{...} }
+type GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsFilterArray []GetSecurityAssessmentSecurityFeatureAnalyticsFilterInput
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeatureAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsFilterArray) ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput {
+	return i.ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsFilterArray) ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput)
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput() GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeatureAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeatureAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeatureAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeatureAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentSecurityFeatureAnalyticsFilter {
+		return vs[0].([]GetSecurityAssessmentSecurityFeatureAnalyticsFilter)[vs[1].(int)]
+	}).(GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput)
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollection struct {
+	// The array of database security feature analytics summary.
+	Items []GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionInput is an input type that accepts GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArgs and GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionInput` via:
+//
+//	GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArgs{...}
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArgs struct {
+	// The array of database security feature analytics summary.
+	Items GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArgs) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput {
+	return i.ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArgs) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput)
+}
+
+// GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayInput is an input type that accepts GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArray and GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayInput` via:
+//
+//	GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArray{ GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArgs{...} }
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArray []GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionInput
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArray) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput {
+	return i.ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArray) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput)
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput {
+	return o
+}
+
+// The array of database security feature analytics summary.
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput) Items() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollection) []GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem {
+		return v.Items
+	}).(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollection {
+		return vs[0].([]GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollection)[vs[1].(int)]
+	}).(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput)
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem struct {
+	// The scope of analytics data.
+	Dimensions []GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimension `pulumi:"dimensions"`
+	// The name of the aggregation metric.
+	MetricName string `pulumi:"metricName"`
+	// The total count for the aggregation metric.
+	SecurityAssessmentSecurityFeatureAnalyticCount string `pulumi:"securityAssessmentSecurityFeatureAnalyticCount"`
+}
+
+// GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemInput is an input type that accepts GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArgs and GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemInput` via:
+//
+//	GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArgs{...}
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArgs struct {
+	// The scope of analytics data.
+	Dimensions GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// The name of the aggregation metric.
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// The total count for the aggregation metric.
+	SecurityAssessmentSecurityFeatureAnalyticCount pulumi.StringInput `pulumi:"securityAssessmentSecurityFeatureAnalyticCount"`
+}
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArgs) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput {
+	return i.ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArgs) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput)
+}
+
+// GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayInput is an input type that accepts GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArray and GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayInput` via:
+//
+//	GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArray{ GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArgs{...} }
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArray []GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemInput
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArray) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput {
+	return i.ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArray) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput {
+	return o
+}
+
+// The scope of analytics data.
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput) Dimensions() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem) []GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+// The name of the aggregation metric.
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem) string {
+		return v.MetricName
+	}).(pulumi.StringOutput)
+}
+
+// The total count for the aggregation metric.
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput) SecurityAssessmentSecurityFeatureAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem) string {
+		return v.SecurityAssessmentSecurityFeatureAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem {
+		return vs[0].([]GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput)
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimension struct {
+	// The name of the security feature.
+	SecurityFeature string `pulumi:"securityFeature"`
+}
+
+// GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionInput is an input type that accepts GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArgs and GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionInput` via:
+//
+//	GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArgs{...}
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArgs struct {
+	// The name of the security feature.
+	SecurityFeature pulumi.StringInput `pulumi:"securityFeature"`
+}
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArgs) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput {
+	return i.ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArgs) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput)
+}
+
+// GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArray and GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayInput` via:
+//
+//	GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArray{ GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArgs{...} }
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput
+	ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArray []GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionInput
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArray) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput {
+	return i.ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArray) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+// The name of the security feature.
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput) SecurityFeature() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimension) string {
+		return v.SecurityFeature
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput() GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput) ToGetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimension {
+		return vs[0].([]GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput)
+}
+
+type GetSecurityAssessmentSecurityFeaturesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityAssessmentSecurityFeaturesFilterInput is an input type that accepts GetSecurityAssessmentSecurityFeaturesFilterArgs and GetSecurityAssessmentSecurityFeaturesFilterOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeaturesFilterInput` via:
+//
+//	GetSecurityAssessmentSecurityFeaturesFilterArgs{...}
+type GetSecurityAssessmentSecurityFeaturesFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeaturesFilterOutput() GetSecurityAssessmentSecurityFeaturesFilterOutput
+	ToGetSecurityAssessmentSecurityFeaturesFilterOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeaturesFilterOutput
+}
+
+type GetSecurityAssessmentSecurityFeaturesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityAssessmentSecurityFeaturesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesFilterArgs) ToGetSecurityAssessmentSecurityFeaturesFilterOutput() GetSecurityAssessmentSecurityFeaturesFilterOutput {
+	return i.ToGetSecurityAssessmentSecurityFeaturesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesFilterArgs) ToGetSecurityAssessmentSecurityFeaturesFilterOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeaturesFilterOutput)
+}
+
+// GetSecurityAssessmentSecurityFeaturesFilterArrayInput is an input type that accepts GetSecurityAssessmentSecurityFeaturesFilterArray and GetSecurityAssessmentSecurityFeaturesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeaturesFilterArrayInput` via:
+//
+//	GetSecurityAssessmentSecurityFeaturesFilterArray{ GetSecurityAssessmentSecurityFeaturesFilterArgs{...} }
+type GetSecurityAssessmentSecurityFeaturesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeaturesFilterArrayOutput() GetSecurityAssessmentSecurityFeaturesFilterArrayOutput
+	ToGetSecurityAssessmentSecurityFeaturesFilterArrayOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeaturesFilterArrayOutput
+}
+
+type GetSecurityAssessmentSecurityFeaturesFilterArray []GetSecurityAssessmentSecurityFeaturesFilterInput
+
+func (GetSecurityAssessmentSecurityFeaturesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeaturesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesFilterArray) ToGetSecurityAssessmentSecurityFeaturesFilterArrayOutput() GetSecurityAssessmentSecurityFeaturesFilterArrayOutput {
+	return i.ToGetSecurityAssessmentSecurityFeaturesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesFilterArray) ToGetSecurityAssessmentSecurityFeaturesFilterArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeaturesFilterArrayOutput)
+}
+
+type GetSecurityAssessmentSecurityFeaturesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeaturesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesFilterOutput) ToGetSecurityAssessmentSecurityFeaturesFilterOutput() GetSecurityAssessmentSecurityFeaturesFilterOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesFilterOutput) ToGetSecurityAssessmentSecurityFeaturesFilterOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesFilterOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityAssessmentSecurityFeaturesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeaturesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeaturesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesFilterArrayOutput) ToGetSecurityAssessmentSecurityFeaturesFilterArrayOutput() GetSecurityAssessmentSecurityFeaturesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesFilterArrayOutput) ToGetSecurityAssessmentSecurityFeaturesFilterArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentSecurityFeaturesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentSecurityFeaturesFilter {
+		return vs[0].([]GetSecurityAssessmentSecurityFeaturesFilter)[vs[1].(int)]
+	}).(GetSecurityAssessmentSecurityFeaturesFilterOutput)
+}
+
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollection struct {
+	// Array of database security feature summary.
+	Items []GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionInput is an input type that accepts GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArgs and GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionInput` via:
+//
+//	GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArgs{...}
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput
+	ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput
+}
+
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArgs struct {
+	// Array of database security feature summary.
+	Items GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollection)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArgs) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput {
+	return i.ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArgs) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput)
+}
+
+// GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayInput is an input type that accepts GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArray and GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayInput` via:
+//
+//	GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArray{ GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArgs{...} }
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput
+	ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput
+}
+
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArray []GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionInput
+
+func (GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollection)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArray) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput {
+	return i.ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArray) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput)
+}
+
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollection)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput {
+	return o
+}
+
+// Array of database security feature summary.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput) Items() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollection) []GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem {
+		return v.Items
+	}).(GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput)
+}
+
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollection)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollection {
+		return vs[0].([]GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollection)[vs[1].(int)]
+	}).(GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput)
+}
+
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem struct {
+	// The OCID of the assessment that generates this security feature usage result.
+	AssessmentId string `pulumi:"assessmentId"`
+	// The usage of security feature - Column Encryption.
+	ColumnEncryption string `pulumi:"columnEncryption"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The usage of security feature - Database Vault.
+	DatabaseVault string `pulumi:"databaseVault"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The usage of security feature - External Authentication.
+	ExternalAuthentication string `pulumi:"externalAuthentication"`
+	// The usage of security feature - Fine Grained Audit.
+	FineGrainedAudit string `pulumi:"fineGrainedAudit"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The usage of security feature - Global Authentication.
+	GlobalAuthentication string `pulumi:"globalAuthentication"`
+	// The usage of security feature - Network Encryption.
+	NetworkEncryption string `pulumi:"networkEncryption"`
+	// The usage of security feature - Password Authentication.
+	PasswordAuthentication string `pulumi:"passwordAuthentication"`
+	// The usage of security feature - Privilege Analysis.
+	PrivilegeAnalysis string `pulumi:"privilegeAnalysis"`
+	// The usage of security feature - Tablespace Encryption.
+	TablespaceEncryption string `pulumi:"tablespaceEncryption"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The usage of security feature - Traditional Audit.
+	TraditionalAudit string `pulumi:"traditionalAudit"`
+	// The usage of security feature - Unified Audit.
+	UnifiedAudit string `pulumi:"unifiedAudit"`
+}
+
+// GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemInput is an input type that accepts GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArgs and GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemInput` via:
+//
+//	GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArgs{...}
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput
+	ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput
+}
+
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArgs struct {
+	// The OCID of the assessment that generates this security feature usage result.
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
+	// The usage of security feature - Column Encryption.
+	ColumnEncryption pulumi.StringInput `pulumi:"columnEncryption"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The usage of security feature - Database Vault.
+	DatabaseVault pulumi.StringInput `pulumi:"databaseVault"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The usage of security feature - External Authentication.
+	ExternalAuthentication pulumi.StringInput `pulumi:"externalAuthentication"`
+	// The usage of security feature - Fine Grained Audit.
+	FineGrainedAudit pulumi.StringInput `pulumi:"fineGrainedAudit"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The usage of security feature - Global Authentication.
+	GlobalAuthentication pulumi.StringInput `pulumi:"globalAuthentication"`
+	// The usage of security feature - Network Encryption.
+	NetworkEncryption pulumi.StringInput `pulumi:"networkEncryption"`
+	// The usage of security feature - Password Authentication.
+	PasswordAuthentication pulumi.StringInput `pulumi:"passwordAuthentication"`
+	// The usage of security feature - Privilege Analysis.
+	PrivilegeAnalysis pulumi.StringInput `pulumi:"privilegeAnalysis"`
+	// The usage of security feature - Tablespace Encryption.
+	TablespaceEncryption pulumi.StringInput `pulumi:"tablespaceEncryption"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The usage of security feature - Traditional Audit.
+	TraditionalAudit pulumi.StringInput `pulumi:"traditionalAudit"`
+	// The usage of security feature - Unified Audit.
+	UnifiedAudit pulumi.StringInput `pulumi:"unifiedAudit"`
+}
+
+func (GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArgs) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput {
+	return i.ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArgs) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput)
+}
+
+// GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayInput is an input type that accepts GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArray and GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayInput` via:
+//
+//	GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArray{ GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArgs{...} }
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput
+	ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutputWithContext(context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput
+}
+
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArray []GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemInput
+
+func (GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArray) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput {
+	return i.ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArray) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput)
+}
+
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput {
+	return o
+}
+
+// The OCID of the assessment that generates this security feature usage result.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.AssessmentId
+	}).(pulumi.StringOutput)
+}
+
+// The usage of security feature - Column Encryption.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) ColumnEncryption() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.ColumnEncryption
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The usage of security feature - Database Vault.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) DatabaseVault() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.DatabaseVault
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// The usage of security feature - External Authentication.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) ExternalAuthentication() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.ExternalAuthentication
+	}).(pulumi.StringOutput)
+}
+
+// The usage of security feature - Fine Grained Audit.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) FineGrainedAudit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.FineGrainedAudit
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The usage of security feature - Global Authentication.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) GlobalAuthentication() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.GlobalAuthentication
+	}).(pulumi.StringOutput)
+}
+
+// The usage of security feature - Network Encryption.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) NetworkEncryption() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.NetworkEncryption
+	}).(pulumi.StringOutput)
+}
+
+// The usage of security feature - Password Authentication.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) PasswordAuthentication() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.PasswordAuthentication
+	}).(pulumi.StringOutput)
+}
+
+// The usage of security feature - Privilege Analysis.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) PrivilegeAnalysis() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.PrivilegeAnalysis
+	}).(pulumi.StringOutput)
+}
+
+// The usage of security feature - Tablespace Encryption.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) TablespaceEncryption() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.TablespaceEncryption
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The usage of security feature - Traditional Audit.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) TraditionalAudit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.TraditionalAudit
+	}).(pulumi.StringOutput)
+}
+
+// The usage of security feature - Unified Audit.
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) UnifiedAudit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) string {
+		return v.UnifiedAudit
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput() GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput) ToGetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem {
+		return vs[0].([]GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem)[vs[1].(int)]
+	}).(GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput)
+}
+
 type GetSecurityAssessmentStatistic struct {
 	// Statistics showing the number of findings with a particular risk level for each category.
 	Advisories []GetSecurityAssessmentStatisticAdvisory `pulumi:"advisories"`
+	// Statistics showing the number of findings with a particular risk level for each category.
+	Deferreds []GetSecurityAssessmentStatisticDeferred `pulumi:"deferreds"`
 	// Statistics showing the number of findings with a particular risk level for each category.
 	Evaluates []GetSecurityAssessmentStatisticEvaluate `pulumi:"evaluates"`
 	// Statistics showing the number of findings with a particular risk level for each category.
@@ -29723,6 +34833,8 @@ type GetSecurityAssessmentStatisticInput interface {
 type GetSecurityAssessmentStatisticArgs struct {
 	// Statistics showing the number of findings with a particular risk level for each category.
 	Advisories GetSecurityAssessmentStatisticAdvisoryArrayInput `pulumi:"advisories"`
+	// Statistics showing the number of findings with a particular risk level for each category.
+	Deferreds GetSecurityAssessmentStatisticDeferredArrayInput `pulumi:"deferreds"`
 	// Statistics showing the number of findings with a particular risk level for each category.
 	Evaluates GetSecurityAssessmentStatisticEvaluateArrayInput `pulumi:"evaluates"`
 	// Statistics showing the number of findings with a particular risk level for each category.
@@ -29791,6 +34903,11 @@ func (o GetSecurityAssessmentStatisticOutput) ToGetSecurityAssessmentStatisticOu
 // Statistics showing the number of findings with a particular risk level for each category.
 func (o GetSecurityAssessmentStatisticOutput) Advisories() GetSecurityAssessmentStatisticAdvisoryArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentStatistic) []GetSecurityAssessmentStatisticAdvisory { return v.Advisories }).(GetSecurityAssessmentStatisticAdvisoryArrayOutput)
+}
+
+// Statistics showing the number of findings with a particular risk level for each category.
+func (o GetSecurityAssessmentStatisticOutput) Deferreds() GetSecurityAssessmentStatisticDeferredArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentStatistic) []GetSecurityAssessmentStatisticDeferred { return v.Deferreds }).(GetSecurityAssessmentStatisticDeferredArrayOutput)
 }
 
 // Statistics showing the number of findings with a particular risk level for each category.
@@ -30003,6 +35120,166 @@ func (o GetSecurityAssessmentStatisticAdvisoryArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentStatisticAdvisory {
 		return vs[0].([]GetSecurityAssessmentStatisticAdvisory)[vs[1].(int)]
 	}).(GetSecurityAssessmentStatisticAdvisoryOutput)
+}
+
+type GetSecurityAssessmentStatisticDeferred struct {
+	// The number of findings in the Auditing category.
+	AuditingFindingsCount int `pulumi:"auditingFindingsCount"`
+	// The number of findings in the Authorization Control category.
+	AuthorizationControlFindingsCount int `pulumi:"authorizationControlFindingsCount"`
+	// The number of findings in the Data Encryption category.
+	DataEncryptionFindingsCount int `pulumi:"dataEncryptionFindingsCount"`
+	// The number of findings in the Database Configuration category.
+	DbConfigurationFindingsCount int `pulumi:"dbConfigurationFindingsCount"`
+	// The number of findings in the Fine-Grained Access Control category.
+	FineGrainedAccessControlFindingsCount int `pulumi:"fineGrainedAccessControlFindingsCount"`
+	// The number of findings in the Privileges and Roles category.
+	PrivilegesAndRolesFindingsCount int `pulumi:"privilegesAndRolesFindingsCount"`
+	// The total number of targets in this security assessment.
+	TargetsCount int `pulumi:"targetsCount"`
+	// The number of findings in the User Accounts category.
+	UserAccountsFindingsCount int `pulumi:"userAccountsFindingsCount"`
+}
+
+// GetSecurityAssessmentStatisticDeferredInput is an input type that accepts GetSecurityAssessmentStatisticDeferredArgs and GetSecurityAssessmentStatisticDeferredOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentStatisticDeferredInput` via:
+//
+//	GetSecurityAssessmentStatisticDeferredArgs{...}
+type GetSecurityAssessmentStatisticDeferredInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentStatisticDeferredOutput() GetSecurityAssessmentStatisticDeferredOutput
+	ToGetSecurityAssessmentStatisticDeferredOutputWithContext(context.Context) GetSecurityAssessmentStatisticDeferredOutput
+}
+
+type GetSecurityAssessmentStatisticDeferredArgs struct {
+	// The number of findings in the Auditing category.
+	AuditingFindingsCount pulumi.IntInput `pulumi:"auditingFindingsCount"`
+	// The number of findings in the Authorization Control category.
+	AuthorizationControlFindingsCount pulumi.IntInput `pulumi:"authorizationControlFindingsCount"`
+	// The number of findings in the Data Encryption category.
+	DataEncryptionFindingsCount pulumi.IntInput `pulumi:"dataEncryptionFindingsCount"`
+	// The number of findings in the Database Configuration category.
+	DbConfigurationFindingsCount pulumi.IntInput `pulumi:"dbConfigurationFindingsCount"`
+	// The number of findings in the Fine-Grained Access Control category.
+	FineGrainedAccessControlFindingsCount pulumi.IntInput `pulumi:"fineGrainedAccessControlFindingsCount"`
+	// The number of findings in the Privileges and Roles category.
+	PrivilegesAndRolesFindingsCount pulumi.IntInput `pulumi:"privilegesAndRolesFindingsCount"`
+	// The total number of targets in this security assessment.
+	TargetsCount pulumi.IntInput `pulumi:"targetsCount"`
+	// The number of findings in the User Accounts category.
+	UserAccountsFindingsCount pulumi.IntInput `pulumi:"userAccountsFindingsCount"`
+}
+
+func (GetSecurityAssessmentStatisticDeferredArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentStatisticDeferredArgs) ToGetSecurityAssessmentStatisticDeferredOutput() GetSecurityAssessmentStatisticDeferredOutput {
+	return i.ToGetSecurityAssessmentStatisticDeferredOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentStatisticDeferredArgs) ToGetSecurityAssessmentStatisticDeferredOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticDeferredOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticDeferredOutput)
+}
+
+// GetSecurityAssessmentStatisticDeferredArrayInput is an input type that accepts GetSecurityAssessmentStatisticDeferredArray and GetSecurityAssessmentStatisticDeferredArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentStatisticDeferredArrayInput` via:
+//
+//	GetSecurityAssessmentStatisticDeferredArray{ GetSecurityAssessmentStatisticDeferredArgs{...} }
+type GetSecurityAssessmentStatisticDeferredArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentStatisticDeferredArrayOutput() GetSecurityAssessmentStatisticDeferredArrayOutput
+	ToGetSecurityAssessmentStatisticDeferredArrayOutputWithContext(context.Context) GetSecurityAssessmentStatisticDeferredArrayOutput
+}
+
+type GetSecurityAssessmentStatisticDeferredArray []GetSecurityAssessmentStatisticDeferredInput
+
+func (GetSecurityAssessmentStatisticDeferredArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentStatisticDeferredArray) ToGetSecurityAssessmentStatisticDeferredArrayOutput() GetSecurityAssessmentStatisticDeferredArrayOutput {
+	return i.ToGetSecurityAssessmentStatisticDeferredArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentStatisticDeferredArray) ToGetSecurityAssessmentStatisticDeferredArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticDeferredArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticDeferredArrayOutput)
+}
+
+type GetSecurityAssessmentStatisticDeferredOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentStatisticDeferredOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentStatisticDeferredOutput) ToGetSecurityAssessmentStatisticDeferredOutput() GetSecurityAssessmentStatisticDeferredOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentStatisticDeferredOutput) ToGetSecurityAssessmentStatisticDeferredOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticDeferredOutput {
+	return o
+}
+
+// The number of findings in the Auditing category.
+func (o GetSecurityAssessmentStatisticDeferredOutput) AuditingFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentStatisticDeferred) int { return v.AuditingFindingsCount }).(pulumi.IntOutput)
+}
+
+// The number of findings in the Authorization Control category.
+func (o GetSecurityAssessmentStatisticDeferredOutput) AuthorizationControlFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentStatisticDeferred) int { return v.AuthorizationControlFindingsCount }).(pulumi.IntOutput)
+}
+
+// The number of findings in the Data Encryption category.
+func (o GetSecurityAssessmentStatisticDeferredOutput) DataEncryptionFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentStatisticDeferred) int { return v.DataEncryptionFindingsCount }).(pulumi.IntOutput)
+}
+
+// The number of findings in the Database Configuration category.
+func (o GetSecurityAssessmentStatisticDeferredOutput) DbConfigurationFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentStatisticDeferred) int { return v.DbConfigurationFindingsCount }).(pulumi.IntOutput)
+}
+
+// The number of findings in the Fine-Grained Access Control category.
+func (o GetSecurityAssessmentStatisticDeferredOutput) FineGrainedAccessControlFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentStatisticDeferred) int { return v.FineGrainedAccessControlFindingsCount }).(pulumi.IntOutput)
+}
+
+// The number of findings in the Privileges and Roles category.
+func (o GetSecurityAssessmentStatisticDeferredOutput) PrivilegesAndRolesFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentStatisticDeferred) int { return v.PrivilegesAndRolesFindingsCount }).(pulumi.IntOutput)
+}
+
+// The total number of targets in this security assessment.
+func (o GetSecurityAssessmentStatisticDeferredOutput) TargetsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentStatisticDeferred) int { return v.TargetsCount }).(pulumi.IntOutput)
+}
+
+// The number of findings in the User Accounts category.
+func (o GetSecurityAssessmentStatisticDeferredOutput) UserAccountsFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentStatisticDeferred) int { return v.UserAccountsFindingsCount }).(pulumi.IntOutput)
+}
+
+type GetSecurityAssessmentStatisticDeferredArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentStatisticDeferredArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentStatisticDeferredArrayOutput) ToGetSecurityAssessmentStatisticDeferredArrayOutput() GetSecurityAssessmentStatisticDeferredArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentStatisticDeferredArrayOutput) ToGetSecurityAssessmentStatisticDeferredArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticDeferredArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentStatisticDeferredArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentStatisticDeferredOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentStatisticDeferred {
+		return vs[0].([]GetSecurityAssessmentStatisticDeferred)[vs[1].(int)]
+	}).(GetSecurityAssessmentStatisticDeferredOutput)
 }
 
 type GetSecurityAssessmentStatisticEvaluate struct {
@@ -30928,7 +36205,7 @@ type GetSecurityAssessmentsSecurityAssessment struct {
 	IgnoredAssessmentIds []string `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets []string `pulumi:"ignoredTargets"`
-	// A filter to return only security assessments that are set as baseline.
+	// A filter to return only the security assessments that are set as a baseline.
 	IsBaseline bool `pulumi:"isBaseline"`
 	// Indicates whether or not the security assessment deviates from the baseline.
 	IsDeviatedFromBaseline bool `pulumi:"isDeviatedFromBaseline"`
@@ -30954,11 +36231,11 @@ type GetSecurityAssessmentsSecurityAssessment struct {
 	TargetIds []string `pulumi:"targetIds"`
 	// The version of the target database.
 	TargetVersion string `pulumi:"targetVersion"`
-	// The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastAssessed string `pulumi:"timeLastAssessed"`
-	// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// A filter to return only security asessments that were created by either user or system.
 	TriggeredBy string `pulumi:"triggeredBy"`
@@ -30994,7 +36271,7 @@ type GetSecurityAssessmentsSecurityAssessmentArgs struct {
 	IgnoredAssessmentIds pulumi.StringArrayInput `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets pulumi.StringArrayInput `pulumi:"ignoredTargets"`
-	// A filter to return only security assessments that are set as baseline.
+	// A filter to return only the security assessments that are set as a baseline.
 	IsBaseline pulumi.BoolInput `pulumi:"isBaseline"`
 	// Indicates whether or not the security assessment deviates from the baseline.
 	IsDeviatedFromBaseline pulumi.BoolInput `pulumi:"isDeviatedFromBaseline"`
@@ -31020,11 +36297,11 @@ type GetSecurityAssessmentsSecurityAssessmentArgs struct {
 	TargetIds pulumi.StringArrayInput `pulumi:"targetIds"`
 	// The version of the target database.
 	TargetVersion pulumi.StringInput `pulumi:"targetVersion"`
-	// The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastAssessed pulumi.StringInput `pulumi:"timeLastAssessed"`
-	// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// A filter to return only security asessments that were created by either user or system.
 	TriggeredBy pulumi.StringInput `pulumi:"triggeredBy"`
@@ -31123,7 +36400,7 @@ func (o GetSecurityAssessmentsSecurityAssessmentOutput) IgnoredTargets() pulumi.
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) []string { return v.IgnoredTargets }).(pulumi.StringArrayOutput)
 }
 
-// A filter to return only security assessments that are set as baseline.
+// A filter to return only the security assessments that are set as a baseline.
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) IsBaseline() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) bool { return v.IsBaseline }).(pulumi.BoolOutput)
 }
@@ -31190,17 +36467,17 @@ func (o GetSecurityAssessmentsSecurityAssessmentOutput) TargetVersion() pulumi.S
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TargetVersion }).(pulumi.StringOutput)
 }
 
-// The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) TimeLastAssessed() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TimeLastAssessed }).(pulumi.StringOutput)
 }
 
-// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -31239,6 +36516,8 @@ type GetSecurityAssessmentsSecurityAssessmentStatistic struct {
 	// Statistics showing the number of findings with a particular risk level for each category.
 	Advisories []GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory `pulumi:"advisories"`
 	// Statistics showing the number of findings with a particular risk level for each category.
+	Deferreds []GetSecurityAssessmentsSecurityAssessmentStatisticDeferred `pulumi:"deferreds"`
+	// Statistics showing the number of findings with a particular risk level for each category.
 	Evaluates []GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate `pulumi:"evaluates"`
 	// Statistics showing the number of findings with a particular risk level for each category.
 	HighRisks []GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk `pulumi:"highRisks"`
@@ -31266,6 +36545,8 @@ type GetSecurityAssessmentsSecurityAssessmentStatisticInput interface {
 type GetSecurityAssessmentsSecurityAssessmentStatisticArgs struct {
 	// Statistics showing the number of findings with a particular risk level for each category.
 	Advisories GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayInput `pulumi:"advisories"`
+	// Statistics showing the number of findings with a particular risk level for each category.
+	Deferreds GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayInput `pulumi:"deferreds"`
 	// Statistics showing the number of findings with a particular risk level for each category.
 	Evaluates GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayInput `pulumi:"evaluates"`
 	// Statistics showing the number of findings with a particular risk level for each category.
@@ -31336,6 +36617,13 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticOutput) Advisories() Ge
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessmentStatistic) []GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory {
 		return v.Advisories
 	}).(GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutput)
+}
+
+// Statistics showing the number of findings with a particular risk level for each category.
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticOutput) Deferreds() GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessmentStatistic) []GetSecurityAssessmentsSecurityAssessmentStatisticDeferred {
+		return v.Deferreds
+	}).(GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput)
 }
 
 // Statistics showing the number of findings with a particular risk level for each category.
@@ -31568,6 +36856,178 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutput) In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory {
 		return vs[0].([]GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory)[vs[1].(int)]
 	}).(GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutput)
+}
+
+type GetSecurityAssessmentsSecurityAssessmentStatisticDeferred struct {
+	// The number of findings in the Auditing category.
+	AuditingFindingsCount int `pulumi:"auditingFindingsCount"`
+	// The number of findings in the Authorization Control category.
+	AuthorizationControlFindingsCount int `pulumi:"authorizationControlFindingsCount"`
+	// The number of findings in the Data Encryption category.
+	DataEncryptionFindingsCount int `pulumi:"dataEncryptionFindingsCount"`
+	// The number of findings in the Database Configuration category.
+	DbConfigurationFindingsCount int `pulumi:"dbConfigurationFindingsCount"`
+	// The number of findings in the Fine-Grained Access Control category.
+	FineGrainedAccessControlFindingsCount int `pulumi:"fineGrainedAccessControlFindingsCount"`
+	// The number of findings in the Privileges and Roles category.
+	PrivilegesAndRolesFindingsCount int `pulumi:"privilegesAndRolesFindingsCount"`
+	// The total number of targets in this security assessment.
+	TargetsCount int `pulumi:"targetsCount"`
+	// The number of findings in the User Accounts category.
+	UserAccountsFindingsCount int `pulumi:"userAccountsFindingsCount"`
+}
+
+// GetSecurityAssessmentsSecurityAssessmentStatisticDeferredInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArgs and GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticDeferredInput` via:
+//
+//	GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArgs{...}
+type GetSecurityAssessmentsSecurityAssessmentStatisticDeferredInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput() GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput
+	ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutputWithContext(context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput
+}
+
+type GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArgs struct {
+	// The number of findings in the Auditing category.
+	AuditingFindingsCount pulumi.IntInput `pulumi:"auditingFindingsCount"`
+	// The number of findings in the Authorization Control category.
+	AuthorizationControlFindingsCount pulumi.IntInput `pulumi:"authorizationControlFindingsCount"`
+	// The number of findings in the Data Encryption category.
+	DataEncryptionFindingsCount pulumi.IntInput `pulumi:"dataEncryptionFindingsCount"`
+	// The number of findings in the Database Configuration category.
+	DbConfigurationFindingsCount pulumi.IntInput `pulumi:"dbConfigurationFindingsCount"`
+	// The number of findings in the Fine-Grained Access Control category.
+	FineGrainedAccessControlFindingsCount pulumi.IntInput `pulumi:"fineGrainedAccessControlFindingsCount"`
+	// The number of findings in the Privileges and Roles category.
+	PrivilegesAndRolesFindingsCount pulumi.IntInput `pulumi:"privilegesAndRolesFindingsCount"`
+	// The total number of targets in this security assessment.
+	TargetsCount pulumi.IntInput `pulumi:"targetsCount"`
+	// The number of findings in the User Accounts category.
+	UserAccountsFindingsCount pulumi.IntInput `pulumi:"userAccountsFindingsCount"`
+}
+
+func (GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArgs) ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput() GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput {
+	return i.ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArgs) ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput)
+}
+
+// GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArray and GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput values.
+// You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayInput` via:
+//
+//	GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArray{ GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArgs{...} }
+type GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput() GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput
+	ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutputWithContext(context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput
+}
+
+type GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArray []GetSecurityAssessmentsSecurityAssessmentStatisticDeferredInput
+
+func (GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentsSecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArray) ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput() GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput {
+	return i.ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArray) ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput)
+}
+
+type GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput() GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput {
+	return o
+}
+
+// The number of findings in the Auditing category.
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput) AuditingFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessmentStatisticDeferred) int { return v.AuditingFindingsCount }).(pulumi.IntOutput)
+}
+
+// The number of findings in the Authorization Control category.
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput) AuthorizationControlFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessmentStatisticDeferred) int {
+		return v.AuthorizationControlFindingsCount
+	}).(pulumi.IntOutput)
+}
+
+// The number of findings in the Data Encryption category.
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput) DataEncryptionFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessmentStatisticDeferred) int {
+		return v.DataEncryptionFindingsCount
+	}).(pulumi.IntOutput)
+}
+
+// The number of findings in the Database Configuration category.
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput) DbConfigurationFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessmentStatisticDeferred) int {
+		return v.DbConfigurationFindingsCount
+	}).(pulumi.IntOutput)
+}
+
+// The number of findings in the Fine-Grained Access Control category.
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput) FineGrainedAccessControlFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessmentStatisticDeferred) int {
+		return v.FineGrainedAccessControlFindingsCount
+	}).(pulumi.IntOutput)
+}
+
+// The number of findings in the Privileges and Roles category.
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput) PrivilegesAndRolesFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessmentStatisticDeferred) int {
+		return v.PrivilegesAndRolesFindingsCount
+	}).(pulumi.IntOutput)
+}
+
+// The total number of targets in this security assessment.
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput) TargetsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessmentStatisticDeferred) int { return v.TargetsCount }).(pulumi.IntOutput)
+}
+
+// The number of findings in the User Accounts category.
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput) UserAccountsFindingsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessmentStatisticDeferred) int {
+		return v.UserAccountsFindingsCount
+	}).(pulumi.IntOutput)
+}
+
+type GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityAssessmentsSecurityAssessmentStatisticDeferred)(nil)).Elem()
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput() GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput {
+	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentsSecurityAssessmentStatisticDeferred {
+		return vs[0].([]GetSecurityAssessmentsSecurityAssessmentStatisticDeferred)[vs[1].(int)]
+	}).(GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput)
 }
 
 type GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate struct {
@@ -32428,6 +37888,3206 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput) Index(
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentsSecurityAssessmentStatisticPass {
 		return vs[0].([]GetSecurityAssessmentsSecurityAssessmentStatisticPass)[vs[1].(int)]
 	}).(GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput)
+}
+
+type GetSecurityPoliciesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityPoliciesFilterInput is an input type that accepts GetSecurityPoliciesFilterArgs and GetSecurityPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesFilterInput` via:
+//
+//	GetSecurityPoliciesFilterArgs{...}
+type GetSecurityPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesFilterOutput() GetSecurityPoliciesFilterOutput
+	ToGetSecurityPoliciesFilterOutputWithContext(context.Context) GetSecurityPoliciesFilterOutput
+}
+
+type GetSecurityPoliciesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesFilterArgs) ToGetSecurityPoliciesFilterOutput() GetSecurityPoliciesFilterOutput {
+	return i.ToGetSecurityPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesFilterArgs) ToGetSecurityPoliciesFilterOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesFilterOutput)
+}
+
+// GetSecurityPoliciesFilterArrayInput is an input type that accepts GetSecurityPoliciesFilterArray and GetSecurityPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesFilterArrayInput` via:
+//
+//	GetSecurityPoliciesFilterArray{ GetSecurityPoliciesFilterArgs{...} }
+type GetSecurityPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesFilterArrayOutput() GetSecurityPoliciesFilterArrayOutput
+	ToGetSecurityPoliciesFilterArrayOutputWithContext(context.Context) GetSecurityPoliciesFilterArrayOutput
+}
+
+type GetSecurityPoliciesFilterArray []GetSecurityPoliciesFilterInput
+
+func (GetSecurityPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesFilterArray) ToGetSecurityPoliciesFilterArrayOutput() GetSecurityPoliciesFilterArrayOutput {
+	return i.ToGetSecurityPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesFilterArray) ToGetSecurityPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesFilterArrayOutput)
+}
+
+type GetSecurityPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesFilterOutput) ToGetSecurityPoliciesFilterOutput() GetSecurityPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterOutput) ToGetSecurityPoliciesFilterOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesFilterArrayOutput) ToGetSecurityPoliciesFilterArrayOutput() GetSecurityPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterArrayOutput) ToGetSecurityPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPoliciesFilter {
+		return vs[0].([]GetSecurityPoliciesFilter)[vs[1].(int)]
+	}).(GetSecurityPoliciesFilterOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollection struct {
+	Items []GetSecurityPoliciesSecurityPolicyCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionArgs and GetSecurityPoliciesSecurityPolicyCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionInput` via:
+//
+//	GetSecurityPoliciesSecurityPolicyCollectionArgs{...}
+type GetSecurityPoliciesSecurityPolicyCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionOutput() GetSecurityPoliciesSecurityPolicyCollectionOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionArgs struct {
+	Items GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityPoliciesSecurityPolicyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArgs) ToGetSecurityPoliciesSecurityPolicyCollectionOutput() GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArgs) ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionOutput)
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionArrayInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionArray and GetSecurityPoliciesSecurityPolicyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionArrayInput` via:
+//
+//	GetSecurityPoliciesSecurityPolicyCollectionArray{ GetSecurityPoliciesSecurityPolicyCollectionArgs{...} }
+type GetSecurityPoliciesSecurityPolicyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionArrayOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionArrayOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionArray []GetSecurityPoliciesSecurityPolicyCollectionInput
+
+func (GetSecurityPoliciesSecurityPolicyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArray) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArray) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionArrayOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) ToGetSecurityPoliciesSecurityPolicyCollectionOutput() GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) Items() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollection) []GetSecurityPoliciesSecurityPolicyCollectionItem {
+		return v.Items
+	}).(GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPoliciesSecurityPolicyCollection {
+		return vs[0].([]GetSecurityPoliciesSecurityPolicyCollection)[vs[1].(int)]
+	}).(GetSecurityPoliciesSecurityPolicyCollectionOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the security policy.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the security policy.
+	Id string `pulumi:"id"`
+	// Details about the current state of the security policy in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// The current state of the security policy.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time that the security policy was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time the security policy was updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionItemInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionItemArgs and GetSecurityPoliciesSecurityPolicyCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionItemInput` via:
+//
+//	GetSecurityPoliciesSecurityPolicyCollectionItemArgs{...}
+type GetSecurityPoliciesSecurityPolicyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemOutput() GetSecurityPoliciesSecurityPolicyCollectionItemOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the security policy.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the security policy.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the security policy in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	// The current state of the security policy.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time that the security policy was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last date and time the security policy was updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutput() GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionItemOutput)
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionItemArray and GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput` via:
+//
+//	GetSecurityPoliciesSecurityPolicyCollectionItemArray{ GetSecurityPoliciesSecurityPolicyCollectionItemArgs{...} }
+type GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemArray []GetSecurityPoliciesSecurityPolicyCollectionItemInput
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArray) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArray) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutput() GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The description of the security policy.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of the security policy.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the security policy in Data Safe.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the security policy resource.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// The current state of the security policy.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time that the security policy was created, in the format defined by RFC3339.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The last date and time the security policy was updated, in the format defined by RFC3339.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPoliciesSecurityPolicyCollectionItem {
+		return vs[0].([]GetSecurityPoliciesSecurityPolicyCollectionItem)[vs[1].(int)]
+	}).(GetSecurityPoliciesSecurityPolicyCollectionItemOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail struct {
+	// The security policy entry type. Allowed values:
+	// * FIREWALL_POLICY - The SQL Firewall policy entry type.
+	EntryType string `pulumi:"entryType"`
+	// The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+	TimeGenerated string `pulumi:"timeGenerated"`
+	// The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs and GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs{...}
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs struct {
+	// The security policy entry type. Allowed values:
+	// * FIREWALL_POLICY - The SQL Firewall policy entry type.
+	EntryType pulumi.StringInput `pulumi:"entryType"`
+	// The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+	TimeGenerated pulumi.StringInput `pulumi:"timeGenerated"`
+	// The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+	TimeStatusUpdated pulumi.StringInput `pulumi:"timeStatusUpdated"`
+}
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput)
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray and GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray{ GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs{...} }
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray []GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailInput
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput {
+	return o
+}
+
+// The security policy entry type. Allowed values:
+// * FIREWALL_POLICY - The SQL Firewall policy entry type.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) EntryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail) string { return v.EntryType }).(pulumi.StringOutput)
+}
+
+// The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) TimeGenerated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail) string { return v.TimeGenerated }).(pulumi.StringOutput)
+}
+
+// The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) TimeStatusUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail) string {
+		return v.TimeStatusUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail {
+		return vs[0].([]GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs{...}
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput)
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray{ GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs{...} }
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterInput
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter {
+		return vs[0].([]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection struct {
+	Items []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs{...}
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs struct {
+	Items GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput)
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray{ GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs{...} }
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionInput
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput) Items() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection) []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem {
+		return v.Items
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection {
+		return vs[0].([]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem struct {
+	// The current state of the security policy deployment.
+	DeploymentStatus string `pulumi:"deploymentStatus"`
+	// Details specific to the security policy entry.
+	EntryDetails []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail `pulumi:"entryDetails"`
+	// Unique id of the security policy entry state.
+	Id string `pulumi:"id"`
+	// The OCID of the security policy deployment resource.
+	SecurityPolicyDeploymentId string `pulumi:"securityPolicyDeploymentId"`
+	// An optional filter to return only resources that match the specified security policy entry OCID.
+	SecurityPolicyEntryId string `pulumi:"securityPolicyEntryId"`
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs{...}
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs struct {
+	// The current state of the security policy deployment.
+	DeploymentStatus pulumi.StringInput `pulumi:"deploymentStatus"`
+	// Details specific to the security policy entry.
+	EntryDetails GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayInput `pulumi:"entryDetails"`
+	// Unique id of the security policy entry state.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The OCID of the security policy deployment resource.
+	SecurityPolicyDeploymentId pulumi.StringInput `pulumi:"securityPolicyDeploymentId"`
+	// An optional filter to return only resources that match the specified security policy entry OCID.
+	SecurityPolicyEntryId pulumi.StringInput `pulumi:"securityPolicyEntryId"`
+}
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput)
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray{ GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs{...} }
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemInput
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput {
+	return o
+}
+
+// The current state of the security policy deployment.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) DeploymentStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem) string {
+		return v.DeploymentStatus
+	}).(pulumi.StringOutput)
+}
+
+// Details specific to the security policy entry.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) EntryDetails() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem) []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail {
+		return v.EntryDetails
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput)
+}
+
+// Unique id of the security policy entry state.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the security policy deployment resource.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) SecurityPolicyDeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem) string {
+		return v.SecurityPolicyDeploymentId
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified security policy entry OCID.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) SecurityPolicyEntryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem) string {
+		return v.SecurityPolicyEntryId
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem {
+		return vs[0].([]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail struct {
+	// The security policy entry type. Allowed values:
+	// * FIREWALL_POLICY - The SQL Firewall policy entry type.
+	EntryType string `pulumi:"entryType"`
+	// The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+	TimeGenerated string `pulumi:"timeGenerated"`
+	// The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs{...}
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs struct {
+	// The security policy entry type. Allowed values:
+	// * FIREWALL_POLICY - The SQL Firewall policy entry type.
+	EntryType pulumi.StringInput `pulumi:"entryType"`
+	// The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+	TimeGenerated pulumi.StringInput `pulumi:"timeGenerated"`
+	// The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+	TimeStatusUpdated pulumi.StringInput `pulumi:"timeStatusUpdated"`
+}
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput)
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray{ GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs{...} }
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailInput
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput {
+	return o
+}
+
+// The security policy entry type. Allowed values:
+// * FIREWALL_POLICY - The SQL Firewall policy entry type.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) EntryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail) string {
+		return v.EntryType
+	}).(pulumi.StringOutput)
+}
+
+// The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) TimeGenerated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail) string {
+		return v.TimeGenerated
+	}).(pulumi.StringOutput)
+}
+
+// The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) TimeStatusUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail) string {
+		return v.TimeStatusUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail {
+		return vs[0].([]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput)
+}
+
+type GetSecurityPolicyDeploymentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityPolicyDeploymentsFilterInput is an input type that accepts GetSecurityPolicyDeploymentsFilterArgs and GetSecurityPolicyDeploymentsFilterOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsFilterInput` via:
+//
+//	GetSecurityPolicyDeploymentsFilterArgs{...}
+type GetSecurityPolicyDeploymentsFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsFilterOutput() GetSecurityPolicyDeploymentsFilterOutput
+	ToGetSecurityPolicyDeploymentsFilterOutputWithContext(context.Context) GetSecurityPolicyDeploymentsFilterOutput
+}
+
+type GetSecurityPolicyDeploymentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityPolicyDeploymentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsFilterArgs) ToGetSecurityPolicyDeploymentsFilterOutput() GetSecurityPolicyDeploymentsFilterOutput {
+	return i.ToGetSecurityPolicyDeploymentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsFilterArgs) ToGetSecurityPolicyDeploymentsFilterOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsFilterOutput)
+}
+
+// GetSecurityPolicyDeploymentsFilterArrayInput is an input type that accepts GetSecurityPolicyDeploymentsFilterArray and GetSecurityPolicyDeploymentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsFilterArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentsFilterArray{ GetSecurityPolicyDeploymentsFilterArgs{...} }
+type GetSecurityPolicyDeploymentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsFilterArrayOutput() GetSecurityPolicyDeploymentsFilterArrayOutput
+	ToGetSecurityPolicyDeploymentsFilterArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentsFilterArrayOutput
+}
+
+type GetSecurityPolicyDeploymentsFilterArray []GetSecurityPolicyDeploymentsFilterInput
+
+func (GetSecurityPolicyDeploymentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsFilterArray) ToGetSecurityPolicyDeploymentsFilterArrayOutput() GetSecurityPolicyDeploymentsFilterArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsFilterArray) ToGetSecurityPolicyDeploymentsFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsFilterArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsFilterOutput) ToGetSecurityPolicyDeploymentsFilterOutput() GetSecurityPolicyDeploymentsFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsFilterOutput) ToGetSecurityPolicyDeploymentsFilterOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityPolicyDeploymentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityPolicyDeploymentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsFilterArrayOutput) ToGetSecurityPolicyDeploymentsFilterArrayOutput() GetSecurityPolicyDeploymentsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsFilterArrayOutput) ToGetSecurityPolicyDeploymentsFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentsFilter {
+		return vs[0].([]GetSecurityPolicyDeploymentsFilter)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentsFilterOutput)
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection struct {
+	Items []GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionInput is an input type that accepts GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs and GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionInput` via:
+//
+//	GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs{...}
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutputWithContext(context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs struct {
+	Items GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput {
+	return i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput)
+}
+
+// GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayInput is an input type that accepts GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray and GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray{ GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs{...} }
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray []GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionInput
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput) Items() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection) []GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem {
+		return v.Items
+	}).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection {
+		return vs[0].([]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput)
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the security policy deployment.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the security policy deployment.
+	Id string `pulumi:"id"`
+	// Details about the current state of the security policy deployment in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
+	SecurityPolicyDeploymentId string `pulumi:"securityPolicyDeploymentId"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// The current state of the security policy deployment.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The time that the security policy deployment was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemInput is an input type that accepts GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs and GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemInput` via:
+//
+//	GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs{...}
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutputWithContext(context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the security policy deployment.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the security policy deployment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the security policy deployment in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
+	SecurityPolicyDeploymentId pulumi.StringInput `pulumi:"securityPolicyDeploymentId"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	// The current state of the security policy deployment.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The time that the security policy deployment was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput {
+	return i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput)
+}
+
+// GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayInput is an input type that accepts GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray and GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray{ GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs{...} }
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray []GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemInput
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// The description of the security policy deployment.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The OCID of the security policy deployment.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the security policy deployment in Data Safe.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) SecurityPolicyDeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.SecurityPolicyDeploymentId
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the security policy resource.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.SecurityPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the security policy deployment.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The time that the security policy deployment was created, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem {
+		return vs[0].([]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput)
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollection struct {
+	Items []GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionInput is an input type that accepts GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArgs and GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionInput` via:
+//
+//	GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArgs{...}
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArgs struct {
+	Items GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArgs) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput {
+	return i.ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArgs) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput)
+}
+
+// GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayInput is an input type that accepts GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArray and GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayInput` via:
+//
+//	GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArray{ GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArgs{...} }
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArray []GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionInput
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArray) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput {
+	return i.ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArray) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput)
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput) Items() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollection) []GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem {
+		return v.Items
+	}).(GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollection {
+		return vs[0].([]GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollection)[vs[1].(int)]
+	}).(GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput)
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem struct {
+	// A non-null value in this field indicates the object through which user has access to table, possible values could be table or view.
+	AccessThroughObject string `pulumi:"accessThroughObject"`
+	// The type of the access the user has on the table, there can be one or more from SELECT, UPDATE, INSERT, OWNER or DELETE.
+	AccessType string `pulumi:"accessType"`
+	// Indicates whether the user has access to all the tables in the schema.
+	AreAllTablesAccessible bool `pulumi:"areAllTablesAccessible"`
+	// If there are column level privileges on a table or view.
+	ColumnName string `pulumi:"columnName"`
+	// This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the  role which is granted to the user though which the user has access to the table.
+	GrantFromRole string `pulumi:"grantFromRole"`
+	// Grantee is the user who can access the table
+	Grantee string `pulumi:"grantee"`
+	// The one who granted this privilege.
+	Grantor string `pulumi:"grantor"`
+	// Indicates whether the table access is constrained via Oracle Database Vault.
+	IsAccessConstrainedByDatabaseVault bool `pulumi:"isAccessConstrainedByDatabaseVault"`
+	// Indicates whether the table access is constrained via Oracle Label Security.
+	IsAccessConstrainedByLabelSecurity bool `pulumi:"isAccessConstrainedByLabelSecurity"`
+	// Indicates whether the table access is constrained via Real Application Security.
+	IsAccessConstrainedByRealApplicationSecurity bool `pulumi:"isAccessConstrainedByRealApplicationSecurity"`
+	// Indicates whether the table access is constrained via Oracle Data Redaction.
+	IsAccessConstrainedByRedaction bool `pulumi:"isAccessConstrainedByRedaction"`
+	// Indicates whether the table access is constrained via Oracle Database SQL Firewall.
+	IsAccessConstrainedBySqlFirewall bool `pulumi:"isAccessConstrainedBySqlFirewall"`
+	// Indicates whether the access is constrained on a table via a view.
+	IsAccessConstrainedByView bool `pulumi:"isAccessConstrainedByView"`
+	// Indicates whether the table access is constrained via Virtual Private Database.
+	IsAccessConstrainedByVirtualPrivateDatabase bool `pulumi:"isAccessConstrainedByVirtualPrivateDatabase"`
+	// Indicates whether the table is marked as sensitive.
+	IsSensitive bool `pulumi:"isSensitive"`
+	// The unique key that identifies the table access report. It is numeric and unique within a security policy report.
+	Key string `pulumi:"key"`
+	// Name of the privilege.
+	Privilege string `pulumi:"privilege"`
+	// Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with  GRANT_OPTION or ADMIN_OPTION
+	PrivilegeGrantable string `pulumi:"privilegeGrantable"`
+	// Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+	PrivilegeType string `pulumi:"privilegeType"`
+	// The name of the database table the user has access to.
+	TableName string `pulumi:"tableName"`
+	// The name of the schema the table belongs to.
+	TableSchema string `pulumi:"tableSchema"`
+	// The OCID of the of the  target database.
+	TargetId string `pulumi:"targetId"`
+}
+
+// GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemInput is an input type that accepts GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArgs and GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemInput` via:
+//
+//	GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArgs{...}
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArgs struct {
+	// A non-null value in this field indicates the object through which user has access to table, possible values could be table or view.
+	AccessThroughObject pulumi.StringInput `pulumi:"accessThroughObject"`
+	// The type of the access the user has on the table, there can be one or more from SELECT, UPDATE, INSERT, OWNER or DELETE.
+	AccessType pulumi.StringInput `pulumi:"accessType"`
+	// Indicates whether the user has access to all the tables in the schema.
+	AreAllTablesAccessible pulumi.BoolInput `pulumi:"areAllTablesAccessible"`
+	// If there are column level privileges on a table or view.
+	ColumnName pulumi.StringInput `pulumi:"columnName"`
+	// This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the  role which is granted to the user though which the user has access to the table.
+	GrantFromRole pulumi.StringInput `pulumi:"grantFromRole"`
+	// Grantee is the user who can access the table
+	Grantee pulumi.StringInput `pulumi:"grantee"`
+	// The one who granted this privilege.
+	Grantor pulumi.StringInput `pulumi:"grantor"`
+	// Indicates whether the table access is constrained via Oracle Database Vault.
+	IsAccessConstrainedByDatabaseVault pulumi.BoolInput `pulumi:"isAccessConstrainedByDatabaseVault"`
+	// Indicates whether the table access is constrained via Oracle Label Security.
+	IsAccessConstrainedByLabelSecurity pulumi.BoolInput `pulumi:"isAccessConstrainedByLabelSecurity"`
+	// Indicates whether the table access is constrained via Real Application Security.
+	IsAccessConstrainedByRealApplicationSecurity pulumi.BoolInput `pulumi:"isAccessConstrainedByRealApplicationSecurity"`
+	// Indicates whether the table access is constrained via Oracle Data Redaction.
+	IsAccessConstrainedByRedaction pulumi.BoolInput `pulumi:"isAccessConstrainedByRedaction"`
+	// Indicates whether the table access is constrained via Oracle Database SQL Firewall.
+	IsAccessConstrainedBySqlFirewall pulumi.BoolInput `pulumi:"isAccessConstrainedBySqlFirewall"`
+	// Indicates whether the access is constrained on a table via a view.
+	IsAccessConstrainedByView pulumi.BoolInput `pulumi:"isAccessConstrainedByView"`
+	// Indicates whether the table access is constrained via Virtual Private Database.
+	IsAccessConstrainedByVirtualPrivateDatabase pulumi.BoolInput `pulumi:"isAccessConstrainedByVirtualPrivateDatabase"`
+	// Indicates whether the table is marked as sensitive.
+	IsSensitive pulumi.BoolInput `pulumi:"isSensitive"`
+	// The unique key that identifies the table access report. It is numeric and unique within a security policy report.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Name of the privilege.
+	Privilege pulumi.StringInput `pulumi:"privilege"`
+	// Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with  GRANT_OPTION or ADMIN_OPTION
+	PrivilegeGrantable pulumi.StringInput `pulumi:"privilegeGrantable"`
+	// Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+	PrivilegeType pulumi.StringInput `pulumi:"privilegeType"`
+	// The name of the database table the user has access to.
+	TableName pulumi.StringInput `pulumi:"tableName"`
+	// The name of the schema the table belongs to.
+	TableSchema pulumi.StringInput `pulumi:"tableSchema"`
+	// The OCID of the of the  target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArgs) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput {
+	return i.ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArgs) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput)
+}
+
+// GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayInput is an input type that accepts GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArray and GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayInput` via:
+//
+//	GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArray{ GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArgs{...} }
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArray []GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemInput
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArray) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput {
+	return i.ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArray) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput {
+	return o
+}
+
+// A non-null value in this field indicates the object through which user has access to table, possible values could be table or view.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) AccessThroughObject() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.AccessThroughObject
+	}).(pulumi.StringOutput)
+}
+
+// The type of the access the user has on the table, there can be one or more from SELECT, UPDATE, INSERT, OWNER or DELETE.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) AccessType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.AccessType
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether the user has access to all the tables in the schema.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) AreAllTablesAccessible() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) bool {
+		return v.AreAllTablesAccessible
+	}).(pulumi.BoolOutput)
+}
+
+// If there are column level privileges on a table or view.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) ColumnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.ColumnName
+	}).(pulumi.StringOutput)
+}
+
+// This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the  role which is granted to the user though which the user has access to the table.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) GrantFromRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.GrantFromRole
+	}).(pulumi.StringOutput)
+}
+
+// Grantee is the user who can access the table
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) Grantee() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.Grantee
+	}).(pulumi.StringOutput)
+}
+
+// The one who granted this privilege.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) Grantor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.Grantor
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether the table access is constrained via Oracle Database Vault.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) IsAccessConstrainedByDatabaseVault() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedByDatabaseVault
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the table access is constrained via Oracle Label Security.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) IsAccessConstrainedByLabelSecurity() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedByLabelSecurity
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the table access is constrained via Real Application Security.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) IsAccessConstrainedByRealApplicationSecurity() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedByRealApplicationSecurity
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the table access is constrained via Oracle Data Redaction.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) IsAccessConstrainedByRedaction() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedByRedaction
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the table access is constrained via Oracle Database SQL Firewall.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) IsAccessConstrainedBySqlFirewall() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedBySqlFirewall
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the access is constrained on a table via a view.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) IsAccessConstrainedByView() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedByView
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the table access is constrained via Virtual Private Database.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) IsAccessConstrainedByVirtualPrivateDatabase() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedByVirtualPrivateDatabase
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the table is marked as sensitive.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) IsSensitive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) bool {
+		return v.IsSensitive
+	}).(pulumi.BoolOutput)
+}
+
+// The unique key that identifies the table access report. It is numeric and unique within a security policy report.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Name of the privilege.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) Privilege() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.Privilege
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with  GRANT_OPTION or ADMIN_OPTION
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) PrivilegeGrantable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.PrivilegeGrantable
+	}).(pulumi.StringOutput)
+}
+
+// Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) PrivilegeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.PrivilegeType
+	}).(pulumi.StringOutput)
+}
+
+// The name of the database table the user has access to.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) TableName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.TableName
+	}).(pulumi.StringOutput)
+}
+
+// The name of the schema the table belongs to.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) TableSchema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.TableSchema
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the of the  target database.
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem) string {
+		return v.TargetId
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem {
+		return vs[0].([]GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItem)[vs[1].(int)]
+	}).(GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput)
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityPolicyReportDatabaseTableAccessEntriesFilterInput is an input type that accepts GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs and GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseTableAccessEntriesFilterInput` via:
+//
+//	GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs{...}
+type GetSecurityPolicyReportDatabaseTableAccessEntriesFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs) ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput {
+	return i.ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs) ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput)
+}
+
+// GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayInput is an input type that accepts GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArray and GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayInput` via:
+//
+//	GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArray{ GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs{...} }
+type GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput
+	ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArray []GetSecurityPolicyReportDatabaseTableAccessEntriesFilterInput
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseTableAccessEntriesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArray) ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput {
+	return i.ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArray) ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput)
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseTableAccessEntriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseTableAccessEntriesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput() GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput) ToGetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportDatabaseTableAccessEntriesFilter {
+		return vs[0].([]GetSecurityPolicyReportDatabaseTableAccessEntriesFilter)[vs[1].(int)]
+	}).(GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput)
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollection struct {
+	Items []GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionInput is an input type that accepts GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArgs and GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionInput` via:
+//
+//	GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArgs{...}
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArgs struct {
+	Items GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArgs) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput {
+	return i.ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArgs) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput)
+}
+
+// GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayInput is an input type that accepts GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArray and GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayInput` via:
+//
+//	GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArray{ GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArgs{...} }
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArray []GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionInput
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArray) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput {
+	return i.ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArray) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput)
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput) Items() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollection) []GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem {
+		return v.Items
+	}).(GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollection {
+		return vs[0].([]GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollection)[vs[1].(int)]
+	}).(GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput)
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem struct {
+	// The type of the access the user has on the table, there can be one or more from SELECT, UPDATE, INSERT or DELETE.
+	AccessType string `pulumi:"accessType"`
+	// If there are column level privileges on a table or view.
+	ColumnName string `pulumi:"columnName"`
+	// This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the  role which is granted to the user though which the user has access to the table.
+	GrantFromRole string `pulumi:"grantFromRole"`
+	// Grantee is the user who can access the table or view
+	Grantee string `pulumi:"grantee"`
+	// The user who granted the privilege.
+	Grantor string `pulumi:"grantor"`
+	// Indicates whether the table access is constrained via Oracle Database Vault.
+	IsAccessConstrainedByDatabaseVault bool `pulumi:"isAccessConstrainedByDatabaseVault"`
+	// Indicates whether the view access is constrained via Real Application Security.
+	IsAccessConstrainedByRealApplicationSecurity bool `pulumi:"isAccessConstrainedByRealApplicationSecurity"`
+	// Indicates whether the view access is constrained via Oracle Data Redaction.
+	IsAccessConstrainedByRedaction bool `pulumi:"isAccessConstrainedByRedaction"`
+	// Indicates whether the view access is constrained via Oracle Database SQL Firewall.
+	IsAccessConstrainedBySqlFirewall bool `pulumi:"isAccessConstrainedBySqlFirewall"`
+	// Indicates whether the view access is constrained via Virtual Private Database.
+	IsAccessConstrainedByVirtualPrivateDatabase bool `pulumi:"isAccessConstrainedByVirtualPrivateDatabase"`
+	// The unique key that identifies the table access report. It is numeric and unique within a security policy report.
+	Key string `pulumi:"key"`
+	// The name of the privilege.
+	Privilege string `pulumi:"privilege"`
+	// Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with  GRANT_OPTION or ADMIN_OPTION
+	PrivilegeGrantable string `pulumi:"privilegeGrantable"`
+	// Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+	PrivilegeType string `pulumi:"privilegeType"`
+	// The name of the database table the user has access to.
+	TableName string `pulumi:"tableName"`
+	// The name of the schema the table belongs to.
+	TableSchema string `pulumi:"tableSchema"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The name of the view.
+	ViewName string `pulumi:"viewName"`
+	// The name of the schema.
+	ViewSchema string `pulumi:"viewSchema"`
+	// Definition of the view.
+	ViewText string `pulumi:"viewText"`
+}
+
+// GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemInput is an input type that accepts GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArgs and GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemInput` via:
+//
+//	GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArgs{...}
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArgs struct {
+	// The type of the access the user has on the table, there can be one or more from SELECT, UPDATE, INSERT or DELETE.
+	AccessType pulumi.StringInput `pulumi:"accessType"`
+	// If there are column level privileges on a table or view.
+	ColumnName pulumi.StringInput `pulumi:"columnName"`
+	// This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the  role which is granted to the user though which the user has access to the table.
+	GrantFromRole pulumi.StringInput `pulumi:"grantFromRole"`
+	// Grantee is the user who can access the table or view
+	Grantee pulumi.StringInput `pulumi:"grantee"`
+	// The user who granted the privilege.
+	Grantor pulumi.StringInput `pulumi:"grantor"`
+	// Indicates whether the table access is constrained via Oracle Database Vault.
+	IsAccessConstrainedByDatabaseVault pulumi.BoolInput `pulumi:"isAccessConstrainedByDatabaseVault"`
+	// Indicates whether the view access is constrained via Real Application Security.
+	IsAccessConstrainedByRealApplicationSecurity pulumi.BoolInput `pulumi:"isAccessConstrainedByRealApplicationSecurity"`
+	// Indicates whether the view access is constrained via Oracle Data Redaction.
+	IsAccessConstrainedByRedaction pulumi.BoolInput `pulumi:"isAccessConstrainedByRedaction"`
+	// Indicates whether the view access is constrained via Oracle Database SQL Firewall.
+	IsAccessConstrainedBySqlFirewall pulumi.BoolInput `pulumi:"isAccessConstrainedBySqlFirewall"`
+	// Indicates whether the view access is constrained via Virtual Private Database.
+	IsAccessConstrainedByVirtualPrivateDatabase pulumi.BoolInput `pulumi:"isAccessConstrainedByVirtualPrivateDatabase"`
+	// The unique key that identifies the table access report. It is numeric and unique within a security policy report.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The name of the privilege.
+	Privilege pulumi.StringInput `pulumi:"privilege"`
+	// Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with  GRANT_OPTION or ADMIN_OPTION
+	PrivilegeGrantable pulumi.StringInput `pulumi:"privilegeGrantable"`
+	// Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+	PrivilegeType pulumi.StringInput `pulumi:"privilegeType"`
+	// The name of the database table the user has access to.
+	TableName pulumi.StringInput `pulumi:"tableName"`
+	// The name of the schema the table belongs to.
+	TableSchema pulumi.StringInput `pulumi:"tableSchema"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The name of the view.
+	ViewName pulumi.StringInput `pulumi:"viewName"`
+	// The name of the schema.
+	ViewSchema pulumi.StringInput `pulumi:"viewSchema"`
+	// Definition of the view.
+	ViewText pulumi.StringInput `pulumi:"viewText"`
+}
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArgs) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput {
+	return i.ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArgs) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput)
+}
+
+// GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayInput is an input type that accepts GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArray and GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayInput` via:
+//
+//	GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArray{ GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArgs{...} }
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArray []GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemInput
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArray) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput {
+	return i.ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArray) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput {
+	return o
+}
+
+// The type of the access the user has on the table, there can be one or more from SELECT, UPDATE, INSERT or DELETE.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) AccessType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.AccessType
+	}).(pulumi.StringOutput)
+}
+
+// If there are column level privileges on a table or view.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) ColumnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.ColumnName
+	}).(pulumi.StringOutput)
+}
+
+// This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the  role which is granted to the user though which the user has access to the table.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) GrantFromRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.GrantFromRole
+	}).(pulumi.StringOutput)
+}
+
+// Grantee is the user who can access the table or view
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) Grantee() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.Grantee
+	}).(pulumi.StringOutput)
+}
+
+// The user who granted the privilege.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) Grantor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.Grantor
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether the table access is constrained via Oracle Database Vault.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) IsAccessConstrainedByDatabaseVault() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedByDatabaseVault
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the view access is constrained via Real Application Security.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) IsAccessConstrainedByRealApplicationSecurity() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedByRealApplicationSecurity
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the view access is constrained via Oracle Data Redaction.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) IsAccessConstrainedByRedaction() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedByRedaction
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the view access is constrained via Oracle Database SQL Firewall.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) IsAccessConstrainedBySqlFirewall() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedBySqlFirewall
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the view access is constrained via Virtual Private Database.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) IsAccessConstrainedByVirtualPrivateDatabase() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) bool {
+		return v.IsAccessConstrainedByVirtualPrivateDatabase
+	}).(pulumi.BoolOutput)
+}
+
+// The unique key that identifies the table access report. It is numeric and unique within a security policy report.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// The name of the privilege.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) Privilege() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.Privilege
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with  GRANT_OPTION or ADMIN_OPTION
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) PrivilegeGrantable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.PrivilegeGrantable
+	}).(pulumi.StringOutput)
+}
+
+// Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) PrivilegeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.PrivilegeType
+	}).(pulumi.StringOutput)
+}
+
+// The name of the database table the user has access to.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) TableName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.TableName
+	}).(pulumi.StringOutput)
+}
+
+// The name of the schema the table belongs to.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) TableSchema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.TableSchema
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.TargetId
+	}).(pulumi.StringOutput)
+}
+
+// The name of the view.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) ViewName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.ViewName
+	}).(pulumi.StringOutput)
+}
+
+// The name of the schema.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) ViewSchema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.ViewSchema
+	}).(pulumi.StringOutput)
+}
+
+// Definition of the view.
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput) ViewText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem) string {
+		return v.ViewText
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem {
+		return vs[0].([]GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItem)[vs[1].(int)]
+	}).(GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput)
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityPolicyReportDatabaseViewAccessEntriesFilterInput is an input type that accepts GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs and GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseViewAccessEntriesFilterInput` via:
+//
+//	GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs{...}
+type GetSecurityPolicyReportDatabaseViewAccessEntriesFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs) ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput {
+	return i.ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs) ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput)
+}
+
+// GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayInput is an input type that accepts GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArray and GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayInput` via:
+//
+//	GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArray{ GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs{...} }
+type GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput
+	ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutputWithContext(context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArray []GetSecurityPolicyReportDatabaseViewAccessEntriesFilterInput
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseViewAccessEntriesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArray) ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput {
+	return i.ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArray) ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput)
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportDatabaseViewAccessEntriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportDatabaseViewAccessEntriesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput() GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput) ToGetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportDatabaseViewAccessEntriesFilter {
+		return vs[0].([]GetSecurityPolicyReportDatabaseViewAccessEntriesFilter)[vs[1].(int)]
+	}).(GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput)
+}
+
+type GetSecurityPolicyReportRoleGrantPathsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityPolicyReportRoleGrantPathsFilterInput is an input type that accepts GetSecurityPolicyReportRoleGrantPathsFilterArgs and GetSecurityPolicyReportRoleGrantPathsFilterOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportRoleGrantPathsFilterInput` via:
+//
+//	GetSecurityPolicyReportRoleGrantPathsFilterArgs{...}
+type GetSecurityPolicyReportRoleGrantPathsFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportRoleGrantPathsFilterOutput() GetSecurityPolicyReportRoleGrantPathsFilterOutput
+	ToGetSecurityPolicyReportRoleGrantPathsFilterOutputWithContext(context.Context) GetSecurityPolicyReportRoleGrantPathsFilterOutput
+}
+
+type GetSecurityPolicyReportRoleGrantPathsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityPolicyReportRoleGrantPathsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsFilterArgs) ToGetSecurityPolicyReportRoleGrantPathsFilterOutput() GetSecurityPolicyReportRoleGrantPathsFilterOutput {
+	return i.ToGetSecurityPolicyReportRoleGrantPathsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsFilterArgs) ToGetSecurityPolicyReportRoleGrantPathsFilterOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportRoleGrantPathsFilterOutput)
+}
+
+// GetSecurityPolicyReportRoleGrantPathsFilterArrayInput is an input type that accepts GetSecurityPolicyReportRoleGrantPathsFilterArray and GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportRoleGrantPathsFilterArrayInput` via:
+//
+//	GetSecurityPolicyReportRoleGrantPathsFilterArray{ GetSecurityPolicyReportRoleGrantPathsFilterArgs{...} }
+type GetSecurityPolicyReportRoleGrantPathsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportRoleGrantPathsFilterArrayOutput() GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput
+	ToGetSecurityPolicyReportRoleGrantPathsFilterArrayOutputWithContext(context.Context) GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput
+}
+
+type GetSecurityPolicyReportRoleGrantPathsFilterArray []GetSecurityPolicyReportRoleGrantPathsFilterInput
+
+func (GetSecurityPolicyReportRoleGrantPathsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportRoleGrantPathsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsFilterArray) ToGetSecurityPolicyReportRoleGrantPathsFilterArrayOutput() GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput {
+	return i.ToGetSecurityPolicyReportRoleGrantPathsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsFilterArray) ToGetSecurityPolicyReportRoleGrantPathsFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput)
+}
+
+type GetSecurityPolicyReportRoleGrantPathsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportRoleGrantPathsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsFilterOutput) ToGetSecurityPolicyReportRoleGrantPathsFilterOutput() GetSecurityPolicyReportRoleGrantPathsFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsFilterOutput) ToGetSecurityPolicyReportRoleGrantPathsFilterOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportRoleGrantPathsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportRoleGrantPathsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportRoleGrantPathsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportRoleGrantPathsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput) ToGetSecurityPolicyReportRoleGrantPathsFilterArrayOutput() GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput) ToGetSecurityPolicyReportRoleGrantPathsFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportRoleGrantPathsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportRoleGrantPathsFilter {
+		return vs[0].([]GetSecurityPolicyReportRoleGrantPathsFilter)[vs[1].(int)]
+	}).(GetSecurityPolicyReportRoleGrantPathsFilterOutput)
+}
+
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollection struct {
+	// An array of grant path summary objects.
+	Items []GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionInput is an input type that accepts GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArgs and GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionInput` via:
+//
+//	GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArgs{...}
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput
+	ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutputWithContext(context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput
+}
+
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArgs struct {
+	// An array of grant path summary objects.
+	Items GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArgs) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput {
+	return i.ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArgs) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput)
+}
+
+// GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayInput is an input type that accepts GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArray and GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayInput` via:
+//
+//	GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArray{ GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArgs{...} }
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput
+	ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutputWithContext(context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput
+}
+
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArray []GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionInput
+
+func (GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArray) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput {
+	return i.ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArray) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput)
+}
+
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput {
+	return o
+}
+
+// An array of grant path summary objects.
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput) Items() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollection) []GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem {
+		return v.Items
+	}).(GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollection {
+		return vs[0].([]GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollection)[vs[1].(int)]
+	}).(GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput)
+}
+
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem struct {
+	// The grant depth level of the indirect grant. An indirectly granted role/privilege is granted to the user through another role. The depth level indicates how deep a privilege is within the grant hierarchy.
+	DepthLevel int `pulumi:"depthLevel"`
+	// A filter to return only items that match the specified role.
+	GrantedRole string `pulumi:"grantedRole"`
+	// A filter to return only items that match the specified grantee.
+	Grantee string `pulumi:"grantee"`
+	// The unique key of a role grant.
+	Key string `pulumi:"key"`
+}
+
+// GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemInput is an input type that accepts GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArgs and GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemInput` via:
+//
+//	GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArgs{...}
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput
+	ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutputWithContext(context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput
+}
+
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArgs struct {
+	// The grant depth level of the indirect grant. An indirectly granted role/privilege is granted to the user through another role. The depth level indicates how deep a privilege is within the grant hierarchy.
+	DepthLevel pulumi.IntInput `pulumi:"depthLevel"`
+	// A filter to return only items that match the specified role.
+	GrantedRole pulumi.StringInput `pulumi:"grantedRole"`
+	// A filter to return only items that match the specified grantee.
+	Grantee pulumi.StringInput `pulumi:"grantee"`
+	// The unique key of a role grant.
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArgs) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput {
+	return i.ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArgs) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput)
+}
+
+// GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayInput is an input type that accepts GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArray and GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayInput` via:
+//
+//	GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArray{ GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArgs{...} }
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput
+	ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutputWithContext(context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput
+}
+
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArray []GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemInput
+
+func (GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArray) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput {
+	return i.ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArray) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput {
+	return o
+}
+
+// The grant depth level of the indirect grant. An indirectly granted role/privilege is granted to the user through another role. The depth level indicates how deep a privilege is within the grant hierarchy.
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput) DepthLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem) int { return v.DepthLevel }).(pulumi.IntOutput)
+}
+
+// A filter to return only items that match the specified role.
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput) GrantedRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem) string { return v.GrantedRole }).(pulumi.StringOutput)
+}
+
+// A filter to return only items that match the specified grantee.
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput) Grantee() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem) string { return v.Grantee }).(pulumi.StringOutput)
+}
+
+// The unique key of a role grant.
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput() GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput) ToGetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem {
+		return vs[0].([]GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItem)[vs[1].(int)]
+	}).(GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput)
+}
+
+type GetSecurityPolicyReportsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityPolicyReportsFilterInput is an input type that accepts GetSecurityPolicyReportsFilterArgs and GetSecurityPolicyReportsFilterOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportsFilterInput` via:
+//
+//	GetSecurityPolicyReportsFilterArgs{...}
+type GetSecurityPolicyReportsFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportsFilterOutput() GetSecurityPolicyReportsFilterOutput
+	ToGetSecurityPolicyReportsFilterOutputWithContext(context.Context) GetSecurityPolicyReportsFilterOutput
+}
+
+type GetSecurityPolicyReportsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityPolicyReportsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportsFilterArgs) ToGetSecurityPolicyReportsFilterOutput() GetSecurityPolicyReportsFilterOutput {
+	return i.ToGetSecurityPolicyReportsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportsFilterArgs) ToGetSecurityPolicyReportsFilterOutputWithContext(ctx context.Context) GetSecurityPolicyReportsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportsFilterOutput)
+}
+
+// GetSecurityPolicyReportsFilterArrayInput is an input type that accepts GetSecurityPolicyReportsFilterArray and GetSecurityPolicyReportsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportsFilterArrayInput` via:
+//
+//	GetSecurityPolicyReportsFilterArray{ GetSecurityPolicyReportsFilterArgs{...} }
+type GetSecurityPolicyReportsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportsFilterArrayOutput() GetSecurityPolicyReportsFilterArrayOutput
+	ToGetSecurityPolicyReportsFilterArrayOutputWithContext(context.Context) GetSecurityPolicyReportsFilterArrayOutput
+}
+
+type GetSecurityPolicyReportsFilterArray []GetSecurityPolicyReportsFilterInput
+
+func (GetSecurityPolicyReportsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportsFilterArray) ToGetSecurityPolicyReportsFilterArrayOutput() GetSecurityPolicyReportsFilterArrayOutput {
+	return i.ToGetSecurityPolicyReportsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportsFilterArray) ToGetSecurityPolicyReportsFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportsFilterArrayOutput)
+}
+
+type GetSecurityPolicyReportsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportsFilterOutput) ToGetSecurityPolicyReportsFilterOutput() GetSecurityPolicyReportsFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportsFilterOutput) ToGetSecurityPolicyReportsFilterOutputWithContext(ctx context.Context) GetSecurityPolicyReportsFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityPolicyReportsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityPolicyReportsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityPolicyReportsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportsFilterArrayOutput) ToGetSecurityPolicyReportsFilterArrayOutput() GetSecurityPolicyReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportsFilterArrayOutput) ToGetSecurityPolicyReportsFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportsFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportsFilter {
+		return vs[0].([]GetSecurityPolicyReportsFilter)[vs[1].(int)]
+	}).(GetSecurityPolicyReportsFilterOutput)
+}
+
+type GetSecurityPolicyReportsSecurityPolicyReportCollection struct {
+	Items []GetSecurityPolicyReportsSecurityPolicyReportCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityPolicyReportsSecurityPolicyReportCollectionInput is an input type that accepts GetSecurityPolicyReportsSecurityPolicyReportCollectionArgs and GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportsSecurityPolicyReportCollectionInput` via:
+//
+//	GetSecurityPolicyReportsSecurityPolicyReportCollectionArgs{...}
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportsSecurityPolicyReportCollectionOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput
+	ToGetSecurityPolicyReportsSecurityPolicyReportCollectionOutputWithContext(context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput
+}
+
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionArgs struct {
+	Items GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityPolicyReportsSecurityPolicyReportCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportsSecurityPolicyReportCollectionArgs) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput {
+	return i.ToGetSecurityPolicyReportsSecurityPolicyReportCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportsSecurityPolicyReportCollectionArgs) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput)
+}
+
+// GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayInput is an input type that accepts GetSecurityPolicyReportsSecurityPolicyReportCollectionArray and GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayInput` via:
+//
+//	GetSecurityPolicyReportsSecurityPolicyReportCollectionArray{ GetSecurityPolicyReportsSecurityPolicyReportCollectionArgs{...} }
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput
+	ToGetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutputWithContext(context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput
+}
+
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionArray []GetSecurityPolicyReportsSecurityPolicyReportCollectionInput
+
+func (GetSecurityPolicyReportsSecurityPolicyReportCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportsSecurityPolicyReportCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportsSecurityPolicyReportCollectionArray) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput {
+	return i.ToGetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportsSecurityPolicyReportCollectionArray) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput)
+}
+
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput) Items() GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollection) []GetSecurityPolicyReportsSecurityPolicyReportCollectionItem {
+		return v.Items
+	}).(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportsSecurityPolicyReportCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportsSecurityPolicyReportCollection {
+		return vs[0].([]GetSecurityPolicyReportsSecurityPolicyReportCollection)[vs[1].(int)]
+	}).(GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput)
+}
+
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the security policy report.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the security policy report.
+	Id string `pulumi:"id"`
+	// Details about the current state of the security policy report.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current state of the security policy report.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the security policy report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the security policy report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSecurityPolicyReportsSecurityPolicyReportCollectionItemInput is an input type that accepts GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs and GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportsSecurityPolicyReportCollectionItemInput` via:
+//
+//	GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs{...}
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput
+	ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutputWithContext(context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput
+}
+
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the security policy report.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the security policy report.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the security policy report.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current state of the security policy report.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the security policy report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the security policy report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput {
+	return i.ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput)
+}
+
+// GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayInput is an input type that accepts GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArray and GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayInput` via:
+//
+//	GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArray{ GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs{...} }
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput
+	ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutputWithContext(context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput
+}
+
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArray []GetSecurityPolicyReportsSecurityPolicyReportCollectionItemInput
+
+func (GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportsSecurityPolicyReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArray) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput {
+	return i.ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArray) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// The description of the security policy report.
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The OCID of the security policy report.
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the security policy report.
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current state of the security policy report.
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the security policy report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the security policy report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyReportsSecurityPolicyReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput() GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput) ToGetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyReportsSecurityPolicyReportCollectionItem {
+		return vs[0].([]GetSecurityPolicyReportsSecurityPolicyReportCollectionItem)[vs[1].(int)]
+	}).(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput)
 }
 
 type GetSensitiveDataModelSensitiveObjectsFilter struct {
@@ -33789,7 +42449,7 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
 	IsAppDefinedRelationDiscoveryEnabled bool `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
-	// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
+	// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
 	IsIncludeAllSchemas bool `pulumi:"isIncludeAllSchemas"`
 	// Indicates if all the existing sensitive types should be used by data discovery jobs.If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
 	IsIncludeAllSensitiveTypes bool `pulumi:"isIncludeAllSensitiveTypes"`
@@ -33839,7 +42499,7 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
 	IsAppDefinedRelationDiscoveryEnabled pulumi.BoolInput `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
-	// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
+	// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
 	IsIncludeAllSchemas pulumi.BoolInput `pulumi:"isIncludeAllSchemas"`
 	// Indicates if all the existing sensitive types should be used by data discovery jobs.If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
 	IsIncludeAllSensitiveTypes pulumi.BoolInput `pulumi:"isIncludeAllSensitiveTypes"`
@@ -33958,7 +42618,7 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) IsAppDefin
 	}).(pulumi.BoolOutput)
 }
 
-// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
+// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
 func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) IsIncludeAllSchemas() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) bool { return v.IsIncludeAllSchemas }).(pulumi.BoolOutput)
 }
@@ -35333,6 +43993,1602 @@ func (o GetTargetDatabaseDatabaseDetailArrayOutput) Index(i pulumi.IntInput) Get
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseDatabaseDetail {
 		return vs[0].([]GetTargetDatabaseDatabaseDetail)[vs[1].(int)]
 	}).(GetTargetDatabaseDatabaseDetailOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseType struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails []GetTargetDatabasePeerTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName string `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description string `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName string `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key int `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role string `pulumi:"role"`
+	// The current state of the target database in Data Safe.
+	State string `pulumi:"state"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs []GetTargetDatabasePeerTargetDatabaseTlsConfig `pulumi:"tlsConfigs"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseTypeInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseTypeArgs and GetTargetDatabasePeerTargetDatabaseTypeOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseTypeInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseTypeArgs{...}
+type GetTargetDatabasePeerTargetDatabaseTypeInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseTypeOutput() GetTargetDatabasePeerTargetDatabaseTypeOutput
+	ToGetTargetDatabasePeerTargetDatabaseTypeOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseTypeOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseTypeArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName pulumi.StringInput `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key pulumi.IntInput `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The current state of the target database in Data Safe.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs GetTargetDatabasePeerTargetDatabaseTlsConfigArrayInput `pulumi:"tlsConfigs"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTypeArgs) ToGetTargetDatabasePeerTargetDatabaseTypeOutput() GetTargetDatabasePeerTargetDatabaseTypeOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseTypeOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTypeArgs) ToGetTargetDatabasePeerTargetDatabaseTypeOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseTypeOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseTypeArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseTypeArray and GetTargetDatabasePeerTargetDatabaseTypeArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseTypeArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseTypeArray{ GetTargetDatabasePeerTargetDatabaseTypeArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutput() GetTargetDatabasePeerTargetDatabaseTypeArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseTypeArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseTypeArray []GetTargetDatabasePeerTargetDatabaseTypeInput
+
+func (GetTargetDatabasePeerTargetDatabaseTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTypeArray) ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutput() GetTargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTypeArray) ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseTypeArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseTypeOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) ToGetTargetDatabasePeerTargetDatabaseTypeOutput() GetTargetDatabasePeerTargetDatabaseTypeOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) ToGetTargetDatabasePeerTargetDatabaseTypeOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTypeOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) DatabaseDetails() GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) []GetTargetDatabasePeerTargetDatabaseDatabaseDetail {
+		return v.DatabaseDetails
+	}).(GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+// Unique name of the database associated to the peer target database.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) DatabaseUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.DatabaseUniqueName }).(pulumi.StringOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) DataguardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.DataguardAssociationId }).(pulumi.StringOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The display name of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The secondary key assigned for the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) Key() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) int { return v.Key }).(pulumi.IntOutput)
+}
+
+// Details about the current state of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Role of the database associated to the peer target database.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The current state of the target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The details required to establish a TLS enabled connection.
+func (o GetTargetDatabasePeerTargetDatabaseTypeOutput) TlsConfigs() GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseType) []GetTargetDatabasePeerTargetDatabaseTlsConfig {
+		return v.TlsConfigs
+	}).(GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseType)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTypeArrayOutput) ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutput() GetTargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTypeArrayOutput) ToGetTargetDatabasePeerTargetDatabaseTypeArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTypeArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTypeArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseType {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseType)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseTypeOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetail struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseDatabaseDetailInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs and GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDatabaseDetailInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{...}
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput
+	ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray and GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray{ GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray []GetTargetDatabasePeerTargetDatabaseDatabaseDetailInput
+
+func (GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
+}
+
+// The database type.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// The infrastructure type the database is running on.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.InfrastructureType }).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) int { return v.ListenerPort }).(pulumi.IntOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.VmClusterId }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseDatabaseDetail {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetail struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails []GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail `pulumi:"databaseDetails"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description string `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName string `pulumi:"displayName"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs []GetTargetDatabasePeerTargetDatabaseDetailTlsConfig `pulumi:"tlsConfigs"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailArgs and GetTargetDatabasePeerTargetDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailArgs{...}
+type GetTargetDatabasePeerTargetDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput `pulumi:"databaseDetails"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput `pulumi:"tlsConfigs"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailArray and GetTargetDatabasePeerTargetDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailArray{ GetTargetDatabasePeerTargetDatabaseDetailArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailArray []GetTargetDatabasePeerTargetDatabaseDetailInput
+
+func (GetTargetDatabasePeerTargetDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) DatabaseDetails() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetail) []GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail {
+		return v.DatabaseDetails
+	}).(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) DataguardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetail) string { return v.DataguardAssociationId }).(pulumi.StringOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetail) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The display name of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The details required to establish a TLS enabled connection.
+func (o GetTargetDatabasePeerTargetDatabaseDetailOutput) TlsConfigs() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetail) []GetTargetDatabasePeerTargetDatabaseDetailTlsConfig {
+		return v.TlsConfigs
+	}).(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseDetail {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseDetailOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs and GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{...}
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray and GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray{ GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray []GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput
+
+func (GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
+}
+
+// The database type.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// The infrastructure type the database is running on.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.InfrastructureType }).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) int { return v.ListenerPort }).(pulumi.IntOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string { return v.VmClusterId }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailTlsConfigInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs and GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailTlsConfigInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{...}
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray and GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray{ GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray []GetTargetDatabasePeerTargetDatabaseDetailTlsConfigInput
+
+func (GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.CertificateStoreType }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.KeyStoreContent }).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.StorePassword }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.TrustStoreContent }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ToGetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseDetailTlsConfig {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseDetailTlsConfig)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabasePeerTargetDatabaseTlsConfigInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseTlsConfigArgs and GetTargetDatabasePeerTargetDatabaseTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseTlsConfigInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseTlsConfigArgs{...}
+type GetTargetDatabasePeerTargetDatabaseTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigOutput
+	ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabasePeerTargetDatabaseTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseTlsConfigOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabaseTlsConfigArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabaseTlsConfigArray and GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabaseTlsConfigArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabaseTlsConfigArray{ GetTargetDatabasePeerTargetDatabaseTlsConfigArgs{...} }
+type GetTargetDatabasePeerTargetDatabaseTlsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput
+	ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabaseTlsConfigArray []GetTargetDatabasePeerTargetDatabaseTlsConfigInput
+
+func (GetTargetDatabasePeerTargetDatabaseTlsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTlsConfigArray) ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabaseTlsConfigArray) ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.CertificateStoreType }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.KeyStoreContent }).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.StorePassword }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.TrustStoreContent }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabaseTlsConfig {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabaseTlsConfig)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabaseTlsConfigOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTargetDatabasePeerTargetDatabasesFilterInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesFilterArgs and GetTargetDatabasePeerTargetDatabasesFilterOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesFilterInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesFilterArgs{...}
+type GetTargetDatabasePeerTargetDatabasesFilterInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesFilterOutput() GetTargetDatabasePeerTargetDatabasesFilterOutput
+	ToGetTargetDatabasePeerTargetDatabasesFilterOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesFilterOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTargetDatabasePeerTargetDatabasesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesFilterArgs) ToGetTargetDatabasePeerTargetDatabasesFilterOutput() GetTargetDatabasePeerTargetDatabasesFilterOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesFilterOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesFilterArgs) ToGetTargetDatabasePeerTargetDatabasesFilterOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesFilterOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabasesFilterArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesFilterArray and GetTargetDatabasePeerTargetDatabasesFilterArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesFilterArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesFilterArray{ GetTargetDatabasePeerTargetDatabasesFilterArgs{...} }
+type GetTargetDatabasePeerTargetDatabasesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutput() GetTargetDatabasePeerTargetDatabasesFilterArrayOutput
+	ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesFilterArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesFilterArray []GetTargetDatabasePeerTargetDatabasesFilterInput
+
+func (GetTargetDatabasePeerTargetDatabasesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesFilterArray) ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutput() GetTargetDatabasePeerTargetDatabasesFilterArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesFilterArray) ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesFilterArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterOutput) ToGetTargetDatabasePeerTargetDatabasesFilterOutput() GetTargetDatabasePeerTargetDatabasesFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterOutput) ToGetTargetDatabasePeerTargetDatabasesFilterOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesFilterOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterArrayOutput) ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutput() GetTargetDatabasePeerTargetDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterArrayOutput) ToGetTargetDatabasePeerTargetDatabasesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabasesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabasesFilter {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabasesFilter)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabasesFilterOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection struct {
+	CompartmentId string                                                                 `pulumi:"compartmentId"`
+	Items         []GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem `pulumi:"items"`
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs{...}
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs struct {
+	CompartmentId pulumi.StringInput                                                             `pulumi:"compartmentId"`
+	Items         GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray{ GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs{...} }
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray []GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionInput
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput) Items() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection) []GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem {
+		return v.Items
+	}).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName string `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description string `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName string `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key int `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role string `pulumi:"role"`
+	// The current state of the peer target database in Data Safe.
+	State string `pulumi:"state"`
+	// The OCID of the Data Safe target database.
+	TargetDatabaseId string `pulumi:"targetDatabaseId"`
+	// The date and time of the peer target database registration in Data Safe.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfig GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig `pulumi:"tlsConfig"`
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs{...}
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsInput `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName pulumi.StringInput `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The display name of the peer target database in Data Safe.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key pulumi.IntInput `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The current state of the peer target database in Data Safe.
+	State pulumi.StringInput `pulumi:"state"`
+	// The OCID of the Data Safe target database.
+	TargetDatabaseId pulumi.StringInput `pulumi:"targetDatabaseId"`
+	// The date and time of the peer target database registration in Data Safe.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfig GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigInput `pulumi:"tlsConfig"`
+}
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput)
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray{ GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs{...} }
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray []GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemInput
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) DatabaseDetails() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails {
+		return v.DatabaseDetails
+	}).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput)
+}
+
+// Unique name of the database associated to the peer target database.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) DatabaseUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.DatabaseUniqueName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) DataguardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.DataguardAssociationId
+	}).(pulumi.StringOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The display name of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The secondary key assigned for the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) Key() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) int { return v.Key }).(pulumi.IntOutput)
+}
+
+// Details about the current state of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Role of the database associated to the peer target database.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The current state of the peer target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID of the Data Safe target database.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) TargetDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.TargetDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of the peer target database registration in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The details required to establish a TLS enabled connection.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput) TlsConfig() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig {
+		return v.TlsConfig
+	}).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem {
+		return vs[0].([]GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItem)[vs[1].(int)]
+	}).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs{...}
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// The database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The infrastructure type the database is running on.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.AutonomousDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// The database type.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.DatabaseType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.DbSystemId
+	}).(pulumi.StringOutput)
+}
+
+// The infrastructure type the database is running on.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.InfrastructureType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.InstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) []string {
+		return v.IpAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) int {
+		return v.ListenerPort
+	}).(pulumi.IntOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails) string {
+		return v.VmClusterId
+	}).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigInput is an input type that accepts GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs and GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigInput` via:
+//
+//	GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs{...}
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput
+	ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutputWithContext(context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput {
+	return i.ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput)
+}
+
+type GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput() GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) ToGetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig) string {
+		return v.CertificateStoreType
+	}).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig) string {
+		return v.KeyStoreContent
+	}).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig) string {
+		return v.StorePassword
+	}).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfig) string {
+		return v.TrustStoreContent
+	}).(pulumi.StringOutput)
 }
 
 type GetTargetDatabaseRoleFilter struct {
@@ -36770,7 +47026,7 @@ type GetTargetDatabasesTargetDatabase struct {
 	DatabaseDetails []GetTargetDatabasesTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The description of the target database in Data Safe.
+	// The description of the peer target database in Data Safe.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
@@ -36778,8 +47034,11 @@ type GetTargetDatabasesTargetDatabase struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Data Safe target database.
 	Id string `pulumi:"id"`
-	// Details about the current state of the target database in Data Safe.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails          string                                                     `pulumi:"lifecycleDetails"`
+	PeerTargetDatabaseDetails []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail `pulumi:"peerTargetDatabaseDetails"`
+	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+	PeerTargetDatabases []GetTargetDatabasesTargetDatabasePeerTargetDatabase `pulumi:"peerTargetDatabases"`
 	// A filter to return only target databases that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -36816,7 +47075,7 @@ type GetTargetDatabasesTargetDatabaseArgs struct {
 	DatabaseDetails GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput `pulumi:"databaseDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// The description of the target database in Data Safe.
+	// The description of the peer target database in Data Safe.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -36824,8 +47083,11 @@ type GetTargetDatabasesTargetDatabaseArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the Data Safe target database.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Details about the current state of the target database in Data Safe.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails          pulumi.StringInput                                                 `pulumi:"lifecycleDetails"`
+	PeerTargetDatabaseDetails GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayInput `pulumi:"peerTargetDatabaseDetails"`
+	// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+	PeerTargetDatabases GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayInput `pulumi:"peerTargetDatabases"`
 	// A filter to return only target databases that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -36925,7 +47187,7 @@ func (o GetTargetDatabasesTargetDatabaseOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// The description of the target database in Data Safe.
+// The description of the peer target database in Data Safe.
 func (o GetTargetDatabasesTargetDatabaseOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -36945,9 +47207,22 @@ func (o GetTargetDatabasesTargetDatabaseOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Details about the current state of the target database in Data Safe.
+// Details about the current state of the peer target database in Data Safe.
 func (o GetTargetDatabasesTargetDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetTargetDatabasesTargetDatabaseOutput) PeerTargetDatabaseDetails() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail {
+		return v.PeerTargetDatabaseDetails
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput)
+}
+
+// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+func (o GetTargetDatabasesTargetDatabaseOutput) PeerTargetDatabases() GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) []GetTargetDatabasesTargetDatabasePeerTargetDatabase {
+		return v.PeerTargetDatabases
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput)
 }
 
 // A filter to return only target databases that match the specified lifecycle state.
@@ -37391,6 +47666,974 @@ func (o GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabaseDatabaseDetail {
 		return vs[0].([]GetTargetDatabasesTargetDatabaseDatabaseDetail)[vs[1].(int)]
 	}).(GetTargetDatabasesTargetDatabaseDatabaseDetailOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabase struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName string `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key int `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role string `pulumi:"role"`
+	// A filter to return only target databases that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs []GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig `pulumi:"tlsConfigs"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput `pulumi:"databaseDetails"`
+	// Unique name of the database associated to the peer target database.
+	DatabaseUniqueName pulumi.StringInput `pulumi:"databaseUniqueName"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The secondary key assigned for the peer target database in Data Safe.
+	Key pulumi.IntInput `pulumi:"key"`
+	// Details about the current state of the peer target database in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Role of the database associated to the peer target database.
+	Role pulumi.StringInput `pulumi:"role"`
+	// A filter to return only target databases that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayInput `pulumi:"tlsConfigs"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabase)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabase)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabase)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) DatabaseDetails() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail {
+		return v.DatabaseDetails
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+// Unique name of the database associated to the peer target database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) DatabaseUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.DatabaseUniqueName }).(pulumi.StringOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) DataguardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.DataguardAssociationId }).(pulumi.StringOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The secondary key assigned for the peer target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) Key() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) int { return v.Key }).(pulumi.IntOutput)
+}
+
+// Details about the current state of the peer target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Role of the database associated to the peer target database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified lifecycle state.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The details required to establish a TLS enabled connection.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput) TlsConfigs() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabase) []GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig {
+		return v.TlsConfigs
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabase)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabase {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabase)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// A filter to return only target databases that match the specified database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// A filter to return only target databases that match the specified infrastructure type.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// A filter to return only target databases that match the specified database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// A filter to return only target databases that match the specified infrastructure type.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string {
+		return v.AutonomousDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified database type.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified infrastructure type.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string {
+		return v.InfrastructureType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) []string {
+		return v.IpAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) int { return v.ListenerPort }).(pulumi.IntOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail) string { return v.VmClusterId }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail `pulumi:"databaseDetails"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId string `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig `pulumi:"tlsConfigs"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs struct {
+	// Details of the database for the registration in Data Safe.
+	DatabaseDetails GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput `pulumi:"databaseDetails"`
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+	DataguardAssociationId pulumi.StringInput `pulumi:"dataguardAssociationId"`
+	// The description of the peer target database in Data Safe.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The details required to establish a TLS enabled connection.
+	TlsConfigs GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput `pulumi:"tlsConfigs"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput {
+	return o
+}
+
+// Details of the database for the registration in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) DatabaseDetails() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail) []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail {
+		return v.DatabaseDetails
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput)
+}
+
+// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) DataguardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail) string {
+		return v.DataguardAssociationId
+	}).(pulumi.StringOutput)
+}
+
+// The description of the peer target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The details required to establish a TLS enabled connection.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput) TlsConfigs() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail) []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig {
+		return v.TlsConfigs
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// A filter to return only target databases that match the specified database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// A filter to return only target databases that match the specified infrastructure type.
+	InfrastructureType string `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId string `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort int `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId string `pulumi:"vmClusterId"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs struct {
+	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	AutonomousDatabaseId pulumi.StringInput `pulumi:"autonomousDatabaseId"`
+	// A filter to return only target databases that match the specified database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The OCID of the cloud database registered as a target database in Data Safe.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// A filter to return only target databases that match the specified infrastructure type.
+	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
+	// The OCID of the compute instance on which the database is running.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The port number of the database listener.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+	// The service name of the database registered as target database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the VM cluster in which the database is running.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return o
+}
+
+// The OCID of the Autonomous Database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.AutonomousDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified database type.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.DatabaseType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the cloud database registered as a target database in Data Safe.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.DbSystemId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only target databases that match the specified infrastructure type.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.InfrastructureType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the compute instance on which the database is running.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.InstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) []string {
+		return v.IpAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// The port number of the database listener.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) int {
+		return v.ListenerPort
+	}).(pulumi.IntOutput)
+}
+
+// The service name of the database registered as target database.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the VM cluster in which the database is running.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail) string {
+		return v.VmClusterId
+	}).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetail)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig) string {
+		return v.CertificateStoreType
+	}).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig) string {
+		return v.KeyStoreContent
+	}).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig) string {
+		return v.StorePassword
+	}).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig) string {
+		return v.TrustStoreContent
+	}).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfig)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig) string {
+		return v.CertificateStoreType
+	}).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.KeyStoreContent }).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.StorePassword }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.TrustStoreContent }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput)
 }
 
 type GetTargetDatabasesTargetDatabaseTlsConfig struct {
@@ -38335,7 +49578,7 @@ type GetUserAssessmentProfilesProfile struct {
 	TargetId string `pulumi:"targetId"`
 	// The OCID of the user assessment.
 	UserAssessmentId string `pulumi:"userAssessmentId"`
-	// The number of users having a given profile.
+	// The number of users that have a given profile.
 	UserCount int `pulumi:"userCount"`
 }
 
@@ -38403,7 +49646,7 @@ type GetUserAssessmentProfilesProfileArgs struct {
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The OCID of the user assessment.
 	UserAssessmentId pulumi.StringInput `pulumi:"userAssessmentId"`
-	// The number of users having a given profile.
+	// The number of users that have a given profile.
 	UserCount pulumi.IntInput `pulumi:"userCount"`
 }
 
@@ -38588,7 +49831,7 @@ func (o GetUserAssessmentProfilesProfileOutput) UserAssessmentId() pulumi.String
 	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.UserAssessmentId }).(pulumi.StringOutput)
 }
 
-// The number of users having a given profile.
+// The number of users that have a given profile.
 func (o GetUserAssessmentProfilesProfileOutput) UserCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) int { return v.UserCount }).(pulumi.IntOutput)
 }
@@ -38611,6 +49854,321 @@ func (o GetUserAssessmentProfilesProfileArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentProfilesProfile {
 		return vs[0].([]GetUserAssessmentProfilesProfile)[vs[1].(int)]
 	}).(GetUserAssessmentProfilesProfileOutput)
+}
+
+type GetUserAssessmentUserAccessAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUserAssessmentUserAccessAnalyticsFilterInput is an input type that accepts GetUserAssessmentUserAccessAnalyticsFilterArgs and GetUserAssessmentUserAccessAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetUserAssessmentUserAccessAnalyticsFilterInput` via:
+//
+//	GetUserAssessmentUserAccessAnalyticsFilterArgs{...}
+type GetUserAssessmentUserAccessAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentUserAccessAnalyticsFilterOutput() GetUserAssessmentUserAccessAnalyticsFilterOutput
+	ToGetUserAssessmentUserAccessAnalyticsFilterOutputWithContext(context.Context) GetUserAssessmentUserAccessAnalyticsFilterOutput
+}
+
+type GetUserAssessmentUserAccessAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUserAssessmentUserAccessAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsFilterArgs) ToGetUserAssessmentUserAccessAnalyticsFilterOutput() GetUserAssessmentUserAccessAnalyticsFilterOutput {
+	return i.ToGetUserAssessmentUserAccessAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsFilterArgs) ToGetUserAssessmentUserAccessAnalyticsFilterOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAccessAnalyticsFilterOutput)
+}
+
+// GetUserAssessmentUserAccessAnalyticsFilterArrayInput is an input type that accepts GetUserAssessmentUserAccessAnalyticsFilterArray and GetUserAssessmentUserAccessAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetUserAssessmentUserAccessAnalyticsFilterArrayInput` via:
+//
+//	GetUserAssessmentUserAccessAnalyticsFilterArray{ GetUserAssessmentUserAccessAnalyticsFilterArgs{...} }
+type GetUserAssessmentUserAccessAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentUserAccessAnalyticsFilterArrayOutput() GetUserAssessmentUserAccessAnalyticsFilterArrayOutput
+	ToGetUserAssessmentUserAccessAnalyticsFilterArrayOutputWithContext(context.Context) GetUserAssessmentUserAccessAnalyticsFilterArrayOutput
+}
+
+type GetUserAssessmentUserAccessAnalyticsFilterArray []GetUserAssessmentUserAccessAnalyticsFilterInput
+
+func (GetUserAssessmentUserAccessAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentUserAccessAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsFilterArray) ToGetUserAssessmentUserAccessAnalyticsFilterArrayOutput() GetUserAssessmentUserAccessAnalyticsFilterArrayOutput {
+	return i.ToGetUserAssessmentUserAccessAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsFilterArray) ToGetUserAssessmentUserAccessAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAccessAnalyticsFilterArrayOutput)
+}
+
+type GetUserAssessmentUserAccessAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentUserAccessAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsFilterOutput) ToGetUserAssessmentUserAccessAnalyticsFilterOutput() GetUserAssessmentUserAccessAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsFilterOutput) ToGetUserAssessmentUserAccessAnalyticsFilterOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentUserAccessAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentUserAccessAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUserAssessmentUserAccessAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUserAssessmentUserAccessAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentUserAccessAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentUserAccessAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsFilterArrayOutput) ToGetUserAssessmentUserAccessAnalyticsFilterArrayOutput() GetUserAssessmentUserAccessAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsFilterArrayOutput) ToGetUserAssessmentUserAccessAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentUserAccessAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentUserAccessAnalyticsFilter {
+		return vs[0].([]GetUserAssessmentUserAccessAnalyticsFilter)[vs[1].(int)]
+	}).(GetUserAssessmentUserAccessAnalyticsFilterOutput)
+}
+
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollection struct {
+	// An array of user access analytics summary objects.
+	Items []GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionInput is an input type that accepts GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArgs and GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionInput` via:
+//
+//	GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArgs{...}
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput
+	ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutputWithContext(context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput
+}
+
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArgs struct {
+	// An array of user access analytics summary objects.
+	Items GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArgs) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput {
+	return i.ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArgs) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput)
+}
+
+// GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayInput is an input type that accepts GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArray and GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayInput` via:
+//
+//	GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArray{ GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArgs{...} }
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput
+	ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutputWithContext(context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput
+}
+
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArray []GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionInput
+
+func (GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArray) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput {
+	return i.ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArray) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput)
+}
+
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput {
+	return o
+}
+
+// An array of user access analytics summary objects.
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput) Items() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollection) []GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItem {
+		return v.Items
+	}).(GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput)
+}
+
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollection {
+		return vs[0].([]GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollection)[vs[1].(int)]
+	}).(GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput)
+}
+
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItem struct {
+	// The total count of schemas a user can access
+	UserAssessmentUserAccessAnalyticCount string `pulumi:"userAssessmentUserAccessAnalyticCount"`
+	// Name of the user.
+	UserName string `pulumi:"userName"`
+}
+
+// GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemInput is an input type that accepts GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArgs and GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemInput` via:
+//
+//	GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArgs{...}
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput
+	ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutputWithContext(context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput
+}
+
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArgs struct {
+	// The total count of schemas a user can access
+	UserAssessmentUserAccessAnalyticCount pulumi.StringInput `pulumi:"userAssessmentUserAccessAnalyticCount"`
+	// Name of the user.
+	UserName pulumi.StringInput `pulumi:"userName"`
+}
+
+func (GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArgs) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput {
+	return i.ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArgs) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput)
+}
+
+// GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayInput is an input type that accepts GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArray and GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayInput` via:
+//
+//	GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArray{ GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArgs{...} }
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput
+	ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput
+}
+
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArray []GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemInput
+
+func (GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArray) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput {
+	return i.ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArray) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput)
+}
+
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput {
+	return o
+}
+
+// The total count of schemas a user can access
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput) UserAssessmentUserAccessAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItem) string {
+		return v.UserAssessmentUserAccessAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+// Name of the user.
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItem) string {
+		return v.UserName
+	}).(pulumi.StringOutput)
+}
+
+type GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput() GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput) ToGetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItem {
+		return vs[0].([]GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput)
 }
 
 type GetUserAssessmentUserAnalyticsFilter struct {
@@ -39017,17 +50575,21 @@ type GetUserAssessmentUsersUser struct {
 	AccountStatus string `pulumi:"accountStatus"`
 	// The admin roles granted to the user.
 	AdminRoles []string `pulumi:"adminRoles"`
+	// A filter to return only items that match the criteria that all schemas can be accessed by a user.
+	AreAllSchemasAccessible bool `pulumi:"areAllSchemasAccessible"`
 	// A filter to return only items that match the specified authentication type.
 	AuthenticationType string `pulumi:"authenticationType"`
 	// The unique user key. This is a system-generated identifier. Use ListUsers to get the user key for a user.
 	Key string `pulumi:"key"`
+	// A filter to return items that contain the specified schema list.
+	SchemaLists []string `pulumi:"schemaLists"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
-	// The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastLogin string `pulumi:"timeLastLogin"`
-	// The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimePasswordChanged string `pulumi:"timePasswordChanged"`
-	// The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUserCreated string `pulumi:"timeUserCreated"`
 	// A filter to return only items that match the specified user category.
 	UserCategory string `pulumi:"userCategory"`
@@ -39055,17 +50617,21 @@ type GetUserAssessmentUsersUserArgs struct {
 	AccountStatus pulumi.StringInput `pulumi:"accountStatus"`
 	// The admin roles granted to the user.
 	AdminRoles pulumi.StringArrayInput `pulumi:"adminRoles"`
+	// A filter to return only items that match the criteria that all schemas can be accessed by a user.
+	AreAllSchemasAccessible pulumi.BoolInput `pulumi:"areAllSchemasAccessible"`
 	// A filter to return only items that match the specified authentication type.
 	AuthenticationType pulumi.StringInput `pulumi:"authenticationType"`
 	// The unique user key. This is a system-generated identifier. Use ListUsers to get the user key for a user.
 	Key pulumi.StringInput `pulumi:"key"`
+	// A filter to return items that contain the specified schema list.
+	SchemaLists pulumi.StringArrayInput `pulumi:"schemaLists"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
-	// The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastLogin pulumi.StringInput `pulumi:"timeLastLogin"`
-	// The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimePasswordChanged pulumi.StringInput `pulumi:"timePasswordChanged"`
-	// The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUserCreated pulumi.StringInput `pulumi:"timeUserCreated"`
 	// A filter to return only items that match the specified user category.
 	UserCategory pulumi.StringInput `pulumi:"userCategory"`
@@ -39138,6 +50704,11 @@ func (o GetUserAssessmentUsersUserOutput) AdminRoles() pulumi.StringArrayOutput 
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) []string { return v.AdminRoles }).(pulumi.StringArrayOutput)
 }
 
+// A filter to return only items that match the criteria that all schemas can be accessed by a user.
+func (o GetUserAssessmentUsersUserOutput) AreAllSchemasAccessible() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUserAssessmentUsersUser) bool { return v.AreAllSchemasAccessible }).(pulumi.BoolOutput)
+}
+
 // A filter to return only items that match the specified authentication type.
 func (o GetUserAssessmentUsersUserOutput) AuthenticationType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.AuthenticationType }).(pulumi.StringOutput)
@@ -39148,22 +50719,27 @@ func (o GetUserAssessmentUsersUserOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.Key }).(pulumi.StringOutput)
 }
 
+// A filter to return items that contain the specified schema list.
+func (o GetUserAssessmentUsersUserOutput) SchemaLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUserAssessmentUsersUser) []string { return v.SchemaLists }).(pulumi.StringArrayOutput)
+}
+
 // A filter to return only items related to a specific target OCID.
 func (o GetUserAssessmentUsersUserOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.TargetId }).(pulumi.StringOutput)
 }
 
-// The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentUsersUserOutput) TimeLastLogin() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.TimeLastLogin }).(pulumi.StringOutput)
 }
 
-// The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentUsersUserOutput) TimePasswordChanged() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.TimePasswordChanged }).(pulumi.StringOutput)
 }
 
-// The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentUsersUserOutput) TimeUserCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.TimeUserCreated }).(pulumi.StringOutput)
 }
@@ -39462,11 +51038,11 @@ type GetUserAssessmentsUserAssessment struct {
 	TargetId string `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds []string `pulumi:"targetIds"`
-	// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastAssessed string `pulumi:"timeLastAssessed"`
-	// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// A filter to return user assessments that were created by either the system or by a user only.
 	TriggeredBy string `pulumi:"triggeredBy"`
@@ -39524,11 +51100,11 @@ type GetUserAssessmentsUserAssessmentArgs struct {
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds pulumi.StringArrayInput `pulumi:"targetIds"`
-	// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastAssessed pulumi.StringInput `pulumi:"timeLastAssessed"`
-	// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// A filter to return user assessments that were created by either the system or by a user only.
 	TriggeredBy pulumi.StringInput `pulumi:"triggeredBy"`
@@ -39684,17 +51260,17 @@ func (o GetUserAssessmentsUserAssessmentOutput) TargetIds() pulumi.StringArrayOu
 	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) []string { return v.TargetIds }).(pulumi.StringArrayOutput)
 }
 
-// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentsUserAssessmentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentsUserAssessmentOutput) TimeLastAssessed() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) string { return v.TimeLastAssessed }).(pulumi.StringOutput)
 }
 
-// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentsUserAssessmentOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -39881,6 +51457,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityAssessmentStatisticArrayInput)(nil)).Elem(), SecurityAssessmentStatisticArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityAssessmentStatisticAdvisoryInput)(nil)).Elem(), SecurityAssessmentStatisticAdvisoryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityAssessmentStatisticAdvisoryArrayInput)(nil)).Elem(), SecurityAssessmentStatisticAdvisoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecurityAssessmentStatisticDeferredInput)(nil)).Elem(), SecurityAssessmentStatisticDeferredArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecurityAssessmentStatisticDeferredArrayInput)(nil)).Elem(), SecurityAssessmentStatisticDeferredArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityAssessmentStatisticEvaluateInput)(nil)).Elem(), SecurityAssessmentStatisticEvaluateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityAssessmentStatisticEvaluateArrayInput)(nil)).Elem(), SecurityAssessmentStatisticEvaluateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityAssessmentStatisticHighRiskInput)(nil)).Elem(), SecurityAssessmentStatisticHighRiskArgs{})
@@ -39897,6 +51475,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabaseCredentialsPtrInput)(nil)).Elem(), TargetDatabaseCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabaseDatabaseDetailsInput)(nil)).Elem(), TargetDatabaseDatabaseDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabaseDatabaseDetailsPtrInput)(nil)).Elem(), TargetDatabaseDatabaseDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseTypeInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseTypeArrayInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDatabaseDetailInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDatabaseDetailsInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDetailInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDetailArrayInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDetailTlsConfigInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseTlsConfigInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseTlsConfigPtrInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabasePeerTargetDatabaseTlsConfigArrayInput)(nil)).Elem(), TargetDatabasePeerTargetDatabaseTlsConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabaseTlsConfigInput)(nil)).Elem(), TargetDatabaseTlsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabaseTlsConfigPtrInput)(nil)).Elem(), TargetDatabaseTlsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UserAssessmentIgnoredTargetInput)(nil)).Elem(), UserAssessmentIgnoredTargetArgs{})
@@ -40233,22 +51825,52 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayInput)(nil)).Elem(), GetSecurityAssessmentComparisonTargetUserAccountCurrentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceInput)(nil)).Elem(), GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayInput)(nil)).Elem(), GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFilterInput)(nil)).Elem(), GetSecurityAssessmentFindingAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFilterArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionInput)(nil)).Elem(), GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemInput)(nil)).Elem(), GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionInput)(nil)).Elem(), GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingFilterInput)(nil)).Elem(), GetSecurityAssessmentFindingFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingFilterArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingFindingInput)(nil)).Elem(), GetSecurityAssessmentFindingFindingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingFindingArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingFindingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingFindingReferenceInput)(nil)).Elem(), GetSecurityAssessmentFindingFindingReferenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingFindingReferenceArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingFindingReferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFilterInput)(nil)).Elem(), GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingsChangeAuditLogsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionInput)(nil)).Elem(), GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemInput)(nil)).Elem(), GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsFilterInput)(nil)).Elem(), GetSecurityAssessmentFindingsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsFilterArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsFindingInput)(nil)).Elem(), GetSecurityAssessmentFindingsFindingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsFindingArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingsFindingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsFindingReferenceInput)(nil)).Elem(), GetSecurityAssessmentFindingsFindingReferenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentFindingsFindingReferenceArrayInput)(nil)).Elem(), GetSecurityAssessmentFindingsFindingReferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsFilterInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeatureAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesFilterInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeaturesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesFilterArrayInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeaturesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayInput)(nil)).Elem(), GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentStatisticInput)(nil)).Elem(), GetSecurityAssessmentStatisticArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentStatisticArrayInput)(nil)).Elem(), GetSecurityAssessmentStatisticArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentStatisticAdvisoryInput)(nil)).Elem(), GetSecurityAssessmentStatisticAdvisoryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentStatisticAdvisoryArrayInput)(nil)).Elem(), GetSecurityAssessmentStatisticAdvisoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentStatisticDeferredInput)(nil)).Elem(), GetSecurityAssessmentStatisticDeferredArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentStatisticDeferredArrayInput)(nil)).Elem(), GetSecurityAssessmentStatisticDeferredArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentStatisticEvaluateInput)(nil)).Elem(), GetSecurityAssessmentStatisticEvaluateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentStatisticEvaluateArrayInput)(nil)).Elem(), GetSecurityAssessmentStatisticEvaluateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentStatisticHighRiskInput)(nil)).Elem(), GetSecurityAssessmentStatisticHighRiskArgs{})
@@ -40267,6 +51889,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticArrayInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticDeferredInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArgs{})
@@ -40277,6 +51901,52 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticPassInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticPassArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesFilterInput)(nil)).Elem(), GetSecurityPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesFilterArrayInput)(nil)).Elem(), GetSecurityPoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionArrayInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItemInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsFilterInput)(nil)).Elem(), GetSecurityPolicyDeploymentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsFilterArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionInput)(nil)).Elem(), GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemInput)(nil)).Elem(), GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesFilterInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesFilterInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayInput)(nil)).Elem(), GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsFilterInput)(nil)).Elem(), GetSecurityPolicyReportRoleGrantPathsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsFilterArrayInput)(nil)).Elem(), GetSecurityPolicyReportRoleGrantPathsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionInput)(nil)).Elem(), GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayInput)(nil)).Elem(), GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemInput)(nil)).Elem(), GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayInput)(nil)).Elem(), GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsFilterInput)(nil)).Elem(), GetSecurityPolicyReportsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsFilterArrayInput)(nil)).Elem(), GetSecurityPolicyReportsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionInput)(nil)).Elem(), GetSecurityPolicyReportsSecurityPolicyReportCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayInput)(nil)).Elem(), GetSecurityPolicyReportsSecurityPolicyReportCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionItemInput)(nil)).Elem(), GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayInput)(nil)).Elem(), GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsFilterInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsFilterArrayInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs{})
@@ -40319,6 +51989,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseCredentialArrayInput)(nil)).Elem(), GetTargetDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseDatabaseDetailInput)(nil)).Elem(), GetTargetDatabaseDatabaseDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabaseDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTypeInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTypeArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailTlsConfigInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTlsConfigInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabaseTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabaseTlsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesFilterInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesFilterArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigInput)(nil)).Elem(), GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseRoleFilterInput)(nil)).Elem(), GetTargetDatabaseRoleFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseRoleFilterArrayInput)(nil)).Elem(), GetTargetDatabaseRoleFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabaseRoleRoleInput)(nil)).Elem(), GetTargetDatabaseRoleRoleArgs{})
@@ -40351,6 +52041,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseCredentialArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseDatabaseDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseTlsConfigInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseTlsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseTlsConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentComparisonSummaryInput)(nil)).Elem(), GetUserAssessmentComparisonSummaryArgs{})
@@ -40369,6 +52071,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfilesFilterArrayInput)(nil)).Elem(), GetUserAssessmentProfilesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfilesProfileInput)(nil)).Elem(), GetUserAssessmentProfilesProfileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfilesProfileArrayInput)(nil)).Elem(), GetUserAssessmentProfilesProfileArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsFilterInput)(nil)).Elem(), GetUserAssessmentUserAccessAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsFilterArrayInput)(nil)).Elem(), GetUserAssessmentUserAccessAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionInput)(nil)).Elem(), GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayInput)(nil)).Elem(), GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemInput)(nil)).Elem(), GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAnalyticsFilterInput)(nil)).Elem(), GetUserAssessmentUserAnalyticsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAnalyticsFilterArrayInput)(nil)).Elem(), GetUserAssessmentUserAnalyticsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentUserAnalyticsUserAggregationInput)(nil)).Elem(), GetUserAssessmentUserAnalyticsUserAggregationArgs{})
@@ -40429,6 +52137,8 @@ func init() {
 	pulumi.RegisterOutputType(SecurityAssessmentStatisticArrayOutput{})
 	pulumi.RegisterOutputType(SecurityAssessmentStatisticAdvisoryOutput{})
 	pulumi.RegisterOutputType(SecurityAssessmentStatisticAdvisoryArrayOutput{})
+	pulumi.RegisterOutputType(SecurityAssessmentStatisticDeferredOutput{})
+	pulumi.RegisterOutputType(SecurityAssessmentStatisticDeferredArrayOutput{})
 	pulumi.RegisterOutputType(SecurityAssessmentStatisticEvaluateOutput{})
 	pulumi.RegisterOutputType(SecurityAssessmentStatisticEvaluateArrayOutput{})
 	pulumi.RegisterOutputType(SecurityAssessmentStatisticHighRiskOutput{})
@@ -40445,6 +52155,20 @@ func init() {
 	pulumi.RegisterOutputType(TargetDatabaseCredentialsPtrOutput{})
 	pulumi.RegisterOutputType(TargetDatabaseDatabaseDetailsOutput{})
 	pulumi.RegisterOutputType(TargetDatabaseDatabaseDetailsPtrOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseTypeOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseTypeArrayOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseDatabaseDetailsOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseDatabaseDetailsPtrOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseTlsConfigOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseTlsConfigPtrOutput{})
+	pulumi.RegisterOutputType(TargetDatabasePeerTargetDatabaseTlsConfigArrayOutput{})
 	pulumi.RegisterOutputType(TargetDatabaseTlsConfigOutput{})
 	pulumi.RegisterOutputType(TargetDatabaseTlsConfigPtrOutput{})
 	pulumi.RegisterOutputType(UserAssessmentIgnoredTargetOutput{})
@@ -40781,22 +52505,52 @@ func init() {
 	pulumi.RegisterOutputType(GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingAnalyticsFindingAnalyticsCollectionItemDimensionArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingFilterOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingFindingOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingFindingArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingFindingReferenceOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingFindingReferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsChangeAuditLogsFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsChangeAuditLogsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsFilterOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsFindingOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsFindingArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsFindingReferenceOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentFindingsFindingReferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeatureAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeatureAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeaturesFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeaturesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentStatisticOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentStatisticArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentStatisticAdvisoryOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentStatisticAdvisoryArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentStatisticDeferredOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentStatisticDeferredArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentStatisticEvaluateOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentStatisticEvaluateArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentStatisticHighRiskOutput{})
@@ -40815,6 +52569,8 @@ func init() {
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticDeferredOutput{})
+	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticDeferredArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutput{})
@@ -40825,6 +52581,52 @@ func init() {
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseTableAccessEntriesDatabaseTableAccessEntryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseTableAccessEntriesFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseViewAccessEntriesDatabaseViewAccessEntryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseViewAccessEntriesFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportRoleGrantPathsFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportRoleGrantPathsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportRoleGrantPathsRoleGrantPathCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportsFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportsSecurityPolicyReportCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsFilterOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput{})
@@ -40867,6 +52669,26 @@ func init() {
 	pulumi.RegisterOutputType(GetTargetDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabaseDatabaseDetailOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabaseDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseTypeOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesFilterOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetailsOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemTlsConfigOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabaseRoleFilterOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabaseRoleFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabaseRoleRoleOutput{})
@@ -40899,6 +52721,18 @@ func init() {
 	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseDatabaseDetailOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseDetailTlsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseTlsConfigOutput{})
 	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentComparisonSummaryOutput{})
@@ -40917,6 +52751,12 @@ func init() {
 	pulumi.RegisterOutputType(GetUserAssessmentProfilesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentProfilesProfileOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentProfilesProfileArrayOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentUserAccessAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentUserAccessAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentUserAccessAnalyticsUserAccessAnalyticsCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentUserAnalyticsFilterOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentUserAnalyticsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentUserAnalyticsUserAggregationOutput{})

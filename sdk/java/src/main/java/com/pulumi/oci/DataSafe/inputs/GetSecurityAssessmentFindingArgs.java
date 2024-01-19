@@ -47,6 +47,13 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
         return Optional.ofNullable(this.findingKey);
     }
 
+    @Import(name="isTopFinding")
+    private @Nullable Output<Boolean> isTopFinding;
+
+    public Optional<Output<Boolean>> isTopFinding() {
+        return Optional.ofNullable(this.isTopFinding);
+    }
+
     @Import(name="references")
     private @Nullable Output<String> references;
 
@@ -68,6 +75,13 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
         return Optional.ofNullable(this.severity);
     }
 
+    @Import(name="state")
+    private @Nullable Output<String> state;
+
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
+    }
+
     private GetSecurityAssessmentFindingArgs() {}
 
     private GetSecurityAssessmentFindingArgs(GetSecurityAssessmentFindingArgs $) {
@@ -75,9 +89,11 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
+        this.isTopFinding = $.isTopFinding;
         this.references = $.references;
         this.securityAssessmentId = $.securityAssessmentId;
         this.severity = $.severity;
+        this.state = $.state;
     }
 
     public static Builder builder() {
@@ -138,6 +154,15 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
             return findingKey(Output.of(findingKey));
         }
 
+        public Builder isTopFinding(@Nullable Output<Boolean> isTopFinding) {
+            $.isTopFinding = isTopFinding;
+            return this;
+        }
+
+        public Builder isTopFinding(Boolean isTopFinding) {
+            return isTopFinding(Output.of(isTopFinding));
+        }
+
         public Builder references(@Nullable Output<String> references) {
             $.references = references;
             return this;
@@ -163,6 +188,15 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
 
         public Builder severity(String severity) {
             return severity(Output.of(severity));
+        }
+
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
+            return this;
+        }
+
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         public GetSecurityAssessmentFindingArgs build() {

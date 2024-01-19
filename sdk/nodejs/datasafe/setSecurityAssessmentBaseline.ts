@@ -58,7 +58,7 @@ export class SetSecurityAssessmentBaseline extends pulumi.CustomResource {
     }
 
     /**
-     * List of security assessment OCIDs that need to be updated while setting the baseline.
+     * The list of OCIDs for the security assessments that need to be updated while setting the baseline.
      */
     public readonly assessmentIds!: pulumi.Output<string[]>;
     /**
@@ -103,7 +103,7 @@ export class SetSecurityAssessmentBaseline extends pulumi.CustomResource {
  */
 export interface SetSecurityAssessmentBaselineState {
     /**
-     * List of security assessment OCIDs that need to be updated while setting the baseline.
+     * The list of OCIDs for the security assessments that need to be updated while setting the baseline.
      */
     assessmentIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -121,7 +121,7 @@ export interface SetSecurityAssessmentBaselineState {
  */
 export interface SetSecurityAssessmentBaselineArgs {
     /**
-     * List of security assessment OCIDs that need to be updated while setting the baseline.
+     * The list of OCIDs for the security assessments that need to be updated while setting the baseline.
      */
     assessmentIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**

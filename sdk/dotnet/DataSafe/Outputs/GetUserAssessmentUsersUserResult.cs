@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableArray<string> AdminRoles;
         /// <summary>
+        /// A filter to return only items that match the criteria that all schemas can be accessed by a user.
+        /// </summary>
+        public readonly bool AreAllSchemasAccessible;
+        /// <summary>
         /// A filter to return only items that match the specified authentication type.
         /// </summary>
         public readonly string AuthenticationType;
@@ -30,19 +34,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
+        /// A filter to return items that contain the specified schema list.
+        /// </summary>
+        public readonly ImmutableArray<string> SchemaLists;
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         public readonly string TargetId;
         /// <summary>
-        /// The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeLastLogin;
         /// <summary>
-        /// The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimePasswordChanged;
         /// <summary>
-        /// The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeUserCreated;
         /// <summary>
@@ -68,9 +76,13 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<string> adminRoles,
 
+            bool areAllSchemasAccessible,
+
             string authenticationType,
 
             string key,
+
+            ImmutableArray<string> schemaLists,
 
             string targetId,
 
@@ -90,8 +102,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         {
             AccountStatus = accountStatus;
             AdminRoles = adminRoles;
+            AreAllSchemasAccessible = areAllSchemasAccessible;
             AuthenticationType = authenticationType;
             Key = key;
+            SchemaLists = schemaLists;
             TargetId = targetId;
             TimeLastLogin = timeLastLogin;
             TimePasswordChanged = timePasswordChanged;

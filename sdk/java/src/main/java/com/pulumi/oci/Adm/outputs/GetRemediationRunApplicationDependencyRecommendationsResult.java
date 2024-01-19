@@ -31,6 +31,11 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
      * 
      */
     private String id;
+    /**
+     * @return Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     * 
+     */
+    private @Nullable String purl;
     private String remediationRunId;
 
     private GetRemediationRunApplicationDependencyRecommendationsResult() {}
@@ -58,6 +63,13 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     * 
+     */
+    public Optional<String> purl() {
+        return Optional.ofNullable(this.purl);
+    }
     public String remediationRunId() {
         return this.remediationRunId;
     }
@@ -75,6 +87,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
         private @Nullable List<GetRemediationRunApplicationDependencyRecommendationsFilter> filters;
         private @Nullable String gav;
         private String id;
+        private @Nullable String purl;
         private String remediationRunId;
         public Builder() {}
         public Builder(GetRemediationRunApplicationDependencyRecommendationsResult defaults) {
@@ -83,6 +96,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
     	      this.filters = defaults.filters;
     	      this.gav = defaults.gav;
     	      this.id = defaults.id;
+    	      this.purl = defaults.purl;
     	      this.remediationRunId = defaults.remediationRunId;
         }
 
@@ -121,6 +135,12 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder purl(@Nullable String purl) {
+
+            this.purl = purl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder remediationRunId(String remediationRunId) {
             if (remediationRunId == null) {
               throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsResult", "remediationRunId");
@@ -134,6 +154,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
             _resultValue.filters = filters;
             _resultValue.gav = gav;
             _resultValue.id = id;
+            _resultValue.purl = purl;
             _resultValue.remediationRunId = remediationRunId;
             return _resultValue;
         }

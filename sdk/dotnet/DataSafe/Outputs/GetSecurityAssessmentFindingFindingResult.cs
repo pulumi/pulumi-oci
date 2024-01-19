@@ -15,12 +15,21 @@ namespace Pulumi.Oci.DataSafe.Outputs
     {
         public readonly string AssessmentId;
         public readonly ImmutableArray<string> Details;
+        public readonly bool HasTargetDbRiskLevelChanged;
+        public readonly bool IsRiskModified;
+        public readonly bool IsTopFinding;
+        public readonly string Justification;
         public readonly string Key;
+        public readonly string LifecycleDetails;
+        public readonly string OracleDefinedSeverity;
         public readonly ImmutableArray<Outputs.GetSecurityAssessmentFindingFindingReferenceResult> References;
         public readonly string Remarks;
         public readonly string Severity;
+        public readonly string State;
         public readonly string Summary;
         public readonly string TargetId;
+        public readonly string TimeUpdated;
+        public readonly string TimeValidUntil;
         public readonly string Title;
 
         [OutputConstructor]
@@ -29,7 +38,19 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<string> details,
 
+            bool hasTargetDbRiskLevelChanged,
+
+            bool isRiskModified,
+
+            bool isTopFinding,
+
+            string justification,
+
             string key,
+
+            string lifecycleDetails,
+
+            string oracleDefinedSeverity,
 
             ImmutableArray<Outputs.GetSecurityAssessmentFindingFindingReferenceResult> references,
 
@@ -37,20 +58,35 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string severity,
 
+            string state,
+
             string summary,
 
             string targetId,
+
+            string timeUpdated,
+
+            string timeValidUntil,
 
             string title)
         {
             AssessmentId = assessmentId;
             Details = details;
+            HasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;
+            IsRiskModified = isRiskModified;
+            IsTopFinding = isTopFinding;
+            Justification = justification;
             Key = key;
+            LifecycleDetails = lifecycleDetails;
+            OracleDefinedSeverity = oracleDefinedSeverity;
             References = references;
             Remarks = remarks;
             Severity = severity;
+            State = state;
             Summary = summary;
             TargetId = targetId;
+            TimeUpdated = timeUpdated;
+            TimeValidUntil = timeValidUntil;
             Title = title;
         }
     }

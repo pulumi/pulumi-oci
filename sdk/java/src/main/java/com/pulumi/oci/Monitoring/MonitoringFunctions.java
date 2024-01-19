@@ -13,6 +13,10 @@ import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionPlainArgs;
 import com.pulumi.oci.Monitoring.inputs.GetAlarmPlainArgs;
 import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesArgs;
 import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesPlainArgs;
+import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionArgs;
+import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionPlainArgs;
+import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
+import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsPlainArgs;
 import com.pulumi.oci.Monitoring.inputs.GetAlarmsArgs;
 import com.pulumi.oci.Monitoring.inputs.GetAlarmsPlainArgs;
 import com.pulumi.oci.Monitoring.inputs.GetMetricDataArgs;
@@ -22,6 +26,8 @@ import com.pulumi.oci.Monitoring.inputs.GetMetricsPlainArgs;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmHistoryCollectionResult;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmResult;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmStatusesResult;
+import com.pulumi.oci.Monitoring.outputs.GetAlarmSuppressionResult;
+import com.pulumi.oci.Monitoring.outputs.GetAlarmSuppressionsResult;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmsResult;
 import com.pulumi.oci.Monitoring.outputs.GetMetricDataResult;
 import com.pulumi.oci.Monitoring.outputs.GetMetricsResult;
@@ -423,6 +429,7 @@ public final class MonitoringFunctions {
      * List the status of each alarm in the specified compartment.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
      * For more information, see
      * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
      * For important limits information, see
@@ -478,6 +485,7 @@ public final class MonitoringFunctions {
      * List the status of each alarm in the specified compartment.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
      * For more information, see
      * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
      * For important limits information, see
@@ -533,6 +541,7 @@ public final class MonitoringFunctions {
      * List the status of each alarm in the specified compartment.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
      * For more information, see
      * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
      * For important limits information, see
@@ -588,6 +597,7 @@ public final class MonitoringFunctions {
      * List the status of each alarm in the specified compartment.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
      * For more information, see
      * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
      * For important limits information, see
@@ -636,6 +646,386 @@ public final class MonitoringFunctions {
      */
     public static CompletableFuture<GetAlarmStatusesResult> getAlarmStatusesPlain(GetAlarmStatusesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", TypeShape.of(GetAlarmStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Gets the specified alarm suppression.
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
+     *             .alarmSuppressionId(oci_monitoring_alarm_suppression.test_alarm_suppression().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAlarmSuppressionResult> getAlarmSuppression(GetAlarmSuppressionArgs args) {
+        return getAlarmSuppression(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Gets the specified alarm suppression.
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
+     *             .alarmSuppressionId(oci_monitoring_alarm_suppression.test_alarm_suppression().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAlarmSuppressionResult> getAlarmSuppressionPlain(GetAlarmSuppressionPlainArgs args) {
+        return getAlarmSuppressionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Gets the specified alarm suppression.
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
+     *             .alarmSuppressionId(oci_monitoring_alarm_suppression.test_alarm_suppression().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAlarmSuppressionResult> getAlarmSuppression(GetAlarmSuppressionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Monitoring/getAlarmSuppression:getAlarmSuppression", TypeShape.of(GetAlarmSuppressionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Gets the specified alarm suppression.
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
+     *             .alarmSuppressionId(oci_monitoring_alarm_suppression.test_alarm_suppression().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAlarmSuppressionResult> getAlarmSuppressionPlain(GetAlarmSuppressionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Monitoring/getAlarmSuppression:getAlarmSuppression", TypeShape.of(GetAlarmSuppressionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Lists alarm suppressions for the specified alarm.
+     * Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .displayName(var_.alarm_suppression_display_name())
+     *             .state(var_.alarm_suppression_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAlarmSuppressionsResult> getAlarmSuppressions(GetAlarmSuppressionsArgs args) {
+        return getAlarmSuppressions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Lists alarm suppressions for the specified alarm.
+     * Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .displayName(var_.alarm_suppression_display_name())
+     *             .state(var_.alarm_suppression_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAlarmSuppressionsResult> getAlarmSuppressionsPlain(GetAlarmSuppressionsPlainArgs args) {
+        return getAlarmSuppressionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Lists alarm suppressions for the specified alarm.
+     * Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .displayName(var_.alarm_suppression_display_name())
+     *             .state(var_.alarm_suppression_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAlarmSuppressionsResult> getAlarmSuppressions(GetAlarmSuppressionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", TypeShape.of(GetAlarmSuppressionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Lists alarm suppressions for the specified alarm.
+     * Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .displayName(var_.alarm_suppression_display_name())
+     *             .state(var_.alarm_suppression_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAlarmSuppressionsResult> getAlarmSuppressionsPlain(GetAlarmSuppressionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", TypeShape.of(GetAlarmSuppressionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.

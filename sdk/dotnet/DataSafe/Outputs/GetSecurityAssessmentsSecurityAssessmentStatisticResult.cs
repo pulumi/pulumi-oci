@@ -20,6 +20,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Statistics showing the number of findings with a particular risk level for each category.
         /// </summary>
+        public readonly ImmutableArray<Outputs.GetSecurityAssessmentsSecurityAssessmentStatisticDeferredResult> Deferreds;
+        /// <summary>
+        /// Statistics showing the number of findings with a particular risk level for each category.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateResult> Evaluates;
         /// <summary>
         /// Statistics showing the number of findings with a particular risk level for each category.
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
         private GetSecurityAssessmentsSecurityAssessmentStatisticResult(
             ImmutableArray<Outputs.GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryResult> advisories,
 
+            ImmutableArray<Outputs.GetSecurityAssessmentsSecurityAssessmentStatisticDeferredResult> deferreds,
+
             ImmutableArray<Outputs.GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateResult> evaluates,
 
             ImmutableArray<Outputs.GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskResult> highRisks,
@@ -59,6 +65,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             int targetsCount)
         {
             Advisories = advisories;
+            Deferreds = deferreds;
             Evaluates = evaluates;
             HighRisks = highRisks;
             LowRisks = lowRisks;

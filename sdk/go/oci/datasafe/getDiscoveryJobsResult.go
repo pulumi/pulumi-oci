@@ -80,7 +80,7 @@ type LookupDiscoveryJobsResultResult struct {
 	// The estimated number of data values the column has in the associated database.
 	EstimatedDataValueCount string `pulumi:"estimatedDataValueCount"`
 	Id                      string `pulumi:"id"`
-	// Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
+	// Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
 	IsResultApplied bool `pulumi:"isResultApplied"`
 	// The unique key that identifies the discovery result.
 	//
@@ -195,7 +195,7 @@ func (o LookupDiscoveryJobsResultResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
+// Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
 func (o LookupDiscoveryJobsResultResultOutput) IsResultApplied() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) bool { return v.IsResultApplied }).(pulumi.BoolOutput)
 }

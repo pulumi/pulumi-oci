@@ -75,7 +75,7 @@ class GetSecurityAssessmentComparisonResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the security assessment comparison.
+        The current state of the finding.
         """
         return pulumi.get(self, "state")
 
@@ -117,7 +117,7 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
     """
     This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
 
-    Gets the details of the comparison report on the security assessments submitted for comparison.
+    Gets the details of the comparison report for the security assessments submitted for comparison.
 
     ## Example Usage
 
@@ -130,7 +130,7 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
     ```
 
 
-    :param str comparison_security_assessment_id: The OCID of the baseline security assessment.
+    :param str comparison_security_assessment_id: The OCID of the security assessment baseline.
     :param str security_assessment_id: The OCID of the security assessment.
     """
     __args__ = dict()
@@ -156,7 +156,7 @@ def get_security_assessment_comparison_output(comparison_security_assessment_id:
     """
     This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
 
-    Gets the details of the comparison report on the security assessments submitted for comparison.
+    Gets the details of the comparison report for the security assessments submitted for comparison.
 
     ## Example Usage
 
@@ -169,7 +169,7 @@ def get_security_assessment_comparison_output(comparison_security_assessment_id:
     ```
 
 
-    :param str comparison_security_assessment_id: The OCID of the baseline security assessment.
+    :param str comparison_security_assessment_id: The OCID of the security assessment baseline.
     :param str security_assessment_id: The OCID of the security assessment.
     """
     ...

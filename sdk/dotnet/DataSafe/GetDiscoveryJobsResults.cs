@@ -263,7 +263,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
+        /// Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
         /// </summary>
         public readonly bool? IsResultApplied;
         /// <summary>

@@ -69,6 +69,26 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return The secondary id assigned for the peer database registered with Data Safe.
+     * 
+     */
+    private Integer peerTargetDatabaseKey;
+    /**
+     * @return The details of the audit trail purge job that ran on the &#34;purgeJobTime&#34;.
+     * 
+     */
+    private String purgeJobDetails;
+    /**
+     * @return The current status of the audit trail purge job.
+     * 
+     */
+    private String purgeJobStatus;
+    /**
+     * @return The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database&#39;s audit trail does not become too large. In the format defined by RFC3339.
+     * 
+     */
+    private String purgeJobTime;
     private Integer resumeTrigger;
     /**
      * @return A optional filter to return only resources that match the specified lifecycle state.
@@ -110,6 +130,11 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
      * 
      */
     private String trailLocation;
+    /**
+     * @return The underlying source of unified audit trail.
+     * 
+     */
+    private String trailSource;
     /**
      * @return The OCID of the workrequest for audit trail which collects audit records.
      * 
@@ -194,6 +219,34 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * @return The secondary id assigned for the peer database registered with Data Safe.
+     * 
+     */
+    public Integer peerTargetDatabaseKey() {
+        return this.peerTargetDatabaseKey;
+    }
+    /**
+     * @return The details of the audit trail purge job that ran on the &#34;purgeJobTime&#34;.
+     * 
+     */
+    public String purgeJobDetails() {
+        return this.purgeJobDetails;
+    }
+    /**
+     * @return The current status of the audit trail purge job.
+     * 
+     */
+    public String purgeJobStatus() {
+        return this.purgeJobStatus;
+    }
+    /**
+     * @return The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database&#39;s audit trail does not become too large. In the format defined by RFC3339.
+     * 
+     */
+    public String purgeJobTime() {
+        return this.purgeJobTime;
+    }
     public Integer resumeTrigger() {
         return this.resumeTrigger;
     }
@@ -254,6 +307,13 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
         return this.trailLocation;
     }
     /**
+     * @return The underlying source of unified audit trail.
+     * 
+     */
+    public String trailSource() {
+        return this.trailSource;
+    }
+    /**
      * @return The OCID of the workrequest for audit trail which collects audit records.
      * 
      */
@@ -281,6 +341,10 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
         private String id;
         private Boolean isAutoPurgeEnabled;
         private String lifecycleDetails;
+        private Integer peerTargetDatabaseKey;
+        private String purgeJobDetails;
+        private String purgeJobStatus;
+        private String purgeJobTime;
         private Integer resumeTrigger;
         private String state;
         private String status;
@@ -290,6 +354,7 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
         private String timeLastCollected;
         private String timeUpdated;
         private String trailLocation;
+        private String trailSource;
         private String workRequestId;
         public Builder() {}
         public Builder(GetAuditTrailsAuditTrailCollectionItem defaults) {
@@ -305,6 +370,10 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
     	      this.id = defaults.id;
     	      this.isAutoPurgeEnabled = defaults.isAutoPurgeEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.peerTargetDatabaseKey = defaults.peerTargetDatabaseKey;
+    	      this.purgeJobDetails = defaults.purgeJobDetails;
+    	      this.purgeJobStatus = defaults.purgeJobStatus;
+    	      this.purgeJobTime = defaults.purgeJobTime;
     	      this.resumeTrigger = defaults.resumeTrigger;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
@@ -314,6 +383,7 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
     	      this.timeLastCollected = defaults.timeLastCollected;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.trailLocation = defaults.trailLocation;
+    	      this.trailSource = defaults.trailSource;
     	      this.workRequestId = defaults.workRequestId;
         }
 
@@ -406,6 +476,38 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder peerTargetDatabaseKey(Integer peerTargetDatabaseKey) {
+            if (peerTargetDatabaseKey == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "peerTargetDatabaseKey");
+            }
+            this.peerTargetDatabaseKey = peerTargetDatabaseKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder purgeJobDetails(String purgeJobDetails) {
+            if (purgeJobDetails == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "purgeJobDetails");
+            }
+            this.purgeJobDetails = purgeJobDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder purgeJobStatus(String purgeJobStatus) {
+            if (purgeJobStatus == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "purgeJobStatus");
+            }
+            this.purgeJobStatus = purgeJobStatus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder purgeJobTime(String purgeJobTime) {
+            if (purgeJobTime == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "purgeJobTime");
+            }
+            this.purgeJobTime = purgeJobTime;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resumeTrigger(Integer resumeTrigger) {
             if (resumeTrigger == null) {
               throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "resumeTrigger");
@@ -478,6 +580,14 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder trailSource(String trailSource) {
+            if (trailSource == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "trailSource");
+            }
+            this.trailSource = trailSource;
+            return this;
+        }
+        @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
             if (workRequestId == null) {
               throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "workRequestId");
@@ -498,6 +608,10 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
             _resultValue.id = id;
             _resultValue.isAutoPurgeEnabled = isAutoPurgeEnabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.peerTargetDatabaseKey = peerTargetDatabaseKey;
+            _resultValue.purgeJobDetails = purgeJobDetails;
+            _resultValue.purgeJobStatus = purgeJobStatus;
+            _resultValue.purgeJobTime = purgeJobTime;
             _resultValue.resumeTrigger = resumeTrigger;
             _resultValue.state = state;
             _resultValue.status = status;
@@ -507,6 +621,7 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
             _resultValue.timeLastCollected = timeLastCollected;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.trailLocation = trailLocation;
+            _resultValue.trailSource = trailSource;
             _resultValue.workRequestId = workRequestId;
             return _resultValue;
         }

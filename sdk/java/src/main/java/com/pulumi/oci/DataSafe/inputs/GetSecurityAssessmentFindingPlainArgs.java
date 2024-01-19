@@ -46,6 +46,13 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         return Optional.ofNullable(this.findingKey);
     }
 
+    @Import(name="isTopFinding")
+    private @Nullable Boolean isTopFinding;
+
+    public Optional<Boolean> isTopFinding() {
+        return Optional.ofNullable(this.isTopFinding);
+    }
+
     @Import(name="references")
     private @Nullable String references;
 
@@ -67,6 +74,13 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         return Optional.ofNullable(this.severity);
     }
 
+    @Import(name="state")
+    private @Nullable String state;
+
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
+    }
+
     private GetSecurityAssessmentFindingPlainArgs() {}
 
     private GetSecurityAssessmentFindingPlainArgs(GetSecurityAssessmentFindingPlainArgs $) {
@@ -74,9 +88,11 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
+        this.isTopFinding = $.isTopFinding;
         this.references = $.references;
         this.securityAssessmentId = $.securityAssessmentId;
         this.severity = $.severity;
+        this.state = $.state;
     }
 
     public static Builder builder() {
@@ -121,6 +137,11 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
             return this;
         }
 
+        public Builder isTopFinding(@Nullable Boolean isTopFinding) {
+            $.isTopFinding = isTopFinding;
+            return this;
+        }
+
         public Builder references(@Nullable String references) {
             $.references = references;
             return this;
@@ -133,6 +154,11 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
 
         public Builder severity(@Nullable String severity) {
             $.severity = severity;
+            return this;
+        }
+
+        public Builder state(@Nullable String state) {
+            $.state = state;
             return this;
         }
 

@@ -22,7 +22,7 @@ class GetTargetDatabaseResult:
     """
     A collection of values returned by getTargetDatabase.
     """
-    def __init__(__self__, associated_resource_ids=None, compartment_id=None, connection_options=None, credentials=None, database_details=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, state=None, system_tags=None, target_database_id=None, time_created=None, time_updated=None, tls_configs=None):
+    def __init__(__self__, associated_resource_ids=None, compartment_id=None, connection_options=None, credentials=None, database_details=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, peer_target_database_details=None, peer_target_databases=None, state=None, system_tags=None, target_database_id=None, time_created=None, time_updated=None, tls_configs=None):
         if associated_resource_ids and not isinstance(associated_resource_ids, list):
             raise TypeError("Expected argument 'associated_resource_ids' to be a list")
         pulumi.set(__self__, "associated_resource_ids", associated_resource_ids)
@@ -56,6 +56,12 @@ class GetTargetDatabaseResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if peer_target_database_details and not isinstance(peer_target_database_details, list):
+            raise TypeError("Expected argument 'peer_target_database_details' to be a list")
+        pulumi.set(__self__, "peer_target_database_details", peer_target_database_details)
+        if peer_target_databases and not isinstance(peer_target_databases, list):
+            raise TypeError("Expected argument 'peer_target_databases' to be a list")
+        pulumi.set(__self__, "peer_target_databases", peer_target_databases)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -127,7 +133,7 @@ class GetTargetDatabaseResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        The description of the target database in Data Safe.
+        The description of the peer target database in Data Safe.
         """
         return pulumi.get(self, "description")
 
@@ -135,7 +141,7 @@ class GetTargetDatabaseResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The display name of the target database in Data Safe.
+        The display name of the peer target database in Data Safe.
         """
         return pulumi.get(self, "display_name")
 
@@ -159,9 +165,22 @@ class GetTargetDatabaseResult:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        Details about the current state of the target database in Data Safe.
+        Details about the current state of the peer target database in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="peerTargetDatabaseDetails")
+    def peer_target_database_details(self) -> Sequence['outputs.GetTargetDatabasePeerTargetDatabaseDetailResult']:
+        return pulumi.get(self, "peer_target_database_details")
+
+    @property
+    @pulumi.getter(name="peerTargetDatabases")
+    def peer_target_databases(self) -> Sequence['outputs.GetTargetDatabasePeerTargetDatabaseResult']:
+        """
+        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        """
+        return pulumi.get(self, "peer_target_databases")
 
     @property
     @pulumi.getter
@@ -226,6 +245,8 @@ class AwaitableGetTargetDatabaseResult(GetTargetDatabaseResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
+            peer_target_database_details=self.peer_target_database_details,
+            peer_target_databases=self.peer_target_databases,
             state=self.state,
             system_tags=self.system_tags,
             target_database_id=self.target_database_id,
@@ -270,6 +291,8 @@ def get_target_database(target_database_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        peer_target_database_details=pulumi.get(__ret__, 'peer_target_database_details'),
+        peer_target_databases=pulumi.get(__ret__, 'peer_target_databases'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'),

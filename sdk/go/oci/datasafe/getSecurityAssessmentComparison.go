@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
 //
-// Gets the details of the comparison report on the security assessments submitted for comparison.
+// Gets the details of the comparison report for the security assessments submitted for comparison.
 //
 // ## Example Usage
 //
@@ -53,7 +53,7 @@ func GetSecurityAssessmentComparison(ctx *pulumi.Context, args *GetSecurityAsses
 
 // A collection of arguments for invoking getSecurityAssessmentComparison.
 type GetSecurityAssessmentComparisonArgs struct {
-	// The OCID of the baseline security assessment.
+	// The OCID of the security assessment baseline.
 	ComparisonSecurityAssessmentId string `pulumi:"comparisonSecurityAssessmentId"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
@@ -67,7 +67,7 @@ type GetSecurityAssessmentComparisonResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id                   string `pulumi:"id"`
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
-	// The current state of the security assessment comparison.
+	// The current state of the finding.
 	State string `pulumi:"state"`
 	// A target-based comparison between two security assessments.
 	Targets []GetSecurityAssessmentComparisonTarget `pulumi:"targets"`
@@ -90,7 +90,7 @@ func GetSecurityAssessmentComparisonOutput(ctx *pulumi.Context, args GetSecurity
 
 // A collection of arguments for invoking getSecurityAssessmentComparison.
 type GetSecurityAssessmentComparisonOutputArgs struct {
-	// The OCID of the baseline security assessment.
+	// The OCID of the security assessment baseline.
 	ComparisonSecurityAssessmentId pulumi.StringInput `pulumi:"comparisonSecurityAssessmentId"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId pulumi.StringInput `pulumi:"securityAssessmentId"`
@@ -133,7 +133,7 @@ func (o GetSecurityAssessmentComparisonResultOutput) SecurityAssessmentId() pulu
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonResult) string { return v.SecurityAssessmentId }).(pulumi.StringOutput)
 }
 
-// The current state of the security assessment comparison.
+// The current state of the finding.
 func (o GetSecurityAssessmentComparisonResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonResult) string { return v.State }).(pulumi.StringOutput)
 }

@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetReport(ctx *pulumi.Context, args *GetReportArgs, opts ...pulumi.InvokeOption) (*GetReportResult, error) {
+func LookupReport(ctx *pulumi.Context, args *LookupReportArgs, opts ...pulumi.InvokeOption) (*LookupReportResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetReportResult
+	var rv LookupReportResult
 	err := ctx.Invoke("oci:DataSafe/getReport:getReport", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,13 +51,13 @@ func GetReport(ctx *pulumi.Context, args *GetReportArgs, opts ...pulumi.InvokeOp
 }
 
 // A collection of arguments for invoking getReport.
-type GetReportArgs struct {
+type LookupReportArgs struct {
 	// Unique report identifier
 	ReportId string `pulumi:"reportId"`
 }
 
 // A collection of values returned by getReport.
-type GetReportResult struct {
+type LookupReportResult struct {
 	// The OCID of the compartment containing the report.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -68,7 +68,7 @@ type GetReportResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The provider-assigned unique ID for this managed resource.
+	// The OCID of the report.
 	Id string `pulumi:"id"`
 	// Specifies the format of report to be .xls or .pdf
 	MimeType string `pulumi:"mimeType"`
@@ -85,108 +85,108 @@ type GetReportResult struct {
 	Type string `pulumi:"type"`
 }
 
-func GetReportOutput(ctx *pulumi.Context, args GetReportOutputArgs, opts ...pulumi.InvokeOption) GetReportResultOutput {
+func LookupReportOutput(ctx *pulumi.Context, args LookupReportOutputArgs, opts ...pulumi.InvokeOption) LookupReportResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetReportResult, error) {
-			args := v.(GetReportArgs)
-			r, err := GetReport(ctx, &args, opts...)
-			var s GetReportResult
+		ApplyT(func(v interface{}) (LookupReportResult, error) {
+			args := v.(LookupReportArgs)
+			r, err := LookupReport(ctx, &args, opts...)
+			var s LookupReportResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetReportResultOutput)
+		}).(LookupReportResultOutput)
 }
 
 // A collection of arguments for invoking getReport.
-type GetReportOutputArgs struct {
+type LookupReportOutputArgs struct {
 	// Unique report identifier
 	ReportId pulumi.StringInput `pulumi:"reportId"`
 }
 
-func (GetReportOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetReportArgs)(nil)).Elem()
+func (LookupReportOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupReportArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getReport.
-type GetReportResultOutput struct{ *pulumi.OutputState }
+type LookupReportResultOutput struct{ *pulumi.OutputState }
 
-func (GetReportResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetReportResult)(nil)).Elem()
+func (LookupReportResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupReportResult)(nil)).Elem()
 }
 
-func (o GetReportResultOutput) ToGetReportResultOutput() GetReportResultOutput {
+func (o LookupReportResultOutput) ToLookupReportResultOutput() LookupReportResultOutput {
 	return o
 }
 
-func (o GetReportResultOutput) ToGetReportResultOutputWithContext(ctx context.Context) GetReportResultOutput {
+func (o LookupReportResultOutput) ToLookupReportResultOutputWithContext(ctx context.Context) LookupReportResultOutput {
 	return o
 }
 
 // The OCID of the compartment containing the report.
-func (o GetReportResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupReportResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetReportResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReportResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupReportResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupReportResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // Specifies a description of the report.
-func (o GetReportResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupReportResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // Name of the report.
-func (o GetReportResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupReportResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetReportResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReportResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupReportResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupReportResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
-func (o GetReportResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.Id }).(pulumi.StringOutput)
+// The OCID of the report.
+func (o LookupReportResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // Specifies the format of report to be .xls or .pdf
-func (o GetReportResultOutput) MimeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.MimeType }).(pulumi.StringOutput)
+func (o LookupReportResultOutput) MimeType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.MimeType }).(pulumi.StringOutput)
 }
 
 // The OCID of the report definition.
-func (o GetReportResultOutput) ReportDefinitionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.ReportDefinitionId }).(pulumi.StringOutput)
+func (o LookupReportResultOutput) ReportDefinitionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.ReportDefinitionId }).(pulumi.StringOutput)
 }
 
-func (o GetReportResultOutput) ReportId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.ReportId }).(pulumi.StringOutput)
+func (o LookupReportResultOutput) ReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.ReportId }).(pulumi.StringOutput)
 }
 
 // The current state of the audit report.
-func (o GetReportResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupReportResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetReportResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReportResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupReportResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupReportResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // Specifies the date and time the report was generated.
-func (o GetReportResultOutput) TimeGenerated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.TimeGenerated }).(pulumi.StringOutput)
+func (o LookupReportResultOutput) TimeGenerated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.TimeGenerated }).(pulumi.StringOutput)
 }
 
 // The type of the audit report.
-func (o GetReportResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupReportResultOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetReportResultOutput{})
+	pulumi.RegisterOutputType(LookupReportResultOutput{})
 }

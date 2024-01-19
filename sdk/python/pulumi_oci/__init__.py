@@ -1949,6 +1949,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/report",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/report:Report": "Report"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/reportDefinition",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -2089,6 +2097,14 @@ _utilities.register(
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/targetDatabase:TargetDatabase": "TargetDatabase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/targetDatabasePeerTargetDatabase",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase": "TargetDatabasePeerTargetDatabase"
   }
  },
  {
@@ -4417,6 +4433,14 @@ _utilities.register(
   "fqn": "pulumi_oci.monitoring",
   "classes": {
    "oci:Monitoring/alarm:Alarm": "Alarm"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Monitoring/alarmSuppression",
+  "fqn": "pulumi_oci.monitoring",
+  "classes": {
+   "oci:Monitoring/alarmSuppression:AlarmSuppression": "AlarmSuppression"
   }
  },
  {

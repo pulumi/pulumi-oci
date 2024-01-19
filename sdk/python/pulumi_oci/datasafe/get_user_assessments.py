@@ -168,7 +168,7 @@ class GetUserAssessmentsResult:
     @pulumi.getter(name="triggeredBy")
     def triggered_by(self) -> Optional[str]:
         """
-        Indicates whether the user assessment was created by system or user.
+        Indicates whether the user assessment was created by the system or the user.
         """
         return pulumi.get(self, "triggered_by")
 
@@ -176,7 +176,7 @@ class GetUserAssessmentsResult:
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        Type of user assessment. Type can be:
+        The type of the user assessment. The possible types are:
         """
         return pulumi.get(self, "type")
 

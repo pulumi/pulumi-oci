@@ -107,15 +107,15 @@ type UserAssessment struct {
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds pulumi.StringArrayOutput `pulumi:"targetIds"`
-	// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastAssessed pulumi.StringOutput `pulumi:"timeLastAssessed"`
-	// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// Indicates whether the user assessment was created by system or user.
+	// Indicates whether the user assessment was created by the system or the user.
 	TriggeredBy pulumi.StringOutput `pulumi:"triggeredBy"`
-	// Type of user assessment. Type can be:
+	// The type of the user assessment. The possible types are:
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -196,15 +196,15 @@ type userAssessmentState struct {
 	TargetId *string `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds []string `pulumi:"targetIds"`
-	// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastAssessed *string `pulumi:"timeLastAssessed"`
-	// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// Indicates whether the user assessment was created by system or user.
+	// Indicates whether the user assessment was created by the system or the user.
 	TriggeredBy *string `pulumi:"triggeredBy"`
-	// Type of user assessment. Type can be:
+	// The type of the user assessment. The possible types are:
 	Type *string `pulumi:"type"`
 }
 
@@ -250,15 +250,15 @@ type UserAssessmentState struct {
 	TargetId pulumi.StringPtrInput
 	// Array of database target OCIDs.
 	TargetIds pulumi.StringArrayInput
-	// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
-	// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastAssessed pulumi.StringPtrInput
-	// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
-	// Indicates whether the user assessment was created by system or user.
+	// Indicates whether the user assessment was created by the system or the user.
 	TriggeredBy pulumi.StringPtrInput
-	// Type of user assessment. Type can be:
+	// The type of the user assessment. The possible types are:
 	Type pulumi.StringPtrInput
 }
 
@@ -493,27 +493,27 @@ func (o UserAssessmentOutput) TargetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *UserAssessment) pulumi.StringArrayOutput { return v.TargetIds }).(pulumi.StringArrayOutput)
 }
 
-// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o UserAssessmentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o UserAssessmentOutput) TimeLastAssessed() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.TimeLastAssessed }).(pulumi.StringOutput)
 }
 
-// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o UserAssessmentOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Indicates whether the user assessment was created by system or user.
+// Indicates whether the user assessment was created by the system or the user.
 func (o UserAssessmentOutput) TriggeredBy() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.TriggeredBy }).(pulumi.StringOutput)
 }
 
-// Type of user assessment. Type can be:
+// The type of the user assessment. The possible types are:
 func (o UserAssessmentOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

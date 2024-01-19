@@ -65,6 +65,7 @@ import (
 //				PrivateZoneId:            pulumi.Any(oci_dns_zone.Test_zone.Id),
 //				ScanListenerPortTcp:      pulumi.Any(_var.Cloud_vm_cluster_scan_listener_port_tcp),
 //				ScanListenerPortTcpSsl:   pulumi.Any(_var.Cloud_vm_cluster_scan_listener_port_tcp_ssl),
+//				SystemVersion:            pulumi.Any(_var.Cloud_vm_cluster_system_version),
 //				TimeZone:                 pulumi.Any(_var.Cloud_vm_cluster_time_zone),
 //			})
 //			if err != nil {
@@ -550,6 +551,8 @@ type cloudVmClusterArgs struct {
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
 	SubnetId string `pulumi:"subnetId"`
+	// Operating system version of the image.
+	SystemVersion *string `pulumi:"systemVersion"`
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	//
 	// ** IMPORTANT **
@@ -628,6 +631,8 @@ type CloudVmClusterArgs struct {
 	SshPublicKeys pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
 	SubnetId pulumi.StringInput
+	// Operating system version of the image.
+	SystemVersion pulumi.StringPtrInput
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	//
 	// ** IMPORTANT **

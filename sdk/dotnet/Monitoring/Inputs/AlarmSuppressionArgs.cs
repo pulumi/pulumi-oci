@@ -23,13 +23,13 @@ namespace Pulumi.Oci.Monitoring.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+        /// (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         /// </summary>
         [Input("timeSuppressFrom", required: true)]
         public Input<string> TimeSuppressFrom { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
+        /// (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
         /// 
         /// 
         /// ** IMPORTANT **

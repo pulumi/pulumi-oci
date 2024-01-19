@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Adm
         ///     {
         ///         RemediationRunId = oci_adm_remediation_run.Test_remediation_run.Id,
         ///         Gav = @var.Remediation_run_application_dependency_recommendation_gav,
+        ///         Purl = @var.Remediation_run_application_dependency_recommendation_purl,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.Adm
         ///     {
         ///         RemediationRunId = oci_adm_remediation_run.Test_remediation_run.Id,
         ///         Gav = @var.Remediation_run_application_dependency_recommendation_gav,
+        ///         Purl = @var.Remediation_run_application_dependency_recommendation_purl,
         ///     });
         /// 
         /// });
@@ -90,6 +92,12 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         [Input("gav")]
         public string? Gav { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+        /// </summary>
+        [Input("purl")]
+        public string? Purl { get; set; }
 
         /// <summary>
         /// Unique Remediation Run identifier path parameter.
@@ -120,6 +128,12 @@ namespace Pulumi.Oci.Adm
         public Input<string>? Gav { get; set; }
 
         /// <summary>
+        /// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+        /// </summary>
+        [Input("purl")]
+        public Input<string>? Purl { get; set; }
+
+        /// <summary>
         /// Unique Remediation Run identifier path parameter.
         /// </summary>
         [Input("remediationRunId", required: true)]
@@ -148,6 +162,10 @@ namespace Pulumi.Oci.Adm
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        /// </summary>
+        public readonly string? Purl;
         public readonly string RemediationRunId;
 
         [OutputConstructor]
@@ -160,12 +178,15 @@ namespace Pulumi.Oci.Adm
 
             string id,
 
+            string? purl,
+
             string remediationRunId)
         {
             ApplicationDependencyRecommendationCollections = applicationDependencyRecommendationCollections;
             Filters = filters;
             Gav = gav;
             Id = id;
+            Purl = purl;
             RemediationRunId = remediationRunId;
         }
     }

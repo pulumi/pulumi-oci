@@ -219,6 +219,8 @@ import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabasePlainArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabasesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
+import com.pulumi.oci.Database.inputs.GetSystemVersionsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
 import com.pulumi.oci.Database.inputs.GetVmClusterNetworkArgs;
 import com.pulumi.oci.Database.inputs.GetVmClusterNetworkDownloadConfigFileArgs;
@@ -354,6 +356,7 @@ import com.pulumi.oci.Database.outputs.GetOneoffPatchResult;
 import com.pulumi.oci.Database.outputs.GetOneoffPatchesResult;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabaseResult;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasesResult;
+import com.pulumi.oci.Database.outputs.GetSystemVersionsResult;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworkDownloadConfigFileResult;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworkResult;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworksResult;
@@ -18146,6 +18149,170 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetPluggableDatabasesResult> getPluggableDatabasesPlain(GetPluggableDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getPluggableDatabases:getPluggableDatabases", TypeShape.of(GetPluggableDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of System Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Exadata system versions for a given shape and GI version.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .giVersion(var_.system_version_gi_version())
+     *             .shape(var_.system_version_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSystemVersionsResult> getSystemVersions(GetSystemVersionsArgs args) {
+        return getSystemVersions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of System Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Exadata system versions for a given shape and GI version.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .giVersion(var_.system_version_gi_version())
+     *             .shape(var_.system_version_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSystemVersionsResult> getSystemVersionsPlain(GetSystemVersionsPlainArgs args) {
+        return getSystemVersionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of System Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Exadata system versions for a given shape and GI version.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .giVersion(var_.system_version_gi_version())
+     *             .shape(var_.system_version_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSystemVersionsResult> getSystemVersions(GetSystemVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSystemVersions:getSystemVersions", TypeShape.of(GetSystemVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of System Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Exadata system versions for a given shape and GI version.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .giVersion(var_.system_version_gi_version())
+     *             .shape(var_.system_version_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSystemVersionsResult> getSystemVersionsPlain(GetSystemVersionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getSystemVersions:getSystemVersions", TypeShape.of(GetSystemVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Vm Cluster resource in Oracle Cloud Infrastructure Database service.

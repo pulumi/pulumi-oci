@@ -35,6 +35,7 @@ class VmClusterArgs:
                  license_model: Optional[pulumi.Input[str]] = None,
                  memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  ocpu_count: Optional[pulumi.Input[float]] = None,
+                 system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a VmCluster resource.
@@ -59,6 +60,7 @@ class VmClusterArgs:
         :param pulumi.Input[bool] is_sparse_diskgroup_enabled: If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
+        :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -92,6 +94,8 @@ class VmClusterArgs:
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if ocpu_count is not None:
             pulumi.set(__self__, "ocpu_count", ocpu_count)
+        if system_version is not None:
+            pulumi.set(__self__, "system_version", system_version)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
 
@@ -320,6 +324,18 @@ class VmClusterArgs:
     @ocpu_count.setter
     def ocpu_count(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpu_count", value)
+
+    @property
+    @pulumi.getter(name="systemVersion")
+    def system_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Operating system version of the image.
+        """
+        return pulumi.get(self, "system_version")
+
+    @system_version.setter
+    def system_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "system_version", value)
 
     @property
     @pulumi.getter(name="timeZone")
@@ -825,6 +841,7 @@ class VmCluster(pulumi.CustomResource):
                  memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  ocpu_count: Optional[pulumi.Input[float]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -863,6 +880,7 @@ class VmCluster(pulumi.CustomResource):
             is_sparse_diskgroup_enabled=var["vm_cluster_is_sparse_diskgroup_enabled"],
             license_model=var["vm_cluster_license_model"],
             memory_size_in_gbs=var["vm_cluster_memory_size_in_gbs"],
+            system_version=var["vm_cluster_system_version"],
             time_zone=var["vm_cluster_time_zone"])
         ```
 
@@ -892,6 +910,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
+        :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
                
@@ -940,6 +959,7 @@ class VmCluster(pulumi.CustomResource):
             is_sparse_diskgroup_enabled=var["vm_cluster_is_sparse_diskgroup_enabled"],
             license_model=var["vm_cluster_license_model"],
             memory_size_in_gbs=var["vm_cluster_memory_size_in_gbs"],
+            system_version=var["vm_cluster_system_version"],
             time_zone=var["vm_cluster_time_zone"])
         ```
 
@@ -984,6 +1004,7 @@ class VmCluster(pulumi.CustomResource):
                  memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  ocpu_count: Optional[pulumi.Input[float]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1025,6 +1046,7 @@ class VmCluster(pulumi.CustomResource):
             if ssh_public_keys is None and not opts.urn:
                 raise TypeError("Missing required property 'ssh_public_keys'")
             __props__.__dict__["ssh_public_keys"] = ssh_public_keys
+            __props__.__dict__["system_version"] = system_version
             __props__.__dict__["time_zone"] = time_zone
             if vm_cluster_network_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vm_cluster_network_id'")
@@ -1036,7 +1058,6 @@ class VmCluster(pulumi.CustomResource):
             __props__.__dict__["ocpus_enabled"] = None
             __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
-            __props__.__dict__["system_version"] = None
             __props__.__dict__["time_created"] = None
         super(VmCluster, __self__).__init__(
             'oci:Database/vmCluster:VmCluster',

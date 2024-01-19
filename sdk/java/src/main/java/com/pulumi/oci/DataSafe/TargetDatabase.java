@@ -12,6 +12,8 @@ import com.pulumi.oci.DataSafe.inputs.TargetDatabaseState;
 import com.pulumi.oci.DataSafe.outputs.TargetDatabaseConnectionOption;
 import com.pulumi.oci.DataSafe.outputs.TargetDatabaseCredentials;
 import com.pulumi.oci.DataSafe.outputs.TargetDatabaseDatabaseDetails;
+import com.pulumi.oci.DataSafe.outputs.TargetDatabasePeerTargetDatabase;
+import com.pulumi.oci.DataSafe.outputs.TargetDatabasePeerTargetDatabaseDetail;
 import com.pulumi.oci.DataSafe.outputs.TargetDatabaseTlsConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
@@ -37,6 +39,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseDatabaseDetailsArgs;
  * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseConnectionOptionArgs;
  * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseCredentialsArgs;
+ * import com.pulumi.oci.DataSafe.inputs.TargetDatabasePeerTargetDatabaseDetailArgs;
+ * import com.pulumi.oci.DataSafe.inputs.TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs;
+ * import com.pulumi.oci.DataSafe.inputs.TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs;
  * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseTlsConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -77,6 +82,29 @@ import javax.annotation.Nullable;
  *             .description(var_.target_database_description())
  *             .displayName(var_.target_database_display_name())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .peerTargetDatabaseDetails(TargetDatabasePeerTargetDatabaseDetailArgs.builder()
+ *                 .databaseDetails(TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs.builder()
+ *                     .databaseType(var_.target_database_peer_target_database_details_database_details_database_type())
+ *                     .infrastructureType(var_.target_database_peer_target_database_details_database_details_infrastructure_type())
+ *                     .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+ *                     .dbSystemId(oci_database_db_system.test_db_system().id())
+ *                     .instanceId(oci_core_instance.test_instance().id())
+ *                     .ipAddresses(var_.target_database_peer_target_database_details_database_details_ip_addresses())
+ *                     .listenerPort(var_.target_database_peer_target_database_details_database_details_listener_port())
+ *                     .serviceName(oci_core_service.test_service().name())
+ *                     .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+ *                     .build())
+ *                 .dataguardAssociationId(oci_certificates_management_association.test_association().id())
+ *                 .description(var_.target_database_peer_target_database_details_description())
+ *                 .displayName(var_.target_database_peer_target_database_details_display_name())
+ *                 .tlsConfig(TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs.builder()
+ *                     .status(var_.target_database_peer_target_database_details_tls_config_status())
+ *                     .certificateStoreType(var_.target_database_peer_target_database_details_tls_config_certificate_store_type())
+ *                     .keyStoreContent(var_.target_database_peer_target_database_details_tls_config_key_store_content())
+ *                     .storePassword(var_.target_database_peer_target_database_details_tls_config_store_password())
+ *                     .trustStoreContent(var_.target_database_peer_target_database_details_tls_config_trust_store_content())
+ *                     .build())
+ *                 .build())
  *             .tlsConfig(TargetDatabaseTlsConfigArgs.builder()
  *                 .status(var_.target_database_tls_config_status())
  *                 .certificateStoreType(var_.target_database_tls_config_certificate_store_type())
@@ -158,14 +186,14 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
         return this.credentials;
     }
     /**
-     * (Updatable) Details of the database for the registration in Data Safe.
+     * Details of the database for the registration in Data Safe.
      * 
      */
     @Export(name="databaseDetails", refs={TargetDatabaseDatabaseDetails.class}, tree="[0]")
     private Output<TargetDatabaseDatabaseDetails> databaseDetails;
 
     /**
-     * @return (Updatable) Details of the database for the registration in Data Safe.
+     * @return Details of the database for the registration in Data Safe.
      * 
      */
     public Output<TargetDatabaseDatabaseDetails> databaseDetails() {
@@ -186,28 +214,28 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) The description of the target database in Data Safe.
+     * The description of the peer target database in Data Safe.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) The description of the target database in Data Safe.
+     * @return The description of the peer target database in Data Safe.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+     * The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+     * @return The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     public Output<String> displayName() {
@@ -228,18 +256,46 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Details about the current state of the target database in Data Safe.
+     * Details about the current state of the peer target database in Data Safe.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
-     * @return Details about the current state of the target database in Data Safe.
+     * @return Details about the current state of the peer target database in Data Safe.
      * 
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * The details of the database to be registered as a peer target database.
+     * 
+     */
+    @Export(name="peerTargetDatabaseDetails", refs={List.class,TargetDatabasePeerTargetDatabaseDetail.class}, tree="[0,1]")
+    private Output<List<TargetDatabasePeerTargetDatabaseDetail>> peerTargetDatabaseDetails;
+
+    /**
+     * @return The details of the database to be registered as a peer target database.
+     * 
+     */
+    public Output<List<TargetDatabasePeerTargetDatabaseDetail>> peerTargetDatabaseDetails() {
+        return this.peerTargetDatabaseDetails;
+    }
+    /**
+     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * 
+     */
+    @Export(name="peerTargetDatabases", refs={List.class,TargetDatabasePeerTargetDatabase.class}, tree="[0,1]")
+    private Output<List<TargetDatabasePeerTargetDatabase>> peerTargetDatabases;
+
+    /**
+     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * 
+     */
+    public Output<List<TargetDatabasePeerTargetDatabase>> peerTargetDatabases() {
+        return this.peerTargetDatabases;
     }
     /**
      * The current state of the target database in Data Safe.

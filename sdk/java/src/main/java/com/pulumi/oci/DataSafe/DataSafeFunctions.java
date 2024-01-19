@@ -128,13 +128,47 @@ import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferencesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsChangeAuditLogsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsChangeAuditLogsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatePlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntriesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntriesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntryArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntryPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntriesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntriesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntryArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntryPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveObjectsArgs;
@@ -156,6 +190,10 @@ import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabaseArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasePlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRoleArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRolePlainArgs;
@@ -177,6 +215,8 @@ import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfileAnalyticsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfileAnalyticsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfilesArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfilesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAccessAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAccessAnalyticsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUsersArgs;
@@ -244,10 +284,27 @@ import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferenceDifferenceCo
 import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferenceResult;
 import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferencesResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentFindingAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentFindingResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentFindingsChangeAuditLogsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentFindingsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentSecurityFeatureAnalyticsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentSecurityFeaturesResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPoliciesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyDeploymentResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyDeploymentsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportDatabaseTableAccessEntriesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportDatabaseTableAccessEntryResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportDatabaseViewAccessEntriesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportDatabaseViewAccessEntryResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportRoleGrantPathsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveObjectsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveSchemasResult;
@@ -258,6 +315,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypeResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypesResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationsResult;
+import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasePeerTargetDatabaseResult;
+import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasePeerTargetDatabasesResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseRoleResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseRolesResult;
@@ -269,6 +328,7 @@ import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentComparisonResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentProfileAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentProfilesResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentResult;
+import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentUserAccessAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentUserAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentUsersResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentsResult;
@@ -11176,7 +11236,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets the details of the comparison report on the security assessments submitted for comparison.
+     * Gets the details of the comparison report for the security assessments submitted for comparison.
      * 
      * ## Example Usage
      * ```java
@@ -11216,7 +11276,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets the details of the comparison report on the security assessments submitted for comparison.
+     * Gets the details of the comparison report for the security assessments submitted for comparison.
      * 
      * ## Example Usage
      * ```java
@@ -11256,7 +11316,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets the details of the comparison report on the security assessments submitted for comparison.
+     * Gets the details of the comparison report for the security assessments submitted for comparison.
      * 
      * ## Example Usage
      * ```java
@@ -11296,7 +11356,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets the details of the comparison report on the security assessments submitted for comparison.
+     * Gets the details of the comparison report for the security assessments submitted for comparison.
      * 
      * ## Example Usage
      * ```java
@@ -11346,9 +11406,229 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", TypeShape.of(GetSecurityAssessmentFindingResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Security Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of findings aggregated details in the specified compartment. This provides information about the overall state
+     * of security assessment findings. You can use groupBy to get the count of findings under a certain risk level and with a certain findingKey,
+     * and as well as get the list of the targets that match the condition.
+     * This data is especially useful content for the statistic chart or to support analytics.
+     * 
+     * When you perform the ListFindingAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindingAnalytics = DataSafeFunctions.getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_finding_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_finding_analytic_compartment_id_in_subtree())
+     *             .findingKey(var_.security_assessment_finding_analytic_finding_key())
+     *             .groupBy(var_.security_assessment_finding_analytic_group_by())
+     *             .isTopFinding(var_.security_assessment_finding_analytic_is_top_finding())
+     *             .severity(var_.security_assessment_finding_analytic_severity())
+     *             .topFindingStatus(var_.security_assessment_finding_analytic_top_finding_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityAssessmentFindingAnalyticsResult> getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs args) {
+        return getSecurityAssessmentFindingAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of findings aggregated details in the specified compartment. This provides information about the overall state
+     * of security assessment findings. You can use groupBy to get the count of findings under a certain risk level and with a certain findingKey,
+     * and as well as get the list of the targets that match the condition.
+     * This data is especially useful content for the statistic chart or to support analytics.
+     * 
+     * When you perform the ListFindingAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindingAnalytics = DataSafeFunctions.getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_finding_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_finding_analytic_compartment_id_in_subtree())
+     *             .findingKey(var_.security_assessment_finding_analytic_finding_key())
+     *             .groupBy(var_.security_assessment_finding_analytic_group_by())
+     *             .isTopFinding(var_.security_assessment_finding_analytic_is_top_finding())
+     *             .severity(var_.security_assessment_finding_analytic_severity())
+     *             .topFindingStatus(var_.security_assessment_finding_analytic_top_finding_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentFindingAnalyticsResult> getSecurityAssessmentFindingAnalyticsPlain(GetSecurityAssessmentFindingAnalyticsPlainArgs args) {
+        return getSecurityAssessmentFindingAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of findings aggregated details in the specified compartment. This provides information about the overall state
+     * of security assessment findings. You can use groupBy to get the count of findings under a certain risk level and with a certain findingKey,
+     * and as well as get the list of the targets that match the condition.
+     * This data is especially useful content for the statistic chart or to support analytics.
+     * 
+     * When you perform the ListFindingAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindingAnalytics = DataSafeFunctions.getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_finding_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_finding_analytic_compartment_id_in_subtree())
+     *             .findingKey(var_.security_assessment_finding_analytic_finding_key())
+     *             .groupBy(var_.security_assessment_finding_analytic_group_by())
+     *             .isTopFinding(var_.security_assessment_finding_analytic_is_top_finding())
+     *             .severity(var_.security_assessment_finding_analytic_severity())
+     *             .topFindingStatus(var_.security_assessment_finding_analytic_top_finding_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityAssessmentFindingAnalyticsResult> getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentFindingAnalytics:getSecurityAssessmentFindingAnalytics", TypeShape.of(GetSecurityAssessmentFindingAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of findings aggregated details in the specified compartment. This provides information about the overall state
+     * of security assessment findings. You can use groupBy to get the count of findings under a certain risk level and with a certain findingKey,
+     * and as well as get the list of the targets that match the condition.
+     * This data is especially useful content for the statistic chart or to support analytics.
+     * 
+     * When you perform the ListFindingAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindingAnalytics = DataSafeFunctions.getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_finding_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_finding_analytic_compartment_id_in_subtree())
+     *             .findingKey(var_.security_assessment_finding_analytic_finding_key())
+     *             .groupBy(var_.security_assessment_finding_analytic_group_by())
+     *             .isTopFinding(var_.security_assessment_finding_analytic_is_top_finding())
+     *             .severity(var_.security_assessment_finding_analytic_severity())
+     *             .topFindingStatus(var_.security_assessment_finding_analytic_top_finding_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentFindingAnalyticsResult> getSecurityAssessmentFindingAnalyticsPlain(GetSecurityAssessmentFindingAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentFindingAnalytics:getSecurityAssessmentFindingAnalytics", TypeShape.of(GetSecurityAssessmentFindingAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * List all the findings from all the targets in the specified assessment.
+     * List all the findings from all the targets in the specified compartment.
      * 
      */
     public static Output<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindings(GetSecurityAssessmentFindingsArgs args) {
@@ -11357,7 +11637,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * List all the findings from all the targets in the specified assessment.
+     * List all the findings from all the targets in the specified compartment.
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindingsPlain(GetSecurityAssessmentFindingsPlainArgs args) {
@@ -11366,7 +11646,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * List all the findings from all the targets in the specified assessment.
+     * List all the findings from all the targets in the specified compartment.
      * 
      */
     public static Output<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindings(GetSecurityAssessmentFindingsArgs args, InvokeOptions options) {
@@ -11375,11 +11655,611 @@ public final class DataSafeFunctions {
     /**
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * List all the findings from all the targets in the specified assessment.
+     * List all the findings from all the targets in the specified compartment.
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindingsPlain(GetSecurityAssessmentFindingsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", TypeShape.of(GetSecurityAssessmentFindingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Findings Change Audit Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * List all changes made by user to risk level of findings of the specified assessment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsChangeAuditLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .findingKey(var_.security_assessment_findings_change_audit_log_finding_key())
+     *             .findingTitle(var_.security_assessment_findings_change_audit_log_finding_title())
+     *             .isRiskDeferred(var_.security_assessment_findings_change_audit_log_is_risk_deferred())
+     *             .modifiedBy(var_.security_assessment_findings_change_audit_log_modified_by())
+     *             .severity(var_.security_assessment_findings_change_audit_log_severity())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.security_assessment_findings_change_audit_log_time_updated_less_than())
+     *             .timeValidUntilGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to())
+     *             .timeValidUntilLessThan(var_.security_assessment_findings_change_audit_log_time_valid_until_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityAssessmentFindingsChangeAuditLogsResult> getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs args) {
+        return getSecurityAssessmentFindingsChangeAuditLogs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Findings Change Audit Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * List all changes made by user to risk level of findings of the specified assessment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsChangeAuditLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .findingKey(var_.security_assessment_findings_change_audit_log_finding_key())
+     *             .findingTitle(var_.security_assessment_findings_change_audit_log_finding_title())
+     *             .isRiskDeferred(var_.security_assessment_findings_change_audit_log_is_risk_deferred())
+     *             .modifiedBy(var_.security_assessment_findings_change_audit_log_modified_by())
+     *             .severity(var_.security_assessment_findings_change_audit_log_severity())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.security_assessment_findings_change_audit_log_time_updated_less_than())
+     *             .timeValidUntilGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to())
+     *             .timeValidUntilLessThan(var_.security_assessment_findings_change_audit_log_time_valid_until_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentFindingsChangeAuditLogsResult> getSecurityAssessmentFindingsChangeAuditLogsPlain(GetSecurityAssessmentFindingsChangeAuditLogsPlainArgs args) {
+        return getSecurityAssessmentFindingsChangeAuditLogsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Findings Change Audit Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * List all changes made by user to risk level of findings of the specified assessment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsChangeAuditLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .findingKey(var_.security_assessment_findings_change_audit_log_finding_key())
+     *             .findingTitle(var_.security_assessment_findings_change_audit_log_finding_title())
+     *             .isRiskDeferred(var_.security_assessment_findings_change_audit_log_is_risk_deferred())
+     *             .modifiedBy(var_.security_assessment_findings_change_audit_log_modified_by())
+     *             .severity(var_.security_assessment_findings_change_audit_log_severity())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.security_assessment_findings_change_audit_log_time_updated_less_than())
+     *             .timeValidUntilGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to())
+     *             .timeValidUntilLessThan(var_.security_assessment_findings_change_audit_log_time_valid_until_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityAssessmentFindingsChangeAuditLogsResult> getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentFindingsChangeAuditLogs:getSecurityAssessmentFindingsChangeAuditLogs", TypeShape.of(GetSecurityAssessmentFindingsChangeAuditLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Findings Change Audit Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * List all changes made by user to risk level of findings of the specified assessment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsChangeAuditLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .findingKey(var_.security_assessment_findings_change_audit_log_finding_key())
+     *             .findingTitle(var_.security_assessment_findings_change_audit_log_finding_title())
+     *             .isRiskDeferred(var_.security_assessment_findings_change_audit_log_is_risk_deferred())
+     *             .modifiedBy(var_.security_assessment_findings_change_audit_log_modified_by())
+     *             .severity(var_.security_assessment_findings_change_audit_log_severity())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.security_assessment_findings_change_audit_log_time_updated_less_than())
+     *             .timeValidUntilGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to())
+     *             .timeValidUntilLessThan(var_.security_assessment_findings_change_audit_log_time_valid_until_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentFindingsChangeAuditLogsResult> getSecurityAssessmentFindingsChangeAuditLogsPlain(GetSecurityAssessmentFindingsChangeAuditLogsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentFindingsChangeAuditLogs:getSecurityAssessmentFindingsChangeAuditLogs", TypeShape.of(GetSecurityAssessmentFindingsChangeAuditLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Security Feature Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of Database security feature usage aggregated details in the specified compartment. This provides information about the
+     * overall security controls, by returning the counting number of the target databases using the security features.
+     * 
+     * When you perform the ListSecurityFeatureAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentSecurityFeatureAnalytics = DataSafeFunctions.getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_security_feature_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_analytic_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityAssessmentSecurityFeatureAnalyticsResult> getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs args) {
+        return getSecurityAssessmentSecurityFeatureAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Security Feature Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of Database security feature usage aggregated details in the specified compartment. This provides information about the
+     * overall security controls, by returning the counting number of the target databases using the security features.
+     * 
+     * When you perform the ListSecurityFeatureAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentSecurityFeatureAnalytics = DataSafeFunctions.getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_security_feature_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_analytic_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentSecurityFeatureAnalyticsResult> getSecurityAssessmentSecurityFeatureAnalyticsPlain(GetSecurityAssessmentSecurityFeatureAnalyticsPlainArgs args) {
+        return getSecurityAssessmentSecurityFeatureAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Security Feature Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of Database security feature usage aggregated details in the specified compartment. This provides information about the
+     * overall security controls, by returning the counting number of the target databases using the security features.
+     * 
+     * When you perform the ListSecurityFeatureAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentSecurityFeatureAnalytics = DataSafeFunctions.getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_security_feature_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_analytic_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityAssessmentSecurityFeatureAnalyticsResult> getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentSecurityFeatureAnalytics:getSecurityAssessmentSecurityFeatureAnalytics", TypeShape.of(GetSecurityAssessmentSecurityFeatureAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Security Feature Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of Database security feature usage aggregated details in the specified compartment. This provides information about the
+     * overall security controls, by returning the counting number of the target databases using the security features.
+     * 
+     * When you perform the ListSecurityFeatureAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentSecurityFeatureAnalytics = DataSafeFunctions.getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_security_feature_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_analytic_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentSecurityFeatureAnalyticsResult> getSecurityAssessmentSecurityFeatureAnalyticsPlain(GetSecurityAssessmentSecurityFeatureAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentSecurityFeatureAnalytics:getSecurityAssessmentSecurityFeatureAnalytics", TypeShape.of(GetSecurityAssessmentSecurityFeatureAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Security Features in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentSecurityFeatures = DataSafeFunctions.getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_security_feature_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetsWithColumnEncryption(var_.security_assessment_security_feature_targets_with_column_encryption())
+     *             .targetsWithDatabaseVault(var_.security_assessment_security_feature_targets_with_database_vault())
+     *             .targetsWithExternalAuthentication(var_.security_assessment_security_feature_targets_with_external_authentication())
+     *             .targetsWithFineGrainedAudit(var_.security_assessment_security_feature_targets_with_fine_grained_audit())
+     *             .targetsWithGlobalAuthentication(var_.security_assessment_security_feature_targets_with_global_authentication())
+     *             .targetsWithNetworkEncryption(var_.security_assessment_security_feature_targets_with_network_encryption())
+     *             .targetsWithPasswordAuthentication(var_.security_assessment_security_feature_targets_with_password_authentication())
+     *             .targetsWithPrivilegeAnalysis(var_.security_assessment_security_feature_targets_with_privilege_analysis())
+     *             .targetsWithTablespaceEncryption(var_.security_assessment_security_feature_targets_with_tablespace_encryption())
+     *             .targetsWithTraditionalAudit(var_.security_assessment_security_feature_targets_with_traditional_audit())
+     *             .targetsWithUnifiedAudit(var_.security_assessment_security_feature_targets_with_unified_audit())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityAssessmentSecurityFeaturesResult> getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs args) {
+        return getSecurityAssessmentSecurityFeatures(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Security Features in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentSecurityFeatures = DataSafeFunctions.getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_security_feature_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetsWithColumnEncryption(var_.security_assessment_security_feature_targets_with_column_encryption())
+     *             .targetsWithDatabaseVault(var_.security_assessment_security_feature_targets_with_database_vault())
+     *             .targetsWithExternalAuthentication(var_.security_assessment_security_feature_targets_with_external_authentication())
+     *             .targetsWithFineGrainedAudit(var_.security_assessment_security_feature_targets_with_fine_grained_audit())
+     *             .targetsWithGlobalAuthentication(var_.security_assessment_security_feature_targets_with_global_authentication())
+     *             .targetsWithNetworkEncryption(var_.security_assessment_security_feature_targets_with_network_encryption())
+     *             .targetsWithPasswordAuthentication(var_.security_assessment_security_feature_targets_with_password_authentication())
+     *             .targetsWithPrivilegeAnalysis(var_.security_assessment_security_feature_targets_with_privilege_analysis())
+     *             .targetsWithTablespaceEncryption(var_.security_assessment_security_feature_targets_with_tablespace_encryption())
+     *             .targetsWithTraditionalAudit(var_.security_assessment_security_feature_targets_with_traditional_audit())
+     *             .targetsWithUnifiedAudit(var_.security_assessment_security_feature_targets_with_unified_audit())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentSecurityFeaturesResult> getSecurityAssessmentSecurityFeaturesPlain(GetSecurityAssessmentSecurityFeaturesPlainArgs args) {
+        return getSecurityAssessmentSecurityFeaturesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Security Features in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentSecurityFeatures = DataSafeFunctions.getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_security_feature_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetsWithColumnEncryption(var_.security_assessment_security_feature_targets_with_column_encryption())
+     *             .targetsWithDatabaseVault(var_.security_assessment_security_feature_targets_with_database_vault())
+     *             .targetsWithExternalAuthentication(var_.security_assessment_security_feature_targets_with_external_authentication())
+     *             .targetsWithFineGrainedAudit(var_.security_assessment_security_feature_targets_with_fine_grained_audit())
+     *             .targetsWithGlobalAuthentication(var_.security_assessment_security_feature_targets_with_global_authentication())
+     *             .targetsWithNetworkEncryption(var_.security_assessment_security_feature_targets_with_network_encryption())
+     *             .targetsWithPasswordAuthentication(var_.security_assessment_security_feature_targets_with_password_authentication())
+     *             .targetsWithPrivilegeAnalysis(var_.security_assessment_security_feature_targets_with_privilege_analysis())
+     *             .targetsWithTablespaceEncryption(var_.security_assessment_security_feature_targets_with_tablespace_encryption())
+     *             .targetsWithTraditionalAudit(var_.security_assessment_security_feature_targets_with_traditional_audit())
+     *             .targetsWithUnifiedAudit(var_.security_assessment_security_feature_targets_with_unified_audit())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityAssessmentSecurityFeaturesResult> getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", TypeShape.of(GetSecurityAssessmentSecurityFeaturesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Security Features in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentSecurityFeatures = DataSafeFunctions.getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_security_feature_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetsWithColumnEncryption(var_.security_assessment_security_feature_targets_with_column_encryption())
+     *             .targetsWithDatabaseVault(var_.security_assessment_security_feature_targets_with_database_vault())
+     *             .targetsWithExternalAuthentication(var_.security_assessment_security_feature_targets_with_external_authentication())
+     *             .targetsWithFineGrainedAudit(var_.security_assessment_security_feature_targets_with_fine_grained_audit())
+     *             .targetsWithGlobalAuthentication(var_.security_assessment_security_feature_targets_with_global_authentication())
+     *             .targetsWithNetworkEncryption(var_.security_assessment_security_feature_targets_with_network_encryption())
+     *             .targetsWithPasswordAuthentication(var_.security_assessment_security_feature_targets_with_password_authentication())
+     *             .targetsWithPrivilegeAnalysis(var_.security_assessment_security_feature_targets_with_privilege_analysis())
+     *             .targetsWithTablespaceEncryption(var_.security_assessment_security_feature_targets_with_tablespace_encryption())
+     *             .targetsWithTraditionalAudit(var_.security_assessment_security_feature_targets_with_traditional_audit())
+     *             .targetsWithUnifiedAudit(var_.security_assessment_security_feature_targets_with_unified_audit())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentSecurityFeaturesResult> getSecurityAssessmentSecurityFeaturesPlain(GetSecurityAssessmentSecurityFeaturesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", TypeShape.of(GetSecurityAssessmentSecurityFeaturesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Security Assessments in Oracle Cloud Infrastructure Data Safe service.
@@ -11640,6 +12520,2334 @@ public final class DataSafeFunctions {
      */
     public static CompletableFuture<GetSecurityAssessmentsResult> getSecurityAssessmentsPlain(GetSecurityAssessmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessments:getSecurityAssessments", TypeShape.of(GetSecurityAssessmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policies in Data Safe.
+     * 
+     * The ListSecurityPolicies operation returns only the security policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicies = DataSafeFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_display_name())
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .state(var_.security_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPoliciesResult> getSecurityPolicies(GetSecurityPoliciesArgs args) {
+        return getSecurityPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policies in Data Safe.
+     * 
+     * The ListSecurityPolicies operation returns only the security policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicies = DataSafeFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_display_name())
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .state(var_.security_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPoliciesResult> getSecurityPoliciesPlain(GetSecurityPoliciesPlainArgs args) {
+        return getSecurityPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policies in Data Safe.
+     * 
+     * The ListSecurityPolicies operation returns only the security policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicies = DataSafeFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_display_name())
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .state(var_.security_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPoliciesResult> getSecurityPolicies(GetSecurityPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicies:getSecurityPolicies", TypeShape.of(GetSecurityPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policies in Data Safe.
+     * 
+     * The ListSecurityPolicies operation returns only the security policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicies = DataSafeFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_display_name())
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .state(var_.security_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPoliciesResult> getSecurityPoliciesPlain(GetSecurityPoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicies:getSecurityPolicies", TypeShape.of(GetSecurityPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy by the specified OCID of the security policy resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyResult> getSecurityPolicy(GetSecurityPolicyArgs args) {
+        return getSecurityPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy by the specified OCID of the security policy resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyResult> getSecurityPolicyPlain(GetSecurityPolicyPlainArgs args) {
+        return getSecurityPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy by the specified OCID of the security policy resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyResult> getSecurityPolicy(GetSecurityPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicy:getSecurityPolicy", TypeShape.of(GetSecurityPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy by the specified OCID of the security policy resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyResult> getSecurityPolicyPlain(GetSecurityPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicy:getSecurityPolicy", TypeShape.of(GetSecurityPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy deployment by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyDeploymentResult> getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs args) {
+        return getSecurityPolicyDeployment(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy deployment by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyDeploymentResult> getSecurityPolicyDeploymentPlain(GetSecurityPolicyDeploymentPlainArgs args) {
+        return getSecurityPolicyDeploymentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy deployment by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyDeploymentResult> getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyDeployment:getSecurityPolicyDeployment", TypeShape.of(GetSecurityPolicyDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy deployment by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyDeploymentResult> getSecurityPolicyDeploymentPlain(GetSecurityPolicyDeploymentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyDeployment:getSecurityPolicyDeployment", TypeShape.of(GetSecurityPolicyDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Deployment Security Policy Entry State resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy entity states by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyEntryStateId(oci_data_safe_security_policy_entry_state.test_security_policy_entry_state().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs args) {
+        return getSecurityPolicyDeploymentSecurityPolicyEntryState(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Deployment Security Policy Entry State resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy entity states by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyEntryStateId(oci_data_safe_security_policy_entry_state.test_security_policy_entry_state().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> getSecurityPolicyDeploymentSecurityPolicyEntryStatePlain(GetSecurityPolicyDeploymentSecurityPolicyEntryStatePlainArgs args) {
+        return getSecurityPolicyDeploymentSecurityPolicyEntryStatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Deployment Security Policy Entry State resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy entity states by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyEntryStateId(oci_data_safe_security_policy_entry_state.test_security_policy_entry_state().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryState:getSecurityPolicyDeploymentSecurityPolicyEntryState", TypeShape.of(GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Deployment Security Policy Entry State resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy entity states by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyEntryStateId(oci_data_safe_security_policy_entry_state.test_security_policy_entry_state().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> getSecurityPolicyDeploymentSecurityPolicyEntryStatePlain(GetSecurityPolicyDeploymentSecurityPolicyEntryStatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryState:getSecurityPolicyDeploymentSecurityPolicyEntryState", TypeShape.of(GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy entry states in Data Safe.
+     * 
+     * The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .deploymentStatus(var_.security_policy_deployment_security_policy_entry_state_deployment_status())
+     *             .securityPolicyEntryId(oci_data_safe_security_policy_entry.test_security_policy_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs args) {
+        return getSecurityPolicyDeploymentSecurityPolicyEntryStates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy entry states in Data Safe.
+     * 
+     * The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .deploymentStatus(var_.security_policy_deployment_security_policy_entry_state_deployment_status())
+     *             .securityPolicyEntryId(oci_data_safe_security_policy_entry.test_security_policy_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> getSecurityPolicyDeploymentSecurityPolicyEntryStatesPlain(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesPlainArgs args) {
+        return getSecurityPolicyDeploymentSecurityPolicyEntryStatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy entry states in Data Safe.
+     * 
+     * The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .deploymentStatus(var_.security_policy_deployment_security_policy_entry_state_deployment_status())
+     *             .securityPolicyEntryId(oci_data_safe_security_policy_entry.test_security_policy_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryStates:getSecurityPolicyDeploymentSecurityPolicyEntryStates", TypeShape.of(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy entry states in Data Safe.
+     * 
+     * The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .deploymentStatus(var_.security_policy_deployment_security_policy_entry_state_deployment_status())
+     *             .securityPolicyEntryId(oci_data_safe_security_policy_entry.test_security_policy_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> getSecurityPolicyDeploymentSecurityPolicyEntryStatesPlain(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryStates:getSecurityPolicyDeploymentSecurityPolicyEntryStates", TypeShape.of(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Deployments in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy deployments in Data Safe.
+     * 
+     * The ListSecurityPolicyDeployments operation returns only the security policy deployments in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyDeployments on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeployments = DataSafeFunctions.getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_deployment_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_deployment_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_deployment_display_name())
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .state(var_.security_policy_deployment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyDeploymentsResult> getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs args) {
+        return getSecurityPolicyDeployments(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Deployments in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy deployments in Data Safe.
+     * 
+     * The ListSecurityPolicyDeployments operation returns only the security policy deployments in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyDeployments on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeployments = DataSafeFunctions.getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_deployment_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_deployment_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_deployment_display_name())
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .state(var_.security_policy_deployment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyDeploymentsResult> getSecurityPolicyDeploymentsPlain(GetSecurityPolicyDeploymentsPlainArgs args) {
+        return getSecurityPolicyDeploymentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Deployments in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy deployments in Data Safe.
+     * 
+     * The ListSecurityPolicyDeployments operation returns only the security policy deployments in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyDeployments on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeployments = DataSafeFunctions.getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_deployment_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_deployment_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_deployment_display_name())
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .state(var_.security_policy_deployment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyDeploymentsResult> getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyDeployments:getSecurityPolicyDeployments", TypeShape.of(GetSecurityPolicyDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Deployments in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy deployments in Data Safe.
+     * 
+     * The ListSecurityPolicyDeployments operation returns only the security policy deployments in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyDeployments on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyDeployments = DataSafeFunctions.getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_deployment_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_deployment_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_deployment_display_name())
+     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .state(var_.security_policy_deployment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyDeploymentsResult> getSecurityPolicyDeploymentsPlain(GetSecurityPolicyDeploymentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyDeployments:getSecurityPolicyDeployments", TypeShape.of(GetSecurityPolicyDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy report by the specified OCID of the security policy report resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportResult> getSecurityPolicyReport(GetSecurityPolicyReportArgs args) {
+        return getSecurityPolicyReport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy report by the specified OCID of the security policy report resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportResult> getSecurityPolicyReportPlain(GetSecurityPolicyReportPlainArgs args) {
+        return getSecurityPolicyReportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy report by the specified OCID of the security policy report resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportResult> getSecurityPolicyReport(GetSecurityPolicyReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyReport:getSecurityPolicyReport", TypeShape.of(GetSecurityPolicyReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy report by the specified OCID of the security policy report resource.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportResult> getSecurityPolicyReportPlain(GetSecurityPolicyReportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyReport:getSecurityPolicyReport", TypeShape.of(GetSecurityPolicyReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Report Database Table Access Entries in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database table access entries in Data Safe.
+     * 
+     * The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .scimQuery(var_.security_policy_report_database_table_access_entry_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs args) {
+        return getSecurityPolicyReportDatabaseTableAccessEntries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Report Database Table Access Entries in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database table access entries in Data Safe.
+     * 
+     * The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .scimQuery(var_.security_policy_report_database_table_access_entry_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> getSecurityPolicyReportDatabaseTableAccessEntriesPlain(GetSecurityPolicyReportDatabaseTableAccessEntriesPlainArgs args) {
+        return getSecurityPolicyReportDatabaseTableAccessEntriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Report Database Table Access Entries in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database table access entries in Data Safe.
+     * 
+     * The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .scimQuery(var_.security_policy_report_database_table_access_entry_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntries:getSecurityPolicyReportDatabaseTableAccessEntries", TypeShape.of(GetSecurityPolicyReportDatabaseTableAccessEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Report Database Table Access Entries in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database table access entries in Data Safe.
+     * 
+     * The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .scimQuery(var_.security_policy_report_database_table_access_entry_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> getSecurityPolicyReportDatabaseTableAccessEntriesPlain(GetSecurityPolicyReportDatabaseTableAccessEntriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntries:getSecurityPolicyReportDatabaseTableAccessEntries", TypeShape.of(GetSecurityPolicyReportDatabaseTableAccessEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report Database Table Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database table access entry object by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
+     *             .databaseTableAccessEntryKey(var_.security_policy_report_database_table_access_entry_database_table_access_entry_key())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportDatabaseTableAccessEntryResult> getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs args) {
+        return getSecurityPolicyReportDatabaseTableAccessEntry(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report Database Table Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database table access entry object by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
+     *             .databaseTableAccessEntryKey(var_.security_policy_report_database_table_access_entry_database_table_access_entry_key())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportDatabaseTableAccessEntryResult> getSecurityPolicyReportDatabaseTableAccessEntryPlain(GetSecurityPolicyReportDatabaseTableAccessEntryPlainArgs args) {
+        return getSecurityPolicyReportDatabaseTableAccessEntryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report Database Table Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database table access entry object by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
+     *             .databaseTableAccessEntryKey(var_.security_policy_report_database_table_access_entry_database_table_access_entry_key())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportDatabaseTableAccessEntryResult> getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntry:getSecurityPolicyReportDatabaseTableAccessEntry", TypeShape.of(GetSecurityPolicyReportDatabaseTableAccessEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report Database Table Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database table access entry object by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseTableAccessEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
+     *             .databaseTableAccessEntryKey(var_.security_policy_report_database_table_access_entry_database_table_access_entry_key())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportDatabaseTableAccessEntryResult> getSecurityPolicyReportDatabaseTableAccessEntryPlain(GetSecurityPolicyReportDatabaseTableAccessEntryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntry:getSecurityPolicyReportDatabaseTableAccessEntry", TypeShape.of(GetSecurityPolicyReportDatabaseTableAccessEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Report Database View Access Entries in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database view access entries in Data Safe.
+     * 
+     * The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .scimQuery(var_.security_policy_report_database_view_access_entry_scim_query())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs args) {
+        return getSecurityPolicyReportDatabaseViewAccessEntries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Report Database View Access Entries in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database view access entries in Data Safe.
+     * 
+     * The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .scimQuery(var_.security_policy_report_database_view_access_entry_scim_query())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> getSecurityPolicyReportDatabaseViewAccessEntriesPlain(GetSecurityPolicyReportDatabaseViewAccessEntriesPlainArgs args) {
+        return getSecurityPolicyReportDatabaseViewAccessEntriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Report Database View Access Entries in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database view access entries in Data Safe.
+     * 
+     * The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .scimQuery(var_.security_policy_report_database_view_access_entry_scim_query())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntries:getSecurityPolicyReportDatabaseViewAccessEntries", TypeShape.of(GetSecurityPolicyReportDatabaseViewAccessEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Report Database View Access Entries in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database view access entries in Data Safe.
+     * 
+     * The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .scimQuery(var_.security_policy_report_database_view_access_entry_scim_query())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> getSecurityPolicyReportDatabaseViewAccessEntriesPlain(GetSecurityPolicyReportDatabaseViewAccessEntriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntries:getSecurityPolicyReportDatabaseViewAccessEntries", TypeShape.of(GetSecurityPolicyReportDatabaseViewAccessEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report Database View Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database view access object by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
+     *             .databaseViewAccessEntryKey(var_.security_policy_report_database_view_access_entry_database_view_access_entry_key())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportDatabaseViewAccessEntryResult> getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs args) {
+        return getSecurityPolicyReportDatabaseViewAccessEntry(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report Database View Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database view access object by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
+     *             .databaseViewAccessEntryKey(var_.security_policy_report_database_view_access_entry_database_view_access_entry_key())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportDatabaseViewAccessEntryResult> getSecurityPolicyReportDatabaseViewAccessEntryPlain(GetSecurityPolicyReportDatabaseViewAccessEntryPlainArgs args) {
+        return getSecurityPolicyReportDatabaseViewAccessEntryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report Database View Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database view access object by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
+     *             .databaseViewAccessEntryKey(var_.security_policy_report_database_view_access_entry_database_view_access_entry_key())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportDatabaseViewAccessEntryResult> getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntry:getSecurityPolicyReportDatabaseViewAccessEntry", TypeShape.of(GetSecurityPolicyReportDatabaseViewAccessEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Report Database View Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database view access object by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportDatabaseViewAccessEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
+     *             .databaseViewAccessEntryKey(var_.security_policy_report_database_view_access_entry_database_view_access_entry_key())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportDatabaseViewAccessEntryResult> getSecurityPolicyReportDatabaseViewAccessEntryPlain(GetSecurityPolicyReportDatabaseViewAccessEntryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntry:getSecurityPolicyReportDatabaseViewAccessEntry", TypeShape.of(GetSecurityPolicyReportDatabaseViewAccessEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Report Role Grant Paths in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all role grant paths for a particular user.
+     * 
+     * The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
+     *             .grantedRole(var_.security_policy_report_role_grant_path_granted_role())
+     *             .grantee(var_.security_policy_report_role_grant_path_grantee())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportRoleGrantPathsResult> getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs args) {
+        return getSecurityPolicyReportRoleGrantPaths(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Report Role Grant Paths in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all role grant paths for a particular user.
+     * 
+     * The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
+     *             .grantedRole(var_.security_policy_report_role_grant_path_granted_role())
+     *             .grantee(var_.security_policy_report_role_grant_path_grantee())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportRoleGrantPathsResult> getSecurityPolicyReportRoleGrantPathsPlain(GetSecurityPolicyReportRoleGrantPathsPlainArgs args) {
+        return getSecurityPolicyReportRoleGrantPathsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Report Role Grant Paths in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all role grant paths for a particular user.
+     * 
+     * The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
+     *             .grantedRole(var_.security_policy_report_role_grant_path_granted_role())
+     *             .grantee(var_.security_policy_report_role_grant_path_grantee())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportRoleGrantPathsResult> getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", TypeShape.of(GetSecurityPolicyReportRoleGrantPathsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Report Role Grant Paths in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all role grant paths for a particular user.
+     * 
+     * The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportRoleGrantPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
+     *             .grantedRole(var_.security_policy_report_role_grant_path_granted_role())
+     *             .grantee(var_.security_policy_report_role_grant_path_grantee())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportRoleGrantPathsResult> getSecurityPolicyReportRoleGrantPathsPlain(GetSecurityPolicyReportRoleGrantPathsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", TypeShape.of(GetSecurityPolicyReportRoleGrantPathsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy reports in Data Safe.
+     * 
+     * The ListSecurityPolicyReports operation returns only the security policy reports in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyReports on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReports = DataSafeFunctions.getSecurityPolicyReports(GetSecurityPolicyReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_report_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_report_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_report_display_name())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .state(var_.security_policy_report_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportsResult> getSecurityPolicyReports(GetSecurityPolicyReportsArgs args) {
+        return getSecurityPolicyReports(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy reports in Data Safe.
+     * 
+     * The ListSecurityPolicyReports operation returns only the security policy reports in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyReports on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReports = DataSafeFunctions.getSecurityPolicyReports(GetSecurityPolicyReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_report_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_report_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_report_display_name())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .state(var_.security_policy_report_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportsResult> getSecurityPolicyReportsPlain(GetSecurityPolicyReportsPlainArgs args) {
+        return getSecurityPolicyReportsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy reports in Data Safe.
+     * 
+     * The ListSecurityPolicyReports operation returns only the security policy reports in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyReports on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReports = DataSafeFunctions.getSecurityPolicyReports(GetSecurityPolicyReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_report_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_report_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_report_display_name())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .state(var_.security_policy_report_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSecurityPolicyReportsResult> getSecurityPolicyReports(GetSecurityPolicyReportsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyReports:getSecurityPolicyReports", TypeShape.of(GetSecurityPolicyReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy reports in Data Safe.
+     * 
+     * The ListSecurityPolicyReports operation returns only the security policy reports in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyReports on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyReports = DataSafeFunctions.getSecurityPolicyReports(GetSecurityPolicyReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_policy_report_access_level())
+     *             .compartmentIdInSubtree(var_.security_policy_report_compartment_id_in_subtree())
+     *             .displayName(var_.security_policy_report_display_name())
+     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .state(var_.security_policy_report_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyReportsResult> getSecurityPolicyReportsPlain(GetSecurityPolicyReportsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyReports:getSecurityPolicyReports", TypeShape.of(GetSecurityPolicyReportsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
@@ -13553,6 +16761,322 @@ public final class DataSafeFunctions {
     public static CompletableFuture<GetTargetDatabaseResult> getTargetDatabasePlain(GetTargetDatabasePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getTargetDatabase:getTargetDatabase", TypeShape.of(GetTargetDatabaseResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * This data source provides details about a specific Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified Data Safe peer target database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
+     *             .peerTargetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetTargetDatabasePeerTargetDatabaseResult> getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs args) {
+        return getTargetDatabasePeerTargetDatabase(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified Data Safe peer target database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
+     *             .peerTargetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetTargetDatabasePeerTargetDatabaseResult> getTargetDatabasePeerTargetDatabasePlain(GetTargetDatabasePeerTargetDatabasePlainArgs args) {
+        return getTargetDatabasePeerTargetDatabasePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified Data Safe peer target database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
+     *             .peerTargetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetTargetDatabasePeerTargetDatabaseResult> getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getTargetDatabasePeerTargetDatabase:getTargetDatabasePeerTargetDatabase", TypeShape.of(GetTargetDatabasePeerTargetDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified Data Safe peer target database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
+     *             .peerTargetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetTargetDatabasePeerTargetDatabaseResult> getTargetDatabasePeerTargetDatabasePlain(GetTargetDatabasePeerTargetDatabasePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getTargetDatabasePeerTargetDatabase:getTargetDatabasePeerTargetDatabase", TypeShape.of(GetTargetDatabasePeerTargetDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Database Peer Target Databases in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists all the peer target databases under the primary target database identified by the OCID passed as path parameter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetTargetDatabasePeerTargetDatabasesResult> getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs args) {
+        return getTargetDatabasePeerTargetDatabases(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Target Database Peer Target Databases in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists all the peer target databases under the primary target database identified by the OCID passed as path parameter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetTargetDatabasePeerTargetDatabasesResult> getTargetDatabasePeerTargetDatabasesPlain(GetTargetDatabasePeerTargetDatabasesPlainArgs args) {
+        return getTargetDatabasePeerTargetDatabasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Target Database Peer Target Databases in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists all the peer target databases under the primary target database identified by the OCID passed as path parameter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetTargetDatabasePeerTargetDatabasesResult> getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getTargetDatabasePeerTargetDatabases:getTargetDatabasePeerTargetDatabases", TypeShape.of(GetTargetDatabasePeerTargetDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Database Peer Target Databases in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists all the peer target databases under the primary target database identified by the OCID passed as path parameter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetTargetDatabasePeerTargetDatabasesResult> getTargetDatabasePeerTargetDatabasesPlain(GetTargetDatabasePeerTargetDatabasesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getTargetDatabasePeerTargetDatabases:getTargetDatabasePeerTargetDatabases", TypeShape.of(GetTargetDatabasePeerTargetDatabasesResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetTargetDatabaseRoleResult> getTargetDatabaseRole(GetTargetDatabaseRoleArgs args) {
         return getTargetDatabaseRole(args, InvokeOptions.Empty);
     }
@@ -14608,7 +18132,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets the details of the comparison report for the user assessments provided.
+     * Gets the details of the comparison report for the user assessments submitted for comparison.
      * 
      * ## Example Usage
      * ```java
@@ -14648,7 +18172,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets the details of the comparison report for the user assessments provided.
+     * Gets the details of the comparison report for the user assessments submitted for comparison.
      * 
      * ## Example Usage
      * ```java
@@ -14688,7 +18212,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets the details of the comparison report for the user assessments provided.
+     * Gets the details of the comparison report for the user assessments submitted for comparison.
      * 
      * ## Example Usage
      * ```java
@@ -14728,7 +18252,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets the details of the comparison report for the user assessments provided.
+     * Gets the details of the comparison report for the user assessments submitted for comparison.
      * 
      * ## Example Usage
      * ```java
@@ -15278,9 +18802,165 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getUserAssessmentProfiles:getUserAssessmentProfiles", TypeShape.of(GetUserAssessmentProfilesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of User Assessment User Access Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of aggregated user access analytics in the specified target in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAccessAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetUserAssessmentUserAccessAnalyticsResult> getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs args) {
+        return getUserAssessmentUserAccessAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of User Assessment User Access Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of aggregated user access analytics in the specified target in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAccessAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetUserAssessmentUserAccessAnalyticsResult> getUserAssessmentUserAccessAnalyticsPlain(GetUserAssessmentUserAccessAnalyticsPlainArgs args) {
+        return getUserAssessmentUserAccessAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of User Assessment User Access Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of aggregated user access analytics in the specified target in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAccessAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetUserAssessmentUserAccessAnalyticsResult> getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getUserAssessmentUserAccessAnalytics:getUserAssessmentUserAccessAnalytics", TypeShape.of(GetUserAssessmentUserAccessAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of User Assessment User Access Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of aggregated user access analytics in the specified target in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAccessAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetUserAssessmentUserAccessAnalyticsResult> getUserAssessmentUserAccessAnalyticsPlain(GetUserAssessmentUserAccessAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getUserAssessmentUserAccessAnalytics:getUserAssessmentUserAccessAnalytics", TypeShape.of(GetUserAssessmentUserAccessAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of User Assessment User Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state
+     * Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state.
      * of database user security.  For example, the user details include how many users have the DBA role and how many users are in
      * the critical category. This data is especially useful content for dashboards or to support analytics.
      * 
@@ -15347,7 +19027,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides the list of User Assessment User Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state
+     * Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state.
      * of database user security.  For example, the user details include how many users have the DBA role and how many users are in
      * the critical category. This data is especially useful content for dashboards or to support analytics.
      * 
@@ -15414,7 +19094,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides the list of User Assessment User Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state
+     * Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state.
      * of database user security.  For example, the user details include how many users have the DBA role and how many users are in
      * the critical category. This data is especially useful content for dashboards or to support analytics.
      * 
@@ -15481,7 +19161,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides the list of User Assessment User Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state
+     * Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state.
      * of database user security.  For example, the user details include how many users have the DBA role and how many users are in
      * the critical category. This data is especially useful content for dashboards or to support analytics.
      * 
@@ -15579,8 +19259,10 @@ public final class DataSafeFunctions {
      *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
      *             .accessLevel(var_.user_assessment_user_access_level())
      *             .accountStatus(var_.user_assessment_user_account_status())
+     *             .areAllSchemasAccessible(var_.user_assessment_user_are_all_schemas_accessible())
      *             .authenticationType(var_.user_assessment_user_authentication_type())
      *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
+     *             .schemaLists(var_.user_assessment_user_schema_list())
      *             .targetId(oci_cloud_guard_target.test_target().id())
      *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
      *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())
@@ -15638,8 +19320,10 @@ public final class DataSafeFunctions {
      *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
      *             .accessLevel(var_.user_assessment_user_access_level())
      *             .accountStatus(var_.user_assessment_user_account_status())
+     *             .areAllSchemasAccessible(var_.user_assessment_user_are_all_schemas_accessible())
      *             .authenticationType(var_.user_assessment_user_authentication_type())
      *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
+     *             .schemaLists(var_.user_assessment_user_schema_list())
      *             .targetId(oci_cloud_guard_target.test_target().id())
      *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
      *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())
@@ -15697,8 +19381,10 @@ public final class DataSafeFunctions {
      *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
      *             .accessLevel(var_.user_assessment_user_access_level())
      *             .accountStatus(var_.user_assessment_user_account_status())
+     *             .areAllSchemasAccessible(var_.user_assessment_user_are_all_schemas_accessible())
      *             .authenticationType(var_.user_assessment_user_authentication_type())
      *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
+     *             .schemaLists(var_.user_assessment_user_schema_list())
      *             .targetId(oci_cloud_guard_target.test_target().id())
      *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
      *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())
@@ -15756,8 +19442,10 @@ public final class DataSafeFunctions {
      *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
      *             .accessLevel(var_.user_assessment_user_access_level())
      *             .accountStatus(var_.user_assessment_user_account_status())
+     *             .areAllSchemasAccessible(var_.user_assessment_user_are_all_schemas_accessible())
      *             .authenticationType(var_.user_assessment_user_authentication_type())
      *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
+     *             .schemaLists(var_.user_assessment_user_schema_list())
      *             .targetId(oci_cloud_guard_target.test_target().id())
      *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
      *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())

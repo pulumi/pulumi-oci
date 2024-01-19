@@ -4,10 +4,10 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition {
@@ -15,27 +15,27 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
      * @return An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    private List<String> applications;
+    private @Nullable List<String> applications;
     /**
      * @return An array of IP address list names to be evaluated against the traffic destination address.
      * 
      */
-    private List<String> destinationAddresses;
+    private @Nullable List<String> destinationAddresses;
     /**
      * @return An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    private List<String> services;
+    private @Nullable List<String> services;
     /**
      * @return An array of IP address list names to be evaluated against the traffic source address.
      * 
      */
-    private List<String> sourceAddresses;
+    private @Nullable List<String> sourceAddresses;
     /**
      * @return An array of URL pattern list names to be evaluated against the HTTP(S) request target.
      * 
      */
-    private List<String> urls;
+    private @Nullable List<String> urls;
 
     private GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition() {}
     /**
@@ -43,35 +43,35 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
      * 
      */
     public List<String> applications() {
-        return this.applications;
+        return this.applications == null ? List.of() : this.applications;
     }
     /**
      * @return An array of IP address list names to be evaluated against the traffic destination address.
      * 
      */
     public List<String> destinationAddresses() {
-        return this.destinationAddresses;
+        return this.destinationAddresses == null ? List.of() : this.destinationAddresses;
     }
     /**
      * @return An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
     public List<String> services() {
-        return this.services;
+        return this.services == null ? List.of() : this.services;
     }
     /**
      * @return An array of IP address list names to be evaluated against the traffic source address.
      * 
      */
     public List<String> sourceAddresses() {
-        return this.sourceAddresses;
+        return this.sourceAddresses == null ? List.of() : this.sourceAddresses;
     }
     /**
      * @return An array of URL pattern list names to be evaluated against the HTTP(S) request target.
      * 
      */
     public List<String> urls() {
-        return this.urls;
+        return this.urls == null ? List.of() : this.urls;
     }
 
     public static Builder builder() {
@@ -83,11 +83,11 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> applications;
-        private List<String> destinationAddresses;
-        private List<String> services;
-        private List<String> sourceAddresses;
-        private List<String> urls;
+        private @Nullable List<String> applications;
+        private @Nullable List<String> destinationAddresses;
+        private @Nullable List<String> services;
+        private @Nullable List<String> sourceAddresses;
+        private @Nullable List<String> urls;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,10 +99,8 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
         }
 
         @CustomType.Setter
-        public Builder applications(List<String> applications) {
-            if (applications == null) {
-              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition", "applications");
-            }
+        public Builder applications(@Nullable List<String> applications) {
+
             this.applications = applications;
             return this;
         }
@@ -110,10 +108,8 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
             return applications(List.of(applications));
         }
         @CustomType.Setter
-        public Builder destinationAddresses(List<String> destinationAddresses) {
-            if (destinationAddresses == null) {
-              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition", "destinationAddresses");
-            }
+        public Builder destinationAddresses(@Nullable List<String> destinationAddresses) {
+
             this.destinationAddresses = destinationAddresses;
             return this;
         }
@@ -121,10 +117,8 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
             return destinationAddresses(List.of(destinationAddresses));
         }
         @CustomType.Setter
-        public Builder services(List<String> services) {
-            if (services == null) {
-              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition", "services");
-            }
+        public Builder services(@Nullable List<String> services) {
+
             this.services = services;
             return this;
         }
@@ -132,10 +126,8 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
             return services(List.of(services));
         }
         @CustomType.Setter
-        public Builder sourceAddresses(List<String> sourceAddresses) {
-            if (sourceAddresses == null) {
-              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition", "sourceAddresses");
-            }
+        public Builder sourceAddresses(@Nullable List<String> sourceAddresses) {
+
             this.sourceAddresses = sourceAddresses;
             return this;
         }
@@ -143,10 +135,8 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
             return sourceAddresses(List.of(sourceAddresses));
         }
         @CustomType.Setter
-        public Builder urls(List<String> urls) {
-            if (urls == null) {
-              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition", "urls");
-            }
+        public Builder urls(@Nullable List<String> urls) {
+
             this.urls = urls;
             return this;
         }

@@ -90,7 +90,7 @@ type GetTargetDatabasesResult struct {
 	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
 	// The database type.
 	DatabaseType *string `pulumi:"databaseType"`
-	// The display name of the target database in Data Safe.
+	// The display name of the peer target database in Data Safe.
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetTargetDatabasesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -181,7 +181,7 @@ func (o GetTargetDatabasesResultOutput) DatabaseType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetTargetDatabasesResult) *string { return v.DatabaseType }).(pulumi.StringPtrOutput)
 }
 
-// The display name of the target database in Data Safe.
+// The display name of the peer target database in Data Safe.
 func (o GetTargetDatabasesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetTargetDatabasesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

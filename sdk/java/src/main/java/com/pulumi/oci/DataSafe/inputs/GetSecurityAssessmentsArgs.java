@@ -87,14 +87,14 @@ public final class GetSecurityAssessmentsArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * A filter to return only security assessments that are set as baseline.
+     * A filter to return only the security assessments that are set as a baseline.
      * 
      */
     @Import(name="isBaseline")
     private @Nullable Output<Boolean> isBaseline;
 
     /**
-     * @return A filter to return only security assessments that are set as baseline.
+     * @return A filter to return only the security assessments that are set as a baseline.
      * 
      */
     public Optional<Output<Boolean>> isBaseline() {
@@ -364,7 +364,7 @@ public final class GetSecurityAssessmentsArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param isBaseline A filter to return only security assessments that are set as baseline.
+         * @param isBaseline A filter to return only the security assessments that are set as a baseline.
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class GetSecurityAssessmentsArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param isBaseline A filter to return only security assessments that are set as baseline.
+         * @param isBaseline A filter to return only the security assessments that are set as a baseline.
          * 
          * @return builder
          * 

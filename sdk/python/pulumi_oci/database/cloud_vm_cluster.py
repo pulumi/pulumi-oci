@@ -45,6 +45,7 @@ class CloudVmClusterArgs:
                  private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+                 system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CloudVmCluster resource.
@@ -88,6 +89,7 @@ class CloudVmClusterArgs:
         :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+        :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
                
                
@@ -143,6 +145,8 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
             pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+        if system_version is not None:
+            pulumi.set(__self__, "system_version", system_version)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
 
@@ -502,6 +506,18 @@ class CloudVmClusterArgs:
     @scan_listener_port_tcp_ssl.setter
     def scan_listener_port_tcp_ssl(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "scan_listener_port_tcp_ssl", value)
+
+    @property
+    @pulumi.getter(name="systemVersion")
+    def system_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Operating system version of the image.
+        """
+        return pulumi.get(self, "system_version")
+
+    @system_version.setter
+    def system_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "system_version", value)
 
     @property
     @pulumi.getter(name="timeZone")
@@ -1342,6 +1358,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -1390,6 +1407,7 @@ class CloudVmCluster(pulumi.CustomResource):
             private_zone_id=oci_dns_zone["test_zone"]["id"],
             scan_listener_port_tcp=var["cloud_vm_cluster_scan_listener_port_tcp"],
             scan_listener_port_tcp_ssl=var["cloud_vm_cluster_scan_listener_port_tcp_ssl"],
+            system_version=var["cloud_vm_cluster_system_version"],
             time_zone=var["cloud_vm_cluster_time_zone"])
         ```
 
@@ -1443,6 +1461,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
+        :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
                
                
@@ -1501,6 +1520,7 @@ class CloudVmCluster(pulumi.CustomResource):
             private_zone_id=oci_dns_zone["test_zone"]["id"],
             scan_listener_port_tcp=var["cloud_vm_cluster_scan_listener_port_tcp"],
             scan_listener_port_tcp_ssl=var["cloud_vm_cluster_scan_listener_port_tcp_ssl"],
+            system_version=var["cloud_vm_cluster_system_version"],
             time_zone=var["cloud_vm_cluster_time_zone"])
         ```
 
@@ -1556,6 +1576,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1613,6 +1634,7 @@ class CloudVmCluster(pulumi.CustomResource):
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["system_version"] = system_version
             __props__.__dict__["time_zone"] = time_zone
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["disk_redundancy"] = None
@@ -1627,7 +1649,6 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["storage_size_in_gbs"] = None
-            __props__.__dict__["system_version"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["vip_ids"] = None
             __props__.__dict__["zone_id"] = None

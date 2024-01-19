@@ -167,6 +167,10 @@ class _AuditTrailState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_purge_enabled: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 peer_target_database_key: Optional[pulumi.Input[int]] = None,
+                 purge_job_details: Optional[pulumi.Input[str]] = None,
+                 purge_job_status: Optional[pulumi.Input[str]] = None,
+                 purge_job_time: Optional[pulumi.Input[str]] = None,
                  resume_trigger: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
@@ -176,6 +180,7 @@ class _AuditTrailState:
                  time_last_collected: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  trail_location: Optional[pulumi.Input[str]] = None,
+                 trail_source: Optional[pulumi.Input[str]] = None,
                  work_request_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AuditTrail resources.
@@ -189,6 +194,10 @@ class _AuditTrailState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_purge_enabled: (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit trail in Data Safe.
+        :param pulumi.Input[int] peer_target_database_key: The secondary id assigned for the peer database registered with Data Safe.
+        :param pulumi.Input[str] purge_job_details: The details of the audit trail purge job that ran on the "purgeJobTime".
+        :param pulumi.Input[str] purge_job_status: The current status of the audit trail purge job.
+        :param pulumi.Input[str] purge_job_time: The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
         :param pulumi.Input[int] resume_trigger: (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
                
                
@@ -202,6 +211,7 @@ class _AuditTrailState:
         :param pulumi.Input[str] time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the audit trail was updated, in the format defined by RFC3339.
         :param pulumi.Input[str] trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+        :param pulumi.Input[str] trail_source: The underlying source of unified audit trail.
         :param pulumi.Input[str] work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
         if audit_collection_start_time is not None:
@@ -224,6 +234,14 @@ class _AuditTrailState:
             pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if peer_target_database_key is not None:
+            pulumi.set(__self__, "peer_target_database_key", peer_target_database_key)
+        if purge_job_details is not None:
+            pulumi.set(__self__, "purge_job_details", purge_job_details)
+        if purge_job_status is not None:
+            pulumi.set(__self__, "purge_job_status", purge_job_status)
+        if purge_job_time is not None:
+            pulumi.set(__self__, "purge_job_time", purge_job_time)
         if resume_trigger is not None:
             pulumi.set(__self__, "resume_trigger", resume_trigger)
         if state is not None:
@@ -242,6 +260,8 @@ class _AuditTrailState:
             pulumi.set(__self__, "time_updated", time_updated)
         if trail_location is not None:
             pulumi.set(__self__, "trail_location", trail_location)
+        if trail_source is not None:
+            pulumi.set(__self__, "trail_source", trail_source)
         if work_request_id is not None:
             pulumi.set(__self__, "work_request_id", work_request_id)
 
@@ -366,6 +386,54 @@ class _AuditTrailState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="peerTargetDatabaseKey")
+    def peer_target_database_key(self) -> Optional[pulumi.Input[int]]:
+        """
+        The secondary id assigned for the peer database registered with Data Safe.
+        """
+        return pulumi.get(self, "peer_target_database_key")
+
+    @peer_target_database_key.setter
+    def peer_target_database_key(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "peer_target_database_key", value)
+
+    @property
+    @pulumi.getter(name="purgeJobDetails")
+    def purge_job_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        The details of the audit trail purge job that ran on the "purgeJobTime".
+        """
+        return pulumi.get(self, "purge_job_details")
+
+    @purge_job_details.setter
+    def purge_job_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "purge_job_details", value)
+
+    @property
+    @pulumi.getter(name="purgeJobStatus")
+    def purge_job_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current status of the audit trail purge job.
+        """
+        return pulumi.get(self, "purge_job_status")
+
+    @purge_job_status.setter
+    def purge_job_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "purge_job_status", value)
+
+    @property
+    @pulumi.getter(name="purgeJobTime")
+    def purge_job_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        """
+        return pulumi.get(self, "purge_job_time")
+
+    @purge_job_time.setter
+    def purge_job_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "purge_job_time", value)
+
+    @property
     @pulumi.getter(name="resumeTrigger")
     def resume_trigger(self) -> Optional[pulumi.Input[int]]:
         """
@@ -476,6 +544,18 @@ class _AuditTrailState:
     @trail_location.setter
     def trail_location(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "trail_location", value)
+
+    @property
+    @pulumi.getter(name="trailSource")
+    def trail_source(self) -> Optional[pulumi.Input[str]]:
+        """
+        The underlying source of unified audit trail.
+        """
+        return pulumi.get(self, "trail_source")
+
+    @trail_source.setter
+    def trail_source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "trail_source", value)
 
     @property
     @pulumi.getter(name="workRequestId")
@@ -597,6 +677,10 @@ class AuditTrail(pulumi.CustomResource):
             __props__.__dict__["audit_profile_id"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["peer_target_database_key"] = None
+            __props__.__dict__["purge_job_details"] = None
+            __props__.__dict__["purge_job_status"] = None
+            __props__.__dict__["purge_job_time"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["target_id"] = None
@@ -604,6 +688,7 @@ class AuditTrail(pulumi.CustomResource):
             __props__.__dict__["time_last_collected"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["trail_location"] = None
+            __props__.__dict__["trail_source"] = None
             __props__.__dict__["work_request_id"] = None
         super(AuditTrail, __self__).__init__(
             'oci:DataSafe/auditTrail:AuditTrail',
@@ -625,6 +710,10 @@ class AuditTrail(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_auto_purge_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            peer_target_database_key: Optional[pulumi.Input[int]] = None,
+            purge_job_details: Optional[pulumi.Input[str]] = None,
+            purge_job_status: Optional[pulumi.Input[str]] = None,
+            purge_job_time: Optional[pulumi.Input[str]] = None,
             resume_trigger: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
@@ -634,6 +723,7 @@ class AuditTrail(pulumi.CustomResource):
             time_last_collected: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             trail_location: Optional[pulumi.Input[str]] = None,
+            trail_source: Optional[pulumi.Input[str]] = None,
             work_request_id: Optional[pulumi.Input[str]] = None) -> 'AuditTrail':
         """
         Get an existing AuditTrail resource's state with the given name, id, and optional extra
@@ -652,6 +742,10 @@ class AuditTrail(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_purge_enabled: (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit trail in Data Safe.
+        :param pulumi.Input[int] peer_target_database_key: The secondary id assigned for the peer database registered with Data Safe.
+        :param pulumi.Input[str] purge_job_details: The details of the audit trail purge job that ran on the "purgeJobTime".
+        :param pulumi.Input[str] purge_job_status: The current status of the audit trail purge job.
+        :param pulumi.Input[str] purge_job_time: The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
         :param pulumi.Input[int] resume_trigger: (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
                
                
@@ -665,6 +759,7 @@ class AuditTrail(pulumi.CustomResource):
         :param pulumi.Input[str] time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the audit trail was updated, in the format defined by RFC3339.
         :param pulumi.Input[str] trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+        :param pulumi.Input[str] trail_source: The underlying source of unified audit trail.
         :param pulumi.Input[str] work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -681,6 +776,10 @@ class AuditTrail(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_auto_purge_enabled"] = is_auto_purge_enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["peer_target_database_key"] = peer_target_database_key
+        __props__.__dict__["purge_job_details"] = purge_job_details
+        __props__.__dict__["purge_job_status"] = purge_job_status
+        __props__.__dict__["purge_job_time"] = purge_job_time
         __props__.__dict__["resume_trigger"] = resume_trigger
         __props__.__dict__["state"] = state
         __props__.__dict__["status"] = status
@@ -690,6 +789,7 @@ class AuditTrail(pulumi.CustomResource):
         __props__.__dict__["time_last_collected"] = time_last_collected
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["trail_location"] = trail_location
+        __props__.__dict__["trail_source"] = trail_source
         __props__.__dict__["work_request_id"] = work_request_id
         return AuditTrail(resource_name, opts=opts, __props__=__props__)
 
@@ -774,6 +874,38 @@ class AuditTrail(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="peerTargetDatabaseKey")
+    def peer_target_database_key(self) -> pulumi.Output[int]:
+        """
+        The secondary id assigned for the peer database registered with Data Safe.
+        """
+        return pulumi.get(self, "peer_target_database_key")
+
+    @property
+    @pulumi.getter(name="purgeJobDetails")
+    def purge_job_details(self) -> pulumi.Output[str]:
+        """
+        The details of the audit trail purge job that ran on the "purgeJobTime".
+        """
+        return pulumi.get(self, "purge_job_details")
+
+    @property
+    @pulumi.getter(name="purgeJobStatus")
+    def purge_job_status(self) -> pulumi.Output[str]:
+        """
+        The current status of the audit trail purge job.
+        """
+        return pulumi.get(self, "purge_job_status")
+
+    @property
+    @pulumi.getter(name="purgeJobTime")
+    def purge_job_time(self) -> pulumi.Output[str]:
+        """
+        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        """
+        return pulumi.get(self, "purge_job_time")
+
+    @property
     @pulumi.getter(name="resumeTrigger")
     def resume_trigger(self) -> pulumi.Output[Optional[int]]:
         """
@@ -848,6 +980,14 @@ class AuditTrail(pulumi.CustomResource):
         An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         """
         return pulumi.get(self, "trail_location")
+
+    @property
+    @pulumi.getter(name="trailSource")
+    def trail_source(self) -> pulumi.Output[str]:
+        """
+        The underlying source of unified audit trail.
+        """
+        return pulumi.get(self, "trail_source")
 
     @property
     @pulumi.getter(name="workRequestId")

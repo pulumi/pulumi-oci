@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabaseConnectionOptionArgs;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabaseCredentialsArgs;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabaseDatabaseDetailsArgs;
+import com.pulumi.oci.DataSafe.inputs.TargetDatabasePeerTargetDatabaseArgs;
+import com.pulumi.oci.DataSafe.inputs.TargetDatabasePeerTargetDatabaseDetailArgs;
 import com.pulumi.oci.DataSafe.inputs.TargetDatabaseTlsConfigArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -83,14 +85,14 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Details of the database for the registration in Data Safe.
+     * Details of the database for the registration in Data Safe.
      * 
      */
     @Import(name="databaseDetails")
     private @Nullable Output<TargetDatabaseDatabaseDetailsArgs> databaseDetails;
 
     /**
-     * @return (Updatable) Details of the database for the registration in Data Safe.
+     * @return Details of the database for the registration in Data Safe.
      * 
      */
     public Optional<Output<TargetDatabaseDatabaseDetailsArgs>> databaseDetails() {
@@ -113,14 +115,14 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The description of the target database in Data Safe.
+     * The description of the peer target database in Data Safe.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the target database in Data Safe.
+     * @return The description of the peer target database in Data Safe.
      * 
      */
     public Optional<Output<String>> description() {
@@ -128,14 +130,14 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+     * The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+     * @return The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -158,18 +160,48 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Details about the current state of the target database in Data Safe.
+     * Details about the current state of the peer target database in Data Safe.
      * 
      */
     @Import(name="lifecycleDetails")
     private @Nullable Output<String> lifecycleDetails;
 
     /**
-     * @return Details about the current state of the target database in Data Safe.
+     * @return Details about the current state of the peer target database in Data Safe.
      * 
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * The details of the database to be registered as a peer target database.
+     * 
+     */
+    @Import(name="peerTargetDatabaseDetails")
+    private @Nullable Output<List<TargetDatabasePeerTargetDatabaseDetailArgs>> peerTargetDatabaseDetails;
+
+    /**
+     * @return The details of the database to be registered as a peer target database.
+     * 
+     */
+    public Optional<Output<List<TargetDatabasePeerTargetDatabaseDetailArgs>>> peerTargetDatabaseDetails() {
+        return Optional.ofNullable(this.peerTargetDatabaseDetails);
+    }
+
+    /**
+     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * 
+     */
+    @Import(name="peerTargetDatabases")
+    private @Nullable Output<List<TargetDatabasePeerTargetDatabaseArgs>> peerTargetDatabases;
+
+    /**
+     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * 
+     */
+    public Optional<Output<List<TargetDatabasePeerTargetDatabaseArgs>>> peerTargetDatabases() {
+        return Optional.ofNullable(this.peerTargetDatabases);
     }
 
     /**
@@ -260,6 +292,8 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.peerTargetDatabaseDetails = $.peerTargetDatabaseDetails;
+        this.peerTargetDatabases = $.peerTargetDatabases;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
@@ -380,7 +414,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe.
+         * @param databaseDetails Details of the database for the registration in Data Safe.
          * 
          * @return builder
          * 
@@ -391,7 +425,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe.
+         * @param databaseDetails Details of the database for the registration in Data Safe.
          * 
          * @return builder
          * 
@@ -422,7 +456,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description (Updatable) The description of the target database in Data Safe.
+         * @param description The description of the peer target database in Data Safe.
          * 
          * @return builder
          * 
@@ -433,7 +467,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description (Updatable) The description of the target database in Data Safe.
+         * @param description The description of the peer target database in Data Safe.
          * 
          * @return builder
          * 
@@ -443,7 +477,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+         * @param displayName The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
          * 
          * @return builder
          * 
@@ -454,7 +488,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+         * @param displayName The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
          * 
          * @return builder
          * 
@@ -485,7 +519,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param lifecycleDetails Details about the current state of the target database in Data Safe.
+         * @param lifecycleDetails Details about the current state of the peer target database in Data Safe.
          * 
          * @return builder
          * 
@@ -496,13 +530,75 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param lifecycleDetails Details about the current state of the target database in Data Safe.
+         * @param lifecycleDetails Details about the current state of the peer target database in Data Safe.
          * 
          * @return builder
          * 
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param peerTargetDatabaseDetails The details of the database to be registered as a peer target database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerTargetDatabaseDetails(@Nullable Output<List<TargetDatabasePeerTargetDatabaseDetailArgs>> peerTargetDatabaseDetails) {
+            $.peerTargetDatabaseDetails = peerTargetDatabaseDetails;
+            return this;
+        }
+
+        /**
+         * @param peerTargetDatabaseDetails The details of the database to be registered as a peer target database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerTargetDatabaseDetails(List<TargetDatabasePeerTargetDatabaseDetailArgs> peerTargetDatabaseDetails) {
+            return peerTargetDatabaseDetails(Output.of(peerTargetDatabaseDetails));
+        }
+
+        /**
+         * @param peerTargetDatabaseDetails The details of the database to be registered as a peer target database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerTargetDatabaseDetails(TargetDatabasePeerTargetDatabaseDetailArgs... peerTargetDatabaseDetails) {
+            return peerTargetDatabaseDetails(List.of(peerTargetDatabaseDetails));
+        }
+
+        /**
+         * @param peerTargetDatabases The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerTargetDatabases(@Nullable Output<List<TargetDatabasePeerTargetDatabaseArgs>> peerTargetDatabases) {
+            $.peerTargetDatabases = peerTargetDatabases;
+            return this;
+        }
+
+        /**
+         * @param peerTargetDatabases The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerTargetDatabases(List<TargetDatabasePeerTargetDatabaseArgs> peerTargetDatabases) {
+            return peerTargetDatabases(Output.of(peerTargetDatabases));
+        }
+
+        /**
+         * @param peerTargetDatabases The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerTargetDatabases(TargetDatabasePeerTargetDatabaseArgs... peerTargetDatabases) {
+            return peerTargetDatabases(List.of(peerTargetDatabases));
         }
 
         /**

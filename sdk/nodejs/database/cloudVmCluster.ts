@@ -52,6 +52,7 @@ import * as utilities from "../utilities";
  *     privateZoneId: oci_dns_zone.test_zone.id,
  *     scanListenerPortTcp: _var.cloud_vm_cluster_scan_listener_port_tcp,
  *     scanListenerPortTcpSsl: _var.cloud_vm_cluster_scan_listener_port_tcp_ssl,
+ *     systemVersion: _var.cloud_vm_cluster_system_version,
  *     timeZone: _var.cloud_vm_cluster_time_zone,
  * });
  * ```
@@ -272,7 +273,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
     /**
      * Operating system version of the image.
      */
-    public /*out*/ readonly systemVersion!: pulumi.Output<string>;
+    public readonly systemVersion!: pulumi.Output<string>;
     /**
      * The date and time that the cloud VM cluster was created.
      */
@@ -412,6 +413,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["scanListenerPortTcpSsl"] = args ? args.scanListenerPortTcpSsl : undefined;
             resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["systemVersion"] = args ? args.systemVersion : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["diskRedundancy"] = undefined /*out*/;
@@ -426,7 +428,6 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["storageSizeInGbs"] = undefined /*out*/;
-            resourceInputs["systemVersion"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["vipIds"] = undefined /*out*/;
             resourceInputs["zoneId"] = undefined /*out*/;
@@ -772,6 +773,10 @@ export interface CloudVmClusterArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
      */
     subnetId: pulumi.Input<string>;
+    /**
+     * Operating system version of the image.
+     */
+    systemVersion?: pulumi.Input<string>;
     /**
      * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
      *

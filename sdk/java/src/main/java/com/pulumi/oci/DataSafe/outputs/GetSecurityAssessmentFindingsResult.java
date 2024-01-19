@@ -31,6 +31,11 @@ public final class GetSecurityAssessmentFindingsResult {
      */
     private String id;
     /**
+     * @return Indicates whether a given finding is marked as topFinding or not.
+     * 
+     */
+    private @Nullable Boolean isTopFinding;
+    /**
      * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
      * 
      */
@@ -41,6 +46,11 @@ public final class GetSecurityAssessmentFindingsResult {
      * 
      */
     private @Nullable String severity;
+    /**
+     * @return The current state of the finding.
+     * 
+     */
+    private @Nullable String state;
 
     private GetSecurityAssessmentFindingsResult() {}
     public Optional<String> accessLevel() {
@@ -70,6 +80,13 @@ public final class GetSecurityAssessmentFindingsResult {
         return this.id;
     }
     /**
+     * @return Indicates whether a given finding is marked as topFinding or not.
+     * 
+     */
+    public Optional<Boolean> isTopFinding() {
+        return Optional.ofNullable(this.isTopFinding);
+    }
+    /**
      * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
      * 
      */
@@ -85,6 +102,13 @@ public final class GetSecurityAssessmentFindingsResult {
      */
     public Optional<String> severity() {
         return Optional.ofNullable(this.severity);
+    }
+    /**
+     * @return The current state of the finding.
+     * 
+     */
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -102,9 +126,11 @@ public final class GetSecurityAssessmentFindingsResult {
         private @Nullable String findingKey;
         private List<GetSecurityAssessmentFindingsFinding> findings;
         private String id;
+        private @Nullable Boolean isTopFinding;
         private @Nullable String references;
         private String securityAssessmentId;
         private @Nullable String severity;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetSecurityAssessmentFindingsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,9 +140,11 @@ public final class GetSecurityAssessmentFindingsResult {
     	      this.findingKey = defaults.findingKey;
     	      this.findings = defaults.findings;
     	      this.id = defaults.id;
+    	      this.isTopFinding = defaults.isTopFinding;
     	      this.references = defaults.references;
     	      this.securityAssessmentId = defaults.securityAssessmentId;
     	      this.severity = defaults.severity;
+    	      this.state = defaults.state;
         }
 
         @CustomType.Setter
@@ -166,6 +194,12 @@ public final class GetSecurityAssessmentFindingsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isTopFinding(@Nullable Boolean isTopFinding) {
+
+            this.isTopFinding = isTopFinding;
+            return this;
+        }
+        @CustomType.Setter
         public Builder references(@Nullable String references) {
 
             this.references = references;
@@ -185,6 +219,12 @@ public final class GetSecurityAssessmentFindingsResult {
             this.severity = severity;
             return this;
         }
+        @CustomType.Setter
+        public Builder state(@Nullable String state) {
+
+            this.state = state;
+            return this;
+        }
         public GetSecurityAssessmentFindingsResult build() {
             final var _resultValue = new GetSecurityAssessmentFindingsResult();
             _resultValue.accessLevel = accessLevel;
@@ -193,9 +233,11 @@ public final class GetSecurityAssessmentFindingsResult {
             _resultValue.findingKey = findingKey;
             _resultValue.findings = findings;
             _resultValue.id = id;
+            _resultValue.isTopFinding = isTopFinding;
             _resultValue.references = references;
             _resultValue.securityAssessmentId = securityAssessmentId;
             _resultValue.severity = severity;
+            _resultValue.state = state;
             return _resultValue;
         }
     }

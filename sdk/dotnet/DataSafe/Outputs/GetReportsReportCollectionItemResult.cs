@@ -45,6 +45,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// The ID of the report definition to filter the list of reports
         /// </summary>
         public readonly string ReportDefinitionId;
+        public readonly string ReportId;
         /// <summary>
         /// An optional filter to return only resources that match the specified lifecycle state.
         /// </summary>
@@ -80,6 +81,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string reportDefinitionId,
 
+            string reportId,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -96,6 +99,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             Id = id;
             MimeType = mimeType;
             ReportDefinitionId = reportDefinitionId;
+            ReportId = reportId;
             State = state;
             SystemTags = systemTags;
             TimeGenerated = timeGenerated;

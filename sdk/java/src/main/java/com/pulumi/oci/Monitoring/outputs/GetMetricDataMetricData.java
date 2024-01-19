@@ -31,12 +31,12 @@ public final class GetMetricDataMetricData {
      */
     private Boolean compartmentIdInSubtree;
     /**
-     * @return Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
+     * @return Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
     private Map<String,Object> dimensions;
     /**
-     * @return The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
+     * @return The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2023-02-01T02:02:29.600Z`
      * 
      */
     private String endTime;
@@ -56,13 +56,15 @@ public final class GetMetricDataMetricData {
      */
     private String namespace;
     /**
-     * @return The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+     * @return The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. When specifying a dimension value, surround it with double quotes, and escape each double quote with a backslash (`\`) character. Supported grouping functions: `grouping()`, `groupBy()`.
      * 
      * Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
      * 
      * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * 
-     * Example: `CpuUtilization[1m].sum()`
+     * Example 1: `CpuUtilization[1m].sum()`
+     * 
+     * Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = \&#34;&lt;var&gt;&amp;lt;instance_OCID&amp;gt;&lt;/var&gt;\&#34;}.max()`
      * 
      */
     private String query;
@@ -77,7 +79,7 @@ public final class GetMetricDataMetricData {
      */
     private String resourceGroup;
     /**
-     * @return The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
+     * @return The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2023-02-01T01:02:29.600Z`
      * 
      */
     private String startTime;
@@ -105,14 +107,14 @@ public final class GetMetricDataMetricData {
         return this.compartmentIdInSubtree;
     }
     /**
-     * @return Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
+     * @return Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
     public Map<String,Object> dimensions() {
         return this.dimensions;
     }
     /**
-     * @return The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
+     * @return The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2023-02-01T02:02:29.600Z`
      * 
      */
     public String endTime() {
@@ -140,13 +142,15 @@ public final class GetMetricDataMetricData {
         return this.namespace;
     }
     /**
-     * @return The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+     * @return The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. When specifying a dimension value, surround it with double quotes, and escape each double quote with a backslash (`\`) character. Supported grouping functions: `grouping()`, `groupBy()`.
      * 
      * Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
      * 
      * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * 
-     * Example: `CpuUtilization[1m].sum()`
+     * Example 1: `CpuUtilization[1m].sum()`
+     * 
+     * Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = \&#34;&lt;var&gt;&amp;lt;instance_OCID&amp;gt;&lt;/var&gt;\&#34;}.max()`
      * 
      */
     public String query() {
@@ -167,7 +171,7 @@ public final class GetMetricDataMetricData {
         return this.resourceGroup;
     }
     /**
-     * @return The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
+     * @return The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2023-02-01T01:02:29.600Z`
      * 
      */
     public String startTime() {

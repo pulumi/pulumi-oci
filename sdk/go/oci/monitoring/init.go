@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:Monitoring/alarm:Alarm":
 		r = &Alarm{}
+	case "oci:Monitoring/alarmSuppression:AlarmSuppression":
+		r = &AlarmSuppression{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +41,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Monitoring/alarm",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Monitoring/alarmSuppression",
 		&module{version},
 	)
 }

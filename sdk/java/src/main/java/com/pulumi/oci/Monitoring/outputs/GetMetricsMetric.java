@@ -25,12 +25,12 @@ public final class GetMetricsMetric {
      */
     private Boolean compartmentIdInSubtree;
     /**
-     * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
+     * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
     private Map<String,Object> dimensionFilters;
     /**
-     * @return Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
+     * @return Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
     private Map<String,Object> dimensions;
@@ -73,14 +73,14 @@ public final class GetMetricsMetric {
         return this.compartmentIdInSubtree;
     }
     /**
-     * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
+     * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
     public Map<String,Object> dimensionFilters() {
         return this.dimensionFilters;
     }
     /**
-     * @return Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
+     * @return Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
     public Map<String,Object> dimensions() {

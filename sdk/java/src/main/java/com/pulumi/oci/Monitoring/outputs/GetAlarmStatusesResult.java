@@ -38,7 +38,7 @@ public final class GetAlarmStatusesResult {
     private @Nullable String resourceId;
     private @Nullable String serviceName;
     /**
-     * @return The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). Example: `FIRING`
+     * @return The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`. Example: `FIRING`
      * 
      */
     private @Nullable String status;
@@ -84,7 +84,7 @@ public final class GetAlarmStatusesResult {
         return Optional.ofNullable(this.serviceName);
     }
     /**
-     * @return The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). Example: `FIRING`
+     * @return The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`. Example: `FIRING`
      * 
      */
     public Optional<String> status() {

@@ -14,39 +14,39 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class TargetDatabaseDatabaseDetails
     {
         /// <summary>
-        /// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+        /// The OCID of the Autonomous Database registered as a target database in Data Safe.
         /// </summary>
         public readonly string? AutonomousDatabaseId;
         /// <summary>
-        /// (Updatable) The database type.
+        /// The database type.
         /// </summary>
         public readonly string DatabaseType;
         /// <summary>
-        /// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+        /// The OCID of the cloud database registered as a target database in Data Safe.
         /// </summary>
         public readonly string? DbSystemId;
         /// <summary>
-        /// (Updatable) The infrastructure type the database is running on.
+        /// The infrastructure type the database is running on.
         /// </summary>
         public readonly string InfrastructureType;
         /// <summary>
-        /// (Updatable) The OCID of the compute instance on which the database is running.
+        /// The OCID of the compute instance on which the database is running.
         /// </summary>
         public readonly string? InstanceId;
         /// <summary>
-        /// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        /// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         /// </summary>
         public readonly ImmutableArray<string> IpAddresses;
         /// <summary>
-        /// (Updatable) The port number of the database listener.
+        /// The port number of the database listener.
         /// </summary>
         public readonly int? ListenerPort;
         /// <summary>
-        /// (Updatable) The service name of the database registered as target database.
+        /// The service name of the database registered as target database.
         /// </summary>
         public readonly string? ServiceName;
         /// <summary>
-        /// (Updatable) The OCID of the VM cluster in which the database is running.
+        /// The OCID of the VM cluster in which the database is running.
         /// </summary>
         public readonly string? VmClusterId;
 

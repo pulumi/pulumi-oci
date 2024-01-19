@@ -107,27 +107,27 @@ public final class GetUserAssessmentResult {
      */
     private List<String> targetIds;
     /**
-     * @return The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeLastAssessed;
     /**
-     * @return The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeUpdated;
     /**
-     * @return Indicates whether the user assessment was created by system or user.
+     * @return Indicates whether the user assessment was created by the system or the user.
      * 
      */
     private String triggeredBy;
     /**
-     * @return Type of user assessment. Type can be:
+     * @return The type of the user assessment. The possible types are:
      * 
      */
     private String type;
@@ -264,35 +264,35 @@ public final class GetUserAssessmentResult {
         return this.targetIds;
     }
     /**
-     * @return The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeLastAssessed() {
         return this.timeLastAssessed;
     }
     /**
-     * @return The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return Indicates whether the user assessment was created by system or user.
+     * @return Indicates whether the user assessment was created by the system or the user.
      * 
      */
     public String triggeredBy() {
         return this.triggeredBy;
     }
     /**
-     * @return Type of user assessment. Type can be:
+     * @return The type of the user assessment. The possible types are:
      * 
      */
     public String type() {

@@ -31,6 +31,7 @@ __all__ = [
     'ReportDefinitionSummaryArgs',
     'SecurityAssessmentStatisticArgs',
     'SecurityAssessmentStatisticAdvisoryArgs',
+    'SecurityAssessmentStatisticDeferredArgs',
     'SecurityAssessmentStatisticEvaluateArgs',
     'SecurityAssessmentStatisticHighRiskArgs',
     'SecurityAssessmentStatisticLowRiskArgs',
@@ -39,6 +40,13 @@ __all__ = [
     'TargetDatabaseConnectionOptionArgs',
     'TargetDatabaseCredentialsArgs',
     'TargetDatabaseDatabaseDetailsArgs',
+    'TargetDatabasePeerTargetDatabaseArgs',
+    'TargetDatabasePeerTargetDatabaseDatabaseDetailArgs',
+    'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs',
+    'TargetDatabasePeerTargetDatabaseDetailArgs',
+    'TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs',
+    'TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs',
+    'TargetDatabasePeerTargetDatabaseTlsConfigArgs',
     'TargetDatabaseTlsConfigArgs',
     'UserAssessmentIgnoredTargetArgs',
     'GetAlertPoliciesFilterArgs',
@@ -68,15 +76,27 @@ __all__ = [
     'GetReportsFilterArgs',
     'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs',
     'GetSdmMaskingPolicyDifferencesFilterArgs',
+    'GetSecurityAssessmentFindingAnalyticsFilterArgs',
     'GetSecurityAssessmentFindingFilterArgs',
+    'GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs',
     'GetSecurityAssessmentFindingsFilterArgs',
+    'GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs',
+    'GetSecurityAssessmentSecurityFeaturesFilterArgs',
     'GetSecurityAssessmentsFilterArgs',
+    'GetSecurityPoliciesFilterArgs',
+    'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs',
+    'GetSecurityPolicyDeploymentsFilterArgs',
+    'GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs',
+    'GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs',
+    'GetSecurityPolicyReportRoleGrantPathsFilterArgs',
+    'GetSecurityPolicyReportsFilterArgs',
     'GetSensitiveDataModelSensitiveObjectsFilterArgs',
     'GetSensitiveDataModelSensitiveSchemasFilterArgs',
     'GetSensitiveDataModelsFilterArgs',
     'GetSensitiveDataModelsSensitiveColumnsFilterArgs',
     'GetSensitiveTypesFilterArgs',
     'GetTargetAlertPolicyAssociationsFilterArgs',
+    'GetTargetDatabasePeerTargetDatabasesFilterArgs',
     'GetTargetDatabaseRoleFilterArgs',
     'GetTargetDatabaseRolesFilterArgs',
     'GetTargetDatabasesColumnsFilterArgs',
@@ -85,6 +105,7 @@ __all__ = [
     'GetTargetDatabasesTablesFilterArgs',
     'GetUserAssessmentProfileAnalyticsFilterArgs',
     'GetUserAssessmentProfilesFilterArgs',
+    'GetUserAssessmentUserAccessAnalyticsFilterArgs',
     'GetUserAssessmentUserAnalyticsFilterArgs',
     'GetUserAssessmentUsersFilterArgs',
     'GetUserAssessmentsFilterArgs',
@@ -773,6 +794,10 @@ class AuditProfileAuditTrailArgs:
                  id: Optional[pulumi.Input[str]] = None,
                  is_auto_purge_enabled: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 peer_target_database_key: Optional[pulumi.Input[int]] = None,
+                 purge_job_details: Optional[pulumi.Input[str]] = None,
+                 purge_job_status: Optional[pulumi.Input[str]] = None,
+                 purge_job_time: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -781,6 +806,7 @@ class AuditProfileAuditTrailArgs:
                  time_last_collected: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  trail_location: Optional[pulumi.Input[str]] = None,
+                 trail_source: Optional[pulumi.Input[str]] = None,
                  work_request_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -793,6 +819,10 @@ class AuditProfileAuditTrailArgs:
         :param pulumi.Input[str] id: The OCID of the audit profile.
         :param pulumi.Input[bool] is_auto_purge_enabled: Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit profile in Data Safe.
+        :param pulumi.Input[int] peer_target_database_key: The secondary id assigned for the peer database registered with Data Safe.
+        :param pulumi.Input[str] purge_job_details: The details of the audit trail purge job that ran on the "purgeJobTime".
+        :param pulumi.Input[str] purge_job_status: The current status of the audit trail purge job.
+        :param pulumi.Input[str] purge_job_time: The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
         :param pulumi.Input[str] state: The current state of the audit profile.
         :param pulumi.Input[str] status: The current sub-state of the audit trail.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -801,6 +831,7 @@ class AuditProfileAuditTrailArgs:
         :param pulumi.Input[str] time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         :param pulumi.Input[str] trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+        :param pulumi.Input[str] trail_source: The underlying source of unified audit trail.
         :param pulumi.Input[str] work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
         if audit_collection_start_time is not None:
@@ -823,6 +854,14 @@ class AuditProfileAuditTrailArgs:
             pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if peer_target_database_key is not None:
+            pulumi.set(__self__, "peer_target_database_key", peer_target_database_key)
+        if purge_job_details is not None:
+            pulumi.set(__self__, "purge_job_details", purge_job_details)
+        if purge_job_status is not None:
+            pulumi.set(__self__, "purge_job_status", purge_job_status)
+        if purge_job_time is not None:
+            pulumi.set(__self__, "purge_job_time", purge_job_time)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if status is not None:
@@ -839,6 +878,8 @@ class AuditProfileAuditTrailArgs:
             pulumi.set(__self__, "time_updated", time_updated)
         if trail_location is not None:
             pulumi.set(__self__, "trail_location", trail_location)
+        if trail_source is not None:
+            pulumi.set(__self__, "trail_source", trail_source)
         if work_request_id is not None:
             pulumi.set(__self__, "work_request_id", work_request_id)
 
@@ -963,6 +1004,54 @@ class AuditProfileAuditTrailArgs:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="peerTargetDatabaseKey")
+    def peer_target_database_key(self) -> Optional[pulumi.Input[int]]:
+        """
+        The secondary id assigned for the peer database registered with Data Safe.
+        """
+        return pulumi.get(self, "peer_target_database_key")
+
+    @peer_target_database_key.setter
+    def peer_target_database_key(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "peer_target_database_key", value)
+
+    @property
+    @pulumi.getter(name="purgeJobDetails")
+    def purge_job_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        The details of the audit trail purge job that ran on the "purgeJobTime".
+        """
+        return pulumi.get(self, "purge_job_details")
+
+    @purge_job_details.setter
+    def purge_job_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "purge_job_details", value)
+
+    @property
+    @pulumi.getter(name="purgeJobStatus")
+    def purge_job_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current status of the audit trail purge job.
+        """
+        return pulumi.get(self, "purge_job_status")
+
+    @purge_job_status.setter
+    def purge_job_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "purge_job_status", value)
+
+    @property
+    @pulumi.getter(name="purgeJobTime")
+    def purge_job_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        """
+        return pulumi.get(self, "purge_job_time")
+
+    @purge_job_time.setter
+    def purge_job_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "purge_job_time", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1057,6 +1146,18 @@ class AuditProfileAuditTrailArgs:
     @trail_location.setter
     def trail_location(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "trail_location", value)
+
+    @property
+    @pulumi.getter(name="trailSource")
+    def trail_source(self) -> Optional[pulumi.Input[str]]:
+        """
+        The underlying source of unified audit trail.
+        """
+        return pulumi.get(self, "trail_source")
+
+    @trail_source.setter
+    def trail_source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "trail_source", value)
 
     @property
     @pulumi.getter(name="workRequestId")
@@ -2523,6 +2624,7 @@ class ReportDefinitionSummaryArgs:
 class SecurityAssessmentStatisticArgs:
     def __init__(__self__, *,
                  advisories: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]]] = None,
+                 deferreds: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]]] = None,
                  evaluates: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]]] = None,
                  high_risks: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]]] = None,
                  low_risks: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]]] = None,
@@ -2531,6 +2633,7 @@ class SecurityAssessmentStatisticArgs:
                  targets_count: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]] advisories: Statistics showing the number of findings with a particular risk level for each category.
+        :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]] deferreds: Statistics showing the number of findings with a particular risk level for each category.
         :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]] evaluates: Statistics showing the number of findings with a particular risk level for each category.
         :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]] high_risks: Statistics showing the number of findings with a particular risk level for each category.
         :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]] low_risks: Statistics showing the number of findings with a particular risk level for each category.
@@ -2540,6 +2643,8 @@ class SecurityAssessmentStatisticArgs:
         """
         if advisories is not None:
             pulumi.set(__self__, "advisories", advisories)
+        if deferreds is not None:
+            pulumi.set(__self__, "deferreds", deferreds)
         if evaluates is not None:
             pulumi.set(__self__, "evaluates", evaluates)
         if high_risks is not None:
@@ -2564,6 +2669,18 @@ class SecurityAssessmentStatisticArgs:
     @advisories.setter
     def advisories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]]]):
         pulumi.set(self, "advisories", value)
+
+    @property
+    @pulumi.getter
+    def deferreds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]]]:
+        """
+        Statistics showing the number of findings with a particular risk level for each category.
+        """
+        return pulumi.get(self, "deferreds")
+
+    @deferreds.setter
+    def deferreds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]]]):
+        pulumi.set(self, "deferreds", value)
 
     @property
     @pulumi.getter
@@ -2640,6 +2757,141 @@ class SecurityAssessmentStatisticArgs:
 
 @pulumi.input_type
 class SecurityAssessmentStatisticAdvisoryArgs:
+    def __init__(__self__, *,
+                 auditing_findings_count: Optional[pulumi.Input[int]] = None,
+                 authorization_control_findings_count: Optional[pulumi.Input[int]] = None,
+                 data_encryption_findings_count: Optional[pulumi.Input[int]] = None,
+                 db_configuration_findings_count: Optional[pulumi.Input[int]] = None,
+                 fine_grained_access_control_findings_count: Optional[pulumi.Input[int]] = None,
+                 privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
+                 targets_count: Optional[pulumi.Input[int]] = None,
+                 user_accounts_findings_count: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] auditing_findings_count: The number of findings in the Auditing category.
+        :param pulumi.Input[int] authorization_control_findings_count: The number of findings in the Authorization Control category.
+        :param pulumi.Input[int] data_encryption_findings_count: The number of findings in the Data Encryption category.
+        :param pulumi.Input[int] db_configuration_findings_count: The number of findings in the Database Configuration category.
+        :param pulumi.Input[int] fine_grained_access_control_findings_count: The number of findings in the Fine-Grained Access Control category.
+        :param pulumi.Input[int] privileges_and_roles_findings_count: The number of findings in the Privileges and Roles category.
+        :param pulumi.Input[int] targets_count: The total number of targets in this security assessment.
+        :param pulumi.Input[int] user_accounts_findings_count: The number of findings in the User Accounts category.
+        """
+        if auditing_findings_count is not None:
+            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        if authorization_control_findings_count is not None:
+            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        if data_encryption_findings_count is not None:
+            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        if db_configuration_findings_count is not None:
+            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        if fine_grained_access_control_findings_count is not None:
+            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        if privileges_and_roles_findings_count is not None:
+            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        if targets_count is not None:
+            pulumi.set(__self__, "targets_count", targets_count)
+        if user_accounts_findings_count is not None:
+            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+
+    @property
+    @pulumi.getter(name="auditingFindingsCount")
+    def auditing_findings_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of findings in the Auditing category.
+        """
+        return pulumi.get(self, "auditing_findings_count")
+
+    @auditing_findings_count.setter
+    def auditing_findings_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "auditing_findings_count", value)
+
+    @property
+    @pulumi.getter(name="authorizationControlFindingsCount")
+    def authorization_control_findings_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of findings in the Authorization Control category.
+        """
+        return pulumi.get(self, "authorization_control_findings_count")
+
+    @authorization_control_findings_count.setter
+    def authorization_control_findings_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "authorization_control_findings_count", value)
+
+    @property
+    @pulumi.getter(name="dataEncryptionFindingsCount")
+    def data_encryption_findings_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of findings in the Data Encryption category.
+        """
+        return pulumi.get(self, "data_encryption_findings_count")
+
+    @data_encryption_findings_count.setter
+    def data_encryption_findings_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "data_encryption_findings_count", value)
+
+    @property
+    @pulumi.getter(name="dbConfigurationFindingsCount")
+    def db_configuration_findings_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of findings in the Database Configuration category.
+        """
+        return pulumi.get(self, "db_configuration_findings_count")
+
+    @db_configuration_findings_count.setter
+    def db_configuration_findings_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "db_configuration_findings_count", value)
+
+    @property
+    @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
+    def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of findings in the Fine-Grained Access Control category.
+        """
+        return pulumi.get(self, "fine_grained_access_control_findings_count")
+
+    @fine_grained_access_control_findings_count.setter
+    def fine_grained_access_control_findings_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "fine_grained_access_control_findings_count", value)
+
+    @property
+    @pulumi.getter(name="privilegesAndRolesFindingsCount")
+    def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of findings in the Privileges and Roles category.
+        """
+        return pulumi.get(self, "privileges_and_roles_findings_count")
+
+    @privileges_and_roles_findings_count.setter
+    def privileges_and_roles_findings_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "privileges_and_roles_findings_count", value)
+
+    @property
+    @pulumi.getter(name="targetsCount")
+    def targets_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total number of targets in this security assessment.
+        """
+        return pulumi.get(self, "targets_count")
+
+    @targets_count.setter
+    def targets_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "targets_count", value)
+
+    @property
+    @pulumi.getter(name="userAccountsFindingsCount")
+    def user_accounts_findings_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of findings in the User Accounts category.
+        """
+        return pulumi.get(self, "user_accounts_findings_count")
+
+    @user_accounts_findings_count.setter
+    def user_accounts_findings_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "user_accounts_findings_count", value)
+
+
+@pulumi.input_type
+class SecurityAssessmentStatisticDeferredArgs:
     def __init__(__self__, *,
                  auditing_findings_count: Optional[pulumi.Input[int]] = None,
                  authorization_control_findings_count: Optional[pulumi.Input[int]] = None,
@@ -3556,6 +3808,489 @@ class TargetDatabaseDatabaseDetailsArgs:
                  service_name: Optional[pulumi.Input[str]] = None,
                  vm_cluster_id: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] database_type: The database type.
+        :param pulumi.Input[str] infrastructure_type: The infrastructure type the database is running on.
+        :param pulumi.Input[str] autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param pulumi.Input[str] db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param pulumi.Input[str] instance_id: The OCID of the compute instance on which the database is running.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param pulumi.Input[int] listener_port: The port number of the database listener.
+        :param pulumi.Input[str] service_name: The service name of the database registered as target database.
+        :param pulumi.Input[str] vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        """
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        if autonomous_database_id is not None:
+            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if ip_addresses is not None:
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
+        if listener_port is not None:
+            pulumi.set(__self__, "listener_port", listener_port)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> pulumi.Input[str]:
+        """
+        The database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @database_type.setter
+    def database_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "database_type", value)
+
+    @property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> pulumi.Input[str]:
+        """
+        The infrastructure type the database is running on.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @infrastructure_type.setter
+    def infrastructure_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "infrastructure_type", value)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseId")
+    def autonomous_database_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "autonomous_database_id")
+
+    @autonomous_database_id.setter
+    def autonomous_database_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "autonomous_database_id", value)
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the cloud database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @db_system_id.setter
+    def db_system_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_system_id", value)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the compute instance on which the database is running.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_id", value)
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @ip_addresses.setter
+    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "ip_addresses", value)
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port number of the database listener.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @listener_port.setter
+    def listener_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "listener_port", value)
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The service name of the database registered as target database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @service_name.setter
+    def service_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_name", value)
+
+    @property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the VM cluster in which the database is running.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+
+@pulumi.input_type
+class TargetDatabasePeerTargetDatabaseArgs:
+    def __init__(__self__, *,
+                 database_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]]] = None,
+                 database_unique_name: Optional[pulumi.Input[str]] = None,
+                 dataguard_association_id: Optional[pulumi.Input[str]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 key: Optional[pulumi.Input[int]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None,
+                 tls_configs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]] database_details: Details of the database for the registration in Data Safe.
+        :param pulumi.Input[str] database_unique_name: Unique name of the database associated to the peer target database.
+        :param pulumi.Input[str] dataguard_association_id: The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+        :param pulumi.Input[str] description: The description of the peer target database in Data Safe.
+        :param pulumi.Input[str] display_name: The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        :param pulumi.Input[int] key: The secondary key assigned for the peer target database in Data Safe.
+        :param pulumi.Input[str] lifecycle_details: Details about the current state of the peer target database in Data Safe.
+        :param pulumi.Input[str] role: Role of the database associated to the peer target database.
+        :param pulumi.Input[str] state: The current state of the target database in Data Safe.
+        :param pulumi.Input[str] time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+        :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]] tls_configs: (Updatable) The details required to establish a TLS enabled connection.
+        """
+        if database_details is not None:
+            pulumi.set(__self__, "database_details", database_details)
+        if database_unique_name is not None:
+            pulumi.set(__self__, "database_unique_name", database_unique_name)
+        if dataguard_association_id is not None:
+            pulumi.set(__self__, "dataguard_association_id", dataguard_association_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if tls_configs is not None:
+            pulumi.set(__self__, "tls_configs", tls_configs)
+
+    @property
+    @pulumi.getter(name="databaseDetails")
+    def database_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]]]:
+        """
+        Details of the database for the registration in Data Safe.
+        """
+        return pulumi.get(self, "database_details")
+
+    @database_details.setter
+    def database_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]]]):
+        pulumi.set(self, "database_details", value)
+
+    @property
+    @pulumi.getter(name="databaseUniqueName")
+    def database_unique_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique name of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "database_unique_name")
+
+    @database_unique_name.setter
+    def database_unique_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_unique_name", value)
+
+    @property
+    @pulumi.getter(name="dataguardAssociationId")
+    def dataguard_association_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+        """
+        return pulumi.get(self, "dataguard_association_id")
+
+    @dataguard_association_id.setter
+    def dataguard_association_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dataguard_association_id", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        The description of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[int]]:
+        """
+        The secondary key assigned for the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        Details about the current state of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        Role of the database associated to the peer target database.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of the target database in Data Safe.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="tlsConfigs")
+    def tls_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]]]:
+        """
+        (Updatable) The details required to establish a TLS enabled connection.
+        """
+        return pulumi.get(self, "tls_configs")
+
+    @tls_configs.setter
+    def tls_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]]]):
+        pulumi.set(self, "tls_configs", value)
+
+
+@pulumi.input_type
+class TargetDatabasePeerTargetDatabaseDatabaseDetailArgs:
+    def __init__(__self__, *,
+                 autonomous_database_id: Optional[pulumi.Input[str]] = None,
+                 database_type: Optional[pulumi.Input[str]] = None,
+                 db_system_id: Optional[pulumi.Input[str]] = None,
+                 infrastructure_type: Optional[pulumi.Input[str]] = None,
+                 instance_id: Optional[pulumi.Input[str]] = None,
+                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 listener_port: Optional[pulumi.Input[int]] = None,
+                 service_name: Optional[pulumi.Input[str]] = None,
+                 vm_cluster_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param pulumi.Input[str] database_type: The database type.
+        :param pulumi.Input[str] db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param pulumi.Input[str] infrastructure_type: The infrastructure type the database is running on.
+        :param pulumi.Input[str] instance_id: The OCID of the compute instance on which the database is running.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param pulumi.Input[int] listener_port: The port number of the database listener.
+        :param pulumi.Input[str] service_name: The service name of the database registered as target database.
+        :param pulumi.Input[str] vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        """
+        if autonomous_database_id is not None:
+            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if database_type is not None:
+            pulumi.set(__self__, "database_type", database_type)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if infrastructure_type is not None:
+            pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if ip_addresses is not None:
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
+        if listener_port is not None:
+            pulumi.set(__self__, "listener_port", listener_port)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseId")
+    def autonomous_database_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "autonomous_database_id")
+
+    @autonomous_database_id.setter
+    def autonomous_database_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "autonomous_database_id", value)
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @database_type.setter
+    def database_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_type", value)
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the cloud database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @db_system_id.setter
+    def db_system_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_system_id", value)
+
+    @property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The infrastructure type the database is running on.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @infrastructure_type.setter
+    def infrastructure_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "infrastructure_type", value)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the compute instance on which the database is running.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_id", value)
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @ip_addresses.setter
+    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "ip_addresses", value)
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port number of the database listener.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @listener_port.setter
+    def listener_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "listener_port", value)
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The service name of the database registered as target database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @service_name.setter
+    def service_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_name", value)
+
+    @property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the VM cluster in which the database is running.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+
+@pulumi.input_type
+class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs:
+    def __init__(__self__, *,
+                 database_type: pulumi.Input[str],
+                 infrastructure_type: pulumi.Input[str],
+                 autonomous_database_id: Optional[pulumi.Input[str]] = None,
+                 db_system_id: Optional[pulumi.Input[str]] = None,
+                 instance_id: Optional[pulumi.Input[str]] = None,
+                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 listener_port: Optional[pulumi.Input[int]] = None,
+                 service_name: Optional[pulumi.Input[str]] = None,
+                 vm_cluster_id: Optional[pulumi.Input[str]] = None):
+        """
         :param pulumi.Input[str] database_type: (Updatable) The database type.
         :param pulumi.Input[str] infrastructure_type: (Updatable) The infrastructure type the database is running on.
         :param pulumi.Input[str] autonomous_database_id: (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
@@ -3690,6 +4425,429 @@ class TargetDatabaseDatabaseDetailsArgs:
     @vm_cluster_id.setter
     def vm_cluster_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vm_cluster_id", value)
+
+
+@pulumi.input_type
+class TargetDatabasePeerTargetDatabaseDetailArgs:
+    def __init__(__self__, *,
+                 database_details: pulumi.Input['TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs'],
+                 dataguard_association_id: Optional[pulumi.Input[str]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 tls_config: Optional[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs']] = None):
+        """
+        :param pulumi.Input['TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs'] database_details: Details of the database for the registration in Data Safe.
+        :param pulumi.Input[str] dataguard_association_id: The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+        :param pulumi.Input[str] description: The description of the peer target database in Data Safe.
+        :param pulumi.Input[str] display_name: The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        :param pulumi.Input['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs'] tls_config: (Updatable) The details required to establish a TLS enabled connection.
+        """
+        pulumi.set(__self__, "database_details", database_details)
+        if dataguard_association_id is not None:
+            pulumi.set(__self__, "dataguard_association_id", dataguard_association_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if tls_config is not None:
+            pulumi.set(__self__, "tls_config", tls_config)
+
+    @property
+    @pulumi.getter(name="databaseDetails")
+    def database_details(self) -> pulumi.Input['TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs']:
+        """
+        Details of the database for the registration in Data Safe.
+        """
+        return pulumi.get(self, "database_details")
+
+    @database_details.setter
+    def database_details(self, value: pulumi.Input['TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs']):
+        pulumi.set(self, "database_details", value)
+
+    @property
+    @pulumi.getter(name="dataguardAssociationId")
+    def dataguard_association_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+        """
+        return pulumi.get(self, "dataguard_association_id")
+
+    @dataguard_association_id.setter
+    def dataguard_association_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dataguard_association_id", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        The description of the peer target database in Data Safe.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="tlsConfig")
+    def tls_config(self) -> Optional[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs']]:
+        """
+        (Updatable) The details required to establish a TLS enabled connection.
+        """
+        return pulumi.get(self, "tls_config")
+
+    @tls_config.setter
+    def tls_config(self, value: Optional[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs']]):
+        pulumi.set(self, "tls_config", value)
+
+
+@pulumi.input_type
+class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs:
+    def __init__(__self__, *,
+                 database_type: pulumi.Input[str],
+                 infrastructure_type: pulumi.Input[str],
+                 autonomous_database_id: Optional[pulumi.Input[str]] = None,
+                 db_system_id: Optional[pulumi.Input[str]] = None,
+                 instance_id: Optional[pulumi.Input[str]] = None,
+                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 listener_port: Optional[pulumi.Input[int]] = None,
+                 service_name: Optional[pulumi.Input[str]] = None,
+                 vm_cluster_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] database_type: The database type.
+        :param pulumi.Input[str] infrastructure_type: The infrastructure type the database is running on.
+        :param pulumi.Input[str] autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param pulumi.Input[str] db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
+        :param pulumi.Input[str] instance_id: The OCID of the compute instance on which the database is running.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param pulumi.Input[int] listener_port: The port number of the database listener.
+        :param pulumi.Input[str] service_name: The service name of the database registered as target database.
+        :param pulumi.Input[str] vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        """
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        if autonomous_database_id is not None:
+            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if ip_addresses is not None:
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
+        if listener_port is not None:
+            pulumi.set(__self__, "listener_port", listener_port)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> pulumi.Input[str]:
+        """
+        The database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @database_type.setter
+    def database_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "database_type", value)
+
+    @property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> pulumi.Input[str]:
+        """
+        The infrastructure type the database is running on.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @infrastructure_type.setter
+    def infrastructure_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "infrastructure_type", value)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseId")
+    def autonomous_database_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "autonomous_database_id")
+
+    @autonomous_database_id.setter
+    def autonomous_database_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "autonomous_database_id", value)
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the cloud database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @db_system_id.setter
+    def db_system_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_system_id", value)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the compute instance on which the database is running.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_id", value)
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @ip_addresses.setter
+    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "ip_addresses", value)
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port number of the database listener.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @listener_port.setter
+    def listener_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "listener_port", value)
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The service name of the database registered as target database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @service_name.setter
+    def service_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_name", value)
+
+    @property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the VM cluster in which the database is running.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+
+@pulumi.input_type
+class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs:
+    def __init__(__self__, *,
+                 status: pulumi.Input[str],
+                 certificate_store_type: Optional[pulumi.Input[str]] = None,
+                 key_store_content: Optional[pulumi.Input[str]] = None,
+                 store_password: Optional[pulumi.Input[str]] = None,
+                 trust_store_content: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] status: (Updatable) Status to represent whether the database connection is TLS enabled or not.
+        :param pulumi.Input[str] certificate_store_type: (Updatable) The format of the certificate store.
+        :param pulumi.Input[str] key_store_content: (Updatable) Base64 encoded string of key store file content.
+        :param pulumi.Input[str] store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
+        :param pulumi.Input[str] trust_store_content: (Updatable) Base64 encoded string of trust store file content.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "status", status)
+        if certificate_store_type is not None:
+            pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+        if key_store_content is not None:
+            pulumi.set(__self__, "key_store_content", key_store_content)
+        if store_password is not None:
+            pulumi.set(__self__, "store_password", store_password)
+        if trust_store_content is not None:
+            pulumi.set(__self__, "trust_store_content", trust_store_content)
+
+    @property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Status to represent whether the database connection is TLS enabled or not.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[str]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="certificateStoreType")
+    def certificate_store_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The format of the certificate store.
+        """
+        return pulumi.get(self, "certificate_store_type")
+
+    @certificate_store_type.setter
+    def certificate_store_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate_store_type", value)
+
+    @property
+    @pulumi.getter(name="keyStoreContent")
+    def key_store_content(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Base64 encoded string of key store file content.
+        """
+        return pulumi.get(self, "key_store_content")
+
+    @key_store_content.setter
+    def key_store_content(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_store_content", value)
+
+    @property
+    @pulumi.getter(name="storePassword")
+    def store_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The password to read the trust store and key store files, if they are password protected.
+        """
+        return pulumi.get(self, "store_password")
+
+    @store_password.setter
+    def store_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "store_password", value)
+
+    @property
+    @pulumi.getter(name="trustStoreContent")
+    def trust_store_content(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Base64 encoded string of trust store file content.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "trust_store_content")
+
+    @trust_store_content.setter
+    def trust_store_content(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "trust_store_content", value)
+
+
+@pulumi.input_type
+class TargetDatabasePeerTargetDatabaseTlsConfigArgs:
+    def __init__(__self__, *,
+                 status: pulumi.Input[str],
+                 certificate_store_type: Optional[pulumi.Input[str]] = None,
+                 key_store_content: Optional[pulumi.Input[str]] = None,
+                 store_password: Optional[pulumi.Input[str]] = None,
+                 trust_store_content: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] status: (Updatable) Status to represent whether the database connection is TLS enabled or not.
+        :param pulumi.Input[str] certificate_store_type: (Updatable) The format of the certificate store.
+        :param pulumi.Input[str] key_store_content: (Updatable) Base64 encoded string of key store file content.
+        :param pulumi.Input[str] store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
+        :param pulumi.Input[str] trust_store_content: (Updatable) Base64 encoded string of trust store file content.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "status", status)
+        if certificate_store_type is not None:
+            pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+        if key_store_content is not None:
+            pulumi.set(__self__, "key_store_content", key_store_content)
+        if store_password is not None:
+            pulumi.set(__self__, "store_password", store_password)
+        if trust_store_content is not None:
+            pulumi.set(__self__, "trust_store_content", trust_store_content)
+
+    @property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Status to represent whether the database connection is TLS enabled or not.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[str]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="certificateStoreType")
+    def certificate_store_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The format of the certificate store.
+        """
+        return pulumi.get(self, "certificate_store_type")
+
+    @certificate_store_type.setter
+    def certificate_store_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate_store_type", value)
+
+    @property
+    @pulumi.getter(name="keyStoreContent")
+    def key_store_content(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Base64 encoded string of key store file content.
+        """
+        return pulumi.get(self, "key_store_content")
+
+    @key_store_content.setter
+    def key_store_content(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_store_content", value)
+
+    @property
+    @pulumi.getter(name="storePassword")
+    def store_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The password to read the trust store and key store files, if they are password protected.
+        """
+        return pulumi.get(self, "store_password")
+
+    @store_password.setter
+    def store_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "store_password", value)
+
+    @property
+    @pulumi.getter(name="trustStoreContent")
+    def trust_store_content(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Base64 encoded string of trust store file content.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "trust_store_content")
+
+    @trust_store_content.setter
+    def trust_store_content(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "trust_store_content", value)
 
 
 @pulumi.input_type
@@ -4901,7 +6059,85 @@ class GetSdmMaskingPolicyDifferencesFilterArgs:
 
 
 @pulumi.input_type
+class GetSecurityAssessmentFindingAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetSecurityAssessmentFindingFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -4979,7 +6215,358 @@ class GetSecurityAssessmentFindingsFilterArgs:
 
 
 @pulumi.input_type
+class GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityAssessmentSecurityFeaturesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetSecurityAssessmentsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityPoliciesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityPolicyDeploymentsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityPolicyReportRoleGrantPathsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityPolicyReportsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -5214,6 +6801,45 @@ class GetSensitiveTypesFilterArgs:
 
 @pulumi.input_type
 class GetTargetAlertPolicyAssociationsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetTargetDatabasePeerTargetDatabasesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -5526,6 +7152,45 @@ class GetUserAssessmentProfileAnalyticsFilterArgs:
 
 @pulumi.input_type
 class GetUserAssessmentProfilesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetUserAssessmentUserAccessAnalyticsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

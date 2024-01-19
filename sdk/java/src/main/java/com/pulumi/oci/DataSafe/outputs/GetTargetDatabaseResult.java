@@ -8,6 +8,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseConnectionOption;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseCredential;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseDatabaseDetail;
+import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasePeerTargetDatabase;
+import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasePeerTargetDatabaseDetail;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseTlsConfig;
 import java.lang.Object;
 import java.lang.String;
@@ -48,12 +50,12 @@ public final class GetTargetDatabaseResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The description of the target database in Data Safe.
+     * @return The description of the peer target database in Data Safe.
      * 
      */
     private String description;
     /**
-     * @return The display name of the target database in Data Safe.
+     * @return The display name of the peer target database in Data Safe.
      * 
      */
     private String displayName;
@@ -68,10 +70,16 @@ public final class GetTargetDatabaseResult {
      */
     private String id;
     /**
-     * @return Details about the current state of the target database in Data Safe.
+     * @return Details about the current state of the peer target database in Data Safe.
      * 
      */
     private String lifecycleDetails;
+    private List<GetTargetDatabasePeerTargetDatabaseDetail> peerTargetDatabaseDetails;
+    /**
+     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * 
+     */
+    private List<GetTargetDatabasePeerTargetDatabase> peerTargetDatabases;
     /**
      * @return The current state of the target database in Data Safe.
      * 
@@ -143,14 +151,14 @@ public final class GetTargetDatabaseResult {
         return this.definedTags;
     }
     /**
-     * @return The description of the target database in Data Safe.
+     * @return The description of the peer target database in Data Safe.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return The display name of the target database in Data Safe.
+     * @return The display name of the peer target database in Data Safe.
      * 
      */
     public String displayName() {
@@ -171,11 +179,21 @@ public final class GetTargetDatabaseResult {
         return this.id;
     }
     /**
-     * @return Details about the current state of the target database in Data Safe.
+     * @return Details about the current state of the peer target database in Data Safe.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public List<GetTargetDatabasePeerTargetDatabaseDetail> peerTargetDatabaseDetails() {
+        return this.peerTargetDatabaseDetails;
+    }
+    /**
+     * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * 
+     */
+    public List<GetTargetDatabasePeerTargetDatabase> peerTargetDatabases() {
+        return this.peerTargetDatabases;
     }
     /**
      * @return The current state of the target database in Data Safe.
@@ -236,6 +254,8 @@ public final class GetTargetDatabaseResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleDetails;
+        private List<GetTargetDatabasePeerTargetDatabaseDetail> peerTargetDatabaseDetails;
+        private List<GetTargetDatabasePeerTargetDatabase> peerTargetDatabases;
         private String state;
         private Map<String,Object> systemTags;
         private String targetDatabaseId;
@@ -256,6 +276,8 @@ public final class GetTargetDatabaseResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.peerTargetDatabaseDetails = defaults.peerTargetDatabaseDetails;
+    	      this.peerTargetDatabases = defaults.peerTargetDatabases;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.targetDatabaseId = defaults.targetDatabaseId;
@@ -365,6 +387,28 @@ public final class GetTargetDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder peerTargetDatabaseDetails(List<GetTargetDatabasePeerTargetDatabaseDetail> peerTargetDatabaseDetails) {
+            if (peerTargetDatabaseDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseResult", "peerTargetDatabaseDetails");
+            }
+            this.peerTargetDatabaseDetails = peerTargetDatabaseDetails;
+            return this;
+        }
+        public Builder peerTargetDatabaseDetails(GetTargetDatabasePeerTargetDatabaseDetail... peerTargetDatabaseDetails) {
+            return peerTargetDatabaseDetails(List.of(peerTargetDatabaseDetails));
+        }
+        @CustomType.Setter
+        public Builder peerTargetDatabases(List<GetTargetDatabasePeerTargetDatabase> peerTargetDatabases) {
+            if (peerTargetDatabases == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseResult", "peerTargetDatabases");
+            }
+            this.peerTargetDatabases = peerTargetDatabases;
+            return this;
+        }
+        public Builder peerTargetDatabases(GetTargetDatabasePeerTargetDatabase... peerTargetDatabases) {
+            return peerTargetDatabases(List.of(peerTargetDatabases));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetTargetDatabaseResult", "state");
@@ -428,6 +472,8 @@ public final class GetTargetDatabaseResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.peerTargetDatabaseDetails = peerTargetDatabaseDetails;
+            _resultValue.peerTargetDatabases = peerTargetDatabases;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.targetDatabaseId = targetDatabaseId;

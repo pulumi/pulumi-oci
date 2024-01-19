@@ -62,6 +62,7 @@ namespace Pulumi.Oci.Database
     ///         PrivateZoneId = oci_dns_zone.Test_zone.Id,
     ///         ScanListenerPortTcp = @var.Cloud_vm_cluster_scan_listener_port_tcp,
     ///         ScanListenerPortTcpSsl = @var.Cloud_vm_cluster_scan_listener_port_tcp_ssl,
+    ///         SystemVersion = @var.Cloud_vm_cluster_system_version,
     ///         TimeZone = @var.Cloud_vm_cluster_time_zone,
     ///     });
     /// 
@@ -638,6 +639,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
+
+        /// <summary>
+        /// Operating system version of the image.
+        /// </summary>
+        [Input("systemVersion")]
+        public Input<string>? SystemVersion { get; set; }
 
         /// <summary>
         /// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 

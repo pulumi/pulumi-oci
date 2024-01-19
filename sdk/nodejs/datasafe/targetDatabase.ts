@@ -47,6 +47,29 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     peerTargetDatabaseDetails: [{
+ *         databaseDetails: {
+ *             databaseType: _var.target_database_peer_target_database_details_database_details_database_type,
+ *             infrastructureType: _var.target_database_peer_target_database_details_database_details_infrastructure_type,
+ *             autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
+ *             dbSystemId: oci_database_db_system.test_db_system.id,
+ *             instanceId: oci_core_instance.test_instance.id,
+ *             ipAddresses: _var.target_database_peer_target_database_details_database_details_ip_addresses,
+ *             listenerPort: _var.target_database_peer_target_database_details_database_details_listener_port,
+ *             serviceName: oci_core_service.test_service.name,
+ *             vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ *         },
+ *         dataguardAssociationId: oci_certificates_management_association.test_association.id,
+ *         description: _var.target_database_peer_target_database_details_description,
+ *         displayName: _var.target_database_peer_target_database_details_display_name,
+ *         tlsConfig: {
+ *             status: _var.target_database_peer_target_database_details_tls_config_status,
+ *             certificateStoreType: _var.target_database_peer_target_database_details_tls_config_certificate_store_type,
+ *             keyStoreContent: _var.target_database_peer_target_database_details_tls_config_key_store_content,
+ *             storePassword: _var.target_database_peer_target_database_details_tls_config_store_password,
+ *             trustStoreContent: _var.target_database_peer_target_database_details_tls_config_trust_store_content,
+ *         },
+ *     }],
  *     tlsConfig: {
  *         status: _var.target_database_tls_config_status,
  *         certificateStoreType: _var.target_database_tls_config_certificate_store_type,
@@ -110,7 +133,7 @@ export class TargetDatabase extends pulumi.CustomResource {
      */
     public readonly credentials!: pulumi.Output<outputs.DataSafe.TargetDatabaseCredentials>;
     /**
-     * (Updatable) Details of the database for the registration in Data Safe.
+     * Details of the database for the registration in Data Safe.
      */
     public readonly databaseDetails!: pulumi.Output<outputs.DataSafe.TargetDatabaseDatabaseDetails>;
     /**
@@ -118,11 +141,11 @@ export class TargetDatabase extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the target database in Data Safe.
+     * The description of the peer target database in Data Safe.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+     * The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -130,9 +153,17 @@ export class TargetDatabase extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Details about the current state of the target database in Data Safe.
+     * Details about the current state of the peer target database in Data Safe.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * The details of the database to be registered as a peer target database.
+     */
+    public readonly peerTargetDatabaseDetails!: pulumi.Output<outputs.DataSafe.TargetDatabasePeerTargetDatabaseDetail[]>;
+    /**
+     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     */
+    public /*out*/ readonly peerTargetDatabases!: pulumi.Output<outputs.DataSafe.TargetDatabasePeerTargetDatabase[]>;
     /**
      * The current state of the target database in Data Safe.
      */
@@ -177,6 +208,8 @@ export class TargetDatabase extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["peerTargetDatabaseDetails"] = state ? state.peerTargetDatabaseDetails : undefined;
+            resourceInputs["peerTargetDatabases"] = state ? state.peerTargetDatabases : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -198,9 +231,11 @@ export class TargetDatabase extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["peerTargetDatabaseDetails"] = args ? args.peerTargetDatabaseDetails : undefined;
             resourceInputs["tlsConfig"] = args ? args.tlsConfig : undefined;
             resourceInputs["associatedResourceIds"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["peerTargetDatabases"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -232,7 +267,7 @@ export interface TargetDatabaseState {
      */
     credentials?: pulumi.Input<inputs.DataSafe.TargetDatabaseCredentials>;
     /**
-     * (Updatable) Details of the database for the registration in Data Safe.
+     * Details of the database for the registration in Data Safe.
      */
     databaseDetails?: pulumi.Input<inputs.DataSafe.TargetDatabaseDatabaseDetails>;
     /**
@@ -240,11 +275,11 @@ export interface TargetDatabaseState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the target database in Data Safe.
+     * The description of the peer target database in Data Safe.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+     * The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -252,9 +287,17 @@ export interface TargetDatabaseState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Details about the current state of the target database in Data Safe.
+     * Details about the current state of the peer target database in Data Safe.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * The details of the database to be registered as a peer target database.
+     */
+    peerTargetDatabaseDetails?: pulumi.Input<pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseDetail>[]>;
+    /**
+     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     */
+    peerTargetDatabases?: pulumi.Input<pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabase>[]>;
     /**
      * The current state of the target database in Data Safe.
      */
@@ -294,7 +337,7 @@ export interface TargetDatabaseArgs {
      */
     credentials?: pulumi.Input<inputs.DataSafe.TargetDatabaseCredentials>;
     /**
-     * (Updatable) Details of the database for the registration in Data Safe.
+     * Details of the database for the registration in Data Safe.
      */
     databaseDetails: pulumi.Input<inputs.DataSafe.TargetDatabaseDatabaseDetails>;
     /**
@@ -302,17 +345,21 @@ export interface TargetDatabaseArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the target database in Data Safe.
+     * The description of the peer target database in Data Safe.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+     * The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
      */
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * The details of the database to be registered as a peer target database.
+     */
+    peerTargetDatabaseDetails?: pulumi.Input<pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseDetail>[]>;
     /**
      * (Updatable) The details required to establish a TLS enabled connection.
      */

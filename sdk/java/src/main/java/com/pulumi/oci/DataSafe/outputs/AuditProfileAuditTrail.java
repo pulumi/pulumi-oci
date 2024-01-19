@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -65,6 +66,26 @@ public final class AuditProfileAuditTrail {
      */
     private @Nullable String lifecycleDetails;
     /**
+     * @return The secondary id assigned for the peer database registered with Data Safe.
+     * 
+     */
+    private @Nullable Integer peerTargetDatabaseKey;
+    /**
+     * @return The details of the audit trail purge job that ran on the &#34;purgeJobTime&#34;.
+     * 
+     */
+    private @Nullable String purgeJobDetails;
+    /**
+     * @return The current status of the audit trail purge job.
+     * 
+     */
+    private @Nullable String purgeJobStatus;
+    /**
+     * @return The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database&#39;s audit trail does not become too large. In the format defined by RFC3339.
+     * 
+     */
+    private @Nullable String purgeJobTime;
+    /**
      * @return The current state of the audit profile.
      * 
      */
@@ -104,6 +125,11 @@ public final class AuditProfileAuditTrail {
      * 
      */
     private @Nullable String trailLocation;
+    /**
+     * @return The underlying source of unified audit trail.
+     * 
+     */
+    private @Nullable String trailSource;
     /**
      * @return The OCID of the workrequest for audit trail which collects audit records.
      * 
@@ -182,6 +208,34 @@ public final class AuditProfileAuditTrail {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
+     * @return The secondary id assigned for the peer database registered with Data Safe.
+     * 
+     */
+    public Optional<Integer> peerTargetDatabaseKey() {
+        return Optional.ofNullable(this.peerTargetDatabaseKey);
+    }
+    /**
+     * @return The details of the audit trail purge job that ran on the &#34;purgeJobTime&#34;.
+     * 
+     */
+    public Optional<String> purgeJobDetails() {
+        return Optional.ofNullable(this.purgeJobDetails);
+    }
+    /**
+     * @return The current status of the audit trail purge job.
+     * 
+     */
+    public Optional<String> purgeJobStatus() {
+        return Optional.ofNullable(this.purgeJobStatus);
+    }
+    /**
+     * @return The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database&#39;s audit trail does not become too large. In the format defined by RFC3339.
+     * 
+     */
+    public Optional<String> purgeJobTime() {
+        return Optional.ofNullable(this.purgeJobTime);
+    }
+    /**
      * @return The current state of the audit profile.
      * 
      */
@@ -238,6 +292,13 @@ public final class AuditProfileAuditTrail {
         return Optional.ofNullable(this.trailLocation);
     }
     /**
+     * @return The underlying source of unified audit trail.
+     * 
+     */
+    public Optional<String> trailSource() {
+        return Optional.ofNullable(this.trailSource);
+    }
+    /**
      * @return The OCID of the workrequest for audit trail which collects audit records.
      * 
      */
@@ -264,6 +325,10 @@ public final class AuditProfileAuditTrail {
         private @Nullable String id;
         private @Nullable Boolean isAutoPurgeEnabled;
         private @Nullable String lifecycleDetails;
+        private @Nullable Integer peerTargetDatabaseKey;
+        private @Nullable String purgeJobDetails;
+        private @Nullable String purgeJobStatus;
+        private @Nullable String purgeJobTime;
         private @Nullable String state;
         private @Nullable String status;
         private @Nullable Map<String,Object> systemTags;
@@ -272,6 +337,7 @@ public final class AuditProfileAuditTrail {
         private @Nullable String timeLastCollected;
         private @Nullable String timeUpdated;
         private @Nullable String trailLocation;
+        private @Nullable String trailSource;
         private @Nullable String workRequestId;
         public Builder() {}
         public Builder(AuditProfileAuditTrail defaults) {
@@ -286,6 +352,10 @@ public final class AuditProfileAuditTrail {
     	      this.id = defaults.id;
     	      this.isAutoPurgeEnabled = defaults.isAutoPurgeEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.peerTargetDatabaseKey = defaults.peerTargetDatabaseKey;
+    	      this.purgeJobDetails = defaults.purgeJobDetails;
+    	      this.purgeJobStatus = defaults.purgeJobStatus;
+    	      this.purgeJobTime = defaults.purgeJobTime;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
     	      this.systemTags = defaults.systemTags;
@@ -294,6 +364,7 @@ public final class AuditProfileAuditTrail {
     	      this.timeLastCollected = defaults.timeLastCollected;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.trailLocation = defaults.trailLocation;
+    	      this.trailSource = defaults.trailSource;
     	      this.workRequestId = defaults.workRequestId;
         }
 
@@ -358,6 +429,30 @@ public final class AuditProfileAuditTrail {
             return this;
         }
         @CustomType.Setter
+        public Builder peerTargetDatabaseKey(@Nullable Integer peerTargetDatabaseKey) {
+
+            this.peerTargetDatabaseKey = peerTargetDatabaseKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder purgeJobDetails(@Nullable String purgeJobDetails) {
+
+            this.purgeJobDetails = purgeJobDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder purgeJobStatus(@Nullable String purgeJobStatus) {
+
+            this.purgeJobStatus = purgeJobStatus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder purgeJobTime(@Nullable String purgeJobTime) {
+
+            this.purgeJobTime = purgeJobTime;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -406,6 +501,12 @@ public final class AuditProfileAuditTrail {
             return this;
         }
         @CustomType.Setter
+        public Builder trailSource(@Nullable String trailSource) {
+
+            this.trailSource = trailSource;
+            return this;
+        }
+        @CustomType.Setter
         public Builder workRequestId(@Nullable String workRequestId) {
 
             this.workRequestId = workRequestId;
@@ -423,6 +524,10 @@ public final class AuditProfileAuditTrail {
             _resultValue.id = id;
             _resultValue.isAutoPurgeEnabled = isAutoPurgeEnabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.peerTargetDatabaseKey = peerTargetDatabaseKey;
+            _resultValue.purgeJobDetails = purgeJobDetails;
+            _resultValue.purgeJobStatus = purgeJobStatus;
+            _resultValue.purgeJobTime = purgeJobTime;
             _resultValue.state = state;
             _resultValue.status = status;
             _resultValue.systemTags = systemTags;
@@ -431,6 +536,7 @@ public final class AuditProfileAuditTrail {
             _resultValue.timeLastCollected = timeLastCollected;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.trailLocation = trailLocation;
+            _resultValue.trailSource = trailSource;
             _resultValue.workRequestId = workRequestId;
             return _resultValue;
         }

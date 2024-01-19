@@ -10,6 +10,11 @@ export type Alarm = import("./alarm").Alarm;
 export const Alarm: typeof import("./alarm").Alarm = null as any;
 utilities.lazyLoad(exports, ["Alarm"], () => require("./alarm"));
 
+export { AlarmSuppressionArgs, AlarmSuppressionState } from "./alarmSuppression";
+export type AlarmSuppression = import("./alarmSuppression").AlarmSuppression;
+export const AlarmSuppression: typeof import("./alarmSuppression").AlarmSuppression = null as any;
+utilities.lazyLoad(exports, ["AlarmSuppression"], () => require("./alarmSuppression"));
+
 export { GetAlarmArgs, GetAlarmResult, GetAlarmOutputArgs } from "./getAlarm";
 export const getAlarm: typeof import("./getAlarm").getAlarm = null as any;
 export const getAlarmOutput: typeof import("./getAlarm").getAlarmOutput = null as any;
@@ -24,6 +29,16 @@ export { GetAlarmStatusesArgs, GetAlarmStatusesResult, GetAlarmStatusesOutputArg
 export const getAlarmStatuses: typeof import("./getAlarmStatuses").getAlarmStatuses = null as any;
 export const getAlarmStatusesOutput: typeof import("./getAlarmStatuses").getAlarmStatusesOutput = null as any;
 utilities.lazyLoad(exports, ["getAlarmStatuses","getAlarmStatusesOutput"], () => require("./getAlarmStatuses"));
+
+export { GetAlarmSuppressionArgs, GetAlarmSuppressionResult, GetAlarmSuppressionOutputArgs } from "./getAlarmSuppression";
+export const getAlarmSuppression: typeof import("./getAlarmSuppression").getAlarmSuppression = null as any;
+export const getAlarmSuppressionOutput: typeof import("./getAlarmSuppression").getAlarmSuppressionOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarmSuppression","getAlarmSuppressionOutput"], () => require("./getAlarmSuppression"));
+
+export { GetAlarmSuppressionsArgs, GetAlarmSuppressionsResult, GetAlarmSuppressionsOutputArgs } from "./getAlarmSuppressions";
+export const getAlarmSuppressions: typeof import("./getAlarmSuppressions").getAlarmSuppressions = null as any;
+export const getAlarmSuppressionsOutput: typeof import("./getAlarmSuppressions").getAlarmSuppressionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarmSuppressions","getAlarmSuppressionsOutput"], () => require("./getAlarmSuppressions"));
 
 export { GetAlarmsArgs, GetAlarmsResult, GetAlarmsOutputArgs } from "./getAlarms";
 export const getAlarms: typeof import("./getAlarms").getAlarms = null as any;
@@ -47,9 +62,12 @@ const _module = {
         switch (type) {
             case "oci:Monitoring/alarm:Alarm":
                 return new Alarm(name, <any>undefined, { urn })
+            case "oci:Monitoring/alarmSuppression:AlarmSuppression":
+                return new AlarmSuppression(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("oci", "Monitoring/alarm", _module)
+pulumi.runtime.registerResourceModule("oci", "Monitoring/alarmSuppression", _module)

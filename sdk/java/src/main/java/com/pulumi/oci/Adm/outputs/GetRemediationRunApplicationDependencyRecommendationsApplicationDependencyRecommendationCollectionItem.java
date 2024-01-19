@@ -27,10 +27,20 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
      */
     private String nodeId;
     /**
+     * @return A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * 
+     */
+    private String purl;
+    /**
      * @return Recommended application dependency in &#34;group:artifact:version&#34; (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
      * 
      */
     private String recommendedGav;
+    /**
+     * @return Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+     * 
+     */
+    private String recommendedPurl;
 
     private GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem() {}
     /**
@@ -55,11 +65,25 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
         return this.nodeId;
     }
     /**
+     * @return A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * 
+     */
+    public String purl() {
+        return this.purl;
+    }
+    /**
      * @return Recommended application dependency in &#34;group:artifact:version&#34; (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
      * 
      */
     public String recommendedGav() {
         return this.recommendedGav;
+    }
+    /**
+     * @return Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+     * 
+     */
+    public String recommendedPurl() {
+        return this.recommendedPurl;
     }
 
     public static Builder builder() {
@@ -74,14 +98,18 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
         private List<String> applicationDependencyNodeIds;
         private String gav;
         private String nodeId;
+        private String purl;
         private String recommendedGav;
+        private String recommendedPurl;
         public Builder() {}
         public Builder(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applicationDependencyNodeIds = defaults.applicationDependencyNodeIds;
     	      this.gav = defaults.gav;
     	      this.nodeId = defaults.nodeId;
+    	      this.purl = defaults.purl;
     	      this.recommendedGav = defaults.recommendedGav;
+    	      this.recommendedPurl = defaults.recommendedPurl;
         }
 
         @CustomType.Setter
@@ -112,6 +140,14 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
             return this;
         }
         @CustomType.Setter
+        public Builder purl(String purl) {
+            if (purl == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem", "purl");
+            }
+            this.purl = purl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder recommendedGav(String recommendedGav) {
             if (recommendedGav == null) {
               throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem", "recommendedGav");
@@ -119,12 +155,22 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
             this.recommendedGav = recommendedGav;
             return this;
         }
+        @CustomType.Setter
+        public Builder recommendedPurl(String recommendedPurl) {
+            if (recommendedPurl == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem", "recommendedPurl");
+            }
+            this.recommendedPurl = recommendedPurl;
+            return this;
+        }
         public GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem build() {
             final var _resultValue = new GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem();
             _resultValue.applicationDependencyNodeIds = applicationDependencyNodeIds;
             _resultValue.gav = gav;
             _resultValue.nodeId = nodeId;
+            _resultValue.purl = purl;
             _resultValue.recommendedGav = recommendedGav;
+            _resultValue.recommendedPurl = recommendedPurl;
             return _resultValue;
         }
     }

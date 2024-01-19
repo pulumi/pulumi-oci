@@ -105,7 +105,7 @@ def get_user_assessment_comparison(comparison_user_assessment_id: Optional[str] 
     """
     This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
 
-    Gets the details of the comparison report for the user assessments provided.
+    Gets the details of the comparison report for the user assessments submitted for comparison.
 
     ## Example Usage
 
@@ -143,7 +143,7 @@ def get_user_assessment_comparison_output(comparison_user_assessment_id: Optiona
     """
     This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
 
-    Gets the details of the comparison report for the user assessments provided.
+    Gets the details of the comparison report for the user assessments submitted for comparison.
 
     ## Example Usage
 

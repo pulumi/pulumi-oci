@@ -19,14 +19,14 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     public static final TargetDatabaseDatabaseDetailsArgs Empty = new TargetDatabaseDatabaseDetailsArgs();
 
     /**
-     * (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+     * The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     @Import(name="autonomousDatabaseId")
     private @Nullable Output<String> autonomousDatabaseId;
 
     /**
-     * @return (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+     * @return The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     public Optional<Output<String>> autonomousDatabaseId() {
@@ -34,14 +34,14 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The database type.
+     * The database type.
      * 
      */
     @Import(name="databaseType", required=true)
     private Output<String> databaseType;
 
     /**
-     * @return (Updatable) The database type.
+     * @return The database type.
      * 
      */
     public Output<String> databaseType() {
@@ -49,14 +49,14 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+     * The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     @Import(name="dbSystemId")
     private @Nullable Output<String> dbSystemId;
 
     /**
-     * @return (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+     * @return The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     public Optional<Output<String>> dbSystemId() {
@@ -64,14 +64,14 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The infrastructure type the database is running on.
+     * The infrastructure type the database is running on.
      * 
      */
     @Import(name="infrastructureType", required=true)
     private Output<String> infrastructureType;
 
     /**
-     * @return (Updatable) The infrastructure type the database is running on.
+     * @return The infrastructure type the database is running on.
      * 
      */
     public Output<String> infrastructureType() {
@@ -79,14 +79,14 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The OCID of the compute instance on which the database is running.
+     * The OCID of the compute instance on which the database is running.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return (Updatable) The OCID of the compute instance on which the database is running.
+     * @return The OCID of the compute instance on which the database is running.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -94,14 +94,14 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
+     * The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
      * 
      */
     @Import(name="ipAddresses")
     private @Nullable Output<List<String>> ipAddresses;
 
     /**
-     * @return (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
+     * @return The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
      * 
      */
     public Optional<Output<List<String>>> ipAddresses() {
@@ -109,14 +109,14 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The port number of the database listener.
+     * The port number of the database listener.
      * 
      */
     @Import(name="listenerPort")
     private @Nullable Output<Integer> listenerPort;
 
     /**
-     * @return (Updatable) The port number of the database listener.
+     * @return The port number of the database listener.
      * 
      */
     public Optional<Output<Integer>> listenerPort() {
@@ -124,14 +124,14 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The service name of the database registered as target database.
+     * The service name of the database registered as target database.
      * 
      */
     @Import(name="serviceName")
     private @Nullable Output<String> serviceName;
 
     /**
-     * @return (Updatable) The service name of the database registered as target database.
+     * @return The service name of the database registered as target database.
      * 
      */
     public Optional<Output<String>> serviceName() {
@@ -139,14 +139,14 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The OCID of the VM cluster in which the database is running.
+     * The OCID of the VM cluster in which the database is running.
      * 
      */
     @Import(name="vmClusterId")
     private @Nullable Output<String> vmClusterId;
 
     /**
-     * @return (Updatable) The OCID of the VM cluster in which the database is running.
+     * @return The OCID of the VM cluster in which the database is running.
      * 
      */
     public Optional<Output<String>> vmClusterId() {
@@ -186,7 +186,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param autonomousDatabaseId (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+         * @param autonomousDatabaseId The OCID of the Autonomous Database registered as a target database in Data Safe.
          * 
          * @return builder
          * 
@@ -197,7 +197,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param autonomousDatabaseId (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+         * @param autonomousDatabaseId The OCID of the Autonomous Database registered as a target database in Data Safe.
          * 
          * @return builder
          * 
@@ -207,7 +207,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param databaseType (Updatable) The database type.
+         * @param databaseType The database type.
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param databaseType (Updatable) The database type.
+         * @param databaseType The database type.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param dbSystemId (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+         * @param dbSystemId The OCID of the cloud database registered as a target database in Data Safe.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param dbSystemId (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+         * @param dbSystemId The OCID of the cloud database registered as a target database in Data Safe.
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param infrastructureType (Updatable) The infrastructure type the database is running on.
+         * @param infrastructureType The infrastructure type the database is running on.
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param infrastructureType (Updatable) The infrastructure type the database is running on.
+         * @param infrastructureType The infrastructure type the database is running on.
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param instanceId (Updatable) The OCID of the compute instance on which the database is running.
+         * @param instanceId The OCID of the compute instance on which the database is running.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param instanceId (Updatable) The OCID of the compute instance on which the database is running.
+         * @param instanceId The OCID of the compute instance on which the database is running.
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ipAddresses (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
+         * @param ipAddresses The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ipAddresses (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
+         * @param ipAddresses The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ipAddresses (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
+         * @param ipAddresses The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param listenerPort (Updatable) The port number of the database listener.
+         * @param listenerPort The port number of the database listener.
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param listenerPort (Updatable) The port number of the database listener.
+         * @param listenerPort The port number of the database listener.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param serviceName (Updatable) The service name of the database registered as target database.
+         * @param serviceName The service name of the database registered as target database.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param serviceName (Updatable) The service name of the database registered as target database.
+         * @param serviceName The service name of the database registered as target database.
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param vmClusterId (Updatable) The OCID of the VM cluster in which the database is running.
+         * @param vmClusterId The OCID of the VM cluster in which the database is running.
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param vmClusterId (Updatable) The OCID of the VM cluster in which the database is running.
+         * @param vmClusterId The OCID of the VM cluster in which the database is running.
          * 
          * @return builder
          * 

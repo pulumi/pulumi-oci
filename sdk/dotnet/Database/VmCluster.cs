@@ -51,6 +51,7 @@ namespace Pulumi.Oci.Database
     ///         IsSparseDiskgroupEnabled = @var.Vm_cluster_is_sparse_diskgroup_enabled,
     ///         LicenseModel = @var.Vm_cluster_license_model,
     ///         MemorySizeInGbs = @var.Vm_cluster_memory_size_in_gbs,
+    ///         SystemVersion = @var.Vm_cluster_system_version,
     ///         TimeZone = @var.Vm_cluster_time_zone,
     ///     });
     /// 
@@ -408,6 +409,12 @@ namespace Pulumi.Oci.Database
             get => _sshPublicKeys ?? (_sshPublicKeys = new InputList<string>());
             set => _sshPublicKeys = value;
         }
+
+        /// <summary>
+        /// Operating system version of the image.
+        /// </summary>
+        [Input("systemVersion")]
+        public Input<string>? SystemVersion { get; set; }
 
         /// <summary>
         /// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).

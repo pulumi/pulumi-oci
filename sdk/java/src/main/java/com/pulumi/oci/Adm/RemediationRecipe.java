@@ -57,6 +57,7 @@ import javax.annotation.Nullable;
  *                 .exclusions(var_.remediation_recipe_detect_configuration_exclusions())
  *                 .maxPermissibleCvssV2score(var_.remediation_recipe_detect_configuration_max_permissible_cvss_v2score())
  *                 .maxPermissibleCvssV3score(var_.remediation_recipe_detect_configuration_max_permissible_cvss_v3score())
+ *                 .maxPermissibleSeverity(var_.remediation_recipe_detect_configuration_max_permissible_severity())
  *                 .upgradePolicy(var_.remediation_recipe_detect_configuration_upgrade_policy())
  *                 .build())
  *             .isRunTriggeredOnKbChange(var_.remediation_recipe_is_run_triggered_on_kb_change())

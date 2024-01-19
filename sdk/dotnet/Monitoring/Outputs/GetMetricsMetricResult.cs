@@ -22,11 +22,11 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly bool CompartmentIdInSubtree;
         /// <summary>
-        /// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
+        /// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DimensionFilters;
         /// <summary>
-        /// Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
+        /// Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> Dimensions;
         /// <summary>

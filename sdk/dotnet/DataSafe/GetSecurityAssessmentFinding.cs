@@ -38,6 +38,9 @@ namespace Pulumi.Oci.DataSafe
         [Input("findingKey")]
         public string? FindingKey { get; set; }
 
+        [Input("isTopFinding")]
+        public bool? IsTopFinding { get; set; }
+
         [Input("references")]
         public string? References { get; set; }
 
@@ -46,6 +49,9 @@ namespace Pulumi.Oci.DataSafe
 
         [Input("severity")]
         public string? Severity { get; set; }
+
+        [Input("state")]
+        public string? State { get; set; }
 
         public GetSecurityAssessmentFindingArgs()
         {
@@ -72,6 +78,9 @@ namespace Pulumi.Oci.DataSafe
         [Input("findingKey")]
         public Input<string>? FindingKey { get; set; }
 
+        [Input("isTopFinding")]
+        public Input<bool>? IsTopFinding { get; set; }
+
         [Input("references")]
         public Input<string>? References { get; set; }
 
@@ -80,6 +89,9 @@ namespace Pulumi.Oci.DataSafe
 
         [Input("severity")]
         public Input<string>? Severity { get; set; }
+
+        [Input("state")]
+        public Input<string>? State { get; set; }
 
         public GetSecurityAssessmentFindingInvokeArgs()
         {
@@ -100,9 +112,11 @@ namespace Pulumi.Oci.DataSafe
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsTopFinding;
         public readonly string? References;
         public readonly string SecurityAssessmentId;
         public readonly string? Severity;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetSecurityAssessmentFindingResult(
@@ -118,11 +132,15 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            bool? isTopFinding,
+
             string? references,
 
             string securityAssessmentId,
 
-            string? severity)
+            string? severity,
+
+            string? state)
         {
             AccessLevel = accessLevel;
             CompartmentIdInSubtree = compartmentIdInSubtree;
@@ -130,9 +148,11 @@ namespace Pulumi.Oci.DataSafe
             FindingKey = findingKey;
             Findings = findings;
             Id = id;
+            IsTopFinding = isTopFinding;
             References = references;
             SecurityAssessmentId = securityAssessmentId;
             Severity = severity;
+            State = state;
         }
     }
 }

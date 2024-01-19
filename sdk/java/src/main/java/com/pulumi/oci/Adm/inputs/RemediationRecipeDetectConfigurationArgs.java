@@ -63,6 +63,21 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
     }
 
     /**
+     * (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+     * 
+     */
+    @Import(name="maxPermissibleSeverity")
+    private @Nullable Output<String> maxPermissibleSeverity;
+
+    /**
+     * @return (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+     * 
+     */
+    public Optional<Output<String>> maxPermissibleSeverity() {
+        return Optional.ofNullable(this.maxPermissibleSeverity);
+    }
+
+    /**
      * (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
      * 
      */
@@ -83,6 +98,7 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
         this.exclusions = $.exclusions;
         this.maxPermissibleCvssV2score = $.maxPermissibleCvssV2score;
         this.maxPermissibleCvssV3score = $.maxPermissibleCvssV3score;
+        this.maxPermissibleSeverity = $.maxPermissibleSeverity;
         this.upgradePolicy = $.upgradePolicy;
     }
 
@@ -175,6 +191,27 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
          */
         public Builder maxPermissibleCvssV3score(Double maxPermissibleCvssV3score) {
             return maxPermissibleCvssV3score(Output.of(maxPermissibleCvssV3score));
+        }
+
+        /**
+         * @param maxPermissibleSeverity (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxPermissibleSeverity(@Nullable Output<String> maxPermissibleSeverity) {
+            $.maxPermissibleSeverity = maxPermissibleSeverity;
+            return this;
+        }
+
+        /**
+         * @param maxPermissibleSeverity (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxPermissibleSeverity(String maxPermissibleSeverity) {
+            return maxPermissibleSeverity(Output.of(maxPermissibleSeverity));
         }
 
         /**

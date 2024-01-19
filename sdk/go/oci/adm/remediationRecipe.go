@@ -36,6 +36,7 @@ import (
 //					Exclusions:                pulumi.Any(_var.Remediation_recipe_detect_configuration_exclusions),
 //					MaxPermissibleCvssV2score: pulumi.Any(_var.Remediation_recipe_detect_configuration_max_permissible_cvss_v2score),
 //					MaxPermissibleCvssV3score: pulumi.Any(_var.Remediation_recipe_detect_configuration_max_permissible_cvss_v3score),
+//					MaxPermissibleSeverity:    pulumi.Any(_var.Remediation_recipe_detect_configuration_max_permissible_severity),
 //					UpgradePolicy:             pulumi.Any(_var.Remediation_recipe_detect_configuration_upgrade_policy),
 //				},
 //				IsRunTriggeredOnKbChange: pulumi.Any(_var.Remediation_recipe_is_run_triggered_on_kb_change),

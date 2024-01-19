@@ -67,6 +67,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MaskingPolicy{}
 	case "oci:DataSafe/onPremConnector:OnPremConnector":
 		r = &OnPremConnector{}
+	case "oci:DataSafe/report:Report":
+		r = &Report{}
 	case "oci:DataSafe/reportDefinition:ReportDefinition":
 		r = &ReportDefinition{}
 	case "oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference":
@@ -103,6 +105,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &TargetAlertPolicyAssociation{}
 	case "oci:DataSafe/targetDatabase:TargetDatabase":
 		r = &TargetDatabase{}
+	case "oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase":
+		r = &TargetDatabasePeerTargetDatabase{}
 	case "oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline":
 		r = &UnsetSecurityAssessmentBaseline{}
 	case "oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline":
@@ -239,6 +243,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/report",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/reportDefinition",
 		&module{version},
 	)
@@ -325,6 +334,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/targetDatabase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/targetDatabasePeerTargetDatabase",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

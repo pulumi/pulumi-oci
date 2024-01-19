@@ -28,6 +28,11 @@ public final class GetRemediationRecipeDetectConfiguration {
      */
     private Double maxPermissibleCvssV3score;
     /**
+     * @return The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+     * 
+     */
+    private String maxPermissibleSeverity;
+    /**
      * @return The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
      * 
      */
@@ -56,6 +61,13 @@ public final class GetRemediationRecipeDetectConfiguration {
         return this.maxPermissibleCvssV3score;
     }
     /**
+     * @return The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+     * 
+     */
+    public String maxPermissibleSeverity() {
+        return this.maxPermissibleSeverity;
+    }
+    /**
      * @return The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
      * 
      */
@@ -75,6 +87,7 @@ public final class GetRemediationRecipeDetectConfiguration {
         private List<String> exclusions;
         private Double maxPermissibleCvssV2score;
         private Double maxPermissibleCvssV3score;
+        private String maxPermissibleSeverity;
         private String upgradePolicy;
         public Builder() {}
         public Builder(GetRemediationRecipeDetectConfiguration defaults) {
@@ -82,6 +95,7 @@ public final class GetRemediationRecipeDetectConfiguration {
     	      this.exclusions = defaults.exclusions;
     	      this.maxPermissibleCvssV2score = defaults.maxPermissibleCvssV2score;
     	      this.maxPermissibleCvssV3score = defaults.maxPermissibleCvssV3score;
+    	      this.maxPermissibleSeverity = defaults.maxPermissibleSeverity;
     	      this.upgradePolicy = defaults.upgradePolicy;
         }
 
@@ -113,6 +127,14 @@ public final class GetRemediationRecipeDetectConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder maxPermissibleSeverity(String maxPermissibleSeverity) {
+            if (maxPermissibleSeverity == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeDetectConfiguration", "maxPermissibleSeverity");
+            }
+            this.maxPermissibleSeverity = maxPermissibleSeverity;
+            return this;
+        }
+        @CustomType.Setter
         public Builder upgradePolicy(String upgradePolicy) {
             if (upgradePolicy == null) {
               throw new MissingRequiredPropertyException("GetRemediationRecipeDetectConfiguration", "upgradePolicy");
@@ -125,6 +147,7 @@ public final class GetRemediationRecipeDetectConfiguration {
             _resultValue.exclusions = exclusions;
             _resultValue.maxPermissibleCvssV2score = maxPermissibleCvssV2score;
             _resultValue.maxPermissibleCvssV3score = maxPermissibleCvssV3score;
+            _resultValue.maxPermissibleSeverity = maxPermissibleSeverity;
             _resultValue.upgradePolicy = upgradePolicy;
             return _resultValue;
         }

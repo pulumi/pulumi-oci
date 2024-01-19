@@ -57,18 +57,33 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
     }
 
     /**
-     * Each finding has a key. This key is same for the finding across targets
+     * Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      * 
      */
     @Import(name="findingKey")
     private @Nullable Output<String> findingKey;
 
     /**
-     * @return Each finding has a key. This key is same for the finding across targets
+     * @return Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      * 
      */
     public Optional<Output<String>> findingKey() {
         return Optional.ofNullable(this.findingKey);
+    }
+
+    /**
+     * A filter to return only the findings that are marked as top findings.
+     * 
+     */
+    @Import(name="isTopFinding")
+    private @Nullable Output<Boolean> isTopFinding;
+
+    /**
+     * @return A filter to return only the findings that are marked as top findings.
+     * 
+     */
+    public Optional<Output<Boolean>> isTopFinding() {
+        return Optional.ofNullable(this.isTopFinding);
     }
 
     /**
@@ -116,6 +131,21 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         return Optional.ofNullable(this.severity);
     }
 
+    /**
+     * A filter to return only the findings that match the specified lifecycle states.
+     * 
+     */
+    @Import(name="state")
+    private @Nullable Output<String> state;
+
+    /**
+     * @return A filter to return only the findings that match the specified lifecycle states.
+     * 
+     */
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
+    }
+
     private GetSecurityAssessmentFindingsArgs() {}
 
     private GetSecurityAssessmentFindingsArgs(GetSecurityAssessmentFindingsArgs $) {
@@ -123,9 +153,11 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
+        this.isTopFinding = $.isTopFinding;
         this.references = $.references;
         this.securityAssessmentId = $.securityAssessmentId;
         this.severity = $.severity;
+        this.state = $.state;
     }
 
     public static Builder builder() {
@@ -202,7 +234,7 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param findingKey Each finding has a key. This key is same for the finding across targets
+         * @param findingKey Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
          * 
          * @return builder
          * 
@@ -213,13 +245,34 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param findingKey Each finding has a key. This key is same for the finding across targets
+         * @param findingKey Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
          * 
          * @return builder
          * 
          */
         public Builder findingKey(String findingKey) {
             return findingKey(Output.of(findingKey));
+        }
+
+        /**
+         * @param isTopFinding A filter to return only the findings that are marked as top findings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isTopFinding(@Nullable Output<Boolean> isTopFinding) {
+            $.isTopFinding = isTopFinding;
+            return this;
+        }
+
+        /**
+         * @param isTopFinding A filter to return only the findings that are marked as top findings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isTopFinding(Boolean isTopFinding) {
+            return isTopFinding(Output.of(isTopFinding));
         }
 
         /**
@@ -283,6 +336,27 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
          */
         public Builder severity(String severity) {
             return severity(Output.of(severity));
+        }
+
+        /**
+         * @param state A filter to return only the findings that match the specified lifecycle states.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
+            return this;
+        }
+
+        /**
+         * @param state A filter to return only the findings that match the specified lifecycle states.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         public GetSecurityAssessmentFindingsArgs build() {

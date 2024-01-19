@@ -16,12 +16,12 @@ public final class GetAlarmSuppression {
      */
     private String description;
     /**
-     * @return The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+     * @return The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      * 
      */
     private String timeSuppressFrom;
     /**
-     * @return The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+     * @return The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
      * 
      */
     private String timeSuppressUntil;
@@ -35,14 +35,14 @@ public final class GetAlarmSuppression {
         return this.description;
     }
     /**
-     * @return The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
+     * @return The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      * 
      */
     public String timeSuppressFrom() {
         return this.timeSuppressFrom;
     }
     /**
-     * @return The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+     * @return The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
      * 
      */
     public String timeSuppressUntil() {

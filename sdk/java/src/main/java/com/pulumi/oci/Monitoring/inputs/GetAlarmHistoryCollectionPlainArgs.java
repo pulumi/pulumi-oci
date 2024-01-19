@@ -46,14 +46,14 @@ public final class GetAlarmHistoryCollectionPlainArgs extends com.pulumi.resourc
     }
 
     /**
-     * A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2019-01-01T01:00:00.789Z`
+     * A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2023-01-01T01:00:00.789Z`
      * 
      */
     @Import(name="timestampGreaterThanOrEqualTo")
     private @Nullable String timestampGreaterThanOrEqualTo;
 
     /**
-     * @return A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2019-01-01T01:00:00.789Z`
+     * @return A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2023-01-01T01:00:00.789Z`
      * 
      */
     public Optional<String> timestampGreaterThanOrEqualTo() {
@@ -61,14 +61,14 @@ public final class GetAlarmHistoryCollectionPlainArgs extends com.pulumi.resourc
     }
 
     /**
-     * A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2019-01-02T01:00:00.789Z`
+     * A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2023-01-02T01:00:00.789Z`
      * 
      */
     @Import(name="timestampLessThan")
     private @Nullable String timestampLessThan;
 
     /**
-     * @return A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2019-01-02T01:00:00.789Z`
+     * @return A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2023-01-02T01:00:00.789Z`
      * 
      */
     public Optional<String> timestampLessThan() {
@@ -125,7 +125,7 @@ public final class GetAlarmHistoryCollectionPlainArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param timestampGreaterThanOrEqualTo A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2019-01-01T01:00:00.789Z`
+         * @param timestampGreaterThanOrEqualTo A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2023-01-01T01:00:00.789Z`
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class GetAlarmHistoryCollectionPlainArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param timestampLessThan A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2019-01-02T01:00:00.789Z`
+         * @param timestampLessThan A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2023-01-02T01:00:00.789Z`
          * 
          * @return builder
          * 

@@ -79,7 +79,15 @@ type LookupAuditTrailResult struct {
 	IsAutoPurgeEnabled bool `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit trail in Data Safe.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	ResumeTrigger    int    `pulumi:"resumeTrigger"`
+	// The secondary id assigned for the peer database registered with Data Safe.
+	PeerTargetDatabaseKey int `pulumi:"peerTargetDatabaseKey"`
+	// The details of the audit trail purge job that ran on the "purgeJobTime".
+	PurgeJobDetails string `pulumi:"purgeJobDetails"`
+	// The current status of the audit trail purge job.
+	PurgeJobStatus string `pulumi:"purgeJobStatus"`
+	// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+	PurgeJobTime  string `pulumi:"purgeJobTime"`
+	ResumeTrigger int    `pulumi:"resumeTrigger"`
 	// The current state of the audit trail.
 	State string `pulumi:"state"`
 	// The current sub-state of the audit trail.
@@ -96,6 +104,8 @@ type LookupAuditTrailResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 	TrailLocation string `pulumi:"trailLocation"`
+	// The underlying source of unified audit trail.
+	TrailSource string `pulumi:"trailSource"`
 	// The OCID of the workrequest for audit trail which collects audit records.
 	WorkRequestId string `pulumi:"workRequestId"`
 }
@@ -192,6 +202,26 @@ func (o LookupAuditTrailResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// The secondary id assigned for the peer database registered with Data Safe.
+func (o LookupAuditTrailResultOutput) PeerTargetDatabaseKey() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) int { return v.PeerTargetDatabaseKey }).(pulumi.IntOutput)
+}
+
+// The details of the audit trail purge job that ran on the "purgeJobTime".
+func (o LookupAuditTrailResultOutput) PurgeJobDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.PurgeJobDetails }).(pulumi.StringOutput)
+}
+
+// The current status of the audit trail purge job.
+func (o LookupAuditTrailResultOutput) PurgeJobStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.PurgeJobStatus }).(pulumi.StringOutput)
+}
+
+// The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+func (o LookupAuditTrailResultOutput) PurgeJobTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.PurgeJobTime }).(pulumi.StringOutput)
+}
+
 func (o LookupAuditTrailResultOutput) ResumeTrigger() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAuditTrailResult) int { return v.ResumeTrigger }).(pulumi.IntOutput)
 }
@@ -234,6 +264,11 @@ func (o LookupAuditTrailResultOutput) TimeUpdated() pulumi.StringOutput {
 // An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
 func (o LookupAuditTrailResultOutput) TrailLocation() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.TrailLocation }).(pulumi.StringOutput)
+}
+
+// The underlying source of unified audit trail.
+func (o LookupAuditTrailResultOutput) TrailSource() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.TrailSource }).(pulumi.StringOutput)
 }
 
 // The OCID of the workrequest for audit trail which collects audit records.

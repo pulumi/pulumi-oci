@@ -202,6 +202,7 @@ var mappedMods = map[string]string{
 	"file_storage":                   fileStorageMod,
 	"functions":                      functionsMod,
 	"fusion_apps":                    fusionAppsMod,
+	"generative_ai":                  "GenerativeAi",
 	"generic_artifacts_content":      genericArtifactsContentMod,
 	"golden_gate":                    goldenGateMod,
 	"health_checks":                  healthChecksMod,

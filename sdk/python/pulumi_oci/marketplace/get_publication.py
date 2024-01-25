@@ -22,7 +22,7 @@ class GetPublicationResult:
     """
     A collection of values returned by getPublication.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, freeform_tags=None, icons=None, id=None, is_agreement_acknowledged=None, listing_type=None, long_description=None, name=None, package_details=None, package_type=None, publication_id=None, short_description=None, state=None, support_contacts=None, supported_operating_systems=None, time_created=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, freeform_tags=None, icons=None, id=None, is_agreement_acknowledged=None, listing_type=None, long_description=None, name=None, package_details=None, package_type=None, publication_id=None, short_description=None, state=None, support_contacts=None, supported_operating_systems=None, system_tags=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -71,6 +71,9 @@ class GetPublicationResult:
         if supported_operating_systems and not isinstance(supported_operating_systems, list):
             raise TypeError("Expected argument 'supported_operating_systems' to be a list")
         pulumi.set(__self__, "supported_operating_systems", supported_operating_systems)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -195,6 +198,14 @@ class GetPublicationResult:
         return pulumi.get(self, "supported_operating_systems")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -225,6 +236,7 @@ class AwaitableGetPublicationResult(GetPublicationResult):
             state=self.state,
             support_contacts=self.support_contacts,
             supported_operating_systems=self.supported_operating_systems,
+            system_tags=self.system_tags,
             time_created=self.time_created)
 
 
@@ -269,6 +281,7 @@ def get_publication(publication_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         support_contacts=pulumi.get(__ret__, 'support_contacts'),
         supported_operating_systems=pulumi.get(__ret__, 'supported_operating_systems'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
 
 

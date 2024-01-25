@@ -30583,6 +30583,154 @@ export namespace FusionApps {
     }
 }
 
+export namespace GenerativeAi {
+    export interface DedicatedAiClusterCapacity {
+        /**
+         * The type of the dedicated AI cluster capacity.
+         */
+        capacityType?: pulumi.Input<string>;
+        /**
+         * The total number of endpoints that can be hosted on this dedicated AI cluster.
+         */
+        totalEndpointCapacity?: pulumi.Input<number>;
+        /**
+         * The number of endpoints hosted on this dedicated AI cluster.
+         */
+        usedEndpointCapacity?: pulumi.Input<number>;
+    }
+
+    export interface EndpointContentModerationConfig {
+        /**
+         * (Updatable) Whether to enable the content moderation feature.
+         */
+        isEnabled: pulumi.Input<boolean>;
+    }
+
+    export interface GetDedicatedAiClustersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDedicatedAiClustersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetModelsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetModelsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ModelFineTuneDetails {
+        /**
+         * The OCID of the dedicated AI cluster this fine-tuning runs on.
+         */
+        dedicatedAiClusterId: pulumi.Input<string>;
+        /**
+         * The fine-tuning method and hyperparameters used for fine-tuning a custom model.
+         */
+        trainingConfig?: pulumi.Input<inputs.GenerativeAi.ModelFineTuneDetailsTrainingConfig>;
+        /**
+         * The dataset used to fine-tune the model. 
+         *
+         * Only one dataset is allowed per custom model, which is split 90-10 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
+         */
+        trainingDataset: pulumi.Input<inputs.GenerativeAi.ModelFineTuneDetailsTrainingDataset>;
+    }
+
+    export interface ModelFineTuneDetailsTrainingConfig {
+        /**
+         * Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
+         */
+        earlyStoppingPatience?: pulumi.Input<number>;
+        /**
+         * How much the loss must improve to prevent early stopping.
+         */
+        earlyStoppingThreshold?: pulumi.Input<number>;
+        /**
+         * The initial learning rate to be used during training
+         */
+        learningRate?: pulumi.Input<number>;
+        /**
+         * Determines how frequently to log model metrics. 
+         *
+         * Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
+         */
+        logModelMetricsIntervalInSteps?: pulumi.Input<number>;
+        /**
+         * The number of last layers to be fine-tuned.
+         */
+        numOfLastLayers?: pulumi.Input<number>;
+        /**
+         * The maximum number of training epochs to run for.
+         */
+        totalTrainingEpochs?: pulumi.Input<number>;
+        /**
+         * The batch size used during training.
+         */
+        trainingBatchSize?: pulumi.Input<number>;
+        /**
+         * The fine-tuning method for training a custom model.
+         */
+        trainingConfigType: pulumi.Input<string>;
+    }
+
+    export interface ModelFineTuneDetailsTrainingDataset {
+        /**
+         * The Object Storage bucket name.
+         */
+        bucket: pulumi.Input<string>;
+        /**
+         * The type of the data asset.
+         */
+        datasetType: pulumi.Input<string>;
+        /**
+         * The Object Storage namespace.
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * The Object Storage object name.
+         */
+        object: pulumi.Input<string>;
+    }
+
+    export interface ModelModelMetric {
+        /**
+         * Fine-tuned model accuracy.
+         */
+        finalAccuracy?: pulumi.Input<number>;
+        /**
+         * Fine-tuned model loss.
+         */
+        finalLoss?: pulumi.Input<number>;
+        /**
+         * The type of the model metrics. Each type of model can expect a different set of model metrics.
+         */
+        modelMetricsType?: pulumi.Input<string>;
+    }
+}
+
 export namespace GoldenGate {
     export interface ConnectionAdditionalAttribute {
         /**
@@ -69613,6 +69761,18 @@ export namespace StackMonitoring {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetProcessSetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetProcessSetsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface MetricExtensionEnabledOnResource {
         /**
          * The OCID of the resource on which Metric Extension is enabled
@@ -70256,6 +70416,36 @@ export namespace StackMonitoring {
          * Property Value.
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface ProcessSetSpecification {
+        /**
+         * (Updatable) List of Process Set specification details.
+         */
+        items: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ProcessSetSpecificationItem>[]>;
+    }
+
+    export interface ProcessSetSpecificationItem {
+        /**
+         * (Updatable) Optional label used to identify a single filter.
+         */
+        label?: pulumi.Input<string>;
+        /**
+         * (Updatable) String literal used for exact matching on process name.
+         */
+        processCommand?: pulumi.Input<string>;
+        /**
+         * (Updatable) Regex pattern matching on process arguments.
+         */
+        processLineRegexPattern?: pulumi.Input<string>;
+        /**
+         * (Updatable) String literal used for exact matching on process user.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        processUser?: pulumi.Input<string>;
     }
 }
 

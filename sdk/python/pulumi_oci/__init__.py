@@ -107,6 +107,8 @@ if typing.TYPE_CHECKING:
     functions = __functions
     import pulumi_oci.fusionapps as __fusionapps
     fusionapps = __fusionapps
+    import pulumi_oci.generativeai as __generativeai
+    generativeai = __generativeai
     import pulumi_oci.genericartifactscontent as __genericartifactscontent
     genericartifactscontent = __genericartifactscontent
     import pulumi_oci.goldengate as __goldengate
@@ -281,6 +283,7 @@ else:
     filestorage = _utilities.lazy_import('pulumi_oci.filestorage')
     functions = _utilities.lazy_import('pulumi_oci.functions')
     fusionapps = _utilities.lazy_import('pulumi_oci.fusionapps')
+    generativeai = _utilities.lazy_import('pulumi_oci.generativeai')
     genericartifactscontent = _utilities.lazy_import('pulumi_oci.genericartifactscontent')
     goldengate = _utilities.lazy_import('pulumi_oci.goldengate')
     healthchecks = _utilities.lazy_import('pulumi_oci.healthchecks')
@@ -3301,6 +3304,30 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "GenerativeAi/dedicatedAiCluster",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster": "DedicatedAiCluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/endpoint",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/endpoint:Endpoint": "Endpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/model",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/model:Model": "Model"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "GenericArtifactsContent/artifactByPath",
   "fqn": "pulumi_oci.genericartifactscontent",
   "classes": {
@@ -5305,6 +5332,14 @@ _utilities.register(
   "fqn": "pulumi_oci.stackmonitoring",
   "classes": {
    "oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation": "MonitoredResourcesSearchAssociation"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "StackMonitoring/processSet",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/processSet:ProcessSet": "ProcessSet"
   }
  },
  {

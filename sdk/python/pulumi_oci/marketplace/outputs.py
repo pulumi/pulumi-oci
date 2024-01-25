@@ -2904,6 +2904,7 @@ class GetPublicationsPublicationResult(dict):
                  state: str,
                  support_contacts: Sequence['outputs.GetPublicationsPublicationSupportContactResult'],
                  supported_operating_systems: Sequence['outputs.GetPublicationsPublicationSupportedOperatingSystemResult'],
+                 system_tags: Mapping[str, Any],
                  time_created: str):
         """
         :param str compartment_id: The unique identifier for the compartment.
@@ -2919,6 +2920,7 @@ class GetPublicationsPublicationResult(dict):
         :param str state: The lifecycle state of the publication.
         :param Sequence['GetPublicationsPublicationSupportContactArgs'] support_contacts: Contact information for getting support from the publisher for the listing.
         :param Sequence['GetPublicationsPublicationSupportedOperatingSystemArgs'] supported_operating_systems: The list of operating systems supported by the listing.
+        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -2936,6 +2938,7 @@ class GetPublicationsPublicationResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "support_contacts", support_contacts)
         pulumi.set(__self__, "supported_operating_systems", supported_operating_systems)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
 
     @property
@@ -3051,6 +3054,14 @@ class GetPublicationsPublicationResult(dict):
         The list of operating systems supported by the listing.
         """
         return pulumi.get(self, "supported_operating_systems")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

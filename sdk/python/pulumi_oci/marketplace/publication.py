@@ -192,6 +192,7 @@ class _PublicationState:
                  state: Optional[pulumi.Input[str]] = None,
                  support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]]] = None,
                  supported_operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Publication resources.
@@ -209,6 +210,7 @@ class _PublicationState:
         :param pulumi.Input[str] state: The lifecycle state of the publication.
         :param pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
         :param pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]] supported_operating_systems: The list of operating systems supported by the listing.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
@@ -239,6 +241,8 @@ class _PublicationState:
             pulumi.set(__self__, "support_contacts", support_contacts)
         if supported_operating_systems is not None:
             pulumi.set(__self__, "supported_operating_systems", supported_operating_systems)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
 
@@ -409,6 +413,18 @@ class _PublicationState:
     @supported_operating_systems.setter
     def supported_operating_systems(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]]):
         pulumi.set(self, "supported_operating_systems", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -620,6 +636,7 @@ class Publication(pulumi.CustomResource):
             __props__.__dict__["package_type"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["supported_operating_systems"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
         super(Publication, __self__).__init__(
             'oci:Marketplace/publication:Publication',
@@ -645,6 +662,7 @@ class Publication(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]]] = None,
             supported_operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportedOperatingSystemArgs']]]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'Publication':
         """
         Get an existing Publication resource's state with the given name, id, and optional extra
@@ -667,6 +685,7 @@ class Publication(pulumi.CustomResource):
         :param pulumi.Input[str] state: The lifecycle state of the publication.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportedOperatingSystemArgs']]]] supported_operating_systems: The list of operating systems supported by the listing.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -687,6 +706,7 @@ class Publication(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["support_contacts"] = support_contacts
         __props__.__dict__["supported_operating_systems"] = supported_operating_systems
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         return Publication(resource_name, opts=opts, __props__=__props__)
 
@@ -801,6 +821,14 @@ class Publication(pulumi.CustomResource):
         The list of operating systems supported by the listing.
         """
         return pulumi.get(self, "supported_operating_systems")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

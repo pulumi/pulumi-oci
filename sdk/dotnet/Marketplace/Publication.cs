@@ -168,6 +168,12 @@ namespace Pulumi.Oci.Marketplace
         public Output<ImmutableArray<Outputs.PublicationSupportedOperatingSystem>> SupportedOperatingSystems { get; private set; } = null!;
 
         /// <summary>
+        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
@@ -417,6 +423,18 @@ namespace Pulumi.Oci.Marketplace
         {
             get => _supportedOperatingSystems ?? (_supportedOperatingSystems = new InputList<Inputs.PublicationSupportedOperatingSystemGetArgs>());
             set => _supportedOperatingSystems = value;
+        }
+
+        [Input("systemTags")]
+        private InputMap<object>? _systemTags;
+
+        /// <summary>
+        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// </summary>
+        public InputMap<object> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            set => _systemTags = value;
         }
 
         /// <summary>

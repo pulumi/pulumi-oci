@@ -24,6 +24,8 @@ from .get_monitored_resource_tasks import *
 from .get_monitored_resource_type import *
 from .get_monitored_resource_types import *
 from .get_monitored_resources import *
+from .get_process_set import *
+from .get_process_sets import *
 from .metric_extension import *
 from .metric_extension_metric_extension_on_given_resources_management import *
 from .metric_extensions_test_management import *
@@ -34,5 +36,6 @@ from .monitored_resources_associate_monitored_resource import *
 from .monitored_resources_list_member import *
 from .monitored_resources_search import *
 from .monitored_resources_search_association import *
+from .process_set import *
 from ._inputs import *
 from . import outputs

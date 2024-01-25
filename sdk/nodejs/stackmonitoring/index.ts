@@ -100,6 +100,16 @@ export const getMonitoredResources: typeof import("./getMonitoredResources").get
 export const getMonitoredResourcesOutput: typeof import("./getMonitoredResources").getMonitoredResourcesOutput = null as any;
 utilities.lazyLoad(exports, ["getMonitoredResources","getMonitoredResourcesOutput"], () => require("./getMonitoredResources"));
 
+export { GetProcessSetArgs, GetProcessSetResult, GetProcessSetOutputArgs } from "./getProcessSet";
+export const getProcessSet: typeof import("./getProcessSet").getProcessSet = null as any;
+export const getProcessSetOutput: typeof import("./getProcessSet").getProcessSetOutput = null as any;
+utilities.lazyLoad(exports, ["getProcessSet","getProcessSetOutput"], () => require("./getProcessSet"));
+
+export { GetProcessSetsArgs, GetProcessSetsResult, GetProcessSetsOutputArgs } from "./getProcessSets";
+export const getProcessSets: typeof import("./getProcessSets").getProcessSets = null as any;
+export const getProcessSetsOutput: typeof import("./getProcessSets").getProcessSetsOutput = null as any;
+utilities.lazyLoad(exports, ["getProcessSets","getProcessSetsOutput"], () => require("./getProcessSets"));
+
 export { MetricExtensionArgs, MetricExtensionState } from "./metricExtension";
 export type MetricExtension = import("./metricExtension").MetricExtension;
 export const MetricExtension: typeof import("./metricExtension").MetricExtension = null as any;
@@ -150,6 +160,11 @@ export type MonitoredResourcesSearchAssociation = import("./monitoredResourcesSe
 export const MonitoredResourcesSearchAssociation: typeof import("./monitoredResourcesSearchAssociation").MonitoredResourcesSearchAssociation = null as any;
 utilities.lazyLoad(exports, ["MonitoredResourcesSearchAssociation"], () => require("./monitoredResourcesSearchAssociation"));
 
+export { ProcessSetArgs, ProcessSetState } from "./processSet";
+export type ProcessSet = import("./processSet").ProcessSet;
+export const ProcessSet: typeof import("./processSet").ProcessSet = null as any;
+utilities.lazyLoad(exports, ["ProcessSet"], () => require("./processSet"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -181,6 +196,8 @@ const _module = {
                 return new MonitoredResourcesSearch(name, <any>undefined, { urn })
             case "oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation":
                 return new MonitoredResourcesSearchAssociation(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/processSet:ProcessSet":
+                return new ProcessSet(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -199,3 +216,4 @@ pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResources
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourcesListMember", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourcesSearch", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourcesSearchAssociation", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/processSet", _module)

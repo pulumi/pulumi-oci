@@ -39,6 +39,10 @@ import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsPlainArgs;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsResult;
@@ -55,6 +59,8 @@ import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTasksResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypeResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypesResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourcesResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetProcessSetResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetProcessSetsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -2800,5 +2806,321 @@ public final class StackMonitoringFunctions {
      */
     public static CompletableFuture<GetMonitoredResourcesResult> getMonitoredResourcesPlain(GetMonitoredResourcesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoredResources:getMonitoredResources", TypeShape.of(GetMonitoredResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of a Process Set by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProcessSet = StackMonitoringFunctions.getProcessSet(GetProcessSetArgs.builder()
+     *             .processSetId(oci_stack_monitoring_process_set.test_process_set().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetProcessSetResult> getProcessSet(GetProcessSetArgs args) {
+        return getProcessSet(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of a Process Set by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProcessSet = StackMonitoringFunctions.getProcessSet(GetProcessSetArgs.builder()
+     *             .processSetId(oci_stack_monitoring_process_set.test_process_set().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetProcessSetResult> getProcessSetPlain(GetProcessSetPlainArgs args) {
+        return getProcessSetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of a Process Set by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProcessSet = StackMonitoringFunctions.getProcessSet(GetProcessSetArgs.builder()
+     *             .processSetId(oci_stack_monitoring_process_set.test_process_set().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetProcessSetResult> getProcessSet(GetProcessSetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getProcessSet:getProcessSet", TypeShape.of(GetProcessSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of a Process Set by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProcessSet = StackMonitoringFunctions.getProcessSet(GetProcessSetArgs.builder()
+     *             .processSetId(oci_stack_monitoring_process_set.test_process_set().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetProcessSetResult> getProcessSetPlain(GetProcessSetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getProcessSet:getProcessSet", TypeShape.of(GetProcessSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Process Sets in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of all Process Sets.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProcessSets = StackMonitoringFunctions.getProcessSets(GetProcessSetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.process_set_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetProcessSetsResult> getProcessSets(GetProcessSetsArgs args) {
+        return getProcessSets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Process Sets in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of all Process Sets.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProcessSets = StackMonitoringFunctions.getProcessSets(GetProcessSetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.process_set_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetProcessSetsResult> getProcessSetsPlain(GetProcessSetsPlainArgs args) {
+        return getProcessSetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Process Sets in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of all Process Sets.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProcessSets = StackMonitoringFunctions.getProcessSets(GetProcessSetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.process_set_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetProcessSetsResult> getProcessSets(GetProcessSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getProcessSets:getProcessSets", TypeShape.of(GetProcessSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Process Sets in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * API to get the details of all Process Sets.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProcessSets = StackMonitoringFunctions.getProcessSets(GetProcessSetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.process_set_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetProcessSetsResult> getProcessSetsPlain(GetProcessSetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getProcessSets:getProcessSets", TypeShape.of(GetProcessSetsResult.class), args, Utilities.withVersion(options));
     }
 }

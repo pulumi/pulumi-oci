@@ -114,6 +114,8 @@ type Publication struct {
 	SupportContacts PublicationSupportContactArrayOutput `pulumi:"supportContacts"`
 	// The list of operating systems supported by the listing.
 	SupportedOperatingSystems PublicationSupportedOperatingSystemArrayOutput `pulumi:"supportedOperatingSystems"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
@@ -194,6 +196,8 @@ type publicationState struct {
 	SupportContacts []PublicationSupportContact `pulumi:"supportContacts"`
 	// The list of operating systems supported by the listing.
 	SupportedOperatingSystems []PublicationSupportedOperatingSystem `pulumi:"supportedOperatingSystems"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 }
@@ -227,6 +231,8 @@ type PublicationState struct {
 	SupportContacts PublicationSupportContactArrayInput
 	// The list of operating systems supported by the listing.
 	SupportedOperatingSystems PublicationSupportedOperatingSystemArrayInput
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.MapInput
 	// The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 }
@@ -439,6 +445,11 @@ func (o PublicationOutput) SupportedOperatingSystems() PublicationSupportedOpera
 	return o.ApplyT(func(v *Publication) PublicationSupportedOperatingSystemArrayOutput {
 		return v.SupportedOperatingSystems
 	}).(PublicationSupportedOperatingSystemArrayOutput)
+}
+
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o PublicationOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *Publication) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

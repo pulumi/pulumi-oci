@@ -61,6 +61,7 @@ import * as events from "./events";
 import * as filestorage from "./filestorage";
 import * as functions from "./functions";
 import * as fusionapps from "./fusionapps";
+import * as generativeai from "./generativeai";
 import * as genericartifactscontent from "./genericartifactscontent";
 import * as goldengate from "./goldengate";
 import * as healthchecks from "./healthchecks";
@@ -175,6 +176,7 @@ export {
     filestorage,
     functions,
     fusionapps,
+    generativeai,
     genericartifactscontent,
     goldengate,
     healthchecks,

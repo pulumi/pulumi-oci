@@ -86,6 +86,11 @@ public final class GetPublicationsPublication {
      */
     private List<GetPublicationsPublicationSupportedOperatingSystem> supportedOperatingSystems;
     /**
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -190,6 +195,13 @@ public final class GetPublicationsPublication {
         return this.supportedOperatingSystems;
     }
     /**
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -221,6 +233,7 @@ public final class GetPublicationsPublication {
         private String state;
         private List<GetPublicationsPublicationSupportContact> supportContacts;
         private List<GetPublicationsPublicationSupportedOperatingSystem> supportedOperatingSystems;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         public Builder() {}
         public Builder(GetPublicationsPublication defaults) {
@@ -240,6 +253,7 @@ public final class GetPublicationsPublication {
     	      this.state = defaults.state;
     	      this.supportContacts = defaults.supportContacts;
     	      this.supportedOperatingSystems = defaults.supportedOperatingSystems;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
         }
 
@@ -376,6 +390,14 @@ public final class GetPublicationsPublication {
             return supportedOperatingSystems(List.of(supportedOperatingSystems));
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsPublication", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetPublicationsPublication", "timeCreated");
@@ -400,6 +422,7 @@ public final class GetPublicationsPublication {
             _resultValue.state = state;
             _resultValue.supportContacts = supportContacts;
             _resultValue.supportedOperatingSystems = supportedOperatingSystems;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;
         }

@@ -45,6 +45,8 @@ __all__ = [
     'MonitoredResourcesSearchAssociationItemSourceResourceDetail',
     'MonitoredResourcesSearchItem',
     'MonitoredResourcesSearchItemProperty',
+    'ProcessSetSpecification',
+    'ProcessSetSpecificationItem',
     'GetBaselineableMetricsBaselineableMetricSummaryCollectionResult',
     'GetBaselineableMetricsBaselineableMetricSummaryCollectionItemResult',
     'GetBaselineableMetricsEvaluateDataPointResult',
@@ -120,6 +122,13 @@ __all__ = [
     'GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyResult',
     'GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailResult',
     'GetMonitoredResourcesMonitoredResourceCollectionItemPropertyResult',
+    'GetProcessSetSpecificationResult',
+    'GetProcessSetSpecificationItemResult',
+    'GetProcessSetsFilterResult',
+    'GetProcessSetsProcessSetCollectionResult',
+    'GetProcessSetsProcessSetCollectionItemResult',
+    'GetProcessSetsProcessSetCollectionItemSpecificationResult',
+    'GetProcessSetsProcessSetCollectionItemSpecificationItemResult',
 ]
 
 @pulumi.output_type
@@ -2653,6 +2662,108 @@ class MonitoredResourcesSearchItemProperty(dict):
         Property Value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ProcessSetSpecification(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.ProcessSetSpecificationItem']):
+        """
+        :param Sequence['ProcessSetSpecificationItemArgs'] items: (Updatable) List of Process Set specification details.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.ProcessSetSpecificationItem']:
+        """
+        (Updatable) List of Process Set specification details.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class ProcessSetSpecificationItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "processCommand":
+            suggest = "process_command"
+        elif key == "processLineRegexPattern":
+            suggest = "process_line_regex_pattern"
+        elif key == "processUser":
+            suggest = "process_user"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProcessSetSpecificationItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProcessSetSpecificationItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProcessSetSpecificationItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 label: Optional[str] = None,
+                 process_command: Optional[str] = None,
+                 process_line_regex_pattern: Optional[str] = None,
+                 process_user: Optional[str] = None):
+        """
+        :param str label: (Updatable) Optional label used to identify a single filter.
+        :param str process_command: (Updatable) String literal used for exact matching on process name.
+        :param str process_line_regex_pattern: (Updatable) Regex pattern matching on process arguments.
+        :param str process_user: (Updatable) String literal used for exact matching on process user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if process_command is not None:
+            pulumi.set(__self__, "process_command", process_command)
+        if process_line_regex_pattern is not None:
+            pulumi.set(__self__, "process_line_regex_pattern", process_line_regex_pattern)
+        if process_user is not None:
+            pulumi.set(__self__, "process_user", process_user)
+
+    @property
+    @pulumi.getter
+    def label(self) -> Optional[str]:
+        """
+        (Updatable) Optional label used to identify a single filter.
+        """
+        return pulumi.get(self, "label")
+
+    @property
+    @pulumi.getter(name="processCommand")
+    def process_command(self) -> Optional[str]:
+        """
+        (Updatable) String literal used for exact matching on process name.
+        """
+        return pulumi.get(self, "process_command")
+
+    @property
+    @pulumi.getter(name="processLineRegexPattern")
+    def process_line_regex_pattern(self) -> Optional[str]:
+        """
+        (Updatable) Regex pattern matching on process arguments.
+        """
+        return pulumi.get(self, "process_line_regex_pattern")
+
+    @property
+    @pulumi.getter(name="processUser")
+    def process_user(self) -> Optional[str]:
+        """
+        (Updatable) String literal used for exact matching on process user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "process_user")
 
 
 @pulumi.output_type
@@ -6951,5 +7062,316 @@ class GetMonitoredResourcesMonitoredResourceCollectionItemPropertyResult(dict):
         Property Value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetProcessSetSpecificationResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetProcessSetSpecificationItemResult']):
+        """
+        :param Sequence['GetProcessSetSpecificationItemArgs'] items: List of Process Set specification details.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetProcessSetSpecificationItemResult']:
+        """
+        List of Process Set specification details.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetProcessSetSpecificationItemResult(dict):
+    def __init__(__self__, *,
+                 label: str,
+                 process_command: str,
+                 process_line_regex_pattern: str,
+                 process_user: str):
+        """
+        :param str label: Optional label used to identify a single filter.
+        :param str process_command: String literal used for exact matching on process name.
+        :param str process_line_regex_pattern: Regex pattern matching on process arguments.
+        :param str process_user: String literal used for exact matching on process user.
+        """
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "process_command", process_command)
+        pulumi.set(__self__, "process_line_regex_pattern", process_line_regex_pattern)
+        pulumi.set(__self__, "process_user", process_user)
+
+    @property
+    @pulumi.getter
+    def label(self) -> str:
+        """
+        Optional label used to identify a single filter.
+        """
+        return pulumi.get(self, "label")
+
+    @property
+    @pulumi.getter(name="processCommand")
+    def process_command(self) -> str:
+        """
+        String literal used for exact matching on process name.
+        """
+        return pulumi.get(self, "process_command")
+
+    @property
+    @pulumi.getter(name="processLineRegexPattern")
+    def process_line_regex_pattern(self) -> str:
+        """
+        Regex pattern matching on process arguments.
+        """
+        return pulumi.get(self, "process_line_regex_pattern")
+
+    @property
+    @pulumi.getter(name="processUser")
+    def process_user(self) -> str:
+        """
+        String literal used for exact matching on process user.
+        """
+        return pulumi.get(self, "process_user")
+
+
+@pulumi.output_type
+class GetProcessSetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetProcessSetsProcessSetCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetProcessSetsProcessSetCollectionItemResult']):
+        """
+        :param Sequence['GetProcessSetsProcessSetCollectionItemArgs'] items: List of Process Set specification details.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetProcessSetsProcessSetCollectionItemResult']:
+        """
+        List of Process Set specification details.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetProcessSetsProcessSetCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 revision: str,
+                 specifications: Sequence['outputs.GetProcessSetsProcessSetCollectionItemSpecificationResult'],
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The ID of the compartment in which data is listed.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Process Set.
+        :param str revision: The current revision of the Process Set.
+        :param Sequence['GetProcessSetsProcessSetCollectionItemSpecificationArgs'] specifications: Collection of regular expression specifications used to identify the processes to be monitored.
+        :param str state: The current state of the Resource.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time the process set was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time the process set was last updated. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "revision", revision)
+        pulumi.set(__self__, "specifications", specifications)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which data is listed.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Process Set.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def revision(self) -> str:
+        """
+        The current revision of the Process Set.
+        """
+        return pulumi.get(self, "revision")
+
+    @property
+    @pulumi.getter
+    def specifications(self) -> Sequence['outputs.GetProcessSetsProcessSetCollectionItemSpecificationResult']:
+        """
+        Collection of regular expression specifications used to identify the processes to be monitored.
+        """
+        return pulumi.get(self, "specifications")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the Resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the process set was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the process set was last updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetProcessSetsProcessSetCollectionItemSpecificationResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetProcessSetsProcessSetCollectionItemSpecificationItemResult']):
+        """
+        :param Sequence['GetProcessSetsProcessSetCollectionItemSpecificationItemArgs'] items: List of Process Set specification details.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetProcessSetsProcessSetCollectionItemSpecificationItemResult']:
+        """
+        List of Process Set specification details.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetProcessSetsProcessSetCollectionItemSpecificationItemResult(dict):
+    def __init__(__self__, *,
+                 label: str,
+                 process_command: str,
+                 process_line_regex_pattern: str,
+                 process_user: str):
+        """
+        :param str label: Optional label used to identify a single filter.
+        :param str process_command: String literal used for exact matching on process name.
+        :param str process_line_regex_pattern: Regex pattern matching on process arguments.
+        :param str process_user: String literal used for exact matching on process user.
+        """
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "process_command", process_command)
+        pulumi.set(__self__, "process_line_regex_pattern", process_line_regex_pattern)
+        pulumi.set(__self__, "process_user", process_user)
+
+    @property
+    @pulumi.getter
+    def label(self) -> str:
+        """
+        Optional label used to identify a single filter.
+        """
+        return pulumi.get(self, "label")
+
+    @property
+    @pulumi.getter(name="processCommand")
+    def process_command(self) -> str:
+        """
+        String literal used for exact matching on process name.
+        """
+        return pulumi.get(self, "process_command")
+
+    @property
+    @pulumi.getter(name="processLineRegexPattern")
+    def process_line_regex_pattern(self) -> str:
+        """
+        Regex pattern matching on process arguments.
+        """
+        return pulumi.get(self, "process_line_regex_pattern")
+
+    @property
+    @pulumi.getter(name="processUser")
+    def process_user(self) -> str:
+        """
+        String literal used for exact matching on process user.
+        """
+        return pulumi.get(self, "process_user")
 
 

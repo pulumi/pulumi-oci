@@ -47,6 +47,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MonitoredResourcesSearch{}
 	case "oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation":
 		r = &MonitoredResourcesSearchAssociation{}
+	case "oci:StackMonitoring/processSet:ProcessSet":
+		r = &ProcessSet{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -123,6 +125,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"StackMonitoring/monitoredResourcesSearchAssociation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"StackMonitoring/processSet",
 		&module{version},
 	)
 }

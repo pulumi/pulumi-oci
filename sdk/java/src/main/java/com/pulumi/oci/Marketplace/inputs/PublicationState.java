@@ -234,6 +234,21 @@ public final class PublicationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,Object>> systemTags;
+
+    /**
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -265,6 +280,7 @@ public final class PublicationState extends com.pulumi.resources.ResourceArgs {
         this.state = $.state;
         this.supportContacts = $.supportContacts;
         this.supportedOperatingSystems = $.supportedOperatingSystems;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
     }
 
@@ -608,6 +624,27 @@ public final class PublicationState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder supportedOperatingSystems(PublicationSupportedOperatingSystemArgs... supportedOperatingSystems) {
             return supportedOperatingSystems(List.of(supportedOperatingSystems));
+        }
+
+        /**
+         * @param systemTags The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,Object>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,Object> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

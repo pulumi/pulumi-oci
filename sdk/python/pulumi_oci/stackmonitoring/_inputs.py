@@ -44,6 +44,8 @@ __all__ = [
     'MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs',
     'MonitoredResourcesSearchItemArgs',
     'MonitoredResourcesSearchItemPropertyArgs',
+    'ProcessSetSpecificationArgs',
+    'ProcessSetSpecificationItemArgs',
     'GetBaselineableMetricsEvaluateItemArgs',
     'GetBaselineableMetricsEvaluateItemDataPointArgs',
     'GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs',
@@ -56,6 +58,7 @@ __all__ = [
     'GetMonitoredResourceTasksFilterArgs',
     'GetMonitoredResourceTypesFilterArgs',
     'GetMonitoredResourcesFilterArgs',
+    'GetProcessSetsFilterArgs',
 ]
 
 @pulumi.input_type
@@ -2677,6 +2680,107 @@ class MonitoredResourcesSearchItemPropertyArgs:
 
 
 @pulumi.input_type
+class ProcessSetSpecificationArgs:
+    def __init__(__self__, *,
+                 items: pulumi.Input[Sequence[pulumi.Input['ProcessSetSpecificationItemArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ProcessSetSpecificationItemArgs']]] items: (Updatable) List of Process Set specification details.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> pulumi.Input[Sequence[pulumi.Input['ProcessSetSpecificationItemArgs']]]:
+        """
+        (Updatable) List of Process Set specification details.
+        """
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: pulumi.Input[Sequence[pulumi.Input['ProcessSetSpecificationItemArgs']]]):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class ProcessSetSpecificationItemArgs:
+    def __init__(__self__, *,
+                 label: Optional[pulumi.Input[str]] = None,
+                 process_command: Optional[pulumi.Input[str]] = None,
+                 process_line_regex_pattern: Optional[pulumi.Input[str]] = None,
+                 process_user: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] label: (Updatable) Optional label used to identify a single filter.
+        :param pulumi.Input[str] process_command: (Updatable) String literal used for exact matching on process name.
+        :param pulumi.Input[str] process_line_regex_pattern: (Updatable) Regex pattern matching on process arguments.
+        :param pulumi.Input[str] process_user: (Updatable) String literal used for exact matching on process user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if process_command is not None:
+            pulumi.set(__self__, "process_command", process_command)
+        if process_line_regex_pattern is not None:
+            pulumi.set(__self__, "process_line_regex_pattern", process_line_regex_pattern)
+        if process_user is not None:
+            pulumi.set(__self__, "process_user", process_user)
+
+    @property
+    @pulumi.getter
+    def label(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Optional label used to identify a single filter.
+        """
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "label", value)
+
+    @property
+    @pulumi.getter(name="processCommand")
+    def process_command(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) String literal used for exact matching on process name.
+        """
+        return pulumi.get(self, "process_command")
+
+    @process_command.setter
+    def process_command(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "process_command", value)
+
+    @property
+    @pulumi.getter(name="processLineRegexPattern")
+    def process_line_regex_pattern(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Regex pattern matching on process arguments.
+        """
+        return pulumi.get(self, "process_line_regex_pattern")
+
+    @process_line_regex_pattern.setter
+    def process_line_regex_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "process_line_regex_pattern", value)
+
+    @property
+    @pulumi.getter(name="processUser")
+    def process_user(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) String literal used for exact matching on process user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "process_user")
+
+    @process_user.setter
+    def process_user(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "process_user", value)
+
+
+@pulumi.input_type
 class GetBaselineableMetricsEvaluateItemArgs:
     def __init__(__self__, *,
                  data_points: Sequence['GetBaselineableMetricsEvaluateItemDataPointArgs'],
@@ -3222,6 +3326,45 @@ class GetMonitoredResourcesFilterArgs:
         """
         A filter to return resources that match exact resource name.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetProcessSetsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

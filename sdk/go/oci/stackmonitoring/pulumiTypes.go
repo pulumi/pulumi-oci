@@ -5410,6 +5410,276 @@ func (o MonitoredResourcesSearchItemPropertyArrayOutput) Index(i pulumi.IntInput
 	}).(MonitoredResourcesSearchItemPropertyOutput)
 }
 
+type ProcessSetSpecification struct {
+	// (Updatable) List of Process Set specification details.
+	Items []ProcessSetSpecificationItem `pulumi:"items"`
+}
+
+// ProcessSetSpecificationInput is an input type that accepts ProcessSetSpecificationArgs and ProcessSetSpecificationOutput values.
+// You can construct a concrete instance of `ProcessSetSpecificationInput` via:
+//
+//	ProcessSetSpecificationArgs{...}
+type ProcessSetSpecificationInput interface {
+	pulumi.Input
+
+	ToProcessSetSpecificationOutput() ProcessSetSpecificationOutput
+	ToProcessSetSpecificationOutputWithContext(context.Context) ProcessSetSpecificationOutput
+}
+
+type ProcessSetSpecificationArgs struct {
+	// (Updatable) List of Process Set specification details.
+	Items ProcessSetSpecificationItemArrayInput `pulumi:"items"`
+}
+
+func (ProcessSetSpecificationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProcessSetSpecification)(nil)).Elem()
+}
+
+func (i ProcessSetSpecificationArgs) ToProcessSetSpecificationOutput() ProcessSetSpecificationOutput {
+	return i.ToProcessSetSpecificationOutputWithContext(context.Background())
+}
+
+func (i ProcessSetSpecificationArgs) ToProcessSetSpecificationOutputWithContext(ctx context.Context) ProcessSetSpecificationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProcessSetSpecificationOutput)
+}
+
+func (i ProcessSetSpecificationArgs) ToProcessSetSpecificationPtrOutput() ProcessSetSpecificationPtrOutput {
+	return i.ToProcessSetSpecificationPtrOutputWithContext(context.Background())
+}
+
+func (i ProcessSetSpecificationArgs) ToProcessSetSpecificationPtrOutputWithContext(ctx context.Context) ProcessSetSpecificationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProcessSetSpecificationOutput).ToProcessSetSpecificationPtrOutputWithContext(ctx)
+}
+
+// ProcessSetSpecificationPtrInput is an input type that accepts ProcessSetSpecificationArgs, ProcessSetSpecificationPtr and ProcessSetSpecificationPtrOutput values.
+// You can construct a concrete instance of `ProcessSetSpecificationPtrInput` via:
+//
+//	        ProcessSetSpecificationArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProcessSetSpecificationPtrInput interface {
+	pulumi.Input
+
+	ToProcessSetSpecificationPtrOutput() ProcessSetSpecificationPtrOutput
+	ToProcessSetSpecificationPtrOutputWithContext(context.Context) ProcessSetSpecificationPtrOutput
+}
+
+type processSetSpecificationPtrType ProcessSetSpecificationArgs
+
+func ProcessSetSpecificationPtr(v *ProcessSetSpecificationArgs) ProcessSetSpecificationPtrInput {
+	return (*processSetSpecificationPtrType)(v)
+}
+
+func (*processSetSpecificationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProcessSetSpecification)(nil)).Elem()
+}
+
+func (i *processSetSpecificationPtrType) ToProcessSetSpecificationPtrOutput() ProcessSetSpecificationPtrOutput {
+	return i.ToProcessSetSpecificationPtrOutputWithContext(context.Background())
+}
+
+func (i *processSetSpecificationPtrType) ToProcessSetSpecificationPtrOutputWithContext(ctx context.Context) ProcessSetSpecificationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProcessSetSpecificationPtrOutput)
+}
+
+type ProcessSetSpecificationOutput struct{ *pulumi.OutputState }
+
+func (ProcessSetSpecificationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProcessSetSpecification)(nil)).Elem()
+}
+
+func (o ProcessSetSpecificationOutput) ToProcessSetSpecificationOutput() ProcessSetSpecificationOutput {
+	return o
+}
+
+func (o ProcessSetSpecificationOutput) ToProcessSetSpecificationOutputWithContext(ctx context.Context) ProcessSetSpecificationOutput {
+	return o
+}
+
+func (o ProcessSetSpecificationOutput) ToProcessSetSpecificationPtrOutput() ProcessSetSpecificationPtrOutput {
+	return o.ToProcessSetSpecificationPtrOutputWithContext(context.Background())
+}
+
+func (o ProcessSetSpecificationOutput) ToProcessSetSpecificationPtrOutputWithContext(ctx context.Context) ProcessSetSpecificationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProcessSetSpecification) *ProcessSetSpecification {
+		return &v
+	}).(ProcessSetSpecificationPtrOutput)
+}
+
+// (Updatable) List of Process Set specification details.
+func (o ProcessSetSpecificationOutput) Items() ProcessSetSpecificationItemArrayOutput {
+	return o.ApplyT(func(v ProcessSetSpecification) []ProcessSetSpecificationItem { return v.Items }).(ProcessSetSpecificationItemArrayOutput)
+}
+
+type ProcessSetSpecificationPtrOutput struct{ *pulumi.OutputState }
+
+func (ProcessSetSpecificationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProcessSetSpecification)(nil)).Elem()
+}
+
+func (o ProcessSetSpecificationPtrOutput) ToProcessSetSpecificationPtrOutput() ProcessSetSpecificationPtrOutput {
+	return o
+}
+
+func (o ProcessSetSpecificationPtrOutput) ToProcessSetSpecificationPtrOutputWithContext(ctx context.Context) ProcessSetSpecificationPtrOutput {
+	return o
+}
+
+func (o ProcessSetSpecificationPtrOutput) Elem() ProcessSetSpecificationOutput {
+	return o.ApplyT(func(v *ProcessSetSpecification) ProcessSetSpecification {
+		if v != nil {
+			return *v
+		}
+		var ret ProcessSetSpecification
+		return ret
+	}).(ProcessSetSpecificationOutput)
+}
+
+// (Updatable) List of Process Set specification details.
+func (o ProcessSetSpecificationPtrOutput) Items() ProcessSetSpecificationItemArrayOutput {
+	return o.ApplyT(func(v *ProcessSetSpecification) []ProcessSetSpecificationItem {
+		if v == nil {
+			return nil
+		}
+		return v.Items
+	}).(ProcessSetSpecificationItemArrayOutput)
+}
+
+type ProcessSetSpecificationItem struct {
+	// (Updatable) Optional label used to identify a single filter.
+	Label *string `pulumi:"label"`
+	// (Updatable) String literal used for exact matching on process name.
+	ProcessCommand *string `pulumi:"processCommand"`
+	// (Updatable) Regex pattern matching on process arguments.
+	ProcessLineRegexPattern *string `pulumi:"processLineRegexPattern"`
+	// (Updatable) String literal used for exact matching on process user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ProcessUser *string `pulumi:"processUser"`
+}
+
+// ProcessSetSpecificationItemInput is an input type that accepts ProcessSetSpecificationItemArgs and ProcessSetSpecificationItemOutput values.
+// You can construct a concrete instance of `ProcessSetSpecificationItemInput` via:
+//
+//	ProcessSetSpecificationItemArgs{...}
+type ProcessSetSpecificationItemInput interface {
+	pulumi.Input
+
+	ToProcessSetSpecificationItemOutput() ProcessSetSpecificationItemOutput
+	ToProcessSetSpecificationItemOutputWithContext(context.Context) ProcessSetSpecificationItemOutput
+}
+
+type ProcessSetSpecificationItemArgs struct {
+	// (Updatable) Optional label used to identify a single filter.
+	Label pulumi.StringPtrInput `pulumi:"label"`
+	// (Updatable) String literal used for exact matching on process name.
+	ProcessCommand pulumi.StringPtrInput `pulumi:"processCommand"`
+	// (Updatable) Regex pattern matching on process arguments.
+	ProcessLineRegexPattern pulumi.StringPtrInput `pulumi:"processLineRegexPattern"`
+	// (Updatable) String literal used for exact matching on process user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ProcessUser pulumi.StringPtrInput `pulumi:"processUser"`
+}
+
+func (ProcessSetSpecificationItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProcessSetSpecificationItem)(nil)).Elem()
+}
+
+func (i ProcessSetSpecificationItemArgs) ToProcessSetSpecificationItemOutput() ProcessSetSpecificationItemOutput {
+	return i.ToProcessSetSpecificationItemOutputWithContext(context.Background())
+}
+
+func (i ProcessSetSpecificationItemArgs) ToProcessSetSpecificationItemOutputWithContext(ctx context.Context) ProcessSetSpecificationItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProcessSetSpecificationItemOutput)
+}
+
+// ProcessSetSpecificationItemArrayInput is an input type that accepts ProcessSetSpecificationItemArray and ProcessSetSpecificationItemArrayOutput values.
+// You can construct a concrete instance of `ProcessSetSpecificationItemArrayInput` via:
+//
+//	ProcessSetSpecificationItemArray{ ProcessSetSpecificationItemArgs{...} }
+type ProcessSetSpecificationItemArrayInput interface {
+	pulumi.Input
+
+	ToProcessSetSpecificationItemArrayOutput() ProcessSetSpecificationItemArrayOutput
+	ToProcessSetSpecificationItemArrayOutputWithContext(context.Context) ProcessSetSpecificationItemArrayOutput
+}
+
+type ProcessSetSpecificationItemArray []ProcessSetSpecificationItemInput
+
+func (ProcessSetSpecificationItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProcessSetSpecificationItem)(nil)).Elem()
+}
+
+func (i ProcessSetSpecificationItemArray) ToProcessSetSpecificationItemArrayOutput() ProcessSetSpecificationItemArrayOutput {
+	return i.ToProcessSetSpecificationItemArrayOutputWithContext(context.Background())
+}
+
+func (i ProcessSetSpecificationItemArray) ToProcessSetSpecificationItemArrayOutputWithContext(ctx context.Context) ProcessSetSpecificationItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProcessSetSpecificationItemArrayOutput)
+}
+
+type ProcessSetSpecificationItemOutput struct{ *pulumi.OutputState }
+
+func (ProcessSetSpecificationItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProcessSetSpecificationItem)(nil)).Elem()
+}
+
+func (o ProcessSetSpecificationItemOutput) ToProcessSetSpecificationItemOutput() ProcessSetSpecificationItemOutput {
+	return o
+}
+
+func (o ProcessSetSpecificationItemOutput) ToProcessSetSpecificationItemOutputWithContext(ctx context.Context) ProcessSetSpecificationItemOutput {
+	return o
+}
+
+// (Updatable) Optional label used to identify a single filter.
+func (o ProcessSetSpecificationItemOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProcessSetSpecificationItem) *string { return v.Label }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) String literal used for exact matching on process name.
+func (o ProcessSetSpecificationItemOutput) ProcessCommand() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProcessSetSpecificationItem) *string { return v.ProcessCommand }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Regex pattern matching on process arguments.
+func (o ProcessSetSpecificationItemOutput) ProcessLineRegexPattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProcessSetSpecificationItem) *string { return v.ProcessLineRegexPattern }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) String literal used for exact matching on process user.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ProcessSetSpecificationItemOutput) ProcessUser() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProcessSetSpecificationItem) *string { return v.ProcessUser }).(pulumi.StringPtrOutput)
+}
+
+type ProcessSetSpecificationItemArrayOutput struct{ *pulumi.OutputState }
+
+func (ProcessSetSpecificationItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProcessSetSpecificationItem)(nil)).Elem()
+}
+
+func (o ProcessSetSpecificationItemArrayOutput) ToProcessSetSpecificationItemArrayOutput() ProcessSetSpecificationItemArrayOutput {
+	return o
+}
+
+func (o ProcessSetSpecificationItemArrayOutput) ToProcessSetSpecificationItemArrayOutputWithContext(ctx context.Context) ProcessSetSpecificationItemArrayOutput {
+	return o
+}
+
+func (o ProcessSetSpecificationItemArrayOutput) Index(i pulumi.IntInput) ProcessSetSpecificationItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProcessSetSpecificationItem {
+		return vs[0].([]ProcessSetSpecificationItem)[vs[1].(int)]
+	}).(ProcessSetSpecificationItemOutput)
+}
+
 type GetBaselineableMetricsBaselineableMetricSummaryCollection struct {
 	Items []GetBaselineableMetricsBaselineableMetricSummaryCollectionItem `pulumi:"items"`
 }
@@ -15320,6 +15590,844 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput)
 	}).(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput)
 }
 
+type GetProcessSetSpecification struct {
+	// List of Process Set specification details.
+	Items []GetProcessSetSpecificationItem `pulumi:"items"`
+}
+
+// GetProcessSetSpecificationInput is an input type that accepts GetProcessSetSpecificationArgs and GetProcessSetSpecificationOutput values.
+// You can construct a concrete instance of `GetProcessSetSpecificationInput` via:
+//
+//	GetProcessSetSpecificationArgs{...}
+type GetProcessSetSpecificationInput interface {
+	pulumi.Input
+
+	ToGetProcessSetSpecificationOutput() GetProcessSetSpecificationOutput
+	ToGetProcessSetSpecificationOutputWithContext(context.Context) GetProcessSetSpecificationOutput
+}
+
+type GetProcessSetSpecificationArgs struct {
+	// List of Process Set specification details.
+	Items GetProcessSetSpecificationItemArrayInput `pulumi:"items"`
+}
+
+func (GetProcessSetSpecificationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetSpecification)(nil)).Elem()
+}
+
+func (i GetProcessSetSpecificationArgs) ToGetProcessSetSpecificationOutput() GetProcessSetSpecificationOutput {
+	return i.ToGetProcessSetSpecificationOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetSpecificationArgs) ToGetProcessSetSpecificationOutputWithContext(ctx context.Context) GetProcessSetSpecificationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetSpecificationOutput)
+}
+
+// GetProcessSetSpecificationArrayInput is an input type that accepts GetProcessSetSpecificationArray and GetProcessSetSpecificationArrayOutput values.
+// You can construct a concrete instance of `GetProcessSetSpecificationArrayInput` via:
+//
+//	GetProcessSetSpecificationArray{ GetProcessSetSpecificationArgs{...} }
+type GetProcessSetSpecificationArrayInput interface {
+	pulumi.Input
+
+	ToGetProcessSetSpecificationArrayOutput() GetProcessSetSpecificationArrayOutput
+	ToGetProcessSetSpecificationArrayOutputWithContext(context.Context) GetProcessSetSpecificationArrayOutput
+}
+
+type GetProcessSetSpecificationArray []GetProcessSetSpecificationInput
+
+func (GetProcessSetSpecificationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetSpecification)(nil)).Elem()
+}
+
+func (i GetProcessSetSpecificationArray) ToGetProcessSetSpecificationArrayOutput() GetProcessSetSpecificationArrayOutput {
+	return i.ToGetProcessSetSpecificationArrayOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetSpecificationArray) ToGetProcessSetSpecificationArrayOutputWithContext(ctx context.Context) GetProcessSetSpecificationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetSpecificationArrayOutput)
+}
+
+type GetProcessSetSpecificationOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetSpecificationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetSpecification)(nil)).Elem()
+}
+
+func (o GetProcessSetSpecificationOutput) ToGetProcessSetSpecificationOutput() GetProcessSetSpecificationOutput {
+	return o
+}
+
+func (o GetProcessSetSpecificationOutput) ToGetProcessSetSpecificationOutputWithContext(ctx context.Context) GetProcessSetSpecificationOutput {
+	return o
+}
+
+// List of Process Set specification details.
+func (o GetProcessSetSpecificationOutput) Items() GetProcessSetSpecificationItemArrayOutput {
+	return o.ApplyT(func(v GetProcessSetSpecification) []GetProcessSetSpecificationItem { return v.Items }).(GetProcessSetSpecificationItemArrayOutput)
+}
+
+type GetProcessSetSpecificationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetSpecificationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetSpecification)(nil)).Elem()
+}
+
+func (o GetProcessSetSpecificationArrayOutput) ToGetProcessSetSpecificationArrayOutput() GetProcessSetSpecificationArrayOutput {
+	return o
+}
+
+func (o GetProcessSetSpecificationArrayOutput) ToGetProcessSetSpecificationArrayOutputWithContext(ctx context.Context) GetProcessSetSpecificationArrayOutput {
+	return o
+}
+
+func (o GetProcessSetSpecificationArrayOutput) Index(i pulumi.IntInput) GetProcessSetSpecificationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProcessSetSpecification {
+		return vs[0].([]GetProcessSetSpecification)[vs[1].(int)]
+	}).(GetProcessSetSpecificationOutput)
+}
+
+type GetProcessSetSpecificationItem struct {
+	// Optional label used to identify a single filter.
+	Label string `pulumi:"label"`
+	// String literal used for exact matching on process name.
+	ProcessCommand string `pulumi:"processCommand"`
+	// Regex pattern matching on process arguments.
+	ProcessLineRegexPattern string `pulumi:"processLineRegexPattern"`
+	// String literal used for exact matching on process user.
+	ProcessUser string `pulumi:"processUser"`
+}
+
+// GetProcessSetSpecificationItemInput is an input type that accepts GetProcessSetSpecificationItemArgs and GetProcessSetSpecificationItemOutput values.
+// You can construct a concrete instance of `GetProcessSetSpecificationItemInput` via:
+//
+//	GetProcessSetSpecificationItemArgs{...}
+type GetProcessSetSpecificationItemInput interface {
+	pulumi.Input
+
+	ToGetProcessSetSpecificationItemOutput() GetProcessSetSpecificationItemOutput
+	ToGetProcessSetSpecificationItemOutputWithContext(context.Context) GetProcessSetSpecificationItemOutput
+}
+
+type GetProcessSetSpecificationItemArgs struct {
+	// Optional label used to identify a single filter.
+	Label pulumi.StringInput `pulumi:"label"`
+	// String literal used for exact matching on process name.
+	ProcessCommand pulumi.StringInput `pulumi:"processCommand"`
+	// Regex pattern matching on process arguments.
+	ProcessLineRegexPattern pulumi.StringInput `pulumi:"processLineRegexPattern"`
+	// String literal used for exact matching on process user.
+	ProcessUser pulumi.StringInput `pulumi:"processUser"`
+}
+
+func (GetProcessSetSpecificationItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetSpecificationItem)(nil)).Elem()
+}
+
+func (i GetProcessSetSpecificationItemArgs) ToGetProcessSetSpecificationItemOutput() GetProcessSetSpecificationItemOutput {
+	return i.ToGetProcessSetSpecificationItemOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetSpecificationItemArgs) ToGetProcessSetSpecificationItemOutputWithContext(ctx context.Context) GetProcessSetSpecificationItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetSpecificationItemOutput)
+}
+
+// GetProcessSetSpecificationItemArrayInput is an input type that accepts GetProcessSetSpecificationItemArray and GetProcessSetSpecificationItemArrayOutput values.
+// You can construct a concrete instance of `GetProcessSetSpecificationItemArrayInput` via:
+//
+//	GetProcessSetSpecificationItemArray{ GetProcessSetSpecificationItemArgs{...} }
+type GetProcessSetSpecificationItemArrayInput interface {
+	pulumi.Input
+
+	ToGetProcessSetSpecificationItemArrayOutput() GetProcessSetSpecificationItemArrayOutput
+	ToGetProcessSetSpecificationItemArrayOutputWithContext(context.Context) GetProcessSetSpecificationItemArrayOutput
+}
+
+type GetProcessSetSpecificationItemArray []GetProcessSetSpecificationItemInput
+
+func (GetProcessSetSpecificationItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetSpecificationItem)(nil)).Elem()
+}
+
+func (i GetProcessSetSpecificationItemArray) ToGetProcessSetSpecificationItemArrayOutput() GetProcessSetSpecificationItemArrayOutput {
+	return i.ToGetProcessSetSpecificationItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetSpecificationItemArray) ToGetProcessSetSpecificationItemArrayOutputWithContext(ctx context.Context) GetProcessSetSpecificationItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetSpecificationItemArrayOutput)
+}
+
+type GetProcessSetSpecificationItemOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetSpecificationItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetSpecificationItem)(nil)).Elem()
+}
+
+func (o GetProcessSetSpecificationItemOutput) ToGetProcessSetSpecificationItemOutput() GetProcessSetSpecificationItemOutput {
+	return o
+}
+
+func (o GetProcessSetSpecificationItemOutput) ToGetProcessSetSpecificationItemOutputWithContext(ctx context.Context) GetProcessSetSpecificationItemOutput {
+	return o
+}
+
+// Optional label used to identify a single filter.
+func (o GetProcessSetSpecificationItemOutput) Label() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetSpecificationItem) string { return v.Label }).(pulumi.StringOutput)
+}
+
+// String literal used for exact matching on process name.
+func (o GetProcessSetSpecificationItemOutput) ProcessCommand() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetSpecificationItem) string { return v.ProcessCommand }).(pulumi.StringOutput)
+}
+
+// Regex pattern matching on process arguments.
+func (o GetProcessSetSpecificationItemOutput) ProcessLineRegexPattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetSpecificationItem) string { return v.ProcessLineRegexPattern }).(pulumi.StringOutput)
+}
+
+// String literal used for exact matching on process user.
+func (o GetProcessSetSpecificationItemOutput) ProcessUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetSpecificationItem) string { return v.ProcessUser }).(pulumi.StringOutput)
+}
+
+type GetProcessSetSpecificationItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetSpecificationItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetSpecificationItem)(nil)).Elem()
+}
+
+func (o GetProcessSetSpecificationItemArrayOutput) ToGetProcessSetSpecificationItemArrayOutput() GetProcessSetSpecificationItemArrayOutput {
+	return o
+}
+
+func (o GetProcessSetSpecificationItemArrayOutput) ToGetProcessSetSpecificationItemArrayOutputWithContext(ctx context.Context) GetProcessSetSpecificationItemArrayOutput {
+	return o
+}
+
+func (o GetProcessSetSpecificationItemArrayOutput) Index(i pulumi.IntInput) GetProcessSetSpecificationItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProcessSetSpecificationItem {
+		return vs[0].([]GetProcessSetSpecificationItem)[vs[1].(int)]
+	}).(GetProcessSetSpecificationItemOutput)
+}
+
+type GetProcessSetsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetProcessSetsFilterInput is an input type that accepts GetProcessSetsFilterArgs and GetProcessSetsFilterOutput values.
+// You can construct a concrete instance of `GetProcessSetsFilterInput` via:
+//
+//	GetProcessSetsFilterArgs{...}
+type GetProcessSetsFilterInput interface {
+	pulumi.Input
+
+	ToGetProcessSetsFilterOutput() GetProcessSetsFilterOutput
+	ToGetProcessSetsFilterOutputWithContext(context.Context) GetProcessSetsFilterOutput
+}
+
+type GetProcessSetsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetProcessSetsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetsFilter)(nil)).Elem()
+}
+
+func (i GetProcessSetsFilterArgs) ToGetProcessSetsFilterOutput() GetProcessSetsFilterOutput {
+	return i.ToGetProcessSetsFilterOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetsFilterArgs) ToGetProcessSetsFilterOutputWithContext(ctx context.Context) GetProcessSetsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetsFilterOutput)
+}
+
+// GetProcessSetsFilterArrayInput is an input type that accepts GetProcessSetsFilterArray and GetProcessSetsFilterArrayOutput values.
+// You can construct a concrete instance of `GetProcessSetsFilterArrayInput` via:
+//
+//	GetProcessSetsFilterArray{ GetProcessSetsFilterArgs{...} }
+type GetProcessSetsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetProcessSetsFilterArrayOutput() GetProcessSetsFilterArrayOutput
+	ToGetProcessSetsFilterArrayOutputWithContext(context.Context) GetProcessSetsFilterArrayOutput
+}
+
+type GetProcessSetsFilterArray []GetProcessSetsFilterInput
+
+func (GetProcessSetsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetsFilter)(nil)).Elem()
+}
+
+func (i GetProcessSetsFilterArray) ToGetProcessSetsFilterArrayOutput() GetProcessSetsFilterArrayOutput {
+	return i.ToGetProcessSetsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetsFilterArray) ToGetProcessSetsFilterArrayOutputWithContext(ctx context.Context) GetProcessSetsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetsFilterArrayOutput)
+}
+
+type GetProcessSetsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetsFilter)(nil)).Elem()
+}
+
+func (o GetProcessSetsFilterOutput) ToGetProcessSetsFilterOutput() GetProcessSetsFilterOutput {
+	return o
+}
+
+func (o GetProcessSetsFilterOutput) ToGetProcessSetsFilterOutputWithContext(ctx context.Context) GetProcessSetsFilterOutput {
+	return o
+}
+
+func (o GetProcessSetsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetProcessSetsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProcessSetsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetProcessSetsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetProcessSetsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetProcessSetsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetsFilter)(nil)).Elem()
+}
+
+func (o GetProcessSetsFilterArrayOutput) ToGetProcessSetsFilterArrayOutput() GetProcessSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetProcessSetsFilterArrayOutput) ToGetProcessSetsFilterArrayOutputWithContext(ctx context.Context) GetProcessSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetProcessSetsFilterArrayOutput) Index(i pulumi.IntInput) GetProcessSetsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProcessSetsFilter {
+		return vs[0].([]GetProcessSetsFilter)[vs[1].(int)]
+	}).(GetProcessSetsFilterOutput)
+}
+
+type GetProcessSetsProcessSetCollection struct {
+	// List of Process Set specification details.
+	Items []GetProcessSetsProcessSetCollectionItem `pulumi:"items"`
+}
+
+// GetProcessSetsProcessSetCollectionInput is an input type that accepts GetProcessSetsProcessSetCollectionArgs and GetProcessSetsProcessSetCollectionOutput values.
+// You can construct a concrete instance of `GetProcessSetsProcessSetCollectionInput` via:
+//
+//	GetProcessSetsProcessSetCollectionArgs{...}
+type GetProcessSetsProcessSetCollectionInput interface {
+	pulumi.Input
+
+	ToGetProcessSetsProcessSetCollectionOutput() GetProcessSetsProcessSetCollectionOutput
+	ToGetProcessSetsProcessSetCollectionOutputWithContext(context.Context) GetProcessSetsProcessSetCollectionOutput
+}
+
+type GetProcessSetsProcessSetCollectionArgs struct {
+	// List of Process Set specification details.
+	Items GetProcessSetsProcessSetCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetProcessSetsProcessSetCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetsProcessSetCollection)(nil)).Elem()
+}
+
+func (i GetProcessSetsProcessSetCollectionArgs) ToGetProcessSetsProcessSetCollectionOutput() GetProcessSetsProcessSetCollectionOutput {
+	return i.ToGetProcessSetsProcessSetCollectionOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetsProcessSetCollectionArgs) ToGetProcessSetsProcessSetCollectionOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetsProcessSetCollectionOutput)
+}
+
+// GetProcessSetsProcessSetCollectionArrayInput is an input type that accepts GetProcessSetsProcessSetCollectionArray and GetProcessSetsProcessSetCollectionArrayOutput values.
+// You can construct a concrete instance of `GetProcessSetsProcessSetCollectionArrayInput` via:
+//
+//	GetProcessSetsProcessSetCollectionArray{ GetProcessSetsProcessSetCollectionArgs{...} }
+type GetProcessSetsProcessSetCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetProcessSetsProcessSetCollectionArrayOutput() GetProcessSetsProcessSetCollectionArrayOutput
+	ToGetProcessSetsProcessSetCollectionArrayOutputWithContext(context.Context) GetProcessSetsProcessSetCollectionArrayOutput
+}
+
+type GetProcessSetsProcessSetCollectionArray []GetProcessSetsProcessSetCollectionInput
+
+func (GetProcessSetsProcessSetCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetsProcessSetCollection)(nil)).Elem()
+}
+
+func (i GetProcessSetsProcessSetCollectionArray) ToGetProcessSetsProcessSetCollectionArrayOutput() GetProcessSetsProcessSetCollectionArrayOutput {
+	return i.ToGetProcessSetsProcessSetCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetsProcessSetCollectionArray) ToGetProcessSetsProcessSetCollectionArrayOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetsProcessSetCollectionArrayOutput)
+}
+
+type GetProcessSetsProcessSetCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetsProcessSetCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetsProcessSetCollection)(nil)).Elem()
+}
+
+func (o GetProcessSetsProcessSetCollectionOutput) ToGetProcessSetsProcessSetCollectionOutput() GetProcessSetsProcessSetCollectionOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionOutput) ToGetProcessSetsProcessSetCollectionOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionOutput {
+	return o
+}
+
+// List of Process Set specification details.
+func (o GetProcessSetsProcessSetCollectionOutput) Items() GetProcessSetsProcessSetCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollection) []GetProcessSetsProcessSetCollectionItem { return v.Items }).(GetProcessSetsProcessSetCollectionItemArrayOutput)
+}
+
+type GetProcessSetsProcessSetCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetsProcessSetCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetsProcessSetCollection)(nil)).Elem()
+}
+
+func (o GetProcessSetsProcessSetCollectionArrayOutput) ToGetProcessSetsProcessSetCollectionArrayOutput() GetProcessSetsProcessSetCollectionArrayOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionArrayOutput) ToGetProcessSetsProcessSetCollectionArrayOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionArrayOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionArrayOutput) Index(i pulumi.IntInput) GetProcessSetsProcessSetCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProcessSetsProcessSetCollection {
+		return vs[0].([]GetProcessSetsProcessSetCollection)[vs[1].(int)]
+	}).(GetProcessSetsProcessSetCollectionOutput)
+}
+
+type GetProcessSetsProcessSetCollectionItem struct {
+	// The ID of the compartment in which data is listed.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Process Set.
+	Id string `pulumi:"id"`
+	// The current revision of the Process Set.
+	Revision string `pulumi:"revision"`
+	// Collection of regular expression specifications used to identify the processes to be monitored.
+	Specifications []GetProcessSetsProcessSetCollectionItemSpecification `pulumi:"specifications"`
+	// The current state of the Resource.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the process set was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the process set was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetProcessSetsProcessSetCollectionItemInput is an input type that accepts GetProcessSetsProcessSetCollectionItemArgs and GetProcessSetsProcessSetCollectionItemOutput values.
+// You can construct a concrete instance of `GetProcessSetsProcessSetCollectionItemInput` via:
+//
+//	GetProcessSetsProcessSetCollectionItemArgs{...}
+type GetProcessSetsProcessSetCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetProcessSetsProcessSetCollectionItemOutput() GetProcessSetsProcessSetCollectionItemOutput
+	ToGetProcessSetsProcessSetCollectionItemOutputWithContext(context.Context) GetProcessSetsProcessSetCollectionItemOutput
+}
+
+type GetProcessSetsProcessSetCollectionItemArgs struct {
+	// The ID of the compartment in which data is listed.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Process Set.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The current revision of the Process Set.
+	Revision pulumi.StringInput `pulumi:"revision"`
+	// Collection of regular expression specifications used to identify the processes to be monitored.
+	Specifications GetProcessSetsProcessSetCollectionItemSpecificationArrayInput `pulumi:"specifications"`
+	// The current state of the Resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the process set was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the process set was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetProcessSetsProcessSetCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetsProcessSetCollectionItem)(nil)).Elem()
+}
+
+func (i GetProcessSetsProcessSetCollectionItemArgs) ToGetProcessSetsProcessSetCollectionItemOutput() GetProcessSetsProcessSetCollectionItemOutput {
+	return i.ToGetProcessSetsProcessSetCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetsProcessSetCollectionItemArgs) ToGetProcessSetsProcessSetCollectionItemOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetsProcessSetCollectionItemOutput)
+}
+
+// GetProcessSetsProcessSetCollectionItemArrayInput is an input type that accepts GetProcessSetsProcessSetCollectionItemArray and GetProcessSetsProcessSetCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetProcessSetsProcessSetCollectionItemArrayInput` via:
+//
+//	GetProcessSetsProcessSetCollectionItemArray{ GetProcessSetsProcessSetCollectionItemArgs{...} }
+type GetProcessSetsProcessSetCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetProcessSetsProcessSetCollectionItemArrayOutput() GetProcessSetsProcessSetCollectionItemArrayOutput
+	ToGetProcessSetsProcessSetCollectionItemArrayOutputWithContext(context.Context) GetProcessSetsProcessSetCollectionItemArrayOutput
+}
+
+type GetProcessSetsProcessSetCollectionItemArray []GetProcessSetsProcessSetCollectionItemInput
+
+func (GetProcessSetsProcessSetCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetsProcessSetCollectionItem)(nil)).Elem()
+}
+
+func (i GetProcessSetsProcessSetCollectionItemArray) ToGetProcessSetsProcessSetCollectionItemArrayOutput() GetProcessSetsProcessSetCollectionItemArrayOutput {
+	return i.ToGetProcessSetsProcessSetCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetsProcessSetCollectionItemArray) ToGetProcessSetsProcessSetCollectionItemArrayOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetsProcessSetCollectionItemArrayOutput)
+}
+
+type GetProcessSetsProcessSetCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetsProcessSetCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetsProcessSetCollectionItem)(nil)).Elem()
+}
+
+func (o GetProcessSetsProcessSetCollectionItemOutput) ToGetProcessSetsProcessSetCollectionItemOutput() GetProcessSetsProcessSetCollectionItemOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionItemOutput) ToGetProcessSetsProcessSetCollectionItemOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which data is listed.
+func (o GetProcessSetsProcessSetCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetProcessSetsProcessSetCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetProcessSetsProcessSetCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetProcessSetsProcessSetCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Process Set.
+func (o GetProcessSetsProcessSetCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The current revision of the Process Set.
+func (o GetProcessSetsProcessSetCollectionItemOutput) Revision() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) string { return v.Revision }).(pulumi.StringOutput)
+}
+
+// Collection of regular expression specifications used to identify the processes to be monitored.
+func (o GetProcessSetsProcessSetCollectionItemOutput) Specifications() GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) []GetProcessSetsProcessSetCollectionItemSpecification {
+		return v.Specifications
+	}).(GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput)
+}
+
+// The current state of the Resource.
+func (o GetProcessSetsProcessSetCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetProcessSetsProcessSetCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the process set was created. An RFC3339 formatted datetime string.
+func (o GetProcessSetsProcessSetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the process set was last updated. An RFC3339 formatted datetime string.
+func (o GetProcessSetsProcessSetCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetProcessSetsProcessSetCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetsProcessSetCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetsProcessSetCollectionItem)(nil)).Elem()
+}
+
+func (o GetProcessSetsProcessSetCollectionItemArrayOutput) ToGetProcessSetsProcessSetCollectionItemArrayOutput() GetProcessSetsProcessSetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionItemArrayOutput) ToGetProcessSetsProcessSetCollectionItemArrayOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProcessSetsProcessSetCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProcessSetsProcessSetCollectionItem {
+		return vs[0].([]GetProcessSetsProcessSetCollectionItem)[vs[1].(int)]
+	}).(GetProcessSetsProcessSetCollectionItemOutput)
+}
+
+type GetProcessSetsProcessSetCollectionItemSpecification struct {
+	// List of Process Set specification details.
+	Items []GetProcessSetsProcessSetCollectionItemSpecificationItem `pulumi:"items"`
+}
+
+// GetProcessSetsProcessSetCollectionItemSpecificationInput is an input type that accepts GetProcessSetsProcessSetCollectionItemSpecificationArgs and GetProcessSetsProcessSetCollectionItemSpecificationOutput values.
+// You can construct a concrete instance of `GetProcessSetsProcessSetCollectionItemSpecificationInput` via:
+//
+//	GetProcessSetsProcessSetCollectionItemSpecificationArgs{...}
+type GetProcessSetsProcessSetCollectionItemSpecificationInput interface {
+	pulumi.Input
+
+	ToGetProcessSetsProcessSetCollectionItemSpecificationOutput() GetProcessSetsProcessSetCollectionItemSpecificationOutput
+	ToGetProcessSetsProcessSetCollectionItemSpecificationOutputWithContext(context.Context) GetProcessSetsProcessSetCollectionItemSpecificationOutput
+}
+
+type GetProcessSetsProcessSetCollectionItemSpecificationArgs struct {
+	// List of Process Set specification details.
+	Items GetProcessSetsProcessSetCollectionItemSpecificationItemArrayInput `pulumi:"items"`
+}
+
+func (GetProcessSetsProcessSetCollectionItemSpecificationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemSpecification)(nil)).Elem()
+}
+
+func (i GetProcessSetsProcessSetCollectionItemSpecificationArgs) ToGetProcessSetsProcessSetCollectionItemSpecificationOutput() GetProcessSetsProcessSetCollectionItemSpecificationOutput {
+	return i.ToGetProcessSetsProcessSetCollectionItemSpecificationOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetsProcessSetCollectionItemSpecificationArgs) ToGetProcessSetsProcessSetCollectionItemSpecificationOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemSpecificationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetsProcessSetCollectionItemSpecificationOutput)
+}
+
+// GetProcessSetsProcessSetCollectionItemSpecificationArrayInput is an input type that accepts GetProcessSetsProcessSetCollectionItemSpecificationArray and GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput values.
+// You can construct a concrete instance of `GetProcessSetsProcessSetCollectionItemSpecificationArrayInput` via:
+//
+//	GetProcessSetsProcessSetCollectionItemSpecificationArray{ GetProcessSetsProcessSetCollectionItemSpecificationArgs{...} }
+type GetProcessSetsProcessSetCollectionItemSpecificationArrayInput interface {
+	pulumi.Input
+
+	ToGetProcessSetsProcessSetCollectionItemSpecificationArrayOutput() GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput
+	ToGetProcessSetsProcessSetCollectionItemSpecificationArrayOutputWithContext(context.Context) GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput
+}
+
+type GetProcessSetsProcessSetCollectionItemSpecificationArray []GetProcessSetsProcessSetCollectionItemSpecificationInput
+
+func (GetProcessSetsProcessSetCollectionItemSpecificationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetsProcessSetCollectionItemSpecification)(nil)).Elem()
+}
+
+func (i GetProcessSetsProcessSetCollectionItemSpecificationArray) ToGetProcessSetsProcessSetCollectionItemSpecificationArrayOutput() GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput {
+	return i.ToGetProcessSetsProcessSetCollectionItemSpecificationArrayOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetsProcessSetCollectionItemSpecificationArray) ToGetProcessSetsProcessSetCollectionItemSpecificationArrayOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput)
+}
+
+type GetProcessSetsProcessSetCollectionItemSpecificationOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetsProcessSetCollectionItemSpecificationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemSpecification)(nil)).Elem()
+}
+
+func (o GetProcessSetsProcessSetCollectionItemSpecificationOutput) ToGetProcessSetsProcessSetCollectionItemSpecificationOutput() GetProcessSetsProcessSetCollectionItemSpecificationOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionItemSpecificationOutput) ToGetProcessSetsProcessSetCollectionItemSpecificationOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemSpecificationOutput {
+	return o
+}
+
+// List of Process Set specification details.
+func (o GetProcessSetsProcessSetCollectionItemSpecificationOutput) Items() GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItemSpecification) []GetProcessSetsProcessSetCollectionItemSpecificationItem {
+		return v.Items
+	}).(GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput)
+}
+
+type GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetsProcessSetCollectionItemSpecification)(nil)).Elem()
+}
+
+func (o GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput) ToGetProcessSetsProcessSetCollectionItemSpecificationArrayOutput() GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput) ToGetProcessSetsProcessSetCollectionItemSpecificationArrayOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput) Index(i pulumi.IntInput) GetProcessSetsProcessSetCollectionItemSpecificationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProcessSetsProcessSetCollectionItemSpecification {
+		return vs[0].([]GetProcessSetsProcessSetCollectionItemSpecification)[vs[1].(int)]
+	}).(GetProcessSetsProcessSetCollectionItemSpecificationOutput)
+}
+
+type GetProcessSetsProcessSetCollectionItemSpecificationItem struct {
+	// Optional label used to identify a single filter.
+	Label string `pulumi:"label"`
+	// String literal used for exact matching on process name.
+	ProcessCommand string `pulumi:"processCommand"`
+	// Regex pattern matching on process arguments.
+	ProcessLineRegexPattern string `pulumi:"processLineRegexPattern"`
+	// String literal used for exact matching on process user.
+	ProcessUser string `pulumi:"processUser"`
+}
+
+// GetProcessSetsProcessSetCollectionItemSpecificationItemInput is an input type that accepts GetProcessSetsProcessSetCollectionItemSpecificationItemArgs and GetProcessSetsProcessSetCollectionItemSpecificationItemOutput values.
+// You can construct a concrete instance of `GetProcessSetsProcessSetCollectionItemSpecificationItemInput` via:
+//
+//	GetProcessSetsProcessSetCollectionItemSpecificationItemArgs{...}
+type GetProcessSetsProcessSetCollectionItemSpecificationItemInput interface {
+	pulumi.Input
+
+	ToGetProcessSetsProcessSetCollectionItemSpecificationItemOutput() GetProcessSetsProcessSetCollectionItemSpecificationItemOutput
+	ToGetProcessSetsProcessSetCollectionItemSpecificationItemOutputWithContext(context.Context) GetProcessSetsProcessSetCollectionItemSpecificationItemOutput
+}
+
+type GetProcessSetsProcessSetCollectionItemSpecificationItemArgs struct {
+	// Optional label used to identify a single filter.
+	Label pulumi.StringInput `pulumi:"label"`
+	// String literal used for exact matching on process name.
+	ProcessCommand pulumi.StringInput `pulumi:"processCommand"`
+	// Regex pattern matching on process arguments.
+	ProcessLineRegexPattern pulumi.StringInput `pulumi:"processLineRegexPattern"`
+	// String literal used for exact matching on process user.
+	ProcessUser pulumi.StringInput `pulumi:"processUser"`
+}
+
+func (GetProcessSetsProcessSetCollectionItemSpecificationItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemSpecificationItem)(nil)).Elem()
+}
+
+func (i GetProcessSetsProcessSetCollectionItemSpecificationItemArgs) ToGetProcessSetsProcessSetCollectionItemSpecificationItemOutput() GetProcessSetsProcessSetCollectionItemSpecificationItemOutput {
+	return i.ToGetProcessSetsProcessSetCollectionItemSpecificationItemOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetsProcessSetCollectionItemSpecificationItemArgs) ToGetProcessSetsProcessSetCollectionItemSpecificationItemOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemSpecificationItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetsProcessSetCollectionItemSpecificationItemOutput)
+}
+
+// GetProcessSetsProcessSetCollectionItemSpecificationItemArrayInput is an input type that accepts GetProcessSetsProcessSetCollectionItemSpecificationItemArray and GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput values.
+// You can construct a concrete instance of `GetProcessSetsProcessSetCollectionItemSpecificationItemArrayInput` via:
+//
+//	GetProcessSetsProcessSetCollectionItemSpecificationItemArray{ GetProcessSetsProcessSetCollectionItemSpecificationItemArgs{...} }
+type GetProcessSetsProcessSetCollectionItemSpecificationItemArrayInput interface {
+	pulumi.Input
+
+	ToGetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput() GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput
+	ToGetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutputWithContext(context.Context) GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput
+}
+
+type GetProcessSetsProcessSetCollectionItemSpecificationItemArray []GetProcessSetsProcessSetCollectionItemSpecificationItemInput
+
+func (GetProcessSetsProcessSetCollectionItemSpecificationItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetsProcessSetCollectionItemSpecificationItem)(nil)).Elem()
+}
+
+func (i GetProcessSetsProcessSetCollectionItemSpecificationItemArray) ToGetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput() GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput {
+	return i.ToGetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetProcessSetsProcessSetCollectionItemSpecificationItemArray) ToGetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput)
+}
+
+type GetProcessSetsProcessSetCollectionItemSpecificationItemOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetsProcessSetCollectionItemSpecificationItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemSpecificationItem)(nil)).Elem()
+}
+
+func (o GetProcessSetsProcessSetCollectionItemSpecificationItemOutput) ToGetProcessSetsProcessSetCollectionItemSpecificationItemOutput() GetProcessSetsProcessSetCollectionItemSpecificationItemOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionItemSpecificationItemOutput) ToGetProcessSetsProcessSetCollectionItemSpecificationItemOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemSpecificationItemOutput {
+	return o
+}
+
+// Optional label used to identify a single filter.
+func (o GetProcessSetsProcessSetCollectionItemSpecificationItemOutput) Label() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItemSpecificationItem) string { return v.Label }).(pulumi.StringOutput)
+}
+
+// String literal used for exact matching on process name.
+func (o GetProcessSetsProcessSetCollectionItemSpecificationItemOutput) ProcessCommand() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItemSpecificationItem) string { return v.ProcessCommand }).(pulumi.StringOutput)
+}
+
+// Regex pattern matching on process arguments.
+func (o GetProcessSetsProcessSetCollectionItemSpecificationItemOutput) ProcessLineRegexPattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItemSpecificationItem) string {
+		return v.ProcessLineRegexPattern
+	}).(pulumi.StringOutput)
+}
+
+// String literal used for exact matching on process user.
+func (o GetProcessSetsProcessSetCollectionItemSpecificationItemOutput) ProcessUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItemSpecificationItem) string { return v.ProcessUser }).(pulumi.StringOutput)
+}
+
+type GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessSetsProcessSetCollectionItemSpecificationItem)(nil)).Elem()
+}
+
+func (o GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput) ToGetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput() GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput) ToGetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutputWithContext(ctx context.Context) GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput {
+	return o
+}
+
+func (o GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput) Index(i pulumi.IntInput) GetProcessSetsProcessSetCollectionItemSpecificationItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProcessSetsProcessSetCollectionItemSpecificationItem {
+		return vs[0].([]GetProcessSetsProcessSetCollectionItemSpecificationItem)[vs[1].(int)]
+	}).(GetProcessSetsProcessSetCollectionItemSpecificationItemOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsPtrInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsArgs{})
@@ -15387,6 +16495,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemArrayInput)(nil)).Elem(), MonitoredResourcesSearchItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemPropertyInput)(nil)).Elem(), MonitoredResourcesSearchItemPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemPropertyArrayInput)(nil)).Elem(), MonitoredResourcesSearchItemPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProcessSetSpecificationInput)(nil)).Elem(), ProcessSetSpecificationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProcessSetSpecificationPtrInput)(nil)).Elem(), ProcessSetSpecificationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProcessSetSpecificationItemInput)(nil)).Elem(), ProcessSetSpecificationItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProcessSetSpecificationItemArrayInput)(nil)).Elem(), ProcessSetSpecificationItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsBaselineableMetricSummaryCollectionInput)(nil)).Elem(), GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayInput)(nil)).Elem(), GetBaselineableMetricsBaselineableMetricSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsBaselineableMetricSummaryCollectionItemInput)(nil)).Elem(), GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs{})
@@ -15537,6 +16649,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemPropertyInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetSpecificationInput)(nil)).Elem(), GetProcessSetSpecificationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetSpecificationArrayInput)(nil)).Elem(), GetProcessSetSpecificationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetSpecificationItemInput)(nil)).Elem(), GetProcessSetSpecificationItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetSpecificationItemArrayInput)(nil)).Elem(), GetProcessSetSpecificationItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsFilterInput)(nil)).Elem(), GetProcessSetsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsFilterArrayInput)(nil)).Elem(), GetProcessSetsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsProcessSetCollectionInput)(nil)).Elem(), GetProcessSetsProcessSetCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsProcessSetCollectionArrayInput)(nil)).Elem(), GetProcessSetsProcessSetCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemInput)(nil)).Elem(), GetProcessSetsProcessSetCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemArrayInput)(nil)).Elem(), GetProcessSetsProcessSetCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemSpecificationInput)(nil)).Elem(), GetProcessSetsProcessSetCollectionItemSpecificationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemSpecificationArrayInput)(nil)).Elem(), GetProcessSetsProcessSetCollectionItemSpecificationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemSpecificationItemInput)(nil)).Elem(), GetProcessSetsProcessSetCollectionItemSpecificationItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessSetsProcessSetCollectionItemSpecificationItemArrayInput)(nil)).Elem(), GetProcessSetsProcessSetCollectionItemSpecificationItemArray{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsCredentialsOutput{})
@@ -15603,6 +16729,10 @@ func init() {
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemArrayOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemPropertyOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemPropertyArrayOutput{})
+	pulumi.RegisterOutputType(ProcessSetSpecificationOutput{})
+	pulumi.RegisterOutputType(ProcessSetSpecificationPtrOutput{})
+	pulumi.RegisterOutputType(ProcessSetSpecificationItemOutput{})
+	pulumi.RegisterOutputType(ProcessSetSpecificationItemArrayOutput{})
 	pulumi.RegisterOutputType(GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput{})
 	pulumi.RegisterOutputType(GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput{})
@@ -15753,4 +16883,18 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetProcessSetSpecificationOutput{})
+	pulumi.RegisterOutputType(GetProcessSetSpecificationArrayOutput{})
+	pulumi.RegisterOutputType(GetProcessSetSpecificationItemOutput{})
+	pulumi.RegisterOutputType(GetProcessSetSpecificationItemArrayOutput{})
+	pulumi.RegisterOutputType(GetProcessSetsFilterOutput{})
+	pulumi.RegisterOutputType(GetProcessSetsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetProcessSetsProcessSetCollectionOutput{})
+	pulumi.RegisterOutputType(GetProcessSetsProcessSetCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetProcessSetsProcessSetCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetProcessSetsProcessSetCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetProcessSetsProcessSetCollectionItemSpecificationOutput{})
+	pulumi.RegisterOutputType(GetProcessSetsProcessSetCollectionItemSpecificationArrayOutput{})
+	pulumi.RegisterOutputType(GetProcessSetsProcessSetCollectionItemSpecificationItemOutput{})
+	pulumi.RegisterOutputType(GetProcessSetsProcessSetCollectionItemSpecificationItemArrayOutput{})
 }

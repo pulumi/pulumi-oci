@@ -1902,15 +1902,179 @@ public final class CoreFunctions {
     public static CompletableFuture<GetBootVolumeResult> getBootVolumePlain(GetBootVolumePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getBootVolume:getBootVolume", TypeShape.of(GetBootVolumeResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volume attachments in the specified compartment. You can filter the
+     * list by specifying an instance OCID, boot volume OCID, or both.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_attachment_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * For more detailed implementation refer the instance example
+     * 
+     */
     public static Output<GetBootVolumeAttachmentsResult> getBootVolumeAttachments(GetBootVolumeAttachmentsArgs args) {
         return getBootVolumeAttachments(args, InvokeOptions.Empty);
     }
+    /**
+     * This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volume attachments in the specified compartment. You can filter the
+     * list by specifying an instance OCID, boot volume OCID, or both.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_attachment_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * For more detailed implementation refer the instance example
+     * 
+     */
     public static CompletableFuture<GetBootVolumeAttachmentsResult> getBootVolumeAttachmentsPlain(GetBootVolumeAttachmentsPlainArgs args) {
         return getBootVolumeAttachmentsPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volume attachments in the specified compartment. You can filter the
+     * list by specifying an instance OCID, boot volume OCID, or both.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_attachment_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * For more detailed implementation refer the instance example
+     * 
+     */
     public static Output<GetBootVolumeAttachmentsResult> getBootVolumeAttachments(GetBootVolumeAttachmentsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", TypeShape.of(GetBootVolumeAttachmentsResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volume attachments in the specified compartment. You can filter the
+     * list by specifying an instance OCID, boot volume OCID, or both.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_attachment_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * For more detailed implementation refer the instance example
+     * 
+     */
     public static CompletableFuture<GetBootVolumeAttachmentsResult> getBootVolumeAttachmentsPlain(GetBootVolumeAttachmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", TypeShape.of(GetBootVolumeAttachmentsResult.class), args, Utilities.withVersion(options));
     }

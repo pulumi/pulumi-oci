@@ -60376,10 +60376,16 @@ export namespace LoadBalancer {
     }
 
     export interface LoadBalancerIpAddressDetailReservedIp {
+        /**
+         * Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+         */
         id?: pulumi.Input<string>;
     }
 
     export interface LoadBalancerReservedIp {
+        /**
+         * Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+         */
         id?: pulumi.Input<string>;
     }
 

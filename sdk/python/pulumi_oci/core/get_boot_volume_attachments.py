@@ -122,7 +122,24 @@ def get_boot_volume_attachments(availability_domain: Optional[str] = None,
                                 instance_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumeAttachmentsResult:
     """
-    Use this data source to access information about an existing resource.
+    This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
+
+    Lists the boot volume attachments in the specified compartment. You can filter the
+    list by specifying an instance OCID, boot volume OCID, or both.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_boot_volume_attachments = oci.Core.get_boot_volume_attachments(availability_domain=var["boot_volume_attachment_availability_domain"],
+        compartment_id=var["compartment_id"],
+        boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
+        instance_id=oci_core_instance["test_instance"]["id"])
+    ```
+    For more detailed implementation refer the instance example
+
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param str boot_volume_id: The OCID of the boot volume.
@@ -156,7 +173,24 @@ def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Inpu
                                        instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeAttachmentsResult]:
     """
-    Use this data source to access information about an existing resource.
+    This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
+
+    Lists the boot volume attachments in the specified compartment. You can filter the
+    list by specifying an instance OCID, boot volume OCID, or both.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_boot_volume_attachments = oci.Core.get_boot_volume_attachments(availability_domain=var["boot_volume_attachment_availability_domain"],
+        compartment_id=var["compartment_id"],
+        boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
+        instance_id=oci_core_instance["test_instance"]["id"])
+    ```
+    For more detailed implementation refer the instance example
+
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param str boot_volume_id: The OCID of the boot volume.

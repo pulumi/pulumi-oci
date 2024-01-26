@@ -1056,12 +1056,18 @@ class LoadBalancerIpAddressDetailArgs:
 class LoadBalancerIpAddressDetailReservedIpArgs:
     def __init__(__self__, *,
                  id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] id: Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+        """
         if id is not None:
             pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -1073,12 +1079,18 @@ class LoadBalancerIpAddressDetailReservedIpArgs:
 class LoadBalancerReservedIpArgs:
     def __init__(__self__, *,
                  id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] id: Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+        """
         if id is not None:
             pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+        """
         return pulumi.get(self, "id")
 
     @id.setter

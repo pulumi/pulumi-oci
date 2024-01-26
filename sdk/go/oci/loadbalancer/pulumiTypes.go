@@ -2108,6 +2108,7 @@ func (o LoadBalancerIpAddressDetailArrayOutput) Index(i pulumi.IntInput) LoadBal
 }
 
 type LoadBalancerIpAddressDetailReservedIp struct {
+	// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id *string `pulumi:"id"`
 }
 
@@ -2123,6 +2124,7 @@ type LoadBalancerIpAddressDetailReservedIpInput interface {
 }
 
 type LoadBalancerIpAddressDetailReservedIpArgs struct {
+	// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -2177,6 +2179,7 @@ func (o LoadBalancerIpAddressDetailReservedIpOutput) ToLoadBalancerIpAddressDeta
 	return o
 }
 
+// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 func (o LoadBalancerIpAddressDetailReservedIpOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LoadBalancerIpAddressDetailReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -2202,6 +2205,7 @@ func (o LoadBalancerIpAddressDetailReservedIpArrayOutput) Index(i pulumi.IntInpu
 }
 
 type LoadBalancerReservedIp struct {
+	// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id *string `pulumi:"id"`
 }
 
@@ -2217,6 +2221,7 @@ type LoadBalancerReservedIpInput interface {
 }
 
 type LoadBalancerReservedIpArgs struct {
+	// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -2271,6 +2276,7 @@ func (o LoadBalancerReservedIpOutput) ToLoadBalancerReservedIpOutputWithContext(
 	return o
 }
 
+// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 func (o LoadBalancerReservedIpOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LoadBalancerReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }

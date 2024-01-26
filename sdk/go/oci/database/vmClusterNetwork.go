@@ -123,11 +123,12 @@ type VmClusterNetwork struct {
 	// (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time when the VM cluster network was created.
-	TimeCreated              pulumi.StringOutput  `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
 	ValidateVmClusterNetwork pulumi.BoolPtrOutput `pulumi:"validateVmClusterNetwork"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
 	VmClusterId pulumi.StringOutput `pulumi:"vmClusterId"`
-	// (Updatable) Details of the client and backup networks.
+	// Details of the client and backup networks.
 	VmNetworks VmClusterNetworkVmNetworkArrayOutput `pulumi:"vmNetworks"`
 }
 
@@ -200,11 +201,12 @@ type vmClusterNetworkState struct {
 	// (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
 	State *string `pulumi:"state"`
 	// The date and time when the VM cluster network was created.
-	TimeCreated              *string `pulumi:"timeCreated"`
-	ValidateVmClusterNetwork *bool   `pulumi:"validateVmClusterNetwork"`
+	TimeCreated *string `pulumi:"timeCreated"`
+	// (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+	ValidateVmClusterNetwork *bool `pulumi:"validateVmClusterNetwork"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
 	VmClusterId *string `pulumi:"vmClusterId"`
-	// (Updatable) Details of the client and backup networks.
+	// Details of the client and backup networks.
 	VmNetworks []VmClusterNetworkVmNetwork `pulumi:"vmNetworks"`
 }
 
@@ -233,11 +235,12 @@ type VmClusterNetworkState struct {
 	// (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
 	State pulumi.StringPtrInput
 	// The date and time when the VM cluster network was created.
-	TimeCreated              pulumi.StringPtrInput
+	TimeCreated pulumi.StringPtrInput
+	// (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
 	ValidateVmClusterNetwork pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
 	VmClusterId pulumi.StringPtrInput
-	// (Updatable) Details of the client and backup networks.
+	// Details of the client and backup networks.
 	VmNetworks VmClusterNetworkVmNetworkArrayInput
 }
 
@@ -264,9 +267,10 @@ type vmClusterNetworkArgs struct {
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
 	Ntps []string `pulumi:"ntps"`
 	// (Updatable) The SCAN details.
-	Scans                    []VmClusterNetworkScan `pulumi:"scans"`
-	ValidateVmClusterNetwork *bool                  `pulumi:"validateVmClusterNetwork"`
-	// (Updatable) Details of the client and backup networks.
+	Scans []VmClusterNetworkScan `pulumi:"scans"`
+	// (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+	ValidateVmClusterNetwork *bool `pulumi:"validateVmClusterNetwork"`
+	// Details of the client and backup networks.
 	VmNetworks []VmClusterNetworkVmNetwork `pulumi:"vmNetworks"`
 }
 
@@ -290,9 +294,10 @@ type VmClusterNetworkArgs struct {
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
 	Ntps pulumi.StringArrayInput
 	// (Updatable) The SCAN details.
-	Scans                    VmClusterNetworkScanArrayInput
+	Scans VmClusterNetworkScanArrayInput
+	// (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
 	ValidateVmClusterNetwork pulumi.BoolPtrInput
-	// (Updatable) Details of the client and backup networks.
+	// Details of the client and backup networks.
 	VmNetworks VmClusterNetworkVmNetworkArrayInput
 }
 
@@ -447,6 +452,7 @@ func (o VmClusterNetworkOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
 func (o VmClusterNetworkOutput) ValidateVmClusterNetwork() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *VmClusterNetwork) pulumi.BoolPtrOutput { return v.ValidateVmClusterNetwork }).(pulumi.BoolPtrOutput)
 }
@@ -456,7 +462,7 @@ func (o VmClusterNetworkOutput) VmClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringOutput { return v.VmClusterId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Details of the client and backup networks.
+// Details of the client and backup networks.
 func (o VmClusterNetworkOutput) VmNetworks() VmClusterNetworkVmNetworkArrayOutput {
 	return o.ApplyT(func(v *VmClusterNetwork) VmClusterNetworkVmNetworkArrayOutput { return v.VmNetworks }).(VmClusterNetworkVmNetworkArrayOutput)
 }

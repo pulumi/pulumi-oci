@@ -6,6 +6,27 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
+/**
+ * This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the boot volume attachments in the specified compartment. You can filter the
+ * list by specifying an instance OCID, boot volume OCID, or both.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBootVolumeAttachments = oci.Core.getBootVolumeAttachments({
+ *     availabilityDomain: _var.boot_volume_attachment_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ *     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
+ *     instanceId: oci_core_instance.test_instance.id,
+ * });
+ * ```
+ * For more detailed implementation refer the instance example
+ */
 export function getBootVolumeAttachments(args: GetBootVolumeAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeAttachmentsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -71,6 +92,27 @@ export interface GetBootVolumeAttachmentsResult {
      */
     readonly instanceId?: string;
 }
+/**
+ * This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the boot volume attachments in the specified compartment. You can filter the
+ * list by specifying an instance OCID, boot volume OCID, or both.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBootVolumeAttachments = oci.Core.getBootVolumeAttachments({
+ *     availabilityDomain: _var.boot_volume_attachment_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ *     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
+ *     instanceId: oci_core_instance.test_instance.id,
+ * });
+ * ```
+ * For more detailed implementation refer the instance example
+ */
 export function getBootVolumeAttachmentsOutput(args: GetBootVolumeAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeAttachmentsResult> {
     return pulumi.output(args).apply((a: any) => getBootVolumeAttachments(a, opts))
 }

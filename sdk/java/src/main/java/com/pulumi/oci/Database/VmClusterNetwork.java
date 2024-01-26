@@ -279,9 +279,17 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+     * 
+     */
     @Export(name="validateVmClusterNetwork", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> validateVmClusterNetwork;
 
+    /**
+     * @return (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+     * 
+     */
     public Output<Optional<Boolean>> validateVmClusterNetwork() {
         return Codegen.optional(this.validateVmClusterNetwork);
     }
@@ -300,14 +308,14 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
         return this.vmClusterId;
     }
     /**
-     * (Updatable) Details of the client and backup networks.
+     * Details of the client and backup networks.
      * 
      */
     @Export(name="vmNetworks", refs={List.class,VmClusterNetworkVmNetwork.class}, tree="[0,1]")
     private Output<List<VmClusterNetworkVmNetwork>> vmNetworks;
 
     /**
-     * @return (Updatable) Details of the client and backup networks.
+     * @return Details of the client and backup networks.
      * 
      */
     public Output<List<VmClusterNetworkVmNetwork>> vmNetworks() {

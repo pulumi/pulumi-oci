@@ -209,9 +209,17 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.timeCreated);
     }
 
+    /**
+     * (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+     * 
+     */
     @Import(name="validateVmClusterNetwork")
     private @Nullable Output<Boolean> validateVmClusterNetwork;
 
+    /**
+     * @return (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+     * 
+     */
     public Optional<Output<Boolean>> validateVmClusterNetwork() {
         return Optional.ofNullable(this.validateVmClusterNetwork);
     }
@@ -232,14 +240,14 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Details of the client and backup networks.
+     * Details of the client and backup networks.
      * 
      */
     @Import(name="vmNetworks")
     private @Nullable Output<List<VmClusterNetworkVmNetworkArgs>> vmNetworks;
 
     /**
-     * @return (Updatable) Details of the client and backup networks.
+     * @return Details of the client and backup networks.
      * 
      */
     public Optional<Output<List<VmClusterNetworkVmNetworkArgs>>> vmNetworks() {
@@ -586,11 +594,23 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
             return timeCreated(Output.of(timeCreated));
         }
 
+        /**
+         * @param validateVmClusterNetwork (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+         * 
+         * @return builder
+         * 
+         */
         public Builder validateVmClusterNetwork(@Nullable Output<Boolean> validateVmClusterNetwork) {
             $.validateVmClusterNetwork = validateVmClusterNetwork;
             return this;
         }
 
+        /**
+         * @param validateVmClusterNetwork (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+         * 
+         * @return builder
+         * 
+         */
         public Builder validateVmClusterNetwork(Boolean validateVmClusterNetwork) {
             return validateVmClusterNetwork(Output.of(validateVmClusterNetwork));
         }
@@ -617,7 +637,7 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vmNetworks (Updatable) Details of the client and backup networks.
+         * @param vmNetworks Details of the client and backup networks.
          * 
          * @return builder
          * 
@@ -628,7 +648,7 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vmNetworks (Updatable) Details of the client and backup networks.
+         * @param vmNetworks Details of the client and backup networks.
          * 
          * @return builder
          * 
@@ -638,7 +658,7 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vmNetworks (Updatable) Details of the client and backup networks.
+         * @param vmNetworks Details of the client and backup networks.
          * 
          * @return builder
          * 

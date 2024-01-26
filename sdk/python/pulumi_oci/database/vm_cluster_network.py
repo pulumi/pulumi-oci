@@ -34,12 +34,13 @@ class VmClusterNetworkArgs:
         :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]] scans: (Updatable) The SCAN details.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]] vm_networks: (Updatable) Details of the client and backup networks.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]] vm_networks: Details of the client and backup networks.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dns: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]] dr_scans: (Updatable) The SCAN details for DR network
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
+        :param pulumi.Input[bool] validate_vm_cluster_network: (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -113,7 +114,7 @@ class VmClusterNetworkArgs:
     @pulumi.getter(name="vmNetworks")
     def vm_networks(self) -> pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]]:
         """
-        (Updatable) Details of the client and backup networks.
+        Details of the client and backup networks.
         """
         return pulumi.get(self, "vm_networks")
 
@@ -193,6 +194,9 @@ class VmClusterNetworkArgs:
     @property
     @pulumi.getter(name="validateVmClusterNetwork")
     def validate_vm_cluster_network(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+        """
         return pulumi.get(self, "validate_vm_cluster_network")
 
     @validate_vm_cluster_network.setter
@@ -233,8 +237,9 @@ class _VmClusterNetworkState:
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]] scans: (Updatable) The SCAN details.
         :param pulumi.Input[str] state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         :param pulumi.Input[str] time_created: The date and time when the VM cluster network was created.
+        :param pulumi.Input[bool] validate_vm_cluster_network: (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]] vm_networks: (Updatable) Details of the client and backup networks.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]] vm_networks: Details of the client and backup networks.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -425,6 +430,9 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter(name="validateVmClusterNetwork")
     def validate_vm_cluster_network(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+        """
         return pulumi.get(self, "validate_vm_cluster_network")
 
     @validate_vm_cluster_network.setter
@@ -447,7 +455,7 @@ class _VmClusterNetworkState:
     @pulumi.getter(name="vmNetworks")
     def vm_networks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]]]:
         """
-        (Updatable) Details of the client and backup networks.
+        Details of the client and backup networks.
         """
         return pulumi.get(self, "vm_networks")
 
@@ -545,7 +553,8 @@ class VmClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkScanArgs']]]] scans: (Updatable) The SCAN details.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]] vm_networks: (Updatable) Details of the client and backup networks.
+        :param pulumi.Input[bool] validate_vm_cluster_network: (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]] vm_networks: Details of the client and backup networks.
         """
         ...
     @overload
@@ -720,8 +729,9 @@ class VmClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkScanArgs']]]] scans: (Updatable) The SCAN details.
         :param pulumi.Input[str] state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         :param pulumi.Input[str] time_created: The date and time when the VM cluster network was created.
+        :param pulumi.Input[bool] validate_vm_cluster_network: (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]] vm_networks: (Updatable) Details of the client and backup networks.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]] vm_networks: Details of the client and backup networks.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -849,6 +859,9 @@ class VmClusterNetwork(pulumi.CustomResource):
     @property
     @pulumi.getter(name="validateVmClusterNetwork")
     def validate_vm_cluster_network(self) -> pulumi.Output[Optional[bool]]:
+        """
+        (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
+        """
         return pulumi.get(self, "validate_vm_cluster_network")
 
     @property
@@ -863,7 +876,7 @@ class VmClusterNetwork(pulumi.CustomResource):
     @pulumi.getter(name="vmNetworks")
     def vm_networks(self) -> pulumi.Output[Sequence['outputs.VmClusterNetworkVmNetwork']]:
         """
-        (Updatable) Details of the client and backup networks.
+        Details of the client and backup networks.
         """
         return pulumi.get(self, "vm_networks")
 

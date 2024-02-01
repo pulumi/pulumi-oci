@@ -33,14 +33,11 @@ func GetDisableAutoRetries(ctx *pulumi.Context) bool {
 func GetFingerprint(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:fingerprint")
 }
-
-// (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated
-// remote object
 func GetIgnoreDefinedTags(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:ignoreDefinedTags")
 }
 
-// (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
+// (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
 // set to 'ApiKey', ignored otherwise.
 func GetPrivateKey(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:privateKey")
@@ -51,8 +48,8 @@ func GetPrivateKeyPassword(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:privateKeyPassword")
 }
 
-// (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-// auth is set to 'ApiKey', ignored otherwise.
+// (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
+// is set to 'ApiKey', ignored otherwise.
 func GetPrivateKeyPath(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:privateKeyPath")
 }
@@ -68,8 +65,8 @@ func GetRegion(ctx *pulumi.Context) string {
 }
 
 // (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-// duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-// is set to true.
+// duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is
+// set to true.
 func GetRetryDurationSeconds(ctx *pulumi.Context) int {
 	return config.GetInt(ctx, "oci:retryDurationSeconds")
 }

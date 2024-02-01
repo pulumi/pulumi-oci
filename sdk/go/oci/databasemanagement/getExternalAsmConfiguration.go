@@ -30,7 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalAsmConfiguration(ctx, &databasemanagement.GetExternalAsmConfigurationArgs{
-//				ExternalAsmId: oci_database_management_external_asm.Test_external_asm.Id,
+//				ExternalAsmId:        oci_database_management_external_asm.Test_external_asm.Id,
+//				OpcNamedCredentialId: pulumi.StringRef(_var.External_asm_configuration_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -54,6 +55,8 @@ func GetExternalAsmConfiguration(ctx *pulumi.Context, args *GetExternalAsmConfig
 type GetExternalAsmConfigurationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
 	ExternalAsmId string `pulumi:"externalAsmId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 }
 
 // A collection of values returned by getExternalAsmConfiguration.
@@ -62,7 +65,8 @@ type GetExternalAsmConfigurationResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// An array of initialization parameters for the external ASM instances.
-	InitParameters []GetExternalAsmConfigurationInitParameter `pulumi:"initParameters"`
+	InitParameters       []GetExternalAsmConfigurationInitParameter `pulumi:"initParameters"`
+	OpcNamedCredentialId *string                                    `pulumi:"opcNamedCredentialId"`
 }
 
 func GetExternalAsmConfigurationOutput(ctx *pulumi.Context, args GetExternalAsmConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetExternalAsmConfigurationResultOutput {
@@ -82,6 +86,8 @@ func GetExternalAsmConfigurationOutput(ctx *pulumi.Context, args GetExternalAsmC
 type GetExternalAsmConfigurationOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
 	ExternalAsmId pulumi.StringInput `pulumi:"externalAsmId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 }
 
 func (GetExternalAsmConfigurationOutputArgs) ElementType() reflect.Type {
@@ -117,6 +123,10 @@ func (o GetExternalAsmConfigurationResultOutput) InitParameters() GetExternalAsm
 	return o.ApplyT(func(v GetExternalAsmConfigurationResult) []GetExternalAsmConfigurationInitParameter {
 		return v.InitParameters
 	}).(GetExternalAsmConfigurationInitParameterArrayOutput)
+}
+
+func (o GetExternalAsmConfigurationResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmConfigurationResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

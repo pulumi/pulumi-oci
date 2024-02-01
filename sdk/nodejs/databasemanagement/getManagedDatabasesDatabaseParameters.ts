@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     isAllowedValuesIncluded: _var.managed_databases_database_parameter_is_allowed_values_included,
  *     name: _var.managed_databases_database_parameter_name,
+ *     opcNamedCredentialId: _var.managed_databases_database_parameter_opc_named_credential_id,
  *     source: _var.managed_databases_database_parameter_source,
  * });
  * ```
@@ -33,6 +34,7 @@ export function getManagedDatabasesDatabaseParameters(args: GetManagedDatabasesD
         "isAllowedValuesIncluded": args.isAllowedValuesIncluded,
         "managedDatabaseId": args.managedDatabaseId,
         "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "source": args.source,
     }, opts);
 }
@@ -54,6 +56,10 @@ export interface GetManagedDatabasesDatabaseParametersArgs {
      * A filter to return all parameters that have the text given in their names.
      */
     name?: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
     /**
      * The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
      */
@@ -79,6 +85,7 @@ export interface GetManagedDatabasesDatabaseParametersResult {
      * The parameter name.
      */
     readonly name?: string;
+    readonly opcNamedCredentialId?: string;
     readonly source?: string;
 }
 /**
@@ -96,6 +103,7 @@ export interface GetManagedDatabasesDatabaseParametersResult {
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     isAllowedValuesIncluded: _var.managed_databases_database_parameter_is_allowed_values_included,
  *     name: _var.managed_databases_database_parameter_name,
+ *     opcNamedCredentialId: _var.managed_databases_database_parameter_opc_named_credential_id,
  *     source: _var.managed_databases_database_parameter_source,
  * });
  * ```
@@ -121,6 +129,10 @@ export interface GetManagedDatabasesDatabaseParametersOutputArgs {
      * A filter to return all parameters that have the text given in their names.
      */
     name?: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
      */

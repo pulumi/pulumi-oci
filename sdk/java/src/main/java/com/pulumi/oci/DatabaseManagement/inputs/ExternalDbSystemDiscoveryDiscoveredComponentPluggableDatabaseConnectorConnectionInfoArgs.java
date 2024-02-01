@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -63,12 +64,28 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
         return Optional.ofNullable(this.connectionStrings);
     }
 
+    /**
+     * The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    @Import(name="databaseCredentials")
+    private @Nullable Output<List<ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs>> databaseCredentials;
+
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    public Optional<Output<List<ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs>>> databaseCredentials() {
+        return Optional.ofNullable(this.databaseCredentials);
+    }
+
     private ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs() {}
 
     private ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs $) {
         this.componentType = $.componentType;
         this.connectionCredentials = $.connectionCredentials;
         this.connectionStrings = $.connectionStrings;
+        this.databaseCredentials = $.databaseCredentials;
     }
 
     public static Builder builder() {
@@ -170,6 +187,37 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
          */
         public Builder connectionStrings(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
+        }
+
+        /**
+         * @param databaseCredentials The credential to connect to the database to perform tablespace administration tasks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseCredentials(@Nullable Output<List<ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs>> databaseCredentials) {
+            $.databaseCredentials = databaseCredentials;
+            return this;
+        }
+
+        /**
+         * @param databaseCredentials The credential to connect to the database to perform tablespace administration tasks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseCredentials(List<ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs> databaseCredentials) {
+            return databaseCredentials(Output.of(databaseCredentials));
+        }
+
+        /**
+         * @param databaseCredentials The credential to connect to the database to perform tablespace administration tasks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseCredentials(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs... databaseCredentials) {
+            return databaseCredentials(List.of(databaseCredentials));
         }
 
         public ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs build() {

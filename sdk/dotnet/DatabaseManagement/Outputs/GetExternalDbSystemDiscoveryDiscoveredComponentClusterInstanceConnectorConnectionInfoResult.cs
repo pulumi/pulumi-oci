@@ -25,6 +25,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The Oracle Database connection string.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult> ConnectionStrings;
+        /// <summary>
+        /// The credential to connect to the database to perform tablespace administration tasks.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialResult> DatabaseCredentials;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoResult(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult> connectionCredentials,
 
-            ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult> connectionStrings)
+            ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult> connectionStrings,
+
+            ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialResult> databaseCredentials)
         {
             ComponentType = componentType;
             ConnectionCredentials = connectionCredentials;
             ConnectionStrings = connectionStrings;
+            DatabaseCredentials = databaseCredentials;
         }
     }
 }

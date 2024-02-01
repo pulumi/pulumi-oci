@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceImportRequestImportConflictResolutionArgs;
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceImportRequestImportedObjectArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -20,6 +21,21 @@ import javax.annotation.Nullable;
 public final class WorkspaceImportRequestState extends com.pulumi.resources.ResourceArgs {
 
     public static final WorkspaceImportRequestState Empty = new WorkspaceImportRequestState();
+
+    /**
+     * This field controls if the data asset references will be included during import.
+     * 
+     */
+    @Import(name="areDataAssetReferencesIncluded")
+    private @Nullable Output<Boolean> areDataAssetReferencesIncluded;
+
+    /**
+     * @return This field controls if the data asset references will be included during import.
+     * 
+     */
+    public Optional<Output<Boolean>> areDataAssetReferencesIncluded() {
+        return Optional.ofNullable(this.areDataAssetReferencesIncluded);
+    }
 
     /**
      * Name of the Object Storage bucket where the object will be imported from.
@@ -270,6 +286,7 @@ public final class WorkspaceImportRequestState extends com.pulumi.resources.Reso
     private WorkspaceImportRequestState() {}
 
     private WorkspaceImportRequestState(WorkspaceImportRequestState $) {
+        this.areDataAssetReferencesIncluded = $.areDataAssetReferencesIncluded;
         this.bucket = $.bucket;
         this.createdBy = $.createdBy;
         this.errorMessages = $.errorMessages;
@@ -304,6 +321,27 @@ public final class WorkspaceImportRequestState extends com.pulumi.resources.Reso
 
         public Builder(WorkspaceImportRequestState defaults) {
             $ = new WorkspaceImportRequestState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param areDataAssetReferencesIncluded This field controls if the data asset references will be included during import.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areDataAssetReferencesIncluded(@Nullable Output<Boolean> areDataAssetReferencesIncluded) {
+            $.areDataAssetReferencesIncluded = areDataAssetReferencesIncluded;
+            return this;
+        }
+
+        /**
+         * @param areDataAssetReferencesIncluded This field controls if the data asset references will be included during import.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areDataAssetReferencesIncluded(Boolean areDataAssetReferencesIncluded) {
+            return areDataAssetReferencesIncluded(Output.of(areDataAssetReferencesIncluded));
         }
 
         /**

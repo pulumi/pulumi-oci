@@ -13,6 +13,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
@@ -52,6 +54,7 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
      */
     private Boolean isSqlPlanBaselinesUsageEnabled;
     private String managedDatabaseId;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The number of weeks to retain unused plans before they are purged.
      * 
@@ -126,6 +129,9 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
     public String managedDatabaseId() {
         return this.managedDatabaseId;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return The number of weeks to retain unused plans before they are purged.
      * 
@@ -172,6 +178,7 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
         private Boolean isHighFrequencyAutoSpmEvolveTaskEnabled;
         private Boolean isSqlPlanBaselinesUsageEnabled;
         private String managedDatabaseId;
+        private @Nullable String opcNamedCredentialId;
         private Integer planRetentionWeeks;
         private Double spaceBudgetMb;
         private Double spaceBudgetPercent;
@@ -187,6 +194,7 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
     	      this.isHighFrequencyAutoSpmEvolveTaskEnabled = defaults.isHighFrequencyAutoSpmEvolveTaskEnabled;
     	      this.isSqlPlanBaselinesUsageEnabled = defaults.isSqlPlanBaselinesUsageEnabled;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.planRetentionWeeks = defaults.planRetentionWeeks;
     	      this.spaceBudgetMb = defaults.spaceBudgetMb;
     	      this.spaceBudgetPercent = defaults.spaceBudgetPercent;
@@ -264,6 +272,12 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder planRetentionWeeks(Integer planRetentionWeeks) {
             if (planRetentionWeeks == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "planRetentionWeeks");
@@ -305,6 +319,7 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
             _resultValue.isHighFrequencyAutoSpmEvolveTaskEnabled = isHighFrequencyAutoSpmEvolveTaskEnabled;
             _resultValue.isSqlPlanBaselinesUsageEnabled = isSqlPlanBaselinesUsageEnabled;
             _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.planRetentionWeeks = planRetentionWeeks;
             _resultValue.spaceBudgetMb = spaceBudgetMb;
             _resultValue.spaceBudgetPercent = spaceBudgetPercent;

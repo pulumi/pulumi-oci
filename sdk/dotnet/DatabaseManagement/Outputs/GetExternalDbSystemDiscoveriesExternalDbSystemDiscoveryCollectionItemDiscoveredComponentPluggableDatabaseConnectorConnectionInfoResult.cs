@@ -25,6 +25,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The Oracle Database connection string.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult> ConnectionStrings;
+        /// <summary>
+        /// The credential to connect to the database to perform tablespace administration tasks.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialResult> DatabaseCredentials;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult> connectionCredentials,
 
-            ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult> connectionStrings)
+            ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult> connectionStrings,
+
+            ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialResult> databaseCredentials)
         {
             ComponentType = componentType;
             ConnectionCredentials = connectionCredentials;
             ConnectionStrings = connectionStrings;
+            DatabaseCredentials = databaseCredentials;
         }
     }
 }

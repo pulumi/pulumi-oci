@@ -23,7 +23,7 @@ class GetManagedDatabaseUsersResult:
     """
     A collection of values returned by getManagedDatabaseUsers.
     """
-    def __init__(__self__, filters=None, id=None, managed_database_id=None, name=None, user_collections=None):
+    def __init__(__self__, filters=None, id=None, managed_database_id=None, name=None, opc_named_credential_id=None, user_collections=None):
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -36,6 +36,9 @@ class GetManagedDatabaseUsersResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if user_collections and not isinstance(user_collections, list):
             raise TypeError("Expected argument 'user_collections' to be a list")
         pulumi.set(__self__, "user_collections", user_collections)
@@ -67,6 +70,11 @@ class GetManagedDatabaseUsersResult:
         return pulumi.get(self, "name")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter(name="userCollections")
     def user_collections(self) -> Sequence['outputs.GetManagedDatabaseUsersUserCollectionResult']:
         """
@@ -85,12 +93,14 @@ class AwaitableGetManagedDatabaseUsersResult(GetManagedDatabaseUsersResult):
             id=self.id,
             managed_database_id=self.managed_database_id,
             name=self.name,
+            opc_named_credential_id=self.opc_named_credential_id,
             user_collections=self.user_collections)
 
 
 def get_managed_database_users(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseUsersFilterArgs']]] = None,
                                managed_database_id: Optional[str] = None,
                                name: Optional[str] = None,
+                               opc_named_credential_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseUsersResult:
     """
     This data source provides the list of Managed Database Users in Oracle Cloud Infrastructure Database Management service.
@@ -104,17 +114,20 @@ def get_managed_database_users(filters: Optional[Sequence[pulumi.InputType['GetM
     import pulumi_oci as oci
 
     test_managed_database_users = oci.DatabaseManagement.get_managed_database_users(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_user_name"])
+        name=var["managed_database_user_name"],
+        opc_named_credential_id=var["managed_database_user_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name: A filter to return only resources that match the entire name.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     """
     __args__ = dict()
     __args__['filters'] = filters
     __args__['managedDatabaseId'] = managed_database_id
     __args__['name'] = name
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseUsers:getManagedDatabaseUsers', __args__, opts=opts, typ=GetManagedDatabaseUsersResult).value
 
@@ -123,6 +136,7 @@ def get_managed_database_users(filters: Optional[Sequence[pulumi.InputType['GetM
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name=pulumi.get(__ret__, 'name'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         user_collections=pulumi.get(__ret__, 'user_collections'))
 
 
@@ -130,6 +144,7 @@ def get_managed_database_users(filters: Optional[Sequence[pulumi.InputType['GetM
 def get_managed_database_users_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseUsersFilterArgs']]]]] = None,
                                       managed_database_id: Optional[pulumi.Input[str]] = None,
                                       name: Optional[pulumi.Input[Optional[str]]] = None,
+                                      opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseUsersResult]:
     """
     This data source provides the list of Managed Database Users in Oracle Cloud Infrastructure Database Management service.
@@ -143,11 +158,13 @@ def get_managed_database_users_output(filters: Optional[pulumi.Input[Optional[Se
     import pulumi_oci as oci
 
     test_managed_database_users = oci.DatabaseManagement.get_managed_database_users(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_user_name"])
+        name=var["managed_database_user_name"],
+        opc_named_credential_id=var["managed_database_user_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name: A filter to return only resources that match the entire name.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     """
     ...

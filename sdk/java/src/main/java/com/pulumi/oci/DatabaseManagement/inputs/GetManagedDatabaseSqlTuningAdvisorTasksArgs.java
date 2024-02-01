@@ -56,6 +56,21 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksArgs extends com.pulum
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable Output<String> opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<Output<String>> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * The optional query parameter to filter the SQL Tuning Advisor task list by status.
      * 
      */
@@ -106,6 +121,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksArgs extends com.pulum
         this.filters = $.filters;
         this.managedDatabaseId = $.managedDatabaseId;
         this.name = $.name;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.status = $.status;
         this.timeGreaterThanOrEqualTo = $.timeGreaterThanOrEqualTo;
         this.timeLessThanOrEqualTo = $.timeLessThanOrEqualTo;
@@ -182,6 +198,27 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksArgs extends com.pulum
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable Output<String> opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            return opcNamedCredentialId(Output.of(opcNamedCredentialId));
         }
 
         /**

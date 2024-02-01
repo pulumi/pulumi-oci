@@ -31,9 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.NewWorkspaceImportRequest(ctx, "testWorkspaceImportRequest", &DataIntegration.WorkspaceImportRequestArgs{
-//				Bucket:      pulumi.Any(_var.Workspace_import_request_bucket),
-//				FileName:    pulumi.Any(_var.Workspace_import_request_file_name),
-//				WorkspaceId: pulumi.Any(oci_dataintegration_workspace.Test_workspace.Id),
+//				Bucket:                         pulumi.Any(_var.Workspace_import_request_bucket),
+//				FileName:                       pulumi.Any(_var.Workspace_import_request_file_name),
+//				WorkspaceId:                    pulumi.Any(oci_dataintegration_workspace.Test_workspace.Id),
+//				AreDataAssetReferencesIncluded: pulumi.Any(_var.Workspace_import_request_are_data_asset_references_included),
 //				ImportConflictResolution: &dataintegration.WorkspaceImportRequestImportConflictResolutionArgs{
 //					ImportConflictResolutionType: pulumi.Any(_var.Workspace_import_request_import_conflict_resolution_import_conflict_resolution_type),
 //					DuplicatePrefix:              pulumi.Any(_var.Workspace_import_request_import_conflict_resolution_duplicate_prefix),
@@ -64,6 +65,8 @@ import (
 type WorkspaceImportRequest struct {
 	pulumi.CustomResourceState
 
+	// This field controls if the data asset references will be included during import.
+	AreDataAssetReferencesIncluded pulumi.BoolOutput `pulumi:"areDataAssetReferencesIncluded"`
 	// Name of the Object Storage bucket where the object will be imported from.
 	Bucket pulumi.StringOutput `pulumi:"bucket"`
 	// Name of the user who initiated import request.
@@ -140,6 +143,8 @@ func GetWorkspaceImportRequest(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering WorkspaceImportRequest resources.
 type workspaceImportRequestState struct {
+	// This field controls if the data asset references will be included during import.
+	AreDataAssetReferencesIncluded *bool `pulumi:"areDataAssetReferencesIncluded"`
 	// Name of the Object Storage bucket where the object will be imported from.
 	Bucket *string `pulumi:"bucket"`
 	// Name of the user who initiated import request.
@@ -178,6 +183,8 @@ type workspaceImportRequestState struct {
 }
 
 type WorkspaceImportRequestState struct {
+	// This field controls if the data asset references will be included during import.
+	AreDataAssetReferencesIncluded pulumi.BoolPtrInput
 	// Name of the Object Storage bucket where the object will be imported from.
 	Bucket pulumi.StringPtrInput
 	// Name of the user who initiated import request.
@@ -220,6 +227,8 @@ func (WorkspaceImportRequestState) ElementType() reflect.Type {
 }
 
 type workspaceImportRequestArgs struct {
+	// This field controls if the data asset references will be included during import.
+	AreDataAssetReferencesIncluded *bool `pulumi:"areDataAssetReferencesIncluded"`
 	// Name of the Object Storage bucket where the object will be imported from.
 	Bucket string `pulumi:"bucket"`
 	// Name of the zip file to be imported.
@@ -241,6 +250,8 @@ type workspaceImportRequestArgs struct {
 
 // The set of arguments for constructing a WorkspaceImportRequest resource.
 type WorkspaceImportRequestArgs struct {
+	// This field controls if the data asset references will be included during import.
+	AreDataAssetReferencesIncluded pulumi.BoolPtrInput
 	// Name of the Object Storage bucket where the object will be imported from.
 	Bucket pulumi.StringInput
 	// Name of the zip file to be imported.
@@ -345,6 +356,11 @@ func (o WorkspaceImportRequestOutput) ToWorkspaceImportRequestOutput() Workspace
 
 func (o WorkspaceImportRequestOutput) ToWorkspaceImportRequestOutputWithContext(ctx context.Context) WorkspaceImportRequestOutput {
 	return o
+}
+
+// This field controls if the data asset references will be included during import.
+func (o WorkspaceImportRequestOutput) AreDataAssetReferencesIncluded() pulumi.BoolOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.BoolOutput { return v.AreDataAssetReferencesIncluded }).(pulumi.BoolOutput)
 }
 
 // Name of the Object Storage bucket where the object will be imported from.

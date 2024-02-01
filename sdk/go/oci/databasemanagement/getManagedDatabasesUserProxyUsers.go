@@ -30,9 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabasesUserProxyUsers(ctx, &databasemanagement.GetManagedDatabasesUserProxyUsersArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				UserName:          oci_identity_user.Test_user.Name,
-//				Name:              pulumi.StringRef(_var.Managed_databases_user_proxy_user_name),
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				UserName:             oci_identity_user.Test_user.Name,
+//				Name:                 pulumi.StringRef(_var.Managed_databases_user_proxy_user_name),
+//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_databases_user_proxy_user_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,6 +60,8 @@ type GetManagedDatabasesUserProxyUsersArgs struct {
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// A filter to return only resources that match the entire name.
 	Name *string `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The name of the user whose details are to be viewed.
 	UserName string `pulumi:"userName"`
 }
@@ -70,7 +73,8 @@ type GetManagedDatabasesUserProxyUsersResult struct {
 	Id                string `pulumi:"id"`
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// The name of a proxy user or the name of the client user.
-	Name *string `pulumi:"name"`
+	Name                 *string `pulumi:"name"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The list of proxy_user_collection.
 	ProxyUserCollections []GetManagedDatabasesUserProxyUsersProxyUserCollection `pulumi:"proxyUserCollections"`
 	UserName             string                                                 `pulumi:"userName"`
@@ -96,6 +100,8 @@ type GetManagedDatabasesUserProxyUsersOutputArgs struct {
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 	// A filter to return only resources that match the entire name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The name of the user whose details are to be viewed.
 	UserName pulumi.StringInput `pulumi:"userName"`
 }
@@ -137,6 +143,10 @@ func (o GetManagedDatabasesUserProxyUsersResultOutput) ManagedDatabaseId() pulum
 // The name of a proxy user or the name of the client user.
 func (o GetManagedDatabasesUserProxyUsersResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabasesUserProxyUsersResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetManagedDatabasesUserProxyUsersResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesUserProxyUsersResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 // The list of proxy_user_collection.

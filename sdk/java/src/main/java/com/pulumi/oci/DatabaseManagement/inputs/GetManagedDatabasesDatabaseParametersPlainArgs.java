@@ -71,6 +71,21 @@ public final class GetManagedDatabasesDatabaseParametersPlainArgs extends com.pu
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable String opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
      * 
      */
@@ -92,6 +107,7 @@ public final class GetManagedDatabasesDatabaseParametersPlainArgs extends com.pu
         this.isAllowedValuesIncluded = $.isAllowedValuesIncluded;
         this.managedDatabaseId = $.managedDatabaseId;
         this.name = $.name;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.source = $.source;
     }
 
@@ -152,6 +168,17 @@ public final class GetManagedDatabasesDatabaseParametersPlainArgs extends com.pu
          */
         public Builder name(@Nullable String name) {
             $.name = name;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
 

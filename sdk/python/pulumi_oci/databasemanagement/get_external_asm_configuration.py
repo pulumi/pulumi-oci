@@ -22,7 +22,7 @@ class GetExternalAsmConfigurationResult:
     """
     A collection of values returned by getExternalAsmConfiguration.
     """
-    def __init__(__self__, external_asm_id=None, id=None, init_parameters=None):
+    def __init__(__self__, external_asm_id=None, id=None, init_parameters=None, opc_named_credential_id=None):
         if external_asm_id and not isinstance(external_asm_id, str):
             raise TypeError("Expected argument 'external_asm_id' to be a str")
         pulumi.set(__self__, "external_asm_id", external_asm_id)
@@ -32,6 +32,9 @@ class GetExternalAsmConfigurationResult:
         if init_parameters and not isinstance(init_parameters, list):
             raise TypeError("Expected argument 'init_parameters' to be a list")
         pulumi.set(__self__, "init_parameters", init_parameters)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
 
     @property
     @pulumi.getter(name="externalAsmId")
@@ -54,6 +57,11 @@ class GetExternalAsmConfigurationResult:
         """
         return pulumi.get(self, "init_parameters")
 
+    @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
 
 class AwaitableGetExternalAsmConfigurationResult(GetExternalAsmConfigurationResult):
     # pylint: disable=using-constant-test
@@ -63,10 +71,12 @@ class AwaitableGetExternalAsmConfigurationResult(GetExternalAsmConfigurationResu
         return GetExternalAsmConfigurationResult(
             external_asm_id=self.external_asm_id,
             id=self.id,
-            init_parameters=self.init_parameters)
+            init_parameters=self.init_parameters,
+            opc_named_credential_id=self.opc_named_credential_id)
 
 
 def get_external_asm_configuration(external_asm_id: Optional[str] = None,
+                                   opc_named_credential_id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalAsmConfigurationResult:
     """
     This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
@@ -79,25 +89,30 @@ def get_external_asm_configuration(external_asm_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
+    test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"],
+        opc_named_credential_id=var["external_asm_configuration_opc_named_credential_id"])
     ```
 
 
     :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     """
     __args__ = dict()
     __args__['externalAsmId'] = external_asm_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration', __args__, opts=opts, typ=GetExternalAsmConfigurationResult).value
 
     return AwaitableGetExternalAsmConfigurationResult(
         external_asm_id=pulumi.get(__ret__, 'external_asm_id'),
         id=pulumi.get(__ret__, 'id'),
-        init_parameters=pulumi.get(__ret__, 'init_parameters'))
+        init_parameters=pulumi.get(__ret__, 'init_parameters'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
 
 
 @_utilities.lift_output_func(get_external_asm_configuration)
 def get_external_asm_configuration_output(external_asm_id: Optional[pulumi.Input[str]] = None,
+                                          opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmConfigurationResult]:
     """
     This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
@@ -110,10 +125,12 @@ def get_external_asm_configuration_output(external_asm_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
+    test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"],
+        opc_named_credential_id=var["external_asm_configuration_opc_named_credential_id"])
     ```
 
 
     :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     """
     ...

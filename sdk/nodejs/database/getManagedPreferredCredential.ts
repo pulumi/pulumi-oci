@@ -27,6 +27,7 @@ export function getManagedPreferredCredential(args: GetManagedPreferredCredentia
     return pulumi.runtime.invoke("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", {
         "credentialName": args.credentialName,
         "managedDatabaseId": args.managedDatabaseId,
+        "namedCredentialId": args.namedCredentialId,
     }, opts);
 }
 
@@ -42,6 +43,10 @@ export interface GetManagedPreferredCredentialArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+     */
+    namedCredentialId?: string;
 }
 
 /**
@@ -61,6 +66,10 @@ export interface GetManagedPreferredCredentialResult {
      */
     readonly isAccessible: boolean;
     readonly managedDatabaseId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+     */
+    readonly namedCredentialId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
      */
@@ -115,4 +124,8 @@ export interface GetManagedPreferredCredentialOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+     */
+    namedCredentialId?: pulumi.Input<string>;
 }

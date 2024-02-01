@@ -25,6 +25,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The Oracle Database connection string.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringResult> ConnectionStrings;
+        /// <summary>
+        /// The credential to connect to the database to perform tablespace administration tasks.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialResult> DatabaseCredentials;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoResult(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult> connectionCredentials,
 
-            ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringResult> connectionStrings)
+            ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringResult> connectionStrings,
+
+            ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialResult> databaseCredentials)
         {
             ComponentType = componentType;
             ConnectionCredentials = connectionCredentials;
             ConnectionStrings = connectionStrings;
+            DatabaseCredentials = databaseCredentials;
         }
     }
 }

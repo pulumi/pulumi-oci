@@ -32,7 +32,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseSqlPlanBaselineConfiguration(ctx, &databasemanagement.GetManagedDatabaseSqlPlanBaselineConfigurationArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_sql_plan_baseline_configuration_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -56,6 +57,8 @@ func GetManagedDatabaseSqlPlanBaselineConfiguration(ctx *pulumi.Context, args *G
 type GetManagedDatabaseSqlPlanBaselineConfigurationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 }
 
 // A collection of values returned by getManagedDatabaseSqlPlanBaselineConfiguration.
@@ -73,8 +76,9 @@ type GetManagedDatabaseSqlPlanBaselineConfigurationResult struct {
 	// Indicates whether the high frequency Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
 	IsHighFrequencyAutoSpmEvolveTaskEnabled bool `pulumi:"isHighFrequencyAutoSpmEvolveTaskEnabled"`
 	// Indicates whether the database uses SQL plan baselines (`true`) or not (`false`).
-	IsSqlPlanBaselinesUsageEnabled bool   `pulumi:"isSqlPlanBaselinesUsageEnabled"`
-	ManagedDatabaseId              string `pulumi:"managedDatabaseId"`
+	IsSqlPlanBaselinesUsageEnabled bool    `pulumi:"isSqlPlanBaselinesUsageEnabled"`
+	ManagedDatabaseId              string  `pulumi:"managedDatabaseId"`
+	OpcNamedCredentialId           *string `pulumi:"opcNamedCredentialId"`
 	// The number of weeks to retain unused plans before they are purged.
 	PlanRetentionWeeks int `pulumi:"planRetentionWeeks"`
 	// The maximum `SYSAUX` space that can be used for SQL Management Base in MB.
@@ -102,6 +106,8 @@ func GetManagedDatabaseSqlPlanBaselineConfigurationOutput(ctx *pulumi.Context, a
 type GetManagedDatabaseSqlPlanBaselineConfigurationOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 }
 
 func (GetManagedDatabaseSqlPlanBaselineConfigurationOutputArgs) ElementType() reflect.Type {
@@ -170,6 +176,10 @@ func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) IsSqlPlanBas
 
 func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) ManagedDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) string { return v.ManagedDatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 // The number of weeks to retain unused plans before they are purged.

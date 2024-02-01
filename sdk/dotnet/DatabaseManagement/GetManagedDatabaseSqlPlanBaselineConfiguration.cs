@@ -34,6 +34,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testManagedDatabaseSqlPlanBaselineConfiguration = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineConfiguration.Invoke(new()
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_plan_baseline_configuration_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -67,6 +68,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testManagedDatabaseSqlPlanBaselineConfiguration = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineConfiguration.Invoke(new()
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_plan_baseline_configuration_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -87,6 +89,12 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("managedDatabaseId", required: true)]
         public string ManagedDatabaseId { get; set; } = null!;
 
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
+
         public GetManagedDatabaseSqlPlanBaselineConfigurationArgs()
         {
         }
@@ -100,6 +108,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("managedDatabaseId", required: true)]
         public Input<string> ManagedDatabaseId { get; set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
 
         public GetManagedDatabaseSqlPlanBaselineConfigurationInvokeArgs()
         {
@@ -140,6 +154,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly bool IsSqlPlanBaselinesUsageEnabled;
         public readonly string ManagedDatabaseId;
+        public readonly string? OpcNamedCredentialId;
         /// <summary>
         /// The number of weeks to retain unused plans before they are purged.
         /// </summary>
@@ -175,6 +190,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string managedDatabaseId,
 
+            string? opcNamedCredentialId,
+
             int planRetentionWeeks,
 
             double spaceBudgetMb,
@@ -191,6 +208,7 @@ namespace Pulumi.Oci.DatabaseManagement
             IsHighFrequencyAutoSpmEvolveTaskEnabled = isHighFrequencyAutoSpmEvolveTaskEnabled;
             IsSqlPlanBaselinesUsageEnabled = isSqlPlanBaselinesUsageEnabled;
             ManagedDatabaseId = managedDatabaseId;
+            OpcNamedCredentialId = opcNamedCredentialId;
             PlanRetentionWeeks = planRetentionWeeks;
             SpaceBudgetMb = spaceBudgetMb;
             SpaceBudgetPercent = spaceBudgetPercent;

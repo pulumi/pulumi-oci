@@ -43,12 +43,6 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.NewManagedDatabasesChangeDatabaseParameter(ctx, "testManagedDatabasesChangeDatabaseParameter", &DatabaseManagement.ManagedDatabasesChangeDatabaseParameterArgs{
-//				Credentials: &databasemanagement.ManagedDatabasesChangeDatabaseParameterCredentialsArgs{
-//					Password: pulumi.Any(_var.Managed_databases_change_database_parameter_credentials_password),
-//					Role:     pulumi.Any(_var.Managed_databases_change_database_parameter_credentials_role),
-//					SecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					UserName: pulumi.Any(oci_identity_user.Test_user.Name),
-//				},
 //				ManagedDatabaseId: pulumi.Any(oci_database_management_managed_database.Test_managed_database.Id),
 //				Parameters: databasemanagement.ManagedDatabasesChangeDatabaseParameterParameterArray{
 //					&databasemanagement.ManagedDatabasesChangeDatabaseParameterParameterArgs{
@@ -58,6 +52,20 @@ import (
 //					},
 //				},
 //				Scope: pulumi.Any(_var.Managed_databases_change_database_parameter_scope),
+//				Credentials: &databasemanagement.ManagedDatabasesChangeDatabaseParameterCredentialsArgs{
+//					Password: pulumi.Any(_var.Managed_databases_change_database_parameter_credentials_password),
+//					Role:     pulumi.Any(_var.Managed_databases_change_database_parameter_credentials_role),
+//					SecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					UserName: pulumi.Any(oci_identity_user.Test_user.Name),
+//				},
+//				DatabaseCredential: &databasemanagement.ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs{
+//					CredentialType:    pulumi.Any(_var.Managed_databases_change_database_parameter_database_credential_credential_type),
+//					NamedCredentialId: pulumi.Any(oci_database_management_named_credential.Test_named_credential.Id),
+//					Password:          pulumi.Any(_var.Managed_databases_change_database_parameter_database_credential_password),
+//					PasswordSecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					Role:              pulumi.Any(_var.Managed_databases_change_database_parameter_database_credential_role),
+//					Username:          pulumi.Any(_var.Managed_databases_change_database_parameter_database_credential_username),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -74,8 +82,10 @@ import (
 type ManagedDatabasesChangeDatabaseParameter struct {
 	pulumi.CustomResourceState
 
-	// The database credentials used to perform management activity.
+	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
 	Credentials ManagedDatabasesChangeDatabaseParameterCredentialsOutput `pulumi:"credentials"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredential ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput `pulumi:"databaseCredential"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringOutput `pulumi:"managedDatabaseId"`
 	// A list of database parameters and their values.
@@ -96,9 +106,6 @@ func NewManagedDatabasesChangeDatabaseParameter(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.Credentials == nil {
-		return nil, errors.New("invalid value for required argument 'Credentials'")
-	}
 	if args.ManagedDatabaseId == nil {
 		return nil, errors.New("invalid value for required argument 'ManagedDatabaseId'")
 	}
@@ -131,8 +138,10 @@ func GetManagedDatabasesChangeDatabaseParameter(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ManagedDatabasesChangeDatabaseParameter resources.
 type managedDatabasesChangeDatabaseParameterState struct {
-	// The database credentials used to perform management activity.
+	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
 	Credentials *ManagedDatabasesChangeDatabaseParameterCredentials `pulumi:"credentials"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredential *ManagedDatabasesChangeDatabaseParameterDatabaseCredential `pulumi:"databaseCredential"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId *string `pulumi:"managedDatabaseId"`
 	// A list of database parameters and their values.
@@ -147,8 +156,10 @@ type managedDatabasesChangeDatabaseParameterState struct {
 }
 
 type ManagedDatabasesChangeDatabaseParameterState struct {
-	// The database credentials used to perform management activity.
+	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
 	Credentials ManagedDatabasesChangeDatabaseParameterCredentialsPtrInput
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredential ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringPtrInput
 	// A list of database parameters and their values.
@@ -167,8 +178,10 @@ func (ManagedDatabasesChangeDatabaseParameterState) ElementType() reflect.Type {
 }
 
 type managedDatabasesChangeDatabaseParameterArgs struct {
-	// The database credentials used to perform management activity.
-	Credentials ManagedDatabasesChangeDatabaseParameterCredentials `pulumi:"credentials"`
+	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+	Credentials *ManagedDatabasesChangeDatabaseParameterCredentials `pulumi:"credentials"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredential *ManagedDatabasesChangeDatabaseParameterDatabaseCredential `pulumi:"databaseCredential"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// A list of database parameters and their values.
@@ -184,8 +197,10 @@ type managedDatabasesChangeDatabaseParameterArgs struct {
 
 // The set of arguments for constructing a ManagedDatabasesChangeDatabaseParameter resource.
 type ManagedDatabasesChangeDatabaseParameterArgs struct {
-	// The database credentials used to perform management activity.
-	Credentials ManagedDatabasesChangeDatabaseParameterCredentialsInput
+	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+	Credentials ManagedDatabasesChangeDatabaseParameterCredentialsPtrInput
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredential ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput
 	// A list of database parameters and their values.
@@ -286,11 +301,18 @@ func (o ManagedDatabasesChangeDatabaseParameterOutput) ToManagedDatabasesChangeD
 	return o
 }
 
-// The database credentials used to perform management activity.
+// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
 func (o ManagedDatabasesChangeDatabaseParameterOutput) Credentials() ManagedDatabasesChangeDatabaseParameterCredentialsOutput {
 	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameter) ManagedDatabasesChangeDatabaseParameterCredentialsOutput {
 		return v.Credentials
 	}).(ManagedDatabasesChangeDatabaseParameterCredentialsOutput)
+}
+
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o ManagedDatabasesChangeDatabaseParameterOutput) DatabaseCredential() ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput {
+	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameter) ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput {
+		return v.DatabaseCredential
+	}).(ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

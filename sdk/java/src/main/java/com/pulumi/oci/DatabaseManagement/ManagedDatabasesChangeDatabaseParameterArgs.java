@@ -7,10 +7,13 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterCredentialsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterParameterArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class ManagedDatabasesChangeDatabaseParameterArgs extends com.pulumi.resources.ResourceArgs {
@@ -18,18 +21,33 @@ public final class ManagedDatabasesChangeDatabaseParameterArgs extends com.pulum
     public static final ManagedDatabasesChangeDatabaseParameterArgs Empty = new ManagedDatabasesChangeDatabaseParameterArgs();
 
     /**
-     * The database credentials used to perform management activity.
+     * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      * 
      */
-    @Import(name="credentials", required=true)
-    private Output<ManagedDatabasesChangeDatabaseParameterCredentialsArgs> credentials;
+    @Import(name="credentials")
+    private @Nullable Output<ManagedDatabasesChangeDatabaseParameterCredentialsArgs> credentials;
 
     /**
-     * @return The database credentials used to perform management activity.
+     * @return The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      * 
      */
-    public Output<ManagedDatabasesChangeDatabaseParameterCredentialsArgs> credentials() {
-        return this.credentials;
+    public Optional<Output<ManagedDatabasesChangeDatabaseParameterCredentialsArgs>> credentials() {
+        return Optional.ofNullable(this.credentials);
+    }
+
+    /**
+     * The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    @Import(name="databaseCredential")
+    private @Nullable Output<ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs> databaseCredential;
+
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    public Optional<Output<ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs>> databaseCredential() {
+        return Optional.ofNullable(this.databaseCredential);
     }
 
     /**
@@ -91,6 +109,7 @@ public final class ManagedDatabasesChangeDatabaseParameterArgs extends com.pulum
 
     private ManagedDatabasesChangeDatabaseParameterArgs(ManagedDatabasesChangeDatabaseParameterArgs $) {
         this.credentials = $.credentials;
+        this.databaseCredential = $.databaseCredential;
         this.managedDatabaseId = $.managedDatabaseId;
         this.parameters = $.parameters;
         this.scope = $.scope;
@@ -115,24 +134,45 @@ public final class ManagedDatabasesChangeDatabaseParameterArgs extends com.pulum
         }
 
         /**
-         * @param credentials The database credentials used to perform management activity.
+         * @param credentials The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
          * 
          * @return builder
          * 
          */
-        public Builder credentials(Output<ManagedDatabasesChangeDatabaseParameterCredentialsArgs> credentials) {
+        public Builder credentials(@Nullable Output<ManagedDatabasesChangeDatabaseParameterCredentialsArgs> credentials) {
             $.credentials = credentials;
             return this;
         }
 
         /**
-         * @param credentials The database credentials used to perform management activity.
+         * @param credentials The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
          * 
          * @return builder
          * 
          */
         public Builder credentials(ManagedDatabasesChangeDatabaseParameterCredentialsArgs credentials) {
             return credentials(Output.of(credentials));
+        }
+
+        /**
+         * @param databaseCredential The credential to connect to the database to perform tablespace administration tasks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseCredential(@Nullable Output<ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs> databaseCredential) {
+            $.databaseCredential = databaseCredential;
+            return this;
+        }
+
+        /**
+         * @param databaseCredential The credential to connect to the database to perform tablespace administration tasks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseCredential(ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs databaseCredential) {
+            return databaseCredential(Output.of(databaseCredential));
         }
 
         /**
@@ -219,9 +259,6 @@ public final class ManagedDatabasesChangeDatabaseParameterArgs extends com.pulum
         }
 
         public ManagedDatabasesChangeDatabaseParameterArgs build() {
-            if ($.credentials == null) {
-                throw new MissingRequiredPropertyException("ManagedDatabasesChangeDatabaseParameterArgs", "credentials");
-            }
             if ($.managedDatabaseId == null) {
                 throw new MissingRequiredPropertyException("ManagedDatabasesChangeDatabaseParameterArgs", "managedDatabaseId");
             }

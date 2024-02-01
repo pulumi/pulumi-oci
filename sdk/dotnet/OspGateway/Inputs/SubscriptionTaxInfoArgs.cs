@@ -13,6 +13,12 @@ namespace Pulumi.Oci.OspGateway.Inputs
     public sealed class SubscriptionTaxInfoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Companies' GIRO code
+        /// </summary>
+        [Input("giro")]
+        public Input<string>? Giro { get; set; }
+
+        /// <summary>
         /// (Updatable) Tax exemption reason code.
         /// </summary>
         [Input("noTaxReasonCode")]

@@ -640,7 +640,11 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * @deprecated
+     * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+     * 
      */
+    @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
     @Import(name="isShrinkOnly")
     private @Nullable Output<Boolean> isShrinkOnly;
 
@@ -650,7 +654,11 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * @deprecated
+     * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+     * 
      */
+    @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
     public Optional<Output<Boolean>> isShrinkOnly() {
         return Optional.ofNullable(this.isShrinkOnly);
     }
@@ -980,6 +988,13 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.secretVersionNumber);
     }
 
+    @Import(name="shrinkAdbTrigger")
+    private @Nullable Output<Integer> shrinkAdbTrigger;
+
+    public Optional<Output<Integer>> shrinkAdbTrigger() {
+        return Optional.ofNullable(this.shrinkAdbTrigger);
+    }
+
     /**
      * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
      * 
@@ -1253,6 +1268,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.scheduledOperations = $.scheduledOperations;
         this.secretId = $.secretId;
         this.secretVersionNumber = $.secretVersionNumber;
+        this.shrinkAdbTrigger = $.shrinkAdbTrigger;
         this.source = $.source;
         this.sourceId = $.sourceId;
         this.standbyWhitelistedIps = $.standbyWhitelistedIps;
@@ -2143,7 +2159,11 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+         * 
          */
+        @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
         public Builder isShrinkOnly(@Nullable Output<Boolean> isShrinkOnly) {
             $.isShrinkOnly = isShrinkOnly;
             return this;
@@ -2157,7 +2177,11 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+         * 
          */
+        @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
         public Builder isShrinkOnly(Boolean isShrinkOnly) {
             return isShrinkOnly(Output.of(isShrinkOnly));
         }
@@ -2636,6 +2660,15 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder secretVersionNumber(Integer secretVersionNumber) {
             return secretVersionNumber(Output.of(secretVersionNumber));
+        }
+
+        public Builder shrinkAdbTrigger(@Nullable Output<Integer> shrinkAdbTrigger) {
+            $.shrinkAdbTrigger = shrinkAdbTrigger;
+            return this;
+        }
+
+        public Builder shrinkAdbTrigger(Integer shrinkAdbTrigger) {
+            return shrinkAdbTrigger(Output.of(shrinkAdbTrigger));
         }
 
         /**

@@ -12,6 +12,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SubscriptionTaxInfo {
     /**
+     * @return Companies&#39; GIRO code
+     * 
+     */
+    private @Nullable String giro;
+    /**
      * @return (Updatable) Tax exemption reason code.
      * 
      */
@@ -38,6 +43,13 @@ public final class SubscriptionTaxInfo {
     private @Nullable String taxRegNumber;
 
     private SubscriptionTaxInfo() {}
+    /**
+     * @return Companies&#39; GIRO code
+     * 
+     */
+    public Optional<String> giro() {
+        return Optional.ofNullable(this.giro);
+    }
     /**
      * @return (Updatable) Tax exemption reason code.
      * 
@@ -83,6 +95,7 @@ public final class SubscriptionTaxInfo {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String giro;
         private @Nullable String noTaxReasonCode;
         private @Nullable String noTaxReasonCodeDetails;
         private @Nullable String taxCnpj;
@@ -91,6 +104,7 @@ public final class SubscriptionTaxInfo {
         public Builder() {}
         public Builder(SubscriptionTaxInfo defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.giro = defaults.giro;
     	      this.noTaxReasonCode = defaults.noTaxReasonCode;
     	      this.noTaxReasonCodeDetails = defaults.noTaxReasonCodeDetails;
     	      this.taxCnpj = defaults.taxCnpj;
@@ -98,6 +112,12 @@ public final class SubscriptionTaxInfo {
     	      this.taxRegNumber = defaults.taxRegNumber;
         }
 
+        @CustomType.Setter
+        public Builder giro(@Nullable String giro) {
+
+            this.giro = giro;
+            return this;
+        }
         @CustomType.Setter
         public Builder noTaxReasonCode(@Nullable String noTaxReasonCode) {
 
@@ -130,6 +150,7 @@ public final class SubscriptionTaxInfo {
         }
         public SubscriptionTaxInfo build() {
             final var _resultValue = new SubscriptionTaxInfo();
+            _resultValue.giro = giro;
             _resultValue.noTaxReasonCode = noTaxReasonCode;
             _resultValue.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
             _resultValue.taxCnpj = taxCnpj;

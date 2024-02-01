@@ -33,6 +33,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         Name = @var.Managed_database_sql_plan_baseline_job_name,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_plan_baseline_job_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         Name = @var.Managed_database_sql_plan_baseline_job_name,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_plan_baseline_job_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -99,6 +101,12 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
+
         public GetManagedDatabaseSqlPlanBaselineJobsArgs()
         {
         }
@@ -127,6 +135,12 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
         public GetManagedDatabaseSqlPlanBaselineJobsInvokeArgs()
         {
         }
@@ -147,6 +161,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The name of the job.
         /// </summary>
         public readonly string? Name;
+        public readonly string? OpcNamedCredentialId;
         /// <summary>
         /// The list of sql_plan_baseline_job_collection.
         /// </summary>
@@ -162,12 +177,15 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string? name,
 
+            string? opcNamedCredentialId,
+
             ImmutableArray<Outputs.GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionResult> sqlPlanBaselineJobCollections)
         {
             Filters = filters;
             Id = id;
             ManagedDatabaseId = managedDatabaseId;
             Name = name;
+            OpcNamedCredentialId = opcNamedCredentialId;
             SqlPlanBaselineJobCollections = sqlPlanBaselineJobCollections;
         }
     }

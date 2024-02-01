@@ -23,7 +23,7 @@ class GetManagedDatabaseCursorCacheStatementsResult:
     """
     A collection of values returned by getManagedDatabaseCursorCacheStatements.
     """
-    def __init__(__self__, cursor_cache_statement_collections=None, filters=None, id=None, limit=None, managed_database_id=None, sql_text=None):
+    def __init__(__self__, cursor_cache_statement_collections=None, filters=None, id=None, limit=None, managed_database_id=None, opc_named_credential_id=None, sql_text=None):
         if cursor_cache_statement_collections and not isinstance(cursor_cache_statement_collections, list):
             raise TypeError("Expected argument 'cursor_cache_statement_collections' to be a list")
         pulumi.set(__self__, "cursor_cache_statement_collections", cursor_cache_statement_collections)
@@ -39,6 +39,9 @@ class GetManagedDatabaseCursorCacheStatementsResult:
         if managed_database_id and not isinstance(managed_database_id, str):
             raise TypeError("Expected argument 'managed_database_id' to be a str")
         pulumi.set(__self__, "managed_database_id", managed_database_id)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if sql_text and not isinstance(sql_text, str):
             raise TypeError("Expected argument 'sql_text' to be a str")
         pulumi.set(__self__, "sql_text", sql_text)
@@ -75,6 +78,11 @@ class GetManagedDatabaseCursorCacheStatementsResult:
         return pulumi.get(self, "managed_database_id")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter(name="sqlText")
     def sql_text(self) -> Optional[str]:
         """
@@ -94,12 +102,14 @@ class AwaitableGetManagedDatabaseCursorCacheStatementsResult(GetManagedDatabaseC
             id=self.id,
             limit=self.limit,
             managed_database_id=self.managed_database_id,
+            opc_named_credential_id=self.opc_named_credential_id,
             sql_text=self.sql_text)
 
 
 def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseCursorCacheStatementsFilterArgs']]] = None,
                                                  limit: Optional[int] = None,
                                                  managed_database_id: Optional[str] = None,
+                                                 opc_named_credential_id: Optional[str] = None,
                                                  sql_text: Optional[str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseCursorCacheStatementsResult:
     """
@@ -114,17 +124,20 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulu
     import pulumi_oci as oci
 
     test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        opc_named_credential_id=var["managed_database_cursor_cache_statement_opc_named_credential_id"],
         sql_text=var["managed_database_cursor_cache_statement_sql_text"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
     """
     __args__ = dict()
     __args__['filters'] = filters
     __args__['limit'] = limit
     __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['sqlText'] = sql_text
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements', __args__, opts=opts, typ=GetManagedDatabaseCursorCacheStatementsResult).value
@@ -135,6 +148,7 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulu
         id=pulumi.get(__ret__, 'id'),
         limit=pulumi.get(__ret__, 'limit'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         sql_text=pulumi.get(__ret__, 'sql_text'))
 
 
@@ -142,6 +156,7 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulu
 def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseCursorCacheStatementsFilterArgs']]]]] = None,
                                                         limit: Optional[pulumi.Input[Optional[int]]] = None,
                                                         managed_database_id: Optional[pulumi.Input[str]] = None,
+                                                        opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                         sql_text: Optional[pulumi.Input[Optional[str]]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseCursorCacheStatementsResult]:
     """
@@ -156,11 +171,13 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
     import pulumi_oci as oci
 
     test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        opc_named_credential_id=var["managed_database_cursor_cache_statement_opc_named_credential_id"],
         sql_text=var["managed_database_cursor_cache_statement_sql_text"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
     """
     ...

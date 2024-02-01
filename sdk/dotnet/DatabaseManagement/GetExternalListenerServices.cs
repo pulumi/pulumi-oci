@@ -34,6 +34,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         ExternalListenerId = oci_database_management_external_listener.Test_external_listener.Id,
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         OpcNamedCredentialId = @var.External_listener_service_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -67,6 +68,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         ExternalListenerId = oci_database_management_external_listener.Test_external_listener.Id,
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         OpcNamedCredentialId = @var.External_listener_service_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -101,6 +103,12 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("managedDatabaseId", required: true)]
         public string ManagedDatabaseId { get; set; } = null!;
 
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
+
         public GetExternalListenerServicesArgs()
         {
         }
@@ -129,6 +137,12 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("managedDatabaseId", required: true)]
         public Input<string> ManagedDatabaseId { get; set; } = null!;
 
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
         public GetExternalListenerServicesInvokeArgs()
         {
         }
@@ -153,6 +167,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         /// </summary>
         public readonly string ManagedDatabaseId;
+        public readonly string? OpcNamedCredentialId;
 
         [OutputConstructor]
         private GetExternalListenerServicesResult(
@@ -164,13 +179,16 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string id,
 
-            string managedDatabaseId)
+            string managedDatabaseId,
+
+            string? opcNamedCredentialId)
         {
             ExternalListenerId = externalListenerId;
             ExternalListenerServiceCollections = externalListenerServiceCollections;
             Filters = filters;
             Id = id;
             ManagedDatabaseId = managedDatabaseId;
+            OpcNamedCredentialId = opcNamedCredentialId;
         }
     }
 }

@@ -9,6 +9,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmConfigurationInit
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalAsmConfigurationResult {
@@ -23,6 +25,7 @@ public final class GetExternalAsmConfigurationResult {
      * 
      */
     private List<GetExternalAsmConfigurationInitParameter> initParameters;
+    private @Nullable String opcNamedCredentialId;
 
     private GetExternalAsmConfigurationResult() {}
     public String externalAsmId() {
@@ -42,6 +45,9 @@ public final class GetExternalAsmConfigurationResult {
     public List<GetExternalAsmConfigurationInitParameter> initParameters() {
         return this.initParameters;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -55,12 +61,14 @@ public final class GetExternalAsmConfigurationResult {
         private String externalAsmId;
         private String id;
         private List<GetExternalAsmConfigurationInitParameter> initParameters;
+        private @Nullable String opcNamedCredentialId;
         public Builder() {}
         public Builder(GetExternalAsmConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.externalAsmId = defaults.externalAsmId;
     	      this.id = defaults.id;
     	      this.initParameters = defaults.initParameters;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
         }
 
         @CustomType.Setter
@@ -90,11 +98,18 @@ public final class GetExternalAsmConfigurationResult {
         public Builder initParameters(GetExternalAsmConfigurationInitParameter... initParameters) {
             return initParameters(List.of(initParameters));
         }
+        @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
         public GetExternalAsmConfigurationResult build() {
             final var _resultValue = new GetExternalAsmConfigurationResult();
             _resultValue.externalAsmId = externalAsmId;
             _resultValue.id = id;
             _resultValue.initParameters = initParameters;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             return _resultValue;
         }
     }

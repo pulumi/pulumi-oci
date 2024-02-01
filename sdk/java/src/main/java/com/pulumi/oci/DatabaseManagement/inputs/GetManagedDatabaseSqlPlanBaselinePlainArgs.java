@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetManagedDatabaseSqlPlanBaselinePlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -29,6 +31,21 @@ public final class GetManagedDatabaseSqlPlanBaselinePlainArgs extends com.pulumi
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable String opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * The plan name of the SQL plan baseline.
      * 
      */
@@ -47,6 +64,7 @@ public final class GetManagedDatabaseSqlPlanBaselinePlainArgs extends com.pulumi
 
     private GetManagedDatabaseSqlPlanBaselinePlainArgs(GetManagedDatabaseSqlPlanBaselinePlainArgs $) {
         this.managedDatabaseId = $.managedDatabaseId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.planName = $.planName;
     }
 
@@ -76,6 +94,17 @@ public final class GetManagedDatabaseSqlPlanBaselinePlainArgs extends com.pulumi
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             $.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
 

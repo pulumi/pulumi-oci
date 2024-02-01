@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testManagedDatabaseSqlPlanBaselineJobs = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineJobs({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     name: _var.managed_database_sql_plan_baseline_job_name,
+ *     opcNamedCredentialId: _var.managed_database_sql_plan_baseline_job_opc_named_credential_id,
  * });
  * ```
  */
@@ -30,6 +31,7 @@ export function getManagedDatabaseSqlPlanBaselineJobs(args: GetManagedDatabaseSq
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
         "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
     }, opts);
 }
 
@@ -46,6 +48,10 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsArgs {
      * A filter to return the SQL plan baseline jobs that match the name.
      */
     name?: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
 }
 
 /**
@@ -62,6 +68,7 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsResult {
      * The name of the job.
      */
     readonly name?: string;
+    readonly opcNamedCredentialId?: string;
     /**
      * The list of sql_plan_baseline_job_collection.
      */
@@ -81,6 +88,7 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsResult {
  * const testManagedDatabaseSqlPlanBaselineJobs = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineJobs({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     name: _var.managed_database_sql_plan_baseline_job_name,
+ *     opcNamedCredentialId: _var.managed_database_sql_plan_baseline_job_opc_named_credential_id,
  * });
  * ```
  */
@@ -101,4 +109,8 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsOutputArgs {
      * A filter to return the SQL plan baseline jobs that match the name.
      */
     name?: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
 }

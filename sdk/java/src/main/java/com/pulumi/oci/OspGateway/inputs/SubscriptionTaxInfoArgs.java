@@ -16,6 +16,21 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
     public static final SubscriptionTaxInfoArgs Empty = new SubscriptionTaxInfoArgs();
 
     /**
+     * Companies&#39; GIRO code
+     * 
+     */
+    @Import(name="giro")
+    private @Nullable Output<String> giro;
+
+    /**
+     * @return Companies&#39; GIRO code
+     * 
+     */
+    public Optional<Output<String>> giro() {
+        return Optional.ofNullable(this.giro);
+    }
+
+    /**
      * (Updatable) Tax exemption reason code.
      * 
      */
@@ -93,6 +108,7 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
     private SubscriptionTaxInfoArgs() {}
 
     private SubscriptionTaxInfoArgs(SubscriptionTaxInfoArgs $) {
+        this.giro = $.giro;
         this.noTaxReasonCode = $.noTaxReasonCode;
         this.noTaxReasonCodeDetails = $.noTaxReasonCodeDetails;
         this.taxCnpj = $.taxCnpj;
@@ -116,6 +132,27 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
 
         public Builder(SubscriptionTaxInfoArgs defaults) {
             $ = new SubscriptionTaxInfoArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param giro Companies&#39; GIRO code
+         * 
+         * @return builder
+         * 
+         */
+        public Builder giro(@Nullable Output<String> giro) {
+            $.giro = giro;
+            return this;
+        }
+
+        /**
+         * @param giro Companies&#39; GIRO code
+         * 
+         * @return builder
+         * 
+         */
+        public Builder giro(String giro) {
+            return giro(Output.of(giro));
         }
 
         /**

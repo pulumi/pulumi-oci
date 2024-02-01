@@ -17,6 +17,7 @@ __all__ = [
     'ExternalDbSystemConnectorConnectionInfoArgs',
     'ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs',
     'ExternalDbSystemConnectorConnectionInfoConnectionStringArgs',
+    'ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs',
     'ExternalDbSystemDatabaseManagementConfigArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs',
@@ -26,10 +27,12 @@ __all__ = [
     'ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs',
@@ -37,6 +40,7 @@ __all__ = [
     'ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs',
+    'ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs',
     'ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs',
     'ExternalDbSystemDiscoveryPatchOperationArgs',
@@ -54,8 +58,11 @@ __all__ = [
     'ExternalListenerServicedDatabaseArgs',
     'ManagedDatabaseGroupManagedDatabaseArgs',
     'ManagedDatabasesChangeDatabaseParameterCredentialsArgs',
+    'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs',
     'ManagedDatabasesChangeDatabaseParameterParameterArgs',
     'ManagedDatabasesResetDatabaseParameterCredentialsArgs',
+    'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs',
+    'NamedCredentialContentArgs',
     'GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs',
     'GetDbManagementPrivateEndpointsFilterArgs',
     'GetExternalAsmDiskGroupsFilterArgs',
@@ -105,6 +112,7 @@ __all__ = [
     'GetManagedMySqlDatabaseConfigurationDataFilterArgs',
     'GetManagedMySqlDatabaseSqlDataFilterArgs',
     'GetManagedMySqlDatabasesFilterArgs',
+    'GetNamedCredentialsFilterArgs',
 ]
 
 @pulumi.input_type
@@ -428,17 +436,21 @@ class ExternalDbSystemConnectorConnectionInfoArgs:
     def __init__(__self__, *,
                  component_type: pulumi.Input[str],
                  connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]] = None):
+                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]] = None,
+                 database_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
         """
         :param pulumi.Input[str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]] database_credentials: The credential to connect to the database to perform tablespace administration tasks.
         """
         pulumi.set(__self__, "component_type", component_type)
         if connection_credentials is not None:
             pulumi.set(__self__, "connection_credentials", connection_credentials)
         if connection_strings is not None:
             pulumi.set(__self__, "connection_strings", connection_strings)
+        if database_credentials is not None:
+            pulumi.set(__self__, "database_credentials", database_credentials)
 
     @property
     @pulumi.getter(name="componentType")
@@ -476,6 +488,18 @@ class ExternalDbSystemConnectorConnectionInfoArgs:
     def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
+    @property
+    @pulumi.getter(name="databaseCredentials")
+    def database_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]]]:
+        """
+        The credential to connect to the database to perform tablespace administration tasks.
+        """
+        return pulumi.get(self, "database_credentials")
+
+    @database_credentials.setter
+    def database_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]]]):
+        pulumi.set(self, "database_credentials", value)
+
 
 @pulumi.input_type
 class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
@@ -488,9 +512,9 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
                  user_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
+        :param pulumi.Input[str] credential_type: The type of the credential for tablespace administration tasks.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        :param pulumi.Input[str] role: The role of the database user.
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
         """
@@ -523,7 +547,7 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of credential used to connect to the ASM instance.
+        The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
@@ -535,7 +559,7 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
@@ -547,7 +571,7 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
         """
-        The role of the user connecting to the ASM instance.
+        The role of the database user.
         """
         return pulumi.get(self, "role")
 
@@ -665,6 +689,109 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
     @service.setter
     def service(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "service", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs:
+    def __init__(__self__, *,
+                 credential_type: Optional[pulumi.Input[str]] = None,
+                 named_credential_id: Optional[pulumi.Input[str]] = None,
+                 password: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 username: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_type: The type of the credential for tablespace administration tasks.
+        :param pulumi.Input[str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        :param pulumi.Input[str] password: The database user's password encoded using BASE64 scheme.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        :param pulumi.Input[str] role: The role of the database user.
+        :param pulumi.Input[str] username: The user to connect to the database.
+        """
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of the credential for tablespace administration tasks.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "named_credential_id", value)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database user's password encoded using BASE64 scheme.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the database user.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user to connect to the database.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username", value)
 
 
 @pulumi.input_type
@@ -1777,11 +1904,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     def __init__(__self__, *,
                  component_type: Optional[pulumi.Input[str]] = None,
                  connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]] = None):
+                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]] = None,
+                 database_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
         """
         :param pulumi.Input[str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]] database_credentials: The credential to connect to the database to perform tablespace administration tasks.
         """
         if component_type is not None:
             pulumi.set(__self__, "component_type", component_type)
@@ -1789,6 +1918,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
             pulumi.set(__self__, "connection_credentials", connection_credentials)
         if connection_strings is not None:
             pulumi.set(__self__, "connection_strings", connection_strings)
+        if database_credentials is not None:
+            pulumi.set(__self__, "database_credentials", database_credentials)
 
     @property
     @pulumi.getter(name="componentType")
@@ -1826,6 +1957,18 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
+    @property
+    @pulumi.getter(name="databaseCredentials")
+    def database_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]]]:
+        """
+        The credential to connect to the database to perform tablespace administration tasks.
+        """
+        return pulumi.get(self, "database_credentials")
+
+    @database_credentials.setter
+    def database_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]]]):
+        pulumi.set(self, "database_credentials", value)
+
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs:
@@ -1838,9 +1981,9 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
                  user_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
+        :param pulumi.Input[str] credential_type: The type of the credential for tablespace administration tasks.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        :param pulumi.Input[str] role: The role of the database user.
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
         """
@@ -1873,7 +2016,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of credential used to connect to the ASM instance.
+        The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
@@ -1885,7 +2028,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
@@ -1897,7 +2040,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
         """
-        The role of the user connecting to the ASM instance.
+        The role of the database user.
         """
         return pulumi.get(self, "role")
 
@@ -2015,6 +2158,109 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @service.setter
     def service(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "service", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs:
+    def __init__(__self__, *,
+                 credential_type: Optional[pulumi.Input[str]] = None,
+                 named_credential_id: Optional[pulumi.Input[str]] = None,
+                 password: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 username: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_type: The type of the credential for tablespace administration tasks.
+        :param pulumi.Input[str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        :param pulumi.Input[str] password: The database user's password encoded using BASE64 scheme.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        :param pulumi.Input[str] role: The role of the database user.
+        :param pulumi.Input[str] username: The user to connect to the database.
+        """
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of the credential for tablespace administration tasks.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "named_credential_id", value)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database user's password encoded using BASE64 scheme.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the database user.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user to connect to the database.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username", value)
 
 
 @pulumi.input_type
@@ -2141,11 +2387,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
     def __init__(__self__, *,
                  component_type: Optional[pulumi.Input[str]] = None,
                  connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]] = None):
+                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]] = None,
+                 database_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
         """
         :param pulumi.Input[str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]] database_credentials: The credential to connect to the database to perform tablespace administration tasks.
         """
         if component_type is not None:
             pulumi.set(__self__, "component_type", component_type)
@@ -2153,6 +2401,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
             pulumi.set(__self__, "connection_credentials", connection_credentials)
         if connection_strings is not None:
             pulumi.set(__self__, "connection_strings", connection_strings)
+        if database_credentials is not None:
+            pulumi.set(__self__, "database_credentials", database_credentials)
 
     @property
     @pulumi.getter(name="componentType")
@@ -2190,6 +2440,18 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
     def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
+    @property
+    @pulumi.getter(name="databaseCredentials")
+    def database_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]]]:
+        """
+        The credential to connect to the database to perform tablespace administration tasks.
+        """
+        return pulumi.get(self, "database_credentials")
+
+    @database_credentials.setter
+    def database_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]]]):
+        pulumi.set(self, "database_credentials", value)
+
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs:
@@ -2202,9 +2464,9 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
                  user_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
+        :param pulumi.Input[str] credential_type: The type of the credential for tablespace administration tasks.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        :param pulumi.Input[str] role: The role of the database user.
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
         """
@@ -2237,7 +2499,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of credential used to connect to the ASM instance.
+        The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
@@ -2249,7 +2511,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
@@ -2261,7 +2523,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
         """
-        The role of the user connecting to the ASM instance.
+        The role of the database user.
         """
         return pulumi.get(self, "role")
 
@@ -2379,6 +2641,109 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @service.setter
     def service(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "service", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs:
+    def __init__(__self__, *,
+                 credential_type: Optional[pulumi.Input[str]] = None,
+                 named_credential_id: Optional[pulumi.Input[str]] = None,
+                 password: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 username: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_type: The type of the credential for tablespace administration tasks.
+        :param pulumi.Input[str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        :param pulumi.Input[str] password: The database user's password encoded using BASE64 scheme.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        :param pulumi.Input[str] role: The role of the database user.
+        :param pulumi.Input[str] username: The user to connect to the database.
+        """
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of the credential for tablespace administration tasks.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "named_credential_id", value)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database user's password encoded using BASE64 scheme.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the database user.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user to connect to the database.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username", value)
 
 
 @pulumi.input_type
@@ -2718,11 +3083,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     def __init__(__self__, *,
                  component_type: Optional[pulumi.Input[str]] = None,
                  connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]] = None):
+                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]] = None,
+                 database_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
         """
         :param pulumi.Input[str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]] database_credentials: The credential to connect to the database to perform tablespace administration tasks.
         """
         if component_type is not None:
             pulumi.set(__self__, "component_type", component_type)
@@ -2730,6 +3097,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
             pulumi.set(__self__, "connection_credentials", connection_credentials)
         if connection_strings is not None:
             pulumi.set(__self__, "connection_strings", connection_strings)
+        if database_credentials is not None:
+            pulumi.set(__self__, "database_credentials", database_credentials)
 
     @property
     @pulumi.getter(name="componentType")
@@ -2767,6 +3136,18 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
+    @property
+    @pulumi.getter(name="databaseCredentials")
+    def database_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]]]:
+        """
+        The credential to connect to the database to perform tablespace administration tasks.
+        """
+        return pulumi.get(self, "database_credentials")
+
+    @database_credentials.setter
+    def database_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]]]):
+        pulumi.set(self, "database_credentials", value)
+
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs:
@@ -2779,9 +3160,9 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
                  user_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
+        :param pulumi.Input[str] credential_type: The type of the credential for tablespace administration tasks.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        :param pulumi.Input[str] role: The role of the database user.
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
         """
@@ -2814,7 +3195,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of credential used to connect to the ASM instance.
+        The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
@@ -2826,7 +3207,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
@@ -2838,7 +3219,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
         """
-        The role of the user connecting to the ASM instance.
+        The role of the database user.
         """
         return pulumi.get(self, "role")
 
@@ -2956,6 +3337,109 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @service.setter
     def service(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "service", value)
+
+
+@pulumi.input_type
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs:
+    def __init__(__self__, *,
+                 credential_type: Optional[pulumi.Input[str]] = None,
+                 named_credential_id: Optional[pulumi.Input[str]] = None,
+                 password: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 username: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_type: The type of the credential for tablespace administration tasks.
+        :param pulumi.Input[str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        :param pulumi.Input[str] password: The database user's password encoded using BASE64 scheme.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        :param pulumi.Input[str] role: The role of the database user.
+        :param pulumi.Input[str] username: The user to connect to the database.
+        """
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of the credential for tablespace administration tasks.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "named_credential_id", value)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database user's password encoded using BASE64 scheme.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the database user.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user to connect to the database.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username", value)
 
 
 @pulumi.input_type
@@ -3349,10 +3833,10 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
                  ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
+        :param pulumi.Input[str] credential_type: The type of the credential for tablespace administration tasks.
         :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        :param pulumi.Input[str] role: The role of the database user.
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
         """
@@ -3372,7 +3856,7 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> pulumi.Input[str]:
         """
-        The type of credential used to connect to the ASM instance.
+        The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
@@ -3396,7 +3880,7 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
@@ -3408,7 +3892,7 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
         """
-        The role of the user connecting to the ASM instance.
+        The role of the database user.
         """
         return pulumi.get(self, "role")
 
@@ -4453,8 +4937,8 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
                  secret_id: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] password: The password for the database user name.
-        :param pulumi.Input[str] role: The role of the database user. Indicates whether the database user is a normal user or sysdba.
+        :param pulumi.Input[str] password: The database user's password encoded using BASE64 scheme.
+        :param pulumi.Input[str] role: The role of the database user.
         :param pulumi.Input[str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         :param pulumi.Input[str] user_name: The database user name used to perform management activity.
         """
@@ -4471,7 +4955,7 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
         """
-        The password for the database user name.
+        The database user's password encoded using BASE64 scheme.
         """
         return pulumi.get(self, "password")
 
@@ -4483,7 +4967,7 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
         """
-        The role of the database user. Indicates whether the database user is a normal user or sysdba.
+        The role of the database user.
         """
         return pulumi.get(self, "role")
 
@@ -4514,6 +4998,108 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
     @user_name.setter
     def user_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs:
+    def __init__(__self__, *,
+                 credential_type: pulumi.Input[str],
+                 named_credential_id: Optional[pulumi.Input[str]] = None,
+                 password: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 username: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_type: The type of the credential for tablespace administration tasks.
+        :param pulumi.Input[str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        :param pulumi.Input[str] password: The database user's password encoded using BASE64 scheme.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        :param pulumi.Input[str] role: The role of the database user.
+        :param pulumi.Input[str] username: The user to connect to the database.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> pulumi.Input[str]:
+        """
+        The type of the credential for tablespace administration tasks.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "named_credential_id", value)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database user's password encoded using BASE64 scheme.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the database user.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user to connect to the database.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username", value)
 
 
 @pulumi.input_type
@@ -4577,8 +5163,8 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
                  secret_id: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] password: The password for the database user name.
-        :param pulumi.Input[str] role: The role of the database user. Indicates whether the database user is a normal user or sysdba.
+        :param pulumi.Input[str] password: The database user's password encoded using BASE64 scheme.
+        :param pulumi.Input[str] role: The role of the database user.
         :param pulumi.Input[str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         :param pulumi.Input[str] user_name: The database user name used to perform management activity.
         """
@@ -4595,7 +5181,7 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
         """
-        The password for the database user name.
+        The database user's password encoded using BASE64 scheme.
         """
         return pulumi.get(self, "password")
 
@@ -4607,7 +5193,7 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
         """
-        The role of the database user. Indicates whether the database user is a normal user or sysdba.
+        The role of the database user.
         """
         return pulumi.get(self, "role")
 
@@ -4637,6 +5223,190 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
 
     @user_name.setter
     def user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs:
+    def __init__(__self__, *,
+                 credential_type: pulumi.Input[str],
+                 named_credential_id: Optional[pulumi.Input[str]] = None,
+                 password: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 username: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_type: The type of the credential for tablespace administration tasks.
+        :param pulumi.Input[str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        :param pulumi.Input[str] password: The database user's password encoded using BASE64 scheme.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        :param pulumi.Input[str] role: The role of the database user.
+        :param pulumi.Input[str] username: The user to connect to the database.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> pulumi.Input[str]:
+        """
+        The type of the credential for tablespace administration tasks.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "named_credential_id", value)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database user's password encoded using BASE64 scheme.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the database user.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user to connect to the database.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username", value)
+
+
+@pulumi.input_type
+class NamedCredentialContentArgs:
+    def __init__(__self__, *,
+                 credential_type: pulumi.Input[str],
+                 password_secret_access_mode: pulumi.Input[str],
+                 password_secret_id: pulumi.Input[str],
+                 role: pulumi.Input[str],
+                 user_name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] credential_type: (Updatable) The type of named credential. Only 'BASIC' is supported currently.
+        :param pulumi.Input[str] password_secret_access_mode: (Updatable) The mechanism used to access the password plain text value.
+        :param pulumi.Input[str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+        :param pulumi.Input[str] role: (Updatable) The role of the database user.
+        :param pulumi.Input[str] user_name: (Updatable) The user name used to connect to the database.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "password_secret_access_mode", password_secret_access_mode)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of named credential. Only 'BASIC' is supported currently.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretAccessMode")
+    def password_secret_access_mode(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The mechanism used to access the password plain text value.
+        """
+        return pulumi.get(self, "password_secret_access_mode")
+
+    @password_secret_access_mode.setter
+    def password_secret_access_mode(self, value: pulumi.Input[str]):
+        pulumi.set(self, "password_secret_access_mode", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The role of the database user.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: pulumi.Input[str]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The user name used to connect to the database.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "user_name", value)
 
 
@@ -6675,6 +7445,51 @@ class GetManagedMySqlDatabasesFilterArgs:
     def name(self) -> str:
         """
         The name of the Managed MySQL Database.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetNamedCredentialsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the named credential.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the named credential.
         """
         return pulumi.get(self, "name")
 

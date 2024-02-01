@@ -23,7 +23,7 @@ class GetManagedDatabasesDatabaseParametersResult:
     """
     A collection of values returned by getManagedDatabasesDatabaseParameters.
     """
-    def __init__(__self__, database_parameters_collections=None, filters=None, id=None, is_allowed_values_included=None, managed_database_id=None, name=None, source=None):
+    def __init__(__self__, database_parameters_collections=None, filters=None, id=None, is_allowed_values_included=None, managed_database_id=None, name=None, opc_named_credential_id=None, source=None):
         if database_parameters_collections and not isinstance(database_parameters_collections, list):
             raise TypeError("Expected argument 'database_parameters_collections' to be a list")
         pulumi.set(__self__, "database_parameters_collections", database_parameters_collections)
@@ -42,6 +42,9 @@ class GetManagedDatabasesDatabaseParametersResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if source and not isinstance(source, str):
             raise TypeError("Expected argument 'source' to be a str")
         pulumi.set(__self__, "source", source)
@@ -86,6 +89,11 @@ class GetManagedDatabasesDatabaseParametersResult:
         return pulumi.get(self, "name")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter
     def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
@@ -103,6 +111,7 @@ class AwaitableGetManagedDatabasesDatabaseParametersResult(GetManagedDatabasesDa
             is_allowed_values_included=self.is_allowed_values_included,
             managed_database_id=self.managed_database_id,
             name=self.name,
+            opc_named_credential_id=self.opc_named_credential_id,
             source=self.source)
 
 
@@ -110,6 +119,7 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.
                                               is_allowed_values_included: Optional[bool] = None,
                                               managed_database_id: Optional[str] = None,
                                               name: Optional[str] = None,
+                                              opc_named_credential_id: Optional[str] = None,
                                               source: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabasesDatabaseParametersResult:
     """
@@ -126,6 +136,7 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.
     test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         is_allowed_values_included=var["managed_databases_database_parameter_is_allowed_values_included"],
         name=var["managed_databases_database_parameter_name"],
+        opc_named_credential_id=var["managed_databases_database_parameter_opc_named_credential_id"],
         source=var["managed_databases_database_parameter_source"])
     ```
 
@@ -133,6 +144,7 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.
     :param bool is_allowed_values_included: When true, results include a list of valid values for parameters (if applicable).
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name: A filter to return all parameters that have the text given in their names.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str source: The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
     """
     __args__ = dict()
@@ -140,6 +152,7 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.
     __args__['isAllowedValuesIncluded'] = is_allowed_values_included
     __args__['managedDatabaseId'] = managed_database_id
     __args__['name'] = name
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['source'] = source
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters', __args__, opts=opts, typ=GetManagedDatabasesDatabaseParametersResult).value
@@ -151,6 +164,7 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.
         is_allowed_values_included=pulumi.get(__ret__, 'is_allowed_values_included'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name=pulumi.get(__ret__, 'name'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         source=pulumi.get(__ret__, 'source'))
 
 
@@ -159,6 +173,7 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
                                                      is_allowed_values_included: Optional[pulumi.Input[Optional[bool]]] = None,
                                                      managed_database_id: Optional[pulumi.Input[str]] = None,
                                                      name: Optional[pulumi.Input[Optional[str]]] = None,
+                                                     opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                      source: Optional[pulumi.Input[Optional[str]]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesDatabaseParametersResult]:
     """
@@ -175,6 +190,7 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
     test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         is_allowed_values_included=var["managed_databases_database_parameter_is_allowed_values_included"],
         name=var["managed_databases_database_parameter_name"],
+        opc_named_credential_id=var["managed_databases_database_parameter_opc_named_credential_id"],
         source=var["managed_databases_database_parameter_source"])
     ```
 
@@ -182,6 +198,7 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
     :param bool is_allowed_values_included: When true, results include a list of valid values for parameters (if applicable).
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name: A filter to return all parameters that have the text given in their names.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str source: The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
     """
     ...

@@ -36,6 +36,7 @@ import (
 //				EndExecId:              pulumi.StringRef(oci_database_management_end_exec.Test_end_exec.Id),
 //				FindingFilter:          pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_finding_finding_filter),
 //				IndexHashFilter:        pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter),
+//				OpcNamedCredentialId:   pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id),
 //				SearchPeriod:           pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_finding_search_period),
 //				StatsHashFilter:        pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter),
 //			}, nil)
@@ -70,6 +71,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs struct {
 	IndexHashFilter *string `pulumi:"indexHashFilter"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
 	SearchPeriod *string `pulumi:"searchPeriod"`
 	// The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -85,10 +88,11 @@ type GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult struct {
 	Filters       []GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter `pulumi:"filters"`
 	FindingFilter *string                                                 `pulumi:"findingFilter"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string  `pulumi:"id"`
-	IndexHashFilter   *string `pulumi:"indexHashFilter"`
-	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
-	SearchPeriod      *string `pulumi:"searchPeriod"`
+	Id                   string  `pulumi:"id"`
+	IndexHashFilter      *string `pulumi:"indexHashFilter"`
+	ManagedDatabaseId    string  `pulumi:"managedDatabaseId"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
+	SearchPeriod         *string `pulumi:"searchPeriod"`
 	// The list of sql_tuning_advisor_task_finding_collection.
 	SqlTuningAdvisorTaskFindingCollections []GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection `pulumi:"sqlTuningAdvisorTaskFindingCollections"`
 	// The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -122,6 +126,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksFindingsOutputArgs struct {
 	IndexHashFilter pulumi.StringPtrInput `pulumi:"indexHashFilter"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
 	SearchPeriod pulumi.StringPtrInput `pulumi:"searchPeriod"`
 	// The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -178,6 +184,10 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksFindingsResultOutput) IndexHashFi
 
 func (o GetManagedDatabaseSqlTuningAdvisorTasksFindingsResultOutput) ManagedDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult) string { return v.ManagedDatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseSqlTuningAdvisorTasksFindingsResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseSqlTuningAdvisorTasksFindingsResultOutput) SearchPeriod() pulumi.StringPtrOutput {

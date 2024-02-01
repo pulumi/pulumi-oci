@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetExternalAsmConfigurationArgs extends com.pulumi.resources.InvokeArgs {
@@ -29,10 +31,26 @@ public final class GetExternalAsmConfigurationArgs extends com.pulumi.resources.
         return this.externalAsmId;
     }
 
+    /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable Output<String> opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<Output<String>> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
     private GetExternalAsmConfigurationArgs() {}
 
     private GetExternalAsmConfigurationArgs(GetExternalAsmConfigurationArgs $) {
         this.externalAsmId = $.externalAsmId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
     }
 
     public static Builder builder() {
@@ -72,6 +90,27 @@ public final class GetExternalAsmConfigurationArgs extends com.pulumi.resources.
          */
         public Builder externalAsmId(String externalAsmId) {
             return externalAsmId(Output.of(externalAsmId));
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable Output<String> opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            return opcNamedCredentialId(Output.of(opcNamedCredentialId));
         }
 
         public GetExternalAsmConfigurationArgs build() {

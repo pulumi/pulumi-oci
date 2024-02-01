@@ -54,12 +54,28 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsPlainArgs extends com.pu
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable String opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
     private GetManagedDatabaseSqlPlanBaselineJobsPlainArgs() {}
 
     private GetManagedDatabaseSqlPlanBaselineJobsPlainArgs(GetManagedDatabaseSqlPlanBaselineJobsPlainArgs $) {
         this.filters = $.filters;
         this.managedDatabaseId = $.managedDatabaseId;
         this.name = $.name;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
     }
 
     public static Builder builder() {
@@ -108,6 +124,17 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsPlainArgs extends com.pu
          */
         public Builder name(@Nullable String name) {
             $.name = name;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
 

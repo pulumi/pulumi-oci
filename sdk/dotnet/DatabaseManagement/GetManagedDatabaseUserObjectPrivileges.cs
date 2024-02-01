@@ -33,6 +33,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         UserName = oci_identity_user.Test_user.Name,
         ///         Name = @var.Managed_database_user_object_privilege_name,
+        ///         OpcNamedCredentialId = @var.Managed_database_user_object_privilege_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         UserName = oci_identity_user.Test_user.Name,
         ///         Name = @var.Managed_database_user_object_privilege_name,
+        ///         OpcNamedCredentialId = @var.Managed_database_user_object_privilege_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -98,6 +100,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
+
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
 
         /// <summary>
         /// The name of the user whose details are to be viewed.
@@ -134,6 +142,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// The name of the user whose details are to be viewed.
         /// </summary>
         [Input("userName", required: true)]
@@ -163,6 +177,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The list of object_privilege_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionResult> ObjectPrivilegeCollections;
+        public readonly string? OpcNamedCredentialId;
         public readonly string UserName;
 
         [OutputConstructor]
@@ -177,6 +192,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionResult> objectPrivilegeCollections,
 
+            string? opcNamedCredentialId,
+
             string userName)
         {
             Filters = filters;
@@ -184,6 +201,7 @@ namespace Pulumi.Oci.DatabaseManagement
             ManagedDatabaseId = managedDatabaseId;
             Name = name;
             ObjectPrivilegeCollections = objectPrivilegeCollections;
+            OpcNamedCredentialId = opcNamedCredentialId;
             UserName = userName;
         }
     }

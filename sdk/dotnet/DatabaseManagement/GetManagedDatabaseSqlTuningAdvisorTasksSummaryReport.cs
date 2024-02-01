@@ -35,6 +35,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
         ///         BeginExecIdGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
         ///         EndExecIdLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id,
         ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
         ///         TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
         ///         TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
@@ -72,6 +73,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
         ///         BeginExecIdGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
         ///         EndExecIdLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id,
         ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
         ///         TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
         ///         TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
@@ -106,6 +108,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("managedDatabaseId", required: true)]
         public string ManagedDatabaseId { get; set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
 
         /// <summary>
         /// How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
@@ -158,6 +166,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string> ManagedDatabaseId { get; set; } = null!;
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
         /// </summary>
         [Input("searchPeriod")]
@@ -206,6 +220,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The list of object findings related to statistics.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingResult> ObjectStatFindings;
+        public readonly string? OpcNamedCredentialId;
         public readonly string? SearchPeriod;
         public readonly string SqlTuningAdvisorTaskId;
         /// <summary>
@@ -233,6 +248,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingResult> objectStatFindings,
 
+            string? opcNamedCredentialId,
+
             string? searchPeriod,
 
             string sqlTuningAdvisorTaskId,
@@ -251,6 +268,7 @@ namespace Pulumi.Oci.DatabaseManagement
             IndexFindings = indexFindings;
             ManagedDatabaseId = managedDatabaseId;
             ObjectStatFindings = objectStatFindings;
+            OpcNamedCredentialId = opcNamedCredentialId;
             SearchPeriod = searchPeriod;
             SqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             Statistics = statistics;

@@ -2593,6 +2593,8 @@ func (o SubscriptionSubscriptionTaxInfoPtrOutput) TaxRegNumber() pulumi.StringPt
 }
 
 type SubscriptionTaxInfo struct {
+	// Companies' GIRO code
+	Giro *string `pulumi:"giro"`
 	// (Updatable) Tax exemption reason code.
 	NoTaxReasonCode *string `pulumi:"noTaxReasonCode"`
 	// (Updatable) Tax exemption reason description.
@@ -2617,6 +2619,8 @@ type SubscriptionTaxInfoInput interface {
 }
 
 type SubscriptionTaxInfoArgs struct {
+	// Companies' GIRO code
+	Giro pulumi.StringPtrInput `pulumi:"giro"`
 	// (Updatable) Tax exemption reason code.
 	NoTaxReasonCode pulumi.StringPtrInput `pulumi:"noTaxReasonCode"`
 	// (Updatable) Tax exemption reason description.
@@ -2678,6 +2682,11 @@ func (o SubscriptionTaxInfoOutput) ToSubscriptionTaxInfoOutput() SubscriptionTax
 
 func (o SubscriptionTaxInfoOutput) ToSubscriptionTaxInfoOutputWithContext(ctx context.Context) SubscriptionTaxInfoOutput {
 	return o
+}
+
+// Companies' GIRO code
+func (o SubscriptionTaxInfoOutput) Giro() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SubscriptionTaxInfo) *string { return v.Giro }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Tax exemption reason code.
@@ -2840,7 +2849,7 @@ type GetAddressRuleAddressField struct {
 	Labels []GetAddressRuleAddressFieldLabel `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
 	Language string `pulumi:"language"`
-	// The field name
+	// User friendly name
 	Name string `pulumi:"name"`
 }
 
@@ -2864,7 +2873,7 @@ type GetAddressRuleAddressFieldArgs struct {
 	Labels GetAddressRuleAddressFieldLabelArrayInput `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
 	Language pulumi.StringInput `pulumi:"language"`
-	// The field name
+	// User friendly name
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -2939,7 +2948,7 @@ func (o GetAddressRuleAddressFieldOutput) Language() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleAddressField) string { return v.Language }).(pulumi.StringOutput)
 }
 
-// The field name
+// User friendly name
 func (o GetAddressRuleAddressFieldOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleAddressField) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -2967,7 +2976,7 @@ func (o GetAddressRuleAddressFieldArrayOutput) Index(i pulumi.IntInput) GetAddre
 type GetAddressRuleAddressFieldFormat struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example string `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value string `pulumi:"value"`
 }
 
@@ -2985,7 +2994,7 @@ type GetAddressRuleAddressFieldFormatInput interface {
 type GetAddressRuleAddressFieldFormatArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example pulumi.StringInput `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3045,7 +3054,7 @@ func (o GetAddressRuleAddressFieldFormatOutput) Example() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleAddressFieldFormat) string { return v.Example }).(pulumi.StringOutput)
 }
 
-// Language token of the required label
+// Value
 func (o GetAddressRuleAddressFieldFormatOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleAddressFieldFormat) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -3073,7 +3082,7 @@ func (o GetAddressRuleAddressFieldFormatArrayOutput) Index(i pulumi.IntInput) Ge
 type GetAddressRuleAddressFieldLabel struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example string `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value string `pulumi:"value"`
 }
 
@@ -3091,7 +3100,7 @@ type GetAddressRuleAddressFieldLabelInput interface {
 type GetAddressRuleAddressFieldLabelArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example pulumi.StringInput `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3151,7 +3160,7 @@ func (o GetAddressRuleAddressFieldLabelOutput) Example() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleAddressFieldLabel) string { return v.Example }).(pulumi.StringOutput)
 }
 
-// Language token of the required label
+// Value
 func (o GetAddressRuleAddressFieldLabelOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleAddressFieldLabel) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -3282,7 +3291,7 @@ type GetAddressRuleContactField struct {
 	Labels []GetAddressRuleContactFieldLabel `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
 	Language string `pulumi:"language"`
-	// The field name
+	// User friendly name
 	Name string `pulumi:"name"`
 }
 
@@ -3306,7 +3315,7 @@ type GetAddressRuleContactFieldArgs struct {
 	Labels GetAddressRuleContactFieldLabelArrayInput `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
 	Language pulumi.StringInput `pulumi:"language"`
-	// The field name
+	// User friendly name
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -3381,7 +3390,7 @@ func (o GetAddressRuleContactFieldOutput) Language() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleContactField) string { return v.Language }).(pulumi.StringOutput)
 }
 
-// The field name
+// User friendly name
 func (o GetAddressRuleContactFieldOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleContactField) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -3409,7 +3418,7 @@ func (o GetAddressRuleContactFieldArrayOutput) Index(i pulumi.IntInput) GetAddre
 type GetAddressRuleContactFieldFormat struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example string `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value string `pulumi:"value"`
 }
 
@@ -3427,7 +3436,7 @@ type GetAddressRuleContactFieldFormatInput interface {
 type GetAddressRuleContactFieldFormatArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example pulumi.StringInput `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3487,7 +3496,7 @@ func (o GetAddressRuleContactFieldFormatOutput) Example() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleContactFieldFormat) string { return v.Example }).(pulumi.StringOutput)
 }
 
-// Language token of the required label
+// Value
 func (o GetAddressRuleContactFieldFormatOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleContactFieldFormat) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -3515,7 +3524,7 @@ func (o GetAddressRuleContactFieldFormatArrayOutput) Index(i pulumi.IntInput) Ge
 type GetAddressRuleContactFieldLabel struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example string `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value string `pulumi:"value"`
 }
 
@@ -3533,7 +3542,7 @@ type GetAddressRuleContactFieldLabelInput interface {
 type GetAddressRuleContactFieldLabelArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example pulumi.StringInput `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3593,7 +3602,7 @@ func (o GetAddressRuleContactFieldLabelOutput) Example() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleContactFieldLabel) string { return v.Example }).(pulumi.StringOutput)
 }
 
-// Language token of the required label
+// Value
 func (o GetAddressRuleContactFieldLabelOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleContactFieldLabel) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -3621,6 +3630,8 @@ func (o GetAddressRuleContactFieldLabelArrayOutput) Index(i pulumi.IntInput) Get
 type GetAddressRuleTax struct {
 	// Tax type rule fields
 	Fields []GetAddressRuleTaxField `pulumi:"fields"`
+	// Label value pair for allowed values. Used for GIRO
+	ValueSets []GetAddressRuleTaxValueSet `pulumi:"valueSets"`
 }
 
 // GetAddressRuleTaxInput is an input type that accepts GetAddressRuleTaxArgs and GetAddressRuleTaxOutput values.
@@ -3637,6 +3648,8 @@ type GetAddressRuleTaxInput interface {
 type GetAddressRuleTaxArgs struct {
 	// Tax type rule fields
 	Fields GetAddressRuleTaxFieldArrayInput `pulumi:"fields"`
+	// Label value pair for allowed values. Used for GIRO
+	ValueSets GetAddressRuleTaxValueSetArrayInput `pulumi:"valueSets"`
 }
 
 func (GetAddressRuleTaxArgs) ElementType() reflect.Type {
@@ -3695,6 +3708,11 @@ func (o GetAddressRuleTaxOutput) Fields() GetAddressRuleTaxFieldArrayOutput {
 	return o.ApplyT(func(v GetAddressRuleTax) []GetAddressRuleTaxField { return v.Fields }).(GetAddressRuleTaxFieldArrayOutput)
 }
 
+// Label value pair for allowed values. Used for GIRO
+func (o GetAddressRuleTaxOutput) ValueSets() GetAddressRuleTaxValueSetArrayOutput {
+	return o.ApplyT(func(v GetAddressRuleTax) []GetAddressRuleTaxValueSet { return v.ValueSets }).(GetAddressRuleTaxValueSetArrayOutput)
+}
+
 type GetAddressRuleTaxArrayOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleTaxArrayOutput) ElementType() reflect.Type {
@@ -3724,7 +3742,7 @@ type GetAddressRuleTaxField struct {
 	Labels []GetAddressRuleTaxFieldLabel `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
 	Language string `pulumi:"language"`
-	// The field name
+	// User friendly name
 	Name string `pulumi:"name"`
 }
 
@@ -3748,7 +3766,7 @@ type GetAddressRuleTaxFieldArgs struct {
 	Labels GetAddressRuleTaxFieldLabelArrayInput `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
 	Language pulumi.StringInput `pulumi:"language"`
-	// The field name
+	// User friendly name
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -3823,7 +3841,7 @@ func (o GetAddressRuleTaxFieldOutput) Language() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleTaxField) string { return v.Language }).(pulumi.StringOutput)
 }
 
-// The field name
+// User friendly name
 func (o GetAddressRuleTaxFieldOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleTaxField) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -3851,7 +3869,7 @@ func (o GetAddressRuleTaxFieldArrayOutput) Index(i pulumi.IntInput) GetAddressRu
 type GetAddressRuleTaxFieldFormat struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example string `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value string `pulumi:"value"`
 }
 
@@ -3869,7 +3887,7 @@ type GetAddressRuleTaxFieldFormatInput interface {
 type GetAddressRuleTaxFieldFormatArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example pulumi.StringInput `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3929,7 +3947,7 @@ func (o GetAddressRuleTaxFieldFormatOutput) Example() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleTaxFieldFormat) string { return v.Example }).(pulumi.StringOutput)
 }
 
-// Language token of the required label
+// Value
 func (o GetAddressRuleTaxFieldFormatOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleTaxFieldFormat) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -3957,7 +3975,7 @@ func (o GetAddressRuleTaxFieldFormatArrayOutput) Index(i pulumi.IntInput) GetAdd
 type GetAddressRuleTaxFieldLabel struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example string `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value string `pulumi:"value"`
 }
 
@@ -3975,7 +3993,7 @@ type GetAddressRuleTaxFieldLabelInput interface {
 type GetAddressRuleTaxFieldLabelArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
 	Example pulumi.StringInput `pulumi:"example"`
-	// Language token of the required label
+	// Value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -4035,7 +4053,7 @@ func (o GetAddressRuleTaxFieldLabelOutput) Example() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleTaxFieldLabel) string { return v.Example }).(pulumi.StringOutput)
 }
 
-// Language token of the required label
+// Value
 func (o GetAddressRuleTaxFieldLabelOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressRuleTaxFieldLabel) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -4058,6 +4076,112 @@ func (o GetAddressRuleTaxFieldLabelArrayOutput) Index(i pulumi.IntInput) GetAddr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleTaxFieldLabel {
 		return vs[0].([]GetAddressRuleTaxFieldLabel)[vs[1].(int)]
 	}).(GetAddressRuleTaxFieldLabelOutput)
+}
+
+type GetAddressRuleTaxValueSet struct {
+	// User friendly name
+	Name string `pulumi:"name"`
+	// Value
+	Value string `pulumi:"value"`
+}
+
+// GetAddressRuleTaxValueSetInput is an input type that accepts GetAddressRuleTaxValueSetArgs and GetAddressRuleTaxValueSetOutput values.
+// You can construct a concrete instance of `GetAddressRuleTaxValueSetInput` via:
+//
+//	GetAddressRuleTaxValueSetArgs{...}
+type GetAddressRuleTaxValueSetInput interface {
+	pulumi.Input
+
+	ToGetAddressRuleTaxValueSetOutput() GetAddressRuleTaxValueSetOutput
+	ToGetAddressRuleTaxValueSetOutputWithContext(context.Context) GetAddressRuleTaxValueSetOutput
+}
+
+type GetAddressRuleTaxValueSetArgs struct {
+	// User friendly name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAddressRuleTaxValueSetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddressRuleTaxValueSet)(nil)).Elem()
+}
+
+func (i GetAddressRuleTaxValueSetArgs) ToGetAddressRuleTaxValueSetOutput() GetAddressRuleTaxValueSetOutput {
+	return i.ToGetAddressRuleTaxValueSetOutputWithContext(context.Background())
+}
+
+func (i GetAddressRuleTaxValueSetArgs) ToGetAddressRuleTaxValueSetOutputWithContext(ctx context.Context) GetAddressRuleTaxValueSetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxValueSetOutput)
+}
+
+// GetAddressRuleTaxValueSetArrayInput is an input type that accepts GetAddressRuleTaxValueSetArray and GetAddressRuleTaxValueSetArrayOutput values.
+// You can construct a concrete instance of `GetAddressRuleTaxValueSetArrayInput` via:
+//
+//	GetAddressRuleTaxValueSetArray{ GetAddressRuleTaxValueSetArgs{...} }
+type GetAddressRuleTaxValueSetArrayInput interface {
+	pulumi.Input
+
+	ToGetAddressRuleTaxValueSetArrayOutput() GetAddressRuleTaxValueSetArrayOutput
+	ToGetAddressRuleTaxValueSetArrayOutputWithContext(context.Context) GetAddressRuleTaxValueSetArrayOutput
+}
+
+type GetAddressRuleTaxValueSetArray []GetAddressRuleTaxValueSetInput
+
+func (GetAddressRuleTaxValueSetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddressRuleTaxValueSet)(nil)).Elem()
+}
+
+func (i GetAddressRuleTaxValueSetArray) ToGetAddressRuleTaxValueSetArrayOutput() GetAddressRuleTaxValueSetArrayOutput {
+	return i.ToGetAddressRuleTaxValueSetArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddressRuleTaxValueSetArray) ToGetAddressRuleTaxValueSetArrayOutputWithContext(ctx context.Context) GetAddressRuleTaxValueSetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxValueSetArrayOutput)
+}
+
+type GetAddressRuleTaxValueSetOutput struct{ *pulumi.OutputState }
+
+func (GetAddressRuleTaxValueSetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddressRuleTaxValueSet)(nil)).Elem()
+}
+
+func (o GetAddressRuleTaxValueSetOutput) ToGetAddressRuleTaxValueSetOutput() GetAddressRuleTaxValueSetOutput {
+	return o
+}
+
+func (o GetAddressRuleTaxValueSetOutput) ToGetAddressRuleTaxValueSetOutputWithContext(ctx context.Context) GetAddressRuleTaxValueSetOutput {
+	return o
+}
+
+// User friendly name
+func (o GetAddressRuleTaxValueSetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddressRuleTaxValueSet) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value
+func (o GetAddressRuleTaxValueSetOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddressRuleTaxValueSet) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAddressRuleTaxValueSetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddressRuleTaxValueSetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddressRuleTaxValueSet)(nil)).Elem()
+}
+
+func (o GetAddressRuleTaxValueSetArrayOutput) ToGetAddressRuleTaxValueSetArrayOutput() GetAddressRuleTaxValueSetArrayOutput {
+	return o
+}
+
+func (o GetAddressRuleTaxValueSetArrayOutput) ToGetAddressRuleTaxValueSetArrayOutputWithContext(ctx context.Context) GetAddressRuleTaxValueSetArrayOutput {
+	return o
+}
+
+func (o GetAddressRuleTaxValueSetArrayOutput) Index(i pulumi.IntInput) GetAddressRuleTaxValueSetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleTaxValueSet {
+		return vs[0].([]GetAddressRuleTaxValueSet)[vs[1].(int)]
+	}).(GetAddressRuleTaxValueSetOutput)
 }
 
 type GetInvoiceBillToAddress struct {
@@ -8661,6 +8785,8 @@ func (o GetSubscriptionSubscriptionTaxInfoArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetSubscriptionTaxInfo struct {
+	// Companies' GIRO code
+	Giro string `pulumi:"giro"`
 	// Tax exemption reason code.
 	NoTaxReasonCode string `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
@@ -8685,6 +8811,8 @@ type GetSubscriptionTaxInfoInput interface {
 }
 
 type GetSubscriptionTaxInfoArgs struct {
+	// Companies' GIRO code
+	Giro pulumi.StringInput `pulumi:"giro"`
 	// Tax exemption reason code.
 	NoTaxReasonCode pulumi.StringInput `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
@@ -8746,6 +8874,11 @@ func (o GetSubscriptionTaxInfoOutput) ToGetSubscriptionTaxInfoOutput() GetSubscr
 
 func (o GetSubscriptionTaxInfoOutput) ToGetSubscriptionTaxInfoOutputWithContext(ctx context.Context) GetSubscriptionTaxInfoOutput {
 	return o
+}
+
+// Companies' GIRO code
+func (o GetSubscriptionTaxInfoOutput) Giro() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionTaxInfo) string { return v.Giro }).(pulumi.StringOutput)
 }
 
 // Tax exemption reason code.
@@ -11225,6 +11358,8 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput
 }
 
 type GetSubscriptionsSubscriptionCollectionItemTaxInfo struct {
+	// Companies' GIRO code
+	Giro string `pulumi:"giro"`
 	// Tax exemption reason code.
 	NoTaxReasonCode string `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
@@ -11249,6 +11384,8 @@ type GetSubscriptionsSubscriptionCollectionItemTaxInfoInput interface {
 }
 
 type GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs struct {
+	// Companies' GIRO code
+	Giro pulumi.StringInput `pulumi:"giro"`
 	// Tax exemption reason code.
 	NoTaxReasonCode pulumi.StringInput `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
@@ -11310,6 +11447,11 @@ func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) ToGetSubscripti
 
 func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) ToGetSubscriptionsSubscriptionCollectionItemTaxInfoOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput {
 	return o
+}
+
+// Companies' GIRO code
+func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) Giro() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemTaxInfo) string { return v.Giro }).(pulumi.StringOutput)
 }
 
 // Tax exemption reason code.
@@ -11406,6 +11548,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddressRuleTaxFieldFormatArrayInput)(nil)).Elem(), GetAddressRuleTaxFieldFormatArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddressRuleTaxFieldLabelInput)(nil)).Elem(), GetAddressRuleTaxFieldLabelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddressRuleTaxFieldLabelArrayInput)(nil)).Elem(), GetAddressRuleTaxFieldLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddressRuleTaxValueSetInput)(nil)).Elem(), GetAddressRuleTaxValueSetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddressRuleTaxValueSetArrayInput)(nil)).Elem(), GetAddressRuleTaxValueSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvoiceBillToAddressInput)(nil)).Elem(), GetInvoiceBillToAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvoiceBillToAddressArrayInput)(nil)).Elem(), GetInvoiceBillToAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvoiceBillToAddressCountryInput)(nil)).Elem(), GetInvoiceBillToAddressCountryArgs{})
@@ -11538,6 +11682,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAddressRuleTaxFieldFormatArrayOutput{})
 	pulumi.RegisterOutputType(GetAddressRuleTaxFieldLabelOutput{})
 	pulumi.RegisterOutputType(GetAddressRuleTaxFieldLabelArrayOutput{})
+	pulumi.RegisterOutputType(GetAddressRuleTaxValueSetOutput{})
+	pulumi.RegisterOutputType(GetAddressRuleTaxValueSetArrayOutput{})
 	pulumi.RegisterOutputType(GetInvoiceBillToAddressOutput{})
 	pulumi.RegisterOutputType(GetInvoiceBillToAddressArrayOutput{})
 	pulumi.RegisterOutputType(GetInvoiceBillToAddressCountryOutput{})

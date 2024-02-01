@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -44,6 +46,21 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable String opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -78,6 +95,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
     private GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlainArgs(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlainArgs $) {
         this.executionId = $.executionId;
         this.managedDatabaseId = $.managedDatabaseId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.sqlObjectId = $.sqlObjectId;
         this.sqlTuningAdvisorTaskId = $.sqlTuningAdvisorTaskId;
     }
@@ -119,6 +137,17 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             $.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
 

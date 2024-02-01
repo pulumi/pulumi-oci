@@ -40,11 +40,27 @@ public final class GetExternalAsmDiskGroupsArgs extends com.pulumi.resources.Inv
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable Output<String> opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<Output<String>> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
     private GetExternalAsmDiskGroupsArgs() {}
 
     private GetExternalAsmDiskGroupsArgs(GetExternalAsmDiskGroupsArgs $) {
         this.externalAsmId = $.externalAsmId;
         this.filters = $.filters;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
     }
 
     public static Builder builder() {
@@ -97,6 +113,27 @@ public final class GetExternalAsmDiskGroupsArgs extends com.pulumi.resources.Inv
 
         public Builder filters(GetExternalAsmDiskGroupsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable Output<String> opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            return opcNamedCredentialId(Output.of(opcNamedCredentialId));
         }
 
         public GetExternalAsmDiskGroupsArgs build() {

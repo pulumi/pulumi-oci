@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class ManagedDatabasesChangeDatabaseParameterCredentials
     {
         /// <summary>
-        /// The password for the database user name.
+        /// The database user's password encoded using BASE64 scheme.
         /// </summary>
         public readonly string? Password;
         /// <summary>
-        /// The role of the database user. Indicates whether the database user is a normal user or sysdba.
+        /// The role of the database user.
         /// </summary>
         public readonly string? Role;
         /// <summary>

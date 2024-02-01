@@ -27,6 +27,7 @@ public final class GetManagedDatabasesUserSystemPrivilegesResult {
      * 
      */
     private @Nullable String name;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The list of system_privilege_collection.
      * 
@@ -55,6 +56,9 @@ public final class GetManagedDatabasesUserSystemPrivilegesResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return The list of system_privilege_collection.
      * 
@@ -79,6 +83,7 @@ public final class GetManagedDatabasesUserSystemPrivilegesResult {
         private String id;
         private String managedDatabaseId;
         private @Nullable String name;
+        private @Nullable String opcNamedCredentialId;
         private List<GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection> systemPrivilegeCollections;
         private String userName;
         public Builder() {}
@@ -88,6 +93,7 @@ public final class GetManagedDatabasesUserSystemPrivilegesResult {
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.name = defaults.name;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.systemPrivilegeCollections = defaults.systemPrivilegeCollections;
     	      this.userName = defaults.userName;
         }
@@ -124,6 +130,12 @@ public final class GetManagedDatabasesUserSystemPrivilegesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemPrivilegeCollections(List<GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection> systemPrivilegeCollections) {
             if (systemPrivilegeCollections == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabasesUserSystemPrivilegesResult", "systemPrivilegeCollections");
@@ -148,6 +160,7 @@ public final class GetManagedDatabasesUserSystemPrivilegesResult {
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.name = name;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.systemPrivilegeCollections = systemPrivilegeCollections;
             _resultValue.userName = userName;
             return _resultValue;

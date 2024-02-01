@@ -10,6 +10,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvi
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -22,6 +23,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
      */
     private String id;
     private String managedDatabaseId;
+    private @Nullable String opcNamedCredentialId;
     private String sqlObjectId;
     /**
      * @return The unique identifier of the task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -50,6 +52,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
+    }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
     }
     public String sqlObjectId() {
         return this.sqlObjectId;
@@ -82,6 +87,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
         private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter> filters;
         private String id;
         private String managedDatabaseId;
+        private @Nullable String opcNamedCredentialId;
         private String sqlObjectId;
         private String sqlTuningAdvisorTaskId;
         private List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection> sqlTuningAdvisorTaskRecommendationCollections;
@@ -92,6 +98,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.sqlObjectId = defaults.sqlObjectId;
     	      this.sqlTuningAdvisorTaskId = defaults.sqlTuningAdvisorTaskId;
     	      this.sqlTuningAdvisorTaskRecommendationCollections = defaults.sqlTuningAdvisorTaskRecommendationCollections;
@@ -131,6 +138,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sqlObjectId(String sqlObjectId) {
             if (sqlObjectId == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult", "sqlObjectId");
@@ -163,6 +176,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.sqlObjectId = sqlObjectId;
             _resultValue.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             _resultValue.sqlTuningAdvisorTaskRecommendationCollections = sqlTuningAdvisorTaskRecommendationCollections;

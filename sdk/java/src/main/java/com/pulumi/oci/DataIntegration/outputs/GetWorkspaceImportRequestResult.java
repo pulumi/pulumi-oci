@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceImportRequestImportConflictResolution;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceImportRequestImportedObject;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -16,6 +17,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetWorkspaceImportRequestResult {
+    /**
+     * @return This field controls if the data asset references will be included during import.
+     * 
+     */
+    private Boolean areDataAssetReferencesIncluded;
     /**
      * @return The name of the Object Storage Bucket where the objects will be imported from
      * 
@@ -96,6 +102,13 @@ public final class GetWorkspaceImportRequestResult {
     private String workspaceId;
 
     private GetWorkspaceImportRequestResult() {}
+    /**
+     * @return This field controls if the data asset references will be included during import.
+     * 
+     */
+    public Boolean areDataAssetReferencesIncluded() {
+        return this.areDataAssetReferencesIncluded;
+    }
     /**
      * @return The name of the Object Storage Bucket where the objects will be imported from
      * 
@@ -220,6 +233,7 @@ public final class GetWorkspaceImportRequestResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean areDataAssetReferencesIncluded;
         private String bucket;
         private String createdBy;
         private Map<String,Object> errorMessages;
@@ -241,6 +255,7 @@ public final class GetWorkspaceImportRequestResult {
         public Builder() {}
         public Builder(GetWorkspaceImportRequestResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.areDataAssetReferencesIncluded = defaults.areDataAssetReferencesIncluded;
     	      this.bucket = defaults.bucket;
     	      this.createdBy = defaults.createdBy;
     	      this.errorMessages = defaults.errorMessages;
@@ -261,6 +276,14 @@ public final class GetWorkspaceImportRequestResult {
     	      this.workspaceId = defaults.workspaceId;
         }
 
+        @CustomType.Setter
+        public Builder areDataAssetReferencesIncluded(Boolean areDataAssetReferencesIncluded) {
+            if (areDataAssetReferencesIncluded == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestResult", "areDataAssetReferencesIncluded");
+            }
+            this.areDataAssetReferencesIncluded = areDataAssetReferencesIncluded;
+            return this;
+        }
         @CustomType.Setter
         public Builder bucket(String bucket) {
             if (bucket == null) {
@@ -413,6 +436,7 @@ public final class GetWorkspaceImportRequestResult {
         }
         public GetWorkspaceImportRequestResult build() {
             final var _resultValue = new GetWorkspaceImportRequestResult();
+            _resultValue.areDataAssetReferencesIncluded = areDataAssetReferencesIncluded;
             _resultValue.bucket = bucket;
             _resultValue.createdBy = createdBy;
             _resultValue.errorMessages = errorMessages;

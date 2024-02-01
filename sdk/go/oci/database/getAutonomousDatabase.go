@@ -163,7 +163,8 @@ type LookupAutonomousDatabaseResult struct {
 	IsRefreshableClone bool `pulumi:"isRefreshableClone"`
 	// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsRemoteDataGuardEnabled bool `pulumi:"isRemoteDataGuardEnabled"`
-	IsShrinkOnly             bool `pulumi:"isShrinkOnly"`
+	// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
+	IsShrinkOnly bool `pulumi:"isShrinkOnly"`
 	// Key History Entry.
 	KeyHistoryEntries []GetAutonomousDatabaseKeyHistoryEntry `pulumi:"keyHistoryEntries"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -237,6 +238,7 @@ type LookupAutonomousDatabaseResult struct {
 	SecretVersionNumber int                                       `pulumi:"secretVersionNumber"`
 	// The URL of the Service Console for the Autonomous Database.
 	ServiceConsoleUrl string `pulumi:"serviceConsoleUrl"`
+	ShrinkAdbTrigger  int    `pulumi:"shrinkAdbTrigger"`
 	Source            string `pulumi:"source"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
 	SourceId string `pulumi:"sourceId"`
@@ -604,6 +606,7 @@ func (o LookupAutonomousDatabaseResultOutput) IsRemoteDataGuardEnabled() pulumi.
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsRemoteDataGuardEnabled }).(pulumi.BoolOutput)
 }
 
+// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 func (o LookupAutonomousDatabaseResultOutput) IsShrinkOnly() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsShrinkOnly }).(pulumi.BoolOutput)
 }
@@ -803,6 +806,10 @@ func (o LookupAutonomousDatabaseResultOutput) SecretVersionNumber() pulumi.IntOu
 // The URL of the Service Console for the Autonomous Database.
 func (o LookupAutonomousDatabaseResultOutput) ServiceConsoleUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.ServiceConsoleUrl }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousDatabaseResultOutput) ShrinkAdbTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.ShrinkAdbTrigger }).(pulumi.IntOutput)
 }
 
 func (o LookupAutonomousDatabaseResultOutput) Source() pulumi.StringOutput {

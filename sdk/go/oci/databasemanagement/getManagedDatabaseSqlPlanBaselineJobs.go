@@ -30,8 +30,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseSqlPlanBaselineJobs(ctx, &databasemanagement.GetManagedDatabaseSqlPlanBaselineJobsArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				Name:              pulumi.StringRef(_var.Managed_database_sql_plan_baseline_job_name),
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				Name:                 pulumi.StringRef(_var.Managed_database_sql_plan_baseline_job_name),
+//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_sql_plan_baseline_job_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -58,6 +59,8 @@ type GetManagedDatabaseSqlPlanBaselineJobsArgs struct {
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// A filter to return the SQL plan baseline jobs that match the name.
 	Name *string `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 }
 
 // A collection of values returned by getManagedDatabaseSqlPlanBaselineJobs.
@@ -67,7 +70,8 @@ type GetManagedDatabaseSqlPlanBaselineJobsResult struct {
 	Id                string `pulumi:"id"`
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// The name of the job.
-	Name *string `pulumi:"name"`
+	Name                 *string `pulumi:"name"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The list of sql_plan_baseline_job_collection.
 	SqlPlanBaselineJobCollections []GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection `pulumi:"sqlPlanBaselineJobCollections"`
 }
@@ -92,6 +96,8 @@ type GetManagedDatabaseSqlPlanBaselineJobsOutputArgs struct {
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 	// A filter to return the SQL plan baseline jobs that match the name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 }
 
 func (GetManagedDatabaseSqlPlanBaselineJobsOutputArgs) ElementType() reflect.Type {
@@ -131,6 +137,10 @@ func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) ManagedDatabaseId() p
 // The name of the job.
 func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 // The list of sql_plan_baseline_job_collection.

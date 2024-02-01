@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +29,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * 
      */
     private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings;
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential> databaseCredentials;
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo() {}
     /**
@@ -51,6 +57,13 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings() {
         return this.connectionStrings;
     }
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential> databaseCredentials() {
+        return this.databaseCredentials;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -64,12 +77,14 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         private String componentType;
         private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential> connectionCredentials;
         private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings;
+        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential> databaseCredentials;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.componentType = defaults.componentType;
     	      this.connectionCredentials = defaults.connectionCredentials;
     	      this.connectionStrings = defaults.connectionStrings;
+    	      this.databaseCredentials = defaults.databaseCredentials;
         }
 
         @CustomType.Setter
@@ -102,11 +117,23 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         public Builder connectionStrings(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
         }
+        @CustomType.Setter
+        public Builder databaseCredentials(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential> databaseCredentials) {
+            if (databaseCredentials == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo", "databaseCredentials");
+            }
+            this.databaseCredentials = databaseCredentials;
+            return this;
+        }
+        public Builder databaseCredentials(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential... databaseCredentials) {
+            return databaseCredentials(List.of(databaseCredentials));
+        }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo build() {
             final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo();
             _resultValue.componentType = componentType;
             _resultValue.connectionCredentials = connectionCredentials;
             _resultValue.connectionStrings = connectionStrings;
+            _resultValue.databaseCredentials = databaseCredentials;
             return _resultValue;
         }
     }

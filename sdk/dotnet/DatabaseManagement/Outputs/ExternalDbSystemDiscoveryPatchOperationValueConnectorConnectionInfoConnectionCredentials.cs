@@ -18,15 +18,15 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string? CredentialName;
         /// <summary>
-        /// The type of credential used to connect to the ASM instance.
+        /// The type of the credential for tablespace administration tasks.
         /// </summary>
         public readonly string CredentialType;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         /// </summary>
         public readonly string? PasswordSecretId;
         /// <summary>
-        /// The role of the user connecting to the ASM instance.
+        /// The role of the database user.
         /// </summary>
         public readonly string? Role;
         /// <summary>

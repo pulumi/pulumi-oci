@@ -23,7 +23,7 @@ class GetManagedDatabasesUserSystemPrivilegesResult:
     """
     A collection of values returned by getManagedDatabasesUserSystemPrivileges.
     """
-    def __init__(__self__, filters=None, id=None, managed_database_id=None, name=None, system_privilege_collections=None, user_name=None):
+    def __init__(__self__, filters=None, id=None, managed_database_id=None, name=None, opc_named_credential_id=None, system_privilege_collections=None, user_name=None):
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -36,6 +36,9 @@ class GetManagedDatabasesUserSystemPrivilegesResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if system_privilege_collections and not isinstance(system_privilege_collections, list):
             raise TypeError("Expected argument 'system_privilege_collections' to be a list")
         pulumi.set(__self__, "system_privilege_collections", system_privilege_collections)
@@ -70,6 +73,11 @@ class GetManagedDatabasesUserSystemPrivilegesResult:
         return pulumi.get(self, "name")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter(name="systemPrivilegeCollections")
     def system_privilege_collections(self) -> Sequence['outputs.GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionResult']:
         """
@@ -93,6 +101,7 @@ class AwaitableGetManagedDatabasesUserSystemPrivilegesResult(GetManagedDatabases
             id=self.id,
             managed_database_id=self.managed_database_id,
             name=self.name,
+            opc_named_credential_id=self.opc_named_credential_id,
             system_privilege_collections=self.system_privilege_collections,
             user_name=self.user_name)
 
@@ -100,6 +109,7 @@ class AwaitableGetManagedDatabasesUserSystemPrivilegesResult(GetManagedDatabases
 def get_managed_databases_user_system_privileges(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabasesUserSystemPrivilegesFilterArgs']]] = None,
                                                  managed_database_id: Optional[str] = None,
                                                  name: Optional[str] = None,
+                                                 opc_named_credential_id: Optional[str] = None,
                                                  user_name: Optional[str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabasesUserSystemPrivilegesResult:
     """
@@ -115,18 +125,21 @@ def get_managed_databases_user_system_privileges(filters: Optional[Sequence[pulu
 
     test_managed_databases_user_system_privileges = oci.DatabaseManagement.get_managed_databases_user_system_privileges(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_databases_user_system_privilege_name"])
+        name=var["managed_databases_user_system_privilege_name"],
+        opc_named_credential_id=var["managed_databases_user_system_privilege_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name: A filter to return only resources that match the entire name.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str user_name: The name of the user whose details are to be viewed.
     """
     __args__ = dict()
     __args__['filters'] = filters
     __args__['managedDatabaseId'] = managed_database_id
     __args__['name'] = name
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['userName'] = user_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges', __args__, opts=opts, typ=GetManagedDatabasesUserSystemPrivilegesResult).value
@@ -136,6 +149,7 @@ def get_managed_databases_user_system_privileges(filters: Optional[Sequence[pulu
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name=pulumi.get(__ret__, 'name'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         system_privilege_collections=pulumi.get(__ret__, 'system_privilege_collections'),
         user_name=pulumi.get(__ret__, 'user_name'))
 
@@ -144,6 +158,7 @@ def get_managed_databases_user_system_privileges(filters: Optional[Sequence[pulu
 def get_managed_databases_user_system_privileges_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabasesUserSystemPrivilegesFilterArgs']]]]] = None,
                                                         managed_database_id: Optional[pulumi.Input[str]] = None,
                                                         name: Optional[pulumi.Input[Optional[str]]] = None,
+                                                        opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                         user_name: Optional[pulumi.Input[str]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesUserSystemPrivilegesResult]:
     """
@@ -159,12 +174,14 @@ def get_managed_databases_user_system_privileges_output(filters: Optional[pulumi
 
     test_managed_databases_user_system_privileges = oci.DatabaseManagement.get_managed_databases_user_system_privileges(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_databases_user_system_privilege_name"])
+        name=var["managed_databases_user_system_privilege_name"],
+        opc_named_credential_id=var["managed_databases_user_system_privilege_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name: A filter to return only resources that match the entire name.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str user_name: The name of the user whose details are to be viewed.
     """
     ...

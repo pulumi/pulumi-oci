@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *     endExecId: oci_database_management_end_exec.test_end_exec.id,
  *     findingFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
  *     indexHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
+ *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id,
  *     searchPeriod: _var.managed_database_sql_tuning_advisor_tasks_finding_search_period,
  *     statsHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
  * });
@@ -39,6 +40,7 @@ export function getManagedDatabaseSqlTuningAdvisorTasksFindings(args: GetManaged
         "findingFilter": args.findingFilter,
         "indexHashFilter": args.indexHashFilter,
         "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "searchPeriod": args.searchPeriod,
         "sqlTuningAdvisorTaskId": args.sqlTuningAdvisorTaskId,
         "statsHashFilter": args.statsHashFilter,
@@ -71,6 +73,10 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs {
      */
     managedDatabaseId: string;
     /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
+    /**
      * The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
      */
     searchPeriod?: string;
@@ -98,6 +104,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
     readonly id: string;
     readonly indexHashFilter?: string;
     readonly managedDatabaseId: string;
+    readonly opcNamedCredentialId?: string;
     readonly searchPeriod?: string;
     /**
      * The list of sql_tuning_advisor_task_finding_collection.
@@ -127,6 +134,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
  *     endExecId: oci_database_management_end_exec.test_end_exec.id,
  *     findingFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
  *     indexHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
+ *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id,
  *     searchPeriod: _var.managed_database_sql_tuning_advisor_tasks_finding_search_period,
  *     statsHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
  * });
@@ -161,6 +169,10 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
      */

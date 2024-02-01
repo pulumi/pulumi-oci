@@ -18,7 +18,7 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// </summary>
         public readonly string Example;
         /// <summary>
-        /// Language token of the required label
+        /// Value
         /// </summary>
         public readonly string Value;
 

@@ -22,7 +22,7 @@ class GetManagedDatabaseSqlPlanBaselineConfigurationResult:
     """
     A collection of values returned by getManagedDatabaseSqlPlanBaselineConfiguration.
     """
-    def __init__(__self__, auto_capture_filters=None, auto_spm_evolve_task_parameters=None, id=None, is_auto_spm_evolve_task_enabled=None, is_automatic_initial_plan_capture_enabled=None, is_high_frequency_auto_spm_evolve_task_enabled=None, is_sql_plan_baselines_usage_enabled=None, managed_database_id=None, plan_retention_weeks=None, space_budget_mb=None, space_budget_percent=None, space_used_mb=None):
+    def __init__(__self__, auto_capture_filters=None, auto_spm_evolve_task_parameters=None, id=None, is_auto_spm_evolve_task_enabled=None, is_automatic_initial_plan_capture_enabled=None, is_high_frequency_auto_spm_evolve_task_enabled=None, is_sql_plan_baselines_usage_enabled=None, managed_database_id=None, opc_named_credential_id=None, plan_retention_weeks=None, space_budget_mb=None, space_budget_percent=None, space_used_mb=None):
         if auto_capture_filters and not isinstance(auto_capture_filters, list):
             raise TypeError("Expected argument 'auto_capture_filters' to be a list")
         pulumi.set(__self__, "auto_capture_filters", auto_capture_filters)
@@ -47,6 +47,9 @@ class GetManagedDatabaseSqlPlanBaselineConfigurationResult:
         if managed_database_id and not isinstance(managed_database_id, str):
             raise TypeError("Expected argument 'managed_database_id' to be a str")
         pulumi.set(__self__, "managed_database_id", managed_database_id)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if plan_retention_weeks and not isinstance(plan_retention_weeks, int):
             raise TypeError("Expected argument 'plan_retention_weeks' to be a int")
         pulumi.set(__self__, "plan_retention_weeks", plan_retention_weeks)
@@ -122,6 +125,11 @@ class GetManagedDatabaseSqlPlanBaselineConfigurationResult:
         return pulumi.get(self, "managed_database_id")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter(name="planRetentionWeeks")
     def plan_retention_weeks(self) -> int:
         """
@@ -168,6 +176,7 @@ class AwaitableGetManagedDatabaseSqlPlanBaselineConfigurationResult(GetManagedDa
             is_high_frequency_auto_spm_evolve_task_enabled=self.is_high_frequency_auto_spm_evolve_task_enabled,
             is_sql_plan_baselines_usage_enabled=self.is_sql_plan_baselines_usage_enabled,
             managed_database_id=self.managed_database_id,
+            opc_named_credential_id=self.opc_named_credential_id,
             plan_retention_weeks=self.plan_retention_weeks,
             space_budget_mb=self.space_budget_mb,
             space_budget_percent=self.space_budget_percent,
@@ -175,6 +184,7 @@ class AwaitableGetManagedDatabaseSqlPlanBaselineConfigurationResult(GetManagedDa
 
 
 def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Optional[str] = None,
+                                                         opc_named_credential_id: Optional[str] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlPlanBaselineConfigurationResult:
     """
     This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
@@ -189,14 +199,17 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
+    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        opc_named_credential_id=var["managed_database_sql_plan_baseline_configuration_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration', __args__, opts=opts, typ=GetManagedDatabaseSqlPlanBaselineConfigurationResult).value
 
@@ -209,6 +222,7 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
         is_high_frequency_auto_spm_evolve_task_enabled=pulumi.get(__ret__, 'is_high_frequency_auto_spm_evolve_task_enabled'),
         is_sql_plan_baselines_usage_enabled=pulumi.get(__ret__, 'is_sql_plan_baselines_usage_enabled'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         plan_retention_weeks=pulumi.get(__ret__, 'plan_retention_weeks'),
         space_budget_mb=pulumi.get(__ret__, 'space_budget_mb'),
         space_budget_percent=pulumi.get(__ret__, 'space_budget_percent'),
@@ -217,6 +231,7 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
 
 @_utilities.lift_output_func(get_managed_database_sql_plan_baseline_configuration)
 def get_managed_database_sql_plan_baseline_configuration_output(managed_database_id: Optional[pulumi.Input[str]] = None,
+                                                                opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselineConfigurationResult]:
     """
     This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
@@ -231,10 +246,12 @@ def get_managed_database_sql_plan_baseline_configuration_output(managed_database
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
+    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        opc_named_credential_id=var["managed_database_sql_plan_baseline_configuration_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     """
     ...

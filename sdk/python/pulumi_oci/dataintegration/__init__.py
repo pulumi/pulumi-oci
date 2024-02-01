@@ -7,6 +7,8 @@ import typing
 # Export this package's modules as members:
 from .get_workspace import *
 from .get_workspace_application import *
+from .get_workspace_application_patch import *
+from .get_workspace_application_patches import *
 from .get_workspace_applications import *
 from .get_workspace_export_request import *
 from .get_workspace_export_requests import *
@@ -19,6 +21,7 @@ from .get_workspace_projects import *
 from .get_workspaces import *
 from .workspace import *
 from .workspace_application import *
+from .workspace_application_patch import *
 from .workspace_export_request import *
 from .workspace_folder import *
 from .workspace_import_request import *

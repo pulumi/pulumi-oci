@@ -32,6 +32,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testManagedDatabaseCursorCacheStatements = Oci.DatabaseManagement.GetManagedDatabaseCursorCacheStatements.Invoke(new()
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         OpcNamedCredentialId = @var.Managed_database_cursor_cache_statement_opc_named_credential_id,
         ///         SqlText = @var.Managed_database_cursor_cache_statement_sql_text,
         ///     });
         /// 
@@ -64,6 +65,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testManagedDatabaseCursorCacheStatements = Oci.DatabaseManagement.GetManagedDatabaseCursorCacheStatements.Invoke(new()
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         OpcNamedCredentialId = @var.Managed_database_cursor_cache_statement_opc_named_credential_id,
         ///         SqlText = @var.Managed_database_cursor_cache_statement_sql_text,
         ///     });
         /// 
@@ -97,6 +99,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public string ManagedDatabaseId { get; set; } = null!;
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
         /// </summary>
         [Input("sqlText")]
@@ -128,6 +136,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string> ManagedDatabaseId { get; set; } = null!;
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
         /// </summary>
         [Input("sqlText")]
@@ -154,6 +168,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public readonly string Id;
         public readonly int? Limit;
         public readonly string ManagedDatabaseId;
+        public readonly string? OpcNamedCredentialId;
         /// <summary>
         /// The first thousand characters of the SQL text.
         /// </summary>
@@ -171,6 +186,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string managedDatabaseId,
 
+            string? opcNamedCredentialId,
+
             string? sqlText)
         {
             CursorCacheStatementCollections = cursorCacheStatementCollections;
@@ -178,6 +195,7 @@ namespace Pulumi.Oci.DatabaseManagement
             Id = id;
             Limit = limit;
             ManagedDatabaseId = managedDatabaseId;
+            OpcNamedCredentialId = opcNamedCredentialId;
             SqlText = sqlText;
         }
     }

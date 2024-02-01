@@ -30,7 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalAsmDiskGroups(ctx, &databasemanagement.GetExternalAsmDiskGroupsArgs{
-//				ExternalAsmId: oci_database_management_external_asm.Test_external_asm.Id,
+//				ExternalAsmId:        oci_database_management_external_asm.Test_external_asm.Id,
+//				OpcNamedCredentialId: pulumi.StringRef(_var.External_asm_disk_group_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -55,6 +56,8 @@ type GetExternalAsmDiskGroupsArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
 	ExternalAsmId string                           `pulumi:"externalAsmId"`
 	Filters       []GetExternalAsmDiskGroupsFilter `pulumi:"filters"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 }
 
 // A collection of values returned by getExternalAsmDiskGroups.
@@ -64,7 +67,8 @@ type GetExternalAsmDiskGroupsResult struct {
 	ExternalAsmId                   string                                                   `pulumi:"externalAsmId"`
 	Filters                         []GetExternalAsmDiskGroupsFilter                         `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                   string  `pulumi:"id"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 }
 
 func GetExternalAsmDiskGroupsOutput(ctx *pulumi.Context, args GetExternalAsmDiskGroupsOutputArgs, opts ...pulumi.InvokeOption) GetExternalAsmDiskGroupsResultOutput {
@@ -85,6 +89,8 @@ type GetExternalAsmDiskGroupsOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
 	ExternalAsmId pulumi.StringInput                       `pulumi:"externalAsmId"`
 	Filters       GetExternalAsmDiskGroupsFilterArrayInput `pulumi:"filters"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 }
 
 func (GetExternalAsmDiskGroupsOutputArgs) ElementType() reflect.Type {
@@ -124,6 +130,10 @@ func (o GetExternalAsmDiskGroupsResultOutput) Filters() GetExternalAsmDiskGroups
 // The provider-assigned unique ID for this managed resource.
 func (o GetExternalAsmDiskGroupsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalAsmDiskGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetExternalAsmDiskGroupsResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmDiskGroupsResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

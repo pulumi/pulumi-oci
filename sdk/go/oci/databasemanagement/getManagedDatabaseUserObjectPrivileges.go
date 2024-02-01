@@ -30,9 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseUserObjectPrivileges(ctx, &databasemanagement.GetManagedDatabaseUserObjectPrivilegesArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				UserName:          oci_identity_user.Test_user.Name,
-//				Name:              pulumi.StringRef(_var.Managed_database_user_object_privilege_name),
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				UserName:             oci_identity_user.Test_user.Name,
+//				Name:                 pulumi.StringRef(_var.Managed_database_user_object_privilege_name),
+//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_user_object_privilege_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,6 +60,8 @@ type GetManagedDatabaseUserObjectPrivilegesArgs struct {
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// A filter to return only resources that match the entire name.
 	Name *string `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The name of the user whose details are to be viewed.
 	UserName string `pulumi:"userName"`
 }
@@ -73,6 +76,7 @@ type GetManagedDatabaseUserObjectPrivilegesResult struct {
 	Name *string `pulumi:"name"`
 	// The list of object_privilege_collection.
 	ObjectPrivilegeCollections []GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection `pulumi:"objectPrivilegeCollections"`
+	OpcNamedCredentialId       *string                                                           `pulumi:"opcNamedCredentialId"`
 	UserName                   string                                                            `pulumi:"userName"`
 }
 
@@ -96,6 +100,8 @@ type GetManagedDatabaseUserObjectPrivilegesOutputArgs struct {
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 	// A filter to return only resources that match the entire name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The name of the user whose details are to be viewed.
 	UserName pulumi.StringInput `pulumi:"userName"`
 }
@@ -144,6 +150,10 @@ func (o GetManagedDatabaseUserObjectPrivilegesResultOutput) ObjectPrivilegeColle
 	return o.ApplyT(func(v GetManagedDatabaseUserObjectPrivilegesResult) []GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection {
 		return v.ObjectPrivilegeCollections
 	}).(GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArrayOutput)
+}
+
+func (o GetManagedDatabaseUserObjectPrivilegesResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserObjectPrivilegesResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseUserObjectPrivilegesResultOutput) UserName() pulumi.StringOutput {

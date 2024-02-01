@@ -10,6 +10,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmDiskGroupsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -26,6 +27,7 @@ public final class GetExternalAsmDiskGroupsResult {
      * 
      */
     private String id;
+    private @Nullable String opcNamedCredentialId;
 
     private GetExternalAsmDiskGroupsResult() {}
     /**
@@ -48,6 +50,9 @@ public final class GetExternalAsmDiskGroupsResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -62,6 +67,7 @@ public final class GetExternalAsmDiskGroupsResult {
         private String externalAsmId;
         private @Nullable List<GetExternalAsmDiskGroupsFilter> filters;
         private String id;
+        private @Nullable String opcNamedCredentialId;
         public Builder() {}
         public Builder(GetExternalAsmDiskGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,6 +75,7 @@ public final class GetExternalAsmDiskGroupsResult {
     	      this.externalAsmId = defaults.externalAsmId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
         }
 
         @CustomType.Setter
@@ -107,12 +114,19 @@ public final class GetExternalAsmDiskGroupsResult {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
         public GetExternalAsmDiskGroupsResult build() {
             final var _resultValue = new GetExternalAsmDiskGroupsResult();
             _resultValue.externalAsmDiskGroupCollections = externalAsmDiskGroupCollections;
             _resultValue.externalAsmId = externalAsmId;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             return _resultValue;
         }
     }

@@ -10,6 +10,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvi
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult {
@@ -25,6 +27,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
      * 
      */
     private List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The statistics of a SQL execution plan.
      * 
@@ -54,6 +57,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
     public List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds() {
         return this.modifieds;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return The statistics of a SQL execution plan.
      * 
@@ -81,6 +87,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
         private String id;
         private String managedDatabaseId;
         private List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds;
+        private @Nullable String opcNamedCredentialId;
         private List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals;
         private String sqlObjectId;
         private String sqlTuningAdvisorTaskId;
@@ -91,6 +98,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.modifieds = defaults.modifieds;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.originals = defaults.originals;
     	      this.sqlObjectId = defaults.sqlObjectId;
     	      this.sqlTuningAdvisorTaskId = defaults.sqlTuningAdvisorTaskId;
@@ -132,6 +140,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
             return modifieds(List.of(modifieds));
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder originals(List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals) {
             if (originals == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult", "originals");
@@ -164,6 +178,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.modifieds = modifieds;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.originals = originals;
             _resultValue.sqlObjectId = sqlObjectId;
             _resultValue.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;

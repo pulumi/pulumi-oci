@@ -33,6 +33,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         NameContains = @var.Managed_database_sql_tuning_set_name_contains,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_set_opc_named_credential_id,
         ///         Owner = @var.Managed_database_sql_tuning_set_owner,
         ///     });
         /// 
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         NameContains = @var.Managed_database_sql_tuning_set_name_contains,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_set_opc_named_credential_id,
         ///         Owner = @var.Managed_database_sql_tuning_set_owner,
         ///     });
         /// 
@@ -102,6 +104,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public string? NameContains { get; set; }
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// The owner of the SQL tuning set.
         /// </summary>
         [Input("owner")]
@@ -136,6 +144,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? NameContains { get; set; }
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// The owner of the SQL tuning set.
         /// </summary>
         [Input("owner")]
@@ -161,6 +175,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string ManagedDatabaseId;
         public readonly string? NameContains;
+        public readonly string? OpcNamedCredentialId;
         /// <summary>
         /// The owner of the SQL tuning set.
         /// </summary>
@@ -180,6 +195,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string? nameContains,
 
+            string? opcNamedCredentialId,
+
             string? owner,
 
             ImmutableArray<Outputs.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionResult> sqlTuningSetCollections)
@@ -188,6 +205,7 @@ namespace Pulumi.Oci.DatabaseManagement
             Id = id;
             ManagedDatabaseId = managedDatabaseId;
             NameContains = nameContains;
+            OpcNamedCredentialId = opcNamedCredentialId;
             Owner = owner;
             SqlTuningSetCollections = sqlTuningSetCollections;
         }

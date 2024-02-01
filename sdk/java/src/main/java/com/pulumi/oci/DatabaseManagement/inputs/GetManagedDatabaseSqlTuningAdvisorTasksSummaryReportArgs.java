@@ -62,6 +62,21 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs exte
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable Output<String> opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<Output<String>> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
      * 
      */
@@ -127,6 +142,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs exte
         this.beginExecIdGreaterThanOrEqualTo = $.beginExecIdGreaterThanOrEqualTo;
         this.endExecIdLessThanOrEqualTo = $.endExecIdLessThanOrEqualTo;
         this.managedDatabaseId = $.managedDatabaseId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.searchPeriod = $.searchPeriod;
         this.sqlTuningAdvisorTaskId = $.sqlTuningAdvisorTaskId;
         this.timeGreaterThanOrEqualTo = $.timeGreaterThanOrEqualTo;
@@ -212,6 +228,27 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs exte
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             return managedDatabaseId(Output.of(managedDatabaseId));
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable Output<String> opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            return opcNamedCredentialId(Output.of(opcNamedCredentialId));
         }
 
         /**

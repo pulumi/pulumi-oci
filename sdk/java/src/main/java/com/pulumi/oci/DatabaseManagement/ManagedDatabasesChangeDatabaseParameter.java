@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterState;
 import com.pulumi.oci.DatabaseManagement.outputs.ManagedDatabasesChangeDatabaseParameterCredentials;
+import com.pulumi.oci.DatabaseManagement.outputs.ManagedDatabasesChangeDatabaseParameterDatabaseCredential;
 import com.pulumi.oci.DatabaseManagement.outputs.ManagedDatabasesChangeDatabaseParameterParameter;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
@@ -42,8 +43,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.DatabaseManagement.ManagedDatabasesChangeDatabaseParameter;
  * import com.pulumi.oci.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterArgs;
- * import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterCredentialsArgs;
  * import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterParameterArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterCredentialsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -58,12 +60,6 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedDatabasesChangeDatabaseParameter = new ManagedDatabasesChangeDatabaseParameter(&#34;testManagedDatabasesChangeDatabaseParameter&#34;, ManagedDatabasesChangeDatabaseParameterArgs.builder()        
- *             .credentials(ManagedDatabasesChangeDatabaseParameterCredentialsArgs.builder()
- *                 .password(var_.managed_databases_change_database_parameter_credentials_password())
- *                 .role(var_.managed_databases_change_database_parameter_credentials_role())
- *                 .secretId(oci_vault_secret.test_secret().id())
- *                 .userName(oci_identity_user.test_user().name())
- *                 .build())
  *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
  *             .parameters(ManagedDatabasesChangeDatabaseParameterParameterArgs.builder()
  *                 .name(var_.managed_databases_change_database_parameter_parameters_name())
@@ -71,6 +67,20 @@ import javax.annotation.Nullable;
  *                 .updateComment(var_.managed_databases_change_database_parameter_parameters_update_comment())
  *                 .build())
  *             .scope(var_.managed_databases_change_database_parameter_scope())
+ *             .credentials(ManagedDatabasesChangeDatabaseParameterCredentialsArgs.builder()
+ *                 .password(var_.managed_databases_change_database_parameter_credentials_password())
+ *                 .role(var_.managed_databases_change_database_parameter_credentials_role())
+ *                 .secretId(oci_vault_secret.test_secret().id())
+ *                 .userName(oci_identity_user.test_user().name())
+ *                 .build())
+ *             .databaseCredential(ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs.builder()
+ *                 .credentialType(var_.managed_databases_change_database_parameter_database_credential_credential_type())
+ *                 .namedCredentialId(oci_database_management_named_credential.test_named_credential().id())
+ *                 .password(var_.managed_databases_change_database_parameter_database_credential_password())
+ *                 .passwordSecretId(oci_vault_secret.test_secret().id())
+ *                 .role(var_.managed_databases_change_database_parameter_database_credential_role())
+ *                 .username(var_.managed_databases_change_database_parameter_database_credential_username())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -85,18 +95,32 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter")
 public class ManagedDatabasesChangeDatabaseParameter extends com.pulumi.resources.CustomResource {
     /**
-     * The database credentials used to perform management activity.
+     * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      * 
      */
     @Export(name="credentials", refs={ManagedDatabasesChangeDatabaseParameterCredentials.class}, tree="[0]")
     private Output<ManagedDatabasesChangeDatabaseParameterCredentials> credentials;
 
     /**
-     * @return The database credentials used to perform management activity.
+     * @return The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      * 
      */
     public Output<ManagedDatabasesChangeDatabaseParameterCredentials> credentials() {
         return this.credentials;
+    }
+    /**
+     * The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    @Export(name="databaseCredential", refs={ManagedDatabasesChangeDatabaseParameterDatabaseCredential.class}, tree="[0]")
+    private Output<ManagedDatabasesChangeDatabaseParameterDatabaseCredential> databaseCredential;
+
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    public Output<ManagedDatabasesChangeDatabaseParameterDatabaseCredential> databaseCredential() {
+        return this.databaseCredential;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

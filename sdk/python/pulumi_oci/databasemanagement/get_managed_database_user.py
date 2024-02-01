@@ -21,7 +21,7 @@ class GetManagedDatabaseUserResult:
     """
     A collection of values returned by getManagedDatabaseUser.
     """
-    def __init__(__self__, all_shared=None, authentication=None, common=None, consumer_group=None, default_collation=None, default_tablespace=None, editions_enabled=None, external_name=None, external_shared=None, id=None, implicit=None, inherited=None, local_temp_tablespace=None, managed_database_id=None, name=None, oracle_maintained=None, password_versions=None, profile=None, proxy_connect=None, status=None, temp_tablespace=None, time_created=None, time_expiring=None, time_last_login=None, time_locked=None, time_password_changed=None, user_name=None):
+    def __init__(__self__, all_shared=None, authentication=None, common=None, consumer_group=None, default_collation=None, default_tablespace=None, editions_enabled=None, external_name=None, external_shared=None, id=None, implicit=None, inherited=None, local_temp_tablespace=None, managed_database_id=None, name=None, opc_named_credential_id=None, oracle_maintained=None, password_versions=None, profile=None, proxy_connect=None, status=None, temp_tablespace=None, time_created=None, time_expiring=None, time_last_login=None, time_locked=None, time_password_changed=None, user_name=None):
         if all_shared and not isinstance(all_shared, str):
             raise TypeError("Expected argument 'all_shared' to be a str")
         pulumi.set(__self__, "all_shared", all_shared)
@@ -67,6 +67,9 @@ class GetManagedDatabaseUserResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if oracle_maintained and not isinstance(oracle_maintained, str):
             raise TypeError("Expected argument 'oracle_maintained' to be a str")
         pulumi.set(__self__, "oracle_maintained", oracle_maintained)
@@ -222,6 +225,11 @@ class GetManagedDatabaseUserResult:
         return pulumi.get(self, "name")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter(name="oracleMaintained")
     def oracle_maintained(self) -> str:
         """
@@ -336,6 +344,7 @@ class AwaitableGetManagedDatabaseUserResult(GetManagedDatabaseUserResult):
             local_temp_tablespace=self.local_temp_tablespace,
             managed_database_id=self.managed_database_id,
             name=self.name,
+            opc_named_credential_id=self.opc_named_credential_id,
             oracle_maintained=self.oracle_maintained,
             password_versions=self.password_versions,
             profile=self.profile,
@@ -351,6 +360,7 @@ class AwaitableGetManagedDatabaseUserResult(GetManagedDatabaseUserResult):
 
 
 def get_managed_database_user(managed_database_id: Optional[str] = None,
+                              opc_named_credential_id: Optional[str] = None,
                               user_name: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseUserResult:
     """
@@ -365,15 +375,18 @@ def get_managed_database_user(managed_database_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"])
+        user_name=oci_identity_user["test_user"]["name"],
+        opc_named_credential_id=var["managed_database_user_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str user_name: The name of the user whose details are to be viewed.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['userName'] = user_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseUser:getManagedDatabaseUser', __args__, opts=opts, typ=GetManagedDatabaseUserResult).value
@@ -394,6 +407,7 @@ def get_managed_database_user(managed_database_id: Optional[str] = None,
         local_temp_tablespace=pulumi.get(__ret__, 'local_temp_tablespace'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name=pulumi.get(__ret__, 'name'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         oracle_maintained=pulumi.get(__ret__, 'oracle_maintained'),
         password_versions=pulumi.get(__ret__, 'password_versions'),
         profile=pulumi.get(__ret__, 'profile'),
@@ -410,6 +424,7 @@ def get_managed_database_user(managed_database_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_managed_database_user)
 def get_managed_database_user_output(managed_database_id: Optional[pulumi.Input[str]] = None,
+                                     opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      user_name: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseUserResult]:
     """
@@ -424,11 +439,13 @@ def get_managed_database_user_output(managed_database_id: Optional[pulumi.Input[
     import pulumi_oci as oci
 
     test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"])
+        user_name=oci_identity_user["test_user"]["name"],
+        opc_named_credential_id=var["managed_database_user_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str user_name: The name of the user whose details are to be viewed.
     """
     ...

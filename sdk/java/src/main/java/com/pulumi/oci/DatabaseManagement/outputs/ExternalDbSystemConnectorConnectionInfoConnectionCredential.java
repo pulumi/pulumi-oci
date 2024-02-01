@@ -17,17 +17,17 @@ public final class ExternalDbSystemConnectorConnectionInfoConnectionCredential {
      */
     private @Nullable String credentialName;
     /**
-     * @return The type of credential used to connect to the ASM instance.
+     * @return The type of the credential for tablespace administration tasks.
      * 
      */
     private @Nullable String credentialType;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
      * 
      */
     private @Nullable String passwordSecretId;
     /**
-     * @return The role of the user connecting to the ASM instance.
+     * @return The role of the database user.
      * 
      */
     private @Nullable String role;
@@ -51,21 +51,21 @@ public final class ExternalDbSystemConnectorConnectionInfoConnectionCredential {
         return Optional.ofNullable(this.credentialName);
     }
     /**
-     * @return The type of credential used to connect to the ASM instance.
+     * @return The type of the credential for tablespace administration tasks.
      * 
      */
     public Optional<String> credentialType() {
         return Optional.ofNullable(this.credentialType);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
      * 
      */
     public Optional<String> passwordSecretId() {
         return Optional.ofNullable(this.passwordSecretId);
     }
     /**
-     * @return The role of the user connecting to the ASM instance.
+     * @return The role of the database user.
      * 
      */
     public Optional<String> role() {

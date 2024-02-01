@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult
     {
         /// <summary>
+        /// This field controls if the data asset references will be included during import.
+        /// </summary>
+        public readonly bool AreDataAssetReferencesIncluded;
+        /// <summary>
         /// The name of the Object Storage Bucket where the objects will be imported from
         /// </summary>
         public readonly string Bucket;
@@ -80,6 +84,8 @@ namespace Pulumi.Oci.DataIntegration.Outputs
 
         [OutputConstructor]
         private GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult(
+            bool areDataAssetReferencesIncluded,
+
             string bucket,
 
             string createdBy,
@@ -112,6 +118,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
 
             string workspaceId)
         {
+            AreDataAssetReferencesIncluded = areDataAssetReferencesIncluded;
             Bucket = bucket;
             CreatedBy = createdBy;
             ErrorMessages = errorMessages;

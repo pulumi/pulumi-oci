@@ -11,6 +11,11 @@ import java.util.Objects;
 @CustomType
 public final class GetSubscriptionTaxInfo {
     /**
+     * @return Companies&#39; GIRO code
+     * 
+     */
+    private String giro;
+    /**
      * @return Tax exemption reason code.
      * 
      */
@@ -37,6 +42,13 @@ public final class GetSubscriptionTaxInfo {
     private String taxRegNumber;
 
     private GetSubscriptionTaxInfo() {}
+    /**
+     * @return Companies&#39; GIRO code
+     * 
+     */
+    public String giro() {
+        return this.giro;
+    }
     /**
      * @return Tax exemption reason code.
      * 
@@ -82,6 +94,7 @@ public final class GetSubscriptionTaxInfo {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String giro;
         private String noTaxReasonCode;
         private String noTaxReasonCodeDetails;
         private String taxCnpj;
@@ -90,6 +103,7 @@ public final class GetSubscriptionTaxInfo {
         public Builder() {}
         public Builder(GetSubscriptionTaxInfo defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.giro = defaults.giro;
     	      this.noTaxReasonCode = defaults.noTaxReasonCode;
     	      this.noTaxReasonCodeDetails = defaults.noTaxReasonCodeDetails;
     	      this.taxCnpj = defaults.taxCnpj;
@@ -97,6 +111,14 @@ public final class GetSubscriptionTaxInfo {
     	      this.taxRegNumber = defaults.taxRegNumber;
         }
 
+        @CustomType.Setter
+        public Builder giro(String giro) {
+            if (giro == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionTaxInfo", "giro");
+            }
+            this.giro = giro;
+            return this;
+        }
         @CustomType.Setter
         public Builder noTaxReasonCode(String noTaxReasonCode) {
             if (noTaxReasonCode == null) {
@@ -139,6 +161,7 @@ public final class GetSubscriptionTaxInfo {
         }
         public GetSubscriptionTaxInfo build() {
             final var _resultValue = new GetSubscriptionTaxInfo();
+            _resultValue.giro = giro;
             _resultValue.noTaxReasonCode = noTaxReasonCode;
             _resultValue.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
             _resultValue.taxCnpj = taxCnpj;

@@ -30,8 +30,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseUsers(ctx, &databasemanagement.GetManagedDatabaseUsersArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				Name:              pulumi.StringRef(_var.Managed_database_user_name),
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				Name:                 pulumi.StringRef(_var.Managed_database_user_name),
+//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_user_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -58,6 +59,8 @@ type GetManagedDatabaseUsersArgs struct {
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// A filter to return only resources that match the entire name.
 	Name *string `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 }
 
 // A collection of values returned by getManagedDatabaseUsers.
@@ -67,7 +70,8 @@ type GetManagedDatabaseUsersResult struct {
 	Id                string `pulumi:"id"`
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// The name of the User.
-	Name *string `pulumi:"name"`
+	Name                 *string `pulumi:"name"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The list of user_collection.
 	UserCollections []GetManagedDatabaseUsersUserCollection `pulumi:"userCollections"`
 }
@@ -92,6 +96,8 @@ type GetManagedDatabaseUsersOutputArgs struct {
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 	// A filter to return only resources that match the entire name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 }
 
 func (GetManagedDatabaseUsersOutputArgs) ElementType() reflect.Type {
@@ -129,6 +135,10 @@ func (o GetManagedDatabaseUsersResultOutput) ManagedDatabaseId() pulumi.StringOu
 // The name of the User.
 func (o GetManagedDatabaseUsersResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseUsersResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetManagedDatabaseUsersResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUsersResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 // The list of user_collection.

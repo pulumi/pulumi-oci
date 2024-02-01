@@ -10,26 +10,6 @@ import * as utilities from "../utilities";
  * This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
  *
  * Lists the SQL plan baselines for the specified Managed Database.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testManagedDatabaseSqlPlanBaselines = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselines({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     isAccepted: _var.managed_database_sql_plan_baseline_is_accepted,
- *     isAdaptive: _var.managed_database_sql_plan_baseline_is_adaptive,
- *     isEnabled: _var.managed_database_sql_plan_baseline_is_enabled,
- *     isFixed: _var.managed_database_sql_plan_baseline_is_fixed,
- *     isReproduced: _var.managed_database_sql_plan_baseline_is_reproduced,
- *     origin: _var.managed_database_sql_plan_baseline_origin,
- *     planName: _var.managed_database_sql_plan_baseline_plan_name,
- *     sqlHandle: _var.managed_database_sql_plan_baseline_sql_handle,
- *     sqlText: _var.managed_database_sql_plan_baseline_sql_text,
- * });
- * ```
  */
 export function getManagedDatabaseSqlPlanBaselines(args: GetManagedDatabaseSqlPlanBaselinesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlPlanBaselinesResult> {
 
@@ -38,11 +18,14 @@ export function getManagedDatabaseSqlPlanBaselines(args: GetManagedDatabaseSqlPl
         "filters": args.filters,
         "isAccepted": args.isAccepted,
         "isAdaptive": args.isAdaptive,
+        "isAutoPurged": args.isAutoPurged,
         "isEnabled": args.isEnabled,
         "isFixed": args.isFixed,
+        "isNeverExecuted": args.isNeverExecuted,
         "isReproduced": args.isReproduced,
         "limit": args.limit,
         "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "origin": args.origin,
         "planName": args.planName,
         "sqlHandle": args.sqlHandle,
@@ -64,6 +47,10 @@ export interface GetManagedDatabaseSqlPlanBaselinesArgs {
      */
     isAdaptive?: boolean;
     /**
+     * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
+     */
+    isAutoPurged?: boolean;
+    /**
      * A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
      */
     isEnabled?: boolean;
@@ -71,6 +58,10 @@ export interface GetManagedDatabaseSqlPlanBaselinesArgs {
      * A filter to return only SQL plan baselines that are either fixed or not fixed. By default, all SQL plan baselines are returned.
      */
     isFixed?: boolean;
+    /**
+     * A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
+     */
+    isNeverExecuted?: boolean;
     /**
      * A filter to return only SQL plan baselines that were either reproduced or not reproduced by the optimizer. By default, all SQL plan baselines are returned.
      */
@@ -80,6 +71,10 @@ export interface GetManagedDatabaseSqlPlanBaselinesArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
     /**
      * A filter to return all the SQL plan baselines that match the origin.
      */
@@ -109,11 +104,14 @@ export interface GetManagedDatabaseSqlPlanBaselinesResult {
     readonly id: string;
     readonly isAccepted?: boolean;
     readonly isAdaptive?: boolean;
+    readonly isAutoPurged?: boolean;
     readonly isEnabled?: boolean;
     readonly isFixed?: boolean;
+    readonly isNeverExecuted?: boolean;
     readonly isReproduced?: boolean;
     readonly limit?: number;
     readonly managedDatabaseId: string;
+    readonly opcNamedCredentialId?: string;
     /**
      * The origin of the SQL plan baseline.
      */
@@ -139,26 +137,6 @@ export interface GetManagedDatabaseSqlPlanBaselinesResult {
  * This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
  *
  * Lists the SQL plan baselines for the specified Managed Database.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testManagedDatabaseSqlPlanBaselines = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselines({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     isAccepted: _var.managed_database_sql_plan_baseline_is_accepted,
- *     isAdaptive: _var.managed_database_sql_plan_baseline_is_adaptive,
- *     isEnabled: _var.managed_database_sql_plan_baseline_is_enabled,
- *     isFixed: _var.managed_database_sql_plan_baseline_is_fixed,
- *     isReproduced: _var.managed_database_sql_plan_baseline_is_reproduced,
- *     origin: _var.managed_database_sql_plan_baseline_origin,
- *     planName: _var.managed_database_sql_plan_baseline_plan_name,
- *     sqlHandle: _var.managed_database_sql_plan_baseline_sql_handle,
- *     sqlText: _var.managed_database_sql_plan_baseline_sql_text,
- * });
- * ```
  */
 export function getManagedDatabaseSqlPlanBaselinesOutput(args: GetManagedDatabaseSqlPlanBaselinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselinesResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlPlanBaselines(a, opts))
@@ -178,6 +156,10 @@ export interface GetManagedDatabaseSqlPlanBaselinesOutputArgs {
      */
     isAdaptive?: pulumi.Input<boolean>;
     /**
+     * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
+     */
+    isAutoPurged?: pulumi.Input<boolean>;
+    /**
      * A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
      */
     isEnabled?: pulumi.Input<boolean>;
@@ -185,6 +167,10 @@ export interface GetManagedDatabaseSqlPlanBaselinesOutputArgs {
      * A filter to return only SQL plan baselines that are either fixed or not fixed. By default, all SQL plan baselines are returned.
      */
     isFixed?: pulumi.Input<boolean>;
+    /**
+     * A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
+     */
+    isNeverExecuted?: pulumi.Input<boolean>;
     /**
      * A filter to return only SQL plan baselines that were either reproduced or not reproduced by the optimizer. By default, all SQL plan baselines are returned.
      */
@@ -194,6 +180,10 @@ export interface GetManagedDatabaseSqlPlanBaselinesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * A filter to return all the SQL plan baselines that match the origin.
      */

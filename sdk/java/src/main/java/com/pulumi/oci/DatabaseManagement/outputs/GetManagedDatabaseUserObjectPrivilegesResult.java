@@ -32,6 +32,7 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
      * 
      */
     private List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection> objectPrivilegeCollections;
+    private @Nullable String opcNamedCredentialId;
     private String userName;
 
     private GetManagedDatabaseUserObjectPrivilegesResult() {}
@@ -62,6 +63,9 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
     public List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection> objectPrivilegeCollections() {
         return this.objectPrivilegeCollections;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     public String userName() {
         return this.userName;
     }
@@ -80,6 +84,7 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
         private String managedDatabaseId;
         private @Nullable String name;
         private List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection> objectPrivilegeCollections;
+        private @Nullable String opcNamedCredentialId;
         private String userName;
         public Builder() {}
         public Builder(GetManagedDatabaseUserObjectPrivilegesResult defaults) {
@@ -89,6 +94,7 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.name = defaults.name;
     	      this.objectPrivilegeCollections = defaults.objectPrivilegeCollections;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.userName = defaults.userName;
         }
 
@@ -135,6 +141,12 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
             return objectPrivilegeCollections(List.of(objectPrivilegeCollections));
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder userName(String userName) {
             if (userName == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesResult", "userName");
@@ -149,6 +161,7 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.name = name;
             _resultValue.objectPrivilegeCollections = objectPrivilegeCollections;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.userName = userName;
             return _resultValue;
         }

@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
  *     beginExecIdGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
  *     endExecIdLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
+ *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id,
  *     searchPeriod: _var.managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
  *     timeGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
  *     timeLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
@@ -35,6 +36,7 @@ export function getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(args: GetMa
         "beginExecIdGreaterThanOrEqualTo": args.beginExecIdGreaterThanOrEqualTo,
         "endExecIdLessThanOrEqualTo": args.endExecIdLessThanOrEqualTo,
         "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "searchPeriod": args.searchPeriod,
         "sqlTuningAdvisorTaskId": args.sqlTuningAdvisorTaskId,
         "timeGreaterThanOrEqualTo": args.timeGreaterThanOrEqualTo,
@@ -58,6 +60,10 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
     /**
      * How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
      */
@@ -95,6 +101,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
      * The list of object findings related to statistics.
      */
     readonly objectStatFindings: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding[];
+    readonly opcNamedCredentialId?: string;
     readonly searchPeriod?: string;
     readonly sqlTuningAdvisorTaskId: string;
     /**
@@ -124,6 +131,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
  *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
  *     beginExecIdGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
  *     endExecIdLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
+ *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id,
  *     searchPeriod: _var.managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
  *     timeGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
  *     timeLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
@@ -150,6 +158,10 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutputArgs 
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
      */

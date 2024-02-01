@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     userName: oci_identity_user.test_user.name,
  *     name: _var.managed_databases_user_system_privilege_name,
+ *     opcNamedCredentialId: _var.managed_databases_user_system_privilege_opc_named_credential_id,
  * });
  * ```
  */
@@ -31,6 +32,7 @@ export function getManagedDatabasesUserSystemPrivileges(args: GetManagedDatabase
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
         "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "userName": args.userName,
     }, opts);
 }
@@ -48,6 +50,10 @@ export interface GetManagedDatabasesUserSystemPrivilegesArgs {
      * A filter to return only resources that match the entire name.
      */
     name?: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
     /**
      * The name of the user whose details are to be viewed.
      */
@@ -68,6 +74,7 @@ export interface GetManagedDatabasesUserSystemPrivilegesResult {
      * The name of a system privilege.
      */
     readonly name?: string;
+    readonly opcNamedCredentialId?: string;
     /**
      * The list of system_privilege_collection.
      */
@@ -89,6 +96,7 @@ export interface GetManagedDatabasesUserSystemPrivilegesResult {
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     userName: oci_identity_user.test_user.name,
  *     name: _var.managed_databases_user_system_privilege_name,
+ *     opcNamedCredentialId: _var.managed_databases_user_system_privilege_opc_named_credential_id,
  * });
  * ```
  */
@@ -109,6 +117,10 @@ export interface GetManagedDatabasesUserSystemPrivilegesOutputArgs {
      * A filter to return only resources that match the entire name.
      */
     name?: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * The name of the user whose details are to be viewed.
      */

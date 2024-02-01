@@ -30,8 +30,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseUser(ctx, &databasemanagement.GetManagedDatabaseUserArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				UserName:          oci_identity_user.Test_user.Name,
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				UserName:             oci_identity_user.Test_user.Name,
+//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_user_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -55,6 +56,8 @@ func GetManagedDatabaseUser(ctx *pulumi.Context, args *GetManagedDatabaseUserArg
 type GetManagedDatabaseUserArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The name of the user whose details are to be viewed.
 	UserName string `pulumi:"userName"`
 }
@@ -89,7 +92,8 @@ type GetManagedDatabaseUserResult struct {
 	LocalTempTablespace string `pulumi:"localTempTablespace"`
 	ManagedDatabaseId   string `pulumi:"managedDatabaseId"`
 	// The name of the User.
-	Name string `pulumi:"name"`
+	Name                 string  `pulumi:"name"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
 	OracleMaintained string `pulumi:"oracleMaintained"`
 	// The list of existing versions of the password hashes (also known as "verifiers") for the account.
@@ -132,6 +136,8 @@ func GetManagedDatabaseUserOutput(ctx *pulumi.Context, args GetManagedDatabaseUs
 type GetManagedDatabaseUserOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The name of the user whose details are to be viewed.
 	UserName pulumi.StringInput `pulumi:"userName"`
 }
@@ -227,6 +233,10 @@ func (o GetManagedDatabaseUserResultOutput) ManagedDatabaseId() pulumi.StringOut
 // The name of the User.
 func (o GetManagedDatabaseUserResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseUserResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).

@@ -27,6 +27,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
      * 
      */
     private @Nullable String name;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The list of sql_tuning_advisor_task_collection.
      * 
@@ -56,6 +57,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
+    }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
     }
     /**
      * @return The list of sql_tuning_advisor_task_collection.
@@ -87,6 +91,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
         private String id;
         private String managedDatabaseId;
         private @Nullable String name;
+        private @Nullable String opcNamedCredentialId;
         private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections;
         private @Nullable String status;
         private @Nullable String timeGreaterThanOrEqualTo;
@@ -98,6 +103,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.name = defaults.name;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.sqlTuningAdvisorTaskCollections = defaults.sqlTuningAdvisorTaskCollections;
     	      this.status = defaults.status;
     	      this.timeGreaterThanOrEqualTo = defaults.timeGreaterThanOrEqualTo;
@@ -136,6 +142,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskCollections(List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections) {
             if (sqlTuningAdvisorTaskCollections == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksResult", "sqlTuningAdvisorTaskCollections");
@@ -170,6 +182,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.name = name;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.sqlTuningAdvisorTaskCollections = sqlTuningAdvisorTaskCollections;
             _resultValue.status = status;
             _resultValue.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;

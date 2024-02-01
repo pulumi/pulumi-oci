@@ -51,6 +51,10 @@ export interface GetWorkspaceImportRequestArgs {
  */
 export interface GetWorkspaceImportRequestResult {
     /**
+     * This field controls if the data asset references will be included during import.
+     */
+    readonly areDataAssetReferencesIncluded: boolean;
+    /**
      * The name of the Object Storage Bucket where the objects will be imported from
      */
     readonly bucket: string;

@@ -35,6 +35,7 @@ import (
 //				ManagedDatabaseId:      oci_database_management_managed_database.Test_managed_database.Id,
 //				SqlObjectId:            oci_objectstorage_object.Test_object.Id,
 //				SqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+//				OpcNamedCredentialId:   pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -61,6 +62,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs struct {
 	Filters     []GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SqlObjectId string `pulumi:"sqlObjectId"`
 	// The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -72,9 +75,10 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult struct {
 	ExecutionId string                                                         `pulumi:"executionId"`
 	Filters     []GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
-	SqlObjectId       string `pulumi:"sqlObjectId"`
+	Id                   string  `pulumi:"id"`
+	ManagedDatabaseId    string  `pulumi:"managedDatabaseId"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
+	SqlObjectId          string  `pulumi:"sqlObjectId"`
 	// The unique identifier of the task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SqlTuningAdvisorTaskId string `pulumi:"sqlTuningAdvisorTaskId"`
 	// The list of sql_tuning_advisor_task_recommendation_collection.
@@ -101,6 +105,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutputArgs struct {
 	Filters     GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArrayInput `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SqlObjectId pulumi.StringInput `pulumi:"sqlObjectId"`
 	// The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -145,6 +151,12 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) Mana
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult) string {
 		return v.ManagedDatabaseId
 	}).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult) *string {
+		return v.OpcNamedCredentialId
+	}).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) SqlObjectId() pulumi.StringOutput {

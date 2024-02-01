@@ -23,7 +23,7 @@ class GetManagedDatabaseUserProxiedForUsersResult:
     """
     A collection of values returned by getManagedDatabaseUserProxiedForUsers.
     """
-    def __init__(__self__, filters=None, id=None, managed_database_id=None, name=None, proxied_for_user_collections=None, user_name=None):
+    def __init__(__self__, filters=None, id=None, managed_database_id=None, name=None, opc_named_credential_id=None, proxied_for_user_collections=None, user_name=None):
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -36,6 +36,9 @@ class GetManagedDatabaseUserProxiedForUsersResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if proxied_for_user_collections and not isinstance(proxied_for_user_collections, list):
             raise TypeError("Expected argument 'proxied_for_user_collections' to be a list")
         pulumi.set(__self__, "proxied_for_user_collections", proxied_for_user_collections)
@@ -70,6 +73,11 @@ class GetManagedDatabaseUserProxiedForUsersResult:
         return pulumi.get(self, "name")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter(name="proxiedForUserCollections")
     def proxied_for_user_collections(self) -> Sequence['outputs.GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionResult']:
         """
@@ -93,6 +101,7 @@ class AwaitableGetManagedDatabaseUserProxiedForUsersResult(GetManagedDatabaseUse
             id=self.id,
             managed_database_id=self.managed_database_id,
             name=self.name,
+            opc_named_credential_id=self.opc_named_credential_id,
             proxied_for_user_collections=self.proxied_for_user_collections,
             user_name=self.user_name)
 
@@ -100,6 +109,7 @@ class AwaitableGetManagedDatabaseUserProxiedForUsersResult(GetManagedDatabaseUse
 def get_managed_database_user_proxied_for_users(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseUserProxiedForUsersFilterArgs']]] = None,
                                                 managed_database_id: Optional[str] = None,
                                                 name: Optional[str] = None,
+                                                opc_named_credential_id: Optional[str] = None,
                                                 user_name: Optional[str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseUserProxiedForUsersResult:
     """
@@ -115,18 +125,21 @@ def get_managed_database_user_proxied_for_users(filters: Optional[Sequence[pulum
 
     test_managed_database_user_proxied_for_users = oci.DatabaseManagement.get_managed_database_user_proxied_for_users(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_proxied_for_user_name"])
+        name=var["managed_database_user_proxied_for_user_name"],
+        opc_named_credential_id=var["managed_database_user_proxied_for_user_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name: A filter to return only resources that match the entire name.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str user_name: The name of the user whose details are to be viewed.
     """
     __args__ = dict()
     __args__['filters'] = filters
     __args__['managedDatabaseId'] = managed_database_id
     __args__['name'] = name
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['userName'] = user_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers', __args__, opts=opts, typ=GetManagedDatabaseUserProxiedForUsersResult).value
@@ -136,6 +149,7 @@ def get_managed_database_user_proxied_for_users(filters: Optional[Sequence[pulum
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name=pulumi.get(__ret__, 'name'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         proxied_for_user_collections=pulumi.get(__ret__, 'proxied_for_user_collections'),
         user_name=pulumi.get(__ret__, 'user_name'))
 
@@ -144,6 +158,7 @@ def get_managed_database_user_proxied_for_users(filters: Optional[Sequence[pulum
 def get_managed_database_user_proxied_for_users_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseUserProxiedForUsersFilterArgs']]]]] = None,
                                                        managed_database_id: Optional[pulumi.Input[str]] = None,
                                                        name: Optional[pulumi.Input[Optional[str]]] = None,
+                                                       opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                        user_name: Optional[pulumi.Input[str]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseUserProxiedForUsersResult]:
     """
@@ -159,12 +174,14 @@ def get_managed_database_user_proxied_for_users_output(filters: Optional[pulumi.
 
     test_managed_database_user_proxied_for_users = oci.DatabaseManagement.get_managed_database_user_proxied_for_users(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_proxied_for_user_name"])
+        name=var["managed_database_user_proxied_for_user_name"],
+        opc_named_credential_id=var["managed_database_user_proxied_for_user_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name: A filter to return only resources that match the entire name.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str user_name: The name of the user whose details are to be viewed.
     """
     ...

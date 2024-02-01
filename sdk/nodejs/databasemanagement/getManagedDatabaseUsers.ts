@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testManagedDatabaseUsers = oci.DatabaseManagement.getManagedDatabaseUsers({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     name: _var.managed_database_user_name,
+ *     opcNamedCredentialId: _var.managed_database_user_opc_named_credential_id,
  * });
  * ```
  */
@@ -30,6 +31,7 @@ export function getManagedDatabaseUsers(args: GetManagedDatabaseUsersArgs, opts?
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
         "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
     }, opts);
 }
 
@@ -46,6 +48,10 @@ export interface GetManagedDatabaseUsersArgs {
      * A filter to return only resources that match the entire name.
      */
     name?: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
 }
 
 /**
@@ -62,6 +68,7 @@ export interface GetManagedDatabaseUsersResult {
      * The name of the User.
      */
     readonly name?: string;
+    readonly opcNamedCredentialId?: string;
     /**
      * The list of user_collection.
      */
@@ -81,6 +88,7 @@ export interface GetManagedDatabaseUsersResult {
  * const testManagedDatabaseUsers = oci.DatabaseManagement.getManagedDatabaseUsers({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     name: _var.managed_database_user_name,
+ *     opcNamedCredentialId: _var.managed_database_user_opc_named_credential_id,
  * });
  * ```
  */
@@ -101,4 +109,8 @@ export interface GetManagedDatabaseUsersOutputArgs {
      * A filter to return only resources that match the entire name.
      */
     name?: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
 }

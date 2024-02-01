@@ -27,6 +27,7 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
      * 
      */
     private @Nullable String name;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The list of proxied_for_user_collection.
      * 
@@ -55,6 +56,9 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return The list of proxied_for_user_collection.
      * 
@@ -79,6 +83,7 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
         private String id;
         private String managedDatabaseId;
         private @Nullable String name;
+        private @Nullable String opcNamedCredentialId;
         private List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection> proxiedForUserCollections;
         private String userName;
         public Builder() {}
@@ -88,6 +93,7 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.name = defaults.name;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.proxiedForUserCollections = defaults.proxiedForUserCollections;
     	      this.userName = defaults.userName;
         }
@@ -124,6 +130,12 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder proxiedForUserCollections(List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection> proxiedForUserCollections) {
             if (proxiedForUserCollections == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseUserProxiedForUsersResult", "proxiedForUserCollections");
@@ -148,6 +160,7 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.name = name;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.proxiedForUserCollections = proxiedForUserCollections;
             _resultValue.userName = userName;
             return _resultValue;

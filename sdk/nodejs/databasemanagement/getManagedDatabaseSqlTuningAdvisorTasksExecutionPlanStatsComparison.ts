@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     sqlObjectId: oci_objectstorage_object.test_object.id,
  *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
+ *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id,
  * });
  * ```
  */
@@ -33,6 +34,7 @@ export function getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsCompari
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", {
         "executionId": args.executionId,
         "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "sqlObjectId": args.sqlObjectId,
         "sqlTuningAdvisorTaskId": args.sqlTuningAdvisorTaskId,
     }, opts);
@@ -50,6 +52,10 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsCompar
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
     /**
      * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -74,6 +80,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsCompar
      * The statistics of a SQL execution plan.
      */
     readonly modifieds: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified[];
+    readonly opcNamedCredentialId?: string;
     /**
      * The statistics of a SQL execution plan.
      */
@@ -99,6 +106,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsCompar
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     sqlObjectId: oci_objectstorage_object.test_object.id,
  *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
+ *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id,
  * });
  * ```
  */
@@ -118,6 +126,10 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsCompar
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

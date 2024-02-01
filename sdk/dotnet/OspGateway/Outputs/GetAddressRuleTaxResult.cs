@@ -17,11 +17,19 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// Tax type rule fields
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAddressRuleTaxFieldResult> Fields;
+        /// <summary>
+        /// Label value pair for allowed values. Used for GIRO
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAddressRuleTaxValueSetResult> ValueSets;
 
         [OutputConstructor]
-        private GetAddressRuleTaxResult(ImmutableArray<Outputs.GetAddressRuleTaxFieldResult> fields)
+        private GetAddressRuleTaxResult(
+            ImmutableArray<Outputs.GetAddressRuleTaxFieldResult> fields,
+
+            ImmutableArray<Outputs.GetAddressRuleTaxValueSetResult> valueSets)
         {
             Fields = fields;
+            ValueSets = valueSets;
         }
     }
 }

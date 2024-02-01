@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetManagedPreferredCredentialPlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -43,11 +45,27 @@ public final class GetManagedPreferredCredentialPlainArgs extends com.pulumi.res
         return this.managedDatabaseId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+     * 
+     */
+    @Import(name="namedCredentialId")
+    private @Nullable String namedCredentialId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+     * 
+     */
+    public Optional<String> namedCredentialId() {
+        return Optional.ofNullable(this.namedCredentialId);
+    }
+
     private GetManagedPreferredCredentialPlainArgs() {}
 
     private GetManagedPreferredCredentialPlainArgs(GetManagedPreferredCredentialPlainArgs $) {
         this.credentialName = $.credentialName;
         this.managedDatabaseId = $.managedDatabaseId;
+        this.namedCredentialId = $.namedCredentialId;
     }
 
     public static Builder builder() {
@@ -87,6 +105,17 @@ public final class GetManagedPreferredCredentialPlainArgs extends com.pulumi.res
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             $.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        /**
+         * @param namedCredentialId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namedCredentialId(@Nullable String namedCredentialId) {
+            $.namedCredentialId = namedCredentialId;
             return this;
         }
 

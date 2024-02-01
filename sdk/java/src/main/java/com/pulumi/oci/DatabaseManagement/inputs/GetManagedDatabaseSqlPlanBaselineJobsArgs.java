@@ -55,12 +55,28 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsArgs extends com.pulumi.
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable Output<String> opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<Output<String>> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
     private GetManagedDatabaseSqlPlanBaselineJobsArgs() {}
 
     private GetManagedDatabaseSqlPlanBaselineJobsArgs(GetManagedDatabaseSqlPlanBaselineJobsArgs $) {
         this.filters = $.filters;
         this.managedDatabaseId = $.managedDatabaseId;
         this.name = $.name;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
     }
 
     public static Builder builder() {
@@ -134,6 +150,27 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsArgs extends com.pulumi.
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable Output<String> opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            return opcNamedCredentialId(Output.of(opcNamedCredentialId));
         }
 
         public GetManagedDatabaseSqlPlanBaselineJobsArgs build() {

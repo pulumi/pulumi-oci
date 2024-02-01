@@ -607,6 +607,9 @@ namespace Pulumi.Oci.Database
         [Output("serviceConsoleUrl")]
         public Output<string> ServiceConsoleUrl { get; private set; } = null!;
 
+        [Output("shrinkAdbTrigger")]
+        public Output<int> ShrinkAdbTrigger { get; private set; } = null!;
+
         /// <summary>
         /// The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
         /// 
@@ -1310,6 +1313,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("secretVersionNumber")]
         public Input<int>? SecretVersionNumber { get; set; }
+
+        [Input("shrinkAdbTrigger")]
+        public Input<int>? ShrinkAdbTrigger { get; set; }
 
         /// <summary>
         /// The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -2113,6 +2119,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("serviceConsoleUrl")]
         public Input<string>? ServiceConsoleUrl { get; set; }
+
+        [Input("shrinkAdbTrigger")]
+        public Input<int>? ShrinkAdbTrigger { get; set; }
 
         /// <summary>
         /// The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.

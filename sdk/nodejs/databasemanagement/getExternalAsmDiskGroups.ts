@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalAsmDiskGroups = oci.DatabaseManagement.getExternalAsmDiskGroups({
  *     externalAsmId: oci_database_management_external_asm.test_external_asm.id,
+ *     opcNamedCredentialId: _var.external_asm_disk_group_opc_named_credential_id,
  * });
  * ```
  */
@@ -28,6 +29,7 @@ export function getExternalAsmDiskGroups(args: GetExternalAsmDiskGroupsArgs, opt
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", {
         "externalAsmId": args.externalAsmId,
         "filters": args.filters,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
     }, opts);
 }
 
@@ -40,6 +42,10 @@ export interface GetExternalAsmDiskGroupsArgs {
      */
     externalAsmId: string;
     filters?: inputs.DatabaseManagement.GetExternalAsmDiskGroupsFilter[];
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
 }
 
 /**
@@ -56,6 +62,7 @@ export interface GetExternalAsmDiskGroupsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly opcNamedCredentialId?: string;
 }
 /**
  * This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
@@ -70,6 +77,7 @@ export interface GetExternalAsmDiskGroupsResult {
  *
  * const testExternalAsmDiskGroups = oci.DatabaseManagement.getExternalAsmDiskGroups({
  *     externalAsmId: oci_database_management_external_asm.test_external_asm.id,
+ *     opcNamedCredentialId: _var.external_asm_disk_group_opc_named_credential_id,
  * });
  * ```
  */
@@ -86,4 +94,8 @@ export interface GetExternalAsmDiskGroupsOutputArgs {
      */
     externalAsmId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalAsmDiskGroupsFilterArgs>[]>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
 }

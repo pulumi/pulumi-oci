@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetExternalAsmConfigurationPlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -28,10 +30,26 @@ public final class GetExternalAsmConfigurationPlainArgs extends com.pulumi.resou
         return this.externalAsmId;
     }
 
+    /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable String opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
     private GetExternalAsmConfigurationPlainArgs() {}
 
     private GetExternalAsmConfigurationPlainArgs(GetExternalAsmConfigurationPlainArgs $) {
         this.externalAsmId = $.externalAsmId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
     }
 
     public static Builder builder() {
@@ -60,6 +78,17 @@ public final class GetExternalAsmConfigurationPlainArgs extends com.pulumi.resou
          */
         public Builder externalAsmId(String externalAsmId) {
             $.externalAsmId = externalAsmId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
 

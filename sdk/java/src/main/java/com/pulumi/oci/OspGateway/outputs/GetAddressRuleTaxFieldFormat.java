@@ -16,7 +16,7 @@ public final class GetAddressRuleTaxFieldFormat {
      */
     private String example;
     /**
-     * @return Language token of the required label
+     * @return Value
      * 
      */
     private String value;
@@ -30,7 +30,7 @@ public final class GetAddressRuleTaxFieldFormat {
         return this.example;
     }
     /**
-     * @return Language token of the required label
+     * @return Value
      * 
      */
     public String value() {

@@ -33,6 +33,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         PlanName = @var.Managed_database_sql_plan_baseline_plan_name,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_plan_baseline_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         PlanName = @var.Managed_database_sql_plan_baseline_plan_name,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_plan_baseline_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -86,6 +88,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public string ManagedDatabaseId { get; set; } = null!;
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// The plan name of the SQL plan baseline.
         /// </summary>
         [Input("planName", required: true)]
@@ -104,6 +112,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("managedDatabaseId", required: true)]
         public Input<string> ManagedDatabaseId { get; set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
 
         /// <summary>
         /// The plan name of the SQL plan baseline.
@@ -158,6 +172,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The application module name.
         /// </summary>
         public readonly string Module;
+        public readonly string? OpcNamedCredentialId;
         /// <summary>
         /// The origin of the SQL plan baseline.
         /// </summary>
@@ -213,6 +228,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string module,
 
+            string? opcNamedCredentialId,
+
             string origin,
 
             string planName,
@@ -239,6 +256,7 @@ namespace Pulumi.Oci.DatabaseManagement
             Id = id;
             ManagedDatabaseId = managedDatabaseId;
             Module = module;
+            OpcNamedCredentialId = opcNamedCredentialId;
             Origin = origin;
             PlanName = planName;
             Reproduced = reproduced;

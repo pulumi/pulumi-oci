@@ -55,12 +55,28 @@ public final class GetExternalListenerServicesArgs extends com.pulumi.resources.
         return this.managedDatabaseId;
     }
 
+    /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable Output<String> opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<Output<String>> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
     private GetExternalListenerServicesArgs() {}
 
     private GetExternalListenerServicesArgs(GetExternalListenerServicesArgs $) {
         this.externalListenerId = $.externalListenerId;
         this.filters = $.filters;
         this.managedDatabaseId = $.managedDatabaseId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
     }
 
     public static Builder builder() {
@@ -134,6 +150,27 @@ public final class GetExternalListenerServicesArgs extends com.pulumi.resources.
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             return managedDatabaseId(Output.of(managedDatabaseId));
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable Output<String> opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            return opcNamedCredentialId(Output.of(opcNamedCredentialId));
         }
 
         public GetExternalListenerServicesArgs build() {

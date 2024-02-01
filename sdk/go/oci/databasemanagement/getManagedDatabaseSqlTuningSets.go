@@ -30,9 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseSqlTuningSets(ctx, &databasemanagement.GetManagedDatabaseSqlTuningSetsArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				NameContains:      pulumi.StringRef(_var.Managed_database_sql_tuning_set_name_contains),
-//				Owner:             pulumi.StringRef(_var.Managed_database_sql_tuning_set_owner),
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				NameContains:         pulumi.StringRef(_var.Managed_database_sql_tuning_set_name_contains),
+//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_sql_tuning_set_opc_named_credential_id),
+//				Owner:                pulumi.StringRef(_var.Managed_database_sql_tuning_set_owner),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,6 +60,8 @@ type GetManagedDatabaseSqlTuningSetsArgs struct {
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
 	NameContains *string `pulumi:"nameContains"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The owner of the SQL tuning set.
 	Owner *string `pulumi:"owner"`
 }
@@ -69,8 +72,9 @@ type GetManagedDatabaseSqlTuningSetsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
-	NameContains      *string `pulumi:"nameContains"`
+	ManagedDatabaseId    string  `pulumi:"managedDatabaseId"`
+	NameContains         *string `pulumi:"nameContains"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The owner of the SQL tuning set.
 	Owner *string `pulumi:"owner"`
 	// The list of sql_tuning_set_collection.
@@ -97,6 +101,8 @@ type GetManagedDatabaseSqlTuningSetsOutputArgs struct {
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 	// Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
 	NameContains pulumi.StringPtrInput `pulumi:"nameContains"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The owner of the SQL tuning set.
 	Owner pulumi.StringPtrInput `pulumi:"owner"`
 }
@@ -138,6 +144,10 @@ func (o GetManagedDatabaseSqlTuningSetsResultOutput) ManagedDatabaseId() pulumi.
 
 func (o GetManagedDatabaseSqlTuningSetsResultOutput) NameContains() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsResult) *string { return v.NameContains }).(pulumi.StringPtrOutput)
+}
+
+func (o GetManagedDatabaseSqlTuningSetsResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 // The owner of the SQL tuning set.

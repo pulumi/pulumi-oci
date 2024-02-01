@@ -6,6 +6,7 @@ package com.pulumi.oci.OspGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleTaxField;
+import com.pulumi.oci.OspGateway.outputs.GetAddressRuleTaxValueSet;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,6 +17,11 @@ public final class GetAddressRuleTax {
      * 
      */
     private List<GetAddressRuleTaxField> fields;
+    /**
+     * @return Label value pair for allowed values. Used for GIRO
+     * 
+     */
+    private List<GetAddressRuleTaxValueSet> valueSets;
 
     private GetAddressRuleTax() {}
     /**
@@ -24,6 +30,13 @@ public final class GetAddressRuleTax {
      */
     public List<GetAddressRuleTaxField> fields() {
         return this.fields;
+    }
+    /**
+     * @return Label value pair for allowed values. Used for GIRO
+     * 
+     */
+    public List<GetAddressRuleTaxValueSet> valueSets() {
+        return this.valueSets;
     }
 
     public static Builder builder() {
@@ -36,10 +49,12 @@ public final class GetAddressRuleTax {
     @CustomType.Builder
     public static final class Builder {
         private List<GetAddressRuleTaxField> fields;
+        private List<GetAddressRuleTaxValueSet> valueSets;
         public Builder() {}
         public Builder(GetAddressRuleTax defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fields = defaults.fields;
+    	      this.valueSets = defaults.valueSets;
         }
 
         @CustomType.Setter
@@ -53,9 +68,21 @@ public final class GetAddressRuleTax {
         public Builder fields(GetAddressRuleTaxField... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
+        public Builder valueSets(List<GetAddressRuleTaxValueSet> valueSets) {
+            if (valueSets == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleTax", "valueSets");
+            }
+            this.valueSets = valueSets;
+            return this;
+        }
+        public Builder valueSets(GetAddressRuleTaxValueSet... valueSets) {
+            return valueSets(List.of(valueSets));
+        }
         public GetAddressRuleTax build() {
             final var _resultValue = new GetAddressRuleTax();
             _resultValue.fields = fields;
+            _resultValue.valueSets = valueSets;
             return _resultValue;
         }
     }

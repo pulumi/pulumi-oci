@@ -22,7 +22,10 @@ class GetWorkspaceImportRequestResult:
     """
     A collection of values returned by getWorkspaceImportRequest.
     """
-    def __init__(__self__, bucket=None, created_by=None, error_messages=None, file_name=None, id=None, import_conflict_resolutions=None, import_request_key=None, imported_objects=None, key=None, name=None, object_key_for_import=None, object_storage_region=None, object_storage_tenancy_id=None, status=None, time_ended_in_millis=None, time_started_in_millis=None, total_imported_object_count=None, workspace_id=None):
+    def __init__(__self__, are_data_asset_references_included=None, bucket=None, created_by=None, error_messages=None, file_name=None, id=None, import_conflict_resolutions=None, import_request_key=None, imported_objects=None, key=None, name=None, object_key_for_import=None, object_storage_region=None, object_storage_tenancy_id=None, status=None, time_ended_in_millis=None, time_started_in_millis=None, total_imported_object_count=None, workspace_id=None):
+        if are_data_asset_references_included and not isinstance(are_data_asset_references_included, bool):
+            raise TypeError("Expected argument 'are_data_asset_references_included' to be a bool")
+        pulumi.set(__self__, "are_data_asset_references_included", are_data_asset_references_included)
         if bucket and not isinstance(bucket, str):
             raise TypeError("Expected argument 'bucket' to be a str")
         pulumi.set(__self__, "bucket", bucket)
@@ -77,6 +80,14 @@ class GetWorkspaceImportRequestResult:
         if workspace_id and not isinstance(workspace_id, str):
             raise TypeError("Expected argument 'workspace_id' to be a str")
         pulumi.set(__self__, "workspace_id", workspace_id)
+
+    @property
+    @pulumi.getter(name="areDataAssetReferencesIncluded")
+    def are_data_asset_references_included(self) -> bool:
+        """
+        This field controls if the data asset references will be included during import.
+        """
+        return pulumi.get(self, "are_data_asset_references_included")
 
     @property
     @pulumi.getter
@@ -220,6 +231,7 @@ class AwaitableGetWorkspaceImportRequestResult(GetWorkspaceImportRequestResult):
         if False:
             yield self
         return GetWorkspaceImportRequestResult(
+            are_data_asset_references_included=self.are_data_asset_references_included,
             bucket=self.bucket,
             created_by=self.created_by,
             error_messages=self.error_messages,
@@ -269,6 +281,7 @@ def get_workspace_import_request(import_request_key: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataIntegration/getWorkspaceImportRequest:getWorkspaceImportRequest', __args__, opts=opts, typ=GetWorkspaceImportRequestResult).value
 
     return AwaitableGetWorkspaceImportRequestResult(
+        are_data_asset_references_included=pulumi.get(__ret__, 'are_data_asset_references_included'),
         bucket=pulumi.get(__ret__, 'bucket'),
         created_by=pulumi.get(__ret__, 'created_by'),
         error_messages=pulumi.get(__ret__, 'error_messages'),

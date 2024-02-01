@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     bucket: _var.workspace_import_request_bucket,
  *     fileName: _var.workspace_import_request_file_name,
  *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
+ *     areDataAssetReferencesIncluded: _var.workspace_import_request_are_data_asset_references_included,
  *     importConflictResolution: {
  *         importConflictResolutionType: _var.workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
  *         duplicatePrefix: _var.workspace_import_request_import_conflict_resolution_duplicate_prefix,
@@ -68,6 +69,10 @@ export class WorkspaceImportRequest extends pulumi.CustomResource {
         return obj['__pulumiType'] === WorkspaceImportRequest.__pulumiType;
     }
 
+    /**
+     * This field controls if the data asset references will be included during import.
+     */
+    public readonly areDataAssetReferencesIncluded!: pulumi.Output<boolean>;
     /**
      * Name of the Object Storage bucket where the object will be imported from.
      */
@@ -150,6 +155,7 @@ export class WorkspaceImportRequest extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WorkspaceImportRequestState | undefined;
+            resourceInputs["areDataAssetReferencesIncluded"] = state ? state.areDataAssetReferencesIncluded : undefined;
             resourceInputs["bucket"] = state ? state.bucket : undefined;
             resourceInputs["createdBy"] = state ? state.createdBy : undefined;
             resourceInputs["errorMessages"] = state ? state.errorMessages : undefined;
@@ -177,6 +183,7 @@ export class WorkspaceImportRequest extends pulumi.CustomResource {
             if ((!args || args.workspaceId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'workspaceId'");
             }
+            resourceInputs["areDataAssetReferencesIncluded"] = args ? args.areDataAssetReferencesIncluded : undefined;
             resourceInputs["bucket"] = args ? args.bucket : undefined;
             resourceInputs["fileName"] = args ? args.fileName : undefined;
             resourceInputs["importConflictResolution"] = args ? args.importConflictResolution : undefined;
@@ -203,6 +210,10 @@ export class WorkspaceImportRequest extends pulumi.CustomResource {
  * Input properties used for looking up and filtering WorkspaceImportRequest resources.
  */
 export interface WorkspaceImportRequestState {
+    /**
+     * This field controls if the data asset references will be included during import.
+     */
+    areDataAssetReferencesIncluded?: pulumi.Input<boolean>;
     /**
      * Name of the Object Storage bucket where the object will be imported from.
      */
@@ -277,6 +288,10 @@ export interface WorkspaceImportRequestState {
  * The set of arguments for constructing a WorkspaceImportRequest resource.
  */
 export interface WorkspaceImportRequestArgs {
+    /**
+     * This field controls if the data asset references will be included during import.
+     */
+    areDataAssetReferencesIncluded?: pulumi.Input<boolean>;
     /**
      * Name of the Object Storage bucket where the object will be imported from.
      */

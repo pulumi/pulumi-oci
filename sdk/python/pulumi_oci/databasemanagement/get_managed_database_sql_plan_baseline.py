@@ -21,7 +21,7 @@ class GetManagedDatabaseSqlPlanBaselineResult:
     """
     A collection of values returned by getManagedDatabaseSqlPlanBaseline.
     """
-    def __init__(__self__, accepted=None, action=None, adaptive=None, auto_purge=None, enabled=None, execution_plan=None, fixed=None, id=None, managed_database_id=None, module=None, origin=None, plan_name=None, reproduced=None, sql_handle=None, sql_text=None, time_created=None, time_last_executed=None, time_last_modified=None):
+    def __init__(__self__, accepted=None, action=None, adaptive=None, auto_purge=None, enabled=None, execution_plan=None, fixed=None, id=None, managed_database_id=None, module=None, opc_named_credential_id=None, origin=None, plan_name=None, reproduced=None, sql_handle=None, sql_text=None, time_created=None, time_last_executed=None, time_last_modified=None):
         if accepted and not isinstance(accepted, str):
             raise TypeError("Expected argument 'accepted' to be a str")
         pulumi.set(__self__, "accepted", accepted)
@@ -52,6 +52,9 @@ class GetManagedDatabaseSqlPlanBaselineResult:
         if module and not isinstance(module, str):
             raise TypeError("Expected argument 'module' to be a str")
         pulumi.set(__self__, "module", module)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if origin and not isinstance(origin, str):
             raise TypeError("Expected argument 'origin' to be a str")
         pulumi.set(__self__, "origin", origin)
@@ -155,6 +158,11 @@ class GetManagedDatabaseSqlPlanBaselineResult:
         return pulumi.get(self, "module")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter
     def origin(self) -> str:
         """
@@ -235,6 +243,7 @@ class AwaitableGetManagedDatabaseSqlPlanBaselineResult(GetManagedDatabaseSqlPlan
             id=self.id,
             managed_database_id=self.managed_database_id,
             module=self.module,
+            opc_named_credential_id=self.opc_named_credential_id,
             origin=self.origin,
             plan_name=self.plan_name,
             reproduced=self.reproduced,
@@ -246,6 +255,7 @@ class AwaitableGetManagedDatabaseSqlPlanBaselineResult(GetManagedDatabaseSqlPlan
 
 
 def get_managed_database_sql_plan_baseline(managed_database_id: Optional[str] = None,
+                                           opc_named_credential_id: Optional[str] = None,
                                            plan_name: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlPlanBaselineResult:
     """
@@ -260,15 +270,18 @@ def get_managed_database_sql_plan_baseline(managed_database_id: Optional[str] = 
     import pulumi_oci as oci
 
     test_managed_database_sql_plan_baseline = oci.DatabaseManagement.get_managed_database_sql_plan_baseline(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        plan_name=var["managed_database_sql_plan_baseline_plan_name"])
+        plan_name=var["managed_database_sql_plan_baseline_plan_name"],
+        opc_named_credential_id=var["managed_database_sql_plan_baseline_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str plan_name: The plan name of the SQL plan baseline.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['planName'] = plan_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline', __args__, opts=opts, typ=GetManagedDatabaseSqlPlanBaselineResult).value
@@ -284,6 +297,7 @@ def get_managed_database_sql_plan_baseline(managed_database_id: Optional[str] = 
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         module=pulumi.get(__ret__, 'module'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         origin=pulumi.get(__ret__, 'origin'),
         plan_name=pulumi.get(__ret__, 'plan_name'),
         reproduced=pulumi.get(__ret__, 'reproduced'),
@@ -296,6 +310,7 @@ def get_managed_database_sql_plan_baseline(managed_database_id: Optional[str] = 
 
 @_utilities.lift_output_func(get_managed_database_sql_plan_baseline)
 def get_managed_database_sql_plan_baseline_output(managed_database_id: Optional[pulumi.Input[str]] = None,
+                                                  opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                   plan_name: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselineResult]:
     """
@@ -310,11 +325,13 @@ def get_managed_database_sql_plan_baseline_output(managed_database_id: Optional[
     import pulumi_oci as oci
 
     test_managed_database_sql_plan_baseline = oci.DatabaseManagement.get_managed_database_sql_plan_baseline(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        plan_name=var["managed_database_sql_plan_baseline_plan_name"])
+        plan_name=var["managed_database_sql_plan_baseline_plan_name"],
+        opc_named_credential_id=var["managed_database_sql_plan_baseline_opc_named_credential_id"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str plan_name: The plan name of the SQL plan baseline.
     """
     ...

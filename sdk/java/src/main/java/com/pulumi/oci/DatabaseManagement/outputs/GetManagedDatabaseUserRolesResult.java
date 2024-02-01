@@ -27,6 +27,7 @@ public final class GetManagedDatabaseUserRolesResult {
      * 
      */
     private @Nullable String name;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The list of role_collection.
      * 
@@ -55,6 +56,9 @@ public final class GetManagedDatabaseUserRolesResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return The list of role_collection.
      * 
@@ -79,6 +83,7 @@ public final class GetManagedDatabaseUserRolesResult {
         private String id;
         private String managedDatabaseId;
         private @Nullable String name;
+        private @Nullable String opcNamedCredentialId;
         private List<GetManagedDatabaseUserRolesRoleCollection> roleCollections;
         private String userName;
         public Builder() {}
@@ -88,6 +93,7 @@ public final class GetManagedDatabaseUserRolesResult {
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.name = defaults.name;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.roleCollections = defaults.roleCollections;
     	      this.userName = defaults.userName;
         }
@@ -124,6 +130,12 @@ public final class GetManagedDatabaseUserRolesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder roleCollections(List<GetManagedDatabaseUserRolesRoleCollection> roleCollections) {
             if (roleCollections == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesResult", "roleCollections");
@@ -148,6 +160,7 @@ public final class GetManagedDatabaseUserRolesResult {
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.name = name;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.roleCollections = roleCollections;
             _resultValue.userName = userName;
             return _resultValue;

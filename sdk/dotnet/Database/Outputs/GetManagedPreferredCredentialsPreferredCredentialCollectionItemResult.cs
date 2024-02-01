@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsAccessible;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+        /// </summary>
+        public readonly string NamedCredentialId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
         /// </summary>
         public readonly string PasswordSecretId;
@@ -48,6 +52,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isAccessible,
 
+            string namedCredentialId,
+
             string passwordSecretId,
 
             string role,
@@ -60,6 +66,7 @@ namespace Pulumi.Oci.Database.Outputs
         {
             CredentialName = credentialName;
             IsAccessible = isAccessible;
+            NamedCredentialId = namedCredentialId;
             PasswordSecretId = passwordSecretId;
             Role = role;
             Status = status;

@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  * const testExternalListenerServices = oci.DatabaseManagement.getExternalListenerServices({
  *     externalListenerId: oci_database_management_external_listener.test_external_listener.id,
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     opcNamedCredentialId: _var.external_listener_service_opc_named_credential_id,
  * });
  * ```
  */
@@ -31,6 +32,7 @@ export function getExternalListenerServices(args: GetExternalListenerServicesArg
         "externalListenerId": args.externalListenerId,
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
     }, opts);
 }
 
@@ -47,6 +49,10 @@ export interface GetExternalListenerServicesArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
 }
 
 /**
@@ -67,6 +73,7 @@ export interface GetExternalListenerServicesResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     readonly managedDatabaseId: string;
+    readonly opcNamedCredentialId?: string;
 }
 /**
  * This data source provides the list of External Listener Services in Oracle Cloud Infrastructure Database Management service.
@@ -83,6 +90,7 @@ export interface GetExternalListenerServicesResult {
  * const testExternalListenerServices = oci.DatabaseManagement.getExternalListenerServices({
  *     externalListenerId: oci_database_management_external_listener.test_external_listener.id,
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     opcNamedCredentialId: _var.external_listener_service_opc_named_credential_id,
  * });
  * ```
  */
@@ -103,4 +111,8 @@ export interface GetExternalListenerServicesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
 }

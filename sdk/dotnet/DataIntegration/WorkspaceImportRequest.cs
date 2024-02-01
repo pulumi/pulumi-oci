@@ -29,6 +29,7 @@ namespace Pulumi.Oci.DataIntegration
     ///         Bucket = @var.Workspace_import_request_bucket,
     ///         FileName = @var.Workspace_import_request_file_name,
     ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+    ///         AreDataAssetReferencesIncluded = @var.Workspace_import_request_are_data_asset_references_included,
     ///         ImportConflictResolution = new Oci.DataIntegration.Inputs.WorkspaceImportRequestImportConflictResolutionArgs
     ///         {
     ///             ImportConflictResolutionType = @var.Workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
@@ -54,6 +55,12 @@ namespace Pulumi.Oci.DataIntegration
     [OciResourceType("oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest")]
     public partial class WorkspaceImportRequest : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// This field controls if the data asset references will be included during import.
+        /// </summary>
+        [Output("areDataAssetReferencesIncluded")]
+        public Output<bool> AreDataAssetReferencesIncluded { get; private set; } = null!;
+
         /// <summary>
         /// Name of the Object Storage bucket where the object will be imported from.
         /// </summary>
@@ -201,6 +208,12 @@ namespace Pulumi.Oci.DataIntegration
     public sealed class WorkspaceImportRequestArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// This field controls if the data asset references will be included during import.
+        /// </summary>
+        [Input("areDataAssetReferencesIncluded")]
+        public Input<bool>? AreDataAssetReferencesIncluded { get; set; }
+
+        /// <summary>
         /// Name of the Object Storage bucket where the object will be imported from.
         /// </summary>
         [Input("bucket", required: true)]
@@ -254,6 +267,12 @@ namespace Pulumi.Oci.DataIntegration
 
     public sealed class WorkspaceImportRequestState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// This field controls if the data asset references will be included during import.
+        /// </summary>
+        [Input("areDataAssetReferencesIncluded")]
+        public Input<bool>? AreDataAssetReferencesIncluded { get; set; }
+
         /// <summary>
         /// Name of the Object Storage bucket where the object will be imported from.
         /// </summary>

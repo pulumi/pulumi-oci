@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     userName: oci_identity_user.test_user.name,
  *     name: _var.managed_database_user_role_name,
+ *     opcNamedCredentialId: _var.managed_database_user_role_opc_named_credential_id,
  * });
  * ```
  */
@@ -31,6 +32,7 @@ export function getManagedDatabaseUserRoles(args: GetManagedDatabaseUserRolesArg
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
         "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "userName": args.userName,
     }, opts);
 }
@@ -48,6 +50,10 @@ export interface GetManagedDatabaseUserRolesArgs {
      * A filter to return only resources that match the entire name.
      */
     name?: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
     /**
      * The name of the user whose details are to be viewed.
      */
@@ -68,6 +74,7 @@ export interface GetManagedDatabaseUserRolesResult {
      * The name of the role granted to the user.
      */
     readonly name?: string;
+    readonly opcNamedCredentialId?: string;
     /**
      * The list of role_collection.
      */
@@ -89,6 +96,7 @@ export interface GetManagedDatabaseUserRolesResult {
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     userName: oci_identity_user.test_user.name,
  *     name: _var.managed_database_user_role_name,
+ *     opcNamedCredentialId: _var.managed_database_user_role_opc_named_credential_id,
  * });
  * ```
  */
@@ -109,6 +117,10 @@ export interface GetManagedDatabaseUserRolesOutputArgs {
      * A filter to return only resources that match the entire name.
      */
     name?: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * The name of the user whose details are to be viewed.
      */

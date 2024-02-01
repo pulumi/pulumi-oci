@@ -32,6 +32,7 @@ import (
 //			_, err := DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasks(ctx, &databasemanagement.GetManagedDatabaseSqlTuningAdvisorTasksArgs{
 //				ManagedDatabaseId:        oci_database_management_managed_database.Test_managed_database.Id,
 //				Name:                     pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_name),
+//				OpcNamedCredentialId:     pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_opc_named_credential_id),
 //				Status:                   pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_status),
 //				TimeGreaterThanOrEqualTo: pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to),
 //				TimeLessThanOrEqualTo:    pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to),
@@ -61,6 +62,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksArgs struct {
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// The optional query parameter to filter the SQL Tuning Advisor task list by name.
 	Name *string `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The optional query parameter to filter the SQL Tuning Advisor task list by status.
 	Status *string `pulumi:"status"`
 	// The optional greater than or equal to query parameter to filter the timestamp.
@@ -76,7 +79,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksResult struct {
 	Id                string `pulumi:"id"`
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// The name of the SQL Tuning Advisor task.
-	Name *string `pulumi:"name"`
+	Name                 *string `pulumi:"name"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The list of sql_tuning_advisor_task_collection.
 	SqlTuningAdvisorTaskCollections []GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection `pulumi:"sqlTuningAdvisorTaskCollections"`
 	Status                          *string                                                                 `pulumi:"status"`
@@ -104,6 +108,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksOutputArgs struct {
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 	// The optional query parameter to filter the SQL Tuning Advisor task list by name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The optional query parameter to filter the SQL Tuning Advisor task list by status.
 	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The optional greater than or equal to query parameter to filter the timestamp.
@@ -149,6 +155,10 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksResultOutput) ManagedDatabaseId()
 // The name of the SQL Tuning Advisor task.
 func (o GetManagedDatabaseSqlTuningAdvisorTasksResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetManagedDatabaseSqlTuningAdvisorTasksResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 // The list of sql_tuning_advisor_task_collection.

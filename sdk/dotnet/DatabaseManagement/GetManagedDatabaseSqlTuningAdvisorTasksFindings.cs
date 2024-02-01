@@ -37,6 +37,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///         EndExecId = oci_database_management_end_exec.Test_end_exec.Id,
         ///         FindingFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
         ///         IndexHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id,
         ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_finding_search_period,
         ///         StatsHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
         ///     });
@@ -75,6 +76,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///         EndExecId = oci_database_management_end_exec.Test_end_exec.Id,
         ///         FindingFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
         ///         IndexHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id,
         ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_finding_search_period,
         ///         StatsHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
         ///     });
@@ -128,6 +130,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("managedDatabaseId", required: true)]
         public string ManagedDatabaseId { get; set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
 
         /// <summary>
         /// The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
@@ -194,6 +202,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string> ManagedDatabaseId { get; set; } = null!;
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
         /// </summary>
         [Input("searchPeriod")]
@@ -231,6 +245,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public readonly string Id;
         public readonly string? IndexHashFilter;
         public readonly string ManagedDatabaseId;
+        public readonly string? OpcNamedCredentialId;
         public readonly string? SearchPeriod;
         /// <summary>
         /// The list of sql_tuning_advisor_task_finding_collection.
@@ -258,6 +273,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string managedDatabaseId,
 
+            string? opcNamedCredentialId,
+
             string? searchPeriod,
 
             ImmutableArray<Outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionResult> sqlTuningAdvisorTaskFindingCollections,
@@ -273,6 +290,7 @@ namespace Pulumi.Oci.DatabaseManagement
             Id = id;
             IndexHashFilter = indexHashFilter;
             ManagedDatabaseId = managedDatabaseId;
+            OpcNamedCredentialId = opcNamedCredentialId;
             SearchPeriod = searchPeriod;
             SqlTuningAdvisorTaskFindingCollections = sqlTuningAdvisorTaskFindingCollections;
             SqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;

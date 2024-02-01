@@ -15478,6 +15478,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  secret_id: str,
                  secret_version_number: int,
                  service_console_url: str,
+                 shrink_adb_trigger: int,
                  source: str,
                  source_id: str,
                  standby_dbs: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult'],
@@ -15714,6 +15715,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "secret_version_number", secret_version_number)
         pulumi.set(__self__, "service_console_url", service_console_url)
+        pulumi.set(__self__, "shrink_adb_trigger", shrink_adb_trigger)
         pulumi.set(__self__, "source", source)
         pulumi.set(__self__, "source_id", source_id)
         pulumi.set(__self__, "standby_dbs", standby_dbs)
@@ -16159,6 +16161,9 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @property
     @pulumi.getter(name="isShrinkOnly")
     def is_shrink_only(self) -> bool:
+        warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
+        pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
+
         return pulumi.get(self, "is_shrink_only")
 
     @property
@@ -16453,6 +16458,11 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The URL of the Service Console for the Autonomous Database.
         """
         return pulumi.get(self, "service_console_url")
+
+    @property
+    @pulumi.getter(name="shrinkAdbTrigger")
+    def shrink_adb_trigger(self) -> int:
+        return pulumi.get(self, "shrink_adb_trigger")
 
     @property
     @pulumi.getter
@@ -38535,6 +38545,7 @@ class GetManagedPreferredCredentialsPreferredCredentialCollectionItemResult(dict
     def __init__(__self__, *,
                  credential_name: str,
                  is_accessible: bool,
+                 named_credential_id: str,
                  password_secret_id: str,
                  role: str,
                  status: str,
@@ -38543,6 +38554,7 @@ class GetManagedPreferredCredentialsPreferredCredentialCollectionItemResult(dict
         """
         :param str credential_name: The name of the preferred credential.
         :param bool is_accessible: Indicates whether the preferred credential is accessible.
+        :param str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
         :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
         :param str role: The role of the database user.
         :param str status: The status of the preferred credential.
@@ -38551,6 +38563,7 @@ class GetManagedPreferredCredentialsPreferredCredentialCollectionItemResult(dict
         """
         pulumi.set(__self__, "credential_name", credential_name)
         pulumi.set(__self__, "is_accessible", is_accessible)
+        pulumi.set(__self__, "named_credential_id", named_credential_id)
         pulumi.set(__self__, "password_secret_id", password_secret_id)
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "status", status)
@@ -38572,6 +38585,14 @@ class GetManagedPreferredCredentialsPreferredCredentialCollectionItemResult(dict
         Indicates whether the preferred credential is accessible.
         """
         return pulumi.get(self, "is_accessible")
+
+    @property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+        """
+        return pulumi.get(self, "named_credential_id")
 
     @property
     @pulumi.getter(name="passwordSecretId")

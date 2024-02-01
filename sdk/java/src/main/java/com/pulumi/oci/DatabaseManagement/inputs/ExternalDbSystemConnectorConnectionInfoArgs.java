@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemConnectorConnectionInfoConnectionStringArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -64,12 +65,28 @@ public final class ExternalDbSystemConnectorConnectionInfoArgs extends com.pulum
         return Optional.ofNullable(this.connectionStrings);
     }
 
+    /**
+     * The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    @Import(name="databaseCredentials")
+    private @Nullable Output<List<ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs>> databaseCredentials;
+
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    public Optional<Output<List<ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs>>> databaseCredentials() {
+        return Optional.ofNullable(this.databaseCredentials);
+    }
+
     private ExternalDbSystemConnectorConnectionInfoArgs() {}
 
     private ExternalDbSystemConnectorConnectionInfoArgs(ExternalDbSystemConnectorConnectionInfoArgs $) {
         this.componentType = $.componentType;
         this.connectionCredentials = $.connectionCredentials;
         this.connectionStrings = $.connectionStrings;
+        this.databaseCredentials = $.databaseCredentials;
     }
 
     public static Builder builder() {
@@ -171,6 +188,37 @@ public final class ExternalDbSystemConnectorConnectionInfoArgs extends com.pulum
          */
         public Builder connectionStrings(ExternalDbSystemConnectorConnectionInfoConnectionStringArgs... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
+        }
+
+        /**
+         * @param databaseCredentials The credential to connect to the database to perform tablespace administration tasks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseCredentials(@Nullable Output<List<ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs>> databaseCredentials) {
+            $.databaseCredentials = databaseCredentials;
+            return this;
+        }
+
+        /**
+         * @param databaseCredentials The credential to connect to the database to perform tablespace administration tasks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseCredentials(List<ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs> databaseCredentials) {
+            return databaseCredentials(Output.of(databaseCredentials));
+        }
+
+        /**
+         * @param databaseCredentials The credential to connect to the database to perform tablespace administration tasks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseCredentials(ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs... databaseCredentials) {
+            return databaseCredentials(List.of(databaseCredentials));
         }
 
         public ExternalDbSystemConnectorConnectionInfoArgs build() {

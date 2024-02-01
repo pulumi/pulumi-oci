@@ -534,6 +534,8 @@ type ExternalDbSystemConnectorConnectionInfo struct {
 	ConnectionCredentials []ExternalDbSystemConnectorConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []ExternalDbSystemConnectorConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []ExternalDbSystemConnectorConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // ExternalDbSystemConnectorConnectionInfoInput is an input type that accepts ExternalDbSystemConnectorConnectionInfoArgs and ExternalDbSystemConnectorConnectionInfoOutput values.
@@ -554,6 +556,8 @@ type ExternalDbSystemConnectorConnectionInfoArgs struct {
 	ConnectionCredentials ExternalDbSystemConnectorConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings ExternalDbSystemConnectorConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (ExternalDbSystemConnectorConnectionInfoArgs) ElementType() reflect.Type {
@@ -626,6 +630,13 @@ func (o ExternalDbSystemConnectorConnectionInfoOutput) ConnectionStrings() Exter
 	}).(ExternalDbSystemConnectorConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o ExternalDbSystemConnectorConnectionInfoOutput) DatabaseCredentials() ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v ExternalDbSystemConnectorConnectionInfo) []ExternalDbSystemConnectorConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type ExternalDbSystemConnectorConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbSystemConnectorConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -649,11 +660,11 @@ func (o ExternalDbSystemConnectorConnectionInfoArrayOutput) Index(i pulumi.IntIn
 type ExternalDbSystemConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName *string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType *string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId *string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role *string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId *string `pulumi:"sslSecretId"`
@@ -675,11 +686,11 @@ type ExternalDbSystemConnectorConnectionInfoConnectionCredentialInput interface 
 type ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringPtrInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringPtrInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringPtrInput `pulumi:"sslSecretId"`
@@ -743,17 +754,17 @@ func (o ExternalDbSystemConnectorConnectionInfoConnectionCredentialOutput) Crede
 	return o.ApplyT(func(v ExternalDbSystemConnectorConnectionInfoConnectionCredential) *string { return v.CredentialName }).(pulumi.StringPtrOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o ExternalDbSystemConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemConnectorConnectionInfoConnectionCredential) *string { return v.CredentialType }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o ExternalDbSystemConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemConnectorConnectionInfoConnectionCredential) *string { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o ExternalDbSystemConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemConnectorConnectionInfoConnectionCredential) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
@@ -919,6 +930,148 @@ func (o ExternalDbSystemConnectorConnectionInfoConnectionStringArrayOutput) Inde
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalDbSystemConnectorConnectionInfoConnectionString {
 		return vs[0].([]ExternalDbSystemConnectorConnectionInfoConnectionString)[vs[1].(int)]
 	}).(ExternalDbSystemConnectorConnectionInfoConnectionStringOutput)
+}
+
+type ExternalDbSystemConnectorConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType *string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId *string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password *string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role *string `pulumi:"role"`
+	// The user to connect to the database.
+	Username *string `pulumi:"username"`
+}
+
+// ExternalDbSystemConnectorConnectionInfoDatabaseCredentialInput is an input type that accepts ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs and ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `ExternalDbSystemConnectorConnectionInfoDatabaseCredentialInput` via:
+//
+//	ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs{...}
+type ExternalDbSystemConnectorConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput
+	ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Context) ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput
+}
+
+type ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringPtrInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringPtrInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalDbSystemConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs) ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput {
+	return i.ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs) ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
+// ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayInput is an input type that accepts ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray and ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray{ ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs{...} }
+type ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput
+	ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray []ExternalDbSystemConnectorConnectionInfoDatabaseCredentialInput
+
+func (ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalDbSystemConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray) ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray) ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalDbSystemConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemConnectorConnectionInfoDatabaseCredential) *string { return v.CredentialType }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemConnectorConnectionInfoDatabaseCredential) *string { return v.NamedCredentialId }).(pulumi.StringPtrOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemConnectorConnectionInfoDatabaseCredential) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemConnectorConnectionInfoDatabaseCredential) *string { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
+}
+
+// The role of the database user.
+func (o ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemConnectorConnectionInfoDatabaseCredential) *string { return v.Role }).(pulumi.StringPtrOutput)
+}
+
+// The user to connect to the database.
+func (o ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemConnectorConnectionInfoDatabaseCredential) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalDbSystemConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput) ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput) ToExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalDbSystemConnectorConnectionInfoDatabaseCredential {
+		return vs[0].([]ExternalDbSystemConnectorConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput)
 }
 
 type ExternalDbSystemDatabaseManagementConfig struct {
@@ -2129,6 +2282,8 @@ type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnect
 	ConnectionCredentials []ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoInput is an input type that accepts ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs and ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoOutput values.
@@ -2149,6 +2304,8 @@ type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnect
 	ConnectionCredentials ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs) ElementType() reflect.Type {
@@ -2223,6 +2380,13 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConn
 	}).(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoOutput) DatabaseCredentials() ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo) []ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -2246,11 +2410,11 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConn
 type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName *string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType *string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId *string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role *string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId *string `pulumi:"sslSecretId"`
@@ -2272,11 +2436,11 @@ type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnect
 type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringPtrInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringPtrInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringPtrInput `pulumi:"sslSecretId"`
@@ -2342,21 +2506,21 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConn
 	}).(pulumi.StringPtrOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential) *string {
 		return v.CredentialType
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential) *string {
 		return v.PasswordSecretId
 	}).(pulumi.StringPtrOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential) *string {
 		return v.Role
@@ -2540,6 +2704,160 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConn
 	}).(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringOutput)
 }
 
+type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType *string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId *string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password *string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role *string `pulumi:"role"`
+	// The user to connect to the database.
+	Username *string `pulumi:"username"`
+}
+
+// ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput is an input type that accepts ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs and ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput` via:
+//
+//	ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs{...}
+type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput
+	ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Context) ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringPtrInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringPtrInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs) ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return i.ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs) ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
+// ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput is an input type that accepts ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray and ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray{ ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs{...} }
+type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput
+	ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray []ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray) ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray) ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) *string {
+		return v.CredentialType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) *string {
+		return v.NamedCredentialId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) *string {
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) *string {
+		return v.PasswordSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The role of the database user.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) *string {
+		return v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+// The user to connect to the database.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) *string {
+		return v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) ToExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential {
+		return vs[0].([]ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
 type ExternalDbSystemDiscoveryDiscoveredComponentConnector struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
 	AgentId *string `pulumi:"agentId"`
@@ -2704,6 +3022,8 @@ type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo struct 
 	ConnectionCredentials []ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoInput is an input type that accepts ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs and ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoOutput values.
@@ -2724,6 +3044,8 @@ type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs str
 	ConnectionCredentials ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs) ElementType() reflect.Type {
@@ -2798,6 +3120,13 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoOutpu
 	}).(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoOutput) DatabaseCredentials() ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo) []ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -2821,11 +3150,11 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArray
 type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName *string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType *string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId *string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role *string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId *string `pulumi:"sslSecretId"`
@@ -2847,11 +3176,11 @@ type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnecti
 type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringPtrInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringPtrInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringPtrInput `pulumi:"sslSecretId"`
@@ -2917,21 +3246,21 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConne
 	}).(pulumi.StringPtrOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential) *string {
 		return v.CredentialType
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential) *string {
 		return v.PasswordSecretId
 	}).(pulumi.StringPtrOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential) *string {
 		return v.Role
@@ -3113,6 +3442,160 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConne
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString {
 		return vs[0].([]ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString)[vs[1].(int)]
 	}).(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringOutput)
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType *string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId *string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password *string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role *string `pulumi:"role"`
+	// The user to connect to the database.
+	Username *string `pulumi:"username"`
+}
+
+// ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput is an input type that accepts ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs and ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput` via:
+//
+//	ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs{...}
+type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput
+	ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Context) ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringPtrInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringPtrInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs) ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return i.ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs) ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
+// ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput is an input type that accepts ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray and ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray{ ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs{...} }
+type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput
+	ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray []ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray) ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray) ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) *string {
+		return v.CredentialType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) *string {
+		return v.NamedCredentialId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) *string {
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) *string {
+		return v.PasswordSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The role of the database user.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) *string {
+		return v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+// The user to connect to the database.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) *string {
+		return v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) ToExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential {
+		return vs[0].([]ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput)
 }
 
 type ExternalDbSystemDiscoveryDiscoveredComponentEndpoint struct {
@@ -3663,6 +4146,8 @@ type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConne
 	ConnectionCredentials []ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoInput is an input type that accepts ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs and ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoOutput values.
@@ -3683,6 +4168,8 @@ type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConne
 	ConnectionCredentials ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs) ElementType() reflect.Type {
@@ -3757,6 +4244,13 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorCo
 	}).(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoOutput) DatabaseCredentials() ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo) []ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -3780,11 +4274,11 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorCo
 type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName *string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType *string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId *string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role *string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId *string `pulumi:"sslSecretId"`
@@ -3806,11 +4300,11 @@ type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConne
 type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringPtrInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringPtrInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringPtrInput `pulumi:"sslSecretId"`
@@ -3876,21 +4370,21 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorCo
 	}).(pulumi.StringPtrOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential) *string {
 		return v.CredentialType
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential) *string {
 		return v.PasswordSecretId
 	}).(pulumi.StringPtrOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential) *string {
 		return v.Role
@@ -4072,6 +4566,160 @@ func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorCo
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString {
 		return vs[0].([]ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString)[vs[1].(int)]
 	}).(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringOutput)
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType *string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId *string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password *string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role *string `pulumi:"role"`
+	// The user to connect to the database.
+	Username *string `pulumi:"username"`
+}
+
+// ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput is an input type that accepts ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs and ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput` via:
+//
+//	ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs{...}
+type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput
+	ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Context) ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringPtrInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringPtrInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs) ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return i.ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs) ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
+// ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput is an input type that accepts ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray and ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray{ ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs{...} }
+type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput
+	ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray []ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray) ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray) ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput() ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) *string {
+		return v.CredentialType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) *string {
+		return v.NamedCredentialId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) *string {
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) *string {
+		return v.PasswordSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The role of the database user.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) *string {
+		return v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+// The user to connect to the database.
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) *string {
+		return v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput() ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) ToExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential {
+		return vs[0].([]ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput)
 }
 
 type ExternalDbSystemDiscoveryDiscoveredComponentScanConfiguration struct {
@@ -5015,11 +5663,11 @@ func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoPtrOu
 type ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName *string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId *string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role *string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId *string `pulumi:"sslSecretId"`
@@ -5041,11 +5689,11 @@ type ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnecti
 type ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringPtrInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringPtrInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringPtrInput `pulumi:"sslSecretId"`
@@ -5137,21 +5785,21 @@ func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConne
 	}).(pulumi.StringPtrOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials) string {
 		return v.CredentialType
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsOutput) PasswordSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials) *string {
 		return v.PasswordSecretId
 	}).(pulumi.StringPtrOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials) *string {
 		return v.Role
@@ -5206,7 +5854,7 @@ func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConne
 	}).(pulumi.StringPtrOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsPtrOutput) CredentialType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials) *string {
 		if v == nil {
@@ -5216,7 +5864,7 @@ func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConne
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsPtrOutput) PasswordSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials) *string {
 		if v == nil {
@@ -5226,7 +5874,7 @@ func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConne
 	}).(pulumi.StringPtrOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsPtrOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials) *string {
 		if v == nil {
@@ -6812,9 +7460,9 @@ func (o ManagedDatabaseGroupManagedDatabaseArrayOutput) Index(i pulumi.IntInput)
 }
 
 type ManagedDatabasesChangeDatabaseParameterCredentials struct {
-	// The password for the database user name.
+	// The database user's password encoded using BASE64 scheme.
 	Password *string `pulumi:"password"`
-	// The role of the database user. Indicates whether the database user is a normal user or sysdba.
+	// The role of the database user.
 	Role *string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId *string `pulumi:"secretId"`
@@ -6834,9 +7482,9 @@ type ManagedDatabasesChangeDatabaseParameterCredentialsInput interface {
 }
 
 type ManagedDatabasesChangeDatabaseParameterCredentialsArgs struct {
-	// The password for the database user name.
+	// The database user's password encoded using BASE64 scheme.
 	Password pulumi.StringPtrInput `pulumi:"password"`
-	// The role of the database user. Indicates whether the database user is a normal user or sysdba.
+	// The role of the database user.
 	Role pulumi.StringPtrInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
@@ -6921,12 +7569,12 @@ func (o ManagedDatabasesChangeDatabaseParameterCredentialsOutput) ToManagedDatab
 	}).(ManagedDatabasesChangeDatabaseParameterCredentialsPtrOutput)
 }
 
-// The password for the database user name.
+// The database user's password encoded using BASE64 scheme.
 func (o ManagedDatabasesChangeDatabaseParameterCredentialsOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagedDatabasesChangeDatabaseParameterCredentials) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-// The role of the database user. Indicates whether the database user is a normal user or sysdba.
+// The role of the database user.
 func (o ManagedDatabasesChangeDatabaseParameterCredentialsOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagedDatabasesChangeDatabaseParameterCredentials) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
@@ -6965,7 +7613,7 @@ func (o ManagedDatabasesChangeDatabaseParameterCredentialsPtrOutput) Elem() Mana
 	}).(ManagedDatabasesChangeDatabaseParameterCredentialsOutput)
 }
 
-// The password for the database user name.
+// The database user's password encoded using BASE64 scheme.
 func (o ManagedDatabasesChangeDatabaseParameterCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameterCredentials) *string {
 		if v == nil {
@@ -6975,7 +7623,7 @@ func (o ManagedDatabasesChangeDatabaseParameterCredentialsPtrOutput) Password() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// The role of the database user. Indicates whether the database user is a normal user or sysdba.
+// The role of the database user.
 func (o ManagedDatabasesChangeDatabaseParameterCredentialsPtrOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameterCredentials) *string {
 		if v == nil {
@@ -7002,6 +7650,238 @@ func (o ManagedDatabasesChangeDatabaseParameterCredentialsPtrOutput) UserName() 
 			return nil
 		}
 		return v.UserName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ManagedDatabasesChangeDatabaseParameterDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId *string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password *string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role *string `pulumi:"role"`
+	// The user to connect to the database.
+	Username *string `pulumi:"username"`
+}
+
+// ManagedDatabasesChangeDatabaseParameterDatabaseCredentialInput is an input type that accepts ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs and ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput values.
+// You can construct a concrete instance of `ManagedDatabasesChangeDatabaseParameterDatabaseCredentialInput` via:
+//
+//	ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs{...}
+type ManagedDatabasesChangeDatabaseParameterDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput() ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput
+	ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutputWithContext(context.Context) ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput
+}
+
+type ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringPtrInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringPtrInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedDatabasesChangeDatabaseParameterDatabaseCredential)(nil)).Elem()
+}
+
+func (i ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput() ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput {
+	return i.ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutputWithContext(ctx context.Context) ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput)
+}
+
+func (i ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput() ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput {
+	return i.ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutputWithContext(ctx context.Context) ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput).ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutputWithContext(ctx)
+}
+
+// ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrInput is an input type that accepts ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs, ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtr and ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput values.
+// You can construct a concrete instance of `ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrInput` via:
+//
+//	        ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrInput interface {
+	pulumi.Input
+
+	ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput() ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput
+	ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutputWithContext(context.Context) ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput
+}
+
+type managedDatabasesChangeDatabaseParameterDatabaseCredentialPtrType ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs
+
+func ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtr(v *ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs) ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrInput {
+	return (*managedDatabasesChangeDatabaseParameterDatabaseCredentialPtrType)(v)
+}
+
+func (*managedDatabasesChangeDatabaseParameterDatabaseCredentialPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedDatabasesChangeDatabaseParameterDatabaseCredential)(nil)).Elem()
+}
+
+func (i *managedDatabasesChangeDatabaseParameterDatabaseCredentialPtrType) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput() ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput {
+	return i.ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutputWithContext(context.Background())
+}
+
+func (i *managedDatabasesChangeDatabaseParameterDatabaseCredentialPtrType) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutputWithContext(ctx context.Context) ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput)
+}
+
+type ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedDatabasesChangeDatabaseParameterDatabaseCredential)(nil)).Elem()
+}
+
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput() ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput {
+	return o
+}
+
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutputWithContext(ctx context.Context) ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput {
+	return o
+}
+
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput() ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput {
+	return o.ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutputWithContext(ctx context.Context) ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *ManagedDatabasesChangeDatabaseParameterDatabaseCredential {
+		return &v
+	}).(ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput)
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagedDatabasesChangeDatabaseParameterDatabaseCredential) string { return v.CredentialType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput) NamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *string { return v.NamedCredentialId }).(pulumi.StringPtrOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *string { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
+}
+
+// The role of the database user.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *string { return v.Role }).(pulumi.StringPtrOutput)
+}
+
+// The user to connect to the database.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedDatabasesChangeDatabaseParameterDatabaseCredential)(nil)).Elem()
+}
+
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput() ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput {
+	return o
+}
+
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput) ToManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutputWithContext(ctx context.Context) ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput {
+	return o
+}
+
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput) Elem() ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput {
+	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameterDatabaseCredential) ManagedDatabasesChangeDatabaseParameterDatabaseCredential {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedDatabasesChangeDatabaseParameterDatabaseCredential
+		return ret
+	}).(ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput)
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CredentialType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput) NamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NamedCredentialId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PasswordSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The role of the database user.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+// The user to connect to the database.
+func (o ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Username
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -7121,9 +8001,9 @@ func (o ManagedDatabasesChangeDatabaseParameterParameterArrayOutput) Index(i pul
 }
 
 type ManagedDatabasesResetDatabaseParameterCredentials struct {
-	// The password for the database user name.
+	// The database user's password encoded using BASE64 scheme.
 	Password *string `pulumi:"password"`
-	// The role of the database user. Indicates whether the database user is a normal user or sysdba.
+	// The role of the database user.
 	Role *string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId *string `pulumi:"secretId"`
@@ -7143,9 +8023,9 @@ type ManagedDatabasesResetDatabaseParameterCredentialsInput interface {
 }
 
 type ManagedDatabasesResetDatabaseParameterCredentialsArgs struct {
-	// The password for the database user name.
+	// The database user's password encoded using BASE64 scheme.
 	Password pulumi.StringPtrInput `pulumi:"password"`
-	// The role of the database user. Indicates whether the database user is a normal user or sysdba.
+	// The role of the database user.
 	Role pulumi.StringPtrInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
@@ -7230,12 +8110,12 @@ func (o ManagedDatabasesResetDatabaseParameterCredentialsOutput) ToManagedDataba
 	}).(ManagedDatabasesResetDatabaseParameterCredentialsPtrOutput)
 }
 
-// The password for the database user name.
+// The database user's password encoded using BASE64 scheme.
 func (o ManagedDatabasesResetDatabaseParameterCredentialsOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagedDatabasesResetDatabaseParameterCredentials) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-// The role of the database user. Indicates whether the database user is a normal user or sysdba.
+// The role of the database user.
 func (o ManagedDatabasesResetDatabaseParameterCredentialsOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagedDatabasesResetDatabaseParameterCredentials) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
@@ -7274,7 +8154,7 @@ func (o ManagedDatabasesResetDatabaseParameterCredentialsPtrOutput) Elem() Manag
 	}).(ManagedDatabasesResetDatabaseParameterCredentialsOutput)
 }
 
-// The password for the database user name.
+// The database user's password encoded using BASE64 scheme.
 func (o ManagedDatabasesResetDatabaseParameterCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ManagedDatabasesResetDatabaseParameterCredentials) *string {
 		if v == nil {
@@ -7284,7 +8164,7 @@ func (o ManagedDatabasesResetDatabaseParameterCredentialsPtrOutput) Password() p
 	}).(pulumi.StringPtrOutput)
 }
 
-// The role of the database user. Indicates whether the database user is a normal user or sysdba.
+// The role of the database user.
 func (o ManagedDatabasesResetDatabaseParameterCredentialsPtrOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ManagedDatabasesResetDatabaseParameterCredentials) *string {
 		if v == nil {
@@ -7311,6 +8191,451 @@ func (o ManagedDatabasesResetDatabaseParameterCredentialsPtrOutput) UserName() p
 			return nil
 		}
 		return v.UserName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ManagedDatabasesResetDatabaseParameterDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId *string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password *string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role *string `pulumi:"role"`
+	// The user to connect to the database.
+	Username *string `pulumi:"username"`
+}
+
+// ManagedDatabasesResetDatabaseParameterDatabaseCredentialInput is an input type that accepts ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs and ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput values.
+// You can construct a concrete instance of `ManagedDatabasesResetDatabaseParameterDatabaseCredentialInput` via:
+//
+//	ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs{...}
+type ManagedDatabasesResetDatabaseParameterDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput() ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput
+	ToManagedDatabasesResetDatabaseParameterDatabaseCredentialOutputWithContext(context.Context) ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput
+}
+
+type ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringPtrInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringPtrInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedDatabasesResetDatabaseParameterDatabaseCredential)(nil)).Elem()
+}
+
+func (i ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput() ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput {
+	return i.ToManagedDatabasesResetDatabaseParameterDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialOutputWithContext(ctx context.Context) ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput)
+}
+
+func (i ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput() ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput {
+	return i.ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutputWithContext(ctx context.Context) ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput).ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutputWithContext(ctx)
+}
+
+// ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrInput is an input type that accepts ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs, ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtr and ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput values.
+// You can construct a concrete instance of `ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrInput` via:
+//
+//	        ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrInput interface {
+	pulumi.Input
+
+	ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput() ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput
+	ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutputWithContext(context.Context) ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput
+}
+
+type managedDatabasesResetDatabaseParameterDatabaseCredentialPtrType ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs
+
+func ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtr(v *ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs) ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrInput {
+	return (*managedDatabasesResetDatabaseParameterDatabaseCredentialPtrType)(v)
+}
+
+func (*managedDatabasesResetDatabaseParameterDatabaseCredentialPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedDatabasesResetDatabaseParameterDatabaseCredential)(nil)).Elem()
+}
+
+func (i *managedDatabasesResetDatabaseParameterDatabaseCredentialPtrType) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput() ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput {
+	return i.ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutputWithContext(context.Background())
+}
+
+func (i *managedDatabasesResetDatabaseParameterDatabaseCredentialPtrType) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutputWithContext(ctx context.Context) ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput)
+}
+
+type ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedDatabasesResetDatabaseParameterDatabaseCredential)(nil)).Elem()
+}
+
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput() ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput {
+	return o
+}
+
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialOutputWithContext(ctx context.Context) ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput {
+	return o
+}
+
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput() ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput {
+	return o.ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutputWithContext(ctx context.Context) ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedDatabasesResetDatabaseParameterDatabaseCredential) *ManagedDatabasesResetDatabaseParameterDatabaseCredential {
+		return &v
+	}).(ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput)
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagedDatabasesResetDatabaseParameterDatabaseCredential) string { return v.CredentialType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput) NamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabasesResetDatabaseParameterDatabaseCredential) *string { return v.NamedCredentialId }).(pulumi.StringPtrOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabasesResetDatabaseParameterDatabaseCredential) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabasesResetDatabaseParameterDatabaseCredential) *string { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
+}
+
+// The role of the database user.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabasesResetDatabaseParameterDatabaseCredential) *string { return v.Role }).(pulumi.StringPtrOutput)
+}
+
+// The user to connect to the database.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabasesResetDatabaseParameterDatabaseCredential) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedDatabasesResetDatabaseParameterDatabaseCredential)(nil)).Elem()
+}
+
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput() ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput {
+	return o
+}
+
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput) ToManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutputWithContext(ctx context.Context) ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput {
+	return o
+}
+
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput) Elem() ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput {
+	return o.ApplyT(func(v *ManagedDatabasesResetDatabaseParameterDatabaseCredential) ManagedDatabasesResetDatabaseParameterDatabaseCredential {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedDatabasesResetDatabaseParameterDatabaseCredential
+		return ret
+	}).(ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput)
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesResetDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CredentialType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput) NamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesResetDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NamedCredentialId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesResetDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesResetDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PasswordSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The role of the database user.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesResetDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+// The user to connect to the database.
+func (o ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabasesResetDatabaseParameterDatabaseCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type NamedCredentialContent struct {
+	// (Updatable) The type of named credential. Only 'BASIC' is supported currently.
+	CredentialType string `pulumi:"credentialType"`
+	// (Updatable) The mechanism used to access the password plain text value.
+	PasswordSecretAccessMode string `pulumi:"passwordSecretAccessMode"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// (Updatable) The role of the database user.
+	Role string `pulumi:"role"`
+	// (Updatable) The user name used to connect to the database.
+	UserName string `pulumi:"userName"`
+}
+
+// NamedCredentialContentInput is an input type that accepts NamedCredentialContentArgs and NamedCredentialContentOutput values.
+// You can construct a concrete instance of `NamedCredentialContentInput` via:
+//
+//	NamedCredentialContentArgs{...}
+type NamedCredentialContentInput interface {
+	pulumi.Input
+
+	ToNamedCredentialContentOutput() NamedCredentialContentOutput
+	ToNamedCredentialContentOutputWithContext(context.Context) NamedCredentialContentOutput
+}
+
+type NamedCredentialContentArgs struct {
+	// (Updatable) The type of named credential. Only 'BASIC' is supported currently.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// (Updatable) The mechanism used to access the password plain text value.
+	PasswordSecretAccessMode pulumi.StringInput `pulumi:"passwordSecretAccessMode"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// (Updatable) The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// (Updatable) The user name used to connect to the database.
+	UserName pulumi.StringInput `pulumi:"userName"`
+}
+
+func (NamedCredentialContentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamedCredentialContent)(nil)).Elem()
+}
+
+func (i NamedCredentialContentArgs) ToNamedCredentialContentOutput() NamedCredentialContentOutput {
+	return i.ToNamedCredentialContentOutputWithContext(context.Background())
+}
+
+func (i NamedCredentialContentArgs) ToNamedCredentialContentOutputWithContext(ctx context.Context) NamedCredentialContentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamedCredentialContentOutput)
+}
+
+func (i NamedCredentialContentArgs) ToNamedCredentialContentPtrOutput() NamedCredentialContentPtrOutput {
+	return i.ToNamedCredentialContentPtrOutputWithContext(context.Background())
+}
+
+func (i NamedCredentialContentArgs) ToNamedCredentialContentPtrOutputWithContext(ctx context.Context) NamedCredentialContentPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamedCredentialContentOutput).ToNamedCredentialContentPtrOutputWithContext(ctx)
+}
+
+// NamedCredentialContentPtrInput is an input type that accepts NamedCredentialContentArgs, NamedCredentialContentPtr and NamedCredentialContentPtrOutput values.
+// You can construct a concrete instance of `NamedCredentialContentPtrInput` via:
+//
+//	        NamedCredentialContentArgs{...}
+//
+//	or:
+//
+//	        nil
+type NamedCredentialContentPtrInput interface {
+	pulumi.Input
+
+	ToNamedCredentialContentPtrOutput() NamedCredentialContentPtrOutput
+	ToNamedCredentialContentPtrOutputWithContext(context.Context) NamedCredentialContentPtrOutput
+}
+
+type namedCredentialContentPtrType NamedCredentialContentArgs
+
+func NamedCredentialContentPtr(v *NamedCredentialContentArgs) NamedCredentialContentPtrInput {
+	return (*namedCredentialContentPtrType)(v)
+}
+
+func (*namedCredentialContentPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NamedCredentialContent)(nil)).Elem()
+}
+
+func (i *namedCredentialContentPtrType) ToNamedCredentialContentPtrOutput() NamedCredentialContentPtrOutput {
+	return i.ToNamedCredentialContentPtrOutputWithContext(context.Background())
+}
+
+func (i *namedCredentialContentPtrType) ToNamedCredentialContentPtrOutputWithContext(ctx context.Context) NamedCredentialContentPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamedCredentialContentPtrOutput)
+}
+
+type NamedCredentialContentOutput struct{ *pulumi.OutputState }
+
+func (NamedCredentialContentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamedCredentialContent)(nil)).Elem()
+}
+
+func (o NamedCredentialContentOutput) ToNamedCredentialContentOutput() NamedCredentialContentOutput {
+	return o
+}
+
+func (o NamedCredentialContentOutput) ToNamedCredentialContentOutputWithContext(ctx context.Context) NamedCredentialContentOutput {
+	return o
+}
+
+func (o NamedCredentialContentOutput) ToNamedCredentialContentPtrOutput() NamedCredentialContentPtrOutput {
+	return o.ToNamedCredentialContentPtrOutputWithContext(context.Background())
+}
+
+func (o NamedCredentialContentOutput) ToNamedCredentialContentPtrOutputWithContext(ctx context.Context) NamedCredentialContentPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NamedCredentialContent) *NamedCredentialContent {
+		return &v
+	}).(NamedCredentialContentPtrOutput)
+}
+
+// (Updatable) The type of named credential. Only 'BASIC' is supported currently.
+func (o NamedCredentialContentOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v NamedCredentialContent) string { return v.CredentialType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The mechanism used to access the password plain text value.
+func (o NamedCredentialContentOutput) PasswordSecretAccessMode() pulumi.StringOutput {
+	return o.ApplyT(func(v NamedCredentialContent) string { return v.PasswordSecretAccessMode }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+func (o NamedCredentialContentOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v NamedCredentialContent) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The role of the database user.
+func (o NamedCredentialContentOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v NamedCredentialContent) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// (Updatable) The user name used to connect to the database.
+func (o NamedCredentialContentOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v NamedCredentialContent) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+type NamedCredentialContentPtrOutput struct{ *pulumi.OutputState }
+
+func (NamedCredentialContentPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NamedCredentialContent)(nil)).Elem()
+}
+
+func (o NamedCredentialContentPtrOutput) ToNamedCredentialContentPtrOutput() NamedCredentialContentPtrOutput {
+	return o
+}
+
+func (o NamedCredentialContentPtrOutput) ToNamedCredentialContentPtrOutputWithContext(ctx context.Context) NamedCredentialContentPtrOutput {
+	return o
+}
+
+func (o NamedCredentialContentPtrOutput) Elem() NamedCredentialContentOutput {
+	return o.ApplyT(func(v *NamedCredentialContent) NamedCredentialContent {
+		if v != nil {
+			return *v
+		}
+		var ret NamedCredentialContent
+		return ret
+	}).(NamedCredentialContentOutput)
+}
+
+// (Updatable) The type of named credential. Only 'BASIC' is supported currently.
+func (o NamedCredentialContentPtrOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamedCredentialContent) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CredentialType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The mechanism used to access the password plain text value.
+func (o NamedCredentialContentPtrOutput) PasswordSecretAccessMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamedCredentialContent) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PasswordSecretAccessMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+func (o NamedCredentialContentPtrOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamedCredentialContent) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PasswordSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The role of the database user.
+func (o NamedCredentialContentPtrOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamedCredentialContent) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The user name used to connect to the database.
+func (o NamedCredentialContentPtrOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamedCredentialContent) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.UserName
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -13573,6 +14898,8 @@ type GetExternalDbSystemConnectorConnectionInfo struct {
 	ConnectionCredentials []GetExternalDbSystemConnectorConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []GetExternalDbSystemConnectorConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []GetExternalDbSystemConnectorConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // GetExternalDbSystemConnectorConnectionInfoInput is an input type that accepts GetExternalDbSystemConnectorConnectionInfoArgs and GetExternalDbSystemConnectorConnectionInfoOutput values.
@@ -13593,6 +14920,8 @@ type GetExternalDbSystemConnectorConnectionInfoArgs struct {
 	ConnectionCredentials GetExternalDbSystemConnectorConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings GetExternalDbSystemConnectorConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (GetExternalDbSystemConnectorConnectionInfoArgs) ElementType() reflect.Type {
@@ -13665,6 +14994,13 @@ func (o GetExternalDbSystemConnectorConnectionInfoOutput) ConnectionStrings() Ge
 	}).(GetExternalDbSystemConnectorConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o GetExternalDbSystemConnectorConnectionInfoOutput) DatabaseCredentials() GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorConnectionInfo) []GetExternalDbSystemConnectorConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type GetExternalDbSystemConnectorConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (GetExternalDbSystemConnectorConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -13688,11 +15024,11 @@ func (o GetExternalDbSystemConnectorConnectionInfoArrayOutput) Index(i pulumi.In
 type GetExternalDbSystemConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId string `pulumi:"sslSecretId"`
@@ -13714,11 +15050,11 @@ type GetExternalDbSystemConnectorConnectionInfoConnectionCredentialInput interfa
 type GetExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
@@ -13782,19 +15118,19 @@ func (o GetExternalDbSystemConnectorConnectionInfoConnectionCredentialOutput) Cr
 	return o.ApplyT(func(v GetExternalDbSystemConnectorConnectionInfoConnectionCredential) string { return v.CredentialName }).(pulumi.StringOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o GetExternalDbSystemConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemConnectorConnectionInfoConnectionCredential) string { return v.CredentialType }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o GetExternalDbSystemConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemConnectorConnectionInfoConnectionCredential) string {
 		return v.PasswordSecretId
 	}).(pulumi.StringOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o GetExternalDbSystemConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemConnectorConnectionInfoConnectionCredential) string { return v.Role }).(pulumi.StringOutput)
 }
@@ -13960,6 +15296,150 @@ func (o GetExternalDbSystemConnectorConnectionInfoConnectionStringArrayOutput) I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemConnectorConnectionInfoConnectionString {
 		return vs[0].([]GetExternalDbSystemConnectorConnectionInfoConnectionString)[vs[1].(int)]
 	}).(GetExternalDbSystemConnectorConnectionInfoConnectionStringOutput)
+}
+
+type GetExternalDbSystemConnectorConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role string `pulumi:"role"`
+	// The user to connect to the database.
+	Username string `pulumi:"username"`
+}
+
+// GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialInput is an input type that accepts GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs and GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialInput` via:
+//
+//	GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs{...}
+type GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput
+	ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Context) GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput
+}
+
+type GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput {
+	return i.ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
+// GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayInput is an input type that accepts GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray and GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray{ GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs{...} }
+type GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput
+	ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray []GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialInput
+
+func (GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorConnectionInfoDatabaseCredential) string { return v.CredentialType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorConnectionInfoDatabaseCredential) string {
+		return v.NamedCredentialId
+	}).(pulumi.StringOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorConnectionInfoDatabaseCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorConnectionInfoDatabaseCredential) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+}
+
+// The role of the database user.
+func (o GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorConnectionInfoDatabaseCredential) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The user to connect to the database.
+func (o GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorConnectionInfoDatabaseCredential) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemConnectorConnectionInfoDatabaseCredential {
+		return vs[0].([]GetExternalDbSystemConnectorConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput)
 }
 
 type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection struct {
@@ -14301,6 +15781,8 @@ type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnect
 	ConnectionCredentials []GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoInput is an input type that accepts GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoArgs and GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoOutput values.
@@ -14321,6 +15803,8 @@ type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnect
 	ConnectionCredentials GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoArgs) ElementType() reflect.Type {
@@ -14395,6 +15879,13 @@ func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConn
 	}).(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoOutput) DatabaseCredentials() GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfo) []GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -14418,11 +15909,11 @@ func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConn
 type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId string `pulumi:"sslSecretId"`
@@ -14444,11 +15935,11 @@ type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnect
 type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
@@ -14514,21 +16005,21 @@ func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConn
 	}).(pulumi.StringOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredential) string {
 		return v.CredentialType
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredential) string {
 		return v.PasswordSecretId
 	}).(pulumi.StringOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredential) string {
 		return v.Role
@@ -14710,6 +16201,160 @@ func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionString {
 		return vs[0].([]GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionString)[vs[1].(int)]
 	}).(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringOutput)
+}
+
+type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role string `pulumi:"role"`
+	// The user to connect to the database.
+	Username string `pulumi:"username"`
+}
+
+// GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialInput is an input type that accepts GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArgs and GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialInput` via:
+//
+//	GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArgs{...}
+type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput
+	ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutputWithContext(context.Context) GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput
+}
+
+type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput {
+	return i.ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput)
+}
+
+// GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayInput is an input type that accepts GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArray and GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArray{ GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArgs{...} }
+type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput
+	ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArray []GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialInput
+
+func (GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential) string {
+		return v.NamedCredentialId
+	}).(pulumi.StringOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The role of the database user.
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+// The user to connect to the database.
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential {
+		return vs[0].([]GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput)
 }
 
 type GetExternalDbSystemConnectorsFilter struct {
@@ -16397,6 +18042,8 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscov
 	ConnectionCredentials []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoInput is an input type that accepts GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs and GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoOutput values.
@@ -16417,6 +18064,8 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscov
 	ConnectionCredentials GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs) ElementType() reflect.Type {
@@ -16491,6 +18140,13 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoOutput) DatabaseCredentials() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfo) []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -16514,11 +18170,11 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId string `pulumi:"sslSecretId"`
@@ -16540,11 +18196,11 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscov
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
@@ -16610,21 +18266,21 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 	}).(pulumi.StringOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential) string {
 		return v.CredentialType
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential) string {
 		return v.PasswordSecretId
 	}).(pulumi.StringOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential) string {
 		return v.Role
@@ -16808,6 +18464,160 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringOutput)
 }
 
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role string `pulumi:"role"`
+	// The user to connect to the database.
+	Username string `pulumi:"username"`
+}
+
+// GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput is an input type that accepts GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs and GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput` via:
+//
+//	GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs{...}
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return i.ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
+// GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput is an input type that accepts GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray and GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray{ GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs{...} }
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.NamedCredentialId
+	}).(pulumi.StringOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The role of the database user.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+// The user to connect to the database.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential {
+		return vs[0].([]GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
 	AgentId string `pulumi:"agentId"`
@@ -16980,6 +18790,8 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscov
 	ConnectionCredentials []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoInput is an input type that accepts GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoArgs and GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoOutput values.
@@ -17000,6 +18812,8 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscov
 	ConnectionCredentials GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoArgs) ElementType() reflect.Type {
@@ -17074,6 +18888,13 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoOutput) DatabaseCredentials() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfo) []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -17097,11 +18918,11 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId string `pulumi:"sslSecretId"`
@@ -17123,11 +18944,11 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscov
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
@@ -17193,21 +19014,21 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 	}).(pulumi.StringOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredential) string {
 		return v.CredentialType
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredential) string {
 		return v.PasswordSecretId
 	}).(pulumi.StringOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredential) string {
 		return v.Role
@@ -17389,6 +19210,160 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionString {
 		return vs[0].([]GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionString)[vs[1].(int)]
 	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringOutput)
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role string `pulumi:"role"`
+	// The user to connect to the database.
+	Username string `pulumi:"username"`
+}
+
+// GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput is an input type that accepts GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs and GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput` via:
+//
+//	GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs{...}
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return i.ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
+// GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput is an input type that accepts GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray and GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray{ GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs{...} }
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.NamedCredentialId
+	}).(pulumi.StringOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The role of the database user.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+// The user to connect to the database.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential {
+		return vs[0].([]GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput)
 }
 
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint struct {
@@ -17959,6 +19934,8 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscov
 	ConnectionCredentials []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoInput is an input type that accepts GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs and GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoOutput values.
@@ -17979,6 +19956,8 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscov
 	ConnectionCredentials GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs) ElementType() reflect.Type {
@@ -18053,6 +20032,13 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoOutput) DatabaseCredentials() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo) []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -18076,11 +20062,11 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId string `pulumi:"sslSecretId"`
@@ -18102,11 +20088,11 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscov
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
@@ -18172,21 +20158,21 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 	}).(pulumi.StringOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential) string {
 		return v.CredentialType
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential) string {
 		return v.PasswordSecretId
 	}).(pulumi.StringOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential) string {
 		return v.Role
@@ -18368,6 +20354,160 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDis
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString {
 		return vs[0].([]GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString)[vs[1].(int)]
 	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringOutput)
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role string `pulumi:"role"`
+	// The user to connect to the database.
+	Username string `pulumi:"username"`
+}
+
+// GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput is an input type that accepts GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs and GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput` via:
+//
+//	GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs{...}
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return i.ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
+// GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput is an input type that accepts GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray and GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray{ GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs{...} }
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput
+	ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.NamedCredentialId
+	}).(pulumi.StringOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The role of the database user.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+// The user to connect to the database.
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential {
+		return vs[0].([]GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput)
 }
 
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration struct {
@@ -19123,11 +21263,11 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPat
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId string `pulumi:"sslSecretId"`
@@ -19149,11 +21289,11 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchO
 type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
@@ -19219,21 +21359,21 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPat
 	}).(pulumi.StringOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredential) string {
 		return v.CredentialType
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredential) string {
 		return v.PasswordSecretId
 	}).(pulumi.StringOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredential) string {
 		return v.Role
@@ -20602,6 +22742,8 @@ type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConn
 	ConnectionCredentials []GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoInput is an input type that accepts GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs and GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoOutput values.
@@ -20622,6 +22764,8 @@ type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConn
 	ConnectionCredentials GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs) ElementType() reflect.Type {
@@ -20696,6 +22840,13 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorC
 	}).(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoOutput) DatabaseCredentials() GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo) []GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -20719,11 +22870,11 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorC
 type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId string `pulumi:"sslSecretId"`
@@ -20745,11 +22896,11 @@ type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConn
 type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
@@ -20815,21 +22966,21 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorC
 	}).(pulumi.StringOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential) string {
 		return v.CredentialType
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential) string {
 		return v.PasswordSecretId
 	}).(pulumi.StringOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential) string {
 		return v.Role
@@ -21013,6 +23164,160 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorC
 	}).(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringOutput)
 }
 
+type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role string `pulumi:"role"`
+	// The user to connect to the database.
+	Username string `pulumi:"username"`
+}
+
+// GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput is an input type that accepts GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs and GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput` via:
+//
+//	GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs{...}
+type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return i.ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
+// GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput is an input type that accepts GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray and GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray{ GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs{...} }
+type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray []GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.NamedCredentialId
+	}).(pulumi.StringOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The role of the database user.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+// The user to connect to the database.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential {
+		return vs[0].([]GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
 type GetExternalDbSystemDiscoveryDiscoveredComponentConnector struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
 	AgentId string `pulumi:"agentId"`
@@ -21177,6 +23482,8 @@ type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo stru
 	ConnectionCredentials []GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoInput is an input type that accepts GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs and GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoOutput values.
@@ -21197,6 +23504,8 @@ type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs 
 	ConnectionCredentials GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs) ElementType() reflect.Type {
@@ -21271,6 +23580,13 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoOu
 	}).(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoOutput) DatabaseCredentials() GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo) []GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -21294,11 +23610,11 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoAr
 type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId string `pulumi:"sslSecretId"`
@@ -21320,11 +23636,11 @@ type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConne
 type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
@@ -21390,21 +23706,21 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoCo
 	}).(pulumi.StringOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential) string {
 		return v.CredentialType
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential) string {
 		return v.PasswordSecretId
 	}).(pulumi.StringOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential) string {
 		return v.Role
@@ -21586,6 +23902,160 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoCo
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString {
 		return vs[0].([]GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString)[vs[1].(int)]
 	}).(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringOutput)
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role string `pulumi:"role"`
+	// The user to connect to the database.
+	Username string `pulumi:"username"`
+}
+
+// GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput is an input type that accepts GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs and GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput` via:
+//
+//	GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs{...}
+type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return i.ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
+// GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput is an input type that accepts GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray and GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray{ GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs{...} }
+type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray []GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.NamedCredentialId
+	}).(pulumi.StringOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The role of the database user.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+// The user to connect to the database.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential {
+		return vs[0].([]GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput)
 }
 
 type GetExternalDbSystemDiscoveryDiscoveredComponentEndpoint struct {
@@ -22142,6 +24612,8 @@ type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorCo
 	ConnectionCredentials []GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings []GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials []GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential `pulumi:"databaseCredentials"`
 }
 
 // GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoInput is an input type that accepts GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs and GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoOutput values.
@@ -22162,6 +24634,8 @@ type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorCo
 	ConnectionCredentials GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
 	// The Oracle Database connection string.
 	ConnectionStrings GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredentials GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput `pulumi:"databaseCredentials"`
 }
 
 func (GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs) ElementType() reflect.Type {
@@ -22236,6 +24710,13 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnecto
 	}).(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayOutput)
 }
 
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoOutput) DatabaseCredentials() GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo) []GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential {
+		return v.DatabaseCredentials
+	}).(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
 type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArrayOutput struct{ *pulumi.OutputState }
 
 func (GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArrayOutput) ElementType() reflect.Type {
@@ -22259,11 +24740,11 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnecto
 type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId string `pulumi:"sslSecretId"`
@@ -22285,11 +24766,11 @@ type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorCo
 type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
@@ -22355,21 +24836,21 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnecto
 	}).(pulumi.StringOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential) string {
 		return v.CredentialType
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential) string {
 		return v.PasswordSecretId
 	}).(pulumi.StringOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential) string {
 		return v.Role
@@ -22551,6 +25032,160 @@ func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnecto
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString {
 		return vs[0].([]GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString)[vs[1].(int)]
 	}).(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringOutput)
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType string `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId string `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password string `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role string `pulumi:"role"`
+	// The user to connect to the database.
+	Username string `pulumi:"username"`
+}
+
+// GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput is an input type that accepts GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs and GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput` via:
+//
+//	GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs{...}
+type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs struct {
+	// The type of the credential for tablespace administration tasks.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+	NamedCredentialId pulumi.StringInput `pulumi:"namedCredentialId"`
+	// The database user's password encoded using BASE64 scheme.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The user to connect to the database.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return i.ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs) ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput)
+}
+
+// GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput is an input type that accepts GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray and GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput` via:
+//
+//	GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray{ GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs{...} }
+type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput
+	ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray []GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return i.ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray) ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput)
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput() GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return o
+}
+
+// The type of the credential for tablespace administration tasks.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) NamedCredentialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.NamedCredentialId
+	}).(pulumi.StringOutput)
+}
+
+// The database user's password encoded using BASE64 scheme.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The role of the database user.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+// The user to connect to the database.
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput() GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) ToGetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential {
+		return vs[0].([]GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential)[vs[1].(int)]
+	}).(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput)
 }
 
 type GetExternalDbSystemDiscoveryDiscoveredComponentScanConfiguration struct {
@@ -23276,11 +25911,11 @@ func (o GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoAr
 type GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredential struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName string `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType string `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role string `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId string `pulumi:"sslSecretId"`
@@ -23302,11 +25937,11 @@ type GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConne
 type GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialArgs struct {
 	// The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
-	// The type of credential used to connect to the ASM instance.
+	// The type of the credential for tablespace administration tasks.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
-	// The role of the user connecting to the ASM instance.
+	// The role of the database user.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
 	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
@@ -23372,21 +26007,21 @@ func (o GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoCo
 	}).(pulumi.StringOutput)
 }
 
-// The type of credential used to connect to the ASM instance.
+// The type of the credential for tablespace administration tasks.
 func (o GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredential) string {
 		return v.CredentialType
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
 func (o GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialOutput) PasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredential) string {
 		return v.PasswordSecretId
 	}).(pulumi.StringOutput)
 }
 
-// The role of the user connecting to the ASM instance.
+// The role of the database user.
 func (o GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredential) string {
 		return v.Role
@@ -49408,6 +52043,677 @@ func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput) I
 	}).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput)
 }
 
+type GetNamedCredentialContent struct {
+	// The type of named credential. Only 'BASIC' is supported currently.
+	CredentialType string `pulumi:"credentialType"`
+	// The mechanism used to access the password plain text value.
+	PasswordSecretAccessMode string `pulumi:"passwordSecretAccessMode"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role string `pulumi:"role"`
+	// The user name used to connect to the database.
+	UserName string `pulumi:"userName"`
+}
+
+// GetNamedCredentialContentInput is an input type that accepts GetNamedCredentialContentArgs and GetNamedCredentialContentOutput values.
+// You can construct a concrete instance of `GetNamedCredentialContentInput` via:
+//
+//	GetNamedCredentialContentArgs{...}
+type GetNamedCredentialContentInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialContentOutput() GetNamedCredentialContentOutput
+	ToGetNamedCredentialContentOutputWithContext(context.Context) GetNamedCredentialContentOutput
+}
+
+type GetNamedCredentialContentArgs struct {
+	// The type of named credential. Only 'BASIC' is supported currently.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The mechanism used to access the password plain text value.
+	PasswordSecretAccessMode pulumi.StringInput `pulumi:"passwordSecretAccessMode"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The user name used to connect to the database.
+	UserName pulumi.StringInput `pulumi:"userName"`
+}
+
+func (GetNamedCredentialContentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialContent)(nil)).Elem()
+}
+
+func (i GetNamedCredentialContentArgs) ToGetNamedCredentialContentOutput() GetNamedCredentialContentOutput {
+	return i.ToGetNamedCredentialContentOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialContentArgs) ToGetNamedCredentialContentOutputWithContext(ctx context.Context) GetNamedCredentialContentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialContentOutput)
+}
+
+// GetNamedCredentialContentArrayInput is an input type that accepts GetNamedCredentialContentArray and GetNamedCredentialContentArrayOutput values.
+// You can construct a concrete instance of `GetNamedCredentialContentArrayInput` via:
+//
+//	GetNamedCredentialContentArray{ GetNamedCredentialContentArgs{...} }
+type GetNamedCredentialContentArrayInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialContentArrayOutput() GetNamedCredentialContentArrayOutput
+	ToGetNamedCredentialContentArrayOutputWithContext(context.Context) GetNamedCredentialContentArrayOutput
+}
+
+type GetNamedCredentialContentArray []GetNamedCredentialContentInput
+
+func (GetNamedCredentialContentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialContent)(nil)).Elem()
+}
+
+func (i GetNamedCredentialContentArray) ToGetNamedCredentialContentArrayOutput() GetNamedCredentialContentArrayOutput {
+	return i.ToGetNamedCredentialContentArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialContentArray) ToGetNamedCredentialContentArrayOutputWithContext(ctx context.Context) GetNamedCredentialContentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialContentArrayOutput)
+}
+
+type GetNamedCredentialContentOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialContentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialContent)(nil)).Elem()
+}
+
+func (o GetNamedCredentialContentOutput) ToGetNamedCredentialContentOutput() GetNamedCredentialContentOutput {
+	return o
+}
+
+func (o GetNamedCredentialContentOutput) ToGetNamedCredentialContentOutputWithContext(ctx context.Context) GetNamedCredentialContentOutput {
+	return o
+}
+
+// The type of named credential. Only 'BASIC' is supported currently.
+func (o GetNamedCredentialContentOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialContent) string { return v.CredentialType }).(pulumi.StringOutput)
+}
+
+// The mechanism used to access the password plain text value.
+func (o GetNamedCredentialContentOutput) PasswordSecretAccessMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialContent) string { return v.PasswordSecretAccessMode }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+func (o GetNamedCredentialContentOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialContent) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+}
+
+// The role of the database user.
+func (o GetNamedCredentialContentOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialContent) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The user name used to connect to the database.
+func (o GetNamedCredentialContentOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialContent) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+type GetNamedCredentialContentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialContentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialContent)(nil)).Elem()
+}
+
+func (o GetNamedCredentialContentArrayOutput) ToGetNamedCredentialContentArrayOutput() GetNamedCredentialContentArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialContentArrayOutput) ToGetNamedCredentialContentArrayOutputWithContext(ctx context.Context) GetNamedCredentialContentArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialContentArrayOutput) Index(i pulumi.IntInput) GetNamedCredentialContentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamedCredentialContent {
+		return vs[0].([]GetNamedCredentialContent)[vs[1].(int)]
+	}).(GetNamedCredentialContentOutput)
+}
+
+type GetNamedCredentialsFilter struct {
+	// The name of the named credential.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNamedCredentialsFilterInput is an input type that accepts GetNamedCredentialsFilterArgs and GetNamedCredentialsFilterOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsFilterInput` via:
+//
+//	GetNamedCredentialsFilterArgs{...}
+type GetNamedCredentialsFilterInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsFilterOutput() GetNamedCredentialsFilterOutput
+	ToGetNamedCredentialsFilterOutputWithContext(context.Context) GetNamedCredentialsFilterOutput
+}
+
+type GetNamedCredentialsFilterArgs struct {
+	// The name of the named credential.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNamedCredentialsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsFilterArgs) ToGetNamedCredentialsFilterOutput() GetNamedCredentialsFilterOutput {
+	return i.ToGetNamedCredentialsFilterOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsFilterArgs) ToGetNamedCredentialsFilterOutputWithContext(ctx context.Context) GetNamedCredentialsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsFilterOutput)
+}
+
+// GetNamedCredentialsFilterArrayInput is an input type that accepts GetNamedCredentialsFilterArray and GetNamedCredentialsFilterArrayOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsFilterArrayInput` via:
+//
+//	GetNamedCredentialsFilterArray{ GetNamedCredentialsFilterArgs{...} }
+type GetNamedCredentialsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsFilterArrayOutput() GetNamedCredentialsFilterArrayOutput
+	ToGetNamedCredentialsFilterArrayOutputWithContext(context.Context) GetNamedCredentialsFilterArrayOutput
+}
+
+type GetNamedCredentialsFilterArray []GetNamedCredentialsFilterInput
+
+func (GetNamedCredentialsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsFilterArray) ToGetNamedCredentialsFilterArrayOutput() GetNamedCredentialsFilterArrayOutput {
+	return i.ToGetNamedCredentialsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsFilterArray) ToGetNamedCredentialsFilterArrayOutputWithContext(ctx context.Context) GetNamedCredentialsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsFilterArrayOutput)
+}
+
+type GetNamedCredentialsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsFilterOutput) ToGetNamedCredentialsFilterOutput() GetNamedCredentialsFilterOutput {
+	return o
+}
+
+func (o GetNamedCredentialsFilterOutput) ToGetNamedCredentialsFilterOutputWithContext(ctx context.Context) GetNamedCredentialsFilterOutput {
+	return o
+}
+
+// The name of the named credential.
+func (o GetNamedCredentialsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNamedCredentialsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamedCredentialsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNamedCredentialsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNamedCredentialsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNamedCredentialsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsFilterArrayOutput) ToGetNamedCredentialsFilterArrayOutput() GetNamedCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsFilterArrayOutput) ToGetNamedCredentialsFilterArrayOutputWithContext(ctx context.Context) GetNamedCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsFilterArrayOutput) Index(i pulumi.IntInput) GetNamedCredentialsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamedCredentialsFilter {
+		return vs[0].([]GetNamedCredentialsFilter)[vs[1].(int)]
+	}).(GetNamedCredentialsFilterOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollection struct {
+	Items []GetNamedCredentialsNamedCredentialCollectionItem `pulumi:"items"`
+}
+
+// GetNamedCredentialsNamedCredentialCollectionInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionArgs and GetNamedCredentialsNamedCredentialCollectionOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionArgs{...}
+type GetNamedCredentialsNamedCredentialCollectionInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionOutput() GetNamedCredentialsNamedCredentialCollectionOutput
+	ToGetNamedCredentialsNamedCredentialCollectionOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionArgs struct {
+	Items GetNamedCredentialsNamedCredentialCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNamedCredentialsNamedCredentialCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollection)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionArgs) ToGetNamedCredentialsNamedCredentialCollectionOutput() GetNamedCredentialsNamedCredentialCollectionOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionArgs) ToGetNamedCredentialsNamedCredentialCollectionOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionOutput)
+}
+
+// GetNamedCredentialsNamedCredentialCollectionArrayInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionArray and GetNamedCredentialsNamedCredentialCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionArrayInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionArray{ GetNamedCredentialsNamedCredentialCollectionArgs{...} }
+type GetNamedCredentialsNamedCredentialCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionArrayOutput() GetNamedCredentialsNamedCredentialCollectionArrayOutput
+	ToGetNamedCredentialsNamedCredentialCollectionArrayOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionArrayOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionArray []GetNamedCredentialsNamedCredentialCollectionInput
+
+func (GetNamedCredentialsNamedCredentialCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollection)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionArray) ToGetNamedCredentialsNamedCredentialCollectionArrayOutput() GetNamedCredentialsNamedCredentialCollectionArrayOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionArray) ToGetNamedCredentialsNamedCredentialCollectionArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionArrayOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollection)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionOutput) ToGetNamedCredentialsNamedCredentialCollectionOutput() GetNamedCredentialsNamedCredentialCollectionOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionOutput) ToGetNamedCredentialsNamedCredentialCollectionOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionOutput) Items() GetNamedCredentialsNamedCredentialCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollection) []GetNamedCredentialsNamedCredentialCollectionItem {
+		return v.Items
+	}).(GetNamedCredentialsNamedCredentialCollectionItemArrayOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollection)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionArrayOutput() GetNamedCredentialsNamedCredentialCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionArrayOutput) Index(i pulumi.IntInput) GetNamedCredentialsNamedCredentialCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamedCredentialsNamedCredentialCollection {
+		return vs[0].([]GetNamedCredentialsNamedCredentialCollection)[vs[1].(int)]
+	}).(GetNamedCredentialsNamedCredentialCollectionOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItem struct {
+	// The resource associated to the named credential.
+	AssociatedResource string `pulumi:"associatedResource"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The details of the named credential.
+	Contents []GetNamedCredentialsNamedCredentialCollectionItemContent `pulumi:"contents"`
+	// The information specified by the user about the named credential.
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
+	Id string `pulumi:"id"`
+	// The details of the lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The name of the named credential.
+	Name string `pulumi:"name"`
+	// The scope of named credential.
+	Scope string `pulumi:"scope"`
+	// The current lifecycle state of the named credential.
+	State string `pulumi:"state"`
+	// The date and time the named credential was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the named credential was last updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The type of database that is associated to the named credential.
+	Type string `pulumi:"type"`
+}
+
+// GetNamedCredentialsNamedCredentialCollectionItemInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionItemArgs and GetNamedCredentialsNamedCredentialCollectionItemOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionItemInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionItemArgs{...}
+type GetNamedCredentialsNamedCredentialCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionItemOutput() GetNamedCredentialsNamedCredentialCollectionItemOutput
+	ToGetNamedCredentialsNamedCredentialCollectionItemOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionItemOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemArgs struct {
+	// The resource associated to the named credential.
+	AssociatedResource pulumi.StringInput `pulumi:"associatedResource"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The details of the named credential.
+	Contents GetNamedCredentialsNamedCredentialCollectionItemContentArrayInput `pulumi:"contents"`
+	// The information specified by the user about the named credential.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The details of the lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The name of the named credential.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The scope of named credential.
+	Scope pulumi.StringInput `pulumi:"scope"`
+	// The current lifecycle state of the named credential.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the named credential was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the named credential was last updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The type of database that is associated to the named credential.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNamedCredentialsNamedCredentialCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemArgs) ToGetNamedCredentialsNamedCredentialCollectionItemOutput() GetNamedCredentialsNamedCredentialCollectionItemOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemArgs) ToGetNamedCredentialsNamedCredentialCollectionItemOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionItemOutput)
+}
+
+// GetNamedCredentialsNamedCredentialCollectionItemArrayInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionItemArray and GetNamedCredentialsNamedCredentialCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionItemArrayInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionItemArray{ GetNamedCredentialsNamedCredentialCollectionItemArgs{...} }
+type GetNamedCredentialsNamedCredentialCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemArrayOutput
+	ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionItemArrayOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemArray []GetNamedCredentialsNamedCredentialCollectionItemInput
+
+func (GetNamedCredentialsNamedCredentialCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemArray) ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemArrayOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemArray) ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionItemArrayOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) ToGetNamedCredentialsNamedCredentialCollectionItemOutput() GetNamedCredentialsNamedCredentialCollectionItemOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) ToGetNamedCredentialsNamedCredentialCollectionItemOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemOutput {
+	return o
+}
+
+// The resource associated to the named credential.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) AssociatedResource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.AssociatedResource }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The details of the named credential.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Contents() GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) []GetNamedCredentialsNamedCredentialCollectionItemContent {
+		return v.Contents
+	}).(GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput)
+}
+
+// The information specified by the user about the named credential.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The details of the lifecycle state.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The name of the named credential.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The scope of named credential.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.Scope }).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the named credential.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the named credential was created.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the named credential was last updated.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The type of database that is associated to the named credential.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamedCredentialsNamedCredentialCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamedCredentialsNamedCredentialCollectionItem {
+		return vs[0].([]GetNamedCredentialsNamedCredentialCollectionItem)[vs[1].(int)]
+	}).(GetNamedCredentialsNamedCredentialCollectionItemOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemContent struct {
+	// The type of named credential. Only 'BASIC' is supported currently.
+	CredentialType string `pulumi:"credentialType"`
+	// The mechanism used to access the password plain text value.
+	PasswordSecretAccessMode string `pulumi:"passwordSecretAccessMode"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role string `pulumi:"role"`
+	// The user name used to connect to the database.
+	UserName string `pulumi:"userName"`
+}
+
+// GetNamedCredentialsNamedCredentialCollectionItemContentInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionItemContentArgs and GetNamedCredentialsNamedCredentialCollectionItemContentOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionItemContentInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionItemContentArgs{...}
+type GetNamedCredentialsNamedCredentialCollectionItemContentInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionItemContentOutput() GetNamedCredentialsNamedCredentialCollectionItemContentOutput
+	ToGetNamedCredentialsNamedCredentialCollectionItemContentOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionItemContentOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemContentArgs struct {
+	// The type of named credential. Only 'BASIC' is supported currently.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The mechanism used to access the password plain text value.
+	PasswordSecretAccessMode pulumi.StringInput `pulumi:"passwordSecretAccessMode"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The user name used to connect to the database.
+	UserName pulumi.StringInput `pulumi:"userName"`
+}
+
+func (GetNamedCredentialsNamedCredentialCollectionItemContentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemContent)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemContentArgs) ToGetNamedCredentialsNamedCredentialCollectionItemContentOutput() GetNamedCredentialsNamedCredentialCollectionItemContentOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionItemContentOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemContentArgs) ToGetNamedCredentialsNamedCredentialCollectionItemContentOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemContentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionItemContentOutput)
+}
+
+// GetNamedCredentialsNamedCredentialCollectionItemContentArrayInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionItemContentArray and GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionItemContentArrayInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionItemContentArray{ GetNamedCredentialsNamedCredentialCollectionItemContentArgs{...} }
+type GetNamedCredentialsNamedCredentialCollectionItemContentArrayInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput
+	ToGetNamedCredentialsNamedCredentialCollectionItemContentArrayOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemContentArray []GetNamedCredentialsNamedCredentialCollectionItemContentInput
+
+func (GetNamedCredentialsNamedCredentialCollectionItemContentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollectionItemContent)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemContentArray) ToGetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionItemContentArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemContentArray) ToGetNamedCredentialsNamedCredentialCollectionItemContentArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemContentOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionItemContentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemContent)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemContentOutput) ToGetNamedCredentialsNamedCredentialCollectionItemContentOutput() GetNamedCredentialsNamedCredentialCollectionItemContentOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemContentOutput) ToGetNamedCredentialsNamedCredentialCollectionItemContentOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemContentOutput {
+	return o
+}
+
+// The type of named credential. Only 'BASIC' is supported currently.
+func (o GetNamedCredentialsNamedCredentialCollectionItemContentOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItemContent) string { return v.CredentialType }).(pulumi.StringOutput)
+}
+
+// The mechanism used to access the password plain text value.
+func (o GetNamedCredentialsNamedCredentialCollectionItemContentOutput) PasswordSecretAccessMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItemContent) string {
+		return v.PasswordSecretAccessMode
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+func (o GetNamedCredentialsNamedCredentialCollectionItemContentOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItemContent) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+}
+
+// The role of the database user.
+func (o GetNamedCredentialsNamedCredentialCollectionItemContentOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItemContent) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The user name used to connect to the database.
+func (o GetNamedCredentialsNamedCredentialCollectionItemContentOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItemContent) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollectionItemContent)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionItemContentArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput) Index(i pulumi.IntInput) GetNamedCredentialsNamedCredentialCollectionItemContentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamedCredentialsNamedCredentialCollectionItemContent {
+		return vs[0].([]GetNamedCredentialsNamedCredentialCollectionItemContent)[vs[1].(int)]
+	}).(GetNamedCredentialsNamedCredentialCollectionItemContentOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalAsmServicedDatabaseInput)(nil)).Elem(), ExternalAsmServicedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalAsmServicedDatabaseArrayInput)(nil)).Elem(), ExternalAsmServicedDatabaseArray{})
@@ -49423,6 +52729,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), ExternalDbSystemConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), ExternalDbSystemConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), ExternalDbSystemConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemConnectorConnectionInfoDatabaseCredentialInput)(nil)).Elem(), ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDatabaseManagementConfigInput)(nil)).Elem(), ExternalDbSystemDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDatabaseManagementConfigPtrInput)(nil)).Elem(), ExternalDbSystemDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentArgs{})
@@ -49441,6 +52749,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentConnectorInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentConnectorArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentConnectorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs{})
@@ -49449,6 +52759,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentEndpointInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentEndpointArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs{})
@@ -49463,6 +52775,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArrayInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationInput)(nil)).Elem(), ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs{})
@@ -49497,10 +52811,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabaseGroupManagedDatabaseArrayInput)(nil)).Elem(), ManagedDatabaseGroupManagedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesChangeDatabaseParameterCredentialsInput)(nil)).Elem(), ManagedDatabasesChangeDatabaseParameterCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesChangeDatabaseParameterCredentialsPtrInput)(nil)).Elem(), ManagedDatabasesChangeDatabaseParameterCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesChangeDatabaseParameterDatabaseCredentialInput)(nil)).Elem(), ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrInput)(nil)).Elem(), ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesChangeDatabaseParameterParameterInput)(nil)).Elem(), ManagedDatabasesChangeDatabaseParameterParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesChangeDatabaseParameterParameterArrayInput)(nil)).Elem(), ManagedDatabasesChangeDatabaseParameterParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesResetDatabaseParameterCredentialsInput)(nil)).Elem(), ManagedDatabasesResetDatabaseParameterCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesResetDatabaseParameterCredentialsPtrInput)(nil)).Elem(), ManagedDatabasesResetDatabaseParameterCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesResetDatabaseParameterDatabaseCredentialInput)(nil)).Elem(), ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrInput)(nil)).Elem(), ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamedCredentialContentInput)(nil)).Elem(), NamedCredentialContentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamedCredentialContentPtrInput)(nil)).Elem(), NamedCredentialContentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbManagementPrivateEndpointAssociatedDatabaseItemInput)(nil)).Elem(), GetDbManagementPrivateEndpointAssociatedDatabaseItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbManagementPrivateEndpointAssociatedDatabaseItemArrayInput)(nil)).Elem(), GetDbManagementPrivateEndpointAssociatedDatabaseItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionInput)(nil)).Elem(), GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArgs{})
@@ -49601,6 +52921,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), GetExternalDbSystemConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), GetExternalDbSystemConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialInput)(nil)).Elem(), GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionInput)(nil)).Elem(), GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionArrayInput)(nil)).Elem(), GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemInput)(nil)).Elem(), GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemArgs{})
@@ -49611,6 +52933,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringInput)(nil)).Elem(), GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringArrayInput)(nil)).Elem(), GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialInput)(nil)).Elem(), GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorsFilterInput)(nil)).Elem(), GetExternalDbSystemConnectorsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemConnectorsFilterArrayInput)(nil)).Elem(), GetExternalDbSystemConnectorsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDatabaseManagementConfigInput)(nil)).Elem(), GetExternalDbSystemDatabaseManagementConfigArgs{})
@@ -49635,6 +52959,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoArgs{})
@@ -49643,6 +52969,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationArgs{})
@@ -49657,6 +52985,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationInput)(nil)).Elem(), GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationArgs{})
@@ -49691,6 +53021,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentConnectorInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentConnectorArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentConnectorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs{})
@@ -49699,6 +53031,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentEndpointInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentEndpointArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs{})
@@ -49713,6 +53047,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationInput)(nil)).Elem(), GetExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs{})
@@ -50105,6 +53441,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialContentInput)(nil)).Elem(), GetNamedCredentialContentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialContentArrayInput)(nil)).Elem(), GetNamedCredentialContentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsFilterInput)(nil)).Elem(), GetNamedCredentialsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsFilterArrayInput)(nil)).Elem(), GetNamedCredentialsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionArrayInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemArrayInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemContentInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionItemContentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemContentArrayInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionItemContentArray{})
 	pulumi.RegisterOutputType(ExternalAsmServicedDatabaseOutput{})
 	pulumi.RegisterOutputType(ExternalAsmServicedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(ExternalClusterNetworkConfigurationOutput{})
@@ -50119,6 +53465,8 @@ func init() {
 	pulumi.RegisterOutputType(ExternalDbSystemConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(ExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDatabaseManagementConfigPtrOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentOutput{})
@@ -50137,6 +53485,8 @@ func init() {
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentConnectorOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentConnectorArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoOutput{})
@@ -50145,6 +53495,8 @@ func init() {
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentEndpointOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentEndpointArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationOutput{})
@@ -50159,6 +53511,8 @@ func init() {
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationOutput{})
@@ -50193,10 +53547,16 @@ func init() {
 	pulumi.RegisterOutputType(ManagedDatabaseGroupManagedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(ManagedDatabasesChangeDatabaseParameterCredentialsOutput{})
 	pulumi.RegisterOutputType(ManagedDatabasesChangeDatabaseParameterCredentialsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(ManagedDatabasesChangeDatabaseParameterDatabaseCredentialPtrOutput{})
 	pulumi.RegisterOutputType(ManagedDatabasesChangeDatabaseParameterParameterOutput{})
 	pulumi.RegisterOutputType(ManagedDatabasesChangeDatabaseParameterParameterArrayOutput{})
 	pulumi.RegisterOutputType(ManagedDatabasesResetDatabaseParameterCredentialsOutput{})
 	pulumi.RegisterOutputType(ManagedDatabasesResetDatabaseParameterCredentialsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrOutput{})
+	pulumi.RegisterOutputType(NamedCredentialContentOutput{})
+	pulumi.RegisterOutputType(NamedCredentialContentPtrOutput{})
 	pulumi.RegisterOutputType(GetDbManagementPrivateEndpointAssociatedDatabaseItemOutput{})
 	pulumi.RegisterOutputType(GetDbManagementPrivateEndpointAssociatedDatabaseItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionOutput{})
@@ -50297,6 +53657,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalDbSystemConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemConnectorConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemOutput{})
@@ -50307,6 +53669,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemConnectorsFilterOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemConnectorsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDatabaseManagementConfigOutput{})
@@ -50331,6 +53695,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoOutput{})
@@ -50339,6 +53705,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationOutput{})
@@ -50353,6 +53721,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationOutput{})
@@ -50387,6 +53757,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoOutput{})
@@ -50395,6 +53767,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentEndpointOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationOutput{})
@@ -50409,6 +53783,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationOutput{})
@@ -50801,4 +54177,14 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialContentOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialContentArrayOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsFilterOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionItemContentOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput{})
 }

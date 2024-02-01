@@ -28,6 +28,11 @@ public final class GetManagedPreferredCredentialResult {
     private Boolean isAccessible;
     private String managedDatabaseId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+     * 
+     */
+    private String namedCredentialId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
      * 
      */
@@ -79,6 +84,13 @@ public final class GetManagedPreferredCredentialResult {
         return this.managedDatabaseId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+     * 
+     */
+    public String namedCredentialId() {
+        return this.namedCredentialId;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
      * 
      */
@@ -127,6 +139,7 @@ public final class GetManagedPreferredCredentialResult {
         private String id;
         private Boolean isAccessible;
         private String managedDatabaseId;
+        private String namedCredentialId;
         private String passwordSecretId;
         private String role;
         private String status;
@@ -139,6 +152,7 @@ public final class GetManagedPreferredCredentialResult {
     	      this.id = defaults.id;
     	      this.isAccessible = defaults.isAccessible;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
+    	      this.namedCredentialId = defaults.namedCredentialId;
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.status = defaults.status;
@@ -176,6 +190,14 @@ public final class GetManagedPreferredCredentialResult {
               throw new MissingRequiredPropertyException("GetManagedPreferredCredentialResult", "managedDatabaseId");
             }
             this.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder namedCredentialId(String namedCredentialId) {
+            if (namedCredentialId == null) {
+              throw new MissingRequiredPropertyException("GetManagedPreferredCredentialResult", "namedCredentialId");
+            }
+            this.namedCredentialId = namedCredentialId;
             return this;
         }
         @CustomType.Setter
@@ -224,6 +246,7 @@ public final class GetManagedPreferredCredentialResult {
             _resultValue.id = id;
             _resultValue.isAccessible = isAccessible;
             _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.namedCredentialId = namedCredentialId;
             _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.role = role;
             _resultValue.status = status;

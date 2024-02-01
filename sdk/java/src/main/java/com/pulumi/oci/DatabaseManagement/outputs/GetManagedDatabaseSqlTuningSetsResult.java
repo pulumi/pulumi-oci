@@ -27,6 +27,7 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
      */
     private String managedDatabaseId;
     private @Nullable String nameContains;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The owner of the SQL tuning set.
      * 
@@ -59,6 +60,9 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
     public Optional<String> nameContains() {
         return Optional.ofNullable(this.nameContains);
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return The owner of the SQL tuning set.
      * 
@@ -87,6 +91,7 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
         private String id;
         private String managedDatabaseId;
         private @Nullable String nameContains;
+        private @Nullable String opcNamedCredentialId;
         private @Nullable String owner;
         private List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection> sqlTuningSetCollections;
         public Builder() {}
@@ -96,6 +101,7 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.nameContains = defaults.nameContains;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.owner = defaults.owner;
     	      this.sqlTuningSetCollections = defaults.sqlTuningSetCollections;
         }
@@ -132,6 +138,12 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder owner(@Nullable String owner) {
 
             this.owner = owner;
@@ -154,6 +166,7 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.nameContains = nameContains;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.owner = owner;
             _resultValue.sqlTuningSetCollections = sqlTuningSetCollections;
             return _resultValue;

@@ -23,7 +23,7 @@ class GetExternalAsmDiskGroupsResult:
     """
     A collection of values returned by getExternalAsmDiskGroups.
     """
-    def __init__(__self__, external_asm_disk_group_collections=None, external_asm_id=None, filters=None, id=None):
+    def __init__(__self__, external_asm_disk_group_collections=None, external_asm_id=None, filters=None, id=None, opc_named_credential_id=None):
         if external_asm_disk_group_collections and not isinstance(external_asm_disk_group_collections, list):
             raise TypeError("Expected argument 'external_asm_disk_group_collections' to be a list")
         pulumi.set(__self__, "external_asm_disk_group_collections", external_asm_disk_group_collections)
@@ -36,6 +36,9 @@ class GetExternalAsmDiskGroupsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
 
     @property
     @pulumi.getter(name="externalAsmDiskGroupCollections")
@@ -63,6 +66,11 @@ class GetExternalAsmDiskGroupsResult:
         """
         return pulumi.get(self, "id")
 
+    @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
 
 class AwaitableGetExternalAsmDiskGroupsResult(GetExternalAsmDiskGroupsResult):
     # pylint: disable=using-constant-test
@@ -73,11 +81,13 @@ class AwaitableGetExternalAsmDiskGroupsResult(GetExternalAsmDiskGroupsResult):
             external_asm_disk_group_collections=self.external_asm_disk_group_collections,
             external_asm_id=self.external_asm_id,
             filters=self.filters,
-            id=self.id)
+            id=self.id,
+            opc_named_credential_id=self.opc_named_credential_id)
 
 
 def get_external_asm_disk_groups(external_asm_id: Optional[str] = None,
                                  filters: Optional[Sequence[pulumi.InputType['GetExternalAsmDiskGroupsFilterArgs']]] = None,
+                                 opc_named_credential_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalAsmDiskGroupsResult:
     """
     This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
@@ -90,15 +100,18 @@ def get_external_asm_disk_groups(external_asm_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_disk_groups = oci.DatabaseManagement.get_external_asm_disk_groups(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
+    test_external_asm_disk_groups = oci.DatabaseManagement.get_external_asm_disk_groups(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"],
+        opc_named_credential_id=var["external_asm_disk_group_opc_named_credential_id"])
     ```
 
 
     :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     """
     __args__ = dict()
     __args__['externalAsmId'] = external_asm_id
     __args__['filters'] = filters
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups', __args__, opts=opts, typ=GetExternalAsmDiskGroupsResult).value
 
@@ -106,12 +119,14 @@ def get_external_asm_disk_groups(external_asm_id: Optional[str] = None,
         external_asm_disk_group_collections=pulumi.get(__ret__, 'external_asm_disk_group_collections'),
         external_asm_id=pulumi.get(__ret__, 'external_asm_id'),
         filters=pulumi.get(__ret__, 'filters'),
-        id=pulumi.get(__ret__, 'id'))
+        id=pulumi.get(__ret__, 'id'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
 
 
 @_utilities.lift_output_func(get_external_asm_disk_groups)
 def get_external_asm_disk_groups_output(external_asm_id: Optional[pulumi.Input[str]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalAsmDiskGroupsFilterArgs']]]]] = None,
+                                        opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmDiskGroupsResult]:
     """
     This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
@@ -124,10 +139,12 @@ def get_external_asm_disk_groups_output(external_asm_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_disk_groups = oci.DatabaseManagement.get_external_asm_disk_groups(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
+    test_external_asm_disk_groups = oci.DatabaseManagement.get_external_asm_disk_groups(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"],
+        opc_named_credential_id=var["external_asm_disk_group_opc_named_credential_id"])
     ```
 
 
     :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     """
     ...

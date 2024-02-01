@@ -48,10 +48,6 @@ class _ExportableConfig(types.ModuleType):
 
     @property
     def ignore_defined_tags(self) -> Optional[str]:
-        """
-        (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated
-        remote object
-        """
         return __config__.get('ignoreDefinedTags')
 
     @property

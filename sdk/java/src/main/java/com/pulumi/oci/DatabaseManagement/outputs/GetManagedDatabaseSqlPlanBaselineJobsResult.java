@@ -27,6 +27,7 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
      * 
      */
     private @Nullable String name;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The list of sql_plan_baseline_job_collection.
      * 
@@ -54,6 +55,9 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return The list of sql_plan_baseline_job_collection.
      * 
@@ -75,6 +79,7 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
         private String id;
         private String managedDatabaseId;
         private @Nullable String name;
+        private @Nullable String opcNamedCredentialId;
         private List<GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection> sqlPlanBaselineJobCollections;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlPlanBaselineJobsResult defaults) {
@@ -83,6 +88,7 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.name = defaults.name;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.sqlPlanBaselineJobCollections = defaults.sqlPlanBaselineJobCollections;
         }
 
@@ -118,6 +124,12 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sqlPlanBaselineJobCollections(List<GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection> sqlPlanBaselineJobCollections) {
             if (sqlPlanBaselineJobCollections == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineJobsResult", "sqlPlanBaselineJobCollections");
@@ -134,6 +146,7 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.name = name;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.sqlPlanBaselineJobCollections = sqlPlanBaselineJobCollections;
             return _resultValue;
         }

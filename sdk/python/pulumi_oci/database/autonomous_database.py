@@ -75,6 +75,7 @@ class AutonomousDatabaseArgs:
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
                  secret_version_number: Optional[pulumi.Input[int]] = None,
+                 shrink_adb_trigger: Optional[pulumi.Input[int]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -295,6 +296,9 @@ class AutonomousDatabaseArgs:
         if is_refreshable_clone is not None:
             pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
         if is_shrink_only is not None:
+            warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
+            pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
+        if is_shrink_only is not None:
             pulumi.set(__self__, "is_shrink_only", is_shrink_only)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
@@ -338,6 +342,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "secret_id", secret_id)
         if secret_version_number is not None:
             pulumi.set(__self__, "secret_version_number", secret_version_number)
+        if shrink_adb_trigger is not None:
+            pulumi.set(__self__, "shrink_adb_trigger", shrink_adb_trigger)
         if source is not None:
             pulumi.set(__self__, "source", source)
         if source_id is not None:
@@ -840,6 +846,9 @@ class AutonomousDatabaseArgs:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
+        pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
+
         return pulumi.get(self, "is_shrink_only")
 
     @is_shrink_only.setter
@@ -1106,6 +1115,15 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "secret_version_number", value)
 
     @property
+    @pulumi.getter(name="shrinkAdbTrigger")
+    def shrink_adb_trigger(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "shrink_adb_trigger")
+
+    @shrink_adb_trigger.setter
+    def shrink_adb_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "shrink_adb_trigger", value)
+
+    @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1355,6 +1373,7 @@ class _AutonomousDatabaseState:
                  secret_id: Optional[pulumi.Input[str]] = None,
                  secret_version_number: Optional[pulumi.Input[int]] = None,
                  service_console_url: Optional[pulumi.Input[str]] = None,
+                 shrink_adb_trigger: Optional[pulumi.Input[int]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseStandbyDbArgs']]]] = None,
@@ -1680,6 +1699,9 @@ class _AutonomousDatabaseState:
         if is_remote_data_guard_enabled is not None:
             pulumi.set(__self__, "is_remote_data_guard_enabled", is_remote_data_guard_enabled)
         if is_shrink_only is not None:
+            warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
+            pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
+        if is_shrink_only is not None:
             pulumi.set(__self__, "is_shrink_only", is_shrink_only)
         if key_history_entries is not None:
             pulumi.set(__self__, "key_history_entries", key_history_entries)
@@ -1757,6 +1779,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "secret_version_number", secret_version_number)
         if service_console_url is not None:
             pulumi.set(__self__, "service_console_url", service_console_url)
+        if shrink_adb_trigger is not None:
+            pulumi.set(__self__, "shrink_adb_trigger", shrink_adb_trigger)
         if source is not None:
             pulumi.set(__self__, "source", source)
         if source_id is not None:
@@ -2481,6 +2505,9 @@ class _AutonomousDatabaseState:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
+        pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
+
         return pulumi.get(self, "is_shrink_only")
 
     @is_shrink_only.setter
@@ -2951,6 +2978,15 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "service_console_url", value)
 
     @property
+    @pulumi.getter(name="shrinkAdbTrigger")
+    def shrink_adb_trigger(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "shrink_adb_trigger")
+
+    @shrink_adb_trigger.setter
+    def shrink_adb_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "shrink_adb_trigger", value)
+
+    @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[str]]:
         """
@@ -3419,6 +3455,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
                  secret_version_number: Optional[pulumi.Input[int]] = None,
+                 shrink_adb_trigger: Optional[pulumi.Input[int]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -3673,6 +3710,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
                  secret_version_number: Optional[pulumi.Input[int]] = None,
+                 shrink_adb_trigger: Optional[pulumi.Input[int]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -3756,6 +3794,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["scheduled_operations"] = scheduled_operations
             __props__.__dict__["secret_id"] = secret_id
             __props__.__dict__["secret_version_number"] = secret_version_number
+            __props__.__dict__["shrink_adb_trigger"] = shrink_adb_trigger
             __props__.__dict__["source"] = source
             __props__.__dict__["source_id"] = source_id
             __props__.__dict__["standby_whitelisted_ips"] = standby_whitelisted_ips
@@ -3923,6 +3962,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             secret_id: Optional[pulumi.Input[str]] = None,
             secret_version_number: Optional[pulumi.Input[int]] = None,
             service_console_url: Optional[pulumi.Input[str]] = None,
+            shrink_adb_trigger: Optional[pulumi.Input[int]] = None,
             source: Optional[pulumi.Input[str]] = None,
             source_id: Optional[pulumi.Input[str]] = None,
             standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseStandbyDbArgs']]]]] = None,
@@ -4243,6 +4283,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["secret_id"] = secret_id
         __props__.__dict__["secret_version_number"] = secret_version_number
         __props__.__dict__["service_console_url"] = service_console_url
+        __props__.__dict__["shrink_adb_trigger"] = shrink_adb_trigger
         __props__.__dict__["source"] = source
         __props__.__dict__["source_id"] = source_id
         __props__.__dict__["standby_dbs"] = standby_dbs
@@ -4728,6 +4769,9 @@ class AutonomousDatabase(pulumi.CustomResource):
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
+        pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
+
         return pulumi.get(self, "is_shrink_only")
 
     @property
@@ -5040,6 +5084,11 @@ class AutonomousDatabase(pulumi.CustomResource):
         The URL of the Service Console for the Autonomous Database.
         """
         return pulumi.get(self, "service_console_url")
+
+    @property
+    @pulumi.getter(name="shrinkAdbTrigger")
+    def shrink_adb_trigger(self) -> pulumi.Output[int]:
+        return pulumi.get(self, "shrink_adb_trigger")
 
     @property
     @pulumi.getter

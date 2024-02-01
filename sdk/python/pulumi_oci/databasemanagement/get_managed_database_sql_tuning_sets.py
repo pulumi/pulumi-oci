@@ -23,7 +23,7 @@ class GetManagedDatabaseSqlTuningSetsResult:
     """
     A collection of values returned by getManagedDatabaseSqlTuningSets.
     """
-    def __init__(__self__, filters=None, id=None, managed_database_id=None, name_contains=None, owner=None, sql_tuning_set_collections=None):
+    def __init__(__self__, filters=None, id=None, managed_database_id=None, name_contains=None, opc_named_credential_id=None, owner=None, sql_tuning_set_collections=None):
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -36,6 +36,9 @@ class GetManagedDatabaseSqlTuningSetsResult:
         if name_contains and not isinstance(name_contains, str):
             raise TypeError("Expected argument 'name_contains' to be a str")
         pulumi.set(__self__, "name_contains", name_contains)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if owner and not isinstance(owner, str):
             raise TypeError("Expected argument 'owner' to be a str")
         pulumi.set(__self__, "owner", owner)
@@ -70,6 +73,11 @@ class GetManagedDatabaseSqlTuningSetsResult:
         return pulumi.get(self, "name_contains")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter
     def owner(self) -> Optional[str]:
         """
@@ -96,6 +104,7 @@ class AwaitableGetManagedDatabaseSqlTuningSetsResult(GetManagedDatabaseSqlTuning
             id=self.id,
             managed_database_id=self.managed_database_id,
             name_contains=self.name_contains,
+            opc_named_credential_id=self.opc_named_credential_id,
             owner=self.owner,
             sql_tuning_set_collections=self.sql_tuning_set_collections)
 
@@ -103,6 +112,7 @@ class AwaitableGetManagedDatabaseSqlTuningSetsResult(GetManagedDatabaseSqlTuning
 def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningSetsFilterArgs']]] = None,
                                          managed_database_id: Optional[str] = None,
                                          name_contains: Optional[str] = None,
+                                         opc_named_credential_id: Optional[str] = None,
                                          owner: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlTuningSetsResult:
     """
@@ -118,18 +128,21 @@ def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[pulumi.Input
 
     test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         name_contains=var["managed_database_sql_tuning_set_name_contains"],
+        opc_named_credential_id=var["managed_database_sql_tuning_set_opc_named_credential_id"],
         owner=var["managed_database_sql_tuning_set_owner"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name_contains: Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str owner: The owner of the SQL tuning set.
     """
     __args__ = dict()
     __args__['filters'] = filters
     __args__['managedDatabaseId'] = managed_database_id
     __args__['nameContains'] = name_contains
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['owner'] = owner
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningSetsResult).value
@@ -139,6 +152,7 @@ def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[pulumi.Input
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name_contains=pulumi.get(__ret__, 'name_contains'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         owner=pulumi.get(__ret__, 'owner'),
         sql_tuning_set_collections=pulumi.get(__ret__, 'sql_tuning_set_collections'))
 
@@ -147,6 +161,7 @@ def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[pulumi.Input
 def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningSetsFilterArgs']]]]] = None,
                                                 managed_database_id: Optional[pulumi.Input[str]] = None,
                                                 name_contains: Optional[pulumi.Input[Optional[str]]] = None,
+                                                opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                 owner: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningSetsResult]:
     """
@@ -162,12 +177,14 @@ def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[O
 
     test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         name_contains=var["managed_database_sql_tuning_set_name_contains"],
+        opc_named_credential_id=var["managed_database_sql_tuning_set_opc_named_credential_id"],
         owner=var["managed_database_sql_tuning_set_owner"])
     ```
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name_contains: Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str owner: The owner of the SQL tuning set.
     """
     ...

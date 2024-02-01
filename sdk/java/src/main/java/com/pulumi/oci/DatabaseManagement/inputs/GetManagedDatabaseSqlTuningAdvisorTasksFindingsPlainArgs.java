@@ -100,6 +100,21 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsPlainArgs exte
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable String opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
      * 
      */
@@ -153,6 +168,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsPlainArgs exte
         this.findingFilter = $.findingFilter;
         this.indexHashFilter = $.indexHashFilter;
         this.managedDatabaseId = $.managedDatabaseId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.searchPeriod = $.searchPeriod;
         this.sqlTuningAdvisorTaskId = $.sqlTuningAdvisorTaskId;
         this.statsHashFilter = $.statsHashFilter;
@@ -237,6 +253,17 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsPlainArgs exte
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             $.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
 

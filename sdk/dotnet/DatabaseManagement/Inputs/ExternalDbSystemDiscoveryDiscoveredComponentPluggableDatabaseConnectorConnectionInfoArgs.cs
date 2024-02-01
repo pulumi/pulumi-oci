@@ -42,6 +42,18 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
             set => _connectionStrings = value;
         }
 
+        [Input("databaseCredentials")]
+        private InputList<Inputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs>? _databaseCredentials;
+
+        /// <summary>
+        /// The credential to connect to the database to perform tablespace administration tasks.
+        /// </summary>
+        public InputList<Inputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs> DatabaseCredentials
+        {
+            get => _databaseCredentials ?? (_databaseCredentials = new InputList<Inputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs>());
+            set => _databaseCredentials = value;
+        }
+
         public ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs()
         {
         }

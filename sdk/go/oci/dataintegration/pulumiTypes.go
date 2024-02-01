@@ -824,6 +824,1187 @@ func (o WorkspaceApplicationParentRefArrayOutput) Index(i pulumi.IntInput) Works
 	}).(WorkspaceApplicationParentRefOutput)
 }
 
+type WorkspaceApplicationPatchDependentObjectMetadata struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action *string `pulumi:"action"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier *string `pulumi:"identifier"`
+	// The identifying key for the object.
+	Key *string `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name *string `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath *string `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion *int `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type *string `pulumi:"type"`
+}
+
+// WorkspaceApplicationPatchDependentObjectMetadataInput is an input type that accepts WorkspaceApplicationPatchDependentObjectMetadataArgs and WorkspaceApplicationPatchDependentObjectMetadataOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchDependentObjectMetadataInput` via:
+//
+//	WorkspaceApplicationPatchDependentObjectMetadataArgs{...}
+type WorkspaceApplicationPatchDependentObjectMetadataInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchDependentObjectMetadataOutput() WorkspaceApplicationPatchDependentObjectMetadataOutput
+	ToWorkspaceApplicationPatchDependentObjectMetadataOutputWithContext(context.Context) WorkspaceApplicationPatchDependentObjectMetadataOutput
+}
+
+type WorkspaceApplicationPatchDependentObjectMetadataArgs struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action pulumi.StringPtrInput `pulumi:"action"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
+	// The identifying key for the object.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (WorkspaceApplicationPatchDependentObjectMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchDependentObjectMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchDependentObjectMetadataArgs) ToWorkspaceApplicationPatchDependentObjectMetadataOutput() WorkspaceApplicationPatchDependentObjectMetadataOutput {
+	return i.ToWorkspaceApplicationPatchDependentObjectMetadataOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchDependentObjectMetadataArgs) ToWorkspaceApplicationPatchDependentObjectMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationPatchDependentObjectMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchDependentObjectMetadataOutput)
+}
+
+// WorkspaceApplicationPatchDependentObjectMetadataArrayInput is an input type that accepts WorkspaceApplicationPatchDependentObjectMetadataArray and WorkspaceApplicationPatchDependentObjectMetadataArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchDependentObjectMetadataArrayInput` via:
+//
+//	WorkspaceApplicationPatchDependentObjectMetadataArray{ WorkspaceApplicationPatchDependentObjectMetadataArgs{...} }
+type WorkspaceApplicationPatchDependentObjectMetadataArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchDependentObjectMetadataArrayOutput() WorkspaceApplicationPatchDependentObjectMetadataArrayOutput
+	ToWorkspaceApplicationPatchDependentObjectMetadataArrayOutputWithContext(context.Context) WorkspaceApplicationPatchDependentObjectMetadataArrayOutput
+}
+
+type WorkspaceApplicationPatchDependentObjectMetadataArray []WorkspaceApplicationPatchDependentObjectMetadataInput
+
+func (WorkspaceApplicationPatchDependentObjectMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchDependentObjectMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchDependentObjectMetadataArray) ToWorkspaceApplicationPatchDependentObjectMetadataArrayOutput() WorkspaceApplicationPatchDependentObjectMetadataArrayOutput {
+	return i.ToWorkspaceApplicationPatchDependentObjectMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchDependentObjectMetadataArray) ToWorkspaceApplicationPatchDependentObjectMetadataArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchDependentObjectMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchDependentObjectMetadataArrayOutput)
+}
+
+type WorkspaceApplicationPatchDependentObjectMetadataOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchDependentObjectMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchDependentObjectMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchDependentObjectMetadataOutput) ToWorkspaceApplicationPatchDependentObjectMetadataOutput() WorkspaceApplicationPatchDependentObjectMetadataOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchDependentObjectMetadataOutput) ToWorkspaceApplicationPatchDependentObjectMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationPatchDependentObjectMetadataOutput {
+	return o
+}
+
+// The patch action indicating if object was created, updated, or deleted.
+func (o WorkspaceApplicationPatchDependentObjectMetadataOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchDependentObjectMetadata) *string { return v.Action }).(pulumi.StringPtrOutput)
+}
+
+// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+func (o WorkspaceApplicationPatchDependentObjectMetadataOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchDependentObjectMetadata) *string { return v.Identifier }).(pulumi.StringPtrOutput)
+}
+
+// The identifying key for the object.
+func (o WorkspaceApplicationPatchDependentObjectMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchDependentObjectMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o WorkspaceApplicationPatchDependentObjectMetadataOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchDependentObjectMetadata) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The fully qualified path of the published object, which would include its project and folder.
+func (o WorkspaceApplicationPatchDependentObjectMetadataOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchDependentObjectMetadata) *string { return v.NamePath }).(pulumi.StringPtrOutput)
+}
+
+// The object version.
+func (o WorkspaceApplicationPatchDependentObjectMetadataOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchDependentObjectMetadata) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
+}
+
+// The type of the object in patch.
+func (o WorkspaceApplicationPatchDependentObjectMetadataOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchDependentObjectMetadata) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationPatchDependentObjectMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchDependentObjectMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchDependentObjectMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchDependentObjectMetadataArrayOutput) ToWorkspaceApplicationPatchDependentObjectMetadataArrayOutput() WorkspaceApplicationPatchDependentObjectMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchDependentObjectMetadataArrayOutput) ToWorkspaceApplicationPatchDependentObjectMetadataArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchDependentObjectMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchDependentObjectMetadataArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationPatchDependentObjectMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationPatchDependentObjectMetadata {
+		return vs[0].([]WorkspaceApplicationPatchDependentObjectMetadata)[vs[1].(int)]
+	}).(WorkspaceApplicationPatchDependentObjectMetadataOutput)
+}
+
+type WorkspaceApplicationPatchMetadata struct {
+	// The owning object's key for this object.
+	AggregatorKey *string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []WorkspaceApplicationPatchMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []WorkspaceApplicationPatchMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy *string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName *string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath *string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite *bool `pulumi:"isFavorite"`
+	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version.
+	RegistryVersion *int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy *string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName *string `pulumi:"updatedByName"`
+}
+
+// WorkspaceApplicationPatchMetadataInput is an input type that accepts WorkspaceApplicationPatchMetadataArgs and WorkspaceApplicationPatchMetadataOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchMetadataInput` via:
+//
+//	WorkspaceApplicationPatchMetadataArgs{...}
+type WorkspaceApplicationPatchMetadataInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchMetadataOutput() WorkspaceApplicationPatchMetadataOutput
+	ToWorkspaceApplicationPatchMetadataOutputWithContext(context.Context) WorkspaceApplicationPatchMetadataOutput
+}
+
+type WorkspaceApplicationPatchMetadataArgs struct {
+	// The owning object's key for this object.
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators WorkspaceApplicationPatchMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics WorkspaceApplicationPatchMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
+	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version.
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
+}
+
+func (WorkspaceApplicationPatchMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchMetadataArgs) ToWorkspaceApplicationPatchMetadataOutput() WorkspaceApplicationPatchMetadataOutput {
+	return i.ToWorkspaceApplicationPatchMetadataOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchMetadataArgs) ToWorkspaceApplicationPatchMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchMetadataOutput)
+}
+
+// WorkspaceApplicationPatchMetadataArrayInput is an input type that accepts WorkspaceApplicationPatchMetadataArray and WorkspaceApplicationPatchMetadataArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchMetadataArrayInput` via:
+//
+//	WorkspaceApplicationPatchMetadataArray{ WorkspaceApplicationPatchMetadataArgs{...} }
+type WorkspaceApplicationPatchMetadataArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchMetadataArrayOutput() WorkspaceApplicationPatchMetadataArrayOutput
+	ToWorkspaceApplicationPatchMetadataArrayOutputWithContext(context.Context) WorkspaceApplicationPatchMetadataArrayOutput
+}
+
+type WorkspaceApplicationPatchMetadataArray []WorkspaceApplicationPatchMetadataInput
+
+func (WorkspaceApplicationPatchMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchMetadataArray) ToWorkspaceApplicationPatchMetadataArrayOutput() WorkspaceApplicationPatchMetadataArrayOutput {
+	return i.ToWorkspaceApplicationPatchMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchMetadataArray) ToWorkspaceApplicationPatchMetadataArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchMetadataArrayOutput)
+}
+
+type WorkspaceApplicationPatchMetadataOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchMetadataOutput) ToWorkspaceApplicationPatchMetadataOutput() WorkspaceApplicationPatchMetadataOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataOutput) ToWorkspaceApplicationPatchMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataOutput {
+	return o
+}
+
+// The owning object's key for this object.
+func (o WorkspaceApplicationPatchMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o WorkspaceApplicationPatchMetadataOutput) Aggregators() WorkspaceApplicationPatchMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) []WorkspaceApplicationPatchMetadataAggregator {
+		return v.Aggregators
+	}).(WorkspaceApplicationPatchMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o WorkspaceApplicationPatchMetadataOutput) CountStatistics() WorkspaceApplicationPatchMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) []WorkspaceApplicationPatchMetadataCountStatistic {
+		return v.CountStatistics
+	}).(WorkspaceApplicationPatchMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o WorkspaceApplicationPatchMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// The user that created the object.
+func (o WorkspaceApplicationPatchMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
+}
+
+// The full path to identify this object.
+func (o WorkspaceApplicationPatchMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
+}
+
+// Information property fields.
+func (o WorkspaceApplicationPatchMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o WorkspaceApplicationPatchMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
+}
+
+// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceApplicationPatchMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version.
+func (o WorkspaceApplicationPatchMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
+}
+
+// The date and time that the object was created.
+func (o WorkspaceApplicationPatchMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time that the object was updated.
+func (o WorkspaceApplicationPatchMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// The user that updated the object.
+func (o WorkspaceApplicationPatchMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
+}
+
+// The user that updated the object.
+func (o WorkspaceApplicationPatchMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *string { return v.UpdatedByName }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationPatchMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchMetadataArrayOutput) ToWorkspaceApplicationPatchMetadataArrayOutput() WorkspaceApplicationPatchMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataArrayOutput) ToWorkspaceApplicationPatchMetadataArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationPatchMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationPatchMetadata {
+		return vs[0].([]WorkspaceApplicationPatchMetadata)[vs[1].(int)]
+	}).(WorkspaceApplicationPatchMetadataOutput)
+}
+
+type WorkspaceApplicationPatchMetadataAggregator struct {
+	// Detailed description for the object.
+	Description *string `pulumi:"description"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier *string `pulumi:"identifier"`
+	// The identifying key for the object.
+	Key *string `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name *string `pulumi:"name"`
+	// The type of the object in patch.
+	Type *string `pulumi:"type"`
+}
+
+// WorkspaceApplicationPatchMetadataAggregatorInput is an input type that accepts WorkspaceApplicationPatchMetadataAggregatorArgs and WorkspaceApplicationPatchMetadataAggregatorOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchMetadataAggregatorInput` via:
+//
+//	WorkspaceApplicationPatchMetadataAggregatorArgs{...}
+type WorkspaceApplicationPatchMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchMetadataAggregatorOutput() WorkspaceApplicationPatchMetadataAggregatorOutput
+	ToWorkspaceApplicationPatchMetadataAggregatorOutputWithContext(context.Context) WorkspaceApplicationPatchMetadataAggregatorOutput
+}
+
+type WorkspaceApplicationPatchMetadataAggregatorArgs struct {
+	// Detailed description for the object.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
+	// The identifying key for the object.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The type of the object in patch.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (WorkspaceApplicationPatchMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchMetadataAggregator)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchMetadataAggregatorArgs) ToWorkspaceApplicationPatchMetadataAggregatorOutput() WorkspaceApplicationPatchMetadataAggregatorOutput {
+	return i.ToWorkspaceApplicationPatchMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchMetadataAggregatorArgs) ToWorkspaceApplicationPatchMetadataAggregatorOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchMetadataAggregatorOutput)
+}
+
+// WorkspaceApplicationPatchMetadataAggregatorArrayInput is an input type that accepts WorkspaceApplicationPatchMetadataAggregatorArray and WorkspaceApplicationPatchMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchMetadataAggregatorArrayInput` via:
+//
+//	WorkspaceApplicationPatchMetadataAggregatorArray{ WorkspaceApplicationPatchMetadataAggregatorArgs{...} }
+type WorkspaceApplicationPatchMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchMetadataAggregatorArrayOutput() WorkspaceApplicationPatchMetadataAggregatorArrayOutput
+	ToWorkspaceApplicationPatchMetadataAggregatorArrayOutputWithContext(context.Context) WorkspaceApplicationPatchMetadataAggregatorArrayOutput
+}
+
+type WorkspaceApplicationPatchMetadataAggregatorArray []WorkspaceApplicationPatchMetadataAggregatorInput
+
+func (WorkspaceApplicationPatchMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchMetadataAggregator)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchMetadataAggregatorArray) ToWorkspaceApplicationPatchMetadataAggregatorArrayOutput() WorkspaceApplicationPatchMetadataAggregatorArrayOutput {
+	return i.ToWorkspaceApplicationPatchMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchMetadataAggregatorArray) ToWorkspaceApplicationPatchMetadataAggregatorArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchMetadataAggregatorArrayOutput)
+}
+
+type WorkspaceApplicationPatchMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchMetadataAggregator)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchMetadataAggregatorOutput) ToWorkspaceApplicationPatchMetadataAggregatorOutput() WorkspaceApplicationPatchMetadataAggregatorOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataAggregatorOutput) ToWorkspaceApplicationPatchMetadataAggregatorOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataAggregatorOutput {
+	return o
+}
+
+// Detailed description for the object.
+func (o WorkspaceApplicationPatchMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+func (o WorkspaceApplicationPatchMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
+}
+
+// The identifying key for the object.
+func (o WorkspaceApplicationPatchMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o WorkspaceApplicationPatchMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The type of the object in patch.
+func (o WorkspaceApplicationPatchMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadataAggregator) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationPatchMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchMetadataAggregator)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchMetadataAggregatorArrayOutput) ToWorkspaceApplicationPatchMetadataAggregatorArrayOutput() WorkspaceApplicationPatchMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataAggregatorArrayOutput) ToWorkspaceApplicationPatchMetadataAggregatorArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationPatchMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationPatchMetadataAggregator {
+		return vs[0].([]WorkspaceApplicationPatchMetadataAggregator)[vs[1].(int)]
+	}).(WorkspaceApplicationPatchMetadataAggregatorOutput)
+}
+
+type WorkspaceApplicationPatchMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// WorkspaceApplicationPatchMetadataCountStatisticInput is an input type that accepts WorkspaceApplicationPatchMetadataCountStatisticArgs and WorkspaceApplicationPatchMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchMetadataCountStatisticInput` via:
+//
+//	WorkspaceApplicationPatchMetadataCountStatisticArgs{...}
+type WorkspaceApplicationPatchMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchMetadataCountStatisticOutput() WorkspaceApplicationPatchMetadataCountStatisticOutput
+	ToWorkspaceApplicationPatchMetadataCountStatisticOutputWithContext(context.Context) WorkspaceApplicationPatchMetadataCountStatisticOutput
+}
+
+type WorkspaceApplicationPatchMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (WorkspaceApplicationPatchMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchMetadataCountStatisticArgs) ToWorkspaceApplicationPatchMetadataCountStatisticOutput() WorkspaceApplicationPatchMetadataCountStatisticOutput {
+	return i.ToWorkspaceApplicationPatchMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchMetadataCountStatisticArgs) ToWorkspaceApplicationPatchMetadataCountStatisticOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchMetadataCountStatisticOutput)
+}
+
+// WorkspaceApplicationPatchMetadataCountStatisticArrayInput is an input type that accepts WorkspaceApplicationPatchMetadataCountStatisticArray and WorkspaceApplicationPatchMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchMetadataCountStatisticArrayInput` via:
+//
+//	WorkspaceApplicationPatchMetadataCountStatisticArray{ WorkspaceApplicationPatchMetadataCountStatisticArgs{...} }
+type WorkspaceApplicationPatchMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchMetadataCountStatisticArrayOutput() WorkspaceApplicationPatchMetadataCountStatisticArrayOutput
+	ToWorkspaceApplicationPatchMetadataCountStatisticArrayOutputWithContext(context.Context) WorkspaceApplicationPatchMetadataCountStatisticArrayOutput
+}
+
+type WorkspaceApplicationPatchMetadataCountStatisticArray []WorkspaceApplicationPatchMetadataCountStatisticInput
+
+func (WorkspaceApplicationPatchMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchMetadataCountStatisticArray) ToWorkspaceApplicationPatchMetadataCountStatisticArrayOutput() WorkspaceApplicationPatchMetadataCountStatisticArrayOutput {
+	return i.ToWorkspaceApplicationPatchMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchMetadataCountStatisticArray) ToWorkspaceApplicationPatchMetadataCountStatisticArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchMetadataCountStatisticArrayOutput)
+}
+
+type WorkspaceApplicationPatchMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchMetadataCountStatisticOutput) ToWorkspaceApplicationPatchMetadataCountStatisticOutput() WorkspaceApplicationPatchMetadataCountStatisticOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataCountStatisticOutput) ToWorkspaceApplicationPatchMetadataCountStatisticOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o WorkspaceApplicationPatchMetadataCountStatisticOutput) ObjectTypeCountLists() WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadataCountStatistic) []WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type WorkspaceApplicationPatchMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchMetadataCountStatisticArrayOutput) ToWorkspaceApplicationPatchMetadataCountStatisticArrayOutput() WorkspaceApplicationPatchMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataCountStatisticArrayOutput) ToWorkspaceApplicationPatchMetadataCountStatisticArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationPatchMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationPatchMetadataCountStatistic {
+		return vs[0].([]WorkspaceApplicationPatchMetadataCountStatistic)[vs[1].(int)]
+	}).(WorkspaceApplicationPatchMetadataCountStatisticOutput)
+}
+
+type WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount *string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType *string `pulumi:"objectType"`
+}
+
+// WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListInput is an input type that accepts WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs and WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs{...}
+type WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput() WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput
+	ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
+}
+
+func (WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs) ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput() WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs) ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray and WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray{ WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs{...} }
+type WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray []WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListInput
+
+func (WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray) ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray) ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput) ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput() WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput) ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList) *string {
+		return v.ObjectCount
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of object for the count statistic object.
+func (o WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList) *string {
+		return v.ObjectType
+	}).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput) ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput) ToWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type WorkspaceApplicationPatchParentRef struct {
+	// Key of the parent object.
+	Parent *string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId *string `pulumi:"rootDocId"`
+}
+
+// WorkspaceApplicationPatchParentRefInput is an input type that accepts WorkspaceApplicationPatchParentRefArgs and WorkspaceApplicationPatchParentRefOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchParentRefInput` via:
+//
+//	WorkspaceApplicationPatchParentRefArgs{...}
+type WorkspaceApplicationPatchParentRefInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchParentRefOutput() WorkspaceApplicationPatchParentRefOutput
+	ToWorkspaceApplicationPatchParentRefOutputWithContext(context.Context) WorkspaceApplicationPatchParentRefOutput
+}
+
+type WorkspaceApplicationPatchParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringPtrInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringPtrInput `pulumi:"rootDocId"`
+}
+
+func (WorkspaceApplicationPatchParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchParentRef)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchParentRefArgs) ToWorkspaceApplicationPatchParentRefOutput() WorkspaceApplicationPatchParentRefOutput {
+	return i.ToWorkspaceApplicationPatchParentRefOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchParentRefArgs) ToWorkspaceApplicationPatchParentRefOutputWithContext(ctx context.Context) WorkspaceApplicationPatchParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchParentRefOutput)
+}
+
+// WorkspaceApplicationPatchParentRefArrayInput is an input type that accepts WorkspaceApplicationPatchParentRefArray and WorkspaceApplicationPatchParentRefArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchParentRefArrayInput` via:
+//
+//	WorkspaceApplicationPatchParentRefArray{ WorkspaceApplicationPatchParentRefArgs{...} }
+type WorkspaceApplicationPatchParentRefArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchParentRefArrayOutput() WorkspaceApplicationPatchParentRefArrayOutput
+	ToWorkspaceApplicationPatchParentRefArrayOutputWithContext(context.Context) WorkspaceApplicationPatchParentRefArrayOutput
+}
+
+type WorkspaceApplicationPatchParentRefArray []WorkspaceApplicationPatchParentRefInput
+
+func (WorkspaceApplicationPatchParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchParentRef)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchParentRefArray) ToWorkspaceApplicationPatchParentRefArrayOutput() WorkspaceApplicationPatchParentRefArrayOutput {
+	return i.ToWorkspaceApplicationPatchParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchParentRefArray) ToWorkspaceApplicationPatchParentRefArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchParentRefArrayOutput)
+}
+
+type WorkspaceApplicationPatchParentRefOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchParentRef)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchParentRefOutput) ToWorkspaceApplicationPatchParentRefOutput() WorkspaceApplicationPatchParentRefOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchParentRefOutput) ToWorkspaceApplicationPatchParentRefOutputWithContext(ctx context.Context) WorkspaceApplicationPatchParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o WorkspaceApplicationPatchParentRefOutput) Parent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchParentRef) *string { return v.Parent }).(pulumi.StringPtrOutput)
+}
+
+// Key of the root document object.
+func (o WorkspaceApplicationPatchParentRefOutput) RootDocId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchParentRef) *string { return v.RootDocId }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationPatchParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchParentRef)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchParentRefArrayOutput) ToWorkspaceApplicationPatchParentRefArrayOutput() WorkspaceApplicationPatchParentRefArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchParentRefArrayOutput) ToWorkspaceApplicationPatchParentRefArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchParentRefArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchParentRefArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationPatchParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationPatchParentRef {
+		return vs[0].([]WorkspaceApplicationPatchParentRef)[vs[1].(int)]
+	}).(WorkspaceApplicationPatchParentRefOutput)
+}
+
+type WorkspaceApplicationPatchPatchObjectMetadata struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action *string `pulumi:"action"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier *string `pulumi:"identifier"`
+	// The identifying key for the object.
+	Key *string `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name *string `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath *string `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion *int `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type *string `pulumi:"type"`
+}
+
+// WorkspaceApplicationPatchPatchObjectMetadataInput is an input type that accepts WorkspaceApplicationPatchPatchObjectMetadataArgs and WorkspaceApplicationPatchPatchObjectMetadataOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchPatchObjectMetadataInput` via:
+//
+//	WorkspaceApplicationPatchPatchObjectMetadataArgs{...}
+type WorkspaceApplicationPatchPatchObjectMetadataInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchPatchObjectMetadataOutput() WorkspaceApplicationPatchPatchObjectMetadataOutput
+	ToWorkspaceApplicationPatchPatchObjectMetadataOutputWithContext(context.Context) WorkspaceApplicationPatchPatchObjectMetadataOutput
+}
+
+type WorkspaceApplicationPatchPatchObjectMetadataArgs struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action pulumi.StringPtrInput `pulumi:"action"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
+	// The identifying key for the object.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (WorkspaceApplicationPatchPatchObjectMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchPatchObjectMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchPatchObjectMetadataArgs) ToWorkspaceApplicationPatchPatchObjectMetadataOutput() WorkspaceApplicationPatchPatchObjectMetadataOutput {
+	return i.ToWorkspaceApplicationPatchPatchObjectMetadataOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchPatchObjectMetadataArgs) ToWorkspaceApplicationPatchPatchObjectMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationPatchPatchObjectMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchPatchObjectMetadataOutput)
+}
+
+// WorkspaceApplicationPatchPatchObjectMetadataArrayInput is an input type that accepts WorkspaceApplicationPatchPatchObjectMetadataArray and WorkspaceApplicationPatchPatchObjectMetadataArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchPatchObjectMetadataArrayInput` via:
+//
+//	WorkspaceApplicationPatchPatchObjectMetadataArray{ WorkspaceApplicationPatchPatchObjectMetadataArgs{...} }
+type WorkspaceApplicationPatchPatchObjectMetadataArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchPatchObjectMetadataArrayOutput() WorkspaceApplicationPatchPatchObjectMetadataArrayOutput
+	ToWorkspaceApplicationPatchPatchObjectMetadataArrayOutputWithContext(context.Context) WorkspaceApplicationPatchPatchObjectMetadataArrayOutput
+}
+
+type WorkspaceApplicationPatchPatchObjectMetadataArray []WorkspaceApplicationPatchPatchObjectMetadataInput
+
+func (WorkspaceApplicationPatchPatchObjectMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchPatchObjectMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchPatchObjectMetadataArray) ToWorkspaceApplicationPatchPatchObjectMetadataArrayOutput() WorkspaceApplicationPatchPatchObjectMetadataArrayOutput {
+	return i.ToWorkspaceApplicationPatchPatchObjectMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchPatchObjectMetadataArray) ToWorkspaceApplicationPatchPatchObjectMetadataArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchPatchObjectMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchPatchObjectMetadataArrayOutput)
+}
+
+type WorkspaceApplicationPatchPatchObjectMetadataOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchPatchObjectMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchPatchObjectMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchPatchObjectMetadataOutput) ToWorkspaceApplicationPatchPatchObjectMetadataOutput() WorkspaceApplicationPatchPatchObjectMetadataOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchPatchObjectMetadataOutput) ToWorkspaceApplicationPatchPatchObjectMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationPatchPatchObjectMetadataOutput {
+	return o
+}
+
+// The patch action indicating if object was created, updated, or deleted.
+func (o WorkspaceApplicationPatchPatchObjectMetadataOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchPatchObjectMetadata) *string { return v.Action }).(pulumi.StringPtrOutput)
+}
+
+// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+func (o WorkspaceApplicationPatchPatchObjectMetadataOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchPatchObjectMetadata) *string { return v.Identifier }).(pulumi.StringPtrOutput)
+}
+
+// The identifying key for the object.
+func (o WorkspaceApplicationPatchPatchObjectMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchPatchObjectMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o WorkspaceApplicationPatchPatchObjectMetadataOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchPatchObjectMetadata) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The fully qualified path of the published object, which would include its project and folder.
+func (o WorkspaceApplicationPatchPatchObjectMetadataOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchPatchObjectMetadata) *string { return v.NamePath }).(pulumi.StringPtrOutput)
+}
+
+// The object version.
+func (o WorkspaceApplicationPatchPatchObjectMetadataOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchPatchObjectMetadata) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
+}
+
+// The type of the object in patch.
+func (o WorkspaceApplicationPatchPatchObjectMetadataOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchPatchObjectMetadata) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationPatchPatchObjectMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchPatchObjectMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationPatchPatchObjectMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchPatchObjectMetadataArrayOutput) ToWorkspaceApplicationPatchPatchObjectMetadataArrayOutput() WorkspaceApplicationPatchPatchObjectMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchPatchObjectMetadataArrayOutput) ToWorkspaceApplicationPatchPatchObjectMetadataArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPatchPatchObjectMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchPatchObjectMetadataArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationPatchPatchObjectMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationPatchPatchObjectMetadata {
+		return vs[0].([]WorkspaceApplicationPatchPatchObjectMetadata)[vs[1].(int)]
+	}).(WorkspaceApplicationPatchPatchObjectMetadataOutput)
+}
+
+type WorkspaceApplicationPatchRegistryMetadata struct {
+	// The owning object's key for this object.
+	AggregatorKey *string `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite *bool `pulumi:"isFavorite"`
+	// The identifying key for the object.
+	Key *string `pulumi:"key"`
+	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version.
+	RegistryVersion *int `pulumi:"registryVersion"`
+}
+
+// WorkspaceApplicationPatchRegistryMetadataInput is an input type that accepts WorkspaceApplicationPatchRegistryMetadataArgs and WorkspaceApplicationPatchRegistryMetadataOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchRegistryMetadataInput` via:
+//
+//	WorkspaceApplicationPatchRegistryMetadataArgs{...}
+type WorkspaceApplicationPatchRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchRegistryMetadataOutput() WorkspaceApplicationPatchRegistryMetadataOutput
+	ToWorkspaceApplicationPatchRegistryMetadataOutputWithContext(context.Context) WorkspaceApplicationPatchRegistryMetadataOutput
+}
+
+type WorkspaceApplicationPatchRegistryMetadataArgs struct {
+	// The owning object's key for this object.
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
+	// The identifying key for the object.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version.
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
+}
+
+func (WorkspaceApplicationPatchRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchRegistryMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationPatchRegistryMetadataArgs) ToWorkspaceApplicationPatchRegistryMetadataOutput() WorkspaceApplicationPatchRegistryMetadataOutput {
+	return i.ToWorkspaceApplicationPatchRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchRegistryMetadataArgs) ToWorkspaceApplicationPatchRegistryMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationPatchRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchRegistryMetadataOutput)
+}
+
+func (i WorkspaceApplicationPatchRegistryMetadataArgs) ToWorkspaceApplicationPatchRegistryMetadataPtrOutput() WorkspaceApplicationPatchRegistryMetadataPtrOutput {
+	return i.ToWorkspaceApplicationPatchRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationPatchRegistryMetadataArgs) ToWorkspaceApplicationPatchRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceApplicationPatchRegistryMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchRegistryMetadataOutput).ToWorkspaceApplicationPatchRegistryMetadataPtrOutputWithContext(ctx)
+}
+
+// WorkspaceApplicationPatchRegistryMetadataPtrInput is an input type that accepts WorkspaceApplicationPatchRegistryMetadataArgs, WorkspaceApplicationPatchRegistryMetadataPtr and WorkspaceApplicationPatchRegistryMetadataPtrOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationPatchRegistryMetadataPtrInput` via:
+//
+//	        WorkspaceApplicationPatchRegistryMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type WorkspaceApplicationPatchRegistryMetadataPtrInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationPatchRegistryMetadataPtrOutput() WorkspaceApplicationPatchRegistryMetadataPtrOutput
+	ToWorkspaceApplicationPatchRegistryMetadataPtrOutputWithContext(context.Context) WorkspaceApplicationPatchRegistryMetadataPtrOutput
+}
+
+type workspaceApplicationPatchRegistryMetadataPtrType WorkspaceApplicationPatchRegistryMetadataArgs
+
+func WorkspaceApplicationPatchRegistryMetadataPtr(v *WorkspaceApplicationPatchRegistryMetadataArgs) WorkspaceApplicationPatchRegistryMetadataPtrInput {
+	return (*workspaceApplicationPatchRegistryMetadataPtrType)(v)
+}
+
+func (*workspaceApplicationPatchRegistryMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceApplicationPatchRegistryMetadata)(nil)).Elem()
+}
+
+func (i *workspaceApplicationPatchRegistryMetadataPtrType) ToWorkspaceApplicationPatchRegistryMetadataPtrOutput() WorkspaceApplicationPatchRegistryMetadataPtrOutput {
+	return i.ToWorkspaceApplicationPatchRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *workspaceApplicationPatchRegistryMetadataPtrType) ToWorkspaceApplicationPatchRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceApplicationPatchRegistryMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPatchRegistryMetadataPtrOutput)
+}
+
+type WorkspaceApplicationPatchRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationPatchRegistryMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchRegistryMetadataOutput) ToWorkspaceApplicationPatchRegistryMetadataOutput() WorkspaceApplicationPatchRegistryMetadataOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchRegistryMetadataOutput) ToWorkspaceApplicationPatchRegistryMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationPatchRegistryMetadataOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchRegistryMetadataOutput) ToWorkspaceApplicationPatchRegistryMetadataPtrOutput() WorkspaceApplicationPatchRegistryMetadataPtrOutput {
+	return o.ToWorkspaceApplicationPatchRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o WorkspaceApplicationPatchRegistryMetadataOutput) ToWorkspaceApplicationPatchRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceApplicationPatchRegistryMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceApplicationPatchRegistryMetadata) *WorkspaceApplicationPatchRegistryMetadata {
+		return &v
+	}).(WorkspaceApplicationPatchRegistryMetadataPtrOutput)
+}
+
+// The owning object's key for this object.
+func (o WorkspaceApplicationPatchRegistryMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o WorkspaceApplicationPatchRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
+}
+
+// The identifying key for the object.
+func (o WorkspaceApplicationPatchRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceApplicationPatchRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version.
+func (o WorkspaceApplicationPatchRegistryMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchRegistryMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
+}
+
+type WorkspaceApplicationPatchRegistryMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationPatchRegistryMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceApplicationPatchRegistryMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationPatchRegistryMetadataPtrOutput) ToWorkspaceApplicationPatchRegistryMetadataPtrOutput() WorkspaceApplicationPatchRegistryMetadataPtrOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchRegistryMetadataPtrOutput) ToWorkspaceApplicationPatchRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceApplicationPatchRegistryMetadataPtrOutput {
+	return o
+}
+
+func (o WorkspaceApplicationPatchRegistryMetadataPtrOutput) Elem() WorkspaceApplicationPatchRegistryMetadataOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationPatchRegistryMetadata) WorkspaceApplicationPatchRegistryMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret WorkspaceApplicationPatchRegistryMetadata
+		return ret
+	}).(WorkspaceApplicationPatchRegistryMetadataOutput)
+}
+
+// The owning object's key for this object.
+func (o WorkspaceApplicationPatchRegistryMetadataPtrOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationPatchRegistryMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AggregatorKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o WorkspaceApplicationPatchRegistryMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationPatchRegistryMetadata) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsFavorite
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The identifying key for the object.
+func (o WorkspaceApplicationPatchRegistryMetadataPtrOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationPatchRegistryMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceApplicationPatchRegistryMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationPatchRegistryMetadata) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Labels
+	}).(pulumi.StringArrayOutput)
+}
+
+// The registry version.
+func (o WorkspaceApplicationPatchRegistryMetadataPtrOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationPatchRegistryMetadata) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RegistryVersion
+	}).(pulumi.IntPtrOutput)
+}
+
 type WorkspaceApplicationPublishedObjectMetadata struct {
 	// The patch action indicating if object was created, updated, or deleted.
 	Action *string `pulumi:"action"`
@@ -4479,6 +5660,2718 @@ func (o GetWorkspaceApplicationParentRefArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationParentRef {
 		return vs[0].([]GetWorkspaceApplicationParentRef)[vs[1].(int)]
 	}).(GetWorkspaceApplicationParentRefOutput)
+}
+
+type GetWorkspaceApplicationPatchDependentObjectMetadata struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action string `pulumi:"action"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier string `pulumi:"identifier"`
+	// The key of the object.
+	Key string `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name string `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath string `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion int `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceApplicationPatchDependentObjectMetadataInput is an input type that accepts GetWorkspaceApplicationPatchDependentObjectMetadataArgs and GetWorkspaceApplicationPatchDependentObjectMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchDependentObjectMetadataInput` via:
+//
+//	GetWorkspaceApplicationPatchDependentObjectMetadataArgs{...}
+type GetWorkspaceApplicationPatchDependentObjectMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchDependentObjectMetadataOutput() GetWorkspaceApplicationPatchDependentObjectMetadataOutput
+	ToGetWorkspaceApplicationPatchDependentObjectMetadataOutputWithContext(context.Context) GetWorkspaceApplicationPatchDependentObjectMetadataOutput
+}
+
+type GetWorkspaceApplicationPatchDependentObjectMetadataArgs struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath pulumi.StringInput `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceApplicationPatchDependentObjectMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchDependentObjectMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchDependentObjectMetadataArgs) ToGetWorkspaceApplicationPatchDependentObjectMetadataOutput() GetWorkspaceApplicationPatchDependentObjectMetadataOutput {
+	return i.ToGetWorkspaceApplicationPatchDependentObjectMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchDependentObjectMetadataArgs) ToGetWorkspaceApplicationPatchDependentObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchDependentObjectMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchDependentObjectMetadataOutput)
+}
+
+// GetWorkspaceApplicationPatchDependentObjectMetadataArrayInput is an input type that accepts GetWorkspaceApplicationPatchDependentObjectMetadataArray and GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchDependentObjectMetadataArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchDependentObjectMetadataArray{ GetWorkspaceApplicationPatchDependentObjectMetadataArgs{...} }
+type GetWorkspaceApplicationPatchDependentObjectMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput() GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput
+	ToGetWorkspaceApplicationPatchDependentObjectMetadataArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput
+}
+
+type GetWorkspaceApplicationPatchDependentObjectMetadataArray []GetWorkspaceApplicationPatchDependentObjectMetadataInput
+
+func (GetWorkspaceApplicationPatchDependentObjectMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchDependentObjectMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchDependentObjectMetadataArray) ToGetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput() GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchDependentObjectMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchDependentObjectMetadataArray) ToGetWorkspaceApplicationPatchDependentObjectMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchDependentObjectMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchDependentObjectMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchDependentObjectMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataOutput) ToGetWorkspaceApplicationPatchDependentObjectMetadataOutput() GetWorkspaceApplicationPatchDependentObjectMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataOutput) ToGetWorkspaceApplicationPatchDependentObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchDependentObjectMetadataOutput {
+	return o
+}
+
+// The patch action indicating if object was created, updated, or deleted.
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchDependentObjectMetadata) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchDependentObjectMetadata) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The key of the object.
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchDependentObjectMetadata) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchDependentObjectMetadata) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The fully qualified path of the published object, which would include its project and folder.
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataOutput) NamePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchDependentObjectMetadata) string { return v.NamePath }).(pulumi.StringOutput)
+}
+
+// The object version.
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataOutput) ObjectVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchDependentObjectMetadata) int { return v.ObjectVersion }).(pulumi.IntOutput)
+}
+
+// The type of the object in patch.
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchDependentObjectMetadata) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchDependentObjectMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput) ToGetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput() GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput) ToGetWorkspaceApplicationPatchDependentObjectMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchDependentObjectMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchDependentObjectMetadata {
+		return vs[0].([]GetWorkspaceApplicationPatchDependentObjectMetadata)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchDependentObjectMetadataOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []GetWorkspaceApplicationPatchMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []GetWorkspaceApplicationPatchMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName string `pulumi:"updatedByName"`
+}
+
+// GetWorkspaceApplicationPatchMetadataInput is an input type that accepts GetWorkspaceApplicationPatchMetadataArgs and GetWorkspaceApplicationPatchMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchMetadataInput` via:
+//
+//	GetWorkspaceApplicationPatchMetadataArgs{...}
+type GetWorkspaceApplicationPatchMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchMetadataOutput() GetWorkspaceApplicationPatchMetadataOutput
+	ToGetWorkspaceApplicationPatchMetadataOutputWithContext(context.Context) GetWorkspaceApplicationPatchMetadataOutput
+}
+
+type GetWorkspaceApplicationPatchMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators GetWorkspaceApplicationPatchMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics GetWorkspaceApplicationPatchMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+}
+
+func (GetWorkspaceApplicationPatchMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchMetadataArgs) ToGetWorkspaceApplicationPatchMetadataOutput() GetWorkspaceApplicationPatchMetadataOutput {
+	return i.ToGetWorkspaceApplicationPatchMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchMetadataArgs) ToGetWorkspaceApplicationPatchMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchMetadataOutput)
+}
+
+// GetWorkspaceApplicationPatchMetadataArrayInput is an input type that accepts GetWorkspaceApplicationPatchMetadataArray and GetWorkspaceApplicationPatchMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchMetadataArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchMetadataArray{ GetWorkspaceApplicationPatchMetadataArgs{...} }
+type GetWorkspaceApplicationPatchMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchMetadataArrayOutput() GetWorkspaceApplicationPatchMetadataArrayOutput
+	ToGetWorkspaceApplicationPatchMetadataArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchMetadataArrayOutput
+}
+
+type GetWorkspaceApplicationPatchMetadataArray []GetWorkspaceApplicationPatchMetadataInput
+
+func (GetWorkspaceApplicationPatchMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchMetadataArray) ToGetWorkspaceApplicationPatchMetadataArrayOutput() GetWorkspaceApplicationPatchMetadataArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchMetadataArray) ToGetWorkspaceApplicationPatchMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchMetadataArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchMetadataOutput) ToGetWorkspaceApplicationPatchMetadataOutput() GetWorkspaceApplicationPatchMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataOutput) ToGetWorkspaceApplicationPatchMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceApplicationPatchMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o GetWorkspaceApplicationPatchMetadataOutput) Aggregators() GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) []GetWorkspaceApplicationPatchMetadataAggregator {
+		return v.Aggregators
+	}).(GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o GetWorkspaceApplicationPatchMetadataOutput) CountStatistics() GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) []GetWorkspaceApplicationPatchMetadataCountStatistic {
+		return v.CountStatistics
+	}).(GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceApplicationPatchMetadataOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceApplicationPatchMetadataOutput) CreatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
+}
+
+// The full path to identify this object.
+func (o GetWorkspaceApplicationPatchMetadataOutput) IdentifierPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
+}
+
+// Information property fields.
+func (o GetWorkspaceApplicationPatchMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceApplicationPatchMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceApplicationPatchMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceApplicationPatchMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+// The date and time that the object was created.
+func (o GetWorkspaceApplicationPatchMetadataOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the object was updated.
+func (o GetWorkspaceApplicationPatchMetadataOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceApplicationPatchMetadataOutput) UpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceApplicationPatchMetadataOutput) UpdatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) string { return v.UpdatedByName }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchMetadataArrayOutput) ToGetWorkspaceApplicationPatchMetadataArrayOutput() GetWorkspaceApplicationPatchMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataArrayOutput) ToGetWorkspaceApplicationPatchMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchMetadata {
+		return vs[0].([]GetWorkspaceApplicationPatchMetadata)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchMetadataOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadataAggregator struct {
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier string `pulumi:"identifier"`
+	// The key of the object.
+	Key string `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name string `pulumi:"name"`
+	// The type of the object in patch.
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceApplicationPatchMetadataAggregatorInput is an input type that accepts GetWorkspaceApplicationPatchMetadataAggregatorArgs and GetWorkspaceApplicationPatchMetadataAggregatorOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchMetadataAggregatorInput` via:
+//
+//	GetWorkspaceApplicationPatchMetadataAggregatorArgs{...}
+type GetWorkspaceApplicationPatchMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchMetadataAggregatorOutput() GetWorkspaceApplicationPatchMetadataAggregatorOutput
+	ToGetWorkspaceApplicationPatchMetadataAggregatorOutputWithContext(context.Context) GetWorkspaceApplicationPatchMetadataAggregatorOutput
+}
+
+type GetWorkspaceApplicationPatchMetadataAggregatorArgs struct {
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the object in patch.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceApplicationPatchMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchMetadataAggregatorArgs) ToGetWorkspaceApplicationPatchMetadataAggregatorOutput() GetWorkspaceApplicationPatchMetadataAggregatorOutput {
+	return i.ToGetWorkspaceApplicationPatchMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchMetadataAggregatorArgs) ToGetWorkspaceApplicationPatchMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchMetadataAggregatorOutput)
+}
+
+// GetWorkspaceApplicationPatchMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceApplicationPatchMetadataAggregatorArray and GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchMetadataAggregatorArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchMetadataAggregatorArray{ GetWorkspaceApplicationPatchMetadataAggregatorArgs{...} }
+type GetWorkspaceApplicationPatchMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchMetadataAggregatorArrayOutput() GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput
+	ToGetWorkspaceApplicationPatchMetadataAggregatorArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput
+}
+
+type GetWorkspaceApplicationPatchMetadataAggregatorArray []GetWorkspaceApplicationPatchMetadataAggregatorInput
+
+func (GetWorkspaceApplicationPatchMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchMetadataAggregatorArray) ToGetWorkspaceApplicationPatchMetadataAggregatorArrayOutput() GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchMetadataAggregatorArray) ToGetWorkspaceApplicationPatchMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchMetadataAggregatorOutput) ToGetWorkspaceApplicationPatchMetadataAggregatorOutput() GetWorkspaceApplicationPatchMetadataAggregatorOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataAggregatorOutput) ToGetWorkspaceApplicationPatchMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataAggregatorOutput {
+	return o
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceApplicationPatchMetadataAggregatorOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+func (o GetWorkspaceApplicationPatchMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The key of the object.
+func (o GetWorkspaceApplicationPatchMetadataAggregatorOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o GetWorkspaceApplicationPatchMetadataAggregatorOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the object in patch.
+func (o GetWorkspaceApplicationPatchMetadataAggregatorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadataAggregator) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput) ToGetWorkspaceApplicationPatchMetadataAggregatorArrayOutput() GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput) ToGetWorkspaceApplicationPatchMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchMetadataAggregator {
+		return vs[0].([]GetWorkspaceApplicationPatchMetadataAggregator)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchMetadataAggregatorOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// GetWorkspaceApplicationPatchMetadataCountStatisticInput is an input type that accepts GetWorkspaceApplicationPatchMetadataCountStatisticArgs and GetWorkspaceApplicationPatchMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchMetadataCountStatisticInput` via:
+//
+//	GetWorkspaceApplicationPatchMetadataCountStatisticArgs{...}
+type GetWorkspaceApplicationPatchMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchMetadataCountStatisticOutput() GetWorkspaceApplicationPatchMetadataCountStatisticOutput
+	ToGetWorkspaceApplicationPatchMetadataCountStatisticOutputWithContext(context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticOutput
+}
+
+type GetWorkspaceApplicationPatchMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (GetWorkspaceApplicationPatchMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchMetadataCountStatisticArgs) ToGetWorkspaceApplicationPatchMetadataCountStatisticOutput() GetWorkspaceApplicationPatchMetadataCountStatisticOutput {
+	return i.ToGetWorkspaceApplicationPatchMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchMetadataCountStatisticArgs) ToGetWorkspaceApplicationPatchMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchMetadataCountStatisticOutput)
+}
+
+// GetWorkspaceApplicationPatchMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceApplicationPatchMetadataCountStatisticArray and GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchMetadataCountStatisticArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchMetadataCountStatisticArray{ GetWorkspaceApplicationPatchMetadataCountStatisticArgs{...} }
+type GetWorkspaceApplicationPatchMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput() GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput
+	ToGetWorkspaceApplicationPatchMetadataCountStatisticArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput
+}
+
+type GetWorkspaceApplicationPatchMetadataCountStatisticArray []GetWorkspaceApplicationPatchMetadataCountStatisticInput
+
+func (GetWorkspaceApplicationPatchMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchMetadataCountStatisticArray) ToGetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput() GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchMetadataCountStatisticArray) ToGetWorkspaceApplicationPatchMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticOutput) ToGetWorkspaceApplicationPatchMetadataCountStatisticOutput() GetWorkspaceApplicationPatchMetadataCountStatisticOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticOutput) ToGetWorkspaceApplicationPatchMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticOutput) ObjectTypeCountLists() GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadataCountStatistic) []GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput) ToGetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput() GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput) ToGetWorkspaceApplicationPatchMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchMetadataCountStatistic {
+		return vs[0].([]GetWorkspaceApplicationPatchMetadataCountStatistic)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchMetadataCountStatisticOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType string `pulumi:"objectType"`
+}
+
+// GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs{...}
+type GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput
+	ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+}
+
+func (GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray{ GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs{...} }
+type GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray []GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListInput
+
+func (GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectCount
+	}).(pulumi.StringOutput)
+}
+
+// The type of object for the count statistic object.
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type GetWorkspaceApplicationPatchParentRef struct {
+	// Key of the parent object.
+	Parent string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId string `pulumi:"rootDocId"`
+}
+
+// GetWorkspaceApplicationPatchParentRefInput is an input type that accepts GetWorkspaceApplicationPatchParentRefArgs and GetWorkspaceApplicationPatchParentRefOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchParentRefInput` via:
+//
+//	GetWorkspaceApplicationPatchParentRefArgs{...}
+type GetWorkspaceApplicationPatchParentRefInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchParentRefOutput() GetWorkspaceApplicationPatchParentRefOutput
+	ToGetWorkspaceApplicationPatchParentRefOutputWithContext(context.Context) GetWorkspaceApplicationPatchParentRefOutput
+}
+
+type GetWorkspaceApplicationPatchParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+}
+
+func (GetWorkspaceApplicationPatchParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchParentRefArgs) ToGetWorkspaceApplicationPatchParentRefOutput() GetWorkspaceApplicationPatchParentRefOutput {
+	return i.ToGetWorkspaceApplicationPatchParentRefOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchParentRefArgs) ToGetWorkspaceApplicationPatchParentRefOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchParentRefOutput)
+}
+
+// GetWorkspaceApplicationPatchParentRefArrayInput is an input type that accepts GetWorkspaceApplicationPatchParentRefArray and GetWorkspaceApplicationPatchParentRefArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchParentRefArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchParentRefArray{ GetWorkspaceApplicationPatchParentRefArgs{...} }
+type GetWorkspaceApplicationPatchParentRefArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchParentRefArrayOutput() GetWorkspaceApplicationPatchParentRefArrayOutput
+	ToGetWorkspaceApplicationPatchParentRefArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchParentRefArrayOutput
+}
+
+type GetWorkspaceApplicationPatchParentRefArray []GetWorkspaceApplicationPatchParentRefInput
+
+func (GetWorkspaceApplicationPatchParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchParentRefArray) ToGetWorkspaceApplicationPatchParentRefArrayOutput() GetWorkspaceApplicationPatchParentRefArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchParentRefArray) ToGetWorkspaceApplicationPatchParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchParentRefArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchParentRefOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchParentRefOutput) ToGetWorkspaceApplicationPatchParentRefOutput() GetWorkspaceApplicationPatchParentRefOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchParentRefOutput) ToGetWorkspaceApplicationPatchParentRefOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o GetWorkspaceApplicationPatchParentRefOutput) Parent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchParentRef) string { return v.Parent }).(pulumi.StringOutput)
+}
+
+// Key of the root document object.
+func (o GetWorkspaceApplicationPatchParentRefOutput) RootDocId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchParentRefArrayOutput) ToGetWorkspaceApplicationPatchParentRefArrayOutput() GetWorkspaceApplicationPatchParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchParentRefArrayOutput) ToGetWorkspaceApplicationPatchParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchParentRef {
+		return vs[0].([]GetWorkspaceApplicationPatchParentRef)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchParentRefOutput)
+}
+
+type GetWorkspaceApplicationPatchPatchObjectMetadata struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action string `pulumi:"action"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier string `pulumi:"identifier"`
+	// The key of the object.
+	Key string `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name string `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath string `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion int `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceApplicationPatchPatchObjectMetadataInput is an input type that accepts GetWorkspaceApplicationPatchPatchObjectMetadataArgs and GetWorkspaceApplicationPatchPatchObjectMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchPatchObjectMetadataInput` via:
+//
+//	GetWorkspaceApplicationPatchPatchObjectMetadataArgs{...}
+type GetWorkspaceApplicationPatchPatchObjectMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchPatchObjectMetadataOutput() GetWorkspaceApplicationPatchPatchObjectMetadataOutput
+	ToGetWorkspaceApplicationPatchPatchObjectMetadataOutputWithContext(context.Context) GetWorkspaceApplicationPatchPatchObjectMetadataOutput
+}
+
+type GetWorkspaceApplicationPatchPatchObjectMetadataArgs struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath pulumi.StringInput `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceApplicationPatchPatchObjectMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchPatchObjectMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchPatchObjectMetadataArgs) ToGetWorkspaceApplicationPatchPatchObjectMetadataOutput() GetWorkspaceApplicationPatchPatchObjectMetadataOutput {
+	return i.ToGetWorkspaceApplicationPatchPatchObjectMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchPatchObjectMetadataArgs) ToGetWorkspaceApplicationPatchPatchObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchPatchObjectMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchPatchObjectMetadataOutput)
+}
+
+// GetWorkspaceApplicationPatchPatchObjectMetadataArrayInput is an input type that accepts GetWorkspaceApplicationPatchPatchObjectMetadataArray and GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchPatchObjectMetadataArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchPatchObjectMetadataArray{ GetWorkspaceApplicationPatchPatchObjectMetadataArgs{...} }
+type GetWorkspaceApplicationPatchPatchObjectMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput() GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput
+	ToGetWorkspaceApplicationPatchPatchObjectMetadataArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput
+}
+
+type GetWorkspaceApplicationPatchPatchObjectMetadataArray []GetWorkspaceApplicationPatchPatchObjectMetadataInput
+
+func (GetWorkspaceApplicationPatchPatchObjectMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchPatchObjectMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchPatchObjectMetadataArray) ToGetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput() GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchPatchObjectMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchPatchObjectMetadataArray) ToGetWorkspaceApplicationPatchPatchObjectMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchPatchObjectMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchPatchObjectMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchPatchObjectMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataOutput) ToGetWorkspaceApplicationPatchPatchObjectMetadataOutput() GetWorkspaceApplicationPatchPatchObjectMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataOutput) ToGetWorkspaceApplicationPatchPatchObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchPatchObjectMetadataOutput {
+	return o
+}
+
+// The patch action indicating if object was created, updated, or deleted.
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchPatchObjectMetadata) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchPatchObjectMetadata) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The key of the object.
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchPatchObjectMetadata) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchPatchObjectMetadata) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The fully qualified path of the published object, which would include its project and folder.
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataOutput) NamePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchPatchObjectMetadata) string { return v.NamePath }).(pulumi.StringOutput)
+}
+
+// The object version.
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataOutput) ObjectVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchPatchObjectMetadata) int { return v.ObjectVersion }).(pulumi.IntOutput)
+}
+
+// The type of the object in patch.
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchPatchObjectMetadata) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchPatchObjectMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput) ToGetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput() GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput) ToGetWorkspaceApplicationPatchPatchObjectMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchPatchObjectMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchPatchObjectMetadata {
+		return vs[0].([]GetWorkspaceApplicationPatchPatchObjectMetadata)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchPatchObjectMetadataOutput)
+}
+
+type GetWorkspaceApplicationPatchRegistryMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// The key of the object.
+	Key string `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+}
+
+// GetWorkspaceApplicationPatchRegistryMetadataInput is an input type that accepts GetWorkspaceApplicationPatchRegistryMetadataArgs and GetWorkspaceApplicationPatchRegistryMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchRegistryMetadataInput` via:
+//
+//	GetWorkspaceApplicationPatchRegistryMetadataArgs{...}
+type GetWorkspaceApplicationPatchRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchRegistryMetadataOutput() GetWorkspaceApplicationPatchRegistryMetadataOutput
+	ToGetWorkspaceApplicationPatchRegistryMetadataOutputWithContext(context.Context) GetWorkspaceApplicationPatchRegistryMetadataOutput
+}
+
+type GetWorkspaceApplicationPatchRegistryMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// The key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+}
+
+func (GetWorkspaceApplicationPatchRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchRegistryMetadataArgs) ToGetWorkspaceApplicationPatchRegistryMetadataOutput() GetWorkspaceApplicationPatchRegistryMetadataOutput {
+	return i.ToGetWorkspaceApplicationPatchRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchRegistryMetadataArgs) ToGetWorkspaceApplicationPatchRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchRegistryMetadataOutput)
+}
+
+// GetWorkspaceApplicationPatchRegistryMetadataArrayInput is an input type that accepts GetWorkspaceApplicationPatchRegistryMetadataArray and GetWorkspaceApplicationPatchRegistryMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchRegistryMetadataArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchRegistryMetadataArray{ GetWorkspaceApplicationPatchRegistryMetadataArgs{...} }
+type GetWorkspaceApplicationPatchRegistryMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchRegistryMetadataArrayOutput() GetWorkspaceApplicationPatchRegistryMetadataArrayOutput
+	ToGetWorkspaceApplicationPatchRegistryMetadataArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchRegistryMetadataArrayOutput
+}
+
+type GetWorkspaceApplicationPatchRegistryMetadataArray []GetWorkspaceApplicationPatchRegistryMetadataInput
+
+func (GetWorkspaceApplicationPatchRegistryMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchRegistryMetadataArray) ToGetWorkspaceApplicationPatchRegistryMetadataArrayOutput() GetWorkspaceApplicationPatchRegistryMetadataArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchRegistryMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchRegistryMetadataArray) ToGetWorkspaceApplicationPatchRegistryMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchRegistryMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchRegistryMetadataArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchRegistryMetadataOutput) ToGetWorkspaceApplicationPatchRegistryMetadataOutput() GetWorkspaceApplicationPatchRegistryMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchRegistryMetadataOutput) ToGetWorkspaceApplicationPatchRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchRegistryMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceApplicationPatchRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceApplicationPatchRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// The key of the object.
+func (o GetWorkspaceApplicationPatchRegistryMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceApplicationPatchRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceApplicationPatchRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+type GetWorkspaceApplicationPatchRegistryMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchRegistryMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchRegistryMetadataArrayOutput) ToGetWorkspaceApplicationPatchRegistryMetadataArrayOutput() GetWorkspaceApplicationPatchRegistryMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchRegistryMetadataArrayOutput) ToGetWorkspaceApplicationPatchRegistryMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchRegistryMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchRegistryMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchRegistryMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchRegistryMetadata {
+		return vs[0].([]GetWorkspaceApplicationPatchRegistryMetadata)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchRegistryMetadataOutput)
+}
+
+type GetWorkspaceApplicationPatchesFilter struct {
+	// Used to filter by the name of the object.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetWorkspaceApplicationPatchesFilterInput is an input type that accepts GetWorkspaceApplicationPatchesFilterArgs and GetWorkspaceApplicationPatchesFilterOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesFilterInput` via:
+//
+//	GetWorkspaceApplicationPatchesFilterArgs{...}
+type GetWorkspaceApplicationPatchesFilterInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesFilterOutput() GetWorkspaceApplicationPatchesFilterOutput
+	ToGetWorkspaceApplicationPatchesFilterOutputWithContext(context.Context) GetWorkspaceApplicationPatchesFilterOutput
+}
+
+type GetWorkspaceApplicationPatchesFilterArgs struct {
+	// Used to filter by the name of the object.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetWorkspaceApplicationPatchesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesFilterArgs) ToGetWorkspaceApplicationPatchesFilterOutput() GetWorkspaceApplicationPatchesFilterOutput {
+	return i.ToGetWorkspaceApplicationPatchesFilterOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesFilterArgs) ToGetWorkspaceApplicationPatchesFilterOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesFilterOutput)
+}
+
+// GetWorkspaceApplicationPatchesFilterArrayInput is an input type that accepts GetWorkspaceApplicationPatchesFilterArray and GetWorkspaceApplicationPatchesFilterArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesFilterArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchesFilterArray{ GetWorkspaceApplicationPatchesFilterArgs{...} }
+type GetWorkspaceApplicationPatchesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesFilterArrayOutput() GetWorkspaceApplicationPatchesFilterArrayOutput
+	ToGetWorkspaceApplicationPatchesFilterArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchesFilterArrayOutput
+}
+
+type GetWorkspaceApplicationPatchesFilterArray []GetWorkspaceApplicationPatchesFilterInput
+
+func (GetWorkspaceApplicationPatchesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesFilterArray) ToGetWorkspaceApplicationPatchesFilterArrayOutput() GetWorkspaceApplicationPatchesFilterArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesFilterArray) ToGetWorkspaceApplicationPatchesFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesFilterArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesFilterOutput) ToGetWorkspaceApplicationPatchesFilterOutput() GetWorkspaceApplicationPatchesFilterOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesFilterOutput) ToGetWorkspaceApplicationPatchesFilterOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesFilterOutput {
+	return o
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceApplicationPatchesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetWorkspaceApplicationPatchesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetWorkspaceApplicationPatchesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesFilterArrayOutput) ToGetWorkspaceApplicationPatchesFilterArrayOutput() GetWorkspaceApplicationPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesFilterArrayOutput) ToGetWorkspaceApplicationPatchesFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchesFilter {
+		return vs[0].([]GetWorkspaceApplicationPatchesFilter)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchesFilterOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollection struct {
+	Items []GetWorkspaceApplicationPatchesPatchSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionArgs and GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionArgs{...}
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionArgs struct {
+	Items GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput)
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionArray and GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionArray{ GetWorkspaceApplicationPatchesPatchSummaryCollectionArgs{...} }
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionArray []GetWorkspaceApplicationPatchesPatchSummaryCollectionInput
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput) Items() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollection) []GetWorkspaceApplicationPatchesPatchSummaryCollectionItem {
+		return v.Items
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchesPatchSummaryCollection {
+		return vs[0].([]GetWorkspaceApplicationPatchesPatchSummaryCollection)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItem struct {
+	// The application key.
+	ApplicationKey string `pulumi:"applicationKey"`
+	// The application version of the patch.
+	ApplicationVersion int `pulumi:"applicationVersion"`
+	// List of dependent objects in this patch.
+	DependentObjectMetadatas []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata `pulumi:"dependentObjectMetadatas"`
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	// The errors encountered while applying the patch, if any.
+	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
+	// Used to filter by the identifier of the published object.
+	Identifier string `pulumi:"identifier"`
+	// The key of the object.
+	Key string `pulumi:"key"`
+	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	Metadatas []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata `pulumi:"metadatas"`
+	// The object type.
+	ModelType string `pulumi:"modelType"`
+	// The object's model version.
+	ModelVersion string `pulumi:"modelVersion"`
+	// Used to filter by the name of the object.
+	Name       string   `pulumi:"name"`
+	ObjectKeys []string `pulumi:"objectKeys"`
+	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+	ObjectStatus int `pulumi:"objectStatus"`
+	// The object version.
+	ObjectVersion int `pulumi:"objectVersion"`
+	// A reference to the object's parent.
+	ParentReves []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRef `pulumi:"parentReves"`
+	// List of objects that are published or unpublished in this patch.
+	PatchObjectMetadatas []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata `pulumi:"patchObjectMetadatas"`
+	// Status of the patch applied or being applied on the application
+	PatchStatus string `pulumi:"patchStatus"`
+	// The type of the patch applied or being applied on the application.
+	PatchType        string                                                                   `pulumi:"patchType"`
+	RegistryMetadata GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadata `pulumi:"registryMetadata"`
+	// The date and time the patch was applied, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimePatched string `pulumi:"timePatched"`
+	// The workspace ID.
+	WorkspaceId string `pulumi:"workspaceId"`
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArgs and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArgs{...}
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArgs struct {
+	// The application key.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	// The application version of the patch.
+	ApplicationVersion pulumi.IntInput `pulumi:"applicationVersion"`
+	// List of dependent objects in this patch.
+	DependentObjectMetadatas GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayInput `pulumi:"dependentObjectMetadatas"`
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The errors encountered while applying the patch, if any.
+	ErrorMessages pulumi.MapInput `pulumi:"errorMessages"`
+	// Used to filter by the identifier of the published object.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+	KeyMap pulumi.MapInput `pulumi:"keyMap"`
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	Metadatas GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
+	// The object type.
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+	// The object's model version.
+	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	// Used to filter by the name of the object.
+	Name       pulumi.StringInput      `pulumi:"name"`
+	ObjectKeys pulumi.StringArrayInput `pulumi:"objectKeys"`
+	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
+	// The object version.
+	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	// A reference to the object's parent.
+	ParentReves GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayInput `pulumi:"parentReves"`
+	// List of objects that are published or unpublished in this patch.
+	PatchObjectMetadatas GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayInput `pulumi:"patchObjectMetadatas"`
+	// Status of the patch applied or being applied on the application
+	PatchStatus pulumi.StringInput `pulumi:"patchStatus"`
+	// The type of the patch applied or being applied on the application.
+	PatchType        pulumi.StringInput                                                            `pulumi:"patchType"`
+	RegistryMetadata GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataInput `pulumi:"registryMetadata"`
+	// The date and time the patch was applied, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimePatched pulumi.StringInput `pulumi:"timePatched"`
+	// The workspace ID.
+	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
+}
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput)
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArray and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArray{ GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArgs{...} }
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArray []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemInput
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput {
+	return o
+}
+
+// The application key.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) string { return v.ApplicationKey }).(pulumi.StringOutput)
+}
+
+// The application version of the patch.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ApplicationVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) int { return v.ApplicationVersion }).(pulumi.IntOutput)
+}
+
+// List of dependent objects in this patch.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) DependentObjectMetadatas() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata {
+		return v.DependentObjectMetadatas
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput)
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The errors encountered while applying the patch, if any.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ErrorMessages() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) map[string]interface{} {
+		return v.ErrorMessages
+	}).(pulumi.MapOutput)
+}
+
+// Used to filter by the identifier of the published object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The key of the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) KeyMap() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) map[string]interface{} {
+		return v.KeyMap
+	}).(pulumi.MapOutput)
+}
+
+// A summary type containing information about the object including its key, name and when/who created/updated it.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) Metadatas() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata {
+		return v.Metadatas
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput)
+}
+
+// The object type.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
+}
+
+// The object's model version.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ModelVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) string { return v.ModelVersion }).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ObjectKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) []string { return v.ObjectKeys }).(pulumi.StringArrayOutput)
+}
+
+// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ObjectStatus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) int { return v.ObjectStatus }).(pulumi.IntOutput)
+}
+
+// The object version.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ObjectVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) int { return v.ObjectVersion }).(pulumi.IntOutput)
+}
+
+// A reference to the object's parent.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ParentReves() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRef {
+		return v.ParentReves
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput)
+}
+
+// List of objects that are published or unpublished in this patch.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) PatchObjectMetadatas() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata {
+		return v.PatchObjectMetadatas
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput)
+}
+
+// Status of the patch applied or being applied on the application
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) PatchStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) string { return v.PatchStatus }).(pulumi.StringOutput)
+}
+
+// The type of the patch applied or being applied on the application.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) PatchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) string { return v.PatchType }).(pulumi.StringOutput)
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) RegistryMetadata() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadata {
+		return v.RegistryMetadata
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput)
+}
+
+// The date and time the patch was applied, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) TimePatched() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) string { return v.TimePatched }).(pulumi.StringOutput)
+}
+
+// The workspace ID.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) WorkspaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) string { return v.WorkspaceId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchesPatchSummaryCollectionItem {
+		return vs[0].([]GetWorkspaceApplicationPatchesPatchSummaryCollectionItem)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action string `pulumi:"action"`
+	// Used to filter by the identifier of the published object.
+	Identifier string `pulumi:"identifier"`
+	// The key of the object.
+	Key string `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath string `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion int `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArgs and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArgs{...}
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArgs struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Used to filter by the identifier of the published object.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath pulumi.StringInput `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput)
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArray and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArray{ GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArgs{...} }
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArray []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataInput
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput {
+	return o
+}
+
+// The patch action indicating if object was created, updated, or deleted.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata) string {
+		return v.Action
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the identifier of the published object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata) string {
+		return v.Identifier
+	}).(pulumi.StringOutput)
+}
+
+// The key of the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The fully qualified path of the published object, which would include its project and folder.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput) NamePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata) string {
+		return v.NamePath
+	}).(pulumi.StringOutput)
+}
+
+// The object version.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput) ObjectVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata) int {
+		return v.ObjectVersion
+	}).(pulumi.IntOutput)
+}
+
+// The type of the object in patch.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata {
+		return vs[0].([]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName string `pulumi:"updatedByName"`
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArgs and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArgs{...}
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+}
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput)
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArray and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArray{ GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArgs{...} }
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArray []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataInput
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) string {
+		return v.AggregatorKey
+	}).(pulumi.StringOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) Aggregators() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator {
+		return v.Aggregators
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) CountStatistics() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatistic {
+		return v.CountStatistics
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) CreatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) string {
+		return v.CreatedByName
+	}).(pulumi.StringOutput)
+}
+
+// The full path to identify this object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) string {
+		return v.IdentifierPath
+	}).(pulumi.StringOutput)
+}
+
+// Information property fields.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) map[string]interface{} {
+		return v.InfoFields
+	}).(pulumi.MapOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+// The date and time that the object was created.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the object was updated.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) UpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) UpdatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) string {
+		return v.UpdatedByName
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata {
+		return vs[0].([]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator struct {
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	// Used to filter by the identifier of the published object.
+	Identifier string `pulumi:"identifier"`
+	// The key of the object.
+	Key string `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// The type of the object in patch.
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArgs and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArgs{...}
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArgs struct {
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Used to filter by the identifier of the published object.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the object in patch.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput)
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArray and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArray{ GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArgs{...} }
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArray []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorInput
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput {
+	return o
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the identifier of the published object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator) string {
+		return v.Identifier
+	}).(pulumi.StringOutput)
+}
+
+// The key of the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The type of the object in patch.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator {
+		return vs[0].([]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregator)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArgs and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArgs{...}
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput)
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArray and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArray{ GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArgs{...} }
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArray []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticInput
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput) ObjectTypeCountLists() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatistic) []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatistic {
+		return vs[0].([]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatistic)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType string `pulumi:"objectType"`
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{...}
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+}
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray{ GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{...} }
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectCount
+	}).(pulumi.StringOutput)
+}
+
+// The type of object for the count statistic object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRef struct {
+	// Key of the parent object.
+	Parent string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId string `pulumi:"rootDocId"`
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArgs and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArgs{...}
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+}
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput)
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArray and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArray{ GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArgs{...} }
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArray []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefInput
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput) Parent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRef) string { return v.Parent }).(pulumi.StringOutput)
+}
+
+// Key of the root document object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput) RootDocId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRef {
+		return vs[0].([]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRef)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action string `pulumi:"action"`
+	// Used to filter by the identifier of the published object.
+	Identifier string `pulumi:"identifier"`
+	// The key of the object.
+	Key string `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath string `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion int `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArgs and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArgs{...}
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArgs struct {
+	// The patch action indicating if object was created, updated, or deleted.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Used to filter by the identifier of the published object.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The fully qualified path of the published object, which would include its project and folder.
+	NamePath pulumi.StringInput `pulumi:"namePath"`
+	// The object version.
+	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	// The type of the object in patch.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput)
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArray and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArray{ GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArgs{...} }
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArray []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataInput
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArray) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput {
+	return o
+}
+
+// The patch action indicating if object was created, updated, or deleted.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata) string {
+		return v.Action
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the identifier of the published object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata) string {
+		return v.Identifier
+	}).(pulumi.StringOutput)
+}
+
+// The key of the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The fully qualified path of the published object, which would include its project and folder.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput) NamePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata) string {
+		return v.NamePath
+	}).(pulumi.StringOutput)
+}
+
+// The object version.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput) ObjectVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata) int {
+		return v.ObjectVersion
+	}).(pulumi.IntOutput)
+}
+
+// The type of the object in patch.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata {
+		return vs[0].([]GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata)[vs[1].(int)]
+	}).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// The key of the object.
+	Key string `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+}
+
+// GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataInput is an input type that accepts GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataArgs and GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataInput` via:
+//
+//	GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataArgs{...}
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput
+	ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutputWithContext(context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// The key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+}
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput {
+	return i.ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput)
+}
+
+type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput) ToGetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadata) string {
+		return v.AggregatorKey
+	}).(pulumi.StringOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadata) bool {
+		return v.IsFavorite
+	}).(pulumi.BoolOutput)
+}
+
+// The key of the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadata) []string {
+		return v.Labels
+	}).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadata) int {
+		return v.RegistryVersion
+	}).(pulumi.IntOutput)
 }
 
 type GetWorkspaceApplicationPublishedObjectMetadata struct {
@@ -10026,6 +13919,8 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput) Ind
 }
 
 type GetWorkspaceImportRequestsImportRequestSummaryCollectionItem struct {
+	// This field controls if the data asset references will be included during import.
+	AreDataAssetReferencesIncluded bool `pulumi:"areDataAssetReferencesIncluded"`
 	// The name of the Object Storage Bucket where the objects will be imported from
 	Bucket string `pulumi:"bucket"`
 	// Name of the user who initiated import request.
@@ -10072,6 +13967,8 @@ type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemInput interface
 }
 
 type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs struct {
+	// This field controls if the data asset references will be included during import.
+	AreDataAssetReferencesIncluded pulumi.BoolInput `pulumi:"areDataAssetReferencesIncluded"`
 	// The name of the Object Storage Bucket where the objects will be imported from
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// Name of the user who initiated import request.
@@ -10155,6 +14052,13 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ToGe
 
 func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput {
 	return o
+}
+
+// This field controls if the data asset references will be included during import.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) AreDataAssetReferencesIncluded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) bool {
+		return v.AreDataAssetReferencesIncluded
+	}).(pulumi.BoolOutput)
 }
 
 // The name of the Object Storage Bucket where the objects will be imported from
@@ -12923,6 +16827,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationParentRefInput)(nil)).Elem(), WorkspaceApplicationParentRefArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationParentRefArrayInput)(nil)).Elem(), WorkspaceApplicationParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchDependentObjectMetadataInput)(nil)).Elem(), WorkspaceApplicationPatchDependentObjectMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchDependentObjectMetadataArrayInput)(nil)).Elem(), WorkspaceApplicationPatchDependentObjectMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchMetadataInput)(nil)).Elem(), WorkspaceApplicationPatchMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchMetadataArrayInput)(nil)).Elem(), WorkspaceApplicationPatchMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchMetadataAggregatorInput)(nil)).Elem(), WorkspaceApplicationPatchMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchMetadataAggregatorArrayInput)(nil)).Elem(), WorkspaceApplicationPatchMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchMetadataCountStatisticInput)(nil)).Elem(), WorkspaceApplicationPatchMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchMetadataCountStatisticArrayInput)(nil)).Elem(), WorkspaceApplicationPatchMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchParentRefInput)(nil)).Elem(), WorkspaceApplicationPatchParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchParentRefArrayInput)(nil)).Elem(), WorkspaceApplicationPatchParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchPatchObjectMetadataInput)(nil)).Elem(), WorkspaceApplicationPatchPatchObjectMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchPatchObjectMetadataArrayInput)(nil)).Elem(), WorkspaceApplicationPatchPatchObjectMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchRegistryMetadataInput)(nil)).Elem(), WorkspaceApplicationPatchRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPatchRegistryMetadataPtrInput)(nil)).Elem(), WorkspaceApplicationPatchRegistryMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPublishedObjectMetadataInput)(nil)).Elem(), WorkspaceApplicationPublishedObjectMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPublishedObjectMetadataArrayInput)(nil)).Elem(), WorkspaceApplicationPublishedObjectMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationRegistryMetadataInput)(nil)).Elem(), WorkspaceApplicationRegistryMetadataArgs{})
@@ -12971,6 +16891,43 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationParentRefInput)(nil)).Elem(), GetWorkspaceApplicationParentRefArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationParentRefArrayInput)(nil)).Elem(), GetWorkspaceApplicationParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchDependentObjectMetadataInput)(nil)).Elem(), GetWorkspaceApplicationPatchDependentObjectMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchDependentObjectMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchDependentObjectMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataInput)(nil)).Elem(), GetWorkspaceApplicationPatchMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataAggregatorInput)(nil)).Elem(), GetWorkspaceApplicationPatchMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataAggregatorArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataCountStatisticInput)(nil)).Elem(), GetWorkspaceApplicationPatchMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataCountStatisticArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchParentRefInput)(nil)).Elem(), GetWorkspaceApplicationPatchParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchParentRefArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchPatchObjectMetadataInput)(nil)).Elem(), GetWorkspaceApplicationPatchPatchObjectMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchPatchObjectMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchPatchObjectMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchRegistryMetadataInput)(nil)).Elem(), GetWorkspaceApplicationPatchRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchRegistryMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchRegistryMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesFilterInput)(nil)).Elem(), GetWorkspaceApplicationPatchesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesFilterArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataInput)(nil)).Elem(), GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPublishedObjectMetadataInput)(nil)).Elem(), GetWorkspaceApplicationPublishedObjectMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPublishedObjectMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationPublishedObjectMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationRegistryMetadataInput)(nil)).Elem(), GetWorkspaceApplicationRegistryMetadataArgs{})
@@ -13098,6 +17055,22 @@ func init() {
 	pulumi.RegisterOutputType(WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceApplicationParentRefOutput{})
 	pulumi.RegisterOutputType(WorkspaceApplicationParentRefArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchDependentObjectMetadataOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchDependentObjectMetadataArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchMetadataOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchMetadataArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchParentRefOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchParentRefArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchPatchObjectMetadataOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchPatchObjectMetadataArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchRegistryMetadataOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationPatchRegistryMetadataPtrOutput{})
 	pulumi.RegisterOutputType(WorkspaceApplicationPublishedObjectMetadataOutput{})
 	pulumi.RegisterOutputType(WorkspaceApplicationPublishedObjectMetadataArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceApplicationRegistryMetadataOutput{})
@@ -13146,6 +17119,43 @@ func init() {
 	pulumi.RegisterOutputType(GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationParentRefOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationParentRefArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchDependentObjectMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchDependentObjectMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchParentRefOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchParentRefArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchPatchObjectMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchPatchObjectMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchRegistryMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchRegistryMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesFilterOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemParentRefArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadataOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationPublishedObjectMetadataOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationPublishedObjectMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationRegistryMetadataOutput{})

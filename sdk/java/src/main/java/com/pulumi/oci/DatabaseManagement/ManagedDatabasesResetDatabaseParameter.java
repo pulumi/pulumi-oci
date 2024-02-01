@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DatabaseManagement.ManagedDatabasesResetDatabaseParameterArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesResetDatabaseParameterState;
 import com.pulumi.oci.DatabaseManagement.outputs.ManagedDatabasesResetDatabaseParameterCredentials;
+import com.pulumi.oci.DatabaseManagement.outputs.ManagedDatabasesResetDatabaseParameterDatabaseCredential;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
@@ -30,6 +31,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DatabaseManagement.ManagedDatabasesResetDatabaseParameter;
  * import com.pulumi.oci.DatabaseManagement.ManagedDatabasesResetDatabaseParameterArgs;
  * import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesResetDatabaseParameterCredentialsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -44,15 +46,23 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedDatabasesResetDatabaseParameter = new ManagedDatabasesResetDatabaseParameter(&#34;testManagedDatabasesResetDatabaseParameter&#34;, ManagedDatabasesResetDatabaseParameterArgs.builder()        
+ *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+ *             .parameters(var_.managed_databases_reset_database_parameter_parameters())
+ *             .scope(var_.managed_databases_reset_database_parameter_scope())
  *             .credentials(ManagedDatabasesResetDatabaseParameterCredentialsArgs.builder()
  *                 .password(var_.managed_databases_reset_database_parameter_credentials_password())
  *                 .role(var_.managed_databases_reset_database_parameter_credentials_role())
  *                 .secretId(oci_vault_secret.test_secret().id())
  *                 .userName(oci_identity_user.test_user().name())
  *                 .build())
- *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
- *             .parameters(var_.managed_databases_reset_database_parameter_parameters())
- *             .scope(var_.managed_databases_reset_database_parameter_scope())
+ *             .databaseCredential(ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs.builder()
+ *                 .credentialType(var_.managed_databases_reset_database_parameter_database_credential_credential_type())
+ *                 .namedCredentialId(oci_database_management_named_credential.test_named_credential().id())
+ *                 .password(var_.managed_databases_reset_database_parameter_database_credential_password())
+ *                 .passwordSecretId(oci_vault_secret.test_secret().id())
+ *                 .role(var_.managed_databases_reset_database_parameter_database_credential_role())
+ *                 .username(var_.managed_databases_reset_database_parameter_database_credential_username())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -67,18 +77,32 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DatabaseManagement/managedDatabasesResetDatabaseParameter:ManagedDatabasesResetDatabaseParameter")
 public class ManagedDatabasesResetDatabaseParameter extends com.pulumi.resources.CustomResource {
     /**
-     * The database credentials used to perform management activity.
+     * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      * 
      */
     @Export(name="credentials", refs={ManagedDatabasesResetDatabaseParameterCredentials.class}, tree="[0]")
     private Output<ManagedDatabasesResetDatabaseParameterCredentials> credentials;
 
     /**
-     * @return The database credentials used to perform management activity.
+     * @return The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      * 
      */
     public Output<ManagedDatabasesResetDatabaseParameterCredentials> credentials() {
         return this.credentials;
+    }
+    /**
+     * The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    @Export(name="databaseCredential", refs={ManagedDatabasesResetDatabaseParameterDatabaseCredential.class}, tree="[0]")
+    private Output<ManagedDatabasesResetDatabaseParameterDatabaseCredential> databaseCredential;
+
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    public Output<ManagedDatabasesResetDatabaseParameterDatabaseCredential> databaseCredential() {
+        return this.databaseCredential;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

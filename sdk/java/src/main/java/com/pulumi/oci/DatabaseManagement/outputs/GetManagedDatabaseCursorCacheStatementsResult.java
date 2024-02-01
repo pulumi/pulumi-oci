@@ -29,6 +29,7 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
     private String id;
     private @Nullable Integer limit;
     private String managedDatabaseId;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The first thousand characters of the SQL text.
      * 
@@ -59,6 +60,9 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
     public String managedDatabaseId() {
         return this.managedDatabaseId;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return The first thousand characters of the SQL text.
      * 
@@ -81,6 +85,7 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
         private String id;
         private @Nullable Integer limit;
         private String managedDatabaseId;
+        private @Nullable String opcNamedCredentialId;
         private @Nullable String sqlText;
         public Builder() {}
         public Builder(GetManagedDatabaseCursorCacheStatementsResult defaults) {
@@ -90,6 +95,7 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
     	      this.id = defaults.id;
     	      this.limit = defaults.limit;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.sqlText = defaults.sqlText;
         }
 
@@ -136,6 +142,12 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sqlText(@Nullable String sqlText) {
 
             this.sqlText = sqlText;
@@ -148,6 +160,7 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
             _resultValue.id = id;
             _resultValue.limit = limit;
             _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.sqlText = sqlText;
             return _resultValue;
         }

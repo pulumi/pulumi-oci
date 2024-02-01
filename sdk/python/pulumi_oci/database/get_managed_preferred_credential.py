@@ -21,7 +21,7 @@ class GetManagedPreferredCredentialResult:
     """
     A collection of values returned by getManagedPreferredCredential.
     """
-    def __init__(__self__, credential_name=None, id=None, is_accessible=None, managed_database_id=None, password_secret_id=None, role=None, status=None, type=None, user_name=None):
+    def __init__(__self__, credential_name=None, id=None, is_accessible=None, managed_database_id=None, named_credential_id=None, password_secret_id=None, role=None, status=None, type=None, user_name=None):
         if credential_name and not isinstance(credential_name, str):
             raise TypeError("Expected argument 'credential_name' to be a str")
         pulumi.set(__self__, "credential_name", credential_name)
@@ -34,6 +34,9 @@ class GetManagedPreferredCredentialResult:
         if managed_database_id and not isinstance(managed_database_id, str):
             raise TypeError("Expected argument 'managed_database_id' to be a str")
         pulumi.set(__self__, "managed_database_id", managed_database_id)
+        if named_credential_id and not isinstance(named_credential_id, str):
+            raise TypeError("Expected argument 'named_credential_id' to be a str")
+        pulumi.set(__self__, "named_credential_id", named_credential_id)
         if password_secret_id and not isinstance(password_secret_id, str):
             raise TypeError("Expected argument 'password_secret_id' to be a str")
         pulumi.set(__self__, "password_secret_id", password_secret_id)
@@ -78,6 +81,14 @@ class GetManagedPreferredCredentialResult:
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> str:
         return pulumi.get(self, "managed_database_id")
+
+    @property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+        """
+        return pulumi.get(self, "named_credential_id")
 
     @property
     @pulumi.getter(name="passwordSecretId")
@@ -130,6 +141,7 @@ class AwaitableGetManagedPreferredCredentialResult(GetManagedPreferredCredential
             id=self.id,
             is_accessible=self.is_accessible,
             managed_database_id=self.managed_database_id,
+            named_credential_id=self.named_credential_id,
             password_secret_id=self.password_secret_id,
             role=self.role,
             status=self.status,
@@ -139,6 +151,7 @@ class AwaitableGetManagedPreferredCredentialResult(GetManagedPreferredCredential
 
 def get_managed_preferred_credential(credential_name: Optional[str] = None,
                                      managed_database_id: Optional[str] = None,
+                                     named_credential_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedPreferredCredentialResult:
     """
     This data source provides details about a specific Managed Database Preferred Credential resource in Oracle Cloud Infrastructure Database Management service.
@@ -158,10 +171,12 @@ def get_managed_preferred_credential(credential_name: Optional[str] = None,
 
     :param str credential_name: The name of the preferred credential.
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
     """
     __args__ = dict()
     __args__['credentialName'] = credential_name
     __args__['managedDatabaseId'] = managed_database_id
+    __args__['namedCredentialId'] = named_credential_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getManagedPreferredCredential:getManagedPreferredCredential', __args__, opts=opts, typ=GetManagedPreferredCredentialResult).value
 
@@ -170,6 +185,7 @@ def get_managed_preferred_credential(credential_name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_accessible=pulumi.get(__ret__, 'is_accessible'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        named_credential_id=pulumi.get(__ret__, 'named_credential_id'),
         password_secret_id=pulumi.get(__ret__, 'password_secret_id'),
         role=pulumi.get(__ret__, 'role'),
         status=pulumi.get(__ret__, 'status'),
@@ -180,6 +196,7 @@ def get_managed_preferred_credential(credential_name: Optional[str] = None,
 @_utilities.lift_output_func(get_managed_preferred_credential)
 def get_managed_preferred_credential_output(credential_name: Optional[pulumi.Input[str]] = None,
                                             managed_database_id: Optional[pulumi.Input[str]] = None,
+                                            named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedPreferredCredentialResult]:
     """
     This data source provides details about a specific Managed Database Preferred Credential resource in Oracle Cloud Infrastructure Database Management service.
@@ -199,5 +216,6 @@ def get_managed_preferred_credential_output(credential_name: Optional[pulumi.Inp
 
     :param str credential_name: The name of the preferred credential.
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
     """
     ...

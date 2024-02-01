@@ -57,6 +57,8 @@ type GetManagedPreferredCredentialArgs struct {
 	CredentialName string `pulumi:"credentialName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+	NamedCredentialId *string `pulumi:"namedCredentialId"`
 }
 
 // A collection of values returned by getManagedPreferredCredential.
@@ -68,6 +70,8 @@ type GetManagedPreferredCredentialResult struct {
 	// Indicates whether the preferred credential is accessible.
 	IsAccessible      bool   `pulumi:"isAccessible"`
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+	NamedCredentialId string `pulumi:"namedCredentialId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
 	// The role of the database user.
@@ -99,6 +103,8 @@ type GetManagedPreferredCredentialOutputArgs struct {
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+	NamedCredentialId pulumi.StringPtrInput `pulumi:"namedCredentialId"`
 }
 
 func (GetManagedPreferredCredentialOutputArgs) ElementType() reflect.Type {
@@ -137,6 +143,11 @@ func (o GetManagedPreferredCredentialResultOutput) IsAccessible() pulumi.BoolOut
 
 func (o GetManagedPreferredCredentialResultOutput) ManagedDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedPreferredCredentialResult) string { return v.ManagedDatabaseId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+func (o GetManagedPreferredCredentialResultOutput) NamedCredentialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialResult) string { return v.NamedCredentialId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.

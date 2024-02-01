@@ -31,14 +31,14 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
     }
 
     /**
-     * The type of credential used to connect to the ASM instance.
+     * The type of the credential for tablespace administration tasks.
      * 
      */
     @Import(name="credentialType")
     private @Nullable Output<String> credentialType;
 
     /**
-     * @return The type of credential used to connect to the ASM instance.
+     * @return The type of the credential for tablespace administration tasks.
      * 
      */
     public Optional<Output<String>> credentialType() {
@@ -46,14 +46,14 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
      * 
      */
     @Import(name="passwordSecretId")
     private @Nullable Output<String> passwordSecretId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
      * 
      */
     public Optional<Output<String>> passwordSecretId() {
@@ -61,14 +61,14 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
     }
 
     /**
-     * The role of the user connecting to the ASM instance.
+     * The role of the database user.
      * 
      */
     @Import(name="role")
     private @Nullable Output<String> role;
 
     /**
-     * @return The role of the user connecting to the ASM instance.
+     * @return The role of the database user.
      * 
      */
     public Optional<Output<String>> role() {
@@ -156,7 +156,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
         }
 
         /**
-         * @param credentialType The type of credential used to connect to the ASM instance.
+         * @param credentialType The type of the credential for tablespace administration tasks.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
         }
 
         /**
-         * @param credentialType The type of credential used to connect to the ASM instance.
+         * @param credentialType The type of the credential for tablespace administration tasks.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
         }
 
         /**
-         * @param passwordSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * @param passwordSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
         }
 
         /**
-         * @param passwordSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * @param passwordSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
         }
 
         /**
-         * @param role The role of the user connecting to the ASM instance.
+         * @param role The role of the database user.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
         }
 
         /**
-         * @param role The role of the user connecting to the ASM instance.
+         * @param role The role of the database user.
          * 
          * @return builder
          * 

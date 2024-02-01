@@ -35,7 +35,7 @@ public final class GetAddressRuleAddressField {
      */
     private String language;
     /**
-     * @return The field name
+     * @return User friendly name
      * 
      */
     private String name;
@@ -70,7 +70,7 @@ public final class GetAddressRuleAddressField {
         return this.language;
     }
     /**
-     * @return The field name
+     * @return User friendly name
      * 
      */
     public String name() {

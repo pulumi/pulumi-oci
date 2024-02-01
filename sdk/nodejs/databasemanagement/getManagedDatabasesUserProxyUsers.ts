@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     userName: oci_identity_user.test_user.name,
  *     name: _var.managed_databases_user_proxy_user_name,
+ *     opcNamedCredentialId: _var.managed_databases_user_proxy_user_opc_named_credential_id,
  * });
  * ```
  */
@@ -31,6 +32,7 @@ export function getManagedDatabasesUserProxyUsers(args: GetManagedDatabasesUserP
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
         "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "userName": args.userName,
     }, opts);
 }
@@ -48,6 +50,10 @@ export interface GetManagedDatabasesUserProxyUsersArgs {
      * A filter to return only resources that match the entire name.
      */
     name?: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
     /**
      * The name of the user whose details are to be viewed.
      */
@@ -68,6 +74,7 @@ export interface GetManagedDatabasesUserProxyUsersResult {
      * The name of a proxy user or the name of the client user.
      */
     readonly name?: string;
+    readonly opcNamedCredentialId?: string;
     /**
      * The list of proxy_user_collection.
      */
@@ -89,6 +96,7 @@ export interface GetManagedDatabasesUserProxyUsersResult {
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     userName: oci_identity_user.test_user.name,
  *     name: _var.managed_databases_user_proxy_user_name,
+ *     opcNamedCredentialId: _var.managed_databases_user_proxy_user_opc_named_credential_id,
  * });
  * ```
  */
@@ -109,6 +117,10 @@ export interface GetManagedDatabasesUserProxyUsersOutputArgs {
      * A filter to return only resources that match the entire name.
      */
     name?: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * The name of the user whose details are to be viewed.
      */

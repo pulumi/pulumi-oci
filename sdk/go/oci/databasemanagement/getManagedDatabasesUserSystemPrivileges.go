@@ -30,9 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabasesUserSystemPrivileges(ctx, &databasemanagement.GetManagedDatabasesUserSystemPrivilegesArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				UserName:          oci_identity_user.Test_user.Name,
-//				Name:              pulumi.StringRef(_var.Managed_databases_user_system_privilege_name),
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				UserName:             oci_identity_user.Test_user.Name,
+//				Name:                 pulumi.StringRef(_var.Managed_databases_user_system_privilege_name),
+//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_databases_user_system_privilege_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,6 +60,8 @@ type GetManagedDatabasesUserSystemPrivilegesArgs struct {
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// A filter to return only resources that match the entire name.
 	Name *string `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The name of the user whose details are to be viewed.
 	UserName string `pulumi:"userName"`
 }
@@ -70,7 +73,8 @@ type GetManagedDatabasesUserSystemPrivilegesResult struct {
 	Id                string `pulumi:"id"`
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// The name of a system privilege.
-	Name *string `pulumi:"name"`
+	Name                 *string `pulumi:"name"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The list of system_privilege_collection.
 	SystemPrivilegeCollections []GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection `pulumi:"systemPrivilegeCollections"`
 	UserName                   string                                                             `pulumi:"userName"`
@@ -96,6 +100,8 @@ type GetManagedDatabasesUserSystemPrivilegesOutputArgs struct {
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 	// A filter to return only resources that match the entire name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The name of the user whose details are to be viewed.
 	UserName pulumi.StringInput `pulumi:"userName"`
 }
@@ -137,6 +143,10 @@ func (o GetManagedDatabasesUserSystemPrivilegesResultOutput) ManagedDatabaseId()
 // The name of a system privilege.
 func (o GetManagedDatabasesUserSystemPrivilegesResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabasesUserSystemPrivilegesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetManagedDatabasesUserSystemPrivilegesResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesUserSystemPrivilegesResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 // The list of system_privilege_collection.

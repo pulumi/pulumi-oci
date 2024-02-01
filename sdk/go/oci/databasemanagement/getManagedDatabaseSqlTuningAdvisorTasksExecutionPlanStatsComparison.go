@@ -36,6 +36,7 @@ import (
 //				ManagedDatabaseId:      oci_database_management_managed_database.Test_managed_database.Id,
 //				SqlObjectId:            oci_objectstorage_object.Test_object.Id,
 //				SqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+//				OpcNamedCredentialId:   pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -61,6 +62,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs str
 	ExecutionId string `pulumi:"executionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SqlObjectId string `pulumi:"sqlObjectId"`
 	// The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -74,7 +77,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult s
 	Id                string `pulumi:"id"`
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// The statistics of a SQL execution plan.
-	Modifieds []GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified `pulumi:"modifieds"`
+	Modifieds            []GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified `pulumi:"modifieds"`
+	OpcNamedCredentialId *string                                                                       `pulumi:"opcNamedCredentialId"`
 	// The statistics of a SQL execution plan.
 	Originals              []GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal `pulumi:"originals"`
 	SqlObjectId            string                                                                        `pulumi:"sqlObjectId"`
@@ -100,6 +104,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutputAr
 	ExecutionId pulumi.StringInput `pulumi:"executionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SqlObjectId pulumi.StringInput `pulumi:"sqlObjectId"`
 	// The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -147,6 +153,12 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResul
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult) []GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified {
 		return v.Modifieds
 	}).(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArrayOutput)
+}
+
+func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult) *string {
+		return v.OpcNamedCredentialId
+	}).(pulumi.StringPtrOutput)
 }
 
 // The statistics of a SQL execution plan.

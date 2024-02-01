@@ -23,7 +23,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult:
     """
     A collection of values returned by getManagedDatabaseSqlTuningAdvisorTasksFindings.
     """
-    def __init__(__self__, begin_exec_id=None, end_exec_id=None, filters=None, finding_filter=None, id=None, index_hash_filter=None, managed_database_id=None, search_period=None, sql_tuning_advisor_task_finding_collections=None, sql_tuning_advisor_task_id=None, stats_hash_filter=None):
+    def __init__(__self__, begin_exec_id=None, end_exec_id=None, filters=None, finding_filter=None, id=None, index_hash_filter=None, managed_database_id=None, opc_named_credential_id=None, search_period=None, sql_tuning_advisor_task_finding_collections=None, sql_tuning_advisor_task_id=None, stats_hash_filter=None):
         if begin_exec_id and not isinstance(begin_exec_id, str):
             raise TypeError("Expected argument 'begin_exec_id' to be a str")
         pulumi.set(__self__, "begin_exec_id", begin_exec_id)
@@ -45,6 +45,9 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult:
         if managed_database_id and not isinstance(managed_database_id, str):
             raise TypeError("Expected argument 'managed_database_id' to be a str")
         pulumi.set(__self__, "managed_database_id", managed_database_id)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if search_period and not isinstance(search_period, str):
             raise TypeError("Expected argument 'search_period' to be a str")
         pulumi.set(__self__, "search_period", search_period)
@@ -97,6 +100,11 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult:
         return pulumi.get(self, "managed_database_id")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter(name="searchPeriod")
     def search_period(self) -> Optional[str]:
         return pulumi.get(self, "search_period")
@@ -136,6 +144,7 @@ class AwaitableGetManagedDatabaseSqlTuningAdvisorTasksFindingsResult(GetManagedD
             id=self.id,
             index_hash_filter=self.index_hash_filter,
             managed_database_id=self.managed_database_id,
+            opc_named_credential_id=self.opc_named_credential_id,
             search_period=self.search_period,
             sql_tuning_advisor_task_finding_collections=self.sql_tuning_advisor_task_finding_collections,
             sql_tuning_advisor_task_id=self.sql_tuning_advisor_task_id,
@@ -148,6 +157,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Option
                                                            finding_filter: Optional[str] = None,
                                                            index_hash_filter: Optional[str] = None,
                                                            managed_database_id: Optional[str] = None,
+                                                           opc_named_credential_id: Optional[str] = None,
                                                            search_period: Optional[str] = None,
                                                            sql_tuning_advisor_task_id: Optional[str] = None,
                                                            stats_hash_filter: Optional[str] = None,
@@ -169,6 +179,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Option
         end_exec_id=oci_database_management_end_exec["test_end_exec"]["id"],
         finding_filter=var["managed_database_sql_tuning_advisor_tasks_finding_finding_filter"],
         index_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter"],
+        opc_named_credential_id=var["managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id"],
         search_period=var["managed_database_sql_tuning_advisor_tasks_finding_search_period"],
         stats_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter"])
     ```
@@ -179,6 +190,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Option
     :param str finding_filter: The filter used to display specific findings in the report.
     :param str index_hash_filter: The hash value of the index table name.
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str search_period: The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
     :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str stats_hash_filter: The hash value of the object for the statistic finding search.
@@ -190,6 +202,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Option
     __args__['findingFilter'] = finding_filter
     __args__['indexHashFilter'] = index_hash_filter
     __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['searchPeriod'] = search_period
     __args__['sqlTuningAdvisorTaskId'] = sql_tuning_advisor_task_id
     __args__['statsHashFilter'] = stats_hash_filter
@@ -204,6 +217,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Option
         id=pulumi.get(__ret__, 'id'),
         index_hash_filter=pulumi.get(__ret__, 'index_hash_filter'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         search_period=pulumi.get(__ret__, 'search_period'),
         sql_tuning_advisor_task_finding_collections=pulumi.get(__ret__, 'sql_tuning_advisor_task_finding_collections'),
         sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'),
@@ -217,6 +231,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings_output(begin_exec_id:
                                                                   finding_filter: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   index_hash_filter: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   managed_database_id: Optional[pulumi.Input[str]] = None,
+                                                                  opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   search_period: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   sql_tuning_advisor_task_id: Optional[pulumi.Input[str]] = None,
                                                                   stats_hash_filter: Optional[pulumi.Input[Optional[str]]] = None,
@@ -238,6 +253,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings_output(begin_exec_id:
         end_exec_id=oci_database_management_end_exec["test_end_exec"]["id"],
         finding_filter=var["managed_database_sql_tuning_advisor_tasks_finding_finding_filter"],
         index_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter"],
+        opc_named_credential_id=var["managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id"],
         search_period=var["managed_database_sql_tuning_advisor_tasks_finding_search_period"],
         stats_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter"])
     ```
@@ -248,6 +264,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings_output(begin_exec_id:
     :param str finding_filter: The filter used to display specific findings in the report.
     :param str index_hash_filter: The hash value of the index table name.
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str search_period: The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
     :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str stats_hash_filter: The hash value of the object for the statistic finding search.

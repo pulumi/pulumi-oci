@@ -26,6 +26,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
     private String id;
     private @Nullable String indexHashFilter;
     private String managedDatabaseId;
+    private @Nullable String opcNamedCredentialId;
     private @Nullable String searchPeriod;
     /**
      * @return The list of sql_tuning_advisor_task_finding_collection.
@@ -65,6 +66,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
     public String managedDatabaseId() {
         return this.managedDatabaseId;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     public Optional<String> searchPeriod() {
         return Optional.ofNullable(this.searchPeriod);
     }
@@ -102,6 +106,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
         private String id;
         private @Nullable String indexHashFilter;
         private String managedDatabaseId;
+        private @Nullable String opcNamedCredentialId;
         private @Nullable String searchPeriod;
         private List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections;
         private String sqlTuningAdvisorTaskId;
@@ -116,6 +121,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
     	      this.id = defaults.id;
     	      this.indexHashFilter = defaults.indexHashFilter;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.searchPeriod = defaults.searchPeriod;
     	      this.sqlTuningAdvisorTaskFindingCollections = defaults.sqlTuningAdvisorTaskFindingCollections;
     	      this.sqlTuningAdvisorTaskId = defaults.sqlTuningAdvisorTaskId;
@@ -172,6 +178,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder searchPeriod(@Nullable String searchPeriod) {
 
             this.searchPeriod = searchPeriod;
@@ -211,6 +223,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
             _resultValue.id = id;
             _resultValue.indexHashFilter = indexHashFilter;
             _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.searchPeriod = searchPeriod;
             _resultValue.sqlTuningAdvisorTaskFindingCollections = sqlTuningAdvisorTaskFindingCollections;
             _resultValue.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;

@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testManagedDatabaseSqlPlanBaselineConfiguration = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineConfiguration({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     opcNamedCredentialId: _var.managed_database_sql_plan_baseline_configuration_opc_named_credential_id,
  * });
  * ```
  */
@@ -29,6 +30,7 @@ export function getManagedDatabaseSqlPlanBaselineConfiguration(args: GetManagedD
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration", {
         "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
     }, opts);
 }
 
@@ -40,6 +42,10 @@ export interface GetManagedDatabaseSqlPlanBaselineConfigurationArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
 }
 
 /**
@@ -75,6 +81,7 @@ export interface GetManagedDatabaseSqlPlanBaselineConfigurationResult {
      */
     readonly isSqlPlanBaselinesUsageEnabled: boolean;
     readonly managedDatabaseId: string;
+    readonly opcNamedCredentialId?: string;
     /**
      * The number of weeks to retain unused plans before they are purged.
      */
@@ -107,6 +114,7 @@ export interface GetManagedDatabaseSqlPlanBaselineConfigurationResult {
  *
  * const testManagedDatabaseSqlPlanBaselineConfiguration = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineConfiguration({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     opcNamedCredentialId: _var.managed_database_sql_plan_baseline_configuration_opc_named_credential_id,
  * });
  * ```
  */
@@ -122,4 +130,8 @@ export interface GetManagedDatabaseSqlPlanBaselineConfigurationOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
 }

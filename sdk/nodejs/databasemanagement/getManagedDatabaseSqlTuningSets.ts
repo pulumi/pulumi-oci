@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testManagedDatabaseSqlTuningSets = oci.DatabaseManagement.getManagedDatabaseSqlTuningSets({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     nameContains: _var.managed_database_sql_tuning_set_name_contains,
+ *     opcNamedCredentialId: _var.managed_database_sql_tuning_set_opc_named_credential_id,
  *     owner: _var.managed_database_sql_tuning_set_owner,
  * });
  * ```
@@ -31,6 +32,7 @@ export function getManagedDatabaseSqlTuningSets(args: GetManagedDatabaseSqlTunin
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
         "nameContains": args.nameContains,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "owner": args.owner,
     }, opts);
 }
@@ -48,6 +50,10 @@ export interface GetManagedDatabaseSqlTuningSetsArgs {
      * Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
      */
     nameContains?: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
     /**
      * The owner of the SQL tuning set.
      */
@@ -68,6 +74,7 @@ export interface GetManagedDatabaseSqlTuningSetsResult {
      */
     readonly managedDatabaseId: string;
     readonly nameContains?: string;
+    readonly opcNamedCredentialId?: string;
     /**
      * The owner of the SQL tuning set.
      */
@@ -91,6 +98,7 @@ export interface GetManagedDatabaseSqlTuningSetsResult {
  * const testManagedDatabaseSqlTuningSets = oci.DatabaseManagement.getManagedDatabaseSqlTuningSets({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     nameContains: _var.managed_database_sql_tuning_set_name_contains,
+ *     opcNamedCredentialId: _var.managed_database_sql_tuning_set_opc_named_credential_id,
  *     owner: _var.managed_database_sql_tuning_set_owner,
  * });
  * ```
@@ -112,6 +120,10 @@ export interface GetManagedDatabaseSqlTuningSetsOutputArgs {
      * Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
      */
     nameContains?: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * The owner of the SQL tuning set.
      */

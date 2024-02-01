@@ -12,6 +12,7 @@ import com.pulumi.oci.DataIntegration.inputs.WorkspaceImportRequestState;
 import com.pulumi.oci.DataIntegration.outputs.WorkspaceImportRequestImportConflictResolution;
 import com.pulumi.oci.DataIntegration.outputs.WorkspaceImportRequestImportedObject;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -51,6 +52,7 @@ import javax.annotation.Nullable;
  *             .bucket(var_.workspace_import_request_bucket())
  *             .fileName(var_.workspace_import_request_file_name())
  *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+ *             .areDataAssetReferencesIncluded(var_.workspace_import_request_are_data_asset_references_included())
  *             .importConflictResolution(WorkspaceImportRequestImportConflictResolutionArgs.builder()
  *                 .importConflictResolutionType(var_.workspace_import_request_import_conflict_resolution_import_conflict_resolution_type())
  *                 .duplicatePrefix(var_.workspace_import_request_import_conflict_resolution_duplicate_prefix())
@@ -76,6 +78,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest")
 public class WorkspaceImportRequest extends com.pulumi.resources.CustomResource {
+    /**
+     * This field controls if the data asset references will be included during import.
+     * 
+     */
+    @Export(name="areDataAssetReferencesIncluded", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> areDataAssetReferencesIncluded;
+
+    /**
+     * @return This field controls if the data asset references will be included during import.
+     * 
+     */
+    public Output<Boolean> areDataAssetReferencesIncluded() {
+        return this.areDataAssetReferencesIncluded;
+    }
     /**
      * Name of the Object Storage bucket where the object will be imported from.
      * 

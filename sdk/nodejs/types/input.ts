@@ -16849,6 +16849,24 @@ export namespace DataFlow {
 }
 
 export namespace DataIntegration {
+    export interface GetWorkspaceApplicationPatchesFilter {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetWorkspaceApplicationPatchesFilterArgs {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetWorkspaceApplicationsFilter {
         /**
          * Used to filter by the name of the object.
@@ -17097,6 +17115,202 @@ export namespace DataIntegration {
          * Key of the root document object.
          */
         rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationPatchDependentObjectMetadata {
+        /**
+         * The patch action indicating if object was created, updated, or deleted.
+         */
+        action?: pulumi.Input<string>;
+        /**
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * The identifying key for the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The fully qualified path of the published object, which would include its project and folder.
+         */
+        namePath?: pulumi.Input<string>;
+        /**
+         * The object version.
+         */
+        objectVersion?: pulumi.Input<number>;
+        /**
+         * The type of the object in patch.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationPatchMetadata {
+        /**
+         * The owning object's key for this object.
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         */
+        aggregators?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchMetadataAggregator>[]>;
+        /**
+         * A count statistics.
+         */
+        countStatistics?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchMetadataCountStatistic>[]>;
+        /**
+         * The user that created the object.
+         */
+        createdBy?: pulumi.Input<string>;
+        /**
+         * The user that created the object.
+         */
+        createdByName?: pulumi.Input<string>;
+        /**
+         * The full path to identify this object.
+         */
+        identifierPath?: pulumi.Input<string>;
+        /**
+         * Information property fields.
+         */
+        infoFields?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * Specifies whether this object is a favorite or not.
+         */
+        isFavorite?: pulumi.Input<boolean>;
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         */
+        labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The registry version.
+         */
+        registryVersion?: pulumi.Input<number>;
+        /**
+         * The date and time that the object was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The date and time that the object was updated.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The user that updated the object.
+         */
+        updatedBy?: pulumi.Input<string>;
+        /**
+         * The user that updated the object.
+         */
+        updatedByName?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationPatchMetadataAggregator {
+        /**
+         * Detailed description for the object.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * The identifying key for the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The type of the object in patch.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationPatchMetadataCountStatistic {
+        /**
+         * The array of statistics.
+         */
+        objectTypeCountLists?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList>[]>;
+    }
+
+    export interface WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountList {
+        /**
+         * The value for the count statistic object.
+         */
+        objectCount?: pulumi.Input<string>;
+        /**
+         * The type of object for the count statistic object.
+         */
+        objectType?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationPatchParentRef {
+        /**
+         * Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationPatchPatchObjectMetadata {
+        /**
+         * The patch action indicating if object was created, updated, or deleted.
+         */
+        action?: pulumi.Input<string>;
+        /**
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * The identifying key for the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The fully qualified path of the published object, which would include its project and folder.
+         */
+        namePath?: pulumi.Input<string>;
+        /**
+         * The object version.
+         */
+        objectVersion?: pulumi.Input<number>;
+        /**
+         * The type of the object in patch.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationPatchRegistryMetadata {
+        /**
+         * The owning object's key for this object.
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * Specifies whether this object is a favorite or not.
+         */
+        isFavorite?: pulumi.Input<boolean>;
+        /**
+         * The identifying key for the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         */
+        labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The registry version.
+         */
+        registryVersion?: pulumi.Input<number>;
     }
 
     export interface WorkspaceApplicationPublishedObjectMetadata {
@@ -24536,6 +24750,10 @@ export namespace DatabaseManagement {
          * The Oracle Database connection string.
          */
         connectionStrings?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemConnectorConnectionInfoConnectionString>[]>;
+        /**
+         * The credential to connect to the database to perform tablespace administration tasks.
+         */
+        databaseCredentials?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemConnectorConnectionInfoDatabaseCredential>[]>;
     }
 
     export interface ExternalDbSystemConnectorConnectionInfoConnectionCredential {
@@ -24544,15 +24762,15 @@ export namespace DatabaseManagement {
          */
         credentialName?: pulumi.Input<string>;
         /**
-         * The type of credential used to connect to the ASM instance.
+         * The type of the credential for tablespace administration tasks.
          */
         credentialType?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
          */
         passwordSecretId?: pulumi.Input<string>;
         /**
-         * The role of the user connecting to the ASM instance.
+         * The role of the database user.
          */
         role?: pulumi.Input<string>;
         /**
@@ -24586,6 +24804,33 @@ export namespace DatabaseManagement {
          * The service name of the ASM instance.
          */
         service?: pulumi.Input<string>;
+    }
+
+    export interface ExternalDbSystemConnectorConnectionInfoDatabaseCredential {
+        /**
+         * The type of the credential for tablespace administration tasks.
+         */
+        credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
+        /**
+         * The database user's password encoded using BASE64 scheme.
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+         */
+        passwordSecretId?: pulumi.Input<string>;
+        /**
+         * The role of the database user.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The user to connect to the database.
+         */
+        username?: pulumi.Input<string>;
     }
 
     export interface ExternalDbSystemDatabaseManagementConfig {
@@ -24881,6 +25126,10 @@ export namespace DatabaseManagement {
          * The Oracle Database connection string.
          */
         connectionStrings?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString>[]>;
+        /**
+         * The credential to connect to the database to perform tablespace administration tasks.
+         */
+        databaseCredentials?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential>[]>;
     }
 
     export interface ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential {
@@ -24889,15 +25138,15 @@ export namespace DatabaseManagement {
          */
         credentialName?: pulumi.Input<string>;
         /**
-         * The type of credential used to connect to the ASM instance.
+         * The type of the credential for tablespace administration tasks.
          */
         credentialType?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
          */
         passwordSecretId?: pulumi.Input<string>;
         /**
-         * The role of the user connecting to the ASM instance.
+         * The role of the database user.
          */
         role?: pulumi.Input<string>;
         /**
@@ -24931,6 +25180,33 @@ export namespace DatabaseManagement {
          * The service name of the ASM instance.
          */
         service?: pulumi.Input<string>;
+    }
+
+    export interface ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential {
+        /**
+         * The type of the credential for tablespace administration tasks.
+         */
+        credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
+        /**
+         * The database user's password encoded using BASE64 scheme.
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+         */
+        passwordSecretId?: pulumi.Input<string>;
+        /**
+         * The role of the database user.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The user to connect to the database.
+         */
+        username?: pulumi.Input<string>;
     }
 
     export interface ExternalDbSystemDiscoveryDiscoveredComponentConnector {
@@ -24977,6 +25253,10 @@ export namespace DatabaseManagement {
          * The Oracle Database connection string.
          */
         connectionStrings?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString>[]>;
+        /**
+         * The credential to connect to the database to perform tablespace administration tasks.
+         */
+        databaseCredentials?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential>[]>;
     }
 
     export interface ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential {
@@ -24985,15 +25265,15 @@ export namespace DatabaseManagement {
          */
         credentialName?: pulumi.Input<string>;
         /**
-         * The type of credential used to connect to the ASM instance.
+         * The type of the credential for tablespace administration tasks.
          */
         credentialType?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
          */
         passwordSecretId?: pulumi.Input<string>;
         /**
-         * The role of the user connecting to the ASM instance.
+         * The role of the database user.
          */
         role?: pulumi.Input<string>;
         /**
@@ -25027,6 +25307,33 @@ export namespace DatabaseManagement {
          * The service name of the ASM instance.
          */
         service?: pulumi.Input<string>;
+    }
+
+    export interface ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential {
+        /**
+         * The type of the credential for tablespace administration tasks.
+         */
+        credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
+        /**
+         * The database user's password encoded using BASE64 scheme.
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+         */
+        passwordSecretId?: pulumi.Input<string>;
+        /**
+         * The role of the database user.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The user to connect to the database.
+         */
+        username?: pulumi.Input<string>;
     }
 
     export interface ExternalDbSystemDiscoveryDiscoveredComponentEndpoint {
@@ -25130,6 +25437,10 @@ export namespace DatabaseManagement {
          * The Oracle Database connection string.
          */
         connectionStrings?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString>[]>;
+        /**
+         * The credential to connect to the database to perform tablespace administration tasks.
+         */
+        databaseCredentials?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential>[]>;
     }
 
     export interface ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential {
@@ -25138,15 +25449,15 @@ export namespace DatabaseManagement {
          */
         credentialName?: pulumi.Input<string>;
         /**
-         * The type of credential used to connect to the ASM instance.
+         * The type of the credential for tablespace administration tasks.
          */
         credentialType?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
          */
         passwordSecretId?: pulumi.Input<string>;
         /**
-         * The role of the user connecting to the ASM instance.
+         * The role of the database user.
          */
         role?: pulumi.Input<string>;
         /**
@@ -25180,6 +25491,33 @@ export namespace DatabaseManagement {
          * The service name of the ASM instance.
          */
         service?: pulumi.Input<string>;
+    }
+
+    export interface ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential {
+        /**
+         * The type of the credential for tablespace administration tasks.
+         */
+        credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
+        /**
+         * The database user's password encoded using BASE64 scheme.
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+         */
+        passwordSecretId?: pulumi.Input<string>;
+        /**
+         * The role of the database user.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The user to connect to the database.
+         */
+        username?: pulumi.Input<string>;
     }
 
     export interface ExternalDbSystemDiscoveryDiscoveredComponentScanConfiguration {
@@ -25294,15 +25632,15 @@ export namespace DatabaseManagement {
          */
         credentialName?: pulumi.Input<string>;
         /**
-         * The type of credential used to connect to the ASM instance.
+         * The type of the credential for tablespace administration tasks.
          */
         credentialType: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
          */
         passwordSecretId?: pulumi.Input<string>;
         /**
-         * The role of the user connecting to the ASM instance.
+         * The role of the database user.
          */
         role?: pulumi.Input<string>;
         /**
@@ -26281,6 +26619,24 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetNamedCredentialsFilter {
+        /**
+         * The name of the named credential.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNamedCredentialsFilterArgs {
+        /**
+         * The name of the named credential.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface ManagedDatabaseGroupManagedDatabase {
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
@@ -26322,11 +26678,11 @@ export namespace DatabaseManagement {
 
     export interface ManagedDatabasesChangeDatabaseParameterCredentials {
         /**
-         * The password for the database user name.
+         * The database user's password encoded using BASE64 scheme.
          */
         password?: pulumi.Input<string>;
         /**
-         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+         * The role of the database user.
          */
         role?: pulumi.Input<string>;
         /**
@@ -26337,6 +26693,33 @@ export namespace DatabaseManagement {
          * The database user name used to perform management activity.
          */
         userName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedDatabasesChangeDatabaseParameterDatabaseCredential {
+        /**
+         * The type of the credential for tablespace administration tasks.
+         */
+        credentialType: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
+        /**
+         * The database user's password encoded using BASE64 scheme.
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+         */
+        passwordSecretId?: pulumi.Input<string>;
+        /**
+         * The role of the database user.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The user to connect to the database.
+         */
+        username?: pulumi.Input<string>;
     }
 
     export interface ManagedDatabasesChangeDatabaseParameterParameter {
@@ -26356,11 +26739,11 @@ export namespace DatabaseManagement {
 
     export interface ManagedDatabasesResetDatabaseParameterCredentials {
         /**
-         * The password for the database user name.
+         * The database user's password encoded using BASE64 scheme.
          */
         password?: pulumi.Input<string>;
         /**
-         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+         * The role of the database user.
          */
         role?: pulumi.Input<string>;
         /**
@@ -26371,6 +26754,56 @@ export namespace DatabaseManagement {
          * The database user name used to perform management activity.
          */
         userName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedDatabasesResetDatabaseParameterDatabaseCredential {
+        /**
+         * The type of the credential for tablespace administration tasks.
+         */
+        credentialType: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+         */
+        namedCredentialId?: pulumi.Input<string>;
+        /**
+         * The database user's password encoded using BASE64 scheme.
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+         */
+        passwordSecretId?: pulumi.Input<string>;
+        /**
+         * The role of the database user.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The user to connect to the database.
+         */
+        username?: pulumi.Input<string>;
+    }
+
+    export interface NamedCredentialContent {
+        /**
+         * (Updatable) The type of named credential. Only 'BASIC' is supported currently.
+         */
+        credentialType: pulumi.Input<string>;
+        /**
+         * (Updatable) The mechanism used to access the password plain text value.
+         */
+        passwordSecretAccessMode: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+         */
+        passwordSecretId: pulumi.Input<string>;
+        /**
+         * (Updatable) The role of the database user.
+         */
+        role: pulumi.Input<string>;
+        /**
+         * (Updatable) The user name used to connect to the database.
+         */
+        userName: pulumi.Input<string>;
     }
 }
 
@@ -67966,6 +68399,10 @@ export namespace OspGateway {
     }
 
     export interface SubscriptionTaxInfo {
+        /**
+         * Companies' GIRO code
+         */
+        giro?: pulumi.Input<string>;
         /**
          * (Updatable) Tax exemption reason code.
          */

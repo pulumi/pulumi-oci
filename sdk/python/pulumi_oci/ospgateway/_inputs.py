@@ -2225,18 +2225,22 @@ class SubscriptionSubscriptionTaxInfoArgs:
 @pulumi.input_type
 class SubscriptionTaxInfoArgs:
     def __init__(__self__, *,
+                 giro: Optional[pulumi.Input[str]] = None,
                  no_tax_reason_code: Optional[pulumi.Input[str]] = None,
                  no_tax_reason_code_details: Optional[pulumi.Input[str]] = None,
                  tax_cnpj: Optional[pulumi.Input[str]] = None,
                  tax_payer_id: Optional[pulumi.Input[str]] = None,
                  tax_reg_number: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] giro: Companies' GIRO code
         :param pulumi.Input[str] no_tax_reason_code: (Updatable) Tax exemption reason code.
         :param pulumi.Input[str] no_tax_reason_code_details: (Updatable) Tax exemption reason description.
         :param pulumi.Input[str] tax_cnpj: (Updatable) Brazilian companies' CNPJ number.
         :param pulumi.Input[str] tax_payer_id: (Updatable) Tay payer identifier.
         :param pulumi.Input[str] tax_reg_number: (Updatable) Tax registration number.
         """
+        if giro is not None:
+            pulumi.set(__self__, "giro", giro)
         if no_tax_reason_code is not None:
             pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
@@ -2247,6 +2251,18 @@ class SubscriptionTaxInfoArgs:
             pulumi.set(__self__, "tax_payer_id", tax_payer_id)
         if tax_reg_number is not None:
             pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+
+    @property
+    @pulumi.getter
+    def giro(self) -> Optional[pulumi.Input[str]]:
+        """
+        Companies' GIRO code
+        """
+        return pulumi.get(self, "giro")
+
+    @giro.setter
+    def giro(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "giro", value)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")

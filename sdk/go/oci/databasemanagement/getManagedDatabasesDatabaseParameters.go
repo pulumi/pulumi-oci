@@ -33,6 +33,7 @@ import (
 //				ManagedDatabaseId:       oci_database_management_managed_database.Test_managed_database.Id,
 //				IsAllowedValuesIncluded: pulumi.BoolRef(_var.Managed_databases_database_parameter_is_allowed_values_included),
 //				Name:                    pulumi.StringRef(_var.Managed_databases_database_parameter_name),
+//				OpcNamedCredentialId:    pulumi.StringRef(_var.Managed_databases_database_parameter_opc_named_credential_id),
 //				Source:                  pulumi.StringRef(_var.Managed_databases_database_parameter_source),
 //			}, nil)
 //			if err != nil {
@@ -62,6 +63,8 @@ type GetManagedDatabasesDatabaseParametersArgs struct {
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// A filter to return all parameters that have the text given in their names.
 	Name *string `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
 	Source *string `pulumi:"source"`
 }
@@ -76,8 +79,9 @@ type GetManagedDatabasesDatabaseParametersResult struct {
 	IsAllowedValuesIncluded *bool  `pulumi:"isAllowedValuesIncluded"`
 	ManagedDatabaseId       string `pulumi:"managedDatabaseId"`
 	// The parameter name.
-	Name   *string `pulumi:"name"`
-	Source *string `pulumi:"source"`
+	Name                 *string `pulumi:"name"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
+	Source               *string `pulumi:"source"`
 }
 
 func GetManagedDatabasesDatabaseParametersOutput(ctx *pulumi.Context, args GetManagedDatabasesDatabaseParametersOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabasesDatabaseParametersResultOutput {
@@ -102,6 +106,8 @@ type GetManagedDatabasesDatabaseParametersOutputArgs struct {
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 	// A filter to return all parameters that have the text given in their names.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
 	Source pulumi.StringPtrInput `pulumi:"source"`
 }
@@ -154,6 +160,10 @@ func (o GetManagedDatabasesDatabaseParametersResultOutput) ManagedDatabaseId() p
 // The parameter name.
 func (o GetManagedDatabasesDatabaseParametersResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabasesDatabaseParametersResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetManagedDatabasesDatabaseParametersResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesDatabaseParametersResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabasesDatabaseParametersResultOutput) Source() pulumi.StringPtrOutput {

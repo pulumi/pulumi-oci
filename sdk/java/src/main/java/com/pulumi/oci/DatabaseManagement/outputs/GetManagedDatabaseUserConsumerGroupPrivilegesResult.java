@@ -32,6 +32,7 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
      * 
      */
     private @Nullable String name;
+    private @Nullable String opcNamedCredentialId;
     private String userName;
 
     private GetManagedDatabaseUserConsumerGroupPrivilegesResult() {}
@@ -62,6 +63,9 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     public String userName() {
         return this.userName;
     }
@@ -80,6 +84,7 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
         private String id;
         private String managedDatabaseId;
         private @Nullable String name;
+        private @Nullable String opcNamedCredentialId;
         private String userName;
         public Builder() {}
         public Builder(GetManagedDatabaseUserConsumerGroupPrivilegesResult defaults) {
@@ -89,6 +94,7 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.name = defaults.name;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.userName = defaults.userName;
         }
 
@@ -135,6 +141,12 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder userName(String userName) {
             if (userName == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegesResult", "userName");
@@ -149,6 +161,7 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.name = name;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.userName = userName;
             return _resultValue;
         }

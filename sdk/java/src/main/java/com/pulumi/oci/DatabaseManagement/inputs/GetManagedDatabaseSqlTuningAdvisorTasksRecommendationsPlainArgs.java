@@ -55,6 +55,21 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlainAr
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable String opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -90,6 +105,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlainAr
         this.executionId = $.executionId;
         this.filters = $.filters;
         this.managedDatabaseId = $.managedDatabaseId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.sqlObjectId = $.sqlObjectId;
         this.sqlTuningAdvisorTaskId = $.sqlTuningAdvisorTaskId;
     }
@@ -140,6 +156,17 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlainAr
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             $.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
 

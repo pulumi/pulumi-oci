@@ -9,6 +9,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvi
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult {
@@ -23,6 +25,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
      */
     private String id;
     private String managedDatabaseId;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return A SQL execution plan as a list of steps.
      * 
@@ -48,6 +51,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
+    }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
     }
     /**
      * @return A SQL execution plan as a list of steps.
@@ -75,6 +81,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
         private String attribute;
         private String id;
         private String managedDatabaseId;
+        private @Nullable String opcNamedCredentialId;
         private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans;
         private String sqlObjectId;
         private String sqlTuningAdvisorTaskId;
@@ -84,6 +91,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
     	      this.attribute = defaults.attribute;
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.plans = defaults.plans;
     	      this.sqlObjectId = defaults.sqlObjectId;
     	      this.sqlTuningAdvisorTaskId = defaults.sqlTuningAdvisorTaskId;
@@ -111,6 +119,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
               throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult", "managedDatabaseId");
             }
             this.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
         @CustomType.Setter
@@ -145,6 +159,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
             _resultValue.attribute = attribute;
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.plans = plans;
             _resultValue.sqlObjectId = sqlObjectId;
             _resultValue.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;

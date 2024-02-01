@@ -8,6 +8,10 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchPlainArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesPlainArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPlainArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsPlainArgs;
@@ -31,6 +35,8 @@ import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsPlainArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesPlainArgs;
+import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationPatchResult;
+import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationPatchesResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceExportRequestResult;
@@ -362,6 +368,342 @@ public final class DataIntegrationFunctions {
      */
     public static CompletableFuture<GetWorkspaceApplicationResult> getWorkspaceApplicationPlain(GetWorkspaceApplicationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplication:getWorkspaceApplication", TypeShape.of(GetWorkspaceApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a patch in an application using the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
+     *             .applicationKey(var_.workspace_application_patch_application_key())
+     *             .patchKey(var_.workspace_application_patch_patch_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetWorkspaceApplicationPatchResult> getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs args) {
+        return getWorkspaceApplicationPatch(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a patch in an application using the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
+     *             .applicationKey(var_.workspace_application_patch_application_key())
+     *             .patchKey(var_.workspace_application_patch_patch_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationPatchResult> getWorkspaceApplicationPatchPlain(GetWorkspaceApplicationPatchPlainArgs args) {
+        return getWorkspaceApplicationPatchPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a patch in an application using the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
+     *             .applicationKey(var_.workspace_application_patch_application_key())
+     *             .patchKey(var_.workspace_application_patch_patch_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetWorkspaceApplicationPatchResult> getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationPatch:getWorkspaceApplicationPatch", TypeShape.of(GetWorkspaceApplicationPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a patch in an application using the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
+     *             .applicationKey(var_.workspace_application_patch_application_key())
+     *             .patchKey(var_.workspace_application_patch_patch_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationPatchResult> getWorkspaceApplicationPatchPlain(GetWorkspaceApplicationPatchPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplicationPatch:getWorkspaceApplicationPatch", TypeShape.of(GetWorkspaceApplicationPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Application Patches in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
+     *             .applicationKey(var_.workspace_application_patch_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_application_patch_fields())
+     *             .identifiers(var_.workspace_application_patch_identifier())
+     *             .name(var_.workspace_application_patch_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetWorkspaceApplicationPatchesResult> getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs args) {
+        return getWorkspaceApplicationPatches(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Workspace Application Patches in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
+     *             .applicationKey(var_.workspace_application_patch_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_application_patch_fields())
+     *             .identifiers(var_.workspace_application_patch_identifier())
+     *             .name(var_.workspace_application_patch_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationPatchesResult> getWorkspaceApplicationPatchesPlain(GetWorkspaceApplicationPatchesPlainArgs args) {
+        return getWorkspaceApplicationPatchesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Workspace Application Patches in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
+     *             .applicationKey(var_.workspace_application_patch_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_application_patch_fields())
+     *             .identifiers(var_.workspace_application_patch_identifier())
+     *             .name(var_.workspace_application_patch_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetWorkspaceApplicationPatchesResult> getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches", TypeShape.of(GetWorkspaceApplicationPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Application Patches in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
+     *             .applicationKey(var_.workspace_application_patch_application_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_application_patch_fields())
+     *             .identifiers(var_.workspace_application_patch_identifier())
+     *             .name(var_.workspace_application_patch_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceApplicationPatchesResult> getWorkspaceApplicationPatchesPlain(GetWorkspaceApplicationPatchesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches", TypeShape.of(GetWorkspaceApplicationPatchesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.

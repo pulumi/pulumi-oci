@@ -35,6 +35,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
      * 
      */
     private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding> objectStatFindings;
+    private @Nullable String opcNamedCredentialId;
     private @Nullable String searchPeriod;
     private String sqlTuningAdvisorTaskId;
     /**
@@ -81,6 +82,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
     public List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding> objectStatFindings() {
         return this.objectStatFindings;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     public Optional<String> searchPeriod() {
         return Optional.ofNullable(this.searchPeriod);
     }
@@ -123,6 +127,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
         private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding> indexFindings;
         private String managedDatabaseId;
         private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding> objectStatFindings;
+        private @Nullable String opcNamedCredentialId;
         private @Nullable String searchPeriod;
         private String sqlTuningAdvisorTaskId;
         private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic> statistics;
@@ -138,6 +143,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
     	      this.indexFindings = defaults.indexFindings;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.objectStatFindings = defaults.objectStatFindings;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.searchPeriod = defaults.searchPeriod;
     	      this.sqlTuningAdvisorTaskId = defaults.sqlTuningAdvisorTaskId;
     	      this.statistics = defaults.statistics;
@@ -197,6 +203,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
             return objectStatFindings(List.of(objectStatFindings));
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder searchPeriod(@Nullable String searchPeriod) {
 
             this.searchPeriod = searchPeriod;
@@ -252,6 +264,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
             _resultValue.indexFindings = indexFindings;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.objectStatFindings = objectStatFindings;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.searchPeriod = searchPeriod;
             _resultValue.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             _resultValue.statistics = statistics;

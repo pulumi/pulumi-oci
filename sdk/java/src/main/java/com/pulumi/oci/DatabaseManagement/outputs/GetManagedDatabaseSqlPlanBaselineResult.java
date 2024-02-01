@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlPlanBaselineResult {
@@ -56,6 +58,7 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
      * 
      */
     private String module;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The origin of the SQL plan baseline.
      * 
@@ -164,6 +167,9 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
     public String module() {
         return this.module;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return The origin of the SQL plan baseline.
      * 
@@ -240,6 +246,7 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
         private String id;
         private String managedDatabaseId;
         private String module;
+        private @Nullable String opcNamedCredentialId;
         private String origin;
         private String planName;
         private String reproduced;
@@ -261,6 +268,7 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.module = defaults.module;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.origin = defaults.origin;
     	      this.planName = defaults.planName;
     	      this.reproduced = defaults.reproduced;
@@ -352,6 +360,12 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder origin(String origin) {
             if (origin == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "origin");
@@ -427,6 +441,7 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.module = module;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.origin = origin;
             _resultValue.planName = planName;
             _resultValue.reproduced = reproduced;

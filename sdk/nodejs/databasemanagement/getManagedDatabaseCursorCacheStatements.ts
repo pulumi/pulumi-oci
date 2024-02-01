@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testManagedDatabaseCursorCacheStatements = oci.DatabaseManagement.getManagedDatabaseCursorCacheStatements({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     opcNamedCredentialId: _var.managed_database_cursor_cache_statement_opc_named_credential_id,
  *     sqlText: _var.managed_database_cursor_cache_statement_sql_text,
  * });
  * ```
@@ -30,6 +31,7 @@ export function getManagedDatabaseCursorCacheStatements(args: GetManagedDatabase
         "filters": args.filters,
         "limit": args.limit,
         "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "sqlText": args.sqlText,
     }, opts);
 }
@@ -44,6 +46,10 @@ export interface GetManagedDatabaseCursorCacheStatementsArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
     /**
      * A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
      */
@@ -65,6 +71,7 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
     readonly id: string;
     readonly limit?: number;
     readonly managedDatabaseId: string;
+    readonly opcNamedCredentialId?: string;
     /**
      * The first thousand characters of the SQL text.
      */
@@ -83,6 +90,7 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
  *
  * const testManagedDatabaseCursorCacheStatements = oci.DatabaseManagement.getManagedDatabaseCursorCacheStatements({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     opcNamedCredentialId: _var.managed_database_cursor_cache_statement_opc_named_credential_id,
  *     sqlText: _var.managed_database_cursor_cache_statement_sql_text,
  * });
  * ```
@@ -101,6 +109,10 @@ export interface GetManagedDatabaseCursorCacheStatementsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
      */

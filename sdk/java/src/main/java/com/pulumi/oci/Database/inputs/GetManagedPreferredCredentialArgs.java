@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetManagedPreferredCredentialArgs extends com.pulumi.resources.InvokeArgs {
@@ -44,11 +46,27 @@ public final class GetManagedPreferredCredentialArgs extends com.pulumi.resource
         return this.managedDatabaseId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+     * 
+     */
+    @Import(name="namedCredentialId")
+    private @Nullable Output<String> namedCredentialId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+     * 
+     */
+    public Optional<Output<String>> namedCredentialId() {
+        return Optional.ofNullable(this.namedCredentialId);
+    }
+
     private GetManagedPreferredCredentialArgs() {}
 
     private GetManagedPreferredCredentialArgs(GetManagedPreferredCredentialArgs $) {
         this.credentialName = $.credentialName;
         this.managedDatabaseId = $.managedDatabaseId;
+        this.namedCredentialId = $.namedCredentialId;
     }
 
     public static Builder builder() {
@@ -109,6 +127,27 @@ public final class GetManagedPreferredCredentialArgs extends com.pulumi.resource
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             return managedDatabaseId(Output.of(managedDatabaseId));
+        }
+
+        /**
+         * @param namedCredentialId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namedCredentialId(@Nullable Output<String> namedCredentialId) {
+            $.namedCredentialId = namedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param namedCredentialId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namedCredentialId(String namedCredentialId) {
+            return namedCredentialId(Output.of(namedCredentialId));
         }
 
         public GetManagedPreferredCredentialArgs build() {

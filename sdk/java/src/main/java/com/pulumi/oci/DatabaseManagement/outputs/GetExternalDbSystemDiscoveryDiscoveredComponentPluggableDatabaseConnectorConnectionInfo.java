@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +29,11 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
      * 
      */
     private List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings;
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    private List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential> databaseCredentials;
 
     private GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo() {}
     /**
@@ -51,6 +57,13 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
     public List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings() {
         return this.connectionStrings;
     }
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    public List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential> databaseCredentials() {
+        return this.databaseCredentials;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -64,12 +77,14 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
         private String componentType;
         private List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential> connectionCredentials;
         private List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings;
+        private List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential> databaseCredentials;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.componentType = defaults.componentType;
     	      this.connectionCredentials = defaults.connectionCredentials;
     	      this.connectionStrings = defaults.connectionStrings;
+    	      this.databaseCredentials = defaults.databaseCredentials;
         }
 
         @CustomType.Setter
@@ -102,11 +117,23 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
         public Builder connectionStrings(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
         }
+        @CustomType.Setter
+        public Builder databaseCredentials(List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential> databaseCredentials) {
+            if (databaseCredentials == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo", "databaseCredentials");
+            }
+            this.databaseCredentials = databaseCredentials;
+            return this;
+        }
+        public Builder databaseCredentials(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredential... databaseCredentials) {
+            return databaseCredentials(List.of(databaseCredentials));
+        }
         public GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo build() {
             final var _resultValue = new GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo();
             _resultValue.componentType = componentType;
             _resultValue.connectionCredentials = connectionCredentials;
             _resultValue.connectionStrings = connectionStrings;
+            _resultValue.databaseCredentials = databaseCredentials;
             return _resultValue;
         }
     }

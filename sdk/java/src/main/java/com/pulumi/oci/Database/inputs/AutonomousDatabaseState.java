@@ -872,7 +872,11 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * @deprecated
+     * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+     * 
      */
+    @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
     @Import(name="isShrinkOnly")
     private @Nullable Output<Boolean> isShrinkOnly;
 
@@ -882,7 +886,11 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * @deprecated
+     * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+     * 
      */
+    @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
     public Optional<Output<Boolean>> isShrinkOnly() {
         return Optional.ofNullable(this.isShrinkOnly);
     }
@@ -1465,6 +1473,13 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
      */
     public Optional<Output<String>> serviceConsoleUrl() {
         return Optional.ofNullable(this.serviceConsoleUrl);
+    }
+
+    @Import(name="shrinkAdbTrigger")
+    private @Nullable Output<Integer> shrinkAdbTrigger;
+
+    public Optional<Output<Integer>> shrinkAdbTrigger() {
+        return Optional.ofNullable(this.shrinkAdbTrigger);
     }
 
     /**
@@ -2079,6 +2094,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.secretId = $.secretId;
         this.secretVersionNumber = $.secretVersionNumber;
         this.serviceConsoleUrl = $.serviceConsoleUrl;
+        this.shrinkAdbTrigger = $.shrinkAdbTrigger;
         this.source = $.source;
         this.sourceId = $.sourceId;
         this.standbyDbs = $.standbyDbs;
@@ -3355,7 +3371,11 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+         * 
          */
+        @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
         public Builder isShrinkOnly(@Nullable Output<Boolean> isShrinkOnly) {
             $.isShrinkOnly = isShrinkOnly;
             return this;
@@ -3369,7 +3389,11 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+         * 
          */
+        @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
         public Builder isShrinkOnly(Boolean isShrinkOnly) {
             return isShrinkOnly(Output.of(isShrinkOnly));
         }
@@ -4255,6 +4279,15 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder serviceConsoleUrl(String serviceConsoleUrl) {
             return serviceConsoleUrl(Output.of(serviceConsoleUrl));
+        }
+
+        public Builder shrinkAdbTrigger(@Nullable Output<Integer> shrinkAdbTrigger) {
+            $.shrinkAdbTrigger = shrinkAdbTrigger;
+            return this;
+        }
+
+        public Builder shrinkAdbTrigger(Integer shrinkAdbTrigger) {
+            return shrinkAdbTrigger(Output.of(shrinkAdbTrigger));
         }
 
         /**

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemConnectorConnectionInfoConnectionCredential;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemConnectorConnectionInfoConnectionString;
+import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemConnectorConnectionInfoDatabaseCredential;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -29,6 +30,11 @@ public final class ExternalDbSystemConnectorConnectionInfo {
      * 
      */
     private @Nullable List<ExternalDbSystemConnectorConnectionInfoConnectionString> connectionStrings;
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    private @Nullable List<ExternalDbSystemConnectorConnectionInfoDatabaseCredential> databaseCredentials;
 
     private ExternalDbSystemConnectorConnectionInfo() {}
     /**
@@ -52,6 +58,13 @@ public final class ExternalDbSystemConnectorConnectionInfo {
     public List<ExternalDbSystemConnectorConnectionInfoConnectionString> connectionStrings() {
         return this.connectionStrings == null ? List.of() : this.connectionStrings;
     }
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    public List<ExternalDbSystemConnectorConnectionInfoDatabaseCredential> databaseCredentials() {
+        return this.databaseCredentials == null ? List.of() : this.databaseCredentials;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -65,12 +78,14 @@ public final class ExternalDbSystemConnectorConnectionInfo {
         private String componentType;
         private @Nullable List<ExternalDbSystemConnectorConnectionInfoConnectionCredential> connectionCredentials;
         private @Nullable List<ExternalDbSystemConnectorConnectionInfoConnectionString> connectionStrings;
+        private @Nullable List<ExternalDbSystemConnectorConnectionInfoDatabaseCredential> databaseCredentials;
         public Builder() {}
         public Builder(ExternalDbSystemConnectorConnectionInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.componentType = defaults.componentType;
     	      this.connectionCredentials = defaults.connectionCredentials;
     	      this.connectionStrings = defaults.connectionStrings;
+    	      this.databaseCredentials = defaults.databaseCredentials;
         }
 
         @CustomType.Setter
@@ -99,11 +114,21 @@ public final class ExternalDbSystemConnectorConnectionInfo {
         public Builder connectionStrings(ExternalDbSystemConnectorConnectionInfoConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
         }
+        @CustomType.Setter
+        public Builder databaseCredentials(@Nullable List<ExternalDbSystemConnectorConnectionInfoDatabaseCredential> databaseCredentials) {
+
+            this.databaseCredentials = databaseCredentials;
+            return this;
+        }
+        public Builder databaseCredentials(ExternalDbSystemConnectorConnectionInfoDatabaseCredential... databaseCredentials) {
+            return databaseCredentials(List.of(databaseCredentials));
+        }
         public ExternalDbSystemConnectorConnectionInfo build() {
             final var _resultValue = new ExternalDbSystemConnectorConnectionInfo();
             _resultValue.componentType = componentType;
             _resultValue.connectionCredentials = connectionCredentials;
             _resultValue.connectionStrings = connectionStrings;
+            _resultValue.databaseCredentials = databaseCredentials;
             return _resultValue;
         }
     }

@@ -835,7 +835,11 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * @deprecated
+     * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+     * 
      */
+    @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
     @Export(name="isShrinkOnly", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isShrinkOnly;
 
@@ -1390,6 +1394,12 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> serviceConsoleUrl() {
         return this.serviceConsoleUrl;
+    }
+    @Export(name="shrinkAdbTrigger", refs={Integer.class}, tree="[0]")
+    private Output<Integer> shrinkAdbTrigger;
+
+    public Output<Integer> shrinkAdbTrigger() {
+        return this.shrinkAdbTrigger;
     }
     /**
      * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.

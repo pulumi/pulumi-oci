@@ -16,13 +16,13 @@ __all__ = ['ManagedDatabasesChangeDatabaseParameterArgs', 'ManagedDatabasesChang
 @pulumi.input_type
 class ManagedDatabasesChangeDatabaseParameterArgs:
     def __init__(__self__, *,
-                 credentials: pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs'],
                  managed_database_id: pulumi.Input[str],
                  parameters: pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]],
-                 scope: pulumi.Input[str]):
+                 scope: pulumi.Input[str],
+                 credentials: Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']] = None,
+                 database_credential: Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']] = None):
         """
         The set of arguments for constructing a ManagedDatabasesChangeDatabaseParameter resource.
-        :param pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs'] credentials: The database credentials used to perform management activity.
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]] parameters: A list of database parameters and their values.
         :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
@@ -32,23 +32,16 @@ class ManagedDatabasesChangeDatabaseParameterArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs'] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+        :param pulumi.Input['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs'] database_credential: The credential to connect to the database to perform tablespace administration tasks.
         """
-        pulumi.set(__self__, "credentials", credentials)
         pulumi.set(__self__, "managed_database_id", managed_database_id)
         pulumi.set(__self__, "parameters", parameters)
         pulumi.set(__self__, "scope", scope)
-
-    @property
-    @pulumi.getter
-    def credentials(self) -> pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']:
-        """
-        The database credentials used to perform management activity.
-        """
-        return pulumi.get(self, "credentials")
-
-    @credentials.setter
-    def credentials(self, value: pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']):
-        pulumi.set(self, "credentials", value)
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+        if database_credential is not None:
+            pulumi.set(__self__, "database_credential", database_credential)
 
     @property
     @pulumi.getter(name="managedDatabaseId")
@@ -92,17 +85,43 @@ class ManagedDatabasesChangeDatabaseParameterArgs:
     def scope(self, value: pulumi.Input[str]):
         pulumi.set(self, "scope", value)
 
+    @property
+    @pulumi.getter
+    def credentials(self) -> Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']]:
+        """
+        The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+        """
+        return pulumi.get(self, "credentials")
+
+    @credentials.setter
+    def credentials(self, value: Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']]):
+        pulumi.set(self, "credentials", value)
+
+    @property
+    @pulumi.getter(name="databaseCredential")
+    def database_credential(self) -> Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']]:
+        """
+        The credential to connect to the database to perform tablespace administration tasks.
+        """
+        return pulumi.get(self, "database_credential")
+
+    @database_credential.setter
+    def database_credential(self, value: Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']]):
+        pulumi.set(self, "database_credential", value)
+
 
 @pulumi.input_type
 class _ManagedDatabasesChangeDatabaseParameterState:
     def __init__(__self__, *,
                  credentials: Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']] = None,
+                 database_credential: Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']] = None,
                  managed_database_id: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]] = None,
                  scope: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ManagedDatabasesChangeDatabaseParameter resources.
-        :param pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs'] credentials: The database credentials used to perform management activity.
+        :param pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs'] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+        :param pulumi.Input['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs'] database_credential: The credential to connect to the database to perform tablespace administration tasks.
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]] parameters: A list of database parameters and their values.
         :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
@@ -115,6 +134,8 @@ class _ManagedDatabasesChangeDatabaseParameterState:
         """
         if credentials is not None:
             pulumi.set(__self__, "credentials", credentials)
+        if database_credential is not None:
+            pulumi.set(__self__, "database_credential", database_credential)
         if managed_database_id is not None:
             pulumi.set(__self__, "managed_database_id", managed_database_id)
         if parameters is not None:
@@ -126,13 +147,25 @@ class _ManagedDatabasesChangeDatabaseParameterState:
     @pulumi.getter
     def credentials(self) -> Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']]:
         """
-        The database credentials used to perform management activity.
+        The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
     def credentials(self, value: Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']]):
         pulumi.set(self, "credentials", value)
+
+    @property
+    @pulumi.getter(name="databaseCredential")
+    def database_credential(self) -> Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']]:
+        """
+        The credential to connect to the database to perform tablespace administration tasks.
+        """
+        return pulumi.get(self, "database_credential")
+
+    @database_credential.setter
+    def database_credential(self, value: Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']]):
+        pulumi.set(self, "database_credential", value)
 
     @property
     @pulumi.getter(name="managedDatabaseId")
@@ -183,6 +216,7 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  credentials: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']]] = None,
+                 database_credential: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']]] = None,
                  managed_database_id: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -211,19 +245,27 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_managed_databases_change_database_parameter = oci.database_management.ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter",
-            credentials=oci.database_management.ManagedDatabasesChangeDatabaseParameterCredentialsArgs(
-                password=var["managed_databases_change_database_parameter_credentials_password"],
-                role=var["managed_databases_change_database_parameter_credentials_role"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
-            ),
             managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
             parameters=[oci.database_management.ManagedDatabasesChangeDatabaseParameterParameterArgs(
                 name=var["managed_databases_change_database_parameter_parameters_name"],
                 value=var["managed_databases_change_database_parameter_parameters_value"],
                 update_comment=var["managed_databases_change_database_parameter_parameters_update_comment"],
             )],
-            scope=var["managed_databases_change_database_parameter_scope"])
+            scope=var["managed_databases_change_database_parameter_scope"],
+            credentials=oci.database_management.ManagedDatabasesChangeDatabaseParameterCredentialsArgs(
+                password=var["managed_databases_change_database_parameter_credentials_password"],
+                role=var["managed_databases_change_database_parameter_credentials_role"],
+                secret_id=oci_vault_secret["test_secret"]["id"],
+                user_name=oci_identity_user["test_user"]["name"],
+            ),
+            database_credential=oci.database_management.ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs(
+                credential_type=var["managed_databases_change_database_parameter_database_credential_credential_type"],
+                named_credential_id=oci_database_management_named_credential["test_named_credential"]["id"],
+                password=var["managed_databases_change_database_parameter_database_credential_password"],
+                password_secret_id=oci_vault_secret["test_secret"]["id"],
+                role=var["managed_databases_change_database_parameter_database_credential_role"],
+                username=var["managed_databases_change_database_parameter_database_credential_username"],
+            ))
         ```
 
         ## Import
@@ -232,7 +274,8 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']] credentials: The database credentials used to perform management activity.
+        :param pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+        :param pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']] database_credential: The credential to connect to the database to perform tablespace administration tasks.
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]] parameters: A list of database parameters and their values.
         :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
@@ -273,19 +316,27 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_managed_databases_change_database_parameter = oci.database_management.ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter",
-            credentials=oci.database_management.ManagedDatabasesChangeDatabaseParameterCredentialsArgs(
-                password=var["managed_databases_change_database_parameter_credentials_password"],
-                role=var["managed_databases_change_database_parameter_credentials_role"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
-            ),
             managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
             parameters=[oci.database_management.ManagedDatabasesChangeDatabaseParameterParameterArgs(
                 name=var["managed_databases_change_database_parameter_parameters_name"],
                 value=var["managed_databases_change_database_parameter_parameters_value"],
                 update_comment=var["managed_databases_change_database_parameter_parameters_update_comment"],
             )],
-            scope=var["managed_databases_change_database_parameter_scope"])
+            scope=var["managed_databases_change_database_parameter_scope"],
+            credentials=oci.database_management.ManagedDatabasesChangeDatabaseParameterCredentialsArgs(
+                password=var["managed_databases_change_database_parameter_credentials_password"],
+                role=var["managed_databases_change_database_parameter_credentials_role"],
+                secret_id=oci_vault_secret["test_secret"]["id"],
+                user_name=oci_identity_user["test_user"]["name"],
+            ),
+            database_credential=oci.database_management.ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs(
+                credential_type=var["managed_databases_change_database_parameter_database_credential_credential_type"],
+                named_credential_id=oci_database_management_named_credential["test_named_credential"]["id"],
+                password=var["managed_databases_change_database_parameter_database_credential_password"],
+                password_secret_id=oci_vault_secret["test_secret"]["id"],
+                role=var["managed_databases_change_database_parameter_database_credential_role"],
+                username=var["managed_databases_change_database_parameter_database_credential_username"],
+            ))
         ```
 
         ## Import
@@ -308,6 +359,7 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  credentials: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']]] = None,
+                 database_credential: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']]] = None,
                  managed_database_id: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -320,9 +372,8 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ManagedDatabasesChangeDatabaseParameterArgs.__new__(ManagedDatabasesChangeDatabaseParameterArgs)
 
-            if credentials is None and not opts.urn:
-                raise TypeError("Missing required property 'credentials'")
             __props__.__dict__["credentials"] = credentials
+            __props__.__dict__["database_credential"] = database_credential
             if managed_database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'managed_database_id'")
             __props__.__dict__["managed_database_id"] = managed_database_id
@@ -343,6 +394,7 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             credentials: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']]] = None,
+            database_credential: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']]] = None,
             managed_database_id: Optional[pulumi.Input[str]] = None,
             parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'ManagedDatabasesChangeDatabaseParameter':
@@ -353,7 +405,8 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']] credentials: The database credentials used to perform management activity.
+        :param pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+        :param pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']] database_credential: The credential to connect to the database to perform tablespace administration tasks.
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]] parameters: A list of database parameters and their values.
         :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
@@ -369,6 +422,7 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         __props__ = _ManagedDatabasesChangeDatabaseParameterState.__new__(_ManagedDatabasesChangeDatabaseParameterState)
 
         __props__.__dict__["credentials"] = credentials
+        __props__.__dict__["database_credential"] = database_credential
         __props__.__dict__["managed_database_id"] = managed_database_id
         __props__.__dict__["parameters"] = parameters
         __props__.__dict__["scope"] = scope
@@ -378,9 +432,17 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
     @pulumi.getter
     def credentials(self) -> pulumi.Output['outputs.ManagedDatabasesChangeDatabaseParameterCredentials']:
         """
-        The database credentials used to perform management activity.
+        The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
         """
         return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter(name="databaseCredential")
+    def database_credential(self) -> pulumi.Output['outputs.ManagedDatabasesChangeDatabaseParameterDatabaseCredential']:
+        """
+        The credential to connect to the database to perform tablespace administration tasks.
+        """
+        return pulumi.get(self, "database_credential")
 
     @property
     @pulumi.getter(name="managedDatabaseId")

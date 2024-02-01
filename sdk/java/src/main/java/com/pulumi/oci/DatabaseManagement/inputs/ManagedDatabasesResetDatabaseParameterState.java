@@ -6,6 +6,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesResetDatabaseParameterCredentialsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -18,18 +19,33 @@ public final class ManagedDatabasesResetDatabaseParameterState extends com.pulum
     public static final ManagedDatabasesResetDatabaseParameterState Empty = new ManagedDatabasesResetDatabaseParameterState();
 
     /**
-     * The database credentials used to perform management activity.
+     * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      * 
      */
     @Import(name="credentials")
     private @Nullable Output<ManagedDatabasesResetDatabaseParameterCredentialsArgs> credentials;
 
     /**
-     * @return The database credentials used to perform management activity.
+     * @return The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      * 
      */
     public Optional<Output<ManagedDatabasesResetDatabaseParameterCredentialsArgs>> credentials() {
         return Optional.ofNullable(this.credentials);
+    }
+
+    /**
+     * The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    @Import(name="databaseCredential")
+    private @Nullable Output<ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs> databaseCredential;
+
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    public Optional<Output<ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs>> databaseCredential() {
+        return Optional.ofNullable(this.databaseCredential);
     }
 
     /**
@@ -91,6 +107,7 @@ public final class ManagedDatabasesResetDatabaseParameterState extends com.pulum
 
     private ManagedDatabasesResetDatabaseParameterState(ManagedDatabasesResetDatabaseParameterState $) {
         this.credentials = $.credentials;
+        this.databaseCredential = $.databaseCredential;
         this.managedDatabaseId = $.managedDatabaseId;
         this.parameters = $.parameters;
         this.scope = $.scope;
@@ -115,7 +132,7 @@ public final class ManagedDatabasesResetDatabaseParameterState extends com.pulum
         }
 
         /**
-         * @param credentials The database credentials used to perform management activity.
+         * @param credentials The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
          * 
          * @return builder
          * 
@@ -126,13 +143,34 @@ public final class ManagedDatabasesResetDatabaseParameterState extends com.pulum
         }
 
         /**
-         * @param credentials The database credentials used to perform management activity.
+         * @param credentials The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
          * 
          * @return builder
          * 
          */
         public Builder credentials(ManagedDatabasesResetDatabaseParameterCredentialsArgs credentials) {
             return credentials(Output.of(credentials));
+        }
+
+        /**
+         * @param databaseCredential The credential to connect to the database to perform tablespace administration tasks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseCredential(@Nullable Output<ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs> databaseCredential) {
+            $.databaseCredential = databaseCredential;
+            return this;
+        }
+
+        /**
+         * @param databaseCredential The credential to connect to the database to perform tablespace administration tasks.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseCredential(ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs databaseCredential) {
+            return databaseCredential(Output.of(databaseCredential));
         }
 
         /**

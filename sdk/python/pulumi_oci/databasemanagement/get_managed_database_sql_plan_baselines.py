@@ -23,7 +23,7 @@ class GetManagedDatabaseSqlPlanBaselinesResult:
     """
     A collection of values returned by getManagedDatabaseSqlPlanBaselines.
     """
-    def __init__(__self__, filters=None, id=None, is_accepted=None, is_adaptive=None, is_enabled=None, is_fixed=None, is_reproduced=None, limit=None, managed_database_id=None, origin=None, plan_name=None, sql_handle=None, sql_plan_baseline_collections=None, sql_text=None):
+    def __init__(__self__, filters=None, id=None, is_accepted=None, is_adaptive=None, is_auto_purged=None, is_enabled=None, is_fixed=None, is_never_executed=None, is_reproduced=None, limit=None, managed_database_id=None, opc_named_credential_id=None, origin=None, plan_name=None, sql_handle=None, sql_plan_baseline_collections=None, sql_text=None):
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -36,12 +36,18 @@ class GetManagedDatabaseSqlPlanBaselinesResult:
         if is_adaptive and not isinstance(is_adaptive, bool):
             raise TypeError("Expected argument 'is_adaptive' to be a bool")
         pulumi.set(__self__, "is_adaptive", is_adaptive)
+        if is_auto_purged and not isinstance(is_auto_purged, bool):
+            raise TypeError("Expected argument 'is_auto_purged' to be a bool")
+        pulumi.set(__self__, "is_auto_purged", is_auto_purged)
         if is_enabled and not isinstance(is_enabled, bool):
             raise TypeError("Expected argument 'is_enabled' to be a bool")
         pulumi.set(__self__, "is_enabled", is_enabled)
         if is_fixed and not isinstance(is_fixed, bool):
             raise TypeError("Expected argument 'is_fixed' to be a bool")
         pulumi.set(__self__, "is_fixed", is_fixed)
+        if is_never_executed and not isinstance(is_never_executed, bool):
+            raise TypeError("Expected argument 'is_never_executed' to be a bool")
+        pulumi.set(__self__, "is_never_executed", is_never_executed)
         if is_reproduced and not isinstance(is_reproduced, bool):
             raise TypeError("Expected argument 'is_reproduced' to be a bool")
         pulumi.set(__self__, "is_reproduced", is_reproduced)
@@ -51,6 +57,9 @@ class GetManagedDatabaseSqlPlanBaselinesResult:
         if managed_database_id and not isinstance(managed_database_id, str):
             raise TypeError("Expected argument 'managed_database_id' to be a str")
         pulumi.set(__self__, "managed_database_id", managed_database_id)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if origin and not isinstance(origin, str):
             raise TypeError("Expected argument 'origin' to be a str")
         pulumi.set(__self__, "origin", origin)
@@ -91,6 +100,11 @@ class GetManagedDatabaseSqlPlanBaselinesResult:
         return pulumi.get(self, "is_adaptive")
 
     @property
+    @pulumi.getter(name="isAutoPurged")
+    def is_auto_purged(self) -> Optional[bool]:
+        return pulumi.get(self, "is_auto_purged")
+
+    @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
@@ -99,6 +113,11 @@ class GetManagedDatabaseSqlPlanBaselinesResult:
     @pulumi.getter(name="isFixed")
     def is_fixed(self) -> Optional[bool]:
         return pulumi.get(self, "is_fixed")
+
+    @property
+    @pulumi.getter(name="isNeverExecuted")
+    def is_never_executed(self) -> Optional[bool]:
+        return pulumi.get(self, "is_never_executed")
 
     @property
     @pulumi.getter(name="isReproduced")
@@ -114,6 +133,11 @@ class GetManagedDatabaseSqlPlanBaselinesResult:
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> str:
         return pulumi.get(self, "managed_database_id")
+
+    @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
 
     @property
     @pulumi.getter
@@ -166,11 +190,14 @@ class AwaitableGetManagedDatabaseSqlPlanBaselinesResult(GetManagedDatabaseSqlPla
             id=self.id,
             is_accepted=self.is_accepted,
             is_adaptive=self.is_adaptive,
+            is_auto_purged=self.is_auto_purged,
             is_enabled=self.is_enabled,
             is_fixed=self.is_fixed,
+            is_never_executed=self.is_never_executed,
             is_reproduced=self.is_reproduced,
             limit=self.limit,
             managed_database_id=self.managed_database_id,
+            opc_named_credential_id=self.opc_named_credential_id,
             origin=self.origin,
             plan_name=self.plan_name,
             sql_handle=self.sql_handle,
@@ -181,11 +208,14 @@ class AwaitableGetManagedDatabaseSqlPlanBaselinesResult(GetManagedDatabaseSqlPla
 def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlPlanBaselinesFilterArgs']]] = None,
                                             is_accepted: Optional[bool] = None,
                                             is_adaptive: Optional[bool] = None,
+                                            is_auto_purged: Optional[bool] = None,
                                             is_enabled: Optional[bool] = None,
                                             is_fixed: Optional[bool] = None,
+                                            is_never_executed: Optional[bool] = None,
                                             is_reproduced: Optional[bool] = None,
                                             limit: Optional[int] = None,
                                             managed_database_id: Optional[str] = None,
+                                            opc_named_credential_id: Optional[str] = None,
                                             origin: Optional[str] = None,
                                             plan_name: Optional[str] = None,
                                             sql_handle: Optional[str] = None,
@@ -196,31 +226,16 @@ def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[pulumi.In
 
     Lists the SQL plan baselines for the specified Managed Database.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_plan_baselines = oci.DatabaseManagement.get_managed_database_sql_plan_baselines(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        is_accepted=var["managed_database_sql_plan_baseline_is_accepted"],
-        is_adaptive=var["managed_database_sql_plan_baseline_is_adaptive"],
-        is_enabled=var["managed_database_sql_plan_baseline_is_enabled"],
-        is_fixed=var["managed_database_sql_plan_baseline_is_fixed"],
-        is_reproduced=var["managed_database_sql_plan_baseline_is_reproduced"],
-        origin=var["managed_database_sql_plan_baseline_origin"],
-        plan_name=var["managed_database_sql_plan_baseline_plan_name"],
-        sql_handle=var["managed_database_sql_plan_baseline_sql_handle"],
-        sql_text=var["managed_database_sql_plan_baseline_sql_text"])
-    ```
-
 
     :param bool is_accepted: A filter to return only SQL plan baselines that are either accepted or not accepted. By default, all SQL plan baselines are returned.
     :param bool is_adaptive: A filter to return only SQL plan baselines that are either adaptive or not adaptive. By default, all SQL plan baselines are returned.
+    :param bool is_auto_purged: A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
     :param bool is_enabled: A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
     :param bool is_fixed: A filter to return only SQL plan baselines that are either fixed or not fixed. By default, all SQL plan baselines are returned.
+    :param bool is_never_executed: A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
     :param bool is_reproduced: A filter to return only SQL plan baselines that were either reproduced or not reproduced by the optimizer. By default, all SQL plan baselines are returned.
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str origin: A filter to return all the SQL plan baselines that match the origin.
     :param str plan_name: A filter to return only SQL plan baselines that match the plan name.
     :param str sql_handle: A filter to return all the SQL plan baselines for the specified SQL handle.
@@ -230,11 +245,14 @@ def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[pulumi.In
     __args__['filters'] = filters
     __args__['isAccepted'] = is_accepted
     __args__['isAdaptive'] = is_adaptive
+    __args__['isAutoPurged'] = is_auto_purged
     __args__['isEnabled'] = is_enabled
     __args__['isFixed'] = is_fixed
+    __args__['isNeverExecuted'] = is_never_executed
     __args__['isReproduced'] = is_reproduced
     __args__['limit'] = limit
     __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['origin'] = origin
     __args__['planName'] = plan_name
     __args__['sqlHandle'] = sql_handle
@@ -247,11 +265,14 @@ def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[pulumi.In
         id=pulumi.get(__ret__, 'id'),
         is_accepted=pulumi.get(__ret__, 'is_accepted'),
         is_adaptive=pulumi.get(__ret__, 'is_adaptive'),
+        is_auto_purged=pulumi.get(__ret__, 'is_auto_purged'),
         is_enabled=pulumi.get(__ret__, 'is_enabled'),
         is_fixed=pulumi.get(__ret__, 'is_fixed'),
+        is_never_executed=pulumi.get(__ret__, 'is_never_executed'),
         is_reproduced=pulumi.get(__ret__, 'is_reproduced'),
         limit=pulumi.get(__ret__, 'limit'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         origin=pulumi.get(__ret__, 'origin'),
         plan_name=pulumi.get(__ret__, 'plan_name'),
         sql_handle=pulumi.get(__ret__, 'sql_handle'),
@@ -263,11 +284,14 @@ def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[pulumi.In
 def get_managed_database_sql_plan_baselines_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlPlanBaselinesFilterArgs']]]]] = None,
                                                    is_accepted: Optional[pulumi.Input[Optional[bool]]] = None,
                                                    is_adaptive: Optional[pulumi.Input[Optional[bool]]] = None,
+                                                   is_auto_purged: Optional[pulumi.Input[Optional[bool]]] = None,
                                                    is_enabled: Optional[pulumi.Input[Optional[bool]]] = None,
                                                    is_fixed: Optional[pulumi.Input[Optional[bool]]] = None,
+                                                   is_never_executed: Optional[pulumi.Input[Optional[bool]]] = None,
                                                    is_reproduced: Optional[pulumi.Input[Optional[bool]]] = None,
                                                    limit: Optional[pulumi.Input[Optional[int]]] = None,
                                                    managed_database_id: Optional[pulumi.Input[str]] = None,
+                                                   opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                    origin: Optional[pulumi.Input[Optional[str]]] = None,
                                                    plan_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                    sql_handle: Optional[pulumi.Input[Optional[str]]] = None,
@@ -278,31 +302,16 @@ def get_managed_database_sql_plan_baselines_output(filters: Optional[pulumi.Inpu
 
     Lists the SQL plan baselines for the specified Managed Database.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_plan_baselines = oci.DatabaseManagement.get_managed_database_sql_plan_baselines(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        is_accepted=var["managed_database_sql_plan_baseline_is_accepted"],
-        is_adaptive=var["managed_database_sql_plan_baseline_is_adaptive"],
-        is_enabled=var["managed_database_sql_plan_baseline_is_enabled"],
-        is_fixed=var["managed_database_sql_plan_baseline_is_fixed"],
-        is_reproduced=var["managed_database_sql_plan_baseline_is_reproduced"],
-        origin=var["managed_database_sql_plan_baseline_origin"],
-        plan_name=var["managed_database_sql_plan_baseline_plan_name"],
-        sql_handle=var["managed_database_sql_plan_baseline_sql_handle"],
-        sql_text=var["managed_database_sql_plan_baseline_sql_text"])
-    ```
-
 
     :param bool is_accepted: A filter to return only SQL plan baselines that are either accepted or not accepted. By default, all SQL plan baselines are returned.
     :param bool is_adaptive: A filter to return only SQL plan baselines that are either adaptive or not adaptive. By default, all SQL plan baselines are returned.
+    :param bool is_auto_purged: A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
     :param bool is_enabled: A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
     :param bool is_fixed: A filter to return only SQL plan baselines that are either fixed or not fixed. By default, all SQL plan baselines are returned.
+    :param bool is_never_executed: A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
     :param bool is_reproduced: A filter to return only SQL plan baselines that were either reproduced or not reproduced by the optimizer. By default, all SQL plan baselines are returned.
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str origin: A filter to return all the SQL plan baselines that match the origin.
     :param str plan_name: A filter to return only SQL plan baselines that match the plan name.
     :param str sql_handle: A filter to return all the SQL plan baselines for the specified SQL handle.

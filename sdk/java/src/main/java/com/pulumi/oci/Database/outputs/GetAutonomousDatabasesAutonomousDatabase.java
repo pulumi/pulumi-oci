@@ -274,6 +274,12 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private Boolean isRemoteDataGuardEnabled;
+    /**
+     * @deprecated
+     * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
     private Boolean isShrinkOnly;
     /**
      * @return Key History Entry.
@@ -450,6 +456,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private String serviceConsoleUrl;
+    private Integer shrinkAdbTrigger;
     private String source;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
@@ -943,6 +950,12 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public Boolean isRemoteDataGuardEnabled() {
         return this.isRemoteDataGuardEnabled;
     }
+    /**
+     * @deprecated
+     * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
     public Boolean isShrinkOnly() {
         return this.isShrinkOnly;
     }
@@ -1196,6 +1209,9 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     public String serviceConsoleUrl() {
         return this.serviceConsoleUrl;
+    }
+    public Integer shrinkAdbTrigger() {
+        return this.shrinkAdbTrigger;
     }
     public String source() {
         return this.source;
@@ -1503,6 +1519,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String secretId;
         private Integer secretVersionNumber;
         private String serviceConsoleUrl;
+        private Integer shrinkAdbTrigger;
         private String source;
         private String sourceId;
         private List<GetAutonomousDatabasesAutonomousDatabaseStandbyDb> standbyDbs;
@@ -1630,6 +1647,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.secretId = defaults.secretId;
     	      this.secretVersionNumber = defaults.secretVersionNumber;
     	      this.serviceConsoleUrl = defaults.serviceConsoleUrl;
+    	      this.shrinkAdbTrigger = defaults.shrinkAdbTrigger;
     	      this.source = defaults.source;
     	      this.sourceId = defaults.sourceId;
     	      this.standbyDbs = defaults.standbyDbs;
@@ -2449,6 +2467,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder shrinkAdbTrigger(Integer shrinkAdbTrigger) {
+            if (shrinkAdbTrigger == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "shrinkAdbTrigger");
+            }
+            this.shrinkAdbTrigger = shrinkAdbTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder source(String source) {
             if (source == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "source");
@@ -2810,6 +2836,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.secretId = secretId;
             _resultValue.secretVersionNumber = secretVersionNumber;
             _resultValue.serviceConsoleUrl = serviceConsoleUrl;
+            _resultValue.shrinkAdbTrigger = shrinkAdbTrigger;
             _resultValue.source = source;
             _resultValue.sourceId = sourceId;
             _resultValue.standbyDbs = standbyDbs;

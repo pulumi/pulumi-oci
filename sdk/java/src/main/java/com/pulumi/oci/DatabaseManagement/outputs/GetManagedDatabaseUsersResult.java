@@ -27,6 +27,7 @@ public final class GetManagedDatabaseUsersResult {
      * 
      */
     private @Nullable String name;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The list of user_collection.
      * 
@@ -54,6 +55,9 @@ public final class GetManagedDatabaseUsersResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return The list of user_collection.
      * 
@@ -75,6 +79,7 @@ public final class GetManagedDatabaseUsersResult {
         private String id;
         private String managedDatabaseId;
         private @Nullable String name;
+        private @Nullable String opcNamedCredentialId;
         private List<GetManagedDatabaseUsersUserCollection> userCollections;
         public Builder() {}
         public Builder(GetManagedDatabaseUsersResult defaults) {
@@ -83,6 +88,7 @@ public final class GetManagedDatabaseUsersResult {
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.name = defaults.name;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.userCollections = defaults.userCollections;
         }
 
@@ -118,6 +124,12 @@ public final class GetManagedDatabaseUsersResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder userCollections(List<GetManagedDatabaseUsersUserCollection> userCollections) {
             if (userCollections == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseUsersResult", "userCollections");
@@ -134,6 +146,7 @@ public final class GetManagedDatabaseUsersResult {
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.name = name;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.userCollections = userCollections;
             return _resultValue;
         }

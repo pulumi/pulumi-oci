@@ -55,6 +55,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ManagedDatabasesChangeDatabaseParameter{}
 	case "oci:DatabaseManagement/managedDatabasesResetDatabaseParameter:ManagedDatabasesResetDatabaseParameter":
 		r = &ManagedDatabasesResetDatabaseParameter{}
+	case "oci:DatabaseManagement/namedCredential:NamedCredential":
+		r = &NamedCredential{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -151,6 +153,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseManagement/managedDatabasesResetDatabaseParameter",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/namedCredential",
 		&module{version},
 	)
 }

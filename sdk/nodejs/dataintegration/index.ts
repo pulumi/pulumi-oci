@@ -15,6 +15,16 @@ export const getWorkspaceApplication: typeof import("./getWorkspaceApplication")
 export const getWorkspaceApplicationOutput: typeof import("./getWorkspaceApplication").getWorkspaceApplicationOutput = null as any;
 utilities.lazyLoad(exports, ["getWorkspaceApplication","getWorkspaceApplicationOutput"], () => require("./getWorkspaceApplication"));
 
+export { GetWorkspaceApplicationPatchArgs, GetWorkspaceApplicationPatchResult, GetWorkspaceApplicationPatchOutputArgs } from "./getWorkspaceApplicationPatch";
+export const getWorkspaceApplicationPatch: typeof import("./getWorkspaceApplicationPatch").getWorkspaceApplicationPatch = null as any;
+export const getWorkspaceApplicationPatchOutput: typeof import("./getWorkspaceApplicationPatch").getWorkspaceApplicationPatchOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkspaceApplicationPatch","getWorkspaceApplicationPatchOutput"], () => require("./getWorkspaceApplicationPatch"));
+
+export { GetWorkspaceApplicationPatchesArgs, GetWorkspaceApplicationPatchesResult, GetWorkspaceApplicationPatchesOutputArgs } from "./getWorkspaceApplicationPatches";
+export const getWorkspaceApplicationPatches: typeof import("./getWorkspaceApplicationPatches").getWorkspaceApplicationPatches = null as any;
+export const getWorkspaceApplicationPatchesOutput: typeof import("./getWorkspaceApplicationPatches").getWorkspaceApplicationPatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkspaceApplicationPatches","getWorkspaceApplicationPatchesOutput"], () => require("./getWorkspaceApplicationPatches"));
+
 export { GetWorkspaceApplicationsArgs, GetWorkspaceApplicationsResult, GetWorkspaceApplicationsOutputArgs } from "./getWorkspaceApplications";
 export const getWorkspaceApplications: typeof import("./getWorkspaceApplications").getWorkspaceApplications = null as any;
 export const getWorkspaceApplicationsOutput: typeof import("./getWorkspaceApplications").getWorkspaceApplicationsOutput = null as any;
@@ -75,6 +85,11 @@ export type WorkspaceApplication = import("./workspaceApplication").WorkspaceApp
 export const WorkspaceApplication: typeof import("./workspaceApplication").WorkspaceApplication = null as any;
 utilities.lazyLoad(exports, ["WorkspaceApplication"], () => require("./workspaceApplication"));
 
+export { WorkspaceApplicationPatchArgs, WorkspaceApplicationPatchState } from "./workspaceApplicationPatch";
+export type WorkspaceApplicationPatch = import("./workspaceApplicationPatch").WorkspaceApplicationPatch;
+export const WorkspaceApplicationPatch: typeof import("./workspaceApplicationPatch").WorkspaceApplicationPatch = null as any;
+utilities.lazyLoad(exports, ["WorkspaceApplicationPatch"], () => require("./workspaceApplicationPatch"));
+
 export { WorkspaceExportRequestArgs, WorkspaceExportRequestState } from "./workspaceExportRequest";
 export type WorkspaceExportRequest = import("./workspaceExportRequest").WorkspaceExportRequest;
 export const WorkspaceExportRequest: typeof import("./workspaceExportRequest").WorkspaceExportRequest = null as any;
@@ -104,6 +119,8 @@ const _module = {
                 return new Workspace(name, <any>undefined, { urn })
             case "oci:DataIntegration/workspaceApplication:WorkspaceApplication":
                 return new WorkspaceApplication(name, <any>undefined, { urn })
+            case "oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch":
+                return new WorkspaceApplicationPatch(name, <any>undefined, { urn })
             case "oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest":
                 return new WorkspaceExportRequest(name, <any>undefined, { urn })
             case "oci:DataIntegration/workspaceFolder:WorkspaceFolder":
@@ -119,6 +136,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspace", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceApplication", _module)
+pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceApplicationPatch", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceExportRequest", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceFolder", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceImportRequest", _module)

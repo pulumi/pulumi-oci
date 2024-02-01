@@ -34,6 +34,7 @@ public final class GetManagedDatabasesDatabaseParametersResult {
      * 
      */
     private @Nullable String name;
+    private @Nullable String opcNamedCredentialId;
     private @Nullable String source;
 
     private GetManagedDatabasesDatabaseParametersResult() {}
@@ -67,6 +68,9 @@ public final class GetManagedDatabasesDatabaseParametersResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     public Optional<String> source() {
         return Optional.ofNullable(this.source);
     }
@@ -86,6 +90,7 @@ public final class GetManagedDatabasesDatabaseParametersResult {
         private @Nullable Boolean isAllowedValuesIncluded;
         private String managedDatabaseId;
         private @Nullable String name;
+        private @Nullable String opcNamedCredentialId;
         private @Nullable String source;
         public Builder() {}
         public Builder(GetManagedDatabasesDatabaseParametersResult defaults) {
@@ -96,6 +101,7 @@ public final class GetManagedDatabasesDatabaseParametersResult {
     	      this.isAllowedValuesIncluded = defaults.isAllowedValuesIncluded;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.name = defaults.name;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.source = defaults.source;
         }
 
@@ -148,6 +154,12 @@ public final class GetManagedDatabasesDatabaseParametersResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder source(@Nullable String source) {
 
             this.source = source;
@@ -161,6 +173,7 @@ public final class GetManagedDatabasesDatabaseParametersResult {
             _resultValue.isAllowedValuesIncluded = isAllowedValuesIncluded;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.name = name;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.source = source;
             return _resultValue;
         }

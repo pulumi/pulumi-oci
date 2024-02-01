@@ -15,38 +15,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the SQL plan baselines for the specified Managed Database.
-        /// 
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testManagedDatabaseSqlPlanBaselines = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaselines.Invoke(new()
-        ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         IsAccepted = @var.Managed_database_sql_plan_baseline_is_accepted,
-        ///         IsAdaptive = @var.Managed_database_sql_plan_baseline_is_adaptive,
-        ///         IsEnabled = @var.Managed_database_sql_plan_baseline_is_enabled,
-        ///         IsFixed = @var.Managed_database_sql_plan_baseline_is_fixed,
-        ///         IsReproduced = @var.Managed_database_sql_plan_baseline_is_reproduced,
-        ///         Origin = @var.Managed_database_sql_plan_baseline_origin,
-        ///         PlanName = @var.Managed_database_sql_plan_baseline_plan_name,
-        ///         SqlHandle = @var.Managed_database_sql_plan_baseline_sql_handle,
-        ///         SqlText = @var.Managed_database_sql_plan_baseline_sql_text,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseSqlPlanBaselinesResult> InvokeAsync(GetManagedDatabaseSqlPlanBaselinesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlPlanBaselinesResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", args ?? new GetManagedDatabaseSqlPlanBaselinesArgs(), options.WithDefaults());
@@ -55,38 +23,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the SQL plan baselines for the specified Managed Database.
-        /// 
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testManagedDatabaseSqlPlanBaselines = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaselines.Invoke(new()
-        ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         IsAccepted = @var.Managed_database_sql_plan_baseline_is_accepted,
-        ///         IsAdaptive = @var.Managed_database_sql_plan_baseline_is_adaptive,
-        ///         IsEnabled = @var.Managed_database_sql_plan_baseline_is_enabled,
-        ///         IsFixed = @var.Managed_database_sql_plan_baseline_is_fixed,
-        ///         IsReproduced = @var.Managed_database_sql_plan_baseline_is_reproduced,
-        ///         Origin = @var.Managed_database_sql_plan_baseline_origin,
-        ///         PlanName = @var.Managed_database_sql_plan_baseline_plan_name,
-        ///         SqlHandle = @var.Managed_database_sql_plan_baseline_sql_handle,
-        ///         SqlText = @var.Managed_database_sql_plan_baseline_sql_text,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseSqlPlanBaselinesResult> Invoke(GetManagedDatabaseSqlPlanBaselinesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselinesResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", args ?? new GetManagedDatabaseSqlPlanBaselinesInvokeArgs(), options.WithDefaults());
@@ -116,6 +52,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public bool? IsAdaptive { get; set; }
 
         /// <summary>
+        /// A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
+        /// </summary>
+        [Input("isAutoPurged")]
+        public bool? IsAutoPurged { get; set; }
+
+        /// <summary>
         /// A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
         /// </summary>
         [Input("isEnabled")]
@@ -126,6 +68,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("isFixed")]
         public bool? IsFixed { get; set; }
+
+        /// <summary>
+        /// A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
+        /// </summary>
+        [Input("isNeverExecuted")]
+        public bool? IsNeverExecuted { get; set; }
 
         /// <summary>
         /// A filter to return only SQL plan baselines that were either reproduced or not reproduced by the optimizer. By default, all SQL plan baselines are returned.
@@ -141,6 +89,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("managedDatabaseId", required: true)]
         public string ManagedDatabaseId { get; set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
 
         /// <summary>
         /// A filter to return all the SQL plan baselines that match the origin.
@@ -195,6 +149,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<bool>? IsAdaptive { get; set; }
 
         /// <summary>
+        /// A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
+        /// </summary>
+        [Input("isAutoPurged")]
+        public Input<bool>? IsAutoPurged { get; set; }
+
+        /// <summary>
         /// A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
         /// </summary>
         [Input("isEnabled")]
@@ -205,6 +165,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("isFixed")]
         public Input<bool>? IsFixed { get; set; }
+
+        /// <summary>
+        /// A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
+        /// </summary>
+        [Input("isNeverExecuted")]
+        public Input<bool>? IsNeverExecuted { get; set; }
 
         /// <summary>
         /// A filter to return only SQL plan baselines that were either reproduced or not reproduced by the optimizer. By default, all SQL plan baselines are returned.
@@ -220,6 +186,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("managedDatabaseId", required: true)]
         public Input<string> ManagedDatabaseId { get; set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
 
         /// <summary>
         /// A filter to return all the SQL plan baselines that match the origin.
@@ -262,11 +234,14 @@ namespace Pulumi.Oci.DatabaseManagement
         public readonly string Id;
         public readonly bool? IsAccepted;
         public readonly bool? IsAdaptive;
+        public readonly bool? IsAutoPurged;
         public readonly bool? IsEnabled;
         public readonly bool? IsFixed;
+        public readonly bool? IsNeverExecuted;
         public readonly bool? IsReproduced;
         public readonly int? Limit;
         public readonly string ManagedDatabaseId;
+        public readonly string? OpcNamedCredentialId;
         /// <summary>
         /// The origin of the SQL plan baseline.
         /// </summary>
@@ -298,15 +273,21 @@ namespace Pulumi.Oci.DatabaseManagement
 
             bool? isAdaptive,
 
+            bool? isAutoPurged,
+
             bool? isEnabled,
 
             bool? isFixed,
+
+            bool? isNeverExecuted,
 
             bool? isReproduced,
 
             int? limit,
 
             string managedDatabaseId,
+
+            string? opcNamedCredentialId,
 
             string? origin,
 
@@ -322,11 +303,14 @@ namespace Pulumi.Oci.DatabaseManagement
             Id = id;
             IsAccepted = isAccepted;
             IsAdaptive = isAdaptive;
+            IsAutoPurged = isAutoPurged;
             IsEnabled = isEnabled;
             IsFixed = isFixed;
+            IsNeverExecuted = isNeverExecuted;
             IsReproduced = isReproduced;
             Limit = limit;
             ManagedDatabaseId = managedDatabaseId;
+            OpcNamedCredentialId = opcNamedCredentialId;
             Origin = origin;
             PlanName = planName;
             SqlHandle = sqlHandle;

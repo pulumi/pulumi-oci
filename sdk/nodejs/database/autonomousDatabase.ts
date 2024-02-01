@@ -286,6 +286,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * @deprecated The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
      */
     public readonly isShrinkOnly!: pulumi.Output<boolean | undefined>;
     /**
@@ -447,6 +449,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * The URL of the Service Console for the Autonomous Database.
      */
     public /*out*/ readonly serviceConsoleUrl!: pulumi.Output<string>;
+    public readonly shrinkAdbTrigger!: pulumi.Output<number>;
     /**
      * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
      *
@@ -700,6 +703,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["secretId"] = state ? state.secretId : undefined;
             resourceInputs["secretVersionNumber"] = state ? state.secretVersionNumber : undefined;
             resourceInputs["serviceConsoleUrl"] = state ? state.serviceConsoleUrl : undefined;
+            resourceInputs["shrinkAdbTrigger"] = state ? state.shrinkAdbTrigger : undefined;
             resourceInputs["source"] = state ? state.source : undefined;
             resourceInputs["sourceId"] = state ? state.sourceId : undefined;
             resourceInputs["standbyDbs"] = state ? state.standbyDbs : undefined;
@@ -799,6 +803,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["scheduledOperations"] = args ? args.scheduledOperations : undefined;
             resourceInputs["secretId"] = args ? args.secretId : undefined;
             resourceInputs["secretVersionNumber"] = args ? args.secretVersionNumber : undefined;
+            resourceInputs["shrinkAdbTrigger"] = args ? args.shrinkAdbTrigger : undefined;
             resourceInputs["source"] = args ? args.source : undefined;
             resourceInputs["sourceId"] = args ? args.sourceId : undefined;
             resourceInputs["standbyWhitelistedIps"] = args ? args.standbyWhitelistedIps : undefined;
@@ -1114,6 +1119,8 @@ export interface AutonomousDatabaseState {
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * @deprecated The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
      */
     isShrinkOnly?: pulumi.Input<boolean>;
     /**
@@ -1275,6 +1282,7 @@ export interface AutonomousDatabaseState {
      * The URL of the Service Console for the Autonomous Database.
      */
     serviceConsoleUrl?: pulumi.Input<string>;
+    shrinkAdbTrigger?: pulumi.Input<number>;
     /**
      * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
      *
@@ -1608,6 +1616,8 @@ export interface AutonomousDatabaseArgs {
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * @deprecated The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
      */
     isShrinkOnly?: pulumi.Input<boolean>;
     /**
@@ -1701,6 +1711,7 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
      */
     secretVersionNumber?: pulumi.Input<number>;
+    shrinkAdbTrigger?: pulumi.Input<number>;
     /**
      * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
      *

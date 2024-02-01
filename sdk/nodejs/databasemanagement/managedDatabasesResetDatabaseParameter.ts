@@ -18,15 +18,23 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabasesResetDatabaseParameter = new oci.databasemanagement.ManagedDatabasesResetDatabaseParameter("testManagedDatabasesResetDatabaseParameter", {
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     parameters: _var.managed_databases_reset_database_parameter_parameters,
+ *     scope: _var.managed_databases_reset_database_parameter_scope,
  *     credentials: {
  *         password: _var.managed_databases_reset_database_parameter_credentials_password,
  *         role: _var.managed_databases_reset_database_parameter_credentials_role,
  *         secretId: oci_vault_secret.test_secret.id,
  *         userName: oci_identity_user.test_user.name,
  *     },
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     parameters: _var.managed_databases_reset_database_parameter_parameters,
- *     scope: _var.managed_databases_reset_database_parameter_scope,
+ *     databaseCredential: {
+ *         credentialType: _var.managed_databases_reset_database_parameter_database_credential_credential_type,
+ *         namedCredentialId: oci_database_management_named_credential.test_named_credential.id,
+ *         password: _var.managed_databases_reset_database_parameter_database_credential_password,
+ *         passwordSecretId: oci_vault_secret.test_secret.id,
+ *         role: _var.managed_databases_reset_database_parameter_database_credential_role,
+ *         username: _var.managed_databases_reset_database_parameter_database_credential_username,
+ *     },
  * });
  * ```
  *
@@ -63,9 +71,13 @@ export class ManagedDatabasesResetDatabaseParameter extends pulumi.CustomResourc
     }
 
     /**
-     * The database credentials used to perform management activity.
+     * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      */
     public readonly credentials!: pulumi.Output<outputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterCredentials>;
+    /**
+     * The credential to connect to the database to perform tablespace administration tasks.
+     */
+    public readonly databaseCredential!: pulumi.Output<outputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterDatabaseCredential>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -99,14 +111,12 @@ export class ManagedDatabasesResetDatabaseParameter extends pulumi.CustomResourc
         if (opts.id) {
             const state = argsOrState as ManagedDatabasesResetDatabaseParameterState | undefined;
             resourceInputs["credentials"] = state ? state.credentials : undefined;
+            resourceInputs["databaseCredential"] = state ? state.databaseCredential : undefined;
             resourceInputs["managedDatabaseId"] = state ? state.managedDatabaseId : undefined;
             resourceInputs["parameters"] = state ? state.parameters : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
         } else {
             const args = argsOrState as ManagedDatabasesResetDatabaseParameterArgs | undefined;
-            if ((!args || args.credentials === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'credentials'");
-            }
             if ((!args || args.managedDatabaseId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'managedDatabaseId'");
             }
@@ -117,6 +127,7 @@ export class ManagedDatabasesResetDatabaseParameter extends pulumi.CustomResourc
                 throw new Error("Missing required property 'scope'");
             }
             resourceInputs["credentials"] = args ? args.credentials : undefined;
+            resourceInputs["databaseCredential"] = args ? args.databaseCredential : undefined;
             resourceInputs["managedDatabaseId"] = args ? args.managedDatabaseId : undefined;
             resourceInputs["parameters"] = args ? args.parameters : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
@@ -131,9 +142,13 @@ export class ManagedDatabasesResetDatabaseParameter extends pulumi.CustomResourc
  */
 export interface ManagedDatabasesResetDatabaseParameterState {
     /**
-     * The database credentials used to perform management activity.
+     * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      */
     credentials?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterCredentials>;
+    /**
+     * The credential to connect to the database to perform tablespace administration tasks.
+     */
+    databaseCredential?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterDatabaseCredential>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -159,9 +174,13 @@ export interface ManagedDatabasesResetDatabaseParameterState {
  */
 export interface ManagedDatabasesResetDatabaseParameterArgs {
     /**
-     * The database credentials used to perform management activity.
+     * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      */
-    credentials: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterCredentials>;
+    credentials?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterCredentials>;
+    /**
+     * The credential to connect to the database to perform tablespace administration tasks.
+     */
+    databaseCredential?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesResetDatabaseParameterDatabaseCredential>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */

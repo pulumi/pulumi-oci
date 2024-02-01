@@ -14,41 +14,6 @@ import (
 // This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
 //
 // Lists the SQL plan baselines for the specified Managed Database.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.GetManagedDatabaseSqlPlanBaselines(ctx, &databasemanagement.GetManagedDatabaseSqlPlanBaselinesArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				IsAccepted:        pulumi.BoolRef(_var.Managed_database_sql_plan_baseline_is_accepted),
-//				IsAdaptive:        pulumi.BoolRef(_var.Managed_database_sql_plan_baseline_is_adaptive),
-//				IsEnabled:         pulumi.BoolRef(_var.Managed_database_sql_plan_baseline_is_enabled),
-//				IsFixed:           pulumi.BoolRef(_var.Managed_database_sql_plan_baseline_is_fixed),
-//				IsReproduced:      pulumi.BoolRef(_var.Managed_database_sql_plan_baseline_is_reproduced),
-//				Origin:            pulumi.StringRef(_var.Managed_database_sql_plan_baseline_origin),
-//				PlanName:          pulumi.StringRef(_var.Managed_database_sql_plan_baseline_plan_name),
-//				SqlHandle:         pulumi.StringRef(_var.Managed_database_sql_plan_baseline_sql_handle),
-//				SqlText:           pulumi.StringRef(_var.Managed_database_sql_plan_baseline_sql_text),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetManagedDatabaseSqlPlanBaselines(ctx *pulumi.Context, args *GetManagedDatabaseSqlPlanBaselinesArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseSqlPlanBaselinesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseSqlPlanBaselinesResult
@@ -66,15 +31,21 @@ type GetManagedDatabaseSqlPlanBaselinesArgs struct {
 	IsAccepted *bool `pulumi:"isAccepted"`
 	// A filter to return only SQL plan baselines that are either adaptive or not adaptive. By default, all SQL plan baselines are returned.
 	IsAdaptive *bool `pulumi:"isAdaptive"`
+	// A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
+	IsAutoPurged *bool `pulumi:"isAutoPurged"`
 	// A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// A filter to return only SQL plan baselines that are either fixed or not fixed. By default, all SQL plan baselines are returned.
 	IsFixed *bool `pulumi:"isFixed"`
+	// A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
+	IsNeverExecuted *bool `pulumi:"isNeverExecuted"`
 	// A filter to return only SQL plan baselines that were either reproduced or not reproduced by the optimizer. By default, all SQL plan baselines are returned.
 	IsReproduced *bool `pulumi:"isReproduced"`
 	Limit        *int  `pulumi:"limit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// A filter to return all the SQL plan baselines that match the origin.
 	Origin *string `pulumi:"origin"`
 	// A filter to return only SQL plan baselines that match the plan name.
@@ -89,14 +60,17 @@ type GetManagedDatabaseSqlPlanBaselinesArgs struct {
 type GetManagedDatabaseSqlPlanBaselinesResult struct {
 	Filters []GetManagedDatabaseSqlPlanBaselinesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	IsAccepted        *bool  `pulumi:"isAccepted"`
-	IsAdaptive        *bool  `pulumi:"isAdaptive"`
-	IsEnabled         *bool  `pulumi:"isEnabled"`
-	IsFixed           *bool  `pulumi:"isFixed"`
-	IsReproduced      *bool  `pulumi:"isReproduced"`
-	Limit             *int   `pulumi:"limit"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                   string  `pulumi:"id"`
+	IsAccepted           *bool   `pulumi:"isAccepted"`
+	IsAdaptive           *bool   `pulumi:"isAdaptive"`
+	IsAutoPurged         *bool   `pulumi:"isAutoPurged"`
+	IsEnabled            *bool   `pulumi:"isEnabled"`
+	IsFixed              *bool   `pulumi:"isFixed"`
+	IsNeverExecuted      *bool   `pulumi:"isNeverExecuted"`
+	IsReproduced         *bool   `pulumi:"isReproduced"`
+	Limit                *int    `pulumi:"limit"`
+	ManagedDatabaseId    string  `pulumi:"managedDatabaseId"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The origin of the SQL plan baseline.
 	Origin *string `pulumi:"origin"`
 	// The unique plan identifier.
@@ -129,15 +103,21 @@ type GetManagedDatabaseSqlPlanBaselinesOutputArgs struct {
 	IsAccepted pulumi.BoolPtrInput `pulumi:"isAccepted"`
 	// A filter to return only SQL plan baselines that are either adaptive or not adaptive. By default, all SQL plan baselines are returned.
 	IsAdaptive pulumi.BoolPtrInput `pulumi:"isAdaptive"`
+	// A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
+	IsAutoPurged pulumi.BoolPtrInput `pulumi:"isAutoPurged"`
 	// A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// A filter to return only SQL plan baselines that are either fixed or not fixed. By default, all SQL plan baselines are returned.
 	IsFixed pulumi.BoolPtrInput `pulumi:"isFixed"`
+	// A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
+	IsNeverExecuted pulumi.BoolPtrInput `pulumi:"isNeverExecuted"`
 	// A filter to return only SQL plan baselines that were either reproduced or not reproduced by the optimizer. By default, all SQL plan baselines are returned.
 	IsReproduced pulumi.BoolPtrInput `pulumi:"isReproduced"`
 	Limit        pulumi.IntPtrInput  `pulumi:"limit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// A filter to return all the SQL plan baselines that match the origin.
 	Origin pulumi.StringPtrInput `pulumi:"origin"`
 	// A filter to return only SQL plan baselines that match the plan name.
@@ -186,12 +166,20 @@ func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) IsAdaptive() pulumi.Bool
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesResult) *bool { return v.IsAdaptive }).(pulumi.BoolPtrOutput)
 }
 
+func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) IsAutoPurged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesResult) *bool { return v.IsAutoPurged }).(pulumi.BoolPtrOutput)
+}
+
 func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) IsFixed() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesResult) *bool { return v.IsFixed }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) IsNeverExecuted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesResult) *bool { return v.IsNeverExecuted }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) IsReproduced() pulumi.BoolPtrOutput {
@@ -204,6 +192,10 @@ func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) Limit() pulumi.IntPtrOut
 
 func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) ManagedDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesResult) string { return v.ManagedDatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 // The origin of the SQL plan baseline.

@@ -35,6 +35,7 @@ __all__ = [
     'GetAddressRuleTaxFieldResult',
     'GetAddressRuleTaxFieldFormatResult',
     'GetAddressRuleTaxFieldLabelResult',
+    'GetAddressRuleTaxValueSetResult',
     'GetInvoiceBillToAddressResult',
     'GetInvoiceBillToAddressCountryResult',
     'GetInvoiceCurrencyResult',
@@ -2147,18 +2148,22 @@ class SubscriptionTaxInfo(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 giro: Optional[str] = None,
                  no_tax_reason_code: Optional[str] = None,
                  no_tax_reason_code_details: Optional[str] = None,
                  tax_cnpj: Optional[str] = None,
                  tax_payer_id: Optional[str] = None,
                  tax_reg_number: Optional[str] = None):
         """
+        :param str giro: Companies' GIRO code
         :param str no_tax_reason_code: (Updatable) Tax exemption reason code.
         :param str no_tax_reason_code_details: (Updatable) Tax exemption reason description.
         :param str tax_cnpj: (Updatable) Brazilian companies' CNPJ number.
         :param str tax_payer_id: (Updatable) Tay payer identifier.
         :param str tax_reg_number: (Updatable) Tax registration number.
         """
+        if giro is not None:
+            pulumi.set(__self__, "giro", giro)
         if no_tax_reason_code is not None:
             pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
@@ -2169,6 +2174,14 @@ class SubscriptionTaxInfo(dict):
             pulumi.set(__self__, "tax_payer_id", tax_payer_id)
         if tax_reg_number is not None:
             pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+
+    @property
+    @pulumi.getter
+    def giro(self) -> Optional[str]:
+        """
+        Companies' GIRO code
+        """
+        return pulumi.get(self, "giro")
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -2253,7 +2266,7 @@ class GetAddressRuleAddressFieldResult(dict):
         :param bool is_required: The given field is requeired or not
         :param Sequence['GetAddressRuleAddressFieldLabelArgs'] labels: Label information
         :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-        :param str name: The field name
+        :param str name: User friendly name
         """
         pulumi.set(__self__, "formats", formats)
         pulumi.set(__self__, "is_required", is_required)
@@ -2297,7 +2310,7 @@ class GetAddressRuleAddressFieldResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The field name
+        User friendly name
         """
         return pulumi.get(self, "name")
 
@@ -2309,7 +2322,7 @@ class GetAddressRuleAddressFieldFormatResult(dict):
                  value: str):
         """
         :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
+        :param str value: Value
         """
         pulumi.set(__self__, "example", example)
         pulumi.set(__self__, "value", value)
@@ -2326,7 +2339,7 @@ class GetAddressRuleAddressFieldFormatResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        Language token of the required label
+        Value
         """
         return pulumi.get(self, "value")
 
@@ -2338,7 +2351,7 @@ class GetAddressRuleAddressFieldLabelResult(dict):
                  value: str):
         """
         :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
+        :param str value: Value
         """
         pulumi.set(__self__, "example", example)
         pulumi.set(__self__, "value", value)
@@ -2355,7 +2368,7 @@ class GetAddressRuleAddressFieldLabelResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        Language token of the required label
+        Value
         """
         return pulumi.get(self, "value")
 
@@ -2391,7 +2404,7 @@ class GetAddressRuleContactFieldResult(dict):
         :param bool is_required: The given field is requeired or not
         :param Sequence['GetAddressRuleContactFieldLabelArgs'] labels: Label information
         :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-        :param str name: The field name
+        :param str name: User friendly name
         """
         pulumi.set(__self__, "formats", formats)
         pulumi.set(__self__, "is_required", is_required)
@@ -2435,7 +2448,7 @@ class GetAddressRuleContactFieldResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The field name
+        User friendly name
         """
         return pulumi.get(self, "name")
 
@@ -2447,7 +2460,7 @@ class GetAddressRuleContactFieldFormatResult(dict):
                  value: str):
         """
         :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
+        :param str value: Value
         """
         pulumi.set(__self__, "example", example)
         pulumi.set(__self__, "value", value)
@@ -2464,7 +2477,7 @@ class GetAddressRuleContactFieldFormatResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        Language token of the required label
+        Value
         """
         return pulumi.get(self, "value")
 
@@ -2476,7 +2489,7 @@ class GetAddressRuleContactFieldLabelResult(dict):
                  value: str):
         """
         :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
+        :param str value: Value
         """
         pulumi.set(__self__, "example", example)
         pulumi.set(__self__, "value", value)
@@ -2493,7 +2506,7 @@ class GetAddressRuleContactFieldLabelResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        Language token of the required label
+        Value
         """
         return pulumi.get(self, "value")
 
@@ -2501,11 +2514,14 @@ class GetAddressRuleContactFieldLabelResult(dict):
 @pulumi.output_type
 class GetAddressRuleTaxResult(dict):
     def __init__(__self__, *,
-                 fields: Sequence['outputs.GetAddressRuleTaxFieldResult']):
+                 fields: Sequence['outputs.GetAddressRuleTaxFieldResult'],
+                 value_sets: Sequence['outputs.GetAddressRuleTaxValueSetResult']):
         """
         :param Sequence['GetAddressRuleTaxFieldArgs'] fields: Tax type rule fields
+        :param Sequence['GetAddressRuleTaxValueSetArgs'] value_sets: Label value pair for allowed values. Used for GIRO
         """
         pulumi.set(__self__, "fields", fields)
+        pulumi.set(__self__, "value_sets", value_sets)
 
     @property
     @pulumi.getter
@@ -2514,6 +2530,14 @@ class GetAddressRuleTaxResult(dict):
         Tax type rule fields
         """
         return pulumi.get(self, "fields")
+
+    @property
+    @pulumi.getter(name="valueSets")
+    def value_sets(self) -> Sequence['outputs.GetAddressRuleTaxValueSetResult']:
+        """
+        Label value pair for allowed values. Used for GIRO
+        """
+        return pulumi.get(self, "value_sets")
 
 
 @pulumi.output_type
@@ -2529,7 +2553,7 @@ class GetAddressRuleTaxFieldResult(dict):
         :param bool is_required: The given field is requeired or not
         :param Sequence['GetAddressRuleTaxFieldLabelArgs'] labels: Label information
         :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-        :param str name: The field name
+        :param str name: User friendly name
         """
         pulumi.set(__self__, "formats", formats)
         pulumi.set(__self__, "is_required", is_required)
@@ -2573,7 +2597,7 @@ class GetAddressRuleTaxFieldResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The field name
+        User friendly name
         """
         return pulumi.get(self, "name")
 
@@ -2585,7 +2609,7 @@ class GetAddressRuleTaxFieldFormatResult(dict):
                  value: str):
         """
         :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
+        :param str value: Value
         """
         pulumi.set(__self__, "example", example)
         pulumi.set(__self__, "value", value)
@@ -2602,7 +2626,7 @@ class GetAddressRuleTaxFieldFormatResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        Language token of the required label
+        Value
         """
         return pulumi.get(self, "value")
 
@@ -2614,7 +2638,7 @@ class GetAddressRuleTaxFieldLabelResult(dict):
                  value: str):
         """
         :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
+        :param str value: Value
         """
         pulumi.set(__self__, "example", example)
         pulumi.set(__self__, "value", value)
@@ -2631,7 +2655,36 @@ class GetAddressRuleTaxFieldLabelResult(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        Language token of the required label
+        Value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAddressRuleTaxValueSetResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: User friendly name
+        :param str value: Value
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        User friendly name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value
         """
         return pulumi.get(self, "value")
 
@@ -5516,23 +5569,34 @@ class GetSubscriptionSubscriptionTaxInfoResult(dict):
 @pulumi.output_type
 class GetSubscriptionTaxInfoResult(dict):
     def __init__(__self__, *,
+                 giro: str,
                  no_tax_reason_code: str,
                  no_tax_reason_code_details: str,
                  tax_cnpj: str,
                  tax_payer_id: str,
                  tax_reg_number: str):
         """
+        :param str giro: Companies' GIRO code
         :param str no_tax_reason_code: Tax exemption reason code.
         :param str no_tax_reason_code_details: Tax exemption reason description.
         :param str tax_cnpj: Brazilian companies' CNPJ number.
         :param str tax_payer_id: Tay payer identifier.
         :param str tax_reg_number: Tax registration number.
         """
+        pulumi.set(__self__, "giro", giro)
         pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
         pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
         pulumi.set(__self__, "tax_cnpj", tax_cnpj)
         pulumi.set(__self__, "tax_payer_id", tax_payer_id)
         pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+
+    @property
+    @pulumi.getter
+    def giro(self) -> str:
+        """
+        Companies' GIRO code
+        """
+        return pulumi.get(self, "giro")
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -7134,23 +7198,34 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult(dict):
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemTaxInfoResult(dict):
     def __init__(__self__, *,
+                 giro: str,
                  no_tax_reason_code: str,
                  no_tax_reason_code_details: str,
                  tax_cnpj: str,
                  tax_payer_id: str,
                  tax_reg_number: str):
         """
+        :param str giro: Companies' GIRO code
         :param str no_tax_reason_code: Tax exemption reason code.
         :param str no_tax_reason_code_details: Tax exemption reason description.
         :param str tax_cnpj: Brazilian companies' CNPJ number.
         :param str tax_payer_id: Tay payer identifier.
         :param str tax_reg_number: Tax registration number.
         """
+        pulumi.set(__self__, "giro", giro)
         pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
         pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
         pulumi.set(__self__, "tax_cnpj", tax_cnpj)
         pulumi.set(__self__, "tax_payer_id", tax_payer_id)
         pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+
+    @property
+    @pulumi.getter
+    def giro(self) -> str:
+        """
+        Companies' GIRO code
+        """
+        return pulumi.get(self, "giro")
 
     @property
     @pulumi.getter(name="noTaxReasonCode")

@@ -30,8 +30,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseCursorCacheStatements(ctx, &databasemanagement.GetManagedDatabaseCursorCacheStatementsArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				SqlText:           pulumi.StringRef(_var.Managed_database_cursor_cache_statement_sql_text),
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_cursor_cache_statement_opc_named_credential_id),
+//				SqlText:              pulumi.StringRef(_var.Managed_database_cursor_cache_statement_sql_text),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -57,6 +58,8 @@ type GetManagedDatabaseCursorCacheStatementsArgs struct {
 	Limit   *int                                            `pulumi:"limit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 	SqlText *string `pulumi:"sqlText"`
 }
@@ -67,9 +70,10 @@ type GetManagedDatabaseCursorCacheStatementsResult struct {
 	CursorCacheStatementCollections []GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection `pulumi:"cursorCacheStatementCollections"`
 	Filters                         []GetManagedDatabaseCursorCacheStatementsFilter                         `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	Limit             *int   `pulumi:"limit"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                   string  `pulumi:"id"`
+	Limit                *int    `pulumi:"limit"`
+	ManagedDatabaseId    string  `pulumi:"managedDatabaseId"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The first thousand characters of the SQL text.
 	SqlText *string `pulumi:"sqlText"`
 }
@@ -93,6 +97,8 @@ type GetManagedDatabaseCursorCacheStatementsOutputArgs struct {
 	Limit   pulumi.IntPtrInput                                      `pulumi:"limit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 	SqlText pulumi.StringPtrInput `pulumi:"sqlText"`
 }
@@ -140,6 +146,10 @@ func (o GetManagedDatabaseCursorCacheStatementsResultOutput) Limit() pulumi.IntP
 
 func (o GetManagedDatabaseCursorCacheStatementsResultOutput) ManagedDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsResult) string { return v.ManagedDatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 // The first thousand characters of the SQL text.

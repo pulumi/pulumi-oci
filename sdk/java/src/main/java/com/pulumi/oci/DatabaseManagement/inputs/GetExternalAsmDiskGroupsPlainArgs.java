@@ -39,11 +39,27 @@ public final class GetExternalAsmDiskGroupsPlainArgs extends com.pulumi.resource
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable String opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
     private GetExternalAsmDiskGroupsPlainArgs() {}
 
     private GetExternalAsmDiskGroupsPlainArgs(GetExternalAsmDiskGroupsPlainArgs $) {
         this.externalAsmId = $.externalAsmId;
         this.filters = $.filters;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
     }
 
     public static Builder builder() {
@@ -82,6 +98,17 @@ public final class GetExternalAsmDiskGroupsPlainArgs extends com.pulumi.resource
 
         public Builder filters(GetExternalAsmDiskGroupsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
         }
 
         public GetExternalAsmDiskGroupsPlainArgs build() {

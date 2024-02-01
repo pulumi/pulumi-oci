@@ -61,6 +61,8 @@ type LookupWorkspaceImportRequestArgs struct {
 
 // A collection of values returned by getWorkspaceImportRequest.
 type LookupWorkspaceImportRequestResult struct {
+	// This field controls if the data asset references will be included during import.
+	AreDataAssetReferencesIncluded bool `pulumi:"areDataAssetReferencesIncluded"`
 	// The name of the Object Storage Bucket where the objects will be imported from
 	Bucket string `pulumi:"bucket"`
 	// Name of the user who initiated import request.
@@ -134,6 +136,11 @@ func (o LookupWorkspaceImportRequestResultOutput) ToLookupWorkspaceImportRequest
 
 func (o LookupWorkspaceImportRequestResultOutput) ToLookupWorkspaceImportRequestResultOutputWithContext(ctx context.Context) LookupWorkspaceImportRequestResultOutput {
 	return o
+}
+
+// This field controls if the data asset references will be included during import.
+func (o LookupWorkspaceImportRequestResultOutput) AreDataAssetReferencesIncluded() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupWorkspaceImportRequestResult) bool { return v.AreDataAssetReferencesIncluded }).(pulumi.BoolOutput)
 }
 
 // The name of the Object Storage Bucket where the objects will be imported from

@@ -48,6 +48,21 @@ public final class GetManagedDatabaseCursorCacheStatementsPlainArgs extends com.
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable String opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%&#39; symbol as a wildcard.
      * 
      */
@@ -68,6 +83,7 @@ public final class GetManagedDatabaseCursorCacheStatementsPlainArgs extends com.
         this.filters = $.filters;
         this.limit = $.limit;
         this.managedDatabaseId = $.managedDatabaseId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.sqlText = $.sqlText;
     }
 
@@ -111,6 +127,17 @@ public final class GetManagedDatabaseCursorCacheStatementsPlainArgs extends com.
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             $.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
 

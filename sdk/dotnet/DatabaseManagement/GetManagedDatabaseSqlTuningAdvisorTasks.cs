@@ -33,6 +33,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         Name = @var.Managed_database_sql_tuning_advisor_task_name,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_task_opc_named_credential_id,
         ///         Status = @var.Managed_database_sql_tuning_advisor_task_status,
         ///         TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
         ///         TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to,
@@ -68,6 +69,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         Name = @var.Managed_database_sql_tuning_advisor_task_name,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_task_opc_named_credential_id,
         ///         Status = @var.Managed_database_sql_tuning_advisor_task_status,
         ///         TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
         ///         TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to,
@@ -104,6 +106,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
+
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
 
         /// <summary>
         /// The optional query parameter to filter the SQL Tuning Advisor task list by status.
@@ -152,6 +160,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// The optional query parameter to filter the SQL Tuning Advisor task list by status.
         /// </summary>
         [Input("status")]
@@ -189,6 +203,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The name of the SQL Tuning Advisor task.
         /// </summary>
         public readonly string? Name;
+        public readonly string? OpcNamedCredentialId;
         /// <summary>
         /// The list of sql_tuning_advisor_task_collection.
         /// </summary>
@@ -207,6 +222,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string? name,
 
+            string? opcNamedCredentialId,
+
             ImmutableArray<Outputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionResult> sqlTuningAdvisorTaskCollections,
 
             string? status,
@@ -219,6 +236,7 @@ namespace Pulumi.Oci.DatabaseManagement
             Id = id;
             ManagedDatabaseId = managedDatabaseId;
             Name = name;
+            OpcNamedCredentialId = opcNamedCredentialId;
             SqlTuningAdvisorTaskCollections = sqlTuningAdvisorTaskCollections;
             Status = status;
             TimeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;

@@ -25,11 +25,14 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
     private String id;
     private @Nullable Boolean isAccepted;
     private @Nullable Boolean isAdaptive;
+    private @Nullable Boolean isAutoPurged;
     private @Nullable Boolean isEnabled;
     private @Nullable Boolean isFixed;
+    private @Nullable Boolean isNeverExecuted;
     private @Nullable Boolean isReproduced;
     private @Nullable Integer limit;
     private String managedDatabaseId;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The origin of the SQL plan baseline.
      * 
@@ -73,11 +76,17 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
     public Optional<Boolean> isAdaptive() {
         return Optional.ofNullable(this.isAdaptive);
     }
+    public Optional<Boolean> isAutoPurged() {
+        return Optional.ofNullable(this.isAutoPurged);
+    }
     public Optional<Boolean> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
     }
     public Optional<Boolean> isFixed() {
         return Optional.ofNullable(this.isFixed);
+    }
+    public Optional<Boolean> isNeverExecuted() {
+        return Optional.ofNullable(this.isNeverExecuted);
     }
     public Optional<Boolean> isReproduced() {
         return Optional.ofNullable(this.isReproduced);
@@ -87,6 +96,9 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
+    }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
     }
     /**
      * @return The origin of the SQL plan baseline.
@@ -137,11 +149,14 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
         private String id;
         private @Nullable Boolean isAccepted;
         private @Nullable Boolean isAdaptive;
+        private @Nullable Boolean isAutoPurged;
         private @Nullable Boolean isEnabled;
         private @Nullable Boolean isFixed;
+        private @Nullable Boolean isNeverExecuted;
         private @Nullable Boolean isReproduced;
         private @Nullable Integer limit;
         private String managedDatabaseId;
+        private @Nullable String opcNamedCredentialId;
         private @Nullable String origin;
         private @Nullable String planName;
         private @Nullable String sqlHandle;
@@ -154,11 +169,14 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
     	      this.id = defaults.id;
     	      this.isAccepted = defaults.isAccepted;
     	      this.isAdaptive = defaults.isAdaptive;
+    	      this.isAutoPurged = defaults.isAutoPurged;
     	      this.isEnabled = defaults.isEnabled;
     	      this.isFixed = defaults.isFixed;
+    	      this.isNeverExecuted = defaults.isNeverExecuted;
     	      this.isReproduced = defaults.isReproduced;
     	      this.limit = defaults.limit;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.origin = defaults.origin;
     	      this.planName = defaults.planName;
     	      this.sqlHandle = defaults.sqlHandle;
@@ -196,6 +214,12 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isAutoPurged(@Nullable Boolean isAutoPurged) {
+
+            this.isAutoPurged = isAutoPurged;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
 
             this.isEnabled = isEnabled;
@@ -205,6 +229,12 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
         public Builder isFixed(@Nullable Boolean isFixed) {
 
             this.isFixed = isFixed;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isNeverExecuted(@Nullable Boolean isNeverExecuted) {
+
+            this.isNeverExecuted = isNeverExecuted;
             return this;
         }
         @CustomType.Setter
@@ -225,6 +255,12 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
               throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselinesResult", "managedDatabaseId");
             }
             this.managedDatabaseId = managedDatabaseId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
         @CustomType.Setter
@@ -268,11 +304,14 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
             _resultValue.id = id;
             _resultValue.isAccepted = isAccepted;
             _resultValue.isAdaptive = isAdaptive;
+            _resultValue.isAutoPurged = isAutoPurged;
             _resultValue.isEnabled = isEnabled;
             _resultValue.isFixed = isFixed;
+            _resultValue.isNeverExecuted = isNeverExecuted;
             _resultValue.isReproduced = isReproduced;
             _resultValue.limit = limit;
             _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.origin = origin;
             _resultValue.planName = planName;
             _resultValue.sqlHandle = sqlHandle;

@@ -32,6 +32,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testExternalAsmUsers = Oci.DatabaseManagement.GetExternalAsmUsers.Invoke(new()
         ///     {
         ///         ExternalAsmId = oci_database_management_external_asm.Test_external_asm.Id,
+        ///         OpcNamedCredentialId = @var.External_asm_user_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testExternalAsmUsers = Oci.DatabaseManagement.GetExternalAsmUsers.Invoke(new()
         ///     {
         ///         ExternalAsmId = oci_database_management_external_asm.Test_external_asm.Id,
+        ///         OpcNamedCredentialId = @var.External_asm_user_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -91,6 +93,12 @@ namespace Pulumi.Oci.DatabaseManagement
             set => _filters = value;
         }
 
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
+
         public GetExternalAsmUsersArgs()
         {
         }
@@ -113,6 +121,12 @@ namespace Pulumi.Oci.DatabaseManagement
             set => _filters = value;
         }
 
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
         public GetExternalAsmUsersInvokeArgs()
         {
         }
@@ -133,6 +147,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? OpcNamedCredentialId;
 
         [OutputConstructor]
         private GetExternalAsmUsersResult(
@@ -142,12 +157,15 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetExternalAsmUsersFilterResult> filters,
 
-            string id)
+            string id,
+
+            string? opcNamedCredentialId)
         {
             ExternalAsmId = externalAsmId;
             ExternalAsmUserCollections = externalAsmUserCollections;
             Filters = filters;
             Id = id;
+            OpcNamedCredentialId = opcNamedCredentialId;
         }
     }
 }

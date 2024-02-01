@@ -27,6 +27,7 @@ public final class GetManagedDatabasesUserProxyUsersResult {
      * 
      */
     private @Nullable String name;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return The list of proxy_user_collection.
      * 
@@ -55,6 +56,9 @@ public final class GetManagedDatabasesUserProxyUsersResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return The list of proxy_user_collection.
      * 
@@ -79,6 +83,7 @@ public final class GetManagedDatabasesUserProxyUsersResult {
         private String id;
         private String managedDatabaseId;
         private @Nullable String name;
+        private @Nullable String opcNamedCredentialId;
         private List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections;
         private String userName;
         public Builder() {}
@@ -88,6 +93,7 @@ public final class GetManagedDatabasesUserProxyUsersResult {
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.name = defaults.name;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.proxyUserCollections = defaults.proxyUserCollections;
     	      this.userName = defaults.userName;
         }
@@ -124,6 +130,12 @@ public final class GetManagedDatabasesUserProxyUsersResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder proxyUserCollections(List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections) {
             if (proxyUserCollections == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabasesUserProxyUsersResult", "proxyUserCollections");
@@ -148,6 +160,7 @@ public final class GetManagedDatabasesUserProxyUsersResult {
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.name = name;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.proxyUserCollections = proxyUserCollections;
             _resultValue.userName = userName;
             return _resultValue;

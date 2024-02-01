@@ -35,7 +35,7 @@ public final class GetAddressRuleTaxField {
      */
     private String language;
     /**
-     * @return The field name
+     * @return User friendly name
      * 
      */
     private String name;
@@ -70,7 +70,7 @@ public final class GetAddressRuleTaxField {
         return this.language;
     }
     /**
-     * @return The field name
+     * @return User friendly name
      * 
      */
     public String name() {

@@ -565,6 +565,16 @@ export const getManagedMySqlDatabases: typeof import("./getManagedMySqlDatabases
 export const getManagedMySqlDatabasesOutput: typeof import("./getManagedMySqlDatabases").getManagedMySqlDatabasesOutput = null as any;
 utilities.lazyLoad(exports, ["getManagedMySqlDatabases","getManagedMySqlDatabasesOutput"], () => require("./getManagedMySqlDatabases"));
 
+export { GetNamedCredentialArgs, GetNamedCredentialResult, GetNamedCredentialOutputArgs } from "./getNamedCredential";
+export const getNamedCredential: typeof import("./getNamedCredential").getNamedCredential = null as any;
+export const getNamedCredentialOutput: typeof import("./getNamedCredential").getNamedCredentialOutput = null as any;
+utilities.lazyLoad(exports, ["getNamedCredential","getNamedCredentialOutput"], () => require("./getNamedCredential"));
+
+export { GetNamedCredentialsArgs, GetNamedCredentialsResult, GetNamedCredentialsOutputArgs } from "./getNamedCredentials";
+export const getNamedCredentials: typeof import("./getNamedCredentials").getNamedCredentials = null as any;
+export const getNamedCredentialsOutput: typeof import("./getNamedCredentials").getNamedCredentialsOutput = null as any;
+utilities.lazyLoad(exports, ["getNamedCredentials","getNamedCredentialsOutput"], () => require("./getNamedCredentials"));
+
 export { ManagedDatabaseGroupArgs, ManagedDatabaseGroupState } from "./managedDatabaseGroup";
 export type ManagedDatabaseGroup = import("./managedDatabaseGroup").ManagedDatabaseGroup;
 export const ManagedDatabaseGroup: typeof import("./managedDatabaseGroup").ManagedDatabaseGroup = null as any;
@@ -579,6 +589,11 @@ export { ManagedDatabasesResetDatabaseParameterArgs, ManagedDatabasesResetDataba
 export type ManagedDatabasesResetDatabaseParameter = import("./managedDatabasesResetDatabaseParameter").ManagedDatabasesResetDatabaseParameter;
 export const ManagedDatabasesResetDatabaseParameter: typeof import("./managedDatabasesResetDatabaseParameter").ManagedDatabasesResetDatabaseParameter = null as any;
 utilities.lazyLoad(exports, ["ManagedDatabasesResetDatabaseParameter"], () => require("./managedDatabasesResetDatabaseParameter"));
+
+export { NamedCredentialArgs, NamedCredentialState } from "./namedCredential";
+export type NamedCredential = import("./namedCredential").NamedCredential;
+export const NamedCredential: typeof import("./namedCredential").NamedCredential = null as any;
+utilities.lazyLoad(exports, ["NamedCredential"], () => require("./namedCredential"));
 
 
 const _module = {
@@ -619,6 +634,8 @@ const _module = {
                 return new ManagedDatabasesChangeDatabaseParameter(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/managedDatabasesResetDatabaseParameter:ManagedDatabasesResetDatabaseParameter":
                 return new ManagedDatabasesResetDatabaseParameter(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/namedCredential:NamedCredential":
+                return new NamedCredential(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -641,3 +658,4 @@ pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalListene
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabaseGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabasesChangeDatabaseParameter", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabasesResetDatabaseParameter", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/namedCredential", _module)

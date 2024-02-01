@@ -14,6 +14,10 @@ namespace Pulumi.Oci.OspGateway.Outputs
     public sealed class SubscriptionTaxInfo
     {
         /// <summary>
+        /// Companies' GIRO code
+        /// </summary>
+        public readonly string? Giro;
+        /// <summary>
         /// (Updatable) Tax exemption reason code.
         /// </summary>
         public readonly string? NoTaxReasonCode;
@@ -36,6 +40,8 @@ namespace Pulumi.Oci.OspGateway.Outputs
 
         [OutputConstructor]
         private SubscriptionTaxInfo(
+            string? giro,
+
             string? noTaxReasonCode,
 
             string? noTaxReasonCodeDetails,
@@ -46,6 +52,7 @@ namespace Pulumi.Oci.OspGateway.Outputs
 
             string? taxRegNumber)
         {
+            Giro = giro;
             NoTaxReasonCode = noTaxReasonCode;
             NoTaxReasonCodeDetails = noTaxReasonCodeDetails;
             TaxCnpj = taxCnpj;

@@ -19,6 +19,7 @@ class WorkspaceImportRequestArgs:
                  bucket: pulumi.Input[str],
                  file_name: pulumi.Input[str],
                  workspace_id: pulumi.Input[str],
+                 are_data_asset_references_included: Optional[pulumi.Input[bool]] = None,
                  import_conflict_resolution: Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']] = None,
                  object_key_for_import: Optional[pulumi.Input[str]] = None,
                  object_storage_region: Optional[pulumi.Input[str]] = None,
@@ -32,6 +33,7 @@ class WorkspaceImportRequestArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] are_data_asset_references_included: This field controls if the data asset references will be included during import.
         :param pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs'] import_conflict_resolution: Import Objects Conflict resolution.
         :param pulumi.Input[str] object_key_for_import: Key of the object inside which all the objects will be imported
         :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
@@ -40,6 +42,8 @@ class WorkspaceImportRequestArgs:
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "file_name", file_name)
         pulumi.set(__self__, "workspace_id", workspace_id)
+        if are_data_asset_references_included is not None:
+            pulumi.set(__self__, "are_data_asset_references_included", are_data_asset_references_included)
         if import_conflict_resolution is not None:
             pulumi.set(__self__, "import_conflict_resolution", import_conflict_resolution)
         if object_key_for_import is not None:
@@ -88,6 +92,18 @@ class WorkspaceImportRequestArgs:
     @workspace_id.setter
     def workspace_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "workspace_id", value)
+
+    @property
+    @pulumi.getter(name="areDataAssetReferencesIncluded")
+    def are_data_asset_references_included(self) -> Optional[pulumi.Input[bool]]:
+        """
+        This field controls if the data asset references will be included during import.
+        """
+        return pulumi.get(self, "are_data_asset_references_included")
+
+    @are_data_asset_references_included.setter
+    def are_data_asset_references_included(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_data_asset_references_included", value)
 
     @property
     @pulumi.getter(name="importConflictResolution")
@@ -141,6 +157,7 @@ class WorkspaceImportRequestArgs:
 @pulumi.input_type
 class _WorkspaceImportRequestState:
     def __init__(__self__, *,
+                 are_data_asset_references_included: Optional[pulumi.Input[bool]] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  created_by: Optional[pulumi.Input[str]] = None,
                  error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -159,6 +176,7 @@ class _WorkspaceImportRequestState:
                  workspace_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceImportRequest resources.
+        :param pulumi.Input[bool] are_data_asset_references_included: This field controls if the data asset references will be included during import.
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be imported from.
         :param pulumi.Input[str] created_by: Name of the user who initiated import request.
         :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
@@ -180,6 +198,8 @@ class _WorkspaceImportRequestState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if are_data_asset_references_included is not None:
+            pulumi.set(__self__, "are_data_asset_references_included", are_data_asset_references_included)
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
         if created_by is not None:
@@ -212,6 +232,18 @@ class _WorkspaceImportRequestState:
             pulumi.set(__self__, "total_imported_object_count", total_imported_object_count)
         if workspace_id is not None:
             pulumi.set(__self__, "workspace_id", workspace_id)
+
+    @property
+    @pulumi.getter(name="areDataAssetReferencesIncluded")
+    def are_data_asset_references_included(self) -> Optional[pulumi.Input[bool]]:
+        """
+        This field controls if the data asset references will be included during import.
+        """
+        return pulumi.get(self, "are_data_asset_references_included")
+
+    @are_data_asset_references_included.setter
+    def are_data_asset_references_included(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_data_asset_references_included", value)
 
     @property
     @pulumi.getter
@@ -415,6 +447,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 are_data_asset_references_included: Optional[pulumi.Input[bool]] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  file_name: Optional[pulumi.Input[str]] = None,
                  import_conflict_resolution: Optional[pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportConflictResolutionArgs']]] = None,
@@ -438,6 +471,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             bucket=var["workspace_import_request_bucket"],
             file_name=var["workspace_import_request_file_name"],
             workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
+            are_data_asset_references_included=var["workspace_import_request_are_data_asset_references_included"],
             import_conflict_resolution=oci.data_integration.WorkspaceImportRequestImportConflictResolutionArgs(
                 import_conflict_resolution_type=var["workspace_import_request_import_conflict_resolution_import_conflict_resolution_type"],
                 duplicate_prefix=var["workspace_import_request_import_conflict_resolution_duplicate_prefix"],
@@ -458,6 +492,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] are_data_asset_references_included: This field controls if the data asset references will be included during import.
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be imported from.
         :param pulumi.Input[str] file_name: Name of the zip file to be imported.
         :param pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportConflictResolutionArgs']] import_conflict_resolution: Import Objects Conflict resolution.
@@ -491,6 +526,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             bucket=var["workspace_import_request_bucket"],
             file_name=var["workspace_import_request_file_name"],
             workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
+            are_data_asset_references_included=var["workspace_import_request_are_data_asset_references_included"],
             import_conflict_resolution=oci.data_integration.WorkspaceImportRequestImportConflictResolutionArgs(
                 import_conflict_resolution_type=var["workspace_import_request_import_conflict_resolution_import_conflict_resolution_type"],
                 duplicate_prefix=var["workspace_import_request_import_conflict_resolution_duplicate_prefix"],
@@ -524,6 +560,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 are_data_asset_references_included: Optional[pulumi.Input[bool]] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  file_name: Optional[pulumi.Input[str]] = None,
                  import_conflict_resolution: Optional[pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportConflictResolutionArgs']]] = None,
@@ -540,6 +577,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = WorkspaceImportRequestArgs.__new__(WorkspaceImportRequestArgs)
 
+            __props__.__dict__["are_data_asset_references_included"] = are_data_asset_references_included
             if bucket is None and not opts.urn:
                 raise TypeError("Missing required property 'bucket'")
             __props__.__dict__["bucket"] = bucket
@@ -572,6 +610,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            are_data_asset_references_included: Optional[pulumi.Input[bool]] = None,
             bucket: Optional[pulumi.Input[str]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
             error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -595,6 +634,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] are_data_asset_references_included: This field controls if the data asset references will be included during import.
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be imported from.
         :param pulumi.Input[str] created_by: Name of the user who initiated import request.
         :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
@@ -620,6 +660,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
 
         __props__ = _WorkspaceImportRequestState.__new__(_WorkspaceImportRequestState)
 
+        __props__.__dict__["are_data_asset_references_included"] = are_data_asset_references_included
         __props__.__dict__["bucket"] = bucket
         __props__.__dict__["created_by"] = created_by
         __props__.__dict__["error_messages"] = error_messages
@@ -637,6 +678,14 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         __props__.__dict__["total_imported_object_count"] = total_imported_object_count
         __props__.__dict__["workspace_id"] = workspace_id
         return WorkspaceImportRequest(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="areDataAssetReferencesIncluded")
+    def are_data_asset_references_included(self) -> pulumi.Output[bool]:
+        """
+        This field controls if the data asset references will be included during import.
+        """
+        return pulumi.get(self, "are_data_asset_references_included")
 
     @property
     @pulumi.getter

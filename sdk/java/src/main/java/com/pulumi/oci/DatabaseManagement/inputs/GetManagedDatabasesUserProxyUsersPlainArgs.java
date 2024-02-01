@@ -55,6 +55,21 @@ public final class GetManagedDatabasesUserProxyUsersPlainArgs extends com.pulumi
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable String opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * The name of the user whose details are to be viewed.
      * 
      */
@@ -75,6 +90,7 @@ public final class GetManagedDatabasesUserProxyUsersPlainArgs extends com.pulumi
         this.filters = $.filters;
         this.managedDatabaseId = $.managedDatabaseId;
         this.name = $.name;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.userName = $.userName;
     }
 
@@ -124,6 +140,17 @@ public final class GetManagedDatabasesUserProxyUsersPlainArgs extends com.pulumi
          */
         public Builder name(@Nullable String name) {
             $.name = name;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
 

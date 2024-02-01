@@ -35,6 +35,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         SqlObjectId = oci_objectstorage_object.Test_object.Id,
         ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -69,6 +70,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         SqlObjectId = oci_objectstorage_object.Test_object.Id,
         ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -94,6 +96,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("managedDatabaseId", required: true)]
         public string ManagedDatabaseId { get; set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
 
         /// <summary>
         /// The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -128,6 +136,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string> ManagedDatabaseId { get; set; } = null!;
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("sqlObjectId", required: true)]
@@ -158,6 +172,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string Id;
         public readonly string ManagedDatabaseId;
+        public readonly string? OpcNamedCredentialId;
         /// <summary>
         /// A SQL execution plan as a list of steps.
         /// </summary>
@@ -173,6 +188,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string managedDatabaseId,
 
+            string? opcNamedCredentialId,
+
             ImmutableArray<Outputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanResult> plans,
 
             string sqlObjectId,
@@ -182,6 +199,7 @@ namespace Pulumi.Oci.DatabaseManagement
             Attribute = attribute;
             Id = id;
             ManagedDatabaseId = managedDatabaseId;
+            OpcNamedCredentialId = opcNamedCredentialId;
             Plans = plans;
             SqlObjectId = sqlObjectId;
             SqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;

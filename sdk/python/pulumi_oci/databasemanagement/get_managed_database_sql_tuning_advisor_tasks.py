@@ -23,7 +23,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksResult:
     """
     A collection of values returned by getManagedDatabaseSqlTuningAdvisorTasks.
     """
-    def __init__(__self__, filters=None, id=None, managed_database_id=None, name=None, sql_tuning_advisor_task_collections=None, status=None, time_greater_than_or_equal_to=None, time_less_than_or_equal_to=None):
+    def __init__(__self__, filters=None, id=None, managed_database_id=None, name=None, opc_named_credential_id=None, sql_tuning_advisor_task_collections=None, status=None, time_greater_than_or_equal_to=None, time_less_than_or_equal_to=None):
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -36,6 +36,9 @@ class GetManagedDatabaseSqlTuningAdvisorTasksResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if sql_tuning_advisor_task_collections and not isinstance(sql_tuning_advisor_task_collections, list):
             raise TypeError("Expected argument 'sql_tuning_advisor_task_collections' to be a list")
         pulumi.set(__self__, "sql_tuning_advisor_task_collections", sql_tuning_advisor_task_collections)
@@ -76,6 +79,11 @@ class GetManagedDatabaseSqlTuningAdvisorTasksResult:
         return pulumi.get(self, "name")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter(name="sqlTuningAdvisorTaskCollections")
     def sql_tuning_advisor_task_collections(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionResult']:
         """
@@ -109,6 +117,7 @@ class AwaitableGetManagedDatabaseSqlTuningAdvisorTasksResult(GetManagedDatabaseS
             id=self.id,
             managed_database_id=self.managed_database_id,
             name=self.name,
+            opc_named_credential_id=self.opc_named_credential_id,
             sql_tuning_advisor_task_collections=self.sql_tuning_advisor_task_collections,
             status=self.status,
             time_greater_than_or_equal_to=self.time_greater_than_or_equal_to,
@@ -118,6 +127,7 @@ class AwaitableGetManagedDatabaseSqlTuningAdvisorTasksResult(GetManagedDatabaseS
 def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs']]] = None,
                                                   managed_database_id: Optional[str] = None,
                                                   name: Optional[str] = None,
+                                                  opc_named_credential_id: Optional[str] = None,
                                                   status: Optional[str] = None,
                                                   time_greater_than_or_equal_to: Optional[str] = None,
                                                   time_less_than_or_equal_to: Optional[str] = None,
@@ -135,6 +145,7 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[pul
 
     test_managed_database_sql_tuning_advisor_tasks = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         name=var["managed_database_sql_tuning_advisor_task_name"],
+        opc_named_credential_id=var["managed_database_sql_tuning_advisor_task_opc_named_credential_id"],
         status=var["managed_database_sql_tuning_advisor_task_status"],
         time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to"],
         time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to"])
@@ -143,6 +154,7 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[pul
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name: The optional query parameter to filter the SQL Tuning Advisor task list by name.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str status: The optional query parameter to filter the SQL Tuning Advisor task list by status.
     :param str time_greater_than_or_equal_to: The optional greater than or equal to query parameter to filter the timestamp.
     :param str time_less_than_or_equal_to: The optional less than or equal to query parameter to filter the timestamp.
@@ -151,6 +163,7 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[pul
     __args__['filters'] = filters
     __args__['managedDatabaseId'] = managed_database_id
     __args__['name'] = name
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['status'] = status
     __args__['timeGreaterThanOrEqualTo'] = time_greater_than_or_equal_to
     __args__['timeLessThanOrEqualTo'] = time_less_than_or_equal_to
@@ -162,6 +175,7 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[pul
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name=pulumi.get(__ret__, 'name'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         sql_tuning_advisor_task_collections=pulumi.get(__ret__, 'sql_tuning_advisor_task_collections'),
         status=pulumi.get(__ret__, 'status'),
         time_greater_than_or_equal_to=pulumi.get(__ret__, 'time_greater_than_or_equal_to'),
@@ -172,6 +186,7 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[pul
 def get_managed_database_sql_tuning_advisor_tasks_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs']]]]] = None,
                                                          managed_database_id: Optional[pulumi.Input[str]] = None,
                                                          name: Optional[pulumi.Input[Optional[str]]] = None,
+                                                         opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                          status: Optional[pulumi.Input[Optional[str]]] = None,
                                                          time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                          time_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
@@ -189,6 +204,7 @@ def get_managed_database_sql_tuning_advisor_tasks_output(filters: Optional[pulum
 
     test_managed_database_sql_tuning_advisor_tasks = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         name=var["managed_database_sql_tuning_advisor_task_name"],
+        opc_named_credential_id=var["managed_database_sql_tuning_advisor_task_opc_named_credential_id"],
         status=var["managed_database_sql_tuning_advisor_task_status"],
         time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to"],
         time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to"])
@@ -197,6 +213,7 @@ def get_managed_database_sql_tuning_advisor_tasks_output(filters: Optional[pulum
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str name: The optional query parameter to filter the SQL Tuning Advisor task list by name.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str status: The optional query parameter to filter the SQL Tuning Advisor task list by status.
     :param str time_greater_than_or_equal_to: The optional greater than or equal to query parameter to filter the timestamp.
     :param str time_less_than_or_equal_to: The optional less than or equal to query parameter to filter the timestamp.

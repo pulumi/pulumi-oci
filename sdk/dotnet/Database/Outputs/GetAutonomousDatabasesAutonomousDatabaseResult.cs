@@ -352,6 +352,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The URL of the Service Console for the Autonomous Database.
         /// </summary>
         public readonly string ServiceConsoleUrl;
+        public readonly int ShrinkAdbTrigger;
         public readonly string Source;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
@@ -652,6 +653,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string serviceConsoleUrl,
 
+            int shrinkAdbTrigger,
+
             string source,
 
             string sourceId,
@@ -808,6 +811,7 @@ namespace Pulumi.Oci.Database.Outputs
             SecretId = secretId;
             SecretVersionNumber = secretVersionNumber;
             ServiceConsoleUrl = serviceConsoleUrl;
+            ShrinkAdbTrigger = shrinkAdbTrigger;
             Source = source;
             SourceId = sourceId;
             StandbyDbs = standbyDbs;

@@ -30,9 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivileges(ctx, &databasemanagement.GetManagedDatabaseUserConsumerGroupPrivilegesArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				UserName:          oci_identity_user.Test_user.Name,
-//				Name:              pulumi.StringRef(_var.Managed_database_user_consumer_group_privilege_name),
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				UserName:             oci_identity_user.Test_user.Name,
+//				Name:                 pulumi.StringRef(_var.Managed_database_user_consumer_group_privilege_name),
+//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_user_consumer_group_privilege_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,6 +60,8 @@ type GetManagedDatabaseUserConsumerGroupPrivilegesArgs struct {
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// A filter to return only resources that match the entire name.
 	Name *string `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The name of the user whose details are to be viewed.
 	UserName string `pulumi:"userName"`
 }
@@ -72,8 +75,9 @@ type GetManagedDatabaseUserConsumerGroupPrivilegesResult struct {
 	Id                string `pulumi:"id"`
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// The name of the granted consumer group privilege.
-	Name     *string `pulumi:"name"`
-	UserName string  `pulumi:"userName"`
+	Name                 *string `pulumi:"name"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
+	UserName             string  `pulumi:"userName"`
 }
 
 func GetManagedDatabaseUserConsumerGroupPrivilegesOutput(ctx *pulumi.Context, args GetManagedDatabaseUserConsumerGroupPrivilegesOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput {
@@ -96,6 +100,8 @@ type GetManagedDatabaseUserConsumerGroupPrivilegesOutputArgs struct {
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 	// A filter to return only resources that match the entire name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The name of the user whose details are to be viewed.
 	UserName pulumi.StringInput `pulumi:"userName"`
 }
@@ -144,6 +150,10 @@ func (o GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput) ManagedDataba
 // The name of the granted consumer group privilege.
 func (o GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseUserConsumerGroupPrivilegesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserConsumerGroupPrivilegesResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput) UserName() pulumi.StringOutput {

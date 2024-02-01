@@ -34,6 +34,7 @@ import (
 //				ManagedDatabaseId:      oci_database_management_managed_database.Test_managed_database.Id,
 //				SqlObjectId:            oci_objectstorage_object.Test_object.Id,
 //				SqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+//				OpcNamedCredentialId:   pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,6 +60,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs struct {
 	Attribute string `pulumi:"attribute"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SqlObjectId string `pulumi:"sqlObjectId"`
 	// The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -70,8 +73,9 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult struct {
 	// The text string identifying the type of execution plan.
 	Attribute string `pulumi:"attribute"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                   string  `pulumi:"id"`
+	ManagedDatabaseId    string  `pulumi:"managedDatabaseId"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// A SQL execution plan as a list of steps.
 	Plans                  []GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan `pulumi:"plans"`
 	SqlObjectId            string                                                        `pulumi:"sqlObjectId"`
@@ -97,6 +101,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOutputArgs struct {
 	Attribute pulumi.StringInput `pulumi:"attribute"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SqlObjectId pulumi.StringInput `pulumi:"sqlObjectId"`
 	// The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -136,6 +142,12 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResultOutput) Man
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult) string {
 		return v.ManagedDatabaseId
 	}).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult) *string {
+		return v.OpcNamedCredentialId
+	}).(pulumi.StringPtrOutput)
 }
 
 // A SQL execution plan as a list of steps.

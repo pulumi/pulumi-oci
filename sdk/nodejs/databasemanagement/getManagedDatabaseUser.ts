@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  * const testManagedDatabaseUser = oci.DatabaseManagement.getManagedDatabaseUser({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     userName: oci_identity_user.test_user.name,
+ *     opcNamedCredentialId: _var.managed_database_user_opc_named_credential_id,
  * });
  * ```
  */
@@ -26,6 +27,7 @@ export function getManagedDatabaseUser(args: GetManagedDatabaseUserArgs, opts?: 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUser:getManagedDatabaseUser", {
         "managedDatabaseId": args.managedDatabaseId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "userName": args.userName,
     }, opts);
 }
@@ -38,6 +40,10 @@ export interface GetManagedDatabaseUserArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
     /**
      * The name of the user whose details are to be viewed.
      */
@@ -105,6 +111,7 @@ export interface GetManagedDatabaseUserResult {
      * The name of the User.
      */
     readonly name: string;
+    readonly opcNamedCredentialId?: string;
     /**
      * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
      */
@@ -165,6 +172,7 @@ export interface GetManagedDatabaseUserResult {
  * const testManagedDatabaseUser = oci.DatabaseManagement.getManagedDatabaseUser({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     userName: oci_identity_user.test_user.name,
+ *     opcNamedCredentialId: _var.managed_database_user_opc_named_credential_id,
  * });
  * ```
  */
@@ -180,6 +188,10 @@ export interface GetManagedDatabaseUserOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     managedDatabaseId: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * The name of the user whose details are to be viewed.
      */

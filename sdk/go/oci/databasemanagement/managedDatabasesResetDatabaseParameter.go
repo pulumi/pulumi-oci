@@ -31,15 +31,23 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.NewManagedDatabasesResetDatabaseParameter(ctx, "testManagedDatabasesResetDatabaseParameter", &DatabaseManagement.ManagedDatabasesResetDatabaseParameterArgs{
+//				ManagedDatabaseId: pulumi.Any(oci_database_management_managed_database.Test_managed_database.Id),
+//				Parameters:        pulumi.Any(_var.Managed_databases_reset_database_parameter_parameters),
+//				Scope:             pulumi.Any(_var.Managed_databases_reset_database_parameter_scope),
 //				Credentials: &databasemanagement.ManagedDatabasesResetDatabaseParameterCredentialsArgs{
 //					Password: pulumi.Any(_var.Managed_databases_reset_database_parameter_credentials_password),
 //					Role:     pulumi.Any(_var.Managed_databases_reset_database_parameter_credentials_role),
 //					SecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
 //					UserName: pulumi.Any(oci_identity_user.Test_user.Name),
 //				},
-//				ManagedDatabaseId: pulumi.Any(oci_database_management_managed_database.Test_managed_database.Id),
-//				Parameters:        pulumi.Any(_var.Managed_databases_reset_database_parameter_parameters),
-//				Scope:             pulumi.Any(_var.Managed_databases_reset_database_parameter_scope),
+//				DatabaseCredential: &databasemanagement.ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs{
+//					CredentialType:    pulumi.Any(_var.Managed_databases_reset_database_parameter_database_credential_credential_type),
+//					NamedCredentialId: pulumi.Any(oci_database_management_named_credential.Test_named_credential.Id),
+//					Password:          pulumi.Any(_var.Managed_databases_reset_database_parameter_database_credential_password),
+//					PasswordSecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					Role:              pulumi.Any(_var.Managed_databases_reset_database_parameter_database_credential_role),
+//					Username:          pulumi.Any(_var.Managed_databases_reset_database_parameter_database_credential_username),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -56,8 +64,10 @@ import (
 type ManagedDatabasesResetDatabaseParameter struct {
 	pulumi.CustomResourceState
 
-	// The database credentials used to perform management activity.
+	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
 	Credentials ManagedDatabasesResetDatabaseParameterCredentialsOutput `pulumi:"credentials"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredential ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput `pulumi:"databaseCredential"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringOutput `pulumi:"managedDatabaseId"`
 	// A list of database parameter names.
@@ -78,9 +88,6 @@ func NewManagedDatabasesResetDatabaseParameter(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.Credentials == nil {
-		return nil, errors.New("invalid value for required argument 'Credentials'")
-	}
 	if args.ManagedDatabaseId == nil {
 		return nil, errors.New("invalid value for required argument 'ManagedDatabaseId'")
 	}
@@ -113,8 +120,10 @@ func GetManagedDatabasesResetDatabaseParameter(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ManagedDatabasesResetDatabaseParameter resources.
 type managedDatabasesResetDatabaseParameterState struct {
-	// The database credentials used to perform management activity.
+	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
 	Credentials *ManagedDatabasesResetDatabaseParameterCredentials `pulumi:"credentials"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredential *ManagedDatabasesResetDatabaseParameterDatabaseCredential `pulumi:"databaseCredential"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId *string `pulumi:"managedDatabaseId"`
 	// A list of database parameter names.
@@ -129,8 +138,10 @@ type managedDatabasesResetDatabaseParameterState struct {
 }
 
 type ManagedDatabasesResetDatabaseParameterState struct {
-	// The database credentials used to perform management activity.
+	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
 	Credentials ManagedDatabasesResetDatabaseParameterCredentialsPtrInput
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredential ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringPtrInput
 	// A list of database parameter names.
@@ -149,8 +160,10 @@ func (ManagedDatabasesResetDatabaseParameterState) ElementType() reflect.Type {
 }
 
 type managedDatabasesResetDatabaseParameterArgs struct {
-	// The database credentials used to perform management activity.
-	Credentials ManagedDatabasesResetDatabaseParameterCredentials `pulumi:"credentials"`
+	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+	Credentials *ManagedDatabasesResetDatabaseParameterCredentials `pulumi:"credentials"`
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredential *ManagedDatabasesResetDatabaseParameterDatabaseCredential `pulumi:"databaseCredential"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// A list of database parameter names.
@@ -166,8 +179,10 @@ type managedDatabasesResetDatabaseParameterArgs struct {
 
 // The set of arguments for constructing a ManagedDatabasesResetDatabaseParameter resource.
 type ManagedDatabasesResetDatabaseParameterArgs struct {
-	// The database credentials used to perform management activity.
-	Credentials ManagedDatabasesResetDatabaseParameterCredentialsInput
+	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+	Credentials ManagedDatabasesResetDatabaseParameterCredentialsPtrInput
+	// The credential to connect to the database to perform tablespace administration tasks.
+	DatabaseCredential ManagedDatabasesResetDatabaseParameterDatabaseCredentialPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput
 	// A list of database parameter names.
@@ -268,11 +283,18 @@ func (o ManagedDatabasesResetDatabaseParameterOutput) ToManagedDatabasesResetDat
 	return o
 }
 
-// The database credentials used to perform management activity.
+// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
 func (o ManagedDatabasesResetDatabaseParameterOutput) Credentials() ManagedDatabasesResetDatabaseParameterCredentialsOutput {
 	return o.ApplyT(func(v *ManagedDatabasesResetDatabaseParameter) ManagedDatabasesResetDatabaseParameterCredentialsOutput {
 		return v.Credentials
 	}).(ManagedDatabasesResetDatabaseParameterCredentialsOutput)
+}
+
+// The credential to connect to the database to perform tablespace administration tasks.
+func (o ManagedDatabasesResetDatabaseParameterOutput) DatabaseCredential() ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput {
+	return o.ApplyT(func(v *ManagedDatabasesResetDatabaseParameter) ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput {
+		return v.DatabaseCredential
+	}).(ManagedDatabasesResetDatabaseParameterDatabaseCredentialOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

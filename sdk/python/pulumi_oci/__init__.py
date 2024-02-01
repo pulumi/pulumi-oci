@@ -1728,6 +1728,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataIntegration/workspaceApplicationPatch",
+  "fqn": "pulumi_oci.dataintegration",
+  "classes": {
+   "oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch": "WorkspaceApplicationPatch"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataIntegration/workspaceExportRequest",
   "fqn": "pulumi_oci.dataintegration",
   "classes": {
@@ -2852,6 +2860,14 @@ _utilities.register(
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
    "oci:DatabaseManagement/managedDatabasesResetDatabaseParameter:ManagedDatabasesResetDatabaseParameter": "ManagedDatabasesResetDatabaseParameter"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/namedCredential",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/namedCredential:NamedCredential": "NamedCredential"
   }
  },
  {

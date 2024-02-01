@@ -34,6 +34,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         IsAllowedValuesIncluded = @var.Managed_databases_database_parameter_is_allowed_values_included,
         ///         Name = @var.Managed_databases_database_parameter_name,
+        ///         OpcNamedCredentialId = @var.Managed_databases_database_parameter_opc_named_credential_id,
         ///         Source = @var.Managed_databases_database_parameter_source,
         ///     });
         /// 
@@ -68,6 +69,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
         ///         IsAllowedValuesIncluded = @var.Managed_databases_database_parameter_is_allowed_values_included,
         ///         Name = @var.Managed_databases_database_parameter_name,
+        ///         OpcNamedCredentialId = @var.Managed_databases_database_parameter_opc_named_credential_id,
         ///         Source = @var.Managed_databases_database_parameter_source,
         ///     });
         /// 
@@ -110,6 +112,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public string? Name { get; set; }
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
         /// </summary>
         [Input("source")]
@@ -150,6 +158,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
+        /// <summary>
         /// The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
         /// </summary>
         [Input("source")]
@@ -180,6 +194,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The parameter name.
         /// </summary>
         public readonly string? Name;
+        public readonly string? OpcNamedCredentialId;
         public readonly string? Source;
 
         [OutputConstructor]
@@ -196,6 +211,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string? name,
 
+            string? opcNamedCredentialId,
+
             string? source)
         {
             DatabaseParametersCollections = databaseParametersCollections;
@@ -204,6 +221,7 @@ namespace Pulumi.Oci.DatabaseManagement
             IsAllowedValuesIncluded = isAllowedValuesIncluded;
             ManagedDatabaseId = managedDatabaseId;
             Name = name;
+            OpcNamedCredentialId = opcNamedCredentialId;
             Source = source;
         }
     }

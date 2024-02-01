@@ -19,19 +19,19 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public Input<string>? CredentialName { get; set; }
 
         /// <summary>
-        /// The type of credential used to connect to the ASM instance.
+        /// The type of the credential for tablespace administration tasks.
         /// </summary>
         [Input("credentialType", required: true)]
         public Input<string> CredentialType { get; set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         /// </summary>
         [Input("passwordSecretId")]
         public Input<string>? PasswordSecretId { get; set; }
 
         /// <summary>
-        /// The role of the user connecting to the ASM instance.
+        /// The role of the database user.
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }

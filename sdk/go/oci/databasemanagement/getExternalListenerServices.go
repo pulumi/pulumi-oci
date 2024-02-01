@@ -31,8 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalListenerServices(ctx, &databasemanagement.GetExternalListenerServicesArgs{
-//				ExternalListenerId: oci_database_management_external_listener.Test_external_listener.Id,
-//				ManagedDatabaseId:  oci_database_management_managed_database.Test_managed_database.Id,
+//				ExternalListenerId:   oci_database_management_external_listener.Test_external_listener.Id,
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				OpcNamedCredentialId: pulumi.StringRef(_var.External_listener_service_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,6 +60,8 @@ type GetExternalListenerServicesArgs struct {
 	Filters            []GetExternalListenerServicesFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 }
 
 // A collection of values returned by getExternalListenerServices.
@@ -70,7 +73,8 @@ type GetExternalListenerServicesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	ManagedDatabaseId    string  `pulumi:"managedDatabaseId"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 }
 
 func GetExternalListenerServicesOutput(ctx *pulumi.Context, args GetExternalListenerServicesOutputArgs, opts ...pulumi.InvokeOption) GetExternalListenerServicesResultOutput {
@@ -93,6 +97,8 @@ type GetExternalListenerServicesOutputArgs struct {
 	Filters            GetExternalListenerServicesFilterArrayInput `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 }
 
 func (GetExternalListenerServicesOutputArgs) ElementType() reflect.Type {
@@ -137,6 +143,10 @@ func (o GetExternalListenerServicesResultOutput) Id() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 func (o GetExternalListenerServicesResultOutput) ManagedDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalListenerServicesResult) string { return v.ManagedDatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetExternalListenerServicesResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalListenerServicesResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

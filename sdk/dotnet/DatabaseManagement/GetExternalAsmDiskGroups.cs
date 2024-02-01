@@ -32,6 +32,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testExternalAsmDiskGroups = Oci.DatabaseManagement.GetExternalAsmDiskGroups.Invoke(new()
         ///     {
         ///         ExternalAsmId = oci_database_management_external_asm.Test_external_asm.Id,
+        ///         OpcNamedCredentialId = @var.External_asm_disk_group_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testExternalAsmDiskGroups = Oci.DatabaseManagement.GetExternalAsmDiskGroups.Invoke(new()
         ///     {
         ///         ExternalAsmId = oci_database_management_external_asm.Test_external_asm.Id,
+        ///         OpcNamedCredentialId = @var.External_asm_disk_group_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -91,6 +93,12 @@ namespace Pulumi.Oci.DatabaseManagement
             set => _filters = value;
         }
 
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
+
         public GetExternalAsmDiskGroupsArgs()
         {
         }
@@ -113,6 +121,12 @@ namespace Pulumi.Oci.DatabaseManagement
             set => _filters = value;
         }
 
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
+
         public GetExternalAsmDiskGroupsInvokeArgs()
         {
         }
@@ -133,6 +147,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? OpcNamedCredentialId;
 
         [OutputConstructor]
         private GetExternalAsmDiskGroupsResult(
@@ -142,12 +157,15 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetExternalAsmDiskGroupsFilterResult> filters,
 
-            string id)
+            string id,
+
+            string? opcNamedCredentialId)
         {
             ExternalAsmDiskGroupCollections = externalAsmDiskGroupCollections;
             ExternalAsmId = externalAsmId;
             Filters = filters;
             Id = id;
+            OpcNamedCredentialId = opcNamedCredentialId;
         }
     }
 }

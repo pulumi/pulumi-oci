@@ -203,6 +203,10 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseSqlDataAr
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseSqlDataPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabasesArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabasesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialsPlainArgs;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointAssociatedDatabaseResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointAssociatedDatabasesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointResult;
@@ -301,6 +305,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseConfigur
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseSqlDataResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabasesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetNamedCredentialResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetNamedCredentialsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -1138,6 +1144,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_configuration_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -1177,6 +1184,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_configuration_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -1216,6 +1224,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_configuration_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -1255,6 +1264,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_configuration_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -1294,6 +1304,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_disk_group_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -1333,6 +1344,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_disk_group_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -1372,6 +1384,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_disk_group_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -1411,6 +1424,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_disk_group_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -1852,6 +1866,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -1891,6 +1906,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -1930,6 +1946,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -1969,6 +1986,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
      *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .opcNamedCredentialId(var_.external_asm_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -6884,6 +6902,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
      *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.external_listener_service_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -6925,6 +6944,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
      *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.external_listener_service_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -6966,6 +6986,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
      *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.external_listener_service_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -7007,6 +7028,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
      *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.external_listener_service_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -8880,6 +8902,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.managed_database_cursor_cache_statement_opc_named_credential_id())
      *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
      *             .build());
      * 
@@ -8920,6 +8943,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.managed_database_cursor_cache_statement_opc_named_credential_id())
      *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
      *             .build());
      * 
@@ -8960,6 +8984,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.managed_database_cursor_cache_statement_opc_named_credential_id())
      *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
      *             .build());
      * 
@@ -9000,6 +9025,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.managed_database_cursor_cache_statement_opc_named_credential_id())
      *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
      *             .build());
      * 
@@ -10429,6 +10455,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10469,6 +10496,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10509,6 +10537,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10549,6 +10578,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10590,6 +10620,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_configuration_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10631,6 +10662,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_configuration_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10672,6 +10704,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_configuration_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10713,6 +10746,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_configuration_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10753,6 +10787,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_sql_plan_baseline_job_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_job_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10793,6 +10828,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_sql_plan_baseline_job_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_job_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10833,6 +10869,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_sql_plan_baseline_job_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_job_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10873,6 +10910,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_sql_plan_baseline_job_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_job_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -10889,6 +10927,7 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL plan baselines for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -10914,13 +10953,18 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
      *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
+     *             .isAutoPurged(var_.managed_database_sql_plan_baseline_is_auto_purged())
      *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
      *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
+     *             .isNeverExecuted(var_.managed_database_sql_plan_baseline_is_never_executed())
      *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
      *             .origin(var_.managed_database_sql_plan_baseline_origin())
      *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
      *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
      *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
+     *             .timeLastExecutedGreaterThan(var_.managed_database_sql_plan_baseline_time_last_executed_greater_than())
+     *             .timeLastExecutedLessThan(var_.managed_database_sql_plan_baseline_time_last_executed_less_than())
      *             .build());
      * 
      *     }
@@ -10937,6 +10981,7 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL plan baselines for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -10962,13 +11007,18 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
      *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
+     *             .isAutoPurged(var_.managed_database_sql_plan_baseline_is_auto_purged())
      *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
      *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
+     *             .isNeverExecuted(var_.managed_database_sql_plan_baseline_is_never_executed())
      *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
      *             .origin(var_.managed_database_sql_plan_baseline_origin())
      *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
      *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
      *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
+     *             .timeLastExecutedGreaterThan(var_.managed_database_sql_plan_baseline_time_last_executed_greater_than())
+     *             .timeLastExecutedLessThan(var_.managed_database_sql_plan_baseline_time_last_executed_less_than())
      *             .build());
      * 
      *     }
@@ -10985,6 +11035,7 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL plan baselines for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11010,13 +11061,18 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
      *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
+     *             .isAutoPurged(var_.managed_database_sql_plan_baseline_is_auto_purged())
      *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
      *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
+     *             .isNeverExecuted(var_.managed_database_sql_plan_baseline_is_never_executed())
      *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
      *             .origin(var_.managed_database_sql_plan_baseline_origin())
      *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
      *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
      *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
+     *             .timeLastExecutedGreaterThan(var_.managed_database_sql_plan_baseline_time_last_executed_greater_than())
+     *             .timeLastExecutedLessThan(var_.managed_database_sql_plan_baseline_time_last_executed_less_than())
      *             .build());
      * 
      *     }
@@ -11033,6 +11089,7 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL plan baselines for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11058,13 +11115,18 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
      *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
+     *             .isAutoPurged(var_.managed_database_sql_plan_baseline_is_auto_purged())
      *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
      *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
+     *             .isNeverExecuted(var_.managed_database_sql_plan_baseline_is_never_executed())
      *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
+     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
      *             .origin(var_.managed_database_sql_plan_baseline_origin())
      *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
      *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
      *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
+     *             .timeLastExecutedGreaterThan(var_.managed_database_sql_plan_baseline_time_last_executed_greater_than())
+     *             .timeLastExecutedLessThan(var_.managed_database_sql_plan_baseline_time_last_executed_less_than())
      *             .build());
      * 
      *     }
@@ -11277,6 +11339,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_task_opc_named_credential_id())
      *             .status(var_.managed_database_sql_tuning_advisor_task_status())
      *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
      *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
@@ -11320,6 +11383,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_task_opc_named_credential_id())
      *             .status(var_.managed_database_sql_tuning_advisor_task_status())
      *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
      *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
@@ -11363,6 +11427,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_task_opc_named_credential_id())
      *             .status(var_.managed_database_sql_tuning_advisor_task_status())
      *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
      *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
@@ -11406,6 +11471,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_task_opc_named_credential_id())
      *             .status(var_.managed_database_sql_tuning_advisor_task_status())
      *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
      *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
@@ -11453,6 +11519,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -11497,6 +11564,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -11541,6 +11609,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -11585,6 +11654,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -11813,6 +11883,7 @@ public final class DatabaseManagementFunctions {
      *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
      *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
      *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id())
      *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
      *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
      *             .build());
@@ -11859,6 +11930,7 @@ public final class DatabaseManagementFunctions {
      *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
      *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
      *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id())
      *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
      *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
      *             .build());
@@ -11905,6 +11977,7 @@ public final class DatabaseManagementFunctions {
      *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
      *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
      *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id())
      *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
      *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
      *             .build());
@@ -11951,6 +12024,7 @@ public final class DatabaseManagementFunctions {
      *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
      *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
      *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id())
      *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
      *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
      *             .build());
@@ -12168,6 +12242,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -12211,6 +12286,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -12254,6 +12330,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -12297,6 +12374,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -12339,6 +12417,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -12381,6 +12460,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -12423,6 +12503,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -12465,6 +12546,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .sqlObjectId(oci_objectstorage_object.test_object().id())
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -12507,6 +12589,7 @@ public final class DatabaseManagementFunctions {
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
      *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
      *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id())
      *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
      *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
      *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
@@ -12552,6 +12635,7 @@ public final class DatabaseManagementFunctions {
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
      *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
      *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id())
      *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
      *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
      *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
@@ -12597,6 +12681,7 @@ public final class DatabaseManagementFunctions {
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
      *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
      *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id())
      *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
      *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
      *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
@@ -12642,6 +12727,7 @@ public final class DatabaseManagementFunctions {
      *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
      *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
      *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id())
      *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
      *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
      *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
@@ -12849,6 +12935,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_set_opc_named_credential_id())
      *             .owner(var_.managed_database_sql_tuning_set_owner())
      *             .build());
      * 
@@ -12890,6 +12977,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_set_opc_named_credential_id())
      *             .owner(var_.managed_database_sql_tuning_set_owner())
      *             .build());
      * 
@@ -12931,6 +13019,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_set_opc_named_credential_id())
      *             .owner(var_.managed_database_sql_tuning_set_owner())
      *             .build());
      * 
@@ -12972,6 +13061,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_set_opc_named_credential_id())
      *             .owner(var_.managed_database_sql_tuning_set_owner())
      *             .build());
      * 
@@ -13173,6 +13263,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
+     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -13213,6 +13304,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
+     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -13253,6 +13345,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
+     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -13293,6 +13386,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
+     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -13498,6 +13592,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_consumer_group_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -13539,6 +13634,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_consumer_group_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -13580,6 +13676,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_consumer_group_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -13621,6 +13718,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_consumer_group_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -13826,6 +13924,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_data_access_container_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_data_access_container_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -13867,6 +13966,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_data_access_container_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_data_access_container_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -13908,6 +14008,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_data_access_container_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_data_access_container_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -13949,6 +14050,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_data_access_container_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_data_access_container_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14154,6 +14256,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_object_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_object_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14195,6 +14298,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_object_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_object_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14236,6 +14340,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_object_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_object_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14277,6 +14382,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_object_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_object_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14482,6 +14588,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_proxied_for_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14523,6 +14630,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_proxied_for_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14564,6 +14672,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_proxied_for_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14605,6 +14714,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_proxied_for_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14810,6 +14920,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_role_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_role_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14851,6 +14962,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_role_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_role_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14892,6 +15004,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_role_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_role_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14933,6 +15046,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_database_user_role_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_role_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -14973,6 +15087,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_user_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -15013,6 +15128,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_user_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -15053,6 +15169,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_user_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -15093,6 +15210,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .name(var_.managed_database_user_name())
+     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -15818,6 +15936,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
      *             .name(var_.managed_databases_database_parameter_name())
+     *             .opcNamedCredentialId(var_.managed_databases_database_parameter_opc_named_credential_id())
      *             .source(var_.managed_databases_database_parameter_source())
      *             .build());
      * 
@@ -15860,6 +15979,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
      *             .name(var_.managed_databases_database_parameter_name())
+     *             .opcNamedCredentialId(var_.managed_databases_database_parameter_opc_named_credential_id())
      *             .source(var_.managed_databases_database_parameter_source())
      *             .build());
      * 
@@ -15902,6 +16022,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
      *             .name(var_.managed_databases_database_parameter_name())
+     *             .opcNamedCredentialId(var_.managed_databases_database_parameter_opc_named_credential_id())
      *             .source(var_.managed_databases_database_parameter_source())
      *             .build());
      * 
@@ -15944,6 +16065,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
      *             .name(var_.managed_databases_database_parameter_name())
+     *             .opcNamedCredentialId(var_.managed_databases_database_parameter_opc_named_credential_id())
      *             .source(var_.managed_databases_database_parameter_source())
      *             .build());
      * 
@@ -16150,6 +16272,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .opcNamedCredentialId(var_.managed_databases_user_proxy_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -16191,6 +16314,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .opcNamedCredentialId(var_.managed_databases_user_proxy_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -16232,6 +16356,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .opcNamedCredentialId(var_.managed_databases_user_proxy_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -16273,6 +16398,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .opcNamedCredentialId(var_.managed_databases_user_proxy_user_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -16478,6 +16604,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_databases_user_system_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -16519,6 +16646,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_databases_user_system_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -16560,6 +16688,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_databases_user_system_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -16601,6 +16730,7 @@ public final class DatabaseManagementFunctions {
      *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
      *             .userName(oci_identity_user.test_user().name())
      *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .opcNamedCredentialId(var_.managed_databases_user_system_privilege_opc_named_credential_id())
      *             .build());
      * 
      *     }
@@ -17246,5 +17376,333 @@ public final class DatabaseManagementFunctions {
      */
     public static CompletableFuture<GetManagedMySqlDatabasesResult> getManagedMySqlDatabasesPlain(GetManagedMySqlDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabases:getManagedMySqlDatabases", TypeShape.of(GetManagedMySqlDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Named Credential resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the named credential specified by namedCredentialId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
+     *             .namedCredentialId(oci_database_management_named_credential.test_named_credential().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamedCredentialResult> getNamedCredential(GetNamedCredentialArgs args) {
+        return getNamedCredential(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Named Credential resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the named credential specified by namedCredentialId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
+     *             .namedCredentialId(oci_database_management_named_credential.test_named_credential().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamedCredentialResult> getNamedCredentialPlain(GetNamedCredentialPlainArgs args) {
+        return getNamedCredentialPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Named Credential resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the named credential specified by namedCredentialId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
+     *             .namedCredentialId(oci_database_management_named_credential.test_named_credential().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamedCredentialResult> getNamedCredential(GetNamedCredentialArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getNamedCredential:getNamedCredential", TypeShape.of(GetNamedCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Named Credential resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the named credential specified by namedCredentialId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
+     *             .namedCredentialId(oci_database_management_named_credential.test_named_credential().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamedCredentialResult> getNamedCredentialPlain(GetNamedCredentialPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getNamedCredential:getNamedCredential", TypeShape.of(GetNamedCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a single named credential specified by the name or all the named credentials in a specific compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredentials = DatabaseManagementFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .associatedResource(var_.named_credential_associated_resource())
+     *             .name(var_.named_credential_name())
+     *             .scope(var_.named_credential_scope())
+     *             .type(var_.named_credential_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamedCredentialsResult> getNamedCredentials(GetNamedCredentialsArgs args) {
+        return getNamedCredentials(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a single named credential specified by the name or all the named credentials in a specific compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredentials = DatabaseManagementFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .associatedResource(var_.named_credential_associated_resource())
+     *             .name(var_.named_credential_name())
+     *             .scope(var_.named_credential_scope())
+     *             .type(var_.named_credential_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamedCredentialsResult> getNamedCredentialsPlain(GetNamedCredentialsPlainArgs args) {
+        return getNamedCredentialsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a single named credential specified by the name or all the named credentials in a specific compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredentials = DatabaseManagementFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .associatedResource(var_.named_credential_associated_resource())
+     *             .name(var_.named_credential_name())
+     *             .scope(var_.named_credential_scope())
+     *             .type(var_.named_credential_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamedCredentialsResult> getNamedCredentials(GetNamedCredentialsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getNamedCredentials:getNamedCredentials", TypeShape.of(GetNamedCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a single named credential specified by the name or all the named credentials in a specific compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredentials = DatabaseManagementFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .associatedResource(var_.named_credential_associated_resource())
+     *             .name(var_.named_credential_name())
+     *             .scope(var_.named_credential_scope())
+     *             .type(var_.named_credential_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamedCredentialsResult> getNamedCredentialsPlain(GetNamedCredentialsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getNamedCredentials:getNamedCredentials", TypeShape.of(GetNamedCredentialsResult.class), args, Utilities.withVersion(options));
     }
 }

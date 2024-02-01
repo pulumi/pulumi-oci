@@ -101,6 +101,21 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs extends c
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable Output<String> opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<Output<String>> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * The search period during which the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
      * 
      */
@@ -154,6 +169,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs extends c
         this.findingFilter = $.findingFilter;
         this.indexHashFilter = $.indexHashFilter;
         this.managedDatabaseId = $.managedDatabaseId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.searchPeriod = $.searchPeriod;
         this.sqlTuningAdvisorTaskId = $.sqlTuningAdvisorTaskId;
         this.statsHashFilter = $.statsHashFilter;
@@ -293,6 +309,27 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs extends c
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             return managedDatabaseId(Output.of(managedDatabaseId));
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable Output<String> opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            return opcNamedCredentialId(Output.of(opcNamedCredentialId));
         }
 
         /**

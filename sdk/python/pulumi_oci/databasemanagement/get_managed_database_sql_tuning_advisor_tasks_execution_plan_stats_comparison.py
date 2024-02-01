@@ -22,7 +22,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult:
     """
     A collection of values returned by getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison.
     """
-    def __init__(__self__, execution_id=None, id=None, managed_database_id=None, modifieds=None, originals=None, sql_object_id=None, sql_tuning_advisor_task_id=None):
+    def __init__(__self__, execution_id=None, id=None, managed_database_id=None, modifieds=None, opc_named_credential_id=None, originals=None, sql_object_id=None, sql_tuning_advisor_task_id=None):
         if execution_id and not isinstance(execution_id, str):
             raise TypeError("Expected argument 'execution_id' to be a str")
         pulumi.set(__self__, "execution_id", execution_id)
@@ -35,6 +35,9 @@ class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult:
         if modifieds and not isinstance(modifieds, list):
             raise TypeError("Expected argument 'modifieds' to be a list")
         pulumi.set(__self__, "modifieds", modifieds)
+        if opc_named_credential_id and not isinstance(opc_named_credential_id, str):
+            raise TypeError("Expected argument 'opc_named_credential_id' to be a str")
+        pulumi.set(__self__, "opc_named_credential_id", opc_named_credential_id)
         if originals and not isinstance(originals, list):
             raise TypeError("Expected argument 'originals' to be a list")
         pulumi.set(__self__, "originals", originals)
@@ -72,6 +75,11 @@ class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult:
         return pulumi.get(self, "modifieds")
 
     @property
+    @pulumi.getter(name="opcNamedCredentialId")
+    def opc_named_credential_id(self) -> Optional[str]:
+        return pulumi.get(self, "opc_named_credential_id")
+
+    @property
     @pulumi.getter
     def originals(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalResult']:
         """
@@ -100,6 +108,7 @@ class AwaitableGetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparis
             id=self.id,
             managed_database_id=self.managed_database_id,
             modifieds=self.modifieds,
+            opc_named_credential_id=self.opc_named_credential_id,
             originals=self.originals,
             sql_object_id=self.sql_object_id,
             sql_tuning_advisor_task_id=self.sql_tuning_advisor_task_id)
@@ -107,6 +116,7 @@ class AwaitableGetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparis
 
 def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison(execution_id: Optional[str] = None,
                                                                                   managed_database_id: Optional[str] = None,
+                                                                                  opc_named_credential_id: Optional[str] = None,
                                                                                   sql_object_id: Optional[str] = None,
                                                                                   sql_tuning_advisor_task_id: Optional[str] = None,
                                                                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult:
@@ -126,18 +136,21 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
     test_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison(execution_id=oci_database_management_execution["test_execution"]["id"],
         managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         sql_object_id=oci_objectstorage_object["test_object"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"])
+        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
+        opc_named_credential_id=var["managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id"])
     ```
 
 
     :param str execution_id: The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str sql_object_id: The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
     __args__ = dict()
     __args__['executionId'] = execution_id
     __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
     __args__['sqlObjectId'] = sql_object_id
     __args__['sqlTuningAdvisorTaskId'] = sql_tuning_advisor_task_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -148,6 +161,7 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         modifieds=pulumi.get(__ret__, 'modifieds'),
+        opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         originals=pulumi.get(__ret__, 'originals'),
         sql_object_id=pulumi.get(__ret__, 'sql_object_id'),
         sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'))
@@ -156,6 +170,7 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
 @_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison)
 def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison_output(execution_id: Optional[pulumi.Input[str]] = None,
                                                                                          managed_database_id: Optional[pulumi.Input[str]] = None,
+                                                                                         opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                                          sql_object_id: Optional[pulumi.Input[str]] = None,
                                                                                          sql_tuning_advisor_task_id: Optional[pulumi.Input[str]] = None,
                                                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult]:
@@ -175,12 +190,14 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
     test_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison(execution_id=oci_database_management_execution["test_execution"]["id"],
         managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         sql_object_id=oci_objectstorage_object["test_object"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"])
+        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
+        opc_named_credential_id=var["managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id"])
     ```
 
 
     :param str execution_id: The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str sql_object_id: The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """

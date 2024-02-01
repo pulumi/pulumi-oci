@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredential;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionString;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +29,11 @@ public final class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollect
      * 
      */
     private List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionString> connectionStrings;
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    private List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential> databaseCredentials;
 
     private GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfo() {}
     /**
@@ -51,6 +57,13 @@ public final class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollect
     public List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionString> connectionStrings() {
         return this.connectionStrings;
     }
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    public List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential> databaseCredentials() {
+        return this.databaseCredentials;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -64,12 +77,14 @@ public final class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollect
         private String componentType;
         private List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredential> connectionCredentials;
         private List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionString> connectionStrings;
+        private List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential> databaseCredentials;
         public Builder() {}
         public Builder(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.componentType = defaults.componentType;
     	      this.connectionCredentials = defaults.connectionCredentials;
     	      this.connectionStrings = defaults.connectionStrings;
+    	      this.databaseCredentials = defaults.databaseCredentials;
         }
 
         @CustomType.Setter
@@ -102,11 +117,23 @@ public final class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollect
         public Builder connectionStrings(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
         }
+        @CustomType.Setter
+        public Builder databaseCredentials(List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential> databaseCredentials) {
+            if (databaseCredentials == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfo", "databaseCredentials");
+            }
+            this.databaseCredentials = databaseCredentials;
+            return this;
+        }
+        public Builder databaseCredentials(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoDatabaseCredential... databaseCredentials) {
+            return databaseCredentials(List.of(databaseCredentials));
+        }
         public GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfo build() {
             final var _resultValue = new GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfo();
             _resultValue.componentType = componentType;
             _resultValue.connectionCredentials = connectionCredentials;
             _resultValue.connectionStrings = connectionStrings;
+            _resultValue.databaseCredentials = databaseCredentials;
             return _resultValue;
         }
     }

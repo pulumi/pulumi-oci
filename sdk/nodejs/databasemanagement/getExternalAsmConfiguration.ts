@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalAsmConfiguration = oci.DatabaseManagement.getExternalAsmConfiguration({
  *     externalAsmId: oci_database_management_external_asm.test_external_asm.id,
+ *     opcNamedCredentialId: _var.external_asm_configuration_opc_named_credential_id,
  * });
  * ```
  */
@@ -27,6 +28,7 @@ export function getExternalAsmConfiguration(args: GetExternalAsmConfigurationArg
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", {
         "externalAsmId": args.externalAsmId,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
     }, opts);
 }
 
@@ -38,6 +40,10 @@ export interface GetExternalAsmConfigurationArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
      */
     externalAsmId: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
 }
 
 /**
@@ -53,6 +59,7 @@ export interface GetExternalAsmConfigurationResult {
      * An array of initialization parameters for the external ASM instances.
      */
     readonly initParameters: outputs.DatabaseManagement.GetExternalAsmConfigurationInitParameter[];
+    readonly opcNamedCredentialId?: string;
 }
 /**
  * This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
@@ -67,6 +74,7 @@ export interface GetExternalAsmConfigurationResult {
  *
  * const testExternalAsmConfiguration = oci.DatabaseManagement.getExternalAsmConfiguration({
  *     externalAsmId: oci_database_management_external_asm.test_external_asm.id,
+ *     opcNamedCredentialId: _var.external_asm_configuration_opc_named_credential_id,
  * });
  * ```
  */
@@ -82,4 +90,8 @@ export interface GetExternalAsmConfigurationOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
      */
     externalAsmId: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
 }

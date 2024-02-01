@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs extends com.pulumi.resources.InvokeArgs {
@@ -45,6 +47,21 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs e
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable Output<String> opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<Output<String>> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -79,6 +96,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs e
     private GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs $) {
         this.attribute = $.attribute;
         this.managedDatabaseId = $.managedDatabaseId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.sqlObjectId = $.sqlObjectId;
         this.sqlTuningAdvisorTaskId = $.sqlTuningAdvisorTaskId;
     }
@@ -141,6 +159,27 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs e
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             return managedDatabaseId(Output.of(managedDatabaseId));
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable Output<String> opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            return opcNamedCredentialId(Output.of(opcNamedCredentialId));
         }
 
         /**

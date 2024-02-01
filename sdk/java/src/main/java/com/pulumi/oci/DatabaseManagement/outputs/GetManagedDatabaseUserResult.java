@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUserResult {
@@ -81,6 +83,7 @@ public final class GetManagedDatabaseUserResult {
      * 
      */
     private String name;
+    private @Nullable String opcNamedCredentialId;
     /**
      * @return Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
      * 
@@ -240,6 +243,9 @@ public final class GetManagedDatabaseUserResult {
     public String name() {
         return this.name;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
     /**
      * @return Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
      * 
@@ -345,6 +351,7 @@ public final class GetManagedDatabaseUserResult {
         private String localTempTablespace;
         private String managedDatabaseId;
         private String name;
+        private @Nullable String opcNamedCredentialId;
         private String oracleMaintained;
         private String passwordVersions;
         private String profile;
@@ -375,6 +382,7 @@ public final class GetManagedDatabaseUserResult {
     	      this.localTempTablespace = defaults.localTempTablespace;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
     	      this.name = defaults.name;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
     	      this.oracleMaintained = defaults.oracleMaintained;
     	      this.passwordVersions = defaults.passwordVersions;
     	      this.profile = defaults.profile;
@@ -510,6 +518,12 @@ public final class GetManagedDatabaseUserResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder oracleMaintained(String oracleMaintained) {
             if (oracleMaintained == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseUserResult", "oracleMaintained");
@@ -622,6 +636,7 @@ public final class GetManagedDatabaseUserResult {
             _resultValue.localTempTablespace = localTempTablespace;
             _resultValue.managedDatabaseId = managedDatabaseId;
             _resultValue.name = name;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             _resultValue.oracleMaintained = oracleMaintained;
             _resultValue.passwordVersions = passwordVersions;
             _resultValue.profile = profile;

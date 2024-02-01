@@ -30,7 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalAsmUsers(ctx, &databasemanagement.GetExternalAsmUsersArgs{
-//				ExternalAsmId: oci_database_management_external_asm.Test_external_asm.Id,
+//				ExternalAsmId:        oci_database_management_external_asm.Test_external_asm.Id,
+//				OpcNamedCredentialId: pulumi.StringRef(_var.External_asm_user_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -55,6 +56,8 @@ type GetExternalAsmUsersArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
 	ExternalAsmId string                      `pulumi:"externalAsmId"`
 	Filters       []GetExternalAsmUsersFilter `pulumi:"filters"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 }
 
 // A collection of values returned by getExternalAsmUsers.
@@ -64,7 +67,8 @@ type GetExternalAsmUsersResult struct {
 	ExternalAsmUserCollections []GetExternalAsmUsersExternalAsmUserCollection `pulumi:"externalAsmUserCollections"`
 	Filters                    []GetExternalAsmUsersFilter                    `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                   string  `pulumi:"id"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 }
 
 func GetExternalAsmUsersOutput(ctx *pulumi.Context, args GetExternalAsmUsersOutputArgs, opts ...pulumi.InvokeOption) GetExternalAsmUsersResultOutput {
@@ -85,6 +89,8 @@ type GetExternalAsmUsersOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
 	ExternalAsmId pulumi.StringInput                  `pulumi:"externalAsmId"`
 	Filters       GetExternalAsmUsersFilterArrayInput `pulumi:"filters"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 }
 
 func (GetExternalAsmUsersOutputArgs) ElementType() reflect.Type {
@@ -124,6 +130,10 @@ func (o GetExternalAsmUsersResultOutput) Filters() GetExternalAsmUsersFilterArra
 // The provider-assigned unique ID for this managed resource.
 func (o GetExternalAsmUsersResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalAsmUsersResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetExternalAsmUsersResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmUsersResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

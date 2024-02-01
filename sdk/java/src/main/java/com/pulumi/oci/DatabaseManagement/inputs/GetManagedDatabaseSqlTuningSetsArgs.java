@@ -56,6 +56,21 @@ public final class GetManagedDatabaseSqlTuningSetsArgs extends com.pulumi.resour
     }
 
     /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable Output<String> opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<Output<String>> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
+
+    /**
      * The owner of the SQL tuning set.
      * 
      */
@@ -76,6 +91,7 @@ public final class GetManagedDatabaseSqlTuningSetsArgs extends com.pulumi.resour
         this.filters = $.filters;
         this.managedDatabaseId = $.managedDatabaseId;
         this.nameContains = $.nameContains;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.owner = $.owner;
     }
 
@@ -150,6 +166,27 @@ public final class GetManagedDatabaseSqlTuningSetsArgs extends com.pulumi.resour
          */
         public Builder nameContains(String nameContains) {
             return nameContains(Output.of(nameContains));
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable Output<String> opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            return opcNamedCredentialId(Output.of(opcNamedCredentialId));
         }
 
         /**

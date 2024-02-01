@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testManagedDatabaseSqlTuningAdvisorTasks = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasks({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     name: _var.managed_database_sql_tuning_advisor_task_name,
+ *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_task_opc_named_credential_id,
  *     status: _var.managed_database_sql_tuning_advisor_task_status,
  *     timeGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
  *     timeLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to,
@@ -33,6 +34,7 @@ export function getManagedDatabaseSqlTuningAdvisorTasks(args: GetManagedDatabase
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
         "name": args.name,
+        "opcNamedCredentialId": args.opcNamedCredentialId,
         "status": args.status,
         "timeGreaterThanOrEqualTo": args.timeGreaterThanOrEqualTo,
         "timeLessThanOrEqualTo": args.timeLessThanOrEqualTo,
@@ -52,6 +54,10 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksArgs {
      * The optional query parameter to filter the SQL Tuning Advisor task list by name.
      */
     name?: string;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: string;
     /**
      * The optional query parameter to filter the SQL Tuning Advisor task list by status.
      */
@@ -80,6 +86,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksResult {
      * The name of the SQL Tuning Advisor task.
      */
     readonly name?: string;
+    readonly opcNamedCredentialId?: string;
     /**
      * The list of sql_tuning_advisor_task_collection.
      */
@@ -102,6 +109,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksResult {
  * const testManagedDatabaseSqlTuningAdvisorTasks = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasks({
  *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
  *     name: _var.managed_database_sql_tuning_advisor_task_name,
+ *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_task_opc_named_credential_id,
  *     status: _var.managed_database_sql_tuning_advisor_task_status,
  *     timeGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
  *     timeLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to,
@@ -125,6 +133,10 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksOutputArgs {
      * The optional query parameter to filter the SQL Tuning Advisor task list by name.
      */
     name?: pulumi.Input<string>;
+    /**
+     * The OCID of the Named Credential.
+     */
+    opcNamedCredentialId?: pulumi.Input<string>;
     /**
      * The optional query parameter to filter the SQL Tuning Advisor task list by status.
      */

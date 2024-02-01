@@ -30,8 +30,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseSqlPlanBaseline(ctx, &databasemanagement.GetManagedDatabaseSqlPlanBaselineArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				PlanName:          _var.Managed_database_sql_plan_baseline_plan_name,
+//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
+//				PlanName:             _var.Managed_database_sql_plan_baseline_plan_name,
+//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_sql_plan_baseline_opc_named_credential_id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -55,6 +56,8 @@ func GetManagedDatabaseSqlPlanBaseline(ctx *pulumi.Context, args *GetManagedData
 type GetManagedDatabaseSqlPlanBaselineArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The plan name of the SQL plan baseline.
 	PlanName string `pulumi:"planName"`
 }
@@ -79,7 +82,8 @@ type GetManagedDatabaseSqlPlanBaselineResult struct {
 	Id                string `pulumi:"id"`
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// The application module name.
-	Module string `pulumi:"module"`
+	Module               string  `pulumi:"module"`
+	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
 	// The origin of the SQL plan baseline.
 	Origin string `pulumi:"origin"`
 	// The unique plan identifier.
@@ -115,6 +119,8 @@ func GetManagedDatabaseSqlPlanBaselineOutput(ctx *pulumi.Context, args GetManage
 type GetManagedDatabaseSqlPlanBaselineOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
+	// The OCID of the Named Credential.
+	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
 	// The plan name of the SQL plan baseline.
 	PlanName pulumi.StringInput `pulumi:"planName"`
 }
@@ -185,6 +191,10 @@ func (o GetManagedDatabaseSqlPlanBaselineResultOutput) ManagedDatabaseId() pulum
 // The application module name.
 func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Module() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.Module }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) OpcNamedCredentialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.OpcNamedCredentialId }).(pulumi.StringPtrOutput)
 }
 
 // The origin of the SQL plan baseline.

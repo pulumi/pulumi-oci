@@ -6,6 +6,7 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString;
+import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -29,6 +30,11 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceCo
      * 
      */
     private @Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString> connectionStrings;
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    private @Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential> databaseCredentials;
 
     private ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo() {}
     /**
@@ -52,6 +58,13 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceCo
     public List<ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString> connectionStrings() {
         return this.connectionStrings == null ? List.of() : this.connectionStrings;
     }
+    /**
+     * @return The credential to connect to the database to perform tablespace administration tasks.
+     * 
+     */
+    public List<ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential> databaseCredentials() {
+        return this.databaseCredentials == null ? List.of() : this.databaseCredentials;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -65,12 +78,14 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceCo
         private @Nullable String componentType;
         private @Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential> connectionCredentials;
         private @Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString> connectionStrings;
+        private @Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential> databaseCredentials;
         public Builder() {}
         public Builder(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.componentType = defaults.componentType;
     	      this.connectionCredentials = defaults.connectionCredentials;
     	      this.connectionStrings = defaults.connectionStrings;
+    	      this.databaseCredentials = defaults.databaseCredentials;
         }
 
         @CustomType.Setter
@@ -97,11 +112,21 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceCo
         public Builder connectionStrings(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
         }
+        @CustomType.Setter
+        public Builder databaseCredentials(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential> databaseCredentials) {
+
+            this.databaseCredentials = databaseCredentials;
+            return this;
+        }
+        public Builder databaseCredentials(ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredential... databaseCredentials) {
+            return databaseCredentials(List.of(databaseCredentials));
+        }
         public ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo build() {
             final var _resultValue = new ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo();
             _resultValue.componentType = componentType;
             _resultValue.connectionCredentials = connectionCredentials;
             _resultValue.connectionStrings = connectionStrings;
+            _resultValue.databaseCredentials = databaseCredentials;
             return _resultValue;
         }
     }

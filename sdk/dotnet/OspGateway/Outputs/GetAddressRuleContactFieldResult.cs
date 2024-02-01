@@ -30,7 +30,7 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// </summary>
         public readonly string Language;
         /// <summary>
-        /// The field name
+        /// User friendly name
         /// </summary>
         public readonly string Name;
 

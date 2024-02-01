@@ -32,6 +32,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testExternalAsmConfiguration = Oci.DatabaseManagement.GetExternalAsmConfiguration.Invoke(new()
         ///     {
         ///         ExternalAsmId = oci_database_management_external_asm.Test_external_asm.Id,
+        ///         OpcNamedCredentialId = @var.External_asm_configuration_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testExternalAsmConfiguration = Oci.DatabaseManagement.GetExternalAsmConfiguration.Invoke(new()
         ///     {
         ///         ExternalAsmId = oci_database_management_external_asm.Test_external_asm.Id,
+        ///         OpcNamedCredentialId = @var.External_asm_configuration_opc_named_credential_id,
         ///     });
         /// 
         /// });
@@ -83,6 +85,12 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("externalAsmId", required: true)]
         public string ExternalAsmId { get; set; } = null!;
 
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public string? OpcNamedCredentialId { get; set; }
+
         public GetExternalAsmConfigurationArgs()
         {
         }
@@ -96,6 +104,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("externalAsmId", required: true)]
         public Input<string> ExternalAsmId { get; set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Named Credential.
+        /// </summary>
+        [Input("opcNamedCredentialId")]
+        public Input<string>? OpcNamedCredentialId { get; set; }
 
         public GetExternalAsmConfigurationInvokeArgs()
         {
@@ -116,6 +130,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// An array of initialization parameters for the external ASM instances.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExternalAsmConfigurationInitParameterResult> InitParameters;
+        public readonly string? OpcNamedCredentialId;
 
         [OutputConstructor]
         private GetExternalAsmConfigurationResult(
@@ -123,11 +138,14 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string id,
 
-            ImmutableArray<Outputs.GetExternalAsmConfigurationInitParameterResult> initParameters)
+            ImmutableArray<Outputs.GetExternalAsmConfigurationInitParameterResult> initParameters,
+
+            string? opcNamedCredentialId)
         {
             ExternalAsmId = externalAsmId;
             Id = id;
             InitParameters = initParameters;
+            OpcNamedCredentialId = opcNamedCredentialId;
         }
     }
 }

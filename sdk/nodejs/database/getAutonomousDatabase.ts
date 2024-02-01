@@ -245,6 +245,9 @@ export interface GetAutonomousDatabaseResult {
      * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     readonly isRemoteDataGuardEnabled: boolean;
+    /**
+     * @deprecated The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
+     */
     readonly isShrinkOnly: boolean;
     /**
      * Key History Entry.
@@ -387,6 +390,7 @@ export interface GetAutonomousDatabaseResult {
      * The URL of the Service Console for the Autonomous Database.
      */
     readonly serviceConsoleUrl: string;
+    readonly shrinkAdbTrigger: number;
     readonly source: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.

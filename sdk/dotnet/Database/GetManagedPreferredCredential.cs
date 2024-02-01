@@ -91,6 +91,12 @@ namespace Pulumi.Oci.Database
         [Input("managedDatabaseId", required: true)]
         public string ManagedDatabaseId { get; set; } = null!;
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+        /// </summary>
+        [Input("namedCredentialId")]
+        public string? NamedCredentialId { get; set; }
+
         public GetManagedPreferredCredentialArgs()
         {
         }
@@ -110,6 +116,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("managedDatabaseId", required: true)]
         public Input<string> ManagedDatabaseId { get; set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+        /// </summary>
+        [Input("namedCredentialId")]
+        public Input<string>? NamedCredentialId { get; set; }
 
         public GetManagedPreferredCredentialInvokeArgs()
         {
@@ -134,6 +146,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool IsAccessible;
         public readonly string ManagedDatabaseId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+        /// </summary>
+        public readonly string NamedCredentialId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
         /// </summary>
@@ -165,6 +181,8 @@ namespace Pulumi.Oci.Database
 
             string managedDatabaseId,
 
+            string namedCredentialId,
+
             string passwordSecretId,
 
             string role,
@@ -179,6 +197,7 @@ namespace Pulumi.Oci.Database
             Id = id;
             IsAccessible = isAccessible;
             ManagedDatabaseId = managedDatabaseId;
+            NamedCredentialId = namedCredentialId;
             PasswordSecretId = passwordSecretId;
             Role = role;
             Status = status;

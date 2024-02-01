@@ -10,6 +10,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenerServicesFilt
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -31,6 +32,7 @@ public final class GetExternalListenerServicesResult {
      * 
      */
     private String managedDatabaseId;
+    private @Nullable String opcNamedCredentialId;
 
     private GetExternalListenerServicesResult() {}
     public String externalListenerId() {
@@ -60,6 +62,9 @@ public final class GetExternalListenerServicesResult {
     public String managedDatabaseId() {
         return this.managedDatabaseId;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -75,6 +80,7 @@ public final class GetExternalListenerServicesResult {
         private @Nullable List<GetExternalListenerServicesFilter> filters;
         private String id;
         private String managedDatabaseId;
+        private @Nullable String opcNamedCredentialId;
         public Builder() {}
         public Builder(GetExternalListenerServicesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,6 +89,7 @@ public final class GetExternalListenerServicesResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.managedDatabaseId = defaults.managedDatabaseId;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
         }
 
         @CustomType.Setter
@@ -129,6 +136,12 @@ public final class GetExternalListenerServicesResult {
             this.managedDatabaseId = managedDatabaseId;
             return this;
         }
+        @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
         public GetExternalListenerServicesResult build() {
             final var _resultValue = new GetExternalListenerServicesResult();
             _resultValue.externalListenerId = externalListenerId;
@@ -136,6 +149,7 @@ public final class GetExternalListenerServicesResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             return _resultValue;
         }
     }

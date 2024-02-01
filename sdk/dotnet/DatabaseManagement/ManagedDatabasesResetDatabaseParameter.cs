@@ -26,6 +26,9 @@ namespace Pulumi.Oci.DatabaseManagement
     /// {
     ///     var testManagedDatabasesResetDatabaseParameter = new Oci.DatabaseManagement.ManagedDatabasesResetDatabaseParameter("testManagedDatabasesResetDatabaseParameter", new()
     ///     {
+    ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+    ///         Parameters = @var.Managed_databases_reset_database_parameter_parameters,
+    ///         Scope = @var.Managed_databases_reset_database_parameter_scope,
     ///         Credentials = new Oci.DatabaseManagement.Inputs.ManagedDatabasesResetDatabaseParameterCredentialsArgs
     ///         {
     ///             Password = @var.Managed_databases_reset_database_parameter_credentials_password,
@@ -33,9 +36,15 @@ namespace Pulumi.Oci.DatabaseManagement
     ///             SecretId = oci_vault_secret.Test_secret.Id,
     ///             UserName = oci_identity_user.Test_user.Name,
     ///         },
-    ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-    ///         Parameters = @var.Managed_databases_reset_database_parameter_parameters,
-    ///         Scope = @var.Managed_databases_reset_database_parameter_scope,
+    ///         DatabaseCredential = new Oci.DatabaseManagement.Inputs.ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs
+    ///         {
+    ///             CredentialType = @var.Managed_databases_reset_database_parameter_database_credential_credential_type,
+    ///             NamedCredentialId = oci_database_management_named_credential.Test_named_credential.Id,
+    ///             Password = @var.Managed_databases_reset_database_parameter_database_credential_password,
+    ///             PasswordSecretId = oci_vault_secret.Test_secret.Id,
+    ///             Role = @var.Managed_databases_reset_database_parameter_database_credential_role,
+    ///             Username = @var.Managed_databases_reset_database_parameter_database_credential_username,
+    ///         },
     ///     });
     /// 
     /// });
@@ -49,10 +58,16 @@ namespace Pulumi.Oci.DatabaseManagement
     public partial class ManagedDatabasesResetDatabaseParameter : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The database credentials used to perform management activity.
+        /// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
         /// </summary>
         [Output("credentials")]
         public Output<Outputs.ManagedDatabasesResetDatabaseParameterCredentials> Credentials { get; private set; } = null!;
+
+        /// <summary>
+        /// The credential to connect to the database to perform tablespace administration tasks.
+        /// </summary>
+        [Output("databaseCredential")]
+        public Output<Outputs.ManagedDatabasesResetDatabaseParameterDatabaseCredential> DatabaseCredential { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -125,10 +140,16 @@ namespace Pulumi.Oci.DatabaseManagement
     public sealed class ManagedDatabasesResetDatabaseParameterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The database credentials used to perform management activity.
+        /// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
         /// </summary>
-        [Input("credentials", required: true)]
-        public Input<Inputs.ManagedDatabasesResetDatabaseParameterCredentialsArgs> Credentials { get; set; } = null!;
+        [Input("credentials")]
+        public Input<Inputs.ManagedDatabasesResetDatabaseParameterCredentialsArgs>? Credentials { get; set; }
+
+        /// <summary>
+        /// The credential to connect to the database to perform tablespace administration tasks.
+        /// </summary>
+        [Input("databaseCredential")]
+        public Input<Inputs.ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs>? DatabaseCredential { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -169,10 +190,16 @@ namespace Pulumi.Oci.DatabaseManagement
     public sealed class ManagedDatabasesResetDatabaseParameterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The database credentials used to perform management activity.
+        /// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
         /// </summary>
         [Input("credentials")]
         public Input<Inputs.ManagedDatabasesResetDatabaseParameterCredentialsGetArgs>? Credentials { get; set; }
+
+        /// <summary>
+        /// The credential to connect to the database to perform tablespace administration tasks.
+        /// </summary>
+        [Input("databaseCredential")]
+        public Input<Inputs.ManagedDatabasesResetDatabaseParameterDatabaseCredentialGetArgs>? DatabaseCredential { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

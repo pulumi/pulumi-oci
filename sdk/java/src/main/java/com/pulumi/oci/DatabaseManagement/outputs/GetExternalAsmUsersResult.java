@@ -10,6 +10,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmUsersFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -26,6 +27,7 @@ public final class GetExternalAsmUsersResult {
      * 
      */
     private String id;
+    private @Nullable String opcNamedCredentialId;
 
     private GetExternalAsmUsersResult() {}
     public String externalAsmId() {
@@ -48,6 +50,9 @@ public final class GetExternalAsmUsersResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -62,6 +67,7 @@ public final class GetExternalAsmUsersResult {
         private List<GetExternalAsmUsersExternalAsmUserCollection> externalAsmUserCollections;
         private @Nullable List<GetExternalAsmUsersFilter> filters;
         private String id;
+        private @Nullable String opcNamedCredentialId;
         public Builder() {}
         public Builder(GetExternalAsmUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,6 +75,7 @@ public final class GetExternalAsmUsersResult {
     	      this.externalAsmUserCollections = defaults.externalAsmUserCollections;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.opcNamedCredentialId = defaults.opcNamedCredentialId;
         }
 
         @CustomType.Setter
@@ -107,12 +114,19 @@ public final class GetExternalAsmUsersResult {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
+        public Builder opcNamedCredentialId(@Nullable String opcNamedCredentialId) {
+
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
         public GetExternalAsmUsersResult build() {
             final var _resultValue = new GetExternalAsmUsersResult();
             _resultValue.externalAsmId = externalAsmId;
             _resultValue.externalAsmUserCollections = externalAsmUserCollections;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.opcNamedCredentialId = opcNamedCredentialId;
             return _resultValue;
         }
     }

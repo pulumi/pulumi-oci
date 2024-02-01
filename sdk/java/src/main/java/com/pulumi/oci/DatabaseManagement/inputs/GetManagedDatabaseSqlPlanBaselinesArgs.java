@@ -58,6 +58,21 @@ public final class GetManagedDatabaseSqlPlanBaselinesArgs extends com.pulumi.res
     }
 
     /**
+     * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
+     * 
+     */
+    @Import(name="isAutoPurged")
+    private @Nullable Output<Boolean> isAutoPurged;
+
+    /**
+     * @return A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
+     * 
+     */
+    public Optional<Output<Boolean>> isAutoPurged() {
+        return Optional.ofNullable(this.isAutoPurged);
+    }
+
+    /**
      * A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
      * 
      */
@@ -85,6 +100,21 @@ public final class GetManagedDatabaseSqlPlanBaselinesArgs extends com.pulumi.res
      */
     public Optional<Output<Boolean>> isFixed() {
         return Optional.ofNullable(this.isFixed);
+    }
+
+    /**
+     * A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
+     * 
+     */
+    @Import(name="isNeverExecuted")
+    private @Nullable Output<Boolean> isNeverExecuted;
+
+    /**
+     * @return A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
+     * 
+     */
+    public Optional<Output<Boolean>> isNeverExecuted() {
+        return Optional.ofNullable(this.isNeverExecuted);
     }
 
     /**
@@ -122,6 +152,21 @@ public final class GetManagedDatabaseSqlPlanBaselinesArgs extends com.pulumi.res
      */
     public Output<String> managedDatabaseId() {
         return this.managedDatabaseId;
+    }
+
+    /**
+     * The OCID of the Named Credential.
+     * 
+     */
+    @Import(name="opcNamedCredentialId")
+    private @Nullable Output<String> opcNamedCredentialId;
+
+    /**
+     * @return The OCID of the Named Credential.
+     * 
+     */
+    public Optional<Output<String>> opcNamedCredentialId() {
+        return Optional.ofNullable(this.opcNamedCredentialId);
     }
 
     /**
@@ -190,11 +235,14 @@ public final class GetManagedDatabaseSqlPlanBaselinesArgs extends com.pulumi.res
         this.filters = $.filters;
         this.isAccepted = $.isAccepted;
         this.isAdaptive = $.isAdaptive;
+        this.isAutoPurged = $.isAutoPurged;
         this.isEnabled = $.isEnabled;
         this.isFixed = $.isFixed;
+        this.isNeverExecuted = $.isNeverExecuted;
         this.isReproduced = $.isReproduced;
         this.limit = $.limit;
         this.managedDatabaseId = $.managedDatabaseId;
+        this.opcNamedCredentialId = $.opcNamedCredentialId;
         this.origin = $.origin;
         this.planName = $.planName;
         this.sqlHandle = $.sqlHandle;
@@ -275,6 +323,27 @@ public final class GetManagedDatabaseSqlPlanBaselinesArgs extends com.pulumi.res
         }
 
         /**
+         * @param isAutoPurged A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoPurged(@Nullable Output<Boolean> isAutoPurged) {
+            $.isAutoPurged = isAutoPurged;
+            return this;
+        }
+
+        /**
+         * @param isAutoPurged A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoPurged(Boolean isAutoPurged) {
+            return isAutoPurged(Output.of(isAutoPurged));
+        }
+
+        /**
          * @param isEnabled A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
          * 
          * @return builder
@@ -314,6 +383,27 @@ public final class GetManagedDatabaseSqlPlanBaselinesArgs extends com.pulumi.res
          */
         public Builder isFixed(Boolean isFixed) {
             return isFixed(Output.of(isFixed));
+        }
+
+        /**
+         * @param isNeverExecuted A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isNeverExecuted(@Nullable Output<Boolean> isNeverExecuted) {
+            $.isNeverExecuted = isNeverExecuted;
+            return this;
+        }
+
+        /**
+         * @param isNeverExecuted A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isNeverExecuted(Boolean isNeverExecuted) {
+            return isNeverExecuted(Output.of(isNeverExecuted));
         }
 
         /**
@@ -365,6 +455,27 @@ public final class GetManagedDatabaseSqlPlanBaselinesArgs extends com.pulumi.res
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
             return managedDatabaseId(Output.of(managedDatabaseId));
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(@Nullable Output<String> opcNamedCredentialId) {
+            $.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param opcNamedCredentialId The OCID of the Named Credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            return opcNamedCredentialId(Output.of(opcNamedCredentialId));
         }
 
         /**

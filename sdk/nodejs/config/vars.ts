@@ -54,10 +54,6 @@ Object.defineProperty(exports, "fingerprint", {
     enumerable: true,
 });
 
-/**
- * (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated
- * remote object
- */
 export declare const ignoreDefinedTags: string[] | undefined;
 Object.defineProperty(exports, "ignoreDefinedTags", {
     get() {
@@ -67,7 +63,7 @@ Object.defineProperty(exports, "ignoreDefinedTags", {
 });
 
 /**
- * (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
+ * (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
  * set to 'ApiKey', ignored otherwise.
  */
 export declare const privateKey: string | undefined;
@@ -90,8 +86,8 @@ Object.defineProperty(exports, "privateKeyPassword", {
 });
 
 /**
- * (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
- * auth is set to 'ApiKey', ignored otherwise.
+ * (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
+ * is set to 'ApiKey', ignored otherwise.
  */
 export declare const privateKeyPath: string | undefined;
 Object.defineProperty(exports, "privateKeyPath", {
@@ -125,8 +121,8 @@ Object.defineProperty(exports, "region", {
 
 /**
  * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
- * duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
- * is set to true.
+ * duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is
+ * set to true.
  */
 export declare const retryDurationSeconds: number | undefined;
 Object.defineProperty(exports, "retryDurationSeconds", {

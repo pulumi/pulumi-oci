@@ -33,10 +33,6 @@ console. Required if auth is set to 'ApiKey', ignored otherwise.
 """
 
 ignoreDefinedTags: Optional[str]
-"""
-(Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated
-remote object
-"""
 
 privateKey: Optional[str]
 """

@@ -1665,16 +1665,24 @@ class DbSystem(pulumi.CustomResource):
         DbSystems can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/dbSystem:DbSystem test_db_system "id"
+        $ pulumi import oci:Database/dbSystem:DbSystem test_db_system "id"
         ```
 
-         Import is only supported for source=NONE `db_home.0.database.0.admin_password` is not returned by the service for security reasons. To avoid a force new of the db_home on the next apply, add the following to the resource:
+         Import is only supported for source=NONE
+
+         `db_home.0.database.0.admin_password` is not returned by the service for security reasons. To avoid a force new of the db_home on the next apply, add the following to the resource:
 
          lifecycle {
 
          ignore_changes = ["db_home.0.database.0.admin_password"]
 
-         } You may also need to add `hostname` to the ignore_changes list if you see a diff on a subsequent apply If the oci_database_db_system being imported is missing a primary db_home, an empty placeholder for `db_home` will be set in the Terraform state. To keep configurations consistent with the imported state, add an empty placeholder for `db_home` to your configuration like this:
+         }
+
+         You may also need to add `hostname` to the ignore_changes list if you see a diff on a subsequent apply
+
+         If the oci_database_db_system being imported is missing a primary db_home, an empty placeholder for `db_home` will be set in the Terraform state.
+
+         To keep configurations consistent with the imported state, add an empty placeholder for `db_home` to your configuration like this:
 
         # Add this placeholder into your oci_database_db_system configuration to indicate that the primary db home is empty.
 
@@ -1797,16 +1805,24 @@ class DbSystem(pulumi.CustomResource):
         DbSystems can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import oci:Database/dbSystem:DbSystem test_db_system "id"
+        $ pulumi import oci:Database/dbSystem:DbSystem test_db_system "id"
         ```
 
-         Import is only supported for source=NONE `db_home.0.database.0.admin_password` is not returned by the service for security reasons. To avoid a force new of the db_home on the next apply, add the following to the resource:
+         Import is only supported for source=NONE
+
+         `db_home.0.database.0.admin_password` is not returned by the service for security reasons. To avoid a force new of the db_home on the next apply, add the following to the resource:
 
          lifecycle {
 
          ignore_changes = ["db_home.0.database.0.admin_password"]
 
-         } You may also need to add `hostname` to the ignore_changes list if you see a diff on a subsequent apply If the oci_database_db_system being imported is missing a primary db_home, an empty placeholder for `db_home` will be set in the Terraform state. To keep configurations consistent with the imported state, add an empty placeholder for `db_home` to your configuration like this:
+         }
+
+         You may also need to add `hostname` to the ignore_changes list if you see a diff on a subsequent apply
+
+         If the oci_database_db_system being imported is missing a primary db_home, an empty placeholder for `db_home` will be set in the Terraform state.
+
+         To keep configurations consistent with the imported state, add an empty placeholder for `db_home` to your configuration like this:
 
         # Add this placeholder into your oci_database_db_system configuration to indicate that the primary db home is empty.
 

@@ -9,9 +9,11 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.MediaServices.MediaAssetArgs;
 import com.pulumi.oci.MediaServices.inputs.MediaAssetState;
+import com.pulumi.oci.MediaServices.outputs.MediaAssetLock;
 import com.pulumi.oci.MediaServices.outputs.MediaAssetMediaAssetTag;
 import com.pulumi.oci.MediaServices.outputs.MediaAssetMetadata;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -49,14 +51,14 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
         return this.bucket;
     }
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier.
+     * @return (Updatable) The compartment ID of the lock.
      * 
      */
     public Output<String> compartmentId() {
@@ -103,6 +105,26 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,MediaAssetLock.class}, tree="[0,1]")
+    private Output<List<MediaAssetLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<MediaAssetLock>> locks() {
+        return this.locks;
     }
     /**
      * (Updatable) The ID of the senior most asset from which this asset is derived.
@@ -301,14 +323,14 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+     * @return When the lock was created.
      * 
      */
     public Output<String> timeCreated() {

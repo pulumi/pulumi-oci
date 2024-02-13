@@ -6,8 +6,10 @@ package com.pulumi.oci.MediaServices;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.inputs.MediaAssetLockArgs;
 import com.pulumi.oci.MediaServices.inputs.MediaAssetMediaAssetTagArgs;
 import com.pulumi.oci.MediaServices.inputs.MediaAssetMetadataArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -37,14 +39,14 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier.
+     * @return (Updatable) The compartment ID of the lock.
      * 
      */
     public Output<String> compartmentId() {
@@ -94,6 +96,28 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<MediaAssetLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<MediaAssetLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -305,6 +329,8 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
         this.masterMediaAssetId = $.masterMediaAssetId;
         this.mediaAssetTags = $.mediaAssetTags;
         this.mediaWorkflowJobId = $.mediaWorkflowJobId;
@@ -360,7 +386,7 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -371,7 +397,7 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -441,6 +467,46 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<MediaAssetLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<MediaAssetLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(MediaAssetLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

@@ -106,7 +106,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class GetStreamPackagingConfigResult
     {
         /// <summary>
-        /// Compartment Identifier
+        /// The compartment ID of the lock.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -133,6 +133,11 @@ namespace Pulumi.Oci.MediaServices
         /// Unique identifier that is immutable on creation.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetStreamPackagingConfigLockResult> Locks;
         /// <summary>
         /// The duration in seconds for each fragment.
         /// </summary>
@@ -175,6 +180,10 @@ namespace Pulumi.Oci.MediaServices
 
             string id,
 
+            bool isLockOverride,
+
+            ImmutableArray<Outputs.GetStreamPackagingConfigLockResult> locks,
+
             int segmentTimeInSeconds,
 
             string state,
@@ -196,6 +205,8 @@ namespace Pulumi.Oci.MediaServices
             Encryptions = encryptions;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
+            Locks = locks;
             SegmentTimeInSeconds = segmentTimeInSeconds;
             State = state;
             StreamPackagingConfigId = streamPackagingConfigId;

@@ -22,7 +22,7 @@ class GetMysqlDbSystemResult:
     """
     A collection of values returned by getMysqlDbSystem.
     """
-    def __init__(__self__, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, data_storage_size_in_gb=None, database_management=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, data_storage_size_in_gb=None, database_management=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, secure_connections=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
         if admin_password and not isinstance(admin_password, str):
             raise TypeError("Expected argument 'admin_password' to be a str")
         pulumi.set(__self__, "admin_password", admin_password)
@@ -116,6 +116,9 @@ class GetMysqlDbSystemResult:
         if port_x and not isinstance(port_x, int):
             raise TypeError("Expected argument 'port_x' to be a int")
         pulumi.set(__self__, "port_x", port_x)
+        if secure_connections and not isinstance(secure_connections, list):
+            raise TypeError("Expected argument 'secure_connections' to be a list")
+        pulumi.set(__self__, "secure_connections", secure_connections)
         if shape_name and not isinstance(shape_name, str):
             raise TypeError("Expected argument 'shape_name' to be a str")
         pulumi.set(__self__, "shape_name", shape_name)
@@ -381,6 +384,14 @@ class GetMysqlDbSystemResult:
         return pulumi.get(self, "port_x")
 
     @property
+    @pulumi.getter(name="secureConnections")
+    def secure_connections(self) -> Sequence['outputs.GetMysqlDbSystemSecureConnectionResult']:
+        """
+        Secure connection configuration details.
+        """
+        return pulumi.get(self, "secure_connections")
+
+    @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> str:
         """
@@ -471,6 +482,7 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
             point_in_time_recovery_details=self.point_in_time_recovery_details,
             port=self.port,
             port_x=self.port_x,
+            secure_connections=self.secure_connections,
             shape_name=self.shape_name,
             shutdown_type=self.shutdown_type,
             sources=self.sources,
@@ -536,6 +548,7 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
         point_in_time_recovery_details=pulumi.get(__ret__, 'point_in_time_recovery_details'),
         port=pulumi.get(__ret__, 'port'),
         port_x=pulumi.get(__ret__, 'port_x'),
+        secure_connections=pulumi.get(__ret__, 'secure_connections'),
         shape_name=pulumi.get(__ret__, 'shape_name'),
         shutdown_type=pulumi.get(__ret__, 'shutdown_type'),
         sources=pulumi.get(__ret__, 'sources'),

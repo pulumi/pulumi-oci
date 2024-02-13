@@ -5,8 +5,10 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobLock;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobOutput;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobTaskLifecycleState;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -16,7 +18,7 @@ import java.util.Objects;
 @CustomType
 public final class GetMediaWorkflowJobResult {
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     private String compartmentId;
@@ -40,11 +42,17 @@ public final class GetMediaWorkflowJobResult {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return The lifecycle details of MediaWorkflowJob task.
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetMediaWorkflowJobLock> locks;
     /**
      * @return Configurations to be applied to this run of the workflow.
      * 
@@ -111,7 +119,7 @@ public final class GetMediaWorkflowJobResult {
 
     private GetMediaWorkflowJobResult() {}
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     public String compartmentId() {
@@ -145,12 +153,22 @@ public final class GetMediaWorkflowJobResult {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return The lifecycle details of MediaWorkflowJob task.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetMediaWorkflowJobLock> locks() {
+        return this.locks;
     }
     /**
      * @return Configurations to be applied to this run of the workflow.
@@ -260,7 +278,9 @@ public final class GetMediaWorkflowJobResult {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetMediaWorkflowJobLock> locks;
         private List<String> mediaWorkflowConfigurationIds;
         private String mediaWorkflowId;
         private String mediaWorkflowJobId;
@@ -284,7 +304,9 @@ public final class GetMediaWorkflowJobResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.mediaWorkflowConfigurationIds = defaults.mediaWorkflowConfigurationIds;
     	      this.mediaWorkflowId = defaults.mediaWorkflowId;
     	      this.mediaWorkflowJobId = defaults.mediaWorkflowJobId;
@@ -343,12 +365,31 @@ public final class GetMediaWorkflowJobResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetMediaWorkflowJobResult", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetMediaWorkflowJobLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetMediaWorkflowJobLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder mediaWorkflowConfigurationIds(List<String> mediaWorkflowConfigurationIds) {
@@ -486,7 +527,9 @@ public final class GetMediaWorkflowJobResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
             _resultValue.mediaWorkflowId = mediaWorkflowId;
             _resultValue.mediaWorkflowJobId = mediaWorkflowJobId;

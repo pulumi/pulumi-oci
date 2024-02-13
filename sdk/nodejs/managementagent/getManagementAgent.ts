@@ -49,9 +49,14 @@ export interface GetManagementAgentResult {
      */
     readonly availabilityStatus: string;
     /**
-     * Compartment Identifier
+     * Compartment owning this DataSource.
      */
     readonly compartmentId: string;
+    /**
+     * list of dataSources associated with the agent
+     */
+    readonly dataSourceLists: outputs.ManagementAgent.GetManagementAgentDataSourceList[];
+    readonly dataSourceSummaryLists: outputs.ManagementAgent.GetManagementAgentDataSourceSummaryList[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */

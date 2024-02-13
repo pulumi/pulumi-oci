@@ -71,7 +71,7 @@ type GetMediaWorkflowJobsArgs struct {
 
 // A collection of values returned by getMediaWorkflowJobs.
 type GetMediaWorkflowJobsResult struct {
-	// Compartment Identifier.
+	// The compartment ID of the lock.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string                      `pulumi:"displayName"`
@@ -133,7 +133,7 @@ func (o GetMediaWorkflowJobsResultOutput) ToGetMediaWorkflowJobsResultOutputWith
 	return o
 }
 
-// Compartment Identifier.
+// The compartment ID of the lock.
 func (o GetMediaWorkflowJobsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }

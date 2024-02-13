@@ -40,6 +40,15 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				Locks: mediaservices.MediaWorkflowConfigurationLockArray{
+//					&mediaservices.MediaWorkflowConfigurationLockArgs{
+//						CompartmentId:     pulumi.Any(_var.Compartment_id),
+//						Type:              pulumi.Any(_var.Media_workflow_configuration_locks_type),
+//						Message:           pulumi.Any(_var.Media_workflow_configuration_locks_message),
+//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
+//						TimeCreated:       pulumi.Any(_var.Media_workflow_configuration_locks_time_created),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -62,16 +71,19 @@ import (
 type MediaWorkflowConfiguration struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags   pulumi.MapOutput  `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks MediaWorkflowConfigurationLockArrayOutput `pulumi:"locks"`
 	// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
 	//
 	// ** IMPORTANT **
@@ -81,7 +93,7 @@ type MediaWorkflowConfiguration struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -126,16 +138,19 @@ func GetMediaWorkflowConfiguration(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MediaWorkflowConfiguration resources.
 type mediaWorkflowConfigurationState struct {
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
+	IsLockOverride *bool                  `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails *string `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks []MediaWorkflowConfigurationLock `pulumi:"locks"`
 	// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
 	//
 	// ** IMPORTANT **
@@ -145,23 +160,26 @@ type mediaWorkflowConfigurationState struct {
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type MediaWorkflowConfigurationState struct {
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags   pulumi.MapInput
+	IsLockOverride pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks MediaWorkflowConfigurationLockArrayInput
 	// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
 	//
 	// ** IMPORTANT **
@@ -171,7 +189,7 @@ type MediaWorkflowConfigurationState struct {
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
@@ -182,14 +200,17 @@ func (MediaWorkflowConfigurationState) ElementType() reflect.Type {
 }
 
 type mediaWorkflowConfigurationArgs struct {
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
+	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []MediaWorkflowConfigurationLock `pulumi:"locks"`
 	// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
 	//
 	// ** IMPORTANT **
@@ -199,14 +220,17 @@ type mediaWorkflowConfigurationArgs struct {
 
 // The set of arguments for constructing a MediaWorkflowConfiguration resource.
 type MediaWorkflowConfigurationArgs struct {
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags   pulumi.MapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks MediaWorkflowConfigurationLockArrayInput
 	// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
 	//
 	// ** IMPORTANT **
@@ -301,7 +325,7 @@ func (o MediaWorkflowConfigurationOutput) ToMediaWorkflowConfigurationOutputWith
 	return o
 }
 
-// (Updatable) Compartment Identifier.
+// (Updatable) The compartment ID of the lock.
 func (o MediaWorkflowConfigurationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -321,9 +345,18 @@ func (o MediaWorkflowConfigurationOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
+func (o MediaWorkflowConfigurationOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o MediaWorkflowConfigurationOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o MediaWorkflowConfigurationOutput) Locks() MediaWorkflowConfigurationLockArrayOutput {
+	return o.ApplyT(func(v *MediaWorkflowConfiguration) MediaWorkflowConfigurationLockArrayOutput { return v.Locks }).(MediaWorkflowConfigurationLockArrayOutput)
 }
 
 // (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
@@ -344,7 +377,7 @@ func (o MediaWorkflowConfigurationOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+// When the lock was created.
 func (o MediaWorkflowConfigurationOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

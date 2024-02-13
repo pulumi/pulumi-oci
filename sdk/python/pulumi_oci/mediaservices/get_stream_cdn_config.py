@@ -22,7 +22,7 @@ class GetStreamCdnConfigResult:
     """
     A collection of values returned by getStreamCdnConfig.
     """
-    def __init__(__self__, compartment_id=None, configs=None, defined_tags=None, display_name=None, distribution_channel_id=None, freeform_tags=None, id=None, is_enabled=None, lifecyle_details=None, state=None, stream_cdn_config_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, configs=None, defined_tags=None, display_name=None, distribution_channel_id=None, freeform_tags=None, id=None, is_enabled=None, is_lock_override=None, lifecyle_details=None, locks=None, state=None, stream_cdn_config_id=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,9 +47,15 @@ class GetStreamCdnConfigResult:
         if is_enabled and not isinstance(is_enabled, bool):
             raise TypeError("Expected argument 'is_enabled' to be a bool")
         pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecyle_details and not isinstance(lifecyle_details, str):
             raise TypeError("Expected argument 'lifecyle_details' to be a str")
         pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -70,7 +76,7 @@ class GetStreamCdnConfigResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier.
+        The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -131,12 +137,25 @@ class GetStreamCdnConfigResult:
         return pulumi.get(self, "is_enabled")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> str:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecyle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetStreamCdnConfigLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
@@ -190,7 +209,9 @@ class AwaitableGetStreamCdnConfigResult(GetStreamCdnConfigResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_enabled=self.is_enabled,
+            is_lock_override=self.is_lock_override,
             lifecyle_details=self.lifecyle_details,
+            locks=self.locks,
             state=self.state,
             stream_cdn_config_id=self.stream_cdn_config_id,
             system_tags=self.system_tags,
@@ -231,7 +252,9 @@ def get_stream_cdn_config(stream_cdn_config_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         lifecyle_details=pulumi.get(__ret__, 'lifecyle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         state=pulumi.get(__ret__, 'state'),
         stream_cdn_config_id=pulumi.get(__ret__, 'stream_cdn_config_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),

@@ -47,7 +47,7 @@ class GetMediaWorkflowsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        Compartment Identifier.
+        The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 

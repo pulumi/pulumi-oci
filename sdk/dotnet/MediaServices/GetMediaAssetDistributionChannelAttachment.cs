@@ -37,6 +37,21 @@ namespace Pulumi.Oci.MediaServices
         [Input("distributionChannelId", required: true)]
         public string DistributionChannelId { get; set; } = null!;
 
+        [Input("isLockOverride")]
+        public bool? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private List<Inputs.GetMediaAssetDistributionChannelAttachmentLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public List<Inputs.GetMediaAssetDistributionChannelAttachmentLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new List<Inputs.GetMediaAssetDistributionChannelAttachmentLockArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// Unique MediaAsset identifier
         /// </summary>
@@ -56,6 +71,21 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         [Input("distributionChannelId", required: true)]
         public Input<string> DistributionChannelId { get; set; } = null!;
+
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.GetMediaAssetDistributionChannelAttachmentLockInputArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.GetMediaAssetDistributionChannelAttachmentLockInputArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.GetMediaAssetDistributionChannelAttachmentLockInputArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// Unique MediaAsset identifier
@@ -85,6 +115,11 @@ namespace Pulumi.Oci.MediaServices
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMediaAssetDistributionChannelAttachmentLockResult> Locks;
         public readonly string MediaAssetId;
         /// <summary>
         /// The ingest MediaWorkflowJob ID that created this attachment.
@@ -111,6 +146,10 @@ namespace Pulumi.Oci.MediaServices
 
             string id,
 
+            bool isLockOverride,
+
+            ImmutableArray<Outputs.GetMediaAssetDistributionChannelAttachmentLockResult> locks,
+
             string mediaAssetId,
 
             string mediaWorkflowJobId,
@@ -124,6 +163,8 @@ namespace Pulumi.Oci.MediaServices
             DisplayName = displayName;
             DistributionChannelId = distributionChannelId;
             Id = id;
+            IsLockOverride = isLockOverride;
+            Locks = locks;
             MediaAssetId = mediaAssetId;
             MediaWorkflowJobId = mediaWorkflowJobId;
             MetadataRef = metadataRef;

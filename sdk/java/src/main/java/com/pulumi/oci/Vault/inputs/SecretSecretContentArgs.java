@@ -20,26 +20,26 @@ public final class SecretSecretContentArgs extends com.pulumi.resources.Resource
      * (Updatable) The base64-encoded content of the secret.
      * 
      */
-    @Import(name="content", required=true)
-    private Output<String> content;
+    @Import(name="content")
+    private @Nullable Output<String> content;
 
     /**
      * @return (Updatable) The base64-encoded content of the secret.
      * 
      */
-    public Output<String> content() {
-        return this.content;
+    public Optional<Output<String>> content() {
+        return Optional.ofNullable(this.content);
     }
 
     /**
-     * (Updatable) content type . Example `BASE64` .
+     * (Updatable) The base64-encoded content of the secret.
      * 
      */
     @Import(name="contentType", required=true)
     private Output<String> contentType;
 
     /**
-     * @return (Updatable) content type . Example `BASE64` .
+     * @return (Updatable) The base64-encoded content of the secret.
      * 
      */
     public Output<String> contentType() {
@@ -62,14 +62,14 @@ public final class SecretSecretContentArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
+     * (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
      * 
      */
     @Import(name="stage")
     private @Nullable Output<String> stage;
 
     /**
-     * @return (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
+     * @return (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
      * 
      */
     public Optional<Output<String>> stage() {
@@ -109,7 +109,7 @@ public final class SecretSecretContentArgs extends com.pulumi.resources.Resource
          * @return builder
          * 
          */
-        public Builder content(Output<String> content) {
+        public Builder content(@Nullable Output<String> content) {
             $.content = content;
             return this;
         }
@@ -125,7 +125,7 @@ public final class SecretSecretContentArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param contentType (Updatable) content type . Example `BASE64` .
+         * @param contentType (Updatable) The base64-encoded content of the secret.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class SecretSecretContentArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param contentType (Updatable) content type . Example `BASE64` .
+         * @param contentType (Updatable) The base64-encoded content of the secret.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class SecretSecretContentArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param stage (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
+         * @param stage (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class SecretSecretContentArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param stage (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
+         * @param stage (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
          * 
          * @return builder
          * 
@@ -188,9 +188,6 @@ public final class SecretSecretContentArgs extends com.pulumi.resources.Resource
         }
 
         public SecretSecretContentArgs build() {
-            if ($.content == null) {
-                throw new MissingRequiredPropertyException("SecretSecretContentArgs", "content");
-            }
             if ($.contentType == null) {
                 throw new MissingRequiredPropertyException("SecretSecretContentArgs", "contentType");
             }

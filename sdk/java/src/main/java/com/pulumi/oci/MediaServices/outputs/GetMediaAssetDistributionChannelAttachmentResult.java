@@ -5,7 +5,10 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.outputs.GetMediaAssetDistributionChannelAttachmentLock;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -25,6 +28,12 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetMediaAssetDistributionChannelAttachmentLock> locks;
     private String mediaAssetId;
     /**
      * @return The ingest MediaWorkflowJob ID that created this attachment.
@@ -68,6 +77,16 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
      */
     public String id() {
         return this.id;
+    }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetMediaAssetDistributionChannelAttachmentLock> locks() {
+        return this.locks;
     }
     public String mediaAssetId() {
         return this.mediaAssetId;
@@ -113,6 +132,8 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
         private String displayName;
         private String distributionChannelId;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetMediaAssetDistributionChannelAttachmentLock> locks;
         private String mediaAssetId;
         private String mediaWorkflowJobId;
         private String metadataRef;
@@ -124,6 +145,8 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
     	      this.displayName = defaults.displayName;
     	      this.distributionChannelId = defaults.distributionChannelId;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.mediaAssetId = defaults.mediaAssetId;
     	      this.mediaWorkflowJobId = defaults.mediaWorkflowJobId;
     	      this.metadataRef = defaults.metadataRef;
@@ -154,6 +177,25 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetDistributionChannelAttachmentResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetMediaAssetDistributionChannelAttachmentLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetDistributionChannelAttachmentResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetMediaAssetDistributionChannelAttachmentLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder mediaAssetId(String mediaAssetId) {
@@ -200,6 +242,8 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
             _resultValue.displayName = displayName;
             _resultValue.distributionChannelId = distributionChannelId;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
             _resultValue.mediaAssetId = mediaAssetId;
             _resultValue.mediaWorkflowJobId = mediaWorkflowJobId;
             _resultValue.metadataRef = metadataRef;

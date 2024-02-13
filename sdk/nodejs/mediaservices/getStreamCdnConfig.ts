@@ -45,7 +45,7 @@ export interface GetStreamCdnConfigArgs {
  */
 export interface GetStreamCdnConfigResult {
     /**
-     * Compartment Identifier.
+     * The compartment ID of the lock.
      */
     readonly compartmentId: string;
     /**
@@ -76,10 +76,15 @@ export interface GetStreamCdnConfigResult {
      * Whether publishing to CDN is enabled.
      */
     readonly isEnabled: boolean;
+    readonly isLockOverride: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     readonly lifecyleDetails: string;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.MediaServices.GetStreamCdnConfigLock[];
     /**
      * The current state of the CDN Configuration.
      */

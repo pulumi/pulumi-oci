@@ -93,6 +93,8 @@ type LookupReplicaResult struct {
 	ReplicaId string `pulumi:"replicaId"`
 	// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 	ReplicaOverrides []GetReplicaReplicaOverride `pulumi:"replicaOverrides"`
+	// Secure connection configuration details.
+	SecureConnections []GetReplicaSecureConnection `pulumi:"secureConnections"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 	// The state of the read replica.
@@ -228,6 +230,11 @@ func (o LookupReplicaResultOutput) ReplicaId() pulumi.StringOutput {
 // By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 func (o LookupReplicaResultOutput) ReplicaOverrides() GetReplicaReplicaOverrideArrayOutput {
 	return o.ApplyT(func(v LookupReplicaResult) []GetReplicaReplicaOverride { return v.ReplicaOverrides }).(GetReplicaReplicaOverrideArrayOutput)
+}
+
+// Secure connection configuration details.
+func (o LookupReplicaResultOutput) SecureConnections() GetReplicaSecureConnectionArrayOutput {
+	return o.ApplyT(func(v LookupReplicaResult) []GetReplicaSecureConnection { return v.SecureConnections }).(GetReplicaSecureConnectionArrayOutput)
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.

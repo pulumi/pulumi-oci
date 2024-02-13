@@ -64,6 +64,10 @@ import * as utilities from "../utilities";
  *     },
  *     port: _var.mysql_db_system_port,
  *     portX: _var.mysql_db_system_port_x,
+ *     secureConnections: {
+ *         certificateGenerationType: _var.mysql_db_system_secure_connections_certificate_generation_type,
+ *         certificateId: oci_apigateway_certificate.test_certificate.id,
+ *     },
  *     source: {
  *         sourceType: _var.mysql_db_system_source_source_type,
  *         backupId: oci_mysql_mysql_backup.test_backup.id,
@@ -238,6 +242,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public readonly portX!: pulumi.Output<number>;
     /**
+     * (Updatable) Secure connection configuration details.
+     */
+    public readonly secureConnections!: pulumi.Output<outputs.Mysql.MysqlDbSystemSecureConnections>;
+    /**
      * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */
@@ -312,6 +320,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["pointInTimeRecoveryDetails"] = state ? state.pointInTimeRecoveryDetails : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
             resourceInputs["portX"] = state ? state.portX : undefined;
+            resourceInputs["secureConnections"] = state ? state.secureConnections : undefined;
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
             resourceInputs["shutdownType"] = state ? state.shutdownType : undefined;
             resourceInputs["source"] = state ? state.source : undefined;
@@ -355,6 +364,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["mysqlVersion"] = args ? args.mysqlVersion : undefined;
             resourceInputs["port"] = args ? args.port : undefined;
             resourceInputs["portX"] = args ? args.portX : undefined;
+            resourceInputs["secureConnections"] = args ? args.secureConnections : undefined;
             resourceInputs["shapeName"] = args ? args.shapeName : undefined;
             resourceInputs["shutdownType"] = args ? args.shutdownType : undefined;
             resourceInputs["source"] = args ? args.source : undefined;
@@ -512,6 +522,10 @@ export interface MysqlDbSystemState {
      */
     portX?: pulumi.Input<number>;
     /**
+     * (Updatable) Secure connection configuration details.
+     */
+    secureConnections?: pulumi.Input<inputs.Mysql.MysqlDbSystemSecureConnections>;
+    /**
      * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */
@@ -651,6 +665,10 @@ export interface MysqlDbSystemArgs {
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      */
     portX?: pulumi.Input<number>;
+    /**
+     * (Updatable) Secure connection configuration details.
+     */
+    secureConnections?: pulumi.Input<inputs.Mysql.MysqlDbSystemSecureConnections>;
     /**
      * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.

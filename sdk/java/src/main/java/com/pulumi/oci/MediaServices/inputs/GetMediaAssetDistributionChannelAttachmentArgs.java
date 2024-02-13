@@ -6,8 +6,13 @@ package com.pulumi.oci.MediaServices.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.inputs.GetMediaAssetDistributionChannelAttachmentLockArgs;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetMediaAssetDistributionChannelAttachmentArgs extends com.pulumi.resources.InvokeArgs {
@@ -29,6 +34,28 @@ public final class GetMediaAssetDistributionChannelAttachmentArgs extends com.pu
         return this.distributionChannelId;
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<GetMediaAssetDistributionChannelAttachmentLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<GetMediaAssetDistributionChannelAttachmentLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     /**
      * Unique MediaAsset identifier
      * 
@@ -48,6 +75,8 @@ public final class GetMediaAssetDistributionChannelAttachmentArgs extends com.pu
 
     private GetMediaAssetDistributionChannelAttachmentArgs(GetMediaAssetDistributionChannelAttachmentArgs $) {
         this.distributionChannelId = $.distributionChannelId;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
         this.mediaAssetId = $.mediaAssetId;
     }
 
@@ -88,6 +117,46 @@ public final class GetMediaAssetDistributionChannelAttachmentArgs extends com.pu
          */
         public Builder distributionChannelId(String distributionChannelId) {
             return distributionChannelId(Output.of(distributionChannelId));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<GetMediaAssetDistributionChannelAttachmentLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<GetMediaAssetDistributionChannelAttachmentLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(GetMediaAssetDistributionChannelAttachmentLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

@@ -5,8 +5,11 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -42,6 +45,12 @@ public final class GetStreamDistributionChannelsStreamDistributionChannelCollect
      * 
      */
     private String id;
+    private Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock> locks;
     /**
      * @return A filter to return only the resources with lifecycleState matching the given lifecycleState.
      * 
@@ -106,6 +115,16 @@ public final class GetStreamDistributionChannelsStreamDistributionChannelCollect
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock> locks() {
+        return this.locks;
+    }
     /**
      * @return A filter to return only the resources with lifecycleState matching the given lifecycleState.
      * 
@@ -150,6 +169,8 @@ public final class GetStreamDistributionChannelsStreamDistributionChannelCollect
         private String domainName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock> locks;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
@@ -163,6 +184,8 @@ public final class GetStreamDistributionChannelsStreamDistributionChannelCollect
     	      this.domainName = defaults.domainName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -218,6 +241,25 @@ public final class GetStreamDistributionChannelsStreamDistributionChannelCollect
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetStreamDistributionChannelsStreamDistributionChannelCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetStreamDistributionChannelsStreamDistributionChannelCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetStreamDistributionChannelsStreamDistributionChannelCollectionItem", "state");
@@ -257,6 +299,8 @@ public final class GetStreamDistributionChannelsStreamDistributionChannelCollect
             _resultValue.domainName = domainName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

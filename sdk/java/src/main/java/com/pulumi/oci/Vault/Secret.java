@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.Vault.SecretArgs;
 import com.pulumi.oci.Vault.inputs.SecretState;
+import com.pulumi.oci.Vault.outputs.SecretRotationConfig;
 import com.pulumi.oci.Vault.outputs.SecretSecretContent;
 import com.pulumi.oci.Vault.outputs.SecretSecretRule;
 import java.lang.Object;
@@ -105,18 +106,32 @@ public class Secret extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * The OCID of the master encryption key that is used to encrypt the secret.
+     * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
     @Export(name="keyId", refs={String.class}, tree="[0]")
     private Output<String> keyId;
 
     /**
-     * @return The OCID of the master encryption key that is used to encrypt the secret.
+     * @return The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
     public Output<String> keyId() {
         return this.keyId;
+    }
+    /**
+     * A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    @Export(name="lastRotationTime", refs={String.class}, tree="[0]")
+    private Output<String> lastRotationTime;
+
+    /**
+     * @return A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    public Output<String> lastRotationTime() {
+        return this.lastRotationTime;
     }
     /**
      * Additional information about the current lifecycle state of the secret.
@@ -145,6 +160,48 @@ public class Secret extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> metadata() {
         return this.metadata;
+    }
+    /**
+     * A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    @Export(name="nextRotationTime", refs={String.class}, tree="[0]")
+    private Output<String> nextRotationTime;
+
+    /**
+     * @return A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    public Output<String> nextRotationTime() {
+        return this.nextRotationTime;
+    }
+    /**
+     * (Updatable) Defines the frequency of the rotation and the information about the target system
+     * 
+     */
+    @Export(name="rotationConfig", refs={SecretRotationConfig.class}, tree="[0]")
+    private Output<SecretRotationConfig> rotationConfig;
+
+    /**
+     * @return (Updatable) Defines the frequency of the rotation and the information about the target system
+     * 
+     */
+    public Output<SecretRotationConfig> rotationConfig() {
+        return this.rotationConfig;
+    }
+    /**
+     * Additional information about the status of the secret rotation
+     * 
+     */
+    @Export(name="rotationStatus", refs={String.class}, tree="[0]")
+    private Output<String> rotationStatus;
+
+    /**
+     * @return Additional information about the status of the secret rotation
+     * 
+     */
+    public Output<String> rotationStatus() {
+        return this.rotationStatus;
     }
     /**
      * (Updatable) The content of the secret and metadata to help identify it.

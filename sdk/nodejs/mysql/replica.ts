@@ -137,6 +137,10 @@ export class Replica extends pulumi.CustomResource {
      */
     public readonly replicaOverrides!: pulumi.Output<outputs.Mysql.ReplicaReplicaOverrides>;
     /**
+     * Secure connection configuration details.
+     */
+    public /*out*/ readonly secureConnections!: pulumi.Output<outputs.Mysql.ReplicaSecureConnection[]>;
+    /**
      * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
      *
      *
@@ -186,6 +190,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["port"] = state ? state.port : undefined;
             resourceInputs["portX"] = state ? state.portX : undefined;
             resourceInputs["replicaOverrides"] = state ? state.replicaOverrides : undefined;
+            resourceInputs["secureConnections"] = state ? state.secureConnections : undefined;
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -211,6 +216,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["mysqlVersion"] = undefined /*out*/;
             resourceInputs["port"] = undefined /*out*/;
             resourceInputs["portX"] = undefined /*out*/;
+            resourceInputs["secureConnections"] = undefined /*out*/;
             resourceInputs["shapeName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -289,6 +295,10 @@ export interface ReplicaState {
      * (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
      */
     replicaOverrides?: pulumi.Input<inputs.Mysql.ReplicaReplicaOverrides>;
+    /**
+     * Secure connection configuration details.
+     */
+    secureConnections?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaSecureConnection>[]>;
     /**
      * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
      *

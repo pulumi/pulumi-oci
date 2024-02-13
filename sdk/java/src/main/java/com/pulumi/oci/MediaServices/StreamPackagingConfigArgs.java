@@ -7,9 +7,12 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.inputs.StreamPackagingConfigEncryptionArgs;
+import com.pulumi.oci.MediaServices.inputs.StreamPackagingConfigLockArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -95,6 +98,28 @@ public final class StreamPackagingConfigArgs extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<StreamPackagingConfigLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<StreamPackagingConfigLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     /**
      * The duration in seconds for each fragment.
      * 
@@ -139,6 +164,8 @@ public final class StreamPackagingConfigArgs extends com.pulumi.resources.Resour
         this.distributionChannelId = $.distributionChannelId;
         this.encryption = $.encryption;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
         this.segmentTimeInSeconds = $.segmentTimeInSeconds;
         this.streamPackagingFormat = $.streamPackagingFormat;
     }
@@ -264,6 +291,46 @@ public final class StreamPackagingConfigArgs extends com.pulumi.resources.Resour
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<StreamPackagingConfigLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<StreamPackagingConfigLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(StreamPackagingConfigLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

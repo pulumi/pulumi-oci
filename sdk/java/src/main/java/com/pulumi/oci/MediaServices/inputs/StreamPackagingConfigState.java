@@ -6,9 +6,12 @@ package com.pulumi.oci.MediaServices.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.MediaServices.inputs.StreamPackagingConfigEncryptionArgs;
+import com.pulumi.oci.MediaServices.inputs.StreamPackagingConfigLockArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -20,14 +23,14 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
     public static final StreamPackagingConfigState Empty = new StreamPackagingConfigState();
 
     /**
-     * Compartment Identifier
+     * The compartment ID of the lock.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier
+     * @return The compartment ID of the lock.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -109,6 +112,28 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<StreamPackagingConfigLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<StreamPackagingConfigLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     /**
      * The duration in seconds for each fragment.
      * 
@@ -176,14 +201,14 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
     }
 
     /**
-     * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+     * @return When the lock was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -214,6 +239,8 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
         this.distributionChannelId = $.distributionChannelId;
         this.encryption = $.encryption;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
         this.segmentTimeInSeconds = $.segmentTimeInSeconds;
         this.state = $.state;
         this.streamPackagingFormat = $.streamPackagingFormat;
@@ -241,7 +268,7 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param compartmentId Compartment Identifier
+         * @param compartmentId The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -252,7 +279,7 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param compartmentId Compartment Identifier
+         * @param compartmentId The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -366,6 +393,46 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
             return freeformTags(Output.of(freeformTags));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<StreamPackagingConfigLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<StreamPackagingConfigLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(StreamPackagingConfigLockArgs... locks) {
+            return locks(List.of(locks));
+        }
+
         /**
          * @param segmentTimeInSeconds The duration in seconds for each fragment.
          * 
@@ -457,7 +524,7 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param timeCreated The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 
@@ -468,7 +535,7 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param timeCreated The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 

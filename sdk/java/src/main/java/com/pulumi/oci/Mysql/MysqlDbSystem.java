@@ -17,6 +17,7 @@ import com.pulumi.oci.Mysql.outputs.MysqlDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemHeatWaveCluster;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemMaintenance;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemPointInTimeRecoveryDetail;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemSecureConnections;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemSource;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -46,6 +47,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyPitrPolicyArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSecureConnectionsArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -99,6 +101,10 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .port(var_.mysql_db_system_port())
  *             .portX(var_.mysql_db_system_port_x())
+ *             .secureConnections(MysqlDbSystemSecureConnectionsArgs.builder()
+ *                 .certificateGenerationType(var_.mysql_db_system_secure_connections_certificate_generation_type())
+ *                 .certificateId(oci_apigateway_certificate.test_certificate().id())
+ *                 .build())
  *             .source(MysqlDbSystemSourceArgs.builder()
  *                 .sourceType(var_.mysql_db_system_source_source_type())
  *                 .backupId(oci_mysql_mysql_backup.test_backup().id())
@@ -553,6 +559,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> portX() {
         return this.portX;
+    }
+    /**
+     * (Updatable) Secure connection configuration details.
+     * 
+     */
+    @Export(name="secureConnections", refs={MysqlDbSystemSecureConnections.class}, tree="[0]")
+    private Output<MysqlDbSystemSecureConnections> secureConnections;
+
+    /**
+     * @return (Updatable) Secure connection configuration details.
+     * 
+     */
+    public Output<MysqlDbSystemSecureConnections> secureConnections() {
+        return this.secureConnections;
     }
     /**
      * (Updatable) The name of the shape. The shape determines the resources allocated

@@ -118,7 +118,7 @@ export interface GetMediaAssetsResult {
      */
     readonly bucket?: string;
     /**
-     * The ID of the compartment containing the MediaAsset.
+     * The compartment ID of the lock.
      */
     readonly compartmentId?: string;
     /**

@@ -5,8 +5,11 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -37,11 +40,17 @@ public final class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationColle
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     private String lifecyleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock> locks;
     /**
      * @return Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects&#39; keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue
      * 
@@ -104,12 +113,22 @@ public final class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationColle
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     public String lifecyleDetails() {
         return this.lifecyleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock> locks() {
+        return this.locks;
     }
     /**
      * @return Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects&#39; keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue
@@ -161,7 +180,9 @@ public final class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationColle
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
         private String lifecyleDetails;
+        private List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock> locks;
         private String parameters;
         private String state;
         private Map<String,Object> systemTags;
@@ -175,7 +196,9 @@ public final class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationColle
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecyleDetails = defaults.lifecyleDetails;
+    	      this.locks = defaults.locks;
     	      this.parameters = defaults.parameters;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -224,12 +247,31 @@ public final class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationColle
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecyleDetails(String lifecyleDetails) {
             if (lifecyleDetails == null) {
               throw new MissingRequiredPropertyException("GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem", "lifecyleDetails");
             }
             this.lifecyleDetails = lifecyleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder parameters(String parameters) {
@@ -278,7 +320,9 @@ public final class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationColle
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecyleDetails = lifecyleDetails;
+            _resultValue.locks = locks;
             _resultValue.parameters = parameters;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

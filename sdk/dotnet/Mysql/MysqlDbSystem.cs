@@ -83,6 +83,11 @@ namespace Pulumi.Oci.Mysql
     ///         },
     ///         Port = @var.Mysql_db_system_port,
     ///         PortX = @var.Mysql_db_system_port_x,
+    ///         SecureConnections = new Oci.Mysql.Inputs.MysqlDbSystemSecureConnectionsArgs
+    ///         {
+    ///             CertificateGenerationType = @var.Mysql_db_system_secure_connections_certificate_generation_type,
+    ///             CertificateId = oci_apigateway_certificate.Test_certificate.Id,
+    ///         },
     ///         Source = new Oci.Mysql.Inputs.MysqlDbSystemSourceArgs
     ///         {
     ///             SourceType = @var.Mysql_db_system_source_source_type,
@@ -291,6 +296,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("portX")]
         public Output<int> PortX { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Secure connection configuration details.
+        /// </summary>
+        [Output("secureConnections")]
+        public Output<Outputs.MysqlDbSystemSecureConnections> SecureConnections { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -561,6 +572,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("portX")]
         public Input<int>? PortX { get; set; }
+
+        /// <summary>
+        /// (Updatable) Secure connection configuration details.
+        /// </summary>
+        [Input("secureConnections")]
+        public Input<Inputs.MysqlDbSystemSecureConnectionsArgs>? SecureConnections { get; set; }
 
         /// <summary>
         /// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -849,6 +866,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("portX")]
         public Input<int>? PortX { get; set; }
+
+        /// <summary>
+        /// (Updatable) Secure connection configuration details.
+        /// </summary>
+        [Input("secureConnections")]
+        public Input<Inputs.MysqlDbSystemSecureConnectionsGetArgs>? SecureConnections { get; set; }
 
         /// <summary>
         /// (Updatable) The name of the shape. The shape determines the resources allocated

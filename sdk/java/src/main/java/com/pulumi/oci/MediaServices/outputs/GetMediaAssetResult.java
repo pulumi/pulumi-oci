@@ -5,8 +5,10 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.outputs.GetMediaAssetLock;
 import com.pulumi.oci.MediaServices.outputs.GetMediaAssetMediaAssetTag;
 import com.pulumi.oci.MediaServices.outputs.GetMediaAssetMetadata;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -21,7 +23,7 @@ public final class GetMediaAssetResult {
      */
     private String bucket;
     /**
-     * @return The ID of the compartment containing the MediaAsset.
+     * @return The compartment ID of the lock.
      * 
      */
     private String compartmentId;
@@ -45,6 +47,12 @@ public final class GetMediaAssetResult {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetMediaAssetLock> locks;
     /**
      * @return The ID of the senior most asset from which this asset is derived.
      * 
@@ -141,7 +149,7 @@ public final class GetMediaAssetResult {
         return this.bucket;
     }
     /**
-     * @return The ID of the compartment containing the MediaAsset.
+     * @return The compartment ID of the lock.
      * 
      */
     public String compartmentId() {
@@ -174,6 +182,16 @@ public final class GetMediaAssetResult {
      */
     public String id() {
         return this.id;
+    }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetMediaAssetLock> locks() {
+        return this.locks;
     }
     /**
      * @return The ID of the senior most asset from which this asset is derived.
@@ -313,6 +331,8 @@ public final class GetMediaAssetResult {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetMediaAssetLock> locks;
         private String masterMediaAssetId;
         private String mediaAssetId;
         private List<GetMediaAssetMediaAssetTag> mediaAssetTags;
@@ -340,6 +360,8 @@ public final class GetMediaAssetResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.masterMediaAssetId = defaults.masterMediaAssetId;
     	      this.mediaAssetId = defaults.mediaAssetId;
     	      this.mediaAssetTags = defaults.mediaAssetTags;
@@ -407,6 +429,25 @@ public final class GetMediaAssetResult {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetMediaAssetLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetMediaAssetLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder masterMediaAssetId(String masterMediaAssetId) {
@@ -566,6 +607,8 @@ public final class GetMediaAssetResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
             _resultValue.masterMediaAssetId = masterMediaAssetId;
             _resultValue.mediaAssetId = mediaAssetId;
             _resultValue.mediaAssetTags = mediaAssetTags;

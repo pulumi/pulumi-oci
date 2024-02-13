@@ -36,6 +36,17 @@ namespace Pulumi.Oci.MediaServices
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.MediaServices.Inputs.StreamDistributionChannelLockArgs
+    ///             {
+    ///                 CompartmentId = @var.Compartment_id,
+    ///                 Type = @var.Stream_distribution_channel_locks_type,
+    ///                 Message = @var.Stream_distribution_channel_locks_message,
+    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
+    ///                 TimeCreated = @var.Stream_distribution_channel_locks_time_created,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -53,7 +64,7 @@ namespace Pulumi.Oci.MediaServices
     public partial class StreamDistributionChannel : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The compartment ID of the lock.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -77,14 +88,19 @@ namespace Pulumi.Oci.MediaServices
         public Output<string> DomainName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.StreamDistributionChannelLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Stream Distribution Channel.
@@ -99,7 +115,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -157,7 +173,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class StreamDistributionChannelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The compartment ID of the lock.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -184,16 +200,27 @@ namespace Pulumi.Oci.MediaServices
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
+        }
+
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.StreamDistributionChannelLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.StreamDistributionChannelLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.StreamDistributionChannelLockArgs>());
+            set => _locks = value;
         }
 
         public StreamDistributionChannelArgs()
@@ -205,7 +232,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class StreamDistributionChannelState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The compartment ID of the lock.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -238,16 +265,27 @@ namespace Pulumi.Oci.MediaServices
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
+        }
+
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.StreamDistributionChannelLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.StreamDistributionChannelLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.StreamDistributionChannelLockGetArgs>());
+            set => _locks = value;
         }
 
         /// <summary>
@@ -269,7 +307,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

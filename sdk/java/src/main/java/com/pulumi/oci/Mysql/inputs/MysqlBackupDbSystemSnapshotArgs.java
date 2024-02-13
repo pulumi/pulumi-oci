@@ -9,6 +9,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotBackupPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotDeletionPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotMaintenanceArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotSecureConnectionArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -370,6 +371,21 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
     }
 
     /**
+     * Secure connection configuration details.
+     * 
+     */
+    @Import(name="secureConnections")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotSecureConnectionArgs>> secureConnections;
+
+    /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotSecureConnectionArgs>>> secureConnections() {
+        return Optional.ofNullable(this.secureConnections);
+    }
+
+    /**
      * The shape of the DB System instance used for backup.
      * 
      */
@@ -425,6 +441,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         this.mysqlVersion = $.mysqlVersion;
         this.port = $.port;
         this.portX = $.portX;
+        this.secureConnections = $.secureConnections;
         this.shapeName = $.shapeName;
         this.subnetId = $.subnetId;
     }
@@ -968,6 +985,37 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
          */
         public Builder portX(Integer portX) {
             return portX(Output.of(portX));
+        }
+
+        /**
+         * @param secureConnections Secure connection configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secureConnections(@Nullable Output<List<MysqlBackupDbSystemSnapshotSecureConnectionArgs>> secureConnections) {
+            $.secureConnections = secureConnections;
+            return this;
+        }
+
+        /**
+         * @param secureConnections Secure connection configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secureConnections(List<MysqlBackupDbSystemSnapshotSecureConnectionArgs> secureConnections) {
+            return secureConnections(Output.of(secureConnections));
+        }
+
+        /**
+         * @param secureConnections Secure connection configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secureConnections(MysqlBackupDbSystemSnapshotSecureConnectionArgs... secureConnections) {
+            return secureConnections(List.of(secureConnections));
         }
 
         /**

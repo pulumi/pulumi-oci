@@ -28,6 +28,8 @@ public final class GetManagementAgentsResult {
      */
     private String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable List<String> dataSourceNames;
+    private @Nullable String dataSourceType;
     /**
      * @return Management Agent Name
      * 
@@ -101,6 +103,12 @@ public final class GetManagementAgentsResult {
     }
     public Optional<Boolean> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+    public List<String> dataSourceNames() {
+        return this.dataSourceNames == null ? List.of() : this.dataSourceNames;
+    }
+    public Optional<String> dataSourceType() {
+        return Optional.ofNullable(this.dataSourceType);
     }
     /**
      * @return Management Agent Name
@@ -192,6 +200,8 @@ public final class GetManagementAgentsResult {
         private @Nullable String availabilityStatus;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
+        private @Nullable List<String> dataSourceNames;
+        private @Nullable String dataSourceType;
         private @Nullable String displayName;
         private @Nullable List<GetManagementAgentsFilter> filters;
         private @Nullable List<String> gatewayIds;
@@ -211,6 +221,8 @@ public final class GetManagementAgentsResult {
     	      this.availabilityStatus = defaults.availabilityStatus;
     	      this.compartmentId = defaults.compartmentId;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
+    	      this.dataSourceNames = defaults.dataSourceNames;
+    	      this.dataSourceType = defaults.dataSourceType;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.gatewayIds = defaults.gatewayIds;
@@ -249,6 +261,21 @@ public final class GetManagementAgentsResult {
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
 
             this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dataSourceNames(@Nullable List<String> dataSourceNames) {
+
+            this.dataSourceNames = dataSourceNames;
+            return this;
+        }
+        public Builder dataSourceNames(String... dataSourceNames) {
+            return dataSourceNames(List.of(dataSourceNames));
+        }
+        @CustomType.Setter
+        public Builder dataSourceType(@Nullable String dataSourceType) {
+
+            this.dataSourceType = dataSourceType;
             return this;
         }
         @CustomType.Setter
@@ -351,6 +378,8 @@ public final class GetManagementAgentsResult {
             _resultValue.availabilityStatus = availabilityStatus;
             _resultValue.compartmentId = compartmentId;
             _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.dataSourceNames = dataSourceNames;
+            _resultValue.dataSourceType = dataSourceType;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.gatewayIds = gatewayIds;

@@ -45,7 +45,7 @@ export interface GetStreamPackagingConfigArgs {
  */
 export interface GetStreamPackagingConfigResult {
     /**
-     * Compartment Identifier
+     * The compartment ID of the lock.
      */
     readonly compartmentId: string;
     /**
@@ -72,6 +72,11 @@ export interface GetStreamPackagingConfigResult {
      * Unique identifier that is immutable on creation.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.MediaServices.GetStreamPackagingConfigLock[];
     /**
      * The duration in seconds for each fragment.
      */

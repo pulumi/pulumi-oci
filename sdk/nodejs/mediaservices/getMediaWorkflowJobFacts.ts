@@ -7,6 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * > **_NOTE:_** This data source has been deprecated and is no longer supported.
  * This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
  *
  * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
@@ -81,6 +82,7 @@ export interface GetMediaWorkflowJobFactsResult {
     readonly type?: string;
 }
 /**
+ * > **_NOTE:_** This data source has been deprecated and is no longer supported.
  * This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
  *
  * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.

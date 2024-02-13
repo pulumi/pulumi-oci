@@ -22,7 +22,7 @@ class GetReplicaResult:
     """
     A collection of values returned by getReplica.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, port=None, port_x=None, replica_id=None, replica_overrides=None, shape_name=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, port=None, port_x=None, replica_id=None, replica_overrides=None, secure_connections=None, shape_name=None, state=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -77,6 +77,9 @@ class GetReplicaResult:
         if replica_overrides and not isinstance(replica_overrides, list):
             raise TypeError("Expected argument 'replica_overrides' to be a list")
         pulumi.set(__self__, "replica_overrides", replica_overrides)
+        if secure_connections and not isinstance(secure_connections, list):
+            raise TypeError("Expected argument 'secure_connections' to be a list")
+        pulumi.set(__self__, "secure_connections", secure_connections)
         if shape_name and not isinstance(shape_name, str):
             raise TypeError("Expected argument 'shape_name' to be a str")
         pulumi.set(__self__, "shape_name", shape_name)
@@ -232,6 +235,14 @@ class GetReplicaResult:
         return pulumi.get(self, "replica_overrides")
 
     @property
+    @pulumi.getter(name="secureConnections")
+    def secure_connections(self) -> Sequence['outputs.GetReplicaSecureConnectionResult']:
+        """
+        Secure connection configuration details.
+        """
+        return pulumi.get(self, "secure_connections")
+
+    @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> str:
         """
@@ -288,6 +299,7 @@ class AwaitableGetReplicaResult(GetReplicaResult):
             port_x=self.port_x,
             replica_id=self.replica_id,
             replica_overrides=self.replica_overrides,
+            secure_connections=self.secure_connections,
             shape_name=self.shape_name,
             state=self.state,
             time_created=self.time_created,
@@ -337,6 +349,7 @@ def get_replica(replica_id: Optional[str] = None,
         port_x=pulumi.get(__ret__, 'port_x'),
         replica_id=pulumi.get(__ret__, 'replica_id'),
         replica_overrides=pulumi.get(__ret__, 'replica_overrides'),
+        secure_connections=pulumi.get(__ret__, 'secure_connections'),
         shape_name=pulumi.get(__ret__, 'shape_name'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),

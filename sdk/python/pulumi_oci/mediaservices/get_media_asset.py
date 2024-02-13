@@ -22,7 +22,7 @@ class GetMediaAssetResult:
     """
     A collection of values returned by getMediaAsset.
     """
-    def __init__(__self__, bucket=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, master_media_asset_id=None, media_asset_id=None, media_asset_tags=None, media_workflow_job_id=None, metadatas=None, namespace=None, object=None, object_etag=None, parent_media_asset_id=None, segment_range_end_index=None, segment_range_start_index=None, source_media_workflow_id=None, source_media_workflow_version=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, bucket=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_lock_override=None, locks=None, master_media_asset_id=None, media_asset_id=None, media_asset_tags=None, media_workflow_job_id=None, metadatas=None, namespace=None, object=None, object_etag=None, parent_media_asset_id=None, segment_range_end_index=None, segment_range_start_index=None, source_media_workflow_id=None, source_media_workflow_version=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None):
         if bucket and not isinstance(bucket, str):
             raise TypeError("Expected argument 'bucket' to be a str")
         pulumi.set(__self__, "bucket", bucket)
@@ -41,6 +41,12 @@ class GetMediaAssetResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if master_media_asset_id and not isinstance(master_media_asset_id, str):
             raise TypeError("Expected argument 'master_media_asset_id' to be a str")
         pulumi.set(__self__, "master_media_asset_id", master_media_asset_id)
@@ -108,7 +114,7 @@ class GetMediaAssetResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The ID of the compartment containing the MediaAsset.
+        The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -143,6 +149,19 @@ class GetMediaAssetResult:
         Unique identifier that is immutable on creation.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetMediaAssetLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="masterMediaAssetId")
@@ -298,6 +317,8 @@ class AwaitableGetMediaAssetResult(GetMediaAssetResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_lock_override=self.is_lock_override,
+            locks=self.locks,
             master_media_asset_id=self.master_media_asset_id,
             media_asset_id=self.media_asset_id,
             media_asset_tags=self.media_asset_tags,
@@ -349,6 +370,8 @@ def get_media_asset(media_asset_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
+        locks=pulumi.get(__ret__, 'locks'),
         master_media_asset_id=pulumi.get(__ret__, 'master_media_asset_id'),
         media_asset_id=pulumi.get(__ret__, 'media_asset_id'),
         media_asset_tags=pulumi.get(__ret__, 'media_asset_tags'),

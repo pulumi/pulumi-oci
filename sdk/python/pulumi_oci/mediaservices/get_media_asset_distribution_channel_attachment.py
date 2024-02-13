@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = [
     'GetMediaAssetDistributionChannelAttachmentResult',
@@ -21,7 +23,7 @@ class GetMediaAssetDistributionChannelAttachmentResult:
     """
     A collection of values returned by getMediaAssetDistributionChannelAttachment.
     """
-    def __init__(__self__, display_name=None, distribution_channel_id=None, id=None, media_asset_id=None, media_workflow_job_id=None, metadata_ref=None, state=None, version=None):
+    def __init__(__self__, display_name=None, distribution_channel_id=None, id=None, is_lock_override=None, locks=None, media_asset_id=None, media_workflow_job_id=None, metadata_ref=None, state=None, version=None):
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -31,6 +33,12 @@ class GetMediaAssetDistributionChannelAttachmentResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if media_asset_id and not isinstance(media_asset_id, str):
             raise TypeError("Expected argument 'media_asset_id' to be a str")
         pulumi.set(__self__, "media_asset_id", media_asset_id)
@@ -70,6 +78,19 @@ class GetMediaAssetDistributionChannelAttachmentResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetMediaAssetDistributionChannelAttachmentLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="mediaAssetId")
@@ -118,6 +139,8 @@ class AwaitableGetMediaAssetDistributionChannelAttachmentResult(GetMediaAssetDis
             display_name=self.display_name,
             distribution_channel_id=self.distribution_channel_id,
             id=self.id,
+            is_lock_override=self.is_lock_override,
+            locks=self.locks,
             media_asset_id=self.media_asset_id,
             media_workflow_job_id=self.media_workflow_job_id,
             metadata_ref=self.metadata_ref,
@@ -126,6 +149,8 @@ class AwaitableGetMediaAssetDistributionChannelAttachmentResult(GetMediaAssetDis
 
 
 def get_media_asset_distribution_channel_attachment(distribution_channel_id: Optional[str] = None,
+                                                    is_lock_override: Optional[bool] = None,
+                                                    locks: Optional[Sequence[pulumi.InputType['GetMediaAssetDistributionChannelAttachmentLockArgs']]] = None,
                                                     media_asset_id: Optional[str] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaAssetDistributionChannelAttachmentResult:
     """
@@ -135,10 +160,13 @@ def get_media_asset_distribution_channel_attachment(distribution_channel_id: Opt
 
 
     :param str distribution_channel_id: Unique DistributionChannel identifier.
+    :param Sequence[pulumi.InputType['GetMediaAssetDistributionChannelAttachmentLockArgs']] locks: Locks associated with this resource.
     :param str media_asset_id: Unique MediaAsset identifier
     """
     __args__ = dict()
     __args__['distributionChannelId'] = distribution_channel_id
+    __args__['isLockOverride'] = is_lock_override
+    __args__['locks'] = locks
     __args__['mediaAssetId'] = media_asset_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment', __args__, opts=opts, typ=GetMediaAssetDistributionChannelAttachmentResult).value
@@ -147,6 +175,8 @@ def get_media_asset_distribution_channel_attachment(distribution_channel_id: Opt
         display_name=pulumi.get(__ret__, 'display_name'),
         distribution_channel_id=pulumi.get(__ret__, 'distribution_channel_id'),
         id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
+        locks=pulumi.get(__ret__, 'locks'),
         media_asset_id=pulumi.get(__ret__, 'media_asset_id'),
         media_workflow_job_id=pulumi.get(__ret__, 'media_workflow_job_id'),
         metadata_ref=pulumi.get(__ret__, 'metadata_ref'),
@@ -156,6 +186,8 @@ def get_media_asset_distribution_channel_attachment(distribution_channel_id: Opt
 
 @_utilities.lift_output_func(get_media_asset_distribution_channel_attachment)
 def get_media_asset_distribution_channel_attachment_output(distribution_channel_id: Optional[pulumi.Input[str]] = None,
+                                                           is_lock_override: Optional[pulumi.Input[Optional[bool]]] = None,
+                                                           locks: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMediaAssetDistributionChannelAttachmentLockArgs']]]]] = None,
                                                            media_asset_id: Optional[pulumi.Input[str]] = None,
                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaAssetDistributionChannelAttachmentResult]:
     """
@@ -165,6 +197,7 @@ def get_media_asset_distribution_channel_attachment_output(distribution_channel_
 
 
     :param str distribution_channel_id: Unique DistributionChannel identifier.
+    :param Sequence[pulumi.InputType['GetMediaAssetDistributionChannelAttachmentLockArgs']] locks: Locks associated with this resource.
     :param str media_asset_id: Unique MediaAsset identifier
     """
     ...

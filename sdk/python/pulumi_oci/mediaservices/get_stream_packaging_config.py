@@ -22,7 +22,7 @@ class GetStreamPackagingConfigResult:
     """
     A collection of values returned by getStreamPackagingConfig.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, distribution_channel_id=None, encryptions=None, freeform_tags=None, id=None, segment_time_in_seconds=None, state=None, stream_packaging_config_id=None, stream_packaging_format=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, distribution_channel_id=None, encryptions=None, freeform_tags=None, id=None, is_lock_override=None, locks=None, segment_time_in_seconds=None, state=None, stream_packaging_config_id=None, stream_packaging_format=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +44,12 @@ class GetStreamPackagingConfigResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if segment_time_in_seconds and not isinstance(segment_time_in_seconds, int):
             raise TypeError("Expected argument 'segment_time_in_seconds' to be a int")
         pulumi.set(__self__, "segment_time_in_seconds", segment_time_in_seconds)
@@ -70,7 +76,7 @@ class GetStreamPackagingConfigResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier
+        The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -121,6 +127,19 @@ class GetStreamPackagingConfigResult:
         Unique identifier that is immutable on creation.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetStreamPackagingConfigLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="segmentTimeInSeconds")
@@ -189,6 +208,8 @@ class AwaitableGetStreamPackagingConfigResult(GetStreamPackagingConfigResult):
             encryptions=self.encryptions,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_lock_override=self.is_lock_override,
+            locks=self.locks,
             segment_time_in_seconds=self.segment_time_in_seconds,
             state=self.state,
             stream_packaging_config_id=self.stream_packaging_config_id,
@@ -230,6 +251,8 @@ def get_stream_packaging_config(stream_packaging_config_id: Optional[str] = None
         encryptions=pulumi.get(__ret__, 'encryptions'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
+        locks=pulumi.get(__ret__, 'locks'),
         segment_time_in_seconds=pulumi.get(__ret__, 'segment_time_in_seconds'),
         state=pulumi.get(__ret__, 'state'),
         stream_packaging_config_id=pulumi.get(__ret__, 'stream_packaging_config_id'),

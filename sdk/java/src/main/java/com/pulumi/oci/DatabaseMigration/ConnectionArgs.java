@@ -160,6 +160,13 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="manualDatabaseSubType")
+    private @Nullable Output<String> manualDatabaseSubType;
+
+    public Optional<Output<String>> manualDatabaseSubType() {
+        return Optional.ofNullable(this.manualDatabaseSubType);
+    }
+
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      * 
@@ -277,6 +284,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.manualDatabaseSubType = $.manualDatabaseSubType;
         this.nsgIds = $.nsgIds;
         this.privateEndpoint = $.privateEndpoint;
         this.replicationCredentials = $.replicationCredentials;
@@ -491,6 +499,15 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder manualDatabaseSubType(@Nullable Output<String> manualDatabaseSubType) {
+            $.manualDatabaseSubType = manualDatabaseSubType;
+            return this;
+        }
+
+        public Builder manualDatabaseSubType(String manualDatabaseSubType) {
+            return manualDatabaseSubType(Output.of(manualDatabaseSubType));
         }
 
         /**

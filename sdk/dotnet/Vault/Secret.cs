@@ -56,10 +56,16 @@ namespace Pulumi.Oci.Vault
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the master encryption key that is used to encrypt the secret.
+        /// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         /// </summary>
         [Output("keyId")]
         public Output<string> KeyId { get; private set; } = null!;
+
+        /// <summary>
+        /// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        /// </summary>
+        [Output("lastRotationTime")]
+        public Output<string> LastRotationTime { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state of the secret.
@@ -72,6 +78,24 @@ namespace Pulumi.Oci.Vault
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, object>> Metadata { get; private set; } = null!;
+
+        /// <summary>
+        /// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        /// </summary>
+        [Output("nextRotationTime")]
+        public Output<string> NextRotationTime { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Defines the frequency of the rotation and the information about the target system
+        /// </summary>
+        [Output("rotationConfig")]
+        public Output<Outputs.SecretRotationConfig> RotationConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// Additional information about the status of the secret rotation
+        /// </summary>
+        [Output("rotationStatus")]
+        public Output<string> RotationStatus { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The content of the secret and metadata to help identify it.
@@ -208,7 +232,7 @@ namespace Pulumi.Oci.Vault
         }
 
         /// <summary>
-        /// The OCID of the master encryption key that is used to encrypt the secret.
+        /// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         /// </summary>
         [Input("keyId", required: true)]
         public Input<string> KeyId { get; set; } = null!;
@@ -226,10 +250,16 @@ namespace Pulumi.Oci.Vault
         }
 
         /// <summary>
+        /// (Updatable) Defines the frequency of the rotation and the information about the target system
+        /// </summary>
+        [Input("rotationConfig")]
+        public Input<Inputs.SecretRotationConfigArgs>? RotationConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) The content of the secret and metadata to help identify it.
         /// </summary>
-        [Input("secretContent", required: true)]
-        public Input<Inputs.SecretSecretContentArgs> SecretContent { get; set; } = null!;
+        [Input("secretContent")]
+        public Input<Inputs.SecretSecretContentArgs>? SecretContent { get; set; }
 
         /// <summary>
         /// A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -310,10 +340,16 @@ namespace Pulumi.Oci.Vault
         }
 
         /// <summary>
-        /// The OCID of the master encryption key that is used to encrypt the secret.
+        /// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         /// </summary>
         [Input("keyId")]
         public Input<string>? KeyId { get; set; }
+
+        /// <summary>
+        /// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        /// </summary>
+        [Input("lastRotationTime")]
+        public Input<string>? LastRotationTime { get; set; }
 
         /// <summary>
         /// Additional information about the current lifecycle state of the secret.
@@ -332,6 +368,24 @@ namespace Pulumi.Oci.Vault
             get => _metadata ?? (_metadata = new InputMap<object>());
             set => _metadata = value;
         }
+
+        /// <summary>
+        /// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        /// </summary>
+        [Input("nextRotationTime")]
+        public Input<string>? NextRotationTime { get; set; }
+
+        /// <summary>
+        /// (Updatable) Defines the frequency of the rotation and the information about the target system
+        /// </summary>
+        [Input("rotationConfig")]
+        public Input<Inputs.SecretRotationConfigGetArgs>? RotationConfig { get; set; }
+
+        /// <summary>
+        /// Additional information about the status of the secret rotation
+        /// </summary>
+        [Input("rotationStatus")]
+        public Input<string>? RotationStatus { get; set; }
 
         /// <summary>
         /// (Updatable) The content of the secret and metadata to help identify it.

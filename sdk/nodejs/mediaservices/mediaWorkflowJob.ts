@@ -27,6 +27,13 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     locks: [{
+ *         compartmentId: _var.compartment_id,
+ *         type: _var.media_workflow_job_locks_type,
+ *         message: _var.media_workflow_job_locks_message,
+ *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
+ *         timeCreated: _var.media_workflow_job_locks_time_created,
+ *     }],
  *     mediaWorkflowConfigurationIds: _var.media_workflow_job_media_workflow_configuration_ids,
  *     mediaWorkflowId: oci_media_services_media_workflow.test_media_workflow.id,
  *     mediaWorkflowName: oci_media_services_media_workflow.test_media_workflow.name,
@@ -71,7 +78,7 @@ export class MediaWorkflowJob extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) ID of the compartment in which the job should be created.
+     * (Updatable) The compartment ID of the lock.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -86,10 +93,15 @@ export class MediaWorkflowJob extends pulumi.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * The lifecycle details of MediaWorkflowJob task.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.MediaServices.MediaWorkflowJobLock[]>;
     /**
      * Configurations to be applied to this run of the workflow.
      */
@@ -127,7 +139,7 @@ export class MediaWorkflowJob extends pulumi.CustomResource {
      */
     public /*out*/ readonly taskLifecycleStates!: pulumi.Output<outputs.MediaServices.MediaWorkflowJobTaskLifecycleState[]>;
     /**
-     * Creation time of the job. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -168,7 +180,9 @@ export class MediaWorkflowJob extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["mediaWorkflowConfigurationIds"] = state ? state.mediaWorkflowConfigurationIds : undefined;
             resourceInputs["mediaWorkflowId"] = state ? state.mediaWorkflowId : undefined;
             resourceInputs["mediaWorkflowName"] = state ? state.mediaWorkflowName : undefined;
@@ -195,6 +209,8 @@ export class MediaWorkflowJob extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["mediaWorkflowConfigurationIds"] = args ? args.mediaWorkflowConfigurationIds : undefined;
             resourceInputs["mediaWorkflowId"] = args ? args.mediaWorkflowId : undefined;
             resourceInputs["mediaWorkflowName"] = args ? args.mediaWorkflowName : undefined;
@@ -221,7 +237,7 @@ export class MediaWorkflowJob extends pulumi.CustomResource {
  */
 export interface MediaWorkflowJobState {
     /**
-     * (Updatable) ID of the compartment in which the job should be created.
+     * (Updatable) The compartment ID of the lock.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -236,10 +252,15 @@ export interface MediaWorkflowJobState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * The lifecycle details of MediaWorkflowJob task.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaWorkflowJobLock>[]>;
     /**
      * Configurations to be applied to this run of the workflow.
      */
@@ -277,7 +298,7 @@ export interface MediaWorkflowJobState {
      */
     taskLifecycleStates?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaWorkflowJobTaskLifecycleState>[]>;
     /**
-     * Creation time of the job. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -307,7 +328,7 @@ export interface MediaWorkflowJobState {
  */
 export interface MediaWorkflowJobArgs {
     /**
-     * (Updatable) ID of the compartment in which the job should be created.
+     * (Updatable) The compartment ID of the lock.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -322,6 +343,11 @@ export interface MediaWorkflowJobArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaWorkflowJobLock>[]>;
     /**
      * Configurations to be applied to this run of the workflow.
      */

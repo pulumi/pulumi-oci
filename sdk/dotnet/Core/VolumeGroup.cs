@@ -50,6 +50,10 @@ namespace Pulumi.Oci.Core
     ///                 DisplayName = @var.Volume_group_volume_group_replicas_display_name,
     ///             },
     ///         },
+    ///         VolumeIds = new[]
+    ///         {
+    ///             @var.Volume_group_source_id,
+    ///         },
     ///     });
     /// 
     /// });
@@ -91,11 +95,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -155,7 +155,10 @@ namespace Pulumi.Oci.Core
         public Output<bool?> VolumeGroupReplicasDeletion { get; private set; } = null!;
 
         /// <summary>
-        /// OCIDs for the volumes in this volume group.
+        /// (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("volumeIds")]
         public Output<ImmutableArray<string>> VolumeIds { get; private set; } = null!;
@@ -237,11 +240,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -286,7 +285,10 @@ namespace Pulumi.Oci.Core
         private InputList<string>? _volumeIds;
 
         /// <summary>
-        /// OCIDs for the volumes in this volume group.
+        /// (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> VolumeIds
         {
@@ -333,11 +335,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -412,7 +410,10 @@ namespace Pulumi.Oci.Core
         private InputList<string>? _volumeIds;
 
         /// <summary>
-        /// OCIDs for the volumes in this volume group.
+        /// (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> VolumeIds
         {

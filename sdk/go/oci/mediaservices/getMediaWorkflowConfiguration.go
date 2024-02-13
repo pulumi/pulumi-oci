@@ -58,7 +58,7 @@ type LookupMediaWorkflowConfigurationArgs struct {
 
 // A collection of values returned by getMediaWorkflowConfiguration.
 type LookupMediaWorkflowConfigurationResult struct {
-	// Compartment Identifier.
+	// The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -67,10 +67,13 @@ type LookupMediaWorkflowConfigurationResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails              string `pulumi:"lifecyleDetails"`
-	MediaWorkflowConfigurationId string `pulumi:"mediaWorkflowConfigurationId"`
+	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks                        []GetMediaWorkflowConfigurationLock `pulumi:"locks"`
+	MediaWorkflowConfigurationId string                              `pulumi:"mediaWorkflowConfigurationId"`
 	// Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
 	Parameters string `pulumi:"parameters"`
 	// The current state of the MediaWorkflowConfiguration.
@@ -121,7 +124,7 @@ func (o LookupMediaWorkflowConfigurationResultOutput) ToLookupMediaWorkflowConfi
 	return o
 }
 
-// Compartment Identifier.
+// The compartment ID of the lock.
 func (o LookupMediaWorkflowConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMediaWorkflowConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -146,9 +149,18 @@ func (o LookupMediaWorkflowConfigurationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMediaWorkflowConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o LookupMediaWorkflowConfigurationResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowConfigurationResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o LookupMediaWorkflowConfigurationResultOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMediaWorkflowConfigurationResult) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupMediaWorkflowConfigurationResultOutput) Locks() GetMediaWorkflowConfigurationLockArrayOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowConfigurationResult) []GetMediaWorkflowConfigurationLock { return v.Locks }).(GetMediaWorkflowConfigurationLockArrayOutput)
 }
 
 func (o LookupMediaWorkflowConfigurationResultOutput) MediaWorkflowConfigurationId() pulumi.StringOutput {

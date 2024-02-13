@@ -110,7 +110,7 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public readonly string Bucket;
         /// <summary>
-        /// The ID of the compartment containing the MediaAsset.
+        /// The compartment ID of the lock.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -129,6 +129,11 @@ namespace Pulumi.Oci.MediaServices
         /// Unique identifier that is immutable on creation.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMediaAssetLockResult> Locks;
         /// <summary>
         /// The ID of the senior most asset from which this asset is derived.
         /// </summary>
@@ -213,6 +218,10 @@ namespace Pulumi.Oci.MediaServices
 
             string id,
 
+            bool isLockOverride,
+
+            ImmutableArray<Outputs.GetMediaAssetLockResult> locks,
+
             string masterMediaAssetId,
 
             string mediaAssetId,
@@ -255,6 +264,8 @@ namespace Pulumi.Oci.MediaServices
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
+            Locks = locks;
             MasterMediaAssetId = masterMediaAssetId;
             MediaAssetId = mediaAssetId;
             MediaAssetTags = mediaAssetTags;

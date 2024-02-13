@@ -12,6 +12,10 @@ import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistorie
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesPlainArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountPlainArgs;
+import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourceArgs;
+import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcePlainArgs;
+import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesArgs;
+import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesPlainArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigPlainArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesArgs;
@@ -29,6 +33,8 @@ import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsPlainArgs;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentAvailableHistoriesResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentCountResult;
+import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentDataSourceResult;
+import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentDataSourcesResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentGetAutoUpgradableConfigResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentImagesResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentInstallKeyResult;
@@ -532,6 +538,326 @@ public final class ManagementAgentFunctions {
      */
     public static CompletableFuture<GetManagementAgentCountResult> getManagementAgentCountPlain(GetManagementAgentCountPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", TypeShape.of(GetManagementAgentCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get Datasource details for given Id and given Management Agent.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
+     *             .dataSourceKey(var_.management_agent_data_source_data_source_key())
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagementAgentDataSourceResult> getManagementAgentDataSource(GetManagementAgentDataSourceArgs args) {
+        return getManagementAgentDataSource(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get Datasource details for given Id and given Management Agent.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
+     *             .dataSourceKey(var_.management_agent_data_source_data_source_key())
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagementAgentDataSourceResult> getManagementAgentDataSourcePlain(GetManagementAgentDataSourcePlainArgs args) {
+        return getManagementAgentDataSourcePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get Datasource details for given Id and given Management Agent.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
+     *             .dataSourceKey(var_.management_agent_data_source_data_source_key())
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagementAgentDataSourceResult> getManagementAgentDataSource(GetManagementAgentDataSourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentDataSource:getManagementAgentDataSource", TypeShape.of(GetManagementAgentDataSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get Datasource details for given Id and given Management Agent.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
+     *             .dataSourceKey(var_.management_agent_data_source_data_source_key())
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagementAgentDataSourceResult> getManagementAgentDataSourcePlain(GetManagementAgentDataSourcePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgentDataSource:getManagementAgentDataSource", TypeShape.of(GetManagementAgentDataSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Management Agent Data Sources in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .name(var_.management_agent_data_source_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagementAgentDataSourcesResult> getManagementAgentDataSources(GetManagementAgentDataSourcesArgs args) {
+        return getManagementAgentDataSources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Management Agent Data Sources in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .name(var_.management_agent_data_source_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagementAgentDataSourcesResult> getManagementAgentDataSourcesPlain(GetManagementAgentDataSourcesPlainArgs args) {
+        return getManagementAgentDataSourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Management Agent Data Sources in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .name(var_.management_agent_data_source_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagementAgentDataSourcesResult> getManagementAgentDataSources(GetManagementAgentDataSourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources", TypeShape.of(GetManagementAgentDataSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Management Agent Data Sources in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .name(var_.management_agent_data_source_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagementAgentDataSourcesResult> getManagementAgentDataSourcesPlain(GetManagementAgentDataSourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources", TypeShape.of(GetManagementAgentDataSourcesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Management Agent Get Auto Upgradable Config resource in Oracle Cloud Infrastructure Management Agent service.
@@ -1559,6 +1885,8 @@ public final class ManagementAgentFunctions {
      *             .accessLevel(var_.management_agent_access_level())
      *             .availabilityStatus(var_.management_agent_availability_status())
      *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
+     *             .dataSourceNames(oci_management_agent_management_agent_data_source.test_management_agent_data_source().name())
+     *             .dataSourceType(var_.management_agent_data_source_type())
      *             .displayName(var_.management_agent_display_name())
      *             .gatewayIds(oci_apigateway_gateway.test_gateway().id())
      *             .hostId(oci_management_agent_host.test_host().id())
@@ -1612,6 +1940,8 @@ public final class ManagementAgentFunctions {
      *             .accessLevel(var_.management_agent_access_level())
      *             .availabilityStatus(var_.management_agent_availability_status())
      *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
+     *             .dataSourceNames(oci_management_agent_management_agent_data_source.test_management_agent_data_source().name())
+     *             .dataSourceType(var_.management_agent_data_source_type())
      *             .displayName(var_.management_agent_display_name())
      *             .gatewayIds(oci_apigateway_gateway.test_gateway().id())
      *             .hostId(oci_management_agent_host.test_host().id())
@@ -1665,6 +1995,8 @@ public final class ManagementAgentFunctions {
      *             .accessLevel(var_.management_agent_access_level())
      *             .availabilityStatus(var_.management_agent_availability_status())
      *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
+     *             .dataSourceNames(oci_management_agent_management_agent_data_source.test_management_agent_data_source().name())
+     *             .dataSourceType(var_.management_agent_data_source_type())
      *             .displayName(var_.management_agent_display_name())
      *             .gatewayIds(oci_apigateway_gateway.test_gateway().id())
      *             .hostId(oci_management_agent_host.test_host().id())
@@ -1718,6 +2050,8 @@ public final class ManagementAgentFunctions {
      *             .accessLevel(var_.management_agent_access_level())
      *             .availabilityStatus(var_.management_agent_availability_status())
      *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
+     *             .dataSourceNames(oci_management_agent_management_agent_data_source.test_management_agent_data_source().name())
+     *             .dataSourceType(var_.management_agent_data_source_type())
      *             .displayName(var_.management_agent_display_name())
      *             .gatewayIds(oci_apigateway_gateway.test_gateway().id())
      *             .hostId(oci_management_agent_host.test_host().id())

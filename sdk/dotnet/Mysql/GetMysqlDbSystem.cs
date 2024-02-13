@@ -224,6 +224,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly int PortX;
         /// <summary>
+        /// Secure connection configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemSecureConnectionResult> SecureConnections;
+        /// <summary>
         /// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
         /// </summary>
         public readonly string ShapeName;
@@ -313,6 +317,8 @@ namespace Pulumi.Oci.Mysql
 
             int portX,
 
+            ImmutableArray<Outputs.GetMysqlDbSystemSecureConnectionResult> secureConnections,
+
             string shapeName,
 
             string shutdownType,
@@ -358,6 +364,7 @@ namespace Pulumi.Oci.Mysql
             PointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
             Port = port;
             PortX = portX;
+            SecureConnections = secureConnections;
             ShapeName = shapeName;
             ShutdownType = shutdownType;
             Sources = sources;

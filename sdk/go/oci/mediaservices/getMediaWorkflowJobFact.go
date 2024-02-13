@@ -11,6 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// > **_NOTE:_** This data source has been deprecated and is no longer supported.
 // This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
 //
 // Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.

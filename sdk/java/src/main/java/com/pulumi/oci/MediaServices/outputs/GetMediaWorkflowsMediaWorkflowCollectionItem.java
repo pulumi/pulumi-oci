@@ -5,7 +5,9 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowsMediaWorkflowCollectionItemLock;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowsMediaWorkflowCollectionItemTask;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -39,11 +41,17 @@ public final class GetMediaWorkflowsMediaWorkflowCollectionItem {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     private String lifecyleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetMediaWorkflowsMediaWorkflowCollectionItemLock> locks;
     /**
      * @return Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
      * 
@@ -121,12 +129,22 @@ public final class GetMediaWorkflowsMediaWorkflowCollectionItem {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     public String lifecyleDetails() {
         return this.lifecyleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetMediaWorkflowsMediaWorkflowCollectionItemLock> locks() {
+        return this.locks;
     }
     /**
      * @return Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
@@ -199,7 +217,9 @@ public final class GetMediaWorkflowsMediaWorkflowCollectionItem {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
         private String lifecyleDetails;
+        private List<GetMediaWorkflowsMediaWorkflowCollectionItemLock> locks;
         private List<String> mediaWorkflowConfigurationIds;
         private String parameters;
         private String state;
@@ -216,7 +236,9 @@ public final class GetMediaWorkflowsMediaWorkflowCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecyleDetails = defaults.lifecyleDetails;
+    	      this.locks = defaults.locks;
     	      this.mediaWorkflowConfigurationIds = defaults.mediaWorkflowConfigurationIds;
     	      this.parameters = defaults.parameters;
     	      this.state = defaults.state;
@@ -268,12 +290,31 @@ public final class GetMediaWorkflowsMediaWorkflowCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowsMediaWorkflowCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecyleDetails(String lifecyleDetails) {
             if (lifecyleDetails == null) {
               throw new MissingRequiredPropertyException("GetMediaWorkflowsMediaWorkflowCollectionItem", "lifecyleDetails");
             }
             this.lifecyleDetails = lifecyleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetMediaWorkflowsMediaWorkflowCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowsMediaWorkflowCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetMediaWorkflowsMediaWorkflowCollectionItemLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder mediaWorkflowConfigurationIds(List<String> mediaWorkflowConfigurationIds) {
@@ -352,7 +393,9 @@ public final class GetMediaWorkflowsMediaWorkflowCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecyleDetails = lifecyleDetails;
+            _resultValue.locks = locks;
             _resultValue.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
             _resultValue.parameters = parameters;
             _resultValue.state = state;

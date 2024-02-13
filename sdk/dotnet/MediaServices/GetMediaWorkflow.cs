@@ -106,7 +106,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class GetMediaWorkflowResult
     {
         /// <summary>
-        /// Compartment Identifier.
+        /// The compartment ID of the lock.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -125,10 +125,15 @@ namespace Pulumi.Oci.MediaServices
         /// Unique identifier that is immutable on creation.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecyleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMediaWorkflowLockResult> Locks;
         /// <summary>
         /// Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
         /// </summary>
@@ -175,7 +180,11 @@ namespace Pulumi.Oci.MediaServices
 
             string id,
 
+            bool isLockOverride,
+
             string lifecyleDetails,
+
+            ImmutableArray<Outputs.GetMediaWorkflowLockResult> locks,
 
             ImmutableArray<string> mediaWorkflowConfigurationIds,
 
@@ -200,7 +209,9 @@ namespace Pulumi.Oci.MediaServices
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
             LifecyleDetails = lifecyleDetails;
+            Locks = locks;
             MediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
             MediaWorkflowId = mediaWorkflowId;
             Parameters = parameters;

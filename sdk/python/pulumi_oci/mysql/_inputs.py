@@ -22,6 +22,7 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotDeletionPolicyArgs',
     'MysqlBackupDbSystemSnapshotEndpointArgs',
     'MysqlBackupDbSystemSnapshotMaintenanceArgs',
+    'MysqlBackupDbSystemSnapshotSecureConnectionArgs',
     'MysqlConfigurationInitVariablesArgs',
     'MysqlConfigurationVariablesArgs',
     'MysqlDbSystemBackupPolicyArgs',
@@ -38,8 +39,10 @@ __all__ = [
     'MysqlDbSystemHeatWaveClusterArgs',
     'MysqlDbSystemMaintenanceArgs',
     'MysqlDbSystemPointInTimeRecoveryDetailArgs',
+    'MysqlDbSystemSecureConnectionsArgs',
     'MysqlDbSystemSourceArgs',
     'ReplicaReplicaOverridesArgs',
+    'ReplicaSecureConnectionArgs',
     'GetChannelsFilterArgs',
     'GetMysqlBackupsFilterArgs',
     'GetMysqlConfigurationsFilterArgs',
@@ -555,6 +558,7 @@ class MysqlBackupDbSystemSnapshotArgs:
                  mysql_version: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
+                 secure_connections: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgs']]]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
@@ -581,6 +585,7 @@ class MysqlBackupDbSystemSnapshotArgs:
         :param pulumi.Input[str] mysql_version: The MySQL server version of the DB System used for backup.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgs']]] secure_connections: Secure connection configuration details.
         :param pulumi.Input[str] shape_name: The shape of the DB System instance used for backup.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB System is associated with.
         """
@@ -630,6 +635,8 @@ class MysqlBackupDbSystemSnapshotArgs:
             pulumi.set(__self__, "port", port)
         if port_x is not None:
             pulumi.set(__self__, "port_x", port_x)
+        if secure_connections is not None:
+            pulumi.set(__self__, "secure_connections", secure_connections)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if subnet_id is not None:
@@ -910,6 +917,18 @@ class MysqlBackupDbSystemSnapshotArgs:
     @port_x.setter
     def port_x(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "port_x", value)
+
+    @property
+    @pulumi.getter(name="secureConnections")
+    def secure_connections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgs']]]]:
+        """
+        Secure connection configuration details.
+        """
+        return pulumi.get(self, "secure_connections")
+
+    @secure_connections.setter
+    def secure_connections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgs']]]]):
+        pulumi.set(self, "secure_connections", value)
 
     @property
     @pulumi.getter(name="shapeName")
@@ -1297,6 +1316,45 @@ class MysqlBackupDbSystemSnapshotMaintenanceArgs:
     @window_start_time.setter
     def window_start_time(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "window_start_time", value)
+
+
+@pulumi.input_type
+class MysqlBackupDbSystemSnapshotSecureConnectionArgs:
+    def __init__(__self__, *,
+                 certificate_generation_type: Optional[pulumi.Input[str]] = None,
+                 certificate_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] certificate_generation_type: Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+        :param pulumi.Input[str] certificate_id: The OCID of the certificate to use.
+        """
+        if certificate_generation_type is not None:
+            pulumi.set(__self__, "certificate_generation_type", certificate_generation_type)
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
+
+    @property
+    @pulumi.getter(name="certificateGenerationType")
+    def certificate_generation_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+        """
+        return pulumi.get(self, "certificate_generation_type")
+
+    @certificate_generation_type.setter
+    def certificate_generation_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate_generation_type", value)
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the certificate to use.
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @certificate_id.setter
+    def certificate_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate_id", value)
 
 
 @pulumi.input_type
@@ -4003,6 +4061,44 @@ class MysqlDbSystemPointInTimeRecoveryDetailArgs:
 
 
 @pulumi.input_type
+class MysqlDbSystemSecureConnectionsArgs:
+    def __init__(__self__, *,
+                 certificate_generation_type: pulumi.Input[str],
+                 certificate_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] certificate_generation_type: (Updatable) Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+        :param pulumi.Input[str] certificate_id: (Updatable) The OCID of the certificate to use.
+        """
+        pulumi.set(__self__, "certificate_generation_type", certificate_generation_type)
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
+
+    @property
+    @pulumi.getter(name="certificateGenerationType")
+    def certificate_generation_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+        """
+        return pulumi.get(self, "certificate_generation_type")
+
+    @certificate_generation_type.setter
+    def certificate_generation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "certificate_generation_type", value)
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the certificate to use.
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @certificate_id.setter
+    def certificate_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate_id", value)
+
+
+@pulumi.input_type
 class MysqlDbSystemSourceArgs:
     def __init__(__self__, *,
                  source_type: pulumi.Input[str],
@@ -4149,6 +4245,45 @@ class ReplicaReplicaOverridesArgs:
     @shape_name.setter
     def shape_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "shape_name", value)
+
+
+@pulumi.input_type
+class ReplicaSecureConnectionArgs:
+    def __init__(__self__, *,
+                 certificate_generation_type: Optional[pulumi.Input[str]] = None,
+                 certificate_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] certificate_generation_type: Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+        :param pulumi.Input[str] certificate_id: The OCID of the certificate to use.
+        """
+        if certificate_generation_type is not None:
+            pulumi.set(__self__, "certificate_generation_type", certificate_generation_type)
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
+
+    @property
+    @pulumi.getter(name="certificateGenerationType")
+    def certificate_generation_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+        """
+        return pulumi.get(self, "certificate_generation_type")
+
+    @certificate_generation_type.setter
+    def certificate_generation_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate_generation_type", value)
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the certificate to use.
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @certificate_id.setter
+    def certificate_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate_id", value)
 
 
 @pulumi.input_type

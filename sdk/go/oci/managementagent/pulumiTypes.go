@@ -13,6 +13,594 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ManagementAgentDataSourceList struct {
+	// Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+	AllowMetrics *string `pulumi:"allowMetrics"`
+	// Compartment owning this DataSource.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+	ConnectionTimeout *int `pulumi:"connectionTimeout"`
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet *bool `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key *string `pulumi:"key"`
+	// The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+	MetricDimensions []ManagementAgentDataSourceListMetricDimension `pulumi:"metricDimensions"`
+	// Name of the property
+	Name *string `pulumi:"name"`
+	// The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+	Namespace *string `pulumi:"namespace"`
+	// The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+	ProxyUrl *string `pulumi:"proxyUrl"`
+	// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+	ReadDataLimit *int `pulumi:"readDataLimit"`
+	// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+	ReadTimeout *int `pulumi:"readTimeout"`
+	// Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+	ResourceGroup *string `pulumi:"resourceGroup"`
+	// Number in minutes. The scraping occurs at the specified interval.
+	ScheduleMins *int `pulumi:"scheduleMins"`
+	// The current state of managementAgent
+	State *string `pulumi:"state"`
+	// The time the Management Agent was created. An RFC3339 formatted datetime string
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The type of the DataSource.
+	Type *string `pulumi:"type"`
+	// The url through which the Prometheus Exporter publishes its metrics. (http only)
+	Url *string `pulumi:"url"`
+}
+
+// ManagementAgentDataSourceListInput is an input type that accepts ManagementAgentDataSourceListArgs and ManagementAgentDataSourceListOutput values.
+// You can construct a concrete instance of `ManagementAgentDataSourceListInput` via:
+//
+//	ManagementAgentDataSourceListArgs{...}
+type ManagementAgentDataSourceListInput interface {
+	pulumi.Input
+
+	ToManagementAgentDataSourceListOutput() ManagementAgentDataSourceListOutput
+	ToManagementAgentDataSourceListOutputWithContext(context.Context) ManagementAgentDataSourceListOutput
+}
+
+type ManagementAgentDataSourceListArgs struct {
+	// Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+	AllowMetrics pulumi.StringPtrInput `pulumi:"allowMetrics"`
+	// Compartment owning this DataSource.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+	ConnectionTimeout pulumi.IntPtrInput `pulumi:"connectionTimeout"`
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet pulumi.BoolPtrInput `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+	MetricDimensions ManagementAgentDataSourceListMetricDimensionArrayInput `pulumi:"metricDimensions"`
+	// Name of the property
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+	ProxyUrl pulumi.StringPtrInput `pulumi:"proxyUrl"`
+	// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+	ReadDataLimit pulumi.IntPtrInput `pulumi:"readDataLimit"`
+	// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+	ReadTimeout pulumi.IntPtrInput `pulumi:"readTimeout"`
+	// Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+	// Number in minutes. The scraping occurs at the specified interval.
+	ScheduleMins pulumi.IntPtrInput `pulumi:"scheduleMins"`
+	// The current state of managementAgent
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// The time the Management Agent was created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// The type of the DataSource.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// The url through which the Prometheus Exporter publishes its metrics. (http only)
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (ManagementAgentDataSourceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (i ManagementAgentDataSourceListArgs) ToManagementAgentDataSourceListOutput() ManagementAgentDataSourceListOutput {
+	return i.ToManagementAgentDataSourceListOutputWithContext(context.Background())
+}
+
+func (i ManagementAgentDataSourceListArgs) ToManagementAgentDataSourceListOutputWithContext(ctx context.Context) ManagementAgentDataSourceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentDataSourceListOutput)
+}
+
+// ManagementAgentDataSourceListArrayInput is an input type that accepts ManagementAgentDataSourceListArray and ManagementAgentDataSourceListArrayOutput values.
+// You can construct a concrete instance of `ManagementAgentDataSourceListArrayInput` via:
+//
+//	ManagementAgentDataSourceListArray{ ManagementAgentDataSourceListArgs{...} }
+type ManagementAgentDataSourceListArrayInput interface {
+	pulumi.Input
+
+	ToManagementAgentDataSourceListArrayOutput() ManagementAgentDataSourceListArrayOutput
+	ToManagementAgentDataSourceListArrayOutputWithContext(context.Context) ManagementAgentDataSourceListArrayOutput
+}
+
+type ManagementAgentDataSourceListArray []ManagementAgentDataSourceListInput
+
+func (ManagementAgentDataSourceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (i ManagementAgentDataSourceListArray) ToManagementAgentDataSourceListArrayOutput() ManagementAgentDataSourceListArrayOutput {
+	return i.ToManagementAgentDataSourceListArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementAgentDataSourceListArray) ToManagementAgentDataSourceListArrayOutputWithContext(ctx context.Context) ManagementAgentDataSourceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentDataSourceListArrayOutput)
+}
+
+type ManagementAgentDataSourceListOutput struct{ *pulumi.OutputState }
+
+func (ManagementAgentDataSourceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (o ManagementAgentDataSourceListOutput) ToManagementAgentDataSourceListOutput() ManagementAgentDataSourceListOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceListOutput) ToManagementAgentDataSourceListOutputWithContext(ctx context.Context) ManagementAgentDataSourceListOutput {
+	return o
+}
+
+// Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+func (o ManagementAgentDataSourceListOutput) AllowMetrics() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.AllowMetrics }).(pulumi.StringPtrOutput)
+}
+
+// Compartment owning this DataSource.
+func (o ManagementAgentDataSourceListOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+func (o ManagementAgentDataSourceListOutput) ConnectionTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *int { return v.ConnectionTimeout }).(pulumi.IntPtrOutput)
+}
+
+// If the Kubernetes cluster type is Daemon set then this will be set to true.
+func (o ManagementAgentDataSourceListOutput) IsDaemonSet() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *bool { return v.IsDaemonSet }).(pulumi.BoolPtrOutput)
+}
+
+// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+func (o ManagementAgentDataSourceListOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+func (o ManagementAgentDataSourceListOutput) MetricDimensions() ManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) []ManagementAgentDataSourceListMetricDimension {
+		return v.MetricDimensions
+	}).(ManagementAgentDataSourceListMetricDimensionArrayOutput)
+}
+
+// Name of the property
+func (o ManagementAgentDataSourceListOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+func (o ManagementAgentDataSourceListOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+func (o ManagementAgentDataSourceListOutput) ProxyUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.ProxyUrl }).(pulumi.StringPtrOutput)
+}
+
+// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+func (o ManagementAgentDataSourceListOutput) ReadDataLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *int { return v.ReadDataLimit }).(pulumi.IntPtrOutput)
+}
+
+// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+func (o ManagementAgentDataSourceListOutput) ReadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *int { return v.ReadTimeout }).(pulumi.IntPtrOutput)
+}
+
+// Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+func (o ManagementAgentDataSourceListOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
+}
+
+// Number in minutes. The scraping occurs at the specified interval.
+func (o ManagementAgentDataSourceListOutput) ScheduleMins() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *int { return v.ScheduleMins }).(pulumi.IntPtrOutput)
+}
+
+// The current state of managementAgent
+func (o ManagementAgentDataSourceListOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The time the Management Agent was created. An RFC3339 formatted datetime string
+func (o ManagementAgentDataSourceListOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The time the Management Agent was last updated. An RFC3339 formatted datetime string
+func (o ManagementAgentDataSourceListOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// The type of the DataSource.
+func (o ManagementAgentDataSourceListOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// The url through which the Prometheus Exporter publishes its metrics. (http only)
+func (o ManagementAgentDataSourceListOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type ManagementAgentDataSourceListArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementAgentDataSourceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (o ManagementAgentDataSourceListArrayOutput) ToManagementAgentDataSourceListArrayOutput() ManagementAgentDataSourceListArrayOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceListArrayOutput) ToManagementAgentDataSourceListArrayOutputWithContext(ctx context.Context) ManagementAgentDataSourceListArrayOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceListArrayOutput) Index(i pulumi.IntInput) ManagementAgentDataSourceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementAgentDataSourceList {
+		return vs[0].([]ManagementAgentDataSourceList)[vs[1].(int)]
+	}).(ManagementAgentDataSourceListOutput)
+}
+
+type ManagementAgentDataSourceListMetricDimension struct {
+	// Name of the property
+	Name *string `pulumi:"name"`
+	// Value of the metric dimension
+	Value *string `pulumi:"value"`
+}
+
+// ManagementAgentDataSourceListMetricDimensionInput is an input type that accepts ManagementAgentDataSourceListMetricDimensionArgs and ManagementAgentDataSourceListMetricDimensionOutput values.
+// You can construct a concrete instance of `ManagementAgentDataSourceListMetricDimensionInput` via:
+//
+//	ManagementAgentDataSourceListMetricDimensionArgs{...}
+type ManagementAgentDataSourceListMetricDimensionInput interface {
+	pulumi.Input
+
+	ToManagementAgentDataSourceListMetricDimensionOutput() ManagementAgentDataSourceListMetricDimensionOutput
+	ToManagementAgentDataSourceListMetricDimensionOutputWithContext(context.Context) ManagementAgentDataSourceListMetricDimensionOutput
+}
+
+type ManagementAgentDataSourceListMetricDimensionArgs struct {
+	// Name of the property
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Value of the metric dimension
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementAgentDataSourceListMetricDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (i ManagementAgentDataSourceListMetricDimensionArgs) ToManagementAgentDataSourceListMetricDimensionOutput() ManagementAgentDataSourceListMetricDimensionOutput {
+	return i.ToManagementAgentDataSourceListMetricDimensionOutputWithContext(context.Background())
+}
+
+func (i ManagementAgentDataSourceListMetricDimensionArgs) ToManagementAgentDataSourceListMetricDimensionOutputWithContext(ctx context.Context) ManagementAgentDataSourceListMetricDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentDataSourceListMetricDimensionOutput)
+}
+
+// ManagementAgentDataSourceListMetricDimensionArrayInput is an input type that accepts ManagementAgentDataSourceListMetricDimensionArray and ManagementAgentDataSourceListMetricDimensionArrayOutput values.
+// You can construct a concrete instance of `ManagementAgentDataSourceListMetricDimensionArrayInput` via:
+//
+//	ManagementAgentDataSourceListMetricDimensionArray{ ManagementAgentDataSourceListMetricDimensionArgs{...} }
+type ManagementAgentDataSourceListMetricDimensionArrayInput interface {
+	pulumi.Input
+
+	ToManagementAgentDataSourceListMetricDimensionArrayOutput() ManagementAgentDataSourceListMetricDimensionArrayOutput
+	ToManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(context.Context) ManagementAgentDataSourceListMetricDimensionArrayOutput
+}
+
+type ManagementAgentDataSourceListMetricDimensionArray []ManagementAgentDataSourceListMetricDimensionInput
+
+func (ManagementAgentDataSourceListMetricDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (i ManagementAgentDataSourceListMetricDimensionArray) ToManagementAgentDataSourceListMetricDimensionArrayOutput() ManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return i.ToManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementAgentDataSourceListMetricDimensionArray) ToManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(ctx context.Context) ManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentDataSourceListMetricDimensionArrayOutput)
+}
+
+type ManagementAgentDataSourceListMetricDimensionOutput struct{ *pulumi.OutputState }
+
+func (ManagementAgentDataSourceListMetricDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (o ManagementAgentDataSourceListMetricDimensionOutput) ToManagementAgentDataSourceListMetricDimensionOutput() ManagementAgentDataSourceListMetricDimensionOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceListMetricDimensionOutput) ToManagementAgentDataSourceListMetricDimensionOutputWithContext(ctx context.Context) ManagementAgentDataSourceListMetricDimensionOutput {
+	return o
+}
+
+// Name of the property
+func (o ManagementAgentDataSourceListMetricDimensionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceListMetricDimension) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Value of the metric dimension
+func (o ManagementAgentDataSourceListMetricDimensionOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceListMetricDimension) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementAgentDataSourceListMetricDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementAgentDataSourceListMetricDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (o ManagementAgentDataSourceListMetricDimensionArrayOutput) ToManagementAgentDataSourceListMetricDimensionArrayOutput() ManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceListMetricDimensionArrayOutput) ToManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(ctx context.Context) ManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceListMetricDimensionArrayOutput) Index(i pulumi.IntInput) ManagementAgentDataSourceListMetricDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementAgentDataSourceListMetricDimension {
+		return vs[0].([]ManagementAgentDataSourceListMetricDimension)[vs[1].(int)]
+	}).(ManagementAgentDataSourceListMetricDimensionOutput)
+}
+
+type ManagementAgentDataSourceMetricDimension struct {
+	// Unique name of the DataSource.
+	Name string `pulumi:"name"`
+	// (Updatable) Value of the metric dimension
+	Value string `pulumi:"value"`
+}
+
+// ManagementAgentDataSourceMetricDimensionInput is an input type that accepts ManagementAgentDataSourceMetricDimensionArgs and ManagementAgentDataSourceMetricDimensionOutput values.
+// You can construct a concrete instance of `ManagementAgentDataSourceMetricDimensionInput` via:
+//
+//	ManagementAgentDataSourceMetricDimensionArgs{...}
+type ManagementAgentDataSourceMetricDimensionInput interface {
+	pulumi.Input
+
+	ToManagementAgentDataSourceMetricDimensionOutput() ManagementAgentDataSourceMetricDimensionOutput
+	ToManagementAgentDataSourceMetricDimensionOutputWithContext(context.Context) ManagementAgentDataSourceMetricDimensionOutput
+}
+
+type ManagementAgentDataSourceMetricDimensionArgs struct {
+	// Unique name of the DataSource.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) Value of the metric dimension
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ManagementAgentDataSourceMetricDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementAgentDataSourceMetricDimension)(nil)).Elem()
+}
+
+func (i ManagementAgentDataSourceMetricDimensionArgs) ToManagementAgentDataSourceMetricDimensionOutput() ManagementAgentDataSourceMetricDimensionOutput {
+	return i.ToManagementAgentDataSourceMetricDimensionOutputWithContext(context.Background())
+}
+
+func (i ManagementAgentDataSourceMetricDimensionArgs) ToManagementAgentDataSourceMetricDimensionOutputWithContext(ctx context.Context) ManagementAgentDataSourceMetricDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentDataSourceMetricDimensionOutput)
+}
+
+// ManagementAgentDataSourceMetricDimensionArrayInput is an input type that accepts ManagementAgentDataSourceMetricDimensionArray and ManagementAgentDataSourceMetricDimensionArrayOutput values.
+// You can construct a concrete instance of `ManagementAgentDataSourceMetricDimensionArrayInput` via:
+//
+//	ManagementAgentDataSourceMetricDimensionArray{ ManagementAgentDataSourceMetricDimensionArgs{...} }
+type ManagementAgentDataSourceMetricDimensionArrayInput interface {
+	pulumi.Input
+
+	ToManagementAgentDataSourceMetricDimensionArrayOutput() ManagementAgentDataSourceMetricDimensionArrayOutput
+	ToManagementAgentDataSourceMetricDimensionArrayOutputWithContext(context.Context) ManagementAgentDataSourceMetricDimensionArrayOutput
+}
+
+type ManagementAgentDataSourceMetricDimensionArray []ManagementAgentDataSourceMetricDimensionInput
+
+func (ManagementAgentDataSourceMetricDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementAgentDataSourceMetricDimension)(nil)).Elem()
+}
+
+func (i ManagementAgentDataSourceMetricDimensionArray) ToManagementAgentDataSourceMetricDimensionArrayOutput() ManagementAgentDataSourceMetricDimensionArrayOutput {
+	return i.ToManagementAgentDataSourceMetricDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementAgentDataSourceMetricDimensionArray) ToManagementAgentDataSourceMetricDimensionArrayOutputWithContext(ctx context.Context) ManagementAgentDataSourceMetricDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentDataSourceMetricDimensionArrayOutput)
+}
+
+type ManagementAgentDataSourceMetricDimensionOutput struct{ *pulumi.OutputState }
+
+func (ManagementAgentDataSourceMetricDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementAgentDataSourceMetricDimension)(nil)).Elem()
+}
+
+func (o ManagementAgentDataSourceMetricDimensionOutput) ToManagementAgentDataSourceMetricDimensionOutput() ManagementAgentDataSourceMetricDimensionOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceMetricDimensionOutput) ToManagementAgentDataSourceMetricDimensionOutputWithContext(ctx context.Context) ManagementAgentDataSourceMetricDimensionOutput {
+	return o
+}
+
+// Unique name of the DataSource.
+func (o ManagementAgentDataSourceMetricDimensionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceMetricDimension) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) Value of the metric dimension
+func (o ManagementAgentDataSourceMetricDimensionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceMetricDimension) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ManagementAgentDataSourceMetricDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementAgentDataSourceMetricDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementAgentDataSourceMetricDimension)(nil)).Elem()
+}
+
+func (o ManagementAgentDataSourceMetricDimensionArrayOutput) ToManagementAgentDataSourceMetricDimensionArrayOutput() ManagementAgentDataSourceMetricDimensionArrayOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceMetricDimensionArrayOutput) ToManagementAgentDataSourceMetricDimensionArrayOutputWithContext(ctx context.Context) ManagementAgentDataSourceMetricDimensionArrayOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceMetricDimensionArrayOutput) Index(i pulumi.IntInput) ManagementAgentDataSourceMetricDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementAgentDataSourceMetricDimension {
+		return vs[0].([]ManagementAgentDataSourceMetricDimension)[vs[1].(int)]
+	}).(ManagementAgentDataSourceMetricDimensionOutput)
+}
+
+type ManagementAgentDataSourceSummaryList struct {
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet *bool `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key *string `pulumi:"key"`
+	// Name of the property
+	Name *string `pulumi:"name"`
+	// The type of the DataSource.
+	Type *string `pulumi:"type"`
+}
+
+// ManagementAgentDataSourceSummaryListInput is an input type that accepts ManagementAgentDataSourceSummaryListArgs and ManagementAgentDataSourceSummaryListOutput values.
+// You can construct a concrete instance of `ManagementAgentDataSourceSummaryListInput` via:
+//
+//	ManagementAgentDataSourceSummaryListArgs{...}
+type ManagementAgentDataSourceSummaryListInput interface {
+	pulumi.Input
+
+	ToManagementAgentDataSourceSummaryListOutput() ManagementAgentDataSourceSummaryListOutput
+	ToManagementAgentDataSourceSummaryListOutputWithContext(context.Context) ManagementAgentDataSourceSummaryListOutput
+}
+
+type ManagementAgentDataSourceSummaryListArgs struct {
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet pulumi.BoolPtrInput `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Name of the property
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The type of the DataSource.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (ManagementAgentDataSourceSummaryListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (i ManagementAgentDataSourceSummaryListArgs) ToManagementAgentDataSourceSummaryListOutput() ManagementAgentDataSourceSummaryListOutput {
+	return i.ToManagementAgentDataSourceSummaryListOutputWithContext(context.Background())
+}
+
+func (i ManagementAgentDataSourceSummaryListArgs) ToManagementAgentDataSourceSummaryListOutputWithContext(ctx context.Context) ManagementAgentDataSourceSummaryListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentDataSourceSummaryListOutput)
+}
+
+// ManagementAgentDataSourceSummaryListArrayInput is an input type that accepts ManagementAgentDataSourceSummaryListArray and ManagementAgentDataSourceSummaryListArrayOutput values.
+// You can construct a concrete instance of `ManagementAgentDataSourceSummaryListArrayInput` via:
+//
+//	ManagementAgentDataSourceSummaryListArray{ ManagementAgentDataSourceSummaryListArgs{...} }
+type ManagementAgentDataSourceSummaryListArrayInput interface {
+	pulumi.Input
+
+	ToManagementAgentDataSourceSummaryListArrayOutput() ManagementAgentDataSourceSummaryListArrayOutput
+	ToManagementAgentDataSourceSummaryListArrayOutputWithContext(context.Context) ManagementAgentDataSourceSummaryListArrayOutput
+}
+
+type ManagementAgentDataSourceSummaryListArray []ManagementAgentDataSourceSummaryListInput
+
+func (ManagementAgentDataSourceSummaryListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (i ManagementAgentDataSourceSummaryListArray) ToManagementAgentDataSourceSummaryListArrayOutput() ManagementAgentDataSourceSummaryListArrayOutput {
+	return i.ToManagementAgentDataSourceSummaryListArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementAgentDataSourceSummaryListArray) ToManagementAgentDataSourceSummaryListArrayOutputWithContext(ctx context.Context) ManagementAgentDataSourceSummaryListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentDataSourceSummaryListArrayOutput)
+}
+
+type ManagementAgentDataSourceSummaryListOutput struct{ *pulumi.OutputState }
+
+func (ManagementAgentDataSourceSummaryListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (o ManagementAgentDataSourceSummaryListOutput) ToManagementAgentDataSourceSummaryListOutput() ManagementAgentDataSourceSummaryListOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceSummaryListOutput) ToManagementAgentDataSourceSummaryListOutputWithContext(ctx context.Context) ManagementAgentDataSourceSummaryListOutput {
+	return o
+}
+
+// If the Kubernetes cluster type is Daemon set then this will be set to true.
+func (o ManagementAgentDataSourceSummaryListOutput) IsDaemonSet() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceSummaryList) *bool { return v.IsDaemonSet }).(pulumi.BoolPtrOutput)
+}
+
+// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+func (o ManagementAgentDataSourceSummaryListOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceSummaryList) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Name of the property
+func (o ManagementAgentDataSourceSummaryListOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceSummaryList) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The type of the DataSource.
+func (o ManagementAgentDataSourceSummaryListOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentDataSourceSummaryList) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type ManagementAgentDataSourceSummaryListArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementAgentDataSourceSummaryListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (o ManagementAgentDataSourceSummaryListArrayOutput) ToManagementAgentDataSourceSummaryListArrayOutput() ManagementAgentDataSourceSummaryListArrayOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceSummaryListArrayOutput) ToManagementAgentDataSourceSummaryListArrayOutputWithContext(ctx context.Context) ManagementAgentDataSourceSummaryListArrayOutput {
+	return o
+}
+
+func (o ManagementAgentDataSourceSummaryListArrayOutput) Index(i pulumi.IntInput) ManagementAgentDataSourceSummaryListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementAgentDataSourceSummaryList {
+		return vs[0].([]ManagementAgentDataSourceSummaryList)[vs[1].(int)]
+	}).(ManagementAgentDataSourceSummaryListOutput)
+}
+
 type ManagementAgentManagementAgentProperty struct {
 	// Name of the property
 	Name *string `pulumi:"name"`
@@ -750,6 +1338,818 @@ func (o GetManagementAgentCountItemDimensionArrayOutput) Index(i pulumi.IntInput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentCountItemDimension {
 		return vs[0].([]GetManagementAgentCountItemDimension)[vs[1].(int)]
 	}).(GetManagementAgentCountItemDimensionOutput)
+}
+
+type GetManagementAgentDataSourceList struct {
+	// Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+	AllowMetrics string `pulumi:"allowMetrics"`
+	// Compartment owning this DataSource.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+	ConnectionTimeout int `pulumi:"connectionTimeout"`
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet bool `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key string `pulumi:"key"`
+	// The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+	MetricDimensions []GetManagementAgentDataSourceListMetricDimension `pulumi:"metricDimensions"`
+	// Name of the property
+	Name string `pulumi:"name"`
+	// The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+	Namespace string `pulumi:"namespace"`
+	// The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+	ProxyUrl string `pulumi:"proxyUrl"`
+	// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+	ReadDataLimit int `pulumi:"readDataLimit"`
+	// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+	ReadTimeout int `pulumi:"readTimeout"`
+	// Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// Number in minutes. The scraping occurs at the specified interval.
+	ScheduleMins int `pulumi:"scheduleMins"`
+	// The current state of managementAgent
+	State string `pulumi:"state"`
+	// The time the Management Agent was created. An RFC3339 formatted datetime string
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The type of the DataSource.
+	Type string `pulumi:"type"`
+	// The url through which the Prometheus Exporter publishes its metrics. (http only)
+	Url string `pulumi:"url"`
+}
+
+// GetManagementAgentDataSourceListInput is an input type that accepts GetManagementAgentDataSourceListArgs and GetManagementAgentDataSourceListOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourceListInput` via:
+//
+//	GetManagementAgentDataSourceListArgs{...}
+type GetManagementAgentDataSourceListInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourceListOutput() GetManagementAgentDataSourceListOutput
+	ToGetManagementAgentDataSourceListOutputWithContext(context.Context) GetManagementAgentDataSourceListOutput
+}
+
+type GetManagementAgentDataSourceListArgs struct {
+	// Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+	AllowMetrics pulumi.StringInput `pulumi:"allowMetrics"`
+	// Compartment owning this DataSource.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+	ConnectionTimeout pulumi.IntInput `pulumi:"connectionTimeout"`
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet pulumi.BoolInput `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+	MetricDimensions GetManagementAgentDataSourceListMetricDimensionArrayInput `pulumi:"metricDimensions"`
+	// Name of the property
+	Name pulumi.StringInput `pulumi:"name"`
+	// The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+	ProxyUrl pulumi.StringInput `pulumi:"proxyUrl"`
+	// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+	ReadDataLimit pulumi.IntInput `pulumi:"readDataLimit"`
+	// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+	ReadTimeout pulumi.IntInput `pulumi:"readTimeout"`
+	// Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Number in minutes. The scraping occurs at the specified interval.
+	ScheduleMins pulumi.IntInput `pulumi:"scheduleMins"`
+	// The current state of managementAgent
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the Management Agent was created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The type of the DataSource.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The url through which the Prometheus Exporter publishes its metrics. (http only)
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetManagementAgentDataSourceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourceListArgs) ToGetManagementAgentDataSourceListOutput() GetManagementAgentDataSourceListOutput {
+	return i.ToGetManagementAgentDataSourceListOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourceListArgs) ToGetManagementAgentDataSourceListOutputWithContext(ctx context.Context) GetManagementAgentDataSourceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourceListOutput)
+}
+
+// GetManagementAgentDataSourceListArrayInput is an input type that accepts GetManagementAgentDataSourceListArray and GetManagementAgentDataSourceListArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourceListArrayInput` via:
+//
+//	GetManagementAgentDataSourceListArray{ GetManagementAgentDataSourceListArgs{...} }
+type GetManagementAgentDataSourceListArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourceListArrayOutput() GetManagementAgentDataSourceListArrayOutput
+	ToGetManagementAgentDataSourceListArrayOutputWithContext(context.Context) GetManagementAgentDataSourceListArrayOutput
+}
+
+type GetManagementAgentDataSourceListArray []GetManagementAgentDataSourceListInput
+
+func (GetManagementAgentDataSourceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourceListArray) ToGetManagementAgentDataSourceListArrayOutput() GetManagementAgentDataSourceListArrayOutput {
+	return i.ToGetManagementAgentDataSourceListArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourceListArray) ToGetManagementAgentDataSourceListArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourceListArrayOutput)
+}
+
+type GetManagementAgentDataSourceListOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourceListOutput) ToGetManagementAgentDataSourceListOutput() GetManagementAgentDataSourceListOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceListOutput) ToGetManagementAgentDataSourceListOutputWithContext(ctx context.Context) GetManagementAgentDataSourceListOutput {
+	return o
+}
+
+// Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+func (o GetManagementAgentDataSourceListOutput) AllowMetrics() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.AllowMetrics }).(pulumi.StringOutput)
+}
+
+// Compartment owning this DataSource.
+func (o GetManagementAgentDataSourceListOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+func (o GetManagementAgentDataSourceListOutput) ConnectionTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) int { return v.ConnectionTimeout }).(pulumi.IntOutput)
+}
+
+// If the Kubernetes cluster type is Daemon set then this will be set to true.
+func (o GetManagementAgentDataSourceListOutput) IsDaemonSet() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) bool { return v.IsDaemonSet }).(pulumi.BoolOutput)
+}
+
+// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+func (o GetManagementAgentDataSourceListOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+func (o GetManagementAgentDataSourceListOutput) MetricDimensions() GetManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) []GetManagementAgentDataSourceListMetricDimension {
+		return v.MetricDimensions
+	}).(GetManagementAgentDataSourceListMetricDimensionArrayOutput)
+}
+
+// Name of the property
+func (o GetManagementAgentDataSourceListOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+func (o GetManagementAgentDataSourceListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+func (o GetManagementAgentDataSourceListOutput) ProxyUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.ProxyUrl }).(pulumi.StringOutput)
+}
+
+// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+func (o GetManagementAgentDataSourceListOutput) ReadDataLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) int { return v.ReadDataLimit }).(pulumi.IntOutput)
+}
+
+// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+func (o GetManagementAgentDataSourceListOutput) ReadTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) int { return v.ReadTimeout }).(pulumi.IntOutput)
+}
+
+// Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+func (o GetManagementAgentDataSourceListOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// Number in minutes. The scraping occurs at the specified interval.
+func (o GetManagementAgentDataSourceListOutput) ScheduleMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) int { return v.ScheduleMins }).(pulumi.IntOutput)
+}
+
+// The current state of managementAgent
+func (o GetManagementAgentDataSourceListOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the Management Agent was created. An RFC3339 formatted datetime string
+func (o GetManagementAgentDataSourceListOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the Management Agent was last updated. An RFC3339 formatted datetime string
+func (o GetManagementAgentDataSourceListOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The type of the DataSource.
+func (o GetManagementAgentDataSourceListOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The url through which the Prometheus Exporter publishes its metrics. (http only)
+func (o GetManagementAgentDataSourceListOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceList) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetManagementAgentDataSourceListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourceListArrayOutput) ToGetManagementAgentDataSourceListArrayOutput() GetManagementAgentDataSourceListArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceListArrayOutput) ToGetManagementAgentDataSourceListArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourceListArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceListArrayOutput) Index(i pulumi.IntInput) GetManagementAgentDataSourceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentDataSourceList {
+		return vs[0].([]GetManagementAgentDataSourceList)[vs[1].(int)]
+	}).(GetManagementAgentDataSourceListOutput)
+}
+
+type GetManagementAgentDataSourceListMetricDimension struct {
+	// Name of the property
+	Name string `pulumi:"name"`
+	// Value of the metric dimension
+	Value string `pulumi:"value"`
+}
+
+// GetManagementAgentDataSourceListMetricDimensionInput is an input type that accepts GetManagementAgentDataSourceListMetricDimensionArgs and GetManagementAgentDataSourceListMetricDimensionOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourceListMetricDimensionInput` via:
+//
+//	GetManagementAgentDataSourceListMetricDimensionArgs{...}
+type GetManagementAgentDataSourceListMetricDimensionInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourceListMetricDimensionOutput() GetManagementAgentDataSourceListMetricDimensionOutput
+	ToGetManagementAgentDataSourceListMetricDimensionOutputWithContext(context.Context) GetManagementAgentDataSourceListMetricDimensionOutput
+}
+
+type GetManagementAgentDataSourceListMetricDimensionArgs struct {
+	// Name of the property
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of the metric dimension
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetManagementAgentDataSourceListMetricDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourceListMetricDimensionArgs) ToGetManagementAgentDataSourceListMetricDimensionOutput() GetManagementAgentDataSourceListMetricDimensionOutput {
+	return i.ToGetManagementAgentDataSourceListMetricDimensionOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourceListMetricDimensionArgs) ToGetManagementAgentDataSourceListMetricDimensionOutputWithContext(ctx context.Context) GetManagementAgentDataSourceListMetricDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourceListMetricDimensionOutput)
+}
+
+// GetManagementAgentDataSourceListMetricDimensionArrayInput is an input type that accepts GetManagementAgentDataSourceListMetricDimensionArray and GetManagementAgentDataSourceListMetricDimensionArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourceListMetricDimensionArrayInput` via:
+//
+//	GetManagementAgentDataSourceListMetricDimensionArray{ GetManagementAgentDataSourceListMetricDimensionArgs{...} }
+type GetManagementAgentDataSourceListMetricDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourceListMetricDimensionArrayOutput() GetManagementAgentDataSourceListMetricDimensionArrayOutput
+	ToGetManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(context.Context) GetManagementAgentDataSourceListMetricDimensionArrayOutput
+}
+
+type GetManagementAgentDataSourceListMetricDimensionArray []GetManagementAgentDataSourceListMetricDimensionInput
+
+func (GetManagementAgentDataSourceListMetricDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourceListMetricDimensionArray) ToGetManagementAgentDataSourceListMetricDimensionArrayOutput() GetManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return i.ToGetManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourceListMetricDimensionArray) ToGetManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourceListMetricDimensionArrayOutput)
+}
+
+type GetManagementAgentDataSourceListMetricDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourceListMetricDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourceListMetricDimensionOutput) ToGetManagementAgentDataSourceListMetricDimensionOutput() GetManagementAgentDataSourceListMetricDimensionOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceListMetricDimensionOutput) ToGetManagementAgentDataSourceListMetricDimensionOutputWithContext(ctx context.Context) GetManagementAgentDataSourceListMetricDimensionOutput {
+	return o
+}
+
+// Name of the property
+func (o GetManagementAgentDataSourceListMetricDimensionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceListMetricDimension) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of the metric dimension
+func (o GetManagementAgentDataSourceListMetricDimensionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceListMetricDimension) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetManagementAgentDataSourceListMetricDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourceListMetricDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourceListMetricDimensionArrayOutput) ToGetManagementAgentDataSourceListMetricDimensionArrayOutput() GetManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceListMetricDimensionArrayOutput) ToGetManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceListMetricDimensionArrayOutput) Index(i pulumi.IntInput) GetManagementAgentDataSourceListMetricDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentDataSourceListMetricDimension {
+		return vs[0].([]GetManagementAgentDataSourceListMetricDimension)[vs[1].(int)]
+	}).(GetManagementAgentDataSourceListMetricDimensionOutput)
+}
+
+type GetManagementAgentDataSourceMetricDimension struct {
+	// Unique name of the DataSource.
+	Name string `pulumi:"name"`
+	// Value of the metric dimension
+	Value string `pulumi:"value"`
+}
+
+// GetManagementAgentDataSourceMetricDimensionInput is an input type that accepts GetManagementAgentDataSourceMetricDimensionArgs and GetManagementAgentDataSourceMetricDimensionOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourceMetricDimensionInput` via:
+//
+//	GetManagementAgentDataSourceMetricDimensionArgs{...}
+type GetManagementAgentDataSourceMetricDimensionInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourceMetricDimensionOutput() GetManagementAgentDataSourceMetricDimensionOutput
+	ToGetManagementAgentDataSourceMetricDimensionOutputWithContext(context.Context) GetManagementAgentDataSourceMetricDimensionOutput
+}
+
+type GetManagementAgentDataSourceMetricDimensionArgs struct {
+	// Unique name of the DataSource.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of the metric dimension
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetManagementAgentDataSourceMetricDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourceMetricDimension)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourceMetricDimensionArgs) ToGetManagementAgentDataSourceMetricDimensionOutput() GetManagementAgentDataSourceMetricDimensionOutput {
+	return i.ToGetManagementAgentDataSourceMetricDimensionOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourceMetricDimensionArgs) ToGetManagementAgentDataSourceMetricDimensionOutputWithContext(ctx context.Context) GetManagementAgentDataSourceMetricDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourceMetricDimensionOutput)
+}
+
+// GetManagementAgentDataSourceMetricDimensionArrayInput is an input type that accepts GetManagementAgentDataSourceMetricDimensionArray and GetManagementAgentDataSourceMetricDimensionArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourceMetricDimensionArrayInput` via:
+//
+//	GetManagementAgentDataSourceMetricDimensionArray{ GetManagementAgentDataSourceMetricDimensionArgs{...} }
+type GetManagementAgentDataSourceMetricDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourceMetricDimensionArrayOutput() GetManagementAgentDataSourceMetricDimensionArrayOutput
+	ToGetManagementAgentDataSourceMetricDimensionArrayOutputWithContext(context.Context) GetManagementAgentDataSourceMetricDimensionArrayOutput
+}
+
+type GetManagementAgentDataSourceMetricDimensionArray []GetManagementAgentDataSourceMetricDimensionInput
+
+func (GetManagementAgentDataSourceMetricDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourceMetricDimension)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourceMetricDimensionArray) ToGetManagementAgentDataSourceMetricDimensionArrayOutput() GetManagementAgentDataSourceMetricDimensionArrayOutput {
+	return i.ToGetManagementAgentDataSourceMetricDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourceMetricDimensionArray) ToGetManagementAgentDataSourceMetricDimensionArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourceMetricDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourceMetricDimensionArrayOutput)
+}
+
+type GetManagementAgentDataSourceMetricDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourceMetricDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourceMetricDimension)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourceMetricDimensionOutput) ToGetManagementAgentDataSourceMetricDimensionOutput() GetManagementAgentDataSourceMetricDimensionOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceMetricDimensionOutput) ToGetManagementAgentDataSourceMetricDimensionOutputWithContext(ctx context.Context) GetManagementAgentDataSourceMetricDimensionOutput {
+	return o
+}
+
+// Unique name of the DataSource.
+func (o GetManagementAgentDataSourceMetricDimensionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceMetricDimension) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of the metric dimension
+func (o GetManagementAgentDataSourceMetricDimensionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceMetricDimension) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetManagementAgentDataSourceMetricDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourceMetricDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourceMetricDimension)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourceMetricDimensionArrayOutput) ToGetManagementAgentDataSourceMetricDimensionArrayOutput() GetManagementAgentDataSourceMetricDimensionArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceMetricDimensionArrayOutput) ToGetManagementAgentDataSourceMetricDimensionArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourceMetricDimensionArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceMetricDimensionArrayOutput) Index(i pulumi.IntInput) GetManagementAgentDataSourceMetricDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentDataSourceMetricDimension {
+		return vs[0].([]GetManagementAgentDataSourceMetricDimension)[vs[1].(int)]
+	}).(GetManagementAgentDataSourceMetricDimensionOutput)
+}
+
+type GetManagementAgentDataSourceSummaryList struct {
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet bool `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key string `pulumi:"key"`
+	// Name of the property
+	Name string `pulumi:"name"`
+	// The type of the DataSource.
+	Type string `pulumi:"type"`
+}
+
+// GetManagementAgentDataSourceSummaryListInput is an input type that accepts GetManagementAgentDataSourceSummaryListArgs and GetManagementAgentDataSourceSummaryListOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourceSummaryListInput` via:
+//
+//	GetManagementAgentDataSourceSummaryListArgs{...}
+type GetManagementAgentDataSourceSummaryListInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourceSummaryListOutput() GetManagementAgentDataSourceSummaryListOutput
+	ToGetManagementAgentDataSourceSummaryListOutputWithContext(context.Context) GetManagementAgentDataSourceSummaryListOutput
+}
+
+type GetManagementAgentDataSourceSummaryListArgs struct {
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet pulumi.BoolInput `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Name of the property
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the DataSource.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetManagementAgentDataSourceSummaryListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourceSummaryListArgs) ToGetManagementAgentDataSourceSummaryListOutput() GetManagementAgentDataSourceSummaryListOutput {
+	return i.ToGetManagementAgentDataSourceSummaryListOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourceSummaryListArgs) ToGetManagementAgentDataSourceSummaryListOutputWithContext(ctx context.Context) GetManagementAgentDataSourceSummaryListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourceSummaryListOutput)
+}
+
+// GetManagementAgentDataSourceSummaryListArrayInput is an input type that accepts GetManagementAgentDataSourceSummaryListArray and GetManagementAgentDataSourceSummaryListArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourceSummaryListArrayInput` via:
+//
+//	GetManagementAgentDataSourceSummaryListArray{ GetManagementAgentDataSourceSummaryListArgs{...} }
+type GetManagementAgentDataSourceSummaryListArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourceSummaryListArrayOutput() GetManagementAgentDataSourceSummaryListArrayOutput
+	ToGetManagementAgentDataSourceSummaryListArrayOutputWithContext(context.Context) GetManagementAgentDataSourceSummaryListArrayOutput
+}
+
+type GetManagementAgentDataSourceSummaryListArray []GetManagementAgentDataSourceSummaryListInput
+
+func (GetManagementAgentDataSourceSummaryListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourceSummaryListArray) ToGetManagementAgentDataSourceSummaryListArrayOutput() GetManagementAgentDataSourceSummaryListArrayOutput {
+	return i.ToGetManagementAgentDataSourceSummaryListArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourceSummaryListArray) ToGetManagementAgentDataSourceSummaryListArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourceSummaryListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourceSummaryListArrayOutput)
+}
+
+type GetManagementAgentDataSourceSummaryListOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourceSummaryListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourceSummaryListOutput) ToGetManagementAgentDataSourceSummaryListOutput() GetManagementAgentDataSourceSummaryListOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceSummaryListOutput) ToGetManagementAgentDataSourceSummaryListOutputWithContext(ctx context.Context) GetManagementAgentDataSourceSummaryListOutput {
+	return o
+}
+
+// If the Kubernetes cluster type is Daemon set then this will be set to true.
+func (o GetManagementAgentDataSourceSummaryListOutput) IsDaemonSet() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceSummaryList) bool { return v.IsDaemonSet }).(pulumi.BoolOutput)
+}
+
+// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+func (o GetManagementAgentDataSourceSummaryListOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceSummaryList) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Name of the property
+func (o GetManagementAgentDataSourceSummaryListOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceSummaryList) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the DataSource.
+func (o GetManagementAgentDataSourceSummaryListOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourceSummaryList) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetManagementAgentDataSourceSummaryListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourceSummaryListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourceSummaryListArrayOutput) ToGetManagementAgentDataSourceSummaryListArrayOutput() GetManagementAgentDataSourceSummaryListArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceSummaryListArrayOutput) ToGetManagementAgentDataSourceSummaryListArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourceSummaryListArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourceSummaryListArrayOutput) Index(i pulumi.IntInput) GetManagementAgentDataSourceSummaryListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentDataSourceSummaryList {
+		return vs[0].([]GetManagementAgentDataSourceSummaryList)[vs[1].(int)]
+	}).(GetManagementAgentDataSourceSummaryListOutput)
+}
+
+type GetManagementAgentDataSourcesDataSource struct {
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	DataSourceKey string `pulumi:"dataSourceKey"`
+	// Unique name of the dataSource.
+	Name *string `pulumi:"name"`
+	// The type of the DataSource.
+	Type string `pulumi:"type"`
+}
+
+// GetManagementAgentDataSourcesDataSourceInput is an input type that accepts GetManagementAgentDataSourcesDataSourceArgs and GetManagementAgentDataSourcesDataSourceOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourcesDataSourceInput` via:
+//
+//	GetManagementAgentDataSourcesDataSourceArgs{...}
+type GetManagementAgentDataSourcesDataSourceInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourcesDataSourceOutput() GetManagementAgentDataSourcesDataSourceOutput
+	ToGetManagementAgentDataSourcesDataSourceOutputWithContext(context.Context) GetManagementAgentDataSourcesDataSourceOutput
+}
+
+type GetManagementAgentDataSourcesDataSourceArgs struct {
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	DataSourceKey pulumi.StringInput `pulumi:"dataSourceKey"`
+	// Unique name of the dataSource.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The type of the DataSource.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetManagementAgentDataSourcesDataSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourcesDataSource)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourcesDataSourceArgs) ToGetManagementAgentDataSourcesDataSourceOutput() GetManagementAgentDataSourcesDataSourceOutput {
+	return i.ToGetManagementAgentDataSourcesDataSourceOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourcesDataSourceArgs) ToGetManagementAgentDataSourcesDataSourceOutputWithContext(ctx context.Context) GetManagementAgentDataSourcesDataSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourcesDataSourceOutput)
+}
+
+// GetManagementAgentDataSourcesDataSourceArrayInput is an input type that accepts GetManagementAgentDataSourcesDataSourceArray and GetManagementAgentDataSourcesDataSourceArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourcesDataSourceArrayInput` via:
+//
+//	GetManagementAgentDataSourcesDataSourceArray{ GetManagementAgentDataSourcesDataSourceArgs{...} }
+type GetManagementAgentDataSourcesDataSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourcesDataSourceArrayOutput() GetManagementAgentDataSourcesDataSourceArrayOutput
+	ToGetManagementAgentDataSourcesDataSourceArrayOutputWithContext(context.Context) GetManagementAgentDataSourcesDataSourceArrayOutput
+}
+
+type GetManagementAgentDataSourcesDataSourceArray []GetManagementAgentDataSourcesDataSourceInput
+
+func (GetManagementAgentDataSourcesDataSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourcesDataSource)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourcesDataSourceArray) ToGetManagementAgentDataSourcesDataSourceArrayOutput() GetManagementAgentDataSourcesDataSourceArrayOutput {
+	return i.ToGetManagementAgentDataSourcesDataSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourcesDataSourceArray) ToGetManagementAgentDataSourcesDataSourceArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourcesDataSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourcesDataSourceArrayOutput)
+}
+
+type GetManagementAgentDataSourcesDataSourceOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourcesDataSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourcesDataSource)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourcesDataSourceOutput) ToGetManagementAgentDataSourcesDataSourceOutput() GetManagementAgentDataSourcesDataSourceOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourcesDataSourceOutput) ToGetManagementAgentDataSourcesDataSourceOutputWithContext(ctx context.Context) GetManagementAgentDataSourcesDataSourceOutput {
+	return o
+}
+
+// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+func (o GetManagementAgentDataSourcesDataSourceOutput) DataSourceKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourcesDataSource) string { return v.DataSourceKey }).(pulumi.StringOutput)
+}
+
+// Unique name of the dataSource.
+func (o GetManagementAgentDataSourcesDataSourceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourcesDataSource) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The type of the DataSource.
+func (o GetManagementAgentDataSourcesDataSourceOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourcesDataSource) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetManagementAgentDataSourcesDataSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourcesDataSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourcesDataSource)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourcesDataSourceArrayOutput) ToGetManagementAgentDataSourcesDataSourceArrayOutput() GetManagementAgentDataSourcesDataSourceArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourcesDataSourceArrayOutput) ToGetManagementAgentDataSourcesDataSourceArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourcesDataSourceArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourcesDataSourceArrayOutput) Index(i pulumi.IntInput) GetManagementAgentDataSourcesDataSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentDataSourcesDataSource {
+		return vs[0].([]GetManagementAgentDataSourcesDataSource)[vs[1].(int)]
+	}).(GetManagementAgentDataSourcesDataSourceOutput)
+}
+
+type GetManagementAgentDataSourcesFilter struct {
+	// Unique name of the dataSource.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagementAgentDataSourcesFilterInput is an input type that accepts GetManagementAgentDataSourcesFilterArgs and GetManagementAgentDataSourcesFilterOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourcesFilterInput` via:
+//
+//	GetManagementAgentDataSourcesFilterArgs{...}
+type GetManagementAgentDataSourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourcesFilterOutput() GetManagementAgentDataSourcesFilterOutput
+	ToGetManagementAgentDataSourcesFilterOutputWithContext(context.Context) GetManagementAgentDataSourcesFilterOutput
+}
+
+type GetManagementAgentDataSourcesFilterArgs struct {
+	// Unique name of the dataSource.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagementAgentDataSourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourcesFilter)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourcesFilterArgs) ToGetManagementAgentDataSourcesFilterOutput() GetManagementAgentDataSourcesFilterOutput {
+	return i.ToGetManagementAgentDataSourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourcesFilterArgs) ToGetManagementAgentDataSourcesFilterOutputWithContext(ctx context.Context) GetManagementAgentDataSourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourcesFilterOutput)
+}
+
+// GetManagementAgentDataSourcesFilterArrayInput is an input type that accepts GetManagementAgentDataSourcesFilterArray and GetManagementAgentDataSourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentDataSourcesFilterArrayInput` via:
+//
+//	GetManagementAgentDataSourcesFilterArray{ GetManagementAgentDataSourcesFilterArgs{...} }
+type GetManagementAgentDataSourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentDataSourcesFilterArrayOutput() GetManagementAgentDataSourcesFilterArrayOutput
+	ToGetManagementAgentDataSourcesFilterArrayOutputWithContext(context.Context) GetManagementAgentDataSourcesFilterArrayOutput
+}
+
+type GetManagementAgentDataSourcesFilterArray []GetManagementAgentDataSourcesFilterInput
+
+func (GetManagementAgentDataSourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourcesFilter)(nil)).Elem()
+}
+
+func (i GetManagementAgentDataSourcesFilterArray) ToGetManagementAgentDataSourcesFilterArrayOutput() GetManagementAgentDataSourcesFilterArrayOutput {
+	return i.ToGetManagementAgentDataSourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentDataSourcesFilterArray) ToGetManagementAgentDataSourcesFilterArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentDataSourcesFilterArrayOutput)
+}
+
+type GetManagementAgentDataSourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentDataSourcesFilter)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourcesFilterOutput) ToGetManagementAgentDataSourcesFilterOutput() GetManagementAgentDataSourcesFilterOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourcesFilterOutput) ToGetManagementAgentDataSourcesFilterOutputWithContext(ctx context.Context) GetManagementAgentDataSourcesFilterOutput {
+	return o
+}
+
+// Unique name of the dataSource.
+func (o GetManagementAgentDataSourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAgentDataSourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagementAgentDataSourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentDataSourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagementAgentDataSourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentDataSourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentDataSourcesFilter)(nil)).Elem()
+}
+
+func (o GetManagementAgentDataSourcesFilterArrayOutput) ToGetManagementAgentDataSourcesFilterArrayOutput() GetManagementAgentDataSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourcesFilterArrayOutput) ToGetManagementAgentDataSourcesFilterArrayOutputWithContext(ctx context.Context) GetManagementAgentDataSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentDataSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAgentDataSourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentDataSourcesFilter {
+		return vs[0].([]GetManagementAgentDataSourcesFilter)[vs[1].(int)]
+	}).(GetManagementAgentDataSourcesFilterOutput)
 }
 
 type GetManagementAgentImagesFilter struct {
@@ -2365,7 +3765,10 @@ type GetManagementAgentsManagementAgent struct {
 	// Filter to return only Management Agents in the particular availability status.
 	AvailabilityStatus string `pulumi:"availabilityStatus"`
 	// The OCID of the compartment to which a request will be scoped.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId   string                                             `pulumi:"compartmentId"`
+	DataSourceLists []GetManagementAgentsManagementAgentDataSourceList `pulumi:"dataSourceLists"`
+	// list of dataSources associated with the agent
+	DataSourceSummaryLists []GetManagementAgentsManagementAgentDataSourceSummaryList `pulumi:"dataSourceSummaryLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
 	DeployPluginsIds []string               `pulumi:"deployPluginsIds"`
@@ -2431,7 +3834,10 @@ type GetManagementAgentsManagementAgentArgs struct {
 	// Filter to return only Management Agents in the particular availability status.
 	AvailabilityStatus pulumi.StringInput `pulumi:"availabilityStatus"`
 	// The OCID of the compartment to which a request will be scoped.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId   pulumi.StringInput                                         `pulumi:"compartmentId"`
+	DataSourceLists GetManagementAgentsManagementAgentDataSourceListArrayInput `pulumi:"dataSourceLists"`
+	// list of dataSources associated with the agent
+	DataSourceSummaryLists GetManagementAgentsManagementAgentDataSourceSummaryListArrayInput `pulumi:"dataSourceSummaryLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags      pulumi.MapInput         `pulumi:"definedTags"`
 	DeployPluginsIds pulumi.StringArrayInput `pulumi:"deployPluginsIds"`
@@ -2541,6 +3947,19 @@ func (o GetManagementAgentsManagementAgentOutput) AvailabilityStatus() pulumi.St
 // The OCID of the compartment to which a request will be scoped.
 func (o GetManagementAgentsManagementAgentOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAgentsManagementAgentOutput) DataSourceLists() GetManagementAgentsManagementAgentDataSourceListArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) []GetManagementAgentsManagementAgentDataSourceList {
+		return v.DataSourceLists
+	}).(GetManagementAgentsManagementAgentDataSourceListArrayOutput)
+}
+
+// list of dataSources associated with the agent
+func (o GetManagementAgentsManagementAgentOutput) DataSourceSummaryLists() GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) []GetManagementAgentsManagementAgentDataSourceSummaryList {
+		return v.DataSourceSummaryLists
+	}).(GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2688,6 +4107,455 @@ func (o GetManagementAgentsManagementAgentArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentsManagementAgent {
 		return vs[0].([]GetManagementAgentsManagementAgent)[vs[1].(int)]
 	}).(GetManagementAgentsManagementAgentOutput)
+}
+
+type GetManagementAgentsManagementAgentDataSourceList struct {
+	AllowMetrics string `pulumi:"allowMetrics"`
+	// The OCID of the compartment to which a request will be scoped.
+	CompartmentId     string `pulumi:"compartmentId"`
+	ConnectionTimeout int    `pulumi:"connectionTimeout"`
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet bool `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key              string                                                            `pulumi:"key"`
+	MetricDimensions []GetManagementAgentsManagementAgentDataSourceListMetricDimension `pulumi:"metricDimensions"`
+	// Name of the property
+	Name          string `pulumi:"name"`
+	Namespace     string `pulumi:"namespace"`
+	ProxyUrl      string `pulumi:"proxyUrl"`
+	ReadDataLimit int    `pulumi:"readDataLimit"`
+	ReadTimeout   int    `pulumi:"readTimeout"`
+	ResourceGroup string `pulumi:"resourceGroup"`
+	ScheduleMins  int    `pulumi:"scheduleMins"`
+	// Filter to return only Management Agents in the particular lifecycle state.
+	State string `pulumi:"state"`
+	// The time the Management Agent was created. An RFC3339 formatted datetime string
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The type of the DataSource.
+	Type string `pulumi:"type"`
+	Url  string `pulumi:"url"`
+}
+
+// GetManagementAgentsManagementAgentDataSourceListInput is an input type that accepts GetManagementAgentsManagementAgentDataSourceListArgs and GetManagementAgentsManagementAgentDataSourceListOutput values.
+// You can construct a concrete instance of `GetManagementAgentsManagementAgentDataSourceListInput` via:
+//
+//	GetManagementAgentsManagementAgentDataSourceListArgs{...}
+type GetManagementAgentsManagementAgentDataSourceListInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentsManagementAgentDataSourceListOutput() GetManagementAgentsManagementAgentDataSourceListOutput
+	ToGetManagementAgentsManagementAgentDataSourceListOutputWithContext(context.Context) GetManagementAgentsManagementAgentDataSourceListOutput
+}
+
+type GetManagementAgentsManagementAgentDataSourceListArgs struct {
+	AllowMetrics pulumi.StringInput `pulumi:"allowMetrics"`
+	// The OCID of the compartment to which a request will be scoped.
+	CompartmentId     pulumi.StringInput `pulumi:"compartmentId"`
+	ConnectionTimeout pulumi.IntInput    `pulumi:"connectionTimeout"`
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet pulumi.BoolInput `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key              pulumi.StringInput                                                        `pulumi:"key"`
+	MetricDimensions GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayInput `pulumi:"metricDimensions"`
+	// Name of the property
+	Name          pulumi.StringInput `pulumi:"name"`
+	Namespace     pulumi.StringInput `pulumi:"namespace"`
+	ProxyUrl      pulumi.StringInput `pulumi:"proxyUrl"`
+	ReadDataLimit pulumi.IntInput    `pulumi:"readDataLimit"`
+	ReadTimeout   pulumi.IntInput    `pulumi:"readTimeout"`
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	ScheduleMins  pulumi.IntInput    `pulumi:"scheduleMins"`
+	// Filter to return only Management Agents in the particular lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the Management Agent was created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The type of the DataSource.
+	Type pulumi.StringInput `pulumi:"type"`
+	Url  pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetManagementAgentsManagementAgentDataSourceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceListArgs) ToGetManagementAgentsManagementAgentDataSourceListOutput() GetManagementAgentsManagementAgentDataSourceListOutput {
+	return i.ToGetManagementAgentsManagementAgentDataSourceListOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceListArgs) ToGetManagementAgentsManagementAgentDataSourceListOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentDataSourceListOutput)
+}
+
+// GetManagementAgentsManagementAgentDataSourceListArrayInput is an input type that accepts GetManagementAgentsManagementAgentDataSourceListArray and GetManagementAgentsManagementAgentDataSourceListArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentsManagementAgentDataSourceListArrayInput` via:
+//
+//	GetManagementAgentsManagementAgentDataSourceListArray{ GetManagementAgentsManagementAgentDataSourceListArgs{...} }
+type GetManagementAgentsManagementAgentDataSourceListArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentsManagementAgentDataSourceListArrayOutput() GetManagementAgentsManagementAgentDataSourceListArrayOutput
+	ToGetManagementAgentsManagementAgentDataSourceListArrayOutputWithContext(context.Context) GetManagementAgentsManagementAgentDataSourceListArrayOutput
+}
+
+type GetManagementAgentsManagementAgentDataSourceListArray []GetManagementAgentsManagementAgentDataSourceListInput
+
+func (GetManagementAgentsManagementAgentDataSourceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentsManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceListArray) ToGetManagementAgentsManagementAgentDataSourceListArrayOutput() GetManagementAgentsManagementAgentDataSourceListArrayOutput {
+	return i.ToGetManagementAgentsManagementAgentDataSourceListArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceListArray) ToGetManagementAgentsManagementAgentDataSourceListArrayOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentDataSourceListArrayOutput)
+}
+
+type GetManagementAgentsManagementAgentDataSourceListOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentsManagementAgentDataSourceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) ToGetManagementAgentsManagementAgentDataSourceListOutput() GetManagementAgentsManagementAgentDataSourceListOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) ToGetManagementAgentsManagementAgentDataSourceListOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceListOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) AllowMetrics() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.AllowMetrics }).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment to which a request will be scoped.
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) ConnectionTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) int { return v.ConnectionTimeout }).(pulumi.IntOutput)
+}
+
+// If the Kubernetes cluster type is Daemon set then this will be set to true.
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) IsDaemonSet() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) bool { return v.IsDaemonSet }).(pulumi.BoolOutput)
+}
+
+// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) MetricDimensions() GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) []GetManagementAgentsManagementAgentDataSourceListMetricDimension {
+		return v.MetricDimensions
+	}).(GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput)
+}
+
+// Name of the property
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) ProxyUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.ProxyUrl }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) ReadDataLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) int { return v.ReadDataLimit }).(pulumi.IntOutput)
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) ReadTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) int { return v.ReadTimeout }).(pulumi.IntOutput)
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) ScheduleMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) int { return v.ScheduleMins }).(pulumi.IntOutput)
+}
+
+// Filter to return only Management Agents in the particular lifecycle state.
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the Management Agent was created. An RFC3339 formatted datetime string
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the Management Agent was last updated. An RFC3339 formatted datetime string
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The type of the DataSource.
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceList) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetManagementAgentsManagementAgentDataSourceListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentsManagementAgentDataSourceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentsManagementAgentDataSourceList)(nil)).Elem()
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListArrayOutput) ToGetManagementAgentsManagementAgentDataSourceListArrayOutput() GetManagementAgentsManagementAgentDataSourceListArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListArrayOutput) ToGetManagementAgentsManagementAgentDataSourceListArrayOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceListArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsManagementAgentDataSourceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentsManagementAgentDataSourceList {
+		return vs[0].([]GetManagementAgentsManagementAgentDataSourceList)[vs[1].(int)]
+	}).(GetManagementAgentsManagementAgentDataSourceListOutput)
+}
+
+type GetManagementAgentsManagementAgentDataSourceListMetricDimension struct {
+	// Name of the property
+	Name  string `pulumi:"name"`
+	Value string `pulumi:"value"`
+}
+
+// GetManagementAgentsManagementAgentDataSourceListMetricDimensionInput is an input type that accepts GetManagementAgentsManagementAgentDataSourceListMetricDimensionArgs and GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput values.
+// You can construct a concrete instance of `GetManagementAgentsManagementAgentDataSourceListMetricDimensionInput` via:
+//
+//	GetManagementAgentsManagementAgentDataSourceListMetricDimensionArgs{...}
+type GetManagementAgentsManagementAgentDataSourceListMetricDimensionInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput() GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput
+	ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionOutputWithContext(context.Context) GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput
+}
+
+type GetManagementAgentsManagementAgentDataSourceListMetricDimensionArgs struct {
+	// Name of the property
+	Name  pulumi.StringInput `pulumi:"name"`
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetManagementAgentsManagementAgentDataSourceListMetricDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceListMetricDimensionArgs) ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput() GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput {
+	return i.ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceListMetricDimensionArgs) ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput)
+}
+
+// GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayInput is an input type that accepts GetManagementAgentsManagementAgentDataSourceListMetricDimensionArray and GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayInput` via:
+//
+//	GetManagementAgentsManagementAgentDataSourceListMetricDimensionArray{ GetManagementAgentsManagementAgentDataSourceListMetricDimensionArgs{...} }
+type GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput() GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput
+	ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(context.Context) GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput
+}
+
+type GetManagementAgentsManagementAgentDataSourceListMetricDimensionArray []GetManagementAgentsManagementAgentDataSourceListMetricDimensionInput
+
+func (GetManagementAgentsManagementAgentDataSourceListMetricDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentsManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceListMetricDimensionArray) ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput() GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return i.ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceListMetricDimensionArray) ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput)
+}
+
+type GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput) ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput() GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput) ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput {
+	return o
+}
+
+// Name of the property
+func (o GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceListMetricDimension) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceListMetricDimension) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentsManagementAgentDataSourceListMetricDimension)(nil)).Elem()
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput) ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput() GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput) ToGetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentsManagementAgentDataSourceListMetricDimension {
+		return vs[0].([]GetManagementAgentsManagementAgentDataSourceListMetricDimension)[vs[1].(int)]
+	}).(GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput)
+}
+
+type GetManagementAgentsManagementAgentDataSourceSummaryList struct {
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet bool `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key string `pulumi:"key"`
+	// Name of the property
+	Name string `pulumi:"name"`
+	// The type of the DataSource.
+	Type string `pulumi:"type"`
+}
+
+// GetManagementAgentsManagementAgentDataSourceSummaryListInput is an input type that accepts GetManagementAgentsManagementAgentDataSourceSummaryListArgs and GetManagementAgentsManagementAgentDataSourceSummaryListOutput values.
+// You can construct a concrete instance of `GetManagementAgentsManagementAgentDataSourceSummaryListInput` via:
+//
+//	GetManagementAgentsManagementAgentDataSourceSummaryListArgs{...}
+type GetManagementAgentsManagementAgentDataSourceSummaryListInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentsManagementAgentDataSourceSummaryListOutput() GetManagementAgentsManagementAgentDataSourceSummaryListOutput
+	ToGetManagementAgentsManagementAgentDataSourceSummaryListOutputWithContext(context.Context) GetManagementAgentsManagementAgentDataSourceSummaryListOutput
+}
+
+type GetManagementAgentsManagementAgentDataSourceSummaryListArgs struct {
+	// If the Kubernetes cluster type is Daemon set then this will be set to true.
+	IsDaemonSet pulumi.BoolInput `pulumi:"isDaemonSet"`
+	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Name of the property
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the DataSource.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetManagementAgentsManagementAgentDataSourceSummaryListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceSummaryListArgs) ToGetManagementAgentsManagementAgentDataSourceSummaryListOutput() GetManagementAgentsManagementAgentDataSourceSummaryListOutput {
+	return i.ToGetManagementAgentsManagementAgentDataSourceSummaryListOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceSummaryListArgs) ToGetManagementAgentsManagementAgentDataSourceSummaryListOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceSummaryListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentDataSourceSummaryListOutput)
+}
+
+// GetManagementAgentsManagementAgentDataSourceSummaryListArrayInput is an input type that accepts GetManagementAgentsManagementAgentDataSourceSummaryListArray and GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentsManagementAgentDataSourceSummaryListArrayInput` via:
+//
+//	GetManagementAgentsManagementAgentDataSourceSummaryListArray{ GetManagementAgentsManagementAgentDataSourceSummaryListArgs{...} }
+type GetManagementAgentsManagementAgentDataSourceSummaryListArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput() GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput
+	ToGetManagementAgentsManagementAgentDataSourceSummaryListArrayOutputWithContext(context.Context) GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput
+}
+
+type GetManagementAgentsManagementAgentDataSourceSummaryListArray []GetManagementAgentsManagementAgentDataSourceSummaryListInput
+
+func (GetManagementAgentsManagementAgentDataSourceSummaryListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentsManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceSummaryListArray) ToGetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput() GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput {
+	return i.ToGetManagementAgentsManagementAgentDataSourceSummaryListArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentsManagementAgentDataSourceSummaryListArray) ToGetManagementAgentsManagementAgentDataSourceSummaryListArrayOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput)
+}
+
+type GetManagementAgentsManagementAgentDataSourceSummaryListOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentsManagementAgentDataSourceSummaryListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceSummaryListOutput) ToGetManagementAgentsManagementAgentDataSourceSummaryListOutput() GetManagementAgentsManagementAgentDataSourceSummaryListOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceSummaryListOutput) ToGetManagementAgentsManagementAgentDataSourceSummaryListOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceSummaryListOutput {
+	return o
+}
+
+// If the Kubernetes cluster type is Daemon set then this will be set to true.
+func (o GetManagementAgentsManagementAgentDataSourceSummaryListOutput) IsDaemonSet() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceSummaryList) bool { return v.IsDaemonSet }).(pulumi.BoolOutput)
+}
+
+// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+func (o GetManagementAgentsManagementAgentDataSourceSummaryListOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceSummaryList) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Name of the property
+func (o GetManagementAgentsManagementAgentDataSourceSummaryListOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceSummaryList) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the DataSource.
+func (o GetManagementAgentsManagementAgentDataSourceSummaryListOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentDataSourceSummaryList) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentsManagementAgentDataSourceSummaryList)(nil)).Elem()
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput) ToGetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput() GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput) ToGetManagementAgentsManagementAgentDataSourceSummaryListArrayOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsManagementAgentDataSourceSummaryListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentsManagementAgentDataSourceSummaryList {
+		return vs[0].([]GetManagementAgentsManagementAgentDataSourceSummaryList)[vs[1].(int)]
+	}).(GetManagementAgentsManagementAgentDataSourceSummaryListOutput)
 }
 
 type GetManagementAgentsManagementAgentManagementAgentProperty struct {
@@ -2957,6 +4825,14 @@ func (o GetManagementAgentsManagementAgentPluginListArrayOutput) Index(i pulumi.
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentDataSourceListInput)(nil)).Elem(), ManagementAgentDataSourceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentDataSourceListArrayInput)(nil)).Elem(), ManagementAgentDataSourceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentDataSourceListMetricDimensionInput)(nil)).Elem(), ManagementAgentDataSourceListMetricDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentDataSourceListMetricDimensionArrayInput)(nil)).Elem(), ManagementAgentDataSourceListMetricDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentDataSourceMetricDimensionInput)(nil)).Elem(), ManagementAgentDataSourceMetricDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentDataSourceMetricDimensionArrayInput)(nil)).Elem(), ManagementAgentDataSourceMetricDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentDataSourceSummaryListInput)(nil)).Elem(), ManagementAgentDataSourceSummaryListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentDataSourceSummaryListArrayInput)(nil)).Elem(), ManagementAgentDataSourceSummaryListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentManagementAgentPropertyInput)(nil)).Elem(), ManagementAgentManagementAgentPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentManagementAgentPropertyArrayInput)(nil)).Elem(), ManagementAgentManagementAgentPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentPluginListInput)(nil)).Elem(), ManagementAgentPluginListArgs{})
@@ -2969,6 +4845,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentCountItemArrayInput)(nil)).Elem(), GetManagementAgentCountItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentCountItemDimensionInput)(nil)).Elem(), GetManagementAgentCountItemDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentCountItemDimensionArrayInput)(nil)).Elem(), GetManagementAgentCountItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourceListInput)(nil)).Elem(), GetManagementAgentDataSourceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourceListArrayInput)(nil)).Elem(), GetManagementAgentDataSourceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourceListMetricDimensionInput)(nil)).Elem(), GetManagementAgentDataSourceListMetricDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourceListMetricDimensionArrayInput)(nil)).Elem(), GetManagementAgentDataSourceListMetricDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourceMetricDimensionInput)(nil)).Elem(), GetManagementAgentDataSourceMetricDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourceMetricDimensionArrayInput)(nil)).Elem(), GetManagementAgentDataSourceMetricDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourceSummaryListInput)(nil)).Elem(), GetManagementAgentDataSourceSummaryListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourceSummaryListArrayInput)(nil)).Elem(), GetManagementAgentDataSourceSummaryListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourcesDataSourceInput)(nil)).Elem(), GetManagementAgentDataSourcesDataSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourcesDataSourceArrayInput)(nil)).Elem(), GetManagementAgentDataSourcesDataSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourcesFilterInput)(nil)).Elem(), GetManagementAgentDataSourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentDataSourcesFilterArrayInput)(nil)).Elem(), GetManagementAgentDataSourcesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentImagesFilterInput)(nil)).Elem(), GetManagementAgentImagesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentImagesFilterArrayInput)(nil)).Elem(), GetManagementAgentImagesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentImagesManagementAgentImageInput)(nil)).Elem(), GetManagementAgentImagesManagementAgentImageArgs{})
@@ -2995,10 +4883,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsFilterArrayInput)(nil)).Elem(), GetManagementAgentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentInput)(nil)).Elem(), GetManagementAgentsManagementAgentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentArrayInput)(nil)).Elem(), GetManagementAgentsManagementAgentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceListInput)(nil)).Elem(), GetManagementAgentsManagementAgentDataSourceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceListArrayInput)(nil)).Elem(), GetManagementAgentsManagementAgentDataSourceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceListMetricDimensionInput)(nil)).Elem(), GetManagementAgentsManagementAgentDataSourceListMetricDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayInput)(nil)).Elem(), GetManagementAgentsManagementAgentDataSourceListMetricDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceSummaryListInput)(nil)).Elem(), GetManagementAgentsManagementAgentDataSourceSummaryListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentDataSourceSummaryListArrayInput)(nil)).Elem(), GetManagementAgentsManagementAgentDataSourceSummaryListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentManagementAgentPropertyInput)(nil)).Elem(), GetManagementAgentsManagementAgentManagementAgentPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentManagementAgentPropertyArrayInput)(nil)).Elem(), GetManagementAgentsManagementAgentManagementAgentPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentPluginListInput)(nil)).Elem(), GetManagementAgentsManagementAgentPluginListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentPluginListArrayInput)(nil)).Elem(), GetManagementAgentsManagementAgentPluginListArray{})
+	pulumi.RegisterOutputType(ManagementAgentDataSourceListOutput{})
+	pulumi.RegisterOutputType(ManagementAgentDataSourceListArrayOutput{})
+	pulumi.RegisterOutputType(ManagementAgentDataSourceListMetricDimensionOutput{})
+	pulumi.RegisterOutputType(ManagementAgentDataSourceListMetricDimensionArrayOutput{})
+	pulumi.RegisterOutputType(ManagementAgentDataSourceMetricDimensionOutput{})
+	pulumi.RegisterOutputType(ManagementAgentDataSourceMetricDimensionArrayOutput{})
+	pulumi.RegisterOutputType(ManagementAgentDataSourceSummaryListOutput{})
+	pulumi.RegisterOutputType(ManagementAgentDataSourceSummaryListArrayOutput{})
 	pulumi.RegisterOutputType(ManagementAgentManagementAgentPropertyOutput{})
 	pulumi.RegisterOutputType(ManagementAgentManagementAgentPropertyArrayOutput{})
 	pulumi.RegisterOutputType(ManagementAgentPluginListOutput{})
@@ -3011,6 +4913,18 @@ func init() {
 	pulumi.RegisterOutputType(GetManagementAgentCountItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentCountItemDimensionOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentCountItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourceListOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourceListArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourceListMetricDimensionOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourceListMetricDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourceMetricDimensionOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourceMetricDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourceSummaryListOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourceSummaryListArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourcesDataSourceOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourcesDataSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentDataSourcesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentImagesFilterOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentImagesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentImagesManagementAgentImageOutput{})
@@ -3037,6 +4951,12 @@ func init() {
 	pulumi.RegisterOutputType(GetManagementAgentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentDataSourceListOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentDataSourceListArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentDataSourceListMetricDimensionOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentDataSourceListMetricDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentDataSourceSummaryListOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentDataSourceSummaryListArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentManagementAgentPropertyOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentPluginListOutput{})

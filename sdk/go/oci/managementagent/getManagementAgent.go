@@ -60,8 +60,11 @@ type LookupManagementAgentArgs struct {
 type LookupManagementAgentResult struct {
 	// The current availability status of managementAgent
 	AvailabilityStatus string `pulumi:"availabilityStatus"`
-	// Compartment Identifier
+	// Compartment owning this DataSource.
 	CompartmentId string `pulumi:"compartmentId"`
+	// list of dataSources associated with the agent
+	DataSourceLists        []GetManagementAgentDataSourceList        `pulumi:"dataSourceLists"`
+	DataSourceSummaryLists []GetManagementAgentDataSourceSummaryList `pulumi:"dataSourceSummaryLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
 	DeployPluginsIds []string               `pulumi:"deployPluginsIds"`
@@ -156,9 +159,20 @@ func (o LookupManagementAgentResultOutput) AvailabilityStatus() pulumi.StringOut
 	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.AvailabilityStatus }).(pulumi.StringOutput)
 }
 
-// Compartment Identifier
+// Compartment owning this DataSource.
 func (o LookupManagementAgentResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// list of dataSources associated with the agent
+func (o LookupManagementAgentResultOutput) DataSourceLists() GetManagementAgentDataSourceListArrayOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) []GetManagementAgentDataSourceList { return v.DataSourceLists }).(GetManagementAgentDataSourceListArrayOutput)
+}
+
+func (o LookupManagementAgentResultOutput) DataSourceSummaryLists() GetManagementAgentDataSourceSummaryListArrayOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) []GetManagementAgentDataSourceSummaryList {
+		return v.DataSourceSummaryLists
+	}).(GetManagementAgentDataSourceSummaryListArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

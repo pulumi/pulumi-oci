@@ -54,8 +54,11 @@ type ManagementAgent struct {
 
 	// The current availability status of managementAgent
 	AvailabilityStatus pulumi.StringOutput `pulumi:"availabilityStatus"`
-	// Compartment Identifier
+	// Compartment owning this DataSource.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// list of dataSources associated with the agent
+	DataSourceLists        ManagementAgentDataSourceListArrayOutput        `pulumi:"dataSourceLists"`
+	DataSourceSummaryLists ManagementAgentDataSourceSummaryListArrayOutput `pulumi:"dataSourceSummaryLists"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Plugin Id list
@@ -144,8 +147,11 @@ func GetManagementAgent(ctx *pulumi.Context,
 type managementAgentState struct {
 	// The current availability status of managementAgent
 	AvailabilityStatus *string `pulumi:"availabilityStatus"`
-	// Compartment Identifier
+	// Compartment owning this DataSource.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// list of dataSources associated with the agent
+	DataSourceLists        []ManagementAgentDataSourceList        `pulumi:"dataSourceLists"`
+	DataSourceSummaryLists []ManagementAgentDataSourceSummaryList `pulumi:"dataSourceSummaryLists"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Plugin Id list
@@ -202,8 +208,11 @@ type managementAgentState struct {
 type ManagementAgentState struct {
 	// The current availability status of managementAgent
 	AvailabilityStatus pulumi.StringPtrInput
-	// Compartment Identifier
+	// Compartment owning this DataSource.
 	CompartmentId pulumi.StringPtrInput
+	// list of dataSources associated with the agent
+	DataSourceLists        ManagementAgentDataSourceListArrayInput
+	DataSourceSummaryLists ManagementAgentDataSourceSummaryListArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Plugin Id list
@@ -386,9 +395,20 @@ func (o ManagementAgentOutput) AvailabilityStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringOutput { return v.AvailabilityStatus }).(pulumi.StringOutput)
 }
 
-// Compartment Identifier
+// Compartment owning this DataSource.
 func (o ManagementAgentOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// list of dataSources associated with the agent
+func (o ManagementAgentOutput) DataSourceLists() ManagementAgentDataSourceListArrayOutput {
+	return o.ApplyT(func(v *ManagementAgent) ManagementAgentDataSourceListArrayOutput { return v.DataSourceLists }).(ManagementAgentDataSourceListArrayOutput)
+}
+
+func (o ManagementAgentOutput) DataSourceSummaryLists() ManagementAgentDataSourceSummaryListArrayOutput {
+	return o.ApplyT(func(v *ManagementAgent) ManagementAgentDataSourceSummaryListArrayOutput {
+		return v.DataSourceSummaryLists
+	}).(ManagementAgentDataSourceSummaryListArrayOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`

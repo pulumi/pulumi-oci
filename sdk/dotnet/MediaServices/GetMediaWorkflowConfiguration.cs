@@ -106,7 +106,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class GetMediaWorkflowConfigurationResult
     {
         /// <summary>
-        /// Compartment Identifier.
+        /// The compartment ID of the lock.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -125,10 +125,15 @@ namespace Pulumi.Oci.MediaServices
         /// Unique identifier that is immutable on creation.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecyleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMediaWorkflowConfigurationLockResult> Locks;
         public readonly string MediaWorkflowConfigurationId;
         /// <summary>
         /// Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue
@@ -163,7 +168,11 @@ namespace Pulumi.Oci.MediaServices
 
             string id,
 
+            bool isLockOverride,
+
             string lifecyleDetails,
+
+            ImmutableArray<Outputs.GetMediaWorkflowConfigurationLockResult> locks,
 
             string mediaWorkflowConfigurationId,
 
@@ -182,7 +191,9 @@ namespace Pulumi.Oci.MediaServices
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
             LifecyleDetails = lifecyleDetails;
+            Locks = locks;
             MediaWorkflowConfigurationId = mediaWorkflowConfigurationId;
             Parameters = parameters;
             State = state;

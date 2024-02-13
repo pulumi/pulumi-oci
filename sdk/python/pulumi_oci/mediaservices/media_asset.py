@@ -22,6 +22,8 @@ class MediaAssetArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetLockArgs']]]] = None,
                  master_media_asset_id: Optional[pulumi.Input[str]] = None,
                  media_asset_tags: Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetMediaAssetTagArgs']]]] = None,
                  media_workflow_job_id: Optional[pulumi.Input[str]] = None,
@@ -36,7 +38,7 @@ class MediaAssetArgs:
                  source_media_workflow_version: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MediaAsset resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
                
                
@@ -46,6 +48,7 @@ class MediaAssetArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['MediaAssetLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] master_media_asset_id: (Updatable) The ID of the senior most asset from which this asset is derived.
         :param pulumi.Input[Sequence[pulumi.Input['MediaAssetMediaAssetTagArgs']]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
         :param pulumi.Input[str] media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset.
@@ -69,6 +72,10 @@ class MediaAssetArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if master_media_asset_id is not None:
             pulumi.set(__self__, "master_media_asset_id", master_media_asset_id)
         if media_asset_tags is not None:
@@ -98,7 +105,7 @@ class MediaAssetArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Compartment Identifier.
+        (Updatable) The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -169,6 +176,27 @@ class MediaAssetArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter(name="masterMediaAssetId")
@@ -323,6 +351,8 @@ class _MediaAssetState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetLockArgs']]]] = None,
                  master_media_asset_id: Optional[pulumi.Input[str]] = None,
                  media_asset_tags: Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetMediaAssetTagArgs']]]] = None,
                  media_workflow_job_id: Optional[pulumi.Input[str]] = None,
@@ -343,10 +373,11 @@ class _MediaAssetState:
         """
         Input properties used for looking up and filtering MediaAsset resources.
         :param pulumi.Input[str] bucket: The name of the object storage bucket where this asset is located.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['MediaAssetLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] master_media_asset_id: (Updatable) The ID of the senior most asset from which this asset is derived.
         :param pulumi.Input[Sequence[pulumi.Input['MediaAssetMediaAssetTagArgs']]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
         :param pulumi.Input[str] media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset.
@@ -361,7 +392,7 @@ class _MediaAssetState:
         :param pulumi.Input[str] source_media_workflow_version: The version of the MediaWorkflow used to produce this asset.
         :param pulumi.Input[str] state: The current state of the MediaAsset.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_created: When the lock was created.
         :param pulumi.Input[str] time_updated: The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
                
@@ -379,6 +410,10 @@ class _MediaAssetState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if master_media_asset_id is not None:
             pulumi.set(__self__, "master_media_asset_id", master_media_asset_id)
         if media_asset_tags is not None:
@@ -430,7 +465,7 @@ class _MediaAssetState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment Identifier.
+        (Updatable) The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -473,6 +508,27 @@ class _MediaAssetState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter(name="masterMediaAssetId")
@@ -646,7 +702,7 @@ class _MediaAssetState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+        When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -693,6 +749,8 @@ class MediaAsset(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetLockArgs']]]]] = None,
                  master_media_asset_id: Optional[pulumi.Input[str]] = None,
                  media_asset_tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetMediaAssetTagArgs']]]]] = None,
                  media_workflow_job_id: Optional[pulumi.Input[str]] = None,
@@ -723,10 +781,11 @@ class MediaAsset(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bucket: The name of the object storage bucket where this asset is located.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] master_media_asset_id: (Updatable) The ID of the senior most asset from which this asset is derived.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetMediaAssetTagArgs']]]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
         :param pulumi.Input[str] media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset.
@@ -784,6 +843,8 @@ class MediaAsset(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetLockArgs']]]]] = None,
                  master_media_asset_id: Optional[pulumi.Input[str]] = None,
                  media_asset_tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetMediaAssetTagArgs']]]]] = None,
                  media_workflow_job_id: Optional[pulumi.Input[str]] = None,
@@ -813,6 +874,8 @@ class MediaAsset(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["master_media_asset_id"] = master_media_asset_id
             __props__.__dict__["media_asset_tags"] = media_asset_tags
             __props__.__dict__["media_workflow_job_id"] = media_workflow_job_id
@@ -847,6 +910,8 @@ class MediaAsset(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetLockArgs']]]]] = None,
             master_media_asset_id: Optional[pulumi.Input[str]] = None,
             media_asset_tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetMediaAssetTagArgs']]]]] = None,
             media_workflow_job_id: Optional[pulumi.Input[str]] = None,
@@ -872,10 +937,11 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bucket: The name of the object storage bucket where this asset is located.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] master_media_asset_id: (Updatable) The ID of the senior most asset from which this asset is derived.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetMediaAssetTagArgs']]]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
         :param pulumi.Input[str] media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset.
@@ -890,7 +956,7 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[str] source_media_workflow_version: The version of the MediaWorkflow used to produce this asset.
         :param pulumi.Input[str] state: The current state of the MediaAsset.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_created: When the lock was created.
         :param pulumi.Input[str] time_updated: The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
                
@@ -907,6 +973,8 @@ class MediaAsset(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_lock_override"] = is_lock_override
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["master_media_asset_id"] = master_media_asset_id
         __props__.__dict__["media_asset_tags"] = media_asset_tags
         __props__.__dict__["media_workflow_job_id"] = media_workflow_job_id
@@ -938,7 +1006,7 @@ class MediaAsset(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Compartment Identifier.
+        (Updatable) The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -965,6 +1033,19 @@ class MediaAsset(pulumi.CustomResource):
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.MediaAssetLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="masterMediaAssetId")
@@ -1082,7 +1163,7 @@ class MediaAsset(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+        When the lock was created.
         """
         return pulumi.get(self, "time_created")
 

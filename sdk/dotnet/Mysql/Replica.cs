@@ -157,6 +157,12 @@ namespace Pulumi.Oci.Mysql
         public Output<Outputs.ReplicaReplicaOverrides> ReplicaOverrides { get; private set; } = null!;
 
         /// <summary>
+        /// Secure connection configuration details.
+        /// </summary>
+        [Output("secureConnections")]
+        public Output<ImmutableArray<Outputs.ReplicaSecureConnection>> SecureConnections { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
         /// 
         /// 
@@ -399,6 +405,18 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("replicaOverrides")]
         public Input<Inputs.ReplicaReplicaOverridesGetArgs>? ReplicaOverrides { get; set; }
+
+        [Input("secureConnections")]
+        private InputList<Inputs.ReplicaSecureConnectionGetArgs>? _secureConnections;
+
+        /// <summary>
+        /// Secure connection configuration details.
+        /// </summary>
+        public InputList<Inputs.ReplicaSecureConnectionGetArgs> SecureConnections
+        {
+            get => _secureConnections ?? (_secureConnections = new InputList<Inputs.ReplicaSecureConnectionGetArgs>());
+            set => _secureConnections = value;
+        }
 
         /// <summary>
         /// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 

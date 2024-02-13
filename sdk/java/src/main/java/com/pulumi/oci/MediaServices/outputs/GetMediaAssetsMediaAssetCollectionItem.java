@@ -5,8 +5,10 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.outputs.GetMediaAssetsMediaAssetCollectionItemLock;
 import com.pulumi.oci.MediaServices.outputs.GetMediaAssetsMediaAssetCollectionItemMediaAssetTag;
 import com.pulumi.oci.MediaServices.outputs.GetMediaAssetsMediaAssetCollectionItemMetadata;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -45,6 +47,12 @@ public final class GetMediaAssetsMediaAssetCollectionItem {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetMediaAssetsMediaAssetCollectionItemLock> locks;
     /**
      * @return Unique MediaAsset identifier of the first asset upload.
      * 
@@ -173,6 +181,16 @@ public final class GetMediaAssetsMediaAssetCollectionItem {
      */
     public String id() {
         return this.id;
+    }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetMediaAssetsMediaAssetCollectionItemLock> locks() {
+        return this.locks;
     }
     /**
      * @return Unique MediaAsset identifier of the first asset upload.
@@ -309,6 +327,8 @@ public final class GetMediaAssetsMediaAssetCollectionItem {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetMediaAssetsMediaAssetCollectionItemLock> locks;
         private String masterMediaAssetId;
         private List<GetMediaAssetsMediaAssetCollectionItemMediaAssetTag> mediaAssetTags;
         private String mediaWorkflowJobId;
@@ -335,6 +355,8 @@ public final class GetMediaAssetsMediaAssetCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.masterMediaAssetId = defaults.masterMediaAssetId;
     	      this.mediaAssetTags = defaults.mediaAssetTags;
     	      this.mediaWorkflowJobId = defaults.mediaWorkflowJobId;
@@ -401,6 +423,25 @@ public final class GetMediaAssetsMediaAssetCollectionItem {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetsMediaAssetCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetMediaAssetsMediaAssetCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetsMediaAssetCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetMediaAssetsMediaAssetCollectionItemLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder masterMediaAssetId(String masterMediaAssetId) {
@@ -552,6 +593,8 @@ public final class GetMediaAssetsMediaAssetCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
             _resultValue.masterMediaAssetId = masterMediaAssetId;
             _resultValue.mediaAssetTags = mediaAssetTags;
             _resultValue.mediaWorkflowJobId = mediaWorkflowJobId;

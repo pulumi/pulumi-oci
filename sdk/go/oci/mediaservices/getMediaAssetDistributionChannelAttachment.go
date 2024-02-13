@@ -28,6 +28,9 @@ func GetMediaAssetDistributionChannelAttachment(ctx *pulumi.Context, args *GetMe
 type GetMediaAssetDistributionChannelAttachmentArgs struct {
 	// Unique DistributionChannel identifier.
 	DistributionChannelId string `pulumi:"distributionChannelId"`
+	IsLockOverride        *bool  `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetMediaAssetDistributionChannelAttachmentLock `pulumi:"locks"`
 	// Unique MediaAsset identifier
 	MediaAssetId string `pulumi:"mediaAssetId"`
 }
@@ -39,8 +42,11 @@ type GetMediaAssetDistributionChannelAttachmentResult struct {
 	// OCID of associated Distribution Channel.
 	DistributionChannelId string `pulumi:"distributionChannelId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	MediaAssetId string `pulumi:"mediaAssetId"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks        []GetMediaAssetDistributionChannelAttachmentLock `pulumi:"locks"`
+	MediaAssetId string                                           `pulumi:"mediaAssetId"`
 	// The ingest MediaWorkflowJob ID that created this attachment.
 	MediaWorkflowJobId string `pulumi:"mediaWorkflowJobId"`
 	// The identifier for the metadata.
@@ -67,7 +73,10 @@ func GetMediaAssetDistributionChannelAttachmentOutput(ctx *pulumi.Context, args 
 // A collection of arguments for invoking getMediaAssetDistributionChannelAttachment.
 type GetMediaAssetDistributionChannelAttachmentOutputArgs struct {
 	// Unique DistributionChannel identifier.
-	DistributionChannelId pulumi.StringInput `pulumi:"distributionChannelId"`
+	DistributionChannelId pulumi.StringInput  `pulumi:"distributionChannelId"`
+	IsLockOverride        pulumi.BoolPtrInput `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks GetMediaAssetDistributionChannelAttachmentLockArrayInput `pulumi:"locks"`
 	// Unique MediaAsset identifier
 	MediaAssetId pulumi.StringInput `pulumi:"mediaAssetId"`
 }
@@ -104,6 +113,17 @@ func (o GetMediaAssetDistributionChannelAttachmentResultOutput) DistributionChan
 // The provider-assigned unique ID for this managed resource.
 func (o GetMediaAssetDistributionChannelAttachmentResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetMediaAssetDistributionChannelAttachmentResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o GetMediaAssetDistributionChannelAttachmentResultOutput) Locks() GetMediaAssetDistributionChannelAttachmentLockArrayOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) []GetMediaAssetDistributionChannelAttachmentLock {
+		return v.Locks
+	}).(GetMediaAssetDistributionChannelAttachmentLockArrayOutput)
 }
 
 func (o GetMediaAssetDistributionChannelAttachmentResultOutput) MediaAssetId() pulumi.StringOutput {

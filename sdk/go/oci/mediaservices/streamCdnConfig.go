@@ -54,6 +54,15 @@ import (
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsEnabled: pulumi.Any(_var.Stream_cdn_config_is_enabled),
+//				Locks: mediaservices.StreamCdnConfigLockArray{
+//					&mediaservices.StreamCdnConfigLockArgs{
+//						CompartmentId:     pulumi.Any(_var.Compartment_id),
+//						Type:              pulumi.Any(_var.Stream_cdn_config_locks_type),
+//						Message:           pulumi.Any(_var.Stream_cdn_config_locks_message),
+//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
+//						TimeCreated:       pulumi.Any(_var.Stream_cdn_config_locks_time_created),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -76,7 +85,7 @@ import (
 type StreamCdnConfig struct {
 	pulumi.CustomResourceState
 
-	// Compartment Identifier.
+	// The compartment ID of the lock.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Base fields of the StreamCdnConfig configuration object.
 	Config StreamCdnConfigConfigOutput `pulumi:"config"`
@@ -89,17 +98,17 @@ type StreamCdnConfig struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Whether publishing to CDN is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	IsEnabled      pulumi.BoolOutput `pulumi:"isEnabled"`
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks StreamCdnConfigLockArrayOutput `pulumi:"locks"`
 	// The current state of the CDN Configuration.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -144,7 +153,7 @@ func GetStreamCdnConfig(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering StreamCdnConfig resources.
 type streamCdnConfigState struct {
-	// Compartment Identifier.
+	// The compartment ID of the lock.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Base fields of the StreamCdnConfig configuration object.
 	Config *StreamCdnConfigConfig `pulumi:"config"`
@@ -157,24 +166,24 @@ type streamCdnConfigState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Whether publishing to CDN is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsEnabled *bool `pulumi:"isEnabled"`
+	IsEnabled      *bool `pulumi:"isEnabled"`
+	IsLockOverride *bool `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails *string `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks []StreamCdnConfigLock `pulumi:"locks"`
 	// The current state of the CDN Configuration.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type StreamCdnConfigState struct {
-	// Compartment Identifier.
+	// The compartment ID of the lock.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Base fields of the StreamCdnConfig configuration object.
 	Config StreamCdnConfigConfigPtrInput
@@ -187,17 +196,17 @@ type StreamCdnConfigState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Whether publishing to CDN is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsEnabled pulumi.BoolPtrInput
+	IsEnabled      pulumi.BoolPtrInput
+	IsLockOverride pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks StreamCdnConfigLockArrayInput
 	// The current state of the CDN Configuration.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
@@ -219,10 +228,10 @@ type streamCdnConfigArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Whether publishing to CDN is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsEnabled *bool `pulumi:"isEnabled"`
+	IsEnabled      *bool `pulumi:"isEnabled"`
+	IsLockOverride *bool `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []StreamCdnConfigLock `pulumi:"locks"`
 }
 
 // The set of arguments for constructing a StreamCdnConfig resource.
@@ -238,10 +247,10 @@ type StreamCdnConfigArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Whether publishing to CDN is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsEnabled pulumi.BoolPtrInput
+	IsEnabled      pulumi.BoolPtrInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks StreamCdnConfigLockArrayInput
 }
 
 func (StreamCdnConfigArgs) ElementType() reflect.Type {
@@ -331,7 +340,7 @@ func (o StreamCdnConfigOutput) ToStreamCdnConfigOutputWithContext(ctx context.Co
 	return o
 }
 
-// Compartment Identifier.
+// The compartment ID of the lock.
 func (o StreamCdnConfigOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -362,16 +371,22 @@ func (o StreamCdnConfigOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Whether publishing to CDN is enabled.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StreamCdnConfigOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *StreamCdnConfig) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+func (o StreamCdnConfigOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *StreamCdnConfig) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o StreamCdnConfigOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o StreamCdnConfigOutput) Locks() StreamCdnConfigLockArrayOutput {
+	return o.ApplyT(func(v *StreamCdnConfig) StreamCdnConfigLockArrayOutput { return v.Locks }).(StreamCdnConfigLockArrayOutput)
 }
 
 // The current state of the CDN Configuration.
@@ -384,7 +399,7 @@ func (o StreamCdnConfigOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *StreamCdnConfig) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+// When the lock was created.
 func (o StreamCdnConfigOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

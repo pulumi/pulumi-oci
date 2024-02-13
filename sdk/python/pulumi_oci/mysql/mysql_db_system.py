@@ -40,6 +40,7 @@ class MysqlDbSystemArgs:
                  mysql_version: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
+                 secure_connections: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']] = None,
                  shutdown_type: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None):
@@ -84,6 +85,7 @@ class MysqlDbSystemArgs:
         :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        :param pulumi.Input['MysqlDbSystemSecureConnectionsArgs'] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
                
                ** IMPORTANT **
@@ -135,6 +137,8 @@ class MysqlDbSystemArgs:
             pulumi.set(__self__, "port", port)
         if port_x is not None:
             pulumi.set(__self__, "port_x", port_x)
+        if secure_connections is not None:
+            pulumi.set(__self__, "secure_connections", secure_connections)
         if shutdown_type is not None:
             pulumi.set(__self__, "shutdown_type", shutdown_type)
         if source is not None:
@@ -446,6 +450,18 @@ class MysqlDbSystemArgs:
         pulumi.set(self, "port_x", value)
 
     @property
+    @pulumi.getter(name="secureConnections")
+    def secure_connections(self) -> Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']]:
+        """
+        (Updatable) Secure connection configuration details.
+        """
+        return pulumi.get(self, "secure_connections")
+
+    @secure_connections.setter
+    def secure_connections(self, value: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']]):
+        pulumi.set(self, "secure_connections", value)
+
+    @property
     @pulumi.getter(name="shutdownType")
     def shutdown_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -517,6 +533,7 @@ class _MysqlDbSystemState:
                  point_in_time_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
+                 secure_connections: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  shutdown_type: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
@@ -569,6 +586,7 @@ class _MysqlDbSystemState:
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        :param pulumi.Input['MysqlDbSystemSecureConnectionsArgs'] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -639,6 +657,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "port", port)
         if port_x is not None:
             pulumi.set(__self__, "port_x", port_x)
+        if secure_connections is not None:
+            pulumi.set(__self__, "secure_connections", secure_connections)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if shutdown_type is not None:
@@ -1017,6 +1037,18 @@ class _MysqlDbSystemState:
         pulumi.set(self, "port_x", value)
 
     @property
+    @pulumi.getter(name="secureConnections")
+    def secure_connections(self) -> Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']]:
+        """
+        (Updatable) Secure connection configuration details.
+        """
+        return pulumi.get(self, "secure_connections")
+
+    @secure_connections.setter
+    def secure_connections(self, value: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']]):
+        pulumi.set(self, "secure_connections", value)
+
+    @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1132,6 +1164,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  mysql_version: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
+                 secure_connections: Optional[pulumi.Input[pulumi.InputType['MysqlDbSystemSecureConnectionsArgs']]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  shutdown_type: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[pulumi.InputType['MysqlDbSystemSourceArgs']]] = None,
@@ -1196,6 +1229,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             ),
             port=var["mysql_db_system_port"],
             port_x=var["mysql_db_system_port_x"],
+            secure_connections=oci.mysql.MysqlDbSystemSecureConnectionsArgs(
+                certificate_generation_type=var["mysql_db_system_secure_connections_certificate_generation_type"],
+                certificate_id=oci_apigateway_certificate["test_certificate"]["id"],
+            ),
             source=oci.mysql.MysqlDbSystemSourceArgs(
                 source_type=var["mysql_db_system_source_source_type"],
                 backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
@@ -1248,6 +1285,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        :param pulumi.Input[pulumi.InputType['MysqlDbSystemSecureConnectionsArgs']] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -1322,6 +1360,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             ),
             port=var["mysql_db_system_port"],
             port_x=var["mysql_db_system_port_x"],
+            secure_connections=oci.mysql.MysqlDbSystemSecureConnectionsArgs(
+                certificate_generation_type=var["mysql_db_system_secure_connections_certificate_generation_type"],
+                certificate_id=oci_apigateway_certificate["test_certificate"]["id"],
+            ),
             source=oci.mysql.MysqlDbSystemSourceArgs(
                 source_type=var["mysql_db_system_source_source_type"],
                 backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
@@ -1373,6 +1415,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  mysql_version: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
+                 secure_connections: Optional[pulumi.Input[pulumi.InputType['MysqlDbSystemSecureConnectionsArgs']]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  shutdown_type: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[pulumi.InputType['MysqlDbSystemSourceArgs']]] = None,
@@ -1413,6 +1456,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["mysql_version"] = mysql_version
             __props__.__dict__["port"] = port
             __props__.__dict__["port_x"] = port_x
+            __props__.__dict__["secure_connections"] = secure_connections
             if shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_name'")
             __props__.__dict__["shape_name"] = shape_name
@@ -1472,6 +1516,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             point_in_time_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]]] = None,
             port: Optional[pulumi.Input[int]] = None,
             port_x: Optional[pulumi.Input[int]] = None,
+            secure_connections: Optional[pulumi.Input[pulumi.InputType['MysqlDbSystemSecureConnectionsArgs']]] = None,
             shape_name: Optional[pulumi.Input[str]] = None,
             shutdown_type: Optional[pulumi.Input[str]] = None,
             source: Optional[pulumi.Input[pulumi.InputType['MysqlDbSystemSourceArgs']]] = None,
@@ -1529,6 +1574,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        :param pulumi.Input[pulumi.InputType['MysqlDbSystemSecureConnectionsArgs']] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -1574,6 +1620,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["point_in_time_recovery_details"] = point_in_time_recovery_details
         __props__.__dict__["port"] = port
         __props__.__dict__["port_x"] = port_x
+        __props__.__dict__["secure_connections"] = secure_connections
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["shutdown_type"] = shutdown_type
         __props__.__dict__["source"] = source
@@ -1828,6 +1875,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter(name="secureConnections")
+    def secure_connections(self) -> pulumi.Output['outputs.MysqlDbSystemSecureConnections']:
+        """
+        (Updatable) Secure connection configuration details.
+        """
+        return pulumi.get(self, "secure_connections")
 
     @property
     @pulumi.getter(name="shapeName")

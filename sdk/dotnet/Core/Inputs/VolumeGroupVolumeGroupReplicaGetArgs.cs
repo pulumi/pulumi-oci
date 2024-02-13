@@ -19,11 +19,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

@@ -1413,6 +1413,7 @@ public final class MediaServicesFunctions {
         return Deployment.getInstance().invokeAsync("oci:MediaServices/getMediaWorkflowJob:getMediaWorkflowJob", TypeShape.of(GetMediaWorkflowJobResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
      * This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
      * 
      * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
@@ -1453,6 +1454,7 @@ public final class MediaServicesFunctions {
         return getMediaWorkflowJobFact(args, InvokeOptions.Empty);
     }
     /**
+     * &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
      * This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
      * 
      * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
@@ -1493,6 +1495,7 @@ public final class MediaServicesFunctions {
         return getMediaWorkflowJobFactPlain(args, InvokeOptions.Empty);
     }
     /**
+     * &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
      * This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
      * 
      * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
@@ -1533,6 +1536,7 @@ public final class MediaServicesFunctions {
         return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact", TypeShape.of(GetMediaWorkflowJobFactResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
      * This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
      * 
      * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
@@ -1573,6 +1577,7 @@ public final class MediaServicesFunctions {
         return Deployment.getInstance().invokeAsync("oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact", TypeShape.of(GetMediaWorkflowJobFactResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
      * This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
      * 
      * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
@@ -1614,6 +1619,7 @@ public final class MediaServicesFunctions {
         return getMediaWorkflowJobFacts(args, InvokeOptions.Empty);
     }
     /**
+     * &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
      * This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
      * 
      * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
@@ -1655,6 +1661,7 @@ public final class MediaServicesFunctions {
         return getMediaWorkflowJobFactsPlain(args, InvokeOptions.Empty);
     }
     /**
+     * &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
      * This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
      * 
      * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
@@ -1696,6 +1703,7 @@ public final class MediaServicesFunctions {
         return Deployment.getInstance().invoke("oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts", TypeShape.of(GetMediaWorkflowJobFactsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
      * This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
      * 
      * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.

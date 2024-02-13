@@ -66,7 +66,7 @@ export interface GetStreamDistributionChannelsArgs {
  */
 export interface GetStreamDistributionChannelsResult {
     /**
-     * Compartment Identifier.
+     * The compartment ID of the lock.
      */
     readonly compartmentId?: string;
     /**

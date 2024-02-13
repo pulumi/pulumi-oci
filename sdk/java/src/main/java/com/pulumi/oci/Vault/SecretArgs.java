@@ -6,6 +6,7 @@ package com.pulumi.oci.Vault;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Vault.inputs.SecretRotationConfigArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretContentArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretRuleArgs;
 import java.lang.Object;
@@ -82,14 +83,14 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the master encryption key that is used to encrypt the secret.
+     * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
     @Import(name="keyId", required=true)
     private Output<String> keyId;
 
     /**
-     * @return The OCID of the master encryption key that is used to encrypt the secret.
+     * @return The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
     public Output<String> keyId() {
@@ -112,18 +113,33 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Defines the frequency of the rotation and the information about the target system
+     * 
+     */
+    @Import(name="rotationConfig")
+    private @Nullable Output<SecretRotationConfigArgs> rotationConfig;
+
+    /**
+     * @return (Updatable) Defines the frequency of the rotation and the information about the target system
+     * 
+     */
+    public Optional<Output<SecretRotationConfigArgs>> rotationConfig() {
+        return Optional.ofNullable(this.rotationConfig);
+    }
+
+    /**
      * (Updatable) The content of the secret and metadata to help identify it.
      * 
      */
-    @Import(name="secretContent", required=true)
-    private Output<SecretSecretContentArgs> secretContent;
+    @Import(name="secretContent")
+    private @Nullable Output<SecretSecretContentArgs> secretContent;
 
     /**
      * @return (Updatable) The content of the secret and metadata to help identify it.
      * 
      */
-    public Output<SecretSecretContentArgs> secretContent() {
-        return this.secretContent;
+    public Optional<Output<SecretSecretContentArgs>> secretContent() {
+        return Optional.ofNullable(this.secretContent);
     }
 
     /**
@@ -186,6 +202,7 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.keyId = $.keyId;
         this.metadata = $.metadata;
+        this.rotationConfig = $.rotationConfig;
         this.secretContent = $.secretContent;
         this.secretName = $.secretName;
         this.secretRules = $.secretRules;
@@ -295,7 +312,7 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyId The OCID of the master encryption key that is used to encrypt the secret.
+         * @param keyId The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
          * 
          * @return builder
          * 
@@ -306,7 +323,7 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyId The OCID of the master encryption key that is used to encrypt the secret.
+         * @param keyId The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
          * 
          * @return builder
          * 
@@ -337,12 +354,33 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param rotationConfig (Updatable) Defines the frequency of the rotation and the information about the target system
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotationConfig(@Nullable Output<SecretRotationConfigArgs> rotationConfig) {
+            $.rotationConfig = rotationConfig;
+            return this;
+        }
+
+        /**
+         * @param rotationConfig (Updatable) Defines the frequency of the rotation and the information about the target system
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotationConfig(SecretRotationConfigArgs rotationConfig) {
+            return rotationConfig(Output.of(rotationConfig));
+        }
+
+        /**
          * @param secretContent (Updatable) The content of the secret and metadata to help identify it.
          * 
          * @return builder
          * 
          */
-        public Builder secretContent(Output<SecretSecretContentArgs> secretContent) {
+        public Builder secretContent(@Nullable Output<SecretSecretContentArgs> secretContent) {
             $.secretContent = secretContent;
             return this;
         }
@@ -442,9 +480,6 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
             }
             if ($.keyId == null) {
                 throw new MissingRequiredPropertyException("SecretArgs", "keyId");
-            }
-            if ($.secretContent == null) {
-                throw new MissingRequiredPropertyException("SecretArgs", "secretContent");
             }
             if ($.secretName == null) {
                 throw new MissingRequiredPropertyException("SecretArgs", "secretName");

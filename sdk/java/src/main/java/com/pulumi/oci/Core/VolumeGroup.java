@@ -60,6 +60,7 @@ import javax.annotation.Nullable;
  *                 .availabilityDomain(var_.volume_group_volume_group_replicas_availability_domain())
  *                 .displayName(var_.volume_group_volume_group_replicas_display_name())
  *                 .build())
+ *             .volumeIds(var_.volume_group_source_id())
  *             .build());
  * 
  *     }
@@ -140,18 +141,12 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> displayName() {
@@ -282,14 +277,20 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.volumeGroupReplicasDeletion);
     }
     /**
-     * OCIDs for the volumes in this volume group.
+     * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Export(name="volumeIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> volumeIds;
 
     /**
-     * @return OCIDs for the volumes in this volume group.
+     * @return (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> volumeIds() {

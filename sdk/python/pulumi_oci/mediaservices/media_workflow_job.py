@@ -21,13 +21,15 @@ class MediaWorkflowJobArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]] = None,
                  media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  media_workflow_id: Optional[pulumi.Input[str]] = None,
                  media_workflow_name: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MediaWorkflowJob resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
                
                
@@ -36,6 +38,7 @@ class MediaWorkflowJobArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
         :param pulumi.Input[str] media_workflow_id: OCID of the MediaWorkflow that should be run.
         :param pulumi.Input[str] media_workflow_name: Name of the system MediaWorkflow that should be run.
@@ -49,6 +52,10 @@ class MediaWorkflowJobArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if media_workflow_configuration_ids is not None:
             pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
         if media_workflow_id is not None:
@@ -62,7 +69,7 @@ class MediaWorkflowJobArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) ID of the compartment in which the job should be created.
+        (Updatable) The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -123,6 +130,27 @@ class MediaWorkflowJobArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
     def media_workflow_configuration_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -178,7 +206,9 @@ class _MediaWorkflowJobState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]] = None,
                  media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  media_workflow_id: Optional[pulumi.Input[str]] = None,
                  media_workflow_name: Optional[pulumi.Input[str]] = None,
@@ -195,11 +225,12 @@ class _MediaWorkflowJobState:
                  workflow_identifier_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MediaWorkflowJob resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: The lifecycle details of MediaWorkflowJob task.
+        :param pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
         :param pulumi.Input[str] media_workflow_id: OCID of the MediaWorkflow that should be run.
         :param pulumi.Input[str] media_workflow_name: Name of the system MediaWorkflow that should be run.
@@ -209,7 +240,7 @@ class _MediaWorkflowJobState:
         :param pulumi.Input[str] state: The current state of the MediaWorkflowJob task.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobTaskLifecycleStateArgs']]] task_lifecycle_states: Status of each task.
-        :param pulumi.Input[str] time_created: Creation time of the job. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_created: When the lock was created.
         :param pulumi.Input[str] time_ended: Time when the job finished. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Updated time of the job. An RFC3339 formatted datetime string.
@@ -227,8 +258,12 @@ class _MediaWorkflowJobState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if media_workflow_configuration_ids is not None:
             pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
         if media_workflow_id is not None:
@@ -262,7 +297,7 @@ class _MediaWorkflowJobState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ID of the compartment in which the job should be created.
+        (Updatable) The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -307,6 +342,15 @@ class _MediaWorkflowJobState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -317,6 +361,18 @@ class _MediaWorkflowJobState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
@@ -430,7 +486,7 @@ class _MediaWorkflowJobState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        Creation time of the job. An RFC3339 formatted datetime string.
+        When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -500,6 +556,8 @@ class MediaWorkflowJob(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowJobLockArgs']]]]] = None,
                  media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  media_workflow_id: Optional[pulumi.Input[str]] = None,
                  media_workflow_name: Optional[pulumi.Input[str]] = None,
@@ -527,6 +585,13 @@ class MediaWorkflowJob(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            locks=[oci.media_services.MediaWorkflowJobLockArgs(
+                compartment_id=var["compartment_id"],
+                type=var["media_workflow_job_locks_type"],
+                message=var["media_workflow_job_locks_message"],
+                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+                time_created=var["media_workflow_job_locks_time_created"],
+            )],
             media_workflow_configuration_ids=var["media_workflow_job_media_workflow_configuration_ids"],
             media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
             media_workflow_name=oci_media_services_media_workflow["test_media_workflow"]["name"],
@@ -543,10 +608,11 @@ class MediaWorkflowJob(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowJobLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
         :param pulumi.Input[str] media_workflow_id: OCID of the MediaWorkflow that should be run.
         :param pulumi.Input[str] media_workflow_name: Name of the system MediaWorkflow that should be run.
@@ -584,6 +650,13 @@ class MediaWorkflowJob(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            locks=[oci.media_services.MediaWorkflowJobLockArgs(
+                compartment_id=var["compartment_id"],
+                type=var["media_workflow_job_locks_type"],
+                message=var["media_workflow_job_locks_message"],
+                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+                time_created=var["media_workflow_job_locks_time_created"],
+            )],
             media_workflow_configuration_ids=var["media_workflow_job_media_workflow_configuration_ids"],
             media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
             media_workflow_name=oci_media_services_media_workflow["test_media_workflow"]["name"],
@@ -617,6 +690,8 @@ class MediaWorkflowJob(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowJobLockArgs']]]]] = None,
                  media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  media_workflow_id: Optional[pulumi.Input[str]] = None,
                  media_workflow_name: Optional[pulumi.Input[str]] = None,
@@ -637,6 +712,8 @@ class MediaWorkflowJob(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["media_workflow_configuration_ids"] = media_workflow_configuration_ids
             __props__.__dict__["media_workflow_id"] = media_workflow_id
             __props__.__dict__["media_workflow_name"] = media_workflow_name
@@ -668,7 +745,9 @@ class MediaWorkflowJob(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowJobLockArgs']]]]] = None,
             media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             media_workflow_id: Optional[pulumi.Input[str]] = None,
             media_workflow_name: Optional[pulumi.Input[str]] = None,
@@ -690,11 +769,12 @@ class MediaWorkflowJob(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: The lifecycle details of MediaWorkflowJob task.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowJobLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
         :param pulumi.Input[str] media_workflow_id: OCID of the MediaWorkflow that should be run.
         :param pulumi.Input[str] media_workflow_name: Name of the system MediaWorkflow that should be run.
@@ -704,7 +784,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the MediaWorkflowJob task.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowJobTaskLifecycleStateArgs']]]] task_lifecycle_states: Status of each task.
-        :param pulumi.Input[str] time_created: Creation time of the job. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_created: When the lock was created.
         :param pulumi.Input[str] time_ended: Time when the job finished. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Updated time of the job. An RFC3339 formatted datetime string.
@@ -722,7 +802,9 @@ class MediaWorkflowJob(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["media_workflow_configuration_ids"] = media_workflow_configuration_ids
         __props__.__dict__["media_workflow_id"] = media_workflow_id
         __props__.__dict__["media_workflow_name"] = media_workflow_name
@@ -743,7 +825,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) ID of the compartment in which the job should be created.
+        (Updatable) The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -772,12 +854,25 @@ class MediaWorkflowJob(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
         The lifecycle details of MediaWorkflowJob task.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.MediaWorkflowJobLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
@@ -855,7 +950,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        Creation time of the job. An RFC3339 formatted datetime string.
+        When the lock was created.
         """
         return pulumi.get(self, "time_created")
 

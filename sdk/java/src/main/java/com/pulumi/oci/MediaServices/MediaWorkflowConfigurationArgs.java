@@ -6,8 +6,11 @@ package com.pulumi.oci.MediaServices;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.inputs.MediaWorkflowConfigurationLockArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,14 +22,14 @@ public final class MediaWorkflowConfigurationArgs extends com.pulumi.resources.R
     public static final MediaWorkflowConfigurationArgs Empty = new MediaWorkflowConfigurationArgs();
 
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier.
+     * @return (Updatable) The compartment ID of the lock.
      * 
      */
     public Output<String> compartmentId() {
@@ -78,6 +81,28 @@ public final class MediaWorkflowConfigurationArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<MediaWorkflowConfigurationLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<MediaWorkflowConfigurationLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     /**
      * (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects&#39; keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue
      * 
@@ -106,6 +131,8 @@ public final class MediaWorkflowConfigurationArgs extends com.pulumi.resources.R
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
         this.parameters = $.parameters;
     }
 
@@ -128,7 +155,7 @@ public final class MediaWorkflowConfigurationArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -139,7 +166,7 @@ public final class MediaWorkflowConfigurationArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -209,6 +236,46 @@ public final class MediaWorkflowConfigurationArgs extends com.pulumi.resources.R
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<MediaWorkflowConfigurationLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<MediaWorkflowConfigurationLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(MediaWorkflowConfigurationLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

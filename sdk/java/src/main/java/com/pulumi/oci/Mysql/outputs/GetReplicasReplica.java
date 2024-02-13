@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetReplicasReplicaReplicaOverride;
+import com.pulumi.oci.Mysql.outputs.GetReplicasReplicaSecureConnection;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -101,6 +102,11 @@ public final class GetReplicasReplica {
      * 
      */
     private List<GetReplicasReplicaReplicaOverride> replicaOverrides;
+    /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    private List<GetReplicasReplicaSecureConnection> secureConnections;
     /**
      * @return The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
@@ -243,6 +249,13 @@ public final class GetReplicasReplica {
         return this.replicaOverrides;
     }
     /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    public List<GetReplicasReplicaSecureConnection> secureConnections() {
+        return this.secureConnections;
+    }
+    /**
      * @return The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -297,6 +310,7 @@ public final class GetReplicasReplica {
         private Integer port;
         private Integer portX;
         private List<GetReplicasReplicaReplicaOverride> replicaOverrides;
+        private List<GetReplicasReplicaSecureConnection> secureConnections;
         private String shapeName;
         private String state;
         private String timeCreated;
@@ -321,6 +335,7 @@ public final class GetReplicasReplica {
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
     	      this.replicaOverrides = defaults.replicaOverrides;
+    	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -467,6 +482,17 @@ public final class GetReplicasReplica {
             return replicaOverrides(List.of(replicaOverrides));
         }
         @CustomType.Setter
+        public Builder secureConnections(List<GetReplicasReplicaSecureConnection> secureConnections) {
+            if (secureConnections == null) {
+              throw new MissingRequiredPropertyException("GetReplicasReplica", "secureConnections");
+            }
+            this.secureConnections = secureConnections;
+            return this;
+        }
+        public Builder secureConnections(GetReplicasReplicaSecureConnection... secureConnections) {
+            return secureConnections(List.of(secureConnections));
+        }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             if (shapeName == null) {
               throw new MissingRequiredPropertyException("GetReplicasReplica", "shapeName");
@@ -517,6 +543,7 @@ public final class GetReplicasReplica {
             _resultValue.port = port;
             _resultValue.portX = portX;
             _resultValue.replicaOverrides = replicaOverrides;
+            _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

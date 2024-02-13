@@ -6,9 +6,11 @@ package com.pulumi.oci.MediaServices.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.MediaServices.inputs.StreamCdnConfigConfigArgs;
+import com.pulumi.oci.MediaServices.inputs.StreamCdnConfigLockArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -20,14 +22,14 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
     public static final StreamCdnConfigState Empty = new StreamCdnConfigState();
 
     /**
-     * Compartment Identifier.
+     * The compartment ID of the lock.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -112,9 +114,6 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Whether publishing to CDN is enabled.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
@@ -122,12 +121,16 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
     /**
      * @return (Updatable) Whether publishing to CDN is enabled.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<Boolean>> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
+    }
+
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
     }
 
     /**
@@ -143,6 +146,21 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> lifecyleDetails() {
         return Optional.ofNullable(this.lifecyleDetails);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<StreamCdnConfigLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<StreamCdnConfigLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -176,14 +194,14 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The time when the CDN Config was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time when the CDN Config was created. An RFC3339 formatted datetime string.
+     * @return When the lock was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -215,7 +233,9 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
         this.distributionChannelId = $.distributionChannelId;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
+        this.isLockOverride = $.isLockOverride;
         this.lifecyleDetails = $.lifecyleDetails;
+        this.locks = $.locks;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
@@ -241,7 +261,7 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId Compartment Identifier.
+         * @param compartmentId The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -252,7 +272,7 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId Compartment Identifier.
+         * @param compartmentId The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -369,9 +389,6 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
         /**
          * @param isEnabled (Updatable) Whether publishing to CDN is enabled.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -383,14 +400,20 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
         /**
          * @param isEnabled (Updatable) Whether publishing to CDN is enabled.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder isEnabled(Boolean isEnabled) {
             return isEnabled(Output.of(isEnabled));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
         }
 
         /**
@@ -412,6 +435,37 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
          */
         public Builder lifecyleDetails(String lifecyleDetails) {
             return lifecyleDetails(Output.of(lifecyleDetails));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<StreamCdnConfigLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<StreamCdnConfigLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(StreamCdnConfigLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**
@@ -457,7 +511,7 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeCreated The time when the CDN Config was created. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 
@@ -468,7 +522,7 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeCreated The time when the CDN Config was created. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 

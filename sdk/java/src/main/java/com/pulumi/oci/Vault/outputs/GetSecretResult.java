@@ -5,6 +5,7 @@ package com.pulumi.oci.Vault.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Vault.outputs.GetSecretRotationConfig;
 import com.pulumi.oci.Vault.outputs.GetSecretSecretContent;
 import com.pulumi.oci.Vault.outputs.GetSecretSecretRule;
 import java.lang.Object;
@@ -46,10 +47,15 @@ public final class GetSecretResult {
      */
     private String id;
     /**
-     * @return The OCID of the master encryption key that is used to encrypt the secret.
+     * @return The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
     private String keyId;
+    /**
+     * @return A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    private String lastRotationTime;
     /**
      * @return Additional information about the current lifecycle state of the secret.
      * 
@@ -60,6 +66,21 @@ public final class GetSecretResult {
      * 
      */
     private Map<String,Object> metadata;
+    /**
+     * @return A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    private String nextRotationTime;
+    /**
+     * @return Defines the frequency of the rotation and the information about the target system
+     * 
+     */
+    private List<GetSecretRotationConfig> rotationConfigs;
+    /**
+     * @return Additional information about the status of the secret rotation
+     * 
+     */
+    private String rotationStatus;
     private List<GetSecretSecretContent> secretContents;
     private String secretId;
     /**
@@ -142,11 +163,18 @@ public final class GetSecretResult {
         return this.id;
     }
     /**
-     * @return The OCID of the master encryption key that is used to encrypt the secret.
+     * @return The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
     public String keyId() {
         return this.keyId;
+    }
+    /**
+     * @return A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    public String lastRotationTime() {
+        return this.lastRotationTime;
     }
     /**
      * @return Additional information about the current lifecycle state of the secret.
@@ -161,6 +189,27 @@ public final class GetSecretResult {
      */
     public Map<String,Object> metadata() {
         return this.metadata;
+    }
+    /**
+     * @return A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    public String nextRotationTime() {
+        return this.nextRotationTime;
+    }
+    /**
+     * @return Defines the frequency of the rotation and the information about the target system
+     * 
+     */
+    public List<GetSecretRotationConfig> rotationConfigs() {
+        return this.rotationConfigs;
+    }
+    /**
+     * @return Additional information about the status of the secret rotation
+     * 
+     */
+    public String rotationStatus() {
+        return this.rotationStatus;
     }
     public List<GetSecretSecretContent> secretContents() {
         return this.secretContents;
@@ -234,8 +283,12 @@ public final class GetSecretResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String keyId;
+        private String lastRotationTime;
         private String lifecycleDetails;
         private Map<String,Object> metadata;
+        private String nextRotationTime;
+        private List<GetSecretRotationConfig> rotationConfigs;
+        private String rotationStatus;
         private List<GetSecretSecretContent> secretContents;
         private String secretId;
         private String secretName;
@@ -255,8 +308,12 @@ public final class GetSecretResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.keyId = defaults.keyId;
+    	      this.lastRotationTime = defaults.lastRotationTime;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.metadata = defaults.metadata;
+    	      this.nextRotationTime = defaults.nextRotationTime;
+    	      this.rotationConfigs = defaults.rotationConfigs;
+    	      this.rotationStatus = defaults.rotationStatus;
     	      this.secretContents = defaults.secretContents;
     	      this.secretId = defaults.secretId;
     	      this.secretName = defaults.secretName;
@@ -325,6 +382,14 @@ public final class GetSecretResult {
             return this;
         }
         @CustomType.Setter
+        public Builder lastRotationTime(String lastRotationTime) {
+            if (lastRotationTime == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "lastRotationTime");
+            }
+            this.lastRotationTime = lastRotationTime;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetSecretResult", "lifecycleDetails");
@@ -338,6 +403,33 @@ public final class GetSecretResult {
               throw new MissingRequiredPropertyException("GetSecretResult", "metadata");
             }
             this.metadata = metadata;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nextRotationTime(String nextRotationTime) {
+            if (nextRotationTime == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "nextRotationTime");
+            }
+            this.nextRotationTime = nextRotationTime;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder rotationConfigs(List<GetSecretRotationConfig> rotationConfigs) {
+            if (rotationConfigs == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "rotationConfigs");
+            }
+            this.rotationConfigs = rotationConfigs;
+            return this;
+        }
+        public Builder rotationConfigs(GetSecretRotationConfig... rotationConfigs) {
+            return rotationConfigs(List.of(rotationConfigs));
+        }
+        @CustomType.Setter
+        public Builder rotationStatus(String rotationStatus) {
+            if (rotationStatus == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "rotationStatus");
+            }
+            this.rotationStatus = rotationStatus;
             return this;
         }
         @CustomType.Setter
@@ -427,8 +519,12 @@ public final class GetSecretResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.keyId = keyId;
+            _resultValue.lastRotationTime = lastRotationTime;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.metadata = metadata;
+            _resultValue.nextRotationTime = nextRotationTime;
+            _resultValue.rotationConfigs = rotationConfigs;
+            _resultValue.rotationStatus = rotationStatus;
             _resultValue.secretContents = secretContents;
             _resultValue.secretId = secretId;
             _resultValue.secretName = secretName;

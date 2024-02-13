@@ -79,7 +79,11 @@ namespace Pulumi.Oci.MediaServices.Inputs
         public Input<string>? OriginAuthSignType { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the CDN configuration type.
+        /// Type of the lock.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

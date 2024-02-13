@@ -100,6 +100,8 @@ type Replica struct {
 	PortX pulumi.IntOutput `pulumi:"portX"`
 	// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 	ReplicaOverrides ReplicaReplicaOverridesOutput `pulumi:"replicaOverrides"`
+	// Secure connection configuration details.
+	SecureConnections ReplicaSecureConnectionArrayOutput `pulumi:"secureConnections"`
 	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	//
 	// ** IMPORTANT **
@@ -178,6 +180,8 @@ type replicaState struct {
 	PortX *int `pulumi:"portX"`
 	// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 	ReplicaOverrides *ReplicaReplicaOverrides `pulumi:"replicaOverrides"`
+	// Secure connection configuration details.
+	SecureConnections []ReplicaSecureConnection `pulumi:"secureConnections"`
 	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	//
 	// ** IMPORTANT **
@@ -224,6 +228,8 @@ type ReplicaState struct {
 	PortX pulumi.IntPtrInput
 	// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 	ReplicaOverrides ReplicaReplicaOverridesPtrInput
+	// Secure connection configuration details.
+	SecureConnections ReplicaSecureConnectionArrayInput
 	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	//
 	// ** IMPORTANT **
@@ -441,6 +447,11 @@ func (o ReplicaOutput) PortX() pulumi.IntOutput {
 // (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 func (o ReplicaOutput) ReplicaOverrides() ReplicaReplicaOverridesOutput {
 	return o.ApplyT(func(v *Replica) ReplicaReplicaOverridesOutput { return v.ReplicaOverrides }).(ReplicaReplicaOverridesOutput)
+}
+
+// Secure connection configuration details.
+func (o ReplicaOutput) SecureConnections() ReplicaSecureConnectionArrayOutput {
+	return o.ApplyT(func(v *Replica) ReplicaSecureConnectionArrayOutput { return v.SecureConnections }).(ReplicaSecureConnectionArrayOutput)
 }
 
 // (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.

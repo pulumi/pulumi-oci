@@ -106,6 +106,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int PortX;
         /// <summary>
+        /// Secure connection configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotSecureConnectionResult> SecureConnections;
+        /// <summary>
         /// The shape of the DB System instance used for backup.
         /// </summary>
         public readonly string ShapeName;
@@ -162,6 +166,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int portX,
 
+            ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotSecureConnectionResult> secureConnections,
+
             string shapeName,
 
             string subnetId)
@@ -189,6 +195,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             MysqlVersion = mysqlVersion;
             Port = port;
             PortX = portX;
+            SecureConnections = secureConnections;
             ShapeName = shapeName;
             SubnetId = subnetId;
         }

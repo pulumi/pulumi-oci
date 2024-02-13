@@ -16,9 +16,9 @@ namespace Pulumi.Oci.Vault.Outputs
         /// <summary>
         /// (Updatable) The base64-encoded content of the secret.
         /// </summary>
-        public readonly string Content;
+        public readonly string? Content;
         /// <summary>
-        /// (Updatable) content type . Example `BASE64` .
+        /// (Updatable) The base64-encoded content of the secret.
         /// </summary>
         public readonly string ContentType;
         /// <summary>
@@ -26,13 +26,13 @@ namespace Pulumi.Oci.Vault.Outputs
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
+        /// (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
         /// </summary>
         public readonly string? Stage;
 
         [OutputConstructor]
         private SecretSecretContent(
-            string content,
+            string? content,
 
             string contentType,
 

@@ -5,6 +5,8 @@ package com.pulumi.oci.ManagementAgent.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ManagementAgent.inputs.ManagementAgentDataSourceListArgs;
+import com.pulumi.oci.ManagementAgent.inputs.ManagementAgentDataSourceSummaryListArgs;
 import com.pulumi.oci.ManagementAgent.inputs.ManagementAgentManagementAgentPropertyArgs;
 import com.pulumi.oci.ManagementAgent.inputs.ManagementAgentPluginListArgs;
 import java.lang.Boolean;
@@ -37,18 +39,40 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Compartment Identifier
+     * Compartment owning this DataSource.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier
+     * @return Compartment owning this DataSource.
      * 
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * list of dataSources associated with the agent
+     * 
+     */
+    @Import(name="dataSourceLists")
+    private @Nullable Output<List<ManagementAgentDataSourceListArgs>> dataSourceLists;
+
+    /**
+     * @return list of dataSources associated with the agent
+     * 
+     */
+    public Optional<Output<List<ManagementAgentDataSourceListArgs>>> dataSourceLists() {
+        return Optional.ofNullable(this.dataSourceLists);
+    }
+
+    @Import(name="dataSourceSummaryLists")
+    private @Nullable Output<List<ManagementAgentDataSourceSummaryListArgs>> dataSourceSummaryLists;
+
+    public Optional<Output<List<ManagementAgentDataSourceSummaryListArgs>>> dataSourceSummaryLists() {
+        return Optional.ofNullable(this.dataSourceSummaryLists);
     }
 
     /**
@@ -422,6 +446,8 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
     private ManagementAgentState(ManagementAgentState $) {
         this.availabilityStatus = $.availabilityStatus;
         this.compartmentId = $.compartmentId;
+        this.dataSourceLists = $.dataSourceLists;
+        this.dataSourceSummaryLists = $.dataSourceSummaryLists;
         this.definedTags = $.definedTags;
         this.deployPluginsIds = $.deployPluginsIds;
         this.displayName = $.displayName;
@@ -488,7 +514,7 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId Compartment Identifier
+         * @param compartmentId Compartment owning this DataSource.
          * 
          * @return builder
          * 
@@ -499,13 +525,57 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId Compartment Identifier
+         * @param compartmentId Compartment owning this DataSource.
          * 
          * @return builder
          * 
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param dataSourceLists list of dataSources associated with the agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceLists(@Nullable Output<List<ManagementAgentDataSourceListArgs>> dataSourceLists) {
+            $.dataSourceLists = dataSourceLists;
+            return this;
+        }
+
+        /**
+         * @param dataSourceLists list of dataSources associated with the agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceLists(List<ManagementAgentDataSourceListArgs> dataSourceLists) {
+            return dataSourceLists(Output.of(dataSourceLists));
+        }
+
+        /**
+         * @param dataSourceLists list of dataSources associated with the agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceLists(ManagementAgentDataSourceListArgs... dataSourceLists) {
+            return dataSourceLists(List.of(dataSourceLists));
+        }
+
+        public Builder dataSourceSummaryLists(@Nullable Output<List<ManagementAgentDataSourceSummaryListArgs>> dataSourceSummaryLists) {
+            $.dataSourceSummaryLists = dataSourceSummaryLists;
+            return this;
+        }
+
+        public Builder dataSourceSummaryLists(List<ManagementAgentDataSourceSummaryListArgs> dataSourceSummaryLists) {
+            return dataSourceSummaryLists(Output.of(dataSourceSummaryLists));
+        }
+
+        public Builder dataSourceSummaryLists(ManagementAgentDataSourceSummaryListArgs... dataSourceSummaryLists) {
+            return dataSourceSummaryLists(List.of(dataSourceSummaryLists));
         }
 
         /**

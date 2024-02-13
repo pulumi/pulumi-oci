@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetStreamDistributionChannelResult',
@@ -21,7 +22,7 @@ class GetStreamDistributionChannelResult:
     """
     A collection of values returned by getStreamDistributionChannel.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, domain_name=None, freeform_tags=None, id=None, state=None, stream_distribution_channel_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, domain_name=None, freeform_tags=None, id=None, is_lock_override=None, locks=None, state=None, stream_distribution_channel_id=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -40,6 +41,12 @@ class GetStreamDistributionChannelResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -60,7 +67,7 @@ class GetStreamDistributionChannelResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier.
+        The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -103,6 +110,19 @@ class GetStreamDistributionChannelResult:
         Unique identifier that is immutable on creation.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetStreamDistributionChannelLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
@@ -154,6 +174,8 @@ class AwaitableGetStreamDistributionChannelResult(GetStreamDistributionChannelRe
             domain_name=self.domain_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_lock_override=self.is_lock_override,
+            locks=self.locks,
             state=self.state,
             stream_distribution_channel_id=self.stream_distribution_channel_id,
             system_tags=self.system_tags,
@@ -192,6 +214,8 @@ def get_stream_distribution_channel(stream_distribution_channel_id: Optional[str
         domain_name=pulumi.get(__ret__, 'domain_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
+        locks=pulumi.get(__ret__, 'locks'),
         state=pulumi.get(__ret__, 'state'),
         stream_distribution_channel_id=pulumi.get(__ret__, 'stream_distribution_channel_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),

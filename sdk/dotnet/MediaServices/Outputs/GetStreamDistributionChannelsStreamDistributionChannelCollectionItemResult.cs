@@ -37,6 +37,11 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// Unique Stream Distribution Channel identifier.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockResult> Locks;
         /// <summary>
         /// A filter to return only the resources with lifecycleState matching the given lifecycleState.
         /// </summary>
@@ -68,6 +73,10 @@ namespace Pulumi.Oci.MediaServices.Outputs
 
             string id,
 
+            bool isLockOverride,
+
+            ImmutableArray<Outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockResult> locks,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -82,6 +91,8 @@ namespace Pulumi.Oci.MediaServices.Outputs
             DomainName = domainName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
+            Locks = locks;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

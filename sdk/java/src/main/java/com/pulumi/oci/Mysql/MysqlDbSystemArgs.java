@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSecureConnectionsArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -384,6 +385,21 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Secure connection configuration details.
+     * 
+     */
+    @Import(name="secureConnections")
+    private @Nullable Output<MysqlDbSystemSecureConnectionsArgs> secureConnections;
+
+    /**
+     * @return (Updatable) Secure connection configuration details.
+     * 
+     */
+    public Optional<Output<MysqlDbSystemSecureConnectionsArgs>> secureConnections() {
+        return Optional.ofNullable(this.secureConnections);
+    }
+
+    /**
      * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
@@ -491,6 +507,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.mysqlVersion = $.mysqlVersion;
         this.port = $.port;
         this.portX = $.portX;
+        this.secureConnections = $.secureConnections;
         this.shapeName = $.shapeName;
         this.shutdownType = $.shutdownType;
         this.source = $.source;
@@ -1014,6 +1031,27 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder portX(Integer portX) {
             return portX(Output.of(portX));
+        }
+
+        /**
+         * @param secureConnections (Updatable) Secure connection configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secureConnections(@Nullable Output<MysqlDbSystemSecureConnectionsArgs> secureConnections) {
+            $.secureConnections = secureConnections;
+            return this;
+        }
+
+        /**
+         * @param secureConnections (Updatable) Secure connection configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secureConnections(MysqlDbSystemSecureConnectionsArgs secureConnections) {
+            return secureConnections(Output.of(secureConnections));
         }
 
         /**

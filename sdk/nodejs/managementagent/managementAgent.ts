@@ -59,9 +59,14 @@ export class ManagementAgent extends pulumi.CustomResource {
      */
     public /*out*/ readonly availabilityStatus!: pulumi.Output<string>;
     /**
-     * Compartment Identifier
+     * Compartment owning this DataSource.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    /**
+     * list of dataSources associated with the agent
+     */
+    public /*out*/ readonly dataSourceLists!: pulumi.Output<outputs.ManagementAgent.ManagementAgentDataSourceList[]>;
+    public /*out*/ readonly dataSourceSummaryLists!: pulumi.Output<outputs.ManagementAgent.ManagementAgentDataSourceSummaryList[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
@@ -177,6 +182,8 @@ export class ManagementAgent extends pulumi.CustomResource {
             const state = argsOrState as ManagementAgentState | undefined;
             resourceInputs["availabilityStatus"] = state ? state.availabilityStatus : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["dataSourceLists"] = state ? state.dataSourceLists : undefined;
+            resourceInputs["dataSourceSummaryLists"] = state ? state.dataSourceSummaryLists : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["deployPluginsIds"] = state ? state.deployPluginsIds : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -213,6 +220,8 @@ export class ManagementAgent extends pulumi.CustomResource {
             resourceInputs["managedAgentId"] = args ? args.managedAgentId : undefined;
             resourceInputs["availabilityStatus"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
+            resourceInputs["dataSourceLists"] = undefined /*out*/;
+            resourceInputs["dataSourceSummaryLists"] = undefined /*out*/;
             resourceInputs["host"] = undefined /*out*/;
             resourceInputs["hostId"] = undefined /*out*/;
             resourceInputs["installKeyId"] = undefined /*out*/;
@@ -247,9 +256,14 @@ export interface ManagementAgentState {
      */
     availabilityStatus?: pulumi.Input<string>;
     /**
-     * Compartment Identifier
+     * Compartment owning this DataSource.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * list of dataSources associated with the agent
+     */
+    dataSourceLists?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceList>[]>;
+    dataSourceSummaryLists?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceSummaryList>[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */

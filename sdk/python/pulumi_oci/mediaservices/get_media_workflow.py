@@ -22,7 +22,7 @@ class GetMediaWorkflowResult:
     """
     A collection of values returned by getMediaWorkflow.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecyle_details=None, media_workflow_configuration_ids=None, media_workflow_id=None, parameters=None, state=None, system_tags=None, tasks=None, time_created=None, time_updated=None, version=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_lock_override=None, lifecyle_details=None, locks=None, media_workflow_configuration_ids=None, media_workflow_id=None, parameters=None, state=None, system_tags=None, tasks=None, time_created=None, time_updated=None, version=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -38,9 +38,15 @@ class GetMediaWorkflowResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecyle_details and not isinstance(lifecyle_details, str):
             raise TypeError("Expected argument 'lifecyle_details' to be a str")
         pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if media_workflow_configuration_ids and not isinstance(media_workflow_configuration_ids, list):
             raise TypeError("Expected argument 'media_workflow_configuration_ids' to be a list")
         pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
@@ -73,7 +79,7 @@ class GetMediaWorkflowResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier.
+        The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -110,12 +116,25 @@ class GetMediaWorkflowResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> str:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecyle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetMediaWorkflowLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
@@ -198,7 +217,9 @@ class AwaitableGetMediaWorkflowResult(GetMediaWorkflowResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_lock_override=self.is_lock_override,
             lifecyle_details=self.lifecyle_details,
+            locks=self.locks,
             media_workflow_configuration_ids=self.media_workflow_configuration_ids,
             media_workflow_id=self.media_workflow_id,
             parameters=self.parameters,
@@ -240,7 +261,9 @@ def get_media_workflow(media_workflow_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         lifecyle_details=pulumi.get(__ret__, 'lifecyle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         media_workflow_configuration_ids=pulumi.get(__ret__, 'media_workflow_configuration_ids'),
         media_workflow_id=pulumi.get(__ret__, 'media_workflow_id'),
         parameters=pulumi.get(__ret__, 'parameters'),

@@ -21,6 +21,11 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// The OCID of the compartment to which a request will be scoped.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly ImmutableArray<Outputs.GetManagementAgentsManagementAgentDataSourceListResult> DataSourceLists;
+        /// <summary>
+        /// list of dataSources associated with the agent
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetManagementAgentsManagementAgentDataSourceSummaryListResult> DataSourceSummaryLists;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -122,6 +127,10 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
 
             string compartmentId,
 
+            ImmutableArray<Outputs.GetManagementAgentsManagementAgentDataSourceListResult> dataSourceLists,
+
+            ImmutableArray<Outputs.GetManagementAgentsManagementAgentDataSourceSummaryListResult> dataSourceSummaryLists,
+
             ImmutableDictionary<string, object> definedTags,
 
             ImmutableArray<string> deployPluginsIds,
@@ -174,6 +183,8 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         {
             AvailabilityStatus = availabilityStatus;
             CompartmentId = compartmentId;
+            DataSourceLists = dataSourceLists;
+            DataSourceSummaryLists = dataSourceSummaryLists;
             DefinedTags = definedTags;
             DeployPluginsIds = deployPluginsIds;
             DisplayName = displayName;

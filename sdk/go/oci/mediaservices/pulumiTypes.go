@@ -13,6 +13,148 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type MediaAssetLock struct {
+	// (Updatable) The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// (Updatable) The type of the media asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type string `pulumi:"type"`
+}
+
+// MediaAssetLockInput is an input type that accepts MediaAssetLockArgs and MediaAssetLockOutput values.
+// You can construct a concrete instance of `MediaAssetLockInput` via:
+//
+//	MediaAssetLockArgs{...}
+type MediaAssetLockInput interface {
+	pulumi.Input
+
+	ToMediaAssetLockOutput() MediaAssetLockOutput
+	ToMediaAssetLockOutputWithContext(context.Context) MediaAssetLockOutput
+}
+
+type MediaAssetLockArgs struct {
+	// (Updatable) The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// (Updatable) The type of the media asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (MediaAssetLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MediaAssetLock)(nil)).Elem()
+}
+
+func (i MediaAssetLockArgs) ToMediaAssetLockOutput() MediaAssetLockOutput {
+	return i.ToMediaAssetLockOutputWithContext(context.Background())
+}
+
+func (i MediaAssetLockArgs) ToMediaAssetLockOutputWithContext(ctx context.Context) MediaAssetLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetLockOutput)
+}
+
+// MediaAssetLockArrayInput is an input type that accepts MediaAssetLockArray and MediaAssetLockArrayOutput values.
+// You can construct a concrete instance of `MediaAssetLockArrayInput` via:
+//
+//	MediaAssetLockArray{ MediaAssetLockArgs{...} }
+type MediaAssetLockArrayInput interface {
+	pulumi.Input
+
+	ToMediaAssetLockArrayOutput() MediaAssetLockArrayOutput
+	ToMediaAssetLockArrayOutputWithContext(context.Context) MediaAssetLockArrayOutput
+}
+
+type MediaAssetLockArray []MediaAssetLockInput
+
+func (MediaAssetLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MediaAssetLock)(nil)).Elem()
+}
+
+func (i MediaAssetLockArray) ToMediaAssetLockArrayOutput() MediaAssetLockArrayOutput {
+	return i.ToMediaAssetLockArrayOutputWithContext(context.Background())
+}
+
+func (i MediaAssetLockArray) ToMediaAssetLockArrayOutputWithContext(ctx context.Context) MediaAssetLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetLockArrayOutput)
+}
+
+type MediaAssetLockOutput struct{ *pulumi.OutputState }
+
+func (MediaAssetLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MediaAssetLock)(nil)).Elem()
+}
+
+func (o MediaAssetLockOutput) ToMediaAssetLockOutput() MediaAssetLockOutput {
+	return o
+}
+
+func (o MediaAssetLockOutput) ToMediaAssetLockOutputWithContext(ctx context.Context) MediaAssetLockOutput {
+	return o
+}
+
+// (Updatable) The compartment ID of the lock.
+func (o MediaAssetLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v MediaAssetLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o MediaAssetLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaAssetLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o MediaAssetLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaAssetLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o MediaAssetLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaAssetLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of the media asset.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o MediaAssetLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MediaAssetLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type MediaAssetLockArrayOutput struct{ *pulumi.OutputState }
+
+func (MediaAssetLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MediaAssetLock)(nil)).Elem()
+}
+
+func (o MediaAssetLockArrayOutput) ToMediaAssetLockArrayOutput() MediaAssetLockArrayOutput {
+	return o
+}
+
+func (o MediaAssetLockArrayOutput) ToMediaAssetLockArrayOutputWithContext(ctx context.Context) MediaAssetLockArrayOutput {
+	return o
+}
+
+func (o MediaAssetLockArrayOutput) Index(i pulumi.IntInput) MediaAssetLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MediaAssetLock {
+		return vs[0].([]MediaAssetLock)[vs[1].(int)]
+	}).(MediaAssetLockOutput)
+}
+
 type MediaAssetMediaAssetTag struct {
 	// (Updatable) The type of the media asset.
 	//
@@ -223,6 +365,272 @@ func (o MediaAssetMetadataArrayOutput) Index(i pulumi.IntInput) MediaAssetMetada
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MediaAssetMetadata {
 		return vs[0].([]MediaAssetMetadata)[vs[1].(int)]
 	}).(MediaAssetMetadataOutput)
+}
+
+type MediaWorkflowConfigurationLock struct {
+	// (Updatable) The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// MediaWorkflowConfigurationLockInput is an input type that accepts MediaWorkflowConfigurationLockArgs and MediaWorkflowConfigurationLockOutput values.
+// You can construct a concrete instance of `MediaWorkflowConfigurationLockInput` via:
+//
+//	MediaWorkflowConfigurationLockArgs{...}
+type MediaWorkflowConfigurationLockInput interface {
+	pulumi.Input
+
+	ToMediaWorkflowConfigurationLockOutput() MediaWorkflowConfigurationLockOutput
+	ToMediaWorkflowConfigurationLockOutputWithContext(context.Context) MediaWorkflowConfigurationLockOutput
+}
+
+type MediaWorkflowConfigurationLockArgs struct {
+	// (Updatable) The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (MediaWorkflowConfigurationLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MediaWorkflowConfigurationLock)(nil)).Elem()
+}
+
+func (i MediaWorkflowConfigurationLockArgs) ToMediaWorkflowConfigurationLockOutput() MediaWorkflowConfigurationLockOutput {
+	return i.ToMediaWorkflowConfigurationLockOutputWithContext(context.Background())
+}
+
+func (i MediaWorkflowConfigurationLockArgs) ToMediaWorkflowConfigurationLockOutputWithContext(ctx context.Context) MediaWorkflowConfigurationLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowConfigurationLockOutput)
+}
+
+// MediaWorkflowConfigurationLockArrayInput is an input type that accepts MediaWorkflowConfigurationLockArray and MediaWorkflowConfigurationLockArrayOutput values.
+// You can construct a concrete instance of `MediaWorkflowConfigurationLockArrayInput` via:
+//
+//	MediaWorkflowConfigurationLockArray{ MediaWorkflowConfigurationLockArgs{...} }
+type MediaWorkflowConfigurationLockArrayInput interface {
+	pulumi.Input
+
+	ToMediaWorkflowConfigurationLockArrayOutput() MediaWorkflowConfigurationLockArrayOutput
+	ToMediaWorkflowConfigurationLockArrayOutputWithContext(context.Context) MediaWorkflowConfigurationLockArrayOutput
+}
+
+type MediaWorkflowConfigurationLockArray []MediaWorkflowConfigurationLockInput
+
+func (MediaWorkflowConfigurationLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MediaWorkflowConfigurationLock)(nil)).Elem()
+}
+
+func (i MediaWorkflowConfigurationLockArray) ToMediaWorkflowConfigurationLockArrayOutput() MediaWorkflowConfigurationLockArrayOutput {
+	return i.ToMediaWorkflowConfigurationLockArrayOutputWithContext(context.Background())
+}
+
+func (i MediaWorkflowConfigurationLockArray) ToMediaWorkflowConfigurationLockArrayOutputWithContext(ctx context.Context) MediaWorkflowConfigurationLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowConfigurationLockArrayOutput)
+}
+
+type MediaWorkflowConfigurationLockOutput struct{ *pulumi.OutputState }
+
+func (MediaWorkflowConfigurationLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MediaWorkflowConfigurationLock)(nil)).Elem()
+}
+
+func (o MediaWorkflowConfigurationLockOutput) ToMediaWorkflowConfigurationLockOutput() MediaWorkflowConfigurationLockOutput {
+	return o
+}
+
+func (o MediaWorkflowConfigurationLockOutput) ToMediaWorkflowConfigurationLockOutputWithContext(ctx context.Context) MediaWorkflowConfigurationLockOutput {
+	return o
+}
+
+// (Updatable) The compartment ID of the lock.
+func (o MediaWorkflowConfigurationLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v MediaWorkflowConfigurationLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o MediaWorkflowConfigurationLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaWorkflowConfigurationLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o MediaWorkflowConfigurationLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaWorkflowConfigurationLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o MediaWorkflowConfigurationLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaWorkflowConfigurationLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o MediaWorkflowConfigurationLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MediaWorkflowConfigurationLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type MediaWorkflowConfigurationLockArrayOutput struct{ *pulumi.OutputState }
+
+func (MediaWorkflowConfigurationLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MediaWorkflowConfigurationLock)(nil)).Elem()
+}
+
+func (o MediaWorkflowConfigurationLockArrayOutput) ToMediaWorkflowConfigurationLockArrayOutput() MediaWorkflowConfigurationLockArrayOutput {
+	return o
+}
+
+func (o MediaWorkflowConfigurationLockArrayOutput) ToMediaWorkflowConfigurationLockArrayOutputWithContext(ctx context.Context) MediaWorkflowConfigurationLockArrayOutput {
+	return o
+}
+
+func (o MediaWorkflowConfigurationLockArrayOutput) Index(i pulumi.IntInput) MediaWorkflowConfigurationLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MediaWorkflowConfigurationLock {
+		return vs[0].([]MediaWorkflowConfigurationLock)[vs[1].(int)]
+	}).(MediaWorkflowConfigurationLockOutput)
+}
+
+type MediaWorkflowJobLock struct {
+	// (Updatable) The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// MediaWorkflowJobLockInput is an input type that accepts MediaWorkflowJobLockArgs and MediaWorkflowJobLockOutput values.
+// You can construct a concrete instance of `MediaWorkflowJobLockInput` via:
+//
+//	MediaWorkflowJobLockArgs{...}
+type MediaWorkflowJobLockInput interface {
+	pulumi.Input
+
+	ToMediaWorkflowJobLockOutput() MediaWorkflowJobLockOutput
+	ToMediaWorkflowJobLockOutputWithContext(context.Context) MediaWorkflowJobLockOutput
+}
+
+type MediaWorkflowJobLockArgs struct {
+	// (Updatable) The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (MediaWorkflowJobLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MediaWorkflowJobLock)(nil)).Elem()
+}
+
+func (i MediaWorkflowJobLockArgs) ToMediaWorkflowJobLockOutput() MediaWorkflowJobLockOutput {
+	return i.ToMediaWorkflowJobLockOutputWithContext(context.Background())
+}
+
+func (i MediaWorkflowJobLockArgs) ToMediaWorkflowJobLockOutputWithContext(ctx context.Context) MediaWorkflowJobLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobLockOutput)
+}
+
+// MediaWorkflowJobLockArrayInput is an input type that accepts MediaWorkflowJobLockArray and MediaWorkflowJobLockArrayOutput values.
+// You can construct a concrete instance of `MediaWorkflowJobLockArrayInput` via:
+//
+//	MediaWorkflowJobLockArray{ MediaWorkflowJobLockArgs{...} }
+type MediaWorkflowJobLockArrayInput interface {
+	pulumi.Input
+
+	ToMediaWorkflowJobLockArrayOutput() MediaWorkflowJobLockArrayOutput
+	ToMediaWorkflowJobLockArrayOutputWithContext(context.Context) MediaWorkflowJobLockArrayOutput
+}
+
+type MediaWorkflowJobLockArray []MediaWorkflowJobLockInput
+
+func (MediaWorkflowJobLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MediaWorkflowJobLock)(nil)).Elem()
+}
+
+func (i MediaWorkflowJobLockArray) ToMediaWorkflowJobLockArrayOutput() MediaWorkflowJobLockArrayOutput {
+	return i.ToMediaWorkflowJobLockArrayOutputWithContext(context.Background())
+}
+
+func (i MediaWorkflowJobLockArray) ToMediaWorkflowJobLockArrayOutputWithContext(ctx context.Context) MediaWorkflowJobLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobLockArrayOutput)
+}
+
+type MediaWorkflowJobLockOutput struct{ *pulumi.OutputState }
+
+func (MediaWorkflowJobLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MediaWorkflowJobLock)(nil)).Elem()
+}
+
+func (o MediaWorkflowJobLockOutput) ToMediaWorkflowJobLockOutput() MediaWorkflowJobLockOutput {
+	return o
+}
+
+func (o MediaWorkflowJobLockOutput) ToMediaWorkflowJobLockOutputWithContext(ctx context.Context) MediaWorkflowJobLockOutput {
+	return o
+}
+
+// (Updatable) The compartment ID of the lock.
+func (o MediaWorkflowJobLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v MediaWorkflowJobLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o MediaWorkflowJobLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaWorkflowJobLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o MediaWorkflowJobLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaWorkflowJobLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o MediaWorkflowJobLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaWorkflowJobLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o MediaWorkflowJobLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MediaWorkflowJobLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type MediaWorkflowJobLockArrayOutput struct{ *pulumi.OutputState }
+
+func (MediaWorkflowJobLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MediaWorkflowJobLock)(nil)).Elem()
+}
+
+func (o MediaWorkflowJobLockArrayOutput) ToMediaWorkflowJobLockArrayOutput() MediaWorkflowJobLockArrayOutput {
+	return o
+}
+
+func (o MediaWorkflowJobLockArrayOutput) ToMediaWorkflowJobLockArrayOutputWithContext(ctx context.Context) MediaWorkflowJobLockArrayOutput {
+	return o
+}
+
+func (o MediaWorkflowJobLockArrayOutput) Index(i pulumi.IntInput) MediaWorkflowJobLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MediaWorkflowJobLock {
+		return vs[0].([]MediaWorkflowJobLock)[vs[1].(int)]
+	}).(MediaWorkflowJobLockOutput)
 }
 
 type MediaWorkflowJobOutputType struct {
@@ -473,6 +881,139 @@ func (o MediaWorkflowJobTaskLifecycleStateArrayOutput) Index(i pulumi.IntInput) 
 	}).(MediaWorkflowJobTaskLifecycleStateOutput)
 }
 
+type MediaWorkflowLock struct {
+	// (Updatable) The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+	Type string `pulumi:"type"`
+}
+
+// MediaWorkflowLockInput is an input type that accepts MediaWorkflowLockArgs and MediaWorkflowLockOutput values.
+// You can construct a concrete instance of `MediaWorkflowLockInput` via:
+//
+//	MediaWorkflowLockArgs{...}
+type MediaWorkflowLockInput interface {
+	pulumi.Input
+
+	ToMediaWorkflowLockOutput() MediaWorkflowLockOutput
+	ToMediaWorkflowLockOutputWithContext(context.Context) MediaWorkflowLockOutput
+}
+
+type MediaWorkflowLockArgs struct {
+	// (Updatable) The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (MediaWorkflowLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MediaWorkflowLock)(nil)).Elem()
+}
+
+func (i MediaWorkflowLockArgs) ToMediaWorkflowLockOutput() MediaWorkflowLockOutput {
+	return i.ToMediaWorkflowLockOutputWithContext(context.Background())
+}
+
+func (i MediaWorkflowLockArgs) ToMediaWorkflowLockOutputWithContext(ctx context.Context) MediaWorkflowLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowLockOutput)
+}
+
+// MediaWorkflowLockArrayInput is an input type that accepts MediaWorkflowLockArray and MediaWorkflowLockArrayOutput values.
+// You can construct a concrete instance of `MediaWorkflowLockArrayInput` via:
+//
+//	MediaWorkflowLockArray{ MediaWorkflowLockArgs{...} }
+type MediaWorkflowLockArrayInput interface {
+	pulumi.Input
+
+	ToMediaWorkflowLockArrayOutput() MediaWorkflowLockArrayOutput
+	ToMediaWorkflowLockArrayOutputWithContext(context.Context) MediaWorkflowLockArrayOutput
+}
+
+type MediaWorkflowLockArray []MediaWorkflowLockInput
+
+func (MediaWorkflowLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MediaWorkflowLock)(nil)).Elem()
+}
+
+func (i MediaWorkflowLockArray) ToMediaWorkflowLockArrayOutput() MediaWorkflowLockArrayOutput {
+	return i.ToMediaWorkflowLockArrayOutputWithContext(context.Background())
+}
+
+func (i MediaWorkflowLockArray) ToMediaWorkflowLockArrayOutputWithContext(ctx context.Context) MediaWorkflowLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowLockArrayOutput)
+}
+
+type MediaWorkflowLockOutput struct{ *pulumi.OutputState }
+
+func (MediaWorkflowLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MediaWorkflowLock)(nil)).Elem()
+}
+
+func (o MediaWorkflowLockOutput) ToMediaWorkflowLockOutput() MediaWorkflowLockOutput {
+	return o
+}
+
+func (o MediaWorkflowLockOutput) ToMediaWorkflowLockOutputWithContext(ctx context.Context) MediaWorkflowLockOutput {
+	return o
+}
+
+// (Updatable) The compartment ID of the lock.
+func (o MediaWorkflowLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v MediaWorkflowLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o MediaWorkflowLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaWorkflowLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o MediaWorkflowLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaWorkflowLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o MediaWorkflowLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MediaWorkflowLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+func (o MediaWorkflowLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MediaWorkflowLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type MediaWorkflowLockArrayOutput struct{ *pulumi.OutputState }
+
+func (MediaWorkflowLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MediaWorkflowLock)(nil)).Elem()
+}
+
+func (o MediaWorkflowLockArrayOutput) ToMediaWorkflowLockArrayOutput() MediaWorkflowLockArrayOutput {
+	return o
+}
+
+func (o MediaWorkflowLockArrayOutput) ToMediaWorkflowLockArrayOutputWithContext(ctx context.Context) MediaWorkflowLockArrayOutput {
+	return o
+}
+
+func (o MediaWorkflowLockArrayOutput) Index(i pulumi.IntInput) MediaWorkflowLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MediaWorkflowLock {
+		return vs[0].([]MediaWorkflowLock)[vs[1].(int)]
+	}).(MediaWorkflowLockOutput)
+}
+
 type MediaWorkflowTask struct {
 	// (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
 	EnableParameterReference *string `pulumi:"enableParameterReference"`
@@ -656,7 +1197,10 @@ type StreamCdnConfigConfig struct {
 	OriginAuthSignEncryption *string `pulumi:"originAuthSignEncryption"`
 	// (Updatable) The type of data used to compute the signature.
 	OriginAuthSignType *string `pulumi:"originAuthSignType"`
-	// (Updatable) The name of the CDN configuration type.
+	// Type of the lock.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 }
 
@@ -694,7 +1238,10 @@ type StreamCdnConfigConfigArgs struct {
 	OriginAuthSignEncryption pulumi.StringPtrInput `pulumi:"originAuthSignEncryption"`
 	// (Updatable) The type of data used to compute the signature.
 	OriginAuthSignType pulumi.StringPtrInput `pulumi:"originAuthSignType"`
-	// (Updatable) The name of the CDN configuration type.
+	// Type of the lock.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -830,7 +1377,10 @@ func (o StreamCdnConfigConfigOutput) OriginAuthSignType() pulumi.StringPtrOutput
 	return o.ApplyT(func(v StreamCdnConfigConfig) *string { return v.OriginAuthSignType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The name of the CDN configuration type.
+// Type of the lock.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StreamCdnConfigConfigOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v StreamCdnConfigConfig) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -969,7 +1519,10 @@ func (o StreamCdnConfigConfigPtrOutput) OriginAuthSignType() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The name of the CDN configuration type.
+// Type of the lock.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StreamCdnConfigConfigPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *StreamCdnConfigConfig) *string {
 		if v == nil {
@@ -977,6 +1530,290 @@ func (o StreamCdnConfigConfigPtrOutput) Type() pulumi.StringPtrOutput {
 		}
 		return &v.Type
 	}).(pulumi.StringPtrOutput)
+}
+
+type StreamCdnConfigLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type string `pulumi:"type"`
+}
+
+// StreamCdnConfigLockInput is an input type that accepts StreamCdnConfigLockArgs and StreamCdnConfigLockOutput values.
+// You can construct a concrete instance of `StreamCdnConfigLockInput` via:
+//
+//	StreamCdnConfigLockArgs{...}
+type StreamCdnConfigLockInput interface {
+	pulumi.Input
+
+	ToStreamCdnConfigLockOutput() StreamCdnConfigLockOutput
+	ToStreamCdnConfigLockOutputWithContext(context.Context) StreamCdnConfigLockOutput
+}
+
+type StreamCdnConfigLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (StreamCdnConfigLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamCdnConfigLock)(nil)).Elem()
+}
+
+func (i StreamCdnConfigLockArgs) ToStreamCdnConfigLockOutput() StreamCdnConfigLockOutput {
+	return i.ToStreamCdnConfigLockOutputWithContext(context.Background())
+}
+
+func (i StreamCdnConfigLockArgs) ToStreamCdnConfigLockOutputWithContext(ctx context.Context) StreamCdnConfigLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigLockOutput)
+}
+
+// StreamCdnConfigLockArrayInput is an input type that accepts StreamCdnConfigLockArray and StreamCdnConfigLockArrayOutput values.
+// You can construct a concrete instance of `StreamCdnConfigLockArrayInput` via:
+//
+//	StreamCdnConfigLockArray{ StreamCdnConfigLockArgs{...} }
+type StreamCdnConfigLockArrayInput interface {
+	pulumi.Input
+
+	ToStreamCdnConfigLockArrayOutput() StreamCdnConfigLockArrayOutput
+	ToStreamCdnConfigLockArrayOutputWithContext(context.Context) StreamCdnConfigLockArrayOutput
+}
+
+type StreamCdnConfigLockArray []StreamCdnConfigLockInput
+
+func (StreamCdnConfigLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamCdnConfigLock)(nil)).Elem()
+}
+
+func (i StreamCdnConfigLockArray) ToStreamCdnConfigLockArrayOutput() StreamCdnConfigLockArrayOutput {
+	return i.ToStreamCdnConfigLockArrayOutputWithContext(context.Background())
+}
+
+func (i StreamCdnConfigLockArray) ToStreamCdnConfigLockArrayOutputWithContext(ctx context.Context) StreamCdnConfigLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigLockArrayOutput)
+}
+
+type StreamCdnConfigLockOutput struct{ *pulumi.OutputState }
+
+func (StreamCdnConfigLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamCdnConfigLock)(nil)).Elem()
+}
+
+func (o StreamCdnConfigLockOutput) ToStreamCdnConfigLockOutput() StreamCdnConfigLockOutput {
+	return o
+}
+
+func (o StreamCdnConfigLockOutput) ToStreamCdnConfigLockOutputWithContext(ctx context.Context) StreamCdnConfigLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o StreamCdnConfigLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamCdnConfigLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o StreamCdnConfigLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamCdnConfigLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o StreamCdnConfigLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamCdnConfigLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o StreamCdnConfigLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamCdnConfigLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o StreamCdnConfigLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamCdnConfigLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type StreamCdnConfigLockArrayOutput struct{ *pulumi.OutputState }
+
+func (StreamCdnConfigLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamCdnConfigLock)(nil)).Elem()
+}
+
+func (o StreamCdnConfigLockArrayOutput) ToStreamCdnConfigLockArrayOutput() StreamCdnConfigLockArrayOutput {
+	return o
+}
+
+func (o StreamCdnConfigLockArrayOutput) ToStreamCdnConfigLockArrayOutputWithContext(ctx context.Context) StreamCdnConfigLockArrayOutput {
+	return o
+}
+
+func (o StreamCdnConfigLockArrayOutput) Index(i pulumi.IntInput) StreamCdnConfigLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) StreamCdnConfigLock {
+		return vs[0].([]StreamCdnConfigLock)[vs[1].(int)]
+	}).(StreamCdnConfigLockOutput)
+}
+
+type StreamDistributionChannelLock struct {
+	// (Updatable) The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type string `pulumi:"type"`
+}
+
+// StreamDistributionChannelLockInput is an input type that accepts StreamDistributionChannelLockArgs and StreamDistributionChannelLockOutput values.
+// You can construct a concrete instance of `StreamDistributionChannelLockInput` via:
+//
+//	StreamDistributionChannelLockArgs{...}
+type StreamDistributionChannelLockInput interface {
+	pulumi.Input
+
+	ToStreamDistributionChannelLockOutput() StreamDistributionChannelLockOutput
+	ToStreamDistributionChannelLockOutputWithContext(context.Context) StreamDistributionChannelLockOutput
+}
+
+type StreamDistributionChannelLockArgs struct {
+	// (Updatable) The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (StreamDistributionChannelLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamDistributionChannelLock)(nil)).Elem()
+}
+
+func (i StreamDistributionChannelLockArgs) ToStreamDistributionChannelLockOutput() StreamDistributionChannelLockOutput {
+	return i.ToStreamDistributionChannelLockOutputWithContext(context.Background())
+}
+
+func (i StreamDistributionChannelLockArgs) ToStreamDistributionChannelLockOutputWithContext(ctx context.Context) StreamDistributionChannelLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamDistributionChannelLockOutput)
+}
+
+// StreamDistributionChannelLockArrayInput is an input type that accepts StreamDistributionChannelLockArray and StreamDistributionChannelLockArrayOutput values.
+// You can construct a concrete instance of `StreamDistributionChannelLockArrayInput` via:
+//
+//	StreamDistributionChannelLockArray{ StreamDistributionChannelLockArgs{...} }
+type StreamDistributionChannelLockArrayInput interface {
+	pulumi.Input
+
+	ToStreamDistributionChannelLockArrayOutput() StreamDistributionChannelLockArrayOutput
+	ToStreamDistributionChannelLockArrayOutputWithContext(context.Context) StreamDistributionChannelLockArrayOutput
+}
+
+type StreamDistributionChannelLockArray []StreamDistributionChannelLockInput
+
+func (StreamDistributionChannelLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamDistributionChannelLock)(nil)).Elem()
+}
+
+func (i StreamDistributionChannelLockArray) ToStreamDistributionChannelLockArrayOutput() StreamDistributionChannelLockArrayOutput {
+	return i.ToStreamDistributionChannelLockArrayOutputWithContext(context.Background())
+}
+
+func (i StreamDistributionChannelLockArray) ToStreamDistributionChannelLockArrayOutputWithContext(ctx context.Context) StreamDistributionChannelLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamDistributionChannelLockArrayOutput)
+}
+
+type StreamDistributionChannelLockOutput struct{ *pulumi.OutputState }
+
+func (StreamDistributionChannelLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamDistributionChannelLock)(nil)).Elem()
+}
+
+func (o StreamDistributionChannelLockOutput) ToStreamDistributionChannelLockOutput() StreamDistributionChannelLockOutput {
+	return o
+}
+
+func (o StreamDistributionChannelLockOutput) ToStreamDistributionChannelLockOutputWithContext(ctx context.Context) StreamDistributionChannelLockOutput {
+	return o
+}
+
+// (Updatable) The compartment ID of the lock.
+func (o StreamDistributionChannelLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamDistributionChannelLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o StreamDistributionChannelLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamDistributionChannelLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o StreamDistributionChannelLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamDistributionChannelLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o StreamDistributionChannelLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamDistributionChannelLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o StreamDistributionChannelLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamDistributionChannelLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type StreamDistributionChannelLockArrayOutput struct{ *pulumi.OutputState }
+
+func (StreamDistributionChannelLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamDistributionChannelLock)(nil)).Elem()
+}
+
+func (o StreamDistributionChannelLockArrayOutput) ToStreamDistributionChannelLockArrayOutput() StreamDistributionChannelLockArrayOutput {
+	return o
+}
+
+func (o StreamDistributionChannelLockArrayOutput) ToStreamDistributionChannelLockArrayOutputWithContext(ctx context.Context) StreamDistributionChannelLockArrayOutput {
+	return o
+}
+
+func (o StreamDistributionChannelLockArrayOutput) Index(i pulumi.IntInput) StreamDistributionChannelLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) StreamDistributionChannelLock {
+		return vs[0].([]StreamDistributionChannelLock)[vs[1].(int)]
+	}).(StreamDistributionChannelLockOutput)
 }
 
 type StreamPackagingConfigEncryption struct {
@@ -1133,6 +1970,405 @@ func (o StreamPackagingConfigEncryptionPtrOutput) KmsKeyId() pulumi.StringPtrOut
 		}
 		return v.KmsKeyId
 	}).(pulumi.StringPtrOutput)
+}
+
+type StreamPackagingConfigLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// StreamPackagingConfigLockInput is an input type that accepts StreamPackagingConfigLockArgs and StreamPackagingConfigLockOutput values.
+// You can construct a concrete instance of `StreamPackagingConfigLockInput` via:
+//
+//	StreamPackagingConfigLockArgs{...}
+type StreamPackagingConfigLockInput interface {
+	pulumi.Input
+
+	ToStreamPackagingConfigLockOutput() StreamPackagingConfigLockOutput
+	ToStreamPackagingConfigLockOutputWithContext(context.Context) StreamPackagingConfigLockOutput
+}
+
+type StreamPackagingConfigLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (StreamPackagingConfigLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamPackagingConfigLock)(nil)).Elem()
+}
+
+func (i StreamPackagingConfigLockArgs) ToStreamPackagingConfigLockOutput() StreamPackagingConfigLockOutput {
+	return i.ToStreamPackagingConfigLockOutputWithContext(context.Background())
+}
+
+func (i StreamPackagingConfigLockArgs) ToStreamPackagingConfigLockOutputWithContext(ctx context.Context) StreamPackagingConfigLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamPackagingConfigLockOutput)
+}
+
+// StreamPackagingConfigLockArrayInput is an input type that accepts StreamPackagingConfigLockArray and StreamPackagingConfigLockArrayOutput values.
+// You can construct a concrete instance of `StreamPackagingConfigLockArrayInput` via:
+//
+//	StreamPackagingConfigLockArray{ StreamPackagingConfigLockArgs{...} }
+type StreamPackagingConfigLockArrayInput interface {
+	pulumi.Input
+
+	ToStreamPackagingConfigLockArrayOutput() StreamPackagingConfigLockArrayOutput
+	ToStreamPackagingConfigLockArrayOutputWithContext(context.Context) StreamPackagingConfigLockArrayOutput
+}
+
+type StreamPackagingConfigLockArray []StreamPackagingConfigLockInput
+
+func (StreamPackagingConfigLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamPackagingConfigLock)(nil)).Elem()
+}
+
+func (i StreamPackagingConfigLockArray) ToStreamPackagingConfigLockArrayOutput() StreamPackagingConfigLockArrayOutput {
+	return i.ToStreamPackagingConfigLockArrayOutputWithContext(context.Background())
+}
+
+func (i StreamPackagingConfigLockArray) ToStreamPackagingConfigLockArrayOutputWithContext(ctx context.Context) StreamPackagingConfigLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamPackagingConfigLockArrayOutput)
+}
+
+type StreamPackagingConfigLockOutput struct{ *pulumi.OutputState }
+
+func (StreamPackagingConfigLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamPackagingConfigLock)(nil)).Elem()
+}
+
+func (o StreamPackagingConfigLockOutput) ToStreamPackagingConfigLockOutput() StreamPackagingConfigLockOutput {
+	return o
+}
+
+func (o StreamPackagingConfigLockOutput) ToStreamPackagingConfigLockOutputWithContext(ctx context.Context) StreamPackagingConfigLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o StreamPackagingConfigLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamPackagingConfigLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o StreamPackagingConfigLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamPackagingConfigLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o StreamPackagingConfigLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamPackagingConfigLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o StreamPackagingConfigLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamPackagingConfigLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o StreamPackagingConfigLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamPackagingConfigLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type StreamPackagingConfigLockArrayOutput struct{ *pulumi.OutputState }
+
+func (StreamPackagingConfigLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamPackagingConfigLock)(nil)).Elem()
+}
+
+func (o StreamPackagingConfigLockArrayOutput) ToStreamPackagingConfigLockArrayOutput() StreamPackagingConfigLockArrayOutput {
+	return o
+}
+
+func (o StreamPackagingConfigLockArrayOutput) ToStreamPackagingConfigLockArrayOutputWithContext(ctx context.Context) StreamPackagingConfigLockArrayOutput {
+	return o
+}
+
+func (o StreamPackagingConfigLockArrayOutput) Index(i pulumi.IntInput) StreamPackagingConfigLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) StreamPackagingConfigLock {
+		return vs[0].([]StreamPackagingConfigLock)[vs[1].(int)]
+	}).(StreamPackagingConfigLockOutput)
+}
+
+type GetMediaAssetDistributionChannelAttachmentLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetMediaAssetDistributionChannelAttachmentLockInput is an input type that accepts GetMediaAssetDistributionChannelAttachmentLockArgs and GetMediaAssetDistributionChannelAttachmentLockOutput values.
+// You can construct a concrete instance of `GetMediaAssetDistributionChannelAttachmentLockInput` via:
+//
+//	GetMediaAssetDistributionChannelAttachmentLockArgs{...}
+type GetMediaAssetDistributionChannelAttachmentLockInput interface {
+	pulumi.Input
+
+	ToGetMediaAssetDistributionChannelAttachmentLockOutput() GetMediaAssetDistributionChannelAttachmentLockOutput
+	ToGetMediaAssetDistributionChannelAttachmentLockOutputWithContext(context.Context) GetMediaAssetDistributionChannelAttachmentLockOutput
+}
+
+type GetMediaAssetDistributionChannelAttachmentLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMediaAssetDistributionChannelAttachmentLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaAssetDistributionChannelAttachmentLock)(nil)).Elem()
+}
+
+func (i GetMediaAssetDistributionChannelAttachmentLockArgs) ToGetMediaAssetDistributionChannelAttachmentLockOutput() GetMediaAssetDistributionChannelAttachmentLockOutput {
+	return i.ToGetMediaAssetDistributionChannelAttachmentLockOutputWithContext(context.Background())
+}
+
+func (i GetMediaAssetDistributionChannelAttachmentLockArgs) ToGetMediaAssetDistributionChannelAttachmentLockOutputWithContext(ctx context.Context) GetMediaAssetDistributionChannelAttachmentLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetDistributionChannelAttachmentLockOutput)
+}
+
+// GetMediaAssetDistributionChannelAttachmentLockArrayInput is an input type that accepts GetMediaAssetDistributionChannelAttachmentLockArray and GetMediaAssetDistributionChannelAttachmentLockArrayOutput values.
+// You can construct a concrete instance of `GetMediaAssetDistributionChannelAttachmentLockArrayInput` via:
+//
+//	GetMediaAssetDistributionChannelAttachmentLockArray{ GetMediaAssetDistributionChannelAttachmentLockArgs{...} }
+type GetMediaAssetDistributionChannelAttachmentLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMediaAssetDistributionChannelAttachmentLockArrayOutput() GetMediaAssetDistributionChannelAttachmentLockArrayOutput
+	ToGetMediaAssetDistributionChannelAttachmentLockArrayOutputWithContext(context.Context) GetMediaAssetDistributionChannelAttachmentLockArrayOutput
+}
+
+type GetMediaAssetDistributionChannelAttachmentLockArray []GetMediaAssetDistributionChannelAttachmentLockInput
+
+func (GetMediaAssetDistributionChannelAttachmentLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaAssetDistributionChannelAttachmentLock)(nil)).Elem()
+}
+
+func (i GetMediaAssetDistributionChannelAttachmentLockArray) ToGetMediaAssetDistributionChannelAttachmentLockArrayOutput() GetMediaAssetDistributionChannelAttachmentLockArrayOutput {
+	return i.ToGetMediaAssetDistributionChannelAttachmentLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMediaAssetDistributionChannelAttachmentLockArray) ToGetMediaAssetDistributionChannelAttachmentLockArrayOutputWithContext(ctx context.Context) GetMediaAssetDistributionChannelAttachmentLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetDistributionChannelAttachmentLockArrayOutput)
+}
+
+type GetMediaAssetDistributionChannelAttachmentLockOutput struct{ *pulumi.OutputState }
+
+func (GetMediaAssetDistributionChannelAttachmentLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaAssetDistributionChannelAttachmentLock)(nil)).Elem()
+}
+
+func (o GetMediaAssetDistributionChannelAttachmentLockOutput) ToGetMediaAssetDistributionChannelAttachmentLockOutput() GetMediaAssetDistributionChannelAttachmentLockOutput {
+	return o
+}
+
+func (o GetMediaAssetDistributionChannelAttachmentLockOutput) ToGetMediaAssetDistributionChannelAttachmentLockOutputWithContext(ctx context.Context) GetMediaAssetDistributionChannelAttachmentLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o GetMediaAssetDistributionChannelAttachmentLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMediaAssetDistributionChannelAttachmentLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMediaAssetDistributionChannelAttachmentLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// When the lock was created.
+func (o GetMediaAssetDistributionChannelAttachmentLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetMediaAssetDistributionChannelAttachmentLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMediaAssetDistributionChannelAttachmentLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMediaAssetDistributionChannelAttachmentLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaAssetDistributionChannelAttachmentLock)(nil)).Elem()
+}
+
+func (o GetMediaAssetDistributionChannelAttachmentLockArrayOutput) ToGetMediaAssetDistributionChannelAttachmentLockArrayOutput() GetMediaAssetDistributionChannelAttachmentLockArrayOutput {
+	return o
+}
+
+func (o GetMediaAssetDistributionChannelAttachmentLockArrayOutput) ToGetMediaAssetDistributionChannelAttachmentLockArrayOutputWithContext(ctx context.Context) GetMediaAssetDistributionChannelAttachmentLockArrayOutput {
+	return o
+}
+
+func (o GetMediaAssetDistributionChannelAttachmentLockArrayOutput) Index(i pulumi.IntInput) GetMediaAssetDistributionChannelAttachmentLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaAssetDistributionChannelAttachmentLock {
+		return vs[0].([]GetMediaAssetDistributionChannelAttachmentLock)[vs[1].(int)]
+	}).(GetMediaAssetDistributionChannelAttachmentLockOutput)
+}
+
+type GetMediaAssetLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The type of the media asset.
+	Type string `pulumi:"type"`
+}
+
+// GetMediaAssetLockInput is an input type that accepts GetMediaAssetLockArgs and GetMediaAssetLockOutput values.
+// You can construct a concrete instance of `GetMediaAssetLockInput` via:
+//
+//	GetMediaAssetLockArgs{...}
+type GetMediaAssetLockInput interface {
+	pulumi.Input
+
+	ToGetMediaAssetLockOutput() GetMediaAssetLockOutput
+	ToGetMediaAssetLockOutputWithContext(context.Context) GetMediaAssetLockOutput
+}
+
+type GetMediaAssetLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The type of the media asset.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMediaAssetLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaAssetLock)(nil)).Elem()
+}
+
+func (i GetMediaAssetLockArgs) ToGetMediaAssetLockOutput() GetMediaAssetLockOutput {
+	return i.ToGetMediaAssetLockOutputWithContext(context.Background())
+}
+
+func (i GetMediaAssetLockArgs) ToGetMediaAssetLockOutputWithContext(ctx context.Context) GetMediaAssetLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetLockOutput)
+}
+
+// GetMediaAssetLockArrayInput is an input type that accepts GetMediaAssetLockArray and GetMediaAssetLockArrayOutput values.
+// You can construct a concrete instance of `GetMediaAssetLockArrayInput` via:
+//
+//	GetMediaAssetLockArray{ GetMediaAssetLockArgs{...} }
+type GetMediaAssetLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMediaAssetLockArrayOutput() GetMediaAssetLockArrayOutput
+	ToGetMediaAssetLockArrayOutputWithContext(context.Context) GetMediaAssetLockArrayOutput
+}
+
+type GetMediaAssetLockArray []GetMediaAssetLockInput
+
+func (GetMediaAssetLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaAssetLock)(nil)).Elem()
+}
+
+func (i GetMediaAssetLockArray) ToGetMediaAssetLockArrayOutput() GetMediaAssetLockArrayOutput {
+	return i.ToGetMediaAssetLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMediaAssetLockArray) ToGetMediaAssetLockArrayOutputWithContext(ctx context.Context) GetMediaAssetLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetLockArrayOutput)
+}
+
+type GetMediaAssetLockOutput struct{ *pulumi.OutputState }
+
+func (GetMediaAssetLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaAssetLock)(nil)).Elem()
+}
+
+func (o GetMediaAssetLockOutput) ToGetMediaAssetLockOutput() GetMediaAssetLockOutput {
+	return o
+}
+
+func (o GetMediaAssetLockOutput) ToGetMediaAssetLockOutputWithContext(ctx context.Context) GetMediaAssetLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o GetMediaAssetLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMediaAssetLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMediaAssetLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+func (o GetMediaAssetLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The type of the media asset.
+func (o GetMediaAssetLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMediaAssetLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMediaAssetLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaAssetLock)(nil)).Elem()
+}
+
+func (o GetMediaAssetLockArrayOutput) ToGetMediaAssetLockArrayOutput() GetMediaAssetLockArrayOutput {
+	return o
+}
+
+func (o GetMediaAssetLockArrayOutput) ToGetMediaAssetLockArrayOutputWithContext(ctx context.Context) GetMediaAssetLockArrayOutput {
+	return o
+}
+
+func (o GetMediaAssetLockArrayOutput) Index(i pulumi.IntInput) GetMediaAssetLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaAssetLock {
+		return vs[0].([]GetMediaAssetLock)[vs[1].(int)]
+	}).(GetMediaAssetLockOutput)
 }
 
 type GetMediaAssetMediaAssetTag struct {
@@ -1550,7 +2786,10 @@ type GetMediaAssetsMediaAssetCollectionItem struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetMediaAssetsMediaAssetCollectionItemLock `pulumi:"locks"`
 	// Unique MediaAsset identifier of the first asset upload.
 	MasterMediaAssetId string `pulumi:"masterMediaAssetId"`
 	// List of tags for the MediaAsset.
@@ -1610,7 +2849,10 @@ type GetMediaAssetsMediaAssetCollectionItemArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id             pulumi.StringInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks GetMediaAssetsMediaAssetCollectionItemLockArrayInput `pulumi:"locks"`
 	// Unique MediaAsset identifier of the first asset upload.
 	MasterMediaAssetId pulumi.StringInput `pulumi:"masterMediaAssetId"`
 	// List of tags for the MediaAsset.
@@ -1728,6 +2970,17 @@ func (o GetMediaAssetsMediaAssetCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) Locks() GetMediaAssetsMediaAssetCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) []GetMediaAssetsMediaAssetCollectionItemLock {
+		return v.Locks
+	}).(GetMediaAssetsMediaAssetCollectionItemLockArrayOutput)
+}
+
 // Unique MediaAsset identifier of the first asset upload.
 func (o GetMediaAssetsMediaAssetCollectionItemOutput) MasterMediaAssetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) string { return v.MasterMediaAssetId }).(pulumi.StringOutput)
@@ -1835,6 +3088,139 @@ func (o GetMediaAssetsMediaAssetCollectionItemArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaAssetsMediaAssetCollectionItem {
 		return vs[0].([]GetMediaAssetsMediaAssetCollectionItem)[vs[1].(int)]
 	}).(GetMediaAssetsMediaAssetCollectionItemOutput)
+}
+
+type GetMediaAssetsMediaAssetCollectionItemLock struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Filter MediaAsset by the asset type.
+	Type string `pulumi:"type"`
+}
+
+// GetMediaAssetsMediaAssetCollectionItemLockInput is an input type that accepts GetMediaAssetsMediaAssetCollectionItemLockArgs and GetMediaAssetsMediaAssetCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetMediaAssetsMediaAssetCollectionItemLockInput` via:
+//
+//	GetMediaAssetsMediaAssetCollectionItemLockArgs{...}
+type GetMediaAssetsMediaAssetCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetMediaAssetsMediaAssetCollectionItemLockOutput() GetMediaAssetsMediaAssetCollectionItemLockOutput
+	ToGetMediaAssetsMediaAssetCollectionItemLockOutputWithContext(context.Context) GetMediaAssetsMediaAssetCollectionItemLockOutput
+}
+
+type GetMediaAssetsMediaAssetCollectionItemLockArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Filter MediaAsset by the asset type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMediaAssetsMediaAssetCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaAssetsMediaAssetCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetMediaAssetsMediaAssetCollectionItemLockArgs) ToGetMediaAssetsMediaAssetCollectionItemLockOutput() GetMediaAssetsMediaAssetCollectionItemLockOutput {
+	return i.ToGetMediaAssetsMediaAssetCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetMediaAssetsMediaAssetCollectionItemLockArgs) ToGetMediaAssetsMediaAssetCollectionItemLockOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemLockOutput)
+}
+
+// GetMediaAssetsMediaAssetCollectionItemLockArrayInput is an input type that accepts GetMediaAssetsMediaAssetCollectionItemLockArray and GetMediaAssetsMediaAssetCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetMediaAssetsMediaAssetCollectionItemLockArrayInput` via:
+//
+//	GetMediaAssetsMediaAssetCollectionItemLockArray{ GetMediaAssetsMediaAssetCollectionItemLockArgs{...} }
+type GetMediaAssetsMediaAssetCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMediaAssetsMediaAssetCollectionItemLockArrayOutput() GetMediaAssetsMediaAssetCollectionItemLockArrayOutput
+	ToGetMediaAssetsMediaAssetCollectionItemLockArrayOutputWithContext(context.Context) GetMediaAssetsMediaAssetCollectionItemLockArrayOutput
+}
+
+type GetMediaAssetsMediaAssetCollectionItemLockArray []GetMediaAssetsMediaAssetCollectionItemLockInput
+
+func (GetMediaAssetsMediaAssetCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaAssetsMediaAssetCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetMediaAssetsMediaAssetCollectionItemLockArray) ToGetMediaAssetsMediaAssetCollectionItemLockArrayOutput() GetMediaAssetsMediaAssetCollectionItemLockArrayOutput {
+	return i.ToGetMediaAssetsMediaAssetCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMediaAssetsMediaAssetCollectionItemLockArray) ToGetMediaAssetsMediaAssetCollectionItemLockArrayOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemLockArrayOutput)
+}
+
+type GetMediaAssetsMediaAssetCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetMediaAssetsMediaAssetCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaAssetsMediaAssetCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetMediaAssetsMediaAssetCollectionItemLockOutput) ToGetMediaAssetsMediaAssetCollectionItemLockOutput() GetMediaAssetsMediaAssetCollectionItemLockOutput {
+	return o
+}
+
+func (o GetMediaAssetsMediaAssetCollectionItemLockOutput) ToGetMediaAssetsMediaAssetCollectionItemLockOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemLockOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetMediaAssetsMediaAssetCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItemLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMediaAssetsMediaAssetCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMediaAssetsMediaAssetCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+func (o GetMediaAssetsMediaAssetCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Filter MediaAsset by the asset type.
+func (o GetMediaAssetsMediaAssetCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMediaAssetsMediaAssetCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMediaAssetsMediaAssetCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaAssetsMediaAssetCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetMediaAssetsMediaAssetCollectionItemLockArrayOutput) ToGetMediaAssetsMediaAssetCollectionItemLockArrayOutput() GetMediaAssetsMediaAssetCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetMediaAssetsMediaAssetCollectionItemLockArrayOutput) ToGetMediaAssetsMediaAssetCollectionItemLockArrayOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetMediaAssetsMediaAssetCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetMediaAssetsMediaAssetCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaAssetsMediaAssetCollectionItemLock {
+		return vs[0].([]GetMediaAssetsMediaAssetCollectionItemLock)[vs[1].(int)]
+	}).(GetMediaAssetsMediaAssetCollectionItemLockOutput)
 }
 
 type GetMediaAssetsMediaAssetCollectionItemMediaAssetTag struct {
@@ -2038,6 +3424,139 @@ func (o GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaAssetsMediaAssetCollectionItemMetadata {
 		return vs[0].([]GetMediaAssetsMediaAssetCollectionItemMetadata)[vs[1].(int)]
 	}).(GetMediaAssetsMediaAssetCollectionItemMetadataOutput)
+}
+
+type GetMediaWorkflowConfigurationLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetMediaWorkflowConfigurationLockInput is an input type that accepts GetMediaWorkflowConfigurationLockArgs and GetMediaWorkflowConfigurationLockOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowConfigurationLockInput` via:
+//
+//	GetMediaWorkflowConfigurationLockArgs{...}
+type GetMediaWorkflowConfigurationLockInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowConfigurationLockOutput() GetMediaWorkflowConfigurationLockOutput
+	ToGetMediaWorkflowConfigurationLockOutputWithContext(context.Context) GetMediaWorkflowConfigurationLockOutput
+}
+
+type GetMediaWorkflowConfigurationLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMediaWorkflowConfigurationLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowConfigurationLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowConfigurationLockArgs) ToGetMediaWorkflowConfigurationLockOutput() GetMediaWorkflowConfigurationLockOutput {
+	return i.ToGetMediaWorkflowConfigurationLockOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowConfigurationLockArgs) ToGetMediaWorkflowConfigurationLockOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationLockOutput)
+}
+
+// GetMediaWorkflowConfigurationLockArrayInput is an input type that accepts GetMediaWorkflowConfigurationLockArray and GetMediaWorkflowConfigurationLockArrayOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowConfigurationLockArrayInput` via:
+//
+//	GetMediaWorkflowConfigurationLockArray{ GetMediaWorkflowConfigurationLockArgs{...} }
+type GetMediaWorkflowConfigurationLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowConfigurationLockArrayOutput() GetMediaWorkflowConfigurationLockArrayOutput
+	ToGetMediaWorkflowConfigurationLockArrayOutputWithContext(context.Context) GetMediaWorkflowConfigurationLockArrayOutput
+}
+
+type GetMediaWorkflowConfigurationLockArray []GetMediaWorkflowConfigurationLockInput
+
+func (GetMediaWorkflowConfigurationLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowConfigurationLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowConfigurationLockArray) ToGetMediaWorkflowConfigurationLockArrayOutput() GetMediaWorkflowConfigurationLockArrayOutput {
+	return i.ToGetMediaWorkflowConfigurationLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowConfigurationLockArray) ToGetMediaWorkflowConfigurationLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationLockArrayOutput)
+}
+
+type GetMediaWorkflowConfigurationLockOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowConfigurationLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowConfigurationLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowConfigurationLockOutput) ToGetMediaWorkflowConfigurationLockOutput() GetMediaWorkflowConfigurationLockOutput {
+	return o
+}
+
+func (o GetMediaWorkflowConfigurationLockOutput) ToGetMediaWorkflowConfigurationLockOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o GetMediaWorkflowConfigurationLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMediaWorkflowConfigurationLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMediaWorkflowConfigurationLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+func (o GetMediaWorkflowConfigurationLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetMediaWorkflowConfigurationLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMediaWorkflowConfigurationLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowConfigurationLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowConfigurationLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowConfigurationLockArrayOutput) ToGetMediaWorkflowConfigurationLockArrayOutput() GetMediaWorkflowConfigurationLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowConfigurationLockArrayOutput) ToGetMediaWorkflowConfigurationLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowConfigurationLockArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowConfigurationLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowConfigurationLock {
+		return vs[0].([]GetMediaWorkflowConfigurationLock)[vs[1].(int)]
+	}).(GetMediaWorkflowConfigurationLockOutput)
 }
 
 type GetMediaWorkflowConfigurationsFilter struct {
@@ -2252,9 +3771,12 @@ type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem stru
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique MediaWorkflowConfiguration identifier.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks []GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock `pulumi:"locks"`
 	// Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
 	Parameters string `pulumi:"parameters"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
@@ -2288,9 +3810,12 @@ type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArgs 
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique MediaWorkflowConfiguration identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id             pulumi.StringInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails pulumi.StringInput `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayInput `pulumi:"locks"`
 	// Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
 	Parameters pulumi.StringInput `pulumi:"parameters"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
@@ -2387,11 +3912,24 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOu
 	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) bool {
+		return v.IsLockOverride
+	}).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) string {
 		return v.LifecyleDetails
 	}).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) Locks() GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) []GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock {
+		return v.Locks
+	}).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput)
 }
 
 // Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
@@ -2445,6 +3983,149 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemAr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem {
 		return vs[0].([]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem)[vs[1].(int)]
 	}).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput)
+}
+
+type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockInput is an input type that accepts GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArgs and GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockInput` via:
+//
+//	GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArgs{...}
+type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput() GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput
+	ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutputWithContext(context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput
+}
+
+type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArgs) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput() GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput {
+	return i.ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArgs) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput)
+}
+
+// GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayInput is an input type that accepts GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArray and GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayInput` via:
+//
+//	GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArray{ GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArgs{...} }
+type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput() GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput
+	ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutputWithContext(context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput
+}
+
+type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArray []GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockInput
+
+func (GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArray) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput() GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput {
+	return i.ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArray) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput)
+}
+
+type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput() GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput {
+	return o
+}
+
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock) string {
+		return v.RelatedResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput() GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock {
+		return vs[0].([]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLock)[vs[1].(int)]
+	}).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput)
 }
 
 type GetMediaWorkflowJobFactsFilter struct {
@@ -2783,6 +4464,139 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput) I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem {
 		return vs[0].([]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem)[vs[1].(int)]
 	}).(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput)
+}
+
+type GetMediaWorkflowJobLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// Creation time of the job. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetMediaWorkflowJobLockInput is an input type that accepts GetMediaWorkflowJobLockArgs and GetMediaWorkflowJobLockOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowJobLockInput` via:
+//
+//	GetMediaWorkflowJobLockArgs{...}
+type GetMediaWorkflowJobLockInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowJobLockOutput() GetMediaWorkflowJobLockOutput
+	ToGetMediaWorkflowJobLockOutputWithContext(context.Context) GetMediaWorkflowJobLockOutput
+}
+
+type GetMediaWorkflowJobLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// Creation time of the job. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMediaWorkflowJobLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowJobLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowJobLockArgs) ToGetMediaWorkflowJobLockOutput() GetMediaWorkflowJobLockOutput {
+	return i.ToGetMediaWorkflowJobLockOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowJobLockArgs) ToGetMediaWorkflowJobLockOutputWithContext(ctx context.Context) GetMediaWorkflowJobLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobLockOutput)
+}
+
+// GetMediaWorkflowJobLockArrayInput is an input type that accepts GetMediaWorkflowJobLockArray and GetMediaWorkflowJobLockArrayOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowJobLockArrayInput` via:
+//
+//	GetMediaWorkflowJobLockArray{ GetMediaWorkflowJobLockArgs{...} }
+type GetMediaWorkflowJobLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowJobLockArrayOutput() GetMediaWorkflowJobLockArrayOutput
+	ToGetMediaWorkflowJobLockArrayOutputWithContext(context.Context) GetMediaWorkflowJobLockArrayOutput
+}
+
+type GetMediaWorkflowJobLockArray []GetMediaWorkflowJobLockInput
+
+func (GetMediaWorkflowJobLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowJobLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowJobLockArray) ToGetMediaWorkflowJobLockArrayOutput() GetMediaWorkflowJobLockArrayOutput {
+	return i.ToGetMediaWorkflowJobLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowJobLockArray) ToGetMediaWorkflowJobLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobLockArrayOutput)
+}
+
+type GetMediaWorkflowJobLockOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowJobLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowJobLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowJobLockOutput) ToGetMediaWorkflowJobLockOutput() GetMediaWorkflowJobLockOutput {
+	return o
+}
+
+func (o GetMediaWorkflowJobLockOutput) ToGetMediaWorkflowJobLockOutputWithContext(ctx context.Context) GetMediaWorkflowJobLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o GetMediaWorkflowJobLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMediaWorkflowJobLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMediaWorkflowJobLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// Creation time of the job. An RFC3339 formatted datetime string.
+func (o GetMediaWorkflowJobLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetMediaWorkflowJobLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMediaWorkflowJobLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowJobLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowJobLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowJobLockArrayOutput) ToGetMediaWorkflowJobLockArrayOutput() GetMediaWorkflowJobLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowJobLockArrayOutput) ToGetMediaWorkflowJobLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowJobLockArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobLock {
+		return vs[0].([]GetMediaWorkflowJobLock)[vs[1].(int)]
+	}).(GetMediaWorkflowJobLockOutput)
 }
 
 type GetMediaWorkflowJobOutput struct {
@@ -3245,9 +5059,12 @@ type GetMediaWorkflowJobsMediaWorkflowJobCollectionItem struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique MediaWorkflowJob identifier
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// The lifecycle details of MediaWorkflowJob task.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock `pulumi:"locks"`
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds []string `pulumi:"mediaWorkflowConfigurationIds"`
 	// Unique MediaWorkflow identifier.
@@ -3297,9 +5114,12 @@ type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique MediaWorkflowJob identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id             pulumi.StringInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
 	// The lifecycle details of MediaWorkflowJob task.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayInput `pulumi:"locks"`
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds pulumi.StringArrayInput `pulumi:"mediaWorkflowConfigurationIds"`
 	// Unique MediaWorkflow identifier.
@@ -3408,9 +5228,20 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) Id() pulumi.St
 	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // The lifecycle details of MediaWorkflowJob task.
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) Locks() GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) []GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock {
+		return v.Locks
+	}).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput)
 }
 
 // Configurations to be applied to this run of the workflow.
@@ -3505,6 +5336,139 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput) Index(i p
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
 		return vs[0].([]GetMediaWorkflowJobsMediaWorkflowJobCollectionItem)[vs[1].(int)]
 	}).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput)
+}
+
+type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// Creation time of the job. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArgs and GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockInput` via:
+//
+//	GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArgs{...}
+type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput() GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput
+	ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutputWithContext(context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput
+}
+
+type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// Creation time of the job. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArgs) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput() GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput {
+	return i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArgs) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput)
+}
+
+// GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArray and GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayInput` via:
+//
+//	GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArray{ GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArgs{...} }
+type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput() GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput
+	ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutputWithContext(context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput
+}
+
+type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArray []GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockInput
+
+func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArray) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput() GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput {
+	return i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArray) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput)
+}
+
+type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput() GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput {
+	return o
+}
+
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// Creation time of the job. An RFC3339 formatted datetime string.
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput() GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock {
+		return vs[0].([]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock)[vs[1].(int)]
+	}).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput)
 }
 
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType struct {
@@ -3755,6 +5719,139 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArra
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState {
 		return vs[0].([]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState)[vs[1].(int)]
 	}).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput)
+}
+
+type GetMediaWorkflowLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+	Type string `pulumi:"type"`
+}
+
+// GetMediaWorkflowLockInput is an input type that accepts GetMediaWorkflowLockArgs and GetMediaWorkflowLockOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowLockInput` via:
+//
+//	GetMediaWorkflowLockArgs{...}
+type GetMediaWorkflowLockInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowLockOutput() GetMediaWorkflowLockOutput
+	ToGetMediaWorkflowLockOutputWithContext(context.Context) GetMediaWorkflowLockOutput
+}
+
+type GetMediaWorkflowLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMediaWorkflowLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowLockArgs) ToGetMediaWorkflowLockOutput() GetMediaWorkflowLockOutput {
+	return i.ToGetMediaWorkflowLockOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowLockArgs) ToGetMediaWorkflowLockOutputWithContext(ctx context.Context) GetMediaWorkflowLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowLockOutput)
+}
+
+// GetMediaWorkflowLockArrayInput is an input type that accepts GetMediaWorkflowLockArray and GetMediaWorkflowLockArrayOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowLockArrayInput` via:
+//
+//	GetMediaWorkflowLockArray{ GetMediaWorkflowLockArgs{...} }
+type GetMediaWorkflowLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowLockArrayOutput() GetMediaWorkflowLockArrayOutput
+	ToGetMediaWorkflowLockArrayOutputWithContext(context.Context) GetMediaWorkflowLockArrayOutput
+}
+
+type GetMediaWorkflowLockArray []GetMediaWorkflowLockInput
+
+func (GetMediaWorkflowLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowLockArray) ToGetMediaWorkflowLockArrayOutput() GetMediaWorkflowLockArrayOutput {
+	return i.ToGetMediaWorkflowLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowLockArray) ToGetMediaWorkflowLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowLockArrayOutput)
+}
+
+type GetMediaWorkflowLockOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowLockOutput) ToGetMediaWorkflowLockOutput() GetMediaWorkflowLockOutput {
+	return o
+}
+
+func (o GetMediaWorkflowLockOutput) ToGetMediaWorkflowLockOutputWithContext(ctx context.Context) GetMediaWorkflowLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o GetMediaWorkflowLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMediaWorkflowLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMediaWorkflowLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+func (o GetMediaWorkflowLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+func (o GetMediaWorkflowLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMediaWorkflowLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowLockArrayOutput) ToGetMediaWorkflowLockArrayOutput() GetMediaWorkflowLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowLockArrayOutput) ToGetMediaWorkflowLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowLockArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowLock {
+		return vs[0].([]GetMediaWorkflowLock)[vs[1].(int)]
+	}).(GetMediaWorkflowLockOutput)
 }
 
 type GetMediaWorkflowTask struct {
@@ -4244,9 +6341,12 @@ type GetMediaWorkflowsMediaWorkflowCollectionItem struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique MediaWorkflow identifier.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks []GetMediaWorkflowsMediaWorkflowCollectionItemLock `pulumi:"locks"`
 	// Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
 	MediaWorkflowConfigurationIds []string `pulumi:"mediaWorkflowConfigurationIds"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -4286,9 +6386,12 @@ type GetMediaWorkflowsMediaWorkflowCollectionItemArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique MediaWorkflow identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id             pulumi.StringInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails pulumi.StringInput `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayInput `pulumi:"locks"`
 	// Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
 	MediaWorkflowConfigurationIds pulumi.StringArrayInput `pulumi:"mediaWorkflowConfigurationIds"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -4383,9 +6486,20 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) Id() pulumi.StringOu
 	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) Locks() GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) []GetMediaWorkflowsMediaWorkflowCollectionItemLock {
+		return v.Locks
+	}).(GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput)
 }
 
 // Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
@@ -4448,6 +6562,139 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowsMediaWorkflowCollectionItem {
 		return vs[0].([]GetMediaWorkflowsMediaWorkflowCollectionItem)[vs[1].(int)]
 	}).(GetMediaWorkflowsMediaWorkflowCollectionItemOutput)
+}
+
+type GetMediaWorkflowsMediaWorkflowCollectionItemLock struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+	Type string `pulumi:"type"`
+}
+
+// GetMediaWorkflowsMediaWorkflowCollectionItemLockInput is an input type that accepts GetMediaWorkflowsMediaWorkflowCollectionItemLockArgs and GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowsMediaWorkflowCollectionItemLockInput` via:
+//
+//	GetMediaWorkflowsMediaWorkflowCollectionItemLockArgs{...}
+type GetMediaWorkflowsMediaWorkflowCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowsMediaWorkflowCollectionItemLockOutput() GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput
+	ToGetMediaWorkflowsMediaWorkflowCollectionItemLockOutputWithContext(context.Context) GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput
+}
+
+type GetMediaWorkflowsMediaWorkflowCollectionItemLockArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMediaWorkflowsMediaWorkflowCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowsMediaWorkflowCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowsMediaWorkflowCollectionItemLockArgs) ToGetMediaWorkflowsMediaWorkflowCollectionItemLockOutput() GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput {
+	return i.ToGetMediaWorkflowsMediaWorkflowCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowsMediaWorkflowCollectionItemLockArgs) ToGetMediaWorkflowsMediaWorkflowCollectionItemLockOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput)
+}
+
+// GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayInput is an input type that accepts GetMediaWorkflowsMediaWorkflowCollectionItemLockArray and GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayInput` via:
+//
+//	GetMediaWorkflowsMediaWorkflowCollectionItemLockArray{ GetMediaWorkflowsMediaWorkflowCollectionItemLockArgs{...} }
+type GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput() GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput
+	ToGetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutputWithContext(context.Context) GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput
+}
+
+type GetMediaWorkflowsMediaWorkflowCollectionItemLockArray []GetMediaWorkflowsMediaWorkflowCollectionItemLockInput
+
+func (GetMediaWorkflowsMediaWorkflowCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowsMediaWorkflowCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetMediaWorkflowsMediaWorkflowCollectionItemLockArray) ToGetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput() GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput {
+	return i.ToGetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMediaWorkflowsMediaWorkflowCollectionItemLockArray) ToGetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput)
+}
+
+type GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMediaWorkflowsMediaWorkflowCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput) ToGetMediaWorkflowsMediaWorkflowCollectionItemLockOutput() GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput {
+	return o
+}
+
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput) ToGetMediaWorkflowsMediaWorkflowCollectionItemLockOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMediaWorkflowsMediaWorkflowCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput) ToGetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput() GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput) ToGetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowsMediaWorkflowCollectionItemLock {
+		return vs[0].([]GetMediaWorkflowsMediaWorkflowCollectionItemLock)[vs[1].(int)]
+	}).(GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput)
 }
 
 type GetMediaWorkflowsMediaWorkflowCollectionItemTask struct {
@@ -4626,7 +6873,7 @@ type GetStreamCdnConfigConfig struct {
 	OriginAuthSignEncryption string `pulumi:"originAuthSignEncryption"`
 	// The type of data used to compute the signature.
 	OriginAuthSignType string `pulumi:"originAuthSignType"`
-	// The name of the CDN configuration type.
+	// Type of the lock.
 	Type string `pulumi:"type"`
 }
 
@@ -4664,7 +6911,7 @@ type GetStreamCdnConfigConfigArgs struct {
 	OriginAuthSignEncryption pulumi.StringInput `pulumi:"originAuthSignEncryption"`
 	// The type of data used to compute the signature.
 	OriginAuthSignType pulumi.StringInput `pulumi:"originAuthSignType"`
-	// The name of the CDN configuration type.
+	// Type of the lock.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -4774,7 +7021,7 @@ func (o GetStreamCdnConfigConfigOutput) OriginAuthSignType() pulumi.StringOutput
 	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.OriginAuthSignType }).(pulumi.StringOutput)
 }
 
-// The name of the CDN configuration type.
+// Type of the lock.
 func (o GetStreamCdnConfigConfigOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStreamCdnConfigConfig) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -4797,6 +7044,139 @@ func (o GetStreamCdnConfigConfigArrayOutput) Index(i pulumi.IntInput) GetStreamC
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamCdnConfigConfig {
 		return vs[0].([]GetStreamCdnConfigConfig)[vs[1].(int)]
 	}).(GetStreamCdnConfigConfigOutput)
+}
+
+type GetStreamCdnConfigLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetStreamCdnConfigLockInput is an input type that accepts GetStreamCdnConfigLockArgs and GetStreamCdnConfigLockOutput values.
+// You can construct a concrete instance of `GetStreamCdnConfigLockInput` via:
+//
+//	GetStreamCdnConfigLockArgs{...}
+type GetStreamCdnConfigLockInput interface {
+	pulumi.Input
+
+	ToGetStreamCdnConfigLockOutput() GetStreamCdnConfigLockOutput
+	ToGetStreamCdnConfigLockOutputWithContext(context.Context) GetStreamCdnConfigLockOutput
+}
+
+type GetStreamCdnConfigLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetStreamCdnConfigLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamCdnConfigLock)(nil)).Elem()
+}
+
+func (i GetStreamCdnConfigLockArgs) ToGetStreamCdnConfigLockOutput() GetStreamCdnConfigLockOutput {
+	return i.ToGetStreamCdnConfigLockOutputWithContext(context.Background())
+}
+
+func (i GetStreamCdnConfigLockArgs) ToGetStreamCdnConfigLockOutputWithContext(ctx context.Context) GetStreamCdnConfigLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigLockOutput)
+}
+
+// GetStreamCdnConfigLockArrayInput is an input type that accepts GetStreamCdnConfigLockArray and GetStreamCdnConfigLockArrayOutput values.
+// You can construct a concrete instance of `GetStreamCdnConfigLockArrayInput` via:
+//
+//	GetStreamCdnConfigLockArray{ GetStreamCdnConfigLockArgs{...} }
+type GetStreamCdnConfigLockArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamCdnConfigLockArrayOutput() GetStreamCdnConfigLockArrayOutput
+	ToGetStreamCdnConfigLockArrayOutputWithContext(context.Context) GetStreamCdnConfigLockArrayOutput
+}
+
+type GetStreamCdnConfigLockArray []GetStreamCdnConfigLockInput
+
+func (GetStreamCdnConfigLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamCdnConfigLock)(nil)).Elem()
+}
+
+func (i GetStreamCdnConfigLockArray) ToGetStreamCdnConfigLockArrayOutput() GetStreamCdnConfigLockArrayOutput {
+	return i.ToGetStreamCdnConfigLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamCdnConfigLockArray) ToGetStreamCdnConfigLockArrayOutputWithContext(ctx context.Context) GetStreamCdnConfigLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigLockArrayOutput)
+}
+
+type GetStreamCdnConfigLockOutput struct{ *pulumi.OutputState }
+
+func (GetStreamCdnConfigLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamCdnConfigLock)(nil)).Elem()
+}
+
+func (o GetStreamCdnConfigLockOutput) ToGetStreamCdnConfigLockOutput() GetStreamCdnConfigLockOutput {
+	return o
+}
+
+func (o GetStreamCdnConfigLockOutput) ToGetStreamCdnConfigLockOutputWithContext(ctx context.Context) GetStreamCdnConfigLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o GetStreamCdnConfigLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetStreamCdnConfigLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetStreamCdnConfigLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+func (o GetStreamCdnConfigLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetStreamCdnConfigLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetStreamCdnConfigLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamCdnConfigLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamCdnConfigLock)(nil)).Elem()
+}
+
+func (o GetStreamCdnConfigLockArrayOutput) ToGetStreamCdnConfigLockArrayOutput() GetStreamCdnConfigLockArrayOutput {
+	return o
+}
+
+func (o GetStreamCdnConfigLockArrayOutput) ToGetStreamCdnConfigLockArrayOutputWithContext(ctx context.Context) GetStreamCdnConfigLockArrayOutput {
+	return o
+}
+
+func (o GetStreamCdnConfigLockArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamCdnConfigLock {
+		return vs[0].([]GetStreamCdnConfigLock)[vs[1].(int)]
+	}).(GetStreamCdnConfigLockOutput)
 }
 
 type GetStreamCdnConfigsFilter struct {
@@ -5002,7 +7382,7 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput) Index(i pulumi.
 }
 
 type GetStreamCdnConfigsStreamCdnConfigCollectionItem struct {
-	// Compartment Identifier.
+	// The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Base fields of the StreamCdnConfig configuration object.
 	Configs []GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig `pulumi:"configs"`
@@ -5017,9 +7397,12 @@ type GetStreamCdnConfigsStreamCdnConfigCollectionItem struct {
 	// Unique StreamCdnConfig identifier.
 	Id string `pulumi:"id"`
 	// Whether publishing to CDN is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled      bool `pulumi:"isEnabled"`
+	IsLockOverride bool `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks []GetStreamCdnConfigsStreamCdnConfigCollectionItemLock `pulumi:"locks"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5042,7 +7425,7 @@ type GetStreamCdnConfigsStreamCdnConfigCollectionItemInput interface {
 }
 
 type GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs struct {
-	// Compartment Identifier.
+	// The compartment ID of the lock.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Base fields of the StreamCdnConfig configuration object.
 	Configs GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayInput `pulumi:"configs"`
@@ -5057,9 +7440,12 @@ type GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs struct {
 	// Unique StreamCdnConfig identifier.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether publishing to CDN is enabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled      pulumi.BoolInput `pulumi:"isEnabled"`
+	IsLockOverride pulumi.BoolInput `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails pulumi.StringInput `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayInput `pulumi:"locks"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5121,7 +7507,7 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) ToGetStreamCdnCo
 	return o
 }
 
-// Compartment Identifier.
+// The compartment ID of the lock.
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -5163,9 +7549,20 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) IsEnabled() pulu
 	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) Locks() GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) []GetStreamCdnConfigsStreamCdnConfigCollectionItemLock {
+		return v.Locks
+	}).(GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput)
 }
 
 // A filter to return only the resources with lifecycleState matching the given lifecycleState.
@@ -5231,7 +7628,7 @@ type GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig struct {
 	OriginAuthSignEncryption string `pulumi:"originAuthSignEncryption"`
 	// The type of data used to compute the signature.
 	OriginAuthSignType string `pulumi:"originAuthSignType"`
-	// The name of the CDN configuration type.
+	// Type of the lock.
 	Type string `pulumi:"type"`
 }
 
@@ -5269,7 +7666,7 @@ type GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs struct {
 	OriginAuthSignEncryption pulumi.StringInput `pulumi:"originAuthSignEncryption"`
 	// The type of data used to compute the signature.
 	OriginAuthSignType pulumi.StringInput `pulumi:"originAuthSignType"`
-	// The name of the CDN configuration type.
+	// Type of the lock.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -5385,7 +7782,7 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) OriginAuth
 	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string { return v.OriginAuthSignType }).(pulumi.StringOutput)
 }
 
-// The name of the CDN configuration type.
+// Type of the lock.
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -5408,6 +7805,272 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput) Index
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig {
 		return vs[0].([]GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig)[vs[1].(int)]
 	}).(GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput)
+}
+
+type GetStreamCdnConfigsStreamCdnConfigCollectionItemLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetStreamCdnConfigsStreamCdnConfigCollectionItemLockInput is an input type that accepts GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArgs and GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetStreamCdnConfigsStreamCdnConfigCollectionItemLockInput` via:
+//
+//	GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArgs{...}
+type GetStreamCdnConfigsStreamCdnConfigCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput() GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput
+	ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutputWithContext(context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput
+}
+
+type GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamCdnConfigsStreamCdnConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArgs) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput() GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput {
+	return i.ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArgs) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput)
+}
+
+// GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayInput is an input type that accepts GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArray and GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayInput` via:
+//
+//	GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArray{ GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArgs{...} }
+type GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput() GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput
+	ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutputWithContext(context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput
+}
+
+type GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArray []GetStreamCdnConfigsStreamCdnConfigCollectionItemLockInput
+
+func (GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamCdnConfigsStreamCdnConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArray) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput() GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput {
+	return i.ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArray) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput)
+}
+
+type GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamCdnConfigsStreamCdnConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput() GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput {
+	return o
+}
+
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamCdnConfigsStreamCdnConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput() GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamCdnConfigsStreamCdnConfigCollectionItemLock {
+		return vs[0].([]GetStreamCdnConfigsStreamCdnConfigCollectionItemLock)[vs[1].(int)]
+	}).(GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput)
+}
+
+type GetStreamDistributionChannelLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetStreamDistributionChannelLockInput is an input type that accepts GetStreamDistributionChannelLockArgs and GetStreamDistributionChannelLockOutput values.
+// You can construct a concrete instance of `GetStreamDistributionChannelLockInput` via:
+//
+//	GetStreamDistributionChannelLockArgs{...}
+type GetStreamDistributionChannelLockInput interface {
+	pulumi.Input
+
+	ToGetStreamDistributionChannelLockOutput() GetStreamDistributionChannelLockOutput
+	ToGetStreamDistributionChannelLockOutputWithContext(context.Context) GetStreamDistributionChannelLockOutput
+}
+
+type GetStreamDistributionChannelLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetStreamDistributionChannelLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamDistributionChannelLock)(nil)).Elem()
+}
+
+func (i GetStreamDistributionChannelLockArgs) ToGetStreamDistributionChannelLockOutput() GetStreamDistributionChannelLockOutput {
+	return i.ToGetStreamDistributionChannelLockOutputWithContext(context.Background())
+}
+
+func (i GetStreamDistributionChannelLockArgs) ToGetStreamDistributionChannelLockOutputWithContext(ctx context.Context) GetStreamDistributionChannelLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelLockOutput)
+}
+
+// GetStreamDistributionChannelLockArrayInput is an input type that accepts GetStreamDistributionChannelLockArray and GetStreamDistributionChannelLockArrayOutput values.
+// You can construct a concrete instance of `GetStreamDistributionChannelLockArrayInput` via:
+//
+//	GetStreamDistributionChannelLockArray{ GetStreamDistributionChannelLockArgs{...} }
+type GetStreamDistributionChannelLockArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamDistributionChannelLockArrayOutput() GetStreamDistributionChannelLockArrayOutput
+	ToGetStreamDistributionChannelLockArrayOutputWithContext(context.Context) GetStreamDistributionChannelLockArrayOutput
+}
+
+type GetStreamDistributionChannelLockArray []GetStreamDistributionChannelLockInput
+
+func (GetStreamDistributionChannelLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamDistributionChannelLock)(nil)).Elem()
+}
+
+func (i GetStreamDistributionChannelLockArray) ToGetStreamDistributionChannelLockArrayOutput() GetStreamDistributionChannelLockArrayOutput {
+	return i.ToGetStreamDistributionChannelLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamDistributionChannelLockArray) ToGetStreamDistributionChannelLockArrayOutputWithContext(ctx context.Context) GetStreamDistributionChannelLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelLockArrayOutput)
+}
+
+type GetStreamDistributionChannelLockOutput struct{ *pulumi.OutputState }
+
+func (GetStreamDistributionChannelLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamDistributionChannelLock)(nil)).Elem()
+}
+
+func (o GetStreamDistributionChannelLockOutput) ToGetStreamDistributionChannelLockOutput() GetStreamDistributionChannelLockOutput {
+	return o
+}
+
+func (o GetStreamDistributionChannelLockOutput) ToGetStreamDistributionChannelLockOutputWithContext(ctx context.Context) GetStreamDistributionChannelLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o GetStreamDistributionChannelLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetStreamDistributionChannelLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetStreamDistributionChannelLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+func (o GetStreamDistributionChannelLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetStreamDistributionChannelLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetStreamDistributionChannelLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamDistributionChannelLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamDistributionChannelLock)(nil)).Elem()
+}
+
+func (o GetStreamDistributionChannelLockArrayOutput) ToGetStreamDistributionChannelLockArrayOutput() GetStreamDistributionChannelLockArrayOutput {
+	return o
+}
+
+func (o GetStreamDistributionChannelLockArrayOutput) ToGetStreamDistributionChannelLockArrayOutputWithContext(ctx context.Context) GetStreamDistributionChannelLockArrayOutput {
+	return o
+}
+
+func (o GetStreamDistributionChannelLockArrayOutput) Index(i pulumi.IntInput) GetStreamDistributionChannelLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamDistributionChannelLock {
+		return vs[0].([]GetStreamDistributionChannelLock)[vs[1].(int)]
+	}).(GetStreamDistributionChannelLockOutput)
 }
 
 type GetStreamDistributionChannelsFilter struct {
@@ -5624,7 +8287,10 @@ type GetStreamDistributionChannelsStreamDistributionChannelCollectionItem struct
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique Stream Distribution Channel identifier.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock `pulumi:"locks"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5658,7 +8324,10 @@ type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs st
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique Stream Distribution Channel identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id             pulumi.StringInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayInput `pulumi:"locks"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5760,6 +8429,19 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutp
 	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) bool {
+		return v.IsLockOverride
+	}).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) Locks() GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) []GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock {
+		return v.Locks
+	}).(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput)
+}
+
 // A filter to return only the resources with lifecycleState matching the given lifecycleState.
 func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) string { return v.State }).(pulumi.StringOutput)
@@ -5804,6 +8486,147 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArra
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamDistributionChannelsStreamDistributionChannelCollectionItem {
 		return vs[0].([]GetStreamDistributionChannelsStreamDistributionChannelCollectionItem)[vs[1].(int)]
 	}).(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput)
+}
+
+type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockInput is an input type that accepts GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArgs and GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockInput` via:
+//
+//	GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArgs{...}
+type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput() GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput
+	ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutputWithContext(context.Context) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput
+}
+
+type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArgs) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput() GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput {
+	return i.ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArgs) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutputWithContext(ctx context.Context) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput)
+}
+
+// GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayInput is an input type that accepts GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArray and GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayInput` via:
+//
+//	GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArray{ GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArgs{...} }
+type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput() GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput
+	ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutputWithContext(context.Context) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput
+}
+
+type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArray []GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockInput
+
+func (GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArray) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput() GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput {
+	return i.ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArray) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutputWithContext(ctx context.Context) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput)
+}
+
+type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput() GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput {
+	return o
+}
+
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutputWithContext(ctx context.Context) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock) string {
+		return v.RelatedResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput() GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutputWithContext(ctx context.Context) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock {
+		return vs[0].([]GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLock)[vs[1].(int)]
+	}).(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput)
 }
 
 type GetStreamPackagingConfigEncryption struct {
@@ -5910,6 +8733,139 @@ func (o GetStreamPackagingConfigEncryptionArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPackagingConfigEncryption {
 		return vs[0].([]GetStreamPackagingConfigEncryption)[vs[1].(int)]
 	}).(GetStreamPackagingConfigEncryptionOutput)
+}
+
+type GetStreamPackagingConfigLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetStreamPackagingConfigLockInput is an input type that accepts GetStreamPackagingConfigLockArgs and GetStreamPackagingConfigLockOutput values.
+// You can construct a concrete instance of `GetStreamPackagingConfigLockInput` via:
+//
+//	GetStreamPackagingConfigLockArgs{...}
+type GetStreamPackagingConfigLockInput interface {
+	pulumi.Input
+
+	ToGetStreamPackagingConfigLockOutput() GetStreamPackagingConfigLockOutput
+	ToGetStreamPackagingConfigLockOutputWithContext(context.Context) GetStreamPackagingConfigLockOutput
+}
+
+type GetStreamPackagingConfigLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetStreamPackagingConfigLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamPackagingConfigLock)(nil)).Elem()
+}
+
+func (i GetStreamPackagingConfigLockArgs) ToGetStreamPackagingConfigLockOutput() GetStreamPackagingConfigLockOutput {
+	return i.ToGetStreamPackagingConfigLockOutputWithContext(context.Background())
+}
+
+func (i GetStreamPackagingConfigLockArgs) ToGetStreamPackagingConfigLockOutputWithContext(ctx context.Context) GetStreamPackagingConfigLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigLockOutput)
+}
+
+// GetStreamPackagingConfigLockArrayInput is an input type that accepts GetStreamPackagingConfigLockArray and GetStreamPackagingConfigLockArrayOutput values.
+// You can construct a concrete instance of `GetStreamPackagingConfigLockArrayInput` via:
+//
+//	GetStreamPackagingConfigLockArray{ GetStreamPackagingConfigLockArgs{...} }
+type GetStreamPackagingConfigLockArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamPackagingConfigLockArrayOutput() GetStreamPackagingConfigLockArrayOutput
+	ToGetStreamPackagingConfigLockArrayOutputWithContext(context.Context) GetStreamPackagingConfigLockArrayOutput
+}
+
+type GetStreamPackagingConfigLockArray []GetStreamPackagingConfigLockInput
+
+func (GetStreamPackagingConfigLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamPackagingConfigLock)(nil)).Elem()
+}
+
+func (i GetStreamPackagingConfigLockArray) ToGetStreamPackagingConfigLockArrayOutput() GetStreamPackagingConfigLockArrayOutput {
+	return i.ToGetStreamPackagingConfigLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamPackagingConfigLockArray) ToGetStreamPackagingConfigLockArrayOutputWithContext(ctx context.Context) GetStreamPackagingConfigLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigLockArrayOutput)
+}
+
+type GetStreamPackagingConfigLockOutput struct{ *pulumi.OutputState }
+
+func (GetStreamPackagingConfigLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamPackagingConfigLock)(nil)).Elem()
+}
+
+func (o GetStreamPackagingConfigLockOutput) ToGetStreamPackagingConfigLockOutput() GetStreamPackagingConfigLockOutput {
+	return o
+}
+
+func (o GetStreamPackagingConfigLockOutput) ToGetStreamPackagingConfigLockOutputWithContext(ctx context.Context) GetStreamPackagingConfigLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o GetStreamPackagingConfigLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetStreamPackagingConfigLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetStreamPackagingConfigLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+func (o GetStreamPackagingConfigLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetStreamPackagingConfigLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetStreamPackagingConfigLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamPackagingConfigLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamPackagingConfigLock)(nil)).Elem()
+}
+
+func (o GetStreamPackagingConfigLockArrayOutput) ToGetStreamPackagingConfigLockArrayOutput() GetStreamPackagingConfigLockArrayOutput {
+	return o
+}
+
+func (o GetStreamPackagingConfigLockArrayOutput) ToGetStreamPackagingConfigLockArrayOutputWithContext(ctx context.Context) GetStreamPackagingConfigLockArrayOutput {
+	return o
+}
+
+func (o GetStreamPackagingConfigLockArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPackagingConfigLock {
+		return vs[0].([]GetStreamPackagingConfigLock)[vs[1].(int)]
+	}).(GetStreamPackagingConfigLockOutput)
 }
 
 type GetStreamPackagingConfigsFilter struct {
@@ -6115,7 +9071,7 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput) Ind
 }
 
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItem struct {
-	// Compartment Identifier
+	// The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -6128,7 +9084,10 @@ type GetStreamPackagingConfigsStreamPackagingConfigCollectionItem struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock `pulumi:"locks"`
 	// The duration in seconds for each fragment.
 	SegmentTimeInSeconds int `pulumi:"segmentTimeInSeconds"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
@@ -6155,7 +9114,7 @@ type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemInput interface
 }
 
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs struct {
-	// Compartment Identifier
+	// The compartment ID of the lock.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -6168,7 +9127,10 @@ type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id             pulumi.StringInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayInput `pulumi:"locks"`
 	// The duration in seconds for each fragment.
 	SegmentTimeInSeconds pulumi.IntInput `pulumi:"segmentTimeInSeconds"`
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
@@ -6234,7 +9196,7 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) ToGe
 	return o
 }
 
-// Compartment Identifier
+// The compartment ID of the lock.
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -6275,6 +9237,17 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) Free
 // Unique identifier that is immutable on creation.
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) Locks() GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) []GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock {
+		return v.Locks
+	}).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput)
 }
 
 // The duration in seconds for each fragment.
@@ -6441,6 +9414,143 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionAr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption {
 		return vs[0].([]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption)[vs[1].(int)]
 	}).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput)
+}
+
+type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock struct {
+	// The compartment ID of the lock.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockInput is an input type that accepts GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArgs and GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockInput` via:
+//
+//	GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArgs{...}
+type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput() GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput
+	ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutputWithContext(context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput
+}
+
+type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArgs struct {
+	// The compartment ID of the lock.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArgs) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput() GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput {
+	return i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArgs) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput)
+}
+
+// GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayInput is an input type that accepts GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArray and GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayInput` via:
+//
+//	GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArray{ GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArgs{...} }
+type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput() GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput
+	ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutputWithContext(context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput
+}
+
+type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArray []GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockInput
+
+func (GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArray) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput() GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput {
+	return i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArray) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput)
+}
+
+type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput() GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput {
+	return o
+}
+
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput {
+	return o
+}
+
+// The compartment ID of the lock.
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock) string {
+		return v.RelatedResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput() GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock {
+		return vs[0].([]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock)[vs[1].(int)]
+	}).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput)
 }
 
 type GetSystemMediaWorkflowItem struct {
@@ -6721,20 +9831,38 @@ func (o GetSystemMediaWorkflowItemTaskArrayOutput) Index(i pulumi.IntInput) GetS
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*MediaAssetLockInput)(nil)).Elem(), MediaAssetLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MediaAssetLockArrayInput)(nil)).Elem(), MediaAssetLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MediaAssetMediaAssetTagInput)(nil)).Elem(), MediaAssetMediaAssetTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MediaAssetMediaAssetTagArrayInput)(nil)).Elem(), MediaAssetMediaAssetTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MediaAssetMetadataInput)(nil)).Elem(), MediaAssetMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MediaAssetMetadataArrayInput)(nil)).Elem(), MediaAssetMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowConfigurationLockInput)(nil)).Elem(), MediaWorkflowConfigurationLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowConfigurationLockArrayInput)(nil)).Elem(), MediaWorkflowConfigurationLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowJobLockInput)(nil)).Elem(), MediaWorkflowJobLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowJobLockArrayInput)(nil)).Elem(), MediaWorkflowJobLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowJobOutputTypeInput)(nil)).Elem(), MediaWorkflowJobOutputTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowJobOutputTypeArrayInput)(nil)).Elem(), MediaWorkflowJobOutputTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowJobTaskLifecycleStateInput)(nil)).Elem(), MediaWorkflowJobTaskLifecycleStateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowJobTaskLifecycleStateArrayInput)(nil)).Elem(), MediaWorkflowJobTaskLifecycleStateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowLockInput)(nil)).Elem(), MediaWorkflowLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowLockArrayInput)(nil)).Elem(), MediaWorkflowLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowTaskInput)(nil)).Elem(), MediaWorkflowTaskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MediaWorkflowTaskArrayInput)(nil)).Elem(), MediaWorkflowTaskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*StreamCdnConfigConfigInput)(nil)).Elem(), StreamCdnConfigConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*StreamCdnConfigConfigPtrInput)(nil)).Elem(), StreamCdnConfigConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamCdnConfigLockInput)(nil)).Elem(), StreamCdnConfigLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamCdnConfigLockArrayInput)(nil)).Elem(), StreamCdnConfigLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamDistributionChannelLockInput)(nil)).Elem(), StreamDistributionChannelLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamDistributionChannelLockArrayInput)(nil)).Elem(), StreamDistributionChannelLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*StreamPackagingConfigEncryptionInput)(nil)).Elem(), StreamPackagingConfigEncryptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*StreamPackagingConfigEncryptionPtrInput)(nil)).Elem(), StreamPackagingConfigEncryptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamPackagingConfigLockInput)(nil)).Elem(), StreamPackagingConfigLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamPackagingConfigLockArrayInput)(nil)).Elem(), StreamPackagingConfigLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetDistributionChannelAttachmentLockInput)(nil)).Elem(), GetMediaAssetDistributionChannelAttachmentLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetDistributionChannelAttachmentLockArrayInput)(nil)).Elem(), GetMediaAssetDistributionChannelAttachmentLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetLockInput)(nil)).Elem(), GetMediaAssetLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetLockArrayInput)(nil)).Elem(), GetMediaAssetLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetMediaAssetTagInput)(nil)).Elem(), GetMediaAssetMediaAssetTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetMediaAssetTagArrayInput)(nil)).Elem(), GetMediaAssetMediaAssetTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetMetadataInput)(nil)).Elem(), GetMediaAssetMetadataArgs{})
@@ -6745,22 +9873,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetsMediaAssetCollectionArrayInput)(nil)).Elem(), GetMediaAssetsMediaAssetCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetsMediaAssetCollectionItemInput)(nil)).Elem(), GetMediaAssetsMediaAssetCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetsMediaAssetCollectionItemArrayInput)(nil)).Elem(), GetMediaAssetsMediaAssetCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetsMediaAssetCollectionItemLockInput)(nil)).Elem(), GetMediaAssetsMediaAssetCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetsMediaAssetCollectionItemLockArrayInput)(nil)).Elem(), GetMediaAssetsMediaAssetCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetsMediaAssetCollectionItemMediaAssetTagInput)(nil)).Elem(), GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayInput)(nil)).Elem(), GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetsMediaAssetCollectionItemMetadataInput)(nil)).Elem(), GetMediaAssetsMediaAssetCollectionItemMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaAssetsMediaAssetCollectionItemMetadataArrayInput)(nil)).Elem(), GetMediaAssetsMediaAssetCollectionItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowConfigurationLockInput)(nil)).Elem(), GetMediaWorkflowConfigurationLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowConfigurationLockArrayInput)(nil)).Elem(), GetMediaWorkflowConfigurationLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowConfigurationsFilterInput)(nil)).Elem(), GetMediaWorkflowConfigurationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowConfigurationsFilterArrayInput)(nil)).Elem(), GetMediaWorkflowConfigurationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionInput)(nil)).Elem(), GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayInput)(nil)).Elem(), GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemInput)(nil)).Elem(), GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayInput)(nil)).Elem(), GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockInput)(nil)).Elem(), GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayInput)(nil)).Elem(), GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobFactsFilterInput)(nil)).Elem(), GetMediaWorkflowJobFactsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobFactsFilterArrayInput)(nil)).Elem(), GetMediaWorkflowJobFactsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionInput)(nil)).Elem(), GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayInput)(nil)).Elem(), GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemInput)(nil)).Elem(), GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayInput)(nil)).Elem(), GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobLockInput)(nil)).Elem(), GetMediaWorkflowJobLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobLockArrayInput)(nil)).Elem(), GetMediaWorkflowJobLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobOutputInput)(nil)).Elem(), GetMediaWorkflowJobOutputArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobOutputArrayInput)(nil)).Elem(), GetMediaWorkflowJobOutputArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobTaskLifecycleStateInput)(nil)).Elem(), GetMediaWorkflowJobTaskLifecycleStateArgs{})
@@ -6771,10 +9907,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayInput)(nil)).Elem(), GetMediaWorkflowJobsMediaWorkflowJobCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobsMediaWorkflowJobCollectionItemInput)(nil)).Elem(), GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayInput)(nil)).Elem(), GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockInput)(nil)).Elem(), GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayInput)(nil)).Elem(), GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeInput)(nil)).Elem(), GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayInput)(nil)).Elem(), GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateInput)(nil)).Elem(), GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayInput)(nil)).Elem(), GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowLockInput)(nil)).Elem(), GetMediaWorkflowLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowLockArrayInput)(nil)).Elem(), GetMediaWorkflowLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowTaskInput)(nil)).Elem(), GetMediaWorkflowTaskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowTaskArrayInput)(nil)).Elem(), GetMediaWorkflowTaskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowTaskDeclarationItemInput)(nil)).Elem(), GetMediaWorkflowTaskDeclarationItemArgs{})
@@ -6785,10 +9925,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowsMediaWorkflowCollectionArrayInput)(nil)).Elem(), GetMediaWorkflowsMediaWorkflowCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowsMediaWorkflowCollectionItemInput)(nil)).Elem(), GetMediaWorkflowsMediaWorkflowCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowsMediaWorkflowCollectionItemArrayInput)(nil)).Elem(), GetMediaWorkflowsMediaWorkflowCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowsMediaWorkflowCollectionItemLockInput)(nil)).Elem(), GetMediaWorkflowsMediaWorkflowCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayInput)(nil)).Elem(), GetMediaWorkflowsMediaWorkflowCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowsMediaWorkflowCollectionItemTaskInput)(nil)).Elem(), GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayInput)(nil)).Elem(), GetMediaWorkflowsMediaWorkflowCollectionItemTaskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigConfigInput)(nil)).Elem(), GetStreamCdnConfigConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigConfigArrayInput)(nil)).Elem(), GetStreamCdnConfigConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigLockInput)(nil)).Elem(), GetStreamCdnConfigLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigLockArrayInput)(nil)).Elem(), GetStreamCdnConfigLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigsFilterInput)(nil)).Elem(), GetStreamCdnConfigsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigsFilterArrayInput)(nil)).Elem(), GetStreamCdnConfigsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigsStreamCdnConfigCollectionInput)(nil)).Elem(), GetStreamCdnConfigsStreamCdnConfigCollectionArgs{})
@@ -6797,14 +9941,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayInput)(nil)).Elem(), GetStreamCdnConfigsStreamCdnConfigCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigInput)(nil)).Elem(), GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayInput)(nil)).Elem(), GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigsStreamCdnConfigCollectionItemLockInput)(nil)).Elem(), GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayInput)(nil)).Elem(), GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamDistributionChannelLockInput)(nil)).Elem(), GetStreamDistributionChannelLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamDistributionChannelLockArrayInput)(nil)).Elem(), GetStreamDistributionChannelLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamDistributionChannelsFilterInput)(nil)).Elem(), GetStreamDistributionChannelsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamDistributionChannelsFilterArrayInput)(nil)).Elem(), GetStreamDistributionChannelsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamDistributionChannelsStreamDistributionChannelCollectionInput)(nil)).Elem(), GetStreamDistributionChannelsStreamDistributionChannelCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayInput)(nil)).Elem(), GetStreamDistributionChannelsStreamDistributionChannelCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamDistributionChannelsStreamDistributionChannelCollectionItemInput)(nil)).Elem(), GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayInput)(nil)).Elem(), GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockInput)(nil)).Elem(), GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayInput)(nil)).Elem(), GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigEncryptionInput)(nil)).Elem(), GetStreamPackagingConfigEncryptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigEncryptionArrayInput)(nil)).Elem(), GetStreamPackagingConfigEncryptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigLockInput)(nil)).Elem(), GetStreamPackagingConfigLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigLockArrayInput)(nil)).Elem(), GetStreamPackagingConfigLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigsFilterInput)(nil)).Elem(), GetStreamPackagingConfigsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigsFilterArrayInput)(nil)).Elem(), GetStreamPackagingConfigsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigsStreamPackagingConfigCollectionInput)(nil)).Elem(), GetStreamPackagingConfigsStreamPackagingConfigCollectionArgs{})
@@ -6813,24 +9965,44 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayInput)(nil)).Elem(), GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionInput)(nil)).Elem(), GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayInput)(nil)).Elem(), GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockInput)(nil)).Elem(), GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayInput)(nil)).Elem(), GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemMediaWorkflowItemInput)(nil)).Elem(), GetSystemMediaWorkflowItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemMediaWorkflowItemArrayInput)(nil)).Elem(), GetSystemMediaWorkflowItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemMediaWorkflowItemTaskInput)(nil)).Elem(), GetSystemMediaWorkflowItemTaskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemMediaWorkflowItemTaskArrayInput)(nil)).Elem(), GetSystemMediaWorkflowItemTaskArray{})
+	pulumi.RegisterOutputType(MediaAssetLockOutput{})
+	pulumi.RegisterOutputType(MediaAssetLockArrayOutput{})
 	pulumi.RegisterOutputType(MediaAssetMediaAssetTagOutput{})
 	pulumi.RegisterOutputType(MediaAssetMediaAssetTagArrayOutput{})
 	pulumi.RegisterOutputType(MediaAssetMetadataOutput{})
 	pulumi.RegisterOutputType(MediaAssetMetadataArrayOutput{})
+	pulumi.RegisterOutputType(MediaWorkflowConfigurationLockOutput{})
+	pulumi.RegisterOutputType(MediaWorkflowConfigurationLockArrayOutput{})
+	pulumi.RegisterOutputType(MediaWorkflowJobLockOutput{})
+	pulumi.RegisterOutputType(MediaWorkflowJobLockArrayOutput{})
 	pulumi.RegisterOutputType(MediaWorkflowJobOutputTypeOutput{})
 	pulumi.RegisterOutputType(MediaWorkflowJobOutputTypeArrayOutput{})
 	pulumi.RegisterOutputType(MediaWorkflowJobTaskLifecycleStateOutput{})
 	pulumi.RegisterOutputType(MediaWorkflowJobTaskLifecycleStateArrayOutput{})
+	pulumi.RegisterOutputType(MediaWorkflowLockOutput{})
+	pulumi.RegisterOutputType(MediaWorkflowLockArrayOutput{})
 	pulumi.RegisterOutputType(MediaWorkflowTaskOutput{})
 	pulumi.RegisterOutputType(MediaWorkflowTaskArrayOutput{})
 	pulumi.RegisterOutputType(StreamCdnConfigConfigOutput{})
 	pulumi.RegisterOutputType(StreamCdnConfigConfigPtrOutput{})
+	pulumi.RegisterOutputType(StreamCdnConfigLockOutput{})
+	pulumi.RegisterOutputType(StreamCdnConfigLockArrayOutput{})
+	pulumi.RegisterOutputType(StreamDistributionChannelLockOutput{})
+	pulumi.RegisterOutputType(StreamDistributionChannelLockArrayOutput{})
 	pulumi.RegisterOutputType(StreamPackagingConfigEncryptionOutput{})
 	pulumi.RegisterOutputType(StreamPackagingConfigEncryptionPtrOutput{})
+	pulumi.RegisterOutputType(StreamPackagingConfigLockOutput{})
+	pulumi.RegisterOutputType(StreamPackagingConfigLockArrayOutput{})
+	pulumi.RegisterOutputType(GetMediaAssetDistributionChannelAttachmentLockOutput{})
+	pulumi.RegisterOutputType(GetMediaAssetDistributionChannelAttachmentLockArrayOutput{})
+	pulumi.RegisterOutputType(GetMediaAssetLockOutput{})
+	pulumi.RegisterOutputType(GetMediaAssetLockArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaAssetMediaAssetTagOutput{})
 	pulumi.RegisterOutputType(GetMediaAssetMediaAssetTagArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaAssetMetadataOutput{})
@@ -6841,22 +10013,30 @@ func init() {
 	pulumi.RegisterOutputType(GetMediaAssetsMediaAssetCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaAssetsMediaAssetCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMediaAssetsMediaAssetCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMediaAssetsMediaAssetCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetMediaAssetsMediaAssetCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput{})
 	pulumi.RegisterOutputType(GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaAssetsMediaAssetCollectionItemMetadataOutput{})
 	pulumi.RegisterOutputType(GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowConfigurationLockOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowConfigurationLockArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowConfigurationsFilterOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowConfigurationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobFactsFilterOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobFactsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowJobLockOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowJobLockArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobOutputOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobOutputArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobTaskLifecycleStateOutput{})
@@ -6867,10 +10047,14 @@ func init() {
 	pulumi.RegisterOutputType(GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowLockOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowLockArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowTaskOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowTaskArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowTaskDeclarationItemOutput{})
@@ -6881,10 +10065,14 @@ func init() {
 	pulumi.RegisterOutputType(GetMediaWorkflowsMediaWorkflowCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowsMediaWorkflowCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowsMediaWorkflowCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetMediaWorkflowsMediaWorkflowCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput{})
 	pulumi.RegisterOutputType(GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput{})
 	pulumi.RegisterOutputType(GetStreamCdnConfigConfigOutput{})
 	pulumi.RegisterOutputType(GetStreamCdnConfigConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamCdnConfigLockOutput{})
+	pulumi.RegisterOutputType(GetStreamCdnConfigLockArrayOutput{})
 	pulumi.RegisterOutputType(GetStreamCdnConfigsFilterOutput{})
 	pulumi.RegisterOutputType(GetStreamCdnConfigsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetStreamCdnConfigsStreamCdnConfigCollectionOutput{})
@@ -6893,14 +10081,22 @@ func init() {
 	pulumi.RegisterOutputType(GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput{})
 	pulumi.RegisterOutputType(GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamCdnConfigsStreamCdnConfigCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamDistributionChannelLockOutput{})
+	pulumi.RegisterOutputType(GetStreamDistributionChannelLockArrayOutput{})
 	pulumi.RegisterOutputType(GetStreamDistributionChannelsFilterOutput{})
 	pulumi.RegisterOutputType(GetStreamDistributionChannelsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput{})
 	pulumi.RegisterOutputType(GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetStreamPackagingConfigEncryptionOutput{})
 	pulumi.RegisterOutputType(GetStreamPackagingConfigEncryptionArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamPackagingConfigLockOutput{})
+	pulumi.RegisterOutputType(GetStreamPackagingConfigLockArrayOutput{})
 	pulumi.RegisterOutputType(GetStreamPackagingConfigsFilterOutput{})
 	pulumi.RegisterOutputType(GetStreamPackagingConfigsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput{})
@@ -6909,6 +10105,8 @@ func init() {
 	pulumi.RegisterOutputType(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput{})
 	pulumi.RegisterOutputType(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetSystemMediaWorkflowItemOutput{})
 	pulumi.RegisterOutputType(GetSystemMediaWorkflowItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSystemMediaWorkflowItemTaskOutput{})

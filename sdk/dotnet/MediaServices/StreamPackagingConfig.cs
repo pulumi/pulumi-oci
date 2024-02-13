@@ -43,6 +43,17 @@ namespace Pulumi.Oci.MediaServices
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.MediaServices.Inputs.StreamPackagingConfigLockArgs
+    ///             {
+    ///                 CompartmentId = @var.Compartment_id,
+    ///                 Type = @var.Stream_packaging_config_locks_type,
+    ///                 Message = @var.Stream_packaging_config_locks_message,
+    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
+    ///                 TimeCreated = @var.Stream_packaging_config_locks_time_created,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -60,7 +71,7 @@ namespace Pulumi.Oci.MediaServices
     public partial class StreamPackagingConfig : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Compartment Identifier
+        /// The compartment ID of the lock.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -95,6 +106,15 @@ namespace Pulumi.Oci.MediaServices
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.StreamPackagingConfigLock>> Locks { get; private set; } = null!;
+
         /// <summary>
         /// The duration in seconds for each fragment.
         /// </summary>
@@ -124,7 +144,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -223,6 +243,21 @@ namespace Pulumi.Oci.MediaServices
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.StreamPackagingConfigLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.StreamPackagingConfigLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.StreamPackagingConfigLockArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// The duration in seconds for each fragment.
         /// </summary>
@@ -248,7 +283,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class StreamPackagingConfigState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Compartment Identifier
+        /// The compartment ID of the lock.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -295,6 +330,21 @@ namespace Pulumi.Oci.MediaServices
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.StreamPackagingConfigLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.StreamPackagingConfigLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.StreamPackagingConfigLockGetArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// The duration in seconds for each fragment.
         /// </summary>
@@ -330,7 +380,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

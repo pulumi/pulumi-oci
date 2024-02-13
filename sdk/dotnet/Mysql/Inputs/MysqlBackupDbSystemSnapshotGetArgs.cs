@@ -186,6 +186,18 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("portX")]
         public Input<int>? PortX { get; set; }
 
+        [Input("secureConnections")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotSecureConnectionGetArgs>? _secureConnections;
+
+        /// <summary>
+        /// Secure connection configuration details.
+        /// </summary>
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotSecureConnectionGetArgs> SecureConnections
+        {
+            get => _secureConnections ?? (_secureConnections = new InputList<Inputs.MysqlBackupDbSystemSnapshotSecureConnectionGetArgs>());
+            set => _secureConnections = value;
+        }
+
         /// <summary>
         /// The shape of the DB System instance used for backup.
         /// </summary>

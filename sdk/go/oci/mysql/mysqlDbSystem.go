@@ -79,6 +79,10 @@ import (
 //				},
 //				Port:  pulumi.Any(_var.Mysql_db_system_port),
 //				PortX: pulumi.Any(_var.Mysql_db_system_port_x),
+//				SecureConnections: &mysql.MysqlDbSystemSecureConnectionsArgs{
+//					CertificateGenerationType: pulumi.Any(_var.Mysql_db_system_secure_connections_certificate_generation_type),
+//					CertificateId:             pulumi.Any(oci_apigateway_certificate.Test_certificate.Id),
+//				},
 //				Source: &mysql.MysqlDbSystemSourceArgs{
 //					SourceType: pulumi.Any(_var.Mysql_db_system_source_source_type),
 //					BackupId:   pulumi.Any(oci_mysql_mysql_backup.Test_backup.Id),
@@ -177,6 +181,8 @@ type MysqlDbSystem struct {
 	Port pulumi.IntOutput `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntOutput `pulumi:"portX"`
+	// (Updatable) Secure connection configuration details.
+	SecureConnections MysqlDbSystemSecureConnectionsOutput `pulumi:"secureConnections"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
@@ -318,6 +324,8 @@ type mysqlDbSystemState struct {
 	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
+	// (Updatable) Secure connection configuration details.
+	SecureConnections *MysqlDbSystemSecureConnections `pulumi:"secureConnections"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName *string `pulumi:"shapeName"`
@@ -411,6 +419,8 @@ type MysqlDbSystemState struct {
 	Port pulumi.IntPtrInput
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput
+	// (Updatable) Secure connection configuration details.
+	SecureConnections MysqlDbSystemSecureConnectionsPtrInput
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringPtrInput
@@ -494,6 +504,8 @@ type mysqlDbSystemArgs struct {
 	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
+	// (Updatable) Secure connection configuration details.
+	SecureConnections *MysqlDbSystemSecureConnections `pulumi:"secureConnections"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
@@ -570,6 +582,8 @@ type MysqlDbSystemArgs struct {
 	Port pulumi.IntPtrInput
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput
+	// (Updatable) Secure connection configuration details.
+	SecureConnections MysqlDbSystemSecureConnectionsPtrInput
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput
@@ -832,6 +846,11 @@ func (o MysqlDbSystemOutput) Port() pulumi.IntOutput {
 // The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 func (o MysqlDbSystemOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntOutput { return v.PortX }).(pulumi.IntOutput)
+}
+
+// (Updatable) Secure connection configuration details.
+func (o MysqlDbSystemOutput) SecureConnections() MysqlDbSystemSecureConnectionsOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemSecureConnectionsOutput { return v.SecureConnections }).(MysqlDbSystemSecureConnectionsOutput)
 }
 
 // (Updatable) The name of the shape. The shape determines the resources allocated

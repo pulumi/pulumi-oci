@@ -52,6 +52,17 @@ namespace Pulumi.Oci.MediaServices
     ///             { "bar-key", "value" },
     ///         },
     ///         IsEnabled = @var.Stream_cdn_config_is_enabled,
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.MediaServices.Inputs.StreamCdnConfigLockArgs
+    ///             {
+    ///                 CompartmentId = @var.Compartment_id,
+    ///                 Type = @var.Stream_cdn_config_locks_type,
+    ///                 Message = @var.Stream_cdn_config_locks_message,
+    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
+    ///                 TimeCreated = @var.Stream_cdn_config_locks_time_created,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -69,7 +80,7 @@ namespace Pulumi.Oci.MediaServices
     public partial class StreamCdnConfig : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Compartment Identifier.
+        /// The compartment ID of the lock.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -106,19 +117,24 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// (Updatable) Whether publishing to CDN is enabled.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("isEnabled")]
         public Output<bool> IsEnabled { get; private set; } = null!;
+
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecyleDetails")]
         public Output<string> LifecyleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.StreamCdnConfigLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the CDN Configuration.
@@ -133,7 +149,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -234,13 +250,24 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// (Updatable) Whether publishing to CDN is enabled.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
+
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.StreamCdnConfigLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.StreamCdnConfigLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.StreamCdnConfigLockArgs>());
+            set => _locks = value;
+        }
 
         public StreamCdnConfigArgs()
         {
@@ -251,7 +278,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class StreamCdnConfigState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Compartment Identifier.
+        /// The compartment ID of the lock.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -300,19 +327,30 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// (Updatable) Whether publishing to CDN is enabled.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
+
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Input("lifecyleDetails")]
         public Input<string>? LifecyleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.StreamCdnConfigLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.StreamCdnConfigLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.StreamCdnConfigLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// The current state of the CDN Configuration.
@@ -333,7 +371,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// The time when the CDN Config was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

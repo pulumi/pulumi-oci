@@ -1190,6 +1190,8 @@ type MysqlBackupDbSystemSnapshot struct {
 	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
+	// Secure connection configuration details.
+	SecureConnections []MysqlBackupDbSystemSnapshotSecureConnection `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
 	ShapeName *string `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
@@ -1254,6 +1256,8 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput `pulumi:"portX"`
+	// Secure connection configuration details.
+	SecureConnections MysqlBackupDbSystemSnapshotSecureConnectionArrayInput `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
@@ -1426,6 +1430,13 @@ func (o MysqlBackupDbSystemSnapshotOutput) Port() pulumi.IntPtrOutput {
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 func (o MysqlBackupDbSystemSnapshotOutput) PortX() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *int { return v.PortX }).(pulumi.IntPtrOutput)
+}
+
+// Secure connection configuration details.
+func (o MysqlBackupDbSystemSnapshotOutput) SecureConnections() MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) []MysqlBackupDbSystemSnapshotSecureConnection {
+		return v.SecureConnections
+	}).(MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput)
 }
 
 // The shape of the DB System instance used for backup.
@@ -2087,6 +2098,112 @@ func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotMaintenance {
 		return vs[0].([]MysqlBackupDbSystemSnapshotMaintenance)[vs[1].(int)]
 	}).(MysqlBackupDbSystemSnapshotMaintenanceOutput)
+}
+
+type MysqlBackupDbSystemSnapshotSecureConnection struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType *string `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId *string `pulumi:"certificateId"`
+}
+
+// MysqlBackupDbSystemSnapshotSecureConnectionInput is an input type that accepts MysqlBackupDbSystemSnapshotSecureConnectionArgs and MysqlBackupDbSystemSnapshotSecureConnectionOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotSecureConnectionInput` via:
+//
+//	MysqlBackupDbSystemSnapshotSecureConnectionArgs{...}
+type MysqlBackupDbSystemSnapshotSecureConnectionInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotSecureConnectionOutput() MysqlBackupDbSystemSnapshotSecureConnectionOutput
+	ToMysqlBackupDbSystemSnapshotSecureConnectionOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotSecureConnectionOutput
+}
+
+type MysqlBackupDbSystemSnapshotSecureConnectionArgs struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType pulumi.StringPtrInput `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
+}
+
+func (MysqlBackupDbSystemSnapshotSecureConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotSecureConnectionArgs) ToMysqlBackupDbSystemSnapshotSecureConnectionOutput() MysqlBackupDbSystemSnapshotSecureConnectionOutput {
+	return i.ToMysqlBackupDbSystemSnapshotSecureConnectionOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotSecureConnectionArgs) ToMysqlBackupDbSystemSnapshotSecureConnectionOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotSecureConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotSecureConnectionOutput)
+}
+
+// MysqlBackupDbSystemSnapshotSecureConnectionArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotSecureConnectionArray and MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotSecureConnectionArrayInput` via:
+//
+//	MysqlBackupDbSystemSnapshotSecureConnectionArray{ MysqlBackupDbSystemSnapshotSecureConnectionArgs{...} }
+type MysqlBackupDbSystemSnapshotSecureConnectionArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput() MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput
+	ToMysqlBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotSecureConnectionArray []MysqlBackupDbSystemSnapshotSecureConnectionInput
+
+func (MysqlBackupDbSystemSnapshotSecureConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotSecureConnectionArray) ToMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput() MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotSecureConnectionArray) ToMysqlBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotSecureConnectionOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotSecureConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotSecureConnectionOutput) ToMysqlBackupDbSystemSnapshotSecureConnectionOutput() MysqlBackupDbSystemSnapshotSecureConnectionOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotSecureConnectionOutput) ToMysqlBackupDbSystemSnapshotSecureConnectionOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotSecureConnectionOutput {
+	return o
+}
+
+// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+func (o MysqlBackupDbSystemSnapshotSecureConnectionOutput) CertificateGenerationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotSecureConnection) *string { return v.CertificateGenerationType }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the certificate to use.
+func (o MysqlBackupDbSystemSnapshotSecureConnectionOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotSecureConnection) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
+}
+
+type MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput) ToMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput() MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput) ToMysqlBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotSecureConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotSecureConnection {
+		return vs[0].([]MysqlBackupDbSystemSnapshotSecureConnection)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotSecureConnectionOutput)
 }
 
 type MysqlConfigurationInitVariables struct {
@@ -6366,6 +6483,162 @@ func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.IntInp
 	}).(MysqlDbSystemPointInTimeRecoveryDetailOutput)
 }
 
+type MysqlDbSystemSecureConnections struct {
+	// (Updatable) Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType string `pulumi:"certificateGenerationType"`
+	// (Updatable) The OCID of the certificate to use.
+	CertificateId *string `pulumi:"certificateId"`
+}
+
+// MysqlDbSystemSecureConnectionsInput is an input type that accepts MysqlDbSystemSecureConnectionsArgs and MysqlDbSystemSecureConnectionsOutput values.
+// You can construct a concrete instance of `MysqlDbSystemSecureConnectionsInput` via:
+//
+//	MysqlDbSystemSecureConnectionsArgs{...}
+type MysqlDbSystemSecureConnectionsInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemSecureConnectionsOutput() MysqlDbSystemSecureConnectionsOutput
+	ToMysqlDbSystemSecureConnectionsOutputWithContext(context.Context) MysqlDbSystemSecureConnectionsOutput
+}
+
+type MysqlDbSystemSecureConnectionsArgs struct {
+	// (Updatable) Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType pulumi.StringInput `pulumi:"certificateGenerationType"`
+	// (Updatable) The OCID of the certificate to use.
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
+}
+
+func (MysqlDbSystemSecureConnectionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemSecureConnections)(nil)).Elem()
+}
+
+func (i MysqlDbSystemSecureConnectionsArgs) ToMysqlDbSystemSecureConnectionsOutput() MysqlDbSystemSecureConnectionsOutput {
+	return i.ToMysqlDbSystemSecureConnectionsOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemSecureConnectionsArgs) ToMysqlDbSystemSecureConnectionsOutputWithContext(ctx context.Context) MysqlDbSystemSecureConnectionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSecureConnectionsOutput)
+}
+
+func (i MysqlDbSystemSecureConnectionsArgs) ToMysqlDbSystemSecureConnectionsPtrOutput() MysqlDbSystemSecureConnectionsPtrOutput {
+	return i.ToMysqlDbSystemSecureConnectionsPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemSecureConnectionsArgs) ToMysqlDbSystemSecureConnectionsPtrOutputWithContext(ctx context.Context) MysqlDbSystemSecureConnectionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSecureConnectionsOutput).ToMysqlDbSystemSecureConnectionsPtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemSecureConnectionsPtrInput is an input type that accepts MysqlDbSystemSecureConnectionsArgs, MysqlDbSystemSecureConnectionsPtr and MysqlDbSystemSecureConnectionsPtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemSecureConnectionsPtrInput` via:
+//
+//	        MysqlDbSystemSecureConnectionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlDbSystemSecureConnectionsPtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemSecureConnectionsPtrOutput() MysqlDbSystemSecureConnectionsPtrOutput
+	ToMysqlDbSystemSecureConnectionsPtrOutputWithContext(context.Context) MysqlDbSystemSecureConnectionsPtrOutput
+}
+
+type mysqlDbSystemSecureConnectionsPtrType MysqlDbSystemSecureConnectionsArgs
+
+func MysqlDbSystemSecureConnectionsPtr(v *MysqlDbSystemSecureConnectionsArgs) MysqlDbSystemSecureConnectionsPtrInput {
+	return (*mysqlDbSystemSecureConnectionsPtrType)(v)
+}
+
+func (*mysqlDbSystemSecureConnectionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemSecureConnections)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemSecureConnectionsPtrType) ToMysqlDbSystemSecureConnectionsPtrOutput() MysqlDbSystemSecureConnectionsPtrOutput {
+	return i.ToMysqlDbSystemSecureConnectionsPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemSecureConnectionsPtrType) ToMysqlDbSystemSecureConnectionsPtrOutputWithContext(ctx context.Context) MysqlDbSystemSecureConnectionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSecureConnectionsPtrOutput)
+}
+
+type MysqlDbSystemSecureConnectionsOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemSecureConnectionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemSecureConnections)(nil)).Elem()
+}
+
+func (o MysqlDbSystemSecureConnectionsOutput) ToMysqlDbSystemSecureConnectionsOutput() MysqlDbSystemSecureConnectionsOutput {
+	return o
+}
+
+func (o MysqlDbSystemSecureConnectionsOutput) ToMysqlDbSystemSecureConnectionsOutputWithContext(ctx context.Context) MysqlDbSystemSecureConnectionsOutput {
+	return o
+}
+
+func (o MysqlDbSystemSecureConnectionsOutput) ToMysqlDbSystemSecureConnectionsPtrOutput() MysqlDbSystemSecureConnectionsPtrOutput {
+	return o.ToMysqlDbSystemSecureConnectionsPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemSecureConnectionsOutput) ToMysqlDbSystemSecureConnectionsPtrOutputWithContext(ctx context.Context) MysqlDbSystemSecureConnectionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemSecureConnections) *MysqlDbSystemSecureConnections {
+		return &v
+	}).(MysqlDbSystemSecureConnectionsPtrOutput)
+}
+
+// (Updatable) Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+func (o MysqlDbSystemSecureConnectionsOutput) CertificateGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemSecureConnections) string { return v.CertificateGenerationType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the certificate to use.
+func (o MysqlDbSystemSecureConnectionsOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemSecureConnections) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemSecureConnectionsPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemSecureConnectionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemSecureConnections)(nil)).Elem()
+}
+
+func (o MysqlDbSystemSecureConnectionsPtrOutput) ToMysqlDbSystemSecureConnectionsPtrOutput() MysqlDbSystemSecureConnectionsPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemSecureConnectionsPtrOutput) ToMysqlDbSystemSecureConnectionsPtrOutputWithContext(ctx context.Context) MysqlDbSystemSecureConnectionsPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemSecureConnectionsPtrOutput) Elem() MysqlDbSystemSecureConnectionsOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSecureConnections) MysqlDbSystemSecureConnections {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemSecureConnections
+		return ret
+	}).(MysqlDbSystemSecureConnectionsOutput)
+}
+
+// (Updatable) Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+func (o MysqlDbSystemSecureConnectionsPtrOutput) CertificateGenerationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSecureConnections) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CertificateGenerationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the certificate to use.
+func (o MysqlDbSystemSecureConnectionsPtrOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSecureConnections) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CertificateId
+	}).(pulumi.StringPtrOutput)
+}
+
 type MysqlDbSystemSource struct {
 	// The OCID of the backup to be used as the source for the new DB System.
 	BackupId *string `pulumi:"backupId"`
@@ -6764,6 +7037,112 @@ func (o ReplicaReplicaOverridesPtrOutput) ShapeName() pulumi.StringPtrOutput {
 		}
 		return v.ShapeName
 	}).(pulumi.StringPtrOutput)
+}
+
+type ReplicaSecureConnection struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType *string `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId *string `pulumi:"certificateId"`
+}
+
+// ReplicaSecureConnectionInput is an input type that accepts ReplicaSecureConnectionArgs and ReplicaSecureConnectionOutput values.
+// You can construct a concrete instance of `ReplicaSecureConnectionInput` via:
+//
+//	ReplicaSecureConnectionArgs{...}
+type ReplicaSecureConnectionInput interface {
+	pulumi.Input
+
+	ToReplicaSecureConnectionOutput() ReplicaSecureConnectionOutput
+	ToReplicaSecureConnectionOutputWithContext(context.Context) ReplicaSecureConnectionOutput
+}
+
+type ReplicaSecureConnectionArgs struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType pulumi.StringPtrInput `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
+}
+
+func (ReplicaSecureConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaSecureConnection)(nil)).Elem()
+}
+
+func (i ReplicaSecureConnectionArgs) ToReplicaSecureConnectionOutput() ReplicaSecureConnectionOutput {
+	return i.ToReplicaSecureConnectionOutputWithContext(context.Background())
+}
+
+func (i ReplicaSecureConnectionArgs) ToReplicaSecureConnectionOutputWithContext(ctx context.Context) ReplicaSecureConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaSecureConnectionOutput)
+}
+
+// ReplicaSecureConnectionArrayInput is an input type that accepts ReplicaSecureConnectionArray and ReplicaSecureConnectionArrayOutput values.
+// You can construct a concrete instance of `ReplicaSecureConnectionArrayInput` via:
+//
+//	ReplicaSecureConnectionArray{ ReplicaSecureConnectionArgs{...} }
+type ReplicaSecureConnectionArrayInput interface {
+	pulumi.Input
+
+	ToReplicaSecureConnectionArrayOutput() ReplicaSecureConnectionArrayOutput
+	ToReplicaSecureConnectionArrayOutputWithContext(context.Context) ReplicaSecureConnectionArrayOutput
+}
+
+type ReplicaSecureConnectionArray []ReplicaSecureConnectionInput
+
+func (ReplicaSecureConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaSecureConnection)(nil)).Elem()
+}
+
+func (i ReplicaSecureConnectionArray) ToReplicaSecureConnectionArrayOutput() ReplicaSecureConnectionArrayOutput {
+	return i.ToReplicaSecureConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i ReplicaSecureConnectionArray) ToReplicaSecureConnectionArrayOutputWithContext(ctx context.Context) ReplicaSecureConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaSecureConnectionArrayOutput)
+}
+
+type ReplicaSecureConnectionOutput struct{ *pulumi.OutputState }
+
+func (ReplicaSecureConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaSecureConnection)(nil)).Elem()
+}
+
+func (o ReplicaSecureConnectionOutput) ToReplicaSecureConnectionOutput() ReplicaSecureConnectionOutput {
+	return o
+}
+
+func (o ReplicaSecureConnectionOutput) ToReplicaSecureConnectionOutputWithContext(ctx context.Context) ReplicaSecureConnectionOutput {
+	return o
+}
+
+// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+func (o ReplicaSecureConnectionOutput) CertificateGenerationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicaSecureConnection) *string { return v.CertificateGenerationType }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the certificate to use.
+func (o ReplicaSecureConnectionOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicaSecureConnection) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
+}
+
+type ReplicaSecureConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (ReplicaSecureConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaSecureConnection)(nil)).Elem()
+}
+
+func (o ReplicaSecureConnectionArrayOutput) ToReplicaSecureConnectionArrayOutput() ReplicaSecureConnectionArrayOutput {
+	return o
+}
+
+func (o ReplicaSecureConnectionArrayOutput) ToReplicaSecureConnectionArrayOutputWithContext(ctx context.Context) ReplicaSecureConnectionArrayOutput {
+	return o
+}
+
+func (o ReplicaSecureConnectionArrayOutput) Index(i pulumi.IntInput) ReplicaSecureConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ReplicaSecureConnection {
+		return vs[0].([]ReplicaSecureConnection)[vs[1].(int)]
+	}).(ReplicaSecureConnectionOutput)
 }
 
 type GetChannelSource struct {
@@ -8544,6 +8923,8 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// Secure connection configuration details.
+	SecureConnections []GetMysqlBackupDbSystemSnapshotSecureConnection `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
 	ShapeName string `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
@@ -8608,6 +8989,8 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
+	// Secure connection configuration details.
+	SecureConnections GetMysqlBackupDbSystemSnapshotSecureConnectionArrayInput `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
@@ -8784,6 +9167,13 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) Port() pulumi.IntOutput {
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 func (o GetMysqlBackupDbSystemSnapshotOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// Secure connection configuration details.
+func (o GetMysqlBackupDbSystemSnapshotOutput) SecureConnections() GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) []GetMysqlBackupDbSystemSnapshotSecureConnection {
+		return v.SecureConnections
+	}).(GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput)
 }
 
 // The shape of the DB System instance used for backup.
@@ -9438,6 +9828,112 @@ func (o GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.Int
 	}).(GetMysqlBackupDbSystemSnapshotMaintenanceOutput)
 }
 
+type GetMysqlBackupDbSystemSnapshotSecureConnection struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType string `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId string `pulumi:"certificateId"`
+}
+
+// GetMysqlBackupDbSystemSnapshotSecureConnectionInput is an input type that accepts GetMysqlBackupDbSystemSnapshotSecureConnectionArgs and GetMysqlBackupDbSystemSnapshotSecureConnectionOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotSecureConnectionInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotSecureConnectionArgs{...}
+type GetMysqlBackupDbSystemSnapshotSecureConnectionInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotSecureConnectionOutput() GetMysqlBackupDbSystemSnapshotSecureConnectionOutput
+	ToGetMysqlBackupDbSystemSnapshotSecureConnectionOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotSecureConnectionOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotSecureConnectionArgs struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType pulumi.StringInput `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotSecureConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotSecureConnectionArgs) ToGetMysqlBackupDbSystemSnapshotSecureConnectionOutput() GetMysqlBackupDbSystemSnapshotSecureConnectionOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotSecureConnectionOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotSecureConnectionArgs) ToGetMysqlBackupDbSystemSnapshotSecureConnectionOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotSecureConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotSecureConnectionOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotSecureConnectionArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotSecureConnectionArray and GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotSecureConnectionArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotSecureConnectionArray{ GetMysqlBackupDbSystemSnapshotSecureConnectionArgs{...} }
+type GetMysqlBackupDbSystemSnapshotSecureConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput() GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotSecureConnectionArray []GetMysqlBackupDbSystemSnapshotSecureConnectionInput
+
+func (GetMysqlBackupDbSystemSnapshotSecureConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotSecureConnectionArray) ToGetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput() GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotSecureConnectionArray) ToGetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotSecureConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotSecureConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotSecureConnectionOutput) ToGetMysqlBackupDbSystemSnapshotSecureConnectionOutput() GetMysqlBackupDbSystemSnapshotSecureConnectionOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotSecureConnectionOutput) ToGetMysqlBackupDbSystemSnapshotSecureConnectionOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotSecureConnectionOutput {
+	return o
+}
+
+// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+func (o GetMysqlBackupDbSystemSnapshotSecureConnectionOutput) CertificateGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotSecureConnection) string { return v.CertificateGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the certificate to use.
+func (o GetMysqlBackupDbSystemSnapshotSecureConnectionOutput) CertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotSecureConnection) string { return v.CertificateId }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput) ToGetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput() GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput) ToGetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotSecureConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotSecureConnection {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotSecureConnection)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotSecureConnectionOutput)
+}
+
 type GetMysqlBackupsBackup struct {
 	// The size of the backup in base-2 (IEC) gibibytes. (GiB).
 	BackupSizeInGbs int `pulumi:"backupSizeInGbs"`
@@ -9744,6 +10240,8 @@ type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// Secure connection configuration details.
+	SecureConnections []GetMysqlBackupsBackupDbSystemSnapshotSecureConnection `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
 	ShapeName string `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
@@ -9808,6 +10306,8 @@ type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
+	// Secure connection configuration details.
+	SecureConnections GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
@@ -9986,6 +10486,13 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Port() pulumi.IntOutput {
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// Secure connection configuration details.
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) SecureConnections() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotSecureConnection {
+		return v.SecureConnections
+	}).(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput)
 }
 
 // The shape of the DB System instance used for backup.
@@ -10640,6 +11147,114 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotMaintenance {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotMaintenance)[vs[1].(int)]
 	}).(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotSecureConnection struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType string `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId string `pulumi:"certificateId"`
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs and GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs{...}
+type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType pulumi.StringInput `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+}
+
+func (GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput)
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray and GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray{ GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs{...} }
+type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray []GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput
+
+func (GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput {
+	return o
+}
+
+// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput) CertificateGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotSecureConnection) string {
+		return v.CertificateGenerationType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the certificate to use.
+func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput) CertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotSecureConnection) string { return v.CertificateId }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotSecureConnection {
+		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotSecureConnection)[vs[1].(int)]
+	}).(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput)
 }
 
 type GetMysqlBackupsFilter struct {
@@ -14790,6 +15405,112 @@ func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.Int
 	}).(GetMysqlDbSystemPointInTimeRecoveryDetailOutput)
 }
 
+type GetMysqlDbSystemSecureConnection struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType string `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId string `pulumi:"certificateId"`
+}
+
+// GetMysqlDbSystemSecureConnectionInput is an input type that accepts GetMysqlDbSystemSecureConnectionArgs and GetMysqlDbSystemSecureConnectionOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemSecureConnectionInput` via:
+//
+//	GetMysqlDbSystemSecureConnectionArgs{...}
+type GetMysqlDbSystemSecureConnectionInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemSecureConnectionOutput() GetMysqlDbSystemSecureConnectionOutput
+	ToGetMysqlDbSystemSecureConnectionOutputWithContext(context.Context) GetMysqlDbSystemSecureConnectionOutput
+}
+
+type GetMysqlDbSystemSecureConnectionArgs struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType pulumi.StringInput `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+}
+
+func (GetMysqlDbSystemSecureConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemSecureConnection)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemSecureConnectionArgs) ToGetMysqlDbSystemSecureConnectionOutput() GetMysqlDbSystemSecureConnectionOutput {
+	return i.ToGetMysqlDbSystemSecureConnectionOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemSecureConnectionArgs) ToGetMysqlDbSystemSecureConnectionOutputWithContext(ctx context.Context) GetMysqlDbSystemSecureConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemSecureConnectionOutput)
+}
+
+// GetMysqlDbSystemSecureConnectionArrayInput is an input type that accepts GetMysqlDbSystemSecureConnectionArray and GetMysqlDbSystemSecureConnectionArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemSecureConnectionArrayInput` via:
+//
+//	GetMysqlDbSystemSecureConnectionArray{ GetMysqlDbSystemSecureConnectionArgs{...} }
+type GetMysqlDbSystemSecureConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemSecureConnectionArrayOutput() GetMysqlDbSystemSecureConnectionArrayOutput
+	ToGetMysqlDbSystemSecureConnectionArrayOutputWithContext(context.Context) GetMysqlDbSystemSecureConnectionArrayOutput
+}
+
+type GetMysqlDbSystemSecureConnectionArray []GetMysqlDbSystemSecureConnectionInput
+
+func (GetMysqlDbSystemSecureConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemSecureConnection)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemSecureConnectionArray) ToGetMysqlDbSystemSecureConnectionArrayOutput() GetMysqlDbSystemSecureConnectionArrayOutput {
+	return i.ToGetMysqlDbSystemSecureConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemSecureConnectionArray) ToGetMysqlDbSystemSecureConnectionArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemSecureConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemSecureConnectionArrayOutput)
+}
+
+type GetMysqlDbSystemSecureConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemSecureConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemSecureConnection)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemSecureConnectionOutput) ToGetMysqlDbSystemSecureConnectionOutput() GetMysqlDbSystemSecureConnectionOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemSecureConnectionOutput) ToGetMysqlDbSystemSecureConnectionOutputWithContext(ctx context.Context) GetMysqlDbSystemSecureConnectionOutput {
+	return o
+}
+
+// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+func (o GetMysqlDbSystemSecureConnectionOutput) CertificateGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSecureConnection) string { return v.CertificateGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the certificate to use.
+func (o GetMysqlDbSystemSecureConnectionOutput) CertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSecureConnection) string { return v.CertificateId }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemSecureConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemSecureConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemSecureConnection)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemSecureConnectionArrayOutput) ToGetMysqlDbSystemSecureConnectionArrayOutput() GetMysqlDbSystemSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemSecureConnectionArrayOutput) ToGetMysqlDbSystemSecureConnectionArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemSecureConnectionArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemSecureConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemSecureConnection {
+		return vs[0].([]GetMysqlDbSystemSecureConnection)[vs[1].(int)]
+	}).(GetMysqlDbSystemSecureConnectionOutput)
+}
+
 type GetMysqlDbSystemSource struct {
 	// The OCID of the backup to be used as the source for the new DB System.
 	BackupId string `pulumi:"backupId"`
@@ -14979,6 +15700,8 @@ type GetMysqlDbSystemsDbSystem struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// Secure connection configuration details.
+	SecureConnections []GetMysqlDbSystemsDbSystemSecureConnection `pulumi:"secureConnections"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
 	ShapeName    string `pulumi:"shapeName"`
 	ShutdownType string `pulumi:"shutdownType"`
@@ -15064,6 +15787,8 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
+	// Secure connection configuration details.
+	SecureConnections GetMysqlDbSystemsDbSystemSecureConnectionArrayInput `pulumi:"secureConnections"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
 	ShapeName    pulumi.StringInput `pulumi:"shapeName"`
 	ShutdownType pulumi.StringInput `pulumi:"shutdownType"`
@@ -15282,6 +16007,13 @@ func (o GetMysqlDbSystemsDbSystemOutput) Port() pulumi.IntOutput {
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 func (o GetMysqlDbSystemsDbSystemOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// Secure connection configuration details.
+func (o GetMysqlDbSystemsDbSystemOutput) SecureConnections() GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemSecureConnection {
+		return v.SecureConnections
+	}).(GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput)
 }
 
 // The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
@@ -17158,6 +17890,112 @@ func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i p
 	}).(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput)
 }
 
+type GetMysqlDbSystemsDbSystemSecureConnection struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType string `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId string `pulumi:"certificateId"`
+}
+
+// GetMysqlDbSystemsDbSystemSecureConnectionInput is an input type that accepts GetMysqlDbSystemsDbSystemSecureConnectionArgs and GetMysqlDbSystemsDbSystemSecureConnectionOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemSecureConnectionInput` via:
+//
+//	GetMysqlDbSystemsDbSystemSecureConnectionArgs{...}
+type GetMysqlDbSystemsDbSystemSecureConnectionInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemSecureConnectionOutput() GetMysqlDbSystemsDbSystemSecureConnectionOutput
+	ToGetMysqlDbSystemsDbSystemSecureConnectionOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemSecureConnectionOutput
+}
+
+type GetMysqlDbSystemsDbSystemSecureConnectionArgs struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType pulumi.StringInput `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+}
+
+func (GetMysqlDbSystemsDbSystemSecureConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemSecureConnection)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemSecureConnectionArgs) ToGetMysqlDbSystemsDbSystemSecureConnectionOutput() GetMysqlDbSystemsDbSystemSecureConnectionOutput {
+	return i.ToGetMysqlDbSystemsDbSystemSecureConnectionOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemSecureConnectionArgs) ToGetMysqlDbSystemsDbSystemSecureConnectionOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSecureConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemSecureConnectionOutput)
+}
+
+// GetMysqlDbSystemsDbSystemSecureConnectionArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemSecureConnectionArray and GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemSecureConnectionArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemSecureConnectionArray{ GetMysqlDbSystemsDbSystemSecureConnectionArgs{...} }
+type GetMysqlDbSystemsDbSystemSecureConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemSecureConnectionArrayOutput() GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput
+	ToGetMysqlDbSystemsDbSystemSecureConnectionArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemSecureConnectionArray []GetMysqlDbSystemsDbSystemSecureConnectionInput
+
+func (GetMysqlDbSystemsDbSystemSecureConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemSecureConnection)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemSecureConnectionArray) ToGetMysqlDbSystemsDbSystemSecureConnectionArrayOutput() GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemSecureConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemSecureConnectionArray) ToGetMysqlDbSystemsDbSystemSecureConnectionArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemSecureConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemSecureConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemSecureConnection)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemSecureConnectionOutput) ToGetMysqlDbSystemsDbSystemSecureConnectionOutput() GetMysqlDbSystemsDbSystemSecureConnectionOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemSecureConnectionOutput) ToGetMysqlDbSystemsDbSystemSecureConnectionOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSecureConnectionOutput {
+	return o
+}
+
+// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+func (o GetMysqlDbSystemsDbSystemSecureConnectionOutput) CertificateGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSecureConnection) string { return v.CertificateGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the certificate to use.
+func (o GetMysqlDbSystemsDbSystemSecureConnectionOutput) CertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSecureConnection) string { return v.CertificateId }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemSecureConnection)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput) ToGetMysqlDbSystemsDbSystemSecureConnectionArrayOutput() GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput) ToGetMysqlDbSystemsDbSystemSecureConnectionArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemSecureConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemSecureConnection {
+		return vs[0].([]GetMysqlDbSystemsDbSystemSecureConnection)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemSecureConnectionOutput)
+}
+
 type GetMysqlDbSystemsDbSystemSource struct {
 	// The OCID of the backup to be used as the source for the new DB System.
 	BackupId string `pulumi:"backupId"`
@@ -17827,6 +18665,112 @@ func (o GetReplicaReplicaOverrideArrayOutput) Index(i pulumi.IntInput) GetReplic
 	}).(GetReplicaReplicaOverrideOutput)
 }
 
+type GetReplicaSecureConnection struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType string `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId string `pulumi:"certificateId"`
+}
+
+// GetReplicaSecureConnectionInput is an input type that accepts GetReplicaSecureConnectionArgs and GetReplicaSecureConnectionOutput values.
+// You can construct a concrete instance of `GetReplicaSecureConnectionInput` via:
+//
+//	GetReplicaSecureConnectionArgs{...}
+type GetReplicaSecureConnectionInput interface {
+	pulumi.Input
+
+	ToGetReplicaSecureConnectionOutput() GetReplicaSecureConnectionOutput
+	ToGetReplicaSecureConnectionOutputWithContext(context.Context) GetReplicaSecureConnectionOutput
+}
+
+type GetReplicaSecureConnectionArgs struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType pulumi.StringInput `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+}
+
+func (GetReplicaSecureConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaSecureConnection)(nil)).Elem()
+}
+
+func (i GetReplicaSecureConnectionArgs) ToGetReplicaSecureConnectionOutput() GetReplicaSecureConnectionOutput {
+	return i.ToGetReplicaSecureConnectionOutputWithContext(context.Background())
+}
+
+func (i GetReplicaSecureConnectionArgs) ToGetReplicaSecureConnectionOutputWithContext(ctx context.Context) GetReplicaSecureConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaSecureConnectionOutput)
+}
+
+// GetReplicaSecureConnectionArrayInput is an input type that accepts GetReplicaSecureConnectionArray and GetReplicaSecureConnectionArrayOutput values.
+// You can construct a concrete instance of `GetReplicaSecureConnectionArrayInput` via:
+//
+//	GetReplicaSecureConnectionArray{ GetReplicaSecureConnectionArgs{...} }
+type GetReplicaSecureConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicaSecureConnectionArrayOutput() GetReplicaSecureConnectionArrayOutput
+	ToGetReplicaSecureConnectionArrayOutputWithContext(context.Context) GetReplicaSecureConnectionArrayOutput
+}
+
+type GetReplicaSecureConnectionArray []GetReplicaSecureConnectionInput
+
+func (GetReplicaSecureConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaSecureConnection)(nil)).Elem()
+}
+
+func (i GetReplicaSecureConnectionArray) ToGetReplicaSecureConnectionArrayOutput() GetReplicaSecureConnectionArrayOutput {
+	return i.ToGetReplicaSecureConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicaSecureConnectionArray) ToGetReplicaSecureConnectionArrayOutputWithContext(ctx context.Context) GetReplicaSecureConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaSecureConnectionArrayOutput)
+}
+
+type GetReplicaSecureConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaSecureConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaSecureConnection)(nil)).Elem()
+}
+
+func (o GetReplicaSecureConnectionOutput) ToGetReplicaSecureConnectionOutput() GetReplicaSecureConnectionOutput {
+	return o
+}
+
+func (o GetReplicaSecureConnectionOutput) ToGetReplicaSecureConnectionOutputWithContext(ctx context.Context) GetReplicaSecureConnectionOutput {
+	return o
+}
+
+// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+func (o GetReplicaSecureConnectionOutput) CertificateGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaSecureConnection) string { return v.CertificateGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the certificate to use.
+func (o GetReplicaSecureConnectionOutput) CertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaSecureConnection) string { return v.CertificateId }).(pulumi.StringOutput)
+}
+
+type GetReplicaSecureConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaSecureConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaSecureConnection)(nil)).Elem()
+}
+
+func (o GetReplicaSecureConnectionArrayOutput) ToGetReplicaSecureConnectionArrayOutput() GetReplicaSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetReplicaSecureConnectionArrayOutput) ToGetReplicaSecureConnectionArrayOutputWithContext(ctx context.Context) GetReplicaSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetReplicaSecureConnectionArrayOutput) Index(i pulumi.IntInput) GetReplicaSecureConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicaSecureConnection {
+		return vs[0].([]GetReplicaSecureConnection)[vs[1].(int)]
+	}).(GetReplicaSecureConnectionOutput)
+}
+
 type GetReplicasFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -17968,6 +18912,8 @@ type GetReplicasReplica struct {
 	PortX int `pulumi:"portX"`
 	// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 	ReplicaOverrides []GetReplicasReplicaReplicaOverride `pulumi:"replicaOverrides"`
+	// Secure connection configuration details.
+	SecureConnections []GetReplicasReplicaSecureConnection `pulumi:"secureConnections"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 	// The LifecycleState of the read replica.
@@ -18024,6 +18970,8 @@ type GetReplicasReplicaArgs struct {
 	PortX pulumi.IntInput `pulumi:"portX"`
 	// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 	ReplicaOverrides GetReplicasReplicaReplicaOverrideArrayInput `pulumi:"replicaOverrides"`
+	// Secure connection configuration details.
+	SecureConnections GetReplicasReplicaSecureConnectionArrayInput `pulumi:"secureConnections"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// The LifecycleState of the read replica.
@@ -18168,6 +19116,11 @@ func (o GetReplicasReplicaOutput) PortX() pulumi.IntOutput {
 // By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 func (o GetReplicasReplicaOutput) ReplicaOverrides() GetReplicasReplicaReplicaOverrideArrayOutput {
 	return o.ApplyT(func(v GetReplicasReplica) []GetReplicasReplicaReplicaOverride { return v.ReplicaOverrides }).(GetReplicasReplicaReplicaOverrideArrayOutput)
+}
+
+// Secure connection configuration details.
+func (o GetReplicasReplicaOutput) SecureConnections() GetReplicasReplicaSecureConnectionArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplica) []GetReplicasReplicaSecureConnection { return v.SecureConnections }).(GetReplicasReplicaSecureConnectionArrayOutput)
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -18323,6 +19276,112 @@ func (o GetReplicasReplicaReplicaOverrideArrayOutput) Index(i pulumi.IntInput) G
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaReplicaOverride {
 		return vs[0].([]GetReplicasReplicaReplicaOverride)[vs[1].(int)]
 	}).(GetReplicasReplicaReplicaOverrideOutput)
+}
+
+type GetReplicasReplicaSecureConnection struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType string `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId string `pulumi:"certificateId"`
+}
+
+// GetReplicasReplicaSecureConnectionInput is an input type that accepts GetReplicasReplicaSecureConnectionArgs and GetReplicasReplicaSecureConnectionOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaSecureConnectionInput` via:
+//
+//	GetReplicasReplicaSecureConnectionArgs{...}
+type GetReplicasReplicaSecureConnectionInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaSecureConnectionOutput() GetReplicasReplicaSecureConnectionOutput
+	ToGetReplicasReplicaSecureConnectionOutputWithContext(context.Context) GetReplicasReplicaSecureConnectionOutput
+}
+
+type GetReplicasReplicaSecureConnectionArgs struct {
+	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+	CertificateGenerationType pulumi.StringInput `pulumi:"certificateGenerationType"`
+	// The OCID of the certificate to use.
+	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+}
+
+func (GetReplicasReplicaSecureConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaSecureConnection)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaSecureConnectionArgs) ToGetReplicasReplicaSecureConnectionOutput() GetReplicasReplicaSecureConnectionOutput {
+	return i.ToGetReplicasReplicaSecureConnectionOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaSecureConnectionArgs) ToGetReplicasReplicaSecureConnectionOutputWithContext(ctx context.Context) GetReplicasReplicaSecureConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaSecureConnectionOutput)
+}
+
+// GetReplicasReplicaSecureConnectionArrayInput is an input type that accepts GetReplicasReplicaSecureConnectionArray and GetReplicasReplicaSecureConnectionArrayOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaSecureConnectionArrayInput` via:
+//
+//	GetReplicasReplicaSecureConnectionArray{ GetReplicasReplicaSecureConnectionArgs{...} }
+type GetReplicasReplicaSecureConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaSecureConnectionArrayOutput() GetReplicasReplicaSecureConnectionArrayOutput
+	ToGetReplicasReplicaSecureConnectionArrayOutputWithContext(context.Context) GetReplicasReplicaSecureConnectionArrayOutput
+}
+
+type GetReplicasReplicaSecureConnectionArray []GetReplicasReplicaSecureConnectionInput
+
+func (GetReplicasReplicaSecureConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaSecureConnection)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaSecureConnectionArray) ToGetReplicasReplicaSecureConnectionArrayOutput() GetReplicasReplicaSecureConnectionArrayOutput {
+	return i.ToGetReplicasReplicaSecureConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaSecureConnectionArray) ToGetReplicasReplicaSecureConnectionArrayOutputWithContext(ctx context.Context) GetReplicasReplicaSecureConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaSecureConnectionArrayOutput)
+}
+
+type GetReplicasReplicaSecureConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaSecureConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaSecureConnection)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaSecureConnectionOutput) ToGetReplicasReplicaSecureConnectionOutput() GetReplicasReplicaSecureConnectionOutput {
+	return o
+}
+
+func (o GetReplicasReplicaSecureConnectionOutput) ToGetReplicasReplicaSecureConnectionOutputWithContext(ctx context.Context) GetReplicasReplicaSecureConnectionOutput {
+	return o
+}
+
+// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+func (o GetReplicasReplicaSecureConnectionOutput) CertificateGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaSecureConnection) string { return v.CertificateGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the certificate to use.
+func (o GetReplicasReplicaSecureConnectionOutput) CertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaSecureConnection) string { return v.CertificateId }).(pulumi.StringOutput)
+}
+
+type GetReplicasReplicaSecureConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaSecureConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaSecureConnection)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaSecureConnectionArrayOutput) ToGetReplicasReplicaSecureConnectionArrayOutput() GetReplicasReplicaSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaSecureConnectionArrayOutput) ToGetReplicasReplicaSecureConnectionArrayOutputWithContext(ctx context.Context) GetReplicasReplicaSecureConnectionArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaSecureConnectionArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaSecureConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaSecureConnection {
+		return vs[0].([]GetReplicasReplicaSecureConnection)[vs[1].(int)]
+	}).(GetReplicasReplicaSecureConnectionOutput)
 }
 
 type GetShapesFilter struct {
@@ -18583,6 +19642,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSecureConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationInitVariablesInput)(nil)).Elem(), MysqlConfigurationInitVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationInitVariablesPtrInput)(nil)).Elem(), MysqlConfigurationInitVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationVariablesInput)(nil)).Elem(), MysqlConfigurationVariablesArgs{})
@@ -18615,10 +19676,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemMaintenancePtrInput)(nil)).Elem(), MysqlDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSecureConnectionsInput)(nil)).Elem(), MysqlDbSystemSecureConnectionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSecureConnectionsPtrInput)(nil)).Elem(), MysqlDbSystemSecureConnectionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourcePtrInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesInput)(nil)).Elem(), ReplicaReplicaOverridesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesPtrInput)(nil)).Elem(), ReplicaReplicaOverridesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaSecureConnectionInput)(nil)).Elem(), ReplicaSecureConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaSecureConnectionArrayInput)(nil)).Elem(), ReplicaSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceInput)(nil)).Elem(), GetChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceArrayInput)(nil)).Elem(), GetChannelSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), GetChannelSourceAnonymousTransactionsHandlingArgs{})
@@ -18657,6 +19722,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSecureConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupInput)(nil)).Elem(), GetMysqlBackupsBackupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupArrayInput)(nil)).Elem(), GetMysqlBackupsBackupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotArgs{})
@@ -18671,6 +19738,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsFilterInput)(nil)).Elem(), GetMysqlBackupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsFilterArrayInput)(nil)).Elem(), GetMysqlBackupsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationInitVariableInput)(nil)).Elem(), GetMysqlConfigurationInitVariableArgs{})
@@ -18713,6 +19782,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemMaintenanceArrayInput)(nil)).Elem(), GetMysqlDbSystemMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), GetMysqlDbSystemPointInTimeRecoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemPointInTimeRecoveryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSecureConnectionInput)(nil)).Elem(), GetMysqlDbSystemSecureConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSecureConnectionArrayInput)(nil)).Elem(), GetMysqlDbSystemSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceArrayInput)(nil)).Elem(), GetMysqlDbSystemSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemArgs{})
@@ -18745,6 +19816,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSecureConnectionInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSecureConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSecureConnectionArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsFilterInput)(nil)).Elem(), GetMysqlDbSystemsFilterArgs{})
@@ -18757,12 +19830,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlVersionVersionVersionArrayInput)(nil)).Elem(), GetMysqlVersionVersionVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideInput)(nil)).Elem(), GetReplicaReplicaOverrideArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideArrayInput)(nil)).Elem(), GetReplicaReplicaOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaSecureConnectionInput)(nil)).Elem(), GetReplicaSecureConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaSecureConnectionArrayInput)(nil)).Elem(), GetReplicaSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasFilterInput)(nil)).Elem(), GetReplicasFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasFilterArrayInput)(nil)).Elem(), GetReplicasFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaInput)(nil)).Elem(), GetReplicasReplicaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaArrayInput)(nil)).Elem(), GetReplicasReplicaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideArrayInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaSecureConnectionInput)(nil)).Elem(), GetReplicasReplicaSecureConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaSecureConnectionArrayInput)(nil)).Elem(), GetReplicasReplicaSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterInput)(nil)).Elem(), GetShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterArrayInput)(nil)).Elem(), GetShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeInput)(nil)).Elem(), GetShapesShapeArgs{})
@@ -18791,6 +19868,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSecureConnectionOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationInitVariablesOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationInitVariablesPtrOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationVariablesOutput{})
@@ -18823,10 +19902,14 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemMaintenancePtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemSecureConnectionsOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemSecureConnectionsPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourcePtrOutput{})
 	pulumi.RegisterOutputType(ReplicaReplicaOverridesOutput{})
 	pulumi.RegisterOutputType(ReplicaReplicaOverridesPtrOutput{})
+	pulumi.RegisterOutputType(ReplicaSecureConnectionOutput{})
+	pulumi.RegisterOutputType(ReplicaSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceAnonymousTransactionsHandlingOutput{})
@@ -18865,6 +19948,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotMaintenanceOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSecureConnectionOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotOutput{})
@@ -18879,6 +19964,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsFilterOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationInitVariableOutput{})
@@ -18921,6 +20008,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemPointInTimeRecoveryDetailOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemSecureConnectionOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemOutput{})
@@ -18953,6 +20042,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSecureConnectionOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsFilterOutput{})
@@ -18965,12 +20056,16 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlVersionVersionVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicaReplicaOverrideOutput{})
 	pulumi.RegisterOutputType(GetReplicaReplicaOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicaSecureConnectionOutput{})
+	pulumi.RegisterOutputType(GetReplicaSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasFilterOutput{})
 	pulumi.RegisterOutputType(GetReplicasFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaSecureConnectionOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeOutput{})

@@ -68,7 +68,7 @@ type GetStreamDistributionChannelsArgs struct {
 
 // A collection of values returned by getStreamDistributionChannels.
 type GetStreamDistributionChannelsResult struct {
-	// Compartment Identifier.
+	// The compartment ID of the lock.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Stream Distribution Channel display name. Avoid entering confidential information.
 	DisplayName *string                               `pulumi:"displayName"`
@@ -126,7 +126,7 @@ func (o GetStreamDistributionChannelsResultOutput) ToGetStreamDistributionChanne
 	return o
 }
 
-// Compartment Identifier.
+// The compartment ID of the lock.
 func (o GetStreamDistributionChannelsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetStreamDistributionChannelsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }

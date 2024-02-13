@@ -130,9 +130,13 @@ namespace Pulumi.Oci.Vault
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The OCID of the master encryption key that is used to encrypt the secret.
+        /// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         /// </summary>
         public readonly string KeyId;
+        /// <summary>
+        /// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        /// </summary>
+        public readonly string LastRotationTime;
         /// <summary>
         /// Additional information about the current lifecycle state of the secret.
         /// </summary>
@@ -141,6 +145,18 @@ namespace Pulumi.Oci.Vault
         /// Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         /// </summary>
         public readonly ImmutableDictionary<string, object> Metadata;
+        /// <summary>
+        /// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        /// </summary>
+        public readonly string NextRotationTime;
+        /// <summary>
+        /// Defines the frequency of the rotation and the information about the target system
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSecretRotationConfigResult> RotationConfigs;
+        /// <summary>
+        /// Additional information about the status of the secret rotation
+        /// </summary>
+        public readonly string RotationStatus;
         public readonly ImmutableArray<Outputs.GetSecretSecretContentResult> SecretContents;
         public readonly string SecretId;
         /// <summary>
@@ -188,9 +204,17 @@ namespace Pulumi.Oci.Vault
 
             string keyId,
 
+            string lastRotationTime,
+
             string lifecycleDetails,
 
             ImmutableDictionary<string, object> metadata,
+
+            string nextRotationTime,
+
+            ImmutableArray<Outputs.GetSecretRotationConfigResult> rotationConfigs,
+
+            string rotationStatus,
 
             ImmutableArray<Outputs.GetSecretSecretContentResult> secretContents,
 
@@ -217,8 +241,12 @@ namespace Pulumi.Oci.Vault
             FreeformTags = freeformTags;
             Id = id;
             KeyId = keyId;
+            LastRotationTime = lastRotationTime;
             LifecycleDetails = lifecycleDetails;
             Metadata = metadata;
+            NextRotationTime = nextRotationTime;
+            RotationConfigs = rotationConfigs;
+            RotationStatus = rotationStatus;
             SecretContents = secretContents;
             SecretId = secretId;
             SecretName = secretName;

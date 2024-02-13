@@ -13,14 +13,364 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type SecretRotationConfig struct {
+	// (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
+	IsScheduledRotationEnabled *bool `pulumi:"isScheduledRotationEnabled"`
+	// (Updatable) The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+	RotationInterval *string `pulumi:"rotationInterval"`
+	// (Updatable) The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+	TargetSystemDetails SecretRotationConfigTargetSystemDetails `pulumi:"targetSystemDetails"`
+}
+
+// SecretRotationConfigInput is an input type that accepts SecretRotationConfigArgs and SecretRotationConfigOutput values.
+// You can construct a concrete instance of `SecretRotationConfigInput` via:
+//
+//	SecretRotationConfigArgs{...}
+type SecretRotationConfigInput interface {
+	pulumi.Input
+
+	ToSecretRotationConfigOutput() SecretRotationConfigOutput
+	ToSecretRotationConfigOutputWithContext(context.Context) SecretRotationConfigOutput
+}
+
+type SecretRotationConfigArgs struct {
+	// (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
+	IsScheduledRotationEnabled pulumi.BoolPtrInput `pulumi:"isScheduledRotationEnabled"`
+	// (Updatable) The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+	RotationInterval pulumi.StringPtrInput `pulumi:"rotationInterval"`
+	// (Updatable) The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+	TargetSystemDetails SecretRotationConfigTargetSystemDetailsInput `pulumi:"targetSystemDetails"`
+}
+
+func (SecretRotationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretRotationConfig)(nil)).Elem()
+}
+
+func (i SecretRotationConfigArgs) ToSecretRotationConfigOutput() SecretRotationConfigOutput {
+	return i.ToSecretRotationConfigOutputWithContext(context.Background())
+}
+
+func (i SecretRotationConfigArgs) ToSecretRotationConfigOutputWithContext(ctx context.Context) SecretRotationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretRotationConfigOutput)
+}
+
+func (i SecretRotationConfigArgs) ToSecretRotationConfigPtrOutput() SecretRotationConfigPtrOutput {
+	return i.ToSecretRotationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i SecretRotationConfigArgs) ToSecretRotationConfigPtrOutputWithContext(ctx context.Context) SecretRotationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretRotationConfigOutput).ToSecretRotationConfigPtrOutputWithContext(ctx)
+}
+
+// SecretRotationConfigPtrInput is an input type that accepts SecretRotationConfigArgs, SecretRotationConfigPtr and SecretRotationConfigPtrOutput values.
+// You can construct a concrete instance of `SecretRotationConfigPtrInput` via:
+//
+//	        SecretRotationConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type SecretRotationConfigPtrInput interface {
+	pulumi.Input
+
+	ToSecretRotationConfigPtrOutput() SecretRotationConfigPtrOutput
+	ToSecretRotationConfigPtrOutputWithContext(context.Context) SecretRotationConfigPtrOutput
+}
+
+type secretRotationConfigPtrType SecretRotationConfigArgs
+
+func SecretRotationConfigPtr(v *SecretRotationConfigArgs) SecretRotationConfigPtrInput {
+	return (*secretRotationConfigPtrType)(v)
+}
+
+func (*secretRotationConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretRotationConfig)(nil)).Elem()
+}
+
+func (i *secretRotationConfigPtrType) ToSecretRotationConfigPtrOutput() SecretRotationConfigPtrOutput {
+	return i.ToSecretRotationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *secretRotationConfigPtrType) ToSecretRotationConfigPtrOutputWithContext(ctx context.Context) SecretRotationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretRotationConfigPtrOutput)
+}
+
+type SecretRotationConfigOutput struct{ *pulumi.OutputState }
+
+func (SecretRotationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretRotationConfig)(nil)).Elem()
+}
+
+func (o SecretRotationConfigOutput) ToSecretRotationConfigOutput() SecretRotationConfigOutput {
+	return o
+}
+
+func (o SecretRotationConfigOutput) ToSecretRotationConfigOutputWithContext(ctx context.Context) SecretRotationConfigOutput {
+	return o
+}
+
+func (o SecretRotationConfigOutput) ToSecretRotationConfigPtrOutput() SecretRotationConfigPtrOutput {
+	return o.ToSecretRotationConfigPtrOutputWithContext(context.Background())
+}
+
+func (o SecretRotationConfigOutput) ToSecretRotationConfigPtrOutputWithContext(ctx context.Context) SecretRotationConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SecretRotationConfig) *SecretRotationConfig {
+		return &v
+	}).(SecretRotationConfigPtrOutput)
+}
+
+// (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
+func (o SecretRotationConfigOutput) IsScheduledRotationEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SecretRotationConfig) *bool { return v.IsScheduledRotationEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+func (o SecretRotationConfigOutput) RotationInterval() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretRotationConfig) *string { return v.RotationInterval }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+func (o SecretRotationConfigOutput) TargetSystemDetails() SecretRotationConfigTargetSystemDetailsOutput {
+	return o.ApplyT(func(v SecretRotationConfig) SecretRotationConfigTargetSystemDetails { return v.TargetSystemDetails }).(SecretRotationConfigTargetSystemDetailsOutput)
+}
+
+type SecretRotationConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (SecretRotationConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretRotationConfig)(nil)).Elem()
+}
+
+func (o SecretRotationConfigPtrOutput) ToSecretRotationConfigPtrOutput() SecretRotationConfigPtrOutput {
+	return o
+}
+
+func (o SecretRotationConfigPtrOutput) ToSecretRotationConfigPtrOutputWithContext(ctx context.Context) SecretRotationConfigPtrOutput {
+	return o
+}
+
+func (o SecretRotationConfigPtrOutput) Elem() SecretRotationConfigOutput {
+	return o.ApplyT(func(v *SecretRotationConfig) SecretRotationConfig {
+		if v != nil {
+			return *v
+		}
+		var ret SecretRotationConfig
+		return ret
+	}).(SecretRotationConfigOutput)
+}
+
+// (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
+func (o SecretRotationConfigPtrOutput) IsScheduledRotationEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SecretRotationConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsScheduledRotationEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+func (o SecretRotationConfigPtrOutput) RotationInterval() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretRotationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RotationInterval
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+func (o SecretRotationConfigPtrOutput) TargetSystemDetails() SecretRotationConfigTargetSystemDetailsPtrOutput {
+	return o.ApplyT(func(v *SecretRotationConfig) *SecretRotationConfigTargetSystemDetails {
+		if v == nil {
+			return nil
+		}
+		return &v.TargetSystemDetails
+	}).(SecretRotationConfigTargetSystemDetailsPtrOutput)
+}
+
+type SecretRotationConfigTargetSystemDetails struct {
+	// (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+	AdbId *string `pulumi:"adbId"`
+	// (Updatable) The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+	FunctionId *string `pulumi:"functionId"`
+	// (Updatable) Unique identifier of the target system that Vault Secret connects to.
+	TargetSystemType string `pulumi:"targetSystemType"`
+}
+
+// SecretRotationConfigTargetSystemDetailsInput is an input type that accepts SecretRotationConfigTargetSystemDetailsArgs and SecretRotationConfigTargetSystemDetailsOutput values.
+// You can construct a concrete instance of `SecretRotationConfigTargetSystemDetailsInput` via:
+//
+//	SecretRotationConfigTargetSystemDetailsArgs{...}
+type SecretRotationConfigTargetSystemDetailsInput interface {
+	pulumi.Input
+
+	ToSecretRotationConfigTargetSystemDetailsOutput() SecretRotationConfigTargetSystemDetailsOutput
+	ToSecretRotationConfigTargetSystemDetailsOutputWithContext(context.Context) SecretRotationConfigTargetSystemDetailsOutput
+}
+
+type SecretRotationConfigTargetSystemDetailsArgs struct {
+	// (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+	AdbId pulumi.StringPtrInput `pulumi:"adbId"`
+	// (Updatable) The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
+	// (Updatable) Unique identifier of the target system that Vault Secret connects to.
+	TargetSystemType pulumi.StringInput `pulumi:"targetSystemType"`
+}
+
+func (SecretRotationConfigTargetSystemDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretRotationConfigTargetSystemDetails)(nil)).Elem()
+}
+
+func (i SecretRotationConfigTargetSystemDetailsArgs) ToSecretRotationConfigTargetSystemDetailsOutput() SecretRotationConfigTargetSystemDetailsOutput {
+	return i.ToSecretRotationConfigTargetSystemDetailsOutputWithContext(context.Background())
+}
+
+func (i SecretRotationConfigTargetSystemDetailsArgs) ToSecretRotationConfigTargetSystemDetailsOutputWithContext(ctx context.Context) SecretRotationConfigTargetSystemDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretRotationConfigTargetSystemDetailsOutput)
+}
+
+func (i SecretRotationConfigTargetSystemDetailsArgs) ToSecretRotationConfigTargetSystemDetailsPtrOutput() SecretRotationConfigTargetSystemDetailsPtrOutput {
+	return i.ToSecretRotationConfigTargetSystemDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i SecretRotationConfigTargetSystemDetailsArgs) ToSecretRotationConfigTargetSystemDetailsPtrOutputWithContext(ctx context.Context) SecretRotationConfigTargetSystemDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretRotationConfigTargetSystemDetailsOutput).ToSecretRotationConfigTargetSystemDetailsPtrOutputWithContext(ctx)
+}
+
+// SecretRotationConfigTargetSystemDetailsPtrInput is an input type that accepts SecretRotationConfigTargetSystemDetailsArgs, SecretRotationConfigTargetSystemDetailsPtr and SecretRotationConfigTargetSystemDetailsPtrOutput values.
+// You can construct a concrete instance of `SecretRotationConfigTargetSystemDetailsPtrInput` via:
+//
+//	        SecretRotationConfigTargetSystemDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type SecretRotationConfigTargetSystemDetailsPtrInput interface {
+	pulumi.Input
+
+	ToSecretRotationConfigTargetSystemDetailsPtrOutput() SecretRotationConfigTargetSystemDetailsPtrOutput
+	ToSecretRotationConfigTargetSystemDetailsPtrOutputWithContext(context.Context) SecretRotationConfigTargetSystemDetailsPtrOutput
+}
+
+type secretRotationConfigTargetSystemDetailsPtrType SecretRotationConfigTargetSystemDetailsArgs
+
+func SecretRotationConfigTargetSystemDetailsPtr(v *SecretRotationConfigTargetSystemDetailsArgs) SecretRotationConfigTargetSystemDetailsPtrInput {
+	return (*secretRotationConfigTargetSystemDetailsPtrType)(v)
+}
+
+func (*secretRotationConfigTargetSystemDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretRotationConfigTargetSystemDetails)(nil)).Elem()
+}
+
+func (i *secretRotationConfigTargetSystemDetailsPtrType) ToSecretRotationConfigTargetSystemDetailsPtrOutput() SecretRotationConfigTargetSystemDetailsPtrOutput {
+	return i.ToSecretRotationConfigTargetSystemDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *secretRotationConfigTargetSystemDetailsPtrType) ToSecretRotationConfigTargetSystemDetailsPtrOutputWithContext(ctx context.Context) SecretRotationConfigTargetSystemDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretRotationConfigTargetSystemDetailsPtrOutput)
+}
+
+type SecretRotationConfigTargetSystemDetailsOutput struct{ *pulumi.OutputState }
+
+func (SecretRotationConfigTargetSystemDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretRotationConfigTargetSystemDetails)(nil)).Elem()
+}
+
+func (o SecretRotationConfigTargetSystemDetailsOutput) ToSecretRotationConfigTargetSystemDetailsOutput() SecretRotationConfigTargetSystemDetailsOutput {
+	return o
+}
+
+func (o SecretRotationConfigTargetSystemDetailsOutput) ToSecretRotationConfigTargetSystemDetailsOutputWithContext(ctx context.Context) SecretRotationConfigTargetSystemDetailsOutput {
+	return o
+}
+
+func (o SecretRotationConfigTargetSystemDetailsOutput) ToSecretRotationConfigTargetSystemDetailsPtrOutput() SecretRotationConfigTargetSystemDetailsPtrOutput {
+	return o.ToSecretRotationConfigTargetSystemDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o SecretRotationConfigTargetSystemDetailsOutput) ToSecretRotationConfigTargetSystemDetailsPtrOutputWithContext(ctx context.Context) SecretRotationConfigTargetSystemDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SecretRotationConfigTargetSystemDetails) *SecretRotationConfigTargetSystemDetails {
+		return &v
+	}).(SecretRotationConfigTargetSystemDetailsPtrOutput)
+}
+
+// (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+func (o SecretRotationConfigTargetSystemDetailsOutput) AdbId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretRotationConfigTargetSystemDetails) *string { return v.AdbId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+func (o SecretRotationConfigTargetSystemDetailsOutput) FunctionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretRotationConfigTargetSystemDetails) *string { return v.FunctionId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unique identifier of the target system that Vault Secret connects to.
+func (o SecretRotationConfigTargetSystemDetailsOutput) TargetSystemType() pulumi.StringOutput {
+	return o.ApplyT(func(v SecretRotationConfigTargetSystemDetails) string { return v.TargetSystemType }).(pulumi.StringOutput)
+}
+
+type SecretRotationConfigTargetSystemDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (SecretRotationConfigTargetSystemDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretRotationConfigTargetSystemDetails)(nil)).Elem()
+}
+
+func (o SecretRotationConfigTargetSystemDetailsPtrOutput) ToSecretRotationConfigTargetSystemDetailsPtrOutput() SecretRotationConfigTargetSystemDetailsPtrOutput {
+	return o
+}
+
+func (o SecretRotationConfigTargetSystemDetailsPtrOutput) ToSecretRotationConfigTargetSystemDetailsPtrOutputWithContext(ctx context.Context) SecretRotationConfigTargetSystemDetailsPtrOutput {
+	return o
+}
+
+func (o SecretRotationConfigTargetSystemDetailsPtrOutput) Elem() SecretRotationConfigTargetSystemDetailsOutput {
+	return o.ApplyT(func(v *SecretRotationConfigTargetSystemDetails) SecretRotationConfigTargetSystemDetails {
+		if v != nil {
+			return *v
+		}
+		var ret SecretRotationConfigTargetSystemDetails
+		return ret
+	}).(SecretRotationConfigTargetSystemDetailsOutput)
+}
+
+// (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+func (o SecretRotationConfigTargetSystemDetailsPtrOutput) AdbId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretRotationConfigTargetSystemDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AdbId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+func (o SecretRotationConfigTargetSystemDetailsPtrOutput) FunctionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretRotationConfigTargetSystemDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FunctionId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unique identifier of the target system that Vault Secret connects to.
+func (o SecretRotationConfigTargetSystemDetailsPtrOutput) TargetSystemType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretRotationConfigTargetSystemDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TargetSystemType
+	}).(pulumi.StringPtrOutput)
+}
+
 type SecretSecretContent struct {
 	// (Updatable) The base64-encoded content of the secret.
-	Content string `pulumi:"content"`
-	// (Updatable) content type . Example `BASE64` .
+	Content *string `pulumi:"content"`
+	// (Updatable) The base64-encoded content of the secret.
 	ContentType string `pulumi:"contentType"`
 	// (Updatable) Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 	Name *string `pulumi:"name"`
-	// (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
+	// (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
 	Stage *string `pulumi:"stage"`
 }
 
@@ -37,12 +387,12 @@ type SecretSecretContentInput interface {
 
 type SecretSecretContentArgs struct {
 	// (Updatable) The base64-encoded content of the secret.
-	Content pulumi.StringInput `pulumi:"content"`
-	// (Updatable) content type . Example `BASE64` .
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// (Updatable) The base64-encoded content of the secret.
 	ContentType pulumi.StringInput `pulumi:"contentType"`
 	// (Updatable) Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
+	// (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
 	Stage pulumi.StringPtrInput `pulumi:"stage"`
 }
 
@@ -124,11 +474,11 @@ func (o SecretSecretContentOutput) ToSecretSecretContentPtrOutputWithContext(ctx
 }
 
 // (Updatable) The base64-encoded content of the secret.
-func (o SecretSecretContentOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v SecretSecretContent) string { return v.Content }).(pulumi.StringOutput)
+func (o SecretSecretContentOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSecretContent) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) content type . Example `BASE64` .
+// (Updatable) The base64-encoded content of the secret.
 func (o SecretSecretContentOutput) ContentType() pulumi.StringOutput {
 	return o.ApplyT(func(v SecretSecretContent) string { return v.ContentType }).(pulumi.StringOutput)
 }
@@ -138,7 +488,7 @@ func (o SecretSecretContentOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecretSecretContent) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
+// (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
 func (o SecretSecretContentOutput) Stage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecretSecretContent) *string { return v.Stage }).(pulumi.StringPtrOutput)
 }
@@ -173,11 +523,11 @@ func (o SecretSecretContentPtrOutput) Content() pulumi.StringPtrOutput {
 		if v == nil {
 			return nil
 		}
-		return &v.Content
+		return v.Content
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) content type . Example `BASE64` .
+// (Updatable) The base64-encoded content of the secret.
 func (o SecretSecretContentPtrOutput) ContentType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SecretSecretContent) *string {
 		if v == nil {
@@ -197,7 +547,7 @@ func (o SecretSecretContentPtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
+// (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
 func (o SecretSecretContentPtrOutput) Stage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SecretSecretContent) *string {
 		if v == nil {
@@ -214,7 +564,7 @@ type SecretSecretRule struct {
 	IsSecretContentRetrievalBlockedOnExpiry *bool `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
 	// (Updatable) The type of rule, which either controls when the secret contents expire or whether they can be reused.
 	RuleType string `pulumi:"ruleType"`
-	// (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+	// (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
 	SecretVersionExpiryInterval *string `pulumi:"secretVersionExpiryInterval"`
 	// (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfAbsoluteExpiry *string `pulumi:"timeOfAbsoluteExpiry"`
@@ -238,7 +588,7 @@ type SecretSecretRuleArgs struct {
 	IsSecretContentRetrievalBlockedOnExpiry pulumi.BoolPtrInput `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
 	// (Updatable) The type of rule, which either controls when the secret contents expire or whether they can be reused.
 	RuleType pulumi.StringInput `pulumi:"ruleType"`
-	// (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+	// (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
 	SecretVersionExpiryInterval pulumi.StringPtrInput `pulumi:"secretVersionExpiryInterval"`
 	// (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfAbsoluteExpiry pulumi.StringPtrInput `pulumi:"timeOfAbsoluteExpiry"`
@@ -310,7 +660,7 @@ func (o SecretSecretRuleOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v SecretSecretRule) string { return v.RuleType }).(pulumi.StringOutput)
 }
 
-// (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+// (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
 func (o SecretSecretRuleOutput) SecretVersionExpiryInterval() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecretSecretRule) *string { return v.SecretVersionExpiryInterval }).(pulumi.StringPtrOutput)
 }
@@ -338,6 +688,238 @@ func (o SecretSecretRuleArrayOutput) Index(i pulumi.IntInput) SecretSecretRuleOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SecretSecretRule {
 		return vs[0].([]SecretSecretRule)[vs[1].(int)]
 	}).(SecretSecretRuleOutput)
+}
+
+type GetSecretRotationConfig struct {
+	// Enables auto rotation, when set to true rotationInterval must be set.
+	IsScheduledRotationEnabled bool `pulumi:"isScheduledRotationEnabled"`
+	// The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+	RotationInterval string `pulumi:"rotationInterval"`
+	// The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+	TargetSystemDetails []GetSecretRotationConfigTargetSystemDetail `pulumi:"targetSystemDetails"`
+}
+
+// GetSecretRotationConfigInput is an input type that accepts GetSecretRotationConfigArgs and GetSecretRotationConfigOutput values.
+// You can construct a concrete instance of `GetSecretRotationConfigInput` via:
+//
+//	GetSecretRotationConfigArgs{...}
+type GetSecretRotationConfigInput interface {
+	pulumi.Input
+
+	ToGetSecretRotationConfigOutput() GetSecretRotationConfigOutput
+	ToGetSecretRotationConfigOutputWithContext(context.Context) GetSecretRotationConfigOutput
+}
+
+type GetSecretRotationConfigArgs struct {
+	// Enables auto rotation, when set to true rotationInterval must be set.
+	IsScheduledRotationEnabled pulumi.BoolInput `pulumi:"isScheduledRotationEnabled"`
+	// The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+	RotationInterval pulumi.StringInput `pulumi:"rotationInterval"`
+	// The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+	TargetSystemDetails GetSecretRotationConfigTargetSystemDetailArrayInput `pulumi:"targetSystemDetails"`
+}
+
+func (GetSecretRotationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretRotationConfig)(nil)).Elem()
+}
+
+func (i GetSecretRotationConfigArgs) ToGetSecretRotationConfigOutput() GetSecretRotationConfigOutput {
+	return i.ToGetSecretRotationConfigOutputWithContext(context.Background())
+}
+
+func (i GetSecretRotationConfigArgs) ToGetSecretRotationConfigOutputWithContext(ctx context.Context) GetSecretRotationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretRotationConfigOutput)
+}
+
+// GetSecretRotationConfigArrayInput is an input type that accepts GetSecretRotationConfigArray and GetSecretRotationConfigArrayOutput values.
+// You can construct a concrete instance of `GetSecretRotationConfigArrayInput` via:
+//
+//	GetSecretRotationConfigArray{ GetSecretRotationConfigArgs{...} }
+type GetSecretRotationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretRotationConfigArrayOutput() GetSecretRotationConfigArrayOutput
+	ToGetSecretRotationConfigArrayOutputWithContext(context.Context) GetSecretRotationConfigArrayOutput
+}
+
+type GetSecretRotationConfigArray []GetSecretRotationConfigInput
+
+func (GetSecretRotationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretRotationConfig)(nil)).Elem()
+}
+
+func (i GetSecretRotationConfigArray) ToGetSecretRotationConfigArrayOutput() GetSecretRotationConfigArrayOutput {
+	return i.ToGetSecretRotationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretRotationConfigArray) ToGetSecretRotationConfigArrayOutputWithContext(ctx context.Context) GetSecretRotationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretRotationConfigArrayOutput)
+}
+
+type GetSecretRotationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetSecretRotationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretRotationConfig)(nil)).Elem()
+}
+
+func (o GetSecretRotationConfigOutput) ToGetSecretRotationConfigOutput() GetSecretRotationConfigOutput {
+	return o
+}
+
+func (o GetSecretRotationConfigOutput) ToGetSecretRotationConfigOutputWithContext(ctx context.Context) GetSecretRotationConfigOutput {
+	return o
+}
+
+// Enables auto rotation, when set to true rotationInterval must be set.
+func (o GetSecretRotationConfigOutput) IsScheduledRotationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecretRotationConfig) bool { return v.IsScheduledRotationEnabled }).(pulumi.BoolOutput)
+}
+
+// The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+func (o GetSecretRotationConfigOutput) RotationInterval() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretRotationConfig) string { return v.RotationInterval }).(pulumi.StringOutput)
+}
+
+// The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+func (o GetSecretRotationConfigOutput) TargetSystemDetails() GetSecretRotationConfigTargetSystemDetailArrayOutput {
+	return o.ApplyT(func(v GetSecretRotationConfig) []GetSecretRotationConfigTargetSystemDetail {
+		return v.TargetSystemDetails
+	}).(GetSecretRotationConfigTargetSystemDetailArrayOutput)
+}
+
+type GetSecretRotationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretRotationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretRotationConfig)(nil)).Elem()
+}
+
+func (o GetSecretRotationConfigArrayOutput) ToGetSecretRotationConfigArrayOutput() GetSecretRotationConfigArrayOutput {
+	return o
+}
+
+func (o GetSecretRotationConfigArrayOutput) ToGetSecretRotationConfigArrayOutputWithContext(ctx context.Context) GetSecretRotationConfigArrayOutput {
+	return o
+}
+
+func (o GetSecretRotationConfigArrayOutput) Index(i pulumi.IntInput) GetSecretRotationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretRotationConfig {
+		return vs[0].([]GetSecretRotationConfig)[vs[1].(int)]
+	}).(GetSecretRotationConfigOutput)
+}
+
+type GetSecretRotationConfigTargetSystemDetail struct {
+	// The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+	AdbId string `pulumi:"adbId"`
+	// The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+	FunctionId string `pulumi:"functionId"`
+	// Unique identifier of the target system that Vault Secret connects to.
+	TargetSystemType string `pulumi:"targetSystemType"`
+}
+
+// GetSecretRotationConfigTargetSystemDetailInput is an input type that accepts GetSecretRotationConfigTargetSystemDetailArgs and GetSecretRotationConfigTargetSystemDetailOutput values.
+// You can construct a concrete instance of `GetSecretRotationConfigTargetSystemDetailInput` via:
+//
+//	GetSecretRotationConfigTargetSystemDetailArgs{...}
+type GetSecretRotationConfigTargetSystemDetailInput interface {
+	pulumi.Input
+
+	ToGetSecretRotationConfigTargetSystemDetailOutput() GetSecretRotationConfigTargetSystemDetailOutput
+	ToGetSecretRotationConfigTargetSystemDetailOutputWithContext(context.Context) GetSecretRotationConfigTargetSystemDetailOutput
+}
+
+type GetSecretRotationConfigTargetSystemDetailArgs struct {
+	// The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+	AdbId pulumi.StringInput `pulumi:"adbId"`
+	// The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+	FunctionId pulumi.StringInput `pulumi:"functionId"`
+	// Unique identifier of the target system that Vault Secret connects to.
+	TargetSystemType pulumi.StringInput `pulumi:"targetSystemType"`
+}
+
+func (GetSecretRotationConfigTargetSystemDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretRotationConfigTargetSystemDetail)(nil)).Elem()
+}
+
+func (i GetSecretRotationConfigTargetSystemDetailArgs) ToGetSecretRotationConfigTargetSystemDetailOutput() GetSecretRotationConfigTargetSystemDetailOutput {
+	return i.ToGetSecretRotationConfigTargetSystemDetailOutputWithContext(context.Background())
+}
+
+func (i GetSecretRotationConfigTargetSystemDetailArgs) ToGetSecretRotationConfigTargetSystemDetailOutputWithContext(ctx context.Context) GetSecretRotationConfigTargetSystemDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretRotationConfigTargetSystemDetailOutput)
+}
+
+// GetSecretRotationConfigTargetSystemDetailArrayInput is an input type that accepts GetSecretRotationConfigTargetSystemDetailArray and GetSecretRotationConfigTargetSystemDetailArrayOutput values.
+// You can construct a concrete instance of `GetSecretRotationConfigTargetSystemDetailArrayInput` via:
+//
+//	GetSecretRotationConfigTargetSystemDetailArray{ GetSecretRotationConfigTargetSystemDetailArgs{...} }
+type GetSecretRotationConfigTargetSystemDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretRotationConfigTargetSystemDetailArrayOutput() GetSecretRotationConfigTargetSystemDetailArrayOutput
+	ToGetSecretRotationConfigTargetSystemDetailArrayOutputWithContext(context.Context) GetSecretRotationConfigTargetSystemDetailArrayOutput
+}
+
+type GetSecretRotationConfigTargetSystemDetailArray []GetSecretRotationConfigTargetSystemDetailInput
+
+func (GetSecretRotationConfigTargetSystemDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretRotationConfigTargetSystemDetail)(nil)).Elem()
+}
+
+func (i GetSecretRotationConfigTargetSystemDetailArray) ToGetSecretRotationConfigTargetSystemDetailArrayOutput() GetSecretRotationConfigTargetSystemDetailArrayOutput {
+	return i.ToGetSecretRotationConfigTargetSystemDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretRotationConfigTargetSystemDetailArray) ToGetSecretRotationConfigTargetSystemDetailArrayOutputWithContext(ctx context.Context) GetSecretRotationConfigTargetSystemDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretRotationConfigTargetSystemDetailArrayOutput)
+}
+
+type GetSecretRotationConfigTargetSystemDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSecretRotationConfigTargetSystemDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretRotationConfigTargetSystemDetail)(nil)).Elem()
+}
+
+func (o GetSecretRotationConfigTargetSystemDetailOutput) ToGetSecretRotationConfigTargetSystemDetailOutput() GetSecretRotationConfigTargetSystemDetailOutput {
+	return o
+}
+
+func (o GetSecretRotationConfigTargetSystemDetailOutput) ToGetSecretRotationConfigTargetSystemDetailOutputWithContext(ctx context.Context) GetSecretRotationConfigTargetSystemDetailOutput {
+	return o
+}
+
+// The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+func (o GetSecretRotationConfigTargetSystemDetailOutput) AdbId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretRotationConfigTargetSystemDetail) string { return v.AdbId }).(pulumi.StringOutput)
+}
+
+// The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+func (o GetSecretRotationConfigTargetSystemDetailOutput) FunctionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretRotationConfigTargetSystemDetail) string { return v.FunctionId }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the target system that Vault Secret connects to.
+func (o GetSecretRotationConfigTargetSystemDetailOutput) TargetSystemType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretRotationConfigTargetSystemDetail) string { return v.TargetSystemType }).(pulumi.StringOutput)
+}
+
+type GetSecretRotationConfigTargetSystemDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretRotationConfigTargetSystemDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretRotationConfigTargetSystemDetail)(nil)).Elem()
+}
+
+func (o GetSecretRotationConfigTargetSystemDetailArrayOutput) ToGetSecretRotationConfigTargetSystemDetailArrayOutput() GetSecretRotationConfigTargetSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetSecretRotationConfigTargetSystemDetailArrayOutput) ToGetSecretRotationConfigTargetSystemDetailArrayOutputWithContext(ctx context.Context) GetSecretRotationConfigTargetSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetSecretRotationConfigTargetSystemDetailArrayOutput) Index(i pulumi.IntInput) GetSecretRotationConfigTargetSystemDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretRotationConfigTargetSystemDetail {
+		return vs[0].([]GetSecretRotationConfigTargetSystemDetail)[vs[1].(int)]
+	}).(GetSecretRotationConfigTargetSystemDetailOutput)
 }
 
 type GetSecretSecretContent struct {
@@ -459,7 +1041,7 @@ type GetSecretSecretRule struct {
 	IsSecretContentRetrievalBlockedOnExpiry bool `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
 	// The type of rule, which either controls when the secret contents expire or whether they can be reused.
 	RuleType string `pulumi:"ruleType"`
-	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
 	SecretVersionExpiryInterval string `pulumi:"secretVersionExpiryInterval"`
 	// An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfAbsoluteExpiry string `pulumi:"timeOfAbsoluteExpiry"`
@@ -483,7 +1065,7 @@ type GetSecretSecretRuleArgs struct {
 	IsSecretContentRetrievalBlockedOnExpiry pulumi.BoolInput `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
 	// The type of rule, which either controls when the secret contents expire or whether they can be reused.
 	RuleType pulumi.StringInput `pulumi:"ruleType"`
-	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
 	SecretVersionExpiryInterval pulumi.StringInput `pulumi:"secretVersionExpiryInterval"`
 	// An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfAbsoluteExpiry pulumi.StringInput `pulumi:"timeOfAbsoluteExpiry"`
@@ -555,7 +1137,7 @@ func (o GetSecretSecretRuleOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecretSecretRule) string { return v.RuleType }).(pulumi.StringOutput)
 }
 
-// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
 func (o GetSecretSecretRuleOutput) SecretVersionExpiryInterval() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecretSecretRule) string { return v.SecretVersionExpiryInterval }).(pulumi.StringOutput)
 }
@@ -707,12 +1289,20 @@ type GetSecretsSecret struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the secret.
 	Id string `pulumi:"id"`
-	// The OCID of the master encryption key that is used to encrypt the secret.
+	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId string `pulumi:"keyId"`
+	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	LastRotationTime string `pulumi:"lastRotationTime"`
 	// Additional information about the current lifecycle state of the secret.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-	Metadata       map[string]interface{}          `pulumi:"metadata"`
+	Metadata map[string]interface{} `pulumi:"metadata"`
+	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	NextRotationTime string `pulumi:"nextRotationTime"`
+	// Defines the frequency of the rotation and the information about the target system
+	RotationConfigs []GetSecretsSecretRotationConfig `pulumi:"rotationConfigs"`
+	// Additional information about the status of the secret rotation
+	RotationStatus string                          `pulumi:"rotationStatus"`
 	SecretContents []GetSecretsSecretSecretContent `pulumi:"secretContents"`
 	// The user-friendly name of the secret. Avoid entering confidential information.
 	SecretName string `pulumi:"secretName"`
@@ -754,12 +1344,20 @@ type GetSecretsSecretArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the secret.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The OCID of the master encryption key that is used to encrypt the secret.
+	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId pulumi.StringInput `pulumi:"keyId"`
+	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	LastRotationTime pulumi.StringInput `pulumi:"lastRotationTime"`
 	// Additional information about the current lifecycle state of the secret.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-	Metadata       pulumi.MapInput                         `pulumi:"metadata"`
+	Metadata pulumi.MapInput `pulumi:"metadata"`
+	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	NextRotationTime pulumi.StringInput `pulumi:"nextRotationTime"`
+	// Defines the frequency of the rotation and the information about the target system
+	RotationConfigs GetSecretsSecretRotationConfigArrayInput `pulumi:"rotationConfigs"`
+	// Additional information about the status of the secret rotation
+	RotationStatus pulumi.StringInput                      `pulumi:"rotationStatus"`
 	SecretContents GetSecretsSecretSecretContentArrayInput `pulumi:"secretContents"`
 	// The user-friendly name of the secret. Avoid entering confidential information.
 	SecretName pulumi.StringInput `pulumi:"secretName"`
@@ -858,9 +1456,14 @@ func (o GetSecretsSecretOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecretsSecret) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The OCID of the master encryption key that is used to encrypt the secret.
+// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 func (o GetSecretsSecretOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecretsSecret) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+func (o GetSecretsSecretOutput) LastRotationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecret) string { return v.LastRotationTime }).(pulumi.StringOutput)
 }
 
 // Additional information about the current lifecycle state of the secret.
@@ -871,6 +1474,21 @@ func (o GetSecretsSecretOutput) LifecycleDetails() pulumi.StringOutput {
 // Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
 func (o GetSecretsSecretOutput) Metadata() pulumi.MapOutput {
 	return o.ApplyT(func(v GetSecretsSecret) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+}
+
+// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+func (o GetSecretsSecretOutput) NextRotationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecret) string { return v.NextRotationTime }).(pulumi.StringOutput)
+}
+
+// Defines the frequency of the rotation and the information about the target system
+func (o GetSecretsSecretOutput) RotationConfigs() GetSecretsSecretRotationConfigArrayOutput {
+	return o.ApplyT(func(v GetSecretsSecret) []GetSecretsSecretRotationConfig { return v.RotationConfigs }).(GetSecretsSecretRotationConfigArrayOutput)
+}
+
+// Additional information about the status of the secret rotation
+func (o GetSecretsSecretOutput) RotationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecret) string { return v.RotationStatus }).(pulumi.StringOutput)
 }
 
 func (o GetSecretsSecretOutput) SecretContents() GetSecretsSecretSecretContentArrayOutput {
@@ -930,6 +1548,238 @@ func (o GetSecretsSecretArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsSecret {
 		return vs[0].([]GetSecretsSecret)[vs[1].(int)]
 	}).(GetSecretsSecretOutput)
+}
+
+type GetSecretsSecretRotationConfig struct {
+	// Enables auto rotation, when set to true rotationInterval must be set.
+	IsScheduledRotationEnabled bool `pulumi:"isScheduledRotationEnabled"`
+	// The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+	RotationInterval string `pulumi:"rotationInterval"`
+	// The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+	TargetSystemDetails []GetSecretsSecretRotationConfigTargetSystemDetail `pulumi:"targetSystemDetails"`
+}
+
+// GetSecretsSecretRotationConfigInput is an input type that accepts GetSecretsSecretRotationConfigArgs and GetSecretsSecretRotationConfigOutput values.
+// You can construct a concrete instance of `GetSecretsSecretRotationConfigInput` via:
+//
+//	GetSecretsSecretRotationConfigArgs{...}
+type GetSecretsSecretRotationConfigInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretRotationConfigOutput() GetSecretsSecretRotationConfigOutput
+	ToGetSecretsSecretRotationConfigOutputWithContext(context.Context) GetSecretsSecretRotationConfigOutput
+}
+
+type GetSecretsSecretRotationConfigArgs struct {
+	// Enables auto rotation, when set to true rotationInterval must be set.
+	IsScheduledRotationEnabled pulumi.BoolInput `pulumi:"isScheduledRotationEnabled"`
+	// The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+	RotationInterval pulumi.StringInput `pulumi:"rotationInterval"`
+	// The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+	TargetSystemDetails GetSecretsSecretRotationConfigTargetSystemDetailArrayInput `pulumi:"targetSystemDetails"`
+}
+
+func (GetSecretsSecretRotationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretRotationConfig)(nil)).Elem()
+}
+
+func (i GetSecretsSecretRotationConfigArgs) ToGetSecretsSecretRotationConfigOutput() GetSecretsSecretRotationConfigOutput {
+	return i.ToGetSecretsSecretRotationConfigOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretRotationConfigArgs) ToGetSecretsSecretRotationConfigOutputWithContext(ctx context.Context) GetSecretsSecretRotationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretRotationConfigOutput)
+}
+
+// GetSecretsSecretRotationConfigArrayInput is an input type that accepts GetSecretsSecretRotationConfigArray and GetSecretsSecretRotationConfigArrayOutput values.
+// You can construct a concrete instance of `GetSecretsSecretRotationConfigArrayInput` via:
+//
+//	GetSecretsSecretRotationConfigArray{ GetSecretsSecretRotationConfigArgs{...} }
+type GetSecretsSecretRotationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretRotationConfigArrayOutput() GetSecretsSecretRotationConfigArrayOutput
+	ToGetSecretsSecretRotationConfigArrayOutputWithContext(context.Context) GetSecretsSecretRotationConfigArrayOutput
+}
+
+type GetSecretsSecretRotationConfigArray []GetSecretsSecretRotationConfigInput
+
+func (GetSecretsSecretRotationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretRotationConfig)(nil)).Elem()
+}
+
+func (i GetSecretsSecretRotationConfigArray) ToGetSecretsSecretRotationConfigArrayOutput() GetSecretsSecretRotationConfigArrayOutput {
+	return i.ToGetSecretsSecretRotationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretRotationConfigArray) ToGetSecretsSecretRotationConfigArrayOutputWithContext(ctx context.Context) GetSecretsSecretRotationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretRotationConfigArrayOutput)
+}
+
+type GetSecretsSecretRotationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretRotationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretRotationConfig)(nil)).Elem()
+}
+
+func (o GetSecretsSecretRotationConfigOutput) ToGetSecretsSecretRotationConfigOutput() GetSecretsSecretRotationConfigOutput {
+	return o
+}
+
+func (o GetSecretsSecretRotationConfigOutput) ToGetSecretsSecretRotationConfigOutputWithContext(ctx context.Context) GetSecretsSecretRotationConfigOutput {
+	return o
+}
+
+// Enables auto rotation, when set to true rotationInterval must be set.
+func (o GetSecretsSecretRotationConfigOutput) IsScheduledRotationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecretsSecretRotationConfig) bool { return v.IsScheduledRotationEnabled }).(pulumi.BoolOutput)
+}
+
+// The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+func (o GetSecretsSecretRotationConfigOutput) RotationInterval() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretRotationConfig) string { return v.RotationInterval }).(pulumi.StringOutput)
+}
+
+// The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+func (o GetSecretsSecretRotationConfigOutput) TargetSystemDetails() GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput {
+	return o.ApplyT(func(v GetSecretsSecretRotationConfig) []GetSecretsSecretRotationConfigTargetSystemDetail {
+		return v.TargetSystemDetails
+	}).(GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput)
+}
+
+type GetSecretsSecretRotationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretRotationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretRotationConfig)(nil)).Elem()
+}
+
+func (o GetSecretsSecretRotationConfigArrayOutput) ToGetSecretsSecretRotationConfigArrayOutput() GetSecretsSecretRotationConfigArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretRotationConfigArrayOutput) ToGetSecretsSecretRotationConfigArrayOutputWithContext(ctx context.Context) GetSecretsSecretRotationConfigArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretRotationConfigArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretRotationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsSecretRotationConfig {
+		return vs[0].([]GetSecretsSecretRotationConfig)[vs[1].(int)]
+	}).(GetSecretsSecretRotationConfigOutput)
+}
+
+type GetSecretsSecretRotationConfigTargetSystemDetail struct {
+	// The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+	AdbId string `pulumi:"adbId"`
+	// The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+	FunctionId string `pulumi:"functionId"`
+	// Unique identifier of the target system that Vault Secret connects to.
+	TargetSystemType string `pulumi:"targetSystemType"`
+}
+
+// GetSecretsSecretRotationConfigTargetSystemDetailInput is an input type that accepts GetSecretsSecretRotationConfigTargetSystemDetailArgs and GetSecretsSecretRotationConfigTargetSystemDetailOutput values.
+// You can construct a concrete instance of `GetSecretsSecretRotationConfigTargetSystemDetailInput` via:
+//
+//	GetSecretsSecretRotationConfigTargetSystemDetailArgs{...}
+type GetSecretsSecretRotationConfigTargetSystemDetailInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretRotationConfigTargetSystemDetailOutput() GetSecretsSecretRotationConfigTargetSystemDetailOutput
+	ToGetSecretsSecretRotationConfigTargetSystemDetailOutputWithContext(context.Context) GetSecretsSecretRotationConfigTargetSystemDetailOutput
+}
+
+type GetSecretsSecretRotationConfigTargetSystemDetailArgs struct {
+	// The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+	AdbId pulumi.StringInput `pulumi:"adbId"`
+	// The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+	FunctionId pulumi.StringInput `pulumi:"functionId"`
+	// Unique identifier of the target system that Vault Secret connects to.
+	TargetSystemType pulumi.StringInput `pulumi:"targetSystemType"`
+}
+
+func (GetSecretsSecretRotationConfigTargetSystemDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretRotationConfigTargetSystemDetail)(nil)).Elem()
+}
+
+func (i GetSecretsSecretRotationConfigTargetSystemDetailArgs) ToGetSecretsSecretRotationConfigTargetSystemDetailOutput() GetSecretsSecretRotationConfigTargetSystemDetailOutput {
+	return i.ToGetSecretsSecretRotationConfigTargetSystemDetailOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretRotationConfigTargetSystemDetailArgs) ToGetSecretsSecretRotationConfigTargetSystemDetailOutputWithContext(ctx context.Context) GetSecretsSecretRotationConfigTargetSystemDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretRotationConfigTargetSystemDetailOutput)
+}
+
+// GetSecretsSecretRotationConfigTargetSystemDetailArrayInput is an input type that accepts GetSecretsSecretRotationConfigTargetSystemDetailArray and GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput values.
+// You can construct a concrete instance of `GetSecretsSecretRotationConfigTargetSystemDetailArrayInput` via:
+//
+//	GetSecretsSecretRotationConfigTargetSystemDetailArray{ GetSecretsSecretRotationConfigTargetSystemDetailArgs{...} }
+type GetSecretsSecretRotationConfigTargetSystemDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretRotationConfigTargetSystemDetailArrayOutput() GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput
+	ToGetSecretsSecretRotationConfigTargetSystemDetailArrayOutputWithContext(context.Context) GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput
+}
+
+type GetSecretsSecretRotationConfigTargetSystemDetailArray []GetSecretsSecretRotationConfigTargetSystemDetailInput
+
+func (GetSecretsSecretRotationConfigTargetSystemDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretRotationConfigTargetSystemDetail)(nil)).Elem()
+}
+
+func (i GetSecretsSecretRotationConfigTargetSystemDetailArray) ToGetSecretsSecretRotationConfigTargetSystemDetailArrayOutput() GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput {
+	return i.ToGetSecretsSecretRotationConfigTargetSystemDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretRotationConfigTargetSystemDetailArray) ToGetSecretsSecretRotationConfigTargetSystemDetailArrayOutputWithContext(ctx context.Context) GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput)
+}
+
+type GetSecretsSecretRotationConfigTargetSystemDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretRotationConfigTargetSystemDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretRotationConfigTargetSystemDetail)(nil)).Elem()
+}
+
+func (o GetSecretsSecretRotationConfigTargetSystemDetailOutput) ToGetSecretsSecretRotationConfigTargetSystemDetailOutput() GetSecretsSecretRotationConfigTargetSystemDetailOutput {
+	return o
+}
+
+func (o GetSecretsSecretRotationConfigTargetSystemDetailOutput) ToGetSecretsSecretRotationConfigTargetSystemDetailOutputWithContext(ctx context.Context) GetSecretsSecretRotationConfigTargetSystemDetailOutput {
+	return o
+}
+
+// The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+func (o GetSecretsSecretRotationConfigTargetSystemDetailOutput) AdbId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretRotationConfigTargetSystemDetail) string { return v.AdbId }).(pulumi.StringOutput)
+}
+
+// The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+func (o GetSecretsSecretRotationConfigTargetSystemDetailOutput) FunctionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretRotationConfigTargetSystemDetail) string { return v.FunctionId }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the target system that Vault Secret connects to.
+func (o GetSecretsSecretRotationConfigTargetSystemDetailOutput) TargetSystemType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretRotationConfigTargetSystemDetail) string { return v.TargetSystemType }).(pulumi.StringOutput)
+}
+
+type GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretRotationConfigTargetSystemDetail)(nil)).Elem()
+}
+
+func (o GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput) ToGetSecretsSecretRotationConfigTargetSystemDetailArrayOutput() GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput) ToGetSecretsSecretRotationConfigTargetSystemDetailArrayOutputWithContext(ctx context.Context) GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretRotationConfigTargetSystemDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsSecretRotationConfigTargetSystemDetail {
+		return vs[0].([]GetSecretsSecretRotationConfigTargetSystemDetail)[vs[1].(int)]
+	}).(GetSecretsSecretRotationConfigTargetSystemDetailOutput)
 }
 
 type GetSecretsSecretSecretContent struct {
@@ -1054,7 +1904,7 @@ type GetSecretsSecretSecretRule struct {
 	IsSecretContentRetrievalBlockedOnExpiry bool `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
 	// The type of rule, which either controls when the secret contents expire or whether they can be reused.
 	RuleType string `pulumi:"ruleType"`
-	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
 	SecretVersionExpiryInterval string `pulumi:"secretVersionExpiryInterval"`
 	// An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfAbsoluteExpiry string `pulumi:"timeOfAbsoluteExpiry"`
@@ -1078,7 +1928,7 @@ type GetSecretsSecretSecretRuleArgs struct {
 	IsSecretContentRetrievalBlockedOnExpiry pulumi.BoolInput `pulumi:"isSecretContentRetrievalBlockedOnExpiry"`
 	// The type of rule, which either controls when the secret contents expire or whether they can be reused.
 	RuleType pulumi.StringInput `pulumi:"ruleType"`
-	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+	// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
 	SecretVersionExpiryInterval pulumi.StringInput `pulumi:"secretVersionExpiryInterval"`
 	// An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfAbsoluteExpiry pulumi.StringInput `pulumi:"timeOfAbsoluteExpiry"`
@@ -1150,7 +2000,7 @@ func (o GetSecretsSecretSecretRuleOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecretsSecretSecretRule) string { return v.RuleType }).(pulumi.StringOutput)
 }
 
-// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+// A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
 func (o GetSecretsSecretSecretRuleOutput) SecretVersionExpiryInterval() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecretsSecretSecretRule) string { return v.SecretVersionExpiryInterval }).(pulumi.StringOutput)
 }
@@ -1181,10 +2031,18 @@ func (o GetSecretsSecretSecretRuleArrayOutput) Index(i pulumi.IntInput) GetSecre
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretRotationConfigInput)(nil)).Elem(), SecretRotationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretRotationConfigPtrInput)(nil)).Elem(), SecretRotationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretRotationConfigTargetSystemDetailsInput)(nil)).Elem(), SecretRotationConfigTargetSystemDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretRotationConfigTargetSystemDetailsPtrInput)(nil)).Elem(), SecretRotationConfigTargetSystemDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretContentInput)(nil)).Elem(), SecretSecretContentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretContentPtrInput)(nil)).Elem(), SecretSecretContentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretRuleInput)(nil)).Elem(), SecretSecretRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretRuleArrayInput)(nil)).Elem(), SecretSecretRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretRotationConfigInput)(nil)).Elem(), GetSecretRotationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretRotationConfigArrayInput)(nil)).Elem(), GetSecretRotationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretRotationConfigTargetSystemDetailInput)(nil)).Elem(), GetSecretRotationConfigTargetSystemDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretRotationConfigTargetSystemDetailArrayInput)(nil)).Elem(), GetSecretRotationConfigTargetSystemDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretContentInput)(nil)).Elem(), GetSecretSecretContentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretContentArrayInput)(nil)).Elem(), GetSecretSecretContentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretRuleInput)(nil)).Elem(), GetSecretSecretRuleArgs{})
@@ -1193,14 +2051,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsFilterArrayInput)(nil)).Elem(), GetSecretsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretInput)(nil)).Elem(), GetSecretsSecretArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretArrayInput)(nil)).Elem(), GetSecretsSecretArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretRotationConfigInput)(nil)).Elem(), GetSecretsSecretRotationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretRotationConfigArrayInput)(nil)).Elem(), GetSecretsSecretRotationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretRotationConfigTargetSystemDetailInput)(nil)).Elem(), GetSecretsSecretRotationConfigTargetSystemDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretRotationConfigTargetSystemDetailArrayInput)(nil)).Elem(), GetSecretsSecretRotationConfigTargetSystemDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretContentInput)(nil)).Elem(), GetSecretsSecretSecretContentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretContentArrayInput)(nil)).Elem(), GetSecretsSecretSecretContentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretRuleInput)(nil)).Elem(), GetSecretsSecretSecretRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretRuleArrayInput)(nil)).Elem(), GetSecretsSecretSecretRuleArray{})
+	pulumi.RegisterOutputType(SecretRotationConfigOutput{})
+	pulumi.RegisterOutputType(SecretRotationConfigPtrOutput{})
+	pulumi.RegisterOutputType(SecretRotationConfigTargetSystemDetailsOutput{})
+	pulumi.RegisterOutputType(SecretRotationConfigTargetSystemDetailsPtrOutput{})
 	pulumi.RegisterOutputType(SecretSecretContentOutput{})
 	pulumi.RegisterOutputType(SecretSecretContentPtrOutput{})
 	pulumi.RegisterOutputType(SecretSecretRuleOutput{})
 	pulumi.RegisterOutputType(SecretSecretRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretRotationConfigOutput{})
+	pulumi.RegisterOutputType(GetSecretRotationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretRotationConfigTargetSystemDetailOutput{})
+	pulumi.RegisterOutputType(GetSecretRotationConfigTargetSystemDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretSecretContentOutput{})
 	pulumi.RegisterOutputType(GetSecretSecretContentArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretSecretRuleOutput{})
@@ -1209,6 +2079,10 @@ func init() {
 	pulumi.RegisterOutputType(GetSecretsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretRotationConfigOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretRotationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretRotationConfigTargetSystemDetailOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretRotationConfigTargetSystemDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretSecretContentOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretSecretContentArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretSecretRuleOutput{})

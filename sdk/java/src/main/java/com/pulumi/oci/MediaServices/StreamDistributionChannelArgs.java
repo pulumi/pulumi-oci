@@ -6,8 +6,11 @@ package com.pulumi.oci.MediaServices;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.inputs.StreamDistributionChannelLockArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,14 +22,14 @@ public final class StreamDistributionChannelArgs extends com.pulumi.resources.Re
     public static final StreamDistributionChannelArgs Empty = new StreamDistributionChannelArgs();
 
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier.
+     * @return (Updatable) The compartment ID of the lock.
      * 
      */
     public Output<String> compartmentId() {
@@ -66,9 +69,6 @@ public final class StreamDistributionChannelArgs extends com.pulumi.resources.Re
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
@@ -76,12 +76,31 @@ public final class StreamDistributionChannelArgs extends com.pulumi.resources.Re
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<StreamDistributionChannelLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<StreamDistributionChannelLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     private StreamDistributionChannelArgs() {}
@@ -91,6 +110,8 @@ public final class StreamDistributionChannelArgs extends com.pulumi.resources.Re
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
     }
 
     public static Builder builder() {
@@ -112,7 +133,7 @@ public final class StreamDistributionChannelArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -123,7 +144,7 @@ public final class StreamDistributionChannelArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -177,9 +198,6 @@ public final class StreamDistributionChannelArgs extends com.pulumi.resources.Re
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -191,14 +209,51 @@ public final class StreamDistributionChannelArgs extends com.pulumi.resources.Re
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<StreamDistributionChannelLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<StreamDistributionChannelLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(StreamDistributionChannelLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         public StreamDistributionChannelArgs build() {

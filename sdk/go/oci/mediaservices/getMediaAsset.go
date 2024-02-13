@@ -60,7 +60,7 @@ type LookupMediaAssetArgs struct {
 type LookupMediaAssetResult struct {
 	// The name of the object storage bucket where this represented asset is located.
 	Bucket string `pulumi:"bucket"`
-	// The ID of the compartment containing the MediaAsset.
+	// The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -69,7 +69,10 @@ type LookupMediaAssetResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetMediaAssetLock `pulumi:"locks"`
 	// The ID of the senior most asset from which this asset is derived.
 	MasterMediaAssetId string `pulumi:"masterMediaAssetId"`
 	MediaAssetId       string `pulumi:"mediaAssetId"`
@@ -150,7 +153,7 @@ func (o LookupMediaAssetResultOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The ID of the compartment containing the MediaAsset.
+// The compartment ID of the lock.
 func (o LookupMediaAssetResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -173,6 +176,15 @@ func (o LookupMediaAssetResultOutput) FreeformTags() pulumi.MapOutput {
 // Unique identifier that is immutable on creation.
 func (o LookupMediaAssetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupMediaAssetResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupMediaAssetResultOutput) Locks() GetMediaAssetLockArrayOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) []GetMediaAssetLock { return v.Locks }).(GetMediaAssetLockArrayOutput)
 }
 
 // The ID of the senior most asset from which this asset is derived.

@@ -58,7 +58,7 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// </summary>
         public readonly string OriginAuthSignType;
         /// <summary>
-        /// The name of the CDN configuration type.
+        /// Type of the lock.
         /// </summary>
         public readonly string Type;
 

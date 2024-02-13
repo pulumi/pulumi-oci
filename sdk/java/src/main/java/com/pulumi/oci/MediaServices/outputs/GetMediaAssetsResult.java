@@ -21,7 +21,7 @@ public final class GetMediaAssetsResult {
      */
     private @Nullable String bucket;
     /**
-     * @return The ID of the compartment containing the MediaAsset.
+     * @return The compartment ID of the lock.
      * 
      */
     private @Nullable String compartmentId;
@@ -92,7 +92,7 @@ public final class GetMediaAssetsResult {
         return Optional.ofNullable(this.bucket);
     }
     /**
-     * @return The ID of the compartment containing the MediaAsset.
+     * @return The compartment ID of the lock.
      * 
      */
     public Optional<String> compartmentId() {

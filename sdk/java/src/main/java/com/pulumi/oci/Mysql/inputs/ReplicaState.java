@@ -6,10 +6,12 @@ package com.pulumi.oci.Mysql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesArgs;
+import com.pulumi.oci.Mysql.inputs.ReplicaSecureConnectionArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -261,6 +263,21 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Secure connection configuration details.
+     * 
+     */
+    @Import(name="secureConnections")
+    private @Nullable Output<List<ReplicaSecureConnectionArgs>> secureConnections;
+
+    /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    public Optional<Output<List<ReplicaSecureConnectionArgs>>> secureConnections() {
+        return Optional.ofNullable(this.secureConnections);
+    }
+
+    /**
      * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      * ** IMPORTANT **
@@ -345,6 +362,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         this.port = $.port;
         this.portX = $.portX;
         this.replicaOverrides = $.replicaOverrides;
+        this.secureConnections = $.secureConnections;
         this.shapeName = $.shapeName;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
@@ -703,6 +721,37 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder replicaOverrides(ReplicaReplicaOverridesArgs replicaOverrides) {
             return replicaOverrides(Output.of(replicaOverrides));
+        }
+
+        /**
+         * @param secureConnections Secure connection configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secureConnections(@Nullable Output<List<ReplicaSecureConnectionArgs>> secureConnections) {
+            $.secureConnections = secureConnections;
+            return this;
+        }
+
+        /**
+         * @param secureConnections Secure connection configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secureConnections(List<ReplicaSecureConnectionArgs> secureConnections) {
+            return secureConnections(Output.of(secureConnections));
+        }
+
+        /**
+         * @param secureConnections Secure connection configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secureConnections(ReplicaSecureConnectionArgs... secureConnections) {
+            return secureConnections(List.of(secureConnections));
         }
 
         /**

@@ -70,12 +70,20 @@ type LookupSecretResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the secret.
 	Id string `pulumi:"id"`
-	// The OCID of the master encryption key that is used to encrypt the secret.
+	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId string `pulumi:"keyId"`
+	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	LastRotationTime string `pulumi:"lastRotationTime"`
 	// Additional information about the current lifecycle state of the secret.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-	Metadata       map[string]interface{}   `pulumi:"metadata"`
+	Metadata map[string]interface{} `pulumi:"metadata"`
+	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	NextRotationTime string `pulumi:"nextRotationTime"`
+	// Defines the frequency of the rotation and the information about the target system
+	RotationConfigs []GetSecretRotationConfig `pulumi:"rotationConfigs"`
+	// Additional information about the status of the secret rotation
+	RotationStatus string                   `pulumi:"rotationStatus"`
 	SecretContents []GetSecretSecretContent `pulumi:"secretContents"`
 	SecretId       string                   `pulumi:"secretId"`
 	// The user-friendly name of the secret. Avoid entering confidential information.
@@ -162,9 +170,14 @@ func (o LookupSecretResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecretResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The OCID of the master encryption key that is used to encrypt the secret.
+// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 func (o LookupSecretResultOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecretResult) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+func (o LookupSecretResultOutput) LastRotationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecretResult) string { return v.LastRotationTime }).(pulumi.StringOutput)
 }
 
 // Additional information about the current lifecycle state of the secret.
@@ -175,6 +188,21 @@ func (o LookupSecretResultOutput) LifecycleDetails() pulumi.StringOutput {
 // Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
 func (o LookupSecretResultOutput) Metadata() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupSecretResult) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+}
+
+// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+func (o LookupSecretResultOutput) NextRotationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecretResult) string { return v.NextRotationTime }).(pulumi.StringOutput)
+}
+
+// Defines the frequency of the rotation and the information about the target system
+func (o LookupSecretResultOutput) RotationConfigs() GetSecretRotationConfigArrayOutput {
+	return o.ApplyT(func(v LookupSecretResult) []GetSecretRotationConfig { return v.RotationConfigs }).(GetSecretRotationConfigArrayOutput)
+}
+
+// Additional information about the status of the secret rotation
+func (o LookupSecretResultOutput) RotationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecretResult) string { return v.RotationStatus }).(pulumi.StringOutput)
 }
 
 func (o LookupSecretResultOutput) SecretContents() GetSecretSecretContentArrayOutput {

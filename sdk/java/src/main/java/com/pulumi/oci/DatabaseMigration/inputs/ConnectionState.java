@@ -189,6 +189,13 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.lifecycleDetails);
     }
 
+    @Import(name="manualDatabaseSubType")
+    private @Nullable Output<String> manualDatabaseSubType;
+
+    public Optional<Output<String>> manualDatabaseSubType() {
+        return Optional.ofNullable(this.manualDatabaseSubType);
+    }
+
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      * 
@@ -368,6 +375,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.manualDatabaseSubType = $.manualDatabaseSubType;
         this.nsgIds = $.nsgIds;
         this.privateEndpoint = $.privateEndpoint;
         this.replicationCredentials = $.replicationCredentials;
@@ -628,6 +636,15 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        public Builder manualDatabaseSubType(@Nullable Output<String> manualDatabaseSubType) {
+            $.manualDatabaseSubType = manualDatabaseSubType;
+            return this;
+        }
+
+        public Builder manualDatabaseSubType(String manualDatabaseSubType) {
+            return manualDatabaseSubType(Output.of(manualDatabaseSubType));
         }
 
         /**

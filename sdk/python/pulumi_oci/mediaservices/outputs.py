@@ -11,55 +11,171 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'MediaAssetLock',
     'MediaAssetMediaAssetTag',
     'MediaAssetMetadata',
+    'MediaWorkflowConfigurationLock',
+    'MediaWorkflowJobLock',
     'MediaWorkflowJobOutput',
     'MediaWorkflowJobTaskLifecycleState',
+    'MediaWorkflowLock',
     'MediaWorkflowTask',
     'StreamCdnConfigConfig',
+    'StreamCdnConfigLock',
+    'StreamDistributionChannelLock',
     'StreamPackagingConfigEncryption',
+    'StreamPackagingConfigLock',
+    'GetMediaAssetDistributionChannelAttachmentLockResult',
+    'GetMediaAssetLockResult',
     'GetMediaAssetMediaAssetTagResult',
     'GetMediaAssetMetadataResult',
     'GetMediaAssetsFilterResult',
     'GetMediaAssetsMediaAssetCollectionResult',
     'GetMediaAssetsMediaAssetCollectionItemResult',
+    'GetMediaAssetsMediaAssetCollectionItemLockResult',
     'GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult',
     'GetMediaAssetsMediaAssetCollectionItemMetadataResult',
+    'GetMediaWorkflowConfigurationLockResult',
     'GetMediaWorkflowConfigurationsFilterResult',
     'GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionResult',
     'GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult',
+    'GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockResult',
     'GetMediaWorkflowJobFactsFilterResult',
     'GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionResult',
     'GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult',
+    'GetMediaWorkflowJobLockResult',
     'GetMediaWorkflowJobOutputResult',
     'GetMediaWorkflowJobTaskLifecycleStateResult',
     'GetMediaWorkflowJobsFilterResult',
     'GetMediaWorkflowJobsMediaWorkflowJobCollectionResult',
     'GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult',
+    'GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockResult',
     'GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult',
     'GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult',
+    'GetMediaWorkflowLockResult',
     'GetMediaWorkflowTaskResult',
     'GetMediaWorkflowTaskDeclarationItemResult',
     'GetMediaWorkflowsFilterResult',
     'GetMediaWorkflowsMediaWorkflowCollectionResult',
     'GetMediaWorkflowsMediaWorkflowCollectionItemResult',
+    'GetMediaWorkflowsMediaWorkflowCollectionItemLockResult',
     'GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult',
     'GetStreamCdnConfigConfigResult',
+    'GetStreamCdnConfigLockResult',
     'GetStreamCdnConfigsFilterResult',
     'GetStreamCdnConfigsStreamCdnConfigCollectionResult',
     'GetStreamCdnConfigsStreamCdnConfigCollectionItemResult',
     'GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult',
+    'GetStreamCdnConfigsStreamCdnConfigCollectionItemLockResult',
+    'GetStreamDistributionChannelLockResult',
     'GetStreamDistributionChannelsFilterResult',
     'GetStreamDistributionChannelsStreamDistributionChannelCollectionResult',
     'GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult',
+    'GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockResult',
     'GetStreamPackagingConfigEncryptionResult',
+    'GetStreamPackagingConfigLockResult',
     'GetStreamPackagingConfigsFilterResult',
     'GetStreamPackagingConfigsStreamPackagingConfigCollectionResult',
     'GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult',
     'GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult',
+    'GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockResult',
     'GetSystemMediaWorkflowItemResult',
     'GetSystemMediaWorkflowItemTaskResult',
 ]
+
+@pulumi.output_type
+class MediaAssetLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MediaAssetLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MediaAssetLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MediaAssetLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str compartment_id: (Updatable) The compartment ID of the lock.
+        :param str type: (Updatable) The type of the media asset.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        (Updatable) The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) The type of the media asset.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
 
 @pulumi.output_type
 class MediaAssetMediaAssetTag(dict):
@@ -115,6 +231,178 @@ class MediaAssetMetadata(dict):
         (Updatable) JSON string containing the technial metadata for the media asset.
         """
         return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class MediaWorkflowConfigurationLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MediaWorkflowConfigurationLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MediaWorkflowConfigurationLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MediaWorkflowConfigurationLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str compartment_id: (Updatable) The compartment ID of the lock.
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        (Updatable) The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class MediaWorkflowJobLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MediaWorkflowJobLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MediaWorkflowJobLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MediaWorkflowJobLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str compartment_id: (Updatable) The compartment ID of the lock.
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        (Updatable) The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -259,6 +547,92 @@ class MediaWorkflowJobTaskLifecycleState(dict):
         The current state of the MediaWorkflowJob task.
         """
         return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class MediaWorkflowLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MediaWorkflowLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MediaWorkflowLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MediaWorkflowLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str compartment_id: (Updatable) The compartment ID of the lock.
+        :param str type: (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        (Updatable) The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -428,7 +802,11 @@ class StreamCdnConfigConfig(dict):
                  origin_auth_sign_encryption: Optional[str] = None,
                  origin_auth_sign_type: Optional[str] = None):
         """
-        :param str type: (Updatable) The name of the CDN configuration type.
+        :param str type: Type of the lock.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str edge_hostname: (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
         :param str edge_path_prefix: (Updatable) The path to prepend when building CDN URLs.
         :param str edge_token_key: (Updatable) The encryption key to use for edge token authentication.
@@ -469,7 +847,11 @@ class StreamCdnConfigConfig(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) The name of the CDN configuration type.
+        Type of the lock.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -563,6 +945,194 @@ class StreamCdnConfigConfig(dict):
 
 
 @pulumi.output_type
+class StreamCdnConfigLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in StreamCdnConfigLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        StreamCdnConfigLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        StreamCdnConfigLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str type: Type of the lock.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class StreamDistributionChannelLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in StreamDistributionChannelLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        StreamDistributionChannelLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        StreamDistributionChannelLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str compartment_id: (Updatable) The compartment ID of the lock.
+        :param str type: Type of the lock.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        (Updatable) The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
 class StreamPackagingConfigEncryption(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -607,6 +1177,216 @@ class StreamPackagingConfigEncryption(dict):
         The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
         """
         return pulumi.get(self, "kms_key_id")
+
+
+@pulumi.output_type
+class StreamPackagingConfigLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in StreamPackagingConfigLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        StreamPackagingConfigLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        StreamPackagingConfigLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetMediaAssetDistributionChannelAttachmentLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMediaAssetLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+        :param str type: The type of the media asset.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the media asset.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -704,6 +1484,8 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_lock_override: bool,
+                 locks: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemLockResult'],
                  master_media_asset_id: str,
                  media_asset_tags: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult'],
                  media_workflow_job_id: str,
@@ -728,6 +1510,7 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
         :param str display_name: A filter to return only the resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable on creation.
+        :param Sequence['GetMediaAssetsMediaAssetCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param str master_media_asset_id: Unique MediaAsset identifier of the first asset upload.
         :param Sequence['GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArgs'] media_asset_tags: List of tags for the MediaAsset.
         :param str media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
@@ -752,6 +1535,8 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "master_media_asset_id", master_media_asset_id)
         pulumi.set(__self__, "media_asset_tags", media_asset_tags)
         pulumi.set(__self__, "media_workflow_job_id", media_workflow_job_id)
@@ -817,6 +1602,19 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
         Unique identifier that is immutable on creation.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="masterMediaAssetId")
@@ -956,6 +1754,68 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetMediaAssetsMediaAssetCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+        :param str type: Filter MediaAsset by the asset type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Filter MediaAsset by the asset type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult(dict):
     def __init__(__self__, *,
                  type: str,
@@ -1000,6 +1860,68 @@ class GetMediaAssetsMediaAssetCollectionItemMetadataResult(dict):
         JSON string containing the technial metadata for the media asset.
         """
         return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class GetMediaWorkflowConfigurationLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -1049,7 +1971,9 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResu
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_lock_override: bool,
                  lifecyle_details: str,
+                 locks: Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockResult'],
                  parameters: str,
                  state: str,
                  system_tags: Mapping[str, Any],
@@ -1062,6 +1986,7 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResu
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique MediaWorkflowConfiguration identifier.
         :param str lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param Sequence['GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param str parameters: Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1073,7 +1998,9 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResu
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "parameters", parameters)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -1121,12 +2048,25 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResu
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> str:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecyle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
@@ -1167,6 +2107,68 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResu
         The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -1272,6 +2274,68 @@ class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult(dict):
     def type(self) -> str:
         """
         Types of details to include.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMediaWorkflowJobLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: Creation time of the job. An RFC3339 formatted datetime string.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Creation time of the job. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
         """
         return pulumi.get(self, "type")
 
@@ -1425,7 +2489,9 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_lock_override: bool,
                  lifecycle_details: str,
+                 locks: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockResult'],
                  media_workflow_configuration_ids: Sequence[str],
                  media_workflow_id: str,
                  media_workflow_name: str,
@@ -1447,6 +2513,7 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: unique MediaWorkflowJob identifier
         :param str lifecycle_details: The lifecycle details of MediaWorkflowJob task.
+        :param Sequence['GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param Sequence[str] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
         :param str media_workflow_id: Unique MediaWorkflow identifier.
         :param Sequence['GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputArgs'] outputs: A list of JobOutput for the workflowJob.
@@ -1465,7 +2532,9 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
         pulumi.set(__self__, "media_workflow_id", media_workflow_id)
         pulumi.set(__self__, "media_workflow_name", media_workflow_name)
@@ -1522,12 +2591,25 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
         The lifecycle details of MediaWorkflowJob task.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
@@ -1637,6 +2719,68 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: Creation time of the job. An RFC3339 formatted datetime string.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Creation time of the job. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult(dict):
     def __init__(__self__, *,
                  asset_type: str,
@@ -1736,6 +2880,68 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult
         A filter to return only the resources with lifecycleState matching the given lifecycleState.
         """
         return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetMediaWorkflowLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+        :param str type: The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -1920,7 +3126,9 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_lock_override: bool,
                  lifecyle_details: str,
+                 locks: Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemLockResult'],
                  media_workflow_configuration_ids: Sequence[str],
                  parameters: str,
                  state: str,
@@ -1936,6 +3144,7 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique MediaWorkflow identifier.
         :param str lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param Sequence['GetMediaWorkflowsMediaWorkflowCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param Sequence[str] media_workflow_configuration_ids: Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
         :param str parameters: Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
@@ -1950,7 +3159,9 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
         pulumi.set(__self__, "parameters", parameters)
         pulumi.set(__self__, "state", state)
@@ -2001,12 +3212,25 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> str:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecyle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
@@ -2071,6 +3295,68 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
         The version of the MediaWorkflow.
         """
         return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetMediaWorkflowsMediaWorkflowCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+        :param str type: The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -2184,7 +3470,7 @@ class GetStreamCdnConfigConfigResult(dict):
         :param str origin_auth_secret_key_nonce_b: Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
         :param str origin_auth_sign_encryption: The type of encryption used to compute the signature.
         :param str origin_auth_sign_type: The type of data used to compute the signature.
-        :param str type: The name of the CDN configuration type.
+        :param str type: Type of the lock.
         """
         pulumi.set(__self__, "edge_hostname", edge_hostname)
         pulumi.set(__self__, "edge_path_prefix", edge_path_prefix)
@@ -2291,7 +3577,69 @@ class GetStreamCdnConfigConfigResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The name of the CDN configuration type.
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetStreamCdnConfigLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the CDN Config was created. An RFC3339 formatted datetime string.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the CDN Config was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
         """
         return pulumi.get(self, "type")
 
@@ -2346,13 +3694,15 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_enabled: bool,
+                 is_lock_override: bool,
                  lifecyle_details: str,
+                 locks: Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemLockResult'],
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
-        :param str compartment_id: Compartment Identifier.
+        :param str compartment_id: The compartment ID of the lock.
         :param Sequence['GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs'] configs: Base fields of the StreamCdnConfig configuration object.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name given.
@@ -2361,6 +3711,7 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
         :param str id: Unique StreamCdnConfig identifier.
         :param bool is_enabled: Whether publishing to CDN is enabled.
         :param str lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param Sequence['GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the CDN Config was created. An RFC3339 formatted datetime string.
@@ -2374,7 +3725,9 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -2384,7 +3737,7 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier.
+        The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2445,12 +3798,25 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
         return pulumi.get(self, "is_enabled")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> str:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecyle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
@@ -2512,7 +3878,7 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult(dict):
         :param str origin_auth_secret_key_nonce_b: Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
         :param str origin_auth_sign_encryption: The type of encryption used to compute the signature.
         :param str origin_auth_sign_type: The type of data used to compute the signature.
-        :param str type: The name of the CDN configuration type.
+        :param str type: Type of the lock.
         """
         pulumi.set(__self__, "edge_hostname", edge_hostname)
         pulumi.set(__self__, "edge_path_prefix", edge_path_prefix)
@@ -2619,7 +3985,131 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The name of the CDN configuration type.
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetStreamCdnConfigsStreamCdnConfigCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the CDN Config was created. An RFC3339 formatted datetime string.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the CDN Config was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetStreamDistributionChannelLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
         """
         return pulumi.get(self, "type")
 
@@ -2672,6 +4162,8 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult
                  domain_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_lock_override: bool,
+                 locks: Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockResult'],
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
@@ -2683,6 +4175,7 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult
         :param str domain_name: Unique domain name of the Distribution Channel.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique Stream Distribution Channel identifier.
+        :param Sequence['GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
@@ -2694,6 +4187,8 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult
         pulumi.set(__self__, "domain_name", domain_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -2748,6 +4243,19 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -2781,6 +4289,68 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult
 
 
 @pulumi.output_type
+class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetStreamPackagingConfigEncryptionResult(dict):
     def __init__(__self__, *,
                  algorithm: str,
@@ -2807,6 +4377,68 @@ class GetStreamPackagingConfigEncryptionResult(dict):
         The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
         """
         return pulumi.get(self, "kms_key_id")
+
+
+@pulumi.output_type
+class GetStreamPackagingConfigLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -2858,6 +4490,8 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
                  encryptions: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult'],
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_lock_override: bool,
+                 locks: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockResult'],
                  segment_time_in_seconds: int,
                  state: str,
                  stream_packaging_format: str,
@@ -2865,13 +4499,14 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param str compartment_id: Compartment Identifier
+        :param str compartment_id: The compartment ID of the lock.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name given.
         :param str distribution_channel_id: Unique Stream Distribution Channel identifier.
         :param Sequence['GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArgs'] encryptions: The encryption used by the stream packaging configuration.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable on creation.
+        :param Sequence['GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param int segment_time_in_seconds: The duration in seconds for each fragment.
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
         :param str stream_packaging_format: The output format for the package.
@@ -2886,6 +4521,8 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
         pulumi.set(__self__, "encryptions", encryptions)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "segment_time_in_seconds", segment_time_in_seconds)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "stream_packaging_format", stream_packaging_format)
@@ -2897,7 +4534,7 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier
+        The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2948,6 +4585,19 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
         Unique identifier that is immutable on creation.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="segmentTimeInSeconds")
@@ -3025,6 +4675,68 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResu
         The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
         """
         return pulumi.get(self, "kms_key_id")
+
+
+@pulumi.output_type
+class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str compartment_id: The compartment ID of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID of the lock.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

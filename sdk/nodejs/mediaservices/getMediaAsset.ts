@@ -49,7 +49,7 @@ export interface GetMediaAssetResult {
      */
     readonly bucket: string;
     /**
-     * The ID of the compartment containing the MediaAsset.
+     * The compartment ID of the lock.
      */
     readonly compartmentId: string;
     /**
@@ -68,6 +68,11 @@ export interface GetMediaAssetResult {
      * Unique identifier that is immutable on creation.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.MediaServices.GetMediaAssetLock[];
     /**
      * The ID of the senior most asset from which this asset is derived.
      */

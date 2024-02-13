@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -43,7 +45,7 @@ export interface GetMediaWorkflowConfigurationArgs {
  */
 export interface GetMediaWorkflowConfigurationResult {
     /**
-     * Compartment Identifier.
+     * The compartment ID of the lock.
      */
     readonly compartmentId: string;
     /**
@@ -62,10 +64,15 @@ export interface GetMediaWorkflowConfigurationResult {
      * Unique identifier that is immutable on creation.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     readonly lifecyleDetails: string;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.MediaServices.GetMediaWorkflowConfigurationLock[];
     readonly mediaWorkflowConfigurationId: string;
     /**
      * Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue

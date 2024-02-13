@@ -951,9 +951,6 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_database_management_managed_database_optimizer_statistics_collection_operations":    {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseOptimizerStatisticsCollectionOperations")},
 			"oci_database_management_managed_database_table_statistics":                              {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseTableStatistics")},
 
-			"oci_database_migration_agent":                  {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getAgent")},
-			"oci_database_migration_agent_images":           {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getAgentImages")},
-			"oci_database_migration_agents":                 {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getAgents")},
 			"oci_database_migration_connection":             {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getConnection")},
 			"oci_database_migration_connections":            {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getConnections")},
 			"oci_database_migration_job_advisor_report":     {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getJobAdvisorReport")},

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,6 +26,13 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     locks: [{
+ *         compartmentId: _var.compartment_id,
+ *         type: _var.stream_distribution_channel_locks_type,
+ *         message: _var.stream_distribution_channel_locks_message,
+ *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
+ *         timeCreated: _var.stream_distribution_channel_locks_time_created,
+ *     }],
  * });
  * ```
  *
@@ -64,7 +73,7 @@ export class StreamDistributionChannel extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -80,13 +89,14 @@ export class StreamDistributionChannel extends pulumi.CustomResource {
      */
     public /*out*/ readonly domainName!: pulumi.Output<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.MediaServices.StreamDistributionChannelLock[]>;
     /**
      * The current state of the Stream Distribution Channel.
      */
@@ -96,7 +106,7 @@ export class StreamDistributionChannel extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -122,6 +132,8 @@ export class StreamDistributionChannel extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["domainName"] = state ? state.domainName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -138,6 +150,8 @@ export class StreamDistributionChannel extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["domainName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -154,7 +168,7 @@ export class StreamDistributionChannel extends pulumi.CustomResource {
  */
 export interface StreamDistributionChannelState {
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -170,13 +184,14 @@ export interface StreamDistributionChannelState {
      */
     domainName?: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamDistributionChannelLock>[]>;
     /**
      * The current state of the Stream Distribution Channel.
      */
@@ -186,7 +201,7 @@ export interface StreamDistributionChannelState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -200,7 +215,7 @@ export interface StreamDistributionChannelState {
  */
 export interface StreamDistributionChannelArgs {
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -212,11 +227,12 @@ export interface StreamDistributionChannelArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamDistributionChannelLock>[]>;
 }

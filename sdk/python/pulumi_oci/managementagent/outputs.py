@@ -11,12 +11,22 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ManagementAgentDataSourceList',
+    'ManagementAgentDataSourceListMetricDimension',
+    'ManagementAgentDataSourceMetricDimension',
+    'ManagementAgentDataSourceSummaryList',
     'ManagementAgentManagementAgentProperty',
     'ManagementAgentPluginList',
     'GetManagementAgentAvailableHistoriesAvailabilityHistoryResult',
     'GetManagementAgentAvailableHistoriesFilterResult',
     'GetManagementAgentCountItemResult',
     'GetManagementAgentCountItemDimensionResult',
+    'GetManagementAgentDataSourceListResult',
+    'GetManagementAgentDataSourceListMetricDimensionResult',
+    'GetManagementAgentDataSourceMetricDimensionResult',
+    'GetManagementAgentDataSourceSummaryListResult',
+    'GetManagementAgentDataSourcesDataSourceResult',
+    'GetManagementAgentDataSourcesFilterResult',
     'GetManagementAgentImagesFilterResult',
     'GetManagementAgentImagesManagementAgentImageResult',
     'GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult',
@@ -30,9 +40,406 @@ __all__ = [
     'GetManagementAgentPluginsManagementAgentPluginResult',
     'GetManagementAgentsFilterResult',
     'GetManagementAgentsManagementAgentResult',
+    'GetManagementAgentsManagementAgentDataSourceListResult',
+    'GetManagementAgentsManagementAgentDataSourceListMetricDimensionResult',
+    'GetManagementAgentsManagementAgentDataSourceSummaryListResult',
     'GetManagementAgentsManagementAgentManagementAgentPropertyResult',
     'GetManagementAgentsManagementAgentPluginListResult',
 ]
+
+@pulumi.output_type
+class ManagementAgentDataSourceList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowMetrics":
+            suggest = "allow_metrics"
+        elif key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "connectionTimeout":
+            suggest = "connection_timeout"
+        elif key == "isDaemonSet":
+            suggest = "is_daemon_set"
+        elif key == "metricDimensions":
+            suggest = "metric_dimensions"
+        elif key == "proxyUrl":
+            suggest = "proxy_url"
+        elif key == "readDataLimit":
+            suggest = "read_data_limit"
+        elif key == "readTimeout":
+            suggest = "read_timeout"
+        elif key == "resourceGroup":
+            suggest = "resource_group"
+        elif key == "scheduleMins":
+            suggest = "schedule_mins"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementAgentDataSourceList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementAgentDataSourceList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementAgentDataSourceList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allow_metrics: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 connection_timeout: Optional[int] = None,
+                 is_daemon_set: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 metric_dimensions: Optional[Sequence['outputs.ManagementAgentDataSourceListMetricDimension']] = None,
+                 name: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 proxy_url: Optional[str] = None,
+                 read_data_limit: Optional[int] = None,
+                 read_timeout: Optional[int] = None,
+                 resource_group: Optional[str] = None,
+                 schedule_mins: Optional[int] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 type: Optional[str] = None,
+                 url: Optional[str] = None):
+        """
+        :param str allow_metrics: Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+        :param str compartment_id: Compartment owning this DataSource.
+        :param int connection_timeout: Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+        :param bool is_daemon_set: If the Kubernetes cluster type is Daemon set then this will be set to true.
+        :param str key: Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        :param Sequence['ManagementAgentDataSourceListMetricDimensionArgs'] metric_dimensions: The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+        :param str name: Name of the property
+        :param str namespace: The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+        :param str proxy_url: The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+        :param int read_data_limit: Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+        :param int read_timeout: Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+        :param str resource_group: Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+        :param int schedule_mins: Number in minutes. The scraping occurs at the specified interval.
+        :param str state: The current state of managementAgent
+        :param str time_created: The time the Management Agent was created. An RFC3339 formatted datetime string
+        :param str time_updated: The time the Management Agent was last updated. An RFC3339 formatted datetime string
+        :param str type: The type of the DataSource.
+        :param str url: The url through which the Prometheus Exporter publishes its metrics. (http only)
+        """
+        if allow_metrics is not None:
+            pulumi.set(__self__, "allow_metrics", allow_metrics)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_timeout is not None:
+            pulumi.set(__self__, "connection_timeout", connection_timeout)
+        if is_daemon_set is not None:
+            pulumi.set(__self__, "is_daemon_set", is_daemon_set)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if metric_dimensions is not None:
+            pulumi.set(__self__, "metric_dimensions", metric_dimensions)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if proxy_url is not None:
+            pulumi.set(__self__, "proxy_url", proxy_url)
+        if read_data_limit is not None:
+            pulumi.set(__self__, "read_data_limit", read_data_limit)
+        if read_timeout is not None:
+            pulumi.set(__self__, "read_timeout", read_timeout)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+        if schedule_mins is not None:
+            pulumi.set(__self__, "schedule_mins", schedule_mins)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="allowMetrics")
+    def allow_metrics(self) -> Optional[str]:
+        """
+        Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+        """
+        return pulumi.get(self, "allow_metrics")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        Compartment owning this DataSource.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="connectionTimeout")
+    def connection_timeout(self) -> Optional[int]:
+        """
+        Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+        """
+        return pulumi.get(self, "connection_timeout")
+
+    @property
+    @pulumi.getter(name="isDaemonSet")
+    def is_daemon_set(self) -> Optional[bool]:
+        """
+        If the Kubernetes cluster type is Daemon set then this will be set to true.
+        """
+        return pulumi.get(self, "is_daemon_set")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="metricDimensions")
+    def metric_dimensions(self) -> Optional[Sequence['outputs.ManagementAgentDataSourceListMetricDimension']]:
+        """
+        The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+        """
+        return pulumi.get(self, "metric_dimensions")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[str]:
+        """
+        The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="proxyUrl")
+    def proxy_url(self) -> Optional[str]:
+        """
+        The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+        """
+        return pulumi.get(self, "proxy_url")
+
+    @property
+    @pulumi.getter(name="readDataLimit")
+    def read_data_limit(self) -> Optional[int]:
+        """
+        Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+        """
+        return pulumi.get(self, "read_data_limit")
+
+    @property
+    @pulumi.getter(name="readTimeout")
+    def read_timeout(self) -> Optional[int]:
+        """
+        Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+        """
+        return pulumi.get(self, "read_timeout")
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> Optional[str]:
+        """
+        Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @property
+    @pulumi.getter(name="scheduleMins")
+    def schedule_mins(self) -> Optional[int]:
+        """
+        Number in minutes. The scraping occurs at the specified interval.
+        """
+        return pulumi.get(self, "schedule_mins")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of managementAgent
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The time the Management Agent was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        The time the Management Agent was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        The type of the DataSource.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[str]:
+        """
+        The url through which the Prometheus Exporter publishes its metrics. (http only)
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class ManagementAgentDataSourceListMetricDimension(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: Name of the property
+        :param str value: Value of the metric dimension
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        Value of the metric dimension
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ManagementAgentDataSourceMetricDimension(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Unique name of the DataSource.
+        :param str value: (Updatable) Value of the metric dimension
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Unique name of the DataSource.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        (Updatable) Value of the metric dimension
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ManagementAgentDataSourceSummaryList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isDaemonSet":
+            suggest = "is_daemon_set"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementAgentDataSourceSummaryList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementAgentDataSourceSummaryList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementAgentDataSourceSummaryList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_daemon_set: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        """
+        :param bool is_daemon_set: If the Kubernetes cluster type is Daemon set then this will be set to true.
+        :param str key: Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        :param str name: Name of the property
+        :param str type: The type of the DataSource.
+        """
+        if is_daemon_set is not None:
+            pulumi.set(__self__, "is_daemon_set", is_daemon_set)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="isDaemonSet")
+    def is_daemon_set(self) -> Optional[bool]:
+        """
+        If the Kubernetes cluster type is Daemon set then this will be set to true.
+        """
+        return pulumi.get(self, "is_daemon_set")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        The type of the DataSource.
+        """
+        return pulumi.get(self, "type")
+
 
 @pulumi.output_type
 class ManagementAgentManagementAgentProperty(dict):
@@ -364,6 +771,394 @@ class GetManagementAgentCountItemDimensionResult(dict):
         Agent image version
         """
         return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetManagementAgentDataSourceListResult(dict):
+    def __init__(__self__, *,
+                 allow_metrics: str,
+                 compartment_id: str,
+                 connection_timeout: int,
+                 is_daemon_set: bool,
+                 key: str,
+                 metric_dimensions: Sequence['outputs.GetManagementAgentDataSourceListMetricDimensionResult'],
+                 name: str,
+                 namespace: str,
+                 proxy_url: str,
+                 read_data_limit: int,
+                 read_timeout: int,
+                 resource_group: str,
+                 schedule_mins: int,
+                 state: str,
+                 time_created: str,
+                 time_updated: str,
+                 type: str,
+                 url: str):
+        """
+        :param str allow_metrics: Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+        :param str compartment_id: Compartment owning this DataSource.
+        :param int connection_timeout: Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+        :param bool is_daemon_set: If the Kubernetes cluster type is Daemon set then this will be set to true.
+        :param str key: Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        :param Sequence['GetManagementAgentDataSourceListMetricDimensionArgs'] metric_dimensions: The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+        :param str name: Name of the property
+        :param str namespace: The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+        :param str proxy_url: The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+        :param int read_data_limit: Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+        :param int read_timeout: Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+        :param str resource_group: Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+        :param int schedule_mins: Number in minutes. The scraping occurs at the specified interval.
+        :param str state: The current state of managementAgent
+        :param str time_created: The time the Management Agent was created. An RFC3339 formatted datetime string
+        :param str time_updated: The time the Management Agent was last updated. An RFC3339 formatted datetime string
+        :param str type: The type of the DataSource.
+        :param str url: The url through which the Prometheus Exporter publishes its metrics. (http only)
+        """
+        pulumi.set(__self__, "allow_metrics", allow_metrics)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_timeout", connection_timeout)
+        pulumi.set(__self__, "is_daemon_set", is_daemon_set)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "metric_dimensions", metric_dimensions)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "proxy_url", proxy_url)
+        pulumi.set(__self__, "read_data_limit", read_data_limit)
+        pulumi.set(__self__, "read_timeout", read_timeout)
+        pulumi.set(__self__, "resource_group", resource_group)
+        pulumi.set(__self__, "schedule_mins", schedule_mins)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="allowMetrics")
+    def allow_metrics(self) -> str:
+        """
+        Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+        """
+        return pulumi.get(self, "allow_metrics")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        Compartment owning this DataSource.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="connectionTimeout")
+    def connection_timeout(self) -> int:
+        """
+        Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+        """
+        return pulumi.get(self, "connection_timeout")
+
+    @property
+    @pulumi.getter(name="isDaemonSet")
+    def is_daemon_set(self) -> bool:
+        """
+        If the Kubernetes cluster type is Daemon set then this will be set to true.
+        """
+        return pulumi.get(self, "is_daemon_set")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="metricDimensions")
+    def metric_dimensions(self) -> Sequence['outputs.GetManagementAgentDataSourceListMetricDimensionResult']:
+        """
+        The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+        """
+        return pulumi.get(self, "metric_dimensions")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="proxyUrl")
+    def proxy_url(self) -> str:
+        """
+        The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+        """
+        return pulumi.get(self, "proxy_url")
+
+    @property
+    @pulumi.getter(name="readDataLimit")
+    def read_data_limit(self) -> int:
+        """
+        Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+        """
+        return pulumi.get(self, "read_data_limit")
+
+    @property
+    @pulumi.getter(name="readTimeout")
+    def read_timeout(self) -> int:
+        """
+        Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+        """
+        return pulumi.get(self, "read_timeout")
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> str:
+        """
+        Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @property
+    @pulumi.getter(name="scheduleMins")
+    def schedule_mins(self) -> int:
+        """
+        Number in minutes. The scraping occurs at the specified interval.
+        """
+        return pulumi.get(self, "schedule_mins")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of managementAgent
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the Management Agent was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the Management Agent was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the DataSource.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        The url through which the Prometheus Exporter publishes its metrics. (http only)
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetManagementAgentDataSourceListMetricDimensionResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Name of the property
+        :param str value: Value of the metric dimension
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of the metric dimension
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetManagementAgentDataSourceMetricDimensionResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Unique name of the DataSource.
+        :param str value: Value of the metric dimension
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Unique name of the DataSource.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of the metric dimension
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetManagementAgentDataSourceSummaryListResult(dict):
+    def __init__(__self__, *,
+                 is_daemon_set: bool,
+                 key: str,
+                 name: str,
+                 type: str):
+        """
+        :param bool is_daemon_set: If the Kubernetes cluster type is Daemon set then this will be set to true.
+        :param str key: Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        :param str name: Name of the property
+        :param str type: The type of the DataSource.
+        """
+        pulumi.set(__self__, "is_daemon_set", is_daemon_set)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="isDaemonSet")
+    def is_daemon_set(self) -> bool:
+        """
+        If the Kubernetes cluster type is Daemon set then this will be set to true.
+        """
+        return pulumi.get(self, "is_daemon_set")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the DataSource.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetManagementAgentDataSourcesDataSourceResult(dict):
+    def __init__(__self__, *,
+                 data_source_key: str,
+                 type: str,
+                 name: Optional[str] = None):
+        """
+        :param str data_source_key: Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        :param str type: The type of the DataSource.
+        :param str name: Unique name of the dataSource.
+        """
+        pulumi.set(__self__, "data_source_key", data_source_key)
+        pulumi.set(__self__, "type", type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="dataSourceKey")
+    def data_source_key(self) -> str:
+        """
+        Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        """
+        return pulumi.get(self, "data_source_key")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the DataSource.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Unique name of the dataSource.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetManagementAgentDataSourcesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Unique name of the dataSource.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Unique name of the dataSource.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -1118,6 +1913,8 @@ class GetManagementAgentsManagementAgentResult(dict):
     def __init__(__self__, *,
                  availability_status: str,
                  compartment_id: str,
+                 data_source_lists: Sequence['outputs.GetManagementAgentsManagementAgentDataSourceListResult'],
+                 data_source_summary_lists: Sequence['outputs.GetManagementAgentsManagementAgentDataSourceSummaryListResult'],
                  defined_tags: Mapping[str, Any],
                  deploy_plugins_ids: Sequence[str],
                  display_name: str,
@@ -1146,6 +1943,7 @@ class GetManagementAgentsManagementAgentResult(dict):
         """
         :param str availability_status: Filter to return only Management Agents in the particular availability status.
         :param str compartment_id: The OCID of the compartment to which a request will be scoped.
+        :param Sequence['GetManagementAgentsManagementAgentDataSourceSummaryListArgs'] data_source_summary_lists: list of dataSources associated with the agent
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: Filter to return only Management Agents having the particular display name.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -1172,6 +1970,8 @@ class GetManagementAgentsManagementAgentResult(dict):
         """
         pulumi.set(__self__, "availability_status", availability_status)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_source_lists", data_source_lists)
+        pulumi.set(__self__, "data_source_summary_lists", data_source_summary_lists)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deploy_plugins_ids", deploy_plugins_ids)
         pulumi.set(__self__, "display_name", display_name)
@@ -1213,6 +2013,19 @@ class GetManagementAgentsManagementAgentResult(dict):
         The OCID of the compartment to which a request will be scoped.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dataSourceLists")
+    def data_source_lists(self) -> Sequence['outputs.GetManagementAgentsManagementAgentDataSourceListResult']:
+        return pulumi.get(self, "data_source_lists")
+
+    @property
+    @pulumi.getter(name="dataSourceSummaryLists")
+    def data_source_summary_lists(self) -> Sequence['outputs.GetManagementAgentsManagementAgentDataSourceSummaryListResult']:
+        """
+        list of dataSources associated with the agent
+        """
+        return pulumi.get(self, "data_source_summary_lists")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1407,6 +2220,247 @@ class GetManagementAgentsManagementAgentResult(dict):
         Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
         """
         return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetManagementAgentsManagementAgentDataSourceListResult(dict):
+    def __init__(__self__, *,
+                 allow_metrics: str,
+                 compartment_id: str,
+                 connection_timeout: int,
+                 is_daemon_set: bool,
+                 key: str,
+                 metric_dimensions: Sequence['outputs.GetManagementAgentsManagementAgentDataSourceListMetricDimensionResult'],
+                 name: str,
+                 namespace: str,
+                 proxy_url: str,
+                 read_data_limit: int,
+                 read_timeout: int,
+                 resource_group: str,
+                 schedule_mins: int,
+                 state: str,
+                 time_created: str,
+                 time_updated: str,
+                 type: str,
+                 url: str):
+        """
+        :param str compartment_id: The OCID of the compartment to which a request will be scoped.
+        :param bool is_daemon_set: If the Kubernetes cluster type is Daemon set then this will be set to true.
+        :param str key: Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        :param str name: Name of the property
+        :param str state: Filter to return only Management Agents in the particular lifecycle state.
+        :param str time_created: The time the Management Agent was created. An RFC3339 formatted datetime string
+        :param str time_updated: The time the Management Agent was last updated. An RFC3339 formatted datetime string
+        :param str type: The type of the DataSource.
+        """
+        pulumi.set(__self__, "allow_metrics", allow_metrics)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_timeout", connection_timeout)
+        pulumi.set(__self__, "is_daemon_set", is_daemon_set)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "metric_dimensions", metric_dimensions)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "proxy_url", proxy_url)
+        pulumi.set(__self__, "read_data_limit", read_data_limit)
+        pulumi.set(__self__, "read_timeout", read_timeout)
+        pulumi.set(__self__, "resource_group", resource_group)
+        pulumi.set(__self__, "schedule_mins", schedule_mins)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="allowMetrics")
+    def allow_metrics(self) -> str:
+        return pulumi.get(self, "allow_metrics")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment to which a request will be scoped.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="connectionTimeout")
+    def connection_timeout(self) -> int:
+        return pulumi.get(self, "connection_timeout")
+
+    @property
+    @pulumi.getter(name="isDaemonSet")
+    def is_daemon_set(self) -> bool:
+        """
+        If the Kubernetes cluster type is Daemon set then this will be set to true.
+        """
+        return pulumi.get(self, "is_daemon_set")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="metricDimensions")
+    def metric_dimensions(self) -> Sequence['outputs.GetManagementAgentsManagementAgentDataSourceListMetricDimensionResult']:
+        return pulumi.get(self, "metric_dimensions")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="proxyUrl")
+    def proxy_url(self) -> str:
+        return pulumi.get(self, "proxy_url")
+
+    @property
+    @pulumi.getter(name="readDataLimit")
+    def read_data_limit(self) -> int:
+        return pulumi.get(self, "read_data_limit")
+
+    @property
+    @pulumi.getter(name="readTimeout")
+    def read_timeout(self) -> int:
+        return pulumi.get(self, "read_timeout")
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> str:
+        return pulumi.get(self, "resource_group")
+
+    @property
+    @pulumi.getter(name="scheduleMins")
+    def schedule_mins(self) -> int:
+        return pulumi.get(self, "schedule_mins")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Filter to return only Management Agents in the particular lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the Management Agent was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the Management Agent was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the DataSource.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetManagementAgentsManagementAgentDataSourceListMetricDimensionResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Name of the property
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetManagementAgentsManagementAgentDataSourceSummaryListResult(dict):
+    def __init__(__self__, *,
+                 is_daemon_set: bool,
+                 key: str,
+                 name: str,
+                 type: str):
+        """
+        :param bool is_daemon_set: If the Kubernetes cluster type is Daemon set then this will be set to true.
+        :param str key: Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        :param str name: Name of the property
+        :param str type: The type of the DataSource.
+        """
+        pulumi.set(__self__, "is_daemon_set", is_daemon_set)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="isDaemonSet")
+    def is_daemon_set(self) -> bool:
+        """
+        If the Kubernetes cluster type is Daemon set then this will be set to true.
+        """
+        return pulumi.get(self, "is_daemon_set")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the DataSource.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

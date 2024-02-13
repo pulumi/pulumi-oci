@@ -36,6 +36,8 @@ import (
 //				AccessLevel:            pulumi.StringRef(_var.Management_agent_access_level),
 //				AvailabilityStatus:     pulumi.StringRef(_var.Management_agent_availability_status),
 //				CompartmentIdInSubtree: pulumi.BoolRef(_var.Management_agent_compartment_id_in_subtree),
+//				DataSourceNames:        oci_management_agent_management_agent_data_source.Test_management_agent_data_source.Name,
+//				DataSourceType:         pulumi.StringRef(_var.Management_agent_data_source_type),
 //				DisplayName:            pulumi.StringRef(_var.Management_agent_display_name),
 //				GatewayIds:             oci_apigateway_gateway.Test_gateway.Id,
 //				HostId:                 pulumi.StringRef(oci_management_agent_host.Test_host.Id),
@@ -74,6 +76,10 @@ type GetManagementAgentsArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
+	// Unique name of the dataSource.
+	DataSourceNames []string `pulumi:"dataSourceNames"`
+	// The type of the dataSource.
+	DataSourceType *string `pulumi:"dataSourceType"`
 	// Filter to return only Management Agents having the particular display name.
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetManagementAgentsFilter `pulumi:"filters"`
@@ -101,8 +107,10 @@ type GetManagementAgentsResult struct {
 	// The current availability status of managementAgent
 	AvailabilityStatus *string `pulumi:"availabilityStatus"`
 	// Compartment Identifier
-	CompartmentId          string `pulumi:"compartmentId"`
-	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
+	CompartmentId          string   `pulumi:"compartmentId"`
+	CompartmentIdInSubtree *bool    `pulumi:"compartmentIdInSubtree"`
+	DataSourceNames        []string `pulumi:"dataSourceNames"`
+	DataSourceType         *string  `pulumi:"dataSourceType"`
 	// Management Agent Name
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetManagementAgentsFilter `pulumi:"filters"`
@@ -150,6 +158,10 @@ type GetManagementAgentsOutputArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
 	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
+	// Unique name of the dataSource.
+	DataSourceNames pulumi.StringArrayInput `pulumi:"dataSourceNames"`
+	// The type of the dataSource.
+	DataSourceType pulumi.StringPtrInput `pulumi:"dataSourceType"`
 	// Filter to return only Management Agents having the particular display name.
 	DisplayName pulumi.StringPtrInput               `pulumi:"displayName"`
 	Filters     GetManagementAgentsFilterArrayInput `pulumi:"filters"`
@@ -206,6 +218,14 @@ func (o GetManagementAgentsResultOutput) CompartmentId() pulumi.StringOutput {
 
 func (o GetManagementAgentsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetManagementAgentsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagementAgentsResultOutput) DataSourceNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentsResult) []string { return v.DataSourceNames }).(pulumi.StringArrayOutput)
+}
+
+func (o GetManagementAgentsResultOutput) DataSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsResult) *string { return v.DataSourceType }).(pulumi.StringPtrOutput)
 }
 
 // Management Agent Name

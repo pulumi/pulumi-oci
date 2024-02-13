@@ -5,8 +5,11 @@ package com.pulumi.oci.MediaServices.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.MediaServices.inputs.StreamDistributionChannelLockArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,14 +21,14 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
     public static final StreamDistributionChannelState Empty = new StreamDistributionChannelState();
 
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier.
+     * @return (Updatable) The compartment ID of the lock.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -80,9 +83,6 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
@@ -90,12 +90,31 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<StreamDistributionChannelLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<StreamDistributionChannelLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -129,14 +148,14 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
     }
 
     /**
-     * The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+     * @return When the lock was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -166,6 +185,8 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
         this.displayName = $.displayName;
         this.domainName = $.domainName;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
@@ -191,7 +212,7 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -202,7 +223,7 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -277,9 +298,6 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -291,14 +309,51 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<StreamDistributionChannelLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<StreamDistributionChannelLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(StreamDistributionChannelLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**
@@ -344,7 +399,7 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
         }
 
         /**
-         * @param timeCreated The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 
@@ -355,7 +410,7 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
         }
 
         /**
-         * @param timeCreated The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 

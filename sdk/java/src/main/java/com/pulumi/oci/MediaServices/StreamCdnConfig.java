@@ -10,10 +10,12 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.MediaServices.StreamCdnConfigArgs;
 import com.pulumi.oci.MediaServices.inputs.StreamCdnConfigState;
 import com.pulumi.oci.MediaServices.outputs.StreamCdnConfigConfig;
+import com.pulumi.oci.MediaServices.outputs.StreamCdnConfigLock;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -32,6 +34,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.MediaServices.StreamCdnConfig;
  * import com.pulumi.oci.MediaServices.StreamCdnConfigArgs;
  * import com.pulumi.oci.MediaServices.inputs.StreamCdnConfigConfigArgs;
+ * import com.pulumi.oci.MediaServices.inputs.StreamCdnConfigLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -65,6 +68,13 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .isEnabled(var_.stream_cdn_config_is_enabled())
+ *             .locks(StreamCdnConfigLockArgs.builder()
+ *                 .compartmentId(var_.compartment_id())
+ *                 .type(var_.stream_cdn_config_locks_type())
+ *                 .message(var_.stream_cdn_config_locks_message())
+ *                 .relatedResourceId(oci_usage_proxy_resource.test_resource().id())
+ *                 .timeCreated(var_.stream_cdn_config_locks_time_created())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -83,14 +93,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:MediaServices/streamCdnConfig:StreamCdnConfig")
 public class StreamCdnConfig extends com.pulumi.resources.CustomResource {
     /**
-     * Compartment Identifier.
+     * The compartment ID of the lock.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     public Output<String> compartmentId() {
@@ -169,9 +179,6 @@ public class StreamCdnConfig extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Whether publishing to CDN is enabled.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
@@ -179,12 +186,15 @@ public class StreamCdnConfig extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Whether publishing to CDN is enabled.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Output<Boolean> isEnabled() {
         return this.isEnabled;
+    }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -199,6 +209,20 @@ public class StreamCdnConfig extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecyleDetails() {
         return this.lifecyleDetails;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,StreamCdnConfigLock.class}, tree="[0,1]")
+    private Output<List<StreamCdnConfigLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<StreamCdnConfigLock>> locks() {
+        return this.locks;
     }
     /**
      * The current state of the CDN Configuration.
@@ -229,14 +253,14 @@ public class StreamCdnConfig extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time when the CDN Config was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time when the CDN Config was created. An RFC3339 formatted datetime string.
+     * @return When the lock was created.
      * 
      */
     public Output<String> timeCreated() {

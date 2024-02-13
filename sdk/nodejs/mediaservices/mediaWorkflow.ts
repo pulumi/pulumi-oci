@@ -26,6 +26,13 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     locks: [{
+ *         compartmentId: _var.compartment_id,
+ *         type: _var.media_workflow_locks_type,
+ *         message: _var.media_workflow_locks_message,
+ *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
+ *         timeCreated: _var.media_workflow_locks_time_created,
+ *     }],
  *     mediaWorkflowConfigurationIds: _var.media_workflow_media_workflow_configuration_ids,
  *     parameters: _var.media_workflow_parameters,
  *     tasks: [{
@@ -77,7 +84,7 @@ export class MediaWorkflow extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -92,10 +99,15 @@ export class MediaWorkflow extends pulumi.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.MediaServices.MediaWorkflowLock[]>;
     /**
      * (Updatable) Configurations to be applied to all the jobs for this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob.
      */
@@ -117,7 +129,7 @@ export class MediaWorkflow extends pulumi.CustomResource {
      */
     public readonly tasks!: pulumi.Output<outputs.MediaServices.MediaWorkflowTask[]>;
     /**
-     * The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -150,7 +162,9 @@ export class MediaWorkflow extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["lifecyleDetails"] = state ? state.lifecyleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["mediaWorkflowConfigurationIds"] = state ? state.mediaWorkflowConfigurationIds : undefined;
             resourceInputs["parameters"] = state ? state.parameters : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -171,6 +185,8 @@ export class MediaWorkflow extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["mediaWorkflowConfigurationIds"] = args ? args.mediaWorkflowConfigurationIds : undefined;
             resourceInputs["parameters"] = args ? args.parameters : undefined;
             resourceInputs["tasks"] = args ? args.tasks : undefined;
@@ -191,7 +207,7 @@ export class MediaWorkflow extends pulumi.CustomResource {
  */
 export interface MediaWorkflowState {
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -206,10 +222,15 @@ export interface MediaWorkflowState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecyleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaWorkflowLock>[]>;
     /**
      * (Updatable) Configurations to be applied to all the jobs for this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob.
      */
@@ -231,7 +252,7 @@ export interface MediaWorkflowState {
      */
     tasks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaWorkflowTask>[]>;
     /**
-     * The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -253,7 +274,7 @@ export interface MediaWorkflowState {
  */
 export interface MediaWorkflowArgs {
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -268,6 +289,11 @@ export interface MediaWorkflowArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaWorkflowLock>[]>;
     /**
      * (Updatable) Configurations to be applied to all the jobs for this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob.
      */

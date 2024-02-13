@@ -178,7 +178,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class GetMediaWorkflowJobsResult
     {
         /// <summary>
-        /// Compartment Identifier.
+        /// The compartment ID of the lock.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

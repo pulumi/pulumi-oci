@@ -32,6 +32,13 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     locks: [{
+ *         compartmentId: _var.compartment_id,
+ *         type: _var.stream_packaging_config_locks_type,
+ *         message: _var.stream_packaging_config_locks_message,
+ *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
+ *         timeCreated: _var.stream_packaging_config_locks_time_created,
+ *     }],
  * });
  * ```
  *
@@ -72,7 +79,7 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
     }
 
     /**
-     * Compartment Identifier
+     * The compartment ID of the lock.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -95,6 +102,11 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.MediaServices.StreamPackagingConfigLock[]>;
     /**
      * The duration in seconds for each fragment.
      */
@@ -116,7 +128,7 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -143,6 +155,8 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
             resourceInputs["distributionChannelId"] = state ? state.distributionChannelId : undefined;
             resourceInputs["encryption"] = state ? state.encryption : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["segmentTimeInSeconds"] = state ? state.segmentTimeInSeconds : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["streamPackagingFormat"] = state ? state.streamPackagingFormat : undefined;
@@ -168,6 +182,8 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
             resourceInputs["distributionChannelId"] = args ? args.distributionChannelId : undefined;
             resourceInputs["encryption"] = args ? args.encryption : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["segmentTimeInSeconds"] = args ? args.segmentTimeInSeconds : undefined;
             resourceInputs["streamPackagingFormat"] = args ? args.streamPackagingFormat : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
@@ -186,7 +202,7 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
  */
 export interface StreamPackagingConfigState {
     /**
-     * Compartment Identifier
+     * The compartment ID of the lock.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -209,6 +225,11 @@ export interface StreamPackagingConfigState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamPackagingConfigLock>[]>;
     /**
      * The duration in seconds for each fragment.
      */
@@ -230,7 +251,7 @@ export interface StreamPackagingConfigState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -263,6 +284,11 @@ export interface StreamPackagingConfigArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamPackagingConfigLock>[]>;
     /**
      * The duration in seconds for each fragment.
      */

@@ -16293,7 +16293,10 @@ export namespace Core {
          */
         volumeGroupReplicaId?: pulumi.Input<string>;
         /**
-         * OCIDs for the volumes in this volume group.
+         * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         volumeIds?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -16304,11 +16307,7 @@ export namespace Core {
          */
         availabilityDomain: pulumi.Input<string>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -26904,30 +26903,6 @@ export namespace DatabaseMigration {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vaultId: pulumi.Input<string>;
-    }
-
-    export interface GetAgentImagesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetAgentImagesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetAgentsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetAgentsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetConnectionsFilter {
@@ -61853,6 +61828,24 @@ export namespace ManagementAgent {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetManagementAgentDataSourcesFilter {
+        /**
+         * Unique name of the dataSource.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagementAgentDataSourcesFilterArgs {
+        /**
+         * Unique name of the dataSource.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetManagementAgentImagesFilter {
         /**
          * A filter to return only resources that match the entire platform name given.
@@ -61923,6 +61916,122 @@ export namespace ManagementAgent {
          * Values of the property
          */
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ManagementAgentDataSourceList {
+        /**
+         * Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+         */
+        allowMetrics?: pulumi.Input<string>;
+        /**
+         * Compartment owning this DataSource.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+         */
+        connectionTimeout?: pulumi.Input<number>;
+        /**
+         * If the Kubernetes cluster type is Daemon set then this will be set to true.
+         */
+        isDaemonSet?: pulumi.Input<boolean>;
+        /**
+         * Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+         */
+        metricDimensions?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceListMetricDimension>[]>;
+        /**
+         * Name of the property
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+         */
+        proxyUrl?: pulumi.Input<string>;
+        /**
+         * Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+         */
+        readDataLimit?: pulumi.Input<number>;
+        /**
+         * Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+         */
+        readTimeout?: pulumi.Input<number>;
+        /**
+         * Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+         */
+        resourceGroup?: pulumi.Input<string>;
+        /**
+         * Number in minutes. The scraping occurs at the specified interval.
+         */
+        scheduleMins?: pulumi.Input<number>;
+        /**
+         * The current state of managementAgent
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The time the Management Agent was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the Management Agent was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The type of the DataSource.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * The url through which the Prometheus Exporter publishes its metrics. (http only)
+         */
+        url?: pulumi.Input<string>;
+    }
+
+    export interface ManagementAgentDataSourceListMetricDimension {
+        /**
+         * Name of the property
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Value of the metric dimension
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ManagementAgentDataSourceMetricDimension {
+        /**
+         * Unique name of the DataSource.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the metric dimension
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface ManagementAgentDataSourceSummaryList {
+        /**
+         * If the Kubernetes cluster type is Daemon set then this will be set to true.
+         */
+        isDaemonSet?: pulumi.Input<boolean>;
+        /**
+         * Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Name of the property
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The type of the DataSource.
+         */
+        type?: pulumi.Input<string>;
     }
 
     export interface ManagementAgentManagementAgentProperty {
@@ -62215,6 +62324,52 @@ export namespace Marketplace {
 }
 
 export namespace MediaServices {
+    export interface GetMediaAssetDistributionChannelAttachmentLock {
+        /**
+         * The compartment ID of the lock.
+         */
+        compartmentId?: string;
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: string;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: string;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: string;
+        /**
+         * Type of the lock.
+         */
+        type?: string;
+    }
+
+    export interface GetMediaAssetDistributionChannelAttachmentLockArgs {
+        /**
+         * The compartment ID of the lock.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type?: pulumi.Input<string>;
+    }
+
     export interface GetMediaAssetsFilter {
         name: string;
         regex?: boolean;
@@ -62317,6 +62472,33 @@ export namespace MediaServices {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface MediaAssetLock {
+        /**
+         * (Updatable) The compartment ID of the lock.
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the media asset.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        type: pulumi.Input<string>;
+    }
+
     export interface MediaAssetMediaAssetTag {
         /**
          * (Updatable) The type of the media asset.
@@ -62337,6 +62519,52 @@ export namespace MediaServices {
          * (Updatable) JSON string containing the technial metadata for the media asset.
          */
         metadata: pulumi.Input<string>;
+    }
+
+    export interface MediaWorkflowConfigurationLock {
+        /**
+         * (Updatable) The compartment ID of the lock.
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface MediaWorkflowJobLock {
+        /**
+         * (Updatable) The compartment ID of the lock.
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
     }
 
     export interface MediaWorkflowJobOutput {
@@ -62375,6 +62603,29 @@ export namespace MediaServices {
          * The current state of the MediaWorkflowJob task.
          */
         state?: pulumi.Input<string>;
+    }
+
+    export interface MediaWorkflowLock {
+        /**
+         * (Updatable) The compartment ID of the lock.
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+         */
+        type: pulumi.Input<string>;
     }
 
     export interface MediaWorkflowTask {
@@ -62458,7 +62709,65 @@ export namespace MediaServices {
          */
         originAuthSignType?: pulumi.Input<string>;
         /**
-         * (Updatable) The name of the CDN configuration type.
+         * Type of the lock.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface StreamCdnConfigLock {
+        /**
+         * The compartment ID of the lock.
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface StreamDistributionChannelLock {
+        /**
+         * (Updatable) The compartment ID of the lock.
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -62472,6 +62781,29 @@ export namespace MediaServices {
          * The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
          */
         kmsKeyId?: pulumi.Input<string>;
+    }
+
+    export interface StreamPackagingConfigLock {
+        /**
+         * The compartment ID of the lock.
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
     }
 }
 
@@ -63579,6 +63911,10 @@ export namespace Mysql {
          */
         portX?: pulumi.Input<number>;
         /**
+         * Secure connection configuration details.
+         */
+        secureConnections?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotSecureConnection>[]>;
+        /**
          * The shape of the DB System instance used for backup.
          */
         shapeName?: pulumi.Input<string>;
@@ -63685,6 +64021,17 @@ export namespace Mysql {
          * The start time of the maintenance window.
          */
         windowStartTime?: pulumi.Input<string>;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotSecureConnection {
+        /**
+         * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+         */
+        certificateGenerationType?: pulumi.Input<string>;
+        /**
+         * The OCID of the certificate to use.
+         */
+        certificateId?: pulumi.Input<string>;
     }
 
     export interface MysqlConfigurationInitVariables {
@@ -64448,6 +64795,17 @@ export namespace Mysql {
         timeLatestRecoveryPoint?: pulumi.Input<string>;
     }
 
+    export interface MysqlDbSystemSecureConnections {
+        /**
+         * (Updatable) Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+         */
+        certificateGenerationType: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the certificate to use.
+         */
+        certificateId?: pulumi.Input<string>;
+    }
+
     export interface MysqlDbSystemSource {
         /**
          * The OCID of the backup to be used as the source for the new DB System.
@@ -64488,6 +64846,17 @@ export namespace Mysql {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         shapeName?: pulumi.Input<string>;
+    }
+
+    export interface ReplicaSecureConnection {
+        /**
+         * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+         */
+        certificateGenerationType?: pulumi.Input<string>;
+        /**
+         * The OCID of the certificate to use.
+         */
+        certificateId?: pulumi.Input<string>;
     }
 }
 
@@ -71129,13 +71498,43 @@ export namespace Vault {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface SecretRotationConfig {
+        /**
+         * (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
+         */
+        isScheduledRotationEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+         */
+        rotationInterval?: pulumi.Input<string>;
+        /**
+         * (Updatable) The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+         */
+        targetSystemDetails: pulumi.Input<inputs.Vault.SecretRotationConfigTargetSystemDetails>;
+    }
+
+    export interface SecretRotationConfigTargetSystemDetails {
+        /**
+         * (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+         */
+        adbId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+         */
+        functionId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique identifier of the target system that Vault Secret connects to.
+         */
+        targetSystemType: pulumi.Input<string>;
+    }
+
     export interface SecretSecretContent {
         /**
          * (Updatable) The base64-encoded content of the secret.
          */
-        content: pulumi.Input<string>;
+        content?: pulumi.Input<string>;
         /**
-         * (Updatable) content type . Example `BASE64` .
+         * (Updatable) The base64-encoded content of the secret.
          */
         contentType: pulumi.Input<string>;
         /**
@@ -71143,7 +71542,7 @@ export namespace Vault {
          */
         name?: pulumi.Input<string>;
         /**
-         * (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
+         * (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
          */
         stage?: pulumi.Input<string>;
     }
@@ -71162,7 +71561,7 @@ export namespace Vault {
          */
         ruleType: pulumi.Input<string>;
         /**
-         * (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+         * (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
          */
         secretVersionExpiryInterval?: pulumi.Input<string>;
         /**

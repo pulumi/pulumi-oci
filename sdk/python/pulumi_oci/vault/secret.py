@@ -18,19 +18,19 @@ class SecretArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  key_id: pulumi.Input[str],
-                 secret_content: pulumi.Input['SecretSecretContentArgs'],
                  secret_name: pulumi.Input[str],
                  vault_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 rotation_config: Optional[pulumi.Input['SecretRotationConfigArgs']] = None,
+                 secret_content: Optional[pulumi.Input['SecretSecretContentArgs']] = None,
                  secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None):
         """
         The set of arguments for constructing a Secret resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the secret.
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret.
-        :param pulumi.Input['SecretSecretContentArgs'] secret_content: (Updatable) The content of the secret and metadata to help identify it.
+        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         :param pulumi.Input[str] vault_id: The OCID of the vault where you want to create the secret.
                
@@ -41,11 +41,12 @@ class SecretArgs:
         :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
+        :param pulumi.Input['SecretRotationConfigArgs'] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
+        :param pulumi.Input['SecretSecretContentArgs'] secret_content: (Updatable) The content of the secret and metadata to help identify it.
         :param pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "secret_content", secret_content)
         pulumi.set(__self__, "secret_name", secret_name)
         pulumi.set(__self__, "vault_id", vault_id)
         if defined_tags is not None:
@@ -56,6 +57,10 @@ class SecretArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
+        if rotation_config is not None:
+            pulumi.set(__self__, "rotation_config", rotation_config)
+        if secret_content is not None:
+            pulumi.set(__self__, "secret_content", secret_content)
         if secret_rules is not None:
             pulumi.set(__self__, "secret_rules", secret_rules)
 
@@ -75,25 +80,13 @@ class SecretArgs:
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Input[str]:
         """
-        The OCID of the master encryption key that is used to encrypt the secret.
+        The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
     def key_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "key_id", value)
-
-    @property
-    @pulumi.getter(name="secretContent")
-    def secret_content(self) -> pulumi.Input['SecretSecretContentArgs']:
-        """
-        (Updatable) The content of the secret and metadata to help identify it.
-        """
-        return pulumi.get(self, "secret_content")
-
-    @secret_content.setter
-    def secret_content(self, value: pulumi.Input['SecretSecretContentArgs']):
-        pulumi.set(self, "secret_content", value)
 
     @property
     @pulumi.getter(name="secretName")
@@ -172,6 +165,30 @@ class SecretArgs:
         pulumi.set(self, "metadata", value)
 
     @property
+    @pulumi.getter(name="rotationConfig")
+    def rotation_config(self) -> Optional[pulumi.Input['SecretRotationConfigArgs']]:
+        """
+        (Updatable) Defines the frequency of the rotation and the information about the target system
+        """
+        return pulumi.get(self, "rotation_config")
+
+    @rotation_config.setter
+    def rotation_config(self, value: Optional[pulumi.Input['SecretRotationConfigArgs']]):
+        pulumi.set(self, "rotation_config", value)
+
+    @property
+    @pulumi.getter(name="secretContent")
+    def secret_content(self) -> Optional[pulumi.Input['SecretSecretContentArgs']]:
+        """
+        (Updatable) The content of the secret and metadata to help identify it.
+        """
+        return pulumi.get(self, "secret_content")
+
+    @secret_content.setter
+    def secret_content(self, value: Optional[pulumi.Input['SecretSecretContentArgs']]):
+        pulumi.set(self, "secret_content", value)
+
+    @property
     @pulumi.getter(name="secretRules")
     def secret_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]]:
         """
@@ -193,8 +210,12 @@ class _SecretState:
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
+                 last_rotation_time: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 next_rotation_time: Optional[pulumi.Input[str]] = None,
+                 rotation_config: Optional[pulumi.Input['SecretRotationConfigArgs']] = None,
+                 rotation_status: Optional[pulumi.Input[str]] = None,
                  secret_content: Optional[pulumi.Input['SecretSecretContentArgs']] = None,
                  secret_name: Optional[pulumi.Input[str]] = None,
                  secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None,
@@ -210,9 +231,13 @@ class _SecretState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret.
+        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
+        :param pulumi.Input[str] last_rotation_time: A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the secret.
         :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
+        :param pulumi.Input[str] next_rotation_time: A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        :param pulumi.Input['SecretRotationConfigArgs'] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
+        :param pulumi.Input[str] rotation_status: Additional information about the status of the secret rotation
         :param pulumi.Input['SecretSecretContentArgs'] secret_content: (Updatable) The content of the secret and metadata to help identify it.
         :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         :param pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
@@ -238,10 +263,18 @@ class _SecretState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if key_id is not None:
             pulumi.set(__self__, "key_id", key_id)
+        if last_rotation_time is not None:
+            pulumi.set(__self__, "last_rotation_time", last_rotation_time)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
+        if next_rotation_time is not None:
+            pulumi.set(__self__, "next_rotation_time", next_rotation_time)
+        if rotation_config is not None:
+            pulumi.set(__self__, "rotation_config", rotation_config)
+        if rotation_status is not None:
+            pulumi.set(__self__, "rotation_status", rotation_status)
         if secret_content is not None:
             pulumi.set(__self__, "secret_content", secret_content)
         if secret_name is not None:
@@ -323,13 +356,25 @@ class _SecretState:
     @pulumi.getter(name="keyId")
     def key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the master encryption key that is used to encrypt the secret.
+        The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
     def key_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "key_id", value)
+
+    @property
+    @pulumi.getter(name="lastRotationTime")
+    def last_rotation_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "last_rotation_time")
+
+    @last_rotation_time.setter
+    def last_rotation_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_rotation_time", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -354,6 +399,42 @@ class _SecretState:
     @metadata.setter
     def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "metadata", value)
+
+    @property
+    @pulumi.getter(name="nextRotationTime")
+    def next_rotation_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "next_rotation_time")
+
+    @next_rotation_time.setter
+    def next_rotation_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "next_rotation_time", value)
+
+    @property
+    @pulumi.getter(name="rotationConfig")
+    def rotation_config(self) -> Optional[pulumi.Input['SecretRotationConfigArgs']]:
+        """
+        (Updatable) Defines the frequency of the rotation and the information about the target system
+        """
+        return pulumi.get(self, "rotation_config")
+
+    @rotation_config.setter
+    def rotation_config(self, value: Optional[pulumi.Input['SecretRotationConfigArgs']]):
+        pulumi.set(self, "rotation_config", value)
+
+    @property
+    @pulumi.getter(name="rotationStatus")
+    def rotation_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Additional information about the status of the secret rotation
+        """
+        return pulumi.get(self, "rotation_status")
+
+    @rotation_status.setter
+    def rotation_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "rotation_status", value)
 
     @property
     @pulumi.getter(name="secretContent")
@@ -467,6 +548,7 @@ class Secret(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 rotation_config: Optional[pulumi.Input[pulumi.InputType['SecretRotationConfigArgs']]] = None,
                  secret_content: Optional[pulumi.Input[pulumi.InputType['SecretSecretContentArgs']]] = None,
                  secret_name: Optional[pulumi.Input[str]] = None,
                  secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecretSecretRuleArgs']]]]] = None,
@@ -491,8 +573,9 @@ class Secret(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret.
+        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
+        :param pulumi.Input[pulumi.InputType['SecretRotationConfigArgs']] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
         :param pulumi.Input[pulumi.InputType['SecretSecretContentArgs']] secret_content: (Updatable) The content of the secret and metadata to help identify it.
         :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecretSecretRuleArgs']]]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
@@ -542,6 +625,7 @@ class Secret(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 rotation_config: Optional[pulumi.Input[pulumi.InputType['SecretRotationConfigArgs']]] = None,
                  secret_content: Optional[pulumi.Input[pulumi.InputType['SecretSecretContentArgs']]] = None,
                  secret_name: Optional[pulumi.Input[str]] = None,
                  secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecretSecretRuleArgs']]]]] = None,
@@ -565,8 +649,7 @@ class Secret(pulumi.CustomResource):
                 raise TypeError("Missing required property 'key_id'")
             __props__.__dict__["key_id"] = key_id
             __props__.__dict__["metadata"] = metadata
-            if secret_content is None and not opts.urn:
-                raise TypeError("Missing required property 'secret_content'")
+            __props__.__dict__["rotation_config"] = rotation_config
             __props__.__dict__["secret_content"] = secret_content
             if secret_name is None and not opts.urn:
                 raise TypeError("Missing required property 'secret_name'")
@@ -576,7 +659,10 @@ class Secret(pulumi.CustomResource):
                 raise TypeError("Missing required property 'vault_id'")
             __props__.__dict__["vault_id"] = vault_id
             __props__.__dict__["current_version_number"] = None
+            __props__.__dict__["last_rotation_time"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["next_rotation_time"] = None
+            __props__.__dict__["rotation_status"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_of_current_version_expiry"] = None
@@ -597,8 +683,12 @@ class Secret(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             key_id: Optional[pulumi.Input[str]] = None,
+            last_rotation_time: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            next_rotation_time: Optional[pulumi.Input[str]] = None,
+            rotation_config: Optional[pulumi.Input[pulumi.InputType['SecretRotationConfigArgs']]] = None,
+            rotation_status: Optional[pulumi.Input[str]] = None,
             secret_content: Optional[pulumi.Input[pulumi.InputType['SecretSecretContentArgs']]] = None,
             secret_name: Optional[pulumi.Input[str]] = None,
             secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecretSecretRuleArgs']]]]] = None,
@@ -619,9 +709,13 @@ class Secret(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret.
+        :param pulumi.Input[str] key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
+        :param pulumi.Input[str] last_rotation_time: A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the secret.
         :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
+        :param pulumi.Input[str] next_rotation_time: A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        :param pulumi.Input[pulumi.InputType['SecretRotationConfigArgs']] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
+        :param pulumi.Input[str] rotation_status: Additional information about the status of the secret rotation
         :param pulumi.Input[pulumi.InputType['SecretSecretContentArgs']] secret_content: (Updatable) The content of the secret and metadata to help identify it.
         :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecretSecretRuleArgs']]]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
@@ -645,8 +739,12 @@ class Secret(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["key_id"] = key_id
+        __props__.__dict__["last_rotation_time"] = last_rotation_time
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["metadata"] = metadata
+        __props__.__dict__["next_rotation_time"] = next_rotation_time
+        __props__.__dict__["rotation_config"] = rotation_config
+        __props__.__dict__["rotation_status"] = rotation_status
         __props__.__dict__["secret_content"] = secret_content
         __props__.__dict__["secret_name"] = secret_name
         __props__.__dict__["secret_rules"] = secret_rules
@@ -701,9 +799,17 @@ class Secret(pulumi.CustomResource):
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the master encryption key that is used to encrypt the secret.
+        The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         """
         return pulumi.get(self, "key_id")
+
+    @property
+    @pulumi.getter(name="lastRotationTime")
+    def last_rotation_time(self) -> pulumi.Output[str]:
+        """
+        A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "last_rotation_time")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -720,6 +826,30 @@ class Secret(pulumi.CustomResource):
         (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         """
         return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter(name="nextRotationTime")
+    def next_rotation_time(self) -> pulumi.Output[str]:
+        """
+        A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "next_rotation_time")
+
+    @property
+    @pulumi.getter(name="rotationConfig")
+    def rotation_config(self) -> pulumi.Output['outputs.SecretRotationConfig']:
+        """
+        (Updatable) Defines the frequency of the rotation and the information about the target system
+        """
+        return pulumi.get(self, "rotation_config")
+
+    @property
+    @pulumi.getter(name="rotationStatus")
+    def rotation_status(self) -> pulumi.Output[str]:
+        """
+        Additional information about the status of the secret rotation
+        """
+        return pulumi.get(self, "rotation_status")
 
     @property
     @pulumi.getter(name="secretContent")

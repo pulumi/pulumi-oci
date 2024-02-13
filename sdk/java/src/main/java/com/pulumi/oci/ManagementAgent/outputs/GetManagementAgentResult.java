@@ -5,6 +5,8 @@ package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentDataSourceList;
+import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentDataSourceSummaryList;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentManagementAgentProperty;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentPluginList;
 import java.lang.Boolean;
@@ -22,10 +24,16 @@ public final class GetManagementAgentResult {
      */
     private String availabilityStatus;
     /**
-     * @return Compartment Identifier
+     * @return Compartment owning this DataSource.
      * 
      */
     private String compartmentId;
+    /**
+     * @return list of dataSources associated with the agent
+     * 
+     */
+    private List<GetManagementAgentDataSourceList> dataSourceLists;
+    private List<GetManagementAgentDataSourceSummaryList> dataSourceSummaryLists;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -154,11 +162,21 @@ public final class GetManagementAgentResult {
         return this.availabilityStatus;
     }
     /**
-     * @return Compartment Identifier
+     * @return Compartment owning this DataSource.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return list of dataSources associated with the agent
+     * 
+     */
+    public List<GetManagementAgentDataSourceList> dataSourceLists() {
+        return this.dataSourceLists;
+    }
+    public List<GetManagementAgentDataSourceSummaryList> dataSourceSummaryLists() {
+        return this.dataSourceSummaryLists;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -342,6 +360,8 @@ public final class GetManagementAgentResult {
     public static final class Builder {
         private String availabilityStatus;
         private String compartmentId;
+        private List<GetManagementAgentDataSourceList> dataSourceLists;
+        private List<GetManagementAgentDataSourceSummaryList> dataSourceSummaryLists;
         private Map<String,Object> definedTags;
         private List<String> deployPluginsIds;
         private String displayName;
@@ -373,6 +393,8 @@ public final class GetManagementAgentResult {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityStatus = defaults.availabilityStatus;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.dataSourceLists = defaults.dataSourceLists;
+    	      this.dataSourceSummaryLists = defaults.dataSourceSummaryLists;
     	      this.definedTags = defaults.definedTags;
     	      this.deployPluginsIds = defaults.deployPluginsIds;
     	      this.displayName = defaults.displayName;
@@ -416,6 +438,28 @@ public final class GetManagementAgentResult {
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dataSourceLists(List<GetManagementAgentDataSourceList> dataSourceLists) {
+            if (dataSourceLists == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentResult", "dataSourceLists");
+            }
+            this.dataSourceLists = dataSourceLists;
+            return this;
+        }
+        public Builder dataSourceLists(GetManagementAgentDataSourceList... dataSourceLists) {
+            return dataSourceLists(List.of(dataSourceLists));
+        }
+        @CustomType.Setter
+        public Builder dataSourceSummaryLists(List<GetManagementAgentDataSourceSummaryList> dataSourceSummaryLists) {
+            if (dataSourceSummaryLists == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentResult", "dataSourceSummaryLists");
+            }
+            this.dataSourceSummaryLists = dataSourceSummaryLists;
+            return this;
+        }
+        public Builder dataSourceSummaryLists(GetManagementAgentDataSourceSummaryList... dataSourceSummaryLists) {
+            return dataSourceSummaryLists(List.of(dataSourceSummaryLists));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -638,6 +682,8 @@ public final class GetManagementAgentResult {
             final var _resultValue = new GetManagementAgentResult();
             _resultValue.availabilityStatus = availabilityStatus;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.dataSourceLists = dataSourceLists;
+            _resultValue.dataSourceSummaryLists = dataSourceSummaryLists;
             _resultValue.definedTags = definedTags;
             _resultValue.deployPluginsIds = deployPluginsIds;
             _resultValue.displayName = displayName;

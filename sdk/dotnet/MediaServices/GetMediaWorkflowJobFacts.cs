@@ -12,6 +12,7 @@ namespace Pulumi.Oci.MediaServices
     public static class GetMediaWorkflowJobFacts
     {
         /// <summary>
+        /// &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
         /// This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
         /// 
         /// Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
@@ -44,6 +45,7 @@ namespace Pulumi.Oci.MediaServices
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMediaWorkflowJobFactsResult>("oci:MediaServices/getMediaWorkflowJobFacts:getMediaWorkflowJobFacts", args ?? new GetMediaWorkflowJobFactsArgs(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
         /// This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
         /// 
         /// Internal API to get a point-in-time snapshot of a MediaWorkflowJob.

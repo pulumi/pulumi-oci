@@ -9,6 +9,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupP
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotMaintenance;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotSecureConnection;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -134,6 +135,11 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      * 
      */
     private Integer portX;
+    /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    private List<GetMysqlBackupsBackupDbSystemSnapshotSecureConnection> secureConnections;
     /**
      * @return The shape of the DB System instance used for backup.
      * 
@@ -308,6 +314,13 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
         return this.portX;
     }
     /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    public List<GetMysqlBackupsBackupDbSystemSnapshotSecureConnection> secureConnections() {
+        return this.secureConnections;
+    }
+    /**
      * @return The shape of the DB System instance used for backup.
      * 
      */
@@ -354,6 +367,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
         private String mysqlVersion;
         private Integer port;
         private Integer portX;
+        private List<GetMysqlBackupsBackupDbSystemSnapshotSecureConnection> secureConnections;
         private String shapeName;
         private String subnetId;
         public Builder() {}
@@ -382,6 +396,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
     	      this.mysqlVersion = defaults.mysqlVersion;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
         }
@@ -583,6 +598,17 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             return this;
         }
         @CustomType.Setter
+        public Builder secureConnections(List<GetMysqlBackupsBackupDbSystemSnapshotSecureConnection> secureConnections) {
+            if (secureConnections == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshot", "secureConnections");
+            }
+            this.secureConnections = secureConnections;
+            return this;
+        }
+        public Builder secureConnections(GetMysqlBackupsBackupDbSystemSnapshotSecureConnection... secureConnections) {
+            return secureConnections(List.of(secureConnections));
+        }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             if (shapeName == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshot", "shapeName");
@@ -623,6 +649,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             _resultValue.mysqlVersion = mysqlVersion;
             _resultValue.port = port;
             _resultValue.portX = portX;
+            _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;
             return _resultValue;

@@ -82,6 +82,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetReplicasReplicaReplicaOverrideResult> ReplicaOverrides;
         /// <summary>
+        /// Secure connection configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetReplicasReplicaSecureConnectionResult> SecureConnections;
+        /// <summary>
         /// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         /// </summary>
         public readonly string ShapeName;
@@ -134,6 +138,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             ImmutableArray<Outputs.GetReplicasReplicaReplicaOverrideResult> replicaOverrides,
 
+            ImmutableArray<Outputs.GetReplicasReplicaSecureConnectionResult> secureConnections,
+
             string shapeName,
 
             string state,
@@ -159,6 +165,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             Port = port;
             PortX = portX;
             ReplicaOverrides = replicaOverrides;
+            SecureConnections = secureConnections;
             ShapeName = shapeName;
             State = state;
             TimeCreated = timeCreated;

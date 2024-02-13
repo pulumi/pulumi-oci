@@ -161,6 +161,9 @@ namespace Pulumi.Oci.DatabaseMigration
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        [Output("manualDatabaseSubType")]
+        public Output<string> ManualDatabaseSubType { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         /// </summary>
@@ -339,6 +342,9 @@ namespace Pulumi.Oci.DatabaseMigration
             set => _freeformTags = value;
         }
 
+        [Input("manualDatabaseSubType")]
+        public Input<string>? ManualDatabaseSubType { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
@@ -472,6 +478,9 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("manualDatabaseSubType")]
+        public Input<string>? ManualDatabaseSubType { get; set; }
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;

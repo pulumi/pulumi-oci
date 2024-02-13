@@ -9,6 +9,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotMaintenance;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotSecureConnection;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -134,6 +135,11 @@ public final class GetMysqlBackupDbSystemSnapshot {
      * 
      */
     private Integer portX;
+    /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    private List<GetMysqlBackupDbSystemSnapshotSecureConnection> secureConnections;
     /**
      * @return The shape of the DB System instance used for backup.
      * 
@@ -308,6 +314,13 @@ public final class GetMysqlBackupDbSystemSnapshot {
         return this.portX;
     }
     /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    public List<GetMysqlBackupDbSystemSnapshotSecureConnection> secureConnections() {
+        return this.secureConnections;
+    }
+    /**
      * @return The shape of the DB System instance used for backup.
      * 
      */
@@ -354,6 +367,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
         private String mysqlVersion;
         private Integer port;
         private Integer portX;
+        private List<GetMysqlBackupDbSystemSnapshotSecureConnection> secureConnections;
         private String shapeName;
         private String subnetId;
         public Builder() {}
@@ -382,6 +396,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
     	      this.mysqlVersion = defaults.mysqlVersion;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
         }
@@ -583,6 +598,17 @@ public final class GetMysqlBackupDbSystemSnapshot {
             return this;
         }
         @CustomType.Setter
+        public Builder secureConnections(List<GetMysqlBackupDbSystemSnapshotSecureConnection> secureConnections) {
+            if (secureConnections == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "secureConnections");
+            }
+            this.secureConnections = secureConnections;
+            return this;
+        }
+        public Builder secureConnections(GetMysqlBackupDbSystemSnapshotSecureConnection... secureConnections) {
+            return secureConnections(List.of(secureConnections));
+        }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             if (shapeName == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "shapeName");
@@ -623,6 +649,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
             _resultValue.mysqlVersion = mysqlVersion;
             _resultValue.port = port;
             _resultValue.portX = portX;
+            _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;
             return _resultValue;

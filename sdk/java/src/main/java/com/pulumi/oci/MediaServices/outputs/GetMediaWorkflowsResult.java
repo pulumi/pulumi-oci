@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetMediaWorkflowsResult {
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     private @Nullable String compartmentId;
@@ -44,7 +44,7 @@ public final class GetMediaWorkflowsResult {
 
     private GetMediaWorkflowsResult() {}
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     public Optional<String> compartmentId() {

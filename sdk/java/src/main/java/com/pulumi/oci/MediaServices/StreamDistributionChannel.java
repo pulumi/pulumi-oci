@@ -9,9 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.MediaServices.StreamDistributionChannelArgs;
 import com.pulumi.oci.MediaServices.inputs.StreamDistributionChannelState;
+import com.pulumi.oci.MediaServices.outputs.StreamDistributionChannelLock;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -29,6 +32,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.MediaServices.StreamDistributionChannel;
  * import com.pulumi.oci.MediaServices.StreamDistributionChannelArgs;
+ * import com.pulumi.oci.MediaServices.inputs.StreamDistributionChannelLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -47,6 +51,13 @@ import javax.annotation.Nullable;
  *             .displayName(var_.stream_distribution_channel_display_name())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .locks(StreamDistributionChannelLockArgs.builder()
+ *                 .compartmentId(var_.compartment_id())
+ *                 .type(var_.stream_distribution_channel_locks_type())
+ *                 .message(var_.stream_distribution_channel_locks_message())
+ *                 .relatedResourceId(oci_usage_proxy_resource.test_resource().id())
+ *                 .timeCreated(var_.stream_distribution_channel_locks_time_created())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -65,14 +76,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:MediaServices/streamDistributionChannel:StreamDistributionChannel")
 public class StreamDistributionChannel extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier.
+     * @return (Updatable) The compartment ID of the lock.
      * 
      */
     public Output<String> compartmentId() {
@@ -123,9 +134,6 @@ public class StreamDistributionChannel extends com.pulumi.resources.CustomResour
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
@@ -133,12 +141,29 @@ public class StreamDistributionChannel extends com.pulumi.resources.CustomResour
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,StreamDistributionChannelLock.class}, tree="[0,1]")
+    private Output<List<StreamDistributionChannelLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<StreamDistributionChannelLock>> locks() {
+        return this.locks;
     }
     /**
      * The current state of the Stream Distribution Channel.
@@ -169,14 +194,14 @@ public class StreamDistributionChannel extends com.pulumi.resources.CustomResour
         return this.systemTags;
     }
     /**
-     * The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+     * @return When the lock was created.
      * 
      */
     public Output<String> timeCreated() {

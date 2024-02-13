@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['StreamDistributionChannelArgs', 'StreamDistributionChannel']
 
@@ -17,17 +19,16 @@ class StreamDistributionChannelArgs:
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['StreamDistributionChannelLockArgs']]]] = None):
         """
         The set of arguments for constructing a StreamDistributionChannel resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[str] display_name: (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['StreamDistributionChannelLockArgs']]] locks: Locks associated with this resource.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -35,12 +36,16 @@ class StreamDistributionChannelArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Compartment Identifier.
+        (Updatable) The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -76,17 +81,34 @@ class StreamDistributionChannelArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StreamDistributionChannelLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StreamDistributionChannelLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
 
 @pulumi.input_type
@@ -97,24 +119,23 @@ class _StreamDistributionChannelState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['StreamDistributionChannelLockArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering StreamDistributionChannel resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
         :param pulumi.Input[str] domain_name: Unique domain name of the Distribution Channel.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['StreamDistributionChannelLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] state: The current state of the Stream Distribution Channel.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_created: When the lock was created.
         :param pulumi.Input[str] time_updated: The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
         """
         if compartment_id is not None:
@@ -127,6 +148,10 @@ class _StreamDistributionChannelState:
             pulumi.set(__self__, "domain_name", domain_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -140,7 +165,7 @@ class _StreamDistributionChannelState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment Identifier.
+        (Updatable) The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -188,17 +213,34 @@ class _StreamDistributionChannelState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StreamDistributionChannelLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StreamDistributionChannelLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter
@@ -228,7 +270,7 @@ class _StreamDistributionChannelState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+        When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -258,6 +300,8 @@ class StreamDistributionChannel(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamDistributionChannelLockArgs']]]]] = None,
                  __props__=None):
         """
         This resource provides the Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
@@ -278,7 +322,14 @@ class StreamDistributionChannel(pulumi.CustomResource):
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            locks=[oci.media_services.StreamDistributionChannelLockArgs(
+                compartment_id=var["compartment_id"],
+                type=var["stream_distribution_channel_locks_type"],
+                message=var["stream_distribution_channel_locks_message"],
+                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+                time_created=var["stream_distribution_channel_locks_time_created"],
+            )])
         ```
 
         ## Import
@@ -291,14 +342,11 @@ class StreamDistributionChannel(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamDistributionChannelLockArgs']]]] locks: Locks associated with this resource.
         """
         ...
     @overload
@@ -325,7 +373,14 @@ class StreamDistributionChannel(pulumi.CustomResource):
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            locks=[oci.media_services.StreamDistributionChannelLockArgs(
+                compartment_id=var["compartment_id"],
+                type=var["stream_distribution_channel_locks_type"],
+                message=var["stream_distribution_channel_locks_message"],
+                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+                time_created=var["stream_distribution_channel_locks_time_created"],
+            )])
         ```
 
         ## Import
@@ -355,6 +410,8 @@ class StreamDistributionChannel(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamDistributionChannelLockArgs']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -372,6 +429,8 @@ class StreamDistributionChannel(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["domain_name"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -392,6 +451,8 @@ class StreamDistributionChannel(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             domain_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamDistributionChannelLockArgs']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -403,18 +464,15 @@ class StreamDistributionChannel(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
         :param pulumi.Input[str] domain_name: Unique domain name of the Distribution Channel.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamDistributionChannelLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] state: The current state of the Stream Distribution Channel.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_created: When the lock was created.
         :param pulumi.Input[str] time_updated: The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -426,6 +484,8 @@ class StreamDistributionChannel(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["domain_name"] = domain_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_lock_override"] = is_lock_override
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -436,7 +496,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Compartment Identifier.
+        (Updatable) The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -468,13 +528,22 @@ class StreamDistributionChannel(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.StreamDistributionChannelLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
@@ -496,7 +565,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+        When the lock was created.
         """
         return pulumi.get(self, "time_created")
 

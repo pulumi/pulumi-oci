@@ -163,6 +163,10 @@ export interface GetMysqlDbSystemResult {
      */
     readonly portX: number;
     /**
+     * Secure connection configuration details.
+     */
+    readonly secureConnections: outputs.Mysql.GetMysqlDbSystemSecureConnection[];
+    /**
      * The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      */
     readonly shapeName: string;

@@ -68,9 +68,13 @@ export class Secret extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The OCID of the master encryption key that is used to encrypt the secret.
+     * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
     public readonly keyId!: pulumi.Output<string>;
+    /**
+     * A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     */
+    public /*out*/ readonly lastRotationTime!: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state of the secret.
      */
@@ -79,6 +83,18 @@ export class Secret extends pulumi.CustomResource {
      * (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      */
     public readonly metadata!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     */
+    public /*out*/ readonly nextRotationTime!: pulumi.Output<string>;
+    /**
+     * (Updatable) Defines the frequency of the rotation and the information about the target system
+     */
+    public readonly rotationConfig!: pulumi.Output<outputs.Vault.SecretRotationConfig>;
+    /**
+     * Additional information about the status of the secret rotation
+     */
+    public /*out*/ readonly rotationStatus!: pulumi.Output<string>;
     /**
      * (Updatable) The content of the secret and metadata to help identify it.
      */
@@ -135,8 +151,12 @@ export class Secret extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["keyId"] = state ? state.keyId : undefined;
+            resourceInputs["lastRotationTime"] = state ? state.lastRotationTime : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["metadata"] = state ? state.metadata : undefined;
+            resourceInputs["nextRotationTime"] = state ? state.nextRotationTime : undefined;
+            resourceInputs["rotationConfig"] = state ? state.rotationConfig : undefined;
+            resourceInputs["rotationStatus"] = state ? state.rotationStatus : undefined;
             resourceInputs["secretContent"] = state ? state.secretContent : undefined;
             resourceInputs["secretName"] = state ? state.secretName : undefined;
             resourceInputs["secretRules"] = state ? state.secretRules : undefined;
@@ -153,9 +173,6 @@ export class Secret extends pulumi.CustomResource {
             if ((!args || args.keyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'keyId'");
             }
-            if ((!args || args.secretContent === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'secretContent'");
-            }
             if ((!args || args.secretName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'secretName'");
             }
@@ -168,12 +185,16 @@ export class Secret extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["keyId"] = args ? args.keyId : undefined;
             resourceInputs["metadata"] = args ? args.metadata : undefined;
+            resourceInputs["rotationConfig"] = args ? args.rotationConfig : undefined;
             resourceInputs["secretContent"] = args ? args.secretContent : undefined;
             resourceInputs["secretName"] = args ? args.secretName : undefined;
             resourceInputs["secretRules"] = args ? args.secretRules : undefined;
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
             resourceInputs["currentVersionNumber"] = undefined /*out*/;
+            resourceInputs["lastRotationTime"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["nextRotationTime"] = undefined /*out*/;
+            resourceInputs["rotationStatus"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeOfCurrentVersionExpiry"] = undefined /*out*/;
@@ -209,9 +230,13 @@ export interface SecretState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The OCID of the master encryption key that is used to encrypt the secret.
+     * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
     keyId?: pulumi.Input<string>;
+    /**
+     * A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     */
+    lastRotationTime?: pulumi.Input<string>;
     /**
      * Additional information about the current lifecycle state of the secret.
      */
@@ -220,6 +245,18 @@ export interface SecretState {
      * (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      */
     metadata?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     */
+    nextRotationTime?: pulumi.Input<string>;
+    /**
+     * (Updatable) Defines the frequency of the rotation and the information about the target system
+     */
+    rotationConfig?: pulumi.Input<inputs.Vault.SecretRotationConfig>;
+    /**
+     * Additional information about the status of the secret rotation
+     */
+    rotationStatus?: pulumi.Input<string>;
     /**
      * (Updatable) The content of the secret and metadata to help identify it.
      */
@@ -279,7 +316,7 @@ export interface SecretArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The OCID of the master encryption key that is used to encrypt the secret.
+     * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
     keyId: pulumi.Input<string>;
     /**
@@ -287,9 +324,13 @@ export interface SecretArgs {
      */
     metadata?: pulumi.Input<{[key: string]: any}>;
     /**
+     * (Updatable) Defines the frequency of the rotation and the information about the target system
+     */
+    rotationConfig?: pulumi.Input<inputs.Vault.SecretRotationConfig>;
+    /**
      * (Updatable) The content of the secret and metadata to help identify it.
      */
-    secretContent: pulumi.Input<inputs.Vault.SecretSecretContent>;
+    secretContent?: pulumi.Input<inputs.Vault.SecretSecretContent>;
     /**
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */

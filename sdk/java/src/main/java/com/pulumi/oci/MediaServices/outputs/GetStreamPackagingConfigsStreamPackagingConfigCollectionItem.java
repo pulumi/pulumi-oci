@@ -6,6 +6,8 @@ package com.pulumi.oci.MediaServices.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption;
+import com.pulumi.oci.MediaServices.outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -16,7 +18,7 @@ import java.util.Objects;
 @CustomType
 public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItem {
     /**
-     * @return Compartment Identifier
+     * @return The compartment ID of the lock.
      * 
      */
     private String compartmentId;
@@ -50,6 +52,12 @@ public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItem 
      * 
      */
     private String id;
+    private Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock> locks;
     /**
      * @return The duration in seconds for each fragment.
      * 
@@ -83,7 +91,7 @@ public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItem 
 
     private GetStreamPackagingConfigsStreamPackagingConfigCollectionItem() {}
     /**
-     * @return Compartment Identifier
+     * @return The compartment ID of the lock.
      * 
      */
     public String compartmentId() {
@@ -130,6 +138,16 @@ public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItem 
      */
     public String id() {
         return this.id;
+    }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock> locks() {
+        return this.locks;
     }
     /**
      * @return The duration in seconds for each fragment.
@@ -190,6 +208,8 @@ public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItem 
         private List<GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption> encryptions;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock> locks;
         private Integer segmentTimeInSeconds;
         private String state;
         private String streamPackagingFormat;
@@ -206,6 +226,8 @@ public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItem 
     	      this.encryptions = defaults.encryptions;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.segmentTimeInSeconds = defaults.segmentTimeInSeconds;
     	      this.state = defaults.state;
     	      this.streamPackagingFormat = defaults.streamPackagingFormat;
@@ -274,6 +296,25 @@ public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItem 
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetStreamPackagingConfigsStreamPackagingConfigCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetStreamPackagingConfigsStreamPackagingConfigCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder segmentTimeInSeconds(Integer segmentTimeInSeconds) {
             if (segmentTimeInSeconds == null) {
               throw new MissingRequiredPropertyException("GetStreamPackagingConfigsStreamPackagingConfigCollectionItem", "segmentTimeInSeconds");
@@ -330,6 +371,8 @@ public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItem 
             _resultValue.encryptions = encryptions;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
             _resultValue.segmentTimeInSeconds = segmentTimeInSeconds;
             _resultValue.state = state;
             _resultValue.streamPackagingFormat = streamPackagingFormat;

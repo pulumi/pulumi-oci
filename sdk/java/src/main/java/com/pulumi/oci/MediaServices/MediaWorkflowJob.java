@@ -9,9 +9,11 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.MediaServices.MediaWorkflowJobArgs;
 import com.pulumi.oci.MediaServices.inputs.MediaWorkflowJobState;
+import com.pulumi.oci.MediaServices.outputs.MediaWorkflowJobLock;
 import com.pulumi.oci.MediaServices.outputs.MediaWorkflowJobOutput;
 import com.pulumi.oci.MediaServices.outputs.MediaWorkflowJobTaskLifecycleState;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -32,6 +34,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.MediaServices.MediaWorkflowJob;
  * import com.pulumi.oci.MediaServices.MediaWorkflowJobArgs;
+ * import com.pulumi.oci.MediaServices.inputs.MediaWorkflowJobLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -51,6 +54,13 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .displayName(var_.media_workflow_job_display_name())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .locks(MediaWorkflowJobLockArgs.builder()
+ *                 .compartmentId(var_.compartment_id())
+ *                 .type(var_.media_workflow_job_locks_type())
+ *                 .message(var_.media_workflow_job_locks_message())
+ *                 .relatedResourceId(oci_usage_proxy_resource.test_resource().id())
+ *                 .timeCreated(var_.media_workflow_job_locks_time_created())
+ *                 .build())
  *             .mediaWorkflowConfigurationIds(var_.media_workflow_job_media_workflow_configuration_ids())
  *             .mediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
  *             .mediaWorkflowName(oci_media_services_media_workflow.test_media_workflow().name())
@@ -73,14 +83,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob")
 public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) ID of the compartment in which the job should be created.
+     * (Updatable) The compartment ID of the lock.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) ID of the compartment in which the job should be created.
+     * @return (Updatable) The compartment ID of the lock.
      * 
      */
     public Output<String> compartmentId() {
@@ -128,6 +138,12 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * The lifecycle details of MediaWorkflowJob task.
      * 
@@ -141,6 +157,20 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,MediaWorkflowJobLock.class}, tree="[0,1]")
+    private Output<List<MediaWorkflowJobLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<MediaWorkflowJobLock>> locks() {
+        return this.locks;
     }
     /**
      * Configurations to be applied to this run of the workflow.
@@ -269,14 +299,14 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
         return this.taskLifecycleStates;
     }
     /**
-     * Creation time of the job. An RFC3339 formatted datetime string.
+     * When the lock was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return Creation time of the job. An RFC3339 formatted datetime string.
+     * @return When the lock was created.
      * 
      */
     public Output<String> timeCreated() {

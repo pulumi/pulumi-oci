@@ -57,12 +57,6 @@ __all__ = [
     'MigrationGoldenGateServiceDetailsTargetDbCredentials',
     'MigrationIncludeObject',
     'MigrationVaultDetails',
-    'GetAgentImagesAgentImageCollectionResult',
-    'GetAgentImagesAgentImageCollectionItemResult',
-    'GetAgentImagesFilterResult',
-    'GetAgentsAgentCollectionResult',
-    'GetAgentsAgentCollectionItemResult',
-    'GetAgentsFilterResult',
     'GetConnectionAdminCredentialResult',
     'GetConnectionConnectDescriptorResult',
     'GetConnectionPrivateEndpointResult',
@@ -2705,276 +2699,6 @@ class MigrationVaultDetails(dict):
 
 
 @pulumi.output_type
-class GetAgentImagesAgentImageCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetAgentImagesAgentImageCollectionItemResult']):
-        """
-        :param Sequence['GetAgentImagesAgentImageCollectionItemArgs'] items: Items in collection.
-        """
-        pulumi.set(__self__, "items", items)
-
-    @property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAgentImagesAgentImageCollectionItemResult']:
-        """
-        Items in collection.
-        """
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetAgentImagesAgentImageCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 download_url: str,
-                 version: str):
-        """
-        :param str download_url: URL to download Agent Image of the ODMS Agent.
-        :param str version: ODMS Agent Image version.
-        """
-        pulumi.set(__self__, "download_url", download_url)
-        pulumi.set(__self__, "version", version)
-
-    @property
-    @pulumi.getter(name="downloadUrl")
-    def download_url(self) -> str:
-        """
-        URL to download Agent Image of the ODMS Agent.
-        """
-        return pulumi.get(self, "download_url")
-
-    @property
-    @pulumi.getter
-    def version(self) -> str:
-        """
-        ODMS Agent Image version.
-        """
-        return pulumi.get(self, "version")
-
-
-@pulumi.output_type
-class GetAgentImagesFilterResult(dict):
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetAgentsAgentCollectionResult(dict):
-    def __init__(__self__, *,
-                 items: Sequence['outputs.GetAgentsAgentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
-
-    @property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAgentsAgentCollectionItemResult']:
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetAgentsAgentCollectionItemResult(dict):
-    def __init__(__self__, *,
-                 agent_id: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 public_key: str,
-                 state: str,
-                 stream_id: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 version: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The OCID of the resource
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str public_key: ODMS Agent public key.
-        :param str state: The current state of the Database Migration Deployment.
-        :param str stream_id: The OCID of the Stream
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the Agent was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time of the last Agent details update. An RFC3339 formatted datetime string.
-        :param str version: ODMS Agent version
-        """
-        pulumi.set(__self__, "agent_id", agent_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "public_key", public_key)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "stream_id", stream_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "version", version)
-
-    @property
-    @pulumi.getter(name="agentId")
-    def agent_id(self) -> str:
-        return pulumi.get(self, "agent_id")
-
-    @property
-    @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
-        return pulumi.get(self, "compartment_id")
-
-    @property
-    @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
-        return pulumi.get(self, "defined_tags")
-
-    @property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
-        return pulumi.get(self, "display_name")
-
-    @property
-    @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
-        return pulumi.get(self, "freeform_tags")
-
-    @property
-    @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource
-        """
-        return pulumi.get(self, "id")
-
-    @property
-    @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
-        return pulumi.get(self, "lifecycle_details")
-
-    @property
-    @pulumi.getter(name="publicKey")
-    def public_key(self) -> str:
-        """
-        ODMS Agent public key.
-        """
-        return pulumi.get(self, "public_key")
-
-    @property
-    @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Database Migration Deployment.
-        """
-        return pulumi.get(self, "state")
-
-    @property
-    @pulumi.getter(name="streamId")
-    def stream_id(self) -> str:
-        """
-        The OCID of the Stream
-        """
-        return pulumi.get(self, "stream_id")
-
-    @property
-    @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        return pulumi.get(self, "system_tags")
-
-    @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Agent was created. An RFC3339 formatted datetime string.
-        """
-        return pulumi.get(self, "time_created")
-
-    @property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time of the last Agent details update. An RFC3339 formatted datetime string.
-        """
-        return pulumi.get(self, "time_updated")
-
-    @property
-    @pulumi.getter
-    def version(self) -> str:
-        """
-        ODMS Agent version
-        """
-        return pulumi.get(self, "version")
-
-
-@pulumi.output_type
-class GetAgentsFilterResult(dict):
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
 class GetConnectionAdminCredentialResult(dict):
     def __init__(__self__, *,
                  password: str,
@@ -3240,6 +2964,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  lifecycle_details: str,
+                 manual_database_sub_type: str,
                  nsg_ids: Sequence[str],
                  private_endpoints: Sequence['outputs.GetConnectionsConnectionCollectionItemPrivateEndpointResult'],
                  replication_credentials: Sequence['outputs.GetConnectionsConnectionCollectionItemReplicationCredentialResult'],
@@ -3286,6 +3011,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "manual_database_sub_type", manual_database_sub_type)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_endpoints", private_endpoints)
         pulumi.set(__self__, "replication_credentials", replication_credentials)
@@ -3393,6 +3119,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="manualDatabaseSubType")
+    def manual_database_sub_type(self) -> str:
+        return pulumi.get(self, "manual_database_sub_type")
 
     @property
     @pulumi.getter(name="nsgIds")

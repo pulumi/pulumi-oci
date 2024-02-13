@@ -22,13 +22,19 @@ class GetManagementAgentResult:
     """
     A collection of values returned by getManagementAgent.
     """
-    def __init__(__self__, availability_status=None, compartment_id=None, defined_tags=None, deploy_plugins_ids=None, display_name=None, freeform_tags=None, host=None, host_id=None, id=None, install_key_id=None, install_path=None, install_type=None, is_agent_auto_upgradable=None, is_customer_deployed=None, lifecycle_details=None, managed_agent_id=None, management_agent_id=None, management_agent_properties=None, platform_name=None, platform_type=None, platform_version=None, plugin_lists=None, resource_artifact_version=None, state=None, time_created=None, time_last_heartbeat=None, time_updated=None, version=None):
+    def __init__(__self__, availability_status=None, compartment_id=None, data_source_lists=None, data_source_summary_lists=None, defined_tags=None, deploy_plugins_ids=None, display_name=None, freeform_tags=None, host=None, host_id=None, id=None, install_key_id=None, install_path=None, install_type=None, is_agent_auto_upgradable=None, is_customer_deployed=None, lifecycle_details=None, managed_agent_id=None, management_agent_id=None, management_agent_properties=None, platform_name=None, platform_type=None, platform_version=None, plugin_lists=None, resource_artifact_version=None, state=None, time_created=None, time_last_heartbeat=None, time_updated=None, version=None):
         if availability_status and not isinstance(availability_status, str):
             raise TypeError("Expected argument 'availability_status' to be a str")
         pulumi.set(__self__, "availability_status", availability_status)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if data_source_lists and not isinstance(data_source_lists, list):
+            raise TypeError("Expected argument 'data_source_lists' to be a list")
+        pulumi.set(__self__, "data_source_lists", data_source_lists)
+        if data_source_summary_lists and not isinstance(data_source_summary_lists, list):
+            raise TypeError("Expected argument 'data_source_summary_lists' to be a list")
+        pulumi.set(__self__, "data_source_summary_lists", data_source_summary_lists)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -120,9 +126,22 @@ class GetManagementAgentResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier
+        Compartment owning this DataSource.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dataSourceLists")
+    def data_source_lists(self) -> Sequence['outputs.GetManagementAgentDataSourceListResult']:
+        """
+        list of dataSources associated with the agent
+        """
+        return pulumi.get(self, "data_source_lists")
+
+    @property
+    @pulumi.getter(name="dataSourceSummaryLists")
+    def data_source_summary_lists(self) -> Sequence['outputs.GetManagementAgentDataSourceSummaryListResult']:
+        return pulumi.get(self, "data_source_summary_lists")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -332,6 +351,8 @@ class AwaitableGetManagementAgentResult(GetManagementAgentResult):
         return GetManagementAgentResult(
             availability_status=self.availability_status,
             compartment_id=self.compartment_id,
+            data_source_lists=self.data_source_lists,
+            data_source_summary_lists=self.data_source_summary_lists,
             defined_tags=self.defined_tags,
             deploy_plugins_ids=self.deploy_plugins_ids,
             display_name=self.display_name,
@@ -387,6 +408,8 @@ def get_management_agent(management_agent_id: Optional[str] = None,
     return AwaitableGetManagementAgentResult(
         availability_status=pulumi.get(__ret__, 'availability_status'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        data_source_lists=pulumi.get(__ret__, 'data_source_lists'),
+        data_source_summary_lists=pulumi.get(__ret__, 'data_source_summary_lists'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         deploy_plugins_ids=pulumi.get(__ret__, 'deploy_plugins_ids'),
         display_name=pulumi.get(__ret__, 'display_name'),

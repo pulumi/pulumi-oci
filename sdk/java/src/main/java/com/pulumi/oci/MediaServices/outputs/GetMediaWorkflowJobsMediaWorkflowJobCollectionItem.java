@@ -5,8 +5,10 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -40,11 +42,17 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return The lifecycle details of MediaWorkflowJob task.
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock> locks;
     /**
      * @return Configurations to be applied to this run of the workflow.
      * 
@@ -144,12 +152,22 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return The lifecycle details of MediaWorkflowJob task.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock> locks() {
+        return this.locks;
     }
     /**
      * @return Configurations to be applied to this run of the workflow.
@@ -256,7 +274,9 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock> locks;
         private List<String> mediaWorkflowConfigurationIds;
         private String mediaWorkflowId;
         private String mediaWorkflowName;
@@ -279,7 +299,9 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.mediaWorkflowConfigurationIds = defaults.mediaWorkflowConfigurationIds;
     	      this.mediaWorkflowId = defaults.mediaWorkflowId;
     	      this.mediaWorkflowName = defaults.mediaWorkflowName;
@@ -337,12 +359,31 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowJobsMediaWorkflowJobCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder mediaWorkflowConfigurationIds(List<String> mediaWorkflowConfigurationIds) {
@@ -472,7 +513,9 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
             _resultValue.mediaWorkflowId = mediaWorkflowId;
             _resultValue.mediaWorkflowName = mediaWorkflowName;

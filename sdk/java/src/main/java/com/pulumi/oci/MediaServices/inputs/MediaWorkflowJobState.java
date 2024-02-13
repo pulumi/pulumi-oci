@@ -5,8 +5,10 @@ package com.pulumi.oci.MediaServices.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.MediaServices.inputs.MediaWorkflowJobLockArgs;
 import com.pulumi.oci.MediaServices.inputs.MediaWorkflowJobOutputArgs;
 import com.pulumi.oci.MediaServices.inputs.MediaWorkflowJobTaskLifecycleStateArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -21,14 +23,14 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
     public static final MediaWorkflowJobState Empty = new MediaWorkflowJobState();
 
     /**
-     * (Updatable) ID of the compartment in which the job should be created.
+     * (Updatable) The compartment ID of the lock.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) ID of the compartment in which the job should be created.
+     * @return (Updatable) The compartment ID of the lock.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -80,6 +82,13 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * The lifecycle details of MediaWorkflowJob task.
      * 
@@ -93,6 +102,21 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<MediaWorkflowJobLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<MediaWorkflowJobLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -231,14 +255,14 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Creation time of the job. An RFC3339 formatted datetime string.
+     * When the lock was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return Creation time of the job. An RFC3339 formatted datetime string.
+     * @return When the lock was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -318,7 +342,9 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.mediaWorkflowConfigurationIds = $.mediaWorkflowConfigurationIds;
         this.mediaWorkflowId = $.mediaWorkflowId;
         this.mediaWorkflowName = $.mediaWorkflowName;
@@ -354,7 +380,7 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) ID of the compartment in which the job should be created.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -365,7 +391,7 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) ID of the compartment in which the job should be created.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -437,6 +463,15 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
             return freeformTags(Output.of(freeformTags));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param lifecycleDetails The lifecycle details of MediaWorkflowJob task.
          * 
@@ -456,6 +491,37 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<MediaWorkflowJobLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<MediaWorkflowJobLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(MediaWorkflowJobLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**
@@ -678,7 +744,7 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeCreated Creation time of the job. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 
@@ -689,7 +755,7 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeCreated Creation time of the job. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 

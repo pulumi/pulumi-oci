@@ -16,9 +16,9 @@ public final class SecretSecretContent {
      * @return (Updatable) The base64-encoded content of the secret.
      * 
      */
-    private String content;
+    private @Nullable String content;
     /**
-     * @return (Updatable) content type . Example `BASE64` .
+     * @return (Updatable) The base64-encoded content of the secret.
      * 
      */
     private String contentType;
@@ -28,7 +28,7 @@ public final class SecretSecretContent {
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
+     * @return (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
      * 
      */
     private @Nullable String stage;
@@ -38,11 +38,11 @@ public final class SecretSecretContent {
      * @return (Updatable) The base64-encoded content of the secret.
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     /**
-     * @return (Updatable) content type . Example `BASE64` .
+     * @return (Updatable) The base64-encoded content of the secret.
      * 
      */
     public String contentType() {
@@ -56,7 +56,7 @@ public final class SecretSecretContent {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
+     * @return (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
      * 
      */
     public Optional<String> stage() {
@@ -72,7 +72,7 @@ public final class SecretSecretContent {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String content;
+        private @Nullable String content;
         private String contentType;
         private @Nullable String name;
         private @Nullable String stage;
@@ -86,10 +86,8 @@ public final class SecretSecretContent {
         }
 
         @CustomType.Setter
-        public Builder content(String content) {
-            if (content == null) {
-              throw new MissingRequiredPropertyException("SecretSecretContent", "content");
-            }
+        public Builder content(@Nullable String content) {
+
             this.content = content;
             return this;
         }

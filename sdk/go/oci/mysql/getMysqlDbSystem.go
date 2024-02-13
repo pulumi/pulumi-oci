@@ -118,6 +118,8 @@ type LookupMysqlDbSystemResult struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// Secure connection configuration details.
+	SecureConnections []GetMysqlDbSystemSecureConnection `pulumi:"secureConnections"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
 	ShapeName    string `pulumi:"shapeName"`
 	ShutdownType string `pulumi:"shutdownType"`
@@ -324,6 +326,11 @@ func (o LookupMysqlDbSystemResultOutput) Port() pulumi.IntOutput {
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 func (o LookupMysqlDbSystemResultOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// Secure connection configuration details.
+func (o LookupMysqlDbSystemResultOutput) SecureConnections() GetMysqlDbSystemSecureConnectionArrayOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemSecureConnection { return v.SecureConnections }).(GetMysqlDbSystemSecureConnectionArrayOutput)
 }
 
 // The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.

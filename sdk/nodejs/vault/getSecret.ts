@@ -69,9 +69,13 @@ export interface GetSecretResult {
      */
     readonly id: string;
     /**
-     * The OCID of the master encryption key that is used to encrypt the secret.
+     * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
     readonly keyId: string;
+    /**
+     * A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     */
+    readonly lastRotationTime: string;
     /**
      * Additional information about the current lifecycle state of the secret.
      */
@@ -80,6 +84,18 @@ export interface GetSecretResult {
      * Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      */
     readonly metadata: {[key: string]: any};
+    /**
+     * A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     */
+    readonly nextRotationTime: string;
+    /**
+     * Defines the frequency of the rotation and the information about the target system
+     */
+    readonly rotationConfigs: outputs.Vault.GetSecretRotationConfig[];
+    /**
+     * Additional information about the status of the secret rotation
+     */
+    readonly rotationStatus: string;
     readonly secretContents: outputs.Vault.GetSecretSecretContent[];
     readonly secretId: string;
     /**

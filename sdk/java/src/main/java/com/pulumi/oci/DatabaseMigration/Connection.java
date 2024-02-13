@@ -268,6 +268,12 @@ public class Connection extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    @Export(name="manualDatabaseSubType", refs={String.class}, tree="[0]")
+    private Output<String> manualDatabaseSubType;
+
+    public Output<String> manualDatabaseSubType() {
+        return this.manualDatabaseSubType;
+    }
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      * 

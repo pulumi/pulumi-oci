@@ -58,7 +58,7 @@ type LookupMediaWorkflowJobArgs struct {
 
 // A collection of values returned by getMediaWorkflowJob.
 type LookupMediaWorkflowJobResult struct {
-	// Compartment Identifier.
+	// The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -67,9 +67,12 @@ type LookupMediaWorkflowJobResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The ID associated with the job output.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// The lifecycle details of MediaWorkflowJob task.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetMediaWorkflowJobLock `pulumi:"locks"`
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds []string `pulumi:"mediaWorkflowConfigurationIds"`
 	// The workflow to execute.
@@ -137,7 +140,7 @@ func (o LookupMediaWorkflowJobResultOutput) ToLookupMediaWorkflowJobResultOutput
 	return o
 }
 
-// Compartment Identifier.
+// The compartment ID of the lock.
 func (o LookupMediaWorkflowJobResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -162,9 +165,18 @@ func (o LookupMediaWorkflowJobResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o LookupMediaWorkflowJobResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // The lifecycle details of MediaWorkflowJob task.
 func (o LookupMediaWorkflowJobResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupMediaWorkflowJobResultOutput) Locks() GetMediaWorkflowJobLockArrayOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) []GetMediaWorkflowJobLock { return v.Locks }).(GetMediaWorkflowJobLockArrayOutput)
 }
 
 // Configurations to be applied to this run of the workflow.

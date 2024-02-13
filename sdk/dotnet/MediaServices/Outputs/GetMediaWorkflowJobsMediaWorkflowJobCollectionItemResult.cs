@@ -33,10 +33,15 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// unique MediaWorkflowJob identifier
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// The lifecycle details of MediaWorkflowJob task.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockResult> Locks;
         /// <summary>
         /// Configurations to be applied to this run of the workflow.
         /// </summary>
@@ -100,7 +105,11 @@ namespace Pulumi.Oci.MediaServices.Outputs
 
             string id,
 
+            bool isLockOverride,
+
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockResult> locks,
 
             ImmutableArray<string> mediaWorkflowConfigurationIds,
 
@@ -135,7 +144,9 @@ namespace Pulumi.Oci.MediaServices.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             MediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
             MediaWorkflowId = mediaWorkflowId;
             MediaWorkflowName = mediaWorkflowName;

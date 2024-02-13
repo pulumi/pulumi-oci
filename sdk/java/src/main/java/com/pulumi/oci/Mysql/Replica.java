@@ -10,11 +10,13 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Mysql.ReplicaArgs;
 import com.pulumi.oci.Mysql.inputs.ReplicaState;
 import com.pulumi.oci.Mysql.outputs.ReplicaReplicaOverrides;
+import com.pulumi.oci.Mysql.outputs.ReplicaSecureConnection;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -298,6 +300,20 @@ public class Replica extends com.pulumi.resources.CustomResource {
      */
     public Output<ReplicaReplicaOverrides> replicaOverrides() {
         return this.replicaOverrides;
+    }
+    /**
+     * Secure connection configuration details.
+     * 
+     */
+    @Export(name="secureConnections", refs={List.class,ReplicaSecureConnection.class}, tree="[0,1]")
+    private Output<List<ReplicaSecureConnection>> secureConnections;
+
+    /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    public Output<List<ReplicaSecureConnection>> secureConnections() {
+        return this.secureConnections;
     }
     /**
      * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.

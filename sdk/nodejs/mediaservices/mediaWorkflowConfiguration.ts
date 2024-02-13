@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,6 +27,13 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     locks: [{
+ *         compartmentId: _var.compartment_id,
+ *         type: _var.media_workflow_configuration_locks_type,
+ *         message: _var.media_workflow_configuration_locks_message,
+ *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
+ *         timeCreated: _var.media_workflow_configuration_locks_time_created,
+ *     }],
  * });
  * ```
  *
@@ -65,7 +74,7 @@ export class MediaWorkflowConfiguration extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -80,10 +89,15 @@ export class MediaWorkflowConfiguration extends pulumi.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.MediaServices.MediaWorkflowConfigurationLock[]>;
     /**
      * (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue 
      *
@@ -101,7 +115,7 @@ export class MediaWorkflowConfiguration extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -126,7 +140,9 @@ export class MediaWorkflowConfiguration extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["lifecyleDetails"] = state ? state.lifecyleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["parameters"] = state ? state.parameters : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -147,6 +163,8 @@ export class MediaWorkflowConfiguration extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["parameters"] = args ? args.parameters : undefined;
             resourceInputs["lifecyleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -164,7 +182,7 @@ export class MediaWorkflowConfiguration extends pulumi.CustomResource {
  */
 export interface MediaWorkflowConfigurationState {
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -179,10 +197,15 @@ export interface MediaWorkflowConfigurationState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecyleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaWorkflowConfigurationLock>[]>;
     /**
      * (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue 
      *
@@ -200,7 +223,7 @@ export interface MediaWorkflowConfigurationState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -214,7 +237,7 @@ export interface MediaWorkflowConfigurationState {
  */
 export interface MediaWorkflowConfigurationArgs {
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -229,6 +252,11 @@ export interface MediaWorkflowConfigurationArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaWorkflowConfigurationLock>[]>;
     /**
      * (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue 
      *

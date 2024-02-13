@@ -52,7 +52,7 @@ export class MediaAsset extends pulumi.CustomResource {
      */
     public readonly bucket!: pulumi.Output<string>;
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -67,6 +67,11 @@ export class MediaAsset extends pulumi.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.MediaServices.MediaAssetLock[]>;
     /**
      * (Updatable) The ID of the senior most asset from which this asset is derived.
      */
@@ -124,7 +129,7 @@ export class MediaAsset extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -158,6 +163,8 @@ export class MediaAsset extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["masterMediaAssetId"] = state ? state.masterMediaAssetId : undefined;
             resourceInputs["mediaAssetTags"] = state ? state.mediaAssetTags : undefined;
             resourceInputs["mediaWorkflowJobId"] = state ? state.mediaWorkflowJobId : undefined;
@@ -188,6 +195,8 @@ export class MediaAsset extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["masterMediaAssetId"] = args ? args.masterMediaAssetId : undefined;
             resourceInputs["mediaAssetTags"] = args ? args.mediaAssetTags : undefined;
             resourceInputs["mediaWorkflowJobId"] = args ? args.mediaWorkflowJobId : undefined;
@@ -220,7 +229,7 @@ export interface MediaAssetState {
      */
     bucket?: pulumi.Input<string>;
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -235,6 +244,11 @@ export interface MediaAssetState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetLock>[]>;
     /**
      * (Updatable) The ID of the senior most asset from which this asset is derived.
      */
@@ -292,7 +306,7 @@ export interface MediaAssetState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -318,7 +332,7 @@ export interface MediaAssetArgs {
      */
     bucket?: pulumi.Input<string>;
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -333,6 +347,11 @@ export interface MediaAssetArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetLock>[]>;
     /**
      * (Updatable) The ID of the senior most asset from which this asset is derived.
      */

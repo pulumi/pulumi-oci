@@ -154,6 +154,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly string ManualDatabaseSubType;
         /// <summary>
         /// An array of Network Security Group OCIDs used to define network access for Connections.
         /// </summary>
@@ -221,6 +222,8 @@ namespace Pulumi.Oci.DatabaseMigration
 
             string lifecycleDetails,
 
+            string manualDatabaseSubType,
+
             ImmutableArray<string> nsgIds,
 
             ImmutableArray<Outputs.GetConnectionPrivateEndpointResult> privateEndpoints,
@@ -256,6 +259,7 @@ namespace Pulumi.Oci.DatabaseMigration
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            ManualDatabaseSubType = manualDatabaseSubType;
             NsgIds = nsgIds;
             PrivateEndpoints = privateEndpoints;
             ReplicationCredentials = replicationCredentials;

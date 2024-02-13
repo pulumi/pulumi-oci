@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:ManagementAgent/managementAgent:ManagementAgent":
 		r = &ManagementAgent{}
+	case "oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource":
+		r = &ManagementAgentDataSource{}
 	case "oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey":
 		r = &ManagementAgentInstallKey{}
 	default:
@@ -41,6 +43,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"ManagementAgent/managementAgent",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"ManagementAgent/managementAgentDataSource",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -41,6 +41,13 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     isEnabled: _var.stream_cdn_config_is_enabled,
+ *     locks: [{
+ *         compartmentId: _var.compartment_id,
+ *         type: _var.stream_cdn_config_locks_type,
+ *         message: _var.stream_cdn_config_locks_message,
+ *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
+ *         timeCreated: _var.stream_cdn_config_locks_time_created,
+ *     }],
  * });
  * ```
  *
@@ -81,7 +88,7 @@ export class StreamCdnConfig extends pulumi.CustomResource {
     }
 
     /**
-     * Compartment Identifier.
+     * The compartment ID of the lock.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -106,16 +113,17 @@ export class StreamCdnConfig extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) Whether publishing to CDN is enabled.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.MediaServices.StreamCdnConfigLock[]>;
     /**
      * The current state of the CDN Configuration.
      */
@@ -125,7 +133,7 @@ export class StreamCdnConfig extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time when the CDN Config was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -153,7 +161,9 @@ export class StreamCdnConfig extends pulumi.CustomResource {
             resourceInputs["distributionChannelId"] = state ? state.distributionChannelId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["lifecyleDetails"] = state ? state.lifecyleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -175,6 +185,8 @@ export class StreamCdnConfig extends pulumi.CustomResource {
             resourceInputs["distributionChannelId"] = args ? args.distributionChannelId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lifecyleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -192,7 +204,7 @@ export class StreamCdnConfig extends pulumi.CustomResource {
  */
 export interface StreamCdnConfigState {
     /**
-     * Compartment Identifier.
+     * The compartment ID of the lock.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -217,16 +229,17 @@ export interface StreamCdnConfigState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Whether publishing to CDN is enabled.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isEnabled?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecyleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamCdnConfigLock>[]>;
     /**
      * The current state of the CDN Configuration.
      */
@@ -236,7 +249,7 @@ export interface StreamCdnConfigState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time when the CDN Config was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -271,10 +284,11 @@ export interface StreamCdnConfigArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Whether publishing to CDN is enabled.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isEnabled?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.StreamCdnConfigLock>[]>;
 }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Vault.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Vault.inputs.SecretRotationConfigArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretContentArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretRuleArgs;
 import java.lang.Object;
@@ -96,18 +97,33 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the master encryption key that is used to encrypt the secret.
+     * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
     @Import(name="keyId")
     private @Nullable Output<String> keyId;
 
     /**
-     * @return The OCID of the master encryption key that is used to encrypt the secret.
+     * @return The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
     public Optional<Output<String>> keyId() {
         return Optional.ofNullable(this.keyId);
+    }
+
+    /**
+     * A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    @Import(name="lastRotationTime")
+    private @Nullable Output<String> lastRotationTime;
+
+    /**
+     * @return A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    public Optional<Output<String>> lastRotationTime() {
+        return Optional.ofNullable(this.lastRotationTime);
     }
 
     /**
@@ -138,6 +154,51 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,Object>>> metadata() {
         return Optional.ofNullable(this.metadata);
+    }
+
+    /**
+     * A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    @Import(name="nextRotationTime")
+    private @Nullable Output<String> nextRotationTime;
+
+    /**
+     * @return A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+     * 
+     */
+    public Optional<Output<String>> nextRotationTime() {
+        return Optional.ofNullable(this.nextRotationTime);
+    }
+
+    /**
+     * (Updatable) Defines the frequency of the rotation and the information about the target system
+     * 
+     */
+    @Import(name="rotationConfig")
+    private @Nullable Output<SecretRotationConfigArgs> rotationConfig;
+
+    /**
+     * @return (Updatable) Defines the frequency of the rotation and the information about the target system
+     * 
+     */
+    public Optional<Output<SecretRotationConfigArgs>> rotationConfig() {
+        return Optional.ofNullable(this.rotationConfig);
+    }
+
+    /**
+     * Additional information about the status of the secret rotation
+     * 
+     */
+    @Import(name="rotationStatus")
+    private @Nullable Output<String> rotationStatus;
+
+    /**
+     * @return Additional information about the status of the secret rotation
+     * 
+     */
+    public Optional<Output<String>> rotationStatus() {
+        return Optional.ofNullable(this.rotationStatus);
     }
 
     /**
@@ -275,8 +336,12 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.freeformTags = $.freeformTags;
         this.keyId = $.keyId;
+        this.lastRotationTime = $.lastRotationTime;
         this.lifecycleDetails = $.lifecycleDetails;
         this.metadata = $.metadata;
+        this.nextRotationTime = $.nextRotationTime;
+        this.rotationConfig = $.rotationConfig;
+        this.rotationStatus = $.rotationStatus;
         this.secretContent = $.secretContent;
         this.secretName = $.secretName;
         this.secretRules = $.secretRules;
@@ -411,7 +476,7 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyId The OCID of the master encryption key that is used to encrypt the secret.
+         * @param keyId The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
          * 
          * @return builder
          * 
@@ -422,13 +487,34 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyId The OCID of the master encryption key that is used to encrypt the secret.
+         * @param keyId The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
          * 
          * @return builder
          * 
          */
         public Builder keyId(String keyId) {
             return keyId(Output.of(keyId));
+        }
+
+        /**
+         * @param lastRotationTime A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastRotationTime(@Nullable Output<String> lastRotationTime) {
+            $.lastRotationTime = lastRotationTime;
+            return this;
+        }
+
+        /**
+         * @param lastRotationTime A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastRotationTime(String lastRotationTime) {
+            return lastRotationTime(Output.of(lastRotationTime));
         }
 
         /**
@@ -471,6 +557,69 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder metadata(Map<String,Object> metadata) {
             return metadata(Output.of(metadata));
+        }
+
+        /**
+         * @param nextRotationTime A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nextRotationTime(@Nullable Output<String> nextRotationTime) {
+            $.nextRotationTime = nextRotationTime;
+            return this;
+        }
+
+        /**
+         * @param nextRotationTime A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nextRotationTime(String nextRotationTime) {
+            return nextRotationTime(Output.of(nextRotationTime));
+        }
+
+        /**
+         * @param rotationConfig (Updatable) Defines the frequency of the rotation and the information about the target system
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotationConfig(@Nullable Output<SecretRotationConfigArgs> rotationConfig) {
+            $.rotationConfig = rotationConfig;
+            return this;
+        }
+
+        /**
+         * @param rotationConfig (Updatable) Defines the frequency of the rotation and the information about the target system
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotationConfig(SecretRotationConfigArgs rotationConfig) {
+            return rotationConfig(Output.of(rotationConfig));
+        }
+
+        /**
+         * @param rotationStatus Additional information about the status of the secret rotation
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotationStatus(@Nullable Output<String> rotationStatus) {
+            $.rotationStatus = rotationStatus;
+            return this;
+        }
+
+        /**
+         * @param rotationStatus Additional information about the status of the secret rotation
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotationStatus(String rotationStatus) {
+            return rotationStatus(Output.of(rotationStatus));
         }
 
         /**

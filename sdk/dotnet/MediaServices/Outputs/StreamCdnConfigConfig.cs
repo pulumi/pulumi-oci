@@ -58,7 +58,11 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// </summary>
         public readonly string? OriginAuthSignType;
         /// <summary>
-        /// (Updatable) The name of the CDN configuration type.
+        /// Type of the lock.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Type;
 

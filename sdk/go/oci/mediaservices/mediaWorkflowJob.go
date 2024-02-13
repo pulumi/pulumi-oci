@@ -40,6 +40,15 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				Locks: mediaservices.MediaWorkflowJobLockArray{
+//					&mediaservices.MediaWorkflowJobLockArgs{
+//						CompartmentId:     pulumi.Any(_var.Compartment_id),
+//						Type:              pulumi.Any(_var.Media_workflow_job_locks_type),
+//						Message:           pulumi.Any(_var.Media_workflow_job_locks_message),
+//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
+//						TimeCreated:       pulumi.Any(_var.Media_workflow_job_locks_time_created),
+//					},
+//				},
 //				MediaWorkflowConfigurationIds: pulumi.Any(_var.Media_workflow_job_media_workflow_configuration_ids),
 //				MediaWorkflowId:               pulumi.Any(oci_media_services_media_workflow.Test_media_workflow.Id),
 //				MediaWorkflowName:             pulumi.Any(oci_media_services_media_workflow.Test_media_workflow.Name),
@@ -66,16 +75,19 @@ import (
 type MediaWorkflowJob struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) ID of the compartment in which the job should be created.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags   pulumi.MapOutput  `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
 	// The lifecycle details of MediaWorkflowJob task.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks MediaWorkflowJobLockArrayOutput `pulumi:"locks"`
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds pulumi.StringArrayOutput `pulumi:"mediaWorkflowConfigurationIds"`
 	// OCID of the MediaWorkflow that should be run.
@@ -94,7 +106,7 @@ type MediaWorkflowJob struct {
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates MediaWorkflowJobTaskLifecycleStateArrayOutput `pulumi:"taskLifecycleStates"`
-	// Creation time of the job. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Time when the job finished. An RFC3339 formatted datetime string.
 	TimeEnded pulumi.StringOutput `pulumi:"timeEnded"`
@@ -145,16 +157,19 @@ func GetMediaWorkflowJob(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MediaWorkflowJob resources.
 type mediaWorkflowJobState struct {
-	// (Updatable) ID of the compartment in which the job should be created.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
+	IsLockOverride *bool                  `pulumi:"isLockOverride"`
 	// The lifecycle details of MediaWorkflowJob task.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []MediaWorkflowJobLock `pulumi:"locks"`
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds []string `pulumi:"mediaWorkflowConfigurationIds"`
 	// OCID of the MediaWorkflow that should be run.
@@ -173,7 +188,7 @@ type mediaWorkflowJobState struct {
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates []MediaWorkflowJobTaskLifecycleState `pulumi:"taskLifecycleStates"`
-	// Creation time of the job. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Time when the job finished. An RFC3339 formatted datetime string.
 	TimeEnded *string `pulumi:"timeEnded"`
@@ -189,16 +204,19 @@ type mediaWorkflowJobState struct {
 }
 
 type MediaWorkflowJobState struct {
-	// (Updatable) ID of the compartment in which the job should be created.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags   pulumi.MapInput
+	IsLockOverride pulumi.BoolPtrInput
 	// The lifecycle details of MediaWorkflowJob task.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks MediaWorkflowJobLockArrayInput
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds pulumi.StringArrayInput
 	// OCID of the MediaWorkflow that should be run.
@@ -217,7 +235,7 @@ type MediaWorkflowJobState struct {
 	SystemTags pulumi.MapInput
 	// Status of each task.
 	TaskLifecycleStates MediaWorkflowJobTaskLifecycleStateArrayInput
-	// Creation time of the job. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringPtrInput
 	// Time when the job finished. An RFC3339 formatted datetime string.
 	TimeEnded pulumi.StringPtrInput
@@ -237,14 +255,17 @@ func (MediaWorkflowJobState) ElementType() reflect.Type {
 }
 
 type mediaWorkflowJobArgs struct {
-	// (Updatable) ID of the compartment in which the job should be created.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
+	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []MediaWorkflowJobLock `pulumi:"locks"`
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds []string `pulumi:"mediaWorkflowConfigurationIds"`
 	// OCID of the MediaWorkflow that should be run.
@@ -262,14 +283,17 @@ type mediaWorkflowJobArgs struct {
 
 // The set of arguments for constructing a MediaWorkflowJob resource.
 type MediaWorkflowJobArgs struct {
-	// (Updatable) ID of the compartment in which the job should be created.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags   pulumi.MapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks MediaWorkflowJobLockArrayInput
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds pulumi.StringArrayInput
 	// OCID of the MediaWorkflow that should be run.
@@ -372,7 +396,7 @@ func (o MediaWorkflowJobOutput) ToMediaWorkflowJobOutputWithContext(ctx context.
 	return o
 }
 
-// (Updatable) ID of the compartment in which the job should be created.
+// (Updatable) The compartment ID of the lock.
 func (o MediaWorkflowJobOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -392,9 +416,18 @@ func (o MediaWorkflowJobOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
+func (o MediaWorkflowJobOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // The lifecycle details of MediaWorkflowJob task.
 func (o MediaWorkflowJobOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o MediaWorkflowJobOutput) Locks() MediaWorkflowJobLockArrayOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) MediaWorkflowJobLockArrayOutput { return v.Locks }).(MediaWorkflowJobLockArrayOutput)
 }
 
 // Configurations to be applied to this run of the workflow.
@@ -442,7 +475,7 @@ func (o MediaWorkflowJobOutput) TaskLifecycleStates() MediaWorkflowJobTaskLifecy
 	return o.ApplyT(func(v *MediaWorkflowJob) MediaWorkflowJobTaskLifecycleStateArrayOutput { return v.TaskLifecycleStates }).(MediaWorkflowJobTaskLifecycleStateArrayOutput)
 }
 
-// Creation time of the job. An RFC3339 formatted datetime string.
+// When the lock was created.
 func (o MediaWorkflowJobOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

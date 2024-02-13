@@ -7,9 +7,11 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.inputs.StreamCdnConfigConfigArgs;
+import com.pulumi.oci.MediaServices.inputs.StreamCdnConfigLockArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -98,9 +100,6 @@ public final class StreamCdnConfigArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) Whether publishing to CDN is enabled.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
@@ -108,12 +107,31 @@ public final class StreamCdnConfigArgs extends com.pulumi.resources.ResourceArgs
     /**
      * @return (Updatable) Whether publishing to CDN is enabled.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<Boolean>> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
+    }
+
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<StreamCdnConfigLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<StreamCdnConfigLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     private StreamCdnConfigArgs() {}
@@ -125,6 +143,8 @@ public final class StreamCdnConfigArgs extends com.pulumi.resources.ResourceArgs
         this.distributionChannelId = $.distributionChannelId;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
     }
 
     public static Builder builder() {
@@ -253,9 +273,6 @@ public final class StreamCdnConfigArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param isEnabled (Updatable) Whether publishing to CDN is enabled.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -267,14 +284,51 @@ public final class StreamCdnConfigArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param isEnabled (Updatable) Whether publishing to CDN is enabled.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder isEnabled(Boolean isEnabled) {
             return isEnabled(Output.of(isEnabled));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<StreamCdnConfigLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<StreamCdnConfigLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(StreamCdnConfigLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         public StreamCdnConfigArgs build() {

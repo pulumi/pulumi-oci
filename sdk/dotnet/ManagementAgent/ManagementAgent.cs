@@ -48,10 +48,19 @@ namespace Pulumi.Oci.ManagementAgent
         public Output<string> AvailabilityStatus { get; private set; } = null!;
 
         /// <summary>
-        /// Compartment Identifier
+        /// Compartment owning this DataSource.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// list of dataSources associated with the agent
+        /// </summary>
+        [Output("dataSourceLists")]
+        public Output<ImmutableArray<Outputs.ManagementAgentDataSourceList>> DataSourceLists { get; private set; } = null!;
+
+        [Output("dataSourceSummaryLists")]
+        public Output<ImmutableArray<Outputs.ManagementAgentDataSourceSummaryList>> DataSourceSummaryLists { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -312,10 +321,30 @@ namespace Pulumi.Oci.ManagementAgent
         public Input<string>? AvailabilityStatus { get; set; }
 
         /// <summary>
-        /// Compartment Identifier
+        /// Compartment owning this DataSource.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        [Input("dataSourceLists")]
+        private InputList<Inputs.ManagementAgentDataSourceListGetArgs>? _dataSourceLists;
+
+        /// <summary>
+        /// list of dataSources associated with the agent
+        /// </summary>
+        public InputList<Inputs.ManagementAgentDataSourceListGetArgs> DataSourceLists
+        {
+            get => _dataSourceLists ?? (_dataSourceLists = new InputList<Inputs.ManagementAgentDataSourceListGetArgs>());
+            set => _dataSourceLists = value;
+        }
+
+        [Input("dataSourceSummaryLists")]
+        private InputList<Inputs.ManagementAgentDataSourceSummaryListGetArgs>? _dataSourceSummaryLists;
+        public InputList<Inputs.ManagementAgentDataSourceSummaryListGetArgs> DataSourceSummaryLists
+        {
+            get => _dataSourceSummaryLists ?? (_dataSourceSummaryLists = new InputList<Inputs.ManagementAgentDataSourceSummaryListGetArgs>());
+            set => _dataSourceSummaryLists = value;
+        }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;

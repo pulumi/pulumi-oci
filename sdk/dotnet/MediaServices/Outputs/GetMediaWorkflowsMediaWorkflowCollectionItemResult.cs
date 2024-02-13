@@ -33,10 +33,15 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// Unique MediaWorkflow identifier.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecyleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMediaWorkflowsMediaWorkflowCollectionItemLockResult> Locks;
         /// <summary>
         /// Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
         /// </summary>
@@ -82,7 +87,11 @@ namespace Pulumi.Oci.MediaServices.Outputs
 
             string id,
 
+            bool isLockOverride,
+
             string lifecyleDetails,
+
+            ImmutableArray<Outputs.GetMediaWorkflowsMediaWorkflowCollectionItemLockResult> locks,
 
             ImmutableArray<string> mediaWorkflowConfigurationIds,
 
@@ -105,7 +114,9 @@ namespace Pulumi.Oci.MediaServices.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
             LifecyleDetails = lifecyleDetails;
+            Locks = locks;
             MediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
             Parameters = parameters;
             State = state;

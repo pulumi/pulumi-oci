@@ -106,7 +106,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class GetMediaWorkflowJobResult
     {
         /// <summary>
-        /// Compartment Identifier.
+        /// The compartment ID of the lock.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -125,10 +125,15 @@ namespace Pulumi.Oci.MediaServices
         /// The ID associated with the job output.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// The lifecycle details of MediaWorkflowJob task.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMediaWorkflowJobLockResult> Locks;
         /// <summary>
         /// Configurations to be applied to this run of the workflow.
         /// </summary>
@@ -193,7 +198,11 @@ namespace Pulumi.Oci.MediaServices
 
             string id,
 
+            bool isLockOverride,
+
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetMediaWorkflowJobLockResult> locks,
 
             ImmutableArray<string> mediaWorkflowConfigurationIds,
 
@@ -230,7 +239,9 @@ namespace Pulumi.Oci.MediaServices
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             MediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
             MediaWorkflowId = mediaWorkflowId;
             MediaWorkflowJobId = mediaWorkflowJobId;

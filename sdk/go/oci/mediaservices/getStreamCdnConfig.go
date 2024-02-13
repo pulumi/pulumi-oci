@@ -58,7 +58,7 @@ type LookupStreamCdnConfigArgs struct {
 
 // A collection of values returned by getStreamCdnConfig.
 type LookupStreamCdnConfigResult struct {
-	// Compartment Identifier.
+	// The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Base fields of the StreamCdnConfig configuration object.
 	Configs []GetStreamCdnConfigConfig `pulumi:"configs"`
@@ -73,9 +73,12 @@ type LookupStreamCdnConfigResult struct {
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// Whether publishing to CDN is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled      bool `pulumi:"isEnabled"`
+	IsLockOverride bool `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	// Locks associated with this resource.
+	Locks []GetStreamCdnConfigLock `pulumi:"locks"`
 	// The current state of the CDN Configuration.
 	State             string `pulumi:"state"`
 	StreamCdnConfigId string `pulumi:"streamCdnConfigId"`
@@ -125,7 +128,7 @@ func (o LookupStreamCdnConfigResultOutput) ToLookupStreamCdnConfigResultOutputWi
 	return o
 }
 
-// Compartment Identifier.
+// The compartment ID of the lock.
 func (o LookupStreamCdnConfigResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupStreamCdnConfigResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -165,9 +168,18 @@ func (o LookupStreamCdnConfigResultOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupStreamCdnConfigResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
+func (o LookupStreamCdnConfigResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o LookupStreamCdnConfigResultOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupStreamCdnConfigResult) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupStreamCdnConfigResultOutput) Locks() GetStreamCdnConfigLockArrayOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) []GetStreamCdnConfigLock { return v.Locks }).(GetStreamCdnConfigLockArrayOutput)
 }
 
 // The current state of the CDN Configuration.

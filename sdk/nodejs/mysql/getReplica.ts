@@ -114,6 +114,10 @@ export interface GetReplicaResult {
      */
     readonly replicaOverrides: outputs.Mysql.GetReplicaReplicaOverride[];
     /**
+     * Secure connection configuration details.
+     */
+    readonly secureConnections: outputs.Mysql.GetReplicaSecureConnection[];
+    /**
      * The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */
     readonly shapeName: string;

@@ -106,7 +106,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class GetStreamCdnConfigResult
     {
         /// <summary>
-        /// Compartment Identifier.
+        /// The compartment ID of the lock.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -137,10 +137,15 @@ namespace Pulumi.Oci.MediaServices
         /// Whether publishing to CDN is enabled.
         /// </summary>
         public readonly bool IsEnabled;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecyleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetStreamCdnConfigLockResult> Locks;
         /// <summary>
         /// The current state of the CDN Configuration.
         /// </summary>
@@ -177,7 +182,11 @@ namespace Pulumi.Oci.MediaServices
 
             bool isEnabled,
 
+            bool isLockOverride,
+
             string lifecyleDetails,
+
+            ImmutableArray<Outputs.GetStreamCdnConfigLockResult> locks,
 
             string state,
 
@@ -197,7 +206,9 @@ namespace Pulumi.Oci.MediaServices
             FreeformTags = freeformTags;
             Id = id;
             IsEnabled = isEnabled;
+            IsLockOverride = isLockOverride;
             LifecyleDetails = lifecyleDetails;
+            Locks = locks;
             State = state;
             StreamCdnConfigId = streamCdnConfigId;
             SystemTags = systemTags;

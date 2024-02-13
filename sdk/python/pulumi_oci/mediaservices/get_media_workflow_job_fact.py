@@ -108,6 +108,7 @@ def get_media_workflow_job_fact(key: Optional[str] = None,
                                 media_workflow_job_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaWorkflowJobFactResult:
     """
+    > **_NOTE:_** This data source has been deprecated and is no longer supported.
     This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
 
     Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
@@ -146,6 +147,7 @@ def get_media_workflow_job_fact_output(key: Optional[pulumi.Input[str]] = None,
                                        media_workflow_job_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowJobFactResult]:
     """
+    > **_NOTE:_** This data source has been deprecated and is no longer supported.
     This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
 
     Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.

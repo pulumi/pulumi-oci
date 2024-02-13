@@ -5,30 +5,10 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export { AgentArgs, AgentState } from "./agent";
-export type Agent = import("./agent").Agent;
-export const Agent: typeof import("./agent").Agent = null as any;
-utilities.lazyLoad(exports, ["Agent"], () => require("./agent"));
-
 export { ConnectionArgs, ConnectionState } from "./connection";
 export type Connection = import("./connection").Connection;
 export const Connection: typeof import("./connection").Connection = null as any;
 utilities.lazyLoad(exports, ["Connection"], () => require("./connection"));
-
-export { GetAgentArgs, GetAgentResult, GetAgentOutputArgs } from "./getAgent";
-export const getAgent: typeof import("./getAgent").getAgent = null as any;
-export const getAgentOutput: typeof import("./getAgent").getAgentOutput = null as any;
-utilities.lazyLoad(exports, ["getAgent","getAgentOutput"], () => require("./getAgent"));
-
-export { GetAgentImagesArgs, GetAgentImagesResult, GetAgentImagesOutputArgs } from "./getAgentImages";
-export const getAgentImages: typeof import("./getAgentImages").getAgentImages = null as any;
-export const getAgentImagesOutput: typeof import("./getAgentImages").getAgentImagesOutput = null as any;
-utilities.lazyLoad(exports, ["getAgentImages","getAgentImagesOutput"], () => require("./getAgentImages"));
-
-export { GetAgentsArgs, GetAgentsResult, GetAgentsOutputArgs } from "./getAgents";
-export const getAgents: typeof import("./getAgents").getAgents = null as any;
-export const getAgentsOutput: typeof import("./getAgents").getAgentsOutput = null as any;
-utilities.lazyLoad(exports, ["getAgents","getAgentsOutput"], () => require("./getAgents"));
 
 export { GetConnectionArgs, GetConnectionResult, GetConnectionOutputArgs } from "./getConnection";
 export const getConnection: typeof import("./getConnection").getConnection = null as any;
@@ -80,8 +60,6 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
-            case "oci:DatabaseMigration/agent:Agent":
-                return new Agent(name, <any>undefined, { urn })
             case "oci:DatabaseMigration/connection:Connection":
                 return new Connection(name, <any>undefined, { urn })
             case "oci:DatabaseMigration/job:Job":
@@ -93,7 +71,6 @@ const _module = {
         }
     },
 };
-pulumi.runtime.registerResourceModule("oci", "DatabaseMigration/agent", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseMigration/connection", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseMigration/job", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseMigration/migration", _module)

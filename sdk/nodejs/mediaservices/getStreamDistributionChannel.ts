@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -43,7 +45,7 @@ export interface GetStreamDistributionChannelArgs {
  */
 export interface GetStreamDistributionChannelResult {
     /**
-     * Compartment Identifier.
+     * The compartment ID of the lock.
      */
     readonly compartmentId: string;
     /**
@@ -66,6 +68,11 @@ export interface GetStreamDistributionChannelResult {
      * Unique identifier that is immutable on creation.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.MediaServices.GetStreamDistributionChannelLock[];
     /**
      * The current state of the Stream Distribution Channel.
      */

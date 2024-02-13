@@ -5,7 +5,9 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowLock;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowTask;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -15,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetMediaWorkflowResult {
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     private String compartmentId;
@@ -39,11 +41,17 @@ public final class GetMediaWorkflowResult {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     private String lifecyleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetMediaWorkflowLock> locks;
     /**
      * @return Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
      * 
@@ -88,7 +96,7 @@ public final class GetMediaWorkflowResult {
 
     private GetMediaWorkflowResult() {}
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     public String compartmentId() {
@@ -122,12 +130,22 @@ public final class GetMediaWorkflowResult {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     public String lifecyleDetails() {
         return this.lifecyleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetMediaWorkflowLock> locks() {
+        return this.locks;
     }
     /**
      * @return Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
@@ -203,7 +221,9 @@ public final class GetMediaWorkflowResult {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
         private String lifecyleDetails;
+        private List<GetMediaWorkflowLock> locks;
         private List<String> mediaWorkflowConfigurationIds;
         private String mediaWorkflowId;
         private String parameters;
@@ -221,7 +241,9 @@ public final class GetMediaWorkflowResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecyleDetails = defaults.lifecyleDetails;
+    	      this.locks = defaults.locks;
     	      this.mediaWorkflowConfigurationIds = defaults.mediaWorkflowConfigurationIds;
     	      this.mediaWorkflowId = defaults.mediaWorkflowId;
     	      this.parameters = defaults.parameters;
@@ -274,12 +296,31 @@ public final class GetMediaWorkflowResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecyleDetails(String lifecyleDetails) {
             if (lifecyleDetails == null) {
               throw new MissingRequiredPropertyException("GetMediaWorkflowResult", "lifecyleDetails");
             }
             this.lifecyleDetails = lifecyleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetMediaWorkflowLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetMediaWorkflowLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder mediaWorkflowConfigurationIds(List<String> mediaWorkflowConfigurationIds) {
@@ -366,7 +407,9 @@ public final class GetMediaWorkflowResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecyleDetails = lifecyleDetails;
+            _resultValue.locks = locks;
             _resultValue.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
             _resultValue.mediaWorkflowId = mediaWorkflowId;
             _resultValue.parameters = parameters;

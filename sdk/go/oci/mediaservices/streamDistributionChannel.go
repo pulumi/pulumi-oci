@@ -39,6 +39,15 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				Locks: mediaservices.StreamDistributionChannelLockArray{
+//					&mediaservices.StreamDistributionChannelLockArgs{
+//						CompartmentId:     pulumi.Any(_var.Compartment_id),
+//						Type:              pulumi.Any(_var.Stream_distribution_channel_locks_type),
+//						Message:           pulumi.Any(_var.Stream_distribution_channel_locks_message),
+//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
+//						TimeCreated:       pulumi.Any(_var.Stream_distribution_channel_locks_time_created),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -61,7 +70,7 @@ import (
 type StreamDistributionChannel struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -70,15 +79,15 @@ type StreamDistributionChannel struct {
 	// Unique domain name of the Distribution Channel.
 	DomainName pulumi.StringOutput `pulumi:"domainName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags   pulumi.MapOutput  `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks StreamDistributionChannelLockArrayOutput `pulumi:"locks"`
 	// The current state of the Stream Distribution Channel.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -120,7 +129,7 @@ func GetStreamDistributionChannel(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering StreamDistributionChannel resources.
 type streamDistributionChannelState struct {
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -129,22 +138,22 @@ type streamDistributionChannelState struct {
 	// Unique domain name of the Distribution Channel.
 	DomainName *string `pulumi:"domainName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
+	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []StreamDistributionChannelLock `pulumi:"locks"`
 	// The current state of the Stream Distribution Channel.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type StreamDistributionChannelState struct {
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -153,15 +162,15 @@ type StreamDistributionChannelState struct {
 	// Unique domain name of the Distribution Channel.
 	DomainName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags   pulumi.MapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks StreamDistributionChannelLockArrayInput
 	// The current state of the Stream Distribution Channel.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
@@ -172,32 +181,32 @@ func (StreamDistributionChannelState) ElementType() reflect.Type {
 }
 
 type streamDistributionChannelArgs struct {
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
+	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []StreamDistributionChannelLock `pulumi:"locks"`
 }
 
 // The set of arguments for constructing a StreamDistributionChannel resource.
 type StreamDistributionChannelArgs struct {
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags   pulumi.MapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks StreamDistributionChannelLockArrayInput
 }
 
 func (StreamDistributionChannelArgs) ElementType() reflect.Type {
@@ -287,7 +296,7 @@ func (o StreamDistributionChannelOutput) ToStreamDistributionChannelOutputWithCo
 	return o
 }
 
-// (Updatable) Compartment Identifier.
+// (Updatable) The compartment ID of the lock.
 func (o StreamDistributionChannelOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -308,11 +317,17 @@ func (o StreamDistributionChannelOutput) DomainName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StreamDistributionChannelOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+func (o StreamDistributionChannelOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o StreamDistributionChannelOutput) Locks() StreamDistributionChannelLockArrayOutput {
+	return o.ApplyT(func(v *StreamDistributionChannel) StreamDistributionChannelLockArrayOutput { return v.Locks }).(StreamDistributionChannelLockArrayOutput)
 }
 
 // The current state of the Stream Distribution Channel.
@@ -325,7 +340,7 @@ func (o StreamDistributionChannelOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
+// When the lock was created.
 func (o StreamDistributionChannelOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

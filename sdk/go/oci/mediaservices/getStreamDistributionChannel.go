@@ -58,7 +58,7 @@ type LookupStreamDistributionChannelArgs struct {
 
 // A collection of values returned by getStreamDistributionChannel.
 type LookupStreamDistributionChannelResult struct {
-	// Compartment Identifier.
+	// The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -69,7 +69,10 @@ type LookupStreamDistributionChannelResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetStreamDistributionChannelLock `pulumi:"locks"`
 	// The current state of the Stream Distribution Channel.
 	State                       string `pulumi:"state"`
 	StreamDistributionChannelId string `pulumi:"streamDistributionChannelId"`
@@ -119,7 +122,7 @@ func (o LookupStreamDistributionChannelResultOutput) ToLookupStreamDistributionC
 	return o
 }
 
-// Compartment Identifier.
+// The compartment ID of the lock.
 func (o LookupStreamDistributionChannelResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupStreamDistributionChannelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -147,6 +150,15 @@ func (o LookupStreamDistributionChannelResultOutput) FreeformTags() pulumi.MapOu
 // Unique identifier that is immutable on creation.
 func (o LookupStreamDistributionChannelResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupStreamDistributionChannelResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupStreamDistributionChannelResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupStreamDistributionChannelResultOutput) Locks() GetStreamDistributionChannelLockArrayOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) []GetStreamDistributionChannelLock { return v.Locks }).(GetStreamDistributionChannelLockArrayOutput)
 }
 
 // The current state of the Stream Distribution Channel.

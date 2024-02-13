@@ -14683,7 +14683,10 @@ class VolumeGroupSourceDetails(dict):
         :param str volume_group_backup_id: The OCID of the volume group backup to restore from.
         :param str volume_group_id: The OCID of the volume group to clone from.
         :param str volume_group_replica_id: The OCID of the volume group replica.
-        :param Sequence[str] volume_ids: OCIDs for the volumes in this volume group.
+        :param Sequence[str] volume_ids: (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "type", type)
         if volume_group_backup_id is not None:
@@ -14731,7 +14734,10 @@ class VolumeGroupSourceDetails(dict):
     @pulumi.getter(name="volumeIds")
     def volume_ids(self) -> Optional[Sequence[str]]:
         """
-        OCIDs for the volumes in this volume group.
+        (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "volume_ids")
 
@@ -14765,11 +14771,7 @@ class VolumeGroupVolumeGroupReplica(dict):
                  volume_group_replica_id: Optional[str] = None):
         """
         :param str availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str volume_group_replica_id: The OCID of the volume group replica.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -14790,11 +14792,7 @@ class VolumeGroupVolumeGroupReplica(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 

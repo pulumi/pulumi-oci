@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -14,6 +16,8 @@ export function getMediaAssetDistributionChannelAttachment(args: GetMediaAssetDi
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", {
         "distributionChannelId": args.distributionChannelId,
+        "isLockOverride": args.isLockOverride,
+        "locks": args.locks,
         "mediaAssetId": args.mediaAssetId,
     }, opts);
 }
@@ -26,6 +30,11 @@ export interface GetMediaAssetDistributionChannelAttachmentArgs {
      * Unique DistributionChannel identifier.
      */
     distributionChannelId: string;
+    isLockOverride?: boolean;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: inputs.MediaServices.GetMediaAssetDistributionChannelAttachmentLock[];
     /**
      * Unique MediaAsset identifier
      */
@@ -48,6 +57,11 @@ export interface GetMediaAssetDistributionChannelAttachmentResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.MediaServices.GetMediaAssetDistributionChannelAttachmentLock[];
     readonly mediaAssetId: string;
     /**
      * The ingest MediaWorkflowJob ID that created this attachment.
@@ -83,6 +97,11 @@ export interface GetMediaAssetDistributionChannelAttachmentOutputArgs {
      * Unique DistributionChannel identifier.
      */
     distributionChannelId: pulumi.Input<string>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetMediaAssetDistributionChannelAttachmentLockArgs>[]>;
     /**
      * Unique MediaAsset identifier
      */

@@ -5,15 +5,18 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.MediaServices.outputs.GetStreamDistributionChannelLock;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetStreamDistributionChannelResult {
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     private String compartmentId;
@@ -42,6 +45,12 @@ public final class GetStreamDistributionChannelResult {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetStreamDistributionChannelLock> locks;
     /**
      * @return The current state of the Stream Distribution Channel.
      * 
@@ -66,7 +75,7 @@ public final class GetStreamDistributionChannelResult {
 
     private GetStreamDistributionChannelResult() {}
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     public String compartmentId() {
@@ -106,6 +115,16 @@ public final class GetStreamDistributionChannelResult {
      */
     public String id() {
         return this.id;
+    }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetStreamDistributionChannelLock> locks() {
+        return this.locks;
     }
     /**
      * @return The current state of the Stream Distribution Channel.
@@ -154,6 +173,8 @@ public final class GetStreamDistributionChannelResult {
         private String domainName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetStreamDistributionChannelLock> locks;
         private String state;
         private String streamDistributionChannelId;
         private Map<String,Object> systemTags;
@@ -168,6 +189,8 @@ public final class GetStreamDistributionChannelResult {
     	      this.domainName = defaults.domainName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.state = defaults.state;
     	      this.streamDistributionChannelId = defaults.streamDistributionChannelId;
     	      this.systemTags = defaults.systemTags;
@@ -224,6 +247,25 @@ public final class GetStreamDistributionChannelResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetStreamDistributionChannelResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetStreamDistributionChannelLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetStreamDistributionChannelResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetStreamDistributionChannelLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetStreamDistributionChannelResult", "state");
@@ -271,6 +313,8 @@ public final class GetStreamDistributionChannelResult {
             _resultValue.domainName = domainName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
             _resultValue.state = state;
             _resultValue.streamDistributionChannelId = streamDistributionChannelId;
             _resultValue.systemTags = systemTags;

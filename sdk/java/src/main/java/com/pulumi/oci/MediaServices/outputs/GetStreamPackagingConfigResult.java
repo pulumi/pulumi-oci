@@ -6,6 +6,8 @@ package com.pulumi.oci.MediaServices.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetStreamPackagingConfigEncryption;
+import com.pulumi.oci.MediaServices.outputs.GetStreamPackagingConfigLock;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -16,7 +18,7 @@ import java.util.Objects;
 @CustomType
 public final class GetStreamPackagingConfigResult {
     /**
-     * @return Compartment Identifier
+     * @return The compartment ID of the lock.
      * 
      */
     private String compartmentId;
@@ -50,6 +52,12 @@ public final class GetStreamPackagingConfigResult {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetStreamPackagingConfigLock> locks;
     /**
      * @return The duration in seconds for each fragment.
      * 
@@ -84,7 +92,7 @@ public final class GetStreamPackagingConfigResult {
 
     private GetStreamPackagingConfigResult() {}
     /**
-     * @return Compartment Identifier
+     * @return The compartment ID of the lock.
      * 
      */
     public String compartmentId() {
@@ -131,6 +139,16 @@ public final class GetStreamPackagingConfigResult {
      */
     public String id() {
         return this.id;
+    }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetStreamPackagingConfigLock> locks() {
+        return this.locks;
     }
     /**
      * @return The duration in seconds for each fragment.
@@ -194,6 +212,8 @@ public final class GetStreamPackagingConfigResult {
         private List<GetStreamPackagingConfigEncryption> encryptions;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetStreamPackagingConfigLock> locks;
         private Integer segmentTimeInSeconds;
         private String state;
         private String streamPackagingConfigId;
@@ -211,6 +231,8 @@ public final class GetStreamPackagingConfigResult {
     	      this.encryptions = defaults.encryptions;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.segmentTimeInSeconds = defaults.segmentTimeInSeconds;
     	      this.state = defaults.state;
     	      this.streamPackagingConfigId = defaults.streamPackagingConfigId;
@@ -280,6 +302,25 @@ public final class GetStreamPackagingConfigResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetStreamPackagingConfigResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetStreamPackagingConfigLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetStreamPackagingConfigResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetStreamPackagingConfigLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder segmentTimeInSeconds(Integer segmentTimeInSeconds) {
             if (segmentTimeInSeconds == null) {
               throw new MissingRequiredPropertyException("GetStreamPackagingConfigResult", "segmentTimeInSeconds");
@@ -344,6 +385,8 @@ public final class GetStreamPackagingConfigResult {
             _resultValue.encryptions = encryptions;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
             _resultValue.segmentTimeInSeconds = segmentTimeInSeconds;
             _resultValue.state = state;
             _resultValue.streamPackagingConfigId = streamPackagingConfigId;

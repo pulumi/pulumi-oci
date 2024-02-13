@@ -24,6 +24,8 @@ import * as utilities from "../utilities";
  *     accessLevel: _var.management_agent_access_level,
  *     availabilityStatus: _var.management_agent_availability_status,
  *     compartmentIdInSubtree: _var.management_agent_compartment_id_in_subtree,
+ *     dataSourceNames: oci_management_agent_management_agent_data_source.test_management_agent_data_source.name,
+ *     dataSourceType: _var.management_agent_data_source_type,
  *     displayName: _var.management_agent_display_name,
  *     gatewayIds: oci_apigateway_gateway.test_gateway.id,
  *     hostId: oci_management_agent_host.test_host.id,
@@ -44,6 +46,8 @@ export function getManagementAgents(args: GetManagementAgentsArgs, opts?: pulumi
         "availabilityStatus": args.availabilityStatus,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "dataSourceNames": args.dataSourceNames,
+        "dataSourceType": args.dataSourceType,
         "displayName": args.displayName,
         "filters": args.filters,
         "gatewayIds": args.gatewayIds,
@@ -77,6 +81,14 @@ export interface GetManagementAgentsArgs {
      * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
      */
     compartmentIdInSubtree?: boolean;
+    /**
+     * Unique name of the dataSource.
+     */
+    dataSourceNames?: string[];
+    /**
+     * The type of the dataSource.
+     */
+    dataSourceType?: string;
     /**
      * Filter to return only Management Agents having the particular display name.
      */
@@ -130,6 +142,8 @@ export interface GetManagementAgentsResult {
      */
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;
+    readonly dataSourceNames?: string[];
+    readonly dataSourceType?: string;
     /**
      * Management Agent Name
      */
@@ -191,6 +205,8 @@ export interface GetManagementAgentsResult {
  *     accessLevel: _var.management_agent_access_level,
  *     availabilityStatus: _var.management_agent_availability_status,
  *     compartmentIdInSubtree: _var.management_agent_compartment_id_in_subtree,
+ *     dataSourceNames: oci_management_agent_management_agent_data_source.test_management_agent_data_source.name,
+ *     dataSourceType: _var.management_agent_data_source_type,
  *     displayName: _var.management_agent_display_name,
  *     gatewayIds: oci_apigateway_gateway.test_gateway.id,
  *     hostId: oci_management_agent_host.test_host.id,
@@ -227,6 +243,14 @@ export interface GetManagementAgentsOutputArgs {
      * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
      */
     compartmentIdInSubtree?: pulumi.Input<boolean>;
+    /**
+     * Unique name of the dataSource.
+     */
+    dataSourceNames?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The type of the dataSource.
+     */
+    dataSourceType?: pulumi.Input<string>;
     /**
      * Filter to return only Management Agents having the particular display name.
      */

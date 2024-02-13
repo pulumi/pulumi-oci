@@ -93,6 +93,7 @@ export interface GetConnectionResult {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     readonly lifecycleDetails: string;
+    readonly manualDatabaseSubType: string;
     /**
      * An array of Network Security Group OCIDs used to define network access for Connections.
      */

@@ -67,7 +67,7 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig {
      */
     private String originAuthSignType;
     /**
-     * @return The name of the CDN configuration type.
+     * @return Type of the lock.
      * 
      */
     private String type;
@@ -151,7 +151,7 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig {
         return this.originAuthSignType;
     }
     /**
-     * @return The name of the CDN configuration type.
+     * @return Type of the lock.
      * 
      */
     public String type() {

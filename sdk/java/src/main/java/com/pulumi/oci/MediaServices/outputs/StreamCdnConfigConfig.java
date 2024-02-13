@@ -69,7 +69,10 @@ public final class StreamCdnConfigConfig {
      */
     private @Nullable String originAuthSignType;
     /**
-     * @return (Updatable) The name of the CDN configuration type.
+     * @return Type of the lock.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String type;
@@ -153,7 +156,10 @@ public final class StreamCdnConfigConfig {
         return Optional.ofNullable(this.originAuthSignType);
     }
     /**
-     * @return (Updatable) The name of the CDN configuration type.
+     * @return Type of the lock.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String type() {

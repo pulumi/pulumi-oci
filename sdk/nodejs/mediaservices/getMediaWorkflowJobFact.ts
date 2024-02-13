@@ -5,6 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * > **_NOTE:_** This data source has been deprecated and is no longer supported.
  * This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
  *
  * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
@@ -74,6 +75,7 @@ export interface GetMediaWorkflowJobFactResult {
     readonly type: string;
 }
 /**
+ * > **_NOTE:_** This data source has been deprecated and is no longer supported.
  * This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
  *
  * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.

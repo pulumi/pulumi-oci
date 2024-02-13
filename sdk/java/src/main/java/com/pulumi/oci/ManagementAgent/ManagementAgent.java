@@ -9,6 +9,8 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.ManagementAgent.ManagementAgentArgs;
 import com.pulumi.oci.ManagementAgent.inputs.ManagementAgentState;
+import com.pulumi.oci.ManagementAgent.outputs.ManagementAgentDataSourceList;
+import com.pulumi.oci.ManagementAgent.outputs.ManagementAgentDataSourceSummaryList;
 import com.pulumi.oci.ManagementAgent.outputs.ManagementAgentManagementAgentProperty;
 import com.pulumi.oci.ManagementAgent.outputs.ManagementAgentPluginList;
 import com.pulumi.oci.Utilities;
@@ -79,18 +81,38 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
         return this.availabilityStatus;
     }
     /**
-     * Compartment Identifier
+     * Compartment owning this DataSource.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier
+     * @return Compartment owning this DataSource.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * list of dataSources associated with the agent
+     * 
+     */
+    @Export(name="dataSourceLists", refs={List.class,ManagementAgentDataSourceList.class}, tree="[0,1]")
+    private Output<List<ManagementAgentDataSourceList>> dataSourceLists;
+
+    /**
+     * @return list of dataSources associated with the agent
+     * 
+     */
+    public Output<List<ManagementAgentDataSourceList>> dataSourceLists() {
+        return this.dataSourceLists;
+    }
+    @Export(name="dataSourceSummaryLists", refs={List.class,ManagementAgentDataSourceSummaryList.class}, tree="[0,1]")
+    private Output<List<ManagementAgentDataSourceSummaryList>> dataSourceSummaryLists;
+
+    public Output<List<ManagementAgentDataSourceSummaryList>> dataSourceSummaryLists() {
+        return this.dataSourceSummaryLists;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`

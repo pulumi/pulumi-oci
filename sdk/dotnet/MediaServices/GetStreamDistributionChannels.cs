@@ -164,7 +164,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class GetStreamDistributionChannelsResult
     {
         /// <summary>
-        /// Compartment Identifier.
+        /// The compartment ID of the lock.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

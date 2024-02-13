@@ -37,6 +37,11 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// Unique identifier that is immutable on creation.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMediaAssetsMediaAssetCollectionItemLockResult> Locks;
         /// <summary>
         /// Unique MediaAsset identifier of the first asset upload.
         /// </summary>
@@ -120,6 +125,10 @@ namespace Pulumi.Oci.MediaServices.Outputs
 
             string id,
 
+            bool isLockOverride,
+
+            ImmutableArray<Outputs.GetMediaAssetsMediaAssetCollectionItemLockResult> locks,
+
             string masterMediaAssetId,
 
             ImmutableArray<Outputs.GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult> mediaAssetTags,
@@ -160,6 +169,8 @@ namespace Pulumi.Oci.MediaServices.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
+            Locks = locks;
             MasterMediaAssetId = masterMediaAssetId;
             MediaAssetTags = mediaAssetTags;
             MediaWorkflowJobId = mediaWorkflowJobId;

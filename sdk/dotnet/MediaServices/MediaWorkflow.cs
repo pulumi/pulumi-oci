@@ -36,6 +36,17 @@ namespace Pulumi.Oci.MediaServices
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.MediaServices.Inputs.MediaWorkflowLockArgs
+    ///             {
+    ///                 CompartmentId = @var.Compartment_id,
+    ///                 Type = @var.Media_workflow_locks_type,
+    ///                 Message = @var.Media_workflow_locks_message,
+    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
+    ///                 TimeCreated = @var.Media_workflow_locks_time_created,
+    ///             },
+    ///         },
     ///         MediaWorkflowConfigurationIds = @var.Media_workflow_media_workflow_configuration_ids,
     ///         Parameters = @var.Media_workflow_parameters,
     ///         Tasks = new[]
@@ -68,7 +79,7 @@ namespace Pulumi.Oci.MediaServices
     public partial class MediaWorkflow : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The compartment ID of the lock.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -91,11 +102,20 @@ namespace Pulumi.Oci.MediaServices
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecyleDetails")]
         public Output<string> LifecyleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.MediaWorkflowLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Configurations to be applied to all the jobs for this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob.
@@ -128,7 +148,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<ImmutableArray<Outputs.MediaWorkflowTask>> Tasks { get; private set; } = null!;
 
         /// <summary>
-        /// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -196,7 +216,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class MediaWorkflowArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The compartment ID of the lock.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -229,6 +249,21 @@ namespace Pulumi.Oci.MediaServices
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
+        }
+
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.MediaWorkflowLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.MediaWorkflowLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.MediaWorkflowLockArgs>());
+            set => _locks = value;
         }
 
         [Input("mediaWorkflowConfigurationIds")]
@@ -270,7 +305,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class MediaWorkflowState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The compartment ID of the lock.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -305,11 +340,26 @@ namespace Pulumi.Oci.MediaServices
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Input("lifecyleDetails")]
         public Input<string>? LifecyleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.MediaWorkflowLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.MediaWorkflowLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.MediaWorkflowLockGetArgs>());
+            set => _locks = value;
+        }
 
         [Input("mediaWorkflowConfigurationIds")]
         private InputList<string>? _mediaWorkflowConfigurationIds;
@@ -360,7 +410,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

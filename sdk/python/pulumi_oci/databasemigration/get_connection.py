@@ -22,7 +22,7 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, admin_credentials=None, certificate_tdn=None, compartment_id=None, connect_descriptors=None, connection_id=None, credentials_secret_id=None, database_id=None, database_type=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, nsg_ids=None, private_endpoints=None, replication_credentials=None, ssh_details=None, state=None, system_tags=None, time_created=None, time_updated=None, tls_keystore=None, tls_wallet=None, vault_details=None):
+    def __init__(__self__, admin_credentials=None, certificate_tdn=None, compartment_id=None, connect_descriptors=None, connection_id=None, credentials_secret_id=None, database_id=None, database_type=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, manual_database_sub_type=None, nsg_ids=None, private_endpoints=None, replication_credentials=None, ssh_details=None, state=None, system_tags=None, time_created=None, time_updated=None, tls_keystore=None, tls_wallet=None, vault_details=None):
         if admin_credentials and not isinstance(admin_credentials, list):
             raise TypeError("Expected argument 'admin_credentials' to be a list")
         pulumi.set(__self__, "admin_credentials", admin_credentials)
@@ -62,6 +62,9 @@ class GetConnectionResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if manual_database_sub_type and not isinstance(manual_database_sub_type, str):
+            raise TypeError("Expected argument 'manual_database_sub_type' to be a str")
+        pulumi.set(__self__, "manual_database_sub_type", manual_database_sub_type)
         if nsg_ids and not isinstance(nsg_ids, list):
             raise TypeError("Expected argument 'nsg_ids' to be a list")
         pulumi.set(__self__, "nsg_ids", nsg_ids)
@@ -198,6 +201,11 @@ class GetConnectionResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="manualDatabaseSubType")
+    def manual_database_sub_type(self) -> str:
+        return pulumi.get(self, "manual_database_sub_type")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
@@ -299,6 +307,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
+            manual_database_sub_type=self.manual_database_sub_type,
             nsg_ids=self.nsg_ids,
             private_endpoints=self.private_endpoints,
             replication_credentials=self.replication_credentials,
@@ -350,6 +359,7 @@ def get_connection(connection_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        manual_database_sub_type=pulumi.get(__ret__, 'manual_database_sub_type'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         private_endpoints=pulumi.get(__ret__, 'private_endpoints'),
         replication_credentials=pulumi.get(__ret__, 'replication_credentials'),

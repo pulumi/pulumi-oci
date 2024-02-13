@@ -146,6 +146,7 @@ export class Connection extends pulumi.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public readonly manualDatabaseSubType!: pulumi.Output<string>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      */
@@ -215,6 +216,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["manualDatabaseSubType"] = state ? state.manualDatabaseSubType : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["privateEndpoint"] = state ? state.privateEndpoint : undefined;
             resourceInputs["replicationCredentials"] = state ? state.replicationCredentials : undefined;
@@ -249,6 +251,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["manualDatabaseSubType"] = args ? args.manualDatabaseSubType : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["privateEndpoint"] = args ? args.privateEndpoint : undefined;
             resourceInputs["replicationCredentials"] = args ? args.replicationCredentials : undefined;
@@ -316,6 +319,7 @@ export interface ConnectionState {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    manualDatabaseSubType?: pulumi.Input<string>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      */
@@ -402,6 +406,7 @@ export interface ConnectionArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    manualDatabaseSubType?: pulumi.Input<string>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      */

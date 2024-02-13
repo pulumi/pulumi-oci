@@ -8,6 +8,7 @@ import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotMaintenance;
+import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotSecureConnection;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -135,6 +136,11 @@ public final class MysqlBackupDbSystemSnapshot {
      * 
      */
     private @Nullable Integer portX;
+    /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    private @Nullable List<MysqlBackupDbSystemSnapshotSecureConnection> secureConnections;
     /**
      * @return The shape of the DB System instance used for backup.
      * 
@@ -309,6 +315,13 @@ public final class MysqlBackupDbSystemSnapshot {
         return Optional.ofNullable(this.portX);
     }
     /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    public List<MysqlBackupDbSystemSnapshotSecureConnection> secureConnections() {
+        return this.secureConnections == null ? List.of() : this.secureConnections;
+    }
+    /**
      * @return The shape of the DB System instance used for backup.
      * 
      */
@@ -355,6 +368,7 @@ public final class MysqlBackupDbSystemSnapshot {
         private @Nullable String mysqlVersion;
         private @Nullable Integer port;
         private @Nullable Integer portX;
+        private @Nullable List<MysqlBackupDbSystemSnapshotSecureConnection> secureConnections;
         private @Nullable String shapeName;
         private @Nullable String subnetId;
         public Builder() {}
@@ -383,6 +397,7 @@ public final class MysqlBackupDbSystemSnapshot {
     	      this.mysqlVersion = defaults.mysqlVersion;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
         }
@@ -538,6 +553,15 @@ public final class MysqlBackupDbSystemSnapshot {
             return this;
         }
         @CustomType.Setter
+        public Builder secureConnections(@Nullable List<MysqlBackupDbSystemSnapshotSecureConnection> secureConnections) {
+
+            this.secureConnections = secureConnections;
+            return this;
+        }
+        public Builder secureConnections(MysqlBackupDbSystemSnapshotSecureConnection... secureConnections) {
+            return secureConnections(List.of(secureConnections));
+        }
+        @CustomType.Setter
         public Builder shapeName(@Nullable String shapeName) {
 
             this.shapeName = shapeName;
@@ -574,6 +598,7 @@ public final class MysqlBackupDbSystemSnapshot {
             _resultValue.mysqlVersion = mysqlVersion;
             _resultValue.port = port;
             _resultValue.portX = portX;
+            _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;
             return _resultValue;

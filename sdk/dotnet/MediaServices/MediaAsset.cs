@@ -32,7 +32,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<string> Bucket { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The compartment ID of the lock.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -54,6 +54,15 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.MediaAssetLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The ID of the senior most asset from which this asset is derived.
@@ -140,7 +149,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -214,7 +223,7 @@ namespace Pulumi.Oci.MediaServices
         public Input<string>? Bucket { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The compartment ID of the lock.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -247,6 +256,21 @@ namespace Pulumi.Oci.MediaServices
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
+        }
+
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.MediaAssetLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.MediaAssetLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.MediaAssetLockArgs>());
+            set => _locks = value;
         }
 
         /// <summary>
@@ -358,7 +382,7 @@ namespace Pulumi.Oci.MediaServices
         public Input<string>? Bucket { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier.
+        /// (Updatable) The compartment ID of the lock.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -391,6 +415,21 @@ namespace Pulumi.Oci.MediaServices
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
+        }
+
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.MediaAssetLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.MediaAssetLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.MediaAssetLockGetArgs>());
+            set => _locks = value;
         }
 
         /// <summary>
@@ -496,7 +535,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

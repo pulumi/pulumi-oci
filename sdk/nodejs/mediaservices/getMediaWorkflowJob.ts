@@ -45,7 +45,7 @@ export interface GetMediaWorkflowJobArgs {
  */
 export interface GetMediaWorkflowJobResult {
     /**
-     * Compartment Identifier.
+     * The compartment ID of the lock.
      */
     readonly compartmentId: string;
     /**
@@ -64,10 +64,15 @@ export interface GetMediaWorkflowJobResult {
      * The ID associated with the job output.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
     /**
      * The lifecycle details of MediaWorkflowJob task.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.MediaServices.GetMediaWorkflowJobLock[];
     /**
      * Configurations to be applied to this run of the workflow.
      */

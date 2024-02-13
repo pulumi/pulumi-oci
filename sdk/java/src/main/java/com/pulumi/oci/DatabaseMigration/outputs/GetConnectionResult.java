@@ -80,6 +80,7 @@ public final class GetConnectionResult {
      * 
      */
     private String lifecycleDetails;
+    private String manualDatabaseSubType;
     /**
      * @return An array of Network Security Group OCIDs used to define network access for Connections.
      * 
@@ -216,6 +217,9 @@ public final class GetConnectionResult {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    public String manualDatabaseSubType() {
+        return this.manualDatabaseSubType;
+    }
     /**
      * @return An array of Network Security Group OCIDs used to define network access for Connections.
      * 
@@ -308,6 +312,7 @@ public final class GetConnectionResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleDetails;
+        private String manualDatabaseSubType;
         private List<String> nsgIds;
         private List<GetConnectionPrivateEndpoint> privateEndpoints;
         private List<GetConnectionReplicationCredential> replicationCredentials;
@@ -335,6 +340,7 @@ public final class GetConnectionResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.manualDatabaseSubType = defaults.manualDatabaseSubType;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateEndpoints = defaults.privateEndpoints;
     	      this.replicationCredentials = defaults.replicationCredentials;
@@ -459,6 +465,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder manualDatabaseSubType(String manualDatabaseSubType) {
+            if (manualDatabaseSubType == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "manualDatabaseSubType");
+            }
+            this.manualDatabaseSubType = manualDatabaseSubType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             if (nsgIds == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "nsgIds");
@@ -576,6 +590,7 @@ public final class GetConnectionResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.manualDatabaseSubType = manualDatabaseSubType;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateEndpoints = privateEndpoints;
             _resultValue.replicationCredentials = replicationCredentials;

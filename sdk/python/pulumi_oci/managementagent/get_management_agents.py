@@ -23,7 +23,7 @@ class GetManagementAgentsResult:
     """
     A collection of values returned by getManagementAgents.
     """
-    def __init__(__self__, access_level=None, availability_status=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, gateway_ids=None, host_id=None, id=None, install_type=None, is_customer_deployed=None, management_agents=None, platform_types=None, plugin_names=None, state=None, versions=None):
+    def __init__(__self__, access_level=None, availability_status=None, compartment_id=None, compartment_id_in_subtree=None, data_source_names=None, data_source_type=None, display_name=None, filters=None, gateway_ids=None, host_id=None, id=None, install_type=None, is_customer_deployed=None, management_agents=None, platform_types=None, plugin_names=None, state=None, versions=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -36,6 +36,12 @@ class GetManagementAgentsResult:
         if compartment_id_in_subtree and not isinstance(compartment_id_in_subtree, bool):
             raise TypeError("Expected argument 'compartment_id_in_subtree' to be a bool")
         pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
+        if data_source_names and not isinstance(data_source_names, list):
+            raise TypeError("Expected argument 'data_source_names' to be a list")
+        pulumi.set(__self__, "data_source_names", data_source_names)
+        if data_source_type and not isinstance(data_source_type, str):
+            raise TypeError("Expected argument 'data_source_type' to be a str")
+        pulumi.set(__self__, "data_source_type", data_source_type)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -98,6 +104,16 @@ class GetManagementAgentsResult:
     @pulumi.getter(name="compartmentIdInSubtree")
     def compartment_id_in_subtree(self) -> Optional[bool]:
         return pulumi.get(self, "compartment_id_in_subtree")
+
+    @property
+    @pulumi.getter(name="dataSourceNames")
+    def data_source_names(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "data_source_names")
+
+    @property
+    @pulumi.getter(name="dataSourceType")
+    def data_source_type(self) -> Optional[str]:
+        return pulumi.get(self, "data_source_type")
 
     @property
     @pulumi.getter(name="displayName")
@@ -200,6 +216,8 @@ class AwaitableGetManagementAgentsResult(GetManagementAgentsResult):
             availability_status=self.availability_status,
             compartment_id=self.compartment_id,
             compartment_id_in_subtree=self.compartment_id_in_subtree,
+            data_source_names=self.data_source_names,
+            data_source_type=self.data_source_type,
             display_name=self.display_name,
             filters=self.filters,
             gateway_ids=self.gateway_ids,
@@ -218,6 +236,8 @@ def get_management_agents(access_level: Optional[str] = None,
                           availability_status: Optional[str] = None,
                           compartment_id: Optional[str] = None,
                           compartment_id_in_subtree: Optional[bool] = None,
+                          data_source_names: Optional[Sequence[str]] = None,
+                          data_source_type: Optional[str] = None,
                           display_name: Optional[str] = None,
                           filters: Optional[Sequence[pulumi.InputType['GetManagementAgentsFilterArgs']]] = None,
                           gateway_ids: Optional[Sequence[str]] = None,
@@ -246,6 +266,8 @@ def get_management_agents(access_level: Optional[str] = None,
         access_level=var["management_agent_access_level"],
         availability_status=var["management_agent_availability_status"],
         compartment_id_in_subtree=var["management_agent_compartment_id_in_subtree"],
+        data_source_names=oci_management_agent_management_agent_data_source["test_management_agent_data_source"]["name"],
+        data_source_type=var["management_agent_data_source_type"],
         display_name=var["management_agent_display_name"],
         gateway_ids=oci_apigateway_gateway["test_gateway"]["id"],
         host_id=oci_management_agent_host["test_host"]["id"],
@@ -262,6 +284,8 @@ def get_management_agents(access_level: Optional[str] = None,
     :param str availability_status: Filter to return only Management Agents in the particular availability status.
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
     :param bool compartment_id_in_subtree: if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+    :param Sequence[str] data_source_names: Unique name of the dataSource.
+    :param str data_source_type: The type of the dataSource.
     :param str display_name: Filter to return only Management Agents having the particular display name.
     :param Sequence[str] gateway_ids: Filter to return only results having the particular gatewayId.
     :param str host_id: Filter to return only Management Agents having the particular agent host id.
@@ -277,6 +301,8 @@ def get_management_agents(access_level: Optional[str] = None,
     __args__['availabilityStatus'] = availability_status
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['dataSourceNames'] = data_source_names
+    __args__['dataSourceType'] = data_source_type
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['gatewayIds'] = gateway_ids
@@ -295,6 +321,8 @@ def get_management_agents(access_level: Optional[str] = None,
         availability_status=pulumi.get(__ret__, 'availability_status'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        data_source_names=pulumi.get(__ret__, 'data_source_names'),
+        data_source_type=pulumi.get(__ret__, 'data_source_type'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         gateway_ids=pulumi.get(__ret__, 'gateway_ids'),
@@ -314,6 +342,8 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
                                  availability_status: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id: Optional[pulumi.Input[str]] = None,
                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
+                                 data_source_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                 data_source_type: Optional[pulumi.Input[Optional[str]]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagementAgentsFilterArgs']]]]] = None,
                                  gateway_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -342,6 +372,8 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
         access_level=var["management_agent_access_level"],
         availability_status=var["management_agent_availability_status"],
         compartment_id_in_subtree=var["management_agent_compartment_id_in_subtree"],
+        data_source_names=oci_management_agent_management_agent_data_source["test_management_agent_data_source"]["name"],
+        data_source_type=var["management_agent_data_source_type"],
         display_name=var["management_agent_display_name"],
         gateway_ids=oci_apigateway_gateway["test_gateway"]["id"],
         host_id=oci_management_agent_host["test_host"]["id"],
@@ -358,6 +390,8 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
     :param str availability_status: Filter to return only Management Agents in the particular availability status.
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
     :param bool compartment_id_in_subtree: if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+    :param Sequence[str] data_source_names: Unique name of the dataSource.
+    :param str data_source_type: The type of the dataSource.
     :param str display_name: Filter to return only Management Agents having the particular display name.
     :param Sequence[str] gateway_ids: Filter to return only results having the particular gatewayId.
     :param str host_id: Filter to return only Management Agents having the particular agent host id.

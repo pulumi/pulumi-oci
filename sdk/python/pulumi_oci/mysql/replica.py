@@ -151,6 +151,7 @@ class _ReplicaState:
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
                  replica_overrides: Optional[pulumi.Input['ReplicaReplicaOverridesArgs']] = None,
+                 secure_connections: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicaSecureConnectionArgs']]]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -173,6 +174,7 @@ class _ReplicaState:
         :param pulumi.Input[int] port: The port the read replica is configured to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input['ReplicaReplicaOverridesArgs'] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+        :param pulumi.Input[Sequence[pulumi.Input['ReplicaSecureConnectionArgs']]] secure_connections: Secure connection configuration details.
         :param pulumi.Input[str] shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
                
                
@@ -214,6 +216,8 @@ class _ReplicaState:
             pulumi.set(__self__, "port_x", port_x)
         if replica_overrides is not None:
             pulumi.set(__self__, "replica_overrides", replica_overrides)
+        if secure_connections is not None:
+            pulumi.set(__self__, "secure_connections", secure_connections)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if state is not None:
@@ -414,6 +418,18 @@ class _ReplicaState:
     @replica_overrides.setter
     def replica_overrides(self, value: Optional[pulumi.Input['ReplicaReplicaOverridesArgs']]):
         pulumi.set(self, "replica_overrides", value)
+
+    @property
+    @pulumi.getter(name="secureConnections")
+    def secure_connections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ReplicaSecureConnectionArgs']]]]:
+        """
+        Secure connection configuration details.
+        """
+        return pulumi.get(self, "secure_connections")
+
+    @secure_connections.setter
+    def secure_connections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicaSecureConnectionArgs']]]]):
+        pulumi.set(self, "secure_connections", value)
 
     @property
     @pulumi.getter(name="shapeName")
@@ -620,6 +636,7 @@ class Replica(pulumi.CustomResource):
             __props__.__dict__["mysql_version"] = None
             __props__.__dict__["port"] = None
             __props__.__dict__["port_x"] = None
+            __props__.__dict__["secure_connections"] = None
             __props__.__dict__["shape_name"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -650,6 +667,7 @@ class Replica(pulumi.CustomResource):
             port: Optional[pulumi.Input[int]] = None,
             port_x: Optional[pulumi.Input[int]] = None,
             replica_overrides: Optional[pulumi.Input[pulumi.InputType['ReplicaReplicaOverridesArgs']]] = None,
+            secure_connections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReplicaSecureConnectionArgs']]]]] = None,
             shape_name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -677,6 +695,7 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[int] port: The port the read replica is configured to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[pulumi.InputType['ReplicaReplicaOverridesArgs']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReplicaSecureConnectionArgs']]]] secure_connections: Secure connection configuration details.
         :param pulumi.Input[str] shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
                
                
@@ -706,6 +725,7 @@ class Replica(pulumi.CustomResource):
         __props__.__dict__["port"] = port
         __props__.__dict__["port_x"] = port_x
         __props__.__dict__["replica_overrides"] = replica_overrides
+        __props__.__dict__["secure_connections"] = secure_connections
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
@@ -839,6 +859,14 @@ class Replica(pulumi.CustomResource):
         (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
         """
         return pulumi.get(self, "replica_overrides")
+
+    @property
+    @pulumi.getter(name="secureConnections")
+    def secure_connections(self) -> pulumi.Output[Sequence['outputs.ReplicaSecureConnection']]:
+        """
+        Secure connection configuration details.
+        """
+        return pulumi.get(self, "secure_connections")
 
     @property
     @pulumi.getter(name="shapeName")

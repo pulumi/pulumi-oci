@@ -282,7 +282,7 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public readonly string? Bucket;
         /// <summary>
-        /// The ID of the compartment containing the MediaAsset.
+        /// The compartment ID of the lock.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

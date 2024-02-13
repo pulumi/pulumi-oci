@@ -10,10 +10,13 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.MediaServices.StreamPackagingConfigArgs;
 import com.pulumi.oci.MediaServices.inputs.StreamPackagingConfigState;
 import com.pulumi.oci.MediaServices.outputs.StreamPackagingConfigEncryption;
+import com.pulumi.oci.MediaServices.outputs.StreamPackagingConfigLock;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -32,6 +35,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.MediaServices.StreamPackagingConfig;
  * import com.pulumi.oci.MediaServices.StreamPackagingConfigArgs;
  * import com.pulumi.oci.MediaServices.inputs.StreamPackagingConfigEncryptionArgs;
+ * import com.pulumi.oci.MediaServices.inputs.StreamPackagingConfigLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -56,6 +60,13 @@ import javax.annotation.Nullable;
  *                 .kmsKeyId(oci_kms_key.test_key().id())
  *                 .build())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .locks(StreamPackagingConfigLockArgs.builder()
+ *                 .compartmentId(var_.compartment_id())
+ *                 .type(var_.stream_packaging_config_locks_type())
+ *                 .message(var_.stream_packaging_config_locks_message())
+ *                 .relatedResourceId(oci_usage_proxy_resource.test_resource().id())
+ *                 .timeCreated(var_.stream_packaging_config_locks_time_created())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -74,14 +85,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:MediaServices/streamPackagingConfig:StreamPackagingConfig")
 public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
     /**
-     * Compartment Identifier
+     * The compartment ID of the lock.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier
+     * @return The compartment ID of the lock.
      * 
      */
     public Output<String> compartmentId() {
@@ -157,6 +168,26 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,StreamPackagingConfigLock.class}, tree="[0,1]")
+    private Output<List<StreamPackagingConfigLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<StreamPackagingConfigLock>> locks() {
+        return this.locks;
+    }
     /**
      * The duration in seconds for each fragment.
      * 
@@ -220,14 +251,14 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
+     * @return When the lock was created.
      * 
      */
     public Output<String> timeCreated() {

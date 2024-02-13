@@ -21,8 +21,6 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
-	case "oci:DatabaseMigration/agent:Agent":
-		r = &Agent{}
 	case "oci:DatabaseMigration/connection:Connection":
 		r = &Connection{}
 	case "oci:DatabaseMigration/job:Job":
@@ -42,11 +40,6 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
-	pulumi.RegisterResourceModule(
-		"oci",
-		"DatabaseMigration/agent",
-		&module{version},
-	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseMigration/connection",

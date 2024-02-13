@@ -82,7 +82,7 @@ class GetMediaAssetsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The ID of the compartment containing the MediaAsset.
+        The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 

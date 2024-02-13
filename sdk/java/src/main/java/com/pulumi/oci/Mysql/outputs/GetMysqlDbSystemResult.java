@@ -13,6 +13,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemHeatWaveCluster;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemMaintenance;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemPointInTimeRecoveryDetail;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemSecureConnection;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemSource;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -171,6 +172,11 @@ public final class GetMysqlDbSystemResult {
      * 
      */
     private Integer portX;
+    /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    private List<GetMysqlDbSystemSecureConnection> secureConnections;
     /**
      * @return The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      * 
@@ -414,6 +420,13 @@ public final class GetMysqlDbSystemResult {
         return this.portX;
     }
     /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    public List<GetMysqlDbSystemSecureConnection> secureConnections() {
+        return this.secureConnections;
+    }
+    /**
      * @return The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -499,6 +512,7 @@ public final class GetMysqlDbSystemResult {
         private List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails;
         private Integer port;
         private Integer portX;
+        private List<GetMysqlDbSystemSecureConnection> secureConnections;
         private String shapeName;
         private String shutdownType;
         private List<GetMysqlDbSystemSource> sources;
@@ -540,6 +554,7 @@ public final class GetMysqlDbSystemResult {
     	      this.pointInTimeRecoveryDetails = defaults.pointInTimeRecoveryDetails;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
     	      this.shutdownType = defaults.shutdownType;
     	      this.sources = defaults.sources;
@@ -822,6 +837,17 @@ public final class GetMysqlDbSystemResult {
             return this;
         }
         @CustomType.Setter
+        public Builder secureConnections(List<GetMysqlDbSystemSecureConnection> secureConnections) {
+            if (secureConnections == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "secureConnections");
+            }
+            this.secureConnections = secureConnections;
+            return this;
+        }
+        public Builder secureConnections(GetMysqlDbSystemSecureConnection... secureConnections) {
+            return secureConnections(List.of(secureConnections));
+        }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             if (shapeName == null) {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "shapeName");
@@ -913,6 +939,7 @@ public final class GetMysqlDbSystemResult {
             _resultValue.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
             _resultValue.port = port;
             _resultValue.portX = portX;
+            _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;
             _resultValue.shutdownType = shutdownType;
             _resultValue.sources = sources;

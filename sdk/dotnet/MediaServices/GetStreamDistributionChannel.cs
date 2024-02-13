@@ -106,7 +106,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class GetStreamDistributionChannelResult
     {
         /// <summary>
-        /// Compartment Identifier.
+        /// The compartment ID of the lock.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -129,6 +129,11 @@ namespace Pulumi.Oci.MediaServices
         /// Unique identifier that is immutable on creation.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetStreamDistributionChannelLockResult> Locks;
         /// <summary>
         /// The current state of the Stream Distribution Channel.
         /// </summary>
@@ -161,6 +166,10 @@ namespace Pulumi.Oci.MediaServices
 
             string id,
 
+            bool isLockOverride,
+
+            ImmutableArray<Outputs.GetStreamDistributionChannelLockResult> locks,
+
             string state,
 
             string streamDistributionChannelId,
@@ -177,6 +186,8 @@ namespace Pulumi.Oci.MediaServices
             DomainName = domainName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
+            Locks = locks;
             State = state;
             StreamDistributionChannelId = streamDistributionChannelId;
             SystemTags = systemTags;

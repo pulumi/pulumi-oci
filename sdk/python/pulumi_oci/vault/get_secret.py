@@ -22,7 +22,7 @@ class GetSecretResult:
     """
     A collection of values returned by getSecret.
     """
-    def __init__(__self__, compartment_id=None, current_version_number=None, defined_tags=None, description=None, freeform_tags=None, id=None, key_id=None, lifecycle_details=None, metadata=None, secret_contents=None, secret_id=None, secret_name=None, secret_rules=None, state=None, time_created=None, time_of_current_version_expiry=None, time_of_deletion=None, vault_id=None):
+    def __init__(__self__, compartment_id=None, current_version_number=None, defined_tags=None, description=None, freeform_tags=None, id=None, key_id=None, last_rotation_time=None, lifecycle_details=None, metadata=None, next_rotation_time=None, rotation_configs=None, rotation_status=None, secret_contents=None, secret_id=None, secret_name=None, secret_rules=None, state=None, time_created=None, time_of_current_version_expiry=None, time_of_deletion=None, vault_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,12 +44,24 @@ class GetSecretResult:
         if key_id and not isinstance(key_id, str):
             raise TypeError("Expected argument 'key_id' to be a str")
         pulumi.set(__self__, "key_id", key_id)
+        if last_rotation_time and not isinstance(last_rotation_time, str):
+            raise TypeError("Expected argument 'last_rotation_time' to be a str")
+        pulumi.set(__self__, "last_rotation_time", last_rotation_time)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if metadata and not isinstance(metadata, dict):
             raise TypeError("Expected argument 'metadata' to be a dict")
         pulumi.set(__self__, "metadata", metadata)
+        if next_rotation_time and not isinstance(next_rotation_time, str):
+            raise TypeError("Expected argument 'next_rotation_time' to be a str")
+        pulumi.set(__self__, "next_rotation_time", next_rotation_time)
+        if rotation_configs and not isinstance(rotation_configs, list):
+            raise TypeError("Expected argument 'rotation_configs' to be a list")
+        pulumi.set(__self__, "rotation_configs", rotation_configs)
+        if rotation_status and not isinstance(rotation_status, str):
+            raise TypeError("Expected argument 'rotation_status' to be a str")
+        pulumi.set(__self__, "rotation_status", rotation_status)
         if secret_contents and not isinstance(secret_contents, list):
             raise TypeError("Expected argument 'secret_contents' to be a list")
         pulumi.set(__self__, "secret_contents", secret_contents)
@@ -130,9 +142,17 @@ class GetSecretResult:
     @pulumi.getter(name="keyId")
     def key_id(self) -> str:
         """
-        The OCID of the master encryption key that is used to encrypt the secret.
+        The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         """
         return pulumi.get(self, "key_id")
+
+    @property
+    @pulumi.getter(name="lastRotationTime")
+    def last_rotation_time(self) -> str:
+        """
+        A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "last_rotation_time")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -149,6 +169,30 @@ class GetSecretResult:
         Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         """
         return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter(name="nextRotationTime")
+    def next_rotation_time(self) -> str:
+        """
+        A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "next_rotation_time")
+
+    @property
+    @pulumi.getter(name="rotationConfigs")
+    def rotation_configs(self) -> Sequence['outputs.GetSecretRotationConfigResult']:
+        """
+        Defines the frequency of the rotation and the information about the target system
+        """
+        return pulumi.get(self, "rotation_configs")
+
+    @property
+    @pulumi.getter(name="rotationStatus")
+    def rotation_status(self) -> str:
+        """
+        Additional information about the status of the secret rotation
+        """
+        return pulumi.get(self, "rotation_status")
 
     @property
     @pulumi.getter(name="secretContents")
@@ -230,8 +274,12 @@ class AwaitableGetSecretResult(GetSecretResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             key_id=self.key_id,
+            last_rotation_time=self.last_rotation_time,
             lifecycle_details=self.lifecycle_details,
             metadata=self.metadata,
+            next_rotation_time=self.next_rotation_time,
+            rotation_configs=self.rotation_configs,
+            rotation_status=self.rotation_status,
             secret_contents=self.secret_contents,
             secret_id=self.secret_id,
             secret_name=self.secret_name,
@@ -275,8 +323,12 @@ def get_secret(secret_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         key_id=pulumi.get(__ret__, 'key_id'),
+        last_rotation_time=pulumi.get(__ret__, 'last_rotation_time'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         metadata=pulumi.get(__ret__, 'metadata'),
+        next_rotation_time=pulumi.get(__ret__, 'next_rotation_time'),
+        rotation_configs=pulumi.get(__ret__, 'rotation_configs'),
+        rotation_status=pulumi.get(__ret__, 'rotation_status'),
         secret_contents=pulumi.get(__ret__, 'secret_contents'),
         secret_id=pulumi.get(__ret__, 'secret_id'),
         secret_name=pulumi.get(__ret__, 'secret_name'),

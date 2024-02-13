@@ -111,6 +111,8 @@ class _ManagementAgentState:
     def __init__(__self__, *,
                  availability_status: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 data_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]]] = None,
+                 data_source_summary_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceSummaryListArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deploy_plugins_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -138,7 +140,8 @@ class _ManagementAgentState:
         """
         Input properties used for looking up and filtering ManagementAgent resources.
         :param pulumi.Input[str] availability_status: The current availability status of managementAgent
-        :param pulumi.Input[str] compartment_id: Compartment Identifier
+        :param pulumi.Input[str] compartment_id: Compartment owning this DataSource.
+        :param pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]] data_source_lists: list of dataSources associated with the agent
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_plugins_ids: (Updatable) Plugin Id list
                
@@ -171,6 +174,10 @@ class _ManagementAgentState:
             pulumi.set(__self__, "availability_status", availability_status)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if data_source_lists is not None:
+            pulumi.set(__self__, "data_source_lists", data_source_lists)
+        if data_source_summary_lists is not None:
+            pulumi.set(__self__, "data_source_summary_lists", data_source_summary_lists)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deploy_plugins_ids is not None:
@@ -236,13 +243,34 @@ class _ManagementAgentState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Compartment Identifier
+        Compartment owning this DataSource.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="dataSourceLists")
+    def data_source_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]]]:
+        """
+        list of dataSources associated with the agent
+        """
+        return pulumi.get(self, "data_source_lists")
+
+    @data_source_lists.setter
+    def data_source_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]]]):
+        pulumi.set(self, "data_source_lists", value)
+
+    @property
+    @pulumi.getter(name="dataSourceSummaryLists")
+    def data_source_summary_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceSummaryListArgs']]]]:
+        return pulumi.get(self, "data_source_summary_lists")
+
+    @data_source_summary_lists.setter
+    def data_source_summary_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceSummaryListArgs']]]]):
+        pulumi.set(self, "data_source_summary_lists", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -642,6 +670,8 @@ class ManagementAgent(pulumi.CustomResource):
             __props__.__dict__["managed_agent_id"] = managed_agent_id
             __props__.__dict__["availability_status"] = None
             __props__.__dict__["compartment_id"] = None
+            __props__.__dict__["data_source_lists"] = None
+            __props__.__dict__["data_source_summary_lists"] = None
             __props__.__dict__["host"] = None
             __props__.__dict__["host_id"] = None
             __props__.__dict__["install_key_id"] = None
@@ -673,6 +703,8 @@ class ManagementAgent(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_status: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            data_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementAgentDataSourceListArgs']]]]] = None,
+            data_source_summary_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementAgentDataSourceSummaryListArgs']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             deploy_plugins_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -705,7 +737,8 @@ class ManagementAgent(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_status: The current availability status of managementAgent
-        :param pulumi.Input[str] compartment_id: Compartment Identifier
+        :param pulumi.Input[str] compartment_id: Compartment owning this DataSource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementAgentDataSourceListArgs']]]] data_source_lists: list of dataSources associated with the agent
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_plugins_ids: (Updatable) Plugin Id list
                
@@ -740,6 +773,8 @@ class ManagementAgent(pulumi.CustomResource):
 
         __props__.__dict__["availability_status"] = availability_status
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["data_source_lists"] = data_source_lists
+        __props__.__dict__["data_source_summary_lists"] = data_source_summary_lists
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["deploy_plugins_ids"] = deploy_plugins_ids
         __props__.__dict__["display_name"] = display_name
@@ -778,9 +813,22 @@ class ManagementAgent(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        Compartment Identifier
+        Compartment owning this DataSource.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dataSourceLists")
+    def data_source_lists(self) -> pulumi.Output[Sequence['outputs.ManagementAgentDataSourceList']]:
+        """
+        list of dataSources associated with the agent
+        """
+        return pulumi.get(self, "data_source_lists")
+
+    @property
+    @pulumi.getter(name="dataSourceSummaryLists")
+    def data_source_summary_lists(self) -> pulumi.Output[Sequence['outputs.ManagementAgentDataSourceSummaryList']]:
+        return pulumi.get(self, "data_source_summary_lists")
 
     @property
     @pulumi.getter(name="definedTags")

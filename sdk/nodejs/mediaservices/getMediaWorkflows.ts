@@ -66,7 +66,7 @@ export interface GetMediaWorkflowsArgs {
  */
 export interface GetMediaWorkflowsResult {
     /**
-     * Compartment Identifier.
+     * The compartment ID of the lock.
      */
     readonly compartmentId?: string;
     /**

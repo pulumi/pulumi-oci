@@ -37,6 +37,8 @@ namespace Pulumi.Oci.ManagementAgent
         ///         AccessLevel = @var.Management_agent_access_level,
         ///         AvailabilityStatus = @var.Management_agent_availability_status,
         ///         CompartmentIdInSubtree = @var.Management_agent_compartment_id_in_subtree,
+        ///         DataSourceNames = oci_management_agent_management_agent_data_source.Test_management_agent_data_source.Name,
+        ///         DataSourceType = @var.Management_agent_data_source_type,
         ///         DisplayName = @var.Management_agent_display_name,
         ///         GatewayIds = oci_apigateway_gateway.Test_gateway.Id,
         ///         HostId = oci_management_agent_host.Test_host.Id,
@@ -82,6 +84,8 @@ namespace Pulumi.Oci.ManagementAgent
         ///         AccessLevel = @var.Management_agent_access_level,
         ///         AvailabilityStatus = @var.Management_agent_availability_status,
         ///         CompartmentIdInSubtree = @var.Management_agent_compartment_id_in_subtree,
+        ///         DataSourceNames = oci_management_agent_management_agent_data_source.Test_management_agent_data_source.Name,
+        ///         DataSourceType = @var.Management_agent_data_source_type,
         ///         DisplayName = @var.Management_agent_display_name,
         ///         GatewayIds = oci_apigateway_gateway.Test_gateway.Id,
         ///         HostId = oci_management_agent_host.Test_host.Id,
@@ -128,6 +132,24 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
+
+        [Input("dataSourceNames")]
+        private List<string>? _dataSourceNames;
+
+        /// <summary>
+        /// Unique name of the dataSource.
+        /// </summary>
+        public List<string> DataSourceNames
+        {
+            get => _dataSourceNames ?? (_dataSourceNames = new List<string>());
+            set => _dataSourceNames = value;
+        }
+
+        /// <summary>
+        /// The type of the dataSource.
+        /// </summary>
+        [Input("dataSourceType")]
+        public string? DataSourceType { get; set; }
 
         /// <summary>
         /// Filter to return only Management Agents having the particular display name.
@@ -247,6 +269,24 @@ namespace Pulumi.Oci.ManagementAgent
         [Input("compartmentIdInSubtree")]
         public Input<bool>? CompartmentIdInSubtree { get; set; }
 
+        [Input("dataSourceNames")]
+        private InputList<string>? _dataSourceNames;
+
+        /// <summary>
+        /// Unique name of the dataSource.
+        /// </summary>
+        public InputList<string> DataSourceNames
+        {
+            get => _dataSourceNames ?? (_dataSourceNames = new InputList<string>());
+            set => _dataSourceNames = value;
+        }
+
+        /// <summary>
+        /// The type of the dataSource.
+        /// </summary>
+        [Input("dataSourceType")]
+        public Input<string>? DataSourceType { get; set; }
+
         /// <summary>
         /// Filter to return only Management Agents having the particular display name.
         /// </summary>
@@ -353,6 +393,8 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
+        public readonly ImmutableArray<string> DataSourceNames;
+        public readonly string? DataSourceType;
         /// <summary>
         /// Management Agent Name
         /// </summary>
@@ -406,6 +448,10 @@ namespace Pulumi.Oci.ManagementAgent
 
             bool? compartmentIdInSubtree,
 
+            ImmutableArray<string> dataSourceNames,
+
+            string? dataSourceType,
+
             string? displayName,
 
             ImmutableArray<Outputs.GetManagementAgentsFilterResult> filters,
@@ -434,6 +480,8 @@ namespace Pulumi.Oci.ManagementAgent
             AvailabilityStatus = availabilityStatus;
             CompartmentId = compartmentId;
             CompartmentIdInSubtree = compartmentIdInSubtree;
+            DataSourceNames = dataSourceNames;
+            DataSourceType = dataSourceType;
             DisplayName = displayName;
             Filters = filters;
             GatewayIds = gatewayIds;

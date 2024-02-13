@@ -80,6 +80,36 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
+     * Unique name of the dataSource.
+     * 
+     */
+    @Import(name="dataSourceNames")
+    private @Nullable Output<List<String>> dataSourceNames;
+
+    /**
+     * @return Unique name of the dataSource.
+     * 
+     */
+    public Optional<Output<List<String>>> dataSourceNames() {
+        return Optional.ofNullable(this.dataSourceNames);
+    }
+
+    /**
+     * The type of the dataSource.
+     * 
+     */
+    @Import(name="dataSourceType")
+    private @Nullable Output<String> dataSourceType;
+
+    /**
+     * @return The type of the dataSource.
+     * 
+     */
+    public Optional<Output<String>> dataSourceType() {
+        return Optional.ofNullable(this.dataSourceType);
+    }
+
+    /**
      * Filter to return only Management Agents having the particular display name.
      * 
      */
@@ -228,6 +258,8 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         this.availabilityStatus = $.availabilityStatus;
         this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
+        this.dataSourceNames = $.dataSourceNames;
+        this.dataSourceType = $.dataSourceType;
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.gatewayIds = $.gatewayIds;
@@ -340,6 +372,58 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             return compartmentIdInSubtree(Output.of(compartmentIdInSubtree));
+        }
+
+        /**
+         * @param dataSourceNames Unique name of the dataSource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceNames(@Nullable Output<List<String>> dataSourceNames) {
+            $.dataSourceNames = dataSourceNames;
+            return this;
+        }
+
+        /**
+         * @param dataSourceNames Unique name of the dataSource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceNames(List<String> dataSourceNames) {
+            return dataSourceNames(Output.of(dataSourceNames));
+        }
+
+        /**
+         * @param dataSourceNames Unique name of the dataSource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceNames(String... dataSourceNames) {
+            return dataSourceNames(List.of(dataSourceNames));
+        }
+
+        /**
+         * @param dataSourceType The type of the dataSource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceType(@Nullable Output<String> dataSourceType) {
+            $.dataSourceType = dataSourceType;
+            return this;
+        }
+
+        /**
+         * @param dataSourceType The type of the dataSource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceType(String dataSourceType) {
+            return dataSourceType(Output.of(dataSourceType));
         }
 
         /**

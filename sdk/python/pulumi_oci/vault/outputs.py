@@ -11,15 +11,147 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'SecretRotationConfig',
+    'SecretRotationConfigTargetSystemDetails',
     'SecretSecretContent',
     'SecretSecretRule',
+    'GetSecretRotationConfigResult',
+    'GetSecretRotationConfigTargetSystemDetailResult',
     'GetSecretSecretContentResult',
     'GetSecretSecretRuleResult',
     'GetSecretsFilterResult',
     'GetSecretsSecretResult',
+    'GetSecretsSecretRotationConfigResult',
+    'GetSecretsSecretRotationConfigTargetSystemDetailResult',
     'GetSecretsSecretSecretContentResult',
     'GetSecretsSecretSecretRuleResult',
 ]
+
+@pulumi.output_type
+class SecretRotationConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "targetSystemDetails":
+            suggest = "target_system_details"
+        elif key == "isScheduledRotationEnabled":
+            suggest = "is_scheduled_rotation_enabled"
+        elif key == "rotationInterval":
+            suggest = "rotation_interval"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SecretRotationConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SecretRotationConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SecretRotationConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 target_system_details: 'outputs.SecretRotationConfigTargetSystemDetails',
+                 is_scheduled_rotation_enabled: Optional[bool] = None,
+                 rotation_interval: Optional[str] = None):
+        """
+        :param 'SecretRotationConfigTargetSystemDetailsArgs' target_system_details: (Updatable) The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+        :param bool is_scheduled_rotation_enabled: (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
+        :param str rotation_interval: (Updatable) The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+        """
+        pulumi.set(__self__, "target_system_details", target_system_details)
+        if is_scheduled_rotation_enabled is not None:
+            pulumi.set(__self__, "is_scheduled_rotation_enabled", is_scheduled_rotation_enabled)
+        if rotation_interval is not None:
+            pulumi.set(__self__, "rotation_interval", rotation_interval)
+
+    @property
+    @pulumi.getter(name="targetSystemDetails")
+    def target_system_details(self) -> 'outputs.SecretRotationConfigTargetSystemDetails':
+        """
+        (Updatable) The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+        """
+        return pulumi.get(self, "target_system_details")
+
+    @property
+    @pulumi.getter(name="isScheduledRotationEnabled")
+    def is_scheduled_rotation_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
+        """
+        return pulumi.get(self, "is_scheduled_rotation_enabled")
+
+    @property
+    @pulumi.getter(name="rotationInterval")
+    def rotation_interval(self) -> Optional[str]:
+        """
+        (Updatable) The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+        """
+        return pulumi.get(self, "rotation_interval")
+
+
+@pulumi.output_type
+class SecretRotationConfigTargetSystemDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "targetSystemType":
+            suggest = "target_system_type"
+        elif key == "adbId":
+            suggest = "adb_id"
+        elif key == "functionId":
+            suggest = "function_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SecretRotationConfigTargetSystemDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SecretRotationConfigTargetSystemDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SecretRotationConfigTargetSystemDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 target_system_type: str,
+                 adb_id: Optional[str] = None,
+                 function_id: Optional[str] = None):
+        """
+        :param str target_system_type: (Updatable) Unique identifier of the target system that Vault Secret connects to.
+        :param str adb_id: (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+        :param str function_id: (Updatable) The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+        """
+        pulumi.set(__self__, "target_system_type", target_system_type)
+        if adb_id is not None:
+            pulumi.set(__self__, "adb_id", adb_id)
+        if function_id is not None:
+            pulumi.set(__self__, "function_id", function_id)
+
+    @property
+    @pulumi.getter(name="targetSystemType")
+    def target_system_type(self) -> str:
+        """
+        (Updatable) Unique identifier of the target system that Vault Secret connects to.
+        """
+        return pulumi.get(self, "target_system_type")
+
+    @property
+    @pulumi.getter(name="adbId")
+    def adb_id(self) -> Optional[str]:
+        """
+        (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+        """
+        return pulumi.get(self, "adb_id")
+
+    @property
+    @pulumi.getter(name="functionId")
+    def function_id(self) -> Optional[str]:
+        """
+        (Updatable) The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+        """
+        return pulumi.get(self, "function_id")
+
 
 @pulumi.output_type
 class SecretSecretContent(dict):
@@ -41,38 +173,39 @@ class SecretSecretContent(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 content: str,
                  content_type: str,
+                 content: Optional[str] = None,
                  name: Optional[str] = None,
                  stage: Optional[str] = None):
         """
+        :param str content_type: (Updatable) The base64-encoded content of the secret.
         :param str content: (Updatable) The base64-encoded content of the secret.
-        :param str content_type: (Updatable) content type . Example `BASE64` .
         :param str name: (Updatable) Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        :param str stage: (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
+        :param str stage: (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
         """
-        pulumi.set(__self__, "content", content)
         pulumi.set(__self__, "content_type", content_type)
+        if content is not None:
+            pulumi.set(__self__, "content", content)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if stage is not None:
             pulumi.set(__self__, "stage", stage)
 
     @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> str:
+        """
+        (Updatable) The base64-encoded content of the secret.
+        """
+        return pulumi.get(self, "content_type")
+
+    @property
     @pulumi.getter
-    def content(self) -> str:
+    def content(self) -> Optional[str]:
         """
         (Updatable) The base64-encoded content of the secret.
         """
         return pulumi.get(self, "content")
-
-    @property
-    @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
-        """
-        (Updatable) content type . Example `BASE64` .
-        """
-        return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter
@@ -86,7 +219,7 @@ class SecretSecretContent(dict):
     @pulumi.getter
     def stage(self) -> Optional[str]:
         """
-        (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
+        (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
         """
         return pulumi.get(self, "stage")
 
@@ -128,7 +261,7 @@ class SecretSecretRule(dict):
         :param str rule_type: (Updatable) The type of rule, which either controls when the secret contents expire or whether they can be reused.
         :param bool is_enforced_on_deleted_secret_versions: (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
         :param bool is_secret_content_retrieval_blocked_on_expiry: (Updatable) A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-        :param str secret_version_expiry_interval: (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+        :param str secret_version_expiry_interval: (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
         :param str time_of_absolute_expiry: (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
         """
         pulumi.set(__self__, "rule_type", rule_type)
@@ -169,7 +302,7 @@ class SecretSecretRule(dict):
     @pulumi.getter(name="secretVersionExpiryInterval")
     def secret_version_expiry_interval(self) -> Optional[str]:
         """
-        (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+        (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
         """
         return pulumi.get(self, "secret_version_expiry_interval")
 
@@ -180,6 +313,86 @@ class SecretSecretRule(dict):
         (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_of_absolute_expiry")
+
+
+@pulumi.output_type
+class GetSecretRotationConfigResult(dict):
+    def __init__(__self__, *,
+                 is_scheduled_rotation_enabled: bool,
+                 rotation_interval: str,
+                 target_system_details: Sequence['outputs.GetSecretRotationConfigTargetSystemDetailResult']):
+        """
+        :param bool is_scheduled_rotation_enabled: Enables auto rotation, when set to true rotationInterval must be set.
+        :param str rotation_interval: The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+        :param Sequence['GetSecretRotationConfigTargetSystemDetailArgs'] target_system_details: The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+        """
+        pulumi.set(__self__, "is_scheduled_rotation_enabled", is_scheduled_rotation_enabled)
+        pulumi.set(__self__, "rotation_interval", rotation_interval)
+        pulumi.set(__self__, "target_system_details", target_system_details)
+
+    @property
+    @pulumi.getter(name="isScheduledRotationEnabled")
+    def is_scheduled_rotation_enabled(self) -> bool:
+        """
+        Enables auto rotation, when set to true rotationInterval must be set.
+        """
+        return pulumi.get(self, "is_scheduled_rotation_enabled")
+
+    @property
+    @pulumi.getter(name="rotationInterval")
+    def rotation_interval(self) -> str:
+        """
+        The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+        """
+        return pulumi.get(self, "rotation_interval")
+
+    @property
+    @pulumi.getter(name="targetSystemDetails")
+    def target_system_details(self) -> Sequence['outputs.GetSecretRotationConfigTargetSystemDetailResult']:
+        """
+        The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+        """
+        return pulumi.get(self, "target_system_details")
+
+
+@pulumi.output_type
+class GetSecretRotationConfigTargetSystemDetailResult(dict):
+    def __init__(__self__, *,
+                 adb_id: str,
+                 function_id: str,
+                 target_system_type: str):
+        """
+        :param str adb_id: The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+        :param str function_id: The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+        :param str target_system_type: Unique identifier of the target system that Vault Secret connects to.
+        """
+        pulumi.set(__self__, "adb_id", adb_id)
+        pulumi.set(__self__, "function_id", function_id)
+        pulumi.set(__self__, "target_system_type", target_system_type)
+
+    @property
+    @pulumi.getter(name="adbId")
+    def adb_id(self) -> str:
+        """
+        The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+        """
+        return pulumi.get(self, "adb_id")
+
+    @property
+    @pulumi.getter(name="functionId")
+    def function_id(self) -> str:
+        """
+        The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+        """
+        return pulumi.get(self, "function_id")
+
+    @property
+    @pulumi.getter(name="targetSystemType")
+    def target_system_type(self) -> str:
+        """
+        Unique identifier of the target system that Vault Secret connects to.
+        """
+        return pulumi.get(self, "target_system_type")
 
 
 @pulumi.output_type
@@ -227,7 +440,7 @@ class GetSecretSecretRuleResult(dict):
         :param bool is_enforced_on_deleted_secret_versions: A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
         :param bool is_secret_content_retrieval_blocked_on_expiry: A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
         :param str rule_type: The type of rule, which either controls when the secret contents expire or whether they can be reused.
-        :param str secret_version_expiry_interval: A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+        :param str secret_version_expiry_interval: A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
         :param str time_of_absolute_expiry: An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
         """
         pulumi.set(__self__, "is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
@@ -264,7 +477,7 @@ class GetSecretSecretRuleResult(dict):
     @pulumi.getter(name="secretVersionExpiryInterval")
     def secret_version_expiry_interval(self) -> str:
         """
-        A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+        A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
         """
         return pulumi.get(self, "secret_version_expiry_interval")
 
@@ -320,8 +533,12 @@ class GetSecretsSecretResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  key_id: str,
+                 last_rotation_time: str,
                  lifecycle_details: str,
                  metadata: Mapping[str, Any],
+                 next_rotation_time: str,
+                 rotation_configs: Sequence['outputs.GetSecretsSecretRotationConfigResult'],
+                 rotation_status: str,
                  secret_contents: Sequence['outputs.GetSecretsSecretSecretContentResult'],
                  secret_name: str,
                  secret_rules: Sequence['outputs.GetSecretsSecretSecretRuleResult'],
@@ -337,9 +554,13 @@ class GetSecretsSecretResult(dict):
         :param str description: A brief description of the secret. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the secret.
-        :param str key_id: The OCID of the master encryption key that is used to encrypt the secret.
+        :param str key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
+        :param str last_rotation_time: A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str lifecycle_details: Additional information about the current lifecycle state of the secret.
         :param Mapping[str, Any] metadata: Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
+        :param str next_rotation_time: A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        :param Sequence['GetSecretsSecretRotationConfigArgs'] rotation_configs: Defines the frequency of the rotation and the information about the target system
+        :param str rotation_status: Additional information about the status of the secret rotation
         :param str secret_name: The user-friendly name of the secret. Avoid entering confidential information.
         :param Sequence['GetSecretsSecretSecretRuleArgs'] secret_rules: A list of rules that control how the secret is used and managed.
         :param str state: A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
@@ -355,8 +576,12 @@ class GetSecretsSecretResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "last_rotation_time", last_rotation_time)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "next_rotation_time", next_rotation_time)
+        pulumi.set(__self__, "rotation_configs", rotation_configs)
+        pulumi.set(__self__, "rotation_status", rotation_status)
         pulumi.set(__self__, "secret_contents", secret_contents)
         pulumi.set(__self__, "secret_name", secret_name)
         pulumi.set(__self__, "secret_rules", secret_rules)
@@ -418,9 +643,17 @@ class GetSecretsSecretResult(dict):
     @pulumi.getter(name="keyId")
     def key_id(self) -> str:
         """
-        The OCID of the master encryption key that is used to encrypt the secret.
+        The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         """
         return pulumi.get(self, "key_id")
+
+    @property
+    @pulumi.getter(name="lastRotationTime")
+    def last_rotation_time(self) -> str:
+        """
+        A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "last_rotation_time")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -437,6 +670,30 @@ class GetSecretsSecretResult(dict):
         Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         """
         return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter(name="nextRotationTime")
+    def next_rotation_time(self) -> str:
+        """
+        A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "next_rotation_time")
+
+    @property
+    @pulumi.getter(name="rotationConfigs")
+    def rotation_configs(self) -> Sequence['outputs.GetSecretsSecretRotationConfigResult']:
+        """
+        Defines the frequency of the rotation and the information about the target system
+        """
+        return pulumi.get(self, "rotation_configs")
+
+    @property
+    @pulumi.getter(name="rotationStatus")
+    def rotation_status(self) -> str:
+        """
+        Additional information about the status of the secret rotation
+        """
+        return pulumi.get(self, "rotation_status")
 
     @property
     @pulumi.getter(name="secretContents")
@@ -501,6 +758,86 @@ class GetSecretsSecretResult(dict):
 
 
 @pulumi.output_type
+class GetSecretsSecretRotationConfigResult(dict):
+    def __init__(__self__, *,
+                 is_scheduled_rotation_enabled: bool,
+                 rotation_interval: str,
+                 target_system_details: Sequence['outputs.GetSecretsSecretRotationConfigTargetSystemDetailResult']):
+        """
+        :param bool is_scheduled_rotation_enabled: Enables auto rotation, when set to true rotationInterval must be set.
+        :param str rotation_interval: The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+        :param Sequence['GetSecretsSecretRotationConfigTargetSystemDetailArgs'] target_system_details: The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+        """
+        pulumi.set(__self__, "is_scheduled_rotation_enabled", is_scheduled_rotation_enabled)
+        pulumi.set(__self__, "rotation_interval", rotation_interval)
+        pulumi.set(__self__, "target_system_details", target_system_details)
+
+    @property
+    @pulumi.getter(name="isScheduledRotationEnabled")
+    def is_scheduled_rotation_enabled(self) -> bool:
+        """
+        Enables auto rotation, when set to true rotationInterval must be set.
+        """
+        return pulumi.get(self, "is_scheduled_rotation_enabled")
+
+    @property
+    @pulumi.getter(name="rotationInterval")
+    def rotation_interval(self) -> str:
+        """
+        The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+        """
+        return pulumi.get(self, "rotation_interval")
+
+    @property
+    @pulumi.getter(name="targetSystemDetails")
+    def target_system_details(self) -> Sequence['outputs.GetSecretsSecretRotationConfigTargetSystemDetailResult']:
+        """
+        The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+        """
+        return pulumi.get(self, "target_system_details")
+
+
+@pulumi.output_type
+class GetSecretsSecretRotationConfigTargetSystemDetailResult(dict):
+    def __init__(__self__, *,
+                 adb_id: str,
+                 function_id: str,
+                 target_system_type: str):
+        """
+        :param str adb_id: The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+        :param str function_id: The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+        :param str target_system_type: Unique identifier of the target system that Vault Secret connects to.
+        """
+        pulumi.set(__self__, "adb_id", adb_id)
+        pulumi.set(__self__, "function_id", function_id)
+        pulumi.set(__self__, "target_system_type", target_system_type)
+
+    @property
+    @pulumi.getter(name="adbId")
+    def adb_id(self) -> str:
+        """
+        The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+        """
+        return pulumi.get(self, "adb_id")
+
+    @property
+    @pulumi.getter(name="functionId")
+    def function_id(self) -> str:
+        """
+        The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+        """
+        return pulumi.get(self, "function_id")
+
+    @property
+    @pulumi.getter(name="targetSystemType")
+    def target_system_type(self) -> str:
+        """
+        Unique identifier of the target system that Vault Secret connects to.
+        """
+        return pulumi.get(self, "target_system_type")
+
+
+@pulumi.output_type
 class GetSecretsSecretSecretContentResult(dict):
     def __init__(__self__, *,
                  content: str,
@@ -551,7 +888,7 @@ class GetSecretsSecretSecretRuleResult(dict):
         :param bool is_enforced_on_deleted_secret_versions: A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
         :param bool is_secret_content_retrieval_blocked_on_expiry: A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
         :param str rule_type: The type of rule, which either controls when the secret contents expire or whether they can be reused.
-        :param str secret_version_expiry_interval: A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+        :param str secret_version_expiry_interval: A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
         :param str time_of_absolute_expiry: An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
         """
         pulumi.set(__self__, "is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
@@ -588,7 +925,7 @@ class GetSecretsSecretSecretRuleResult(dict):
     @pulumi.getter(name="secretVersionExpiryInterval")
     def secret_version_expiry_interval(self) -> str:
         """
-        A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+        A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
         """
         return pulumi.get(self, "secret_version_expiry_interval")
 

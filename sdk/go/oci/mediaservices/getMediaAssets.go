@@ -94,7 +94,7 @@ type GetMediaAssetsArgs struct {
 type GetMediaAssetsResult struct {
 	// The name of the object storage bucket where this represented asset is located.
 	Bucket *string `pulumi:"bucket"`
-	// The ID of the compartment containing the MediaAsset.
+	// The compartment ID of the lock.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName           *string                `pulumi:"displayName"`
@@ -188,7 +188,7 @@ func (o GetMediaAssetsResultOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMediaAssetsResult) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
-// The ID of the compartment containing the MediaAsset.
+// The compartment ID of the lock.
 func (o GetMediaAssetsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMediaAssetsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }

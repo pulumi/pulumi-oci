@@ -34,7 +34,10 @@ public final class VolumeGroupSourceDetails {
      */
     private @Nullable String volumeGroupReplicaId;
     /**
-     * @return OCIDs for the volumes in this volume group.
+     * @return (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable List<String> volumeIds;
@@ -69,7 +72,10 @@ public final class VolumeGroupSourceDetails {
         return Optional.ofNullable(this.volumeGroupReplicaId);
     }
     /**
-     * @return OCIDs for the volumes in this volume group.
+     * @return (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public List<String> volumeIds() {

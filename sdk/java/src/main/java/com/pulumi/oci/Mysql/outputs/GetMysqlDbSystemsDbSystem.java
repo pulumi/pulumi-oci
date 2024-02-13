@@ -13,6 +13,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemHeatWaveCluster;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemMaintenance;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemSecureConnection;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemSource;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -166,6 +167,11 @@ public final class GetMysqlDbSystemsDbSystem {
      * 
      */
     private Integer portX;
+    /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    private List<GetMysqlDbSystemsDbSystemSecureConnection> secureConnections;
     /**
      * @return The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      * 
@@ -402,6 +408,13 @@ public final class GetMysqlDbSystemsDbSystem {
         return this.portX;
     }
     /**
+     * @return Secure connection configuration details.
+     * 
+     */
+    public List<GetMysqlDbSystemsDbSystemSecureConnection> secureConnections() {
+        return this.secureConnections;
+    }
+    /**
      * @return The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -486,6 +499,7 @@ public final class GetMysqlDbSystemsDbSystem {
         private List<GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails;
         private Integer port;
         private Integer portX;
+        private List<GetMysqlDbSystemsDbSystemSecureConnection> secureConnections;
         private String shapeName;
         private String shutdownType;
         private List<GetMysqlDbSystemsDbSystemSource> sources;
@@ -526,6 +540,7 @@ public final class GetMysqlDbSystemsDbSystem {
     	      this.pointInTimeRecoveryDetails = defaults.pointInTimeRecoveryDetails;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
     	      this.shutdownType = defaults.shutdownType;
     	      this.sources = defaults.sources;
@@ -800,6 +815,17 @@ public final class GetMysqlDbSystemsDbSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder secureConnections(List<GetMysqlDbSystemsDbSystemSecureConnection> secureConnections) {
+            if (secureConnections == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "secureConnections");
+            }
+            this.secureConnections = secureConnections;
+            return this;
+        }
+        public Builder secureConnections(GetMysqlDbSystemsDbSystemSecureConnection... secureConnections) {
+            return secureConnections(List.of(secureConnections));
+        }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             if (shapeName == null) {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "shapeName");
@@ -890,6 +916,7 @@ public final class GetMysqlDbSystemsDbSystem {
             _resultValue.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
             _resultValue.port = port;
             _resultValue.portX = portX;
+            _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;
             _resultValue.shutdownType = shutdownType;
             _resultValue.sources = sources;

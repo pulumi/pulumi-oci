@@ -21,7 +21,9 @@ class StreamCdnConfigArgs:
                  distribution_channel_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 is_enabled: Optional[pulumi.Input[bool]] = None):
+                 is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]] = None):
         """
         The set of arguments for constructing a StreamCdnConfig resource.
         :param pulumi.Input['StreamCdnConfigConfigArgs'] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
@@ -30,10 +32,7 @@ class StreamCdnConfigArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether publishing to CDN is enabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]] locks: Locks associated with this resource.
         """
         pulumi.set(__self__, "config", config)
         pulumi.set(__self__, "display_name", display_name)
@@ -44,6 +43,10 @@ class StreamCdnConfigArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
 
     @property
     @pulumi.getter
@@ -110,16 +113,33 @@ class StreamCdnConfigArgs:
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Whether publishing to CDN is enabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
 
 @pulumi.input_type
@@ -132,28 +152,27 @@ class _StreamCdnConfigState:
                  distribution_channel_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  lifecyle_details: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering StreamCdnConfig resources.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier.
+        :param pulumi.Input[str] compartment_id: The compartment ID of the lock.
         :param pulumi.Input['StreamCdnConfigConfigArgs'] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[str] distribution_channel_id: Distribution Channel Identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether publishing to CDN is enabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] state: The current state of the CDN Configuration.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when the CDN Config was created. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_created: When the lock was created.
         :param pulumi.Input[str] time_updated: The time when the CDN Config was updated. An RFC3339 formatted datetime string.
         """
         if compartment_id is not None:
@@ -170,8 +189,12 @@ class _StreamCdnConfigState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecyle_details is not None:
             pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -185,7 +208,7 @@ class _StreamCdnConfigState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Compartment Identifier.
+        The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -258,16 +281,21 @@ class _StreamCdnConfigState:
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Whether publishing to CDN is enabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
 
     @property
     @pulumi.getter(name="lifecyleDetails")
@@ -280,6 +308,18 @@ class _StreamCdnConfigState:
     @lifecyle_details.setter
     def lifecyle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecyle_details", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter
@@ -309,7 +349,7 @@ class _StreamCdnConfigState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time when the CDN Config was created. An RFC3339 formatted datetime string.
+        When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -341,6 +381,8 @@ class StreamCdnConfig(pulumi.CustomResource):
                  distribution_channel_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamCdnConfigLockArgs']]]]] = None,
                  __props__=None):
         """
         This resource provides the Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -376,7 +418,14 @@ class StreamCdnConfig(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=var["stream_cdn_config_is_enabled"])
+            is_enabled=var["stream_cdn_config_is_enabled"],
+            locks=[oci.media_services.StreamCdnConfigLockArgs(
+                compartment_id=var["compartment_id"],
+                type=var["stream_cdn_config_locks_type"],
+                message=var["stream_cdn_config_locks_message"],
+                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+                time_created=var["stream_cdn_config_locks_time_created"],
+            )])
         ```
 
         ## Import
@@ -395,10 +444,7 @@ class StreamCdnConfig(pulumi.CustomResource):
         :param pulumi.Input[str] distribution_channel_id: Distribution Channel Identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether publishing to CDN is enabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamCdnConfigLockArgs']]]] locks: Locks associated with this resource.
         """
         ...
     @overload
@@ -440,7 +486,14 @@ class StreamCdnConfig(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=var["stream_cdn_config_is_enabled"])
+            is_enabled=var["stream_cdn_config_is_enabled"],
+            locks=[oci.media_services.StreamCdnConfigLockArgs(
+                compartment_id=var["compartment_id"],
+                type=var["stream_cdn_config_locks_type"],
+                message=var["stream_cdn_config_locks_message"],
+                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+                time_created=var["stream_cdn_config_locks_time_created"],
+            )])
         ```
 
         ## Import
@@ -472,6 +525,8 @@ class StreamCdnConfig(pulumi.CustomResource):
                  distribution_channel_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamCdnConfigLockArgs']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -493,6 +548,8 @@ class StreamCdnConfig(pulumi.CustomResource):
             __props__.__dict__["distribution_channel_id"] = distribution_channel_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_enabled"] = is_enabled
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["lifecyle_details"] = None
             __props__.__dict__["state"] = None
@@ -516,7 +573,9 @@ class StreamCdnConfig(pulumi.CustomResource):
             distribution_channel_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_enabled: Optional[pulumi.Input[bool]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
             lifecyle_details: Optional[pulumi.Input[str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamCdnConfigLockArgs']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -528,21 +587,18 @@ class StreamCdnConfig(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier.
+        :param pulumi.Input[str] compartment_id: The compartment ID of the lock.
         :param pulumi.Input[pulumi.InputType['StreamCdnConfigConfigArgs']] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[str] distribution_channel_id: Distribution Channel Identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether publishing to CDN is enabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamCdnConfigLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] state: The current state of the CDN Configuration.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when the CDN Config was created. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_created: When the lock was created.
         :param pulumi.Input[str] time_updated: The time when the CDN Config was updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -556,7 +612,9 @@ class StreamCdnConfig(pulumi.CustomResource):
         __props__.__dict__["distribution_channel_id"] = distribution_channel_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_enabled"] = is_enabled
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["lifecyle_details"] = lifecyle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -567,7 +625,7 @@ class StreamCdnConfig(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        Compartment Identifier.
+        The compartment ID of the lock.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -616,12 +674,13 @@ class StreamCdnConfig(pulumi.CustomResource):
     def is_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) Whether publishing to CDN is enabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_lock_override")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
@@ -630,6 +689,14 @@ class StreamCdnConfig(pulumi.CustomResource):
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecyle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.StreamCdnConfigLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
@@ -651,7 +718,7 @@ class StreamCdnConfig(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time when the CDN Config was created. An RFC3339 formatted datetime string.
+        When the lock was created.
         """
         return pulumi.get(self, "time_created")
 

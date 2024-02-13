@@ -20,6 +20,16 @@ export const getManagementAgentCount: typeof import("./getManagementAgentCount")
 export const getManagementAgentCountOutput: typeof import("./getManagementAgentCount").getManagementAgentCountOutput = null as any;
 utilities.lazyLoad(exports, ["getManagementAgentCount","getManagementAgentCountOutput"], () => require("./getManagementAgentCount"));
 
+export { GetManagementAgentDataSourceArgs, GetManagementAgentDataSourceResult, GetManagementAgentDataSourceOutputArgs } from "./getManagementAgentDataSource";
+export const getManagementAgentDataSource: typeof import("./getManagementAgentDataSource").getManagementAgentDataSource = null as any;
+export const getManagementAgentDataSourceOutput: typeof import("./getManagementAgentDataSource").getManagementAgentDataSourceOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgentDataSource","getManagementAgentDataSourceOutput"], () => require("./getManagementAgentDataSource"));
+
+export { GetManagementAgentDataSourcesArgs, GetManagementAgentDataSourcesResult, GetManagementAgentDataSourcesOutputArgs } from "./getManagementAgentDataSources";
+export const getManagementAgentDataSources: typeof import("./getManagementAgentDataSources").getManagementAgentDataSources = null as any;
+export const getManagementAgentDataSourcesOutput: typeof import("./getManagementAgentDataSources").getManagementAgentDataSourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgentDataSources","getManagementAgentDataSourcesOutput"], () => require("./getManagementAgentDataSources"));
+
 export { GetManagementAgentGetAutoUpgradableConfigArgs, GetManagementAgentGetAutoUpgradableConfigResult, GetManagementAgentGetAutoUpgradableConfigOutputArgs } from "./getManagementAgentGetAutoUpgradableConfig";
 export const getManagementAgentGetAutoUpgradableConfig: typeof import("./getManagementAgentGetAutoUpgradableConfig").getManagementAgentGetAutoUpgradableConfig = null as any;
 export const getManagementAgentGetAutoUpgradableConfigOutput: typeof import("./getManagementAgentGetAutoUpgradableConfig").getManagementAgentGetAutoUpgradableConfigOutput = null as any;
@@ -60,6 +70,11 @@ export type ManagementAgent = import("./managementAgent").ManagementAgent;
 export const ManagementAgent: typeof import("./managementAgent").ManagementAgent = null as any;
 utilities.lazyLoad(exports, ["ManagementAgent"], () => require("./managementAgent"));
 
+export { ManagementAgentDataSourceArgs, ManagementAgentDataSourceState } from "./managementAgentDataSource";
+export type ManagementAgentDataSource = import("./managementAgentDataSource").ManagementAgentDataSource;
+export const ManagementAgentDataSource: typeof import("./managementAgentDataSource").ManagementAgentDataSource = null as any;
+utilities.lazyLoad(exports, ["ManagementAgentDataSource"], () => require("./managementAgentDataSource"));
+
 export { ManagementAgentInstallKeyArgs, ManagementAgentInstallKeyState } from "./managementAgentInstallKey";
 export type ManagementAgentInstallKey = import("./managementAgentInstallKey").ManagementAgentInstallKey;
 export const ManagementAgentInstallKey: typeof import("./managementAgentInstallKey").ManagementAgentInstallKey = null as any;
@@ -72,6 +87,8 @@ const _module = {
         switch (type) {
             case "oci:ManagementAgent/managementAgent:ManagementAgent":
                 return new ManagementAgent(name, <any>undefined, { urn })
+            case "oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource":
+                return new ManagementAgentDataSource(name, <any>undefined, { urn })
             case "oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey":
                 return new ManagementAgentInstallKey(name, <any>undefined, { urn })
             default:
@@ -80,4 +97,5 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "ManagementAgent/managementAgent", _module)
+pulumi.runtime.registerResourceModule("oci", "ManagementAgent/managementAgentDataSource", _module)
 pulumi.runtime.registerResourceModule("oci", "ManagementAgent/managementAgentInstallKey", _module)

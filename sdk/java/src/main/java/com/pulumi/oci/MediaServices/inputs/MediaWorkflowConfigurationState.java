@@ -5,8 +5,11 @@ package com.pulumi.oci.MediaServices.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.MediaServices.inputs.MediaWorkflowConfigurationLockArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,14 +21,14 @@ public final class MediaWorkflowConfigurationState extends com.pulumi.resources.
     public static final MediaWorkflowConfigurationState Empty = new MediaWorkflowConfigurationState();
 
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The compartment ID of the lock.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier.
+     * @return (Updatable) The compartment ID of the lock.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -77,6 +80,13 @@ public final class MediaWorkflowConfigurationState extends com.pulumi.resources.
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
@@ -90,6 +100,21 @@ public final class MediaWorkflowConfigurationState extends com.pulumi.resources.
      */
     public Optional<Output<String>> lifecyleDetails() {
         return Optional.ofNullable(this.lifecyleDetails);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<MediaWorkflowConfigurationLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<MediaWorkflowConfigurationLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -144,14 +169,14 @@ public final class MediaWorkflowConfigurationState extends com.pulumi.resources.
     }
 
     /**
-     * The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+     * @return When the lock was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -180,7 +205,9 @@ public final class MediaWorkflowConfigurationState extends com.pulumi.resources.
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
         this.lifecyleDetails = $.lifecyleDetails;
+        this.locks = $.locks;
         this.parameters = $.parameters;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -207,7 +234,7 @@ public final class MediaWorkflowConfigurationState extends com.pulumi.resources.
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -218,7 +245,7 @@ public final class MediaWorkflowConfigurationState extends com.pulumi.resources.
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The compartment ID of the lock.
          * 
          * @return builder
          * 
@@ -290,6 +317,15 @@ public final class MediaWorkflowConfigurationState extends com.pulumi.resources.
             return freeformTags(Output.of(freeformTags));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param lifecyleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * 
@@ -309,6 +345,37 @@ public final class MediaWorkflowConfigurationState extends com.pulumi.resources.
          */
         public Builder lifecyleDetails(String lifecyleDetails) {
             return lifecyleDetails(Output.of(lifecyleDetails));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<MediaWorkflowConfigurationLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<MediaWorkflowConfigurationLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(MediaWorkflowConfigurationLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**
@@ -381,7 +448,7 @@ public final class MediaWorkflowConfigurationState extends com.pulumi.resources.
         }
 
         /**
-         * @param timeCreated The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 
@@ -392,7 +459,7 @@ public final class MediaWorkflowConfigurationState extends com.pulumi.resources.
         }
 
         /**
-         * @param timeCreated The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 

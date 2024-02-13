@@ -6,6 +6,7 @@ package com.pulumi.oci.MediaServices.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig;
+import com.pulumi.oci.MediaServices.outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemLock;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -16,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetStreamCdnConfigsStreamCdnConfigCollectionItem {
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     private String compartmentId;
@@ -55,11 +56,17 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItem {
      * 
      */
     private Boolean isEnabled;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     private String lifecyleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetStreamCdnConfigsStreamCdnConfigCollectionItemLock> locks;
     /**
      * @return A filter to return only the resources with lifecycleState matching the given lifecycleState.
      * 
@@ -83,7 +90,7 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItem {
 
     private GetStreamCdnConfigsStreamCdnConfigCollectionItem() {}
     /**
-     * @return Compartment Identifier.
+     * @return The compartment ID of the lock.
      * 
      */
     public String compartmentId() {
@@ -138,12 +145,22 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItem {
     public Boolean isEnabled() {
         return this.isEnabled;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     public String lifecyleDetails() {
         return this.lifecyleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetStreamCdnConfigsStreamCdnConfigCollectionItemLock> locks() {
+        return this.locks;
     }
     /**
      * @return A filter to return only the resources with lifecycleState matching the given lifecycleState.
@@ -191,7 +208,9 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItem {
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isEnabled;
+        private Boolean isLockOverride;
         private String lifecyleDetails;
+        private List<GetStreamCdnConfigsStreamCdnConfigCollectionItemLock> locks;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
@@ -207,7 +226,9 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isEnabled = defaults.isEnabled;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecyleDetails = defaults.lifecyleDetails;
+    	      this.locks = defaults.locks;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -282,12 +303,31 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecyleDetails(String lifecyleDetails) {
             if (lifecyleDetails == null) {
               throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItem", "lifecyleDetails");
             }
             this.lifecyleDetails = lifecyleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetStreamCdnConfigsStreamCdnConfigCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetStreamCdnConfigsStreamCdnConfigCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetStreamCdnConfigsStreamCdnConfigCollectionItemLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -331,7 +371,9 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItem {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isEnabled = isEnabled;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecyleDetails = lifecyleDetails;
+            _resultValue.locks = locks;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

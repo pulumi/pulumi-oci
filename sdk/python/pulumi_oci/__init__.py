@@ -2872,14 +2872,6 @@ _utilities.register(
  },
  {
   "pkg": "oci",
-  "mod": "DatabaseMigration/agent",
-  "fqn": "pulumi_oci.databasemigration",
-  "classes": {
-   "oci:DatabaseMigration/agent:Agent": "Agent"
-  }
- },
- {
-  "pkg": "oci",
   "mod": "DatabaseMigration/connection",
   "fqn": "pulumi_oci.databasemigration",
   "classes": {
@@ -4324,6 +4316,14 @@ _utilities.register(
   "fqn": "pulumi_oci.managementagent",
   "classes": {
    "oci:ManagementAgent/managementAgent:ManagementAgent": "ManagementAgent"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ManagementAgent/managementAgentDataSource",
+  "fqn": "pulumi_oci.managementagent",
+  "classes": {
+   "oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource": "ManagementAgentDataSource"
   }
  },
  {

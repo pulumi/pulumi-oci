@@ -58,7 +58,7 @@ type LookupStreamPackagingConfigArgs struct {
 
 // A collection of values returned by getStreamPackagingConfig.
 type LookupStreamPackagingConfigResult struct {
-	// Compartment Identifier
+	// The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -71,7 +71,10 @@ type LookupStreamPackagingConfigResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetStreamPackagingConfigLock `pulumi:"locks"`
 	// The duration in seconds for each fragment.
 	SegmentTimeInSeconds int `pulumi:"segmentTimeInSeconds"`
 	// The current state of the Packaging Configuration.
@@ -125,7 +128,7 @@ func (o LookupStreamPackagingConfigResultOutput) ToLookupStreamPackagingConfigRe
 	return o
 }
 
-// Compartment Identifier
+// The compartment ID of the lock.
 func (o LookupStreamPackagingConfigResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupStreamPackagingConfigResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -158,6 +161,15 @@ func (o LookupStreamPackagingConfigResultOutput) FreeformTags() pulumi.MapOutput
 // Unique identifier that is immutable on creation.
 func (o LookupStreamPackagingConfigResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupStreamPackagingConfigResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupStreamPackagingConfigResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupStreamPackagingConfigResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupStreamPackagingConfigResultOutput) Locks() GetStreamPackagingConfigLockArrayOutput {
+	return o.ApplyT(func(v LookupStreamPackagingConfigResult) []GetStreamPackagingConfigLock { return v.Locks }).(GetStreamPackagingConfigLockArrayOutput)
 }
 
 // The duration in seconds for each fragment.

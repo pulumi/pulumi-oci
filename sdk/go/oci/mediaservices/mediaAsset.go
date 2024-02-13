@@ -30,14 +30,17 @@ type MediaAsset struct {
 
 	// The name of the object storage bucket where this asset is located.
 	Bucket pulumi.StringOutput `pulumi:"bucket"`
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags   pulumi.MapOutput  `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks MediaAssetLockArrayOutput `pulumi:"locks"`
 	// (Updatable) The ID of the senior most asset from which this asset is derived.
 	MasterMediaAssetId pulumi.StringOutput `pulumi:"masterMediaAssetId"`
 	// (Updatable) list of tags for the MediaAsset.
@@ -66,7 +69,7 @@ type MediaAsset struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -115,14 +118,17 @@ func GetMediaAsset(ctx *pulumi.Context,
 type mediaAssetState struct {
 	// The name of the object storage bucket where this asset is located.
 	Bucket *string `pulumi:"bucket"`
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
+	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []MediaAssetLock `pulumi:"locks"`
 	// (Updatable) The ID of the senior most asset from which this asset is derived.
 	MasterMediaAssetId *string `pulumi:"masterMediaAssetId"`
 	// (Updatable) list of tags for the MediaAsset.
@@ -151,7 +157,7 @@ type mediaAssetState struct {
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -165,14 +171,17 @@ type mediaAssetState struct {
 type MediaAssetState struct {
 	// The name of the object storage bucket where this asset is located.
 	Bucket pulumi.StringPtrInput
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags   pulumi.MapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks MediaAssetLockArrayInput
 	// (Updatable) The ID of the senior most asset from which this asset is derived.
 	MasterMediaAssetId pulumi.StringPtrInput
 	// (Updatable) list of tags for the MediaAsset.
@@ -201,7 +210,7 @@ type MediaAssetState struct {
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
@@ -219,14 +228,17 @@ func (MediaAssetState) ElementType() reflect.Type {
 type mediaAssetArgs struct {
 	// The name of the object storage bucket where this asset is located.
 	Bucket *string `pulumi:"bucket"`
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
+	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []MediaAssetLock `pulumi:"locks"`
 	// (Updatable) The ID of the senior most asset from which this asset is derived.
 	MasterMediaAssetId *string `pulumi:"masterMediaAssetId"`
 	// (Updatable) list of tags for the MediaAsset.
@@ -262,14 +274,17 @@ type mediaAssetArgs struct {
 type MediaAssetArgs struct {
 	// The name of the object storage bucket where this asset is located.
 	Bucket pulumi.StringPtrInput
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The compartment ID of the lock.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags   pulumi.MapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks MediaAssetLockArrayInput
 	// (Updatable) The ID of the senior most asset from which this asset is derived.
 	MasterMediaAssetId pulumi.StringPtrInput
 	// (Updatable) list of tags for the MediaAsset.
@@ -393,7 +408,7 @@ func (o MediaAssetOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// (Updatable) Compartment Identifier.
+// (Updatable) The compartment ID of the lock.
 func (o MediaAssetOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -411,6 +426,15 @@ func (o MediaAssetOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o MediaAssetOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MediaAsset) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+func (o MediaAssetOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o MediaAssetOutput) Locks() MediaAssetLockArrayOutput {
+	return o.ApplyT(func(v *MediaAsset) MediaAssetLockArrayOutput { return v.Locks }).(MediaAssetLockArrayOutput)
 }
 
 // (Updatable) The ID of the senior most asset from which this asset is derived.
@@ -483,7 +507,7 @@ func (o MediaAssetOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MediaAsset) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
+// When the lock was created.
 func (o MediaAssetOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

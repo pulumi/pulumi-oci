@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *         availabilityDomain: _var.volume_group_volume_group_replicas_availability_domain,
  *         displayName: _var.volume_group_volume_group_replicas_display_name,
  *     }],
+ *     volumeIds: [_var.volume_group_source_id],
  * });
  * ```
  *
@@ -90,11 +91,7 @@ export class VolumeGroup extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -132,7 +129,10 @@ export class VolumeGroup extends pulumi.CustomResource {
     public readonly volumeGroupReplicas!: pulumi.Output<outputs.Core.VolumeGroupVolumeGroupReplica[]>;
     public readonly volumeGroupReplicasDeletion!: pulumi.Output<boolean | undefined>;
     /**
-     * OCIDs for the volumes in this volume group.
+     * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly volumeIds!: pulumi.Output<string[]>;
 
@@ -221,11 +221,7 @@ export interface VolumeGroupState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -263,7 +259,10 @@ export interface VolumeGroupState {
     volumeGroupReplicas?: pulumi.Input<pulumi.Input<inputs.Core.VolumeGroupVolumeGroupReplica>[]>;
     volumeGroupReplicasDeletion?: pulumi.Input<boolean>;
     /**
-     * OCIDs for the volumes in this volume group.
+     * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     volumeIds?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -291,11 +290,7 @@ export interface VolumeGroupArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -313,7 +308,10 @@ export interface VolumeGroupArgs {
     volumeGroupReplicas?: pulumi.Input<pulumi.Input<inputs.Core.VolumeGroupVolumeGroupReplica>[]>;
     volumeGroupReplicasDeletion?: pulumi.Input<boolean>;
     /**
-     * OCIDs for the volumes in this volume group.
+     * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     volumeIds?: pulumi.Input<pulumi.Input<string>[]>;
 }

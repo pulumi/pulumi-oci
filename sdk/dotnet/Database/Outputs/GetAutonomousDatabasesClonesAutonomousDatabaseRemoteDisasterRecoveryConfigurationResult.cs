@@ -17,11 +17,24 @@ namespace Pulumi.Oci.Database.Outputs
         /// Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         public readonly string DisasterRecoveryType;
+        public readonly bool IsReplicateAutomaticBackups;
+        public readonly bool IsSnapshotStandby;
+        public readonly string TimeSnapshotStandbyEnabledTill;
 
         [OutputConstructor]
-        private GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(string disasterRecoveryType)
+        private GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(
+            string disasterRecoveryType,
+
+            bool isReplicateAutomaticBackups,
+
+            bool isSnapshotStandby,
+
+            string timeSnapshotStandbyEnabledTill)
         {
             DisasterRecoveryType = disasterRecoveryType;
+            IsReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            IsSnapshotStandby = isSnapshotStandby;
+            TimeSnapshotStandbyEnabledTill = timeSnapshotStandbyEnabledTill;
         }
     }
 }

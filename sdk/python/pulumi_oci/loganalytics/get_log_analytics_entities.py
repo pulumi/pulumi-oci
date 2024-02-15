@@ -23,7 +23,7 @@ class GetLogAnalyticsEntitiesResult:
     """
     A collection of values returned by getLogAnalyticsEntities.
     """
-    def __init__(__self__, cloud_resource_id=None, compartment_id=None, entity_type_names=None, filters=None, hostname=None, hostname_contains=None, id=None, is_management_agent_id_null=None, lifecycle_details_contains=None, log_analytics_entity_collections=None, name=None, name_contains=None, namespace=None, source_id=None, state=None):
+    def __init__(__self__, cloud_resource_id=None, compartment_id=None, entity_type_names=None, filters=None, hostname=None, hostname_contains=None, id=None, is_management_agent_id_null=None, lifecycle_details_contains=None, log_analytics_entity_collections=None, metadata_equals=None, name=None, name_contains=None, namespace=None, source_id=None, state=None):
         if cloud_resource_id and not isinstance(cloud_resource_id, str):
             raise TypeError("Expected argument 'cloud_resource_id' to be a str")
         pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
@@ -54,6 +54,9 @@ class GetLogAnalyticsEntitiesResult:
         if log_analytics_entity_collections and not isinstance(log_analytics_entity_collections, list):
             raise TypeError("Expected argument 'log_analytics_entity_collections' to be a list")
         pulumi.set(__self__, "log_analytics_entity_collections", log_analytics_entity_collections)
+        if metadata_equals and not isinstance(metadata_equals, list):
+            raise TypeError("Expected argument 'metadata_equals' to be a list")
+        pulumi.set(__self__, "metadata_equals", metadata_equals)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -139,6 +142,11 @@ class GetLogAnalyticsEntitiesResult:
         return pulumi.get(self, "log_analytics_entity_collections")
 
     @property
+    @pulumi.getter(name="metadataEquals")
+    def metadata_equals(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "metadata_equals")
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
@@ -189,6 +197,7 @@ class AwaitableGetLogAnalyticsEntitiesResult(GetLogAnalyticsEntitiesResult):
             is_management_agent_id_null=self.is_management_agent_id_null,
             lifecycle_details_contains=self.lifecycle_details_contains,
             log_analytics_entity_collections=self.log_analytics_entity_collections,
+            metadata_equals=self.metadata_equals,
             name=self.name,
             name_contains=self.name_contains,
             namespace=self.namespace,
@@ -204,6 +213,7 @@ def get_log_analytics_entities(cloud_resource_id: Optional[str] = None,
                                hostname_contains: Optional[str] = None,
                                is_management_agent_id_null: Optional[str] = None,
                                lifecycle_details_contains: Optional[str] = None,
+                               metadata_equals: Optional[Sequence[str]] = None,
                                name: Optional[str] = None,
                                name_contains: Optional[str] = None,
                                namespace: Optional[str] = None,
@@ -229,6 +239,7 @@ def get_log_analytics_entities(cloud_resource_id: Optional[str] = None,
         hostname_contains=var["log_analytics_entity_hostname_contains"],
         is_management_agent_id_null=var["log_analytics_entity_is_management_agent_id_null"],
         lifecycle_details_contains=var["log_analytics_entity_lifecycle_details_contains"],
+        metadata_equals=var["log_analytics_entity_metadata_equals"],
         name=var["log_analytics_entity_name"],
         name_contains=var["log_analytics_entity_name_contains"],
         source_id=oci_log_analytics_source["test_source"]["id"],
@@ -243,6 +254,7 @@ def get_log_analytics_entities(cloud_resource_id: Optional[str] = None,
     :param str hostname_contains: A filter to return only log analytics entities whose hostname contains the substring given. The match is case-insensitive.
     :param str is_management_agent_id_null: A filter to return only those log analytics entities whose managementAgentId is null or is not null.
     :param str lifecycle_details_contains: A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
+    :param Sequence[str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
     :param str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
     :param str name_contains: A filter to return only log analytics entities whose name contains the name given. The match is case-insensitive.
     :param str namespace: The Logging Analytics namespace used for the request.
@@ -258,6 +270,7 @@ def get_log_analytics_entities(cloud_resource_id: Optional[str] = None,
     __args__['hostnameContains'] = hostname_contains
     __args__['isManagementAgentIdNull'] = is_management_agent_id_null
     __args__['lifecycleDetailsContains'] = lifecycle_details_contains
+    __args__['metadataEquals'] = metadata_equals
     __args__['name'] = name
     __args__['nameContains'] = name_contains
     __args__['namespace'] = namespace
@@ -277,6 +290,7 @@ def get_log_analytics_entities(cloud_resource_id: Optional[str] = None,
         is_management_agent_id_null=pulumi.get(__ret__, 'is_management_agent_id_null'),
         lifecycle_details_contains=pulumi.get(__ret__, 'lifecycle_details_contains'),
         log_analytics_entity_collections=pulumi.get(__ret__, 'log_analytics_entity_collections'),
+        metadata_equals=pulumi.get(__ret__, 'metadata_equals'),
         name=pulumi.get(__ret__, 'name'),
         name_contains=pulumi.get(__ret__, 'name_contains'),
         namespace=pulumi.get(__ret__, 'namespace'),
@@ -293,6 +307,7 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
                                       hostname_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                       is_management_agent_id_null: Optional[pulumi.Input[Optional[str]]] = None,
                                       lifecycle_details_contains: Optional[pulumi.Input[Optional[str]]] = None,
+                                      metadata_equals: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                       name: Optional[pulumi.Input[Optional[str]]] = None,
                                       name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                       namespace: Optional[pulumi.Input[str]] = None,
@@ -318,6 +333,7 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
         hostname_contains=var["log_analytics_entity_hostname_contains"],
         is_management_agent_id_null=var["log_analytics_entity_is_management_agent_id_null"],
         lifecycle_details_contains=var["log_analytics_entity_lifecycle_details_contains"],
+        metadata_equals=var["log_analytics_entity_metadata_equals"],
         name=var["log_analytics_entity_name"],
         name_contains=var["log_analytics_entity_name_contains"],
         source_id=oci_log_analytics_source["test_source"]["id"],
@@ -332,6 +348,7 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
     :param str hostname_contains: A filter to return only log analytics entities whose hostname contains the substring given. The match is case-insensitive.
     :param str is_management_agent_id_null: A filter to return only those log analytics entities whose managementAgentId is null or is not null.
     :param str lifecycle_details_contains: A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
+    :param Sequence[str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
     :param str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
     :param str name_contains: A filter to return only log analytics entities whose name contains the name given. The match is case-insensitive.
     :param str namespace: The Logging Analytics namespace used for the request.

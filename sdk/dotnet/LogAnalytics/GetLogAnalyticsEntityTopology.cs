@@ -32,6 +32,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     {
         ///         LogAnalyticsEntityId = oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
         ///         Namespace = @var.Log_analytics_entity_topology_namespace,
+        ///         MetadataEquals = @var.Log_analytics_entity_topology_metadata_equals,
         ///         State = @var.Log_analytics_entity_topology_state,
         ///     });
         /// 
@@ -64,6 +65,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     {
         ///         LogAnalyticsEntityId = oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
         ///         Namespace = @var.Log_analytics_entity_topology_namespace,
+        ///         MetadataEquals = @var.Log_analytics_entity_topology_metadata_equals,
         ///         State = @var.Log_analytics_entity_topology_state,
         ///     });
         /// 
@@ -84,6 +86,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("logAnalyticsEntityId", required: true)]
         public string LogAnalyticsEntityId { get; set; } = null!;
+
+        [Input("metadataEquals")]
+        private List<string>? _metadataEquals;
+
+        /// <summary>
+        /// A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+        /// </summary>
+        public List<string> MetadataEquals
+        {
+            get => _metadataEquals ?? (_metadataEquals = new List<string>());
+            set => _metadataEquals = value;
+        }
 
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -110,6 +124,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("logAnalyticsEntityId", required: true)]
         public Input<string> LogAnalyticsEntityId { get; set; } = null!;
+
+        [Input("metadataEquals")]
+        private InputList<string>? _metadataEquals;
+
+        /// <summary>
+        /// A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+        /// </summary>
+        public InputList<string> MetadataEquals
+        {
+            get => _metadataEquals ?? (_metadataEquals = new InputList<string>());
+            set => _metadataEquals = value;
+        }
 
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -138,10 +164,11 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Array of log analytics entity summary.
+        /// An array of entity metadata.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLogAnalyticsEntityTopologyItemResult> Items;
         public readonly string LogAnalyticsEntityId;
+        public readonly ImmutableArray<string> MetadataEquals;
         public readonly string Namespace;
         /// <summary>
         /// The current state of the log analytics entity.
@@ -156,6 +183,8 @@ namespace Pulumi.Oci.LogAnalytics
 
             string logAnalyticsEntityId,
 
+            ImmutableArray<string> metadataEquals,
+
             string @namespace,
 
             string? state)
@@ -163,6 +192,7 @@ namespace Pulumi.Oci.LogAnalytics
             Id = id;
             Items = items;
             LogAnalyticsEntityId = logAnalyticsEntityId;
+            MetadataEquals = metadataEquals;
             Namespace = @namespace;
             State = state;
         }

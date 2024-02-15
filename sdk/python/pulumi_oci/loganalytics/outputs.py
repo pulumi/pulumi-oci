@@ -11,6 +11,8 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'LogAnalyticsEntityMetadata',
+    'LogAnalyticsEntityMetadataItem',
     'LogAnalyticsImportCustomContentChangeList',
     'LogAnalyticsObjectCollectionRuleOverride',
     'LogAnalyticsPreferencesManagementItem',
@@ -25,6 +27,10 @@ __all__ = [
     'GetLogAnalyticsEntitiesFilterResult',
     'GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionResult',
     'GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult',
+    'GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataResult',
+    'GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemResult',
+    'GetLogAnalyticsEntityMetadataResult',
+    'GetLogAnalyticsEntityMetadataItemResult',
     'GetLogAnalyticsEntityTopologyItemResult',
     'GetLogAnalyticsEntityTopologyItemLinkResult',
     'GetLogAnalyticsEntityTopologyItemLinkItemResult',
@@ -77,6 +83,68 @@ __all__ = [
     'GetNamespacesNamespaceCollectionResult',
     'GetNamespacesNamespaceCollectionItemResult',
 ]
+
+@pulumi.output_type
+class LogAnalyticsEntityMetadata(dict):
+    def __init__(__self__, *,
+                 items: Optional[Sequence['outputs.LogAnalyticsEntityMetadataItem']] = None):
+        """
+        :param Sequence['LogAnalyticsEntityMetadataItemArgs'] items: (Updatable) An array of entity metadata details.
+        """
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Optional[Sequence['outputs.LogAnalyticsEntityMetadataItem']]:
+        """
+        (Updatable) An array of entity metadata details.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class LogAnalyticsEntityMetadataItem(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: (Updatable) Log analytics entity name.
+        :param str type: (Updatable) The metadata type.
+        :param str value: (Updatable) The metadata value.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Log analytics entity name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        (Updatable) The metadata type.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) The metadata value.
+        """
+        return pulumi.get(self, "value")
+
 
 @pulumi.output_type
 class LogAnalyticsImportCustomContentChangeList(dict):
@@ -987,11 +1055,17 @@ class GetLogAnalyticsEntitiesFilterResult(dict):
 class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult']):
+        """
+        :param Sequence['GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs'] items: An array of entity metadata.
+        """
         pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult']:
+        """
+        An array of entity metadata.
+        """
         return pulumi.get(self, "items")
 
 
@@ -1011,12 +1085,14 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
                  management_agent_compartment_id: str,
                  management_agent_display_name: str,
                  management_agent_id: str,
+                 metadatas: Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataResult'],
                  name: str,
                  namespace: str,
                  properties: Mapping[str, Any],
                  source_id: str,
                  state: str,
                  time_created: str,
+                 time_last_discovered: str,
                  time_updated: str,
                  timezone_region: str):
         """
@@ -1033,12 +1109,14 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
         :param str management_agent_compartment_id: Management agent (management-agents resource kind) compartment OCID
         :param str management_agent_display_name: Management agent (management-agents resource kind) display name
         :param str management_agent_id: The OCID of the Management Agent.
+        :param Sequence['GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataArgs'] metadatas: Details of entity metadata information.
         :param str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
         :param str namespace: The Logging Analytics namespace used for the request.
         :param Mapping[str, Any] properties: The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param str source_id: A filter to return only log analytics entities whose sourceId matches the sourceId given.
         :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
         :param str time_created: The date and time the resource was created, in the format defined by RFC3339.
+        :param str time_last_discovered: The date and time the resource was last discovered, in the format defined by RFC3339.
         :param str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
         :param str timezone_region: The timezone region of the log analytics entity.
         """
@@ -1055,12 +1133,14 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
         pulumi.set(__self__, "management_agent_compartment_id", management_agent_compartment_id)
         pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
         pulumi.set(__self__, "management_agent_id", management_agent_id)
+        pulumi.set(__self__, "metadatas", metadatas)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "properties", properties)
         pulumi.set(__self__, "source_id", source_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_discovered", time_last_discovered)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "timezone_region", timezone_region)
 
@@ -1170,6 +1250,14 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
 
     @property
     @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataResult']:
+        """
+        Details of entity metadata information.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @property
+    @pulumi.getter
     def name(self) -> str:
         """
         A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
@@ -1217,6 +1305,14 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeLastDiscovered")
+    def time_last_discovered(self) -> str:
+        """
+        The date and time the resource was last discovered, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_discovered")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
@@ -1231,6 +1327,122 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
         The timezone region of the log analytics entity.
         """
         return pulumi.get(self, "timezone_region")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemResult']):
+        """
+        :param Sequence['GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemArgs'] items: An array of entity metadata.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemResult']:
+        """
+        An array of entity metadata.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 type: str,
+                 value: str):
+        """
+        :param str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
+        :param str type: The metadata type.
+        :param str value: The metadata value.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The metadata type.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The metadata value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityMetadataResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetLogAnalyticsEntityMetadataItemResult']):
+        """
+        :param Sequence['GetLogAnalyticsEntityMetadataItemArgs'] items: An array of entity metadata.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetLogAnalyticsEntityMetadataItemResult']:
+        """
+        An array of entity metadata.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityMetadataItemResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 type: str,
+                 value: str):
+        """
+        :param str name: Log analytics entity name.
+        :param str type: The metadata type.
+        :param str value: The metadata value.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Log analytics entity name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The metadata type.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The metadata value.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -1267,7 +1479,7 @@ class GetLogAnalyticsEntityTopologyItemLinkResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkItemResult']):
         """
-        :param Sequence['GetLogAnalyticsEntityTopologyItemLinkItemArgs'] items: Array of log analytics entity summary.
+        :param Sequence['GetLogAnalyticsEntityTopologyItemLinkItemArgs'] items: An array of entity metadata.
         """
         pulumi.set(__self__, "items", items)
 
@@ -1275,7 +1487,7 @@ class GetLogAnalyticsEntityTopologyItemLinkResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkItemResult']:
         """
-        Array of log analytics entity summary.
+        An array of entity metadata.
         """
         return pulumi.get(self, "items")
 
@@ -1314,7 +1526,7 @@ class GetLogAnalyticsEntityTopologyItemNodeResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeItemResult']):
         """
-        :param Sequence['GetLogAnalyticsEntityTopologyItemNodeItemArgs'] items: Array of log analytics entity summary.
+        :param Sequence['GetLogAnalyticsEntityTopologyItemNodeItemArgs'] items: An array of entity metadata.
         """
         pulumi.set(__self__, "items", items)
 
@@ -1322,7 +1534,7 @@ class GetLogAnalyticsEntityTopologyItemNodeResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeItemResult']:
         """
-        Array of log analytics entity summary.
+        An array of entity metadata.
         """
         return pulumi.get(self, "items")
 
@@ -1745,12 +1957,14 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_enabled: bool,
+                 is_force_historic_collection: bool,
                  lifecycle_details: str,
                  log_group_id: str,
                  log_set: str,
                  log_set_ext_regex: str,
                  log_set_key: str,
                  log_source_name: str,
+                 log_type: str,
                  name: str,
                  namespace: str,
                  object_name_filters: Sequence[str],
@@ -1773,12 +1987,14 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
         :param bool is_enabled: Whether or not this rule is currently enabled.
+        :param bool is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         :param str lifecycle_details: A detailed status of the life cycle state.
         :param str log_group_id: Logging Analytics Log group OCID to associate the processed logs with.
         :param str log_set: The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param str log_set_ext_regex: The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param str log_set_key: An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
         :param str log_source_name: Name of the Logging Analytics Source to use for the processing.
+        :param str log_type: Type of files/objects in this object collection rule.
         :param str name: A filter to return rules only matching with this name.
         :param str namespace: The Logging Analytics namespace used for the request.
         :param Sequence[str] object_name_filters: When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
@@ -1801,12 +2017,14 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "is_force_historic_collection", is_force_historic_collection)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_set", log_set)
         pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
         pulumi.set(__self__, "log_set_key", log_set_key)
         pulumi.set(__self__, "log_source_name", log_source_name)
+        pulumi.set(__self__, "log_type", log_type)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "object_name_filters", object_name_filters)
@@ -1893,6 +2111,14 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         return pulumi.get(self, "is_enabled")
 
     @property
+    @pulumi.getter(name="isForceHistoricCollection")
+    def is_force_historic_collection(self) -> bool:
+        """
+        Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        """
+        return pulumi.get(self, "is_force_historic_collection")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -1939,6 +2165,14 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         Name of the Logging Analytics Source to use for the processing.
         """
         return pulumi.get(self, "log_source_name")
+
+    @property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> str:
+        """
+        Type of files/objects in this object collection rule.
+        """
+        return pulumi.get(self, "log_type")
 
     @property
     @pulumi.getter
@@ -2918,6 +3152,7 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
                  kind: str,
                  last_execution_status: str,
                  state: str,
+                 target_service: str,
                  time_created: str,
                  time_last_executed: str,
                  time_updated: str):
@@ -2932,6 +3167,7 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
         :param str kind: The rule kind used for filtering. Only rules of the specified kind will be returned.
         :param str last_execution_status: The most recent task execution status.
         :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+        :param str target_service: The target service to use for filtering.
         :param str time_created: The date and time the resource was created, in the format defined by RFC3339.
         :param str time_last_executed: The date and time the scheduled task last executed, in the format defined by RFC3339.
         :param str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
@@ -2946,6 +3182,7 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
         pulumi.set(__self__, "kind", kind)
         pulumi.set(__self__, "last_execution_status", last_execution_status)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "target_service", target_service)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_last_executed", time_last_executed)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -3029,6 +3266,14 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
         The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="targetService")
+    def target_service(self) -> str:
+        """
+        The target service to use for filtering.
+        """
+        return pulumi.get(self, "target_service")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -3829,32 +4074,46 @@ class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionResult(dic
 @pulumi.output_type
 class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult(dict):
     def __init__(__self__, *,
+                 collection_id: str,
                  created_by: str,
                  log_sets: str,
                  purpose: str,
                  query_string: str,
+                 recall_id: str,
                  status: str,
                  time_data_ended: str,
                  time_data_started: str,
                  time_started: str):
         """
+        :param str collection_id: This is the id of the associated recalled data collection
         :param str created_by: This is the user who initiated the recall request
         :param str log_sets: This is the list of logsets associated with this recall
         :param str purpose: This is the purpose of the recall
         :param str query_string: This is the query associated with the recall
+        :param str recall_id: This is the id for the recall request
         :param str status: This is the status of the recall
         :param str time_data_ended: This is the end of the time range for recalled data
         :param str time_data_started: This is the start of the time range for recalled data
         :param str time_started: This is the time when the recall operation was started for this recall request
         """
+        pulumi.set(__self__, "collection_id", collection_id)
         pulumi.set(__self__, "created_by", created_by)
         pulumi.set(__self__, "log_sets", log_sets)
         pulumi.set(__self__, "purpose", purpose)
         pulumi.set(__self__, "query_string", query_string)
+        pulumi.set(__self__, "recall_id", recall_id)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "time_data_ended", time_data_ended)
         pulumi.set(__self__, "time_data_started", time_data_started)
         pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="collectionId")
+    def collection_id(self) -> str:
+        """
+        This is the id of the associated recalled data collection
+        """
+        return pulumi.get(self, "collection_id")
 
     @property
     @pulumi.getter(name="createdBy")
@@ -3887,6 +4146,14 @@ class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult
         This is the query associated with the recall
         """
         return pulumi.get(self, "query_string")
+
+    @property
+    @pulumi.getter(name="recallId")
+    def recall_id(self) -> str:
+        """
+        This is the id for the recall request
+        """
+        return pulumi.get(self, "recall_id")
 
     @property
     @pulumi.getter

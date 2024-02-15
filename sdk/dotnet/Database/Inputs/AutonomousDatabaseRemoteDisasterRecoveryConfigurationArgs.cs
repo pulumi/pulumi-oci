@@ -18,6 +18,24 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("disasterRecoveryType")]
         public Input<string>? DisasterRecoveryType { get; set; }
 
+        /// <summary>
+        /// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        /// </summary>
+        [Input("isReplicateAutomaticBackups")]
+        public Input<bool>? IsReplicateAutomaticBackups { get; set; }
+
+        /// <summary>
+        /// Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+        /// </summary>
+        [Input("isSnapshotStandby")]
+        public Input<bool>? IsSnapshotStandby { get; set; }
+
+        /// <summary>
+        /// Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+        /// </summary>
+        [Input("timeSnapshotStandbyEnabledTill")]
+        public Input<string>? TimeSnapshotStandbyEnabledTill { get; set; }
+
         public AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs()
         {
         }

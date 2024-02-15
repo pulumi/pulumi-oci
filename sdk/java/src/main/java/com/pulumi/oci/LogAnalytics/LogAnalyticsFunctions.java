@@ -462,6 +462,7 @@ public final class LogAnalyticsFunctions {
      *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
      *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
      *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
+     *             .metadataEquals(var_.log_analytics_entity_metadata_equals())
      *             .name(var_.log_analytics_entity_name())
      *             .nameContains(var_.log_analytics_entity_name_contains())
      *             .sourceId(oci_log_analytics_source.test_source().id())
@@ -512,6 +513,7 @@ public final class LogAnalyticsFunctions {
      *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
      *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
      *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
+     *             .metadataEquals(var_.log_analytics_entity_metadata_equals())
      *             .name(var_.log_analytics_entity_name())
      *             .nameContains(var_.log_analytics_entity_name_contains())
      *             .sourceId(oci_log_analytics_source.test_source().id())
@@ -562,6 +564,7 @@ public final class LogAnalyticsFunctions {
      *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
      *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
      *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
+     *             .metadataEquals(var_.log_analytics_entity_metadata_equals())
      *             .name(var_.log_analytics_entity_name())
      *             .nameContains(var_.log_analytics_entity_name_contains())
      *             .sourceId(oci_log_analytics_source.test_source().id())
@@ -612,6 +615,7 @@ public final class LogAnalyticsFunctions {
      *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
      *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
      *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
+     *             .metadataEquals(var_.log_analytics_entity_metadata_equals())
      *             .name(var_.log_analytics_entity_name())
      *             .nameContains(var_.log_analytics_entity_name_contains())
      *             .sourceId(oci_log_analytics_source.test_source().id())
@@ -976,6 +980,7 @@ public final class LogAnalyticsFunctions {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
      *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
      *             .namespace(var_.log_analytics_entity_topology_namespace())
+     *             .metadataEquals(var_.log_analytics_entity_topology_metadata_equals())
      *             .state(var_.log_analytics_entity_topology_state())
      *             .build());
      * 
@@ -1017,6 +1022,7 @@ public final class LogAnalyticsFunctions {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
      *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
      *             .namespace(var_.log_analytics_entity_topology_namespace())
+     *             .metadataEquals(var_.log_analytics_entity_topology_metadata_equals())
      *             .state(var_.log_analytics_entity_topology_state())
      *             .build());
      * 
@@ -1058,6 +1064,7 @@ public final class LogAnalyticsFunctions {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
      *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
      *             .namespace(var_.log_analytics_entity_topology_namespace())
+     *             .metadataEquals(var_.log_analytics_entity_topology_metadata_equals())
      *             .state(var_.log_analytics_entity_topology_state())
      *             .build());
      * 
@@ -1099,6 +1106,7 @@ public final class LogAnalyticsFunctions {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
      *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
      *             .namespace(var_.log_analytics_entity_topology_namespace())
+     *             .metadataEquals(var_.log_analytics_entity_topology_metadata_equals())
      *             .state(var_.log_analytics_entity_topology_state())
      *             .build());
      * 
@@ -3439,6 +3447,7 @@ public final class LogAnalyticsFunctions {
      *             .displayName(var_.namespace_rule_display_name())
      *             .kind(var_.namespace_rule_kind())
      *             .state(var_.namespace_rule_state())
+     *             .targetService(var_.namespace_rule_target_service())
      *             .build());
      * 
      *     }
@@ -3482,6 +3491,7 @@ public final class LogAnalyticsFunctions {
      *             .displayName(var_.namespace_rule_display_name())
      *             .kind(var_.namespace_rule_kind())
      *             .state(var_.namespace_rule_state())
+     *             .targetService(var_.namespace_rule_target_service())
      *             .build());
      * 
      *     }
@@ -3525,6 +3535,7 @@ public final class LogAnalyticsFunctions {
      *             .displayName(var_.namespace_rule_display_name())
      *             .kind(var_.namespace_rule_kind())
      *             .state(var_.namespace_rule_state())
+     *             .targetService(var_.namespace_rule_target_service())
      *             .build());
      * 
      *     }
@@ -3568,6 +3579,7 @@ public final class LogAnalyticsFunctions {
      *             .displayName(var_.namespace_rule_display_name())
      *             .kind(var_.namespace_rule_kind())
      *             .state(var_.namespace_rule_state())
+     *             .targetService(var_.namespace_rule_target_service())
      *             .build());
      * 
      *     }
@@ -3929,6 +3941,7 @@ public final class LogAnalyticsFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .namespace(var_.namespace_scheduled_task_namespace())
      *             .displayName(var_.namespace_scheduled_task_display_name())
+     *             .targetService(var_.namespace_scheduled_task_target_service())
      *             .taskType(var_.namespace_scheduled_task_task_type())
      *             .build());
      * 
@@ -3971,6 +3984,7 @@ public final class LogAnalyticsFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .namespace(var_.namespace_scheduled_task_namespace())
      *             .displayName(var_.namespace_scheduled_task_display_name())
+     *             .targetService(var_.namespace_scheduled_task_target_service())
      *             .taskType(var_.namespace_scheduled_task_task_type())
      *             .build());
      * 
@@ -4013,6 +4027,7 @@ public final class LogAnalyticsFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .namespace(var_.namespace_scheduled_task_namespace())
      *             .displayName(var_.namespace_scheduled_task_display_name())
+     *             .targetService(var_.namespace_scheduled_task_target_service())
      *             .taskType(var_.namespace_scheduled_task_task_type())
      *             .build());
      * 
@@ -4055,6 +4070,7 @@ public final class LogAnalyticsFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .namespace(var_.namespace_scheduled_task_namespace())
      *             .displayName(var_.namespace_scheduled_task_display_name())
+     *             .targetService(var_.namespace_scheduled_task_target_service())
      *             .taskType(var_.namespace_scheduled_task_task_type())
      *             .build());
      * 

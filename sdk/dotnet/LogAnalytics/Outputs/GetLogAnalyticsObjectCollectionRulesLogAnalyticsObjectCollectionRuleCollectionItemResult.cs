@@ -50,6 +50,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>
+        /// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        /// </summary>
+        public readonly bool IsForceHistoricCollection;
+        /// <summary>
         /// A detailed status of the life cycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -73,6 +77,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// Name of the Logging Analytics Source to use for the processing.
         /// </summary>
         public readonly string LogSourceName;
+        /// <summary>
+        /// Type of files/objects in this object collection rule.
+        /// </summary>
+        public readonly string LogType;
         /// <summary>
         /// A filter to return rules only matching with this name.
         /// </summary>
@@ -142,6 +150,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             bool isEnabled,
 
+            bool isForceHistoricCollection,
+
             string lifecycleDetails,
 
             string logGroupId,
@@ -153,6 +163,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             string logSetKey,
 
             string logSourceName,
+
+            string logType,
 
             string name,
 
@@ -187,12 +199,14 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsEnabled = isEnabled;
+            IsForceHistoricCollection = isForceHistoricCollection;
             LifecycleDetails = lifecycleDetails;
             LogGroupId = logGroupId;
             LogSet = logSet;
             LogSetExtRegex = logSetExtRegex;
             LogSetKey = logSetKey;
             LogSourceName = logSourceName;
+            LogType = logType;
             Name = name;
             Namespace = @namespace;
             ObjectNameFilters = objectNameFilters;

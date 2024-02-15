@@ -14,6 +14,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
     public sealed class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult
     {
         /// <summary>
+        /// This is the id of the associated recalled data collection
+        /// </summary>
+        public readonly string CollectionId;
+        /// <summary>
         /// This is the user who initiated the recall request
         /// </summary>
         public readonly string CreatedBy;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// This is the query associated with the recall
         /// </summary>
         public readonly string QueryString;
+        /// <summary>
+        /// This is the id for the recall request
+        /// </summary>
+        public readonly string RecallId;
         /// <summary>
         /// This is the status of the recall
         /// </summary>
@@ -48,6 +56,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
         [OutputConstructor]
         private GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult(
+            string collectionId,
+
             string createdBy,
 
             string logSets,
@@ -55,6 +65,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             string purpose,
 
             string queryString,
+
+            string recallId,
 
             string status,
 
@@ -64,10 +76,12 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string timeStarted)
         {
+            CollectionId = collectionId;
             CreatedBy = createdBy;
             LogSets = logSets;
             Purpose = purpose;
             QueryString = queryString;
+            RecallId = recallId;
             Status = status;
             TimeDataEnded = timeDataEnded;
             TimeDataStarted = timeDataStarted;

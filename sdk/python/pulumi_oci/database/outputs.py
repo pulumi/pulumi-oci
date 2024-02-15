@@ -2358,6 +2358,12 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfiguration(dict):
         suggest = None
         if key == "disasterRecoveryType":
             suggest = "disaster_recovery_type"
+        elif key == "isReplicateAutomaticBackups":
+            suggest = "is_replicate_automatic_backups"
+        elif key == "isSnapshotStandby":
+            suggest = "is_snapshot_standby"
+        elif key == "timeSnapshotStandbyEnabledTill":
+            suggest = "time_snapshot_standby_enabled_till"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseRemoteDisasterRecoveryConfiguration. Access the value via the '{suggest}' property getter instead.")
@@ -2371,12 +2377,24 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfiguration(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 disaster_recovery_type: Optional[str] = None):
+                 disaster_recovery_type: Optional[str] = None,
+                 is_replicate_automatic_backups: Optional[bool] = None,
+                 is_snapshot_standby: Optional[bool] = None,
+                 time_snapshot_standby_enabled_till: Optional[str] = None):
         """
         :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        :param bool is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+        :param str time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
         """
         if disaster_recovery_type is not None:
             pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
+        if is_replicate_automatic_backups is not None:
+            pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
+        if is_snapshot_standby is not None:
+            pulumi.set(__self__, "is_snapshot_standby", is_snapshot_standby)
+        if time_snapshot_standby_enabled_till is not None:
+            pulumi.set(__self__, "time_snapshot_standby_enabled_till", time_snapshot_standby_enabled_till)
 
     @property
     @pulumi.getter(name="disasterRecoveryType")
@@ -2385,6 +2403,30 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfiguration(dict):
         Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
+
+    @property
+    @pulumi.getter(name="isReplicateAutomaticBackups")
+    def is_replicate_automatic_backups(self) -> Optional[bool]:
+        """
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        """
+        return pulumi.get(self, "is_replicate_automatic_backups")
+
+    @property
+    @pulumi.getter(name="isSnapshotStandby")
+    def is_snapshot_standby(self) -> Optional[bool]:
+        """
+        Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+        """
+        return pulumi.get(self, "is_snapshot_standby")
+
+    @property
+    @pulumi.getter(name="timeSnapshotStandbyEnabledTill")
+    def time_snapshot_standby_enabled_till(self) -> Optional[str]:
+        """
+        Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+        """
+        return pulumi.get(self, "time_snapshot_standby_enabled_till")
 
 
 @pulumi.output_type
@@ -15219,11 +15261,18 @@ class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult
 @pulumi.output_type
 class GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
     def __init__(__self__, *,
-                 disaster_recovery_type: str):
+                 disaster_recovery_type: str,
+                 is_replicate_automatic_backups: bool,
+                 is_snapshot_standby: bool,
+                 time_snapshot_standby_enabled_till: str):
         """
         :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         """
         pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
+        pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
+        pulumi.set(__self__, "is_snapshot_standby", is_snapshot_standby)
+        pulumi.set(__self__, "time_snapshot_standby_enabled_till", time_snapshot_standby_enabled_till)
 
     @property
     @pulumi.getter(name="disasterRecoveryType")
@@ -15232,6 +15281,24 @@ class GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
         Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
+
+    @property
+    @pulumi.getter(name="isReplicateAutomaticBackups")
+    def is_replicate_automatic_backups(self) -> bool:
+        """
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        """
+        return pulumi.get(self, "is_replicate_automatic_backups")
+
+    @property
+    @pulumi.getter(name="isSnapshotStandby")
+    def is_snapshot_standby(self) -> bool:
+        return pulumi.get(self, "is_snapshot_standby")
+
+    @property
+    @pulumi.getter(name="timeSnapshotStandbyEnabledTill")
+    def time_snapshot_standby_enabled_till(self) -> str:
+        return pulumi.get(self, "time_snapshot_standby_enabled_till")
 
 
 @pulumi.output_type
@@ -15439,6 +15506,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  is_reconnect_clone_enabled: bool,
                  is_refreshable_clone: bool,
                  is_remote_data_guard_enabled: bool,
+                 is_replicate_automatic_backups: bool,
                  is_shrink_only: bool,
                  key_history_entries: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult'],
                  key_store_id: str,
@@ -15560,6 +15628,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param bool is_reconnect_clone_enabled: Indicates if the refreshable clone can be reconnected to its source database.
         :param bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
         :param bool is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
         :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
@@ -15676,6 +15745,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "is_reconnect_clone_enabled", is_reconnect_clone_enabled)
         pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
         pulumi.set(__self__, "is_remote_data_guard_enabled", is_remote_data_guard_enabled)
+        pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
         pulumi.set(__self__, "is_shrink_only", is_shrink_only)
         pulumi.set(__self__, "key_history_entries", key_history_entries)
         pulumi.set(__self__, "key_store_id", key_store_id)
@@ -16157,6 +16227,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_remote_data_guard_enabled")
+
+    @property
+    @pulumi.getter(name="isReplicateAutomaticBackups")
+    def is_replicate_automatic_backups(self) -> bool:
+        """
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        """
+        return pulumi.get(self, "is_replicate_automatic_backups")
 
     @property
     @pulumi.getter(name="isShrinkOnly")
@@ -17274,11 +17352,18 @@ class GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult(dict)
 @pulumi.output_type
 class GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
     def __init__(__self__, *,
-                 disaster_recovery_type: str):
+                 disaster_recovery_type: str,
+                 is_replicate_automatic_backups: bool,
+                 is_snapshot_standby: bool,
+                 time_snapshot_standby_enabled_till: str):
         """
         :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         """
         pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
+        pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
+        pulumi.set(__self__, "is_snapshot_standby", is_snapshot_standby)
+        pulumi.set(__self__, "time_snapshot_standby_enabled_till", time_snapshot_standby_enabled_till)
 
     @property
     @pulumi.getter(name="disasterRecoveryType")
@@ -17287,6 +17372,24 @@ class GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguratio
         Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
+
+    @property
+    @pulumi.getter(name="isReplicateAutomaticBackups")
+    def is_replicate_automatic_backups(self) -> bool:
+        """
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        """
+        return pulumi.get(self, "is_replicate_automatic_backups")
+
+    @property
+    @pulumi.getter(name="isSnapshotStandby")
+    def is_snapshot_standby(self) -> bool:
+        return pulumi.get(self, "is_snapshot_standby")
+
+    @property
+    @pulumi.getter(name="timeSnapshotStandbyEnabledTill")
+    def time_snapshot_standby_enabled_till(self) -> str:
+        return pulumi.get(self, "time_snapshot_standby_enabled_till")
 
 
 @pulumi.output_type
@@ -19196,11 +19299,17 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult
 @pulumi.output_type
 class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
     def __init__(__self__, *,
-                 disaster_recovery_type: str):
+                 disaster_recovery_type: str,
+                 is_replicate_automatic_backups: bool,
+                 is_snapshot_standby: bool,
+                 time_snapshot_standby_enabled_till: str):
         """
         :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
+        pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
+        pulumi.set(__self__, "is_snapshot_standby", is_snapshot_standby)
+        pulumi.set(__self__, "time_snapshot_standby_enabled_till", time_snapshot_standby_enabled_till)
 
     @property
     @pulumi.getter(name="disasterRecoveryType")
@@ -19209,6 +19318,21 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfig
         Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
+
+    @property
+    @pulumi.getter(name="isReplicateAutomaticBackups")
+    def is_replicate_automatic_backups(self) -> bool:
+        return pulumi.get(self, "is_replicate_automatic_backups")
+
+    @property
+    @pulumi.getter(name="isSnapshotStandby")
+    def is_snapshot_standby(self) -> bool:
+        return pulumi.get(self, "is_snapshot_standby")
+
+    @property
+    @pulumi.getter(name="timeSnapshotStandbyEnabledTill")
+    def time_snapshot_standby_enabled_till(self) -> str:
+        return pulumi.get(self, "time_snapshot_standby_enabled_till")
 
 
 @pulumi.output_type

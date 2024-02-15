@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,8 +30,16 @@ import * as utilities from "../utilities";
  *     },
  *     hostname: _var.log_analytics_entity_hostname,
  *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
+ *     metadata: {
+ *         items: [{
+ *             name: _var.log_analytics_entity_metadata_items_name,
+ *             type: _var.log_analytics_entity_metadata_items_type,
+ *             value: _var.log_analytics_entity_metadata_items_value,
+ *         }],
+ *     },
  *     properties: _var.log_analytics_entity_properties,
  *     sourceId: oci_log_analytics_source.test_source.id,
+ *     timeLastDiscovered: _var.log_analytics_entity_time_last_discovered,
  *     timezoneRegion: _var.log_analytics_entity_timezone_region,
  * });
  * ```
@@ -119,6 +129,10 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
      */
     public readonly managementAgentId!: pulumi.Output<string>;
     /**
+     * (Updatable) Details of Entity Metadata.
+     */
+    public readonly metadata!: pulumi.Output<outputs.LogAnalytics.LogAnalyticsEntityMetadata>;
+    /**
      * (Updatable) Log analytics entity name.
      */
     public readonly name!: pulumi.Output<string>;
@@ -142,6 +156,10 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
      * The date and time the resource was created, in the format defined by RFC3339.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+     */
+    public readonly timeLastDiscovered!: pulumi.Output<string>;
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      */
@@ -180,12 +198,14 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
             resourceInputs["managementAgentCompartmentId"] = state ? state.managementAgentCompartmentId : undefined;
             resourceInputs["managementAgentDisplayName"] = state ? state.managementAgentDisplayName : undefined;
             resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
+            resourceInputs["metadata"] = state ? state.metadata : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["namespace"] = state ? state.namespace : undefined;
             resourceInputs["properties"] = state ? state.properties : undefined;
             resourceInputs["sourceId"] = state ? state.sourceId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeLastDiscovered"] = state ? state.timeLastDiscovered : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["timezoneRegion"] = state ? state.timezoneRegion : undefined;
         } else {
@@ -206,10 +226,12 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["hostname"] = args ? args.hostname : undefined;
             resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
+            resourceInputs["metadata"] = args ? args.metadata : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["namespace"] = args ? args.namespace : undefined;
             resourceInputs["properties"] = args ? args.properties : undefined;
             resourceInputs["sourceId"] = args ? args.sourceId : undefined;
+            resourceInputs["timeLastDiscovered"] = args ? args.timeLastDiscovered : undefined;
             resourceInputs["timezoneRegion"] = args ? args.timezoneRegion : undefined;
             resourceInputs["areLogsCollected"] = undefined /*out*/;
             resourceInputs["entityTypeInternalName"] = undefined /*out*/;
@@ -278,6 +300,10 @@ export interface LogAnalyticsEntityState {
      */
     managementAgentId?: pulumi.Input<string>;
     /**
+     * (Updatable) Details of Entity Metadata.
+     */
+    metadata?: pulumi.Input<inputs.LogAnalytics.LogAnalyticsEntityMetadata>;
+    /**
      * (Updatable) Log analytics entity name.
      */
     name?: pulumi.Input<string>;
@@ -301,6 +327,10 @@ export interface LogAnalyticsEntityState {
      * The date and time the resource was created, in the format defined by RFC3339.
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+     */
+    timeLastDiscovered?: pulumi.Input<string>;
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      */
@@ -348,6 +378,10 @@ export interface LogAnalyticsEntityArgs {
      */
     managementAgentId?: pulumi.Input<string>;
     /**
+     * (Updatable) Details of Entity Metadata.
+     */
+    metadata?: pulumi.Input<inputs.LogAnalytics.LogAnalyticsEntityMetadata>;
+    /**
      * (Updatable) Log analytics entity name.
      */
     name?: pulumi.Input<string>;
@@ -363,6 +397,10 @@ export interface LogAnalyticsEntityArgs {
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      */
     sourceId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+     */
+    timeLastDiscovered?: pulumi.Input<string>;
     /**
      * (Updatable) The timezone region of the log analytics entity. 
      *

@@ -308,6 +308,10 @@ namespace Pulumi.Oci.Database
         /// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
         public readonly bool IsRemoteDataGuardEnabled;
+        /// <summary>
+        /// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        /// </summary>
+        public readonly bool IsReplicateAutomaticBackups;
         public readonly bool IsShrinkOnly;
         /// <summary>
         /// Key History Entry.
@@ -673,6 +677,8 @@ namespace Pulumi.Oci.Database
 
             bool isRemoteDataGuardEnabled,
 
+            bool isReplicateAutomaticBackups,
+
             bool isShrinkOnly,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseKeyHistoryEntryResult> keyHistoryEntries,
@@ -870,6 +876,7 @@ namespace Pulumi.Oci.Database
             IsReconnectCloneEnabled = isReconnectCloneEnabled;
             IsRefreshableClone = isRefreshableClone;
             IsRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
+            IsReplicateAutomaticBackups = isReplicateAutomaticBackups;
             IsShrinkOnly = isShrinkOnly;
             KeyHistoryEntries = keyHistoryEntries;
             KeyStoreId = keyStoreId;

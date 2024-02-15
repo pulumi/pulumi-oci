@@ -35,6 +35,7 @@ import (
 //				DisplayName:   pulumi.StringRef(_var.Namespace_rule_display_name),
 //				Kind:          pulumi.StringRef(_var.Namespace_rule_kind),
 //				State:         pulumi.StringRef(_var.Namespace_rule_state),
+//				TargetService: pulumi.StringRef(_var.Namespace_rule_target_service),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -67,6 +68,8 @@ type GetNamespaceRulesArgs struct {
 	Namespace string `pulumi:"namespace"`
 	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
 	State *string `pulumi:"state"`
+	// The target service to use for filtering.
+	TargetService *string `pulumi:"targetService"`
 }
 
 // A collection of values returned by getNamespaceRules.
@@ -85,6 +88,8 @@ type GetNamespaceRulesResult struct {
 	RuleSummaryCollections []GetNamespaceRulesRuleSummaryCollection `pulumi:"ruleSummaryCollections"`
 	// The current state of the logging analytics rule.
 	State *string `pulumi:"state"`
+	// The target service.
+	TargetService *string `pulumi:"targetService"`
 }
 
 func GetNamespaceRulesOutput(ctx *pulumi.Context, args GetNamespaceRulesOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceRulesResultOutput {
@@ -113,6 +118,8 @@ type GetNamespaceRulesOutputArgs struct {
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// The target service to use for filtering.
+	TargetService pulumi.StringPtrInput `pulumi:"targetService"`
 }
 
 func (GetNamespaceRulesOutputArgs) ElementType() reflect.Type {
@@ -172,6 +179,11 @@ func (o GetNamespaceRulesResultOutput) RuleSummaryCollections() GetNamespaceRule
 // The current state of the logging analytics rule.
 func (o GetNamespaceRulesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNamespaceRulesResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The target service.
+func (o GetNamespaceRulesResultOutput) TargetService() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesResult) *string { return v.TargetService }).(pulumi.StringPtrOutput)
 }
 
 func init() {

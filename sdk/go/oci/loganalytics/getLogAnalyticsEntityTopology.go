@@ -32,6 +32,7 @@ import (
 //			_, err := LogAnalytics.GetLogAnalyticsEntityTopology(ctx, &loganalytics.GetLogAnalyticsEntityTopologyArgs{
 //				LogAnalyticsEntityId: oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
 //				Namespace:            _var.Log_analytics_entity_topology_namespace,
+//				MetadataEquals:       _var.Log_analytics_entity_topology_metadata_equals,
 //				State:                pulumi.StringRef(_var.Log_analytics_entity_topology_state),
 //			}, nil)
 //			if err != nil {
@@ -56,6 +57,8 @@ func GetLogAnalyticsEntityTopology(ctx *pulumi.Context, args *GetLogAnalyticsEnt
 type GetLogAnalyticsEntityTopologyArgs struct {
 	// The log analytics entity OCID.
 	LogAnalyticsEntityId string `pulumi:"logAnalyticsEntityId"`
+	// A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+	MetadataEquals []string `pulumi:"metadataEquals"`
 	// The Logging Analytics namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
@@ -66,9 +69,10 @@ type GetLogAnalyticsEntityTopologyArgs struct {
 type GetLogAnalyticsEntityTopologyResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Array of log analytics entity summary.
+	// An array of entity metadata.
 	Items                []GetLogAnalyticsEntityTopologyItem `pulumi:"items"`
 	LogAnalyticsEntityId string                              `pulumi:"logAnalyticsEntityId"`
+	MetadataEquals       []string                            `pulumi:"metadataEquals"`
 	Namespace            string                              `pulumi:"namespace"`
 	// The current state of the log analytics entity.
 	State *string `pulumi:"state"`
@@ -91,6 +95,8 @@ func GetLogAnalyticsEntityTopologyOutput(ctx *pulumi.Context, args GetLogAnalyti
 type GetLogAnalyticsEntityTopologyOutputArgs struct {
 	// The log analytics entity OCID.
 	LogAnalyticsEntityId pulumi.StringInput `pulumi:"logAnalyticsEntityId"`
+	// A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+	MetadataEquals pulumi.StringArrayInput `pulumi:"metadataEquals"`
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
@@ -121,13 +127,17 @@ func (o GetLogAnalyticsEntityTopologyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Array of log analytics entity summary.
+// An array of entity metadata.
 func (o GetLogAnalyticsEntityTopologyResultOutput) Items() GetLogAnalyticsEntityTopologyItemArrayOutput {
 	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyResult) []GetLogAnalyticsEntityTopologyItem { return v.Items }).(GetLogAnalyticsEntityTopologyItemArrayOutput)
 }
 
 func (o GetLogAnalyticsEntityTopologyResultOutput) LogAnalyticsEntityId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyResult) string { return v.LogAnalyticsEntityId }).(pulumi.StringOutput)
+}
+
+func (o GetLogAnalyticsEntityTopologyResultOutput) MetadataEquals() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyResult) []string { return v.MetadataEquals }).(pulumi.StringArrayOutput)
 }
 
 func (o GetLogAnalyticsEntityTopologyResultOutput) Namespace() pulumi.StringOutput {

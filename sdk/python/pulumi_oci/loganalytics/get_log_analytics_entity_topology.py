@@ -22,7 +22,7 @@ class GetLogAnalyticsEntityTopologyResult:
     """
     A collection of values returned by getLogAnalyticsEntityTopology.
     """
-    def __init__(__self__, id=None, items=None, log_analytics_entity_id=None, namespace=None, state=None):
+    def __init__(__self__, id=None, items=None, log_analytics_entity_id=None, metadata_equals=None, namespace=None, state=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -32,6 +32,9 @@ class GetLogAnalyticsEntityTopologyResult:
         if log_analytics_entity_id and not isinstance(log_analytics_entity_id, str):
             raise TypeError("Expected argument 'log_analytics_entity_id' to be a str")
         pulumi.set(__self__, "log_analytics_entity_id", log_analytics_entity_id)
+        if metadata_equals and not isinstance(metadata_equals, list):
+            raise TypeError("Expected argument 'metadata_equals' to be a list")
+        pulumi.set(__self__, "metadata_equals", metadata_equals)
         if namespace and not isinstance(namespace, str):
             raise TypeError("Expected argument 'namespace' to be a str")
         pulumi.set(__self__, "namespace", namespace)
@@ -51,7 +54,7 @@ class GetLogAnalyticsEntityTopologyResult:
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetLogAnalyticsEntityTopologyItemResult']:
         """
-        Array of log analytics entity summary.
+        An array of entity metadata.
         """
         return pulumi.get(self, "items")
 
@@ -59,6 +62,11 @@ class GetLogAnalyticsEntityTopologyResult:
     @pulumi.getter(name="logAnalyticsEntityId")
     def log_analytics_entity_id(self) -> str:
         return pulumi.get(self, "log_analytics_entity_id")
+
+    @property
+    @pulumi.getter(name="metadataEquals")
+    def metadata_equals(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "metadata_equals")
 
     @property
     @pulumi.getter
@@ -83,11 +91,13 @@ class AwaitableGetLogAnalyticsEntityTopologyResult(GetLogAnalyticsEntityTopology
             id=self.id,
             items=self.items,
             log_analytics_entity_id=self.log_analytics_entity_id,
+            metadata_equals=self.metadata_equals,
             namespace=self.namespace,
             state=self.state)
 
 
 def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[str] = None,
+                                      metadata_equals: Optional[Sequence[str]] = None,
                                       namespace: Optional[str] = None,
                                       state: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsEntityTopologyResult:
@@ -104,16 +114,19 @@ def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[str] = N
 
     test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
         namespace=var["log_analytics_entity_topology_namespace"],
+        metadata_equals=var["log_analytics_entity_topology_metadata_equals"],
         state=var["log_analytics_entity_topology_state"])
     ```
 
 
     :param str log_analytics_entity_id: The log analytics entity OCID.
+    :param Sequence[str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
     :param str namespace: The Logging Analytics namespace used for the request.
     :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
     __args__['logAnalyticsEntityId'] = log_analytics_entity_id
+    __args__['metadataEquals'] = metadata_equals
     __args__['namespace'] = namespace
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -123,12 +136,14 @@ def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[str] = N
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         log_analytics_entity_id=pulumi.get(__ret__, 'log_analytics_entity_id'),
+        metadata_equals=pulumi.get(__ret__, 'metadata_equals'),
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_log_analytics_entity_topology)
 def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[pulumi.Input[str]] = None,
+                                             metadata_equals: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                              namespace: Optional[pulumi.Input[str]] = None,
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsEntityTopologyResult]:
@@ -145,11 +160,13 @@ def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[p
 
     test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
         namespace=var["log_analytics_entity_topology_namespace"],
+        metadata_equals=var["log_analytics_entity_topology_metadata_equals"],
         state=var["log_analytics_entity_topology_state"])
     ```
 
 
     :param str log_analytics_entity_id: The log analytics entity OCID.
+    :param Sequence[str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
     :param str namespace: The Logging Analytics namespace used for the request.
     :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """

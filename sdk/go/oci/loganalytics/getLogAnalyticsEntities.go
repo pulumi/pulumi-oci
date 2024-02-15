@@ -38,6 +38,7 @@ import (
 //				HostnameContains:         pulumi.StringRef(_var.Log_analytics_entity_hostname_contains),
 //				IsManagementAgentIdNull:  pulumi.StringRef(_var.Log_analytics_entity_is_management_agent_id_null),
 //				LifecycleDetailsContains: pulumi.StringRef(_var.Log_analytics_entity_lifecycle_details_contains),
+//				MetadataEquals:           _var.Log_analytics_entity_metadata_equals,
 //				Name:                     pulumi.StringRef(_var.Log_analytics_entity_name),
 //				NameContains:             pulumi.StringRef(_var.Log_analytics_entity_name_contains),
 //				SourceId:                 pulumi.StringRef(oci_log_analytics_source.Test_source.Id),
@@ -78,6 +79,8 @@ type GetLogAnalyticsEntitiesArgs struct {
 	IsManagementAgentIdNull *string `pulumi:"isManagementAgentIdNull"`
 	// A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
 	LifecycleDetailsContains *string `pulumi:"lifecycleDetailsContains"`
+	// A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+	MetadataEquals []string `pulumi:"metadataEquals"`
 	// A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
 	Name *string `pulumi:"name"`
 	// A filter to return only log analytics entities whose name contains the name given. The match is case-insensitive.
@@ -108,6 +111,7 @@ type GetLogAnalyticsEntitiesResult struct {
 	LifecycleDetailsContains *string `pulumi:"lifecycleDetailsContains"`
 	// The list of log_analytics_entity_collection.
 	LogAnalyticsEntityCollections []GetLogAnalyticsEntitiesLogAnalyticsEntityCollection `pulumi:"logAnalyticsEntityCollections"`
+	MetadataEquals                []string                                              `pulumi:"metadataEquals"`
 	// Log analytics entity name.
 	Name         *string `pulumi:"name"`
 	NameContains *string `pulumi:"nameContains"`
@@ -148,6 +152,8 @@ type GetLogAnalyticsEntitiesOutputArgs struct {
 	IsManagementAgentIdNull pulumi.StringPtrInput `pulumi:"isManagementAgentIdNull"`
 	// A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
 	LifecycleDetailsContains pulumi.StringPtrInput `pulumi:"lifecycleDetailsContains"`
+	// A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+	MetadataEquals pulumi.StringArrayInput `pulumi:"metadataEquals"`
 	// A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter to return only log analytics entities whose name contains the name given. The match is case-insensitive.
@@ -225,6 +231,10 @@ func (o GetLogAnalyticsEntitiesResultOutput) LogAnalyticsEntityCollections() Get
 	return o.ApplyT(func(v GetLogAnalyticsEntitiesResult) []GetLogAnalyticsEntitiesLogAnalyticsEntityCollection {
 		return v.LogAnalyticsEntityCollections
 	}).(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput)
+}
+
+func (o GetLogAnalyticsEntitiesResultOutput) MetadataEquals() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesResult) []string { return v.MetadataEquals }).(pulumi.StringArrayOutput)
 }
 
 // Log analytics entity name.

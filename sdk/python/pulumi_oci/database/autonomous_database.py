@@ -53,6 +53,7 @@ class AutonomousDatabaseArgs:
                  is_mtls_connection_required: Optional[pulumi.Input[bool]] = None,
                  is_preview_version_with_service_terms_accepted: Optional[pulumi.Input[bool]] = None,
                  is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
+                 is_replicate_automatic_backups: Optional[pulumi.Input[bool]] = None,
                  is_shrink_only: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
@@ -152,6 +153,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[bool] is_mtls_connection_required: (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
         :param pulumi.Input[bool] is_preview_version_with_service_terms_accepted: If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         :param pulumi.Input[bool] is_refreshable_clone: (Updatable) True for creating a refreshable clone and False for detaching the clone from source Autonomous Database. Detaching is one time operation and clone becomes a regular Autonomous Database.
+        :param pulumi.Input[bool] is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param pulumi.Input[bool] is_shrink_only: (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
                
                ** IMPORTANT **
@@ -295,6 +297,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "is_preview_version_with_service_terms_accepted", is_preview_version_with_service_terms_accepted)
         if is_refreshable_clone is not None:
             pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
+        if is_replicate_automatic_backups is not None:
+            pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
         if is_shrink_only is not None:
             warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
             pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
@@ -838,6 +842,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "is_refreshable_clone", value)
 
     @property
+    @pulumi.getter(name="isReplicateAutomaticBackups")
+    def is_replicate_automatic_backups(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        """
+        return pulumi.get(self, "is_replicate_automatic_backups")
+
+    @is_replicate_automatic_backups.setter
+    def is_replicate_automatic_backups(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_replicate_automatic_backups", value)
+
+    @property
     @pulumi.getter(name="isShrinkOnly")
     def is_shrink_only(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -1334,6 +1350,7 @@ class _AutonomousDatabaseState:
                  is_reconnect_clone_enabled: Optional[pulumi.Input[bool]] = None,
                  is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
                  is_remote_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_replicate_automatic_backups: Optional[pulumi.Input[bool]] = None,
                  is_shrink_only: Optional[pulumi.Input[bool]] = None,
                  key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseKeyHistoryEntryArgs']]]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
@@ -1486,6 +1503,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[bool] is_reconnect_clone_enabled: Indicates if the refreshable clone can be reconnected to its source database.
         :param pulumi.Input[bool] is_refreshable_clone: (Updatable) True for creating a refreshable clone and False for detaching the clone from source Autonomous Database. Detaching is one time operation and clone becomes a regular Autonomous Database.
         :param pulumi.Input[bool] is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param pulumi.Input[bool] is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param pulumi.Input[bool] is_shrink_only: (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
                
                ** IMPORTANT **
@@ -1698,6 +1716,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
         if is_remote_data_guard_enabled is not None:
             pulumi.set(__self__, "is_remote_data_guard_enabled", is_remote_data_guard_enabled)
+        if is_replicate_automatic_backups is not None:
+            pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
         if is_shrink_only is not None:
             warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
             pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
@@ -2495,6 +2515,18 @@ class _AutonomousDatabaseState:
     @is_remote_data_guard_enabled.setter
     def is_remote_data_guard_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_remote_data_guard_enabled", value)
+
+    @property
+    @pulumi.getter(name="isReplicateAutomaticBackups")
+    def is_replicate_automatic_backups(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        """
+        return pulumi.get(self, "is_replicate_automatic_backups")
+
+    @is_replicate_automatic_backups.setter
+    def is_replicate_automatic_backups(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_replicate_automatic_backups", value)
 
     @property
     @pulumi.getter(name="isShrinkOnly")
@@ -3433,6 +3465,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_mtls_connection_required: Optional[pulumi.Input[bool]] = None,
                  is_preview_version_with_service_terms_accepted: Optional[pulumi.Input[bool]] = None,
                  is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
+                 is_replicate_automatic_backups: Optional[pulumi.Input[bool]] = None,
                  is_shrink_only: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
@@ -3546,6 +3579,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[bool] is_mtls_connection_required: (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
         :param pulumi.Input[bool] is_preview_version_with_service_terms_accepted: If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         :param pulumi.Input[bool] is_refreshable_clone: (Updatable) True for creating a refreshable clone and False for detaching the clone from source Autonomous Database. Detaching is one time operation and clone becomes a regular Autonomous Database.
+        :param pulumi.Input[bool] is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param pulumi.Input[bool] is_shrink_only: (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
                
                ** IMPORTANT **
@@ -3688,6 +3722,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_mtls_connection_required: Optional[pulumi.Input[bool]] = None,
                  is_preview_version_with_service_terms_accepted: Optional[pulumi.Input[bool]] = None,
                  is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
+                 is_replicate_automatic_backups: Optional[pulumi.Input[bool]] = None,
                  is_shrink_only: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
@@ -3772,6 +3807,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["is_mtls_connection_required"] = is_mtls_connection_required
             __props__.__dict__["is_preview_version_with_service_terms_accepted"] = is_preview_version_with_service_terms_accepted
             __props__.__dict__["is_refreshable_clone"] = is_refreshable_clone
+            __props__.__dict__["is_replicate_automatic_backups"] = is_replicate_automatic_backups
             __props__.__dict__["is_shrink_only"] = is_shrink_only
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["license_model"] = license_model
@@ -3923,6 +3959,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             is_reconnect_clone_enabled: Optional[pulumi.Input[bool]] = None,
             is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
             is_remote_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+            is_replicate_automatic_backups: Optional[pulumi.Input[bool]] = None,
             is_shrink_only: Optional[pulumi.Input[bool]] = None,
             key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseKeyHistoryEntryArgs']]]]] = None,
             key_store_id: Optional[pulumi.Input[str]] = None,
@@ -4080,6 +4117,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[bool] is_reconnect_clone_enabled: Indicates if the refreshable clone can be reconnected to its source database.
         :param pulumi.Input[bool] is_refreshable_clone: (Updatable) True for creating a refreshable clone and False for detaching the clone from source Autonomous Database. Detaching is one time operation and clone becomes a regular Autonomous Database.
         :param pulumi.Input[bool] is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param pulumi.Input[bool] is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param pulumi.Input[bool] is_shrink_only: (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
                
                ** IMPORTANT **
@@ -4244,6 +4282,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["is_reconnect_clone_enabled"] = is_reconnect_clone_enabled
         __props__.__dict__["is_refreshable_clone"] = is_refreshable_clone
         __props__.__dict__["is_remote_data_guard_enabled"] = is_remote_data_guard_enabled
+        __props__.__dict__["is_replicate_automatic_backups"] = is_replicate_automatic_backups
         __props__.__dict__["is_shrink_only"] = is_shrink_only
         __props__.__dict__["key_history_entries"] = key_history_entries
         __props__.__dict__["key_store_id"] = key_store_id
@@ -4759,6 +4798,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_remote_data_guard_enabled")
+
+    @property
+    @pulumi.getter(name="isReplicateAutomaticBackups")
+    def is_replicate_automatic_backups(self) -> pulumi.Output[bool]:
+        """
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        """
+        return pulumi.get(self, "is_replicate_automatic_backups")
 
     @property
     @pulumi.getter(name="isShrinkOnly")

@@ -88,6 +88,8 @@ type LookupLogAnalyticsEntityResult struct {
 	ManagementAgentDisplayName string `pulumi:"managementAgentDisplayName"`
 	// The OCID of the Management Agent.
 	ManagementAgentId string `pulumi:"managementAgentId"`
+	// Details of entity metadata information.
+	Metadatas []GetLogAnalyticsEntityMetadata `pulumi:"metadatas"`
 	// Log analytics entity name.
 	Name      string `pulumi:"name"`
 	Namespace string `pulumi:"namespace"`
@@ -99,6 +101,8 @@ type LookupLogAnalyticsEntityResult struct {
 	State string `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the resource was last discovered, in the format defined by RFC3339.
+	TimeLastDiscovered string `pulumi:"timeLastDiscovered"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The timezone region of the log analytics entity.
@@ -214,6 +218,11 @@ func (o LookupLogAnalyticsEntityResultOutput) ManagementAgentId() pulumi.StringO
 	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.ManagementAgentId }).(pulumi.StringOutput)
 }
 
+// Details of entity metadata information.
+func (o LookupLogAnalyticsEntityResultOutput) Metadatas() GetLogAnalyticsEntityMetadataArrayOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) []GetLogAnalyticsEntityMetadata { return v.Metadatas }).(GetLogAnalyticsEntityMetadataArrayOutput)
+}
+
 // Log analytics entity name.
 func (o LookupLogAnalyticsEntityResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.Name }).(pulumi.StringOutput)
@@ -241,6 +250,11 @@ func (o LookupLogAnalyticsEntityResultOutput) State() pulumi.StringOutput {
 // The date and time the resource was created, in the format defined by RFC3339.
 func (o LookupLogAnalyticsEntityResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was last discovered, in the format defined by RFC3339.
+func (o LookupLogAnalyticsEntityResultOutput) TimeLastDiscovered() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.TimeLastDiscovered }).(pulumi.StringOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.

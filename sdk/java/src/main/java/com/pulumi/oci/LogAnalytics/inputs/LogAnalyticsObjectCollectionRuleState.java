@@ -141,6 +141,21 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
+     * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+     * 
+     */
+    @Import(name="isForceHistoricCollection")
+    private @Nullable Output<Boolean> isForceHistoricCollection;
+
+    /**
+     * @return Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+     * 
+     */
+    public Optional<Output<Boolean>> isForceHistoricCollection() {
+        return Optional.ofNullable(this.isForceHistoricCollection);
+    }
+
+    /**
      * A detailed status of the life cycle state.
      * 
      */
@@ -228,6 +243,21 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
      */
     public Optional<Output<String>> logSourceName() {
         return Optional.ofNullable(this.logSourceName);
+    }
+
+    /**
+     * Type of files/objects in this object collection rule.
+     * 
+     */
+    @Import(name="logType")
+    private @Nullable Output<String> logType;
+
+    /**
+     * @return Type of files/objects in this object collection rule.
+     * 
+     */
+    public Optional<Output<String>> logType() {
+        return Optional.ofNullable(this.logType);
     }
 
     /**
@@ -427,12 +457,14 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         this.entityId = $.entityId;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
+        this.isForceHistoricCollection = $.isForceHistoricCollection;
         this.lifecycleDetails = $.lifecycleDetails;
         this.logGroupId = $.logGroupId;
         this.logSet = $.logSet;
         this.logSetExtRegex = $.logSetExtRegex;
         this.logSetKey = $.logSetKey;
         this.logSourceName = $.logSourceName;
+        this.logType = $.logType;
         this.name = $.name;
         this.namespace = $.namespace;
         this.objectNameFilters = $.objectNameFilters;
@@ -634,6 +666,27 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
+         * @param isForceHistoricCollection Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isForceHistoricCollection(@Nullable Output<Boolean> isForceHistoricCollection) {
+            $.isForceHistoricCollection = isForceHistoricCollection;
+            return this;
+        }
+
+        /**
+         * @param isForceHistoricCollection Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isForceHistoricCollection(Boolean isForceHistoricCollection) {
+            return isForceHistoricCollection(Output.of(isForceHistoricCollection));
+        }
+
+        /**
          * @param lifecycleDetails A detailed status of the life cycle state.
          * 
          * @return builder
@@ -757,6 +810,27 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
          */
         public Builder logSourceName(String logSourceName) {
             return logSourceName(Output.of(logSourceName));
+        }
+
+        /**
+         * @param logType Type of files/objects in this object collection rule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logType(@Nullable Output<String> logType) {
+            $.logType = logType;
+            return this;
+        }
+
+        /**
+         * @param logType Type of files/objects in this object collection rule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logType(String logType) {
+            return logType(Output.of(logType));
         }
 
         /**

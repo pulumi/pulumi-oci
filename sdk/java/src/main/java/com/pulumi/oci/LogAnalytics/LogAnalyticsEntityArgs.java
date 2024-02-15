@@ -6,6 +6,7 @@ package com.pulumi.oci.LogAnalytics;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsEntityMetadataArgs;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -124,6 +125,21 @@ public final class LogAnalyticsEntityArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) Details of Entity Metadata.
+     * 
+     */
+    @Import(name="metadata")
+    private @Nullable Output<LogAnalyticsEntityMetadataArgs> metadata;
+
+    /**
+     * @return (Updatable) Details of Entity Metadata.
+     * 
+     */
+    public Optional<Output<LogAnalyticsEntityMetadataArgs>> metadata() {
+        return Optional.ofNullable(this.metadata);
+    }
+
+    /**
      * (Updatable) Log analytics entity name.
      * 
      */
@@ -184,6 +200,21 @@ public final class LogAnalyticsEntityArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+     * 
+     */
+    @Import(name="timeLastDiscovered")
+    private @Nullable Output<String> timeLastDiscovered;
+
+    /**
+     * @return (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+     * 
+     */
+    public Optional<Output<String>> timeLastDiscovered() {
+        return Optional.ofNullable(this.timeLastDiscovered);
+    }
+
+    /**
      * (Updatable) The timezone region of the log analytics entity.
      * 
      * ** IMPORTANT **
@@ -214,10 +245,12 @@ public final class LogAnalyticsEntityArgs extends com.pulumi.resources.ResourceA
         this.freeformTags = $.freeformTags;
         this.hostname = $.hostname;
         this.managementAgentId = $.managementAgentId;
+        this.metadata = $.metadata;
         this.name = $.name;
         this.namespace = $.namespace;
         this.properties = $.properties;
         this.sourceId = $.sourceId;
+        this.timeLastDiscovered = $.timeLastDiscovered;
         this.timezoneRegion = $.timezoneRegion;
     }
 
@@ -387,6 +420,27 @@ public final class LogAnalyticsEntityArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param metadata (Updatable) Details of Entity Metadata.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metadata(@Nullable Output<LogAnalyticsEntityMetadataArgs> metadata) {
+            $.metadata = metadata;
+            return this;
+        }
+
+        /**
+         * @param metadata (Updatable) Details of Entity Metadata.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metadata(LogAnalyticsEntityMetadataArgs metadata) {
+            return metadata(Output.of(metadata));
+        }
+
+        /**
          * @param name (Updatable) Log analytics entity name.
          * 
          * @return builder
@@ -468,6 +522,27 @@ public final class LogAnalyticsEntityArgs extends com.pulumi.resources.ResourceA
          */
         public Builder sourceId(String sourceId) {
             return sourceId(Output.of(sourceId));
+        }
+
+        /**
+         * @param timeLastDiscovered (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastDiscovered(@Nullable Output<String> timeLastDiscovered) {
+            $.timeLastDiscovered = timeLastDiscovered;
+            return this;
+        }
+
+        /**
+         * @param timeLastDiscovered (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastDiscovered(String timeLastDiscovered) {
+            return timeLastDiscovered(Output.of(timeLastDiscovered));
         }
 
         /**

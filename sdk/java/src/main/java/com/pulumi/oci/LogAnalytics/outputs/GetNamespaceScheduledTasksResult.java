@@ -37,6 +37,7 @@ public final class GetNamespaceScheduledTasksResult {
      * 
      */
     private List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections;
+    private @Nullable String targetService;
     /**
      * @return Task type.
      * 
@@ -78,6 +79,9 @@ public final class GetNamespaceScheduledTasksResult {
     public List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections() {
         return this.scheduledTaskCollections;
     }
+    public Optional<String> targetService() {
+        return Optional.ofNullable(this.targetService);
+    }
     /**
      * @return Task type.
      * 
@@ -101,6 +105,7 @@ public final class GetNamespaceScheduledTasksResult {
         private String id;
         private String namespace;
         private List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections;
+        private @Nullable String targetService;
         private String taskType;
         public Builder() {}
         public Builder(GetNamespaceScheduledTasksResult defaults) {
@@ -111,6 +116,7 @@ public final class GetNamespaceScheduledTasksResult {
     	      this.id = defaults.id;
     	      this.namespace = defaults.namespace;
     	      this.scheduledTaskCollections = defaults.scheduledTaskCollections;
+    	      this.targetService = defaults.targetService;
     	      this.taskType = defaults.taskType;
         }
 
@@ -165,6 +171,12 @@ public final class GetNamespaceScheduledTasksResult {
             return scheduledTaskCollections(List.of(scheduledTaskCollections));
         }
         @CustomType.Setter
+        public Builder targetService(@Nullable String targetService) {
+
+            this.targetService = targetService;
+            return this;
+        }
+        @CustomType.Setter
         public Builder taskType(String taskType) {
             if (taskType == null) {
               throw new MissingRequiredPropertyException("GetNamespaceScheduledTasksResult", "taskType");
@@ -180,6 +192,7 @@ public final class GetNamespaceScheduledTasksResult {
             _resultValue.id = id;
             _resultValue.namespace = namespace;
             _resultValue.scheduledTaskCollections = scheduledTaskCollections;
+            _resultValue.targetService = targetService;
             _resultValue.taskType = taskType;
             return _resultValue;
         }

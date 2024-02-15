@@ -246,6 +246,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly isRemoteDataGuardEnabled: boolean;
     /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     */
+    readonly isReplicateAutomaticBackups: boolean;
+    /**
      * @deprecated The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
      */
     readonly isShrinkOnly: boolean;

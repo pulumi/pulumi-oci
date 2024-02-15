@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,6 +17,21 @@ public final class AutonomousDatabaseRemoteDisasterRecoveryConfiguration {
      * 
      */
     private @Nullable String disasterRecoveryType;
+    /**
+     * @return If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * 
+     */
+    private @Nullable Boolean isReplicateAutomaticBackups;
+    /**
+     * @return Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+     * 
+     */
+    private @Nullable Boolean isSnapshotStandby;
+    /**
+     * @return Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+     * 
+     */
+    private @Nullable String timeSnapshotStandbyEnabledTill;
 
     private AutonomousDatabaseRemoteDisasterRecoveryConfiguration() {}
     /**
@@ -24,6 +40,27 @@ public final class AutonomousDatabaseRemoteDisasterRecoveryConfiguration {
      */
     public Optional<String> disasterRecoveryType() {
         return Optional.ofNullable(this.disasterRecoveryType);
+    }
+    /**
+     * @return If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * 
+     */
+    public Optional<Boolean> isReplicateAutomaticBackups() {
+        return Optional.ofNullable(this.isReplicateAutomaticBackups);
+    }
+    /**
+     * @return Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+     * 
+     */
+    public Optional<Boolean> isSnapshotStandby() {
+        return Optional.ofNullable(this.isSnapshotStandby);
+    }
+    /**
+     * @return Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+     * 
+     */
+    public Optional<String> timeSnapshotStandbyEnabledTill() {
+        return Optional.ofNullable(this.timeSnapshotStandbyEnabledTill);
     }
 
     public static Builder builder() {
@@ -36,10 +73,16 @@ public final class AutonomousDatabaseRemoteDisasterRecoveryConfiguration {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String disasterRecoveryType;
+        private @Nullable Boolean isReplicateAutomaticBackups;
+        private @Nullable Boolean isSnapshotStandby;
+        private @Nullable String timeSnapshotStandbyEnabledTill;
         public Builder() {}
         public Builder(AutonomousDatabaseRemoteDisasterRecoveryConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.disasterRecoveryType = defaults.disasterRecoveryType;
+    	      this.isReplicateAutomaticBackups = defaults.isReplicateAutomaticBackups;
+    	      this.isSnapshotStandby = defaults.isSnapshotStandby;
+    	      this.timeSnapshotStandbyEnabledTill = defaults.timeSnapshotStandbyEnabledTill;
         }
 
         @CustomType.Setter
@@ -48,9 +91,30 @@ public final class AutonomousDatabaseRemoteDisasterRecoveryConfiguration {
             this.disasterRecoveryType = disasterRecoveryType;
             return this;
         }
+        @CustomType.Setter
+        public Builder isReplicateAutomaticBackups(@Nullable Boolean isReplicateAutomaticBackups) {
+
+            this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSnapshotStandby(@Nullable Boolean isSnapshotStandby) {
+
+            this.isSnapshotStandby = isSnapshotStandby;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeSnapshotStandbyEnabledTill(@Nullable String timeSnapshotStandbyEnabledTill) {
+
+            this.timeSnapshotStandbyEnabledTill = timeSnapshotStandbyEnabledTill;
+            return this;
+        }
         public AutonomousDatabaseRemoteDisasterRecoveryConfiguration build() {
             final var _resultValue = new AutonomousDatabaseRemoteDisasterRecoveryConfiguration();
             _resultValue.disasterRecoveryType = disasterRecoveryType;
+            _resultValue.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            _resultValue.isSnapshotStandby = isSnapshotStandby;
+            _resultValue.timeSnapshotStandbyEnabledTill = timeSnapshotStandbyEnabledTill;
             return _resultValue;
         }
     }

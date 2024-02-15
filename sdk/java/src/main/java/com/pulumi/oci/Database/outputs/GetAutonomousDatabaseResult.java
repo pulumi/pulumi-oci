@@ -279,6 +279,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private Boolean isRemoteDataGuardEnabled;
     /**
+     * @return If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * 
+     */
+    private Boolean isReplicateAutomaticBackups;
+    /**
      * @deprecated
      * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
      * 
@@ -959,6 +964,13 @@ public final class GetAutonomousDatabaseResult {
         return this.isRemoteDataGuardEnabled;
     }
     /**
+     * @return If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * 
+     */
+    public Boolean isReplicateAutomaticBackups() {
+        return this.isReplicateAutomaticBackups;
+    }
+    /**
      * @deprecated
      * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
      * 
@@ -1488,6 +1500,7 @@ public final class GetAutonomousDatabaseResult {
         private Boolean isReconnectCloneEnabled;
         private Boolean isRefreshableClone;
         private Boolean isRemoteDataGuardEnabled;
+        private Boolean isReplicateAutomaticBackups;
         private Boolean isShrinkOnly;
         private List<GetAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries;
         private String keyStoreId;
@@ -1616,6 +1629,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.isReconnectCloneEnabled = defaults.isReconnectCloneEnabled;
     	      this.isRefreshableClone = defaults.isRefreshableClone;
     	      this.isRemoteDataGuardEnabled = defaults.isRemoteDataGuardEnabled;
+    	      this.isReplicateAutomaticBackups = defaults.isReplicateAutomaticBackups;
     	      this.isShrinkOnly = defaults.isShrinkOnly;
     	      this.keyHistoryEntries = defaults.keyHistoryEntries;
     	      this.keyStoreId = defaults.keyStoreId;
@@ -2133,6 +2147,14 @@ public final class GetAutonomousDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isRemoteDataGuardEnabled");
             }
             this.isRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isReplicateAutomaticBackups(Boolean isReplicateAutomaticBackups) {
+            if (isReplicateAutomaticBackups == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isReplicateAutomaticBackups");
+            }
+            this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
             return this;
         }
         @CustomType.Setter
@@ -2805,6 +2827,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.isReconnectCloneEnabled = isReconnectCloneEnabled;
             _resultValue.isRefreshableClone = isRefreshableClone;
             _resultValue.isRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
+            _resultValue.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
             _resultValue.isShrinkOnly = isShrinkOnly;
             _resultValue.keyHistoryEntries = keyHistoryEntries;
             _resultValue.keyStoreId = keyStoreId;

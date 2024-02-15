@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.namespace_rule_display_name,
  *     kind: _var.namespace_rule_kind,
  *     state: _var.namespace_rule_state,
+ *     targetService: _var.namespace_rule_target_service,
  * });
  * ```
  */
@@ -36,6 +37,7 @@ export function getNamespaceRules(args: GetNamespaceRulesArgs, opts?: pulumi.Inv
         "kind": args.kind,
         "namespace": args.namespace,
         "state": args.state,
+        "targetService": args.targetService,
     }, opts);
 }
 
@@ -64,6 +66,10 @@ export interface GetNamespaceRulesArgs {
      * The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
      */
     state?: string;
+    /**
+     * The target service to use for filtering.
+     */
+    targetService?: string;
 }
 
 /**
@@ -96,6 +102,10 @@ export interface GetNamespaceRulesResult {
      * The current state of the logging analytics rule.
      */
     readonly state?: string;
+    /**
+     * The target service.
+     */
+    readonly targetService?: string;
 }
 /**
  * This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
@@ -114,6 +124,7 @@ export interface GetNamespaceRulesResult {
  *     displayName: _var.namespace_rule_display_name,
  *     kind: _var.namespace_rule_kind,
  *     state: _var.namespace_rule_state,
+ *     targetService: _var.namespace_rule_target_service,
  * });
  * ```
  */
@@ -146,4 +157,8 @@ export interface GetNamespaceRulesOutputArgs {
      * The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
      */
     state?: pulumi.Input<string>;
+    /**
+     * The target service to use for filtering.
+     */
+    targetService?: pulumi.Input<string>;
 }

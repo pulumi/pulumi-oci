@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.LogAnalytics.LogAnalyticsEntityArgs;
 import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsEntityState;
+import com.pulumi.oci.LogAnalytics.outputs.LogAnalyticsEntityMetadata;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -30,6 +31,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.LogAnalytics.LogAnalyticsEntity;
  * import com.pulumi.oci.LogAnalytics.LogAnalyticsEntityArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsEntityMetadataArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -52,8 +54,16 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .hostname(var_.log_analytics_entity_hostname())
  *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+ *             .metadata(LogAnalyticsEntityMetadataArgs.builder()
+ *                 .items(LogAnalyticsEntityMetadataItemArgs.builder()
+ *                     .name(var_.log_analytics_entity_metadata_items_name())
+ *                     .type(var_.log_analytics_entity_metadata_items_type())
+ *                     .value(var_.log_analytics_entity_metadata_items_value())
+ *                     .build())
+ *                 .build())
  *             .properties(var_.log_analytics_entity_properties())
  *             .sourceId(oci_log_analytics_source.test_source().id())
+ *             .timeLastDiscovered(var_.log_analytics_entity_time_last_discovered())
  *             .timezoneRegion(var_.log_analytics_entity_timezone_region())
  *             .build());
  * 
@@ -241,6 +251,20 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
         return this.managementAgentId;
     }
     /**
+     * (Updatable) Details of Entity Metadata.
+     * 
+     */
+    @Export(name="metadata", refs={LogAnalyticsEntityMetadata.class}, tree="[0]")
+    private Output<LogAnalyticsEntityMetadata> metadata;
+
+    /**
+     * @return (Updatable) Details of Entity Metadata.
+     * 
+     */
+    public Output<LogAnalyticsEntityMetadata> metadata() {
+        return this.metadata;
+    }
+    /**
      * (Updatable) Log analytics entity name.
      * 
      */
@@ -323,6 +347,20 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+     * 
+     */
+    @Export(name="timeLastDiscovered", refs={String.class}, tree="[0]")
+    private Output<String> timeLastDiscovered;
+
+    /**
+     * @return (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+     * 
+     */
+    public Output<String> timeLastDiscovered() {
+        return this.timeLastDiscovered;
     }
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.

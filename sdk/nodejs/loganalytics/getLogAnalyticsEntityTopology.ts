@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testLogAnalyticsEntityTopology = oci.LogAnalytics.getLogAnalyticsEntityTopology({
  *     logAnalyticsEntityId: oci_log_analytics_log_analytics_entity.test_log_analytics_entity.id,
  *     namespace: _var.log_analytics_entity_topology_namespace,
+ *     metadataEquals: _var.log_analytics_entity_topology_metadata_equals,
  *     state: _var.log_analytics_entity_topology_state,
  * });
  * ```
@@ -29,6 +30,7 @@ export function getLogAnalyticsEntityTopology(args: GetLogAnalyticsEntityTopolog
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", {
         "logAnalyticsEntityId": args.logAnalyticsEntityId,
+        "metadataEquals": args.metadataEquals,
         "namespace": args.namespace,
         "state": args.state,
     }, opts);
@@ -42,6 +44,10 @@ export interface GetLogAnalyticsEntityTopologyArgs {
      * The log analytics entity OCID.
      */
     logAnalyticsEntityId: string;
+    /**
+     * A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+     */
+    metadataEquals?: string[];
     /**
      * The Logging Analytics namespace used for the request.
      */
@@ -61,10 +67,11 @@ export interface GetLogAnalyticsEntityTopologyResult {
      */
     readonly id: string;
     /**
-     * Array of log analytics entity summary.
+     * An array of entity metadata.
      */
     readonly items: outputs.LogAnalytics.GetLogAnalyticsEntityTopologyItem[];
     readonly logAnalyticsEntityId: string;
+    readonly metadataEquals?: string[];
     readonly namespace: string;
     /**
      * The current state of the log analytics entity.
@@ -85,6 +92,7 @@ export interface GetLogAnalyticsEntityTopologyResult {
  * const testLogAnalyticsEntityTopology = oci.LogAnalytics.getLogAnalyticsEntityTopology({
  *     logAnalyticsEntityId: oci_log_analytics_log_analytics_entity.test_log_analytics_entity.id,
  *     namespace: _var.log_analytics_entity_topology_namespace,
+ *     metadataEquals: _var.log_analytics_entity_topology_metadata_equals,
  *     state: _var.log_analytics_entity_topology_state,
  * });
  * ```
@@ -101,6 +109,10 @@ export interface GetLogAnalyticsEntityTopologyOutputArgs {
      * The log analytics entity OCID.
      */
     logAnalyticsEntityId: pulumi.Input<string>;
+    /**
+     * A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+     */
+    metadataEquals?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The Logging Analytics namespace used for the request.
      */

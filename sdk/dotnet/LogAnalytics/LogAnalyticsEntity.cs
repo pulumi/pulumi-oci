@@ -40,8 +40,21 @@ namespace Pulumi.Oci.LogAnalytics
     ///         },
     ///         Hostname = @var.Log_analytics_entity_hostname,
     ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+    ///         Metadata = new Oci.LogAnalytics.Inputs.LogAnalyticsEntityMetadataArgs
+    ///         {
+    ///             Items = new[]
+    ///             {
+    ///                 new Oci.LogAnalytics.Inputs.LogAnalyticsEntityMetadataItemArgs
+    ///                 {
+    ///                     Name = @var.Log_analytics_entity_metadata_items_name,
+    ///                     Type = @var.Log_analytics_entity_metadata_items_type,
+    ///                     Value = @var.Log_analytics_entity_metadata_items_value,
+    ///                 },
+    ///             },
+    ///         },
     ///         Properties = @var.Log_analytics_entity_properties,
     ///         SourceId = oci_log_analytics_source.Test_source.Id,
+    ///         TimeLastDiscovered = @var.Log_analytics_entity_time_last_discovered,
     ///         TimezoneRegion = @var.Log_analytics_entity_timezone_region,
     ///     });
     /// 
@@ -132,6 +145,12 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> ManagementAgentId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Details of Entity Metadata.
+        /// </summary>
+        [Output("metadata")]
+        public Output<Outputs.LogAnalyticsEntityMetadata> Metadata { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Log analytics entity name.
         /// </summary>
         [Output("name")]
@@ -166,6 +185,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+        /// </summary>
+        [Output("timeLastDiscovered")]
+        public Output<string> TimeLastDiscovered { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was last updated, in the format defined by RFC3339.
@@ -284,6 +309,12 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? ManagementAgentId { get; set; }
 
         /// <summary>
+        /// (Updatable) Details of Entity Metadata.
+        /// </summary>
+        [Input("metadata")]
+        public Input<Inputs.LogAnalyticsEntityMetadataArgs>? Metadata { get; set; }
+
+        /// <summary>
         /// (Updatable) Log analytics entity name.
         /// </summary>
         [Input("name")]
@@ -312,6 +343,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("sourceId")]
         public Input<string>? SourceId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+        /// </summary>
+        [Input("timeLastDiscovered")]
+        public Input<string>? TimeLastDiscovered { get; set; }
 
         /// <summary>
         /// (Updatable) The timezone region of the log analytics entity. 
@@ -416,6 +453,12 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? ManagementAgentId { get; set; }
 
         /// <summary>
+        /// (Updatable) Details of Entity Metadata.
+        /// </summary>
+        [Input("metadata")]
+        public Input<Inputs.LogAnalyticsEntityMetadataGetArgs>? Metadata { get; set; }
+
+        /// <summary>
         /// (Updatable) Log analytics entity name.
         /// </summary>
         [Input("name")]
@@ -456,6 +499,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+        /// </summary>
+        [Input("timeLastDiscovered")]
+        public Input<string>? TimeLastDiscovered { get; set; }
 
         /// <summary>
         /// The date and time the resource was last updated, in the format defined by RFC3339.

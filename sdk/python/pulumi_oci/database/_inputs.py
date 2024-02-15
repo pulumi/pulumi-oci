@@ -1997,12 +1997,24 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
 @pulumi.input_type
 class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
     def __init__(__self__, *,
-                 disaster_recovery_type: Optional[pulumi.Input[str]] = None):
+                 disaster_recovery_type: Optional[pulumi.Input[str]] = None,
+                 is_replicate_automatic_backups: Optional[pulumi.Input[bool]] = None,
+                 is_snapshot_standby: Optional[pulumi.Input[bool]] = None,
+                 time_snapshot_standby_enabled_till: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param pulumi.Input[bool] is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        :param pulumi.Input[bool] is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+        :param pulumi.Input[str] time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
         """
         if disaster_recovery_type is not None:
             pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
+        if is_replicate_automatic_backups is not None:
+            pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
+        if is_snapshot_standby is not None:
+            pulumi.set(__self__, "is_snapshot_standby", is_snapshot_standby)
+        if time_snapshot_standby_enabled_till is not None:
+            pulumi.set(__self__, "time_snapshot_standby_enabled_till", time_snapshot_standby_enabled_till)
 
     @property
     @pulumi.getter(name="disasterRecoveryType")
@@ -2015,6 +2027,42 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
     @disaster_recovery_type.setter
     def disaster_recovery_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "disaster_recovery_type", value)
+
+    @property
+    @pulumi.getter(name="isReplicateAutomaticBackups")
+    def is_replicate_automatic_backups(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        """
+        return pulumi.get(self, "is_replicate_automatic_backups")
+
+    @is_replicate_automatic_backups.setter
+    def is_replicate_automatic_backups(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_replicate_automatic_backups", value)
+
+    @property
+    @pulumi.getter(name="isSnapshotStandby")
+    def is_snapshot_standby(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+        """
+        return pulumi.get(self, "is_snapshot_standby")
+
+    @is_snapshot_standby.setter
+    def is_snapshot_standby(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_snapshot_standby", value)
+
+    @property
+    @pulumi.getter(name="timeSnapshotStandbyEnabledTill")
+    def time_snapshot_standby_enabled_till(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+        """
+        return pulumi.get(self, "time_snapshot_standby_enabled_till")
+
+    @time_snapshot_standby_enabled_till.setter
+    def time_snapshot_standby_enabled_till(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_snapshot_standby_enabled_till", value)
 
 
 @pulumi.input_type

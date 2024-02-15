@@ -21422,6 +21422,18 @@ export namespace Database {
          * Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          */
         disasterRecoveryType?: pulumi.Input<string>;
+        /**
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+         */
+        isReplicateAutomaticBackups?: pulumi.Input<boolean>;
+        /**
+         * Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+         */
+        isSnapshotStandby?: pulumi.Input<boolean>;
+        /**
+         * Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+         */
+        timeSnapshotStandbyEnabledTill?: pulumi.Input<string>;
     }
 
     export interface AutonomousDatabaseResourcePoolSummary {
@@ -61241,6 +61253,28 @@ export namespace LogAnalytics {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface LogAnalyticsEntityMetadata {
+        /**
+         * (Updatable) An array of entity metadata details.
+         */
+        items?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsEntityMetadataItem>[]>;
+    }
+
+    export interface LogAnalyticsEntityMetadataItem {
+        /**
+         * (Updatable) Log analytics entity name.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The metadata type.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The metadata value.
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface LogAnalyticsImportCustomContentChangeList {

@@ -49,6 +49,7 @@ public final class GetLogAnalyticsEntitiesResult {
      * 
      */
     private List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections;
+    private @Nullable List<String> metadataEquals;
     /**
      * @return Log analytics entity name.
      * 
@@ -122,6 +123,9 @@ public final class GetLogAnalyticsEntitiesResult {
     public List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections() {
         return this.logAnalyticsEntityCollections;
     }
+    public List<String> metadataEquals() {
+        return this.metadataEquals == null ? List.of() : this.metadataEquals;
+    }
     /**
      * @return Log analytics entity name.
      * 
@@ -169,6 +173,7 @@ public final class GetLogAnalyticsEntitiesResult {
         private @Nullable String isManagementAgentIdNull;
         private @Nullable String lifecycleDetailsContains;
         private List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections;
+        private @Nullable List<String> metadataEquals;
         private @Nullable String name;
         private @Nullable String nameContains;
         private String namespace;
@@ -187,6 +192,7 @@ public final class GetLogAnalyticsEntitiesResult {
     	      this.isManagementAgentIdNull = defaults.isManagementAgentIdNull;
     	      this.lifecycleDetailsContains = defaults.lifecycleDetailsContains;
     	      this.logAnalyticsEntityCollections = defaults.logAnalyticsEntityCollections;
+    	      this.metadataEquals = defaults.metadataEquals;
     	      this.name = defaults.name;
     	      this.nameContains = defaults.nameContains;
     	      this.namespace = defaults.namespace;
@@ -270,6 +276,15 @@ public final class GetLogAnalyticsEntitiesResult {
             return logAnalyticsEntityCollections(List.of(logAnalyticsEntityCollections));
         }
         @CustomType.Setter
+        public Builder metadataEquals(@Nullable List<String> metadataEquals) {
+
+            this.metadataEquals = metadataEquals;
+            return this;
+        }
+        public Builder metadataEquals(String... metadataEquals) {
+            return metadataEquals(List.of(metadataEquals));
+        }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
 
             this.name = name;
@@ -313,6 +328,7 @@ public final class GetLogAnalyticsEntitiesResult {
             _resultValue.isManagementAgentIdNull = isManagementAgentIdNull;
             _resultValue.lifecycleDetailsContains = lifecycleDetailsContains;
             _resultValue.logAnalyticsEntityCollections = logAnalyticsEntityCollections;
+            _resultValue.metadataEquals = metadataEquals;
             _resultValue.name = name;
             _resultValue.nameContains = nameContains;
             _resultValue.namespace = namespace;

@@ -33,6 +33,7 @@ import (
 //				CompartmentId: _var.Compartment_id,
 //				Namespace:     _var.Namespace_scheduled_task_namespace,
 //				DisplayName:   pulumi.StringRef(_var.Namespace_scheduled_task_display_name),
+//				TargetService: pulumi.StringRef(_var.Namespace_scheduled_task_target_service),
 //				TaskType:      _var.Namespace_scheduled_task_task_type,
 //			}, nil)
 //			if err != nil {
@@ -62,6 +63,8 @@ type GetNamespaceScheduledTasksArgs struct {
 	Filters     []GetNamespaceScheduledTasksFilter `pulumi:"filters"`
 	// The Logging Analytics namespace used for the request.
 	Namespace string `pulumi:"namespace"`
+	// The target service to use for filtering.
+	TargetService *string `pulumi:"targetService"`
 	// Required parameter to specify schedule task type.
 	TaskType string `pulumi:"taskType"`
 }
@@ -78,6 +81,7 @@ type GetNamespaceScheduledTasksResult struct {
 	Namespace string `pulumi:"namespace"`
 	// The list of scheduled_task_collection.
 	ScheduledTaskCollections []GetNamespaceScheduledTasksScheduledTaskCollection `pulumi:"scheduledTaskCollections"`
+	TargetService            *string                                             `pulumi:"targetService"`
 	// Task type.
 	TaskType string `pulumi:"taskType"`
 }
@@ -104,6 +108,8 @@ type GetNamespaceScheduledTasksOutputArgs struct {
 	Filters     GetNamespaceScheduledTasksFilterArrayInput `pulumi:"filters"`
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The target service to use for filtering.
+	TargetService pulumi.StringPtrInput `pulumi:"targetService"`
 	// Required parameter to specify schedule task type.
 	TaskType pulumi.StringInput `pulumi:"taskType"`
 }
@@ -155,6 +161,10 @@ func (o GetNamespaceScheduledTasksResultOutput) ScheduledTaskCollections() GetNa
 	return o.ApplyT(func(v GetNamespaceScheduledTasksResult) []GetNamespaceScheduledTasksScheduledTaskCollection {
 		return v.ScheduledTaskCollections
 	}).(GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput)
+}
+
+func (o GetNamespaceScheduledTasksResultOutput) TargetService() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksResult) *string { return v.TargetService }).(pulumi.StringPtrOutput)
 }
 
 // Task type.

@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['LogAnalyticsEntityArgs', 'LogAnalyticsEntity']
 
@@ -22,9 +24,11 @@ class LogAnalyticsEntityArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
+                 metadata: Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
+                 time_last_discovered: Optional[pulumi.Input[str]] = None,
                  timezone_region: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a LogAnalyticsEntity resource.
@@ -36,9 +40,11 @@ class LogAnalyticsEntityArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
+        :param pulumi.Input['LogAnalyticsEntityMetadataArgs'] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
+        :param pulumi.Input[str] time_last_discovered: (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
         :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
                
                
@@ -58,12 +64,16 @@ class LogAnalyticsEntityArgs:
             pulumi.set(__self__, "hostname", hostname)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
         if source_id is not None:
             pulumi.set(__self__, "source_id", source_id)
+        if time_last_discovered is not None:
+            pulumi.set(__self__, "time_last_discovered", time_last_discovered)
         if timezone_region is not None:
             pulumi.set(__self__, "timezone_region", timezone_region)
 
@@ -165,6 +175,18 @@ class LogAnalyticsEntityArgs:
 
     @property
     @pulumi.getter
+    def metadata(self) -> Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']]:
+        """
+        (Updatable) Details of Entity Metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']]):
+        pulumi.set(self, "metadata", value)
+
+    @property
+    @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Log analytics entity name.
@@ -200,6 +222,18 @@ class LogAnalyticsEntityArgs:
         pulumi.set(self, "source_id", value)
 
     @property
+    @pulumi.getter(name="timeLastDiscovered")
+    def time_last_discovered(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_discovered")
+
+    @time_last_discovered.setter
+    def time_last_discovered(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_last_discovered", value)
+
+    @property
     @pulumi.getter(name="timezoneRegion")
     def timezone_region(self) -> Optional[pulumi.Input[str]]:
         """
@@ -231,12 +265,14 @@ class _LogAnalyticsEntityState:
                  management_agent_compartment_id: Optional[pulumi.Input[str]] = None,
                  management_agent_display_name: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
+                 metadata: Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_last_discovered: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  timezone_region: Optional[pulumi.Input[str]] = None):
         """
@@ -253,12 +289,14 @@ class _LogAnalyticsEntityState:
         :param pulumi.Input[str] management_agent_compartment_id: Management agent (management-agents resource kind) compartment OCID
         :param pulumi.Input[str] management_agent_display_name: Management agent (management-agents resource kind) display name
         :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
+        :param pulumi.Input['LogAnalyticsEntityMetadataArgs'] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[str] state: The current state of the log analytics entity.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
+        :param pulumi.Input[str] time_last_discovered: (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
         :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
                
@@ -290,6 +328,8 @@ class _LogAnalyticsEntityState:
             pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if namespace is not None:
@@ -302,6 +342,8 @@ class _LogAnalyticsEntityState:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_last_discovered is not None:
+            pulumi.set(__self__, "time_last_discovered", time_last_discovered)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if timezone_region is not None:
@@ -453,6 +495,18 @@ class _LogAnalyticsEntityState:
 
     @property
     @pulumi.getter
+    def metadata(self) -> Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']]:
+        """
+        (Updatable) Details of Entity Metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']]):
+        pulumi.set(self, "metadata", value)
+
+    @property
+    @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Log analytics entity name.
@@ -524,6 +578,18 @@ class _LogAnalyticsEntityState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeLastDiscovered")
+    def time_last_discovered(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_discovered")
+
+    @time_last_discovered.setter
+    def time_last_discovered(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_last_discovered", value)
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
@@ -564,10 +630,12 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
+                 metadata: Optional[pulumi.Input[pulumi.InputType['LogAnalyticsEntityMetadataArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
+                 time_last_discovered: Optional[pulumi.Input[str]] = None,
                  timezone_region: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -594,8 +662,16 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             },
             hostname=var["log_analytics_entity_hostname"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
+            metadata=oci.log_analytics.LogAnalyticsEntityMetadataArgs(
+                items=[oci.log_analytics.LogAnalyticsEntityMetadataItemArgs(
+                    name=var["log_analytics_entity_metadata_items_name"],
+                    type=var["log_analytics_entity_metadata_items_type"],
+                    value=var["log_analytics_entity_metadata_items_value"],
+                )],
+            ),
             properties=var["log_analytics_entity_properties"],
             source_id=oci_log_analytics_source["test_source"]["id"],
+            time_last_discovered=var["log_analytics_entity_time_last_discovered"],
             timezone_region=var["log_analytics_entity_timezone_region"])
         ```
 
@@ -616,10 +692,12 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
+        :param pulumi.Input[pulumi.InputType['LogAnalyticsEntityMetadataArgs']] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
+        :param pulumi.Input[str] time_last_discovered: (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
         :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
                
                
@@ -656,8 +734,16 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             },
             hostname=var["log_analytics_entity_hostname"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
+            metadata=oci.log_analytics.LogAnalyticsEntityMetadataArgs(
+                items=[oci.log_analytics.LogAnalyticsEntityMetadataItemArgs(
+                    name=var["log_analytics_entity_metadata_items_name"],
+                    type=var["log_analytics_entity_metadata_items_type"],
+                    value=var["log_analytics_entity_metadata_items_value"],
+                )],
+            ),
             properties=var["log_analytics_entity_properties"],
             source_id=oci_log_analytics_source["test_source"]["id"],
+            time_last_discovered=var["log_analytics_entity_time_last_discovered"],
             timezone_region=var["log_analytics_entity_timezone_region"])
         ```
 
@@ -691,10 +777,12 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
+                 metadata: Optional[pulumi.Input[pulumi.InputType['LogAnalyticsEntityMetadataArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
+                 time_last_discovered: Optional[pulumi.Input[str]] = None,
                  timezone_region: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -716,12 +804,14 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["hostname"] = hostname
             __props__.__dict__["management_agent_id"] = management_agent_id
+            __props__.__dict__["metadata"] = metadata
             __props__.__dict__["name"] = name
             if namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace'")
             __props__.__dict__["namespace"] = namespace
             __props__.__dict__["properties"] = properties
             __props__.__dict__["source_id"] = source_id
+            __props__.__dict__["time_last_discovered"] = time_last_discovered
             __props__.__dict__["timezone_region"] = timezone_region
             __props__.__dict__["are_logs_collected"] = None
             __props__.__dict__["entity_type_internal_name"] = None
@@ -753,12 +843,14 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             management_agent_compartment_id: Optional[pulumi.Input[str]] = None,
             management_agent_display_name: Optional[pulumi.Input[str]] = None,
             management_agent_id: Optional[pulumi.Input[str]] = None,
+            metadata: Optional[pulumi.Input[pulumi.InputType['LogAnalyticsEntityMetadataArgs']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
             properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             source_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_last_discovered: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             timezone_region: Optional[pulumi.Input[str]] = None) -> 'LogAnalyticsEntity':
         """
@@ -780,12 +872,14 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[str] management_agent_compartment_id: Management agent (management-agents resource kind) compartment OCID
         :param pulumi.Input[str] management_agent_display_name: Management agent (management-agents resource kind) display name
         :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
+        :param pulumi.Input[pulumi.InputType['LogAnalyticsEntityMetadataArgs']] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[str] state: The current state of the log analytics entity.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
+        :param pulumi.Input[str] time_last_discovered: (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
         :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
                
@@ -809,12 +903,14 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         __props__.__dict__["management_agent_compartment_id"] = management_agent_compartment_id
         __props__.__dict__["management_agent_display_name"] = management_agent_display_name
         __props__.__dict__["management_agent_id"] = management_agent_id
+        __props__.__dict__["metadata"] = metadata
         __props__.__dict__["name"] = name
         __props__.__dict__["namespace"] = namespace
         __props__.__dict__["properties"] = properties
         __props__.__dict__["source_id"] = source_id
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_last_discovered"] = time_last_discovered
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["timezone_region"] = timezone_region
         return LogAnalyticsEntity(resource_name, opts=opts, __props__=__props__)
@@ -917,6 +1013,14 @@ class LogAnalyticsEntity(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    def metadata(self) -> pulumi.Output['outputs.LogAnalyticsEntityMetadata']:
+        """
+        (Updatable) Details of Entity Metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
         (Updatable) Log analytics entity name.
@@ -962,6 +1066,14 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         The date and time the resource was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastDiscovered")
+    def time_last_discovered(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_discovered")
 
     @property
     @pulumi.getter(name="timeUpdated")

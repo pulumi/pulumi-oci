@@ -163,6 +163,8 @@ type LookupAutonomousDatabaseResult struct {
 	IsRefreshableClone bool `pulumi:"isRefreshableClone"`
 	// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsRemoteDataGuardEnabled bool `pulumi:"isRemoteDataGuardEnabled"`
+	// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+	IsReplicateAutomaticBackups bool `pulumi:"isReplicateAutomaticBackups"`
 	// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 	IsShrinkOnly bool `pulumi:"isShrinkOnly"`
 	// Key History Entry.
@@ -604,6 +606,11 @@ func (o LookupAutonomousDatabaseResultOutput) IsRefreshableClone() pulumi.BoolOu
 // Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 func (o LookupAutonomousDatabaseResultOutput) IsRemoteDataGuardEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsRemoteDataGuardEnabled }).(pulumi.BoolOutput)
+}
+
+// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+func (o LookupAutonomousDatabaseResultOutput) IsReplicateAutomaticBackups() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsReplicateAutomaticBackups }).(pulumi.BoolOutput)
 }
 
 // Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.

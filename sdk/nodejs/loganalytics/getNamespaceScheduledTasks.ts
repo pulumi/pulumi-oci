@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     namespace: _var.namespace_scheduled_task_namespace,
  *     displayName: _var.namespace_scheduled_task_display_name,
+ *     targetService: _var.namespace_scheduled_task_target_service,
  *     taskType: _var.namespace_scheduled_task_task_type,
  * });
  * ```
@@ -33,6 +34,7 @@ export function getNamespaceScheduledTasks(args: GetNamespaceScheduledTasksArgs,
         "displayName": args.displayName,
         "filters": args.filters,
         "namespace": args.namespace,
+        "targetService": args.targetService,
         "taskType": args.taskType,
     }, opts);
 }
@@ -54,6 +56,10 @@ export interface GetNamespaceScheduledTasksArgs {
      * The Logging Analytics namespace used for the request.
      */
     namespace: string;
+    /**
+     * The target service to use for filtering.
+     */
+    targetService?: string;
     /**
      * Required parameter to specify schedule task type.
      */
@@ -82,6 +88,7 @@ export interface GetNamespaceScheduledTasksResult {
      * The list of scheduled_task_collection.
      */
     readonly scheduledTaskCollections: outputs.LogAnalytics.GetNamespaceScheduledTasksScheduledTaskCollection[];
+    readonly targetService?: string;
     /**
      * Task type.
      */
@@ -102,6 +109,7 @@ export interface GetNamespaceScheduledTasksResult {
  *     compartmentId: _var.compartment_id,
  *     namespace: _var.namespace_scheduled_task_namespace,
  *     displayName: _var.namespace_scheduled_task_display_name,
+ *     targetService: _var.namespace_scheduled_task_target_service,
  *     taskType: _var.namespace_scheduled_task_task_type,
  * });
  * ```
@@ -127,6 +135,10 @@ export interface GetNamespaceScheduledTasksOutputArgs {
      * The Logging Analytics namespace used for the request.
      */
     namespace: pulumi.Input<string>;
+    /**
+     * The target service to use for filtering.
+     */
+    targetService?: pulumi.Input<string>;
     /**
      * Required parameter to specify schedule task type.
      */

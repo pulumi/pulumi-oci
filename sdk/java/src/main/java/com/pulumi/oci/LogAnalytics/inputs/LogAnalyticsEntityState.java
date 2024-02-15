@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsEntityMetadataArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -199,6 +200,21 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) Details of Entity Metadata.
+     * 
+     */
+    @Import(name="metadata")
+    private @Nullable Output<LogAnalyticsEntityMetadataArgs> metadata;
+
+    /**
+     * @return (Updatable) Details of Entity Metadata.
+     * 
+     */
+    public Optional<Output<LogAnalyticsEntityMetadataArgs>> metadata() {
+        return Optional.ofNullable(this.metadata);
+    }
+
+    /**
      * (Updatable) Log analytics entity name.
      * 
      */
@@ -289,6 +305,21 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+     * 
+     */
+    @Import(name="timeLastDiscovered")
+    private @Nullable Output<String> timeLastDiscovered;
+
+    /**
+     * @return (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+     * 
+     */
+    public Optional<Output<String>> timeLastDiscovered() {
+        return Optional.ofNullable(this.timeLastDiscovered);
+    }
+
+    /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      * 
      */
@@ -339,12 +370,14 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
         this.managementAgentCompartmentId = $.managementAgentCompartmentId;
         this.managementAgentDisplayName = $.managementAgentDisplayName;
         this.managementAgentId = $.managementAgentId;
+        this.metadata = $.metadata;
         this.name = $.name;
         this.namespace = $.namespace;
         this.properties = $.properties;
         this.sourceId = $.sourceId;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
+        this.timeLastDiscovered = $.timeLastDiscovered;
         this.timeUpdated = $.timeUpdated;
         this.timezoneRegion = $.timezoneRegion;
     }
@@ -620,6 +653,27 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param metadata (Updatable) Details of Entity Metadata.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metadata(@Nullable Output<LogAnalyticsEntityMetadataArgs> metadata) {
+            $.metadata = metadata;
+            return this;
+        }
+
+        /**
+         * @param metadata (Updatable) Details of Entity Metadata.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metadata(LogAnalyticsEntityMetadataArgs metadata) {
+            return metadata(Output.of(metadata));
+        }
+
+        /**
          * @param name (Updatable) Log analytics entity name.
          * 
          * @return builder
@@ -743,6 +797,27 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeLastDiscovered (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastDiscovered(@Nullable Output<String> timeLastDiscovered) {
+            $.timeLastDiscovered = timeLastDiscovered;
+            return this;
+        }
+
+        /**
+         * @param timeLastDiscovered (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastDiscovered(String timeLastDiscovered) {
+            return timeLastDiscovered(Output.of(timeLastDiscovered));
         }
 
         /**

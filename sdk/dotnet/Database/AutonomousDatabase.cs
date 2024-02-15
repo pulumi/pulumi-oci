@@ -364,6 +364,12 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsRemoteDataGuardEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        /// </summary>
+        [Output("isReplicateAutomaticBackups")]
+        public Output<bool> IsReplicateAutomaticBackups { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
         /// 
         /// ** IMPORTANT **
@@ -1155,6 +1161,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsRefreshableClone { get; set; }
 
         /// <summary>
+        /// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        /// </summary>
+        [Input("isReplicateAutomaticBackups")]
+        public Input<bool>? IsReplicateAutomaticBackups { get; set; }
+
+        /// <summary>
         /// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
         /// 
         /// ** IMPORTANT **
@@ -1827,6 +1839,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isRemoteDataGuardEnabled")]
         public Input<bool>? IsRemoteDataGuardEnabled { get; set; }
+
+        /// <summary>
+        /// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        /// </summary>
+        [Input("isReplicateAutomaticBackups")]
+        public Input<bool>? IsReplicateAutomaticBackups { get; set; }
 
         /// <summary>
         /// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.

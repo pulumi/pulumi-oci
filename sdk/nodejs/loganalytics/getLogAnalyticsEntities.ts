@@ -26,6 +26,7 @@ import * as utilities from "../utilities";
  *     hostnameContains: _var.log_analytics_entity_hostname_contains,
  *     isManagementAgentIdNull: _var.log_analytics_entity_is_management_agent_id_null,
  *     lifecycleDetailsContains: _var.log_analytics_entity_lifecycle_details_contains,
+ *     metadataEquals: _var.log_analytics_entity_metadata_equals,
  *     name: _var.log_analytics_entity_name,
  *     nameContains: _var.log_analytics_entity_name_contains,
  *     sourceId: oci_log_analytics_source.test_source.id,
@@ -45,6 +46,7 @@ export function getLogAnalyticsEntities(args: GetLogAnalyticsEntitiesArgs, opts?
         "hostnameContains": args.hostnameContains,
         "isManagementAgentIdNull": args.isManagementAgentIdNull,
         "lifecycleDetailsContains": args.lifecycleDetailsContains,
+        "metadataEquals": args.metadataEquals,
         "name": args.name,
         "nameContains": args.nameContains,
         "namespace": args.namespace,
@@ -86,6 +88,10 @@ export interface GetLogAnalyticsEntitiesArgs {
      * A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
      */
     lifecycleDetailsContains?: string;
+    /**
+     * A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+     */
+    metadataEquals?: string[];
     /**
      * A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
      */
@@ -140,6 +146,7 @@ export interface GetLogAnalyticsEntitiesResult {
      * The list of log_analytics_entity_collection.
      */
     readonly logAnalyticsEntityCollections: outputs.LogAnalytics.GetLogAnalyticsEntitiesLogAnalyticsEntityCollection[];
+    readonly metadataEquals?: string[];
     /**
      * Log analytics entity name.
      */
@@ -175,6 +182,7 @@ export interface GetLogAnalyticsEntitiesResult {
  *     hostnameContains: _var.log_analytics_entity_hostname_contains,
  *     isManagementAgentIdNull: _var.log_analytics_entity_is_management_agent_id_null,
  *     lifecycleDetailsContains: _var.log_analytics_entity_lifecycle_details_contains,
+ *     metadataEquals: _var.log_analytics_entity_metadata_equals,
  *     name: _var.log_analytics_entity_name,
  *     nameContains: _var.log_analytics_entity_name_contains,
  *     sourceId: oci_log_analytics_source.test_source.id,
@@ -219,6 +227,10 @@ export interface GetLogAnalyticsEntitiesOutputArgs {
      * A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
      */
     lifecycleDetailsContains?: pulumi.Input<string>;
+    /**
+     * A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+     */
+    metadataEquals?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
      */

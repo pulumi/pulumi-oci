@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -102,6 +104,10 @@ export interface GetLogAnalyticsEntityResult {
      */
     readonly managementAgentId: string;
     /**
+     * Details of entity metadata information.
+     */
+    readonly metadatas: outputs.LogAnalytics.GetLogAnalyticsEntityMetadata[];
+    /**
      * Log analytics entity name.
      */
     readonly name: string;
@@ -122,6 +128,10 @@ export interface GetLogAnalyticsEntityResult {
      * The date and time the resource was created, in the format defined by RFC3339.
      */
     readonly timeCreated: string;
+    /**
+     * The date and time the resource was last discovered, in the format defined by RFC3339.
+     */
+    readonly timeLastDiscovered: string;
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      */

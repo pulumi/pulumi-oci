@@ -11,6 +11,11 @@ import java.util.Objects;
 @CustomType
 public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem {
     /**
+     * @return This is the id of the associated recalled data collection
+     * 
+     */
+    private String collectionId;
+    /**
      * @return This is the user who initiated the recall request
      * 
      */
@@ -30,6 +35,11 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
      * 
      */
     private String queryString;
+    /**
+     * @return This is the id for the recall request
+     * 
+     */
+    private String recallId;
     /**
      * @return This is the status of the recall
      * 
@@ -52,6 +62,13 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
     private String timeStarted;
 
     private GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem() {}
+    /**
+     * @return This is the id of the associated recalled data collection
+     * 
+     */
+    public String collectionId() {
+        return this.collectionId;
+    }
     /**
      * @return This is the user who initiated the recall request
      * 
@@ -79,6 +96,13 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
      */
     public String queryString() {
         return this.queryString;
+    }
+    /**
+     * @return This is the id for the recall request
+     * 
+     */
+    public String recallId() {
+        return this.recallId;
     }
     /**
      * @return This is the status of the recall
@@ -118,10 +142,12 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
     }
     @CustomType.Builder
     public static final class Builder {
+        private String collectionId;
         private String createdBy;
         private String logSets;
         private String purpose;
         private String queryString;
+        private String recallId;
         private String status;
         private String timeDataEnded;
         private String timeDataStarted;
@@ -129,16 +155,26 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
         public Builder() {}
         public Builder(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.collectionId = defaults.collectionId;
     	      this.createdBy = defaults.createdBy;
     	      this.logSets = defaults.logSets;
     	      this.purpose = defaults.purpose;
     	      this.queryString = defaults.queryString;
+    	      this.recallId = defaults.recallId;
     	      this.status = defaults.status;
     	      this.timeDataEnded = defaults.timeDataEnded;
     	      this.timeDataStarted = defaults.timeDataStarted;
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
+        public Builder collectionId(String collectionId) {
+            if (collectionId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem", "collectionId");
+            }
+            this.collectionId = collectionId;
+            return this;
+        }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
             if (createdBy == null) {
@@ -169,6 +205,14 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
               throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem", "queryString");
             }
             this.queryString = queryString;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder recallId(String recallId) {
+            if (recallId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem", "recallId");
+            }
+            this.recallId = recallId;
             return this;
         }
         @CustomType.Setter
@@ -205,10 +249,12 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
         }
         public GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem build() {
             final var _resultValue = new GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem();
+            _resultValue.collectionId = collectionId;
             _resultValue.createdBy = createdBy;
             _resultValue.logSets = logSets;
             _resultValue.purpose = purpose;
             _resultValue.queryString = queryString;
+            _resultValue.recallId = recallId;
             _resultValue.status = status;
             _resultValue.timeDataEnded = timeDataEnded;
             _resultValue.timeDataStarted = timeDataStarted;

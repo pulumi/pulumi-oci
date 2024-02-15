@@ -173,6 +173,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly string ManagementAgentId;
         /// <summary>
+        /// Details of entity metadata information.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetLogAnalyticsEntityMetadataResult> Metadatas;
+        /// <summary>
         /// Log analytics entity name.
         /// </summary>
         public readonly string Name;
@@ -193,6 +197,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// The date and time the resource was created, in the format defined by RFC3339.
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time the resource was last discovered, in the format defined by RFC3339.
+        /// </summary>
+        public readonly string TimeLastDiscovered;
         /// <summary>
         /// The date and time the resource was last updated, in the format defined by RFC3339.
         /// </summary>
@@ -232,6 +240,8 @@ namespace Pulumi.Oci.LogAnalytics
 
             string managementAgentId,
 
+            ImmutableArray<Outputs.GetLogAnalyticsEntityMetadataResult> metadatas,
+
             string name,
 
             string @namespace,
@@ -243,6 +253,8 @@ namespace Pulumi.Oci.LogAnalytics
             string state,
 
             string timeCreated,
+
+            string timeLastDiscovered,
 
             string timeUpdated,
 
@@ -262,12 +274,14 @@ namespace Pulumi.Oci.LogAnalytics
             ManagementAgentCompartmentId = managementAgentCompartmentId;
             ManagementAgentDisplayName = managementAgentDisplayName;
             ManagementAgentId = managementAgentId;
+            Metadatas = metadatas;
             Name = name;
             Namespace = @namespace;
             Properties = properties;
             SourceId = sourceId;
             State = state;
             TimeCreated = timeCreated;
+            TimeLastDiscovered = timeLastDiscovered;
             TimeUpdated = timeUpdated;
             TimezoneRegion = timezoneRegion;
         }

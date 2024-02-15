@@ -36,6 +36,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         DisplayName = @var.Namespace_rule_display_name,
         ///         Kind = @var.Namespace_rule_kind,
         ///         State = @var.Namespace_rule_state,
+        ///         TargetService = @var.Namespace_rule_target_service,
         ///     });
         /// 
         /// });
@@ -71,6 +72,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         DisplayName = @var.Namespace_rule_display_name,
         ///         Kind = @var.Namespace_rule_kind,
         ///         State = @var.Namespace_rule_state,
+        ///         TargetService = @var.Namespace_rule_target_service,
         ///     });
         /// 
         /// });
@@ -123,6 +125,12 @@ namespace Pulumi.Oci.LogAnalytics
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// The target service to use for filtering.
+        /// </summary>
+        [Input("targetService")]
+        public string? TargetService { get; set; }
+
         public GetNamespaceRulesArgs()
         {
         }
@@ -169,6 +177,12 @@ namespace Pulumi.Oci.LogAnalytics
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// The target service to use for filtering.
+        /// </summary>
+        [Input("targetService")]
+        public Input<string>? TargetService { get; set; }
+
         public GetNamespaceRulesInvokeArgs()
         {
         }
@@ -205,6 +219,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// The current state of the logging analytics rule.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The target service.
+        /// </summary>
+        public readonly string? TargetService;
 
         [OutputConstructor]
         private GetNamespaceRulesResult(
@@ -222,7 +240,9 @@ namespace Pulumi.Oci.LogAnalytics
 
             ImmutableArray<Outputs.GetNamespaceRulesRuleSummaryCollectionResult> ruleSummaryCollections,
 
-            string? state)
+            string? state,
+
+            string? targetService)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;
@@ -232,6 +252,7 @@ namespace Pulumi.Oci.LogAnalytics
             Namespace = @namespace;
             RuleSummaryCollections = ruleSummaryCollections;
             State = state;
+            TargetService = targetService;
         }
     }
 }

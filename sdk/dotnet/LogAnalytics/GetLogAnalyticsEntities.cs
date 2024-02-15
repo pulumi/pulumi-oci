@@ -38,6 +38,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         HostnameContains = @var.Log_analytics_entity_hostname_contains,
         ///         IsManagementAgentIdNull = @var.Log_analytics_entity_is_management_agent_id_null,
         ///         LifecycleDetailsContains = @var.Log_analytics_entity_lifecycle_details_contains,
+        ///         MetadataEquals = @var.Log_analytics_entity_metadata_equals,
         ///         Name = @var.Log_analytics_entity_name,
         ///         NameContains = @var.Log_analytics_entity_name_contains,
         ///         SourceId = oci_log_analytics_source.Test_source.Id,
@@ -79,6 +80,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         HostnameContains = @var.Log_analytics_entity_hostname_contains,
         ///         IsManagementAgentIdNull = @var.Log_analytics_entity_is_management_agent_id_null,
         ///         LifecycleDetailsContains = @var.Log_analytics_entity_lifecycle_details_contains,
+        ///         MetadataEquals = @var.Log_analytics_entity_metadata_equals,
         ///         Name = @var.Log_analytics_entity_name,
         ///         NameContains = @var.Log_analytics_entity_name_contains,
         ///         SourceId = oci_log_analytics_source.Test_source.Id,
@@ -152,6 +154,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("lifecycleDetailsContains")]
         public string? LifecycleDetailsContains { get; set; }
+
+        [Input("metadataEquals")]
+        private List<string>? _metadataEquals;
+
+        /// <summary>
+        /// A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+        /// </summary>
+        public List<string> MetadataEquals
+        {
+            get => _metadataEquals ?? (_metadataEquals = new List<string>());
+            set => _metadataEquals = value;
+        }
 
         /// <summary>
         /// A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
@@ -247,6 +261,18 @@ namespace Pulumi.Oci.LogAnalytics
         [Input("lifecycleDetailsContains")]
         public Input<string>? LifecycleDetailsContains { get; set; }
 
+        [Input("metadataEquals")]
+        private InputList<string>? _metadataEquals;
+
+        /// <summary>
+        /// A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+        /// </summary>
+        public InputList<string> MetadataEquals
+        {
+            get => _metadataEquals ?? (_metadataEquals = new InputList<string>());
+            set => _metadataEquals = value;
+        }
+
         /// <summary>
         /// A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
         /// </summary>
@@ -315,6 +341,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// The list of log_analytics_entity_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionResult> LogAnalyticsEntityCollections;
+        public readonly ImmutableArray<string> MetadataEquals;
         /// <summary>
         /// Log analytics entity name.
         /// </summary>
@@ -352,6 +379,8 @@ namespace Pulumi.Oci.LogAnalytics
 
             ImmutableArray<Outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionResult> logAnalyticsEntityCollections,
 
+            ImmutableArray<string> metadataEquals,
+
             string? name,
 
             string? nameContains,
@@ -372,6 +401,7 @@ namespace Pulumi.Oci.LogAnalytics
             IsManagementAgentIdNull = isManagementAgentIdNull;
             LifecycleDetailsContains = lifecycleDetailsContains;
             LogAnalyticsEntityCollections = logAnalyticsEntityCollections;
+            MetadataEquals = metadataEquals;
             Name = name;
             NameContains = nameContains;
             Namespace = @namespace;

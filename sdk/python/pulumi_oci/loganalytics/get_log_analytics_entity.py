@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetLogAnalyticsEntityResult',
@@ -21,7 +22,7 @@ class GetLogAnalyticsEntityResult:
     """
     A collection of values returned by getLogAnalyticsEntity.
     """
-    def __init__(__self__, are_logs_collected=None, cloud_resource_id=None, compartment_id=None, defined_tags=None, entity_type_internal_name=None, entity_type_name=None, freeform_tags=None, hostname=None, id=None, lifecycle_details=None, log_analytics_entity_id=None, management_agent_compartment_id=None, management_agent_display_name=None, management_agent_id=None, name=None, namespace=None, properties=None, source_id=None, state=None, time_created=None, time_updated=None, timezone_region=None):
+    def __init__(__self__, are_logs_collected=None, cloud_resource_id=None, compartment_id=None, defined_tags=None, entity_type_internal_name=None, entity_type_name=None, freeform_tags=None, hostname=None, id=None, lifecycle_details=None, log_analytics_entity_id=None, management_agent_compartment_id=None, management_agent_display_name=None, management_agent_id=None, metadatas=None, name=None, namespace=None, properties=None, source_id=None, state=None, time_created=None, time_last_discovered=None, time_updated=None, timezone_region=None):
         if are_logs_collected and not isinstance(are_logs_collected, bool):
             raise TypeError("Expected argument 'are_logs_collected' to be a bool")
         pulumi.set(__self__, "are_logs_collected", are_logs_collected)
@@ -64,6 +65,9 @@ class GetLogAnalyticsEntityResult:
         if management_agent_id and not isinstance(management_agent_id, str):
             raise TypeError("Expected argument 'management_agent_id' to be a str")
         pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if metadatas and not isinstance(metadatas, list):
+            raise TypeError("Expected argument 'metadatas' to be a list")
+        pulumi.set(__self__, "metadatas", metadatas)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -82,6 +86,9 @@ class GetLogAnalyticsEntityResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_last_discovered and not isinstance(time_last_discovered, str):
+            raise TypeError("Expected argument 'time_last_discovered' to be a str")
+        pulumi.set(__self__, "time_last_discovered", time_last_discovered)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
@@ -200,6 +207,14 @@ class GetLogAnalyticsEntityResult:
 
     @property
     @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetLogAnalyticsEntityMetadataResult']:
+        """
+        Details of entity metadata information.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @property
+    @pulumi.getter
     def name(self) -> str:
         """
         Log analytics entity name.
@@ -244,6 +259,14 @@ class GetLogAnalyticsEntityResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeLastDiscovered")
+    def time_last_discovered(self) -> str:
+        """
+        The date and time the resource was last discovered, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_discovered")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
@@ -280,12 +303,14 @@ class AwaitableGetLogAnalyticsEntityResult(GetLogAnalyticsEntityResult):
             management_agent_compartment_id=self.management_agent_compartment_id,
             management_agent_display_name=self.management_agent_display_name,
             management_agent_id=self.management_agent_id,
+            metadatas=self.metadatas,
             name=self.name,
             namespace=self.namespace,
             properties=self.properties,
             source_id=self.source_id,
             state=self.state,
             time_created=self.time_created,
+            time_last_discovered=self.time_last_discovered,
             time_updated=self.time_updated,
             timezone_region=self.timezone_region)
 
@@ -333,12 +358,14 @@ def get_log_analytics_entity(log_analytics_entity_id: Optional[str] = None,
         management_agent_compartment_id=pulumi.get(__ret__, 'management_agent_compartment_id'),
         management_agent_display_name=pulumi.get(__ret__, 'management_agent_display_name'),
         management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
+        metadatas=pulumi.get(__ret__, 'metadatas'),
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
         properties=pulumi.get(__ret__, 'properties'),
         source_id=pulumi.get(__ret__, 'source_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_discovered=pulumi.get(__ret__, 'time_last_discovered'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         timezone_region=pulumi.get(__ret__, 'timezone_region'))
 

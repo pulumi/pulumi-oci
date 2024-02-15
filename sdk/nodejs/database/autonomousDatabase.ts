@@ -282,6 +282,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly isRemoteDataGuardEnabled!: pulumi.Output<boolean>;
     /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     */
+    public readonly isReplicateAutomaticBackups!: pulumi.Output<boolean>;
+    /**
      * (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `isDedicated` is false.
      *
      * ** IMPORTANT **
@@ -664,6 +668,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isReconnectCloneEnabled"] = state ? state.isReconnectCloneEnabled : undefined;
             resourceInputs["isRefreshableClone"] = state ? state.isRefreshableClone : undefined;
             resourceInputs["isRemoteDataGuardEnabled"] = state ? state.isRemoteDataGuardEnabled : undefined;
+            resourceInputs["isReplicateAutomaticBackups"] = state ? state.isReplicateAutomaticBackups : undefined;
             resourceInputs["isShrinkOnly"] = state ? state.isShrinkOnly : undefined;
             resourceInputs["keyHistoryEntries"] = state ? state.keyHistoryEntries : undefined;
             resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
@@ -781,6 +786,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isMtlsConnectionRequired"] = args ? args.isMtlsConnectionRequired : undefined;
             resourceInputs["isPreviewVersionWithServiceTermsAccepted"] = args ? args.isPreviewVersionWithServiceTermsAccepted : undefined;
             resourceInputs["isRefreshableClone"] = args ? args.isRefreshableClone : undefined;
+            resourceInputs["isReplicateAutomaticBackups"] = args ? args.isReplicateAutomaticBackups : undefined;
             resourceInputs["isShrinkOnly"] = args ? args.isShrinkOnly : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
@@ -1114,6 +1120,10 @@ export interface AutonomousDatabaseState {
      * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     isRemoteDataGuardEnabled?: pulumi.Input<boolean>;
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     */
+    isReplicateAutomaticBackups?: pulumi.Input<boolean>;
     /**
      * (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `isDedicated` is false.
      *
@@ -1611,6 +1621,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) True for creating a refreshable clone and False for detaching the clone from source Autonomous Database. Detaching is one time operation and clone becomes a regular Autonomous Database.
      */
     isRefreshableClone?: pulumi.Input<boolean>;
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     */
+    isReplicateAutomaticBackups?: pulumi.Input<boolean>;
     /**
      * (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `isDedicated` is false.
      *

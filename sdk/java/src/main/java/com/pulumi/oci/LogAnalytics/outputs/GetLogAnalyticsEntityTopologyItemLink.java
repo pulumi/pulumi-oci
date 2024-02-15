@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetLogAnalyticsEntityTopologyItemLink {
     /**
-     * @return Array of log analytics entity summary.
+     * @return An array of entity metadata.
      * 
      */
     private List<GetLogAnalyticsEntityTopologyItemLinkItem> items;
 
     private GetLogAnalyticsEntityTopologyItemLink() {}
     /**
-     * @return Array of log analytics entity summary.
+     * @return An array of entity metadata.
      * 
      */
     public List<GetLogAnalyticsEntityTopologyItemLinkItem> items() {

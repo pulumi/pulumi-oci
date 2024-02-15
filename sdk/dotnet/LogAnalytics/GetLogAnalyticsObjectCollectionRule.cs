@@ -156,6 +156,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>
+        /// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        /// </summary>
+        public readonly bool IsForceHistoricCollection;
+        /// <summary>
         /// A detailed status of the life cycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -180,6 +184,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// Name of the Logging Analytics Source to use for the processing.
         /// </summary>
         public readonly string LogSourceName;
+        /// <summary>
+        /// Type of files/objects in this object collection rule.
+        /// </summary>
+        public readonly string LogType;
         /// <summary>
         /// A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
         /// </summary>
@@ -246,6 +254,8 @@ namespace Pulumi.Oci.LogAnalytics
 
             bool isEnabled,
 
+            bool isForceHistoricCollection,
+
             string lifecycleDetails,
 
             string logAnalyticsObjectCollectionRuleId,
@@ -259,6 +269,8 @@ namespace Pulumi.Oci.LogAnalytics
             string logSetKey,
 
             string logSourceName,
+
+            string logType,
 
             string name,
 
@@ -293,6 +305,7 @@ namespace Pulumi.Oci.LogAnalytics
             FreeformTags = freeformTags;
             Id = id;
             IsEnabled = isEnabled;
+            IsForceHistoricCollection = isForceHistoricCollection;
             LifecycleDetails = lifecycleDetails;
             LogAnalyticsObjectCollectionRuleId = logAnalyticsObjectCollectionRuleId;
             LogGroupId = logGroupId;
@@ -300,6 +313,7 @@ namespace Pulumi.Oci.LogAnalytics
             LogSetExtRegex = logSetExtRegex;
             LogSetKey = logSetKey;
             LogSourceName = logSourceName;
+            LogType = logType;
             Name = name;
             Namespace = @namespace;
             ObjectNameFilters = objectNameFilters;

@@ -635,6 +635,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * 
+     */
+    @Import(name="isReplicateAutomaticBackups")
+    private @Nullable Output<Boolean> isReplicateAutomaticBackups;
+
+    /**
+     * @return If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * 
+     */
+    public Optional<Output<Boolean>> isReplicateAutomaticBackups() {
+        return Optional.ofNullable(this.isReplicateAutomaticBackups);
+    }
+
+    /**
      * (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
      * 
      * ** IMPORTANT **
@@ -1246,6 +1261,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.isMtlsConnectionRequired = $.isMtlsConnectionRequired;
         this.isPreviewVersionWithServiceTermsAccepted = $.isPreviewVersionWithServiceTermsAccepted;
         this.isRefreshableClone = $.isRefreshableClone;
+        this.isReplicateAutomaticBackups = $.isReplicateAutomaticBackups;
         this.isShrinkOnly = $.isShrinkOnly;
         this.kmsKeyId = $.kmsKeyId;
         this.licenseModel = $.licenseModel;
@@ -2149,6 +2165,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder isRefreshableClone(Boolean isRefreshableClone) {
             return isRefreshableClone(Output.of(isRefreshableClone));
+        }
+
+        /**
+         * @param isReplicateAutomaticBackups If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isReplicateAutomaticBackups(@Nullable Output<Boolean> isReplicateAutomaticBackups) {
+            $.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            return this;
+        }
+
+        /**
+         * @param isReplicateAutomaticBackups If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isReplicateAutomaticBackups(Boolean isReplicateAutomaticBackups) {
+            return isReplicateAutomaticBackups(Output.of(isReplicateAutomaticBackups));
         }
 
         /**

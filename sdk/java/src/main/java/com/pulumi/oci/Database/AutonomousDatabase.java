@@ -830,6 +830,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.isRemoteDataGuardEnabled;
     }
     /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * 
+     */
+    @Export(name="isReplicateAutomaticBackups", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isReplicateAutomaticBackups;
+
+    /**
+     * @return If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * 
+     */
+    public Output<Boolean> isReplicateAutomaticBackups() {
+        return this.isReplicateAutomaticBackups;
+    }
+    /**
      * (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
      * 
      * ** IMPORTANT **

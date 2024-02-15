@@ -71,6 +71,21 @@ public final class GetNamespaceScheduledTasksArgs extends com.pulumi.resources.I
     }
 
     /**
+     * The target service to use for filtering.
+     * 
+     */
+    @Import(name="targetService")
+    private @Nullable Output<String> targetService;
+
+    /**
+     * @return The target service to use for filtering.
+     * 
+     */
+    public Optional<Output<String>> targetService() {
+        return Optional.ofNullable(this.targetService);
+    }
+
+    /**
      * Required parameter to specify schedule task type.
      * 
      */
@@ -92,6 +107,7 @@ public final class GetNamespaceScheduledTasksArgs extends com.pulumi.resources.I
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.namespace = $.namespace;
+        this.targetService = $.targetService;
         this.taskType = $.taskType;
     }
 
@@ -187,6 +203,27 @@ public final class GetNamespaceScheduledTasksArgs extends com.pulumi.resources.I
          */
         public Builder namespace(String namespace) {
             return namespace(Output.of(namespace));
+        }
+
+        /**
+         * @param targetService The target service to use for filtering.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetService(@Nullable Output<String> targetService) {
+            $.targetService = targetService;
+            return this;
+        }
+
+        /**
+         * @param targetService The target service to use for filtering.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetService(String targetService) {
+            return targetService(Output.of(targetService));
         }
 
         /**

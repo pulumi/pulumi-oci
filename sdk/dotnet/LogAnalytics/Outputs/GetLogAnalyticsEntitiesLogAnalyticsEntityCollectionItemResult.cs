@@ -66,6 +66,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string ManagementAgentId;
         /// <summary>
+        /// Details of entity metadata information.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataResult> Metadatas;
+        /// <summary>
         /// A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
         /// </summary>
         public readonly string Name;
@@ -89,6 +93,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// The date and time the resource was created, in the format defined by RFC3339.
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time the resource was last discovered, in the format defined by RFC3339.
+        /// </summary>
+        public readonly string TimeLastDiscovered;
         /// <summary>
         /// The date and time the resource was last updated, in the format defined by RFC3339.
         /// </summary>
@@ -126,6 +134,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string managementAgentId,
 
+            ImmutableArray<Outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataResult> metadatas,
+
             string name,
 
             string @namespace,
@@ -137,6 +147,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             string state,
 
             string timeCreated,
+
+            string timeLastDiscovered,
 
             string timeUpdated,
 
@@ -155,12 +167,14 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             ManagementAgentCompartmentId = managementAgentCompartmentId;
             ManagementAgentDisplayName = managementAgentDisplayName;
             ManagementAgentId = managementAgentId;
+            Metadatas = metadatas;
             Name = name;
             Namespace = @namespace;
             Properties = properties;
             SourceId = sourceId;
             State = state;
             TimeCreated = timeCreated;
+            TimeLastDiscovered = timeLastDiscovered;
             TimeUpdated = timeUpdated;
             TimezoneRegion = timezoneRegion;
         }

@@ -23,7 +23,7 @@ class GetNamespaceRulesResult:
     """
     A collection of values returned by getNamespaceRules.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, kind=None, namespace=None, rule_summary_collections=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, kind=None, namespace=None, rule_summary_collections=None, state=None, target_service=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -48,6 +48,9 @@ class GetNamespaceRulesResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if target_service and not isinstance(target_service, str):
+            raise TypeError("Expected argument 'target_service' to be a str")
+        pulumi.set(__self__, "target_service", target_service)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -107,6 +110,14 @@ class GetNamespaceRulesResult:
         """
         return pulumi.get(self, "state")
 
+    @property
+    @pulumi.getter(name="targetService")
+    def target_service(self) -> Optional[str]:
+        """
+        The target service.
+        """
+        return pulumi.get(self, "target_service")
+
 
 class AwaitableGetNamespaceRulesResult(GetNamespaceRulesResult):
     # pylint: disable=using-constant-test
@@ -121,7 +132,8 @@ class AwaitableGetNamespaceRulesResult(GetNamespaceRulesResult):
             kind=self.kind,
             namespace=self.namespace,
             rule_summary_collections=self.rule_summary_collections,
-            state=self.state)
+            state=self.state,
+            target_service=self.target_service)
 
 
 def get_namespace_rules(compartment_id: Optional[str] = None,
@@ -130,6 +142,7 @@ def get_namespace_rules(compartment_id: Optional[str] = None,
                         kind: Optional[str] = None,
                         namespace: Optional[str] = None,
                         state: Optional[str] = None,
+                        target_service: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceRulesResult:
     """
     This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
@@ -146,7 +159,8 @@ def get_namespace_rules(compartment_id: Optional[str] = None,
         namespace=var["namespace_rule_namespace"],
         display_name=var["namespace_rule_display_name"],
         kind=var["namespace_rule_kind"],
-        state=var["namespace_rule_state"])
+        state=var["namespace_rule_state"],
+        target_service=var["namespace_rule_target_service"])
     ```
 
 
@@ -155,6 +169,7 @@ def get_namespace_rules(compartment_id: Optional[str] = None,
     :param str kind: The rule kind used for filtering. Only rules of the specified kind will be returned.
     :param str namespace: The Logging Analytics namespace used for the request.
     :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+    :param str target_service: The target service to use for filtering.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -163,6 +178,7 @@ def get_namespace_rules(compartment_id: Optional[str] = None,
     __args__['kind'] = kind
     __args__['namespace'] = namespace
     __args__['state'] = state
+    __args__['targetService'] = target_service
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getNamespaceRules:getNamespaceRules', __args__, opts=opts, typ=GetNamespaceRulesResult).value
 
@@ -174,7 +190,8 @@ def get_namespace_rules(compartment_id: Optional[str] = None,
         kind=pulumi.get(__ret__, 'kind'),
         namespace=pulumi.get(__ret__, 'namespace'),
         rule_summary_collections=pulumi.get(__ret__, 'rule_summary_collections'),
-        state=pulumi.get(__ret__, 'state'))
+        state=pulumi.get(__ret__, 'state'),
+        target_service=pulumi.get(__ret__, 'target_service'))
 
 
 @_utilities.lift_output_func(get_namespace_rules)
@@ -184,6 +201,7 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                kind: Optional[pulumi.Input[Optional[str]]] = None,
                                namespace: Optional[pulumi.Input[str]] = None,
                                state: Optional[pulumi.Input[Optional[str]]] = None,
+                               target_service: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceRulesResult]:
     """
     This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
@@ -200,7 +218,8 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[str]] = Non
         namespace=var["namespace_rule_namespace"],
         display_name=var["namespace_rule_display_name"],
         kind=var["namespace_rule_kind"],
-        state=var["namespace_rule_state"])
+        state=var["namespace_rule_state"],
+        target_service=var["namespace_rule_target_service"])
     ```
 
 
@@ -209,5 +228,6 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[str]] = Non
     :param str kind: The rule kind used for filtering. Only rules of the specified kind will be returned.
     :param str namespace: The Logging Analytics namespace used for the request.
     :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+    :param str target_service: The target service to use for filtering.
     """
     ...

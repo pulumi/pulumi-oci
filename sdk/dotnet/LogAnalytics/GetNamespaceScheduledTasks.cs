@@ -33,6 +33,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         CompartmentId = @var.Compartment_id,
         ///         Namespace = @var.Namespace_scheduled_task_namespace,
         ///         DisplayName = @var.Namespace_scheduled_task_display_name,
+        ///         TargetService = @var.Namespace_scheduled_task_target_service,
         ///         TaskType = @var.Namespace_scheduled_task_task_type,
         ///     });
         /// 
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         CompartmentId = @var.Compartment_id,
         ///         Namespace = @var.Namespace_scheduled_task_namespace,
         ///         DisplayName = @var.Namespace_scheduled_task_display_name,
+        ///         TargetService = @var.Namespace_scheduled_task_target_service,
         ///         TaskType = @var.Namespace_scheduled_task_task_type,
         ///     });
         /// 
@@ -108,6 +110,12 @@ namespace Pulumi.Oci.LogAnalytics
         public string Namespace { get; set; } = null!;
 
         /// <summary>
+        /// The target service to use for filtering.
+        /// </summary>
+        [Input("targetService")]
+        public string? TargetService { get; set; }
+
+        /// <summary>
         /// Required parameter to specify schedule task type.
         /// </summary>
         [Input("taskType", required: true)]
@@ -148,6 +156,12 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
+        /// The target service to use for filtering.
+        /// </summary>
+        [Input("targetService")]
+        public Input<string>? TargetService { get; set; }
+
+        /// <summary>
         /// Required parameter to specify schedule task type.
         /// </summary>
         [Input("taskType", required: true)]
@@ -181,6 +195,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// The list of scheduled_task_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionResult> ScheduledTaskCollections;
+        public readonly string? TargetService;
         /// <summary>
         /// Task type.
         /// </summary>
@@ -200,6 +215,8 @@ namespace Pulumi.Oci.LogAnalytics
 
             ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionResult> scheduledTaskCollections,
 
+            string? targetService,
+
             string taskType)
         {
             CompartmentId = compartmentId;
@@ -208,6 +225,7 @@ namespace Pulumi.Oci.LogAnalytics
             Id = id;
             Namespace = @namespace;
             ScheduledTaskCollections = scheduledTaskCollections;
+            TargetService = targetService;
             TaskType = taskType;
         }
     }

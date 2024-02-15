@@ -87,6 +87,10 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
      */
     readonly isEnabled: boolean;
     /**
+     * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+     */
+    readonly isForceHistoricCollection: boolean;
+    /**
      * A detailed status of the life cycle state.
      */
     readonly lifecycleDetails: string;
@@ -111,6 +115,10 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
      * Name of the Logging Analytics Source to use for the processing.
      */
     readonly logSourceName: string;
+    /**
+     * Type of files/objects in this object collection rule.
+     */
+    readonly logType: string;
     /**
      * A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
      */

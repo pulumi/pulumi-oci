@@ -47,15 +47,17 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsEnabled:         pulumi.Any(_var.Log_analytics_object_collection_rule_is_enabled),
-//				LogSet:            pulumi.Any(_var.Log_analytics_object_collection_rule_log_set),
-//				LogSetExtRegex:    pulumi.Any(_var.Log_analytics_object_collection_rule_log_set_ext_regex),
-//				LogSetKey:         pulumi.Any(_var.Log_analytics_object_collection_rule_log_set_key),
-//				ObjectNameFilters: pulumi.Any(_var.Log_analytics_object_collection_rule_object_name_filters),
-//				Overrides:         pulumi.Any(_var.Log_analytics_object_collection_rule_overrides),
-//				PollSince:         pulumi.Any(_var.Log_analytics_object_collection_rule_poll_since),
-//				PollTill:          pulumi.Any(_var.Log_analytics_object_collection_rule_poll_till),
-//				Timezone:          pulumi.Any(_var.Log_analytics_object_collection_rule_timezone),
+//				IsEnabled:                 pulumi.Any(_var.Log_analytics_object_collection_rule_is_enabled),
+//				IsForceHistoricCollection: pulumi.Any(_var.Log_analytics_object_collection_rule_is_force_historic_collection),
+//				LogSet:                    pulumi.Any(_var.Log_analytics_object_collection_rule_log_set),
+//				LogSetExtRegex:            pulumi.Any(_var.Log_analytics_object_collection_rule_log_set_ext_regex),
+//				LogSetKey:                 pulumi.Any(_var.Log_analytics_object_collection_rule_log_set_key),
+//				LogType:                   pulumi.Any(_var.Log_analytics_object_collection_rule_log_type),
+//				ObjectNameFilters:         pulumi.Any(_var.Log_analytics_object_collection_rule_object_name_filters),
+//				Overrides:                 pulumi.Any(_var.Log_analytics_object_collection_rule_overrides),
+//				PollSince:                 pulumi.Any(_var.Log_analytics_object_collection_rule_poll_since),
+//				PollTill:                  pulumi.Any(_var.Log_analytics_object_collection_rule_poll_till),
+//				Timezone:                  pulumi.Any(_var.Log_analytics_object_collection_rule_timezone),
 //			})
 //			if err != nil {
 //				return err
@@ -94,6 +96,8 @@ type LogAnalyticsObjectCollectionRule struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Whether or not this rule is currently enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+	IsForceHistoricCollection pulumi.BoolOutput `pulumi:"isForceHistoricCollection"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
@@ -106,6 +110,8 @@ type LogAnalyticsObjectCollectionRule struct {
 	LogSetKey pulumi.StringOutput `pulumi:"logSetKey"`
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName pulumi.StringOutput `pulumi:"logSourceName"`
+	// Type of files/objects in this object collection rule.
+	LogType pulumi.StringOutput `pulumi:"logType"`
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
@@ -199,6 +205,8 @@ type logAnalyticsObjectCollectionRuleState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Whether or not this rule is currently enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
+	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+	IsForceHistoricCollection *bool `pulumi:"isForceHistoricCollection"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
@@ -211,6 +219,8 @@ type logAnalyticsObjectCollectionRuleState struct {
 	LogSetKey *string `pulumi:"logSetKey"`
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName *string `pulumi:"logSourceName"`
+	// Type of files/objects in this object collection rule.
+	LogType *string `pulumi:"logType"`
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
 	Name *string `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
@@ -257,6 +267,8 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Whether or not this rule is currently enabled.
 	IsEnabled pulumi.BoolPtrInput
+	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+	IsForceHistoricCollection pulumi.BoolPtrInput
 	// A detailed status of the life cycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
@@ -269,6 +281,8 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	LogSetKey pulumi.StringPtrInput
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName pulumi.StringPtrInput
+	// Type of files/objects in this object collection rule.
+	LogType pulumi.StringPtrInput
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
 	Name pulumi.StringPtrInput
 	// The Logging Analytics namespace used for the request.
@@ -319,6 +333,8 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Whether or not this rule is currently enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
+	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+	IsForceHistoricCollection *bool `pulumi:"isForceHistoricCollection"`
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId string `pulumi:"logGroupId"`
 	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
@@ -329,6 +345,8 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	LogSetKey *string `pulumi:"logSetKey"`
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName string `pulumi:"logSourceName"`
+	// Type of files/objects in this object collection rule.
+	LogType *string `pulumi:"logType"`
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
 	Name *string `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
@@ -370,6 +388,8 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Whether or not this rule is currently enabled.
 	IsEnabled pulumi.BoolPtrInput
+	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+	IsForceHistoricCollection pulumi.BoolPtrInput
 	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId pulumi.StringInput
 	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
@@ -380,6 +400,8 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	LogSetKey pulumi.StringPtrInput
 	// (Updatable) Name of the Logging Analytics Source to use for the processing.
 	LogSourceName pulumi.StringInput
+	// Type of files/objects in this object collection rule.
+	LogType pulumi.StringPtrInput
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
 	Name pulumi.StringPtrInput
 	// The Logging Analytics namespace used for the request.
@@ -530,6 +552,11 @@ func (o LogAnalyticsObjectCollectionRuleOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
+// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+func (o LogAnalyticsObjectCollectionRuleOutput) IsForceHistoricCollection() pulumi.BoolOutput {
+	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.BoolOutput { return v.IsForceHistoricCollection }).(pulumi.BoolOutput)
+}
+
 // A detailed status of the life cycle state.
 func (o LogAnalyticsObjectCollectionRuleOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -558,6 +585,11 @@ func (o LogAnalyticsObjectCollectionRuleOutput) LogSetKey() pulumi.StringOutput 
 // (Updatable) Name of the Logging Analytics Source to use for the processing.
 func (o LogAnalyticsObjectCollectionRuleOutput) LogSourceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LogSourceName }).(pulumi.StringOutput)
+}
+
+// Type of files/objects in this object collection rule.
+func (o LogAnalyticsObjectCollectionRuleOutput) LogType() pulumi.StringOutput {
+	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LogType }).(pulumi.StringOutput)
 }
 
 // A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.

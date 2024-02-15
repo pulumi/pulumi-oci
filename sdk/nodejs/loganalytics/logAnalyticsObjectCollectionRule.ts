@@ -35,9 +35,11 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     isEnabled: _var.log_analytics_object_collection_rule_is_enabled,
+ *     isForceHistoricCollection: _var.log_analytics_object_collection_rule_is_force_historic_collection,
  *     logSet: _var.log_analytics_object_collection_rule_log_set,
  *     logSetExtRegex: _var.log_analytics_object_collection_rule_log_set_ext_regex,
  *     logSetKey: _var.log_analytics_object_collection_rule_log_set_key,
+ *     logType: _var.log_analytics_object_collection_rule_log_type,
  *     objectNameFilters: _var.log_analytics_object_collection_rule_object_name_filters,
  *     overrides: _var.log_analytics_object_collection_rule_overrides,
  *     pollSince: _var.log_analytics_object_collection_rule_poll_since,
@@ -115,6 +117,10 @@ export class LogAnalyticsObjectCollectionRule extends pulumi.CustomResource {
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
+     * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+     */
+    public readonly isForceHistoricCollection!: pulumi.Output<boolean>;
+    /**
      * A detailed status of the life cycle state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -138,6 +144,10 @@ export class LogAnalyticsObjectCollectionRule extends pulumi.CustomResource {
      * (Updatable) Name of the Logging Analytics Source to use for the processing.
      */
     public readonly logSourceName!: pulumi.Output<string>;
+    /**
+     * Type of files/objects in this object collection rule.
+     */
+    public readonly logType!: pulumi.Output<string>;
     /**
      * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
      */
@@ -212,12 +222,14 @@ export class LogAnalyticsObjectCollectionRule extends pulumi.CustomResource {
             resourceInputs["entityId"] = state ? state.entityId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
+            resourceInputs["isForceHistoricCollection"] = state ? state.isForceHistoricCollection : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["logGroupId"] = state ? state.logGroupId : undefined;
             resourceInputs["logSet"] = state ? state.logSet : undefined;
             resourceInputs["logSetExtRegex"] = state ? state.logSetExtRegex : undefined;
             resourceInputs["logSetKey"] = state ? state.logSetKey : undefined;
             resourceInputs["logSourceName"] = state ? state.logSourceName : undefined;
+            resourceInputs["logType"] = state ? state.logType : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["namespace"] = state ? state.namespace : undefined;
             resourceInputs["objectNameFilters"] = state ? state.objectNameFilters : undefined;
@@ -258,11 +270,13 @@ export class LogAnalyticsObjectCollectionRule extends pulumi.CustomResource {
             resourceInputs["entityId"] = args ? args.entityId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
+            resourceInputs["isForceHistoricCollection"] = args ? args.isForceHistoricCollection : undefined;
             resourceInputs["logGroupId"] = args ? args.logGroupId : undefined;
             resourceInputs["logSet"] = args ? args.logSet : undefined;
             resourceInputs["logSetExtRegex"] = args ? args.logSetExtRegex : undefined;
             resourceInputs["logSetKey"] = args ? args.logSetKey : undefined;
             resourceInputs["logSourceName"] = args ? args.logSourceName : undefined;
+            resourceInputs["logType"] = args ? args.logType : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["namespace"] = args ? args.namespace : undefined;
             resourceInputs["objectNameFilters"] = args ? args.objectNameFilters : undefined;
@@ -319,6 +333,10 @@ export interface LogAnalyticsObjectCollectionRuleState {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
+     * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+     */
+    isForceHistoricCollection?: pulumi.Input<boolean>;
+    /**
      * A detailed status of the life cycle state.
      */
     lifecycleDetails?: pulumi.Input<string>;
@@ -342,6 +360,10 @@ export interface LogAnalyticsObjectCollectionRuleState {
      * (Updatable) Name of the Logging Analytics Source to use for the processing.
      */
     logSourceName?: pulumi.Input<string>;
+    /**
+     * Type of files/objects in this object collection rule.
+     */
+    logType?: pulumi.Input<string>;
     /**
      * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
      */
@@ -433,6 +455,10 @@ export interface LogAnalyticsObjectCollectionRuleArgs {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
+     * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+     */
+    isForceHistoricCollection?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
      */
     logGroupId: pulumi.Input<string>;
@@ -452,6 +478,10 @@ export interface LogAnalyticsObjectCollectionRuleArgs {
      * (Updatable) Name of the Logging Analytics Source to use for the processing.
      */
     logSourceName: pulumi.Input<string>;
+    /**
+     * Type of files/objects in this object collection rule.
+     */
+    logType?: pulumi.Input<string>;
     /**
      * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
      */

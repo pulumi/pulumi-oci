@@ -99,6 +99,21 @@ public final class GetNamespaceRulesPlainArgs extends com.pulumi.resources.Invok
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * The target service to use for filtering.
+     * 
+     */
+    @Import(name="targetService")
+    private @Nullable String targetService;
+
+    /**
+     * @return The target service to use for filtering.
+     * 
+     */
+    public Optional<String> targetService() {
+        return Optional.ofNullable(this.targetService);
+    }
+
     private GetNamespaceRulesPlainArgs() {}
 
     private GetNamespaceRulesPlainArgs(GetNamespaceRulesPlainArgs $) {
@@ -108,6 +123,7 @@ public final class GetNamespaceRulesPlainArgs extends com.pulumi.resources.Invok
         this.kind = $.kind;
         this.namespace = $.namespace;
         this.state = $.state;
+        this.targetService = $.targetService;
     }
 
     public static Builder builder() {
@@ -189,6 +205,17 @@ public final class GetNamespaceRulesPlainArgs extends com.pulumi.resources.Invok
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param targetService The target service to use for filtering.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetService(@Nullable String targetService) {
+            $.targetService = targetService;
             return this;
         }
 

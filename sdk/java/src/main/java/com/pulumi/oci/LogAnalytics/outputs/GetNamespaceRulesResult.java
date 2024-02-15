@@ -47,6 +47,11 @@ public final class GetNamespaceRulesResult {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The target service.
+     * 
+     */
+    private @Nullable String targetService;
 
     private GetNamespaceRulesResult() {}
     /**
@@ -97,6 +102,13 @@ public final class GetNamespaceRulesResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return The target service.
+     * 
+     */
+    public Optional<String> targetService() {
+        return Optional.ofNullable(this.targetService);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -115,6 +127,7 @@ public final class GetNamespaceRulesResult {
         private String namespace;
         private List<GetNamespaceRulesRuleSummaryCollection> ruleSummaryCollections;
         private @Nullable String state;
+        private @Nullable String targetService;
         public Builder() {}
         public Builder(GetNamespaceRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,6 +139,7 @@ public final class GetNamespaceRulesResult {
     	      this.namespace = defaults.namespace;
     	      this.ruleSummaryCollections = defaults.ruleSummaryCollections;
     	      this.state = defaults.state;
+    	      this.targetService = defaults.targetService;
         }
 
         @CustomType.Setter
@@ -190,6 +204,12 @@ public final class GetNamespaceRulesResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder targetService(@Nullable String targetService) {
+
+            this.targetService = targetService;
+            return this;
+        }
         public GetNamespaceRulesResult build() {
             final var _resultValue = new GetNamespaceRulesResult();
             _resultValue.compartmentId = compartmentId;
@@ -200,6 +220,7 @@ public final class GetNamespaceRulesResult {
             _resultValue.namespace = namespace;
             _resultValue.ruleSummaryCollections = ruleSummaryCollections;
             _resultValue.state = state;
+            _resultValue.targetService = targetService;
             return _resultValue;
         }
     }

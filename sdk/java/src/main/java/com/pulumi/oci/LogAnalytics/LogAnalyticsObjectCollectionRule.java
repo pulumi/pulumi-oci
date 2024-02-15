@@ -60,9 +60,11 @@ import javax.annotation.Nullable;
  *             .entityId(oci_log_analytics_entity.test_entity().id())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .isEnabled(var_.log_analytics_object_collection_rule_is_enabled())
+ *             .isForceHistoricCollection(var_.log_analytics_object_collection_rule_is_force_historic_collection())
  *             .logSet(var_.log_analytics_object_collection_rule_log_set())
  *             .logSetExtRegex(var_.log_analytics_object_collection_rule_log_set_ext_regex())
  *             .logSetKey(var_.log_analytics_object_collection_rule_log_set_key())
+ *             .logType(var_.log_analytics_object_collection_rule_log_type())
  *             .objectNameFilters(var_.log_analytics_object_collection_rule_object_name_filters())
  *             .overrides(var_.log_analytics_object_collection_rule_overrides())
  *             .pollSince(var_.log_analytics_object_collection_rule_poll_since())
@@ -198,6 +200,20 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
         return this.isEnabled;
     }
     /**
+     * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+     * 
+     */
+    @Export(name="isForceHistoricCollection", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isForceHistoricCollection;
+
+    /**
+     * @return Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+     * 
+     */
+    public Output<Boolean> isForceHistoricCollection() {
+        return this.isForceHistoricCollection;
+    }
+    /**
      * A detailed status of the life cycle state.
      * 
      */
@@ -280,6 +296,20 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      */
     public Output<String> logSourceName() {
         return this.logSourceName;
+    }
+    /**
+     * Type of files/objects in this object collection rule.
+     * 
+     */
+    @Export(name="logType", refs={String.class}, tree="[0]")
+    private Output<String> logType;
+
+    /**
+     * @return Type of files/objects in this object collection rule.
+     * 
+     */
+    public Output<String> logType() {
+        return this.logType;
     }
     /**
      * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.

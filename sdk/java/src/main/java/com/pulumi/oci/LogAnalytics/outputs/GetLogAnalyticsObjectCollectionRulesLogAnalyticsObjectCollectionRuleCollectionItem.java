@@ -61,6 +61,11 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      */
     private Boolean isEnabled;
     /**
+     * @return Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+     * 
+     */
+    private Boolean isForceHistoricCollection;
+    /**
      * @return A detailed status of the life cycle state.
      * 
      */
@@ -90,6 +95,11 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      * 
      */
     private String logSourceName;
+    /**
+     * @return Type of files/objects in this object collection rule.
+     * 
+     */
+    private String logType;
     /**
      * @return A filter to return rules only matching with this name.
      * 
@@ -216,6 +226,13 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         return this.isEnabled;
     }
     /**
+     * @return Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+     * 
+     */
+    public Boolean isForceHistoricCollection() {
+        return this.isForceHistoricCollection;
+    }
+    /**
      * @return A detailed status of the life cycle state.
      * 
      */
@@ -256,6 +273,13 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      */
     public String logSourceName() {
         return this.logSourceName;
+    }
+    /**
+     * @return Type of files/objects in this object collection rule.
+     * 
+     */
+    public String logType() {
+        return this.logType;
     }
     /**
      * @return A filter to return rules only matching with this name.
@@ -360,12 +384,14 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isEnabled;
+        private Boolean isForceHistoricCollection;
         private String lifecycleDetails;
         private String logGroupId;
         private String logSet;
         private String logSetExtRegex;
         private String logSetKey;
         private String logSourceName;
+        private String logType;
         private String name;
         private String namespace;
         private List<String> objectNameFilters;
@@ -390,12 +416,14 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isEnabled = defaults.isEnabled;
+    	      this.isForceHistoricCollection = defaults.isForceHistoricCollection;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logGroupId = defaults.logGroupId;
     	      this.logSet = defaults.logSet;
     	      this.logSetExtRegex = defaults.logSetExtRegex;
     	      this.logSetKey = defaults.logSetKey;
     	      this.logSourceName = defaults.logSourceName;
+    	      this.logType = defaults.logType;
     	      this.name = defaults.name;
     	      this.namespace = defaults.namespace;
     	      this.objectNameFilters = defaults.objectNameFilters;
@@ -483,6 +511,14 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
             return this;
         }
         @CustomType.Setter
+        public Builder isForceHistoricCollection(Boolean isForceHistoricCollection) {
+            if (isForceHistoricCollection == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem", "isForceHistoricCollection");
+            }
+            this.isForceHistoricCollection = isForceHistoricCollection;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem", "lifecycleDetails");
@@ -528,6 +564,14 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
               throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem", "logSourceName");
             }
             this.logSourceName = logSourceName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder logType(String logType) {
+            if (logType == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem", "logType");
+            }
+            this.logType = logType;
             return this;
         }
         @CustomType.Setter
@@ -643,12 +687,14 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isEnabled = isEnabled;
+            _resultValue.isForceHistoricCollection = isForceHistoricCollection;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.logGroupId = logGroupId;
             _resultValue.logSet = logSet;
             _resultValue.logSetExtRegex = logSetExtRegex;
             _resultValue.logSetKey = logSetKey;
             _resultValue.logSourceName = logSourceName;
+            _resultValue.logType = logType;
             _resultValue.name = name;
             _resultValue.namespace = namespace;
             _resultValue.objectNameFilters = objectNameFilters;

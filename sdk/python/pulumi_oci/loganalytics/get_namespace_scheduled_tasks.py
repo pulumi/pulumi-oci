@@ -23,7 +23,7 @@ class GetNamespaceScheduledTasksResult:
     """
     A collection of values returned by getNamespaceScheduledTasks.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, namespace=None, scheduled_task_collections=None, task_type=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, namespace=None, scheduled_task_collections=None, target_service=None, task_type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -42,6 +42,9 @@ class GetNamespaceScheduledTasksResult:
         if scheduled_task_collections and not isinstance(scheduled_task_collections, list):
             raise TypeError("Expected argument 'scheduled_task_collections' to be a list")
         pulumi.set(__self__, "scheduled_task_collections", scheduled_task_collections)
+        if target_service and not isinstance(target_service, str):
+            raise TypeError("Expected argument 'target_service' to be a str")
+        pulumi.set(__self__, "target_service", target_service)
         if task_type and not isinstance(task_type, str):
             raise TypeError("Expected argument 'task_type' to be a str")
         pulumi.set(__self__, "task_type", task_type)
@@ -89,6 +92,11 @@ class GetNamespaceScheduledTasksResult:
         return pulumi.get(self, "scheduled_task_collections")
 
     @property
+    @pulumi.getter(name="targetService")
+    def target_service(self) -> Optional[str]:
+        return pulumi.get(self, "target_service")
+
+    @property
     @pulumi.getter(name="taskType")
     def task_type(self) -> str:
         """
@@ -109,6 +117,7 @@ class AwaitableGetNamespaceScheduledTasksResult(GetNamespaceScheduledTasksResult
             id=self.id,
             namespace=self.namespace,
             scheduled_task_collections=self.scheduled_task_collections,
+            target_service=self.target_service,
             task_type=self.task_type)
 
 
@@ -116,6 +125,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
                                   display_name: Optional[str] = None,
                                   filters: Optional[Sequence[pulumi.InputType['GetNamespaceScheduledTasksFilterArgs']]] = None,
                                   namespace: Optional[str] = None,
+                                  target_service: Optional[str] = None,
                                   task_type: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceScheduledTasksResult:
     """
@@ -132,6 +142,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
     test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=var["compartment_id"],
         namespace=var["namespace_scheduled_task_namespace"],
         display_name=var["namespace_scheduled_task_display_name"],
+        target_service=var["namespace_scheduled_task_target_service"],
         task_type=var["namespace_scheduled_task_task_type"])
     ```
 
@@ -139,6 +150,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the given display name exactly.
     :param str namespace: The Logging Analytics namespace used for the request.
+    :param str target_service: The target service to use for filtering.
     :param str task_type: Required parameter to specify schedule task type.
     """
     __args__ = dict()
@@ -146,6 +158,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['namespace'] = namespace
+    __args__['targetService'] = target_service
     __args__['taskType'] = task_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks', __args__, opts=opts, typ=GetNamespaceScheduledTasksResult).value
@@ -157,6 +170,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'),
         scheduled_task_collections=pulumi.get(__ret__, 'scheduled_task_collections'),
+        target_service=pulumi.get(__ret__, 'target_service'),
         task_type=pulumi.get(__ret__, 'task_type'))
 
 
@@ -165,6 +179,7 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[s
                                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNamespaceScheduledTasksFilterArgs']]]]] = None,
                                          namespace: Optional[pulumi.Input[str]] = None,
+                                         target_service: Optional[pulumi.Input[Optional[str]]] = None,
                                          task_type: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceScheduledTasksResult]:
     """
@@ -181,6 +196,7 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[s
     test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=var["compartment_id"],
         namespace=var["namespace_scheduled_task_namespace"],
         display_name=var["namespace_scheduled_task_display_name"],
+        target_service=var["namespace_scheduled_task_target_service"],
         task_type=var["namespace_scheduled_task_task_type"])
     ```
 
@@ -188,6 +204,7 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[s
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the given display name exactly.
     :param str namespace: The Logging Analytics namespace used for the request.
+    :param str target_service: The target service to use for filtering.
     :param str task_type: Required parameter to specify schedule task type.
     """
     ...

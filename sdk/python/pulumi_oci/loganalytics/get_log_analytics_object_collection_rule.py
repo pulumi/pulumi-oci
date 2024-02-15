@@ -22,7 +22,7 @@ class GetLogAnalyticsObjectCollectionRuleResult:
     """
     A collection of values returned by getLogAnalyticsObjectCollectionRule.
     """
-    def __init__(__self__, char_encoding=None, collection_type=None, compartment_id=None, defined_tags=None, description=None, entity_id=None, freeform_tags=None, id=None, is_enabled=None, lifecycle_details=None, log_analytics_object_collection_rule_id=None, log_group_id=None, log_set=None, log_set_ext_regex=None, log_set_key=None, log_source_name=None, name=None, namespace=None, object_name_filters=None, os_bucket_name=None, os_namespace=None, overrides=None, poll_since=None, poll_till=None, state=None, time_created=None, time_updated=None, timezone=None):
+    def __init__(__self__, char_encoding=None, collection_type=None, compartment_id=None, defined_tags=None, description=None, entity_id=None, freeform_tags=None, id=None, is_enabled=None, is_force_historic_collection=None, lifecycle_details=None, log_analytics_object_collection_rule_id=None, log_group_id=None, log_set=None, log_set_ext_regex=None, log_set_key=None, log_source_name=None, log_type=None, name=None, namespace=None, object_name_filters=None, os_bucket_name=None, os_namespace=None, overrides=None, poll_since=None, poll_till=None, state=None, time_created=None, time_updated=None, timezone=None):
         if char_encoding and not isinstance(char_encoding, str):
             raise TypeError("Expected argument 'char_encoding' to be a str")
         pulumi.set(__self__, "char_encoding", char_encoding)
@@ -50,6 +50,9 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         if is_enabled and not isinstance(is_enabled, bool):
             raise TypeError("Expected argument 'is_enabled' to be a bool")
         pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_force_historic_collection and not isinstance(is_force_historic_collection, bool):
+            raise TypeError("Expected argument 'is_force_historic_collection' to be a bool")
+        pulumi.set(__self__, "is_force_historic_collection", is_force_historic_collection)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -71,6 +74,9 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         if log_source_name and not isinstance(log_source_name, str):
             raise TypeError("Expected argument 'log_source_name' to be a str")
         pulumi.set(__self__, "log_source_name", log_source_name)
+        if log_type and not isinstance(log_type, str):
+            raise TypeError("Expected argument 'log_type' to be a str")
+        pulumi.set(__self__, "log_type", log_type)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -181,6 +187,14 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         return pulumi.get(self, "is_enabled")
 
     @property
+    @pulumi.getter(name="isForceHistoricCollection")
+    def is_force_historic_collection(self) -> bool:
+        """
+        Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        """
+        return pulumi.get(self, "is_force_historic_collection")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -232,6 +246,14 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         Name of the Logging Analytics Source to use for the processing.
         """
         return pulumi.get(self, "log_source_name")
+
+    @property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> str:
+        """
+        Type of files/objects in this object collection rule.
+        """
+        return pulumi.get(self, "log_type")
 
     @property
     @pulumi.getter
@@ -342,6 +364,7 @@ class AwaitableGetLogAnalyticsObjectCollectionRuleResult(GetLogAnalyticsObjectCo
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_enabled=self.is_enabled,
+            is_force_historic_collection=self.is_force_historic_collection,
             lifecycle_details=self.lifecycle_details,
             log_analytics_object_collection_rule_id=self.log_analytics_object_collection_rule_id,
             log_group_id=self.log_group_id,
@@ -349,6 +372,7 @@ class AwaitableGetLogAnalyticsObjectCollectionRuleResult(GetLogAnalyticsObjectCo
             log_set_ext_regex=self.log_set_ext_regex,
             log_set_key=self.log_set_key,
             log_source_name=self.log_source_name,
+            log_type=self.log_type,
             name=self.name,
             namespace=self.namespace,
             object_name_filters=self.object_name_filters,
@@ -401,6 +425,7 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        is_force_historic_collection=pulumi.get(__ret__, 'is_force_historic_collection'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         log_analytics_object_collection_rule_id=pulumi.get(__ret__, 'log_analytics_object_collection_rule_id'),
         log_group_id=pulumi.get(__ret__, 'log_group_id'),
@@ -408,6 +433,7 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
         log_set_ext_regex=pulumi.get(__ret__, 'log_set_ext_regex'),
         log_set_key=pulumi.get(__ret__, 'log_set_key'),
         log_source_name=pulumi.get(__ret__, 'log_source_name'),
+        log_type=pulumi.get(__ret__, 'log_type'),
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
         object_name_filters=pulumi.get(__ret__, 'object_name_filters'),

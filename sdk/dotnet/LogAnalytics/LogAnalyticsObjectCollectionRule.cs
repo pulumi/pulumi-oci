@@ -45,9 +45,11 @@ namespace Pulumi.Oci.LogAnalytics
     ///             { "bar-key", "value" },
     ///         },
     ///         IsEnabled = @var.Log_analytics_object_collection_rule_is_enabled,
+    ///         IsForceHistoricCollection = @var.Log_analytics_object_collection_rule_is_force_historic_collection,
     ///         LogSet = @var.Log_analytics_object_collection_rule_log_set,
     ///         LogSetExtRegex = @var.Log_analytics_object_collection_rule_log_set_ext_regex,
     ///         LogSetKey = @var.Log_analytics_object_collection_rule_log_set_key,
+    ///         LogType = @var.Log_analytics_object_collection_rule_log_type,
     ///         ObjectNameFilters = @var.Log_analytics_object_collection_rule_object_name_filters,
     ///         Overrides = @var.Log_analytics_object_collection_rule_overrides,
     ///         PollSince = @var.Log_analytics_object_collection_rule_poll_since,
@@ -118,6 +120,12 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        /// </summary>
+        [Output("isForceHistoricCollection")]
+        public Output<bool> IsForceHistoricCollection { get; private set; } = null!;
+
+        /// <summary>
         /// A detailed status of the life cycle state.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -152,6 +160,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Output("logSourceName")]
         public Output<string> LogSourceName { get; private set; } = null!;
+
+        /// <summary>
+        /// Type of files/objects in this object collection rule.
+        /// </summary>
+        [Output("logType")]
+        public Output<string> LogType { get; private set; } = null!;
 
         /// <summary>
         /// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
@@ -336,6 +350,12 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
+        /// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        /// </summary>
+        [Input("isForceHistoricCollection")]
+        public Input<bool>? IsForceHistoricCollection { get; set; }
+
+        /// <summary>
         /// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
         /// </summary>
         [Input("logGroupId", required: true)]
@@ -364,6 +384,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("logSourceName", required: true)]
         public Input<string> LogSourceName { get; set; } = null!;
+
+        /// <summary>
+        /// Type of files/objects in this object collection rule.
+        /// </summary>
+        [Input("logType")]
+        public Input<string>? LogType { get; set; }
 
         /// <summary>
         /// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
@@ -504,6 +530,12 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
+        /// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        /// </summary>
+        [Input("isForceHistoricCollection")]
+        public Input<bool>? IsForceHistoricCollection { get; set; }
+
+        /// <summary>
         /// A detailed status of the life cycle state.
         /// </summary>
         [Input("lifecycleDetails")]
@@ -538,6 +570,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("logSourceName")]
         public Input<string>? LogSourceName { get; set; }
+
+        /// <summary>
+        /// Type of files/objects in this object collection rule.
+        /// </summary>
+        [Input("logType")]
+        public Input<string>? LogType { get; set; }
 
         /// <summary>
         /// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.

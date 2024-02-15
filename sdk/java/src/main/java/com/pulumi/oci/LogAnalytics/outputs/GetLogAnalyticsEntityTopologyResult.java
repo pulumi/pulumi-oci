@@ -20,11 +20,12 @@ public final class GetLogAnalyticsEntityTopologyResult {
      */
     private String id;
     /**
-     * @return Array of log analytics entity summary.
+     * @return An array of entity metadata.
      * 
      */
     private List<GetLogAnalyticsEntityTopologyItem> items;
     private String logAnalyticsEntityId;
+    private @Nullable List<String> metadataEquals;
     private String namespace;
     /**
      * @return The current state of the log analytics entity.
@@ -41,7 +42,7 @@ public final class GetLogAnalyticsEntityTopologyResult {
         return this.id;
     }
     /**
-     * @return Array of log analytics entity summary.
+     * @return An array of entity metadata.
      * 
      */
     public List<GetLogAnalyticsEntityTopologyItem> items() {
@@ -49,6 +50,9 @@ public final class GetLogAnalyticsEntityTopologyResult {
     }
     public String logAnalyticsEntityId() {
         return this.logAnalyticsEntityId;
+    }
+    public List<String> metadataEquals() {
+        return this.metadataEquals == null ? List.of() : this.metadataEquals;
     }
     public String namespace() {
         return this.namespace;
@@ -73,6 +77,7 @@ public final class GetLogAnalyticsEntityTopologyResult {
         private String id;
         private List<GetLogAnalyticsEntityTopologyItem> items;
         private String logAnalyticsEntityId;
+        private @Nullable List<String> metadataEquals;
         private String namespace;
         private @Nullable String state;
         public Builder() {}
@@ -81,6 +86,7 @@ public final class GetLogAnalyticsEntityTopologyResult {
     	      this.id = defaults.id;
     	      this.items = defaults.items;
     	      this.logAnalyticsEntityId = defaults.logAnalyticsEntityId;
+    	      this.metadataEquals = defaults.metadataEquals;
     	      this.namespace = defaults.namespace;
     	      this.state = defaults.state;
         }
@@ -113,6 +119,15 @@ public final class GetLogAnalyticsEntityTopologyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder metadataEquals(@Nullable List<String> metadataEquals) {
+
+            this.metadataEquals = metadataEquals;
+            return this;
+        }
+        public Builder metadataEquals(String... metadataEquals) {
+            return metadataEquals(List.of(metadataEquals));
+        }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             if (namespace == null) {
               throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyResult", "namespace");
@@ -131,6 +146,7 @@ public final class GetLogAnalyticsEntityTopologyResult {
             _resultValue.id = id;
             _resultValue.items = items;
             _resultValue.logAnalyticsEntityId = logAnalyticsEntityId;
+            _resultValue.metadataEquals = metadataEquals;
             _resultValue.namespace = namespace;
             _resultValue.state = state;
             return _resultValue;

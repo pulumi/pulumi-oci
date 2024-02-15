@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
     public sealed class GetLogAnalyticsEntityTopologyItemNodeResult
     {
         /// <summary>
-        /// Array of log analytics entity summary.
+        /// An array of entity metadata.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLogAnalyticsEntityTopologyItemNodeItemResult> Items;
 

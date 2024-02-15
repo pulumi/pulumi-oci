@@ -29,9 +29,11 @@ class LogAnalyticsObjectCollectionRuleArgs:
                  entity_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_force_historic_collection: Optional[pulumi.Input[bool]] = None,
                  log_set: Optional[pulumi.Input[str]] = None,
                  log_set_ext_regex: Optional[pulumi.Input[str]] = None,
                  log_set_key: Optional[pulumi.Input[str]] = None,
+                 log_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  overrides: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] = None,
@@ -53,9 +55,11 @@ class LogAnalyticsObjectCollectionRuleArgs:
         :param pulumi.Input[str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
+        :param pulumi.Input[bool] is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param pulumi.Input[str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+        :param pulumi.Input[str] log_type: Type of files/objects in this object collection rule.
         :param pulumi.Input[str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
@@ -87,12 +91,16 @@ class LogAnalyticsObjectCollectionRuleArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_force_historic_collection is not None:
+            pulumi.set(__self__, "is_force_historic_collection", is_force_historic_collection)
         if log_set is not None:
             pulumi.set(__self__, "log_set", log_set)
         if log_set_ext_regex is not None:
             pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
         if log_set_key is not None:
             pulumi.set(__self__, "log_set_key", log_set_key)
+        if log_type is not None:
+            pulumi.set(__self__, "log_type", log_type)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if object_name_filters is not None:
@@ -263,6 +271,18 @@ class LogAnalyticsObjectCollectionRuleArgs:
         pulumi.set(self, "is_enabled", value)
 
     @property
+    @pulumi.getter(name="isForceHistoricCollection")
+    def is_force_historic_collection(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        """
+        return pulumi.get(self, "is_force_historic_collection")
+
+    @is_force_historic_collection.setter
+    def is_force_historic_collection(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_force_historic_collection", value)
+
+    @property
     @pulumi.getter(name="logSet")
     def log_set(self) -> Optional[pulumi.Input[str]]:
         """
@@ -297,6 +317,18 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @log_set_key.setter
     def log_set_key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "log_set_key", value)
+
+    @property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of files/objects in this object collection rule.
+        """
+        return pulumi.get(self, "log_type")
+
+    @log_type.setter
+    def log_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_type", value)
 
     @property
     @pulumi.getter
@@ -386,12 +418,14 @@ class _LogAnalyticsObjectCollectionRuleState:
                  entity_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_force_historic_collection: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_set: Optional[pulumi.Input[str]] = None,
                  log_set_ext_regex: Optional[pulumi.Input[str]] = None,
                  log_set_key: Optional[pulumi.Input[str]] = None,
                  log_source_name: Optional[pulumi.Input[str]] = None,
+                 log_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -414,12 +448,14 @@ class _LogAnalyticsObjectCollectionRuleState:
         :param pulumi.Input[str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
+        :param pulumi.Input[bool] is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         :param pulumi.Input[str] lifecycle_details: A detailed status of the life cycle state.
         :param pulumi.Input[str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param pulumi.Input[str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
         :param pulumi.Input[str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
+        :param pulumi.Input[str] log_type: Type of files/objects in this object collection rule.
         :param pulumi.Input[str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
@@ -453,6 +489,8 @@ class _LogAnalyticsObjectCollectionRuleState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_force_historic_collection is not None:
+            pulumi.set(__self__, "is_force_historic_collection", is_force_historic_collection)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if log_group_id is not None:
@@ -465,6 +503,8 @@ class _LogAnalyticsObjectCollectionRuleState:
             pulumi.set(__self__, "log_set_key", log_set_key)
         if log_source_name is not None:
             pulumi.set(__self__, "log_source_name", log_source_name)
+        if log_type is not None:
+            pulumi.set(__self__, "log_type", log_type)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if namespace is not None:
@@ -587,6 +627,18 @@ class _LogAnalyticsObjectCollectionRuleState:
         pulumi.set(self, "is_enabled", value)
 
     @property
+    @pulumi.getter(name="isForceHistoricCollection")
+    def is_force_historic_collection(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        """
+        return pulumi.get(self, "is_force_historic_collection")
+
+    @is_force_historic_collection.setter
+    def is_force_historic_collection(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_force_historic_collection", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -657,6 +709,18 @@ class _LogAnalyticsObjectCollectionRuleState:
     @log_source_name.setter
     def log_source_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "log_source_name", value)
+
+    @property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of files/objects in this object collection rule.
+        """
+        return pulumi.get(self, "log_type")
+
+    @log_type.setter
+    def log_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_type", value)
 
     @property
     @pulumi.getter
@@ -820,11 +884,13 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  entity_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_force_historic_collection: Optional[pulumi.Input[bool]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_set: Optional[pulumi.Input[str]] = None,
                  log_set_ext_regex: Optional[pulumi.Input[str]] = None,
                  log_set_key: Optional[pulumi.Input[str]] = None,
                  log_source_name: Optional[pulumi.Input[str]] = None,
+                 log_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -864,9 +930,11 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_enabled=var["log_analytics_object_collection_rule_is_enabled"],
+            is_force_historic_collection=var["log_analytics_object_collection_rule_is_force_historic_collection"],
             log_set=var["log_analytics_object_collection_rule_log_set"],
             log_set_ext_regex=var["log_analytics_object_collection_rule_log_set_ext_regex"],
             log_set_key=var["log_analytics_object_collection_rule_log_set_key"],
+            log_type=var["log_analytics_object_collection_rule_log_type"],
             object_name_filters=var["log_analytics_object_collection_rule_object_name_filters"],
             overrides=var["log_analytics_object_collection_rule_overrides"],
             poll_since=var["log_analytics_object_collection_rule_poll_since"],
@@ -892,11 +960,13 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
+        :param pulumi.Input[bool] is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         :param pulumi.Input[str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param pulumi.Input[str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
         :param pulumi.Input[str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
+        :param pulumi.Input[str] log_type: Type of files/objects in this object collection rule.
         :param pulumi.Input[str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
@@ -946,9 +1016,11 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_enabled=var["log_analytics_object_collection_rule_is_enabled"],
+            is_force_historic_collection=var["log_analytics_object_collection_rule_is_force_historic_collection"],
             log_set=var["log_analytics_object_collection_rule_log_set"],
             log_set_ext_regex=var["log_analytics_object_collection_rule_log_set_ext_regex"],
             log_set_key=var["log_analytics_object_collection_rule_log_set_key"],
+            log_type=var["log_analytics_object_collection_rule_log_type"],
             object_name_filters=var["log_analytics_object_collection_rule_object_name_filters"],
             overrides=var["log_analytics_object_collection_rule_overrides"],
             poll_since=var["log_analytics_object_collection_rule_poll_since"],
@@ -987,11 +1059,13 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  entity_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_force_historic_collection: Optional[pulumi.Input[bool]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_set: Optional[pulumi.Input[str]] = None,
                  log_set_ext_regex: Optional[pulumi.Input[str]] = None,
                  log_set_key: Optional[pulumi.Input[str]] = None,
                  log_source_name: Optional[pulumi.Input[str]] = None,
+                 log_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1020,6 +1094,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             __props__.__dict__["entity_id"] = entity_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_enabled"] = is_enabled
+            __props__.__dict__["is_force_historic_collection"] = is_force_historic_collection
             if log_group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'log_group_id'")
             __props__.__dict__["log_group_id"] = log_group_id
@@ -1029,6 +1104,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             if log_source_name is None and not opts.urn:
                 raise TypeError("Missing required property 'log_source_name'")
             __props__.__dict__["log_source_name"] = log_source_name
+            __props__.__dict__["log_type"] = log_type
             __props__.__dict__["name"] = name
             if namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace'")
@@ -1066,12 +1142,14 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             entity_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_enabled: Optional[pulumi.Input[bool]] = None,
+            is_force_historic_collection: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             log_group_id: Optional[pulumi.Input[str]] = None,
             log_set: Optional[pulumi.Input[str]] = None,
             log_set_ext_regex: Optional[pulumi.Input[str]] = None,
             log_set_key: Optional[pulumi.Input[str]] = None,
             log_source_name: Optional[pulumi.Input[str]] = None,
+            log_type: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
             object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1099,12 +1177,14 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
+        :param pulumi.Input[bool] is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         :param pulumi.Input[str] lifecycle_details: A detailed status of the life cycle state.
         :param pulumi.Input[str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param pulumi.Input[str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
         :param pulumi.Input[str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
+        :param pulumi.Input[str] log_type: Type of files/objects in this object collection rule.
         :param pulumi.Input[str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
@@ -1134,12 +1214,14 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         __props__.__dict__["entity_id"] = entity_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_enabled"] = is_enabled
+        __props__.__dict__["is_force_historic_collection"] = is_force_historic_collection
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["log_group_id"] = log_group_id
         __props__.__dict__["log_set"] = log_set
         __props__.__dict__["log_set_ext_regex"] = log_set_ext_regex
         __props__.__dict__["log_set_key"] = log_set_key
         __props__.__dict__["log_source_name"] = log_source_name
+        __props__.__dict__["log_type"] = log_type
         __props__.__dict__["name"] = name
         __props__.__dict__["namespace"] = namespace
         __props__.__dict__["object_name_filters"] = object_name_filters
@@ -1219,6 +1301,14 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         return pulumi.get(self, "is_enabled")
 
     @property
+    @pulumi.getter(name="isForceHistoricCollection")
+    def is_force_historic_collection(self) -> pulumi.Output[bool]:
+        """
+        Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        """
+        return pulumi.get(self, "is_force_historic_collection")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
@@ -1265,6 +1355,14 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         (Updatable) Name of the Logging Analytics Source to use for the processing.
         """
         return pulumi.get(self, "log_source_name")
+
+    @property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> pulumi.Output[str]:
+        """
+        Type of files/objects in this object collection rule.
+        """
+        return pulumi.get(self, "log_type")
 
     @property
     @pulumi.getter

@@ -79,6 +79,8 @@ type LookupLogAnalyticsObjectCollectionRuleResult struct {
 	Id string `pulumi:"id"`
 	// Whether or not this rule is currently enabled.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+	IsForceHistoricCollection bool `pulumi:"isForceHistoricCollection"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails                   string `pulumi:"lifecycleDetails"`
 	LogAnalyticsObjectCollectionRuleId string `pulumi:"logAnalyticsObjectCollectionRuleId"`
@@ -92,6 +94,8 @@ type LookupLogAnalyticsObjectCollectionRuleResult struct {
 	LogSetKey string `pulumi:"logSetKey"`
 	// Name of the Logging Analytics Source to use for the processing.
 	LogSourceName string `pulumi:"logSourceName"`
+	// Type of files/objects in this object collection rule.
+	LogType string `pulumi:"logType"`
 	// A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
 	Name      string `pulumi:"name"`
 	Namespace string `pulumi:"namespace"`
@@ -202,6 +206,11 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) IsEnabled() pulumi.B
 	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
+// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) IsForceHistoricCollection() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) bool { return v.IsForceHistoricCollection }).(pulumi.BoolOutput)
+}
+
 // A detailed status of the life cycle state.
 func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -236,6 +245,11 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSetKey() pulumi.S
 // Name of the Logging Analytics Source to use for the processing.
 func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSourceName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogSourceName }).(pulumi.StringOutput)
+}
+
+// Type of files/objects in this object collection rule.
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogType }).(pulumi.StringOutput)
 }
 
 // A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.

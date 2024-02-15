@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -15,6 +16,9 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterR
      * 
      */
     private String disasterRecoveryType;
+    private Boolean isReplicateAutomaticBackups;
+    private Boolean isSnapshotStandby;
+    private String timeSnapshotStandbyEnabledTill;
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration() {}
     /**
@@ -23,6 +27,15 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterR
      */
     public String disasterRecoveryType() {
         return this.disasterRecoveryType;
+    }
+    public Boolean isReplicateAutomaticBackups() {
+        return this.isReplicateAutomaticBackups;
+    }
+    public Boolean isSnapshotStandby() {
+        return this.isSnapshotStandby;
+    }
+    public String timeSnapshotStandbyEnabledTill() {
+        return this.timeSnapshotStandbyEnabledTill;
     }
 
     public static Builder builder() {
@@ -35,10 +48,16 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterR
     @CustomType.Builder
     public static final class Builder {
         private String disasterRecoveryType;
+        private Boolean isReplicateAutomaticBackups;
+        private Boolean isSnapshotStandby;
+        private String timeSnapshotStandbyEnabledTill;
         public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.disasterRecoveryType = defaults.disasterRecoveryType;
+    	      this.isReplicateAutomaticBackups = defaults.isReplicateAutomaticBackups;
+    	      this.isSnapshotStandby = defaults.isSnapshotStandby;
+    	      this.timeSnapshotStandbyEnabledTill = defaults.timeSnapshotStandbyEnabledTill;
         }
 
         @CustomType.Setter
@@ -49,9 +68,36 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterR
             this.disasterRecoveryType = disasterRecoveryType;
             return this;
         }
+        @CustomType.Setter
+        public Builder isReplicateAutomaticBackups(Boolean isReplicateAutomaticBackups) {
+            if (isReplicateAutomaticBackups == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration", "isReplicateAutomaticBackups");
+            }
+            this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSnapshotStandby(Boolean isSnapshotStandby) {
+            if (isSnapshotStandby == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration", "isSnapshotStandby");
+            }
+            this.isSnapshotStandby = isSnapshotStandby;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeSnapshotStandbyEnabledTill(String timeSnapshotStandbyEnabledTill) {
+            if (timeSnapshotStandbyEnabledTill == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration", "timeSnapshotStandbyEnabledTill");
+            }
+            this.timeSnapshotStandbyEnabledTill = timeSnapshotStandbyEnabledTill;
+            return this;
+        }
         public GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration build() {
             final var _resultValue = new GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration();
             _resultValue.disasterRecoveryType = disasterRecoveryType;
+            _resultValue.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            _resultValue.isSnapshotStandby = isSnapshotStandby;
+            _resultValue.timeSnapshotStandbyEnabledTill = timeSnapshotStandbyEnabledTill;
             return _resultValue;
         }
     }

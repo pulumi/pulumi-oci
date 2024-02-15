@@ -43,9 +43,19 @@ import (
 //				},
 //				Hostname:          pulumi.Any(_var.Log_analytics_entity_hostname),
 //				ManagementAgentId: pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
-//				Properties:        pulumi.Any(_var.Log_analytics_entity_properties),
-//				SourceId:          pulumi.Any(oci_log_analytics_source.Test_source.Id),
-//				TimezoneRegion:    pulumi.Any(_var.Log_analytics_entity_timezone_region),
+//				Metadata: &loganalytics.LogAnalyticsEntityMetadataArgs{
+//					Items: loganalytics.LogAnalyticsEntityMetadataItemArray{
+//						&loganalytics.LogAnalyticsEntityMetadataItemArgs{
+//							Name:  pulumi.Any(_var.Log_analytics_entity_metadata_items_name),
+//							Type:  pulumi.Any(_var.Log_analytics_entity_metadata_items_type),
+//							Value: pulumi.Any(_var.Log_analytics_entity_metadata_items_value),
+//						},
+//					},
+//				},
+//				Properties:         pulumi.Any(_var.Log_analytics_entity_properties),
+//				SourceId:           pulumi.Any(oci_log_analytics_source.Test_source.Id),
+//				TimeLastDiscovered: pulumi.Any(_var.Log_analytics_entity_time_last_discovered),
+//				TimezoneRegion:     pulumi.Any(_var.Log_analytics_entity_timezone_region),
 //			})
 //			if err != nil {
 //				return err
@@ -92,6 +102,8 @@ type LogAnalyticsEntity struct {
 	ManagementAgentDisplayName pulumi.StringOutput `pulumi:"managementAgentDisplayName"`
 	// (Updatable) The OCID of the Management Agent.
 	ManagementAgentId pulumi.StringOutput `pulumi:"managementAgentId"`
+	// (Updatable) Details of Entity Metadata.
+	Metadata LogAnalyticsEntityMetadataOutput `pulumi:"metadata"`
 	// (Updatable) Log analytics entity name.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
@@ -104,6 +116,8 @@ type LogAnalyticsEntity struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+	TimeLastDiscovered pulumi.StringOutput `pulumi:"timeLastDiscovered"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) The timezone region of the log analytics entity.
@@ -176,6 +190,8 @@ type logAnalyticsEntityState struct {
 	ManagementAgentDisplayName *string `pulumi:"managementAgentDisplayName"`
 	// (Updatable) The OCID of the Management Agent.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
+	// (Updatable) Details of Entity Metadata.
+	Metadata *LogAnalyticsEntityMetadata `pulumi:"metadata"`
 	// (Updatable) Log analytics entity name.
 	Name *string `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
@@ -188,6 +204,8 @@ type logAnalyticsEntityState struct {
 	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+	TimeLastDiscovered *string `pulumi:"timeLastDiscovered"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The timezone region of the log analytics entity.
@@ -222,6 +240,8 @@ type LogAnalyticsEntityState struct {
 	ManagementAgentDisplayName pulumi.StringPtrInput
 	// (Updatable) The OCID of the Management Agent.
 	ManagementAgentId pulumi.StringPtrInput
+	// (Updatable) Details of Entity Metadata.
+	Metadata LogAnalyticsEntityMetadataPtrInput
 	// (Updatable) Log analytics entity name.
 	Name pulumi.StringPtrInput
 	// The Logging Analytics namespace used for the request.
@@ -234,6 +254,8 @@ type LogAnalyticsEntityState struct {
 	State pulumi.StringPtrInput
 	// The date and time the resource was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
+	// (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+	TimeLastDiscovered pulumi.StringPtrInput
 	// The date and time the resource was last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The timezone region of the log analytics entity.
@@ -262,6 +284,8 @@ type logAnalyticsEntityArgs struct {
 	Hostname *string `pulumi:"hostname"`
 	// (Updatable) The OCID of the Management Agent.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
+	// (Updatable) Details of Entity Metadata.
+	Metadata *LogAnalyticsEntityMetadata `pulumi:"metadata"`
 	// (Updatable) Log analytics entity name.
 	Name *string `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
@@ -270,6 +294,8 @@ type logAnalyticsEntityArgs struct {
 	Properties map[string]interface{} `pulumi:"properties"`
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
 	SourceId *string `pulumi:"sourceId"`
+	// (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+	TimeLastDiscovered *string `pulumi:"timeLastDiscovered"`
 	// (Updatable) The timezone region of the log analytics entity.
 	//
 	// ** IMPORTANT **
@@ -293,6 +319,8 @@ type LogAnalyticsEntityArgs struct {
 	Hostname pulumi.StringPtrInput
 	// (Updatable) The OCID of the Management Agent.
 	ManagementAgentId pulumi.StringPtrInput
+	// (Updatable) Details of Entity Metadata.
+	Metadata LogAnalyticsEntityMetadataPtrInput
 	// (Updatable) Log analytics entity name.
 	Name pulumi.StringPtrInput
 	// The Logging Analytics namespace used for the request.
@@ -301,6 +329,8 @@ type LogAnalyticsEntityArgs struct {
 	Properties pulumi.MapInput
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
 	SourceId pulumi.StringPtrInput
+	// (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+	TimeLastDiscovered pulumi.StringPtrInput
 	// (Updatable) The timezone region of the log analytics entity.
 	//
 	// ** IMPORTANT **
@@ -455,6 +485,11 @@ func (o LogAnalyticsEntityOutput) ManagementAgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.ManagementAgentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Details of Entity Metadata.
+func (o LogAnalyticsEntityOutput) Metadata() LogAnalyticsEntityMetadataOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) LogAnalyticsEntityMetadataOutput { return v.Metadata }).(LogAnalyticsEntityMetadataOutput)
+}
+
 // (Updatable) Log analytics entity name.
 func (o LogAnalyticsEntityOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
@@ -483,6 +518,11 @@ func (o LogAnalyticsEntityOutput) State() pulumi.StringOutput {
 // The date and time the resource was created, in the format defined by RFC3339.
 func (o LogAnalyticsEntityOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
+func (o LogAnalyticsEntityOutput) TimeLastDiscovered() pulumi.StringOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.TimeLastDiscovered }).(pulumi.StringOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.

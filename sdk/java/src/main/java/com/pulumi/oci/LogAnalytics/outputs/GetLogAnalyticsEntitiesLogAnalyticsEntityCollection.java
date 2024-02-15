@@ -11,9 +11,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollection {
+    /**
+     * @return An array of entity metadata.
+     * 
+     */
     private List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items;
 
     private GetLogAnalyticsEntitiesLogAnalyticsEntityCollection() {}
+    /**
+     * @return An array of entity metadata.
+     * 
+     */
     public List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items() {
         return this.items;
     }

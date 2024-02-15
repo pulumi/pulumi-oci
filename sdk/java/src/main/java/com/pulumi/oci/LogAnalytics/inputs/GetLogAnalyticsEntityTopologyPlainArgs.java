@@ -6,6 +6,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -28,6 +29,21 @@ public final class GetLogAnalyticsEntityTopologyPlainArgs extends com.pulumi.res
      */
     public String logAnalyticsEntityId() {
         return this.logAnalyticsEntityId;
+    }
+
+    /**
+     * A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format &#34;{name}:{value}:{type}&#34;.  All inputs are case-insensitive.
+     * 
+     */
+    @Import(name="metadataEquals")
+    private @Nullable List<String> metadataEquals;
+
+    /**
+     * @return A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format &#34;{name}:{value}:{type}&#34;.  All inputs are case-insensitive.
+     * 
+     */
+    public Optional<List<String>> metadataEquals() {
+        return Optional.ofNullable(this.metadataEquals);
     }
 
     /**
@@ -64,6 +80,7 @@ public final class GetLogAnalyticsEntityTopologyPlainArgs extends com.pulumi.res
 
     private GetLogAnalyticsEntityTopologyPlainArgs(GetLogAnalyticsEntityTopologyPlainArgs $) {
         this.logAnalyticsEntityId = $.logAnalyticsEntityId;
+        this.metadataEquals = $.metadataEquals;
         this.namespace = $.namespace;
         this.state = $.state;
     }
@@ -95,6 +112,27 @@ public final class GetLogAnalyticsEntityTopologyPlainArgs extends com.pulumi.res
         public Builder logAnalyticsEntityId(String logAnalyticsEntityId) {
             $.logAnalyticsEntityId = logAnalyticsEntityId;
             return this;
+        }
+
+        /**
+         * @param metadataEquals A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format &#34;{name}:{value}:{type}&#34;.  All inputs are case-insensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metadataEquals(@Nullable List<String> metadataEquals) {
+            $.metadataEquals = metadataEquals;
+            return this;
+        }
+
+        /**
+         * @param metadataEquals A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format &#34;{name}:{value}:{type}&#34;.  All inputs are case-insensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metadataEquals(String... metadataEquals) {
+            return metadataEquals(List.of(metadataEquals));
         }
 
         /**

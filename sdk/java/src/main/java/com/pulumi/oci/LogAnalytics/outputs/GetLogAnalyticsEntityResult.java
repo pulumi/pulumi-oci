@@ -5,9 +5,11 @@ package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityMetadata;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -80,6 +82,11 @@ public final class GetLogAnalyticsEntityResult {
      */
     private String managementAgentId;
     /**
+     * @return Details of entity metadata information.
+     * 
+     */
+    private List<GetLogAnalyticsEntityMetadata> metadatas;
+    /**
      * @return Log analytics entity name.
      * 
      */
@@ -105,6 +112,11 @@ public final class GetLogAnalyticsEntityResult {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The date and time the resource was last discovered, in the format defined by RFC3339.
+     * 
+     */
+    private String timeLastDiscovered;
     /**
      * @return The date and time the resource was last updated, in the format defined by RFC3339.
      * 
@@ -212,6 +224,13 @@ public final class GetLogAnalyticsEntityResult {
         return this.managementAgentId;
     }
     /**
+     * @return Details of entity metadata information.
+     * 
+     */
+    public List<GetLogAnalyticsEntityMetadata> metadatas() {
+        return this.metadatas;
+    }
+    /**
      * @return Log analytics entity name.
      * 
      */
@@ -248,6 +267,13 @@ public final class GetLogAnalyticsEntityResult {
      */
     public String timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * @return The date and time the resource was last discovered, in the format defined by RFC3339.
+     * 
+     */
+    public String timeLastDiscovered() {
+        return this.timeLastDiscovered;
     }
     /**
      * @return The date and time the resource was last updated, in the format defined by RFC3339.
@@ -287,12 +313,14 @@ public final class GetLogAnalyticsEntityResult {
         private String managementAgentCompartmentId;
         private String managementAgentDisplayName;
         private String managementAgentId;
+        private List<GetLogAnalyticsEntityMetadata> metadatas;
         private String name;
         private String namespace;
         private Map<String,Object> properties;
         private String sourceId;
         private String state;
         private String timeCreated;
+        private String timeLastDiscovered;
         private String timeUpdated;
         private String timezoneRegion;
         public Builder() {}
@@ -312,12 +340,14 @@ public final class GetLogAnalyticsEntityResult {
     	      this.managementAgentCompartmentId = defaults.managementAgentCompartmentId;
     	      this.managementAgentDisplayName = defaults.managementAgentDisplayName;
     	      this.managementAgentId = defaults.managementAgentId;
+    	      this.metadatas = defaults.metadatas;
     	      this.name = defaults.name;
     	      this.namespace = defaults.namespace;
     	      this.properties = defaults.properties;
     	      this.sourceId = defaults.sourceId;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeLastDiscovered = defaults.timeLastDiscovered;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.timezoneRegion = defaults.timezoneRegion;
         }
@@ -435,6 +465,17 @@ public final class GetLogAnalyticsEntityResult {
             return this;
         }
         @CustomType.Setter
+        public Builder metadatas(List<GetLogAnalyticsEntityMetadata> metadatas) {
+            if (metadatas == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityResult", "metadatas");
+            }
+            this.metadatas = metadatas;
+            return this;
+        }
+        public Builder metadatas(GetLogAnalyticsEntityMetadata... metadatas) {
+            return metadatas(List.of(metadatas));
+        }
+        @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
               throw new MissingRequiredPropertyException("GetLogAnalyticsEntityResult", "name");
@@ -483,6 +524,14 @@ public final class GetLogAnalyticsEntityResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeLastDiscovered(String timeLastDiscovered) {
+            if (timeLastDiscovered == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityResult", "timeLastDiscovered");
+            }
+            this.timeLastDiscovered = timeLastDiscovered;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             if (timeUpdated == null) {
               throw new MissingRequiredPropertyException("GetLogAnalyticsEntityResult", "timeUpdated");
@@ -514,12 +563,14 @@ public final class GetLogAnalyticsEntityResult {
             _resultValue.managementAgentCompartmentId = managementAgentCompartmentId;
             _resultValue.managementAgentDisplayName = managementAgentDisplayName;
             _resultValue.managementAgentId = managementAgentId;
+            _resultValue.metadatas = metadatas;
             _resultValue.name = name;
             _resultValue.namespace = namespace;
             _resultValue.properties = properties;
             _resultValue.sourceId = sourceId;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastDiscovered = timeLastDiscovered;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.timezoneRegion = timezoneRegion;
             return _resultValue;

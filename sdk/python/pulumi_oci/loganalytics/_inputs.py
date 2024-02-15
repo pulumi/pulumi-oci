@@ -10,6 +10,8 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'LogAnalyticsEntityMetadataArgs',
+    'LogAnalyticsEntityMetadataItemArgs',
     'LogAnalyticsImportCustomContentChangeListArgs',
     'LogAnalyticsObjectCollectionRuleOverrideArgs',
     'LogAnalyticsPreferencesManagementItemArgs',
@@ -31,6 +33,84 @@ __all__ = [
     'GetNamespaceStorageOverlappingRecallsFilterArgs',
     'GetNamespacesFilterArgs',
 ]
+
+@pulumi.input_type
+class LogAnalyticsEntityMetadataArgs:
+    def __init__(__self__, *,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]] items: (Updatable) An array of entity metadata details.
+        """
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]]:
+        """
+        (Updatable) An array of entity metadata details.
+        """
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]]):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class LogAnalyticsEntityMetadataItemArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
+        :param pulumi.Input[str] type: (Updatable) The metadata type.
+        :param pulumi.Input[str] value: (Updatable) The metadata value.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Log analytics entity name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The metadata type.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The metadata value.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
 
 @pulumi.input_type
 class LogAnalyticsImportCustomContentChangeListArgs:

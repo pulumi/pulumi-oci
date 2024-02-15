@@ -54,6 +54,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The target service to use for filtering.
+        /// </summary>
+        public readonly string TargetService;
+        /// <summary>
         /// The date and time the resource was created, in the format defined by RFC3339.
         /// </summary>
         public readonly string TimeCreated;
@@ -88,6 +92,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string state,
 
+            string targetService,
+
             string timeCreated,
 
             string timeLastExecuted,
@@ -104,6 +110,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             Kind = kind;
             LastExecutionStatus = lastExecutionStatus;
             State = state;
+            TargetService = targetService;
             TimeCreated = timeCreated;
             TimeLastExecuted = timeLastExecuted;
             TimeUpdated = timeUpdated;

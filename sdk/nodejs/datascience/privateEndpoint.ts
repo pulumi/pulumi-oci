@@ -125,6 +125,10 @@ export class PrivateEndpoint extends pulumi.CustomResource {
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -159,6 +163,7 @@ export class PrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subDomain"] = state ? state.subDomain : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
@@ -185,6 +190,7 @@ export class PrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["fqdn"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -253,6 +259,10 @@ export interface PrivateEndpointState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */

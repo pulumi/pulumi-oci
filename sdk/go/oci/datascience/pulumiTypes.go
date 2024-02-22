@@ -207,6 +207,238 @@ func (o JobJobConfigurationDetailsPtrOutput) MaximumRuntimeInMinutes() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
+type JobJobEnvironmentConfigurationDetails struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest *string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId *string `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType string `pulumi:"jobEnvironmentType"`
+}
+
+// JobJobEnvironmentConfigurationDetailsInput is an input type that accepts JobJobEnvironmentConfigurationDetailsArgs and JobJobEnvironmentConfigurationDetailsOutput values.
+// You can construct a concrete instance of `JobJobEnvironmentConfigurationDetailsInput` via:
+//
+//	JobJobEnvironmentConfigurationDetailsArgs{...}
+type JobJobEnvironmentConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToJobJobEnvironmentConfigurationDetailsOutput() JobJobEnvironmentConfigurationDetailsOutput
+	ToJobJobEnvironmentConfigurationDetailsOutputWithContext(context.Context) JobJobEnvironmentConfigurationDetailsOutput
+}
+
+type JobJobEnvironmentConfigurationDetailsArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringPtrInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringPtrInput `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType pulumi.StringInput `pulumi:"jobEnvironmentType"`
+}
+
+func (JobJobEnvironmentConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobJobEnvironmentConfigurationDetails)(nil)).Elem()
+}
+
+func (i JobJobEnvironmentConfigurationDetailsArgs) ToJobJobEnvironmentConfigurationDetailsOutput() JobJobEnvironmentConfigurationDetailsOutput {
+	return i.ToJobJobEnvironmentConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i JobJobEnvironmentConfigurationDetailsArgs) ToJobJobEnvironmentConfigurationDetailsOutputWithContext(ctx context.Context) JobJobEnvironmentConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobJobEnvironmentConfigurationDetailsOutput)
+}
+
+func (i JobJobEnvironmentConfigurationDetailsArgs) ToJobJobEnvironmentConfigurationDetailsPtrOutput() JobJobEnvironmentConfigurationDetailsPtrOutput {
+	return i.ToJobJobEnvironmentConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i JobJobEnvironmentConfigurationDetailsArgs) ToJobJobEnvironmentConfigurationDetailsPtrOutputWithContext(ctx context.Context) JobJobEnvironmentConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobJobEnvironmentConfigurationDetailsOutput).ToJobJobEnvironmentConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// JobJobEnvironmentConfigurationDetailsPtrInput is an input type that accepts JobJobEnvironmentConfigurationDetailsArgs, JobJobEnvironmentConfigurationDetailsPtr and JobJobEnvironmentConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `JobJobEnvironmentConfigurationDetailsPtrInput` via:
+//
+//	        JobJobEnvironmentConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type JobJobEnvironmentConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToJobJobEnvironmentConfigurationDetailsPtrOutput() JobJobEnvironmentConfigurationDetailsPtrOutput
+	ToJobJobEnvironmentConfigurationDetailsPtrOutputWithContext(context.Context) JobJobEnvironmentConfigurationDetailsPtrOutput
+}
+
+type jobJobEnvironmentConfigurationDetailsPtrType JobJobEnvironmentConfigurationDetailsArgs
+
+func JobJobEnvironmentConfigurationDetailsPtr(v *JobJobEnvironmentConfigurationDetailsArgs) JobJobEnvironmentConfigurationDetailsPtrInput {
+	return (*jobJobEnvironmentConfigurationDetailsPtrType)(v)
+}
+
+func (*jobJobEnvironmentConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobJobEnvironmentConfigurationDetails)(nil)).Elem()
+}
+
+func (i *jobJobEnvironmentConfigurationDetailsPtrType) ToJobJobEnvironmentConfigurationDetailsPtrOutput() JobJobEnvironmentConfigurationDetailsPtrOutput {
+	return i.ToJobJobEnvironmentConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *jobJobEnvironmentConfigurationDetailsPtrType) ToJobJobEnvironmentConfigurationDetailsPtrOutputWithContext(ctx context.Context) JobJobEnvironmentConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobJobEnvironmentConfigurationDetailsPtrOutput)
+}
+
+type JobJobEnvironmentConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (JobJobEnvironmentConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobJobEnvironmentConfigurationDetails)(nil)).Elem()
+}
+
+func (o JobJobEnvironmentConfigurationDetailsOutput) ToJobJobEnvironmentConfigurationDetailsOutput() JobJobEnvironmentConfigurationDetailsOutput {
+	return o
+}
+
+func (o JobJobEnvironmentConfigurationDetailsOutput) ToJobJobEnvironmentConfigurationDetailsOutputWithContext(ctx context.Context) JobJobEnvironmentConfigurationDetailsOutput {
+	return o
+}
+
+func (o JobJobEnvironmentConfigurationDetailsOutput) ToJobJobEnvironmentConfigurationDetailsPtrOutput() JobJobEnvironmentConfigurationDetailsPtrOutput {
+	return o.ToJobJobEnvironmentConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o JobJobEnvironmentConfigurationDetailsOutput) ToJobJobEnvironmentConfigurationDetailsPtrOutputWithContext(ctx context.Context) JobJobEnvironmentConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v JobJobEnvironmentConfigurationDetails) *JobJobEnvironmentConfigurationDetails {
+		return &v
+	}).(JobJobEnvironmentConfigurationDetailsPtrOutput)
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o JobJobEnvironmentConfigurationDetailsOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v JobJobEnvironmentConfigurationDetails) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o JobJobEnvironmentConfigurationDetailsOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v JobJobEnvironmentConfigurationDetails) []string { return v.Entrypoints }).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o JobJobEnvironmentConfigurationDetailsOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v JobJobEnvironmentConfigurationDetails) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o JobJobEnvironmentConfigurationDetailsOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobEnvironmentConfigurationDetails) *string { return v.ImageDigest }).(pulumi.StringPtrOutput)
+}
+
+// OCID of the container image signature
+func (o JobJobEnvironmentConfigurationDetailsOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobEnvironmentConfigurationDetails) *string { return v.ImageSignatureId }).(pulumi.StringPtrOutput)
+}
+
+// The environment configuration type used for job runtime.
+func (o JobJobEnvironmentConfigurationDetailsOutput) JobEnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v JobJobEnvironmentConfigurationDetails) string { return v.JobEnvironmentType }).(pulumi.StringOutput)
+}
+
+type JobJobEnvironmentConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (JobJobEnvironmentConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobJobEnvironmentConfigurationDetails)(nil)).Elem()
+}
+
+func (o JobJobEnvironmentConfigurationDetailsPtrOutput) ToJobJobEnvironmentConfigurationDetailsPtrOutput() JobJobEnvironmentConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o JobJobEnvironmentConfigurationDetailsPtrOutput) ToJobJobEnvironmentConfigurationDetailsPtrOutputWithContext(ctx context.Context) JobJobEnvironmentConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o JobJobEnvironmentConfigurationDetailsPtrOutput) Elem() JobJobEnvironmentConfigurationDetailsOutput {
+	return o.ApplyT(func(v *JobJobEnvironmentConfigurationDetails) JobJobEnvironmentConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret JobJobEnvironmentConfigurationDetails
+		return ret
+	}).(JobJobEnvironmentConfigurationDetailsOutput)
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o JobJobEnvironmentConfigurationDetailsPtrOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *JobJobEnvironmentConfigurationDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o JobJobEnvironmentConfigurationDetailsPtrOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *JobJobEnvironmentConfigurationDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o JobJobEnvironmentConfigurationDetailsPtrOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobJobEnvironmentConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Image
+	}).(pulumi.StringPtrOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o JobJobEnvironmentConfigurationDetailsPtrOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobJobEnvironmentConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageDigest
+	}).(pulumi.StringPtrOutput)
+}
+
+// OCID of the container image signature
+func (o JobJobEnvironmentConfigurationDetailsPtrOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobJobEnvironmentConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageSignatureId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The environment configuration type used for job runtime.
+func (o JobJobEnvironmentConfigurationDetailsPtrOutput) JobEnvironmentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobJobEnvironmentConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.JobEnvironmentType
+	}).(pulumi.StringPtrOutput)
+}
+
 type JobJobInfrastructureConfigurationDetails struct {
 	// (Updatable) The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
@@ -1123,6 +1355,238 @@ func (o JobRunJobConfigurationOverrideDetailsPtrOutput) MaximumRuntimeInMinutes(
 			return nil
 		}
 		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringPtrOutput)
+}
+
+type JobRunJobEnvironmentConfigurationOverrideDetails struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest *string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId *string `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType string `pulumi:"jobEnvironmentType"`
+}
+
+// JobRunJobEnvironmentConfigurationOverrideDetailsInput is an input type that accepts JobRunJobEnvironmentConfigurationOverrideDetailsArgs and JobRunJobEnvironmentConfigurationOverrideDetailsOutput values.
+// You can construct a concrete instance of `JobRunJobEnvironmentConfigurationOverrideDetailsInput` via:
+//
+//	JobRunJobEnvironmentConfigurationOverrideDetailsArgs{...}
+type JobRunJobEnvironmentConfigurationOverrideDetailsInput interface {
+	pulumi.Input
+
+	ToJobRunJobEnvironmentConfigurationOverrideDetailsOutput() JobRunJobEnvironmentConfigurationOverrideDetailsOutput
+	ToJobRunJobEnvironmentConfigurationOverrideDetailsOutputWithContext(context.Context) JobRunJobEnvironmentConfigurationOverrideDetailsOutput
+}
+
+type JobRunJobEnvironmentConfigurationOverrideDetailsArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringPtrInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringPtrInput `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType pulumi.StringInput `pulumi:"jobEnvironmentType"`
+}
+
+func (JobRunJobEnvironmentConfigurationOverrideDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobEnvironmentConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i JobRunJobEnvironmentConfigurationOverrideDetailsArgs) ToJobRunJobEnvironmentConfigurationOverrideDetailsOutput() JobRunJobEnvironmentConfigurationOverrideDetailsOutput {
+	return i.ToJobRunJobEnvironmentConfigurationOverrideDetailsOutputWithContext(context.Background())
+}
+
+func (i JobRunJobEnvironmentConfigurationOverrideDetailsArgs) ToJobRunJobEnvironmentConfigurationOverrideDetailsOutputWithContext(ctx context.Context) JobRunJobEnvironmentConfigurationOverrideDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobEnvironmentConfigurationOverrideDetailsOutput)
+}
+
+func (i JobRunJobEnvironmentConfigurationOverrideDetailsArgs) ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput() JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return i.ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i JobRunJobEnvironmentConfigurationOverrideDetailsArgs) ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobEnvironmentConfigurationOverrideDetailsOutput).ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(ctx)
+}
+
+// JobRunJobEnvironmentConfigurationOverrideDetailsPtrInput is an input type that accepts JobRunJobEnvironmentConfigurationOverrideDetailsArgs, JobRunJobEnvironmentConfigurationOverrideDetailsPtr and JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput values.
+// You can construct a concrete instance of `JobRunJobEnvironmentConfigurationOverrideDetailsPtrInput` via:
+//
+//	        JobRunJobEnvironmentConfigurationOverrideDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type JobRunJobEnvironmentConfigurationOverrideDetailsPtrInput interface {
+	pulumi.Input
+
+	ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput() JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput
+	ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(context.Context) JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput
+}
+
+type jobRunJobEnvironmentConfigurationOverrideDetailsPtrType JobRunJobEnvironmentConfigurationOverrideDetailsArgs
+
+func JobRunJobEnvironmentConfigurationOverrideDetailsPtr(v *JobRunJobEnvironmentConfigurationOverrideDetailsArgs) JobRunJobEnvironmentConfigurationOverrideDetailsPtrInput {
+	return (*jobRunJobEnvironmentConfigurationOverrideDetailsPtrType)(v)
+}
+
+func (*jobRunJobEnvironmentConfigurationOverrideDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobRunJobEnvironmentConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i *jobRunJobEnvironmentConfigurationOverrideDetailsPtrType) ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput() JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return i.ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *jobRunJobEnvironmentConfigurationOverrideDetailsPtrType) ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput)
+}
+
+type JobRunJobEnvironmentConfigurationOverrideDetailsOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobEnvironmentConfigurationOverrideDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobEnvironmentConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsOutput) ToJobRunJobEnvironmentConfigurationOverrideDetailsOutput() JobRunJobEnvironmentConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsOutput) ToJobRunJobEnvironmentConfigurationOverrideDetailsOutputWithContext(ctx context.Context) JobRunJobEnvironmentConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsOutput) ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput() JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return o.ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsOutput) ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v JobRunJobEnvironmentConfigurationOverrideDetails) *JobRunJobEnvironmentConfigurationOverrideDetails {
+		return &v
+	}).(JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput)
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v JobRunJobEnvironmentConfigurationOverrideDetails) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v JobRunJobEnvironmentConfigurationOverrideDetails) []string { return v.Entrypoints }).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v JobRunJobEnvironmentConfigurationOverrideDetails) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobEnvironmentConfigurationOverrideDetails) *string { return v.ImageDigest }).(pulumi.StringPtrOutput)
+}
+
+// OCID of the container image signature
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobEnvironmentConfigurationOverrideDetails) *string { return v.ImageSignatureId }).(pulumi.StringPtrOutput)
+}
+
+// The environment configuration type used for job runtime.
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsOutput) JobEnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v JobRunJobEnvironmentConfigurationOverrideDetails) string { return v.JobEnvironmentType }).(pulumi.StringOutput)
+}
+
+type JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobRunJobEnvironmentConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput) ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput() JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput) ToJobRunJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput) Elem() JobRunJobEnvironmentConfigurationOverrideDetailsOutput {
+	return o.ApplyT(func(v *JobRunJobEnvironmentConfigurationOverrideDetails) JobRunJobEnvironmentConfigurationOverrideDetails {
+		if v != nil {
+			return *v
+		}
+		var ret JobRunJobEnvironmentConfigurationOverrideDetails
+		return ret
+	}).(JobRunJobEnvironmentConfigurationOverrideDetailsOutput)
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *JobRunJobEnvironmentConfigurationOverrideDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *JobRunJobEnvironmentConfigurationOverrideDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobEnvironmentConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Image
+	}).(pulumi.StringPtrOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobEnvironmentConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageDigest
+	}).(pulumi.StringPtrOutput)
+}
+
+// OCID of the container image signature
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobEnvironmentConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageSignatureId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The environment configuration type used for job runtime.
+func (o JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput) JobEnvironmentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobEnvironmentConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.JobEnvironmentType
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -8000,6 +8464,148 @@ func (o GetJobJobConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetJob
 	}).(GetJobJobConfigurationDetailOutput)
 }
 
+type GetJobJobEnvironmentConfigurationDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType string `pulumi:"jobEnvironmentType"`
+}
+
+// GetJobJobEnvironmentConfigurationDetailInput is an input type that accepts GetJobJobEnvironmentConfigurationDetailArgs and GetJobJobEnvironmentConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetJobJobEnvironmentConfigurationDetailInput` via:
+//
+//	GetJobJobEnvironmentConfigurationDetailArgs{...}
+type GetJobJobEnvironmentConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetJobJobEnvironmentConfigurationDetailOutput() GetJobJobEnvironmentConfigurationDetailOutput
+	ToGetJobJobEnvironmentConfigurationDetailOutputWithContext(context.Context) GetJobJobEnvironmentConfigurationDetailOutput
+}
+
+type GetJobJobEnvironmentConfigurationDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType pulumi.StringInput `pulumi:"jobEnvironmentType"`
+}
+
+func (GetJobJobEnvironmentConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobJobEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetJobJobEnvironmentConfigurationDetailArgs) ToGetJobJobEnvironmentConfigurationDetailOutput() GetJobJobEnvironmentConfigurationDetailOutput {
+	return i.ToGetJobJobEnvironmentConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetJobJobEnvironmentConfigurationDetailArgs) ToGetJobJobEnvironmentConfigurationDetailOutputWithContext(ctx context.Context) GetJobJobEnvironmentConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobJobEnvironmentConfigurationDetailOutput)
+}
+
+// GetJobJobEnvironmentConfigurationDetailArrayInput is an input type that accepts GetJobJobEnvironmentConfigurationDetailArray and GetJobJobEnvironmentConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetJobJobEnvironmentConfigurationDetailArrayInput` via:
+//
+//	GetJobJobEnvironmentConfigurationDetailArray{ GetJobJobEnvironmentConfigurationDetailArgs{...} }
+type GetJobJobEnvironmentConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetJobJobEnvironmentConfigurationDetailArrayOutput() GetJobJobEnvironmentConfigurationDetailArrayOutput
+	ToGetJobJobEnvironmentConfigurationDetailArrayOutputWithContext(context.Context) GetJobJobEnvironmentConfigurationDetailArrayOutput
+}
+
+type GetJobJobEnvironmentConfigurationDetailArray []GetJobJobEnvironmentConfigurationDetailInput
+
+func (GetJobJobEnvironmentConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobJobEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetJobJobEnvironmentConfigurationDetailArray) ToGetJobJobEnvironmentConfigurationDetailArrayOutput() GetJobJobEnvironmentConfigurationDetailArrayOutput {
+	return i.ToGetJobJobEnvironmentConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobJobEnvironmentConfigurationDetailArray) ToGetJobJobEnvironmentConfigurationDetailArrayOutputWithContext(ctx context.Context) GetJobJobEnvironmentConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobJobEnvironmentConfigurationDetailArrayOutput)
+}
+
+type GetJobJobEnvironmentConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetJobJobEnvironmentConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobJobEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetJobJobEnvironmentConfigurationDetailOutput) ToGetJobJobEnvironmentConfigurationDetailOutput() GetJobJobEnvironmentConfigurationDetailOutput {
+	return o
+}
+
+func (o GetJobJobEnvironmentConfigurationDetailOutput) ToGetJobJobEnvironmentConfigurationDetailOutputWithContext(ctx context.Context) GetJobJobEnvironmentConfigurationDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetJobJobEnvironmentConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobJobEnvironmentConfigurationDetail) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetJobJobEnvironmentConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobJobEnvironmentConfigurationDetail) []string { return v.Entrypoints }).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o GetJobJobEnvironmentConfigurationDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobEnvironmentConfigurationDetail) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetJobJobEnvironmentConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobEnvironmentConfigurationDetail) string { return v.ImageDigest }).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetJobJobEnvironmentConfigurationDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobEnvironmentConfigurationDetail) string { return v.ImageSignatureId }).(pulumi.StringOutput)
+}
+
+// The environment configuration type used for job runtime.
+func (o GetJobJobEnvironmentConfigurationDetailOutput) JobEnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobEnvironmentConfigurationDetail) string { return v.JobEnvironmentType }).(pulumi.StringOutput)
+}
+
+type GetJobJobEnvironmentConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobJobEnvironmentConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobJobEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetJobJobEnvironmentConfigurationDetailArrayOutput) ToGetJobJobEnvironmentConfigurationDetailArrayOutput() GetJobJobEnvironmentConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetJobJobEnvironmentConfigurationDetailArrayOutput) ToGetJobJobEnvironmentConfigurationDetailArrayOutputWithContext(ctx context.Context) GetJobJobEnvironmentConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetJobJobEnvironmentConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetJobJobEnvironmentConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobJobEnvironmentConfigurationDetail {
+		return vs[0].([]GetJobJobEnvironmentConfigurationDetail)[vs[1].(int)]
+	}).(GetJobJobEnvironmentConfigurationDetailOutput)
+}
+
 type GetJobJobInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
@@ -8647,6 +9253,148 @@ func (o GetJobRunJobConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunJobConfigurationOverrideDetail {
 		return vs[0].([]GetJobRunJobConfigurationOverrideDetail)[vs[1].(int)]
 	}).(GetJobRunJobConfigurationOverrideDetailOutput)
+}
+
+type GetJobRunJobEnvironmentConfigurationOverrideDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType string `pulumi:"jobEnvironmentType"`
+}
+
+// GetJobRunJobEnvironmentConfigurationOverrideDetailInput is an input type that accepts GetJobRunJobEnvironmentConfigurationOverrideDetailArgs and GetJobRunJobEnvironmentConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetJobRunJobEnvironmentConfigurationOverrideDetailInput` via:
+//
+//	GetJobRunJobEnvironmentConfigurationOverrideDetailArgs{...}
+type GetJobRunJobEnvironmentConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobEnvironmentConfigurationOverrideDetailOutput() GetJobRunJobEnvironmentConfigurationOverrideDetailOutput
+	ToGetJobRunJobEnvironmentConfigurationOverrideDetailOutputWithContext(context.Context) GetJobRunJobEnvironmentConfigurationOverrideDetailOutput
+}
+
+type GetJobRunJobEnvironmentConfigurationOverrideDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType pulumi.StringInput `pulumi:"jobEnvironmentType"`
+}
+
+func (GetJobRunJobEnvironmentConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetJobRunJobEnvironmentConfigurationOverrideDetailArgs) ToGetJobRunJobEnvironmentConfigurationOverrideDetailOutput() GetJobRunJobEnvironmentConfigurationOverrideDetailOutput {
+	return i.ToGetJobRunJobEnvironmentConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobEnvironmentConfigurationOverrideDetailArgs) ToGetJobRunJobEnvironmentConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetJobRunJobEnvironmentConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobEnvironmentConfigurationOverrideDetailOutput)
+}
+
+// GetJobRunJobEnvironmentConfigurationOverrideDetailArrayInput is an input type that accepts GetJobRunJobEnvironmentConfigurationOverrideDetailArray and GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetJobRunJobEnvironmentConfigurationOverrideDetailArrayInput` via:
+//
+//	GetJobRunJobEnvironmentConfigurationOverrideDetailArray{ GetJobRunJobEnvironmentConfigurationOverrideDetailArgs{...} }
+type GetJobRunJobEnvironmentConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput() GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput
+	ToGetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput
+}
+
+type GetJobRunJobEnvironmentConfigurationOverrideDetailArray []GetJobRunJobEnvironmentConfigurationOverrideDetailInput
+
+func (GetJobRunJobEnvironmentConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetJobRunJobEnvironmentConfigurationOverrideDetailArray) ToGetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput() GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return i.ToGetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobEnvironmentConfigurationOverrideDetailArray) ToGetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput)
+}
+
+type GetJobRunJobEnvironmentConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobEnvironmentConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetJobRunJobEnvironmentConfigurationOverrideDetailOutput) ToGetJobRunJobEnvironmentConfigurationOverrideDetailOutput() GetJobRunJobEnvironmentConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetJobRunJobEnvironmentConfigurationOverrideDetailOutput) ToGetJobRunJobEnvironmentConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetJobRunJobEnvironmentConfigurationOverrideDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetJobRunJobEnvironmentConfigurationOverrideDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobRunJobEnvironmentConfigurationOverrideDetail) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetJobRunJobEnvironmentConfigurationOverrideDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobRunJobEnvironmentConfigurationOverrideDetail) []string { return v.Entrypoints }).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o GetJobRunJobEnvironmentConfigurationOverrideDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobEnvironmentConfigurationOverrideDetail) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetJobRunJobEnvironmentConfigurationOverrideDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobEnvironmentConfigurationOverrideDetail) string { return v.ImageDigest }).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetJobRunJobEnvironmentConfigurationOverrideDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobEnvironmentConfigurationOverrideDetail) string { return v.ImageSignatureId }).(pulumi.StringOutput)
+}
+
+// The environment configuration type used for job runtime.
+func (o GetJobRunJobEnvironmentConfigurationOverrideDetailOutput) JobEnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobEnvironmentConfigurationOverrideDetail) string { return v.JobEnvironmentType }).(pulumi.StringOutput)
+}
+
+type GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput) ToGetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput() GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput) ToGetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetJobRunJobEnvironmentConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunJobEnvironmentConfigurationOverrideDetail {
+		return vs[0].([]GetJobRunJobEnvironmentConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetJobRunJobEnvironmentConfigurationOverrideDetailOutput)
 }
 
 type GetJobRunJobInfrastructureConfigurationDetail struct {
@@ -9404,6 +10152,8 @@ type GetJobRunsJobRun struct {
 	Id string `pulumi:"id"`
 	// The job configuration details
 	JobConfigurationOverrideDetails []GetJobRunsJobRunJobConfigurationOverrideDetail `pulumi:"jobConfigurationOverrideDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails []GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
 	JobId string `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
@@ -9455,6 +10205,8 @@ type GetJobRunsJobRunArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The job configuration details
 	JobConfigurationOverrideDetails GetJobRunsJobRunJobConfigurationOverrideDetailArrayInput `pulumi:"jobConfigurationOverrideDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayInput `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
 	JobId pulumi.StringInput `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
@@ -9569,6 +10321,13 @@ func (o GetJobRunsJobRunOutput) JobConfigurationOverrideDetails() GetJobRunsJobR
 	return o.ApplyT(func(v GetJobRunsJobRun) []GetJobRunsJobRunJobConfigurationOverrideDetail {
 		return v.JobConfigurationOverrideDetails
 	}).(GetJobRunsJobRunJobConfigurationOverrideDetailArrayOutput)
+}
+
+// Environment configuration to capture job runtime dependencies.
+func (o GetJobRunsJobRunOutput) JobEnvironmentConfigurationOverrideDetails() GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetJobRunsJobRun) []GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail {
+		return v.JobEnvironmentConfigurationOverrideDetails
+	}).(GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
@@ -9776,6 +10535,148 @@ func (o GetJobRunsJobRunJobConfigurationOverrideDetailArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunsJobRunJobConfigurationOverrideDetail {
 		return vs[0].([]GetJobRunsJobRunJobConfigurationOverrideDetail)[vs[1].(int)]
 	}).(GetJobRunsJobRunJobConfigurationOverrideDetailOutput)
+}
+
+type GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType string `pulumi:"jobEnvironmentType"`
+}
+
+// GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailInput is an input type that accepts GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArgs and GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailInput` via:
+//
+//	GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArgs{...}
+type GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput() GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput
+	ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutputWithContext(context.Context) GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput
+}
+
+type GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType pulumi.StringInput `pulumi:"jobEnvironmentType"`
+}
+
+func (GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArgs) ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput() GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput {
+	return i.ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArgs) ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput)
+}
+
+// GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayInput is an input type that accepts GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArray and GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayInput` via:
+//
+//	GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArray{ GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArgs{...} }
+type GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput() GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput
+	ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput
+}
+
+type GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArray []GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailInput
+
+func (GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArray) ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput() GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return i.ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArray) ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput)
+}
+
+type GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput) ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput() GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput) ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail) []string { return v.Entrypoints }).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail) string { return v.ImageDigest }).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail) string { return v.ImageSignatureId }).(pulumi.StringOutput)
+}
+
+// The environment configuration type used for job runtime.
+func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput) JobEnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail) string { return v.JobEnvironmentType }).(pulumi.StringOutput)
+}
+
+type GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput) ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput() GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput) ToGetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail {
+		return vs[0].([]GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput)
 }
 
 type GetJobRunsJobRunJobInfrastructureConfigurationDetail struct {
@@ -10778,6 +11679,8 @@ type GetJobsJob struct {
 	JobArtifact string `pulumi:"jobArtifact"`
 	// The job configuration details
 	JobConfigurationDetails []GetJobsJobJobConfigurationDetail `pulumi:"jobConfigurationDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationDetails []GetJobsJobJobEnvironmentConfigurationDetail `pulumi:"jobEnvironmentConfigurationDetails"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails []GetJobsJobJobInfrastructureConfigurationDetail `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
@@ -10829,6 +11732,8 @@ type GetJobsJobArgs struct {
 	JobArtifact pulumi.StringInput `pulumi:"jobArtifact"`
 	// The job configuration details
 	JobConfigurationDetails GetJobsJobJobConfigurationDetailArrayInput `pulumi:"jobConfigurationDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationDetails GetJobsJobJobEnvironmentConfigurationDetailArrayInput `pulumi:"jobEnvironmentConfigurationDetails"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails GetJobsJobJobInfrastructureConfigurationDetailArrayInput `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
@@ -10962,6 +11867,13 @@ func (o GetJobsJobOutput) JobArtifact() pulumi.StringOutput {
 // The job configuration details
 func (o GetJobsJobOutput) JobConfigurationDetails() GetJobsJobJobConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetJobsJob) []GetJobsJobJobConfigurationDetail { return v.JobConfigurationDetails }).(GetJobsJobJobConfigurationDetailArrayOutput)
+}
+
+// Environment configuration to capture job runtime dependencies.
+func (o GetJobsJobOutput) JobEnvironmentConfigurationDetails() GetJobsJobJobEnvironmentConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetJobsJob) []GetJobsJobJobEnvironmentConfigurationDetail {
+		return v.JobEnvironmentConfigurationDetails
+	}).(GetJobsJobJobEnvironmentConfigurationDetailArrayOutput)
 }
 
 // The job infrastructure configuration details (shape, block storage, etc.)
@@ -11145,6 +12057,148 @@ func (o GetJobsJobJobConfigurationDetailArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobJobConfigurationDetail {
 		return vs[0].([]GetJobsJobJobConfigurationDetail)[vs[1].(int)]
 	}).(GetJobsJobJobConfigurationDetailOutput)
+}
+
+type GetJobsJobJobEnvironmentConfigurationDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType string `pulumi:"jobEnvironmentType"`
+}
+
+// GetJobsJobJobEnvironmentConfigurationDetailInput is an input type that accepts GetJobsJobJobEnvironmentConfigurationDetailArgs and GetJobsJobJobEnvironmentConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetJobsJobJobEnvironmentConfigurationDetailInput` via:
+//
+//	GetJobsJobJobEnvironmentConfigurationDetailArgs{...}
+type GetJobsJobJobEnvironmentConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetJobsJobJobEnvironmentConfigurationDetailOutput() GetJobsJobJobEnvironmentConfigurationDetailOutput
+	ToGetJobsJobJobEnvironmentConfigurationDetailOutputWithContext(context.Context) GetJobsJobJobEnvironmentConfigurationDetailOutput
+}
+
+type GetJobsJobJobEnvironmentConfigurationDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType pulumi.StringInput `pulumi:"jobEnvironmentType"`
+}
+
+func (GetJobsJobJobEnvironmentConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobJobEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetJobsJobJobEnvironmentConfigurationDetailArgs) ToGetJobsJobJobEnvironmentConfigurationDetailOutput() GetJobsJobJobEnvironmentConfigurationDetailOutput {
+	return i.ToGetJobsJobJobEnvironmentConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobJobEnvironmentConfigurationDetailArgs) ToGetJobsJobJobEnvironmentConfigurationDetailOutputWithContext(ctx context.Context) GetJobsJobJobEnvironmentConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobJobEnvironmentConfigurationDetailOutput)
+}
+
+// GetJobsJobJobEnvironmentConfigurationDetailArrayInput is an input type that accepts GetJobsJobJobEnvironmentConfigurationDetailArray and GetJobsJobJobEnvironmentConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetJobsJobJobEnvironmentConfigurationDetailArrayInput` via:
+//
+//	GetJobsJobJobEnvironmentConfigurationDetailArray{ GetJobsJobJobEnvironmentConfigurationDetailArgs{...} }
+type GetJobsJobJobEnvironmentConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetJobsJobJobEnvironmentConfigurationDetailArrayOutput() GetJobsJobJobEnvironmentConfigurationDetailArrayOutput
+	ToGetJobsJobJobEnvironmentConfigurationDetailArrayOutputWithContext(context.Context) GetJobsJobJobEnvironmentConfigurationDetailArrayOutput
+}
+
+type GetJobsJobJobEnvironmentConfigurationDetailArray []GetJobsJobJobEnvironmentConfigurationDetailInput
+
+func (GetJobsJobJobEnvironmentConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobJobEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetJobsJobJobEnvironmentConfigurationDetailArray) ToGetJobsJobJobEnvironmentConfigurationDetailArrayOutput() GetJobsJobJobEnvironmentConfigurationDetailArrayOutput {
+	return i.ToGetJobsJobJobEnvironmentConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobJobEnvironmentConfigurationDetailArray) ToGetJobsJobJobEnvironmentConfigurationDetailArrayOutputWithContext(ctx context.Context) GetJobsJobJobEnvironmentConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobJobEnvironmentConfigurationDetailArrayOutput)
+}
+
+type GetJobsJobJobEnvironmentConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobJobEnvironmentConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobJobEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetJobsJobJobEnvironmentConfigurationDetailOutput) ToGetJobsJobJobEnvironmentConfigurationDetailOutput() GetJobsJobJobEnvironmentConfigurationDetailOutput {
+	return o
+}
+
+func (o GetJobsJobJobEnvironmentConfigurationDetailOutput) ToGetJobsJobJobEnvironmentConfigurationDetailOutputWithContext(ctx context.Context) GetJobsJobJobEnvironmentConfigurationDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetJobsJobJobEnvironmentConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobsJobJobEnvironmentConfigurationDetail) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetJobsJobJobEnvironmentConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobsJobJobEnvironmentConfigurationDetail) []string { return v.Entrypoints }).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o GetJobsJobJobEnvironmentConfigurationDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobEnvironmentConfigurationDetail) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetJobsJobJobEnvironmentConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobEnvironmentConfigurationDetail) string { return v.ImageDigest }).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetJobsJobJobEnvironmentConfigurationDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobEnvironmentConfigurationDetail) string { return v.ImageSignatureId }).(pulumi.StringOutput)
+}
+
+// The environment configuration type used for job runtime.
+func (o GetJobsJobJobEnvironmentConfigurationDetailOutput) JobEnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobEnvironmentConfigurationDetail) string { return v.JobEnvironmentType }).(pulumi.StringOutput)
+}
+
+type GetJobsJobJobEnvironmentConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobJobEnvironmentConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobJobEnvironmentConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetJobsJobJobEnvironmentConfigurationDetailArrayOutput) ToGetJobsJobJobEnvironmentConfigurationDetailArrayOutput() GetJobsJobJobEnvironmentConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetJobsJobJobEnvironmentConfigurationDetailArrayOutput) ToGetJobsJobJobEnvironmentConfigurationDetailArrayOutputWithContext(ctx context.Context) GetJobsJobJobEnvironmentConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetJobsJobJobEnvironmentConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetJobsJobJobEnvironmentConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobJobEnvironmentConfigurationDetail {
+		return vs[0].([]GetJobsJobJobEnvironmentConfigurationDetail)[vs[1].(int)]
+	}).(GetJobsJobJobEnvironmentConfigurationDetailOutput)
 }
 
 type GetJobsJobJobInfrastructureConfigurationDetail struct {
@@ -14803,6 +15857,8 @@ type GetModelVersionSetsModelVersionSet struct {
 	ProjectId string `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -14839,6 +15895,8 @@ type GetModelVersionSetsModelVersionSetArgs struct {
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -14939,6 +15997,11 @@ func (o GetModelVersionSetsModelVersionSetOutput) ProjectId() pulumi.StringOutpu
 // <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 func (o GetModelVersionSetsModelVersionSetOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetModelVersionSetsModelVersionSetOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -22857,6 +23920,8 @@ type GetPrivateEndpointsDataSciencePrivateEndpoint struct {
 	SubDomain string `pulumi:"subDomain"`
 	// The OCID of a subnet.
 	SubnetId string `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -22902,6 +23967,8 @@ type GetPrivateEndpointsDataSciencePrivateEndpointArgs struct {
 	SubDomain pulumi.StringInput `pulumi:"subDomain"`
 	// The OCID of a subnet.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -23026,6 +24093,11 @@ func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) SubDomain() pulumi.
 // The OCID of a subnet.
 func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -23287,6 +24359,8 @@ type GetProjectsProject struct {
 	Id string `pulumi:"id"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -23319,6 +24393,8 @@ type GetProjectsProjectArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -23414,6 +24490,11 @@ func (o GetProjectsProjectOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProjectsProject) string { return v.State }).(pulumi.StringOutput)
 }
 
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetProjectsProjectOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetProjectsProject) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 func (o GetProjectsProjectOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProjectsProject) string { return v.TimeCreated }).(pulumi.StringOutput)
@@ -23442,6 +24523,8 @@ func (o GetProjectsProjectArrayOutput) Index(i pulumi.IntInput) GetProjectsProje
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobConfigurationDetailsInput)(nil)).Elem(), JobJobConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobConfigurationDetailsPtrInput)(nil)).Elem(), JobJobConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobJobEnvironmentConfigurationDetailsInput)(nil)).Elem(), JobJobEnvironmentConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobJobEnvironmentConfigurationDetailsPtrInput)(nil)).Elem(), JobJobEnvironmentConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsPtrInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{})
@@ -23452,6 +24535,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), JobJobStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobConfigurationOverrideDetailsInput)(nil)).Elem(), JobRunJobConfigurationOverrideDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobConfigurationOverrideDetailsPtrInput)(nil)).Elem(), JobRunJobConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobEnvironmentConfigurationOverrideDetailsInput)(nil)).Elem(), JobRunJobEnvironmentConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobEnvironmentConfigurationOverrideDetailsPtrInput)(nil)).Elem(), JobRunJobEnvironmentConfigurationOverrideDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
@@ -23537,6 +24622,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFastLaunchJobConfigsFilterArrayInput)(nil)).Elem(), GetFastLaunchJobConfigsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobConfigurationDetailInput)(nil)).Elem(), GetJobJobConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobConfigurationDetailArrayInput)(nil)).Elem(), GetJobJobConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobEnvironmentConfigurationDetailInput)(nil)).Elem(), GetJobJobEnvironmentConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobEnvironmentConfigurationDetailArrayInput)(nil)).Elem(), GetJobJobEnvironmentConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
@@ -23547,6 +24634,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetJobJobStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobConfigurationOverrideDetailInput)(nil)).Elem(), GetJobRunJobConfigurationOverrideDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetJobRunJobConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobEnvironmentConfigurationOverrideDetailInput)(nil)).Elem(), GetJobRunJobEnvironmentConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobEnvironmentConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetJobRunJobEnvironmentConfigurationOverrideDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
@@ -23563,6 +24652,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunArrayInput)(nil)).Elem(), GetJobRunsJobRunArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobConfigurationOverrideDetailInput)(nil)).Elem(), GetJobRunsJobRunJobConfigurationOverrideDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunJobConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailInput)(nil)).Elem(), GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
@@ -23583,6 +24674,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobArrayInput)(nil)).Elem(), GetJobsJobArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobConfigurationDetailInput)(nil)).Elem(), GetJobsJobJobConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobConfigurationDetailArrayInput)(nil)).Elem(), GetJobsJobJobConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobEnvironmentConfigurationDetailInput)(nil)).Elem(), GetJobsJobJobEnvironmentConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobEnvironmentConfigurationDetailArrayInput)(nil)).Elem(), GetJobsJobJobEnvironmentConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
@@ -23773,6 +24866,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectArrayInput)(nil)).Elem(), GetProjectsProjectArray{})
 	pulumi.RegisterOutputType(JobJobConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(JobJobConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(JobJobEnvironmentConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(JobJobEnvironmentConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutput{})
@@ -23783,6 +24878,8 @@ func init() {
 	pulumi.RegisterOutputType(JobJobStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(JobRunJobConfigurationOverrideDetailsOutput{})
 	pulumi.RegisterOutputType(JobRunJobConfigurationOverrideDetailsPtrOutput{})
+	pulumi.RegisterOutputType(JobRunJobEnvironmentConfigurationOverrideDetailsOutput{})
+	pulumi.RegisterOutputType(JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
@@ -23868,6 +24965,8 @@ func init() {
 	pulumi.RegisterOutputType(GetFastLaunchJobConfigsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetJobJobConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetJobJobConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobJobEnvironmentConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetJobJobEnvironmentConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
@@ -23878,6 +24977,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobJobStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobConfigurationOverrideDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobEnvironmentConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
@@ -23894,6 +24995,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobRunsJobRunArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobConfigurationOverrideDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
@@ -23914,6 +25017,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobsJobArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobsJobJobEnvironmentConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetJobsJobJobEnvironmentConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})

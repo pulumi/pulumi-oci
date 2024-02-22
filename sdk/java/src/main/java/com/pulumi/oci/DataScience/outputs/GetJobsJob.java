@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetJobsJobJobEnvironmentConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobInfrastructureConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobLogConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobStorageMountConfigurationDetailsList;
@@ -65,6 +66,11 @@ public final class GetJobsJob {
      * 
      */
     private List<GetJobsJobJobConfigurationDetail> jobConfigurationDetails;
+    /**
+     * @return Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    private List<GetJobsJobJobEnvironmentConfigurationDetail> jobEnvironmentConfigurationDetails;
     /**
      * @return The job infrastructure configuration details (shape, block storage, etc.)
      * 
@@ -180,6 +186,13 @@ public final class GetJobsJob {
         return this.jobConfigurationDetails;
     }
     /**
+     * @return Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    public List<GetJobsJobJobEnvironmentConfigurationDetail> jobEnvironmentConfigurationDetails() {
+        return this.jobEnvironmentConfigurationDetails;
+    }
+    /**
      * @return The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
@@ -253,6 +266,7 @@ public final class GetJobsJob {
         private String id;
         private String jobArtifact;
         private List<GetJobsJobJobConfigurationDetail> jobConfigurationDetails;
+        private List<GetJobsJobJobEnvironmentConfigurationDetail> jobEnvironmentConfigurationDetails;
         private List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
         private List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails;
         private List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
@@ -278,6 +292,7 @@ public final class GetJobsJob {
     	      this.id = defaults.id;
     	      this.jobArtifact = defaults.jobArtifact;
     	      this.jobConfigurationDetails = defaults.jobConfigurationDetails;
+    	      this.jobEnvironmentConfigurationDetails = defaults.jobEnvironmentConfigurationDetails;
     	      this.jobInfrastructureConfigurationDetails = defaults.jobInfrastructureConfigurationDetails;
     	      this.jobLogConfigurationDetails = defaults.jobLogConfigurationDetails;
     	      this.jobStorageMountConfigurationDetailsLists = defaults.jobStorageMountConfigurationDetailsLists;
@@ -411,6 +426,17 @@ public final class GetJobsJob {
             return jobConfigurationDetails(List.of(jobConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder jobEnvironmentConfigurationDetails(List<GetJobsJobJobEnvironmentConfigurationDetail> jobEnvironmentConfigurationDetails) {
+            if (jobEnvironmentConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "jobEnvironmentConfigurationDetails");
+            }
+            this.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
+            return this;
+        }
+        public Builder jobEnvironmentConfigurationDetails(GetJobsJobJobEnvironmentConfigurationDetail... jobEnvironmentConfigurationDetails) {
+            return jobEnvironmentConfigurationDetails(List.of(jobEnvironmentConfigurationDetails));
+        }
+        @CustomType.Setter
         public Builder jobInfrastructureConfigurationDetails(List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails) {
             if (jobInfrastructureConfigurationDetails == null) {
               throw new MissingRequiredPropertyException("GetJobsJob", "jobInfrastructureConfigurationDetails");
@@ -492,6 +518,7 @@ public final class GetJobsJob {
             _resultValue.id = id;
             _resultValue.jobArtifact = jobArtifact;
             _resultValue.jobConfigurationDetails = jobConfigurationDetails;
+            _resultValue.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
             _resultValue.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             _resultValue.jobLogConfigurationDetails = jobLogConfigurationDetails;
             _resultValue.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;

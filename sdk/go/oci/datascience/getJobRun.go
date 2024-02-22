@@ -73,6 +73,8 @@ type LookupJobRunResult struct {
 	Id string `pulumi:"id"`
 	// The job configuration details
 	JobConfigurationOverrideDetails []GetJobRunJobConfigurationOverrideDetail `pulumi:"jobConfigurationOverrideDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails []GetJobRunJobEnvironmentConfigurationOverrideDetail `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
 	JobId string `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
@@ -175,6 +177,13 @@ func (o LookupJobRunResultOutput) JobConfigurationOverrideDetails() GetJobRunJob
 	return o.ApplyT(func(v LookupJobRunResult) []GetJobRunJobConfigurationOverrideDetail {
 		return v.JobConfigurationOverrideDetails
 	}).(GetJobRunJobConfigurationOverrideDetailArrayOutput)
+}
+
+// Environment configuration to capture job runtime dependencies.
+func (o LookupJobRunResultOutput) JobEnvironmentConfigurationOverrideDetails() GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v LookupJobRunResult) []GetJobRunJobEnvironmentConfigurationOverrideDetail {
+		return v.JobEnvironmentConfigurationOverrideDetails
+	}).(GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.

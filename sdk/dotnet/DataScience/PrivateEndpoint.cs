@@ -140,6 +140,12 @@ namespace Pulumi.Oci.DataScience
         public Output<string> SubnetId { get; private set; } = null!;
 
         /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
@@ -380,6 +386,18 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<object>? _systemTags;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<object> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`

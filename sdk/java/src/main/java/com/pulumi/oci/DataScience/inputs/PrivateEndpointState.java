@@ -220,6 +220,21 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,Object>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
@@ -265,6 +280,7 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
         this.state = $.state;
         this.subDomain = $.subDomain;
         this.subnetId = $.subnetId;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -574,6 +590,27 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,Object>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,Object> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

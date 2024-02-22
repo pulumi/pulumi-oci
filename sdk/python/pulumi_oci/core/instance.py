@@ -116,7 +116,7 @@ class InstanceArgs:
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
                
                **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
-        :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: The platform configuration requested for the instance.
+        :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -527,7 +527,7 @@ class InstanceArgs:
     @pulumi.getter(name="platformConfig")
     def platform_config(self) -> Optional[pulumi.Input['InstancePlatformConfigArgs']]:
         """
-        The platform configuration requested for the instance.
+        (Updatable only for VM's) The platform configuration requested for the instance.
 
         If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 
@@ -764,7 +764,7 @@ class _InstanceState:
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
                
                **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
-        :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: The platform configuration requested for the instance.
+        :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -1241,7 +1241,7 @@ class _InstanceState:
     @pulumi.getter(name="platformConfig")
     def platform_config(self) -> Optional[pulumi.Input['InstancePlatformConfigArgs']]:
         """
-        The platform configuration requested for the instance.
+        (Updatable only for VM's) The platform configuration requested for the instance.
 
         If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 
@@ -1600,7 +1600,7 @@ class Instance(pulumi.CustomResource):
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
                
                **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
-        :param pulumi.Input[pulumi.InputType['InstancePlatformConfigArgs']] platform_config: The platform configuration requested for the instance.
+        :param pulumi.Input[pulumi.InputType['InstancePlatformConfigArgs']] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -1913,7 +1913,7 @@ class Instance(pulumi.CustomResource):
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
                
                **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
-        :param pulumi.Input[pulumi.InputType['InstancePlatformConfigArgs']] platform_config: The platform configuration requested for the instance.
+        :param pulumi.Input[pulumi.InputType['InstancePlatformConfigArgs']] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -2246,7 +2246,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="platformConfig")
     def platform_config(self) -> pulumi.Output['outputs.InstancePlatformConfig']:
         """
-        The platform configuration requested for the instance.
+        (Updatable only for VM's) The platform configuration requested for the instance.
 
         If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 

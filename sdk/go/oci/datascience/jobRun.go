@@ -48,6 +48,14 @@ import (
 //					EnvironmentVariables:    pulumi.Any(_var.Job_run_job_configuration_override_details_environment_variables),
 //					MaximumRuntimeInMinutes: pulumi.Any(_var.Job_run_job_configuration_override_details_maximum_runtime_in_minutes),
 //				},
+//				JobEnvironmentConfigurationOverrideDetails: &datascience.JobRunJobEnvironmentConfigurationOverrideDetailsArgs{
+//					Image:              pulumi.Any(_var.Job_run_job_environment_configuration_override_details_image),
+//					JobEnvironmentType: pulumi.Any(_var.Job_run_job_environment_configuration_override_details_job_environment_type),
+//					Cmds:               pulumi.Any(_var.Job_run_job_environment_configuration_override_details_cmd),
+//					Entrypoints:        pulumi.Any(_var.Job_run_job_environment_configuration_override_details_entrypoint),
+//					ImageDigest:        pulumi.Any(_var.Job_run_job_environment_configuration_override_details_image_digest),
+//					ImageSignatureId:   pulumi.Any(oci_datascience_image_signature.Test_image_signature.Id),
+//				},
 //				JobLogConfigurationOverrideDetails: &datascience.JobRunJobLogConfigurationOverrideDetailsArgs{
 //					EnableAutoLogCreation: pulumi.Any(_var.Job_run_job_log_configuration_override_details_enable_auto_log_creation),
 //					EnableLogging:         pulumi.Any(_var.Job_run_job_log_configuration_override_details_enable_logging),
@@ -90,6 +98,8 @@ type JobRun struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The job configuration details
 	JobConfigurationOverrideDetails JobRunJobConfigurationOverrideDetailsOutput `pulumi:"jobConfigurationOverrideDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails JobRunJobEnvironmentConfigurationOverrideDetailsOutput `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
 	JobId pulumi.StringOutput `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
@@ -170,6 +180,8 @@ type jobRunState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The job configuration details
 	JobConfigurationOverrideDetails *JobRunJobConfigurationOverrideDetails `pulumi:"jobConfigurationOverrideDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails *JobRunJobEnvironmentConfigurationOverrideDetails `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
 	JobId *string `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
@@ -212,6 +224,8 @@ type JobRunState struct {
 	FreeformTags pulumi.MapInput
 	// The job configuration details
 	JobConfigurationOverrideDetails JobRunJobConfigurationOverrideDetailsPtrInput
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails JobRunJobEnvironmentConfigurationOverrideDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
 	JobId pulumi.StringPtrInput
 	// The job infrastructure configuration details (shape, block storage, etc.)
@@ -256,6 +270,8 @@ type jobRunArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The job configuration details
 	JobConfigurationOverrideDetails *JobRunJobConfigurationOverrideDetails `pulumi:"jobConfigurationOverrideDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails *JobRunJobEnvironmentConfigurationOverrideDetails `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
 	JobId string `pulumi:"jobId"`
 	// Logging configuration for resource.
@@ -281,6 +297,8 @@ type JobRunArgs struct {
 	FreeformTags pulumi.MapInput
 	// The job configuration details
 	JobConfigurationOverrideDetails JobRunJobConfigurationOverrideDetailsPtrInput
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails JobRunJobEnvironmentConfigurationOverrideDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
 	JobId pulumi.StringInput
 	// Logging configuration for resource.
@@ -412,6 +430,13 @@ func (o JobRunOutput) FreeformTags() pulumi.MapOutput {
 // The job configuration details
 func (o JobRunOutput) JobConfigurationOverrideDetails() JobRunJobConfigurationOverrideDetailsOutput {
 	return o.ApplyT(func(v *JobRun) JobRunJobConfigurationOverrideDetailsOutput { return v.JobConfigurationOverrideDetails }).(JobRunJobConfigurationOverrideDetailsOutput)
+}
+
+// Environment configuration to capture job runtime dependencies.
+func (o JobRunOutput) JobEnvironmentConfigurationOverrideDetails() JobRunJobEnvironmentConfigurationOverrideDetailsOutput {
+	return o.ApplyT(func(v *JobRun) JobRunJobEnvironmentConfigurationOverrideDetailsOutput {
+		return v.JobEnvironmentConfigurationOverrideDetails
+	}).(JobRunJobEnvironmentConfigurationOverrideDetailsOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.

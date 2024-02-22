@@ -97,6 +97,10 @@ export interface GetPrivateEndpointResult {
      */
     readonly subnetId: string;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: any};
+    /**
      * The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     readonly timeCreated: string;

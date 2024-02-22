@@ -26,6 +26,14 @@ __all__ = [
     'WorkspaceApplicationPatchRegistryMetadataArgs',
     'WorkspaceApplicationPublishedObjectMetadataArgs',
     'WorkspaceApplicationRegistryMetadataArgs',
+    'WorkspaceApplicationScheduleFrequencyDetailsArgs',
+    'WorkspaceApplicationScheduleFrequencyDetailsTimeArgs',
+    'WorkspaceApplicationScheduleMetadataArgs',
+    'WorkspaceApplicationScheduleMetadataAggregatorArgs',
+    'WorkspaceApplicationScheduleMetadataCountStatisticArgs',
+    'WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs',
+    'WorkspaceApplicationScheduleParentRefArgs',
+    'WorkspaceApplicationScheduleRegistryMetadataArgs',
     'WorkspaceApplicationSourceApplicationInfoArgs',
     'WorkspaceExportRequestExportedItemArgs',
     'WorkspaceFolderMetadataArgs',
@@ -43,6 +51,7 @@ __all__ = [
     'WorkspaceProjectParentRefArgs',
     'WorkspaceProjectRegistryMetadataArgs',
     'GetWorkspaceApplicationPatchesFilterArgs',
+    'GetWorkspaceApplicationSchedulesFilterArgs',
     'GetWorkspaceApplicationsFilterArgs',
     'GetWorkspaceExportRequestsFilterArgs',
     'GetWorkspaceFoldersFilterArgs',
@@ -1540,6 +1549,701 @@ class WorkspaceApplicationRegistryMetadataArgs:
 
 
 @pulumi.input_type
+class WorkspaceApplicationScheduleFrequencyDetailsArgs:
+    def __init__(__self__, *,
+                 model_type: pulumi.Input[str],
+                 custom_expression: Optional[pulumi.Input[str]] = None,
+                 day_of_week: Optional[pulumi.Input[str]] = None,
+                 days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 frequency: Optional[pulumi.Input[str]] = None,
+                 interval: Optional[pulumi.Input[int]] = None,
+                 time: Optional[pulumi.Input['WorkspaceApplicationScheduleFrequencyDetailsTimeArgs']] = None,
+                 week_of_month: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] model_type: (Updatable) The type of the model
+        :param pulumi.Input[str] custom_expression: (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+        :param pulumi.Input[str] day_of_week: (Updatable) This holds the day of the week on which the schedule should be triggered.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] days: (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+        :param pulumi.Input[str] frequency: (Updatable) the frequency of the schedule.
+        :param pulumi.Input[int] interval: (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+        :param pulumi.Input['WorkspaceApplicationScheduleFrequencyDetailsTimeArgs'] time: (Updatable) A model to hold time in hour:minute:second format.
+        :param pulumi.Input[str] week_of_month: (Updatable) This holds the week of the month in which the schedule should be triggered.
+        """
+        pulumi.set(__self__, "model_type", model_type)
+        if custom_expression is not None:
+            pulumi.set(__self__, "custom_expression", custom_expression)
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
+        if days is not None:
+            pulumi.set(__self__, "days", days)
+        if frequency is not None:
+            pulumi.set(__self__, "frequency", frequency)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if time is not None:
+            pulumi.set(__self__, "time", time)
+        if week_of_month is not None:
+            pulumi.set(__self__, "week_of_month", week_of_month)
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of the model
+        """
+        return pulumi.get(self, "model_type")
+
+    @model_type.setter
+    def model_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "model_type", value)
+
+    @property
+    @pulumi.getter(name="customExpression")
+    def custom_expression(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+        """
+        return pulumi.get(self, "custom_expression")
+
+    @custom_expression.setter
+    def custom_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "custom_expression", value)
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This holds the day of the week on which the schedule should be triggered.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @day_of_week.setter
+    def day_of_week(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "day_of_week", value)
+
+    @property
+    @pulumi.getter
+    def days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+        """
+        return pulumi.get(self, "days")
+
+    @days.setter
+    def days(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "days", value)
+
+    @property
+    @pulumi.getter
+    def frequency(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) the frequency of the schedule.
+        """
+        return pulumi.get(self, "frequency")
+
+    @frequency.setter
+    def frequency(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "frequency", value)
+
+    @property
+    @pulumi.getter
+    def interval(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+        """
+        return pulumi.get(self, "interval")
+
+    @interval.setter
+    def interval(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "interval", value)
+
+    @property
+    @pulumi.getter
+    def time(self) -> Optional[pulumi.Input['WorkspaceApplicationScheduleFrequencyDetailsTimeArgs']]:
+        """
+        (Updatable) A model to hold time in hour:minute:second format.
+        """
+        return pulumi.get(self, "time")
+
+    @time.setter
+    def time(self, value: Optional[pulumi.Input['WorkspaceApplicationScheduleFrequencyDetailsTimeArgs']]):
+        pulumi.set(self, "time", value)
+
+    @property
+    @pulumi.getter(name="weekOfMonth")
+    def week_of_month(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This holds the week of the month in which the schedule should be triggered.
+        """
+        return pulumi.get(self, "week_of_month")
+
+    @week_of_month.setter
+    def week_of_month(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "week_of_month", value)
+
+
+@pulumi.input_type
+class WorkspaceApplicationScheduleFrequencyDetailsTimeArgs:
+    def __init__(__self__, *,
+                 hour: Optional[pulumi.Input[int]] = None,
+                 minute: Optional[pulumi.Input[int]] = None,
+                 second: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] hour: (Updatable) The hour value.
+        :param pulumi.Input[int] minute: (Updatable) The minute value.
+        :param pulumi.Input[int] second: (Updatable) The second value.
+        """
+        if hour is not None:
+            pulumi.set(__self__, "hour", hour)
+        if minute is not None:
+            pulumi.set(__self__, "minute", minute)
+        if second is not None:
+            pulumi.set(__self__, "second", second)
+
+    @property
+    @pulumi.getter
+    def hour(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The hour value.
+        """
+        return pulumi.get(self, "hour")
+
+    @hour.setter
+    def hour(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "hour", value)
+
+    @property
+    @pulumi.getter
+    def minute(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The minute value.
+        """
+        return pulumi.get(self, "minute")
+
+    @minute.setter
+    def minute(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "minute", value)
+
+    @property
+    @pulumi.getter
+    def second(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The second value.
+        """
+        return pulumi.get(self, "second")
+
+    @second.setter
+    def second(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "second", value)
+
+
+@pulumi.input_type
+class WorkspaceApplicationScheduleMetadataArgs:
+    def __init__(__self__, *,
+                 aggregator_key: Optional[pulumi.Input[str]] = None,
+                 aggregators: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataAggregatorArgs']]]] = None,
+                 count_statistics: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticArgs']]]] = None,
+                 created_by: Optional[pulumi.Input[str]] = None,
+                 created_by_name: Optional[pulumi.Input[str]] = None,
+                 identifier_path: Optional[pulumi.Input[str]] = None,
+                 info_fields: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_favorite: Optional[pulumi.Input[bool]] = None,
+                 labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 registry_version: Optional[pulumi.Input[int]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None,
+                 time_updated: Optional[pulumi.Input[str]] = None,
+                 updated_by: Optional[pulumi.Input[str]] = None,
+                 updated_by_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataAggregatorArgs']]] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticArgs']]] count_statistics: A count statistics.
+        :param pulumi.Input[str] created_by: The user that created the object.
+        :param pulumi.Input[str] created_by_name: The user that created the object.
+        :param pulumi.Input[str] identifier_path: The full path to identify this object.
+        :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[int] registry_version: (Updatable) The registry version.
+        :param pulumi.Input[str] time_created: The date and time that the object was created.
+        :param pulumi.Input[str] time_updated: The date and time that the object was updated.
+        :param pulumi.Input[str] updated_by: The user that updated the object.
+        :param pulumi.Input[str] updated_by_name: The user that updated the object.
+        """
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if aggregators is not None:
+            pulumi.set(__self__, "aggregators", aggregators)
+        if count_statistics is not None:
+            pulumi.set(__self__, "count_statistics", count_statistics)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_by_name is not None:
+            pulumi.set(__self__, "created_by_name", created_by_name)
+        if identifier_path is not None:
+            pulumi.set(__self__, "identifier_path", identifier_path)
+        if info_fields is not None:
+            pulumi.set(__self__, "info_fields", info_fields)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
+        if updated_by_name is not None:
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The owning object's key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @aggregator_key.setter
+    def aggregator_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "aggregator_key", value)
+
+    @property
+    @pulumi.getter
+    def aggregators(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataAggregatorArgs']]]]:
+        """
+        A summary type containing information about the object's aggregator including its type, key, name and description.
+        """
+        return pulumi.get(self, "aggregators")
+
+    @aggregators.setter
+    def aggregators(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataAggregatorArgs']]]]):
+        pulumi.set(self, "aggregators", value)
+
+    @property
+    @pulumi.getter(name="countStatistics")
+    def count_statistics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticArgs']]]]:
+        """
+        A count statistics.
+        """
+        return pulumi.get(self, "count_statistics")
+
+    @count_statistics.setter
+    def count_statistics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticArgs']]]]):
+        pulumi.set(self, "count_statistics", value)
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by")
+
+    @created_by.setter
+    def created_by(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created_by", value)
+
+    @property
+    @pulumi.getter(name="createdByName")
+    def created_by_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by_name")
+
+    @created_by_name.setter
+    def created_by_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created_by_name", value)
+
+    @property
+    @pulumi.getter(name="identifierPath")
+    def identifier_path(self) -> Optional[pulumi.Input[str]]:
+        """
+        The full path to identify this object.
+        """
+        return pulumi.get(self, "identifier_path")
+
+    @identifier_path.setter
+    def identifier_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "identifier_path", value)
+
+    @property
+    @pulumi.getter(name="infoFields")
+    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Information property fields.
+        """
+        return pulumi.get(self, "info_fields")
+
+    @info_fields.setter
+    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "info_fields", value)
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @is_favorite.setter
+    def is_favorite(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_favorite", value)
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @labels.setter
+    def labels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "labels", value)
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The registry version.
+        """
+        return pulumi.get(self, "registry_version")
+
+    @registry_version.setter
+    def registry_version(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "registry_version", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time that the object was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time that the object was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_updated", value)
+
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @updated_by.setter
+    def updated_by(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "updated_by", value)
+
+    @property
+    @pulumi.getter(name="updatedByName")
+    def updated_by_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by_name")
+
+    @updated_by_name.setter
+    def updated_by_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "updated_by_name", value)
+
+
+@pulumi.input_type
+class WorkspaceApplicationScheduleMetadataAggregatorArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 identifier: Optional[pulumi.Input[str]] = None,
+                 key: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] type: The type of the aggregator.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        """
+        return pulumi.get(self, "identifier")
+
+    @identifier.setter
+    def identifier(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "identifier", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The identifying key for the object.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of the aggregator.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class WorkspaceApplicationScheduleMetadataCountStatisticArgs:
+    def __init__(__self__, *,
+                 object_type_count_lists: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs']]] object_type_count_lists: The array of statistics.
+        """
+        if object_type_count_lists is not None:
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+
+    @property
+    @pulumi.getter(name="objectTypeCountLists")
+    def object_type_count_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs']]]]:
+        """
+        The array of statistics.
+        """
+        return pulumi.get(self, "object_type_count_lists")
+
+    @object_type_count_lists.setter
+    def object_type_count_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs']]]]):
+        pulumi.set(self, "object_type_count_lists", value)
+
+
+@pulumi.input_type
+class WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs:
+    def __init__(__self__, *,
+                 object_count: Optional[pulumi.Input[str]] = None,
+                 object_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] object_count: The value for the count statistic object.
+        :param pulumi.Input[str] object_type: The type of object for the count statistic object.
+        """
+        if object_count is not None:
+            pulumi.set(__self__, "object_count", object_count)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
+
+    @property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> Optional[pulumi.Input[str]]:
+        """
+        The value for the count statistic object.
+        """
+        return pulumi.get(self, "object_count")
+
+    @object_count.setter
+    def object_count(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "object_count", value)
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of object for the count statistic object.
+        """
+        return pulumi.get(self, "object_type")
+
+    @object_type.setter
+    def object_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "object_type", value)
+
+
+@pulumi.input_type
+class WorkspaceApplicationScheduleParentRefArgs:
+    def __init__(__self__, *,
+                 parent: Optional[pulumi.Input[str]] = None,
+                 root_doc_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] parent: Key of the parent object.
+        :param pulumi.Input[str] root_doc_id: Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[pulumi.Input[str]]:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @parent.setter
+    def parent(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "parent", value)
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+    @root_doc_id.setter
+    def root_doc_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "root_doc_id", value)
+
+
+@pulumi.input_type
+class WorkspaceApplicationScheduleRegistryMetadataArgs:
+    def __init__(__self__, *,
+                 aggregator_key: Optional[pulumi.Input[str]] = None,
+                 is_favorite: Optional[pulumi.Input[bool]] = None,
+                 key: Optional[pulumi.Input[str]] = None,
+                 labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 registry_version: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[int] registry_version: (Updatable) The registry version.
+        """
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The owning object's key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @aggregator_key.setter
+    def aggregator_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "aggregator_key", value)
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @is_favorite.setter
+    def is_favorite(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_favorite", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The identifying key for the object.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @labels.setter
+    def labels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "labels", value)
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The registry version.
+        """
+        return pulumi.get(self, "registry_version")
+
+    @registry_version.setter
+    def registry_version(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "registry_version", value)
+
+
+@pulumi.input_type
 class WorkspaceApplicationSourceApplicationInfoArgs:
     def __init__(__self__, *,
                  application_key: Optional[pulumi.Input[str]] = None,
@@ -3004,6 +3708,51 @@ class WorkspaceProjectRegistryMetadataArgs:
 
 @pulumi.input_type
 class GetWorkspaceApplicationPatchesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Used to filter by the name of the object.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetWorkspaceApplicationSchedulesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataScience.JobArgs;
 import com.pulumi.oci.DataScience.inputs.JobState;
 import com.pulumi.oci.DataScience.outputs.JobJobConfigurationDetails;
+import com.pulumi.oci.DataScience.outputs.JobJobEnvironmentConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.JobJobInfrastructureConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.JobJobLogConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.JobJobStorageMountConfigurationDetailsList;
@@ -39,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.JobJobConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobEnvironmentConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobStorageMountConfigurationDetailsListArgs;
  * import java.util.List;
@@ -77,6 +79,14 @@ import javax.annotation.Nullable;
  *             .description(var_.job_description())
  *             .displayName(var_.job_display_name())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .jobEnvironmentConfigurationDetails(JobJobEnvironmentConfigurationDetailsArgs.builder()
+ *                 .image(var_.job_job_environment_configuration_details_image())
+ *                 .jobEnvironmentType(var_.job_job_environment_configuration_details_job_environment_type())
+ *                 .cmds(var_.job_job_environment_configuration_details_cmd())
+ *                 .entrypoints(var_.job_job_environment_configuration_details_entrypoint())
+ *                 .imageDigest(var_.job_job_environment_configuration_details_image_digest())
+ *                 .imageSignatureId(oci_datascience_image_signature.test_image_signature().id())
+ *                 .build())
  *             .jobLogConfigurationDetails(JobJobLogConfigurationDetailsArgs.builder()
  *                 .enableAutoLogCreation(var_.job_job_log_configuration_details_enable_auto_log_creation())
  *                 .enableLogging(var_.job_job_log_configuration_details_enable_logging())
@@ -287,6 +297,20 @@ public class Job extends com.pulumi.resources.CustomResource {
      */
     public Output<JobJobConfigurationDetails> jobConfigurationDetails() {
         return this.jobConfigurationDetails;
+    }
+    /**
+     * Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    @Export(name="jobEnvironmentConfigurationDetails", refs={JobJobEnvironmentConfigurationDetails.class}, tree="[0]")
+    private Output<JobJobEnvironmentConfigurationDetails> jobEnvironmentConfigurationDetails;
+
+    /**
+     * @return Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    public Output<JobJobEnvironmentConfigurationDetails> jobEnvironmentConfigurationDetails() {
+        return this.jobEnvironmentConfigurationDetails;
     }
     /**
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)

@@ -2369,6 +2369,1332 @@ func (o WorkspaceApplicationRegistryMetadataPtrOutput) RegistryVersion() pulumi.
 	}).(pulumi.IntPtrOutput)
 }
 
+type WorkspaceApplicationScheduleFrequencyDetails struct {
+	// (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+	CustomExpression *string `pulumi:"customExpression"`
+	// (Updatable) This holds the day of the week on which the schedule should be triggered.
+	DayOfWeek *string `pulumi:"dayOfWeek"`
+	// (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+	Days []int `pulumi:"days"`
+	// (Updatable) the frequency of the schedule.
+	Frequency *string `pulumi:"frequency"`
+	// (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+	Interval *int `pulumi:"interval"`
+	// (Updatable) The type of the model
+	ModelType string `pulumi:"modelType"`
+	// (Updatable) A model to hold time in hour:minute:second format.
+	Time *WorkspaceApplicationScheduleFrequencyDetailsTime `pulumi:"time"`
+	// (Updatable) This holds the week of the month in which the schedule should be triggered.
+	WeekOfMonth *string `pulumi:"weekOfMonth"`
+}
+
+// WorkspaceApplicationScheduleFrequencyDetailsInput is an input type that accepts WorkspaceApplicationScheduleFrequencyDetailsArgs and WorkspaceApplicationScheduleFrequencyDetailsOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleFrequencyDetailsInput` via:
+//
+//	WorkspaceApplicationScheduleFrequencyDetailsArgs{...}
+type WorkspaceApplicationScheduleFrequencyDetailsInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleFrequencyDetailsOutput() WorkspaceApplicationScheduleFrequencyDetailsOutput
+	ToWorkspaceApplicationScheduleFrequencyDetailsOutputWithContext(context.Context) WorkspaceApplicationScheduleFrequencyDetailsOutput
+}
+
+type WorkspaceApplicationScheduleFrequencyDetailsArgs struct {
+	// (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+	CustomExpression pulumi.StringPtrInput `pulumi:"customExpression"`
+	// (Updatable) This holds the day of the week on which the schedule should be triggered.
+	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
+	// (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+	Days pulumi.IntArrayInput `pulumi:"days"`
+	// (Updatable) the frequency of the schedule.
+	Frequency pulumi.StringPtrInput `pulumi:"frequency"`
+	// (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+	Interval pulumi.IntPtrInput `pulumi:"interval"`
+	// (Updatable) The type of the model
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+	// (Updatable) A model to hold time in hour:minute:second format.
+	Time WorkspaceApplicationScheduleFrequencyDetailsTimePtrInput `pulumi:"time"`
+	// (Updatable) This holds the week of the month in which the schedule should be triggered.
+	WeekOfMonth pulumi.StringPtrInput `pulumi:"weekOfMonth"`
+}
+
+func (WorkspaceApplicationScheduleFrequencyDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleFrequencyDetails)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleFrequencyDetailsArgs) ToWorkspaceApplicationScheduleFrequencyDetailsOutput() WorkspaceApplicationScheduleFrequencyDetailsOutput {
+	return i.ToWorkspaceApplicationScheduleFrequencyDetailsOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleFrequencyDetailsArgs) ToWorkspaceApplicationScheduleFrequencyDetailsOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleFrequencyDetailsOutput)
+}
+
+func (i WorkspaceApplicationScheduleFrequencyDetailsArgs) ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutput() WorkspaceApplicationScheduleFrequencyDetailsPtrOutput {
+	return i.ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleFrequencyDetailsArgs) ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleFrequencyDetailsOutput).ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutputWithContext(ctx)
+}
+
+// WorkspaceApplicationScheduleFrequencyDetailsPtrInput is an input type that accepts WorkspaceApplicationScheduleFrequencyDetailsArgs, WorkspaceApplicationScheduleFrequencyDetailsPtr and WorkspaceApplicationScheduleFrequencyDetailsPtrOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleFrequencyDetailsPtrInput` via:
+//
+//	        WorkspaceApplicationScheduleFrequencyDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WorkspaceApplicationScheduleFrequencyDetailsPtrInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutput() WorkspaceApplicationScheduleFrequencyDetailsPtrOutput
+	ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutputWithContext(context.Context) WorkspaceApplicationScheduleFrequencyDetailsPtrOutput
+}
+
+type workspaceApplicationScheduleFrequencyDetailsPtrType WorkspaceApplicationScheduleFrequencyDetailsArgs
+
+func WorkspaceApplicationScheduleFrequencyDetailsPtr(v *WorkspaceApplicationScheduleFrequencyDetailsArgs) WorkspaceApplicationScheduleFrequencyDetailsPtrInput {
+	return (*workspaceApplicationScheduleFrequencyDetailsPtrType)(v)
+}
+
+func (*workspaceApplicationScheduleFrequencyDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceApplicationScheduleFrequencyDetails)(nil)).Elem()
+}
+
+func (i *workspaceApplicationScheduleFrequencyDetailsPtrType) ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutput() WorkspaceApplicationScheduleFrequencyDetailsPtrOutput {
+	return i.ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *workspaceApplicationScheduleFrequencyDetailsPtrType) ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleFrequencyDetailsPtrOutput)
+}
+
+type WorkspaceApplicationScheduleFrequencyDetailsOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleFrequencyDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleFrequencyDetails)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) ToWorkspaceApplicationScheduleFrequencyDetailsOutput() WorkspaceApplicationScheduleFrequencyDetailsOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) ToWorkspaceApplicationScheduleFrequencyDetailsOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutput() WorkspaceApplicationScheduleFrequencyDetailsPtrOutput {
+	return o.ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceApplicationScheduleFrequencyDetails) *WorkspaceApplicationScheduleFrequencyDetails {
+		return &v
+	}).(WorkspaceApplicationScheduleFrequencyDetailsPtrOutput)
+}
+
+// (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) CustomExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleFrequencyDetails) *string { return v.CustomExpression }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) This holds the day of the week on which the schedule should be triggered.
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) DayOfWeek() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleFrequencyDetails) *string { return v.DayOfWeek }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) Days() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleFrequencyDetails) []int { return v.Days }).(pulumi.IntArrayOutput)
+}
+
+// (Updatable) the frequency of the schedule.
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) Frequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleFrequencyDetails) *string { return v.Frequency }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleFrequencyDetails) *int { return v.Interval }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The type of the model
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleFrequencyDetails) string { return v.ModelType }).(pulumi.StringOutput)
+}
+
+// (Updatable) A model to hold time in hour:minute:second format.
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) Time() WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleFrequencyDetails) *WorkspaceApplicationScheduleFrequencyDetailsTime {
+		return v.Time
+	}).(WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput)
+}
+
+// (Updatable) This holds the week of the month in which the schedule should be triggered.
+func (o WorkspaceApplicationScheduleFrequencyDetailsOutput) WeekOfMonth() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleFrequencyDetails) *string { return v.WeekOfMonth }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationScheduleFrequencyDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceApplicationScheduleFrequencyDetails)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutput() WorkspaceApplicationScheduleFrequencyDetailsPtrOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) ToWorkspaceApplicationScheduleFrequencyDetailsPtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsPtrOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) Elem() WorkspaceApplicationScheduleFrequencyDetailsOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetails) WorkspaceApplicationScheduleFrequencyDetails {
+		if v != nil {
+			return *v
+		}
+		var ret WorkspaceApplicationScheduleFrequencyDetails
+		return ret
+	}).(WorkspaceApplicationScheduleFrequencyDetailsOutput)
+}
+
+// (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+func (o WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) CustomExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomExpression
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) This holds the day of the week on which the schedule should be triggered.
+func (o WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) DayOfWeek() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DayOfWeek
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+func (o WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) Days() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetails) []int {
+		if v == nil {
+			return nil
+		}
+		return v.Days
+	}).(pulumi.IntArrayOutput)
+}
+
+// (Updatable) the frequency of the schedule.
+func (o WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) Frequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Frequency
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+func (o WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Interval
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The type of the model
+func (o WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ModelType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A model to hold time in hour:minute:second format.
+func (o WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) Time() WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetails) *WorkspaceApplicationScheduleFrequencyDetailsTime {
+		if v == nil {
+			return nil
+		}
+		return v.Time
+	}).(WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput)
+}
+
+// (Updatable) This holds the week of the month in which the schedule should be triggered.
+func (o WorkspaceApplicationScheduleFrequencyDetailsPtrOutput) WeekOfMonth() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WeekOfMonth
+	}).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationScheduleFrequencyDetailsTime struct {
+	// (Updatable) The hour value.
+	Hour *int `pulumi:"hour"`
+	// (Updatable) The minute value.
+	Minute *int `pulumi:"minute"`
+	// (Updatable) The second value.
+	Second *int `pulumi:"second"`
+}
+
+// WorkspaceApplicationScheduleFrequencyDetailsTimeInput is an input type that accepts WorkspaceApplicationScheduleFrequencyDetailsTimeArgs and WorkspaceApplicationScheduleFrequencyDetailsTimeOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleFrequencyDetailsTimeInput` via:
+//
+//	WorkspaceApplicationScheduleFrequencyDetailsTimeArgs{...}
+type WorkspaceApplicationScheduleFrequencyDetailsTimeInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleFrequencyDetailsTimeOutput() WorkspaceApplicationScheduleFrequencyDetailsTimeOutput
+	ToWorkspaceApplicationScheduleFrequencyDetailsTimeOutputWithContext(context.Context) WorkspaceApplicationScheduleFrequencyDetailsTimeOutput
+}
+
+type WorkspaceApplicationScheduleFrequencyDetailsTimeArgs struct {
+	// (Updatable) The hour value.
+	Hour pulumi.IntPtrInput `pulumi:"hour"`
+	// (Updatable) The minute value.
+	Minute pulumi.IntPtrInput `pulumi:"minute"`
+	// (Updatable) The second value.
+	Second pulumi.IntPtrInput `pulumi:"second"`
+}
+
+func (WorkspaceApplicationScheduleFrequencyDetailsTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleFrequencyDetailsTime)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleFrequencyDetailsTimeArgs) ToWorkspaceApplicationScheduleFrequencyDetailsTimeOutput() WorkspaceApplicationScheduleFrequencyDetailsTimeOutput {
+	return i.ToWorkspaceApplicationScheduleFrequencyDetailsTimeOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleFrequencyDetailsTimeArgs) ToWorkspaceApplicationScheduleFrequencyDetailsTimeOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleFrequencyDetailsTimeOutput)
+}
+
+func (i WorkspaceApplicationScheduleFrequencyDetailsTimeArgs) ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput() WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput {
+	return i.ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleFrequencyDetailsTimeArgs) ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleFrequencyDetailsTimeOutput).ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutputWithContext(ctx)
+}
+
+// WorkspaceApplicationScheduleFrequencyDetailsTimePtrInput is an input type that accepts WorkspaceApplicationScheduleFrequencyDetailsTimeArgs, WorkspaceApplicationScheduleFrequencyDetailsTimePtr and WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleFrequencyDetailsTimePtrInput` via:
+//
+//	        WorkspaceApplicationScheduleFrequencyDetailsTimeArgs{...}
+//
+//	or:
+//
+//	        nil
+type WorkspaceApplicationScheduleFrequencyDetailsTimePtrInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput() WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput
+	ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutputWithContext(context.Context) WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput
+}
+
+type workspaceApplicationScheduleFrequencyDetailsTimePtrType WorkspaceApplicationScheduleFrequencyDetailsTimeArgs
+
+func WorkspaceApplicationScheduleFrequencyDetailsTimePtr(v *WorkspaceApplicationScheduleFrequencyDetailsTimeArgs) WorkspaceApplicationScheduleFrequencyDetailsTimePtrInput {
+	return (*workspaceApplicationScheduleFrequencyDetailsTimePtrType)(v)
+}
+
+func (*workspaceApplicationScheduleFrequencyDetailsTimePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceApplicationScheduleFrequencyDetailsTime)(nil)).Elem()
+}
+
+func (i *workspaceApplicationScheduleFrequencyDetailsTimePtrType) ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput() WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput {
+	return i.ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutputWithContext(context.Background())
+}
+
+func (i *workspaceApplicationScheduleFrequencyDetailsTimePtrType) ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput)
+}
+
+type WorkspaceApplicationScheduleFrequencyDetailsTimeOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleFrequencyDetailsTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleFrequencyDetailsTime)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimeOutput) ToWorkspaceApplicationScheduleFrequencyDetailsTimeOutput() WorkspaceApplicationScheduleFrequencyDetailsTimeOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimeOutput) ToWorkspaceApplicationScheduleFrequencyDetailsTimeOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsTimeOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimeOutput) ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput() WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput {
+	return o.ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutputWithContext(context.Background())
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimeOutput) ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceApplicationScheduleFrequencyDetailsTime) *WorkspaceApplicationScheduleFrequencyDetailsTime {
+		return &v
+	}).(WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput)
+}
+
+// (Updatable) The hour value.
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimeOutput) Hour() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleFrequencyDetailsTime) *int { return v.Hour }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The minute value.
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimeOutput) Minute() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleFrequencyDetailsTime) *int { return v.Minute }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The second value.
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimeOutput) Second() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleFrequencyDetailsTime) *int { return v.Second }).(pulumi.IntPtrOutput)
+}
+
+type WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceApplicationScheduleFrequencyDetailsTime)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput) ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput() WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput) ToWorkspaceApplicationScheduleFrequencyDetailsTimePtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput) Elem() WorkspaceApplicationScheduleFrequencyDetailsTimeOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetailsTime) WorkspaceApplicationScheduleFrequencyDetailsTime {
+		if v != nil {
+			return *v
+		}
+		var ret WorkspaceApplicationScheduleFrequencyDetailsTime
+		return ret
+	}).(WorkspaceApplicationScheduleFrequencyDetailsTimeOutput)
+}
+
+// (Updatable) The hour value.
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput) Hour() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetailsTime) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Hour
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The minute value.
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput) Minute() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetailsTime) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Minute
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The second value.
+func (o WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput) Second() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleFrequencyDetailsTime) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Second
+	}).(pulumi.IntPtrOutput)
+}
+
+type WorkspaceApplicationScheduleMetadata struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey *string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []WorkspaceApplicationScheduleMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []WorkspaceApplicationScheduleMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy *string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName *string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath *string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite *bool `pulumi:"isFavorite"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion *int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy *string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName *string `pulumi:"updatedByName"`
+}
+
+// WorkspaceApplicationScheduleMetadataInput is an input type that accepts WorkspaceApplicationScheduleMetadataArgs and WorkspaceApplicationScheduleMetadataOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleMetadataInput` via:
+//
+//	WorkspaceApplicationScheduleMetadataArgs{...}
+type WorkspaceApplicationScheduleMetadataInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleMetadataOutput() WorkspaceApplicationScheduleMetadataOutput
+	ToWorkspaceApplicationScheduleMetadataOutputWithContext(context.Context) WorkspaceApplicationScheduleMetadataOutput
+}
+
+type WorkspaceApplicationScheduleMetadataArgs struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators WorkspaceApplicationScheduleMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics WorkspaceApplicationScheduleMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
+}
+
+func (WorkspaceApplicationScheduleMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleMetadataArgs) ToWorkspaceApplicationScheduleMetadataOutput() WorkspaceApplicationScheduleMetadataOutput {
+	return i.ToWorkspaceApplicationScheduleMetadataOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleMetadataArgs) ToWorkspaceApplicationScheduleMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleMetadataOutput)
+}
+
+// WorkspaceApplicationScheduleMetadataArrayInput is an input type that accepts WorkspaceApplicationScheduleMetadataArray and WorkspaceApplicationScheduleMetadataArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleMetadataArrayInput` via:
+//
+//	WorkspaceApplicationScheduleMetadataArray{ WorkspaceApplicationScheduleMetadataArgs{...} }
+type WorkspaceApplicationScheduleMetadataArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleMetadataArrayOutput() WorkspaceApplicationScheduleMetadataArrayOutput
+	ToWorkspaceApplicationScheduleMetadataArrayOutputWithContext(context.Context) WorkspaceApplicationScheduleMetadataArrayOutput
+}
+
+type WorkspaceApplicationScheduleMetadataArray []WorkspaceApplicationScheduleMetadataInput
+
+func (WorkspaceApplicationScheduleMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationScheduleMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleMetadataArray) ToWorkspaceApplicationScheduleMetadataArrayOutput() WorkspaceApplicationScheduleMetadataArrayOutput {
+	return i.ToWorkspaceApplicationScheduleMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleMetadataArray) ToWorkspaceApplicationScheduleMetadataArrayOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleMetadataArrayOutput)
+}
+
+type WorkspaceApplicationScheduleMetadataOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleMetadataOutput) ToWorkspaceApplicationScheduleMetadataOutput() WorkspaceApplicationScheduleMetadataOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataOutput) ToWorkspaceApplicationScheduleMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataOutput {
+	return o
+}
+
+// (Updatable) The owning object's key for this object.
+func (o WorkspaceApplicationScheduleMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o WorkspaceApplicationScheduleMetadataOutput) Aggregators() WorkspaceApplicationScheduleMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) []WorkspaceApplicationScheduleMetadataAggregator {
+		return v.Aggregators
+	}).(WorkspaceApplicationScheduleMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o WorkspaceApplicationScheduleMetadataOutput) CountStatistics() WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) []WorkspaceApplicationScheduleMetadataCountStatistic {
+		return v.CountStatistics
+	}).(WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o WorkspaceApplicationScheduleMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// The user that created the object.
+func (o WorkspaceApplicationScheduleMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
+}
+
+// The full path to identify this object.
+func (o WorkspaceApplicationScheduleMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
+}
+
+// Information property fields.
+func (o WorkspaceApplicationScheduleMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+}
+
+// (Updatable) Specifies whether this object is a favorite or not.
+func (o WorkspaceApplicationScheduleMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceApplicationScheduleMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The registry version.
+func (o WorkspaceApplicationScheduleMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
+}
+
+// The date and time that the object was created.
+func (o WorkspaceApplicationScheduleMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time that the object was updated.
+func (o WorkspaceApplicationScheduleMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// The user that updated the object.
+func (o WorkspaceApplicationScheduleMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
+}
+
+// The user that updated the object.
+func (o WorkspaceApplicationScheduleMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *string { return v.UpdatedByName }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationScheduleMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationScheduleMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleMetadataArrayOutput) ToWorkspaceApplicationScheduleMetadataArrayOutput() WorkspaceApplicationScheduleMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataArrayOutput) ToWorkspaceApplicationScheduleMetadataArrayOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationScheduleMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationScheduleMetadata {
+		return vs[0].([]WorkspaceApplicationScheduleMetadata)[vs[1].(int)]
+	}).(WorkspaceApplicationScheduleMetadataOutput)
+}
+
+type WorkspaceApplicationScheduleMetadataAggregator struct {
+	// (Updatable) Detailed description for the object.
+	Description *string `pulumi:"description"`
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier *string `pulumi:"identifier"`
+	// (Updatable) The identifying key for the object.
+	Key *string `pulumi:"key"`
+	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name *string `pulumi:"name"`
+	// The type of the aggregator.
+	Type *string `pulumi:"type"`
+}
+
+// WorkspaceApplicationScheduleMetadataAggregatorInput is an input type that accepts WorkspaceApplicationScheduleMetadataAggregatorArgs and WorkspaceApplicationScheduleMetadataAggregatorOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleMetadataAggregatorInput` via:
+//
+//	WorkspaceApplicationScheduleMetadataAggregatorArgs{...}
+type WorkspaceApplicationScheduleMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleMetadataAggregatorOutput() WorkspaceApplicationScheduleMetadataAggregatorOutput
+	ToWorkspaceApplicationScheduleMetadataAggregatorOutputWithContext(context.Context) WorkspaceApplicationScheduleMetadataAggregatorOutput
+}
+
+type WorkspaceApplicationScheduleMetadataAggregatorArgs struct {
+	// (Updatable) Detailed description for the object.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
+	// (Updatable) The identifying key for the object.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The type of the aggregator.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (WorkspaceApplicationScheduleMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleMetadataAggregator)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleMetadataAggregatorArgs) ToWorkspaceApplicationScheduleMetadataAggregatorOutput() WorkspaceApplicationScheduleMetadataAggregatorOutput {
+	return i.ToWorkspaceApplicationScheduleMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleMetadataAggregatorArgs) ToWorkspaceApplicationScheduleMetadataAggregatorOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleMetadataAggregatorOutput)
+}
+
+// WorkspaceApplicationScheduleMetadataAggregatorArrayInput is an input type that accepts WorkspaceApplicationScheduleMetadataAggregatorArray and WorkspaceApplicationScheduleMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleMetadataAggregatorArrayInput` via:
+//
+//	WorkspaceApplicationScheduleMetadataAggregatorArray{ WorkspaceApplicationScheduleMetadataAggregatorArgs{...} }
+type WorkspaceApplicationScheduleMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleMetadataAggregatorArrayOutput() WorkspaceApplicationScheduleMetadataAggregatorArrayOutput
+	ToWorkspaceApplicationScheduleMetadataAggregatorArrayOutputWithContext(context.Context) WorkspaceApplicationScheduleMetadataAggregatorArrayOutput
+}
+
+type WorkspaceApplicationScheduleMetadataAggregatorArray []WorkspaceApplicationScheduleMetadataAggregatorInput
+
+func (WorkspaceApplicationScheduleMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationScheduleMetadataAggregator)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleMetadataAggregatorArray) ToWorkspaceApplicationScheduleMetadataAggregatorArrayOutput() WorkspaceApplicationScheduleMetadataAggregatorArrayOutput {
+	return i.ToWorkspaceApplicationScheduleMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleMetadataAggregatorArray) ToWorkspaceApplicationScheduleMetadataAggregatorArrayOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleMetadataAggregatorArrayOutput)
+}
+
+type WorkspaceApplicationScheduleMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleMetadataAggregator)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleMetadataAggregatorOutput) ToWorkspaceApplicationScheduleMetadataAggregatorOutput() WorkspaceApplicationScheduleMetadataAggregatorOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataAggregatorOutput) ToWorkspaceApplicationScheduleMetadataAggregatorOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataAggregatorOutput {
+	return o
+}
+
+// (Updatable) Detailed description for the object.
+func (o WorkspaceApplicationScheduleMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+func (o WorkspaceApplicationScheduleMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The identifying key for the object.
+func (o WorkspaceApplicationScheduleMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o WorkspaceApplicationScheduleMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The type of the aggregator.
+func (o WorkspaceApplicationScheduleMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadataAggregator) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationScheduleMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationScheduleMetadataAggregator)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleMetadataAggregatorArrayOutput) ToWorkspaceApplicationScheduleMetadataAggregatorArrayOutput() WorkspaceApplicationScheduleMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataAggregatorArrayOutput) ToWorkspaceApplicationScheduleMetadataAggregatorArrayOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationScheduleMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationScheduleMetadataAggregator {
+		return vs[0].([]WorkspaceApplicationScheduleMetadataAggregator)[vs[1].(int)]
+	}).(WorkspaceApplicationScheduleMetadataAggregatorOutput)
+}
+
+type WorkspaceApplicationScheduleMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// WorkspaceApplicationScheduleMetadataCountStatisticInput is an input type that accepts WorkspaceApplicationScheduleMetadataCountStatisticArgs and WorkspaceApplicationScheduleMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleMetadataCountStatisticInput` via:
+//
+//	WorkspaceApplicationScheduleMetadataCountStatisticArgs{...}
+type WorkspaceApplicationScheduleMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleMetadataCountStatisticOutput() WorkspaceApplicationScheduleMetadataCountStatisticOutput
+	ToWorkspaceApplicationScheduleMetadataCountStatisticOutputWithContext(context.Context) WorkspaceApplicationScheduleMetadataCountStatisticOutput
+}
+
+type WorkspaceApplicationScheduleMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (WorkspaceApplicationScheduleMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleMetadataCountStatisticArgs) ToWorkspaceApplicationScheduleMetadataCountStatisticOutput() WorkspaceApplicationScheduleMetadataCountStatisticOutput {
+	return i.ToWorkspaceApplicationScheduleMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleMetadataCountStatisticArgs) ToWorkspaceApplicationScheduleMetadataCountStatisticOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleMetadataCountStatisticOutput)
+}
+
+// WorkspaceApplicationScheduleMetadataCountStatisticArrayInput is an input type that accepts WorkspaceApplicationScheduleMetadataCountStatisticArray and WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleMetadataCountStatisticArrayInput` via:
+//
+//	WorkspaceApplicationScheduleMetadataCountStatisticArray{ WorkspaceApplicationScheduleMetadataCountStatisticArgs{...} }
+type WorkspaceApplicationScheduleMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput() WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput
+	ToWorkspaceApplicationScheduleMetadataCountStatisticArrayOutputWithContext(context.Context) WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput
+}
+
+type WorkspaceApplicationScheduleMetadataCountStatisticArray []WorkspaceApplicationScheduleMetadataCountStatisticInput
+
+func (WorkspaceApplicationScheduleMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationScheduleMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleMetadataCountStatisticArray) ToWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput() WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput {
+	return i.ToWorkspaceApplicationScheduleMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleMetadataCountStatisticArray) ToWorkspaceApplicationScheduleMetadataCountStatisticArrayOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput)
+}
+
+type WorkspaceApplicationScheduleMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleMetadataCountStatisticOutput) ToWorkspaceApplicationScheduleMetadataCountStatisticOutput() WorkspaceApplicationScheduleMetadataCountStatisticOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataCountStatisticOutput) ToWorkspaceApplicationScheduleMetadataCountStatisticOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o WorkspaceApplicationScheduleMetadataCountStatisticOutput) ObjectTypeCountLists() WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadataCountStatistic) []WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationScheduleMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput) ToWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput() WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput) ToWorkspaceApplicationScheduleMetadataCountStatisticArrayOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationScheduleMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationScheduleMetadataCountStatistic {
+		return vs[0].([]WorkspaceApplicationScheduleMetadataCountStatistic)[vs[1].(int)]
+	}).(WorkspaceApplicationScheduleMetadataCountStatisticOutput)
+}
+
+type WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount *string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType *string `pulumi:"objectType"`
+}
+
+// WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListInput is an input type that accepts WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs and WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs{...}
+type WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput() WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput
+	ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
+}
+
+func (WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs) ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput() WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs) ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray and WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray{ WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs{...} }
+type WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray []WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListInput
+
+func (WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray) ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray) ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput) ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput() WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput) ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList) *string {
+		return v.ObjectCount
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of object for the count statistic object.
+func (o WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList) *string {
+		return v.ObjectType
+	}).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput) ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput) ToWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type WorkspaceApplicationScheduleParentRef struct {
+	// Key of the parent object.
+	Parent *string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId *string `pulumi:"rootDocId"`
+}
+
+// WorkspaceApplicationScheduleParentRefInput is an input type that accepts WorkspaceApplicationScheduleParentRefArgs and WorkspaceApplicationScheduleParentRefOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleParentRefInput` via:
+//
+//	WorkspaceApplicationScheduleParentRefArgs{...}
+type WorkspaceApplicationScheduleParentRefInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleParentRefOutput() WorkspaceApplicationScheduleParentRefOutput
+	ToWorkspaceApplicationScheduleParentRefOutputWithContext(context.Context) WorkspaceApplicationScheduleParentRefOutput
+}
+
+type WorkspaceApplicationScheduleParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringPtrInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringPtrInput `pulumi:"rootDocId"`
+}
+
+func (WorkspaceApplicationScheduleParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleParentRef)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleParentRefArgs) ToWorkspaceApplicationScheduleParentRefOutput() WorkspaceApplicationScheduleParentRefOutput {
+	return i.ToWorkspaceApplicationScheduleParentRefOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleParentRefArgs) ToWorkspaceApplicationScheduleParentRefOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleParentRefOutput)
+}
+
+// WorkspaceApplicationScheduleParentRefArrayInput is an input type that accepts WorkspaceApplicationScheduleParentRefArray and WorkspaceApplicationScheduleParentRefArrayOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleParentRefArrayInput` via:
+//
+//	WorkspaceApplicationScheduleParentRefArray{ WorkspaceApplicationScheduleParentRefArgs{...} }
+type WorkspaceApplicationScheduleParentRefArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleParentRefArrayOutput() WorkspaceApplicationScheduleParentRefArrayOutput
+	ToWorkspaceApplicationScheduleParentRefArrayOutputWithContext(context.Context) WorkspaceApplicationScheduleParentRefArrayOutput
+}
+
+type WorkspaceApplicationScheduleParentRefArray []WorkspaceApplicationScheduleParentRefInput
+
+func (WorkspaceApplicationScheduleParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationScheduleParentRef)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleParentRefArray) ToWorkspaceApplicationScheduleParentRefArrayOutput() WorkspaceApplicationScheduleParentRefArrayOutput {
+	return i.ToWorkspaceApplicationScheduleParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleParentRefArray) ToWorkspaceApplicationScheduleParentRefArrayOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleParentRefArrayOutput)
+}
+
+type WorkspaceApplicationScheduleParentRefOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleParentRef)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleParentRefOutput) ToWorkspaceApplicationScheduleParentRefOutput() WorkspaceApplicationScheduleParentRefOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleParentRefOutput) ToWorkspaceApplicationScheduleParentRefOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o WorkspaceApplicationScheduleParentRefOutput) Parent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleParentRef) *string { return v.Parent }).(pulumi.StringPtrOutput)
+}
+
+// Key of the root document object.
+func (o WorkspaceApplicationScheduleParentRefOutput) RootDocId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleParentRef) *string { return v.RootDocId }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceApplicationScheduleParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceApplicationScheduleParentRef)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleParentRefArrayOutput) ToWorkspaceApplicationScheduleParentRefArrayOutput() WorkspaceApplicationScheduleParentRefArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleParentRefArrayOutput) ToWorkspaceApplicationScheduleParentRefArrayOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleParentRefArrayOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleParentRefArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationScheduleParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationScheduleParentRef {
+		return vs[0].([]WorkspaceApplicationScheduleParentRef)[vs[1].(int)]
+	}).(WorkspaceApplicationScheduleParentRefOutput)
+}
+
+type WorkspaceApplicationScheduleRegistryMetadata struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey *string `pulumi:"aggregatorKey"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite *bool `pulumi:"isFavorite"`
+	// (Updatable) The identifying key for the object.
+	Key *string `pulumi:"key"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion *int `pulumi:"registryVersion"`
+}
+
+// WorkspaceApplicationScheduleRegistryMetadataInput is an input type that accepts WorkspaceApplicationScheduleRegistryMetadataArgs and WorkspaceApplicationScheduleRegistryMetadataOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleRegistryMetadataInput` via:
+//
+//	WorkspaceApplicationScheduleRegistryMetadataArgs{...}
+type WorkspaceApplicationScheduleRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleRegistryMetadataOutput() WorkspaceApplicationScheduleRegistryMetadataOutput
+	ToWorkspaceApplicationScheduleRegistryMetadataOutputWithContext(context.Context) WorkspaceApplicationScheduleRegistryMetadataOutput
+}
+
+type WorkspaceApplicationScheduleRegistryMetadataArgs struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
+	// (Updatable) The identifying key for the object.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
+}
+
+func (WorkspaceApplicationScheduleRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleRegistryMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceApplicationScheduleRegistryMetadataArgs) ToWorkspaceApplicationScheduleRegistryMetadataOutput() WorkspaceApplicationScheduleRegistryMetadataOutput {
+	return i.ToWorkspaceApplicationScheduleRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleRegistryMetadataArgs) ToWorkspaceApplicationScheduleRegistryMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleRegistryMetadataOutput)
+}
+
+func (i WorkspaceApplicationScheduleRegistryMetadataArgs) ToWorkspaceApplicationScheduleRegistryMetadataPtrOutput() WorkspaceApplicationScheduleRegistryMetadataPtrOutput {
+	return i.ToWorkspaceApplicationScheduleRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i WorkspaceApplicationScheduleRegistryMetadataArgs) ToWorkspaceApplicationScheduleRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleRegistryMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleRegistryMetadataOutput).ToWorkspaceApplicationScheduleRegistryMetadataPtrOutputWithContext(ctx)
+}
+
+// WorkspaceApplicationScheduleRegistryMetadataPtrInput is an input type that accepts WorkspaceApplicationScheduleRegistryMetadataArgs, WorkspaceApplicationScheduleRegistryMetadataPtr and WorkspaceApplicationScheduleRegistryMetadataPtrOutput values.
+// You can construct a concrete instance of `WorkspaceApplicationScheduleRegistryMetadataPtrInput` via:
+//
+//	        WorkspaceApplicationScheduleRegistryMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type WorkspaceApplicationScheduleRegistryMetadataPtrInput interface {
+	pulumi.Input
+
+	ToWorkspaceApplicationScheduleRegistryMetadataPtrOutput() WorkspaceApplicationScheduleRegistryMetadataPtrOutput
+	ToWorkspaceApplicationScheduleRegistryMetadataPtrOutputWithContext(context.Context) WorkspaceApplicationScheduleRegistryMetadataPtrOutput
+}
+
+type workspaceApplicationScheduleRegistryMetadataPtrType WorkspaceApplicationScheduleRegistryMetadataArgs
+
+func WorkspaceApplicationScheduleRegistryMetadataPtr(v *WorkspaceApplicationScheduleRegistryMetadataArgs) WorkspaceApplicationScheduleRegistryMetadataPtrInput {
+	return (*workspaceApplicationScheduleRegistryMetadataPtrType)(v)
+}
+
+func (*workspaceApplicationScheduleRegistryMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceApplicationScheduleRegistryMetadata)(nil)).Elem()
+}
+
+func (i *workspaceApplicationScheduleRegistryMetadataPtrType) ToWorkspaceApplicationScheduleRegistryMetadataPtrOutput() WorkspaceApplicationScheduleRegistryMetadataPtrOutput {
+	return i.ToWorkspaceApplicationScheduleRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *workspaceApplicationScheduleRegistryMetadataPtrType) ToWorkspaceApplicationScheduleRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleRegistryMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationScheduleRegistryMetadataPtrOutput)
+}
+
+type WorkspaceApplicationScheduleRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceApplicationScheduleRegistryMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleRegistryMetadataOutput) ToWorkspaceApplicationScheduleRegistryMetadataOutput() WorkspaceApplicationScheduleRegistryMetadataOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleRegistryMetadataOutput) ToWorkspaceApplicationScheduleRegistryMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleRegistryMetadataOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleRegistryMetadataOutput) ToWorkspaceApplicationScheduleRegistryMetadataPtrOutput() WorkspaceApplicationScheduleRegistryMetadataPtrOutput {
+	return o.ToWorkspaceApplicationScheduleRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o WorkspaceApplicationScheduleRegistryMetadataOutput) ToWorkspaceApplicationScheduleRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleRegistryMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceApplicationScheduleRegistryMetadata) *WorkspaceApplicationScheduleRegistryMetadata {
+		return &v
+	}).(WorkspaceApplicationScheduleRegistryMetadataPtrOutput)
+}
+
+// (Updatable) The owning object's key for this object.
+func (o WorkspaceApplicationScheduleRegistryMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether this object is a favorite or not.
+func (o WorkspaceApplicationScheduleRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The identifying key for the object.
+func (o WorkspaceApplicationScheduleRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceApplicationScheduleRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The registry version.
+func (o WorkspaceApplicationScheduleRegistryMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleRegistryMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
+}
+
+type WorkspaceApplicationScheduleRegistryMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceApplicationScheduleRegistryMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceApplicationScheduleRegistryMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceApplicationScheduleRegistryMetadataPtrOutput) ToWorkspaceApplicationScheduleRegistryMetadataPtrOutput() WorkspaceApplicationScheduleRegistryMetadataPtrOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleRegistryMetadataPtrOutput) ToWorkspaceApplicationScheduleRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceApplicationScheduleRegistryMetadataPtrOutput {
+	return o
+}
+
+func (o WorkspaceApplicationScheduleRegistryMetadataPtrOutput) Elem() WorkspaceApplicationScheduleRegistryMetadataOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleRegistryMetadata) WorkspaceApplicationScheduleRegistryMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret WorkspaceApplicationScheduleRegistryMetadata
+		return ret
+	}).(WorkspaceApplicationScheduleRegistryMetadataOutput)
+}
+
+// (Updatable) The owning object's key for this object.
+func (o WorkspaceApplicationScheduleRegistryMetadataPtrOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleRegistryMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AggregatorKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether this object is a favorite or not.
+func (o WorkspaceApplicationScheduleRegistryMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleRegistryMetadata) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsFavorite
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The identifying key for the object.
+func (o WorkspaceApplicationScheduleRegistryMetadataPtrOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleRegistryMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceApplicationScheduleRegistryMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleRegistryMetadata) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Labels
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The registry version.
+func (o WorkspaceApplicationScheduleRegistryMetadataPtrOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationScheduleRegistryMetadata) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RegistryVersion
+	}).(pulumi.IntPtrOutput)
+}
+
 type WorkspaceApplicationSourceApplicationInfo struct {
 	// The source application key to use when creating the application.
 	ApplicationKey *string `pulumi:"applicationKey"`
@@ -8656,6 +9982,2533 @@ func (o GetWorkspaceApplicationRegistryMetadataArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationRegistryMetadata {
 		return vs[0].([]GetWorkspaceApplicationRegistryMetadata)[vs[1].(int)]
 	}).(GetWorkspaceApplicationRegistryMetadataOutput)
+}
+
+type GetWorkspaceApplicationScheduleFrequencyDetail struct {
+	// This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+	CustomExpression string `pulumi:"customExpression"`
+	// This holds the day of the week on which the schedule should be triggered.
+	DayOfWeek string `pulumi:"dayOfWeek"`
+	// A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+	Days []int `pulumi:"days"`
+	// the frequency of the schedule.
+	Frequency string `pulumi:"frequency"`
+	// This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+	Interval int `pulumi:"interval"`
+	// The type of the object.
+	ModelType string `pulumi:"modelType"`
+	// A model to hold time in hour:minute:second format.
+	Times []GetWorkspaceApplicationScheduleFrequencyDetailTime `pulumi:"times"`
+	// This holds the week of the month in which the schedule should be triggered.
+	WeekOfMonth string `pulumi:"weekOfMonth"`
+}
+
+// GetWorkspaceApplicationScheduleFrequencyDetailInput is an input type that accepts GetWorkspaceApplicationScheduleFrequencyDetailArgs and GetWorkspaceApplicationScheduleFrequencyDetailOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleFrequencyDetailInput` via:
+//
+//	GetWorkspaceApplicationScheduleFrequencyDetailArgs{...}
+type GetWorkspaceApplicationScheduleFrequencyDetailInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleFrequencyDetailOutput() GetWorkspaceApplicationScheduleFrequencyDetailOutput
+	ToGetWorkspaceApplicationScheduleFrequencyDetailOutputWithContext(context.Context) GetWorkspaceApplicationScheduleFrequencyDetailOutput
+}
+
+type GetWorkspaceApplicationScheduleFrequencyDetailArgs struct {
+	// This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+	CustomExpression pulumi.StringInput `pulumi:"customExpression"`
+	// This holds the day of the week on which the schedule should be triggered.
+	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	// A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+	Days pulumi.IntArrayInput `pulumi:"days"`
+	// the frequency of the schedule.
+	Frequency pulumi.StringInput `pulumi:"frequency"`
+	// This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+	Interval pulumi.IntInput `pulumi:"interval"`
+	// The type of the object.
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+	// A model to hold time in hour:minute:second format.
+	Times GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayInput `pulumi:"times"`
+	// This holds the week of the month in which the schedule should be triggered.
+	WeekOfMonth pulumi.StringInput `pulumi:"weekOfMonth"`
+}
+
+func (GetWorkspaceApplicationScheduleFrequencyDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleFrequencyDetail)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleFrequencyDetailArgs) ToGetWorkspaceApplicationScheduleFrequencyDetailOutput() GetWorkspaceApplicationScheduleFrequencyDetailOutput {
+	return i.ToGetWorkspaceApplicationScheduleFrequencyDetailOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleFrequencyDetailArgs) ToGetWorkspaceApplicationScheduleFrequencyDetailOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleFrequencyDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleFrequencyDetailOutput)
+}
+
+// GetWorkspaceApplicationScheduleFrequencyDetailArrayInput is an input type that accepts GetWorkspaceApplicationScheduleFrequencyDetailArray and GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleFrequencyDetailArrayInput` via:
+//
+//	GetWorkspaceApplicationScheduleFrequencyDetailArray{ GetWorkspaceApplicationScheduleFrequencyDetailArgs{...} }
+type GetWorkspaceApplicationScheduleFrequencyDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleFrequencyDetailArrayOutput() GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput
+	ToGetWorkspaceApplicationScheduleFrequencyDetailArrayOutputWithContext(context.Context) GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput
+}
+
+type GetWorkspaceApplicationScheduleFrequencyDetailArray []GetWorkspaceApplicationScheduleFrequencyDetailInput
+
+func (GetWorkspaceApplicationScheduleFrequencyDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleFrequencyDetail)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleFrequencyDetailArray) ToGetWorkspaceApplicationScheduleFrequencyDetailArrayOutput() GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput {
+	return i.ToGetWorkspaceApplicationScheduleFrequencyDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleFrequencyDetailArray) ToGetWorkspaceApplicationScheduleFrequencyDetailArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput)
+}
+
+type GetWorkspaceApplicationScheduleFrequencyDetailOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleFrequencyDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleFrequencyDetail)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleFrequencyDetailOutput) ToGetWorkspaceApplicationScheduleFrequencyDetailOutput() GetWorkspaceApplicationScheduleFrequencyDetailOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleFrequencyDetailOutput) ToGetWorkspaceApplicationScheduleFrequencyDetailOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleFrequencyDetailOutput {
+	return o
+}
+
+// This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+func (o GetWorkspaceApplicationScheduleFrequencyDetailOutput) CustomExpression() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleFrequencyDetail) string { return v.CustomExpression }).(pulumi.StringOutput)
+}
+
+// This holds the day of the week on which the schedule should be triggered.
+func (o GetWorkspaceApplicationScheduleFrequencyDetailOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleFrequencyDetail) string { return v.DayOfWeek }).(pulumi.StringOutput)
+}
+
+// A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+func (o GetWorkspaceApplicationScheduleFrequencyDetailOutput) Days() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleFrequencyDetail) []int { return v.Days }).(pulumi.IntArrayOutput)
+}
+
+// the frequency of the schedule.
+func (o GetWorkspaceApplicationScheduleFrequencyDetailOutput) Frequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleFrequencyDetail) string { return v.Frequency }).(pulumi.StringOutput)
+}
+
+// This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+func (o GetWorkspaceApplicationScheduleFrequencyDetailOutput) Interval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleFrequencyDetail) int { return v.Interval }).(pulumi.IntOutput)
+}
+
+// The type of the object.
+func (o GetWorkspaceApplicationScheduleFrequencyDetailOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleFrequencyDetail) string { return v.ModelType }).(pulumi.StringOutput)
+}
+
+// A model to hold time in hour:minute:second format.
+func (o GetWorkspaceApplicationScheduleFrequencyDetailOutput) Times() GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleFrequencyDetail) []GetWorkspaceApplicationScheduleFrequencyDetailTime {
+		return v.Times
+	}).(GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput)
+}
+
+// This holds the week of the month in which the schedule should be triggered.
+func (o GetWorkspaceApplicationScheduleFrequencyDetailOutput) WeekOfMonth() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleFrequencyDetail) string { return v.WeekOfMonth }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleFrequencyDetail)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput) ToGetWorkspaceApplicationScheduleFrequencyDetailArrayOutput() GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput) ToGetWorkspaceApplicationScheduleFrequencyDetailArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationScheduleFrequencyDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationScheduleFrequencyDetail {
+		return vs[0].([]GetWorkspaceApplicationScheduleFrequencyDetail)[vs[1].(int)]
+	}).(GetWorkspaceApplicationScheduleFrequencyDetailOutput)
+}
+
+type GetWorkspaceApplicationScheduleFrequencyDetailTime struct {
+	// The hour value.
+	Hour int `pulumi:"hour"`
+	// The minute value.
+	Minute int `pulumi:"minute"`
+	// The second value.
+	Second int `pulumi:"second"`
+}
+
+// GetWorkspaceApplicationScheduleFrequencyDetailTimeInput is an input type that accepts GetWorkspaceApplicationScheduleFrequencyDetailTimeArgs and GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleFrequencyDetailTimeInput` via:
+//
+//	GetWorkspaceApplicationScheduleFrequencyDetailTimeArgs{...}
+type GetWorkspaceApplicationScheduleFrequencyDetailTimeInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleFrequencyDetailTimeOutput() GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput
+	ToGetWorkspaceApplicationScheduleFrequencyDetailTimeOutputWithContext(context.Context) GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput
+}
+
+type GetWorkspaceApplicationScheduleFrequencyDetailTimeArgs struct {
+	// The hour value.
+	Hour pulumi.IntInput `pulumi:"hour"`
+	// The minute value.
+	Minute pulumi.IntInput `pulumi:"minute"`
+	// The second value.
+	Second pulumi.IntInput `pulumi:"second"`
+}
+
+func (GetWorkspaceApplicationScheduleFrequencyDetailTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleFrequencyDetailTime)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleFrequencyDetailTimeArgs) ToGetWorkspaceApplicationScheduleFrequencyDetailTimeOutput() GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput {
+	return i.ToGetWorkspaceApplicationScheduleFrequencyDetailTimeOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleFrequencyDetailTimeArgs) ToGetWorkspaceApplicationScheduleFrequencyDetailTimeOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput)
+}
+
+// GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayInput is an input type that accepts GetWorkspaceApplicationScheduleFrequencyDetailTimeArray and GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayInput` via:
+//
+//	GetWorkspaceApplicationScheduleFrequencyDetailTimeArray{ GetWorkspaceApplicationScheduleFrequencyDetailTimeArgs{...} }
+type GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput() GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput
+	ToGetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutputWithContext(context.Context) GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput
+}
+
+type GetWorkspaceApplicationScheduleFrequencyDetailTimeArray []GetWorkspaceApplicationScheduleFrequencyDetailTimeInput
+
+func (GetWorkspaceApplicationScheduleFrequencyDetailTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleFrequencyDetailTime)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleFrequencyDetailTimeArray) ToGetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput() GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput {
+	return i.ToGetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleFrequencyDetailTimeArray) ToGetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput)
+}
+
+type GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleFrequencyDetailTime)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput) ToGetWorkspaceApplicationScheduleFrequencyDetailTimeOutput() GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput) ToGetWorkspaceApplicationScheduleFrequencyDetailTimeOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput {
+	return o
+}
+
+// The hour value.
+func (o GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput) Hour() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleFrequencyDetailTime) int { return v.Hour }).(pulumi.IntOutput)
+}
+
+// The minute value.
+func (o GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput) Minute() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleFrequencyDetailTime) int { return v.Minute }).(pulumi.IntOutput)
+}
+
+// The second value.
+func (o GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput) Second() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleFrequencyDetailTime) int { return v.Second }).(pulumi.IntOutput)
+}
+
+type GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleFrequencyDetailTime)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput) ToGetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput() GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput) ToGetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationScheduleFrequencyDetailTime {
+		return vs[0].([]GetWorkspaceApplicationScheduleFrequencyDetailTime)[vs[1].(int)]
+	}).(GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []GetWorkspaceApplicationScheduleMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []GetWorkspaceApplicationScheduleMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName string `pulumi:"updatedByName"`
+}
+
+// GetWorkspaceApplicationScheduleMetadataInput is an input type that accepts GetWorkspaceApplicationScheduleMetadataArgs and GetWorkspaceApplicationScheduleMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleMetadataInput` via:
+//
+//	GetWorkspaceApplicationScheduleMetadataArgs{...}
+type GetWorkspaceApplicationScheduleMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleMetadataOutput() GetWorkspaceApplicationScheduleMetadataOutput
+	ToGetWorkspaceApplicationScheduleMetadataOutputWithContext(context.Context) GetWorkspaceApplicationScheduleMetadataOutput
+}
+
+type GetWorkspaceApplicationScheduleMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators GetWorkspaceApplicationScheduleMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics GetWorkspaceApplicationScheduleMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+}
+
+func (GetWorkspaceApplicationScheduleMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataArgs) ToGetWorkspaceApplicationScheduleMetadataOutput() GetWorkspaceApplicationScheduleMetadataOutput {
+	return i.ToGetWorkspaceApplicationScheduleMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataArgs) ToGetWorkspaceApplicationScheduleMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleMetadataOutput)
+}
+
+// GetWorkspaceApplicationScheduleMetadataArrayInput is an input type that accepts GetWorkspaceApplicationScheduleMetadataArray and GetWorkspaceApplicationScheduleMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleMetadataArrayInput` via:
+//
+//	GetWorkspaceApplicationScheduleMetadataArray{ GetWorkspaceApplicationScheduleMetadataArgs{...} }
+type GetWorkspaceApplicationScheduleMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleMetadataArrayOutput() GetWorkspaceApplicationScheduleMetadataArrayOutput
+	ToGetWorkspaceApplicationScheduleMetadataArrayOutputWithContext(context.Context) GetWorkspaceApplicationScheduleMetadataArrayOutput
+}
+
+type GetWorkspaceApplicationScheduleMetadataArray []GetWorkspaceApplicationScheduleMetadataInput
+
+func (GetWorkspaceApplicationScheduleMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataArray) ToGetWorkspaceApplicationScheduleMetadataArrayOutput() GetWorkspaceApplicationScheduleMetadataArrayOutput {
+	return i.ToGetWorkspaceApplicationScheduleMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataArray) ToGetWorkspaceApplicationScheduleMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleMetadataArrayOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataOutput) ToGetWorkspaceApplicationScheduleMetadataOutput() GetWorkspaceApplicationScheduleMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataOutput) ToGetWorkspaceApplicationScheduleMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) Aggregators() GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) []GetWorkspaceApplicationScheduleMetadataAggregator {
+		return v.Aggregators
+	}).(GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) CountStatistics() GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) []GetWorkspaceApplicationScheduleMetadataCountStatistic {
+		return v.CountStatistics
+	}).(GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) CreatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
+}
+
+// The full path to identify this object.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) IdentifierPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
+}
+
+// Information property fields.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+// The date and time that the object was created.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the object was updated.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) UpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceApplicationScheduleMetadataOutput) UpdatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) string { return v.UpdatedByName }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataArrayOutput) ToGetWorkspaceApplicationScheduleMetadataArrayOutput() GetWorkspaceApplicationScheduleMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataArrayOutput) ToGetWorkspaceApplicationScheduleMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationScheduleMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationScheduleMetadata {
+		return vs[0].([]GetWorkspaceApplicationScheduleMetadata)[vs[1].(int)]
+	}).(GetWorkspaceApplicationScheduleMetadataOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadataAggregator struct {
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	// The identifier of the aggregator.
+	Identifier string `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name string `pulumi:"name"`
+	// The type of the aggregator.
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceApplicationScheduleMetadataAggregatorInput is an input type that accepts GetWorkspaceApplicationScheduleMetadataAggregatorArgs and GetWorkspaceApplicationScheduleMetadataAggregatorOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleMetadataAggregatorInput` via:
+//
+//	GetWorkspaceApplicationScheduleMetadataAggregatorArgs{...}
+type GetWorkspaceApplicationScheduleMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleMetadataAggregatorOutput() GetWorkspaceApplicationScheduleMetadataAggregatorOutput
+	ToGetWorkspaceApplicationScheduleMetadataAggregatorOutputWithContext(context.Context) GetWorkspaceApplicationScheduleMetadataAggregatorOutput
+}
+
+type GetWorkspaceApplicationScheduleMetadataAggregatorArgs struct {
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The identifier of the aggregator.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the aggregator.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceApplicationScheduleMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataAggregatorArgs) ToGetWorkspaceApplicationScheduleMetadataAggregatorOutput() GetWorkspaceApplicationScheduleMetadataAggregatorOutput {
+	return i.ToGetWorkspaceApplicationScheduleMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataAggregatorArgs) ToGetWorkspaceApplicationScheduleMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleMetadataAggregatorOutput)
+}
+
+// GetWorkspaceApplicationScheduleMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceApplicationScheduleMetadataAggregatorArray and GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleMetadataAggregatorArrayInput` via:
+//
+//	GetWorkspaceApplicationScheduleMetadataAggregatorArray{ GetWorkspaceApplicationScheduleMetadataAggregatorArgs{...} }
+type GetWorkspaceApplicationScheduleMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput() GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput
+	ToGetWorkspaceApplicationScheduleMetadataAggregatorArrayOutputWithContext(context.Context) GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput
+}
+
+type GetWorkspaceApplicationScheduleMetadataAggregatorArray []GetWorkspaceApplicationScheduleMetadataAggregatorInput
+
+func (GetWorkspaceApplicationScheduleMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataAggregatorArray) ToGetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput() GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput {
+	return i.ToGetWorkspaceApplicationScheduleMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataAggregatorArray) ToGetWorkspaceApplicationScheduleMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataAggregatorOutput) ToGetWorkspaceApplicationScheduleMetadataAggregatorOutput() GetWorkspaceApplicationScheduleMetadataAggregatorOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataAggregatorOutput) ToGetWorkspaceApplicationScheduleMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataAggregatorOutput {
+	return o
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceApplicationScheduleMetadataAggregatorOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The identifier of the aggregator.
+func (o GetWorkspaceApplicationScheduleMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceApplicationScheduleMetadataAggregatorOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o GetWorkspaceApplicationScheduleMetadataAggregatorOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the aggregator.
+func (o GetWorkspaceApplicationScheduleMetadataAggregatorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadataAggregator) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput) ToGetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput() GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput) ToGetWorkspaceApplicationScheduleMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationScheduleMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationScheduleMetadataAggregator {
+		return vs[0].([]GetWorkspaceApplicationScheduleMetadataAggregator)[vs[1].(int)]
+	}).(GetWorkspaceApplicationScheduleMetadataAggregatorOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// GetWorkspaceApplicationScheduleMetadataCountStatisticInput is an input type that accepts GetWorkspaceApplicationScheduleMetadataCountStatisticArgs and GetWorkspaceApplicationScheduleMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleMetadataCountStatisticInput` via:
+//
+//	GetWorkspaceApplicationScheduleMetadataCountStatisticArgs{...}
+type GetWorkspaceApplicationScheduleMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleMetadataCountStatisticOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticOutput
+	ToGetWorkspaceApplicationScheduleMetadataCountStatisticOutputWithContext(context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticOutput
+}
+
+type GetWorkspaceApplicationScheduleMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (GetWorkspaceApplicationScheduleMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataCountStatisticArgs) ToGetWorkspaceApplicationScheduleMetadataCountStatisticOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticOutput {
+	return i.ToGetWorkspaceApplicationScheduleMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataCountStatisticArgs) ToGetWorkspaceApplicationScheduleMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleMetadataCountStatisticOutput)
+}
+
+// GetWorkspaceApplicationScheduleMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceApplicationScheduleMetadataCountStatisticArray and GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleMetadataCountStatisticArrayInput` via:
+//
+//	GetWorkspaceApplicationScheduleMetadataCountStatisticArray{ GetWorkspaceApplicationScheduleMetadataCountStatisticArgs{...} }
+type GetWorkspaceApplicationScheduleMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput
+	ToGetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutputWithContext(context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput
+}
+
+type GetWorkspaceApplicationScheduleMetadataCountStatisticArray []GetWorkspaceApplicationScheduleMetadataCountStatisticInput
+
+func (GetWorkspaceApplicationScheduleMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataCountStatisticArray) ToGetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput {
+	return i.ToGetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataCountStatisticArray) ToGetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticOutput) ToGetWorkspaceApplicationScheduleMetadataCountStatisticOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticOutput) ToGetWorkspaceApplicationScheduleMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticOutput) ObjectTypeCountLists() GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadataCountStatistic) []GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput) ToGetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput) ToGetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationScheduleMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationScheduleMetadataCountStatistic {
+		return vs[0].([]GetWorkspaceApplicationScheduleMetadataCountStatistic)[vs[1].(int)]
+	}).(GetWorkspaceApplicationScheduleMetadataCountStatisticOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType string `pulumi:"objectType"`
+}
+
+// GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs{...}
+type GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput
+	ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+}
+
+func (GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray{ GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs{...} }
+type GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray []GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListInput
+
+func (GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectCount
+	}).(pulumi.StringOutput)
+}
+
+// The type of object for the count statistic object.
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type GetWorkspaceApplicationScheduleParentRef struct {
+	// Key of the parent object.
+	Parent string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId string `pulumi:"rootDocId"`
+}
+
+// GetWorkspaceApplicationScheduleParentRefInput is an input type that accepts GetWorkspaceApplicationScheduleParentRefArgs and GetWorkspaceApplicationScheduleParentRefOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleParentRefInput` via:
+//
+//	GetWorkspaceApplicationScheduleParentRefArgs{...}
+type GetWorkspaceApplicationScheduleParentRefInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleParentRefOutput() GetWorkspaceApplicationScheduleParentRefOutput
+	ToGetWorkspaceApplicationScheduleParentRefOutputWithContext(context.Context) GetWorkspaceApplicationScheduleParentRefOutput
+}
+
+type GetWorkspaceApplicationScheduleParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+}
+
+func (GetWorkspaceApplicationScheduleParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleParentRefArgs) ToGetWorkspaceApplicationScheduleParentRefOutput() GetWorkspaceApplicationScheduleParentRefOutput {
+	return i.ToGetWorkspaceApplicationScheduleParentRefOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleParentRefArgs) ToGetWorkspaceApplicationScheduleParentRefOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleParentRefOutput)
+}
+
+// GetWorkspaceApplicationScheduleParentRefArrayInput is an input type that accepts GetWorkspaceApplicationScheduleParentRefArray and GetWorkspaceApplicationScheduleParentRefArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleParentRefArrayInput` via:
+//
+//	GetWorkspaceApplicationScheduleParentRefArray{ GetWorkspaceApplicationScheduleParentRefArgs{...} }
+type GetWorkspaceApplicationScheduleParentRefArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleParentRefArrayOutput() GetWorkspaceApplicationScheduleParentRefArrayOutput
+	ToGetWorkspaceApplicationScheduleParentRefArrayOutputWithContext(context.Context) GetWorkspaceApplicationScheduleParentRefArrayOutput
+}
+
+type GetWorkspaceApplicationScheduleParentRefArray []GetWorkspaceApplicationScheduleParentRefInput
+
+func (GetWorkspaceApplicationScheduleParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleParentRefArray) ToGetWorkspaceApplicationScheduleParentRefArrayOutput() GetWorkspaceApplicationScheduleParentRefArrayOutput {
+	return i.ToGetWorkspaceApplicationScheduleParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleParentRefArray) ToGetWorkspaceApplicationScheduleParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleParentRefArrayOutput)
+}
+
+type GetWorkspaceApplicationScheduleParentRefOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleParentRefOutput) ToGetWorkspaceApplicationScheduleParentRefOutput() GetWorkspaceApplicationScheduleParentRefOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleParentRefOutput) ToGetWorkspaceApplicationScheduleParentRefOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o GetWorkspaceApplicationScheduleParentRefOutput) Parent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleParentRef) string { return v.Parent }).(pulumi.StringOutput)
+}
+
+// Key of the root document object.
+func (o GetWorkspaceApplicationScheduleParentRefOutput) RootDocId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationScheduleParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleParentRefArrayOutput) ToGetWorkspaceApplicationScheduleParentRefArrayOutput() GetWorkspaceApplicationScheduleParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleParentRefArrayOutput) ToGetWorkspaceApplicationScheduleParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationScheduleParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationScheduleParentRef {
+		return vs[0].([]GetWorkspaceApplicationScheduleParentRef)[vs[1].(int)]
+	}).(GetWorkspaceApplicationScheduleParentRefOutput)
+}
+
+type GetWorkspaceApplicationScheduleRegistryMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+}
+
+// GetWorkspaceApplicationScheduleRegistryMetadataInput is an input type that accepts GetWorkspaceApplicationScheduleRegistryMetadataArgs and GetWorkspaceApplicationScheduleRegistryMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleRegistryMetadataInput` via:
+//
+//	GetWorkspaceApplicationScheduleRegistryMetadataArgs{...}
+type GetWorkspaceApplicationScheduleRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleRegistryMetadataOutput() GetWorkspaceApplicationScheduleRegistryMetadataOutput
+	ToGetWorkspaceApplicationScheduleRegistryMetadataOutputWithContext(context.Context) GetWorkspaceApplicationScheduleRegistryMetadataOutput
+}
+
+type GetWorkspaceApplicationScheduleRegistryMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+}
+
+func (GetWorkspaceApplicationScheduleRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleRegistryMetadataArgs) ToGetWorkspaceApplicationScheduleRegistryMetadataOutput() GetWorkspaceApplicationScheduleRegistryMetadataOutput {
+	return i.ToGetWorkspaceApplicationScheduleRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleRegistryMetadataArgs) ToGetWorkspaceApplicationScheduleRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleRegistryMetadataOutput)
+}
+
+// GetWorkspaceApplicationScheduleRegistryMetadataArrayInput is an input type that accepts GetWorkspaceApplicationScheduleRegistryMetadataArray and GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationScheduleRegistryMetadataArrayInput` via:
+//
+//	GetWorkspaceApplicationScheduleRegistryMetadataArray{ GetWorkspaceApplicationScheduleRegistryMetadataArgs{...} }
+type GetWorkspaceApplicationScheduleRegistryMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationScheduleRegistryMetadataArrayOutput() GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput
+	ToGetWorkspaceApplicationScheduleRegistryMetadataArrayOutputWithContext(context.Context) GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput
+}
+
+type GetWorkspaceApplicationScheduleRegistryMetadataArray []GetWorkspaceApplicationScheduleRegistryMetadataInput
+
+func (GetWorkspaceApplicationScheduleRegistryMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationScheduleRegistryMetadataArray) ToGetWorkspaceApplicationScheduleRegistryMetadataArrayOutput() GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput {
+	return i.ToGetWorkspaceApplicationScheduleRegistryMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationScheduleRegistryMetadataArray) ToGetWorkspaceApplicationScheduleRegistryMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput)
+}
+
+type GetWorkspaceApplicationScheduleRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationScheduleRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleRegistryMetadataOutput) ToGetWorkspaceApplicationScheduleRegistryMetadataOutput() GetWorkspaceApplicationScheduleRegistryMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleRegistryMetadataOutput) ToGetWorkspaceApplicationScheduleRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleRegistryMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceApplicationScheduleRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceApplicationScheduleRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceApplicationScheduleRegistryMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceApplicationScheduleRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceApplicationScheduleRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+type GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationScheduleRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput) ToGetWorkspaceApplicationScheduleRegistryMetadataArrayOutput() GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput) ToGetWorkspaceApplicationScheduleRegistryMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationScheduleRegistryMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationScheduleRegistryMetadata {
+		return vs[0].([]GetWorkspaceApplicationScheduleRegistryMetadata)[vs[1].(int)]
+	}).(GetWorkspaceApplicationScheduleRegistryMetadataOutput)
+}
+
+type GetWorkspaceApplicationSchedulesFilter struct {
+	// Used to filter by the name of the object.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetWorkspaceApplicationSchedulesFilterInput is an input type that accepts GetWorkspaceApplicationSchedulesFilterArgs and GetWorkspaceApplicationSchedulesFilterOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesFilterInput` via:
+//
+//	GetWorkspaceApplicationSchedulesFilterArgs{...}
+type GetWorkspaceApplicationSchedulesFilterInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesFilterOutput() GetWorkspaceApplicationSchedulesFilterOutput
+	ToGetWorkspaceApplicationSchedulesFilterOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesFilterOutput
+}
+
+type GetWorkspaceApplicationSchedulesFilterArgs struct {
+	// Used to filter by the name of the object.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetWorkspaceApplicationSchedulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesFilterArgs) ToGetWorkspaceApplicationSchedulesFilterOutput() GetWorkspaceApplicationSchedulesFilterOutput {
+	return i.ToGetWorkspaceApplicationSchedulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesFilterArgs) ToGetWorkspaceApplicationSchedulesFilterOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesFilterOutput)
+}
+
+// GetWorkspaceApplicationSchedulesFilterArrayInput is an input type that accepts GetWorkspaceApplicationSchedulesFilterArray and GetWorkspaceApplicationSchedulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesFilterArrayInput` via:
+//
+//	GetWorkspaceApplicationSchedulesFilterArray{ GetWorkspaceApplicationSchedulesFilterArgs{...} }
+type GetWorkspaceApplicationSchedulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesFilterArrayOutput() GetWorkspaceApplicationSchedulesFilterArrayOutput
+	ToGetWorkspaceApplicationSchedulesFilterArrayOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesFilterArrayOutput
+}
+
+type GetWorkspaceApplicationSchedulesFilterArray []GetWorkspaceApplicationSchedulesFilterInput
+
+func (GetWorkspaceApplicationSchedulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesFilterArray) ToGetWorkspaceApplicationSchedulesFilterArrayOutput() GetWorkspaceApplicationSchedulesFilterArrayOutput {
+	return i.ToGetWorkspaceApplicationSchedulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesFilterArray) ToGetWorkspaceApplicationSchedulesFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesFilterArrayOutput)
+}
+
+type GetWorkspaceApplicationSchedulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesFilterOutput) ToGetWorkspaceApplicationSchedulesFilterOutput() GetWorkspaceApplicationSchedulesFilterOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesFilterOutput) ToGetWorkspaceApplicationSchedulesFilterOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesFilterOutput {
+	return o
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceApplicationSchedulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetWorkspaceApplicationSchedulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetWorkspaceApplicationSchedulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetWorkspaceApplicationSchedulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesFilterArrayOutput) ToGetWorkspaceApplicationSchedulesFilterArrayOutput() GetWorkspaceApplicationSchedulesFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesFilterArrayOutput) ToGetWorkspaceApplicationSchedulesFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationSchedulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationSchedulesFilter {
+		return vs[0].([]GetWorkspaceApplicationSchedulesFilter)[vs[1].(int)]
+	}).(GetWorkspaceApplicationSchedulesFilterOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollection struct {
+	Items []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArgs and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArgs{...}
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArgs struct {
+	Items GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput)
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArray and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArray{ GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArgs{...} }
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArray []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionInput
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput) Items() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollection) []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem {
+		return v.Items
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationSchedulesScheduleSummaryCollection {
+		return vs[0].([]GetWorkspaceApplicationSchedulesScheduleSummaryCollection)[vs[1].(int)]
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem struct {
+	// The application key.
+	ApplicationKey string `pulumi:"applicationKey"`
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	// The model that holds the frequency details.
+	FrequencyDetails GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails `pulumi:"frequencyDetails"`
+	// Used to filter by the identifier of the object.
+	Identifier string `pulumi:"identifier"`
+	// A flag to indicate daylight saving.
+	IsDaylightAdjustmentEnabled bool `pulumi:"isDaylightAdjustmentEnabled"`
+	// Used to filter by the key of the object.
+	Key string `pulumi:"key"`
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	Metadatas []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata `pulumi:"metadatas"`
+	// The type of the object.
+	ModelType string `pulumi:"modelType"`
+	// This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+	ModelVersion string `pulumi:"modelVersion"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+	ObjectStatus int `pulumi:"objectStatus"`
+	// This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+	ObjectVersion int `pulumi:"objectVersion"`
+	// A reference to the object's parent.
+	ParentReves      []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRef      `pulumi:"parentReves"`
+	RegistryMetadata GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadata `pulumi:"registryMetadata"`
+	// The timezone for the schedule.
+	Timezone string `pulumi:"timezone"`
+	// The workspace ID.
+	WorkspaceId string `pulumi:"workspaceId"`
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArgs and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArgs{...}
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArgs struct {
+	// The application key.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The model that holds the frequency details.
+	FrequencyDetails GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsInput `pulumi:"frequencyDetails"`
+	// Used to filter by the identifier of the object.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// A flag to indicate daylight saving.
+	IsDaylightAdjustmentEnabled pulumi.BoolInput `pulumi:"isDaylightAdjustmentEnabled"`
+	// Used to filter by the key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	Metadatas GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
+	// The type of the object.
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+	// This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
+	// This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	// A reference to the object's parent.
+	ParentReves      GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayInput   `pulumi:"parentReves"`
+	RegistryMetadata GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataInput `pulumi:"registryMetadata"`
+	// The timezone for the schedule.
+	Timezone pulumi.StringInput `pulumi:"timezone"`
+	// The workspace ID.
+	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
+}
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput)
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArray and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArray{ GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArgs{...} }
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArray []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemInput
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput {
+	return o
+}
+
+// The application key.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) string { return v.ApplicationKey }).(pulumi.StringOutput)
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The model that holds the frequency details.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) FrequencyDetails() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails {
+		return v.FrequencyDetails
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput)
+}
+
+// Used to filter by the identifier of the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// A flag to indicate daylight saving.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) IsDaylightAdjustmentEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) bool {
+		return v.IsDaylightAdjustmentEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Used to filter by the key of the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// A summary type containing information about the object including its key, name and when/who created/updated it.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) Metadatas() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata {
+		return v.Metadatas
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput)
+}
+
+// The type of the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
+}
+
+// This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) ModelVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) string { return v.ModelVersion }).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) ObjectStatus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) int { return v.ObjectStatus }).(pulumi.IntOutput)
+}
+
+// This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) ObjectVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) int { return v.ObjectVersion }).(pulumi.IntOutput)
+}
+
+// A reference to the object's parent.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) ParentReves() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRef {
+		return v.ParentReves
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput)
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) RegistryMetadata() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadata {
+		return v.RegistryMetadata
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput)
+}
+
+// The timezone for the schedule.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) Timezone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) string { return v.Timezone }).(pulumi.StringOutput)
+}
+
+// The workspace ID.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput) WorkspaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem) string { return v.WorkspaceId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem {
+		return vs[0].([]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem)[vs[1].(int)]
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails struct {
+	// This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+	CustomExpression string `pulumi:"customExpression"`
+	// This holds the day of the week on which the schedule should be triggered.
+	DayOfWeek string `pulumi:"dayOfWeek"`
+	// A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+	Days []int `pulumi:"days"`
+	// the frequency of the schedule.
+	Frequency string `pulumi:"frequency"`
+	// This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+	Interval int `pulumi:"interval"`
+	// The type of the object.
+	ModelType string `pulumi:"modelType"`
+	// A model to hold time in hour:minute:second format.
+	Time GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTime `pulumi:"time"`
+	// This holds the week of the month in which the schedule should be triggered.
+	WeekOfMonth string `pulumi:"weekOfMonth"`
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsArgs and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsArgs{...}
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsArgs struct {
+	// This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+	CustomExpression pulumi.StringInput `pulumi:"customExpression"`
+	// This holds the day of the week on which the schedule should be triggered.
+	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	// A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+	Days pulumi.IntArrayInput `pulumi:"days"`
+	// the frequency of the schedule.
+	Frequency pulumi.StringInput `pulumi:"frequency"`
+	// This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+	Interval pulumi.IntInput `pulumi:"interval"`
+	// The type of the object.
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+	// A model to hold time in hour:minute:second format.
+	Time GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeInput `pulumi:"time"`
+	// This holds the week of the month in which the schedule should be triggered.
+	WeekOfMonth pulumi.StringInput `pulumi:"weekOfMonth"`
+}
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput {
+	return o
+}
+
+// This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput) CustomExpression() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails) string {
+		return v.CustomExpression
+	}).(pulumi.StringOutput)
+}
+
+// This holds the day of the week on which the schedule should be triggered.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails) string {
+		return v.DayOfWeek
+	}).(pulumi.StringOutput)
+}
+
+// A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput) Days() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails) []int {
+		return v.Days
+	}).(pulumi.IntArrayOutput)
+}
+
+// the frequency of the schedule.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput) Frequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails) string {
+		return v.Frequency
+	}).(pulumi.StringOutput)
+}
+
+// This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput) Interval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails) int {
+		return v.Interval
+	}).(pulumi.IntOutput)
+}
+
+// The type of the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails) string {
+		return v.ModelType
+	}).(pulumi.StringOutput)
+}
+
+// A model to hold time in hour:minute:second format.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput) Time() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTime {
+		return v.Time
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput)
+}
+
+// This holds the week of the month in which the schedule should be triggered.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput) WeekOfMonth() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetails) string {
+		return v.WeekOfMonth
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTime struct {
+	// The hour value.
+	Hour int `pulumi:"hour"`
+	// The minute value.
+	Minute int `pulumi:"minute"`
+	// The second value.
+	Second int `pulumi:"second"`
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeArgs and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeArgs{...}
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeArgs struct {
+	// The hour value.
+	Hour pulumi.IntInput `pulumi:"hour"`
+	// The minute value.
+	Minute pulumi.IntInput `pulumi:"minute"`
+	// The second value.
+	Second pulumi.IntInput `pulumi:"second"`
+}
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTime)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTime)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput {
+	return o
+}
+
+// The hour value.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput) Hour() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTime) int {
+		return v.Hour
+	}).(pulumi.IntOutput)
+}
+
+// The minute value.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput) Minute() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTime) int {
+		return v.Minute
+	}).(pulumi.IntOutput)
+}
+
+// The second value.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput) Second() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTime) int {
+		return v.Second
+	}).(pulumi.IntOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName string `pulumi:"updatedByName"`
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArgs and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArgs{...}
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+}
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput)
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArray and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArray{ GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArgs{...} }
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArray []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataInput
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) string {
+		return v.AggregatorKey
+	}).(pulumi.StringOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) Aggregators() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator {
+		return v.Aggregators
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) CountStatistics() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatistic {
+		return v.CountStatistics
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) string {
+		return v.CreatedBy
+	}).(pulumi.StringOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) CreatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) string {
+		return v.CreatedByName
+	}).(pulumi.StringOutput)
+}
+
+// The full path to identify this object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) string {
+		return v.IdentifierPath
+	}).(pulumi.StringOutput)
+}
+
+// Information property fields.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) map[string]interface{} {
+		return v.InfoFields
+	}).(pulumi.MapOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) bool {
+		return v.IsFavorite
+	}).(pulumi.BoolOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) []string {
+		return v.Labels
+	}).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) int {
+		return v.RegistryVersion
+	}).(pulumi.IntOutput)
+}
+
+// The date and time that the object was created.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time that the object was updated.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) UpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) string {
+		return v.UpdatedBy
+	}).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) UpdatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) string {
+		return v.UpdatedByName
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata {
+		return vs[0].([]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata)[vs[1].(int)]
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator struct {
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	// Used to filter by the identifier of the object.
+	Identifier string `pulumi:"identifier"`
+	// Used to filter by the key of the object.
+	Key string `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArgs and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArgs{...}
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArgs struct {
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Used to filter by the identifier of the object.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// Used to filter by the key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput)
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArray and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArray{ GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArgs{...} }
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArray []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorInput
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput {
+	return o
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the identifier of the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator) string {
+		return v.Identifier
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the key of the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator {
+		return vs[0].([]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregator)[vs[1].(int)]
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArgs and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArgs{...}
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput)
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArray and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArray{ GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArgs{...} }
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArray []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticInput
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput) ObjectTypeCountLists() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatistic) []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatistic {
+		return vs[0].([]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatistic)[vs[1].(int)]
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType string `pulumi:"objectType"`
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{...}
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+}
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray{ GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{...} }
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectCount
+	}).(pulumi.StringOutput)
+}
+
+// The type of object for the count statistic object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRef struct {
+	// Key of the parent object.
+	Parent string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId string `pulumi:"rootDocId"`
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArgs and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArgs{...}
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+}
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput)
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArray and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArray{ GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArgs{...} }
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArray []GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefInput
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArray) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput) Parent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRef) string { return v.Parent }).(pulumi.StringOutput)
+}
+
+// Key of the root document object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput) RootDocId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRef) string {
+		return v.RootDocId
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRef {
+		return vs[0].([]GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRef)[vs[1].(int)]
+	}).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// Used to filter by the key of the object.
+	Key string `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+}
+
+// GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataInput is an input type that accepts GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataArgs and GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataInput` via:
+//
+//	GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataArgs{...}
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput
+	ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutputWithContext(context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// Used to filter by the key of the object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+}
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput {
+	return i.ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput)
+}
+
+type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput) ToGetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadata) string {
+		return v.AggregatorKey
+	}).(pulumi.StringOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadata) bool {
+		return v.IsFavorite
+	}).(pulumi.BoolOutput)
+}
+
+// Used to filter by the key of the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadata) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadata) []string {
+		return v.Labels
+	}).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadata) int {
+		return v.RegistryVersion
+	}).(pulumi.IntOutput)
 }
 
 type GetWorkspaceApplicationSourceApplicationInfo struct {
@@ -16847,6 +20700,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationPublishedObjectMetadataArrayInput)(nil)).Elem(), WorkspaceApplicationPublishedObjectMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationRegistryMetadataInput)(nil)).Elem(), WorkspaceApplicationRegistryMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationRegistryMetadataPtrInput)(nil)).Elem(), WorkspaceApplicationRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleFrequencyDetailsInput)(nil)).Elem(), WorkspaceApplicationScheduleFrequencyDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleFrequencyDetailsPtrInput)(nil)).Elem(), WorkspaceApplicationScheduleFrequencyDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleFrequencyDetailsTimeInput)(nil)).Elem(), WorkspaceApplicationScheduleFrequencyDetailsTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleFrequencyDetailsTimePtrInput)(nil)).Elem(), WorkspaceApplicationScheduleFrequencyDetailsTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleMetadataInput)(nil)).Elem(), WorkspaceApplicationScheduleMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleMetadataArrayInput)(nil)).Elem(), WorkspaceApplicationScheduleMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleMetadataAggregatorInput)(nil)).Elem(), WorkspaceApplicationScheduleMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleMetadataAggregatorArrayInput)(nil)).Elem(), WorkspaceApplicationScheduleMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleMetadataCountStatisticInput)(nil)).Elem(), WorkspaceApplicationScheduleMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleMetadataCountStatisticArrayInput)(nil)).Elem(), WorkspaceApplicationScheduleMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleParentRefInput)(nil)).Elem(), WorkspaceApplicationScheduleParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleParentRefArrayInput)(nil)).Elem(), WorkspaceApplicationScheduleParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleRegistryMetadataInput)(nil)).Elem(), WorkspaceApplicationScheduleRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationScheduleRegistryMetadataPtrInput)(nil)).Elem(), WorkspaceApplicationScheduleRegistryMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationSourceApplicationInfoInput)(nil)).Elem(), WorkspaceApplicationSourceApplicationInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationSourceApplicationInfoPtrInput)(nil)).Elem(), WorkspaceApplicationSourceApplicationInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceExportRequestExportedItemInput)(nil)).Elem(), WorkspaceExportRequestExportedItemArgs{})
@@ -16932,6 +20801,41 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationPublishedObjectMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationPublishedObjectMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationRegistryMetadataInput)(nil)).Elem(), GetWorkspaceApplicationRegistryMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationRegistryMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationRegistryMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleFrequencyDetailInput)(nil)).Elem(), GetWorkspaceApplicationScheduleFrequencyDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleFrequencyDetailArrayInput)(nil)).Elem(), GetWorkspaceApplicationScheduleFrequencyDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleFrequencyDetailTimeInput)(nil)).Elem(), GetWorkspaceApplicationScheduleFrequencyDetailTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayInput)(nil)).Elem(), GetWorkspaceApplicationScheduleFrequencyDetailTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataInput)(nil)).Elem(), GetWorkspaceApplicationScheduleMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationScheduleMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataAggregatorInput)(nil)).Elem(), GetWorkspaceApplicationScheduleMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataAggregatorArrayInput)(nil)).Elem(), GetWorkspaceApplicationScheduleMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataCountStatisticInput)(nil)).Elem(), GetWorkspaceApplicationScheduleMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataCountStatisticArrayInput)(nil)).Elem(), GetWorkspaceApplicationScheduleMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleParentRefInput)(nil)).Elem(), GetWorkspaceApplicationScheduleParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleParentRefArrayInput)(nil)).Elem(), GetWorkspaceApplicationScheduleParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleRegistryMetadataInput)(nil)).Elem(), GetWorkspaceApplicationScheduleRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationScheduleRegistryMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationScheduleRegistryMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesFilterInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesFilterArrayInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataInput)(nil)).Elem(), GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSourceApplicationInfoInput)(nil)).Elem(), GetWorkspaceApplicationSourceApplicationInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationSourceApplicationInfoArrayInput)(nil)).Elem(), GetWorkspaceApplicationSourceApplicationInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationsApplicationSummaryCollectionInput)(nil)).Elem(), GetWorkspaceApplicationsApplicationSummaryCollectionArgs{})
@@ -17075,6 +20979,22 @@ func init() {
 	pulumi.RegisterOutputType(WorkspaceApplicationPublishedObjectMetadataArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceApplicationRegistryMetadataOutput{})
 	pulumi.RegisterOutputType(WorkspaceApplicationRegistryMetadataPtrOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleFrequencyDetailsOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleFrequencyDetailsPtrOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleFrequencyDetailsTimeOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleMetadataOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleMetadataArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleParentRefOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleParentRefArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleRegistryMetadataOutput{})
+	pulumi.RegisterOutputType(WorkspaceApplicationScheduleRegistryMetadataPtrOutput{})
 	pulumi.RegisterOutputType(WorkspaceApplicationSourceApplicationInfoOutput{})
 	pulumi.RegisterOutputType(WorkspaceApplicationSourceApplicationInfoPtrOutput{})
 	pulumi.RegisterOutputType(WorkspaceExportRequestExportedItemOutput{})
@@ -17160,6 +21080,41 @@ func init() {
 	pulumi.RegisterOutputType(GetWorkspaceApplicationPublishedObjectMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationRegistryMetadataOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationRegistryMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleFrequencyDetailOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleFrequencyDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleFrequencyDetailTimeOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleFrequencyDetailTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleParentRefOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleParentRefArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleRegistryMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationScheduleRegistryMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesFilterOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemFrequencyDetailsTimeOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemParentRefArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemRegistryMetadataOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationSourceApplicationInfoOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationSourceApplicationInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationsApplicationSummaryCollectionOutput{})

@@ -235,7 +235,7 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly metadata!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The platform configuration requested for the instance.
+     * (Updatable only for VM's) The platform configuration requested for the instance.
      *
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
      *
@@ -572,7 +572,7 @@ export interface InstanceState {
      */
     metadata?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The platform configuration requested for the instance.
+     * (Updatable only for VM's) The platform configuration requested for the instance.
      *
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
      *
@@ -791,7 +791,7 @@ export interface InstanceArgs {
      */
     metadata?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The platform configuration requested for the instance.
+     * (Updatable only for VM's) The platform configuration requested for the instance.
      *
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
      *

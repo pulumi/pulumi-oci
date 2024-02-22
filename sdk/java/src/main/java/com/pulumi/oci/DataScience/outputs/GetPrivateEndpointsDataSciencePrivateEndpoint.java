@@ -80,6 +80,11 @@ public final class GetPrivateEndpointsDataSciencePrivateEndpoint {
      */
     private String subnetId;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
@@ -186,6 +191,13 @@ public final class GetPrivateEndpointsDataSciencePrivateEndpoint {
         return this.subnetId;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
@@ -223,6 +235,7 @@ public final class GetPrivateEndpointsDataSciencePrivateEndpoint {
         private String state;
         private String subDomain;
         private String subnetId;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -242,6 +255,7 @@ public final class GetPrivateEndpointsDataSciencePrivateEndpoint {
     	      this.state = defaults.state;
     	      this.subDomain = defaults.subDomain;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -362,6 +376,14 @@ public final class GetPrivateEndpointsDataSciencePrivateEndpoint {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetPrivateEndpointsDataSciencePrivateEndpoint", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetPrivateEndpointsDataSciencePrivateEndpoint", "timeCreated");
@@ -393,6 +415,7 @@ public final class GetPrivateEndpointsDataSciencePrivateEndpoint {
             _resultValue.state = state;
             _resultValue.subDomain = subDomain;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

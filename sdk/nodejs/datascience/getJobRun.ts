@@ -74,6 +74,10 @@ export interface GetJobRunResult {
      */
     readonly jobConfigurationOverrideDetails: outputs.DataScience.GetJobRunJobConfigurationOverrideDetail[];
     /**
+     * Environment configuration to capture job runtime dependencies.
+     */
+    readonly jobEnvironmentConfigurationOverrideDetails: outputs.DataScience.GetJobRunJobEnvironmentConfigurationOverrideDetail[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
      */
     readonly jobId: string;

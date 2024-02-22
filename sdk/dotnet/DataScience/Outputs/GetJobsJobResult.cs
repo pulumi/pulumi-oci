@@ -53,6 +53,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobsJobJobConfigurationDetailResult> JobConfigurationDetails;
         /// <summary>
+        /// Environment configuration to capture job runtime dependencies.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJobsJobJobEnvironmentConfigurationDetailResult> JobEnvironmentConfigurationDetails;
+        /// <summary>
         /// The job infrastructure configuration details (shape, block storage, etc.)
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobsJobJobInfrastructureConfigurationDetailResult> JobInfrastructureConfigurationDetails;
@@ -113,6 +117,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetJobsJobJobConfigurationDetailResult> jobConfigurationDetails,
 
+            ImmutableArray<Outputs.GetJobsJobJobEnvironmentConfigurationDetailResult> jobEnvironmentConfigurationDetails,
+
             ImmutableArray<Outputs.GetJobsJobJobInfrastructureConfigurationDetailResult> jobInfrastructureConfigurationDetails,
 
             ImmutableArray<Outputs.GetJobsJobJobLogConfigurationDetailResult> jobLogConfigurationDetails,
@@ -142,6 +148,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             Id = id;
             JobArtifact = jobArtifact;
             JobConfigurationDetails = jobConfigurationDetails;
+            JobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
             JobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             JobLogConfigurationDetails = jobLogConfigurationDetails;
             JobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;

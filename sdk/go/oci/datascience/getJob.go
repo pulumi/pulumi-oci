@@ -81,7 +81,9 @@ type LookupJobResult struct {
 	JobArtifact string `pulumi:"jobArtifact"`
 	// The job configuration details
 	JobConfigurationDetails []GetJobJobConfigurationDetail `pulumi:"jobConfigurationDetails"`
-	JobId                   string                         `pulumi:"jobId"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationDetails []GetJobJobEnvironmentConfigurationDetail `pulumi:"jobEnvironmentConfigurationDetails"`
+	JobId                              string                                    `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails []GetJobJobInfrastructureConfigurationDetail `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
@@ -202,6 +204,13 @@ func (o LookupJobResultOutput) JobArtifact() pulumi.StringOutput {
 // The job configuration details
 func (o LookupJobResultOutput) JobConfigurationDetails() GetJobJobConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v LookupJobResult) []GetJobJobConfigurationDetail { return v.JobConfigurationDetails }).(GetJobJobConfigurationDetailArrayOutput)
+}
+
+// Environment configuration to capture job runtime dependencies.
+func (o LookupJobResultOutput) JobEnvironmentConfigurationDetails() GetJobJobEnvironmentConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v LookupJobResult) []GetJobJobEnvironmentConfigurationDetail {
+		return v.JobEnvironmentConfigurationDetails
+	}).(GetJobJobEnvironmentConfigurationDetailArrayOutput)
 }
 
 func (o LookupJobResultOutput) JobId() pulumi.StringOutput {

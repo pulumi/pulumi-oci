@@ -58,6 +58,11 @@ public final class GetModelVersionSetsModelVersionSet {
      */
     private String state;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
@@ -133,6 +138,13 @@ public final class GetModelVersionSetsModelVersionSet {
         return this.state;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
@@ -165,6 +177,7 @@ public final class GetModelVersionSetsModelVersionSet {
         private String name;
         private String projectId;
         private String state;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -179,6 +192,7 @@ public final class GetModelVersionSetsModelVersionSet {
     	      this.name = defaults.name;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -256,6 +270,14 @@ public final class GetModelVersionSetsModelVersionSet {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetModelVersionSetsModelVersionSet", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetModelVersionSetsModelVersionSet", "timeCreated");
@@ -282,6 +304,7 @@ public final class GetModelVersionSetsModelVersionSet {
             _resultValue.name = name;
             _resultValue.projectId = projectId;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

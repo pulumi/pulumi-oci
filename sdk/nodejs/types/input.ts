@@ -14118,7 +14118,7 @@ export namespace Core {
          */
         isSecureBootEnabled?: pulumi.Input<boolean>;
         /**
-         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         * (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
          *
          * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
          */
@@ -14719,7 +14719,7 @@ export namespace Core {
          */
         isSecureBootEnabled?: pulumi.Input<boolean>;
         /**
-         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         * (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
          *
          * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
          */
@@ -15138,7 +15138,7 @@ export namespace Core {
          */
         isSecureBootEnabled?: pulumi.Input<boolean>;
         /**
-         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         * (Updatable only for INTEL_VM and AMD_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
          *
          * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
          */
@@ -16866,6 +16866,24 @@ export namespace DataIntegration {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetWorkspaceApplicationSchedulesFilter {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetWorkspaceApplicationSchedulesFilterArgs {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetWorkspaceApplicationsFilter {
         /**
          * Used to filter by the name of the object.
@@ -17362,6 +17380,190 @@ export namespace DataIntegration {
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * The registry version.
+         */
+        registryVersion?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceApplicationScheduleFrequencyDetails {
+        /**
+         * (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+         */
+        customExpression?: pulumi.Input<string>;
+        /**
+         * (Updatable) This holds the day of the week on which the schedule should be triggered.
+         */
+        dayOfWeek?: pulumi.Input<string>;
+        /**
+         * (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+         */
+        days?: pulumi.Input<pulumi.Input<number>[]>;
+        /**
+         * (Updatable) the frequency of the schedule.
+         */
+        frequency?: pulumi.Input<string>;
+        /**
+         * (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+         */
+        interval?: pulumi.Input<number>;
+        /**
+         * (Updatable) The type of the model
+         */
+        modelType: pulumi.Input<string>;
+        /**
+         * (Updatable) A model to hold time in hour:minute:second format.
+         */
+        time?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationScheduleFrequencyDetailsTime>;
+        /**
+         * (Updatable) This holds the week of the month in which the schedule should be triggered.
+         */
+        weekOfMonth?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationScheduleFrequencyDetailsTime {
+        /**
+         * (Updatable) The hour value.
+         */
+        hour?: pulumi.Input<number>;
+        /**
+         * (Updatable) The minute value.
+         */
+        minute?: pulumi.Input<number>;
+        /**
+         * (Updatable) The second value.
+         */
+        second?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceApplicationScheduleMetadata {
+        /**
+         * (Updatable) The owning object's key for this object.
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         */
+        aggregators?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationScheduleMetadataAggregator>[]>;
+        /**
+         * A count statistics.
+         */
+        countStatistics?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationScheduleMetadataCountStatistic>[]>;
+        /**
+         * The user that created the object.
+         */
+        createdBy?: pulumi.Input<string>;
+        /**
+         * The user that created the object.
+         */
+        createdByName?: pulumi.Input<string>;
+        /**
+         * The full path to identify this object.
+         */
+        identifierPath?: pulumi.Input<string>;
+        /**
+         * Information property fields.
+         */
+        infoFields?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) Specifies whether this object is a favorite or not.
+         */
+        isFavorite?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         */
+        labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The registry version.
+         */
+        registryVersion?: pulumi.Input<number>;
+        /**
+         * The date and time that the object was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The date and time that the object was updated.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The user that updated the object.
+         */
+        updatedBy?: pulumi.Input<string>;
+        /**
+         * The user that updated the object.
+         */
+        updatedByName?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationScheduleMetadataAggregator {
+        /**
+         * (Updatable) Detailed description for the object.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * (Updatable) The identifying key for the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The type of the aggregator.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationScheduleMetadataCountStatistic {
+        /**
+         * The array of statistics.
+         */
+        objectTypeCountLists?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList>[]>;
+    }
+
+    export interface WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountList {
+        /**
+         * The value for the count statistic object.
+         */
+        objectCount?: pulumi.Input<string>;
+        /**
+         * The type of object for the count statistic object.
+         */
+        objectType?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationScheduleParentRef {
+        /**
+         * Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceApplicationScheduleRegistryMetadata {
+        /**
+         * (Updatable) The owning object's key for this object.
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether this object is a favorite or not.
+         */
+        isFavorite?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The identifying key for the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         */
+        labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The registry version.
          */
         registryVersion?: pulumi.Input<number>;
     }
@@ -20136,6 +20338,33 @@ export namespace DataScience {
         maximumRuntimeInMinutes?: pulumi.Input<string>;
     }
 
+    export interface JobJobEnvironmentConfigurationDetails {
+        /**
+         * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+         */
+        cmds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+         */
+        entrypoints?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+         */
+        image: pulumi.Input<string>;
+        /**
+         * The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+         */
+        imageDigest?: pulumi.Input<string>;
+        /**
+         * OCID of the container image signature
+         */
+        imageSignatureId?: pulumi.Input<string>;
+        /**
+         * The environment configuration type used for job runtime.
+         */
+        jobEnvironmentType: pulumi.Input<string>;
+    }
+
     export interface JobJobInfrastructureConfigurationDetails {
         /**
          * (Updatable) The size of the block storage volume to attach to the instance running the job
@@ -20241,6 +20470,33 @@ export namespace DataScience {
          * A time bound for the execution of the job. Timer starts when the job becomes active.
          */
         maximumRuntimeInMinutes?: pulumi.Input<string>;
+    }
+
+    export interface JobRunJobEnvironmentConfigurationOverrideDetails {
+        /**
+         * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+         */
+        cmds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+         */
+        entrypoints?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+         */
+        image: pulumi.Input<string>;
+        /**
+         * The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+         */
+        imageDigest?: pulumi.Input<string>;
+        /**
+         * OCID of the container image signature
+         */
+        imageSignatureId?: pulumi.Input<string>;
+        /**
+         * The environment configuration type used for job runtime.
+         */
+        jobEnvironmentType: pulumi.Input<string>;
     }
 
     export interface JobRunJobInfrastructureConfigurationDetail {

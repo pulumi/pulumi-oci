@@ -57,6 +57,15 @@ namespace Pulumi.Oci.DataScience
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         JobEnvironmentConfigurationDetails = new Oci.DataScience.Inputs.JobJobEnvironmentConfigurationDetailsArgs
+    ///         {
+    ///             Image = @var.Job_job_environment_configuration_details_image,
+    ///             JobEnvironmentType = @var.Job_job_environment_configuration_details_job_environment_type,
+    ///             Cmds = @var.Job_job_environment_configuration_details_cmd,
+    ///             Entrypoints = @var.Job_job_environment_configuration_details_entrypoint,
+    ///             ImageDigest = @var.Job_job_environment_configuration_details_image_digest,
+    ///             ImageSignatureId = oci_datascience_image_signature.Test_image_signature.Id,
+    ///         },
     ///         JobLogConfigurationDetails = new Oci.DataScience.Inputs.JobJobLogConfigurationDetailsArgs
     ///         {
     ///             EnableAutoLogCreation = @var.Job_job_log_configuration_details_enable_auto_log_creation,
@@ -172,6 +181,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("jobConfigurationDetails")]
         public Output<Outputs.JobJobConfigurationDetails> JobConfigurationDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Environment configuration to capture job runtime dependencies.
+        /// </summary>
+        [Output("jobEnvironmentConfigurationDetails")]
+        public Output<Outputs.JobJobEnvironmentConfigurationDetails> JobEnvironmentConfigurationDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
@@ -338,6 +353,12 @@ namespace Pulumi.Oci.DataScience
         public Input<Inputs.JobJobConfigurationDetailsArgs> JobConfigurationDetails { get; set; } = null!;
 
         /// <summary>
+        /// Environment configuration to capture job runtime dependencies.
+        /// </summary>
+        [Input("jobEnvironmentConfigurationDetails")]
+        public Input<Inputs.JobJobEnvironmentConfigurationDetailsArgs>? JobEnvironmentConfigurationDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
         /// </summary>
         [Input("jobInfrastructureConfigurationDetails", required: true)]
@@ -465,6 +486,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("jobConfigurationDetails")]
         public Input<Inputs.JobJobConfigurationDetailsGetArgs>? JobConfigurationDetails { get; set; }
+
+        /// <summary>
+        /// Environment configuration to capture job runtime dependencies.
+        /// </summary>
+        [Input("jobEnvironmentConfigurationDetails")]
+        public Input<Inputs.JobJobEnvironmentConfigurationDetailsGetArgs>? JobEnvironmentConfigurationDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)

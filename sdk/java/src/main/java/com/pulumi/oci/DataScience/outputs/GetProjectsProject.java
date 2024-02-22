@@ -53,6 +53,11 @@ public final class GetProjectsProject {
      */
     private String state;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
@@ -116,6 +121,13 @@ public final class GetProjectsProject {
         return this.state;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
@@ -140,6 +152,7 @@ public final class GetProjectsProject {
         private Map<String,Object> freeformTags;
         private String id;
         private String state;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         public Builder() {}
         public Builder(GetProjectsProject defaults) {
@@ -152,6 +165,7 @@ public final class GetProjectsProject {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
         }
 
@@ -220,6 +234,14 @@ public final class GetProjectsProject {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetProjectsProject", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetProjectsProject", "timeCreated");
@@ -237,6 +259,7 @@ public final class GetProjectsProject {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;
         }

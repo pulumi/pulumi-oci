@@ -67,6 +67,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
@@ -105,6 +109,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string subnetId,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string timeCreated,
 
             string timeUpdated)
@@ -123,6 +129,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             State = state;
             SubDomain = subDomain;
             SubnetId = subnetId;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

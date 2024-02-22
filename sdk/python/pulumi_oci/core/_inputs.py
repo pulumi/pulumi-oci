@@ -6225,7 +6225,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
         :param pulumi.Input[bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param pulumi.Input[bool] is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param pulumi.Input[bool] is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
                
                Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
@@ -6358,7 +6358,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
 
         Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         """
@@ -8379,7 +8379,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
         :param pulumi.Input[bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param pulumi.Input[bool] is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param pulumi.Input[bool] is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
                
                Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
@@ -8498,7 +8498,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
 
         Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         """
@@ -9914,7 +9914,7 @@ class InstancePlatformConfigArgs:
         :param pulumi.Input[bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param pulumi.Input[bool] is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param pulumi.Input[bool] is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: (Updatable only for INTEL_VM and AMD_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
                
                Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
@@ -10047,7 +10047,7 @@ class InstancePlatformConfigArgs:
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        (Updatable only for INTEL_VM and AMD_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
 
         Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         """

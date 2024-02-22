@@ -57,6 +57,14 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
+//				JobEnvironmentConfigurationDetails: &datascience.JobJobEnvironmentConfigurationDetailsArgs{
+//					Image:              pulumi.Any(_var.Job_job_environment_configuration_details_image),
+//					JobEnvironmentType: pulumi.Any(_var.Job_job_environment_configuration_details_job_environment_type),
+//					Cmds:               pulumi.Any(_var.Job_job_environment_configuration_details_cmd),
+//					Entrypoints:        pulumi.Any(_var.Job_job_environment_configuration_details_entrypoint),
+//					ImageDigest:        pulumi.Any(_var.Job_job_environment_configuration_details_image_digest),
+//					ImageSignatureId:   pulumi.Any(oci_datascience_image_signature.Test_image_signature.Id),
+//				},
 //				JobLogConfigurationDetails: &datascience.JobJobLogConfigurationDetailsArgs{
 //					EnableAutoLogCreation: pulumi.Any(_var.Job_job_log_configuration_details_enable_auto_log_creation),
 //					EnableLogging:         pulumi.Any(_var.Job_job_log_configuration_details_enable_logging),
@@ -125,6 +133,8 @@ type Job struct {
 	JobArtifact pulumi.StringPtrOutput `pulumi:"jobArtifact"`
 	// The job configuration details
 	JobConfigurationDetails JobJobConfigurationDetailsOutput `pulumi:"jobConfigurationDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationDetails JobJobEnvironmentConfigurationDetailsOutput `pulumi:"jobEnvironmentConfigurationDetails"`
 	// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetailsOutput `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
@@ -211,6 +221,8 @@ type jobState struct {
 	JobArtifact *string `pulumi:"jobArtifact"`
 	// The job configuration details
 	JobConfigurationDetails *JobJobConfigurationDetails `pulumi:"jobConfigurationDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationDetails *JobJobEnvironmentConfigurationDetails `pulumi:"jobEnvironmentConfigurationDetails"`
 	// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails *JobJobInfrastructureConfigurationDetails `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
@@ -256,6 +268,8 @@ type JobState struct {
 	JobArtifact pulumi.StringPtrInput
 	// The job configuration details
 	JobConfigurationDetails JobJobConfigurationDetailsPtrInput
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationDetails JobJobEnvironmentConfigurationDetailsPtrInput
 	// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetailsPtrInput
 	// Logging configuration for resource.
@@ -300,6 +314,8 @@ type jobArgs struct {
 	JobArtifact *string `pulumi:"jobArtifact"`
 	// The job configuration details
 	JobConfigurationDetails JobJobConfigurationDetails `pulumi:"jobConfigurationDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationDetails *JobJobEnvironmentConfigurationDetails `pulumi:"jobEnvironmentConfigurationDetails"`
 	// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetails `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
@@ -335,6 +351,8 @@ type JobArgs struct {
 	JobArtifact pulumi.StringPtrInput
 	// The job configuration details
 	JobConfigurationDetails JobJobConfigurationDetailsInput
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationDetails JobJobEnvironmentConfigurationDetailsPtrInput
 	// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetailsInput
 	// Logging configuration for resource.
@@ -500,6 +518,11 @@ func (o JobOutput) JobArtifact() pulumi.StringPtrOutput {
 // The job configuration details
 func (o JobOutput) JobConfigurationDetails() JobJobConfigurationDetailsOutput {
 	return o.ApplyT(func(v *Job) JobJobConfigurationDetailsOutput { return v.JobConfigurationDetails }).(JobJobConfigurationDetailsOutput)
+}
+
+// Environment configuration to capture job runtime dependencies.
+func (o JobOutput) JobEnvironmentConfigurationDetails() JobJobEnvironmentConfigurationDetailsOutput {
+	return o.ApplyT(func(v *Job) JobJobEnvironmentConfigurationDetailsOutput { return v.JobEnvironmentConfigurationDetails }).(JobJobEnvironmentConfigurationDetailsOutput)
 }
 
 // (Updatable) The job infrastructure configuration details (shape, block storage, etc.)

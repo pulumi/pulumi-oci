@@ -139,6 +139,10 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         /// </summary>
         public readonly string TimeCreated;
@@ -163,6 +167,8 @@ namespace Pulumi.Oci.DataScience
 
             string state,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string timeCreated)
         {
             CompartmentId = compartmentId;
@@ -174,6 +180,7 @@ namespace Pulumi.Oci.DataScience
             Id = id;
             ProjectId = projectId;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
         }
     }

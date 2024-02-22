@@ -83,6 +83,10 @@ export interface GetJobResult {
      * The job configuration details
      */
     readonly jobConfigurationDetails: outputs.DataScience.GetJobJobConfigurationDetail[];
+    /**
+     * Environment configuration to capture job runtime dependencies.
+     */
+    readonly jobEnvironmentConfigurationDetails: outputs.DataScience.GetJobJobEnvironmentConfigurationDetail[];
     readonly jobId: string;
     /**
      * The job infrastructure configuration details (shape, block storage, etc.)

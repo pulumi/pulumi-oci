@@ -178,7 +178,7 @@ type Instance struct {
 	//
 	// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
 	Metadata pulumi.MapOutput `pulumi:"metadata"`
-	// The platform configuration requested for the instance.
+	// (Updatable only for VM's) The platform configuration requested for the instance.
 	//
 	// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 	//
@@ -376,7 +376,7 @@ type instanceState struct {
 	//
 	// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
 	Metadata map[string]interface{} `pulumi:"metadata"`
-	// The platform configuration requested for the instance.
+	// (Updatable only for VM's) The platform configuration requested for the instance.
 	//
 	// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 	//
@@ -539,7 +539,7 @@ type InstanceState struct {
 	//
 	// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
 	Metadata pulumi.MapInput
-	// The platform configuration requested for the instance.
+	// (Updatable only for VM's) The platform configuration requested for the instance.
 	//
 	// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 	//
@@ -700,7 +700,7 @@ type instanceArgs struct {
 	//
 	// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
 	Metadata map[string]interface{} `pulumi:"metadata"`
-	// The platform configuration requested for the instance.
+	// (Updatable only for VM's) The platform configuration requested for the instance.
 	//
 	// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 	//
@@ -842,7 +842,7 @@ type InstanceArgs struct {
 	//
 	// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
 	Metadata pulumi.MapInput
-	// The platform configuration requested for the instance.
+	// (Updatable only for VM's) The platform configuration requested for the instance.
 	//
 	// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 	//
@@ -1153,7 +1153,7 @@ func (o InstanceOutput) Metadata() pulumi.MapOutput {
 	return o.ApplyT(func(v *Instance) pulumi.MapOutput { return v.Metadata }).(pulumi.MapOutput)
 }
 
-// The platform configuration requested for the instance.
+// (Updatable only for VM's) The platform configuration requested for the instance.
 //
 // If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 //

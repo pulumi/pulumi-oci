@@ -22,7 +22,7 @@ class GetJobResult:
     """
     A collection of values returned by getJob.
     """
-    def __init__(__self__, artifact_content_disposition=None, artifact_content_length=None, artifact_content_md5=None, artifact_last_modified=None, compartment_id=None, created_by=None, defined_tags=None, delete_related_job_runs=None, description=None, display_name=None, empty_artifact=None, freeform_tags=None, id=None, job_artifact=None, job_configuration_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_details=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, project_id=None, state=None, time_created=None):
+    def __init__(__self__, artifact_content_disposition=None, artifact_content_length=None, artifact_content_md5=None, artifact_last_modified=None, compartment_id=None, created_by=None, defined_tags=None, delete_related_job_runs=None, description=None, display_name=None, empty_artifact=None, freeform_tags=None, id=None, job_artifact=None, job_configuration_details=None, job_environment_configuration_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_details=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, project_id=None, state=None, time_created=None):
         if artifact_content_disposition and not isinstance(artifact_content_disposition, str):
             raise TypeError("Expected argument 'artifact_content_disposition' to be a str")
         pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
@@ -68,6 +68,9 @@ class GetJobResult:
         if job_configuration_details and not isinstance(job_configuration_details, list):
             raise TypeError("Expected argument 'job_configuration_details' to be a list")
         pulumi.set(__self__, "job_configuration_details", job_configuration_details)
+        if job_environment_configuration_details and not isinstance(job_environment_configuration_details, list):
+            raise TypeError("Expected argument 'job_environment_configuration_details' to be a list")
+        pulumi.set(__self__, "job_environment_configuration_details", job_environment_configuration_details)
         if job_id and not isinstance(job_id, str):
             raise TypeError("Expected argument 'job_id' to be a str")
         pulumi.set(__self__, "job_id", job_id)
@@ -193,6 +196,14 @@ class GetJobResult:
         return pulumi.get(self, "job_configuration_details")
 
     @property
+    @pulumi.getter(name="jobEnvironmentConfigurationDetails")
+    def job_environment_configuration_details(self) -> Sequence['outputs.GetJobJobEnvironmentConfigurationDetailResult']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_details")
+
+    @property
     @pulumi.getter(name="jobId")
     def job_id(self) -> str:
         return pulumi.get(self, "job_id")
@@ -275,6 +286,7 @@ class AwaitableGetJobResult(GetJobResult):
             id=self.id,
             job_artifact=self.job_artifact,
             job_configuration_details=self.job_configuration_details,
+            job_environment_configuration_details=self.job_environment_configuration_details,
             job_id=self.job_id,
             job_infrastructure_configuration_details=self.job_infrastructure_configuration_details,
             job_log_configuration_details=self.job_log_configuration_details,
@@ -325,6 +337,7 @@ def get_job(job_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         job_artifact=pulumi.get(__ret__, 'job_artifact'),
         job_configuration_details=pulumi.get(__ret__, 'job_configuration_details'),
+        job_environment_configuration_details=pulumi.get(__ret__, 'job_environment_configuration_details'),
         job_id=pulumi.get(__ret__, 'job_id'),
         job_infrastructure_configuration_details=pulumi.get(__ret__, 'job_infrastructure_configuration_details'),
         job_log_configuration_details=pulumi.get(__ret__, 'job_log_configuration_details'),

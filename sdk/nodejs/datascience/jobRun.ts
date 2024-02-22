@@ -35,6 +35,14 @@ import * as utilities from "../utilities";
  *         environmentVariables: _var.job_run_job_configuration_override_details_environment_variables,
  *         maximumRuntimeInMinutes: _var.job_run_job_configuration_override_details_maximum_runtime_in_minutes,
  *     },
+ *     jobEnvironmentConfigurationOverrideDetails: {
+ *         image: _var.job_run_job_environment_configuration_override_details_image,
+ *         jobEnvironmentType: _var.job_run_job_environment_configuration_override_details_job_environment_type,
+ *         cmds: _var.job_run_job_environment_configuration_override_details_cmd,
+ *         entrypoints: _var.job_run_job_environment_configuration_override_details_entrypoint,
+ *         imageDigest: _var.job_run_job_environment_configuration_override_details_image_digest,
+ *         imageSignatureId: oci_datascience_image_signature.test_image_signature.id,
+ *     },
  *     jobLogConfigurationOverrideDetails: {
  *         enableAutoLogCreation: _var.job_run_job_log_configuration_override_details_enable_auto_log_creation,
  *         enableLogging: _var.job_run_job_log_configuration_override_details_enable_logging,
@@ -109,6 +117,10 @@ export class JobRun extends pulumi.CustomResource {
      */
     public readonly jobConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobConfigurationOverrideDetails>;
     /**
+     * Environment configuration to capture job runtime dependencies.
+     */
+    public readonly jobEnvironmentConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobEnvironmentConfigurationOverrideDetails>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
      */
     public readonly jobId!: pulumi.Output<string>;
@@ -177,6 +189,7 @@ export class JobRun extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["jobConfigurationOverrideDetails"] = state ? state.jobConfigurationOverrideDetails : undefined;
+            resourceInputs["jobEnvironmentConfigurationOverrideDetails"] = state ? state.jobEnvironmentConfigurationOverrideDetails : undefined;
             resourceInputs["jobId"] = state ? state.jobId : undefined;
             resourceInputs["jobInfrastructureConfigurationDetails"] = state ? state.jobInfrastructureConfigurationDetails : undefined;
             resourceInputs["jobLogConfigurationOverrideDetails"] = state ? state.jobLogConfigurationOverrideDetails : undefined;
@@ -205,6 +218,7 @@ export class JobRun extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["jobConfigurationOverrideDetails"] = args ? args.jobConfigurationOverrideDetails : undefined;
+            resourceInputs["jobEnvironmentConfigurationOverrideDetails"] = args ? args.jobEnvironmentConfigurationOverrideDetails : undefined;
             resourceInputs["jobId"] = args ? args.jobId : undefined;
             resourceInputs["jobLogConfigurationOverrideDetails"] = args ? args.jobLogConfigurationOverrideDetails : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
@@ -255,6 +269,10 @@ export interface JobRunState {
      * The job configuration details
      */
     jobConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobConfigurationOverrideDetails>;
+    /**
+     * Environment configuration to capture job runtime dependencies.
+     */
+    jobEnvironmentConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobEnvironmentConfigurationOverrideDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
      */
@@ -333,6 +351,10 @@ export interface JobRunArgs {
      * The job configuration details
      */
     jobConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobConfigurationOverrideDetails>;
+    /**
+     * Environment configuration to capture job runtime dependencies.
+     */
+    jobEnvironmentConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobEnvironmentConfigurationOverrideDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
      */

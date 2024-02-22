@@ -43,6 +43,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobRunsJobRunJobConfigurationOverrideDetailResult> JobConfigurationOverrideDetails;
         /// <summary>
+        /// Environment configuration to capture job runtime dependencies.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailResult> JobEnvironmentConfigurationOverrideDetails;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
         /// </summary>
         public readonly string JobId;
@@ -105,6 +109,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetJobRunsJobRunJobConfigurationOverrideDetailResult> jobConfigurationOverrideDetails,
 
+            ImmutableArray<Outputs.GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailResult> jobEnvironmentConfigurationOverrideDetails,
+
             string jobId,
 
             ImmutableArray<Outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResult> jobInfrastructureConfigurationDetails,
@@ -135,6 +141,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             FreeformTags = freeformTags;
             Id = id;
             JobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
+            JobEnvironmentConfigurationOverrideDetails = jobEnvironmentConfigurationOverrideDetails;
             JobId = jobId;
             JobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             JobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;

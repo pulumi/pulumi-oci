@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobConfigurationOverrideDetail;
+import com.pulumi.oci.DataScience.outputs.GetJobRunJobEnvironmentConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobInfrastructureConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobLogConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobStorageMountConfigurationDetailsList;
@@ -55,6 +56,11 @@ public final class GetJobRunResult {
      * 
      */
     private List<GetJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails;
+    /**
+     * @return Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    private List<GetJobRunJobEnvironmentConfigurationOverrideDetail> jobEnvironmentConfigurationOverrideDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
      * 
@@ -166,6 +172,13 @@ public final class GetJobRunResult {
         return this.jobConfigurationOverrideDetails;
     }
     /**
+     * @return Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    public List<GetJobRunJobEnvironmentConfigurationOverrideDetail> jobEnvironmentConfigurationOverrideDetails() {
+        return this.jobEnvironmentConfigurationOverrideDetails;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
      * 
      */
@@ -263,6 +276,7 @@ public final class GetJobRunResult {
         private Map<String,Object> freeformTags;
         private String id;
         private List<GetJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails;
+        private List<GetJobRunJobEnvironmentConfigurationOverrideDetail> jobEnvironmentConfigurationOverrideDetails;
         private String jobId;
         private List<GetJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
         private List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
@@ -286,6 +300,7 @@ public final class GetJobRunResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.jobConfigurationOverrideDetails = defaults.jobConfigurationOverrideDetails;
+    	      this.jobEnvironmentConfigurationOverrideDetails = defaults.jobEnvironmentConfigurationOverrideDetails;
     	      this.jobId = defaults.jobId;
     	      this.jobInfrastructureConfigurationDetails = defaults.jobInfrastructureConfigurationDetails;
     	      this.jobLogConfigurationOverrideDetails = defaults.jobLogConfigurationOverrideDetails;
@@ -366,6 +381,17 @@ public final class GetJobRunResult {
         }
         public Builder jobConfigurationOverrideDetails(GetJobRunJobConfigurationOverrideDetail... jobConfigurationOverrideDetails) {
             return jobConfigurationOverrideDetails(List.of(jobConfigurationOverrideDetails));
+        }
+        @CustomType.Setter
+        public Builder jobEnvironmentConfigurationOverrideDetails(List<GetJobRunJobEnvironmentConfigurationOverrideDetail> jobEnvironmentConfigurationOverrideDetails) {
+            if (jobEnvironmentConfigurationOverrideDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobRunResult", "jobEnvironmentConfigurationOverrideDetails");
+            }
+            this.jobEnvironmentConfigurationOverrideDetails = jobEnvironmentConfigurationOverrideDetails;
+            return this;
+        }
+        public Builder jobEnvironmentConfigurationOverrideDetails(GetJobRunJobEnvironmentConfigurationOverrideDetail... jobEnvironmentConfigurationOverrideDetails) {
+            return jobEnvironmentConfigurationOverrideDetails(List.of(jobEnvironmentConfigurationOverrideDetails));
         }
         @CustomType.Setter
         public Builder jobId(String jobId) {
@@ -485,6 +511,7 @@ public final class GetJobRunResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
+            _resultValue.jobEnvironmentConfigurationOverrideDetails = jobEnvironmentConfigurationOverrideDetails;
             _resultValue.jobId = jobId;
             _resultValue.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             _resultValue.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;

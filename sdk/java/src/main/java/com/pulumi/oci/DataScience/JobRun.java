@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataScience.JobRunArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunState;
 import com.pulumi.oci.DataScience.outputs.JobRunJobConfigurationOverrideDetails;
+import com.pulumi.oci.DataScience.outputs.JobRunJobEnvironmentConfigurationOverrideDetails;
 import com.pulumi.oci.DataScience.outputs.JobRunJobInfrastructureConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.JobRunJobLogConfigurationOverrideDetails;
 import com.pulumi.oci.DataScience.outputs.JobRunJobStorageMountConfigurationDetailsList;
@@ -38,6 +39,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.JobRun;
  * import com.pulumi.oci.DataScience.JobRunArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobEnvironmentConfigurationOverrideDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobLogConfigurationOverrideDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -65,6 +67,14 @@ import javax.annotation.Nullable;
  *                 .commandLineArguments(var_.job_run_job_configuration_override_details_command_line_arguments())
  *                 .environmentVariables(var_.job_run_job_configuration_override_details_environment_variables())
  *                 .maximumRuntimeInMinutes(var_.job_run_job_configuration_override_details_maximum_runtime_in_minutes())
+ *                 .build())
+ *             .jobEnvironmentConfigurationOverrideDetails(JobRunJobEnvironmentConfigurationOverrideDetailsArgs.builder()
+ *                 .image(var_.job_run_job_environment_configuration_override_details_image())
+ *                 .jobEnvironmentType(var_.job_run_job_environment_configuration_override_details_job_environment_type())
+ *                 .cmds(var_.job_run_job_environment_configuration_override_details_cmd())
+ *                 .entrypoints(var_.job_run_job_environment_configuration_override_details_entrypoint())
+ *                 .imageDigest(var_.job_run_job_environment_configuration_override_details_image_digest())
+ *                 .imageSignatureId(oci_datascience_image_signature.test_image_signature().id())
  *                 .build())
  *             .jobLogConfigurationOverrideDetails(JobRunJobLogConfigurationOverrideDetailsArgs.builder()
  *                 .enableAutoLogCreation(var_.job_run_job_log_configuration_override_details_enable_auto_log_creation())
@@ -186,6 +196,20 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      */
     public Output<JobRunJobConfigurationOverrideDetails> jobConfigurationOverrideDetails() {
         return this.jobConfigurationOverrideDetails;
+    }
+    /**
+     * Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    @Export(name="jobEnvironmentConfigurationOverrideDetails", refs={JobRunJobEnvironmentConfigurationOverrideDetails.class}, tree="[0]")
+    private Output<JobRunJobEnvironmentConfigurationOverrideDetails> jobEnvironmentConfigurationOverrideDetails;
+
+    /**
+     * @return Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    public Output<JobRunJobEnvironmentConfigurationOverrideDetails> jobEnvironmentConfigurationOverrideDetails() {
+        return this.jobEnvironmentConfigurationOverrideDetails;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.

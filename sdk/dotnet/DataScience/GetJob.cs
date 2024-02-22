@@ -144,6 +144,10 @@ namespace Pulumi.Oci.DataScience
         /// The job configuration details
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobJobConfigurationDetailResult> JobConfigurationDetails;
+        /// <summary>
+        /// Environment configuration to capture job runtime dependencies.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJobJobEnvironmentConfigurationDetailResult> JobEnvironmentConfigurationDetails;
         public readonly string JobId;
         /// <summary>
         /// The job infrastructure configuration details (shape, block storage, etc.)
@@ -206,6 +210,8 @@ namespace Pulumi.Oci.DataScience
 
             ImmutableArray<Outputs.GetJobJobConfigurationDetailResult> jobConfigurationDetails,
 
+            ImmutableArray<Outputs.GetJobJobEnvironmentConfigurationDetailResult> jobEnvironmentConfigurationDetails,
+
             string jobId,
 
             ImmutableArray<Outputs.GetJobJobInfrastructureConfigurationDetailResult> jobInfrastructureConfigurationDetails,
@@ -237,6 +243,7 @@ namespace Pulumi.Oci.DataScience
             Id = id;
             JobArtifact = jobArtifact;
             JobConfigurationDetails = jobConfigurationDetails;
+            JobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
             JobId = jobId;
             JobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             JobLogConfigurationDetails = jobLogConfigurationDetails;

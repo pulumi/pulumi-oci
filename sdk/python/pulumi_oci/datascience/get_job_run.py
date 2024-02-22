@@ -22,7 +22,7 @@ class GetJobRunResult:
     """
     A collection of values returned by getJobRun.
     """
-    def __init__(__self__, asynchronous=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, job_configuration_override_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_override_details=None, job_run_id=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, log_details=None, project_id=None, state=None, time_accepted=None, time_finished=None, time_started=None):
+    def __init__(__self__, asynchronous=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, job_configuration_override_details=None, job_environment_configuration_override_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_override_details=None, job_run_id=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, log_details=None, project_id=None, state=None, time_accepted=None, time_finished=None, time_started=None):
         if asynchronous and not isinstance(asynchronous, bool):
             raise TypeError("Expected argument 'asynchronous' to be a bool")
         pulumi.set(__self__, "asynchronous", asynchronous)
@@ -47,6 +47,9 @@ class GetJobRunResult:
         if job_configuration_override_details and not isinstance(job_configuration_override_details, list):
             raise TypeError("Expected argument 'job_configuration_override_details' to be a list")
         pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
+        if job_environment_configuration_override_details and not isinstance(job_environment_configuration_override_details, list):
+            raise TypeError("Expected argument 'job_environment_configuration_override_details' to be a list")
+        pulumi.set(__self__, "job_environment_configuration_override_details", job_environment_configuration_override_details)
         if job_id and not isinstance(job_id, str):
             raise TypeError("Expected argument 'job_id' to be a str")
         pulumi.set(__self__, "job_id", job_id)
@@ -144,6 +147,14 @@ class GetJobRunResult:
         The job configuration details
         """
         return pulumi.get(self, "job_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentConfigurationOverrideDetails")
+    def job_environment_configuration_override_details(self) -> Sequence['outputs.GetJobRunJobEnvironmentConfigurationOverrideDetailResult']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_override_details")
 
     @property
     @pulumi.getter(name="jobId")
@@ -253,6 +264,7 @@ class AwaitableGetJobRunResult(GetJobRunResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             job_configuration_override_details=self.job_configuration_override_details,
+            job_environment_configuration_override_details=self.job_environment_configuration_override_details,
             job_id=self.job_id,
             job_infrastructure_configuration_details=self.job_infrastructure_configuration_details,
             job_log_configuration_override_details=self.job_log_configuration_override_details,
@@ -300,6 +312,7 @@ def get_job_run(job_run_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         job_configuration_override_details=pulumi.get(__ret__, 'job_configuration_override_details'),
+        job_environment_configuration_override_details=pulumi.get(__ret__, 'job_environment_configuration_override_details'),
         job_id=pulumi.get(__ret__, 'job_id'),
         job_infrastructure_configuration_details=pulumi.get(__ret__, 'job_infrastructure_configuration_details'),
         job_log_configuration_override_details=pulumi.get(__ret__, 'job_log_configuration_override_details'),

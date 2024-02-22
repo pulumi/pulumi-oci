@@ -46,6 +46,15 @@ namespace Pulumi.Oci.DataScience
     ///             EnvironmentVariables = @var.Job_run_job_configuration_override_details_environment_variables,
     ///             MaximumRuntimeInMinutes = @var.Job_run_job_configuration_override_details_maximum_runtime_in_minutes,
     ///         },
+    ///         JobEnvironmentConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobEnvironmentConfigurationOverrideDetailsArgs
+    ///         {
+    ///             Image = @var.Job_run_job_environment_configuration_override_details_image,
+    ///             JobEnvironmentType = @var.Job_run_job_environment_configuration_override_details_job_environment_type,
+    ///             Cmds = @var.Job_run_job_environment_configuration_override_details_cmd,
+    ///             Entrypoints = @var.Job_run_job_environment_configuration_override_details_entrypoint,
+    ///             ImageDigest = @var.Job_run_job_environment_configuration_override_details_image_digest,
+    ///             ImageSignatureId = oci_datascience_image_signature.Test_image_signature.Id,
+    ///         },
     ///         JobLogConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobLogConfigurationOverrideDetailsArgs
     ///         {
     ///             EnableAutoLogCreation = @var.Job_run_job_log_configuration_override_details_enable_auto_log_creation,
@@ -110,6 +119,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("jobConfigurationOverrideDetails")]
         public Output<Outputs.JobRunJobConfigurationOverrideDetails> JobConfigurationOverrideDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Environment configuration to capture job runtime dependencies.
+        /// </summary>
+        [Output("jobEnvironmentConfigurationOverrideDetails")]
+        public Output<Outputs.JobRunJobEnvironmentConfigurationOverrideDetails> JobEnvironmentConfigurationOverrideDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
@@ -276,6 +291,12 @@ namespace Pulumi.Oci.DataScience
         public Input<Inputs.JobRunJobConfigurationOverrideDetailsArgs>? JobConfigurationOverrideDetails { get; set; }
 
         /// <summary>
+        /// Environment configuration to capture job runtime dependencies.
+        /// </summary>
+        [Input("jobEnvironmentConfigurationOverrideDetails")]
+        public Input<Inputs.JobRunJobEnvironmentConfigurationOverrideDetailsArgs>? JobEnvironmentConfigurationOverrideDetails { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
         /// </summary>
         [Input("jobId", required: true)]
@@ -358,6 +379,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("jobConfigurationOverrideDetails")]
         public Input<Inputs.JobRunJobConfigurationOverrideDetailsGetArgs>? JobConfigurationOverrideDetails { get; set; }
+
+        /// <summary>
+        /// Environment configuration to capture job runtime dependencies.
+        /// </summary>
+        [Input("jobEnvironmentConfigurationOverrideDetails")]
+        public Input<Inputs.JobRunJobEnvironmentConfigurationOverrideDetailsGetArgs>? JobEnvironmentConfigurationOverrideDetails { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.

@@ -1736,6 +1736,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataIntegration/workspaceApplicationSchedule",
+  "fqn": "pulumi_oci.dataintegration",
+  "classes": {
+   "oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule": "WorkspaceApplicationSchedule"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataIntegration/workspaceExportRequest",
   "fqn": "pulumi_oci.dataintegration",
   "classes": {

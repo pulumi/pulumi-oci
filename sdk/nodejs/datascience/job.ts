@@ -44,6 +44,14 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     jobEnvironmentConfigurationDetails: {
+ *         image: _var.job_job_environment_configuration_details_image,
+ *         jobEnvironmentType: _var.job_job_environment_configuration_details_job_environment_type,
+ *         cmds: _var.job_job_environment_configuration_details_cmd,
+ *         entrypoints: _var.job_job_environment_configuration_details_entrypoint,
+ *         imageDigest: _var.job_job_environment_configuration_details_image_digest,
+ *         imageSignatureId: oci_datascience_image_signature.test_image_signature.id,
+ *     },
  *     jobLogConfigurationDetails: {
  *         enableAutoLogCreation: _var.job_job_log_configuration_details_enable_auto_log_creation,
  *         enableLogging: _var.job_job_log_configuration_details_enable_logging,
@@ -151,6 +159,10 @@ export class Job extends pulumi.CustomResource {
      */
     public readonly jobConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobConfigurationDetails>;
     /**
+     * Environment configuration to capture job runtime dependencies.
+     */
+    public readonly jobEnvironmentConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobEnvironmentConfigurationDetails>;
+    /**
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
      */
     public readonly jobInfrastructureConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobInfrastructureConfigurationDetails>;
@@ -206,6 +218,7 @@ export class Job extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["jobArtifact"] = state ? state.jobArtifact : undefined;
             resourceInputs["jobConfigurationDetails"] = state ? state.jobConfigurationDetails : undefined;
+            resourceInputs["jobEnvironmentConfigurationDetails"] = state ? state.jobEnvironmentConfigurationDetails : undefined;
             resourceInputs["jobInfrastructureConfigurationDetails"] = state ? state.jobInfrastructureConfigurationDetails : undefined;
             resourceInputs["jobLogConfigurationDetails"] = state ? state.jobLogConfigurationDetails : undefined;
             resourceInputs["jobStorageMountConfigurationDetailsLists"] = state ? state.jobStorageMountConfigurationDetailsLists : undefined;
@@ -237,6 +250,7 @@ export class Job extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["jobArtifact"] = args ? args.jobArtifact : undefined;
             resourceInputs["jobConfigurationDetails"] = args ? args.jobConfigurationDetails : undefined;
+            resourceInputs["jobEnvironmentConfigurationDetails"] = args ? args.jobEnvironmentConfigurationDetails : undefined;
             resourceInputs["jobInfrastructureConfigurationDetails"] = args ? args.jobInfrastructureConfigurationDetails : undefined;
             resourceInputs["jobLogConfigurationDetails"] = args ? args.jobLogConfigurationDetails : undefined;
             resourceInputs["jobStorageMountConfigurationDetailsLists"] = args ? args.jobStorageMountConfigurationDetailsLists : undefined;
@@ -309,6 +323,10 @@ export interface JobState {
      * The job configuration details
      */
     jobConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobConfigurationDetails>;
+    /**
+     * Environment configuration to capture job runtime dependencies.
+     */
+    jobEnvironmentConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobEnvironmentConfigurationDetails>;
     /**
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
      */
@@ -387,6 +405,10 @@ export interface JobArgs {
      * The job configuration details
      */
     jobConfigurationDetails: pulumi.Input<inputs.DataScience.JobJobConfigurationDetails>;
+    /**
+     * Environment configuration to capture job runtime dependencies.
+     */
+    jobEnvironmentConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobEnvironmentConfigurationDetails>;
     /**
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
      */

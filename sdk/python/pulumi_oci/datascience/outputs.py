@@ -12,11 +12,13 @@ from . import outputs
 
 __all__ = [
     'JobJobConfigurationDetails',
+    'JobJobEnvironmentConfigurationDetails',
     'JobJobInfrastructureConfigurationDetails',
     'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails',
     'JobJobLogConfigurationDetails',
     'JobJobStorageMountConfigurationDetailsList',
     'JobRunJobConfigurationOverrideDetails',
+    'JobRunJobEnvironmentConfigurationOverrideDetails',
     'JobRunJobInfrastructureConfigurationDetail',
     'JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail',
     'JobRunJobLogConfigurationOverrideDetails',
@@ -60,11 +62,13 @@ __all__ = [
     'GetFastLaunchJobConfigsFastLaunchJobConfigResult',
     'GetFastLaunchJobConfigsFilterResult',
     'GetJobJobConfigurationDetailResult',
+    'GetJobJobEnvironmentConfigurationDetailResult',
     'GetJobJobInfrastructureConfigurationDetailResult',
     'GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobJobLogConfigurationDetailResult',
     'GetJobJobStorageMountConfigurationDetailsListResult',
     'GetJobRunJobConfigurationOverrideDetailResult',
+    'GetJobRunJobEnvironmentConfigurationOverrideDetailResult',
     'GetJobRunJobInfrastructureConfigurationDetailResult',
     'GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobRunJobLogConfigurationOverrideDetailResult',
@@ -73,6 +77,7 @@ __all__ = [
     'GetJobRunsFilterResult',
     'GetJobRunsJobRunResult',
     'GetJobRunsJobRunJobConfigurationOverrideDetailResult',
+    'GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationDetailResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobRunsJobRunJobLogConfigurationOverrideDetailResult',
@@ -83,6 +88,7 @@ __all__ = [
     'GetJobsFilterResult',
     'GetJobsJobResult',
     'GetJobsJobJobConfigurationDetailResult',
+    'GetJobsJobJobEnvironmentConfigurationDetailResult',
     'GetJobsJobJobInfrastructureConfigurationDetailResult',
     'GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobsJobJobLogConfigurationDetailResult',
@@ -254,6 +260,104 @@ class JobJobConfigurationDetails(dict):
         A time bound for the execution of the job. Timer starts when the job becomes active.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class JobJobEnvironmentConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobEnvironmentType":
+            suggest = "job_environment_type"
+        elif key == "imageDigest":
+            suggest = "image_digest"
+        elif key == "imageSignatureId":
+            suggest = "image_signature_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobEnvironmentConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobEnvironmentConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobEnvironmentConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 image: str,
+                 job_environment_type: str,
+                 cmds: Optional[Sequence[str]] = None,
+                 entrypoints: Optional[Sequence[str]] = None,
+                 image_digest: Optional[str] = None,
+                 image_signature_id: Optional[str] = None):
+        """
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param str job_environment_type: The environment configuration type used for job runtime.
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if image_signature_id is not None:
+            pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Optional[Sequence[str]]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Optional[Sequence[str]]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[str]:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> Optional[str]:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
 
 
 @pulumi.output_type
@@ -672,6 +776,104 @@ class JobRunJobConfigurationOverrideDetails(dict):
         A time bound for the execution of the job. Timer starts when the job becomes active.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class JobRunJobEnvironmentConfigurationOverrideDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobEnvironmentType":
+            suggest = "job_environment_type"
+        elif key == "imageDigest":
+            suggest = "image_digest"
+        elif key == "imageSignatureId":
+            suggest = "image_signature_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobEnvironmentConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobEnvironmentConfigurationOverrideDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobEnvironmentConfigurationOverrideDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 image: str,
+                 job_environment_type: str,
+                 cmds: Optional[Sequence[str]] = None,
+                 entrypoints: Optional[Sequence[str]] = None,
+                 image_digest: Optional[str] = None,
+                 image_signature_id: Optional[str] = None):
+        """
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param str job_environment_type: The environment configuration type used for job runtime.
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if image_signature_id is not None:
+            pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Optional[Sequence[str]]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Optional[Sequence[str]]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[str]:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> Optional[str]:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
 
 
 @pulumi.output_type
@@ -3577,6 +3779,79 @@ class GetJobJobConfigurationDetailResult(dict):
 
 
 @pulumi.output_type
+class GetJobJobEnvironmentConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str,
+                 job_environment_type: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        :param str job_environment_type: The environment configuration type used for job runtime.
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+
+@pulumi.output_type
 class GetJobJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: int,
@@ -3862,6 +4137,79 @@ class GetJobRunJobConfigurationOverrideDetailResult(dict):
         A time bound for the execution of the job. Timer starts when the job becomes active.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetJobRunJobEnvironmentConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str,
+                 job_environment_type: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        :param str job_environment_type: The environment configuration type used for job runtime.
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
 
 
 @pulumi.output_type
@@ -4168,6 +4516,7 @@ class GetJobRunsJobRunResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  job_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobConfigurationOverrideDetailResult'],
+                 job_environment_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailResult'],
                  job_id: str,
                  job_infrastructure_configuration_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResult'],
                  job_log_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult'],
@@ -4187,6 +4536,7 @@ class GetJobRunsJobRunResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param Sequence['GetJobRunsJobRunJobConfigurationOverrideDetailArgs'] job_configuration_override_details: The job configuration details
+        :param Sequence['GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArgs'] job_environment_configuration_override_details: Environment configuration to capture job runtime dependencies.
         :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
         :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param Sequence['GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs'] job_log_configuration_override_details: Logging configuration for resource.
@@ -4207,6 +4557,7 @@ class GetJobRunsJobRunResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
+        pulumi.set(__self__, "job_environment_configuration_override_details", job_environment_configuration_override_details)
         pulumi.set(__self__, "job_id", job_id)
         pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
         pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
@@ -4279,6 +4630,14 @@ class GetJobRunsJobRunResult(dict):
         The job configuration details
         """
         return pulumi.get(self, "job_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentConfigurationOverrideDetails")
+    def job_environment_configuration_override_details(self) -> Sequence['outputs.GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailResult']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_override_details")
 
     @property
     @pulumi.getter(name="jobId")
@@ -4418,6 +4777,79 @@ class GetJobRunsJobRunJobConfigurationOverrideDetailResult(dict):
         A time bound for the execution of the job. Timer starts when the job becomes active.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str,
+                 job_environment_type: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        :param str job_environment_type: The environment configuration type used for job runtime.
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
 
 
 @pulumi.output_type
@@ -4815,6 +5247,7 @@ class GetJobsJobResult(dict):
                  id: str,
                  job_artifact: str,
                  job_configuration_details: Sequence['outputs.GetJobsJobJobConfigurationDetailResult'],
+                 job_environment_configuration_details: Sequence['outputs.GetJobsJobJobEnvironmentConfigurationDetailResult'],
                  job_infrastructure_configuration_details: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult'],
                  job_log_configuration_details: Sequence['outputs.GetJobsJobJobLogConfigurationDetailResult'],
                  job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult'],
@@ -4831,6 +5264,7 @@ class GetJobsJobResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param Sequence['GetJobsJobJobConfigurationDetailArgs'] job_configuration_details: The job configuration details
+        :param Sequence['GetJobsJobJobEnvironmentConfigurationDetailArgs'] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
         :param Sequence['GetJobsJobJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param Sequence['GetJobsJobJobLogConfigurationDetailArgs'] job_log_configuration_details: Logging configuration for resource.
         :param Sequence['GetJobsJobJobStorageMountConfigurationDetailsListArgs'] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
@@ -4854,6 +5288,7 @@ class GetJobsJobResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "job_artifact", job_artifact)
         pulumi.set(__self__, "job_configuration_details", job_configuration_details)
+        pulumi.set(__self__, "job_environment_configuration_details", job_environment_configuration_details)
         pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
         pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
         pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
@@ -4962,6 +5397,14 @@ class GetJobsJobResult(dict):
         return pulumi.get(self, "job_configuration_details")
 
     @property
+    @pulumi.getter(name="jobEnvironmentConfigurationDetails")
+    def job_environment_configuration_details(self) -> Sequence['outputs.GetJobsJobJobEnvironmentConfigurationDetailResult']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_details")
+
+    @property
     @pulumi.getter(name="jobInfrastructureConfigurationDetails")
     def job_infrastructure_configuration_details(self) -> Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult']:
         """
@@ -5067,6 +5510,79 @@ class GetJobsJobJobConfigurationDetailResult(dict):
         A time bound for the execution of the job. Timer starts when the job becomes active.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetJobsJobJobEnvironmentConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str,
+                 job_environment_type: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        :param str job_environment_type: The environment configuration type used for job runtime.
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
 
 
 @pulumi.output_type
@@ -6469,6 +6985,7 @@ class GetModelVersionSetsModelVersionSetResult(dict):
                  name: str,
                  project_id: str,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -6481,6 +6998,7 @@ class GetModelVersionSetsModelVersionSetResult(dict):
         :param str name: A filter to return only resources that match the entire name given.
         :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         :param str time_updated: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
@@ -6493,6 +7011,7 @@ class GetModelVersionSetsModelVersionSetResult(dict):
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -6567,6 +7086,14 @@ class GetModelVersionSetsModelVersionSetResult(dict):
         <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -9958,6 +10485,7 @@ class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
                  state: str,
                  sub_domain: str,
                  subnet_id: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -9974,6 +10502,7 @@ class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
         :param Sequence[str] nsg_ids: An array of network security group OCIDs.
         :param str state: The lifecycle state of the private endpoint.
         :param str subnet_id: The OCID of a subnet.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param str time_updated: The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
@@ -9991,6 +10520,7 @@ class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "sub_domain", sub_domain)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -10104,6 +10634,14 @@ class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
         return pulumi.get(self, "subnet_id")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -10185,6 +10723,7 @@ class GetProjectsProjectResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str):
         """
         :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -10195,6 +10734,7 @@ class GetProjectsProjectResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -10205,6 +10745,7 @@ class GetProjectsProjectResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
 
     @property
@@ -10270,6 +10811,14 @@ class GetProjectsProjectResult(dict):
         <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

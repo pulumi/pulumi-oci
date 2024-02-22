@@ -265,7 +265,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> Metadata { get; private set; } = null!;
 
         /// <summary>
-        /// The platform configuration requested for the instance.
+        /// (Updatable only for VM's) The platform configuration requested for the instance.
         /// 
         /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
         /// 
@@ -621,7 +621,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The platform configuration requested for the instance.
+        /// (Updatable only for VM's) The platform configuration requested for the instance.
         /// 
         /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
         /// 
@@ -917,7 +917,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The platform configuration requested for the instance.
+        /// (Updatable only for VM's) The platform configuration requested for the instance.
         /// 
         /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
         /// 

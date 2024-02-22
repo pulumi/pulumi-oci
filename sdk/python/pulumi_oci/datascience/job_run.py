@@ -24,6 +24,7 @@ class JobRunArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  job_configuration_override_details: Optional[pulumi.Input['JobRunJobConfigurationOverrideDetailsArgs']] = None,
+                 job_environment_configuration_override_details: Optional[pulumi.Input['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']] = None,
                  job_log_configuration_override_details: Optional[pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs']] = None):
         """
         The set of arguments for constructing a JobRun resource.
@@ -39,6 +40,7 @@ class JobRunArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input['JobRunJobConfigurationOverrideDetailsArgs'] job_configuration_override_details: The job configuration details
+        :param pulumi.Input['JobRunJobEnvironmentConfigurationOverrideDetailsArgs'] job_environment_configuration_override_details: Environment configuration to capture job runtime dependencies.
         :param pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs'] job_log_configuration_override_details: Logging configuration for resource.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -54,6 +56,8 @@ class JobRunArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if job_configuration_override_details is not None:
             pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
+        if job_environment_configuration_override_details is not None:
+            pulumi.set(__self__, "job_environment_configuration_override_details", job_environment_configuration_override_details)
         if job_log_configuration_override_details is not None:
             pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
 
@@ -158,6 +162,18 @@ class JobRunArgs:
         pulumi.set(self, "job_configuration_override_details", value)
 
     @property
+    @pulumi.getter(name="jobEnvironmentConfigurationOverrideDetails")
+    def job_environment_configuration_override_details(self) -> Optional[pulumi.Input['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']]:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_override_details")
+
+    @job_environment_configuration_override_details.setter
+    def job_environment_configuration_override_details(self, value: Optional[pulumi.Input['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']]):
+        pulumi.set(self, "job_environment_configuration_override_details", value)
+
+    @property
     @pulumi.getter(name="jobLogConfigurationOverrideDetails")
     def job_log_configuration_override_details(self) -> Optional[pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs']]:
         """
@@ -180,6 +196,7 @@ class _JobRunState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  job_configuration_override_details: Optional[pulumi.Input['JobRunJobConfigurationOverrideDetailsArgs']] = None,
+                 job_environment_configuration_override_details: Optional[pulumi.Input['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']] = None,
                  job_id: Optional[pulumi.Input[str]] = None,
                  job_infrastructure_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailArgs']]]] = None,
                  job_log_configuration_override_details: Optional[pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs']] = None,
@@ -200,6 +217,7 @@ class _JobRunState:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input['JobRunJobConfigurationOverrideDetailsArgs'] job_configuration_override_details: The job configuration details
+        :param pulumi.Input['JobRunJobEnvironmentConfigurationOverrideDetailsArgs'] job_environment_configuration_override_details: Environment configuration to capture job runtime dependencies.
         :param pulumi.Input[str] job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
         :param pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailArgs']]] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs'] job_log_configuration_override_details: Logging configuration for resource.
@@ -230,6 +248,8 @@ class _JobRunState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if job_configuration_override_details is not None:
             pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
+        if job_environment_configuration_override_details is not None:
+            pulumi.set(__self__, "job_environment_configuration_override_details", job_environment_configuration_override_details)
         if job_id is not None:
             pulumi.set(__self__, "job_id", job_id)
         if job_infrastructure_configuration_details is not None:
@@ -336,6 +356,18 @@ class _JobRunState:
     @job_configuration_override_details.setter
     def job_configuration_override_details(self, value: Optional[pulumi.Input['JobRunJobConfigurationOverrideDetailsArgs']]):
         pulumi.set(self, "job_configuration_override_details", value)
+
+    @property
+    @pulumi.getter(name="jobEnvironmentConfigurationOverrideDetails")
+    def job_environment_configuration_override_details(self) -> Optional[pulumi.Input['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']]:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_override_details")
+
+    @job_environment_configuration_override_details.setter
+    def job_environment_configuration_override_details(self, value: Optional[pulumi.Input['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']]):
+        pulumi.set(self, "job_environment_configuration_override_details", value)
 
     @property
     @pulumi.getter(name="jobId")
@@ -485,6 +517,7 @@ class JobRun(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  job_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobConfigurationOverrideDetailsArgs']]] = None,
+                 job_environment_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']]] = None,
                  job_id: Optional[pulumi.Input[str]] = None,
                  job_log_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobLogConfigurationOverrideDetailsArgs']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
@@ -518,6 +551,14 @@ class JobRun(pulumi.CustomResource):
                 environment_variables=var["job_run_job_configuration_override_details_environment_variables"],
                 maximum_runtime_in_minutes=var["job_run_job_configuration_override_details_maximum_runtime_in_minutes"],
             ),
+            job_environment_configuration_override_details=oci.data_science.JobRunJobEnvironmentConfigurationOverrideDetailsArgs(
+                image=var["job_run_job_environment_configuration_override_details_image"],
+                job_environment_type=var["job_run_job_environment_configuration_override_details_job_environment_type"],
+                cmds=var["job_run_job_environment_configuration_override_details_cmd"],
+                entrypoints=var["job_run_job_environment_configuration_override_details_entrypoint"],
+                image_digest=var["job_run_job_environment_configuration_override_details_image_digest"],
+                image_signature_id=oci_datascience_image_signature["test_image_signature"]["id"],
+            ),
             job_log_configuration_override_details=oci.data_science.JobRunJobLogConfigurationOverrideDetailsArgs(
                 enable_auto_log_creation=var["job_run_job_log_configuration_override_details_enable_auto_log_creation"],
                 enable_logging=var["job_run_job_log_configuration_override_details_enable_logging"],
@@ -542,6 +583,7 @@ class JobRun(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['JobRunJobConfigurationOverrideDetailsArgs']] job_configuration_override_details: The job configuration details
+        :param pulumi.Input[pulumi.InputType['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']] job_environment_configuration_override_details: Environment configuration to capture job runtime dependencies.
         :param pulumi.Input[str] job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
         :param pulumi.Input[pulumi.InputType['JobRunJobLogConfigurationOverrideDetailsArgs']] job_log_configuration_override_details: Logging configuration for resource.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -585,6 +627,14 @@ class JobRun(pulumi.CustomResource):
                 environment_variables=var["job_run_job_configuration_override_details_environment_variables"],
                 maximum_runtime_in_minutes=var["job_run_job_configuration_override_details_maximum_runtime_in_minutes"],
             ),
+            job_environment_configuration_override_details=oci.data_science.JobRunJobEnvironmentConfigurationOverrideDetailsArgs(
+                image=var["job_run_job_environment_configuration_override_details_image"],
+                job_environment_type=var["job_run_job_environment_configuration_override_details_job_environment_type"],
+                cmds=var["job_run_job_environment_configuration_override_details_cmd"],
+                entrypoints=var["job_run_job_environment_configuration_override_details_entrypoint"],
+                image_digest=var["job_run_job_environment_configuration_override_details_image_digest"],
+                image_signature_id=oci_datascience_image_signature["test_image_signature"]["id"],
+            ),
             job_log_configuration_override_details=oci.data_science.JobRunJobLogConfigurationOverrideDetailsArgs(
                 enable_auto_log_creation=var["job_run_job_log_configuration_override_details_enable_auto_log_creation"],
                 enable_logging=var["job_run_job_log_configuration_override_details_enable_logging"],
@@ -622,6 +672,7 @@ class JobRun(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  job_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobConfigurationOverrideDetailsArgs']]] = None,
+                 job_environment_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']]] = None,
                  job_id: Optional[pulumi.Input[str]] = None,
                  job_log_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobLogConfigurationOverrideDetailsArgs']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
@@ -642,6 +693,7 @@ class JobRun(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["job_configuration_override_details"] = job_configuration_override_details
+            __props__.__dict__["job_environment_configuration_override_details"] = job_environment_configuration_override_details
             if job_id is None and not opts.urn:
                 raise TypeError("Missing required property 'job_id'")
             __props__.__dict__["job_id"] = job_id
@@ -675,6 +727,7 @@ class JobRun(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             job_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobConfigurationOverrideDetailsArgs']]] = None,
+            job_environment_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']]] = None,
             job_id: Optional[pulumi.Input[str]] = None,
             job_infrastructure_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunJobInfrastructureConfigurationDetailArgs']]]]] = None,
             job_log_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobLogConfigurationOverrideDetailsArgs']]] = None,
@@ -700,6 +753,7 @@ class JobRun(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['JobRunJobConfigurationOverrideDetailsArgs']] job_configuration_override_details: The job configuration details
+        :param pulumi.Input[pulumi.InputType['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']] job_environment_configuration_override_details: Environment configuration to capture job runtime dependencies.
         :param pulumi.Input[str] job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunJobInfrastructureConfigurationDetailArgs']]]] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input[pulumi.InputType['JobRunJobLogConfigurationOverrideDetailsArgs']] job_log_configuration_override_details: Logging configuration for resource.
@@ -727,6 +781,7 @@ class JobRun(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["job_configuration_override_details"] = job_configuration_override_details
+        __props__.__dict__["job_environment_configuration_override_details"] = job_environment_configuration_override_details
         __props__.__dict__["job_id"] = job_id
         __props__.__dict__["job_infrastructure_configuration_details"] = job_infrastructure_configuration_details
         __props__.__dict__["job_log_configuration_override_details"] = job_log_configuration_override_details
@@ -795,6 +850,14 @@ class JobRun(pulumi.CustomResource):
         The job configuration details
         """
         return pulumi.get(self, "job_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentConfigurationOverrideDetails")
+    def job_environment_configuration_override_details(self) -> pulumi.Output['outputs.JobRunJobEnvironmentConfigurationOverrideDetails']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_override_details")
 
     @property
     @pulumi.getter(name="jobId")

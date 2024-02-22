@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.JobRunJobConfigurationOverrideDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.JobRunJobEnvironmentConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationDetailArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobLogConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobStorageMountConfigurationDetailsListArgs;
@@ -127,6 +128,21 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<JobRunJobConfigurationOverrideDetailsArgs>> jobConfigurationOverrideDetails() {
         return Optional.ofNullable(this.jobConfigurationOverrideDetails);
+    }
+
+    /**
+     * Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    @Import(name="jobEnvironmentConfigurationOverrideDetails")
+    private @Nullable Output<JobRunJobEnvironmentConfigurationOverrideDetailsArgs> jobEnvironmentConfigurationOverrideDetails;
+
+    /**
+     * @return Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    public Optional<Output<JobRunJobEnvironmentConfigurationOverrideDetailsArgs>> jobEnvironmentConfigurationOverrideDetails() {
+        return Optional.ofNullable(this.jobEnvironmentConfigurationOverrideDetails);
     }
 
     /**
@@ -310,6 +326,7 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.jobConfigurationOverrideDetails = $.jobConfigurationOverrideDetails;
+        this.jobEnvironmentConfigurationOverrideDetails = $.jobEnvironmentConfigurationOverrideDetails;
         this.jobId = $.jobId;
         this.jobInfrastructureConfigurationDetails = $.jobInfrastructureConfigurationDetails;
         this.jobLogConfigurationOverrideDetails = $.jobLogConfigurationOverrideDetails;
@@ -486,6 +503,27 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder jobConfigurationOverrideDetails(JobRunJobConfigurationOverrideDetailsArgs jobConfigurationOverrideDetails) {
             return jobConfigurationOverrideDetails(Output.of(jobConfigurationOverrideDetails));
+        }
+
+        /**
+         * @param jobEnvironmentConfigurationOverrideDetails Environment configuration to capture job runtime dependencies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobEnvironmentConfigurationOverrideDetails(@Nullable Output<JobRunJobEnvironmentConfigurationOverrideDetailsArgs> jobEnvironmentConfigurationOverrideDetails) {
+            $.jobEnvironmentConfigurationOverrideDetails = jobEnvironmentConfigurationOverrideDetails;
+            return this;
+        }
+
+        /**
+         * @param jobEnvironmentConfigurationOverrideDetails Environment configuration to capture job runtime dependencies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobEnvironmentConfigurationOverrideDetails(JobRunJobEnvironmentConfigurationOverrideDetailsArgs jobEnvironmentConfigurationOverrideDetails) {
+            return jobEnvironmentConfigurationOverrideDetails(Output.of(jobEnvironmentConfigurationOverrideDetails));
         }
 
         /**

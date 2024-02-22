@@ -21,7 +21,7 @@ class GetPrivateEndpointResult:
     """
     A collection of values returned by getPrivateEndpoint.
     """
-    def __init__(__self__, compartment_id=None, created_by=None, data_science_private_endpoint_id=None, data_science_resource_type=None, defined_tags=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, lifecycle_details=None, nsg_ids=None, state=None, sub_domain=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, created_by=None, data_science_private_endpoint_id=None, data_science_resource_type=None, defined_tags=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, lifecycle_details=None, nsg_ids=None, state=None, sub_domain=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -67,6 +67,9 @@ class GetPrivateEndpointResult:
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -189,6 +192,14 @@ class GetPrivateEndpointResult:
         return pulumi.get(self, "subnet_id")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -226,6 +237,7 @@ class AwaitableGetPrivateEndpointResult(GetPrivateEndpointResult):
             state=self.state,
             sub_domain=self.sub_domain,
             subnet_id=self.subnet_id,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -270,6 +282,7 @@ def get_private_endpoint(data_science_private_endpoint_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         sub_domain=pulumi.get(__ret__, 'sub_domain'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 

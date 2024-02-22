@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.JobJobConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.JobJobEnvironmentConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobStorageMountConfigurationDetailsListArgs;
@@ -216,6 +217,21 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    @Import(name="jobEnvironmentConfigurationDetails")
+    private @Nullable Output<JobJobEnvironmentConfigurationDetailsArgs> jobEnvironmentConfigurationDetails;
+
+    /**
+     * @return Environment configuration to capture job runtime dependencies.
+     * 
+     */
+    public Optional<Output<JobJobEnvironmentConfigurationDetailsArgs>> jobEnvironmentConfigurationDetails() {
+        return Optional.ofNullable(this.jobEnvironmentConfigurationDetails);
+    }
+
+    /**
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
@@ -337,6 +353,7 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.jobArtifact = $.jobArtifact;
         this.jobConfigurationDetails = $.jobConfigurationDetails;
+        this.jobEnvironmentConfigurationDetails = $.jobEnvironmentConfigurationDetails;
         this.jobInfrastructureConfigurationDetails = $.jobInfrastructureConfigurationDetails;
         this.jobLogConfigurationDetails = $.jobLogConfigurationDetails;
         this.jobStorageMountConfigurationDetailsLists = $.jobStorageMountConfigurationDetailsLists;
@@ -626,6 +643,27 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder jobConfigurationDetails(JobJobConfigurationDetailsArgs jobConfigurationDetails) {
             return jobConfigurationDetails(Output.of(jobConfigurationDetails));
+        }
+
+        /**
+         * @param jobEnvironmentConfigurationDetails Environment configuration to capture job runtime dependencies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobEnvironmentConfigurationDetails(@Nullable Output<JobJobEnvironmentConfigurationDetailsArgs> jobEnvironmentConfigurationDetails) {
+            $.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param jobEnvironmentConfigurationDetails Environment configuration to capture job runtime dependencies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobEnvironmentConfigurationDetails(JobJobEnvironmentConfigurationDetailsArgs jobEnvironmentConfigurationDetails) {
+            return jobEnvironmentConfigurationDetails(Output.of(jobEnvironmentConfigurationDetails));
         }
 
         /**

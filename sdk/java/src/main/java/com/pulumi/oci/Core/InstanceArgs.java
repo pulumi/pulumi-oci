@@ -487,7 +487,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The platform configuration requested for the instance.
+     * (Updatable only for VM&#39;s) The platform configuration requested for the instance.
      * 
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
      * 
@@ -502,7 +502,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<InstancePlatformConfigArgs> platformConfig;
 
     /**
-     * @return The platform configuration requested for the instance.
+     * @return (Updatable only for VM&#39;s) The platform configuration requested for the instance.
      * 
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
      * 
@@ -1292,7 +1292,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param platformConfig The platform configuration requested for the instance.
+         * @param platformConfig (Updatable only for VM&#39;s) The platform configuration requested for the instance.
          * 
          * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
          * 
@@ -1311,7 +1311,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param platformConfig The platform configuration requested for the instance.
+         * @param platformConfig (Updatable only for VM&#39;s) The platform configuration requested for the instance.
          * 
          * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
          * 

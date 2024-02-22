@@ -75,6 +75,8 @@ type LookupProjectResult struct {
 	ProjectId string `pulumi:"projectId"`
 	// The state of the project.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -159,6 +161,11 @@ func (o LookupProjectResultOutput) ProjectId() pulumi.StringOutput {
 // The state of the project.
 func (o LookupProjectResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupProjectResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupProjectResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z

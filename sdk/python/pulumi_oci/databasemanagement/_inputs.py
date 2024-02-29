@@ -53,10 +53,13 @@ __all__ = [
     'ExternalExadataInfrastructureDatabaseSystemArgs',
     'ExternalExadataInfrastructureStorageGridArgs',
     'ExternalExadataStorageConnectorCredentialInfoArgs',
+    'ExternalExadataStorageGridStorageServerArgs',
+    'ExternalExadataStorageServerConnectorArgs',
     'ExternalListenerEndpointArgs',
     'ExternalListenerServicedAsmArgs',
     'ExternalListenerServicedDatabaseArgs',
     'ManagedDatabaseGroupManagedDatabaseArgs',
+    'ManagedDatabaseManagedDatabaseGroupArgs',
     'ManagedDatabasesChangeDatabaseParameterCredentialsArgs',
     'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs',
     'ManagedDatabasesChangeDatabaseParameterParameterArgs',
@@ -4526,6 +4529,644 @@ class ExternalExadataStorageConnectorCredentialInfoArgs:
 
 
 @pulumi.input_type
+class ExternalExadataStorageGridStorageServerArgs:
+    def __init__(__self__, *,
+                 additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 connector_id: Optional[pulumi.Input[str]] = None,
+                 cpu_count: Optional[pulumi.Input[float]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 internal_id: Optional[pulumi.Input[str]] = None,
+                 ip_address: Optional[pulumi.Input[str]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 make_model: Optional[pulumi.Input[str]] = None,
+                 max_flash_disk_iops: Optional[pulumi.Input[int]] = None,
+                 max_flash_disk_throughput: Optional[pulumi.Input[int]] = None,
+                 max_hard_disk_iops: Optional[pulumi.Input[int]] = None,
+                 max_hard_disk_throughput: Optional[pulumi.Input[int]] = None,
+                 memory_gb: Optional[pulumi.Input[float]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None,
+                 time_updated: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+        :param pulumi.Input[float] cpu_count: The CPU count of the Exadata storage server.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
+        :param pulumi.Input[str] ip_address: The IP address of the Exadata storage server.
+        :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param pulumi.Input[str] make_model: The make model of the Exadata storage server.
+        :param pulumi.Input[int] max_flash_disk_iops: The maximum flash disk IO operations per second of the Exadata storage server.
+        :param pulumi.Input[int] max_flash_disk_throughput: The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+        :param pulumi.Input[int] max_hard_disk_iops: The maximum hard disk IO operations per second of the Exadata storage server.
+        :param pulumi.Input[int] max_hard_disk_throughput: The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+        :param pulumi.Input[float] memory_gb: The Exadata storage server memory size in GB.
+        :param pulumi.Input[str] resource_type: The type of Exadata resource.
+        :param pulumi.Input[str] state: The current lifecycle state of the database resource.
+        :param pulumi.Input[str] status: The status of the Exadata resource.
+        :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
+        :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
+        :param pulumi.Input[str] version: The version of the Exadata resource.
+        """
+        if additional_details is not None:
+            pulumi.set(__self__, "additional_details", additional_details)
+        if connector_id is not None:
+            pulumi.set(__self__, "connector_id", connector_id)
+        if cpu_count is not None:
+            pulumi.set(__self__, "cpu_count", cpu_count)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internal_id is not None:
+            pulumi.set(__self__, "internal_id", internal_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if make_model is not None:
+            pulumi.set(__self__, "make_model", make_model)
+        if max_flash_disk_iops is not None:
+            pulumi.set(__self__, "max_flash_disk_iops", max_flash_disk_iops)
+        if max_flash_disk_throughput is not None:
+            pulumi.set(__self__, "max_flash_disk_throughput", max_flash_disk_throughput)
+        if max_hard_disk_iops is not None:
+            pulumi.set(__self__, "max_hard_disk_iops", max_hard_disk_iops)
+        if max_hard_disk_throughput is not None:
+            pulumi.set(__self__, "max_hard_disk_throughput", max_hard_disk_throughput)
+        if memory_gb is not None:
+            pulumi.set(__self__, "memory_gb", memory_gb)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @additional_details.setter
+    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "additional_details", value)
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+        """
+        return pulumi.get(self, "connector_id")
+
+    @connector_id.setter
+    def connector_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connector_id", value)
+
+    @property
+    @pulumi.getter(name="cpuCount")
+    def cpu_count(self) -> Optional[pulumi.Input[float]]:
+        """
+        The CPU count of the Exadata storage server.
+        """
+        return pulumi.get(self, "cpu_count")
+
+    @cpu_count.setter
+    def cpu_count(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "cpu_count", value)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @internal_id.setter
+    def internal_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "internal_id", value)
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[pulumi.Input[str]]:
+        """
+        The IP address of the Exadata storage server.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ip_address", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter(name="makeModel")
+    def make_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The make model of the Exadata storage server.
+        """
+        return pulumi.get(self, "make_model")
+
+    @make_model.setter
+    def make_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "make_model", value)
+
+    @property
+    @pulumi.getter(name="maxFlashDiskIops")
+    def max_flash_disk_iops(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum flash disk IO operations per second of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_flash_disk_iops")
+
+    @max_flash_disk_iops.setter
+    def max_flash_disk_iops(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_flash_disk_iops", value)
+
+    @property
+    @pulumi.getter(name="maxFlashDiskThroughput")
+    def max_flash_disk_throughput(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_flash_disk_throughput")
+
+    @max_flash_disk_throughput.setter
+    def max_flash_disk_throughput(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_flash_disk_throughput", value)
+
+    @property
+    @pulumi.getter(name="maxHardDiskIops")
+    def max_hard_disk_iops(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum hard disk IO operations per second of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_hard_disk_iops")
+
+    @max_hard_disk_iops.setter
+    def max_hard_disk_iops(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_hard_disk_iops", value)
+
+    @property
+    @pulumi.getter(name="maxHardDiskThroughput")
+    def max_hard_disk_throughput(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_hard_disk_throughput")
+
+    @max_hard_disk_throughput.setter
+    def max_hard_disk_throughput(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_hard_disk_throughput", value)
+
+    @property
+    @pulumi.getter(name="memoryGb")
+    def memory_gb(self) -> Optional[pulumi.Input[float]]:
+        """
+        The Exadata storage server memory size in GB.
+        """
+        return pulumi.get(self, "memory_gb")
+
+    @memory_gb.setter
+    def memory_gb(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_gb", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of Exadata resource.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_updated", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class ExternalExadataStorageServerConnectorArgs:
+    def __init__(__self__, *,
+                 additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 agent_id: Optional[pulumi.Input[str]] = None,
+                 connection_uri: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 internal_id: Optional[pulumi.Input[str]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 storage_server_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None,
+                 time_updated: Optional[pulumi.Input[str]] = None,
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+        :param pulumi.Input[str] connection_uri: The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
+        :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param pulumi.Input[str] resource_type: The type of Exadata resource.
+        :param pulumi.Input[str] state: The current lifecycle state of the database resource.
+        :param pulumi.Input[str] status: The status of the Exadata resource.
+        :param pulumi.Input[str] storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
+        :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
+        :param pulumi.Input[str] version: The version of the Exadata resource.
+        """
+        if additional_details is not None:
+            pulumi.set(__self__, "additional_details", additional_details)
+        if agent_id is not None:
+            pulumi.set(__self__, "agent_id", agent_id)
+        if connection_uri is not None:
+            pulumi.set(__self__, "connection_uri", connection_uri)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internal_id is not None:
+            pulumi.set(__self__, "internal_id", internal_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if storage_server_id is not None:
+            pulumi.set(__self__, "storage_server_id", storage_server_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @additional_details.setter
+    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "additional_details", value)
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @agent_id.setter
+    def agent_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "agent_id", value)
+
+    @property
+    @pulumi.getter(name="connectionUri")
+    def connection_uri(self) -> Optional[pulumi.Input[str]]:
+        """
+        The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+        """
+        return pulumi.get(self, "connection_uri")
+
+    @connection_uri.setter
+    def connection_uri(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_uri", value)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @internal_id.setter
+    def internal_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "internal_id", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of Exadata resource.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="storageServerId")
+    def storage_server_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        """
+        return pulumi.get(self, "storage_server_id")
+
+    @storage_server_id.setter
+    def storage_server_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_server_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_updated", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
 class ExternalListenerEndpointArgs:
     def __init__(__self__, *,
                  host: Optional[pulumi.Input[str]] = None,
@@ -4792,7 +5433,9 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  database_sub_type: Optional[pulumi.Input[str]] = None,
                  database_type: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  time_added: Optional[pulumi.Input[str]] = None,
@@ -4801,7 +5444,9 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
         :param pulumi.Input[str] database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param pulumi.Input[str] database_type: The type of Oracle Database installation.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] deployment_type: The infrastructure used to deploy the Oracle Database.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
                
                
@@ -4817,8 +5462,12 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
             pulumi.set(__self__, "database_sub_type", database_sub_type)
         if database_type is not None:
             pulumi.set(__self__, "database_type", database_type)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if deployment_type is not None:
             pulumi.set(__self__, "deployment_type", deployment_type)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if name is not None:
@@ -4865,6 +5514,18 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
         pulumi.set(self, "database_type", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -4875,6 +5536,18 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
     @deployment_type.setter
     def deployment_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "deployment_type", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter
@@ -4927,6 +5600,61 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
     @workload_type.setter
     def workload_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "workload_type", value)
+
+
+@pulumi.input_type
+class ManagedDatabaseManagedDatabaseGroupArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+        :param pulumi.Input[str] name: The name of the Managed Database.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the Managed Database.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type

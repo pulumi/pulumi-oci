@@ -21,7 +21,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
         /// </summary>
         public readonly string ApplyRate;
-        public readonly int AutonomousContainerDatabaseDataguardAssociationId;
+        public readonly string AutonomousContainerDatabaseDataguardAssociationId;
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -53,9 +53,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
         /// </summary>
         public readonly string PeerAutonomousContainerDatabaseId;
+        public readonly string PeerAutonomousVmClusterId;
         public readonly string PeerCloudAutonomousVmClusterId;
+        public readonly string PeerDbUniqueName;
         /// <summary>
-        /// The current state of Autonomous Data Guard.
+        /// The current state of the Autonomous Container Database.
         /// </summary>
         public readonly string PeerLifecycleState;
         /// <summary>
@@ -98,7 +100,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             string applyRate,
 
-            int autonomousContainerDatabaseDataguardAssociationId,
+            string autonomousContainerDatabaseDataguardAssociationId,
 
             string autonomousContainerDatabaseId,
 
@@ -120,7 +122,11 @@ namespace Pulumi.Oci.Database.Outputs
 
             string peerAutonomousContainerDatabaseId,
 
+            string peerAutonomousVmClusterId,
+
             string peerCloudAutonomousVmClusterId,
+
+            string peerDbUniqueName,
 
             string peerLifecycleState,
 
@@ -155,7 +161,9 @@ namespace Pulumi.Oci.Database.Outputs
             PeerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;
             PeerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
             PeerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
+            PeerAutonomousVmClusterId = peerAutonomousVmClusterId;
             PeerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
+            PeerDbUniqueName = peerDbUniqueName;
             PeerLifecycleState = peerLifecycleState;
             PeerRole = peerRole;
             ProtectionMode = protectionMode;

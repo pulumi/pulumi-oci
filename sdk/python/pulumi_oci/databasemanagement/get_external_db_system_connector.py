@@ -22,7 +22,7 @@ class GetExternalDbSystemConnectorResult:
     """
     A collection of values returned by getExternalDbSystemConnector.
     """
-    def __init__(__self__, agent_id=None, compartment_id=None, connection_failure_message=None, connection_infos=None, connection_status=None, connector_type=None, display_name=None, external_db_system_connector_id=None, external_db_system_id=None, id=None, lifecycle_details=None, state=None, time_connection_status_last_updated=None, time_created=None, time_updated=None):
+    def __init__(__self__, agent_id=None, compartment_id=None, connection_failure_message=None, connection_infos=None, connection_status=None, connector_type=None, defined_tags=None, display_name=None, external_db_system_connector_id=None, external_db_system_id=None, freeform_tags=None, id=None, lifecycle_details=None, state=None, time_connection_status_last_updated=None, time_created=None, time_updated=None):
         if agent_id and not isinstance(agent_id, str):
             raise TypeError("Expected argument 'agent_id' to be a str")
         pulumi.set(__self__, "agent_id", agent_id)
@@ -41,6 +41,9 @@ class GetExternalDbSystemConnectorResult:
         if connector_type and not isinstance(connector_type, str):
             raise TypeError("Expected argument 'connector_type' to be a str")
         pulumi.set(__self__, "connector_type", connector_type)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -50,6 +53,9 @@ class GetExternalDbSystemConnectorResult:
         if external_db_system_id and not isinstance(external_db_system_id, str):
             raise TypeError("Expected argument 'external_db_system_id' to be a str")
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -118,6 +124,14 @@ class GetExternalDbSystemConnectorResult:
         return pulumi.get(self, "connector_type")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -137,6 +151,14 @@ class GetExternalDbSystemConnectorResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the connector is a part of.
         """
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -199,9 +221,11 @@ class AwaitableGetExternalDbSystemConnectorResult(GetExternalDbSystemConnectorRe
             connection_infos=self.connection_infos,
             connection_status=self.connection_status,
             connector_type=self.connector_type,
+            defined_tags=self.defined_tags,
             display_name=self.display_name,
             external_db_system_connector_id=self.external_db_system_connector_id,
             external_db_system_id=self.external_db_system_id,
+            freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             state=self.state,
@@ -241,9 +265,11 @@ def get_external_db_system_connector(external_db_system_connector_id: Optional[s
         connection_infos=pulumi.get(__ret__, 'connection_infos'),
         connection_status=pulumi.get(__ret__, 'connection_status'),
         connector_type=pulumi.get(__ret__, 'connector_type'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         external_db_system_connector_id=pulumi.get(__ret__, 'external_db_system_connector_id'),
         external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         state=pulumi.get(__ret__, 'state'),

@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.cloud_exadata_infrastructure_display_name,
  *     shape: _var.cloud_exadata_infrastructure_shape,
+ *     clusterPlacementGroupId: _var.cloud_exadata_infrastructure_cluster_placement_group_id,
  *     computeCount: _var.cloud_exadata_infrastructure_compute_count,
  *     customerContacts: [{
  *         email: _var.cloud_exadata_infrastructure_customer_contacts_email,
@@ -102,6 +103,10 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      * The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
     public /*out*/ readonly availableStorageSizeInGbs!: pulumi.Output<number>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    public readonly clusterPlacementGroupId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -207,6 +212,10 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      */
     public /*out*/ readonly storageServerVersion!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The date and time the cloud Exadata infrastructure resource was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -232,6 +241,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["additionalStorageCount"] = state ? state.additionalStorageCount : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["availableStorageSizeInGbs"] = state ? state.availableStorageSizeInGbs : undefined;
+            resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeCount"] = state ? state.computeCount : undefined;
             resourceInputs["cpuCount"] = state ? state.cpuCount : undefined;
@@ -257,6 +267,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["storageCount"] = state ? state.storageCount : undefined;
             resourceInputs["storageServerVersion"] = state ? state.storageServerVersion : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["totalStorageSizeInGbs"] = state ? state.totalStorageSizeInGbs : undefined;
         } else {
@@ -274,6 +285,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
                 throw new Error("Missing required property 'shape'");
             }
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
+            resourceInputs["clusterPlacementGroupId"] = args ? args.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["computeCount"] = args ? args.computeCount : undefined;
             resourceInputs["customerContacts"] = args ? args.customerContacts : undefined;
@@ -302,6 +314,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["storageServerVersion"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["totalStorageSizeInGbs"] = undefined /*out*/;
         }
@@ -330,6 +343,10 @@ export interface CloudExadataInfrastructureState {
      * The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
     availableStorageSizeInGbs?: pulumi.Input<number>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -435,6 +452,10 @@ export interface CloudExadataInfrastructureState {
      */
     storageServerVersion?: pulumi.Input<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The date and time the cloud Exadata infrastructure resource was created.
      */
     timeCreated?: pulumi.Input<string>;
@@ -452,6 +473,10 @@ export interface CloudExadataInfrastructureArgs {
      * The availability domain where the cloud Exadata infrastructure is located.
      */
     availabilityDomain: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

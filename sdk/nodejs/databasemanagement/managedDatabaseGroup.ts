@@ -20,7 +20,13 @@ import * as utilities from "../utilities";
  *
  * const testManagedDatabaseGroup = new oci.databasemanagement.ManagedDatabaseGroup("testManagedDatabaseGroup", {
  *     compartmentId: _var.compartment_id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
  *     description: _var.managed_database_group_description,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
  *     managedDatabases: [{
  *         id: _var.managed_database_id,
  *     }],
@@ -68,9 +74,17 @@ export class ManagedDatabaseGroup extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * (Updatable) The information specified by the user about the Managed Database Group.
      */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
      */
@@ -106,7 +120,9 @@ export class ManagedDatabaseGroup extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ManagedDatabaseGroupState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["managedDatabases"] = state ? state.managedDatabases : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -118,7 +134,9 @@ export class ManagedDatabaseGroup extends pulumi.CustomResource {
                 throw new Error("Missing required property 'compartmentId'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["managedDatabases"] = args ? args.managedDatabases : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["state"] = undefined /*out*/;
@@ -139,9 +157,17 @@ export interface ManagedDatabaseGroupState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The information specified by the user about the Managed Database Group.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
      */
@@ -173,9 +199,17 @@ export interface ManagedDatabaseGroupArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The information specified by the user about the Managed Database Group.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
      */

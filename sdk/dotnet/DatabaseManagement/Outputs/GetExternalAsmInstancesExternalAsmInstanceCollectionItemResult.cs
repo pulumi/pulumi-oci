@@ -26,6 +26,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string ComponentName;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// A filter to only return the resources that match the entire display name.
         /// </summary>
         public readonly string DisplayName;
@@ -33,6 +37,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
         /// </summary>
         public readonly string ExternalAsmId;
+        public readonly string ExternalAsmInstanceId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node on which the ASM instance is running.
         /// </summary>
@@ -41,6 +46,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM instance is a part of.
         /// </summary>
         public readonly string ExternalDbSystemId;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The name of the host on which the ASM instance is running.
         /// </summary>
@@ -74,13 +83,19 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string componentName,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string displayName,
 
             string externalAsmId,
 
+            string externalAsmInstanceId,
+
             string externalDbNodeId,
 
             string externalDbSystemId,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string hostName,
 
@@ -97,10 +112,13 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             AdrHomeDirectory = adrHomeDirectory;
             CompartmentId = compartmentId;
             ComponentName = componentName;
+            DefinedTags = definedTags;
             DisplayName = displayName;
             ExternalAsmId = externalAsmId;
+            ExternalAsmInstanceId = externalAsmInstanceId;
             ExternalDbNodeId = externalDbNodeId;
             ExternalDbSystemId = externalDbSystemId;
+            FreeformTags = freeformTags;
             HostName = hostName;
             Id = id;
             LifecycleDetails = lifecycleDetails;

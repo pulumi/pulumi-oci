@@ -33,7 +33,13 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.NewManagedDatabaseGroup(ctx, "testManagedDatabaseGroup", &DatabaseManagement.ManagedDatabaseGroupArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Description:   pulumi.Any(_var.Managed_database_group_description),
+//				DefinedTags: pulumi.Map{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Managed_database_group_description),
+//				FreeformTags: pulumi.Map{
+//					"Department": pulumi.Any("Finance"),
+//				},
 //				ManagedDatabases: databasemanagement.ManagedDatabaseGroupManagedDatabaseArray{
 //					&databasemanagement.ManagedDatabaseGroupManagedDatabaseArgs{
 //						Id: pulumi.Any(_var.Managed_database_id),
@@ -63,8 +69,12 @@ type ManagedDatabaseGroup struct {
 
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The information specified by the user about the Managed Database Group.
 	Description pulumi.StringOutput `pulumi:"description"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
 	ManagedDatabases ManagedDatabaseGroupManagedDatabaseArrayOutput `pulumi:"managedDatabases"`
 	// The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
@@ -112,8 +122,12 @@ func GetManagedDatabaseGroup(ctx *pulumi.Context,
 type managedDatabaseGroupState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The information specified by the user about the Managed Database Group.
 	Description *string `pulumi:"description"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
 	ManagedDatabases []ManagedDatabaseGroupManagedDatabase `pulumi:"managedDatabases"`
 	// The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
@@ -129,8 +143,12 @@ type managedDatabaseGroupState struct {
 type ManagedDatabaseGroupState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId pulumi.StringPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// (Updatable) The information specified by the user about the Managed Database Group.
 	Description pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput
 	// (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
 	ManagedDatabases ManagedDatabaseGroupManagedDatabaseArrayInput
 	// The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
@@ -150,8 +168,12 @@ func (ManagedDatabaseGroupState) ElementType() reflect.Type {
 type managedDatabaseGroupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The information specified by the user about the Managed Database Group.
 	Description *string `pulumi:"description"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
 	ManagedDatabases []ManagedDatabaseGroupManagedDatabase `pulumi:"managedDatabases"`
 	// The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
@@ -162,8 +184,12 @@ type managedDatabaseGroupArgs struct {
 type ManagedDatabaseGroupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId pulumi.StringInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// (Updatable) The information specified by the user about the Managed Database Group.
 	Description pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput
 	// (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
 	ManagedDatabases ManagedDatabaseGroupManagedDatabaseArrayInput
 	// The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
@@ -262,9 +288,19 @@ func (o ManagedDatabaseGroupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ManagedDatabaseGroupOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // (Updatable) The information specified by the user about the Managed Database Group.
 func (o ManagedDatabaseGroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o ManagedDatabaseGroupOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.

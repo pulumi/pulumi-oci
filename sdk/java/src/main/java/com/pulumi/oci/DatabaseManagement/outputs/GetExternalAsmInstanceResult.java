@@ -5,7 +5,9 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -25,6 +27,11 @@ public final class GetExternalAsmInstanceResult {
      * 
      */
     private String componentName;
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the ASM instance. The name does not have to be unique.
      * 
@@ -47,12 +54,17 @@ public final class GetExternalAsmInstanceResult {
      */
     private String externalDbSystemId;
     /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
+    /**
      * @return The name of the host on which the ASM instance is running.
      * 
      */
     private String hostName;
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
      * 
      */
     private String id;
@@ -100,6 +112,13 @@ public final class GetExternalAsmInstanceResult {
         return this.componentName;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The user-friendly name for the ASM instance. The name does not have to be unique.
      * 
      */
@@ -131,6 +150,13 @@ public final class GetExternalAsmInstanceResult {
         return this.externalDbSystemId;
     }
     /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
+    }
+    /**
      * @return The name of the host on which the ASM instance is running.
      * 
      */
@@ -138,7 +164,7 @@ public final class GetExternalAsmInstanceResult {
         return this.hostName;
     }
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
      * 
      */
     public String id() {
@@ -185,11 +211,13 @@ public final class GetExternalAsmInstanceResult {
         private String adrHomeDirectory;
         private String compartmentId;
         private String componentName;
+        private Map<String,Object> definedTags;
         private String displayName;
         private String externalAsmId;
         private String externalAsmInstanceId;
         private String externalDbNodeId;
         private String externalDbSystemId;
+        private Map<String,Object> freeformTags;
         private String hostName;
         private String id;
         private String lifecycleDetails;
@@ -202,11 +230,13 @@ public final class GetExternalAsmInstanceResult {
     	      this.adrHomeDirectory = defaults.adrHomeDirectory;
     	      this.compartmentId = defaults.compartmentId;
     	      this.componentName = defaults.componentName;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.externalAsmId = defaults.externalAsmId;
     	      this.externalAsmInstanceId = defaults.externalAsmInstanceId;
     	      this.externalDbNodeId = defaults.externalDbNodeId;
     	      this.externalDbSystemId = defaults.externalDbSystemId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.hostName = defaults.hostName;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -237,6 +267,14 @@ public final class GetExternalAsmInstanceResult {
               throw new MissingRequiredPropertyException("GetExternalAsmInstanceResult", "componentName");
             }
             this.componentName = componentName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmInstanceResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
@@ -277,6 +315,14 @@ public final class GetExternalAsmInstanceResult {
               throw new MissingRequiredPropertyException("GetExternalAsmInstanceResult", "externalDbSystemId");
             }
             this.externalDbSystemId = externalDbSystemId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmInstanceResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -332,11 +378,13 @@ public final class GetExternalAsmInstanceResult {
             _resultValue.adrHomeDirectory = adrHomeDirectory;
             _resultValue.compartmentId = compartmentId;
             _resultValue.componentName = componentName;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.externalAsmId = externalAsmId;
             _resultValue.externalAsmInstanceId = externalAsmInstanceId;
             _resultValue.externalDbNodeId = externalDbNodeId;
             _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.hostName = hostName;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;

@@ -53,6 +53,10 @@ export class Key extends pulumi.CustomResource {
     }
 
     /**
+     * (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+     */
+    public readonly autoKeyRotationDetails!: pulumi.Output<outputs.Kms.KeyAutoKeyRotationDetails>;
+    /**
      * (Updatable) The OCID of the compartment where you want to create the master encryption key.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -84,6 +88,10 @@ export class Key extends pulumi.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+     */
+    public readonly isAutoRotationEnabled!: pulumi.Output<boolean>;
     /**
      * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      */
@@ -153,6 +161,7 @@ export class Key extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KeyState | undefined;
+            resourceInputs["autoKeyRotationDetails"] = state ? state.autoKeyRotationDetails : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["currentKeyVersion"] = state ? state.currentKeyVersion : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -161,6 +170,7 @@ export class Key extends pulumi.CustomResource {
             resourceInputs["externalKeyReference"] = state ? state.externalKeyReference : undefined;
             resourceInputs["externalKeyReferenceDetails"] = state ? state.externalKeyReferenceDetails : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isAutoRotationEnabled"] = state ? state.isAutoRotationEnabled : undefined;
             resourceInputs["isPrimary"] = state ? state.isPrimary : undefined;
             resourceInputs["keyShape"] = state ? state.keyShape : undefined;
             resourceInputs["managementEndpoint"] = state ? state.managementEndpoint : undefined;
@@ -188,12 +198,14 @@ export class Key extends pulumi.CustomResource {
             if ((!args || args.managementEndpoint === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'managementEndpoint'");
             }
+            resourceInputs["autoKeyRotationDetails"] = args ? args.autoKeyRotationDetails : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["desiredState"] = args ? args.desiredState : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["externalKeyReference"] = args ? args.externalKeyReference : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isAutoRotationEnabled"] = args ? args.isAutoRotationEnabled : undefined;
             resourceInputs["keyShape"] = args ? args.keyShape : undefined;
             resourceInputs["managementEndpoint"] = args ? args.managementEndpoint : undefined;
             resourceInputs["protectionMode"] = args ? args.protectionMode : undefined;
@@ -219,6 +231,10 @@ export class Key extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Key resources.
  */
 export interface KeyState {
+    /**
+     * (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+     */
+    autoKeyRotationDetails?: pulumi.Input<inputs.Kms.KeyAutoKeyRotationDetails>;
     /**
      * (Updatable) The OCID of the compartment where you want to create the master encryption key.
      */
@@ -251,6 +267,10 @@ export interface KeyState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+     */
+    isAutoRotationEnabled?: pulumi.Input<boolean>;
     /**
      * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      */
@@ -313,6 +333,10 @@ export interface KeyState {
  */
 export interface KeyArgs {
     /**
+     * (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+     */
+    autoKeyRotationDetails?: pulumi.Input<inputs.Kms.KeyAutoKeyRotationDetails>;
+    /**
      * (Updatable) The OCID of the compartment where you want to create the master encryption key.
      */
     compartmentId: pulumi.Input<string>;
@@ -336,6 +360,10 @@ export interface KeyArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+     */
+    isAutoRotationEnabled?: pulumi.Input<boolean>;
     /**
      * The cryptographic properties of a key.
      */

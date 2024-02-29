@@ -22,7 +22,19 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly int? BatchRolloverTimeInMs;
         /// <summary>
-        /// (Updatable) The name of the bucket. Avoid entering confidential information.
+        /// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+        /// </summary>
+        public readonly int? BatchSizeInKbs;
+        /// <summary>
+        /// (Updatable) The batch rollover size in number of messages.
+        /// </summary>
+        public readonly int? BatchSizeInNum;
+        /// <summary>
+        /// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+        /// </summary>
+        public readonly int? BatchTimeInSec;
+        /// <summary>
+        /// (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
         /// </summary>
         public readonly string? Bucket;
         /// <summary>
@@ -34,7 +46,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ConnectorTargetDimension> Dimensions;
         /// <summary>
-        /// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+        /// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
         /// </summary>
         public readonly bool? EnableFormattedMessaging;
         /// <summary>
@@ -50,7 +62,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string? LogGroupId;
         /// <summary>
-        /// (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+        /// (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
         /// </summary>
         public readonly string? LogSourceIdentifier;
         /// <summary>
@@ -84,6 +96,12 @@ namespace Pulumi.Oci.Sch.Outputs
 
             int? batchRolloverTimeInMs,
 
+            int? batchSizeInKbs,
+
+            int? batchSizeInNum,
+
+            int? batchTimeInSec,
+
             string? bucket,
 
             string? compartmentId,
@@ -114,6 +132,9 @@ namespace Pulumi.Oci.Sch.Outputs
         {
             BatchRolloverSizeInMbs = batchRolloverSizeInMbs;
             BatchRolloverTimeInMs = batchRolloverTimeInMs;
+            BatchSizeInKbs = batchSizeInKbs;
+            BatchSizeInNum = batchSizeInNum;
+            BatchTimeInSec = batchTimeInSec;
             Bucket = bucket;
             CompartmentId = compartmentId;
             Dimensions = dimensions;

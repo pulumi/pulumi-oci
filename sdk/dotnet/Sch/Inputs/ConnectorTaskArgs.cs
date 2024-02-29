@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Sch.Inputs
         public Input<int>? BatchTimeInSec { get; set; }
 
         /// <summary>
-        /// (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+        /// (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }

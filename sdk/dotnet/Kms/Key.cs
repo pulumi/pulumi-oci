@@ -31,6 +31,12 @@ namespace Pulumi.Oci.Kms
     public partial class Key : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+        /// </summary>
+        [Output("autoKeyRotationDetails")]
+        public Output<Outputs.KeyAutoKeyRotationDetails> AutoKeyRotationDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create the master encryption key.
         /// </summary>
         [Output("compartmentId")]
@@ -77,6 +83,12 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+        /// </summary>
+        [Output("isAutoRotationEnabled")]
+        public Output<bool> IsAutoRotationEnabled { get; private set; } = null!;
 
         /// <summary>
         /// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
@@ -206,6 +218,12 @@ namespace Pulumi.Oci.Kms
     public sealed class KeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+        /// </summary>
+        [Input("autoKeyRotationDetails")]
+        public Input<Inputs.KeyAutoKeyRotationDetailsArgs>? AutoKeyRotationDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create the master encryption key.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -252,6 +270,12 @@ namespace Pulumi.Oci.Kms
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+        /// </summary>
+        [Input("isAutoRotationEnabled")]
+        public Input<bool>? IsAutoRotationEnabled { get; set; }
 
         /// <summary>
         /// The cryptographic properties of a key.
@@ -306,6 +330,12 @@ namespace Pulumi.Oci.Kms
 
     public sealed class KeyState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+        /// </summary>
+        [Input("autoKeyRotationDetails")]
+        public Input<Inputs.KeyAutoKeyRotationDetailsGetArgs>? AutoKeyRotationDetails { get; set; }
+
         /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create the master encryption key.
         /// </summary>
@@ -371,6 +401,12 @@ namespace Pulumi.Oci.Kms
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+        /// </summary>
+        [Input("isAutoRotationEnabled")]
+        public Input<bool>? IsAutoRotationEnabled { get; set; }
 
         /// <summary>
         /// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.

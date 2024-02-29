@@ -18,7 +18,13 @@ import * as utilities from "../utilities";
  * const testDbManagementPrivateEndpoint = new oci.databasemanagement.DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint", {
  *     compartmentId: _var.compartment_id,
  *     subnetId: oci_core_subnet.test_subnet.id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
  *     description: _var.db_management_private_endpoint_description,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
  *     isCluster: _var.db_management_private_endpoint_is_cluster,
  *     nsgIds: _var.db_management_private_endpoint_nsg_ids,
  * });
@@ -65,9 +71,17 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * (Updatable) The description of the private endpoint.
      */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
      */
@@ -119,7 +133,9 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as DbManagementPrivateEndpointState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isCluster"] = state ? state.isCluster : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
@@ -137,7 +153,9 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
                 throw new Error("Missing required property 'subnetId'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isCluster"] = args ? args.isCluster : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
@@ -161,9 +179,17 @@ export interface DbManagementPrivateEndpointState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The description of the private endpoint.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
      */
@@ -211,9 +237,17 @@ export interface DbManagementPrivateEndpointArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The description of the private endpoint.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
      */

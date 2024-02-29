@@ -81,7 +81,9 @@ type GetControlResult struct {
 	// Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved bool `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
-	LastModifiedInfo  string `pulumi:"lastModifiedInfo"`
+	LastModifiedInfo string `pulumi:"lastModifiedInfo"`
+	// Number of approvers required to approve an access request.
+	NumberOfApprovers int    `pulumi:"numberOfApprovers"`
 	OperatorControlId string `pulumi:"operatorControlId"`
 	// Name of the operator control. The name must be unique.
 	OperatorControlName string `pulumi:"operatorControlName"`
@@ -197,6 +199,11 @@ func (o GetControlResultOutput) IsFullyPreApproved() pulumi.BoolOutput {
 // Description associated with the latest modification of the operator control.
 func (o GetControlResultOutput) LastModifiedInfo() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlResult) string { return v.LastModifiedInfo }).(pulumi.StringOutput)
+}
+
+// Number of approvers required to approve an access request.
+func (o GetControlResultOutput) NumberOfApprovers() pulumi.IntOutput {
+	return o.ApplyT(func(v GetControlResult) int { return v.NumberOfApprovers }).(pulumi.IntOutput)
 }
 
 func (o GetControlResultOutput) OperatorControlId() pulumi.StringOutput {

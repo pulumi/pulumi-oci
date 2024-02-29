@@ -21,7 +21,9 @@ class NamedCredentialArgs:
                  scope: pulumi.Input[str],
                  type: pulumi.Input[str],
                  associated_resource: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NamedCredential resource.
@@ -34,7 +36,9 @@ class NamedCredentialArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] associated_resource: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The information specified by the user about the named credential.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -43,8 +47,12 @@ class NamedCredentialArgs:
         pulumi.set(__self__, "type", type)
         if associated_resource is not None:
             pulumi.set(__self__, "associated_resource", associated_resource)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -113,6 +121,18 @@ class NamedCredentialArgs:
         pulumi.set(self, "associated_resource", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
@@ -123,6 +143,18 @@ class NamedCredentialArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter
@@ -143,7 +175,9 @@ class _NamedCredentialState:
                  associated_resource: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  content: Optional[pulumi.Input['NamedCredentialContentArgs']] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -156,7 +190,9 @@ class _NamedCredentialState:
         :param pulumi.Input[str] associated_resource: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
         :param pulumi.Input['NamedCredentialContentArgs'] content: (Updatable) The details of the named credential.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The information specified by the user about the named credential.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state.
         :param pulumi.Input[str] name: The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         :param pulumi.Input[str] scope: (Updatable) The scope of the named credential.
@@ -175,8 +211,12 @@ class _NamedCredentialState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if content is not None:
             pulumi.set(__self__, "content", content)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if name is not None:
@@ -229,6 +269,18 @@ class _NamedCredentialState:
         pulumi.set(self, "content", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
@@ -239,6 +291,18 @@ class _NamedCredentialState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -337,7 +401,9 @@ class NamedCredential(pulumi.CustomResource):
                  associated_resource: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  content: Optional[pulumi.Input[pulumi.InputType['NamedCredentialContentArgs']]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -365,7 +431,13 @@ class NamedCredential(pulumi.CustomResource):
             scope=var["named_credential_scope"],
             type=var["named_credential_type"],
             associated_resource=var["named_credential_associated_resource"],
-            description=var["named_credential_description"])
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=var["named_credential_description"],
+            freeform_tags={
+                "Department": "Finance",
+            })
         ```
 
         ## Import
@@ -381,7 +453,9 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.Input[str] associated_resource: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
         :param pulumi.Input[pulumi.InputType['NamedCredentialContentArgs']] content: (Updatable) The details of the named credential.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The information specified by the user about the named credential.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         :param pulumi.Input[str] scope: (Updatable) The scope of the named credential.
         :param pulumi.Input[str] type: The type of resource associated with the named credential.
@@ -419,7 +493,13 @@ class NamedCredential(pulumi.CustomResource):
             scope=var["named_credential_scope"],
             type=var["named_credential_type"],
             associated_resource=var["named_credential_associated_resource"],
-            description=var["named_credential_description"])
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=var["named_credential_description"],
+            freeform_tags={
+                "Department": "Finance",
+            })
         ```
 
         ## Import
@@ -448,7 +528,9 @@ class NamedCredential(pulumi.CustomResource):
                  associated_resource: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  content: Optional[pulumi.Input[pulumi.InputType['NamedCredentialContentArgs']]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -468,7 +550,9 @@ class NamedCredential(pulumi.CustomResource):
             if content is None and not opts.urn:
                 raise TypeError("Missing required property 'content'")
             __props__.__dict__["content"] = content
+            __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
+            __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["name"] = name
             if scope is None and not opts.urn:
                 raise TypeError("Missing required property 'scope'")
@@ -493,7 +577,9 @@ class NamedCredential(pulumi.CustomResource):
             associated_resource: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             content: Optional[pulumi.Input[pulumi.InputType['NamedCredentialContentArgs']]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             scope: Optional[pulumi.Input[str]] = None,
@@ -511,7 +597,9 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.Input[str] associated_resource: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
         :param pulumi.Input[pulumi.InputType['NamedCredentialContentArgs']] content: (Updatable) The details of the named credential.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The information specified by the user about the named credential.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state.
         :param pulumi.Input[str] name: The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         :param pulumi.Input[str] scope: (Updatable) The scope of the named credential.
@@ -531,7 +619,9 @@ class NamedCredential(pulumi.CustomResource):
         __props__.__dict__["associated_resource"] = associated_resource
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["content"] = content
+        __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
+        __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["name"] = name
         __props__.__dict__["scope"] = scope
@@ -543,7 +633,7 @@ class NamedCredential(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="associatedResource")
-    def associated_resource(self) -> pulumi.Output[str]:
+    def associated_resource(self) -> pulumi.Output[Optional[str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
         """
@@ -566,12 +656,28 @@ class NamedCredential(pulumi.CustomResource):
         return pulumi.get(self, "content")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
         (Updatable) The information specified by the user about the named credential.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

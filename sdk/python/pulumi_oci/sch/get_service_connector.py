@@ -113,7 +113,7 @@ class GetServiceConnectorResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
         """
         return pulumi.get(self, "id")
 
@@ -134,7 +134,7 @@ class GetServiceConnectorResult:
     @pulumi.getter
     def sources(self) -> Sequence['outputs.GetServiceConnectorSourceResult']:
         """
-        An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         """
         return pulumi.get(self, "sources")
 
@@ -142,7 +142,7 @@ class GetServiceConnectorResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the service connector.
+        The current state of the connector.
         """
         return pulumi.get(self, "state")
 
@@ -158,7 +158,7 @@ class GetServiceConnectorResult:
     @pulumi.getter
     def targets(self) -> Sequence['outputs.GetServiceConnectorTargetResult']:
         """
-        An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         """
         return pulumi.get(self, "targets")
 
@@ -174,7 +174,7 @@ class GetServiceConnectorResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+        The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -182,7 +182,7 @@ class GetServiceConnectorResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+        The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -215,7 +215,9 @@ def get_service_connector(service_connector_id: Optional[str] = None,
     """
     This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
 
-    Gets the specified service connector's configuration information.
+    Gets the specified connector's configuration information.
+    For more information, see
+    [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
 
     ## Example Usage
 
@@ -227,7 +229,7 @@ def get_service_connector(service_connector_id: Optional[str] = None,
     ```
 
 
-    :param str service_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+    :param str service_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
     """
     __args__ = dict()
     __args__['serviceConnectorId'] = service_connector_id
@@ -258,7 +260,9 @@ def get_service_connector_output(service_connector_id: Optional[pulumi.Input[str
     """
     This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
 
-    Gets the specified service connector's configuration information.
+    Gets the specified connector's configuration information.
+    For more information, see
+    [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
 
     ## Example Usage
 
@@ -270,6 +274,6 @@ def get_service_connector_output(service_connector_id: Optional[pulumi.Input[str
     ```
 
 
-    :param str service_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+    :param str service_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
     """
     ...

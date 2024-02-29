@@ -271,6 +271,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * Operating system version of the image.
      */
     public readonly systemVersion!: pulumi.Output<string>;
@@ -350,6 +354,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["storageSizeInGbs"] = state ? state.storageSizeInGbs : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["systemVersion"] = state ? state.systemVersion : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
@@ -428,6 +433,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["storageSizeInGbs"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["vipIds"] = undefined /*out*/;
             resourceInputs["zoneId"] = undefined /*out*/;
@@ -618,6 +624,10 @@ export interface CloudVmClusterState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * Operating system version of the image.
      */

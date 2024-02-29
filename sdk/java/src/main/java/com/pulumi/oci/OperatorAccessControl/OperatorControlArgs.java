@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -141,6 +142,21 @@ public final class OperatorControlArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) Number of approvers required to approve an access request.
+     * 
+     */
+    @Import(name="numberOfApprovers")
+    private @Nullable Output<Integer> numberOfApprovers;
+
+    /**
+     * @return (Updatable) Number of approvers required to approve an access request.
+     * 
+     */
+    public Optional<Output<Integer>> numberOfApprovers() {
+        return Optional.ofNullable(this.numberOfApprovers);
+    }
+
+    /**
      * (Updatable) Name of the operator control.
      * 
      */
@@ -217,6 +233,7 @@ public final class OperatorControlArgs extends com.pulumi.resources.ResourceArgs
         this.emailIdLists = $.emailIdLists;
         this.freeformTags = $.freeformTags;
         this.isFullyPreApproved = $.isFullyPreApproved;
+        this.numberOfApprovers = $.numberOfApprovers;
         this.operatorControlName = $.operatorControlName;
         this.preApprovedOpActionLists = $.preApprovedOpActionLists;
         this.resourceType = $.resourceType;
@@ -437,6 +454,27 @@ public final class OperatorControlArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder isFullyPreApproved(Boolean isFullyPreApproved) {
             return isFullyPreApproved(Output.of(isFullyPreApproved));
+        }
+
+        /**
+         * @param numberOfApprovers (Updatable) Number of approvers required to approve an access request.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder numberOfApprovers(@Nullable Output<Integer> numberOfApprovers) {
+            $.numberOfApprovers = numberOfApprovers;
+            return this;
+        }
+
+        /**
+         * @param numberOfApprovers (Updatable) Number of approvers required to approve an access request.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder numberOfApprovers(Integer numberOfApprovers) {
+            return numberOfApprovers(Output.of(numberOfApprovers));
         }
 
         /**

@@ -223,6 +223,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     private String subnetId;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return Operating system version of the image.
      * 
      */
@@ -540,6 +545,13 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.subnetId;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return Operating system version of the image.
      * 
      */
@@ -627,6 +639,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String state;
         private Integer storageSizeInGbs;
         private String subnetId;
+        private Map<String,Object> systemTags;
         private String systemVersion;
         private String timeCreated;
         private String timeZone;
@@ -678,6 +691,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.state = defaults.state;
     	      this.storageSizeInGbs = defaults.storageSizeInGbs;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
     	      this.systemVersion = defaults.systemVersion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -1051,6 +1065,14 @@ public final class GetCloudVmClustersCloudVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemVersion(String systemVersion) {
             if (systemVersion == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "systemVersion");
@@ -1138,6 +1160,7 @@ public final class GetCloudVmClustersCloudVmCluster {
             _resultValue.state = state;
             _resultValue.storageSizeInGbs = storageSizeInGbs;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             _resultValue.systemVersion = systemVersion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;

@@ -6,7 +6,9 @@ package com.pulumi.oci.DatabaseManagement;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -15,6 +17,21 @@ import javax.annotation.Nullable;
 public final class ExternalClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ExternalClusterArgs Empty = new ExternalClusterArgs();
+
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Import(name="definedTags")
+    private @Nullable Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> definedTags() {
+        return Optional.ofNullable(this.definedTags);
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
@@ -34,9 +51,6 @@ public final class ExternalClusterArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="externalConnectorId")
     private @Nullable Output<String> externalConnectorId;
@@ -44,19 +58,39 @@ public final class ExternalClusterArgs extends com.pulumi.resources.ResourceArgs
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<String>> externalConnectorId() {
         return Optional.ofNullable(this.externalConnectorId);
     }
 
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="freeformTags")
+    private @Nullable Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
+    }
+
     private ExternalClusterArgs() {}
 
     private ExternalClusterArgs(ExternalClusterArgs $) {
+        this.definedTags = $.definedTags;
         this.externalClusterId = $.externalClusterId;
         this.externalConnectorId = $.externalConnectorId;
+        this.freeformTags = $.freeformTags;
     }
 
     public static Builder builder() {
@@ -75,6 +109,27 @@ public final class ExternalClusterArgs extends com.pulumi.resources.ResourceArgs
 
         public Builder(ExternalClusterArgs defaults) {
             $ = new ExternalClusterArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+            $.definedTags = definedTags;
+            return this;
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(Map<String,Object> definedTags) {
+            return definedTags(Output.of(definedTags));
         }
 
         /**
@@ -101,9 +156,6 @@ public final class ExternalClusterArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param externalConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -115,14 +167,38 @@ public final class ExternalClusterArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param externalConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
          * 
+         * @return builder
+         * 
+         */
+        public Builder externalConnectorId(String externalConnectorId) {
+            return externalConnectorId(Output.of(externalConnectorId));
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder externalConnectorId(String externalConnectorId) {
-            return externalConnectorId(Output.of(externalConnectorId));
+        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+            $.freeformTags = freeformTags;
+            return this;
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
         }
 
         public ExternalClusterArgs build() {

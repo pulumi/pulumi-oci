@@ -66,6 +66,10 @@ export class KeyVersion extends pulumi.CustomResource {
      */
     public readonly externalKeyVersionId!: pulumi.Output<string>;
     /**
+     * An optional property indicating whether this keyversion is generated from auto rotatation.
+     */
+    public /*out*/ readonly isAutoRotated!: pulumi.Output<boolean>;
+    /**
      * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      */
     public /*out*/ readonly isPrimary!: pulumi.Output<boolean>;
@@ -127,6 +131,7 @@ export class KeyVersion extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["externalKeyReferenceDetails"] = state ? state.externalKeyReferenceDetails : undefined;
             resourceInputs["externalKeyVersionId"] = state ? state.externalKeyVersionId : undefined;
+            resourceInputs["isAutoRotated"] = state ? state.isAutoRotated : undefined;
             resourceInputs["isPrimary"] = state ? state.isPrimary : undefined;
             resourceInputs["keyId"] = state ? state.keyId : undefined;
             resourceInputs["keyVersionId"] = state ? state.keyVersionId : undefined;
@@ -153,6 +158,7 @@ export class KeyVersion extends pulumi.CustomResource {
             resourceInputs["timeOfDeletion"] = args ? args.timeOfDeletion : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["externalKeyReferenceDetails"] = undefined /*out*/;
+            resourceInputs["isAutoRotated"] = undefined /*out*/;
             resourceInputs["isPrimary"] = undefined /*out*/;
             resourceInputs["keyVersionId"] = undefined /*out*/;
             resourceInputs["publicKey"] = undefined /*out*/;
@@ -184,6 +190,10 @@ export interface KeyVersionState {
      * Key version ID associated with the external key.
      */
     externalKeyVersionId?: pulumi.Input<string>;
+    /**
+     * An optional property indicating whether this keyversion is generated from auto rotatation.
+     */
+    isAutoRotated?: pulumi.Input<boolean>;
     /**
      * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      */

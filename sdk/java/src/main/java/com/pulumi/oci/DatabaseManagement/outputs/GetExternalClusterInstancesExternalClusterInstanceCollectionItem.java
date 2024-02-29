@@ -5,7 +5,9 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -30,6 +32,11 @@ public final class GetExternalClusterInstancesExternalClusterInstanceCollectionI
      * 
      */
     private String crsBaseDirectory;
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
@@ -56,6 +63,11 @@ public final class GetExternalClusterInstancesExternalClusterInstanceCollectionI
      * 
      */
     private String externalDbSystemId;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The name of the host on which the cluster instance is running.
      * 
@@ -122,6 +134,13 @@ public final class GetExternalClusterInstancesExternalClusterInstanceCollectionI
         return this.crsBaseDirectory;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
@@ -158,6 +177,13 @@ public final class GetExternalClusterInstancesExternalClusterInstanceCollectionI
      */
     public String externalDbSystemId() {
         return this.externalDbSystemId;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The name of the host on which the cluster instance is running.
@@ -222,12 +248,14 @@ public final class GetExternalClusterInstancesExternalClusterInstanceCollectionI
         private String compartmentId;
         private String componentName;
         private String crsBaseDirectory;
+        private Map<String,Object> definedTags;
         private String displayName;
         private String externalClusterId;
         private String externalClusterInstanceId;
         private String externalConnectorId;
         private String externalDbNodeId;
         private String externalDbSystemId;
+        private Map<String,Object> freeformTags;
         private String hostName;
         private String id;
         private String lifecycleDetails;
@@ -242,12 +270,14 @@ public final class GetExternalClusterInstancesExternalClusterInstanceCollectionI
     	      this.compartmentId = defaults.compartmentId;
     	      this.componentName = defaults.componentName;
     	      this.crsBaseDirectory = defaults.crsBaseDirectory;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.externalClusterId = defaults.externalClusterId;
     	      this.externalClusterInstanceId = defaults.externalClusterInstanceId;
     	      this.externalConnectorId = defaults.externalConnectorId;
     	      this.externalDbNodeId = defaults.externalDbNodeId;
     	      this.externalDbSystemId = defaults.externalDbSystemId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.hostName = defaults.hostName;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -287,6 +317,14 @@ public final class GetExternalClusterInstancesExternalClusterInstanceCollectionI
               throw new MissingRequiredPropertyException("GetExternalClusterInstancesExternalClusterInstanceCollectionItem", "crsBaseDirectory");
             }
             this.crsBaseDirectory = crsBaseDirectory;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstancesExternalClusterInstanceCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
@@ -335,6 +373,14 @@ public final class GetExternalClusterInstancesExternalClusterInstanceCollectionI
               throw new MissingRequiredPropertyException("GetExternalClusterInstancesExternalClusterInstanceCollectionItem", "externalDbSystemId");
             }
             this.externalDbSystemId = externalDbSystemId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterInstancesExternalClusterInstanceCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -399,12 +445,14 @@ public final class GetExternalClusterInstancesExternalClusterInstanceCollectionI
             _resultValue.compartmentId = compartmentId;
             _resultValue.componentName = componentName;
             _resultValue.crsBaseDirectory = crsBaseDirectory;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.externalClusterId = externalClusterId;
             _resultValue.externalClusterInstanceId = externalClusterInstanceId;
             _resultValue.externalConnectorId = externalConnectorId;
             _resultValue.externalDbNodeId = externalDbNodeId;
             _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.hostName = hostName;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;

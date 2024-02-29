@@ -38,7 +38,15 @@ namespace Pulumi.Oci.DatabaseManagement
     ///         Scope = @var.Named_credential_scope,
     ///         Type = @var.Named_credential_type,
     ///         AssociatedResource = @var.Named_credential_associated_resource,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
     ///         Description = @var.Named_credential_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
     ///     });
     /// 
     /// });
@@ -59,7 +67,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
         /// </summary>
         [Output("associatedResource")]
-        public Output<string> AssociatedResource { get; private set; } = null!;
+        public Output<string?> AssociatedResource { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
@@ -74,10 +82,22 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<Outputs.NamedCredentialContent> Content { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        [Output("definedTags")]
+        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The information specified by the user about the named credential.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        [Output("freeformTags")]
+        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The details of the lifecycle state.
@@ -189,11 +209,35 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("content", required: true)]
         public Input<Inputs.NamedCredentialContentArgs> Content { get; set; } = null!;
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// (Updatable) The information specified by the user about the named credential.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
@@ -243,11 +287,35 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("content")]
         public Input<Inputs.NamedCredentialContentGetArgs>? Content { get; set; }
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// (Updatable) The information specified by the user about the named credential.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// The details of the lifecycle state.

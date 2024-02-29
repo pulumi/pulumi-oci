@@ -7,8 +7,10 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperation;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -24,6 +26,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      */
     private String compartmentId;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The list of DB system components that were found in the DB system discovery.
      * 
      */
@@ -34,6 +41,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      */
     private String displayName;
     private String externalDbSystemDiscoveryId;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The directory in which Oracle Grid Infrastructure is installed.
      * 
@@ -87,6 +99,13 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         return this.compartmentId;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The list of DB system components that were found in the DB system discovery.
      * 
      */
@@ -102,6 +121,13 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     }
     public String externalDbSystemDiscoveryId() {
         return this.externalDbSystemDiscoveryId;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The directory in which Oracle Grid Infrastructure is installed.
@@ -167,9 +193,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     public static final class Builder {
         private String agentId;
         private String compartmentId;
+        private Map<String,Object> definedTags;
         private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent> discoveredComponents;
         private String displayName;
         private String externalDbSystemDiscoveryId;
+        private Map<String,Object> freeformTags;
         private String gridHome;
         private String id;
         private String lifecycleDetails;
@@ -183,9 +211,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     	      Objects.requireNonNull(defaults);
     	      this.agentId = defaults.agentId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.definedTags = defaults.definedTags;
     	      this.discoveredComponents = defaults.discoveredComponents;
     	      this.displayName = defaults.displayName;
     	      this.externalDbSystemDiscoveryId = defaults.externalDbSystemDiscoveryId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.gridHome = defaults.gridHome;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -213,6 +243,14 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder discoveredComponents(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent> discoveredComponents) {
             if (discoveredComponents == null) {
               throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItem", "discoveredComponents");
@@ -237,6 +275,14 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
               throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItem", "externalDbSystemDiscoveryId");
             }
             this.externalDbSystemDiscoveryId = externalDbSystemDiscoveryId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -310,9 +356,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItem();
             _resultValue.agentId = agentId;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
             _resultValue.discoveredComponents = discoveredComponents;
             _resultValue.displayName = displayName;
             _resultValue.externalDbSystemDiscoveryId = externalDbSystemDiscoveryId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.gridHome = gridHome;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;

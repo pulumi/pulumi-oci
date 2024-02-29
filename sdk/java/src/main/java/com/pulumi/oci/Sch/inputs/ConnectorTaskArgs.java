@@ -48,14 +48,14 @@ public final class ConnectorTaskArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+     * (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+     * @return (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -163,7 +163,7 @@ public final class ConnectorTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param condition (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+         * @param condition (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class ConnectorTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param condition (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+         * @param condition (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
          * 
          * @return builder
          * 

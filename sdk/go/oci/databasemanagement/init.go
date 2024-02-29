@@ -25,10 +25,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DbManagementPrivateEndpoint{}
 	case "oci:DatabaseManagement/externalAsm:ExternalAsm":
 		r = &ExternalAsm{}
+	case "oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance":
+		r = &ExternalAsmInstance{}
 	case "oci:DatabaseManagement/externalCluster:ExternalCluster":
 		r = &ExternalCluster{}
 	case "oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance":
 		r = &ExternalClusterInstance{}
+	case "oci:DatabaseManagement/externalDbHome:ExternalDbHome":
+		r = &ExternalDbHome{}
 	case "oci:DatabaseManagement/externalDbNode:ExternalDbNode":
 		r = &ExternalDbNode{}
 	case "oci:DatabaseManagement/externalDbSystem:ExternalDbSystem":
@@ -47,8 +51,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ExternalExadataInfrastructureExadataManagement{}
 	case "oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector":
 		r = &ExternalExadataStorageConnector{}
+	case "oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid":
+		r = &ExternalExadataStorageGrid{}
+	case "oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer":
+		r = &ExternalExadataStorageServer{}
 	case "oci:DatabaseManagement/externalListener:ExternalListener":
 		r = &ExternalListener{}
+	case "oci:DatabaseManagement/managedDatabase:ManagedDatabase":
+		r = &ManagedDatabase{}
 	case "oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup":
 		r = &ManagedDatabaseGroup{}
 	case "oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter":
@@ -82,12 +92,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DatabaseManagement/externalAsmInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DatabaseManagement/externalCluster",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseManagement/externalClusterInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalDbHome",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -137,7 +157,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DatabaseManagement/externalExadataStorageGrid",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalExadataStorageServer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DatabaseManagement/externalListener",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/managedDatabase",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetServiceConnectorsServiceConnectorCollectionItemSourceCursor {
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     private String kind;
 
     private GetServiceConnectorsServiceConnectorCollectionItemSourceCursor() {}
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     public String kind() {

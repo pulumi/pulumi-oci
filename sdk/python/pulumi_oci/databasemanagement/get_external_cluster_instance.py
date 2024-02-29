@@ -21,7 +21,7 @@ class GetExternalClusterInstanceResult:
     """
     A collection of values returned by getExternalClusterInstance.
     """
-    def __init__(__self__, adr_home_directory=None, compartment_id=None, component_name=None, crs_base_directory=None, display_name=None, external_cluster_id=None, external_cluster_instance_id=None, external_connector_id=None, external_db_node_id=None, external_db_system_id=None, host_name=None, id=None, lifecycle_details=None, node_role=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, adr_home_directory=None, compartment_id=None, component_name=None, crs_base_directory=None, defined_tags=None, display_name=None, external_cluster_id=None, external_cluster_instance_id=None, external_connector_id=None, external_db_node_id=None, external_db_system_id=None, freeform_tags=None, host_name=None, id=None, lifecycle_details=None, node_role=None, state=None, time_created=None, time_updated=None):
         if adr_home_directory and not isinstance(adr_home_directory, str):
             raise TypeError("Expected argument 'adr_home_directory' to be a str")
         pulumi.set(__self__, "adr_home_directory", adr_home_directory)
@@ -34,6 +34,9 @@ class GetExternalClusterInstanceResult:
         if crs_base_directory and not isinstance(crs_base_directory, str):
             raise TypeError("Expected argument 'crs_base_directory' to be a str")
         pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -52,6 +55,9 @@ class GetExternalClusterInstanceResult:
         if external_db_system_id and not isinstance(external_db_system_id, str):
             raise TypeError("Expected argument 'external_db_system_id' to be a str")
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_name and not isinstance(host_name, str):
             raise TypeError("Expected argument 'host_name' to be a str")
         pulumi.set(__self__, "host_name", host_name)
@@ -107,6 +113,14 @@ class GetExternalClusterInstanceResult:
         return pulumi.get(self, "crs_base_directory")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -150,6 +164,14 @@ class GetExternalClusterInstanceResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
         """
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostName")
@@ -218,12 +240,14 @@ class AwaitableGetExternalClusterInstanceResult(GetExternalClusterInstanceResult
             compartment_id=self.compartment_id,
             component_name=self.component_name,
             crs_base_directory=self.crs_base_directory,
+            defined_tags=self.defined_tags,
             display_name=self.display_name,
             external_cluster_id=self.external_cluster_id,
             external_cluster_instance_id=self.external_cluster_instance_id,
             external_connector_id=self.external_connector_id,
             external_db_node_id=self.external_db_node_id,
             external_db_system_id=self.external_db_system_id,
+            freeform_tags=self.freeform_tags,
             host_name=self.host_name,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
@@ -262,12 +286,14 @@ def get_external_cluster_instance(external_cluster_instance_id: Optional[str] = 
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         component_name=pulumi.get(__ret__, 'component_name'),
         crs_base_directory=pulumi.get(__ret__, 'crs_base_directory'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         external_cluster_id=pulumi.get(__ret__, 'external_cluster_id'),
         external_cluster_instance_id=pulumi.get(__ret__, 'external_cluster_instance_id'),
         external_connector_id=pulumi.get(__ret__, 'external_connector_id'),
         external_db_node_id=pulumi.get(__ret__, 'external_db_node_id'),
         external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         host_name=pulumi.get(__ret__, 'host_name'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),

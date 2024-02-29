@@ -5,6 +5,8 @@ package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestsAccessRequestCollectionItemApproverDetail;
+import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -30,6 +32,11 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
      * 
      */
     private String approverComment;
+    /**
+     * @return Contains the user ids who have approved the accessRequest for extension.
+     * 
+     */
+    private List<GetAccessRequestsAccessRequestCollectionItemApproverDetail> approverDetails;
     /**
      * @return Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
      * 
@@ -61,6 +68,11 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
      */
     private Integer extendDuration;
     /**
+     * @return Contains the user ids who have approved the accessRequest for extension.
+     * 
+     */
+    private List<GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail> extensionApproverDetails;
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
@@ -76,10 +88,30 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
      */
     private Boolean isAutoApproved;
     /**
+     * @return Whether the access request was requested for Validate Assignment.
+     * 
+     */
+    private Boolean isValidateAssignment;
+    /**
      * @return more in detail about the lifeCycleState.
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Number of approvers who have authorized an access request.
+     * 
+     */
+    private Integer numberOfApprovers;
+    /**
+     * @return Number of approvers required to approve an access request.
+     * 
+     */
+    private Integer numberOfApproversRequired;
+    /**
+     * @return Number of approvers who have authorized an access request for extension.
+     * 
+     */
+    private Integer numberOfExtensionApprovers;
     /**
      * @return Additional message specific to the access request that can be specified by the approver at the time of approval.
      * 
@@ -161,6 +193,11 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
      */
     private String timeOfUserCreation;
     /**
+     * @return Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
+     * 
+     */
+    private String timeRequestedForFutureAccess;
+    /**
      * @return The OCID of the user that last modified the access request.
      * 
      */
@@ -192,6 +229,13 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
      */
     public String approverComment() {
         return this.approverComment;
+    }
+    /**
+     * @return Contains the user ids who have approved the accessRequest for extension.
+     * 
+     */
+    public List<GetAccessRequestsAccessRequestCollectionItemApproverDetail> approverDetails() {
+        return this.approverDetails;
     }
     /**
      * @return Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
@@ -236,6 +280,13 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
         return this.extendDuration;
     }
     /**
+     * @return Contains the user ids who have approved the accessRequest for extension.
+     * 
+     */
+    public List<GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail> extensionApproverDetails() {
+        return this.extensionApproverDetails;
+    }
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
@@ -257,11 +308,39 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
         return this.isAutoApproved;
     }
     /**
+     * @return Whether the access request was requested for Validate Assignment.
+     * 
+     */
+    public Boolean isValidateAssignment() {
+        return this.isValidateAssignment;
+    }
+    /**
      * @return more in detail about the lifeCycleState.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Number of approvers who have authorized an access request.
+     * 
+     */
+    public Integer numberOfApprovers() {
+        return this.numberOfApprovers;
+    }
+    /**
+     * @return Number of approvers required to approve an access request.
+     * 
+     */
+    public Integer numberOfApproversRequired() {
+        return this.numberOfApproversRequired;
+    }
+    /**
+     * @return Number of approvers who have authorized an access request for extension.
+     * 
+     */
+    public Integer numberOfExtensionApprovers() {
+        return this.numberOfExtensionApprovers;
     }
     /**
      * @return Additional message specific to the access request that can be specified by the approver at the time of approval.
@@ -376,6 +455,13 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
         return this.timeOfUserCreation;
     }
     /**
+     * @return Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
+     * 
+     */
+    public String timeRequestedForFutureAccess() {
+        return this.timeRequestedForFutureAccess;
+    }
+    /**
      * @return The OCID of the user that last modified the access request.
      * 
      */
@@ -402,16 +488,22 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
         private String accessReasonSummary;
         private List<String> actionRequestsLists;
         private String approverComment;
+        private List<GetAccessRequestsAccessRequestCollectionItemApproverDetail> approverDetails;
         private List<String> auditTypes;
         private String closureComment;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private Integer duration;
         private Integer extendDuration;
+        private List<GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail> extensionApproverDetails;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isAutoApproved;
+        private Boolean isValidateAssignment;
         private String lifecycleDetails;
+        private Integer numberOfApprovers;
+        private Integer numberOfApproversRequired;
+        private Integer numberOfExtensionApprovers;
         private String opctlAdditionalMessage;
         private String opctlId;
         private String opctlName;
@@ -428,6 +520,7 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
         private String timeOfCreation;
         private String timeOfModification;
         private String timeOfUserCreation;
+        private String timeRequestedForFutureAccess;
         private String userId;
         private List<String> workflowIds;
         public Builder() {}
@@ -436,16 +529,22 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
     	      this.accessReasonSummary = defaults.accessReasonSummary;
     	      this.actionRequestsLists = defaults.actionRequestsLists;
     	      this.approverComment = defaults.approverComment;
+    	      this.approverDetails = defaults.approverDetails;
     	      this.auditTypes = defaults.auditTypes;
     	      this.closureComment = defaults.closureComment;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.duration = defaults.duration;
     	      this.extendDuration = defaults.extendDuration;
+    	      this.extensionApproverDetails = defaults.extensionApproverDetails;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isAutoApproved = defaults.isAutoApproved;
+    	      this.isValidateAssignment = defaults.isValidateAssignment;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.numberOfApprovers = defaults.numberOfApprovers;
+    	      this.numberOfApproversRequired = defaults.numberOfApproversRequired;
+    	      this.numberOfExtensionApprovers = defaults.numberOfExtensionApprovers;
     	      this.opctlAdditionalMessage = defaults.opctlAdditionalMessage;
     	      this.opctlId = defaults.opctlId;
     	      this.opctlName = defaults.opctlName;
@@ -462,6 +561,7 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
     	      this.timeOfCreation = defaults.timeOfCreation;
     	      this.timeOfModification = defaults.timeOfModification;
     	      this.timeOfUserCreation = defaults.timeOfUserCreation;
+    	      this.timeRequestedForFutureAccess = defaults.timeRequestedForFutureAccess;
     	      this.userId = defaults.userId;
     	      this.workflowIds = defaults.workflowIds;
         }
@@ -492,6 +592,17 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
             }
             this.approverComment = approverComment;
             return this;
+        }
+        @CustomType.Setter
+        public Builder approverDetails(List<GetAccessRequestsAccessRequestCollectionItemApproverDetail> approverDetails) {
+            if (approverDetails == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestsAccessRequestCollectionItem", "approverDetails");
+            }
+            this.approverDetails = approverDetails;
+            return this;
+        }
+        public Builder approverDetails(GetAccessRequestsAccessRequestCollectionItemApproverDetail... approverDetails) {
+            return approverDetails(List.of(approverDetails));
         }
         @CustomType.Setter
         public Builder auditTypes(List<String> auditTypes) {
@@ -545,6 +656,17 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder extensionApproverDetails(List<GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail> extensionApproverDetails) {
+            if (extensionApproverDetails == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestsAccessRequestCollectionItem", "extensionApproverDetails");
+            }
+            this.extensionApproverDetails = extensionApproverDetails;
+            return this;
+        }
+        public Builder extensionApproverDetails(GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail... extensionApproverDetails) {
+            return extensionApproverDetails(List.of(extensionApproverDetails));
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetAccessRequestsAccessRequestCollectionItem", "freeformTags");
@@ -569,11 +691,43 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isValidateAssignment(Boolean isValidateAssignment) {
+            if (isValidateAssignment == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestsAccessRequestCollectionItem", "isValidateAssignment");
+            }
+            this.isValidateAssignment = isValidateAssignment;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetAccessRequestsAccessRequestCollectionItem", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder numberOfApprovers(Integer numberOfApprovers) {
+            if (numberOfApprovers == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestsAccessRequestCollectionItem", "numberOfApprovers");
+            }
+            this.numberOfApprovers = numberOfApprovers;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder numberOfApproversRequired(Integer numberOfApproversRequired) {
+            if (numberOfApproversRequired == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestsAccessRequestCollectionItem", "numberOfApproversRequired");
+            }
+            this.numberOfApproversRequired = numberOfApproversRequired;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder numberOfExtensionApprovers(Integer numberOfExtensionApprovers) {
+            if (numberOfExtensionApprovers == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestsAccessRequestCollectionItem", "numberOfExtensionApprovers");
+            }
+            this.numberOfExtensionApprovers = numberOfExtensionApprovers;
             return this;
         }
         @CustomType.Setter
@@ -708,6 +862,14 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeRequestedForFutureAccess(String timeRequestedForFutureAccess) {
+            if (timeRequestedForFutureAccess == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestsAccessRequestCollectionItem", "timeRequestedForFutureAccess");
+            }
+            this.timeRequestedForFutureAccess = timeRequestedForFutureAccess;
+            return this;
+        }
+        @CustomType.Setter
         public Builder userId(String userId) {
             if (userId == null) {
               throw new MissingRequiredPropertyException("GetAccessRequestsAccessRequestCollectionItem", "userId");
@@ -731,16 +893,22 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
             _resultValue.accessReasonSummary = accessReasonSummary;
             _resultValue.actionRequestsLists = actionRequestsLists;
             _resultValue.approverComment = approverComment;
+            _resultValue.approverDetails = approverDetails;
             _resultValue.auditTypes = auditTypes;
             _resultValue.closureComment = closureComment;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.duration = duration;
             _resultValue.extendDuration = extendDuration;
+            _resultValue.extensionApproverDetails = extensionApproverDetails;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isAutoApproved = isAutoApproved;
+            _resultValue.isValidateAssignment = isValidateAssignment;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.numberOfApprovers = numberOfApprovers;
+            _resultValue.numberOfApproversRequired = numberOfApproversRequired;
+            _resultValue.numberOfExtensionApprovers = numberOfExtensionApprovers;
             _resultValue.opctlAdditionalMessage = opctlAdditionalMessage;
             _resultValue.opctlId = opctlId;
             _resultValue.opctlName = opctlName;
@@ -757,6 +925,7 @@ public final class GetAccessRequestsAccessRequestCollectionItem {
             _resultValue.timeOfCreation = timeOfCreation;
             _resultValue.timeOfModification = timeOfModification;
             _resultValue.timeOfUserCreation = timeOfUserCreation;
+            _resultValue.timeRequestedForFutureAccess = timeRequestedForFutureAccess;
             _resultValue.userId = userId;
             _resultValue.workflowIds = workflowIds;
             return _resultValue;

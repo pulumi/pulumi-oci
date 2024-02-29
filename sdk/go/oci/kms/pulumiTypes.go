@@ -200,6 +200,238 @@ func (o GeneratedKeyKeyShapePtrOutput) Length() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+type KeyAutoKeyRotationDetails struct {
+	// (Updatable) The last execution status message.
+	LastRotationMessage *string `pulumi:"lastRotationMessage"`
+	// (Updatable) The status of last execution of auto key rotation.
+	LastRotationStatus *string `pulumi:"lastRotationStatus"`
+	// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	RotationIntervalInDays *int `pulumi:"rotationIntervalInDays"`
+	// (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	TimeOfLastRotation *string `pulumi:"timeOfLastRotation"`
+	// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfNextRotation *string `pulumi:"timeOfNextRotation"`
+	// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfScheduleStart *string `pulumi:"timeOfScheduleStart"`
+}
+
+// KeyAutoKeyRotationDetailsInput is an input type that accepts KeyAutoKeyRotationDetailsArgs and KeyAutoKeyRotationDetailsOutput values.
+// You can construct a concrete instance of `KeyAutoKeyRotationDetailsInput` via:
+//
+//	KeyAutoKeyRotationDetailsArgs{...}
+type KeyAutoKeyRotationDetailsInput interface {
+	pulumi.Input
+
+	ToKeyAutoKeyRotationDetailsOutput() KeyAutoKeyRotationDetailsOutput
+	ToKeyAutoKeyRotationDetailsOutputWithContext(context.Context) KeyAutoKeyRotationDetailsOutput
+}
+
+type KeyAutoKeyRotationDetailsArgs struct {
+	// (Updatable) The last execution status message.
+	LastRotationMessage pulumi.StringPtrInput `pulumi:"lastRotationMessage"`
+	// (Updatable) The status of last execution of auto key rotation.
+	LastRotationStatus pulumi.StringPtrInput `pulumi:"lastRotationStatus"`
+	// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	RotationIntervalInDays pulumi.IntPtrInput `pulumi:"rotationIntervalInDays"`
+	// (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	TimeOfLastRotation pulumi.StringPtrInput `pulumi:"timeOfLastRotation"`
+	// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfNextRotation pulumi.StringPtrInput `pulumi:"timeOfNextRotation"`
+	// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfScheduleStart pulumi.StringPtrInput `pulumi:"timeOfScheduleStart"`
+}
+
+func (KeyAutoKeyRotationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyAutoKeyRotationDetails)(nil)).Elem()
+}
+
+func (i KeyAutoKeyRotationDetailsArgs) ToKeyAutoKeyRotationDetailsOutput() KeyAutoKeyRotationDetailsOutput {
+	return i.ToKeyAutoKeyRotationDetailsOutputWithContext(context.Background())
+}
+
+func (i KeyAutoKeyRotationDetailsArgs) ToKeyAutoKeyRotationDetailsOutputWithContext(ctx context.Context) KeyAutoKeyRotationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyAutoKeyRotationDetailsOutput)
+}
+
+func (i KeyAutoKeyRotationDetailsArgs) ToKeyAutoKeyRotationDetailsPtrOutput() KeyAutoKeyRotationDetailsPtrOutput {
+	return i.ToKeyAutoKeyRotationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i KeyAutoKeyRotationDetailsArgs) ToKeyAutoKeyRotationDetailsPtrOutputWithContext(ctx context.Context) KeyAutoKeyRotationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyAutoKeyRotationDetailsOutput).ToKeyAutoKeyRotationDetailsPtrOutputWithContext(ctx)
+}
+
+// KeyAutoKeyRotationDetailsPtrInput is an input type that accepts KeyAutoKeyRotationDetailsArgs, KeyAutoKeyRotationDetailsPtr and KeyAutoKeyRotationDetailsPtrOutput values.
+// You can construct a concrete instance of `KeyAutoKeyRotationDetailsPtrInput` via:
+//
+//	        KeyAutoKeyRotationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type KeyAutoKeyRotationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToKeyAutoKeyRotationDetailsPtrOutput() KeyAutoKeyRotationDetailsPtrOutput
+	ToKeyAutoKeyRotationDetailsPtrOutputWithContext(context.Context) KeyAutoKeyRotationDetailsPtrOutput
+}
+
+type keyAutoKeyRotationDetailsPtrType KeyAutoKeyRotationDetailsArgs
+
+func KeyAutoKeyRotationDetailsPtr(v *KeyAutoKeyRotationDetailsArgs) KeyAutoKeyRotationDetailsPtrInput {
+	return (*keyAutoKeyRotationDetailsPtrType)(v)
+}
+
+func (*keyAutoKeyRotationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyAutoKeyRotationDetails)(nil)).Elem()
+}
+
+func (i *keyAutoKeyRotationDetailsPtrType) ToKeyAutoKeyRotationDetailsPtrOutput() KeyAutoKeyRotationDetailsPtrOutput {
+	return i.ToKeyAutoKeyRotationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *keyAutoKeyRotationDetailsPtrType) ToKeyAutoKeyRotationDetailsPtrOutputWithContext(ctx context.Context) KeyAutoKeyRotationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyAutoKeyRotationDetailsPtrOutput)
+}
+
+type KeyAutoKeyRotationDetailsOutput struct{ *pulumi.OutputState }
+
+func (KeyAutoKeyRotationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyAutoKeyRotationDetails)(nil)).Elem()
+}
+
+func (o KeyAutoKeyRotationDetailsOutput) ToKeyAutoKeyRotationDetailsOutput() KeyAutoKeyRotationDetailsOutput {
+	return o
+}
+
+func (o KeyAutoKeyRotationDetailsOutput) ToKeyAutoKeyRotationDetailsOutputWithContext(ctx context.Context) KeyAutoKeyRotationDetailsOutput {
+	return o
+}
+
+func (o KeyAutoKeyRotationDetailsOutput) ToKeyAutoKeyRotationDetailsPtrOutput() KeyAutoKeyRotationDetailsPtrOutput {
+	return o.ToKeyAutoKeyRotationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o KeyAutoKeyRotationDetailsOutput) ToKeyAutoKeyRotationDetailsPtrOutputWithContext(ctx context.Context) KeyAutoKeyRotationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyAutoKeyRotationDetails) *KeyAutoKeyRotationDetails {
+		return &v
+	}).(KeyAutoKeyRotationDetailsPtrOutput)
+}
+
+// (Updatable) The last execution status message.
+func (o KeyAutoKeyRotationDetailsOutput) LastRotationMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *string { return v.LastRotationMessage }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The status of last execution of auto key rotation.
+func (o KeyAutoKeyRotationDetailsOutput) LastRotationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *string { return v.LastRotationStatus }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+func (o KeyAutoKeyRotationDetailsOutput) RotationIntervalInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *int { return v.RotationIntervalInDays }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+func (o KeyAutoKeyRotationDetailsOutput) TimeOfLastRotation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *string { return v.TimeOfLastRotation }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+func (o KeyAutoKeyRotationDetailsOutput) TimeOfNextRotation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *string { return v.TimeOfNextRotation }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+func (o KeyAutoKeyRotationDetailsOutput) TimeOfScheduleStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAutoKeyRotationDetails) *string { return v.TimeOfScheduleStart }).(pulumi.StringPtrOutput)
+}
+
+type KeyAutoKeyRotationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (KeyAutoKeyRotationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyAutoKeyRotationDetails)(nil)).Elem()
+}
+
+func (o KeyAutoKeyRotationDetailsPtrOutput) ToKeyAutoKeyRotationDetailsPtrOutput() KeyAutoKeyRotationDetailsPtrOutput {
+	return o
+}
+
+func (o KeyAutoKeyRotationDetailsPtrOutput) ToKeyAutoKeyRotationDetailsPtrOutputWithContext(ctx context.Context) KeyAutoKeyRotationDetailsPtrOutput {
+	return o
+}
+
+func (o KeyAutoKeyRotationDetailsPtrOutput) Elem() KeyAutoKeyRotationDetailsOutput {
+	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) KeyAutoKeyRotationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret KeyAutoKeyRotationDetails
+		return ret
+	}).(KeyAutoKeyRotationDetailsOutput)
+}
+
+// (Updatable) The last execution status message.
+func (o KeyAutoKeyRotationDetailsPtrOutput) LastRotationMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LastRotationMessage
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The status of last execution of auto key rotation.
+func (o KeyAutoKeyRotationDetailsPtrOutput) LastRotationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LastRotationStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+func (o KeyAutoKeyRotationDetailsPtrOutput) RotationIntervalInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RotationIntervalInDays
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+func (o KeyAutoKeyRotationDetailsPtrOutput) TimeOfLastRotation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeOfLastRotation
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+func (o KeyAutoKeyRotationDetailsPtrOutput) TimeOfNextRotation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeOfNextRotation
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+func (o KeyAutoKeyRotationDetailsPtrOutput) TimeOfScheduleStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAutoKeyRotationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeOfScheduleStart
+	}).(pulumi.StringPtrOutput)
+}
+
 type KeyExternalKeyReference struct {
 	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
 	ExternalKeyId string `pulumi:"externalKeyId"`
@@ -2709,6 +2941,148 @@ func (o GetEkmsPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetEk
 	}).(GetEkmsPrivateEndpointsFilterOutput)
 }
 
+type GetKeyAutoKeyRotationDetail struct {
+	// The last execution status message.
+	LastRotationMessage string `pulumi:"lastRotationMessage"`
+	// The status of last execution of auto key rotation.
+	LastRotationStatus string `pulumi:"lastRotationStatus"`
+	// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	RotationIntervalInDays int `pulumi:"rotationIntervalInDays"`
+	// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	TimeOfLastRotation string `pulumi:"timeOfLastRotation"`
+	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfNextRotation string `pulumi:"timeOfNextRotation"`
+	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfScheduleStart string `pulumi:"timeOfScheduleStart"`
+}
+
+// GetKeyAutoKeyRotationDetailInput is an input type that accepts GetKeyAutoKeyRotationDetailArgs and GetKeyAutoKeyRotationDetailOutput values.
+// You can construct a concrete instance of `GetKeyAutoKeyRotationDetailInput` via:
+//
+//	GetKeyAutoKeyRotationDetailArgs{...}
+type GetKeyAutoKeyRotationDetailInput interface {
+	pulumi.Input
+
+	ToGetKeyAutoKeyRotationDetailOutput() GetKeyAutoKeyRotationDetailOutput
+	ToGetKeyAutoKeyRotationDetailOutputWithContext(context.Context) GetKeyAutoKeyRotationDetailOutput
+}
+
+type GetKeyAutoKeyRotationDetailArgs struct {
+	// The last execution status message.
+	LastRotationMessage pulumi.StringInput `pulumi:"lastRotationMessage"`
+	// The status of last execution of auto key rotation.
+	LastRotationStatus pulumi.StringInput `pulumi:"lastRotationStatus"`
+	// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	RotationIntervalInDays pulumi.IntInput `pulumi:"rotationIntervalInDays"`
+	// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	TimeOfLastRotation pulumi.StringInput `pulumi:"timeOfLastRotation"`
+	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfNextRotation pulumi.StringInput `pulumi:"timeOfNextRotation"`
+	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfScheduleStart pulumi.StringInput `pulumi:"timeOfScheduleStart"`
+}
+
+func (GetKeyAutoKeyRotationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyAutoKeyRotationDetail)(nil)).Elem()
+}
+
+func (i GetKeyAutoKeyRotationDetailArgs) ToGetKeyAutoKeyRotationDetailOutput() GetKeyAutoKeyRotationDetailOutput {
+	return i.ToGetKeyAutoKeyRotationDetailOutputWithContext(context.Background())
+}
+
+func (i GetKeyAutoKeyRotationDetailArgs) ToGetKeyAutoKeyRotationDetailOutputWithContext(ctx context.Context) GetKeyAutoKeyRotationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyAutoKeyRotationDetailOutput)
+}
+
+// GetKeyAutoKeyRotationDetailArrayInput is an input type that accepts GetKeyAutoKeyRotationDetailArray and GetKeyAutoKeyRotationDetailArrayOutput values.
+// You can construct a concrete instance of `GetKeyAutoKeyRotationDetailArrayInput` via:
+//
+//	GetKeyAutoKeyRotationDetailArray{ GetKeyAutoKeyRotationDetailArgs{...} }
+type GetKeyAutoKeyRotationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyAutoKeyRotationDetailArrayOutput() GetKeyAutoKeyRotationDetailArrayOutput
+	ToGetKeyAutoKeyRotationDetailArrayOutputWithContext(context.Context) GetKeyAutoKeyRotationDetailArrayOutput
+}
+
+type GetKeyAutoKeyRotationDetailArray []GetKeyAutoKeyRotationDetailInput
+
+func (GetKeyAutoKeyRotationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyAutoKeyRotationDetail)(nil)).Elem()
+}
+
+func (i GetKeyAutoKeyRotationDetailArray) ToGetKeyAutoKeyRotationDetailArrayOutput() GetKeyAutoKeyRotationDetailArrayOutput {
+	return i.ToGetKeyAutoKeyRotationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyAutoKeyRotationDetailArray) ToGetKeyAutoKeyRotationDetailArrayOutputWithContext(ctx context.Context) GetKeyAutoKeyRotationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyAutoKeyRotationDetailArrayOutput)
+}
+
+type GetKeyAutoKeyRotationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetKeyAutoKeyRotationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyAutoKeyRotationDetail)(nil)).Elem()
+}
+
+func (o GetKeyAutoKeyRotationDetailOutput) ToGetKeyAutoKeyRotationDetailOutput() GetKeyAutoKeyRotationDetailOutput {
+	return o
+}
+
+func (o GetKeyAutoKeyRotationDetailOutput) ToGetKeyAutoKeyRotationDetailOutputWithContext(ctx context.Context) GetKeyAutoKeyRotationDetailOutput {
+	return o
+}
+
+// The last execution status message.
+func (o GetKeyAutoKeyRotationDetailOutput) LastRotationMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) string { return v.LastRotationMessage }).(pulumi.StringOutput)
+}
+
+// The status of last execution of auto key rotation.
+func (o GetKeyAutoKeyRotationDetailOutput) LastRotationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) string { return v.LastRotationStatus }).(pulumi.StringOutput)
+}
+
+// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+func (o GetKeyAutoKeyRotationDetailOutput) RotationIntervalInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) int { return v.RotationIntervalInDays }).(pulumi.IntOutput)
+}
+
+// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+func (o GetKeyAutoKeyRotationDetailOutput) TimeOfLastRotation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) string { return v.TimeOfLastRotation }).(pulumi.StringOutput)
+}
+
+// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+func (o GetKeyAutoKeyRotationDetailOutput) TimeOfNextRotation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) string { return v.TimeOfNextRotation }).(pulumi.StringOutput)
+}
+
+// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+func (o GetKeyAutoKeyRotationDetailOutput) TimeOfScheduleStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAutoKeyRotationDetail) string { return v.TimeOfScheduleStart }).(pulumi.StringOutput)
+}
+
+type GetKeyAutoKeyRotationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyAutoKeyRotationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyAutoKeyRotationDetail)(nil)).Elem()
+}
+
+func (o GetKeyAutoKeyRotationDetailArrayOutput) ToGetKeyAutoKeyRotationDetailArrayOutput() GetKeyAutoKeyRotationDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyAutoKeyRotationDetailArrayOutput) ToGetKeyAutoKeyRotationDetailArrayOutputWithContext(ctx context.Context) GetKeyAutoKeyRotationDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyAutoKeyRotationDetailArrayOutput) Index(i pulumi.IntInput) GetKeyAutoKeyRotationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyAutoKeyRotationDetail {
+		return vs[0].([]GetKeyAutoKeyRotationDetail)[vs[1].(int)]
+	}).(GetKeyAutoKeyRotationDetailOutput)
+}
+
 type GetKeyExternalKeyReference struct {
 	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
 	ExternalKeyId string `pulumi:"externalKeyId"`
@@ -3699,6 +4073,8 @@ type GetKeyVersionsKeyVersion struct {
 	ExternalKeyVersionId string `pulumi:"externalKeyVersionId"`
 	// The OCID of the key version.
 	Id string `pulumi:"id"`
+	// An optional property indicating whether this keyversion is generated from auto rotatation.
+	IsAutoRotated bool `pulumi:"isAutoRotated"`
 	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary bool `pulumi:"isPrimary"`
 	// The OCID of the key.
@@ -3744,6 +4120,8 @@ type GetKeyVersionsKeyVersionArgs struct {
 	ExternalKeyVersionId pulumi.StringInput `pulumi:"externalKeyVersionId"`
 	// The OCID of the key version.
 	Id pulumi.StringInput `pulumi:"id"`
+	// An optional property indicating whether this keyversion is generated from auto rotatation.
+	IsAutoRotated pulumi.BoolInput `pulumi:"isAutoRotated"`
 	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary pulumi.BoolInput `pulumi:"isPrimary"`
 	// The OCID of the key.
@@ -3840,6 +4218,11 @@ func (o GetKeyVersionsKeyVersionOutput) ExternalKeyVersionId() pulumi.StringOutp
 // The OCID of the key version.
 func (o GetKeyVersionsKeyVersionOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyVersionsKeyVersion) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// An optional property indicating whether this keyversion is generated from auto rotatation.
+func (o GetKeyVersionsKeyVersionOutput) IsAutoRotated() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetKeyVersionsKeyVersion) bool { return v.IsAutoRotated }).(pulumi.BoolOutput)
 }
 
 // A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
@@ -4231,6 +4614,8 @@ func (o GetKeysFilterArrayOutput) Index(i pulumi.IntInput) GetKeysFilterOutput {
 }
 
 type GetKeysKey struct {
+	// The details of auto rotation schedule for the Key being create updated or imported.
+	AutoKeyRotationDetails []GetKeysKeyAutoKeyRotationDetail `pulumi:"autoKeyRotationDetails"`
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
@@ -4247,6 +4632,8 @@ type GetKeysKey struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the key.
 	Id string `pulumi:"id"`
+	// A parameter specifying whether the auto key rotation is enabled or not.
+	IsAutoRotationEnabled bool `pulumi:"isAutoRotationEnabled"`
 	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 	IsPrimary bool `pulumi:"isPrimary"`
 	// The cryptographic properties of a key.
@@ -4283,6 +4670,8 @@ type GetKeysKeyInput interface {
 }
 
 type GetKeysKeyArgs struct {
+	// The details of auto rotation schedule for the Key being create updated or imported.
+	AutoKeyRotationDetails GetKeysKeyAutoKeyRotationDetailArrayInput `pulumi:"autoKeyRotationDetails"`
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
@@ -4299,6 +4688,8 @@ type GetKeysKeyArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the key.
 	Id pulumi.StringInput `pulumi:"id"`
+	// A parameter specifying whether the auto key rotation is enabled or not.
+	IsAutoRotationEnabled pulumi.BoolInput `pulumi:"isAutoRotationEnabled"`
 	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 	IsPrimary pulumi.BoolInput `pulumi:"isPrimary"`
 	// The cryptographic properties of a key.
@@ -4374,6 +4765,11 @@ func (o GetKeysKeyOutput) ToGetKeysKeyOutputWithContext(ctx context.Context) Get
 	return o
 }
 
+// The details of auto rotation schedule for the Key being create updated or imported.
+func (o GetKeysKeyOutput) AutoKeyRotationDetails() GetKeysKeyAutoKeyRotationDetailArrayOutput {
+	return o.ApplyT(func(v GetKeysKey) []GetKeysKeyAutoKeyRotationDetail { return v.AutoKeyRotationDetails }).(GetKeysKeyAutoKeyRotationDetailArrayOutput)
+}
+
 // The OCID of the compartment.
 func (o GetKeysKeyOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeysKey) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -4415,6 +4811,11 @@ func (o GetKeysKeyOutput) FreeformTags() pulumi.MapOutput {
 // The OCID of the key.
 func (o GetKeysKeyOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeysKey) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A parameter specifying whether the auto key rotation is enabled or not.
+func (o GetKeysKeyOutput) IsAutoRotationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetKeysKey) bool { return v.IsAutoRotationEnabled }).(pulumi.BoolOutput)
 }
 
 // A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
@@ -4496,6 +4897,148 @@ func (o GetKeysKeyArrayOutput) Index(i pulumi.IntInput) GetKeysKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeysKey {
 		return vs[0].([]GetKeysKey)[vs[1].(int)]
 	}).(GetKeysKeyOutput)
+}
+
+type GetKeysKeyAutoKeyRotationDetail struct {
+	// The last execution status message.
+	LastRotationMessage string `pulumi:"lastRotationMessage"`
+	// The status of last execution of auto key rotation.
+	LastRotationStatus string `pulumi:"lastRotationStatus"`
+	// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	RotationIntervalInDays int `pulumi:"rotationIntervalInDays"`
+	// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	TimeOfLastRotation string `pulumi:"timeOfLastRotation"`
+	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfNextRotation string `pulumi:"timeOfNextRotation"`
+	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfScheduleStart string `pulumi:"timeOfScheduleStart"`
+}
+
+// GetKeysKeyAutoKeyRotationDetailInput is an input type that accepts GetKeysKeyAutoKeyRotationDetailArgs and GetKeysKeyAutoKeyRotationDetailOutput values.
+// You can construct a concrete instance of `GetKeysKeyAutoKeyRotationDetailInput` via:
+//
+//	GetKeysKeyAutoKeyRotationDetailArgs{...}
+type GetKeysKeyAutoKeyRotationDetailInput interface {
+	pulumi.Input
+
+	ToGetKeysKeyAutoKeyRotationDetailOutput() GetKeysKeyAutoKeyRotationDetailOutput
+	ToGetKeysKeyAutoKeyRotationDetailOutputWithContext(context.Context) GetKeysKeyAutoKeyRotationDetailOutput
+}
+
+type GetKeysKeyAutoKeyRotationDetailArgs struct {
+	// The last execution status message.
+	LastRotationMessage pulumi.StringInput `pulumi:"lastRotationMessage"`
+	// The status of last execution of auto key rotation.
+	LastRotationStatus pulumi.StringInput `pulumi:"lastRotationStatus"`
+	// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+	RotationIntervalInDays pulumi.IntInput `pulumi:"rotationIntervalInDays"`
+	// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+	TimeOfLastRotation pulumi.StringInput `pulumi:"timeOfLastRotation"`
+	// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfNextRotation pulumi.StringInput `pulumi:"timeOfNextRotation"`
+	// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+	TimeOfScheduleStart pulumi.StringInput `pulumi:"timeOfScheduleStart"`
+}
+
+func (GetKeysKeyAutoKeyRotationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeysKeyAutoKeyRotationDetail)(nil)).Elem()
+}
+
+func (i GetKeysKeyAutoKeyRotationDetailArgs) ToGetKeysKeyAutoKeyRotationDetailOutput() GetKeysKeyAutoKeyRotationDetailOutput {
+	return i.ToGetKeysKeyAutoKeyRotationDetailOutputWithContext(context.Background())
+}
+
+func (i GetKeysKeyAutoKeyRotationDetailArgs) ToGetKeysKeyAutoKeyRotationDetailOutputWithContext(ctx context.Context) GetKeysKeyAutoKeyRotationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyAutoKeyRotationDetailOutput)
+}
+
+// GetKeysKeyAutoKeyRotationDetailArrayInput is an input type that accepts GetKeysKeyAutoKeyRotationDetailArray and GetKeysKeyAutoKeyRotationDetailArrayOutput values.
+// You can construct a concrete instance of `GetKeysKeyAutoKeyRotationDetailArrayInput` via:
+//
+//	GetKeysKeyAutoKeyRotationDetailArray{ GetKeysKeyAutoKeyRotationDetailArgs{...} }
+type GetKeysKeyAutoKeyRotationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetKeysKeyAutoKeyRotationDetailArrayOutput() GetKeysKeyAutoKeyRotationDetailArrayOutput
+	ToGetKeysKeyAutoKeyRotationDetailArrayOutputWithContext(context.Context) GetKeysKeyAutoKeyRotationDetailArrayOutput
+}
+
+type GetKeysKeyAutoKeyRotationDetailArray []GetKeysKeyAutoKeyRotationDetailInput
+
+func (GetKeysKeyAutoKeyRotationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeysKeyAutoKeyRotationDetail)(nil)).Elem()
+}
+
+func (i GetKeysKeyAutoKeyRotationDetailArray) ToGetKeysKeyAutoKeyRotationDetailArrayOutput() GetKeysKeyAutoKeyRotationDetailArrayOutput {
+	return i.ToGetKeysKeyAutoKeyRotationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeysKeyAutoKeyRotationDetailArray) ToGetKeysKeyAutoKeyRotationDetailArrayOutputWithContext(ctx context.Context) GetKeysKeyAutoKeyRotationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyAutoKeyRotationDetailArrayOutput)
+}
+
+type GetKeysKeyAutoKeyRotationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetKeysKeyAutoKeyRotationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeysKeyAutoKeyRotationDetail)(nil)).Elem()
+}
+
+func (o GetKeysKeyAutoKeyRotationDetailOutput) ToGetKeysKeyAutoKeyRotationDetailOutput() GetKeysKeyAutoKeyRotationDetailOutput {
+	return o
+}
+
+func (o GetKeysKeyAutoKeyRotationDetailOutput) ToGetKeysKeyAutoKeyRotationDetailOutputWithContext(ctx context.Context) GetKeysKeyAutoKeyRotationDetailOutput {
+	return o
+}
+
+// The last execution status message.
+func (o GetKeysKeyAutoKeyRotationDetailOutput) LastRotationMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) string { return v.LastRotationMessage }).(pulumi.StringOutput)
+}
+
+// The status of last execution of auto key rotation.
+func (o GetKeysKeyAutoKeyRotationDetailOutput) LastRotationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) string { return v.LastRotationStatus }).(pulumi.StringOutput)
+}
+
+// The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+func (o GetKeysKeyAutoKeyRotationDetailOutput) RotationIntervalInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) int { return v.RotationIntervalInDays }).(pulumi.IntOutput)
+}
+
+// A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+func (o GetKeysKeyAutoKeyRotationDetailOutput) TimeOfLastRotation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) string { return v.TimeOfLastRotation }).(pulumi.StringOutput)
+}
+
+// A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+func (o GetKeysKeyAutoKeyRotationDetailOutput) TimeOfNextRotation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) string { return v.TimeOfNextRotation }).(pulumi.StringOutput)
+}
+
+// A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+func (o GetKeysKeyAutoKeyRotationDetailOutput) TimeOfScheduleStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeysKeyAutoKeyRotationDetail) string { return v.TimeOfScheduleStart }).(pulumi.StringOutput)
+}
+
+type GetKeysKeyAutoKeyRotationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeysKeyAutoKeyRotationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeysKeyAutoKeyRotationDetail)(nil)).Elem()
+}
+
+func (o GetKeysKeyAutoKeyRotationDetailArrayOutput) ToGetKeysKeyAutoKeyRotationDetailArrayOutput() GetKeysKeyAutoKeyRotationDetailArrayOutput {
+	return o
+}
+
+func (o GetKeysKeyAutoKeyRotationDetailArrayOutput) ToGetKeysKeyAutoKeyRotationDetailArrayOutputWithContext(ctx context.Context) GetKeysKeyAutoKeyRotationDetailArrayOutput {
+	return o
+}
+
+func (o GetKeysKeyAutoKeyRotationDetailArrayOutput) Index(i pulumi.IntInput) GetKeysKeyAutoKeyRotationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeysKeyAutoKeyRotationDetail {
+		return vs[0].([]GetKeysKeyAutoKeyRotationDetail)[vs[1].(int)]
+	}).(GetKeysKeyAutoKeyRotationDetailOutput)
 }
 
 type GetKeysKeyExternalKeyReference struct {
@@ -7421,6 +7964,8 @@ func (o GetVaultsVaultRestoreFromObjectStoreArrayOutput) Index(i pulumi.IntInput
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GeneratedKeyKeyShapeInput)(nil)).Elem(), GeneratedKeyKeyShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GeneratedKeyKeyShapePtrInput)(nil)).Elem(), GeneratedKeyKeyShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyAutoKeyRotationDetailsInput)(nil)).Elem(), KeyAutoKeyRotationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyAutoKeyRotationDetailsPtrInput)(nil)).Elem(), KeyAutoKeyRotationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyExternalKeyReferenceInput)(nil)).Elem(), KeyExternalKeyReferenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyExternalKeyReferencePtrInput)(nil)).Elem(), KeyExternalKeyReferenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyExternalKeyReferenceDetailInput)(nil)).Elem(), KeyExternalKeyReferenceDetailArgs{})
@@ -7455,6 +8000,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayInput)(nil)).Elem(), GetEkmsPrivateEndpointsEkmsPrivateEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEkmsPrivateEndpointsFilterInput)(nil)).Elem(), GetEkmsPrivateEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEkmsPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetEkmsPrivateEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyAutoKeyRotationDetailInput)(nil)).Elem(), GetKeyAutoKeyRotationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyAutoKeyRotationDetailArrayInput)(nil)).Elem(), GetKeyAutoKeyRotationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyExternalKeyReferenceInput)(nil)).Elem(), GetKeyExternalKeyReferenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyExternalKeyReferenceArrayInput)(nil)).Elem(), GetKeyExternalKeyReferenceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyExternalKeyReferenceDetailInput)(nil)).Elem(), GetKeyExternalKeyReferenceDetailArgs{})
@@ -7483,6 +8030,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysFilterArrayInput)(nil)).Elem(), GetKeysFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyInput)(nil)).Elem(), GetKeysKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyArrayInput)(nil)).Elem(), GetKeysKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyAutoKeyRotationDetailInput)(nil)).Elem(), GetKeysKeyAutoKeyRotationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyAutoKeyRotationDetailArrayInput)(nil)).Elem(), GetKeysKeyAutoKeyRotationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyExternalKeyReferenceInput)(nil)).Elem(), GetKeysKeyExternalKeyReferenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyExternalKeyReferenceArrayInput)(nil)).Elem(), GetKeysKeyExternalKeyReferenceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyExternalKeyReferenceDetailInput)(nil)).Elem(), GetKeysKeyExternalKeyReferenceDetailArgs{})
@@ -7535,6 +8084,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultRestoreFromObjectStoreArrayInput)(nil)).Elem(), GetVaultsVaultRestoreFromObjectStoreArray{})
 	pulumi.RegisterOutputType(GeneratedKeyKeyShapeOutput{})
 	pulumi.RegisterOutputType(GeneratedKeyKeyShapePtrOutput{})
+	pulumi.RegisterOutputType(KeyAutoKeyRotationDetailsOutput{})
+	pulumi.RegisterOutputType(KeyAutoKeyRotationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(KeyExternalKeyReferenceOutput{})
 	pulumi.RegisterOutputType(KeyExternalKeyReferencePtrOutput{})
 	pulumi.RegisterOutputType(KeyExternalKeyReferenceDetailOutput{})
@@ -7569,6 +8120,8 @@ func init() {
 	pulumi.RegisterOutputType(GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetEkmsPrivateEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetEkmsPrivateEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyAutoKeyRotationDetailOutput{})
+	pulumi.RegisterOutputType(GetKeyAutoKeyRotationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyExternalKeyReferenceOutput{})
 	pulumi.RegisterOutputType(GetKeyExternalKeyReferenceArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyExternalKeyReferenceDetailOutput{})
@@ -7597,6 +8150,8 @@ func init() {
 	pulumi.RegisterOutputType(GetKeysFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetKeysKeyOutput{})
 	pulumi.RegisterOutputType(GetKeysKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetKeysKeyAutoKeyRotationDetailOutput{})
+	pulumi.RegisterOutputType(GetKeysKeyAutoKeyRotationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetKeysKeyExternalKeyReferenceOutput{})
 	pulumi.RegisterOutputType(GetKeysKeyExternalKeyReferenceArrayOutput{})
 	pulumi.RegisterOutputType(GetKeysKeyExternalKeyReferenceDetailOutput{})

@@ -12,26 +12,26 @@ namespace Pulumi.Oci.Sch
     /// <summary>
     /// This resource provides the Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
     /// 
-    /// Creates a new service connector in the specified compartment.
-    /// A service connector is a logically defined flow for moving data from
+    /// Creates a new connector in the specified compartment.
+    /// A connector is a logically defined flow for moving data from
     /// a source service to a destination service in Oracle Cloud Infrastructure.
-    /// For instructions, see
-    /// [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
-    /// For general information about service connectors, see
-    /// [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
+    /// For more information, see
+    /// [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+    /// For general information about connectors, see
+    /// [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm).
     /// 
     /// For purposes of access control, you must provide the
     /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where
-    /// you want the service connector to reside. Notice that the service connector
+    /// you want the connector to reside. Notice that the connector
     /// doesn't have to be in the same compartment as the source or target services.
     /// For information about access control and compartments, see
     /// [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
     /// 
-    /// After you send your request, the new service connector's state is temporarily
+    /// After you send your request, the new connector's state is temporarily
     /// CREATING. When the state changes to ACTIVE, data begins transferring from the
     /// source service to the target service. For instructions on deactivating and
-    /// activating service connectors, see
-    /// [To activate or deactivate a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
+    /// activating connectors, see
+    /// [Activating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/activate-service-connector.htm).
     /// 
     /// ## Example Usage
     /// 
@@ -50,6 +50,7 @@ namespace Pulumi.Oci.Sch
     ///         Source = new Oci.Sch.Inputs.ConnectorSourceArgs
     ///         {
     ///             Kind = @var.Service_connector_source_kind,
+    ///             ConfigMap = @var.Service_connector_source_config_map,
     ///             Cursor = new Oci.Sch.Inputs.ConnectorSourceCursorArgs
     ///             {
     ///                 Kind = @var.Service_connector_source_cursor_kind,
@@ -85,6 +86,7 @@ namespace Pulumi.Oci.Sch
     ///                     },
     ///                 },
     ///             },
+    ///             PluginName = @var.Service_connector_source_plugin_name,
     ///             StreamId = oci_streaming_stream.Test_stream.Id,
     ///         },
     ///         Target = new Oci.Sch.Inputs.ConnectorTargetArgs
@@ -92,6 +94,9 @@ namespace Pulumi.Oci.Sch
     ///             Kind = @var.Service_connector_target_kind,
     ///             BatchRolloverSizeInMbs = @var.Service_connector_target_batch_rollover_size_in_mbs,
     ///             BatchRolloverTimeInMs = @var.Service_connector_target_batch_rollover_time_in_ms,
+    ///             BatchSizeInKbs = @var.Service_connector_target_batch_size_in_kbs,
+    ///             BatchSizeInNum = @var.Service_connector_target_batch_size_in_num,
+    ///             BatchTimeInSec = @var.Service_connector_target_batch_time_in_sec,
     ///             Bucket = @var.Service_connector_target_bucket,
     ///             CompartmentId = @var.Compartment_id,
     ///             Dimensions = new[]
@@ -191,7 +196,7 @@ namespace Pulumi.Oci.Sch
         public Output<string> LifecyleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        /// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         /// </summary>
         [Output("source")]
         public Output<Outputs.ConnectorSource> Source { get; private set; } = null!;
@@ -213,7 +218,7 @@ namespace Pulumi.Oci.Sch
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        /// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         /// </summary>
         [Output("target")]
         public Output<Outputs.ConnectorTarget> Target { get; private set; } = null!;
@@ -225,13 +230,13 @@ namespace Pulumi.Oci.Sch
         public Output<ImmutableArray<Outputs.ConnectorTask>> Tasks { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+        /// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+        /// The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -325,7 +330,7 @@ namespace Pulumi.Oci.Sch
         }
 
         /// <summary>
-        /// (Updatable) An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        /// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         /// </summary>
         [Input("source", required: true)]
         public Input<Inputs.ConnectorSourceArgs> Source { get; set; } = null!;
@@ -341,7 +346,7 @@ namespace Pulumi.Oci.Sch
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        /// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         /// </summary>
         [Input("target", required: true)]
         public Input<Inputs.ConnectorTargetArgs> Target { get; set; } = null!;
@@ -415,7 +420,7 @@ namespace Pulumi.Oci.Sch
         public Input<string>? LifecyleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        /// (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         /// </summary>
         [Input("source")]
         public Input<Inputs.ConnectorSourceGetArgs>? Source { get; set; }
@@ -443,7 +448,7 @@ namespace Pulumi.Oci.Sch
         }
 
         /// <summary>
-        /// (Updatable) An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        /// (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         /// </summary>
         [Input("target")]
         public Input<Inputs.ConnectorTargetGetArgs>? Target { get; set; }
@@ -461,13 +466,13 @@ namespace Pulumi.Oci.Sch
         }
 
         /// <summary>
-        /// The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+        /// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+        /// The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

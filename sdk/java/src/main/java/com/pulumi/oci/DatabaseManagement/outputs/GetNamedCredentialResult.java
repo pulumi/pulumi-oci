@@ -6,8 +6,10 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetNamedCredentialContent;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -28,10 +30,20 @@ public final class GetNamedCredentialResult {
      */
     private List<GetNamedCredentialContent> contents;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The information specified by the user about the named credential.
      * 
      */
     private String description;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
      * 
@@ -97,11 +109,25 @@ public final class GetNamedCredentialResult {
         return this.contents;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The information specified by the user about the named credential.
      * 
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
@@ -175,7 +201,9 @@ public final class GetNamedCredentialResult {
         private String associatedResource;
         private String compartmentId;
         private List<GetNamedCredentialContent> contents;
+        private Map<String,Object> definedTags;
         private String description;
+        private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleDetails;
         private String name;
@@ -191,7 +219,9 @@ public final class GetNamedCredentialResult {
     	      this.associatedResource = defaults.associatedResource;
     	      this.compartmentId = defaults.compartmentId;
     	      this.contents = defaults.contents;
+    	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.name = defaults.name;
@@ -231,11 +261,27 @@ public final class GetNamedCredentialResult {
             return contents(List.of(contents));
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetNamedCredentialResult", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder description(String description) {
             if (description == null) {
               throw new MissingRequiredPropertyException("GetNamedCredentialResult", "description");
             }
             this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetNamedCredentialResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -315,7 +361,9 @@ public final class GetNamedCredentialResult {
             _resultValue.associatedResource = associatedResource;
             _resultValue.compartmentId = compartmentId;
             _resultValue.contents = contents;
+            _resultValue.definedTags = definedTags;
             _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.name = name;

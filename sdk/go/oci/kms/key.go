@@ -33,6 +33,8 @@ import (
 type Key struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+	AutoKeyRotationDetails KeyAutoKeyRotationDetailsOutput `pulumi:"autoKeyRotationDetails"`
 	// (Updatable) The OCID of the compartment where you want to create the master encryption key.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
@@ -49,6 +51,8 @@ type Key struct {
 	ExternalKeyReferenceDetails KeyExternalKeyReferenceDetailArrayOutput `pulumi:"externalKeyReferenceDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+	IsAutoRotationEnabled pulumi.BoolOutput `pulumi:"isAutoRotationEnabled"`
 	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 	IsPrimary pulumi.BoolOutput `pulumi:"isPrimary"`
 	// The cryptographic properties of a key.
@@ -122,6 +126,8 @@ func GetKey(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Key resources.
 type keyState struct {
+	// (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+	AutoKeyRotationDetails *KeyAutoKeyRotationDetails `pulumi:"autoKeyRotationDetails"`
 	// (Updatable) The OCID of the compartment where you want to create the master encryption key.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
@@ -138,6 +144,8 @@ type keyState struct {
 	ExternalKeyReferenceDetails []KeyExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+	IsAutoRotationEnabled *bool `pulumi:"isAutoRotationEnabled"`
 	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 	IsPrimary *bool `pulumi:"isPrimary"`
 	// The cryptographic properties of a key.
@@ -170,6 +178,8 @@ type keyState struct {
 }
 
 type KeyState struct {
+	// (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+	AutoKeyRotationDetails KeyAutoKeyRotationDetailsPtrInput
 	// (Updatable) The OCID of the compartment where you want to create the master encryption key.
 	CompartmentId pulumi.StringPtrInput
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
@@ -186,6 +196,8 @@ type KeyState struct {
 	ExternalKeyReferenceDetails KeyExternalKeyReferenceDetailArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+	IsAutoRotationEnabled pulumi.BoolPtrInput
 	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 	IsPrimary pulumi.BoolPtrInput
 	// The cryptographic properties of a key.
@@ -222,6 +234,8 @@ func (KeyState) ElementType() reflect.Type {
 }
 
 type keyArgs struct {
+	// (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+	AutoKeyRotationDetails *KeyAutoKeyRotationDetails `pulumi:"autoKeyRotationDetails"`
 	// (Updatable) The OCID of the compartment where you want to create the master encryption key.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -234,6 +248,8 @@ type keyArgs struct {
 	ExternalKeyReference *KeyExternalKeyReference `pulumi:"externalKeyReference"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+	IsAutoRotationEnabled *bool `pulumi:"isAutoRotationEnabled"`
 	// The cryptographic properties of a key.
 	KeyShape KeyKeyShape `pulumi:"keyShape"`
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
@@ -255,6 +271,8 @@ type keyArgs struct {
 
 // The set of arguments for constructing a Key resource.
 type KeyArgs struct {
+	// (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+	AutoKeyRotationDetails KeyAutoKeyRotationDetailsPtrInput
 	// (Updatable) The OCID of the compartment where you want to create the master encryption key.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -267,6 +285,8 @@ type KeyArgs struct {
 	ExternalKeyReference KeyExternalKeyReferencePtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+	IsAutoRotationEnabled pulumi.BoolPtrInput
 	// The cryptographic properties of a key.
 	KeyShape KeyKeyShapeInput
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
@@ -373,6 +393,11 @@ func (o KeyOutput) ToKeyOutputWithContext(ctx context.Context) KeyOutput {
 	return o
 }
 
+// (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+func (o KeyOutput) AutoKeyRotationDetails() KeyAutoKeyRotationDetailsOutput {
+	return o.ApplyT(func(v *Key) KeyAutoKeyRotationDetailsOutput { return v.AutoKeyRotationDetails }).(KeyAutoKeyRotationDetailsOutput)
+}
+
 // (Updatable) The OCID of the compartment where you want to create the master encryption key.
 func (o KeyOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -411,6 +436,11 @@ func (o KeyOutput) ExternalKeyReferenceDetails() KeyExternalKeyReferenceDetailAr
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o KeyOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Key) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+func (o KeyOutput) IsAutoRotationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Key) pulumi.BoolOutput { return v.IsAutoRotationEnabled }).(pulumi.BoolOutput)
 }
 
 // A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.

@@ -26079,6 +26079,172 @@ export namespace DatabaseManagement {
         username: pulumi.Input<string>;
     }
 
+    export interface ExternalExadataStorageGridStorageServer {
+        /**
+         * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+         */
+        additionalDetails?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+         */
+        connectorId?: pulumi.Input<string>;
+        /**
+         * The CPU count of the Exadata storage server.
+         */
+        cpuCount?: pulumi.Input<number>;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The internal ID of the Exadata resource.
+         */
+        internalId?: pulumi.Input<string>;
+        /**
+         * The IP address of the Exadata storage server.
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * The details of the lifecycle state of the Exadata resource.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The make model of the Exadata storage server.
+         */
+        makeModel?: pulumi.Input<string>;
+        /**
+         * The maximum flash disk IO operations per second of the Exadata storage server.
+         */
+        maxFlashDiskIops?: pulumi.Input<number>;
+        /**
+         * The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+         */
+        maxFlashDiskThroughput?: pulumi.Input<number>;
+        /**
+         * The maximum hard disk IO operations per second of the Exadata storage server.
+         */
+        maxHardDiskIops?: pulumi.Input<number>;
+        /**
+         * The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+         */
+        maxHardDiskThroughput?: pulumi.Input<number>;
+        /**
+         * The Exadata storage server memory size in GB.
+         */
+        memoryGb?: pulumi.Input<number>;
+        /**
+         * The type of Exadata resource.
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The current lifecycle state of the database resource.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The status of the Exadata resource.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * The timestamp of the creation of the Exadata resource.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The timestamp of the last update of the Exadata resource.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The version of the Exadata resource.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface ExternalExadataStorageServerConnector {
+        /**
+         * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+         */
+        additionalDetails?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+         */
+        agentId?: pulumi.Input<string>;
+        /**
+         * The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+         */
+        connectionUri?: pulumi.Input<string>;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The internal ID of the Exadata resource.
+         */
+        internalId?: pulumi.Input<string>;
+        /**
+         * The details of the lifecycle state of the Exadata resource.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The type of Exadata resource.
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The current lifecycle state of the database resource.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The status of the Exadata resource.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+         */
+        storageServerId?: pulumi.Input<string>;
+        /**
+         * The timestamp of the creation of the Exadata resource.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The timestamp of the last update of the Exadata resource.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The version of the Exadata resource.
+         */
+        version?: pulumi.Input<string>;
+    }
+
     export interface ExternalListenerEndpoint {
         /**
          * The host name or IP address.
@@ -26918,9 +27084,17 @@ export namespace DatabaseManagement {
          */
         databaseType?: pulumi.Input<string>;
         /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: any}>;
+        /**
          * The infrastructure used to deploy the Oracle Database.
          */
         deploymentType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
          *
@@ -26941,6 +27115,21 @@ export namespace DatabaseManagement {
          * The workload type of the Autonomous Database.
          */
         workloadType?: pulumi.Input<string>;
+    }
+
+    export interface ManagedDatabaseManagedDatabaseGroup {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The name of the Managed Database.
+         */
+        name?: pulumi.Input<string>;
     }
 
     export interface ManagedDatabasesChangeDatabaseParameterCredentials {
@@ -60156,6 +60345,33 @@ export namespace Kms {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface KeyAutoKeyRotationDetails {
+        /**
+         * (Updatable) The last execution status message.
+         */
+        lastRotationMessage?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of last execution of auto key rotation.
+         */
+        lastRotationStatus?: pulumi.Input<string>;
+        /**
+         * (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+         */
+        rotationIntervalInDays?: pulumi.Input<number>;
+        /**
+         * (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+         */
+        timeOfLastRotation?: pulumi.Input<string>;
+        /**
+         * (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+         */
+        timeOfNextRotation?: pulumi.Input<string>;
+        /**
+         * (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+         */
+        timeOfScheduleStart?: pulumi.Input<string>;
+    }
+
     export interface KeyExternalKeyReference {
         /**
          * ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
@@ -69699,7 +69915,11 @@ export namespace ResourceManager {
 export namespace Sch {
     export interface ConnectorSource {
         /**
-         * (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+         * (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+         */
+        configMap?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
          */
         cursor?: pulumi.Input<inputs.Sch.ConnectorSourceCursor>;
         /**
@@ -69711,9 +69931,13 @@ export namespace Sch {
          */
         logSources?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorSourceLogSource>[]>;
         /**
-         * (Updatable) The list of metric namespaces to retrieve data from.
+         * (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
          */
         monitoringSources?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorSourceMonitoringSource>[]>;
+        /**
+         * (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+         */
+        pluginName?: pulumi.Input<string>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
          */
@@ -69792,7 +70016,19 @@ export namespace Sch {
          */
         batchRolloverTimeInMs?: pulumi.Input<number>;
         /**
-         * (Updatable) The name of the bucket. Avoid entering confidential information.
+         * (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+         */
+        batchSizeInKbs?: pulumi.Input<number>;
+        /**
+         * (Updatable) The batch rollover size in number of messages.
+         */
+        batchSizeInNum?: pulumi.Input<number>;
+        /**
+         * (Updatable) Time limit (seconds) for batch sent to invoke the function.
+         */
+        batchTimeInSec?: pulumi.Input<number>;
+        /**
+         * (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
          */
         bucket?: pulumi.Input<string>;
         /**
@@ -69804,7 +70040,7 @@ export namespace Sch {
          */
         dimensions?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorTargetDimension>[]>;
         /**
-         * (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+         * (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
          */
         enableFormattedMessaging?: pulumi.Input<boolean>;
         /**
@@ -69820,7 +70056,7 @@ export namespace Sch {
          */
         logGroupId?: pulumi.Input<string>;
         /**
-         * (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+         * (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
          */
         logSourceIdentifier?: pulumi.Input<string>;
         /**
@@ -69855,7 +70091,7 @@ export namespace Sch {
          */
         dimensionValue?: pulumi.Input<inputs.Sch.ConnectorTargetDimensionDimensionValue>;
         /**
-         * (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+         * (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
          */
         name?: pulumi.Input<string>;
     }
@@ -69885,7 +70121,7 @@ export namespace Sch {
          */
         batchTimeInSec?: pulumi.Input<number>;
         /**
-         * (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+         * (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
          */
         condition?: pulumi.Input<string>;
         /**
@@ -69898,9 +70134,27 @@ export namespace Sch {
         kind: pulumi.Input<string>;
     }
 
+    export interface GetConnectorPluginsFilter {
+        /**
+         * A filter to return only resources that match the given connector plugin name ignoring case.  Example: `QueueSource`
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetConnectorPluginsFilterArgs {
+        /**
+         * A filter to return only resources that match the given connector plugin name ignoring case.  Example: `QueueSource`
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetServiceConnectorsFilter {
         /**
-         * Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+         * Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
          */
         name: string;
         regex?: boolean;
@@ -69909,7 +70163,7 @@ export namespace Sch {
 
     export interface GetServiceConnectorsFilterArgs {
         /**
-         * Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+         * Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;

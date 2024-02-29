@@ -8,7 +8,9 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDatabaseManagementConfigArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemStackMonitoringConfigArgs;
 import java.lang.Boolean;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -64,6 +66,21 @@ public final class ExternalDbSystemState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Import(name="definedTags")
+    private @Nullable Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> definedTags() {
+        return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      * 
      */
@@ -91,6 +108,21 @@ public final class ExternalDbSystemState extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Import(name="freeformTags")
+    private @Nullable Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
     }
 
     /**
@@ -204,8 +236,10 @@ public final class ExternalDbSystemState extends com.pulumi.resources.ResourceAr
         this.compartmentId = $.compartmentId;
         this.databaseManagementConfig = $.databaseManagementConfig;
         this.dbSystemDiscoveryId = $.dbSystemDiscoveryId;
+        this.definedTags = $.definedTags;
         this.discoveryAgentId = $.discoveryAgentId;
         this.displayName = $.displayName;
+        this.freeformTags = $.freeformTags;
         this.homeDirectory = $.homeDirectory;
         this.isCluster = $.isCluster;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -297,6 +331,27 @@ public final class ExternalDbSystemState extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+            $.definedTags = definedTags;
+            return this;
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(Map<String,Object> definedTags) {
+            return definedTags(Output.of(definedTags));
+        }
+
+        /**
          * @param discoveryAgentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
          * 
          * @return builder
@@ -336,6 +391,27 @@ public final class ExternalDbSystemState extends com.pulumi.resources.ResourceAr
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+            $.freeformTags = freeformTags;
+            return this;
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
         }
 
         /**

@@ -47,7 +47,7 @@ public final class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseD
      */
     private String peerAutonomousDatabaseId;
     /**
-     * @return The current state of Autonomous Data Guard.
+     * @return The current state of the Autonomous Database.
      * 
      */
     private String peerAutonomousDatabaseLifeCycleState;
@@ -143,7 +143,7 @@ public final class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseD
         return this.peerAutonomousDatabaseId;
     }
     /**
-     * @return The current state of Autonomous Data Guard.
+     * @return The current state of the Autonomous Database.
      * 
      */
     public String peerAutonomousDatabaseLifeCycleState() {

@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Kms.KeyArgs;
 import com.pulumi.oci.Kms.inputs.KeyState;
+import com.pulumi.oci.Kms.outputs.KeyAutoKeyRotationDetails;
 import com.pulumi.oci.Kms.outputs.KeyExternalKeyReference;
 import com.pulumi.oci.Kms.outputs.KeyExternalKeyReferenceDetail;
 import com.pulumi.oci.Kms.outputs.KeyKeyShape;
@@ -45,6 +46,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Kms/key:Key")
 public class Key extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+     * 
+     */
+    @Export(name="autoKeyRotationDetails", refs={KeyAutoKeyRotationDetails.class}, tree="[0]")
+    private Output<KeyAutoKeyRotationDetails> autoKeyRotationDetails;
+
+    /**
+     * @return (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+     * 
+     */
+    public Output<KeyAutoKeyRotationDetails> autoKeyRotationDetails() {
+        return this.autoKeyRotationDetails;
+    }
     /**
      * (Updatable) The OCID of the compartment where you want to create the master encryption key.
      * 
@@ -156,6 +171,20 @@ public class Key extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+     * 
+     */
+    @Export(name="isAutoRotationEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isAutoRotationEnabled;
+
+    /**
+     * @return (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+     * 
+     */
+    public Output<Boolean> isAutoRotationEnabled() {
+        return this.isAutoRotationEnabled;
     }
     /**
      * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.

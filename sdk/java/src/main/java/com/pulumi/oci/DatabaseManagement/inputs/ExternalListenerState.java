@@ -82,6 +82,21 @@ public final class ExternalListenerState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Import(name="definedTags")
+    private @Nullable Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> definedTags() {
+        return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
      * The user-friendly name for the database. The name does not have to be unique.
      * 
      */
@@ -174,9 +189,6 @@ public final class ExternalListenerState extends com.pulumi.resources.ResourceAr
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="externalListenerId")
     private @Nullable Output<String> externalListenerId;
@@ -184,12 +196,30 @@ public final class ExternalListenerState extends com.pulumi.resources.ResourceAr
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
      * 
+     */
+    public Optional<Output<String>> externalListenerId() {
+        return Optional.ofNullable(this.externalListenerId);
+    }
+
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> externalListenerId() {
-        return Optional.ofNullable(this.externalListenerId);
+    @Import(name="freeformTags")
+    private @Nullable Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
     }
 
     /**
@@ -409,6 +439,7 @@ public final class ExternalListenerState extends com.pulumi.resources.ResourceAr
         this.adrHomeDirectory = $.adrHomeDirectory;
         this.compartmentId = $.compartmentId;
         this.componentName = $.componentName;
+        this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.endpoints = $.endpoints;
         this.externalConnectorId = $.externalConnectorId;
@@ -416,6 +447,7 @@ public final class ExternalListenerState extends com.pulumi.resources.ResourceAr
         this.externalDbNodeId = $.externalDbNodeId;
         this.externalDbSystemId = $.externalDbSystemId;
         this.externalListenerId = $.externalListenerId;
+        this.freeformTags = $.freeformTags;
         this.hostName = $.hostName;
         this.lifecycleDetails = $.lifecycleDetails;
         this.listenerAlias = $.listenerAlias;
@@ -532,6 +564,27 @@ public final class ExternalListenerState extends com.pulumi.resources.ResourceAr
          */
         public Builder componentName(String componentName) {
             return componentName(Output.of(componentName));
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+            $.definedTags = definedTags;
+            return this;
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(Map<String,Object> definedTags) {
+            return definedTags(Output.of(definedTags));
         }
 
         /**
@@ -673,9 +726,6 @@ public final class ExternalListenerState extends com.pulumi.resources.ResourceAr
         /**
          * @param externalListenerId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -687,14 +737,38 @@ public final class ExternalListenerState extends com.pulumi.resources.ResourceAr
         /**
          * @param externalListenerId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
          * 
+         * @return builder
+         * 
+         */
+        public Builder externalListenerId(String externalListenerId) {
+            return externalListenerId(Output.of(externalListenerId));
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder externalListenerId(String externalListenerId) {
-            return externalListenerId(Output.of(externalListenerId));
+        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+            $.freeformTags = freeformTags;
+            return this;
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
         }
 
         /**

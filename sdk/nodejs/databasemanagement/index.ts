@@ -15,6 +15,11 @@ export type ExternalAsm = import("./externalAsm").ExternalAsm;
 export const ExternalAsm: typeof import("./externalAsm").ExternalAsm = null as any;
 utilities.lazyLoad(exports, ["ExternalAsm"], () => require("./externalAsm"));
 
+export { ExternalAsmInstanceArgs, ExternalAsmInstanceState } from "./externalAsmInstance";
+export type ExternalAsmInstance = import("./externalAsmInstance").ExternalAsmInstance;
+export const ExternalAsmInstance: typeof import("./externalAsmInstance").ExternalAsmInstance = null as any;
+utilities.lazyLoad(exports, ["ExternalAsmInstance"], () => require("./externalAsmInstance"));
+
 export { ExternalClusterArgs, ExternalClusterState } from "./externalCluster";
 export type ExternalCluster = import("./externalCluster").ExternalCluster;
 export const ExternalCluster: typeof import("./externalCluster").ExternalCluster = null as any;
@@ -24,6 +29,11 @@ export { ExternalClusterInstanceArgs, ExternalClusterInstanceState } from "./ext
 export type ExternalClusterInstance = import("./externalClusterInstance").ExternalClusterInstance;
 export const ExternalClusterInstance: typeof import("./externalClusterInstance").ExternalClusterInstance = null as any;
 utilities.lazyLoad(exports, ["ExternalClusterInstance"], () => require("./externalClusterInstance"));
+
+export { ExternalDbHomeArgs, ExternalDbHomeState } from "./externalDbHome";
+export type ExternalDbHome = import("./externalDbHome").ExternalDbHome;
+export const ExternalDbHome: typeof import("./externalDbHome").ExternalDbHome = null as any;
+utilities.lazyLoad(exports, ["ExternalDbHome"], () => require("./externalDbHome"));
 
 export { ExternalDbNodeArgs, ExternalDbNodeState } from "./externalDbNode";
 export type ExternalDbNode = import("./externalDbNode").ExternalDbNode;
@@ -69,6 +79,16 @@ export { ExternalExadataStorageConnectorArgs, ExternalExadataStorageConnectorSta
 export type ExternalExadataStorageConnector = import("./externalExadataStorageConnector").ExternalExadataStorageConnector;
 export const ExternalExadataStorageConnector: typeof import("./externalExadataStorageConnector").ExternalExadataStorageConnector = null as any;
 utilities.lazyLoad(exports, ["ExternalExadataStorageConnector"], () => require("./externalExadataStorageConnector"));
+
+export { ExternalExadataStorageGridArgs, ExternalExadataStorageGridState } from "./externalExadataStorageGrid";
+export type ExternalExadataStorageGrid = import("./externalExadataStorageGrid").ExternalExadataStorageGrid;
+export const ExternalExadataStorageGrid: typeof import("./externalExadataStorageGrid").ExternalExadataStorageGrid = null as any;
+utilities.lazyLoad(exports, ["ExternalExadataStorageGrid"], () => require("./externalExadataStorageGrid"));
+
+export { ExternalExadataStorageServerArgs, ExternalExadataStorageServerState } from "./externalExadataStorageServer";
+export type ExternalExadataStorageServer = import("./externalExadataStorageServer").ExternalExadataStorageServer;
+export const ExternalExadataStorageServer: typeof import("./externalExadataStorageServer").ExternalExadataStorageServer = null as any;
+utilities.lazyLoad(exports, ["ExternalExadataStorageServer"], () => require("./externalExadataStorageServer"));
 
 export { ExternalListenerArgs, ExternalListenerState } from "./externalListener";
 export type ExternalListener = import("./externalListener").ExternalListener;
@@ -575,6 +595,11 @@ export const getNamedCredentials: typeof import("./getNamedCredentials").getName
 export const getNamedCredentialsOutput: typeof import("./getNamedCredentials").getNamedCredentialsOutput = null as any;
 utilities.lazyLoad(exports, ["getNamedCredentials","getNamedCredentialsOutput"], () => require("./getNamedCredentials"));
 
+export { ManagedDatabaseArgs, ManagedDatabaseState } from "./managedDatabase";
+export type ManagedDatabase = import("./managedDatabase").ManagedDatabase;
+export const ManagedDatabase: typeof import("./managedDatabase").ManagedDatabase = null as any;
+utilities.lazyLoad(exports, ["ManagedDatabase"], () => require("./managedDatabase"));
+
 export { ManagedDatabaseGroupArgs, ManagedDatabaseGroupState } from "./managedDatabaseGroup";
 export type ManagedDatabaseGroup = import("./managedDatabaseGroup").ManagedDatabaseGroup;
 export const ManagedDatabaseGroup: typeof import("./managedDatabaseGroup").ManagedDatabaseGroup = null as any;
@@ -604,10 +629,14 @@ const _module = {
                 return new DbManagementPrivateEndpoint(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalAsm:ExternalAsm":
                 return new ExternalAsm(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance":
+                return new ExternalAsmInstance(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalCluster:ExternalCluster":
                 return new ExternalCluster(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance":
                 return new ExternalClusterInstance(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalDbHome:ExternalDbHome":
+                return new ExternalDbHome(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalDbNode:ExternalDbNode":
                 return new ExternalDbNode(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalDbSystem:ExternalDbSystem":
@@ -626,8 +655,14 @@ const _module = {
                 return new ExternalExadataInfrastructureExadataManagement(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector":
                 return new ExternalExadataStorageConnector(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid":
+                return new ExternalExadataStorageGrid(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer":
+                return new ExternalExadataStorageServer(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalListener:ExternalListener":
                 return new ExternalListener(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/managedDatabase:ManagedDatabase":
+                return new ManagedDatabase(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup":
                 return new ManagedDatabaseGroup(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter":
@@ -643,8 +678,10 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/dbManagementPrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalAsm", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalAsmInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalClusterInstance", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbHome", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbNode", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystem", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystemConnector", _module)
@@ -654,7 +691,10 @@ pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSyste
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataInfrastructure", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataInfrastructureExadataManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataStorageConnector", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataStorageGrid", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataStorageServer", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalListener", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabaseGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabasesChangeDatabaseParameter", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabasesResetDatabaseParameter", _module)

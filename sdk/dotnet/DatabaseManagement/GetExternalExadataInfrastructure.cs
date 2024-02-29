@@ -126,12 +126,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExternalExadataInfrastructureDatabaseSystemResult> DatabaseSystems;
         public readonly ImmutableArray<string> DbSystemIds;
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
         public readonly string DiscoveryKey;
         /// <summary>
         /// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         /// </summary>
         public readonly string DisplayName;
         public readonly string ExternalExadataInfrastructureId;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         /// </summary>
@@ -190,11 +198,15 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<string> dbSystemIds,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string discoveryKey,
 
             string displayName,
 
             string externalExadataInfrastructureId,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -225,9 +237,11 @@ namespace Pulumi.Oci.DatabaseManagement
             DatabaseCompartments = databaseCompartments;
             DatabaseSystems = databaseSystems;
             DbSystemIds = dbSystemIds;
+            DefinedTags = definedTags;
             DiscoveryKey = discoveryKey;
             DisplayName = displayName;
             ExternalExadataInfrastructureId = externalExadataInfrastructureId;
+            FreeformTags = freeformTags;
             Id = id;
             InternalId = internalId;
             LicenseModel = licenseModel;

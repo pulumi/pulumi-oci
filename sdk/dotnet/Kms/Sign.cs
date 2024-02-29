@@ -17,29 +17,6 @@ namespace Pulumi.Oci.Kms
     /// operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
     /// This operation is not supported for keys having protection mode `EXTERNAL`.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testSign = new Oci.Kms.Sign("testSign", new()
-    ///     {
-    ///         CryptoEndpoint = @var.Sign_message_crypto_endpoint,
-    ///         KeyId = oci_kms_key.Test_key.Id,
-    ///         Message = @var.Sign_message,
-    ///         SigningAlgorithm = @var.Sign_signing_algorithm,
-    ///         KeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///         MessageType = @var.Sign_message_type,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Sign can be imported using the `id`, e.g.

@@ -11,8 +11,10 @@ import com.pulumi.oci.DatabaseManagement.DbManagementPrivateEndpointArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.DbManagementPrivateEndpointState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
@@ -45,7 +47,9 @@ import javax.annotation.Nullable;
  *         var testDbManagementPrivateEndpoint = new DbManagementPrivateEndpoint(&#34;testDbManagementPrivateEndpoint&#34;, DbManagementPrivateEndpointArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .description(var_.db_management_private_endpoint_description())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isCluster(var_.db_management_private_endpoint_is_cluster())
  *             .nsgIds(var_.db_management_private_endpoint_nsg_ids())
  *             .build());
@@ -80,6 +84,20 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
         return this.compartmentId;
     }
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * (Updatable) The description of the private endpoint.
      * 
      */
@@ -92,6 +110,20 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      */
     public Output<String> description() {
         return this.description;
+    }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.

@@ -11,6 +11,7 @@ from .. import _utilities
 
 __all__ = [
     'GeneratedKeyKeyShapeArgs',
+    'KeyAutoKeyRotationDetailsArgs',
     'KeyExternalKeyReferenceArgs',
     'KeyExternalKeyReferenceDetailArgs',
     'KeyKeyShapeArgs',
@@ -90,6 +91,109 @@ class GeneratedKeyKeyShapeArgs:
     @curve_id.setter
     def curve_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "curve_id", value)
+
+
+@pulumi.input_type
+class KeyAutoKeyRotationDetailsArgs:
+    def __init__(__self__, *,
+                 last_rotation_message: Optional[pulumi.Input[str]] = None,
+                 last_rotation_status: Optional[pulumi.Input[str]] = None,
+                 rotation_interval_in_days: Optional[pulumi.Input[int]] = None,
+                 time_of_last_rotation: Optional[pulumi.Input[str]] = None,
+                 time_of_next_rotation: Optional[pulumi.Input[str]] = None,
+                 time_of_schedule_start: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] last_rotation_message: (Updatable) The last execution status message.
+        :param pulumi.Input[str] last_rotation_status: (Updatable) The status of last execution of auto key rotation.
+        :param pulumi.Input[int] rotation_interval_in_days: (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+        :param pulumi.Input[str] time_of_last_rotation: (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+        :param pulumi.Input[str] time_of_next_rotation: (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        :param pulumi.Input[str] time_of_schedule_start: (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        if last_rotation_message is not None:
+            pulumi.set(__self__, "last_rotation_message", last_rotation_message)
+        if last_rotation_status is not None:
+            pulumi.set(__self__, "last_rotation_status", last_rotation_status)
+        if rotation_interval_in_days is not None:
+            pulumi.set(__self__, "rotation_interval_in_days", rotation_interval_in_days)
+        if time_of_last_rotation is not None:
+            pulumi.set(__self__, "time_of_last_rotation", time_of_last_rotation)
+        if time_of_next_rotation is not None:
+            pulumi.set(__self__, "time_of_next_rotation", time_of_next_rotation)
+        if time_of_schedule_start is not None:
+            pulumi.set(__self__, "time_of_schedule_start", time_of_schedule_start)
+
+    @property
+    @pulumi.getter(name="lastRotationMessage")
+    def last_rotation_message(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The last execution status message.
+        """
+        return pulumi.get(self, "last_rotation_message")
+
+    @last_rotation_message.setter
+    def last_rotation_message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_rotation_message", value)
+
+    @property
+    @pulumi.getter(name="lastRotationStatus")
+    def last_rotation_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The status of last execution of auto key rotation.
+        """
+        return pulumi.get(self, "last_rotation_status")
+
+    @last_rotation_status.setter
+    def last_rotation_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_rotation_status", value)
+
+    @property
+    @pulumi.getter(name="rotationIntervalInDays")
+    def rotation_interval_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+        """
+        return pulumi.get(self, "rotation_interval_in_days")
+
+    @rotation_interval_in_days.setter
+    def rotation_interval_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "rotation_interval_in_days", value)
+
+    @property
+    @pulumi.getter(name="timeOfLastRotation")
+    def time_of_last_rotation(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+        """
+        return pulumi.get(self, "time_of_last_rotation")
+
+    @time_of_last_rotation.setter
+    def time_of_last_rotation(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_of_last_rotation", value)
+
+    @property
+    @pulumi.getter(name="timeOfNextRotation")
+    def time_of_next_rotation(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        return pulumi.get(self, "time_of_next_rotation")
+
+    @time_of_next_rotation.setter
+    def time_of_next_rotation(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_of_next_rotation", value)
+
+    @property
+    @pulumi.getter(name="timeOfScheduleStart")
+    def time_of_schedule_start(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        return pulumi.get(self, "time_of_schedule_start")
+
+    @time_of_schedule_start.setter
+    def time_of_schedule_start(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_of_schedule_start", value)
 
 
 @pulumi.input_type

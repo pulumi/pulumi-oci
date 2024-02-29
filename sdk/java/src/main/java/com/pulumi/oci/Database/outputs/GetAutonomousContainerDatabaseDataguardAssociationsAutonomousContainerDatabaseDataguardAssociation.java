@@ -24,7 +24,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
      * 
      */
     private String applyRate;
-    private Integer autonomousContainerDatabaseDataguardAssociationId;
+    private String autonomousContainerDatabaseDataguardAssociationId;
     /**
      * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -63,9 +63,11 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
      * 
      */
     private String peerAutonomousContainerDatabaseId;
+    private String peerAutonomousVmClusterId;
     private String peerCloudAutonomousVmClusterId;
+    private String peerDbUniqueName;
     /**
-     * @return The current state of Autonomous Data Guard.
+     * @return The current state of the Autonomous Container Database.
      * 
      */
     private String peerLifecycleState;
@@ -126,7 +128,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     public String applyRate() {
         return this.applyRate;
     }
-    public Integer autonomousContainerDatabaseDataguardAssociationId() {
+    public String autonomousContainerDatabaseDataguardAssociationId() {
         return this.autonomousContainerDatabaseDataguardAssociationId;
     }
     /**
@@ -187,11 +189,17 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     public String peerAutonomousContainerDatabaseId() {
         return this.peerAutonomousContainerDatabaseId;
     }
+    public String peerAutonomousVmClusterId() {
+        return this.peerAutonomousVmClusterId;
+    }
     public String peerCloudAutonomousVmClusterId() {
         return this.peerCloudAutonomousVmClusterId;
     }
+    public String peerDbUniqueName() {
+        return this.peerDbUniqueName;
+    }
     /**
-     * @return The current state of Autonomous Data Guard.
+     * @return The current state of the Autonomous Container Database.
      * 
      */
     public String peerLifecycleState() {
@@ -268,7 +276,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     public static final class Builder {
         private String applyLag;
         private String applyRate;
-        private Integer autonomousContainerDatabaseDataguardAssociationId;
+        private String autonomousContainerDatabaseDataguardAssociationId;
         private String autonomousContainerDatabaseId;
         private Integer fastStartFailOverLagLimitInSeconds;
         private String id;
@@ -279,7 +287,9 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
         private String peerAutonomousContainerDatabaseDataguardAssociationId;
         private String peerAutonomousContainerDatabaseDisplayName;
         private String peerAutonomousContainerDatabaseId;
+        private String peerAutonomousVmClusterId;
         private String peerCloudAutonomousVmClusterId;
+        private String peerDbUniqueName;
         private String peerLifecycleState;
         private String peerRole;
         private String protectionMode;
@@ -306,7 +316,9 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     	      this.peerAutonomousContainerDatabaseDataguardAssociationId = defaults.peerAutonomousContainerDatabaseDataguardAssociationId;
     	      this.peerAutonomousContainerDatabaseDisplayName = defaults.peerAutonomousContainerDatabaseDisplayName;
     	      this.peerAutonomousContainerDatabaseId = defaults.peerAutonomousContainerDatabaseId;
+    	      this.peerAutonomousVmClusterId = defaults.peerAutonomousVmClusterId;
     	      this.peerCloudAutonomousVmClusterId = defaults.peerCloudAutonomousVmClusterId;
+    	      this.peerDbUniqueName = defaults.peerDbUniqueName;
     	      this.peerLifecycleState = defaults.peerLifecycleState;
     	      this.peerRole = defaults.peerRole;
     	      this.protectionMode = defaults.protectionMode;
@@ -336,7 +348,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousContainerDatabaseDataguardAssociationId(Integer autonomousContainerDatabaseDataguardAssociationId) {
+        public Builder autonomousContainerDatabaseDataguardAssociationId(String autonomousContainerDatabaseDataguardAssociationId) {
             if (autonomousContainerDatabaseDataguardAssociationId == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "autonomousContainerDatabaseDataguardAssociationId");
             }
@@ -427,11 +439,27 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
             return this;
         }
         @CustomType.Setter
+        public Builder peerAutonomousVmClusterId(String peerAutonomousVmClusterId) {
+            if (peerAutonomousVmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "peerAutonomousVmClusterId");
+            }
+            this.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
             if (peerCloudAutonomousVmClusterId == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "peerCloudAutonomousVmClusterId");
             }
             this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder peerDbUniqueName(String peerDbUniqueName) {
+            if (peerDbUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "peerDbUniqueName");
+            }
+            this.peerDbUniqueName = peerDbUniqueName;
             return this;
         }
         @CustomType.Setter
@@ -529,7 +557,9 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
             _resultValue.peerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;
             _resultValue.peerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
             _resultValue.peerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
+            _resultValue.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
             _resultValue.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
+            _resultValue.peerDbUniqueName = peerDbUniqueName;
             _resultValue.peerLifecycleState = peerLifecycleState;
             _resultValue.peerRole = peerRole;
             _resultValue.protectionMode = protectionMode;

@@ -90,6 +90,10 @@ export interface GetControlResult {
      * Description associated with the latest modification of the operator control.
      */
     readonly lastModifiedInfo: string;
+    /**
+     * Number of approvers required to approve an access request.
+     */
+    readonly numberOfApprovers: number;
     readonly operatorControlId: string;
     /**
      * Name of the operator control. The name must be unique.

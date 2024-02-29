@@ -38,6 +38,21 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -182,6 +197,7 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
 
     private CloudExadataInfrastructureArgs(CloudExadataInfrastructureArgs $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.computeCount = $.computeCount;
         this.customerContacts = $.customerContacts;
@@ -230,6 +246,27 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
          */
         public Builder availabilityDomain(String availabilityDomain) {
             return availabilityDomain(Output.of(availabilityDomain));
+        }
+
+        /**
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**

@@ -25,12 +25,14 @@ class OperatorControlAssignmentArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
+                 is_hypervisor_log_forwarded: Optional[pulumi.Input[bool]] = None,
                  is_log_forwarded: Optional[pulumi.Input[bool]] = None,
                  remote_syslog_server_address: Optional[pulumi.Input[str]] = None,
                  remote_syslog_server_ca_cert: Optional[pulumi.Input[str]] = None,
                  remote_syslog_server_port: Optional[pulumi.Input[int]] = None,
                  time_assignment_from: Optional[pulumi.Input[str]] = None,
-                 time_assignment_to: Optional[pulumi.Input[str]] = None):
+                 time_assignment_to: Optional[pulumi.Input[str]] = None,
+                 validate_assignment_trigger: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a OperatorControlAssignment resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the operator control assignment.
@@ -44,12 +46,14 @@ class OperatorControlAssignmentArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
+        :param pulumi.Input[bool] is_hypervisor_log_forwarded: (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
         :param pulumi.Input[bool] is_log_forwarded: (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         :param pulumi.Input[str] remote_syslog_server_address: (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
         :param pulumi.Input[str] remote_syslog_server_ca_cert: (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
         :param pulumi.Input[int] remote_syslog_server_port: (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
         :param pulumi.Input[str] time_assignment_from: (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[int] validate_assignment_trigger: (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
                
                
                ** IMPORTANT **
@@ -70,6 +74,8 @@ class OperatorControlAssignmentArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_approve_during_maintenance is not None:
             pulumi.set(__self__, "is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
+        if is_hypervisor_log_forwarded is not None:
+            pulumi.set(__self__, "is_hypervisor_log_forwarded", is_hypervisor_log_forwarded)
         if is_log_forwarded is not None:
             pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
         if remote_syslog_server_address is not None:
@@ -82,6 +88,8 @@ class OperatorControlAssignmentArgs:
             pulumi.set(__self__, "time_assignment_from", time_assignment_from)
         if time_assignment_to is not None:
             pulumi.set(__self__, "time_assignment_to", time_assignment_to)
+        if validate_assignment_trigger is not None:
+            pulumi.set(__self__, "validate_assignment_trigger", validate_assignment_trigger)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -216,6 +224,18 @@ class OperatorControlAssignmentArgs:
         pulumi.set(self, "is_auto_approve_during_maintenance", value)
 
     @property
+    @pulumi.getter(name="isHypervisorLogForwarded")
+    def is_hypervisor_log_forwarded(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+        """
+        return pulumi.get(self, "is_hypervisor_log_forwarded")
+
+    @is_hypervisor_log_forwarded.setter
+    def is_hypervisor_log_forwarded(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_hypervisor_log_forwarded", value)
+
+    @property
     @pulumi.getter(name="isLogForwarded")
     def is_log_forwarded(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -279,17 +299,29 @@ class OperatorControlAssignmentArgs:
     @pulumi.getter(name="timeAssignmentTo")
     def time_assignment_to(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_assignment_to")
 
     @time_assignment_to.setter
     def time_assignment_to(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_assignment_to", value)
+
+    @property
+    @pulumi.getter(name="validateAssignmentTrigger")
+    def validate_assignment_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "validate_assignment_trigger")
+
+    @validate_assignment_trigger.setter
+    def validate_assignment_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "validate_assignment_trigger", value)
 
 
 @pulumi.input_type
@@ -306,8 +338,10 @@ class _OperatorControlAssignmentState:
                  is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
                  is_default_assignment: Optional[pulumi.Input[bool]] = None,
                  is_enforced_always: Optional[pulumi.Input[bool]] = None,
+                 is_hypervisor_log_forwarded: Optional[pulumi.Input[bool]] = None,
                  is_log_forwarded: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 op_control_name: Optional[pulumi.Input[str]] = None,
                  operator_control_id: Optional[pulumi.Input[str]] = None,
                  remote_syslog_server_address: Optional[pulumi.Input[str]] = None,
                  remote_syslog_server_ca_cert: Optional[pulumi.Input[str]] = None,
@@ -321,7 +355,8 @@ class _OperatorControlAssignmentState:
                  time_assignment_to: Optional[pulumi.Input[str]] = None,
                  time_of_assignment: Optional[pulumi.Input[str]] = None,
                  time_of_deletion: Optional[pulumi.Input[str]] = None,
-                 unassigner_id: Optional[pulumi.Input[str]] = None):
+                 unassigner_id: Optional[pulumi.Input[str]] = None,
+                 validate_assignment_trigger: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering OperatorControlAssignment resources.
         :param pulumi.Input[str] assigner_id: The OCID of the user who created this operator control assignment.
@@ -335,8 +370,10 @@ class _OperatorControlAssignmentState:
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
         :param pulumi.Input[bool] is_default_assignment: Whether the assignment is a default assignment.
         :param pulumi.Input[bool] is_enforced_always: (Updatable) If set, then the target resource is always governed by the operator control.
+        :param pulumi.Input[bool] is_hypervisor_log_forwarded: (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
         :param pulumi.Input[bool] is_log_forwarded: (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         :param pulumi.Input[str] lifecycle_details: More in detail about the lifeCycleState.
+        :param pulumi.Input[str] op_control_name: Name of the operator control name associated.
         :param pulumi.Input[str] operator_control_id: The OCID of the operator control that is being assigned to a target resource.
         :param pulumi.Input[str] remote_syslog_server_address: (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
         :param pulumi.Input[str] remote_syslog_server_ca_cert: (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
@@ -347,14 +384,15 @@ class _OperatorControlAssignmentState:
         :param pulumi.Input[str] resource_type: Type of the target resource.
         :param pulumi.Input[str] state: The current lifcycle state of the OperatorControl.
         :param pulumi.Input[str] time_assignment_from: (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[str] time_of_assignment: Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[str] time_of_deletion: Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[str] unassigner_id: User id who released the operatorControl.
+        :param pulumi.Input[int] validate_assignment_trigger: (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_of_assignment: Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_of_deletion: Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] unassigner_id: User id who released the operatorControl.
         """
         if assigner_id is not None:
             pulumi.set(__self__, "assigner_id", assigner_id)
@@ -378,10 +416,14 @@ class _OperatorControlAssignmentState:
             pulumi.set(__self__, "is_default_assignment", is_default_assignment)
         if is_enforced_always is not None:
             pulumi.set(__self__, "is_enforced_always", is_enforced_always)
+        if is_hypervisor_log_forwarded is not None:
+            pulumi.set(__self__, "is_hypervisor_log_forwarded", is_hypervisor_log_forwarded)
         if is_log_forwarded is not None:
             pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if op_control_name is not None:
+            pulumi.set(__self__, "op_control_name", op_control_name)
         if operator_control_id is not None:
             pulumi.set(__self__, "operator_control_id", operator_control_id)
         if remote_syslog_server_address is not None:
@@ -410,6 +452,8 @@ class _OperatorControlAssignmentState:
             pulumi.set(__self__, "time_of_deletion", time_of_deletion)
         if unassigner_id is not None:
             pulumi.set(__self__, "unassigner_id", unassigner_id)
+        if validate_assignment_trigger is not None:
+            pulumi.set(__self__, "validate_assignment_trigger", validate_assignment_trigger)
 
     @property
     @pulumi.getter(name="assignerId")
@@ -544,6 +588,18 @@ class _OperatorControlAssignmentState:
         pulumi.set(self, "is_enforced_always", value)
 
     @property
+    @pulumi.getter(name="isHypervisorLogForwarded")
+    def is_hypervisor_log_forwarded(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+        """
+        return pulumi.get(self, "is_hypervisor_log_forwarded")
+
+    @is_hypervisor_log_forwarded.setter
+    def is_hypervisor_log_forwarded(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_hypervisor_log_forwarded", value)
+
+    @property
     @pulumi.getter(name="isLogForwarded")
     def is_log_forwarded(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -566,6 +622,18 @@ class _OperatorControlAssignmentState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter(name="opControlName")
+    def op_control_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the operator control name associated.
+        """
+        return pulumi.get(self, "op_control_name")
+
+    @op_control_name.setter
+    def op_control_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "op_control_name", value)
 
     @property
     @pulumi.getter(name="operatorControlId")
@@ -691,11 +759,7 @@ class _OperatorControlAssignmentState:
     @pulumi.getter(name="timeAssignmentTo")
     def time_assignment_to(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_assignment_to")
 
@@ -739,6 +803,22 @@ class _OperatorControlAssignmentState:
     def unassigner_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "unassigner_id", value)
 
+    @property
+    @pulumi.getter(name="validateAssignmentTrigger")
+    def validate_assignment_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "validate_assignment_trigger")
+
+    @validate_assignment_trigger.setter
+    def validate_assignment_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "validate_assignment_trigger", value)
+
 
 class OperatorControlAssignment(pulumi.CustomResource):
     @overload
@@ -751,6 +831,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
                  is_enforced_always: Optional[pulumi.Input[bool]] = None,
+                 is_hypervisor_log_forwarded: Optional[pulumi.Input[bool]] = None,
                  is_log_forwarded: Optional[pulumi.Input[bool]] = None,
                  operator_control_id: Optional[pulumi.Input[str]] = None,
                  remote_syslog_server_address: Optional[pulumi.Input[str]] = None,
@@ -762,6 +843,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
                  resource_type: Optional[pulumi.Input[str]] = None,
                  time_assignment_from: Optional[pulumi.Input[str]] = None,
                  time_assignment_to: Optional[pulumi.Input[str]] = None,
+                 validate_assignment_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         This resource provides the Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -786,6 +868,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
             defined_tags=var["operator_control_assignment_defined_tags"],
             freeform_tags=var["operator_control_assignment_freeform_tags"],
             is_auto_approve_during_maintenance=var["operator_control_assignment_is_auto_approve_during_maintenance"],
+            is_hypervisor_log_forwarded=var["operator_control_assignment_is_hypervisor_log_forwarded"],
             is_log_forwarded=var["operator_control_assignment_is_log_forwarded"],
             remote_syslog_server_address=var["operator_control_assignment_remote_syslog_server_address"],
             remote_syslog_server_ca_cert=var["operator_control_assignment_remote_syslog_server_ca_cert"],
@@ -810,6 +893,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
         :param pulumi.Input[bool] is_enforced_always: (Updatable) If set, then the target resource is always governed by the operator control.
+        :param pulumi.Input[bool] is_hypervisor_log_forwarded: (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
         :param pulumi.Input[bool] is_log_forwarded: (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         :param pulumi.Input[str] operator_control_id: The OCID of the operator control that is being assigned to a target resource.
         :param pulumi.Input[str] remote_syslog_server_address: (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
@@ -820,7 +904,8 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] resource_name_: Name of the target resource.
         :param pulumi.Input[str] resource_type: Type of the target resource.
         :param pulumi.Input[str] time_assignment_from: (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[int] validate_assignment_trigger: (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
                
                
                ** IMPORTANT **
@@ -855,6 +940,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
             defined_tags=var["operator_control_assignment_defined_tags"],
             freeform_tags=var["operator_control_assignment_freeform_tags"],
             is_auto_approve_during_maintenance=var["operator_control_assignment_is_auto_approve_during_maintenance"],
+            is_hypervisor_log_forwarded=var["operator_control_assignment_is_hypervisor_log_forwarded"],
             is_log_forwarded=var["operator_control_assignment_is_log_forwarded"],
             remote_syslog_server_address=var["operator_control_assignment_remote_syslog_server_address"],
             remote_syslog_server_ca_cert=var["operator_control_assignment_remote_syslog_server_ca_cert"],
@@ -892,6 +978,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
                  is_enforced_always: Optional[pulumi.Input[bool]] = None,
+                 is_hypervisor_log_forwarded: Optional[pulumi.Input[bool]] = None,
                  is_log_forwarded: Optional[pulumi.Input[bool]] = None,
                  operator_control_id: Optional[pulumi.Input[str]] = None,
                  remote_syslog_server_address: Optional[pulumi.Input[str]] = None,
@@ -903,6 +990,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
                  resource_type: Optional[pulumi.Input[str]] = None,
                  time_assignment_from: Optional[pulumi.Input[str]] = None,
                  time_assignment_to: Optional[pulumi.Input[str]] = None,
+                 validate_assignment_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -922,6 +1010,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
             if is_enforced_always is None and not opts.urn:
                 raise TypeError("Missing required property 'is_enforced_always'")
             __props__.__dict__["is_enforced_always"] = is_enforced_always
+            __props__.__dict__["is_hypervisor_log_forwarded"] = is_hypervisor_log_forwarded
             __props__.__dict__["is_log_forwarded"] = is_log_forwarded
             if operator_control_id is None and not opts.urn:
                 raise TypeError("Missing required property 'operator_control_id'")
@@ -943,12 +1032,14 @@ class OperatorControlAssignment(pulumi.CustomResource):
             __props__.__dict__["resource_type"] = resource_type
             __props__.__dict__["time_assignment_from"] = time_assignment_from
             __props__.__dict__["time_assignment_to"] = time_assignment_to
+            __props__.__dict__["validate_assignment_trigger"] = validate_assignment_trigger
             __props__.__dict__["assigner_id"] = None
             __props__.__dict__["detachment_description"] = None
             __props__.__dict__["error_code"] = None
             __props__.__dict__["error_message"] = None
             __props__.__dict__["is_default_assignment"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["op_control_name"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_of_assignment"] = None
             __props__.__dict__["time_of_deletion"] = None
@@ -974,8 +1065,10 @@ class OperatorControlAssignment(pulumi.CustomResource):
             is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
             is_default_assignment: Optional[pulumi.Input[bool]] = None,
             is_enforced_always: Optional[pulumi.Input[bool]] = None,
+            is_hypervisor_log_forwarded: Optional[pulumi.Input[bool]] = None,
             is_log_forwarded: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            op_control_name: Optional[pulumi.Input[str]] = None,
             operator_control_id: Optional[pulumi.Input[str]] = None,
             remote_syslog_server_address: Optional[pulumi.Input[str]] = None,
             remote_syslog_server_ca_cert: Optional[pulumi.Input[str]] = None,
@@ -989,7 +1082,8 @@ class OperatorControlAssignment(pulumi.CustomResource):
             time_assignment_to: Optional[pulumi.Input[str]] = None,
             time_of_assignment: Optional[pulumi.Input[str]] = None,
             time_of_deletion: Optional[pulumi.Input[str]] = None,
-            unassigner_id: Optional[pulumi.Input[str]] = None) -> 'OperatorControlAssignment':
+            unassigner_id: Optional[pulumi.Input[str]] = None,
+            validate_assignment_trigger: Optional[pulumi.Input[int]] = None) -> 'OperatorControlAssignment':
         """
         Get an existing OperatorControlAssignment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1008,8 +1102,10 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
         :param pulumi.Input[bool] is_default_assignment: Whether the assignment is a default assignment.
         :param pulumi.Input[bool] is_enforced_always: (Updatable) If set, then the target resource is always governed by the operator control.
+        :param pulumi.Input[bool] is_hypervisor_log_forwarded: (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
         :param pulumi.Input[bool] is_log_forwarded: (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         :param pulumi.Input[str] lifecycle_details: More in detail about the lifeCycleState.
+        :param pulumi.Input[str] op_control_name: Name of the operator control name associated.
         :param pulumi.Input[str] operator_control_id: The OCID of the operator control that is being assigned to a target resource.
         :param pulumi.Input[str] remote_syslog_server_address: (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
         :param pulumi.Input[str] remote_syslog_server_ca_cert: (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
@@ -1020,14 +1116,15 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] resource_type: Type of the target resource.
         :param pulumi.Input[str] state: The current lifcycle state of the OperatorControl.
         :param pulumi.Input[str] time_assignment_from: (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[str] time_of_assignment: Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[str] time_of_deletion: Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[str] unassigner_id: User id who released the operatorControl.
+        :param pulumi.Input[int] validate_assignment_trigger: (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_of_assignment: Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_of_deletion: Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] unassigner_id: User id who released the operatorControl.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1044,8 +1141,10 @@ class OperatorControlAssignment(pulumi.CustomResource):
         __props__.__dict__["is_auto_approve_during_maintenance"] = is_auto_approve_during_maintenance
         __props__.__dict__["is_default_assignment"] = is_default_assignment
         __props__.__dict__["is_enforced_always"] = is_enforced_always
+        __props__.__dict__["is_hypervisor_log_forwarded"] = is_hypervisor_log_forwarded
         __props__.__dict__["is_log_forwarded"] = is_log_forwarded
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["op_control_name"] = op_control_name
         __props__.__dict__["operator_control_id"] = operator_control_id
         __props__.__dict__["remote_syslog_server_address"] = remote_syslog_server_address
         __props__.__dict__["remote_syslog_server_ca_cert"] = remote_syslog_server_ca_cert
@@ -1060,6 +1159,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
         __props__.__dict__["time_of_assignment"] = time_of_assignment
         __props__.__dict__["time_of_deletion"] = time_of_deletion
         __props__.__dict__["unassigner_id"] = unassigner_id
+        __props__.__dict__["validate_assignment_trigger"] = validate_assignment_trigger
         return OperatorControlAssignment(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1151,6 +1251,14 @@ class OperatorControlAssignment(pulumi.CustomResource):
         return pulumi.get(self, "is_enforced_always")
 
     @property
+    @pulumi.getter(name="isHypervisorLogForwarded")
+    def is_hypervisor_log_forwarded(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+        """
+        return pulumi.get(self, "is_hypervisor_log_forwarded")
+
+    @property
     @pulumi.getter(name="isLogForwarded")
     def is_log_forwarded(self) -> pulumi.Output[bool]:
         """
@@ -1165,6 +1273,14 @@ class OperatorControlAssignment(pulumi.CustomResource):
         More in detail about the lifeCycleState.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="opControlName")
+    def op_control_name(self) -> pulumi.Output[str]:
+        """
+        Name of the operator control name associated.
+        """
+        return pulumi.get(self, "op_control_name")
 
     @property
     @pulumi.getter(name="operatorControlId")
@@ -1250,11 +1366,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
     @pulumi.getter(name="timeAssignmentTo")
     def time_assignment_to(self) -> pulumi.Output[str]:
         """
-        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_assignment_to")
 
@@ -1281,4 +1393,16 @@ class OperatorControlAssignment(pulumi.CustomResource):
         User id who released the operatorControl.
         """
         return pulumi.get(self, "unassigner_id")
+
+    @property
+    @pulumi.getter(name="validateAssignmentTrigger")
+    def validate_assignment_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "validate_assignment_trigger")
 

@@ -20,6 +20,7 @@ class CloudExadataInfrastructureArgs:
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
                  shape: pulumi.Input[str],
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[int]] = None,
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -32,6 +33,7 @@ class CloudExadataInfrastructureArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -47,6 +49,8 @@ class CloudExadataInfrastructureArgs:
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "shape", shape)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compute_count is not None:
             pulumi.set(__self__, "compute_count", compute_count)
         if customer_contacts is not None:
@@ -107,6 +111,18 @@ class CloudExadataInfrastructureArgs:
     @shape.setter
     def shape(self, value: pulumi.Input[str]):
         pulumi.set(self, "shape", value)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @property
     @pulumi.getter(name="computeCount")
@@ -192,6 +208,7 @@ class _CloudExadataInfrastructureState:
                  additional_storage_count: Optional[pulumi.Input[int]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  available_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[int]] = None,
                  cpu_count: Optional[pulumi.Input[int]] = None,
@@ -217,6 +234,7 @@ class _CloudExadataInfrastructureState:
                  state: Optional[pulumi.Input[str]] = None,
                  storage_count: Optional[pulumi.Input[int]] = None,
                  storage_server_version: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  total_storage_size_in_gbs: Optional[pulumi.Input[int]] = None):
         """
@@ -225,6 +243,7 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[str] availability_domain: The availability domain where the cloud Exadata infrastructure is located.
         :param pulumi.Input[int] available_storage_size_in_gbs: The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[int] cpu_count: The total number of CPU cores allocated.
@@ -254,6 +273,7 @@ class _CloudExadataInfrastructureState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param pulumi.Input[int] total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
@@ -265,6 +285,8 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if available_storage_size_in_gbs is not None:
             pulumi.set(__self__, "available_storage_size_in_gbs", available_storage_size_in_gbs)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_count is not None:
@@ -315,6 +337,8 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "storage_count", storage_count)
         if storage_server_version is not None:
             pulumi.set(__self__, "storage_server_version", storage_server_version)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if total_storage_size_in_gbs is not None:
@@ -367,6 +391,18 @@ class _CloudExadataInfrastructureState:
     @available_storage_size_in_gbs.setter
     def available_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "available_storage_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -673,6 +709,18 @@ class _CloudExadataInfrastructureState:
         pulumi.set(self, "storage_server_version", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -703,6 +751,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[int]] = None,
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]]] = None,
@@ -729,6 +778,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["cloud_exadata_infrastructure_display_name"],
             shape=var["cloud_exadata_infrastructure_shape"],
+            cluster_placement_group_id=var["cloud_exadata_infrastructure_cluster_placement_group_id"],
             compute_count=var["cloud_exadata_infrastructure_compute_count"],
             customer_contacts=[oci.database.CloudExadataInfrastructureCustomerContactArgs(
                 email=var["cloud_exadata_infrastructure_customer_contacts_email"],
@@ -767,6 +817,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The availability domain where the cloud Exadata infrastructure is located.
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]] customer_contacts: (Updatable) Customer contacts.
@@ -803,6 +854,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["cloud_exadata_infrastructure_display_name"],
             shape=var["cloud_exadata_infrastructure_shape"],
+            cluster_placement_group_id=var["cloud_exadata_infrastructure_cluster_placement_group_id"],
             compute_count=var["cloud_exadata_infrastructure_compute_count"],
             customer_contacts=[oci.database.CloudExadataInfrastructureCustomerContactArgs(
                 email=var["cloud_exadata_infrastructure_customer_contacts_email"],
@@ -854,6 +906,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[int]] = None,
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]]] = None,
@@ -875,6 +928,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
+            __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -909,6 +963,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["next_maintenance_run_id"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["storage_server_version"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["total_storage_size_in_gbs"] = None
         super(CloudExadataInfrastructure, __self__).__init__(
@@ -925,6 +980,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             additional_storage_count: Optional[pulumi.Input[int]] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             available_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+            cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_count: Optional[pulumi.Input[int]] = None,
             cpu_count: Optional[pulumi.Input[int]] = None,
@@ -950,6 +1006,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             storage_count: Optional[pulumi.Input[int]] = None,
             storage_server_version: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             total_storage_size_in_gbs: Optional[pulumi.Input[int]] = None) -> 'CloudExadataInfrastructure':
         """
@@ -963,6 +1020,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[str] availability_domain: The availability domain where the cloud Exadata infrastructure is located.
         :param pulumi.Input[int] available_storage_size_in_gbs: The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[int] cpu_count: The total number of CPU cores allocated.
@@ -992,6 +1050,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param pulumi.Input[int] total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
@@ -1003,6 +1062,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["additional_storage_count"] = additional_storage_count
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["available_storage_size_in_gbs"] = available_storage_size_in_gbs
+        __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_count"] = compute_count
         __props__.__dict__["cpu_count"] = cpu_count
@@ -1028,6 +1088,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_count"] = storage_count
         __props__.__dict__["storage_server_version"] = storage_server_version
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["total_storage_size_in_gbs"] = total_storage_size_in_gbs
         return CloudExadataInfrastructure(resource_name, opts=opts, __props__=__props__)
@@ -1063,6 +1124,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
         return pulumi.get(self, "available_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1267,6 +1336,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         """
         return pulumi.get(self, "storage_server_version")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

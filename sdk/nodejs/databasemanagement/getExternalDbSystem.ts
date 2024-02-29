@@ -57,6 +57,10 @@ export interface GetExternalDbSystemResult {
      */
     readonly dbSystemDiscoveryId: string;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    readonly definedTags: {[key: string]: any};
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      */
     readonly discoveryAgentId: string;
@@ -65,6 +69,10 @@ export interface GetExternalDbSystemResult {
      */
     readonly displayName: string;
     readonly externalDbSystemId: string;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    readonly freeformTags: {[key: string]: any};
     /**
      * The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      */

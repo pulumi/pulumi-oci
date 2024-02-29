@@ -22,6 +22,7 @@ import javax.annotation.Nullable;
  * This operation is not supported for keys having protection mode `EXTERNAL`.
  * 
  * ## Example Usage
+ * 
  * ```java
  * package generated_program;
  * 
@@ -49,6 +50,7 @@ import javax.annotation.Nullable;
  *             .message(var_.sign_message())
  *             .signingAlgorithm(var_.sign_signing_algorithm())
  *             .keyVersionId(oci_kms_key_version.test_key_version().id())
+ *             .loggingContext(var_.sign_logging_context())
  *             .messageType(var_.sign_message_type())
  *             .build());
  * 

@@ -40,7 +40,6 @@ import (
 //			_, err := Database.NewAutonomousContainerDatabaseDataguardAssociation(ctx, "testAutonomousContainerDatabaseDataguardAssociation", &Database.AutonomousContainerDatabaseDataguardAssociationArgs{
 //				AutonomousContainerDatabaseId:              pulumi.Any(oci_database_autonomous_container_database.Test_autonomous_container_database.Id),
 //				PeerAutonomousContainerDatabaseDisplayName: pulumi.Any(_var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name),
-//				PeerCloudAutonomousVmClusterId:             pulumi.Any(oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id),
 //				ProtectionMode:                             pulumi.Any(_var.Autonomous_container_database_dataguard_association_protection_mode),
 //				FastStartFailOverLagLimitInSeconds:         pulumi.Any(_var.Autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds),
 //				IsAutomaticFailoverEnabled:                 pulumi.Any(_var.Autonomous_container_database_dataguard_association_is_automatic_failover_enabled),
@@ -58,6 +57,9 @@ import (
 //					RecoveryWindowInDays: pulumi.Any(_var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days),
 //				},
 //				PeerAutonomousContainerDatabaseCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
+//				PeerAutonomousVmClusterId:                    pulumi.Any(oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id),
+//				PeerCloudAutonomousVmClusterId:               pulumi.Any(oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id),
+//				PeerDbUniqueName:                             pulumi.Any(_var.Autonomous_container_database_dataguard_association_peer_db_unique_name),
 //				StandbyMaintenanceBufferInDays:               pulumi.Any(_var.Autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days),
 //			})
 //			if err != nil {
@@ -85,7 +87,7 @@ type AutonomousContainerDatabaseDataguardAssociation struct {
 	ApplyLag pulumi.StringOutput `pulumi:"applyLag"`
 	// The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
 	ApplyRate                                         pulumi.StringOutput `pulumi:"applyRate"`
-	AutonomousContainerDatabaseDataguardAssociationId pulumi.IntOutput    `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
+	AutonomousContainerDatabaseDataguardAssociationId pulumi.StringOutput `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId pulumi.StringOutput `pulumi:"autonomousContainerDatabaseId"`
 	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
@@ -104,9 +106,13 @@ type AutonomousContainerDatabaseDataguardAssociation struct {
 	PeerAutonomousContainerDatabaseDisplayName pulumi.StringOutput `pulumi:"peerAutonomousContainerDatabaseDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseId pulumi.StringOutput `pulumi:"peerAutonomousContainerDatabaseId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+	PeerAutonomousVmClusterId pulumi.StringOutput `pulumi:"peerAutonomousVmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
 	PeerCloudAutonomousVmClusterId pulumi.StringOutput `pulumi:"peerCloudAutonomousVmClusterId"`
-	// The current state of Autonomous Data Guard.
+	// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+	PeerDbUniqueName pulumi.StringOutput `pulumi:"peerDbUniqueName"`
+	// The current state of the Autonomous Container Database.
 	PeerLifecycleState pulumi.StringOutput `pulumi:"peerLifecycleState"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	PeerRole pulumi.StringOutput `pulumi:"peerRole"`
@@ -144,9 +150,6 @@ func NewAutonomousContainerDatabaseDataguardAssociation(ctx *pulumi.Context,
 	if args.PeerAutonomousContainerDatabaseDisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'PeerAutonomousContainerDatabaseDisplayName'")
 	}
-	if args.PeerCloudAutonomousVmClusterId == nil {
-		return nil, errors.New("invalid value for required argument 'PeerCloudAutonomousVmClusterId'")
-	}
 	if args.ProtectionMode == nil {
 		return nil, errors.New("invalid value for required argument 'ProtectionMode'")
 	}
@@ -177,7 +180,7 @@ type autonomousContainerDatabaseDataguardAssociationState struct {
 	ApplyLag *string `pulumi:"applyLag"`
 	// The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
 	ApplyRate                                         *string `pulumi:"applyRate"`
-	AutonomousContainerDatabaseDataguardAssociationId *int    `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
+	AutonomousContainerDatabaseDataguardAssociationId *string `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId *string `pulumi:"autonomousContainerDatabaseId"`
 	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
@@ -196,9 +199,13 @@ type autonomousContainerDatabaseDataguardAssociationState struct {
 	PeerAutonomousContainerDatabaseDisplayName *string `pulumi:"peerAutonomousContainerDatabaseDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseId *string `pulumi:"peerAutonomousContainerDatabaseId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+	PeerAutonomousVmClusterId *string `pulumi:"peerAutonomousVmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
 	PeerCloudAutonomousVmClusterId *string `pulumi:"peerCloudAutonomousVmClusterId"`
-	// The current state of Autonomous Data Guard.
+	// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+	PeerDbUniqueName *string `pulumi:"peerDbUniqueName"`
+	// The current state of the Autonomous Container Database.
 	PeerLifecycleState *string `pulumi:"peerLifecycleState"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	PeerRole *string `pulumi:"peerRole"`
@@ -228,7 +235,7 @@ type AutonomousContainerDatabaseDataguardAssociationState struct {
 	ApplyLag pulumi.StringPtrInput
 	// The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
 	ApplyRate                                         pulumi.StringPtrInput
-	AutonomousContainerDatabaseDataguardAssociationId pulumi.IntPtrInput
+	AutonomousContainerDatabaseDataguardAssociationId pulumi.StringPtrInput
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId pulumi.StringPtrInput
 	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
@@ -247,9 +254,13 @@ type AutonomousContainerDatabaseDataguardAssociationState struct {
 	PeerAutonomousContainerDatabaseDisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+	PeerAutonomousVmClusterId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
 	PeerCloudAutonomousVmClusterId pulumi.StringPtrInput
-	// The current state of Autonomous Data Guard.
+	// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+	PeerDbUniqueName pulumi.StringPtrInput
+	// The current state of the Autonomous Container Database.
 	PeerLifecycleState pulumi.StringPtrInput
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	PeerRole pulumi.StringPtrInput
@@ -279,7 +290,7 @@ func (AutonomousContainerDatabaseDataguardAssociationState) ElementType() reflec
 }
 
 type autonomousContainerDatabaseDataguardAssociationArgs struct {
-	AutonomousContainerDatabaseDataguardAssociationId *int `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
+	AutonomousContainerDatabaseDataguardAssociationId *string `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
@@ -292,8 +303,12 @@ type autonomousContainerDatabaseDataguardAssociationArgs struct {
 	PeerAutonomousContainerDatabaseCompartmentId *string `pulumi:"peerAutonomousContainerDatabaseCompartmentId"`
 	// The display name for the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseDisplayName string `pulumi:"peerAutonomousContainerDatabaseDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+	PeerAutonomousVmClusterId *string `pulumi:"peerAutonomousVmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
-	PeerCloudAutonomousVmClusterId string `pulumi:"peerCloudAutonomousVmClusterId"`
+	PeerCloudAutonomousVmClusterId *string `pulumi:"peerCloudAutonomousVmClusterId"`
+	// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+	PeerDbUniqueName *string `pulumi:"peerDbUniqueName"`
 	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	//
 	// ** IMPORTANT **
@@ -305,7 +320,7 @@ type autonomousContainerDatabaseDataguardAssociationArgs struct {
 
 // The set of arguments for constructing a AutonomousContainerDatabaseDataguardAssociation resource.
 type AutonomousContainerDatabaseDataguardAssociationArgs struct {
-	AutonomousContainerDatabaseDataguardAssociationId pulumi.IntPtrInput
+	AutonomousContainerDatabaseDataguardAssociationId pulumi.StringPtrInput
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId pulumi.StringInput
 	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
@@ -318,8 +333,12 @@ type AutonomousContainerDatabaseDataguardAssociationArgs struct {
 	PeerAutonomousContainerDatabaseCompartmentId pulumi.StringPtrInput
 	// The display name for the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseDisplayName pulumi.StringInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+	PeerAutonomousVmClusterId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
-	PeerCloudAutonomousVmClusterId pulumi.StringInput
+	PeerCloudAutonomousVmClusterId pulumi.StringPtrInput
+	// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+	PeerDbUniqueName pulumi.StringPtrInput
 	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	//
 	// ** IMPORTANT **
@@ -426,10 +445,10 @@ func (o AutonomousContainerDatabaseDataguardAssociationOutput) ApplyRate() pulum
 	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.ApplyRate }).(pulumi.StringOutput)
 }
 
-func (o AutonomousContainerDatabaseDataguardAssociationOutput) AutonomousContainerDatabaseDataguardAssociationId() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.IntOutput {
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) AutonomousContainerDatabaseDataguardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput {
 		return v.AutonomousContainerDatabaseDataguardAssociationId
-	}).(pulumi.IntOutput)
+	}).(pulumi.StringOutput)
 }
 
 // The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -495,6 +514,13 @@ func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerAutonomousCon
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerAutonomousVmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput {
+		return v.PeerAutonomousVmClusterId
+	}).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
 func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerCloudAutonomousVmClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput {
@@ -502,7 +528,14 @@ func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerCloudAutonomo
 	}).(pulumi.StringOutput)
 }
 
-// The current state of Autonomous Data Guard.
+// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerDbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput {
+		return v.PeerDbUniqueName
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the Autonomous Container Database.
 func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerLifecycleState() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput {
 		return v.PeerLifecycleState

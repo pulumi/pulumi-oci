@@ -13,6 +13,290 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetAccessRequestApproverDetail struct {
+	// The action done by the approver.
+	ApprovalAction string `pulumi:"approvalAction"`
+	// Additional message specified by the approver of the request.
+	ApprovalAdditionalMessage string `pulumi:"approvalAdditionalMessage"`
+	// Comment specified by the approver of the request.
+	ApprovalComment string `pulumi:"approvalComment"`
+	// The userId of the approver.
+	ApproverId string `pulumi:"approverId"`
+	// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeApprovedForAccess string `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeOfAuthorization string `pulumi:"timeOfAuthorization"`
+}
+
+// GetAccessRequestApproverDetailInput is an input type that accepts GetAccessRequestApproverDetailArgs and GetAccessRequestApproverDetailOutput values.
+// You can construct a concrete instance of `GetAccessRequestApproverDetailInput` via:
+//
+//	GetAccessRequestApproverDetailArgs{...}
+type GetAccessRequestApproverDetailInput interface {
+	pulumi.Input
+
+	ToGetAccessRequestApproverDetailOutput() GetAccessRequestApproverDetailOutput
+	ToGetAccessRequestApproverDetailOutputWithContext(context.Context) GetAccessRequestApproverDetailOutput
+}
+
+type GetAccessRequestApproverDetailArgs struct {
+	// The action done by the approver.
+	ApprovalAction pulumi.StringInput `pulumi:"approvalAction"`
+	// Additional message specified by the approver of the request.
+	ApprovalAdditionalMessage pulumi.StringInput `pulumi:"approvalAdditionalMessage"`
+	// Comment specified by the approver of the request.
+	ApprovalComment pulumi.StringInput `pulumi:"approvalComment"`
+	// The userId of the approver.
+	ApproverId pulumi.StringInput `pulumi:"approverId"`
+	// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeApprovedForAccess pulumi.StringInput `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeOfAuthorization pulumi.StringInput `pulumi:"timeOfAuthorization"`
+}
+
+func (GetAccessRequestApproverDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAccessRequestApproverDetail)(nil)).Elem()
+}
+
+func (i GetAccessRequestApproverDetailArgs) ToGetAccessRequestApproverDetailOutput() GetAccessRequestApproverDetailOutput {
+	return i.ToGetAccessRequestApproverDetailOutputWithContext(context.Background())
+}
+
+func (i GetAccessRequestApproverDetailArgs) ToGetAccessRequestApproverDetailOutputWithContext(ctx context.Context) GetAccessRequestApproverDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestApproverDetailOutput)
+}
+
+// GetAccessRequestApproverDetailArrayInput is an input type that accepts GetAccessRequestApproverDetailArray and GetAccessRequestApproverDetailArrayOutput values.
+// You can construct a concrete instance of `GetAccessRequestApproverDetailArrayInput` via:
+//
+//	GetAccessRequestApproverDetailArray{ GetAccessRequestApproverDetailArgs{...} }
+type GetAccessRequestApproverDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAccessRequestApproverDetailArrayOutput() GetAccessRequestApproverDetailArrayOutput
+	ToGetAccessRequestApproverDetailArrayOutputWithContext(context.Context) GetAccessRequestApproverDetailArrayOutput
+}
+
+type GetAccessRequestApproverDetailArray []GetAccessRequestApproverDetailInput
+
+func (GetAccessRequestApproverDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAccessRequestApproverDetail)(nil)).Elem()
+}
+
+func (i GetAccessRequestApproverDetailArray) ToGetAccessRequestApproverDetailArrayOutput() GetAccessRequestApproverDetailArrayOutput {
+	return i.ToGetAccessRequestApproverDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAccessRequestApproverDetailArray) ToGetAccessRequestApproverDetailArrayOutputWithContext(ctx context.Context) GetAccessRequestApproverDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestApproverDetailArrayOutput)
+}
+
+type GetAccessRequestApproverDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAccessRequestApproverDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAccessRequestApproverDetail)(nil)).Elem()
+}
+
+func (o GetAccessRequestApproverDetailOutput) ToGetAccessRequestApproverDetailOutput() GetAccessRequestApproverDetailOutput {
+	return o
+}
+
+func (o GetAccessRequestApproverDetailOutput) ToGetAccessRequestApproverDetailOutputWithContext(ctx context.Context) GetAccessRequestApproverDetailOutput {
+	return o
+}
+
+// The action done by the approver.
+func (o GetAccessRequestApproverDetailOutput) ApprovalAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestApproverDetail) string { return v.ApprovalAction }).(pulumi.StringOutput)
+}
+
+// Additional message specified by the approver of the request.
+func (o GetAccessRequestApproverDetailOutput) ApprovalAdditionalMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestApproverDetail) string { return v.ApprovalAdditionalMessage }).(pulumi.StringOutput)
+}
+
+// Comment specified by the approver of the request.
+func (o GetAccessRequestApproverDetailOutput) ApprovalComment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestApproverDetail) string { return v.ApprovalComment }).(pulumi.StringOutput)
+}
+
+// The userId of the approver.
+func (o GetAccessRequestApproverDetailOutput) ApproverId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestApproverDetail) string { return v.ApproverId }).(pulumi.StringOutput)
+}
+
+// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+func (o GetAccessRequestApproverDetailOutput) TimeApprovedForAccess() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestApproverDetail) string { return v.TimeApprovedForAccess }).(pulumi.StringOutput)
+}
+
+// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+func (o GetAccessRequestApproverDetailOutput) TimeOfAuthorization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestApproverDetail) string { return v.TimeOfAuthorization }).(pulumi.StringOutput)
+}
+
+type GetAccessRequestApproverDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAccessRequestApproverDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAccessRequestApproverDetail)(nil)).Elem()
+}
+
+func (o GetAccessRequestApproverDetailArrayOutput) ToGetAccessRequestApproverDetailArrayOutput() GetAccessRequestApproverDetailArrayOutput {
+	return o
+}
+
+func (o GetAccessRequestApproverDetailArrayOutput) ToGetAccessRequestApproverDetailArrayOutputWithContext(ctx context.Context) GetAccessRequestApproverDetailArrayOutput {
+	return o
+}
+
+func (o GetAccessRequestApproverDetailArrayOutput) Index(i pulumi.IntInput) GetAccessRequestApproverDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessRequestApproverDetail {
+		return vs[0].([]GetAccessRequestApproverDetail)[vs[1].(int)]
+	}).(GetAccessRequestApproverDetailOutput)
+}
+
+type GetAccessRequestExtensionApproverDetail struct {
+	// The action done by the approver.
+	ApprovalAction string `pulumi:"approvalAction"`
+	// Additional message specified by the approver of the request.
+	ApprovalAdditionalMessage string `pulumi:"approvalAdditionalMessage"`
+	// Comment specified by the approver of the request.
+	ApprovalComment string `pulumi:"approvalComment"`
+	// The userId of the approver.
+	ApproverId string `pulumi:"approverId"`
+	// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeApprovedForAccess string `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeOfAuthorization string `pulumi:"timeOfAuthorization"`
+}
+
+// GetAccessRequestExtensionApproverDetailInput is an input type that accepts GetAccessRequestExtensionApproverDetailArgs and GetAccessRequestExtensionApproverDetailOutput values.
+// You can construct a concrete instance of `GetAccessRequestExtensionApproverDetailInput` via:
+//
+//	GetAccessRequestExtensionApproverDetailArgs{...}
+type GetAccessRequestExtensionApproverDetailInput interface {
+	pulumi.Input
+
+	ToGetAccessRequestExtensionApproverDetailOutput() GetAccessRequestExtensionApproverDetailOutput
+	ToGetAccessRequestExtensionApproverDetailOutputWithContext(context.Context) GetAccessRequestExtensionApproverDetailOutput
+}
+
+type GetAccessRequestExtensionApproverDetailArgs struct {
+	// The action done by the approver.
+	ApprovalAction pulumi.StringInput `pulumi:"approvalAction"`
+	// Additional message specified by the approver of the request.
+	ApprovalAdditionalMessage pulumi.StringInput `pulumi:"approvalAdditionalMessage"`
+	// Comment specified by the approver of the request.
+	ApprovalComment pulumi.StringInput `pulumi:"approvalComment"`
+	// The userId of the approver.
+	ApproverId pulumi.StringInput `pulumi:"approverId"`
+	// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeApprovedForAccess pulumi.StringInput `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeOfAuthorization pulumi.StringInput `pulumi:"timeOfAuthorization"`
+}
+
+func (GetAccessRequestExtensionApproverDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAccessRequestExtensionApproverDetail)(nil)).Elem()
+}
+
+func (i GetAccessRequestExtensionApproverDetailArgs) ToGetAccessRequestExtensionApproverDetailOutput() GetAccessRequestExtensionApproverDetailOutput {
+	return i.ToGetAccessRequestExtensionApproverDetailOutputWithContext(context.Background())
+}
+
+func (i GetAccessRequestExtensionApproverDetailArgs) ToGetAccessRequestExtensionApproverDetailOutputWithContext(ctx context.Context) GetAccessRequestExtensionApproverDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestExtensionApproverDetailOutput)
+}
+
+// GetAccessRequestExtensionApproverDetailArrayInput is an input type that accepts GetAccessRequestExtensionApproverDetailArray and GetAccessRequestExtensionApproverDetailArrayOutput values.
+// You can construct a concrete instance of `GetAccessRequestExtensionApproverDetailArrayInput` via:
+//
+//	GetAccessRequestExtensionApproverDetailArray{ GetAccessRequestExtensionApproverDetailArgs{...} }
+type GetAccessRequestExtensionApproverDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAccessRequestExtensionApproverDetailArrayOutput() GetAccessRequestExtensionApproverDetailArrayOutput
+	ToGetAccessRequestExtensionApproverDetailArrayOutputWithContext(context.Context) GetAccessRequestExtensionApproverDetailArrayOutput
+}
+
+type GetAccessRequestExtensionApproverDetailArray []GetAccessRequestExtensionApproverDetailInput
+
+func (GetAccessRequestExtensionApproverDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAccessRequestExtensionApproverDetail)(nil)).Elem()
+}
+
+func (i GetAccessRequestExtensionApproverDetailArray) ToGetAccessRequestExtensionApproverDetailArrayOutput() GetAccessRequestExtensionApproverDetailArrayOutput {
+	return i.ToGetAccessRequestExtensionApproverDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAccessRequestExtensionApproverDetailArray) ToGetAccessRequestExtensionApproverDetailArrayOutputWithContext(ctx context.Context) GetAccessRequestExtensionApproverDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestExtensionApproverDetailArrayOutput)
+}
+
+type GetAccessRequestExtensionApproverDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAccessRequestExtensionApproverDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAccessRequestExtensionApproverDetail)(nil)).Elem()
+}
+
+func (o GetAccessRequestExtensionApproverDetailOutput) ToGetAccessRequestExtensionApproverDetailOutput() GetAccessRequestExtensionApproverDetailOutput {
+	return o
+}
+
+func (o GetAccessRequestExtensionApproverDetailOutput) ToGetAccessRequestExtensionApproverDetailOutputWithContext(ctx context.Context) GetAccessRequestExtensionApproverDetailOutput {
+	return o
+}
+
+// The action done by the approver.
+func (o GetAccessRequestExtensionApproverDetailOutput) ApprovalAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestExtensionApproverDetail) string { return v.ApprovalAction }).(pulumi.StringOutput)
+}
+
+// Additional message specified by the approver of the request.
+func (o GetAccessRequestExtensionApproverDetailOutput) ApprovalAdditionalMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestExtensionApproverDetail) string { return v.ApprovalAdditionalMessage }).(pulumi.StringOutput)
+}
+
+// Comment specified by the approver of the request.
+func (o GetAccessRequestExtensionApproverDetailOutput) ApprovalComment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestExtensionApproverDetail) string { return v.ApprovalComment }).(pulumi.StringOutput)
+}
+
+// The userId of the approver.
+func (o GetAccessRequestExtensionApproverDetailOutput) ApproverId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestExtensionApproverDetail) string { return v.ApproverId }).(pulumi.StringOutput)
+}
+
+// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+func (o GetAccessRequestExtensionApproverDetailOutput) TimeApprovedForAccess() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestExtensionApproverDetail) string { return v.TimeApprovedForAccess }).(pulumi.StringOutput)
+}
+
+// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+func (o GetAccessRequestExtensionApproverDetailOutput) TimeOfAuthorization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestExtensionApproverDetail) string { return v.TimeOfAuthorization }).(pulumi.StringOutput)
+}
+
+type GetAccessRequestExtensionApproverDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAccessRequestExtensionApproverDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAccessRequestExtensionApproverDetail)(nil)).Elem()
+}
+
+func (o GetAccessRequestExtensionApproverDetailArrayOutput) ToGetAccessRequestExtensionApproverDetailArrayOutput() GetAccessRequestExtensionApproverDetailArrayOutput {
+	return o
+}
+
+func (o GetAccessRequestExtensionApproverDetailArrayOutput) ToGetAccessRequestExtensionApproverDetailArrayOutputWithContext(ctx context.Context) GetAccessRequestExtensionApproverDetailArrayOutput {
+	return o
+}
+
+func (o GetAccessRequestExtensionApproverDetailArrayOutput) Index(i pulumi.IntInput) GetAccessRequestExtensionApproverDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessRequestExtensionApproverDetail {
+		return vs[0].([]GetAccessRequestExtensionApproverDetail)[vs[1].(int)]
+	}).(GetAccessRequestExtensionApproverDetailOutput)
+}
+
 type GetAccessRequestHistoryItem struct {
 	// List of operator actions for which approvals were requested by the operator.
 	ActionsLists []string `pulumi:"actionsLists"`
@@ -267,6 +551,8 @@ type GetAccessRequestsAccessRequestCollectionItem struct {
 	ActionRequestsLists []string `pulumi:"actionRequestsLists"`
 	// The last recent Comment entered by the approver of the request.
 	ApproverComment string `pulumi:"approverComment"`
+	// Contains the user ids who have approved the accessRequest for extension.
+	ApproverDetails []GetAccessRequestsAccessRequestCollectionItemApproverDetail `pulumi:"approverDetails"`
 	// Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
 	AuditTypes []string `pulumi:"auditTypes"`
 	// The comment entered by the operator while closing the request.
@@ -279,14 +565,24 @@ type GetAccessRequestsAccessRequestCollectionItem struct {
 	Duration int `pulumi:"duration"`
 	// Duration in hours for which extension access is sought on the target resource.
 	ExtendDuration int `pulumi:"extendDuration"`
+	// Contains the user ids who have approved the accessRequest for extension.
+	ExtensionApproverDetails []GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail `pulumi:"extensionApproverDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the access request.
 	Id string `pulumi:"id"`
 	// Whether the access request was automatically approved.
 	IsAutoApproved bool `pulumi:"isAutoApproved"`
+	// Whether the access request was requested for Validate Assignment.
+	IsValidateAssignment bool `pulumi:"isValidateAssignment"`
 	// more in detail about the lifeCycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Number of approvers who have authorized an access request.
+	NumberOfApprovers int `pulumi:"numberOfApprovers"`
+	// Number of approvers required to approve an access request.
+	NumberOfApproversRequired int `pulumi:"numberOfApproversRequired"`
+	// Number of approvers who have authorized an access request for extension.
+	NumberOfExtensionApprovers int `pulumi:"numberOfExtensionApprovers"`
 	// Additional message specific to the access request that can be specified by the approver at the time of approval.
 	OpctlAdditionalMessage string `pulumi:"opctlAdditionalMessage"`
 	// The OCID of the operator control governing the target resource.
@@ -319,6 +615,8 @@ type GetAccessRequestsAccessRequestCollectionItem struct {
 	TimeOfModification string `pulumi:"timeOfModification"`
 	// The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
 	TimeOfUserCreation string `pulumi:"timeOfUserCreation"`
+	// Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+	TimeRequestedForFutureAccess string `pulumi:"timeRequestedForFutureAccess"`
 	// The OCID of the user that last modified the access request.
 	UserId string `pulumi:"userId"`
 	// The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
@@ -343,6 +641,8 @@ type GetAccessRequestsAccessRequestCollectionItemArgs struct {
 	ActionRequestsLists pulumi.StringArrayInput `pulumi:"actionRequestsLists"`
 	// The last recent Comment entered by the approver of the request.
 	ApproverComment pulumi.StringInput `pulumi:"approverComment"`
+	// Contains the user ids who have approved the accessRequest for extension.
+	ApproverDetails GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayInput `pulumi:"approverDetails"`
 	// Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
 	AuditTypes pulumi.StringArrayInput `pulumi:"auditTypes"`
 	// The comment entered by the operator while closing the request.
@@ -355,14 +655,24 @@ type GetAccessRequestsAccessRequestCollectionItemArgs struct {
 	Duration pulumi.IntInput `pulumi:"duration"`
 	// Duration in hours for which extension access is sought on the target resource.
 	ExtendDuration pulumi.IntInput `pulumi:"extendDuration"`
+	// Contains the user ids who have approved the accessRequest for extension.
+	ExtensionApproverDetails GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayInput `pulumi:"extensionApproverDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the access request.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether the access request was automatically approved.
 	IsAutoApproved pulumi.BoolInput `pulumi:"isAutoApproved"`
+	// Whether the access request was requested for Validate Assignment.
+	IsValidateAssignment pulumi.BoolInput `pulumi:"isValidateAssignment"`
 	// more in detail about the lifeCycleState.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Number of approvers who have authorized an access request.
+	NumberOfApprovers pulumi.IntInput `pulumi:"numberOfApprovers"`
+	// Number of approvers required to approve an access request.
+	NumberOfApproversRequired pulumi.IntInput `pulumi:"numberOfApproversRequired"`
+	// Number of approvers who have authorized an access request for extension.
+	NumberOfExtensionApprovers pulumi.IntInput `pulumi:"numberOfExtensionApprovers"`
 	// Additional message specific to the access request that can be specified by the approver at the time of approval.
 	OpctlAdditionalMessage pulumi.StringInput `pulumi:"opctlAdditionalMessage"`
 	// The OCID of the operator control governing the target resource.
@@ -395,6 +705,8 @@ type GetAccessRequestsAccessRequestCollectionItemArgs struct {
 	TimeOfModification pulumi.StringInput `pulumi:"timeOfModification"`
 	// The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
 	TimeOfUserCreation pulumi.StringInput `pulumi:"timeOfUserCreation"`
+	// Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+	TimeRequestedForFutureAccess pulumi.StringInput `pulumi:"timeRequestedForFutureAccess"`
 	// The OCID of the user that last modified the access request.
 	UserId pulumi.StringInput `pulumi:"userId"`
 	// The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
@@ -467,6 +779,13 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) ApproverComment() pu
 	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.ApproverComment }).(pulumi.StringOutput)
 }
 
+// Contains the user ids who have approved the accessRequest for extension.
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) ApproverDetails() GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) []GetAccessRequestsAccessRequestCollectionItemApproverDetail {
+		return v.ApproverDetails
+	}).(GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput)
+}
+
 // Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
 func (o GetAccessRequestsAccessRequestCollectionItemOutput) AuditTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) []string { return v.AuditTypes }).(pulumi.StringArrayOutput)
@@ -497,6 +816,13 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) ExtendDuration() pul
 	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) int { return v.ExtendDuration }).(pulumi.IntOutput)
 }
 
+// Contains the user ids who have approved the accessRequest for extension.
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) ExtensionApproverDetails() GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) []GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail {
+		return v.ExtensionApproverDetails
+	}).(GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 func (o GetAccessRequestsAccessRequestCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -512,9 +838,29 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) IsAutoApproved() pul
 	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) bool { return v.IsAutoApproved }).(pulumi.BoolOutput)
 }
 
+// Whether the access request was requested for Validate Assignment.
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) IsValidateAssignment() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) bool { return v.IsValidateAssignment }).(pulumi.BoolOutput)
+}
+
 // more in detail about the lifeCycleState.
 func (o GetAccessRequestsAccessRequestCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Number of approvers who have authorized an access request.
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) NumberOfApprovers() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) int { return v.NumberOfApprovers }).(pulumi.IntOutput)
+}
+
+// Number of approvers required to approve an access request.
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) NumberOfApproversRequired() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) int { return v.NumberOfApproversRequired }).(pulumi.IntOutput)
+}
+
+// Number of approvers who have authorized an access request for extension.
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) NumberOfExtensionApprovers() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) int { return v.NumberOfExtensionApprovers }).(pulumi.IntOutput)
 }
 
 // Additional message specific to the access request that can be specified by the approver at the time of approval.
@@ -597,6 +943,11 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) TimeOfUserCreation()
 	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.TimeOfUserCreation }).(pulumi.StringOutput)
 }
 
+// Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) TimeRequestedForFutureAccess() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.TimeRequestedForFutureAccess }).(pulumi.StringOutput)
+}
+
 // The OCID of the user that last modified the access request.
 func (o GetAccessRequestsAccessRequestCollectionItemOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.UserId }).(pulumi.StringOutput)
@@ -625,6 +976,308 @@ func (o GetAccessRequestsAccessRequestCollectionItemArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessRequestsAccessRequestCollectionItem {
 		return vs[0].([]GetAccessRequestsAccessRequestCollectionItem)[vs[1].(int)]
 	}).(GetAccessRequestsAccessRequestCollectionItemOutput)
+}
+
+type GetAccessRequestsAccessRequestCollectionItemApproverDetail struct {
+	// The action done by the approver.
+	ApprovalAction string `pulumi:"approvalAction"`
+	// Additional message specified by the approver of the request.
+	ApprovalAdditionalMessage string `pulumi:"approvalAdditionalMessage"`
+	// Comment specified by the approver of the request.
+	ApprovalComment string `pulumi:"approvalComment"`
+	// The userId of the approver.
+	ApproverId string `pulumi:"approverId"`
+	// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeApprovedForAccess string `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeOfAuthorization string `pulumi:"timeOfAuthorization"`
+}
+
+// GetAccessRequestsAccessRequestCollectionItemApproverDetailInput is an input type that accepts GetAccessRequestsAccessRequestCollectionItemApproverDetailArgs and GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput values.
+// You can construct a concrete instance of `GetAccessRequestsAccessRequestCollectionItemApproverDetailInput` via:
+//
+//	GetAccessRequestsAccessRequestCollectionItemApproverDetailArgs{...}
+type GetAccessRequestsAccessRequestCollectionItemApproverDetailInput interface {
+	pulumi.Input
+
+	ToGetAccessRequestsAccessRequestCollectionItemApproverDetailOutput() GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput
+	ToGetAccessRequestsAccessRequestCollectionItemApproverDetailOutputWithContext(context.Context) GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput
+}
+
+type GetAccessRequestsAccessRequestCollectionItemApproverDetailArgs struct {
+	// The action done by the approver.
+	ApprovalAction pulumi.StringInput `pulumi:"approvalAction"`
+	// Additional message specified by the approver of the request.
+	ApprovalAdditionalMessage pulumi.StringInput `pulumi:"approvalAdditionalMessage"`
+	// Comment specified by the approver of the request.
+	ApprovalComment pulumi.StringInput `pulumi:"approvalComment"`
+	// The userId of the approver.
+	ApproverId pulumi.StringInput `pulumi:"approverId"`
+	// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeApprovedForAccess pulumi.StringInput `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeOfAuthorization pulumi.StringInput `pulumi:"timeOfAuthorization"`
+}
+
+func (GetAccessRequestsAccessRequestCollectionItemApproverDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionItemApproverDetail)(nil)).Elem()
+}
+
+func (i GetAccessRequestsAccessRequestCollectionItemApproverDetailArgs) ToGetAccessRequestsAccessRequestCollectionItemApproverDetailOutput() GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput {
+	return i.ToGetAccessRequestsAccessRequestCollectionItemApproverDetailOutputWithContext(context.Background())
+}
+
+func (i GetAccessRequestsAccessRequestCollectionItemApproverDetailArgs) ToGetAccessRequestsAccessRequestCollectionItemApproverDetailOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput)
+}
+
+// GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayInput is an input type that accepts GetAccessRequestsAccessRequestCollectionItemApproverDetailArray and GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput values.
+// You can construct a concrete instance of `GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayInput` via:
+//
+//	GetAccessRequestsAccessRequestCollectionItemApproverDetailArray{ GetAccessRequestsAccessRequestCollectionItemApproverDetailArgs{...} }
+type GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput() GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput
+	ToGetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutputWithContext(context.Context) GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput
+}
+
+type GetAccessRequestsAccessRequestCollectionItemApproverDetailArray []GetAccessRequestsAccessRequestCollectionItemApproverDetailInput
+
+func (GetAccessRequestsAccessRequestCollectionItemApproverDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAccessRequestsAccessRequestCollectionItemApproverDetail)(nil)).Elem()
+}
+
+func (i GetAccessRequestsAccessRequestCollectionItemApproverDetailArray) ToGetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput() GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput {
+	return i.ToGetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAccessRequestsAccessRequestCollectionItemApproverDetailArray) ToGetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput)
+}
+
+type GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionItemApproverDetail)(nil)).Elem()
+}
+
+func (o GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput) ToGetAccessRequestsAccessRequestCollectionItemApproverDetailOutput() GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput {
+	return o
+}
+
+func (o GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput) ToGetAccessRequestsAccessRequestCollectionItemApproverDetailOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput {
+	return o
+}
+
+// The action done by the approver.
+func (o GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput) ApprovalAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemApproverDetail) string { return v.ApprovalAction }).(pulumi.StringOutput)
+}
+
+// Additional message specified by the approver of the request.
+func (o GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput) ApprovalAdditionalMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemApproverDetail) string {
+		return v.ApprovalAdditionalMessage
+	}).(pulumi.StringOutput)
+}
+
+// Comment specified by the approver of the request.
+func (o GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput) ApprovalComment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemApproverDetail) string { return v.ApprovalComment }).(pulumi.StringOutput)
+}
+
+// The userId of the approver.
+func (o GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput) ApproverId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemApproverDetail) string { return v.ApproverId }).(pulumi.StringOutput)
+}
+
+// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+func (o GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput) TimeApprovedForAccess() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemApproverDetail) string {
+		return v.TimeApprovedForAccess
+	}).(pulumi.StringOutput)
+}
+
+// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+func (o GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput) TimeOfAuthorization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemApproverDetail) string {
+		return v.TimeOfAuthorization
+	}).(pulumi.StringOutput)
+}
+
+type GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAccessRequestsAccessRequestCollectionItemApproverDetail)(nil)).Elem()
+}
+
+func (o GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput) ToGetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput() GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput {
+	return o
+}
+
+func (o GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput) ToGetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput {
+	return o
+}
+
+func (o GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput) Index(i pulumi.IntInput) GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessRequestsAccessRequestCollectionItemApproverDetail {
+		return vs[0].([]GetAccessRequestsAccessRequestCollectionItemApproverDetail)[vs[1].(int)]
+	}).(GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput)
+}
+
+type GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail struct {
+	// The action done by the approver.
+	ApprovalAction string `pulumi:"approvalAction"`
+	// Additional message specified by the approver of the request.
+	ApprovalAdditionalMessage string `pulumi:"approvalAdditionalMessage"`
+	// Comment specified by the approver of the request.
+	ApprovalComment string `pulumi:"approvalComment"`
+	// The userId of the approver.
+	ApproverId string `pulumi:"approverId"`
+	// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeApprovedForAccess string `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeOfAuthorization string `pulumi:"timeOfAuthorization"`
+}
+
+// GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailInput is an input type that accepts GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArgs and GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput values.
+// You can construct a concrete instance of `GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailInput` via:
+//
+//	GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArgs{...}
+type GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailInput interface {
+	pulumi.Input
+
+	ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput() GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput
+	ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutputWithContext(context.Context) GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput
+}
+
+type GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArgs struct {
+	// The action done by the approver.
+	ApprovalAction pulumi.StringInput `pulumi:"approvalAction"`
+	// Additional message specified by the approver of the request.
+	ApprovalAdditionalMessage pulumi.StringInput `pulumi:"approvalAdditionalMessage"`
+	// Comment specified by the approver of the request.
+	ApprovalComment pulumi.StringInput `pulumi:"approvalComment"`
+	// The userId of the approver.
+	ApproverId pulumi.StringInput `pulumi:"approverId"`
+	// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeApprovedForAccess pulumi.StringInput `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeOfAuthorization pulumi.StringInput `pulumi:"timeOfAuthorization"`
+}
+
+func (GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail)(nil)).Elem()
+}
+
+func (i GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArgs) ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput() GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput {
+	return i.ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutputWithContext(context.Background())
+}
+
+func (i GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArgs) ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput)
+}
+
+// GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayInput is an input type that accepts GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArray and GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput values.
+// You can construct a concrete instance of `GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayInput` via:
+//
+//	GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArray{ GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArgs{...} }
+type GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput() GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput
+	ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutputWithContext(context.Context) GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput
+}
+
+type GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArray []GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailInput
+
+func (GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail)(nil)).Elem()
+}
+
+func (i GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArray) ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput() GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput {
+	return i.ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArray) ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput)
+}
+
+type GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail)(nil)).Elem()
+}
+
+func (o GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput) ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput() GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput {
+	return o
+}
+
+func (o GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput) ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput {
+	return o
+}
+
+// The action done by the approver.
+func (o GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput) ApprovalAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail) string {
+		return v.ApprovalAction
+	}).(pulumi.StringOutput)
+}
+
+// Additional message specified by the approver of the request.
+func (o GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput) ApprovalAdditionalMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail) string {
+		return v.ApprovalAdditionalMessage
+	}).(pulumi.StringOutput)
+}
+
+// Comment specified by the approver of the request.
+func (o GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput) ApprovalComment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail) string {
+		return v.ApprovalComment
+	}).(pulumi.StringOutput)
+}
+
+// The userId of the approver.
+func (o GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput) ApproverId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail) string {
+		return v.ApproverId
+	}).(pulumi.StringOutput)
+}
+
+// Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+func (o GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput) TimeApprovedForAccess() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail) string {
+		return v.TimeApprovedForAccess
+	}).(pulumi.StringOutput)
+}
+
+// Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+func (o GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput) TimeOfAuthorization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail) string {
+		return v.TimeOfAuthorization
+	}).(pulumi.StringOutput)
+}
+
+type GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail)(nil)).Elem()
+}
+
+func (o GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput) ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput() GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput {
+	return o
+}
+
+func (o GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput) ToGetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput {
+	return o
+}
+
+func (o GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput) Index(i pulumi.IntInput) GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail {
+		return vs[0].([]GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail)[vs[1].(int)]
+	}).(GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput)
 }
 
 type GetAccessRequestsFilter struct {
@@ -1546,10 +2199,14 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItem struct {
 	IsDefaultAssignment bool `pulumi:"isDefaultAssignment"`
 	// If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways bool `pulumi:"isEnforcedAlways"`
+	// If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+	IsHypervisorLogForwarded bool `pulumi:"isHypervisorLogForwarded"`
 	// If set indicates that the audit logs are being forwarded to the relevant remote logging server
 	IsLogForwarded bool `pulumi:"isLogForwarded"`
 	// More in detail about the lifeCycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Name of the operator control name associated.
+	OpControlName string `pulumi:"opControlName"`
 	// The OCID of the operator control.
 	OperatorControlId string `pulumi:"operatorControlId"`
 	// The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
@@ -1577,7 +2234,8 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItem struct {
 	// Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
 	TimeOfDeletion string `pulumi:"timeOfDeletion"`
 	// User id who released the operatorControl.
-	UnassignerId string `pulumi:"unassignerId"`
+	UnassignerId              string `pulumi:"unassignerId"`
+	ValidateAssignmentTrigger int    `pulumi:"validateAssignmentTrigger"`
 }
 
 // GetControlAssignmentsOperatorControlAssignmentCollectionItemInput is an input type that accepts GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs and GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput values.
@@ -1616,10 +2274,14 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs struct {
 	IsDefaultAssignment pulumi.BoolInput `pulumi:"isDefaultAssignment"`
 	// If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways pulumi.BoolInput `pulumi:"isEnforcedAlways"`
+	// If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+	IsHypervisorLogForwarded pulumi.BoolInput `pulumi:"isHypervisorLogForwarded"`
 	// If set indicates that the audit logs are being forwarded to the relevant remote logging server
 	IsLogForwarded pulumi.BoolInput `pulumi:"isLogForwarded"`
 	// More in detail about the lifeCycleState.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Name of the operator control name associated.
+	OpControlName pulumi.StringInput `pulumi:"opControlName"`
 	// The OCID of the operator control.
 	OperatorControlId pulumi.StringInput `pulumi:"operatorControlId"`
 	// The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
@@ -1647,7 +2309,8 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs struct {
 	// Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
 	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
 	// User id who released the operatorControl.
-	UnassignerId pulumi.StringInput `pulumi:"unassignerId"`
+	UnassignerId              pulumi.StringInput `pulumi:"unassignerId"`
+	ValidateAssignmentTrigger pulumi.IntInput    `pulumi:"validateAssignmentTrigger"`
 }
 
 func (GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs) ElementType() reflect.Type {
@@ -1771,6 +2434,13 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsEn
 	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) bool { return v.IsEnforcedAlways }).(pulumi.BoolOutput)
 }
 
+// If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsHypervisorLogForwarded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) bool {
+		return v.IsHypervisorLogForwarded
+	}).(pulumi.BoolOutput)
+}
+
 // If set indicates that the audit logs are being forwarded to the relevant remote logging server
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsLogForwarded() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) bool { return v.IsLogForwarded }).(pulumi.BoolOutput)
@@ -1779,6 +2449,11 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsLo
 // More in detail about the lifeCycleState.
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Name of the operator control name associated.
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) OpControlName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.OpControlName }).(pulumi.StringOutput)
 }
 
 // The OCID of the operator control.
@@ -1861,6 +2536,12 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) Time
 // User id who released the operatorControl.
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) UnassignerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.UnassignerId }).(pulumi.StringOutput)
+}
+
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ValidateAssignmentTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) int {
+		return v.ValidateAssignmentTrigger
+	}).(pulumi.IntOutput)
 }
 
 type GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2110,6 +2791,8 @@ type GetControlsOperatorControlCollectionItem struct {
 	IsFullyPreApproved bool `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
 	LastModifiedInfo string `pulumi:"lastModifiedInfo"`
+	// Number of approvers required to approve an access request.
+	NumberOfApprovers int `pulumi:"numberOfApprovers"`
 	// Name of the operator control. The name must be unique.
 	OperatorControlName string `pulumi:"operatorControlName"`
 	// List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
@@ -2164,6 +2847,8 @@ type GetControlsOperatorControlCollectionItemArgs struct {
 	IsFullyPreApproved pulumi.BoolInput `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
 	LastModifiedInfo pulumi.StringInput `pulumi:"lastModifiedInfo"`
+	// Number of approvers required to approve an access request.
+	NumberOfApprovers pulumi.IntInput `pulumi:"numberOfApprovers"`
 	// Name of the operator control. The name must be unique.
 	OperatorControlName pulumi.StringInput `pulumi:"operatorControlName"`
 	// List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
@@ -2293,6 +2978,11 @@ func (o GetControlsOperatorControlCollectionItemOutput) LastModifiedInfo() pulum
 	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.LastModifiedInfo }).(pulumi.StringOutput)
 }
 
+// Number of approvers required to approve an access request.
+func (o GetControlsOperatorControlCollectionItemOutput) NumberOfApprovers() pulumi.IntOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) int { return v.NumberOfApprovers }).(pulumi.IntOutput)
+}
+
 // Name of the operator control. The name must be unique.
 func (o GetControlsOperatorControlCollectionItemOutput) OperatorControlName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.OperatorControlName }).(pulumi.StringOutput)
@@ -2354,12 +3044,20 @@ func (o GetControlsOperatorControlCollectionItemArrayOutput) Index(i pulumi.IntI
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestApproverDetailInput)(nil)).Elem(), GetAccessRequestApproverDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestApproverDetailArrayInput)(nil)).Elem(), GetAccessRequestApproverDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestExtensionApproverDetailInput)(nil)).Elem(), GetAccessRequestExtensionApproverDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestExtensionApproverDetailArrayInput)(nil)).Elem(), GetAccessRequestExtensionApproverDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestHistoryItemInput)(nil)).Elem(), GetAccessRequestHistoryItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestHistoryItemArrayInput)(nil)).Elem(), GetAccessRequestHistoryItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionInput)(nil)).Elem(), GetAccessRequestsAccessRequestCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionArrayInput)(nil)).Elem(), GetAccessRequestsAccessRequestCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionItemInput)(nil)).Elem(), GetAccessRequestsAccessRequestCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionItemArrayInput)(nil)).Elem(), GetAccessRequestsAccessRequestCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionItemApproverDetailInput)(nil)).Elem(), GetAccessRequestsAccessRequestCollectionItemApproverDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayInput)(nil)).Elem(), GetAccessRequestsAccessRequestCollectionItemApproverDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailInput)(nil)).Elem(), GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayInput)(nil)).Elem(), GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestsFilterInput)(nil)).Elem(), GetAccessRequestsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccessRequestsFilterArrayInput)(nil)).Elem(), GetAccessRequestsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetActionPropertyInput)(nil)).Elem(), GetActionPropertyArgs{})
@@ -2384,12 +3082,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetControlsOperatorControlCollectionArrayInput)(nil)).Elem(), GetControlsOperatorControlCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetControlsOperatorControlCollectionItemInput)(nil)).Elem(), GetControlsOperatorControlCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetControlsOperatorControlCollectionItemArrayInput)(nil)).Elem(), GetControlsOperatorControlCollectionItemArray{})
+	pulumi.RegisterOutputType(GetAccessRequestApproverDetailOutput{})
+	pulumi.RegisterOutputType(GetAccessRequestApproverDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetAccessRequestExtensionApproverDetailOutput{})
+	pulumi.RegisterOutputType(GetAccessRequestExtensionApproverDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetAccessRequestHistoryItemOutput{})
 	pulumi.RegisterOutputType(GetAccessRequestHistoryItemArrayOutput{})
 	pulumi.RegisterOutputType(GetAccessRequestsAccessRequestCollectionOutput{})
 	pulumi.RegisterOutputType(GetAccessRequestsAccessRequestCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAccessRequestsAccessRequestCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetAccessRequestsAccessRequestCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAccessRequestsAccessRequestCollectionItemApproverDetailOutput{})
+	pulumi.RegisterOutputType(GetAccessRequestsAccessRequestCollectionItemApproverDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailOutput{})
+	pulumi.RegisterOutputType(GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetAccessRequestsFilterOutput{})
 	pulumi.RegisterOutputType(GetAccessRequestsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetActionPropertyOutput{})

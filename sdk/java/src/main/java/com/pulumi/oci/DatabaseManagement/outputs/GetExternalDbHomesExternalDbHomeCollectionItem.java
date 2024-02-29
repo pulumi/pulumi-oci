@@ -28,15 +28,26 @@ public final class GetExternalDbHomesExternalDbHomeCollectionItem {
      */
     private String componentName;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
     private String displayName;
+    private String externalDbHomeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
     private String externalDbSystemId;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The location of the DB home.
      * 
@@ -91,11 +102,21 @@ public final class GetExternalDbHomesExternalDbHomeCollectionItem {
         return this.componentName;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
     public String displayName() {
         return this.displayName;
+    }
+    public String externalDbHomeId() {
+        return this.externalDbHomeId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -103,6 +124,13 @@ public final class GetExternalDbHomesExternalDbHomeCollectionItem {
      */
     public String externalDbSystemId() {
         return this.externalDbSystemId;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The location of the DB home.
@@ -159,8 +187,11 @@ public final class GetExternalDbHomesExternalDbHomeCollectionItem {
         private Map<String,Object> additionalDetails;
         private String compartmentId;
         private String componentName;
+        private Map<String,Object> definedTags;
         private String displayName;
+        private String externalDbHomeId;
         private String externalDbSystemId;
+        private Map<String,Object> freeformTags;
         private String homeDirectory;
         private String id;
         private String lifecycleDetails;
@@ -173,8 +204,11 @@ public final class GetExternalDbHomesExternalDbHomeCollectionItem {
     	      this.additionalDetails = defaults.additionalDetails;
     	      this.compartmentId = defaults.compartmentId;
     	      this.componentName = defaults.componentName;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.externalDbHomeId = defaults.externalDbHomeId;
     	      this.externalDbSystemId = defaults.externalDbSystemId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.homeDirectory = defaults.homeDirectory;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -208,6 +242,14 @@ public final class GetExternalDbHomesExternalDbHomeCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "displayName");
@@ -216,11 +258,27 @@ public final class GetExternalDbHomesExternalDbHomeCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder externalDbHomeId(String externalDbHomeId) {
+            if (externalDbHomeId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "externalDbHomeId");
+            }
+            this.externalDbHomeId = externalDbHomeId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder externalDbSystemId(String externalDbSystemId) {
             if (externalDbSystemId == null) {
               throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "externalDbSystemId");
             }
             this.externalDbSystemId = externalDbSystemId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbHomesExternalDbHomeCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -276,8 +334,11 @@ public final class GetExternalDbHomesExternalDbHomeCollectionItem {
             _resultValue.additionalDetails = additionalDetails;
             _resultValue.compartmentId = compartmentId;
             _resultValue.componentName = componentName;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
+            _resultValue.externalDbHomeId = externalDbHomeId;
             _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.homeDirectory = homeDirectory;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;

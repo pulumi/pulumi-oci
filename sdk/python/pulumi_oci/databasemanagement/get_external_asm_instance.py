@@ -21,7 +21,7 @@ class GetExternalAsmInstanceResult:
     """
     A collection of values returned by getExternalAsmInstance.
     """
-    def __init__(__self__, adr_home_directory=None, compartment_id=None, component_name=None, display_name=None, external_asm_id=None, external_asm_instance_id=None, external_db_node_id=None, external_db_system_id=None, host_name=None, id=None, lifecycle_details=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, adr_home_directory=None, compartment_id=None, component_name=None, defined_tags=None, display_name=None, external_asm_id=None, external_asm_instance_id=None, external_db_node_id=None, external_db_system_id=None, freeform_tags=None, host_name=None, id=None, lifecycle_details=None, state=None, time_created=None, time_updated=None):
         if adr_home_directory and not isinstance(adr_home_directory, str):
             raise TypeError("Expected argument 'adr_home_directory' to be a str")
         pulumi.set(__self__, "adr_home_directory", adr_home_directory)
@@ -31,6 +31,9 @@ class GetExternalAsmInstanceResult:
         if component_name and not isinstance(component_name, str):
             raise TypeError("Expected argument 'component_name' to be a str")
         pulumi.set(__self__, "component_name", component_name)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -46,6 +49,9 @@ class GetExternalAsmInstanceResult:
         if external_db_system_id and not isinstance(external_db_system_id, str):
             raise TypeError("Expected argument 'external_db_system_id' to be a str")
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_name and not isinstance(host_name, str):
             raise TypeError("Expected argument 'host_name' to be a str")
         pulumi.set(__self__, "host_name", host_name)
@@ -90,6 +96,14 @@ class GetExternalAsmInstanceResult:
         return pulumi.get(self, "component_name")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -127,6 +141,14 @@ class GetExternalAsmInstanceResult:
         return pulumi.get(self, "external_db_system_id")
 
     @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> str:
         """
@@ -138,7 +160,7 @@ class GetExternalAsmInstanceResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The provider-assigned unique ID for this managed resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
         """
         return pulumi.get(self, "id")
 
@@ -184,11 +206,13 @@ class AwaitableGetExternalAsmInstanceResult(GetExternalAsmInstanceResult):
             adr_home_directory=self.adr_home_directory,
             compartment_id=self.compartment_id,
             component_name=self.component_name,
+            defined_tags=self.defined_tags,
             display_name=self.display_name,
             external_asm_id=self.external_asm_id,
             external_asm_instance_id=self.external_asm_instance_id,
             external_db_node_id=self.external_db_node_id,
             external_db_system_id=self.external_db_system_id,
+            freeform_tags=self.freeform_tags,
             host_name=self.host_name,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
@@ -225,11 +249,13 @@ def get_external_asm_instance(external_asm_instance_id: Optional[str] = None,
         adr_home_directory=pulumi.get(__ret__, 'adr_home_directory'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         component_name=pulumi.get(__ret__, 'component_name'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         external_asm_id=pulumi.get(__ret__, 'external_asm_id'),
         external_asm_instance_id=pulumi.get(__ret__, 'external_asm_instance_id'),
         external_db_node_id=pulumi.get(__ret__, 'external_db_node_id'),
         external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         host_name=pulumi.get(__ret__, 'host_name'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),

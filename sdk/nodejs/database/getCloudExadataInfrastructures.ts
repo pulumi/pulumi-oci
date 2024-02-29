@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testCloudExadataInfrastructures = oci.Database.getCloudExadataInfrastructures({
  *     compartmentId: _var.compartment_id,
+ *     clusterPlacementGroupId: _var.cloud_exadata_infrastructure_cluster_placement_group_id,
  *     displayName: _var.cloud_exadata_infrastructure_display_name,
  *     state: _var.cloud_exadata_infrastructure_state,
  * });
@@ -28,6 +29,7 @@ export function getCloudExadataInfrastructures(args: GetCloudExadataInfrastructu
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", {
+        "clusterPlacementGroupId": args.clusterPlacementGroupId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -39,6 +41,10 @@ export function getCloudExadataInfrastructures(args: GetCloudExadataInfrastructu
  * A collection of arguments for invoking getCloudExadataInfrastructures.
  */
 export interface GetCloudExadataInfrastructuresArgs {
+    /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     */
+    clusterPlacementGroupId?: string;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -62,6 +68,10 @@ export interface GetCloudExadataInfrastructuresResult {
      * The list of cloud_exadata_infrastructures.
      */
     readonly cloudExadataInfrastructures: outputs.Database.GetCloudExadataInfrastructuresCloudExadataInfrastructure[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    readonly clusterPlacementGroupId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -93,6 +103,7 @@ export interface GetCloudExadataInfrastructuresResult {
  *
  * const testCloudExadataInfrastructures = oci.Database.getCloudExadataInfrastructures({
  *     compartmentId: _var.compartment_id,
+ *     clusterPlacementGroupId: _var.cloud_exadata_infrastructure_cluster_placement_group_id,
  *     displayName: _var.cloud_exadata_infrastructure_display_name,
  *     state: _var.cloud_exadata_infrastructure_state,
  * });
@@ -106,6 +117,10 @@ export function getCloudExadataInfrastructuresOutput(args: GetCloudExadataInfras
  * A collection of arguments for invoking getCloudExadataInfrastructures.
  */
 export interface GetCloudExadataInfrastructuresOutputArgs {
+    /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string LifecyleDetails;
         /// <summary>
-        /// An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        /// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceResult> Sources;
         /// <summary>
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        /// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetResult> Targets;
         /// <summary>
@@ -62,11 +62,11 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemTaskResult> Tasks;
         /// <summary>
-        /// The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+        /// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+        /// The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
 

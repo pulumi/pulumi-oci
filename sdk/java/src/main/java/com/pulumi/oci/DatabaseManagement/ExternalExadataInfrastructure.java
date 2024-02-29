@@ -55,7 +55,9 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .dbSystemIds(var_.external_exadata_infrastructure_db_system_ids())
  *             .displayName(var_.external_exadata_infrastructure_display_name())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .discoveryKey(var_.external_exadata_infrastructure_discovery_key())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .licenseModel(var_.external_exadata_infrastructure_license_model())
  *             .storageServerNames(var_.external_exadata_infrastructure_storage_server_names())
  *             .build());
@@ -146,6 +148,20 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
         return this.dbSystemIds;
     }
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * (Updatable) The unique key of the discovery request.
      * 
      */
@@ -172,6 +188,20 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * The internal ID of the Exadata resource.

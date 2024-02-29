@@ -14,14 +14,18 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ConnectorSource struct {
-	// (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+	// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	ConfigMap *string `pulumi:"configMap"`
+	// (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursor *ConnectorSourceCursor `pulumi:"cursor"`
 	// (Updatable) The type descriminator.
 	Kind string `pulumi:"kind"`
 	// (Updatable) The logs for this Logging source.
 	LogSources []ConnectorSourceLogSource `pulumi:"logSources"`
-	// (Updatable) The list of metric namespaces to retrieve data from.
+	// (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources []ConnectorSourceMonitoringSource `pulumi:"monitoringSources"`
+	// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	PluginName *string `pulumi:"pluginName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId *string `pulumi:"streamId"`
 }
@@ -38,14 +42,18 @@ type ConnectorSourceInput interface {
 }
 
 type ConnectorSourceArgs struct {
-	// (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+	// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	ConfigMap pulumi.StringPtrInput `pulumi:"configMap"`
+	// (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursor ConnectorSourceCursorPtrInput `pulumi:"cursor"`
 	// (Updatable) The type descriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Updatable) The logs for this Logging source.
 	LogSources ConnectorSourceLogSourceArrayInput `pulumi:"logSources"`
-	// (Updatable) The list of metric namespaces to retrieve data from.
+	// (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources ConnectorSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
+	// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	PluginName pulumi.StringPtrInput `pulumi:"pluginName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringPtrInput `pulumi:"streamId"`
 }
@@ -127,7 +135,12 @@ func (o ConnectorSourceOutput) ToConnectorSourcePtrOutputWithContext(ctx context
 	}).(ConnectorSourcePtrOutput)
 }
 
-// (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+func (o ConnectorSourceOutput) ConfigMap() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectorSource) *string { return v.ConfigMap }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 func (o ConnectorSourceOutput) Cursor() ConnectorSourceCursorPtrOutput {
 	return o.ApplyT(func(v ConnectorSource) *ConnectorSourceCursor { return v.Cursor }).(ConnectorSourceCursorPtrOutput)
 }
@@ -142,9 +155,14 @@ func (o ConnectorSourceOutput) LogSources() ConnectorSourceLogSourceArrayOutput 
 	return o.ApplyT(func(v ConnectorSource) []ConnectorSourceLogSource { return v.LogSources }).(ConnectorSourceLogSourceArrayOutput)
 }
 
-// (Updatable) The list of metric namespaces to retrieve data from.
+// (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
 func (o ConnectorSourceOutput) MonitoringSources() ConnectorSourceMonitoringSourceArrayOutput {
 	return o.ApplyT(func(v ConnectorSource) []ConnectorSourceMonitoringSource { return v.MonitoringSources }).(ConnectorSourceMonitoringSourceArrayOutput)
+}
+
+// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+func (o ConnectorSourceOutput) PluginName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectorSource) *string { return v.PluginName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -176,7 +194,17 @@ func (o ConnectorSourcePtrOutput) Elem() ConnectorSourceOutput {
 	}).(ConnectorSourceOutput)
 }
 
-// (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+// (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+func (o ConnectorSourcePtrOutput) ConfigMap() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectorSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ConfigMap
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 func (o ConnectorSourcePtrOutput) Cursor() ConnectorSourceCursorPtrOutput {
 	return o.ApplyT(func(v *ConnectorSource) *ConnectorSourceCursor {
 		if v == nil {
@@ -206,7 +234,7 @@ func (o ConnectorSourcePtrOutput) LogSources() ConnectorSourceLogSourceArrayOutp
 	}).(ConnectorSourceLogSourceArrayOutput)
 }
 
-// (Updatable) The list of metric namespaces to retrieve data from.
+// (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
 func (o ConnectorSourcePtrOutput) MonitoringSources() ConnectorSourceMonitoringSourceArrayOutput {
 	return o.ApplyT(func(v *ConnectorSource) []ConnectorSourceMonitoringSource {
 		if v == nil {
@@ -214,6 +242,16 @@ func (o ConnectorSourcePtrOutput) MonitoringSources() ConnectorSourceMonitoringS
 		}
 		return v.MonitoringSources
 	}).(ConnectorSourceMonitoringSourceArrayOutput)
+}
+
+// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+func (o ConnectorSourcePtrOutput) PluginName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectorSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PluginName
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -909,13 +947,19 @@ type ConnectorTarget struct {
 	BatchRolloverSizeInMbs *int `pulumi:"batchRolloverSizeInMbs"`
 	// (Updatable) The batch rollover time in milliseconds.
 	BatchRolloverTimeInMs *int `pulumi:"batchRolloverTimeInMs"`
-	// (Updatable) The name of the bucket. Avoid entering confidential information.
+	// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+	BatchSizeInKbs *int `pulumi:"batchSizeInKbs"`
+	// (Updatable) The batch rollover size in number of messages.
+	BatchSizeInNum *int `pulumi:"batchSizeInNum"`
+	// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+	BatchTimeInSec *int `pulumi:"batchTimeInSec"`
+	// (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 	Bucket *string `pulumi:"bucket"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) List of dimension names and values.
 	Dimensions []ConnectorTargetDimension `pulumi:"dimensions"`
-	// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+	// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 	EnableFormattedMessaging *bool `pulumi:"enableFormattedMessaging"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId *string `pulumi:"functionId"`
@@ -923,7 +967,7 @@ type ConnectorTarget struct {
 	Kind string `pulumi:"kind"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId *string `pulumi:"logGroupId"`
-	// (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+	// (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier *string `pulumi:"logSourceIdentifier"`
 	// (Updatable) The name of the metric.  Example: `CpuUtilization`
 	Metric *string `pulumi:"metric"`
@@ -955,13 +999,19 @@ type ConnectorTargetArgs struct {
 	BatchRolloverSizeInMbs pulumi.IntPtrInput `pulumi:"batchRolloverSizeInMbs"`
 	// (Updatable) The batch rollover time in milliseconds.
 	BatchRolloverTimeInMs pulumi.IntPtrInput `pulumi:"batchRolloverTimeInMs"`
-	// (Updatable) The name of the bucket. Avoid entering confidential information.
+	// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+	BatchSizeInKbs pulumi.IntPtrInput `pulumi:"batchSizeInKbs"`
+	// (Updatable) The batch rollover size in number of messages.
+	BatchSizeInNum pulumi.IntPtrInput `pulumi:"batchSizeInNum"`
+	// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+	BatchTimeInSec pulumi.IntPtrInput `pulumi:"batchTimeInSec"`
+	// (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// (Updatable) List of dimension names and values.
 	Dimensions ConnectorTargetDimensionArrayInput `pulumi:"dimensions"`
-	// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+	// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 	EnableFormattedMessaging pulumi.BoolPtrInput `pulumi:"enableFormattedMessaging"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
@@ -969,7 +1019,7 @@ type ConnectorTargetArgs struct {
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
-	// (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+	// (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier pulumi.StringPtrInput `pulumi:"logSourceIdentifier"`
 	// (Updatable) The name of the metric.  Example: `CpuUtilization`
 	Metric pulumi.StringPtrInput `pulumi:"metric"`
@@ -1072,7 +1122,22 @@ func (o ConnectorTargetOutput) BatchRolloverTimeInMs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *int { return v.BatchRolloverTimeInMs }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The name of the bucket. Avoid entering confidential information.
+// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+func (o ConnectorTargetOutput) BatchSizeInKbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ConnectorTarget) *int { return v.BatchSizeInKbs }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The batch rollover size in number of messages.
+func (o ConnectorTargetOutput) BatchSizeInNum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ConnectorTarget) *int { return v.BatchSizeInNum }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+func (o ConnectorTargetOutput) BatchTimeInSec() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ConnectorTarget) *int { return v.BatchTimeInSec }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 func (o ConnectorTargetOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
@@ -1087,7 +1152,7 @@ func (o ConnectorTargetOutput) Dimensions() ConnectorTargetDimensionArrayOutput 
 	return o.ApplyT(func(v ConnectorTarget) []ConnectorTargetDimension { return v.Dimensions }).(ConnectorTargetDimensionArrayOutput)
 }
 
-// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 func (o ConnectorTargetOutput) EnableFormattedMessaging() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *bool { return v.EnableFormattedMessaging }).(pulumi.BoolPtrOutput)
 }
@@ -1107,7 +1172,7 @@ func (o ConnectorTargetOutput) LogGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+// (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 func (o ConnectorTargetOutput) LogSourceIdentifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *string { return v.LogSourceIdentifier }).(pulumi.StringPtrOutput)
 }
@@ -1186,7 +1251,37 @@ func (o ConnectorTargetPtrOutput) BatchRolloverTimeInMs() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The name of the bucket. Avoid entering confidential information.
+// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+func (o ConnectorTargetPtrOutput) BatchSizeInKbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ConnectorTarget) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BatchSizeInKbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The batch rollover size in number of messages.
+func (o ConnectorTargetPtrOutput) BatchSizeInNum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ConnectorTarget) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BatchSizeInNum
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+func (o ConnectorTargetPtrOutput) BatchTimeInSec() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ConnectorTarget) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BatchTimeInSec
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 func (o ConnectorTargetPtrOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *string {
 		if v == nil {
@@ -1216,7 +1311,7 @@ func (o ConnectorTargetPtrOutput) Dimensions() ConnectorTargetDimensionArrayOutp
 	}).(ConnectorTargetDimensionArrayOutput)
 }
 
-// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 func (o ConnectorTargetPtrOutput) EnableFormattedMessaging() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *bool {
 		if v == nil {
@@ -1256,7 +1351,7 @@ func (o ConnectorTargetPtrOutput) LogGroupId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+// (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 func (o ConnectorTargetPtrOutput) LogSourceIdentifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *string {
 		if v == nil {
@@ -1329,7 +1424,7 @@ func (o ConnectorTargetPtrOutput) TopicId() pulumi.StringPtrOutput {
 type ConnectorTargetDimension struct {
 	// (Updatable) Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
 	DimensionValue *ConnectorTargetDimensionDimensionValue `pulumi:"dimensionValue"`
-	// (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+	// (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 	Name *string `pulumi:"name"`
 }
 
@@ -1347,7 +1442,7 @@ type ConnectorTargetDimensionInput interface {
 type ConnectorTargetDimensionArgs struct {
 	// (Updatable) Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
 	DimensionValue ConnectorTargetDimensionDimensionValuePtrInput `pulumi:"dimensionValue"`
-	// (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+	// (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -1407,7 +1502,7 @@ func (o ConnectorTargetDimensionOutput) DimensionValue() ConnectorTargetDimensio
 	return o.ApplyT(func(v ConnectorTargetDimension) *ConnectorTargetDimensionDimensionValue { return v.DimensionValue }).(ConnectorTargetDimensionDimensionValuePtrOutput)
 }
 
-// (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+// (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 func (o ConnectorTargetDimensionOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorTargetDimension) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1612,7 +1707,7 @@ type ConnectorTask struct {
 	BatchSizeInKbs *int `pulumi:"batchSizeInKbs"`
 	// (Updatable) Time limit (seconds) for batch sent to invoke the function.
 	BatchTimeInSec *int `pulumi:"batchTimeInSec"`
-	// (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+	// (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
 	Condition *string `pulumi:"condition"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId *string `pulumi:"functionId"`
@@ -1636,7 +1731,7 @@ type ConnectorTaskArgs struct {
 	BatchSizeInKbs pulumi.IntPtrInput `pulumi:"batchSizeInKbs"`
 	// (Updatable) Time limit (seconds) for batch sent to invoke the function.
 	BatchTimeInSec pulumi.IntPtrInput `pulumi:"batchTimeInSec"`
-	// (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+	// (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
@@ -1705,7 +1800,7 @@ func (o ConnectorTaskOutput) BatchTimeInSec() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConnectorTask) *int { return v.BatchTimeInSec }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+// (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
 func (o ConnectorTaskOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorTask) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -1740,15 +1835,384 @@ func (o ConnectorTaskArrayOutput) Index(i pulumi.IntInput) ConnectorTaskOutput {
 	}).(ConnectorTaskOutput)
 }
 
+type GetConnectorPluginsConnectorPluginCollection struct {
+	Items []GetConnectorPluginsConnectorPluginCollectionItem `pulumi:"items"`
+}
+
+// GetConnectorPluginsConnectorPluginCollectionInput is an input type that accepts GetConnectorPluginsConnectorPluginCollectionArgs and GetConnectorPluginsConnectorPluginCollectionOutput values.
+// You can construct a concrete instance of `GetConnectorPluginsConnectorPluginCollectionInput` via:
+//
+//	GetConnectorPluginsConnectorPluginCollectionArgs{...}
+type GetConnectorPluginsConnectorPluginCollectionInput interface {
+	pulumi.Input
+
+	ToGetConnectorPluginsConnectorPluginCollectionOutput() GetConnectorPluginsConnectorPluginCollectionOutput
+	ToGetConnectorPluginsConnectorPluginCollectionOutputWithContext(context.Context) GetConnectorPluginsConnectorPluginCollectionOutput
+}
+
+type GetConnectorPluginsConnectorPluginCollectionArgs struct {
+	Items GetConnectorPluginsConnectorPluginCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetConnectorPluginsConnectorPluginCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectorPluginsConnectorPluginCollection)(nil)).Elem()
+}
+
+func (i GetConnectorPluginsConnectorPluginCollectionArgs) ToGetConnectorPluginsConnectorPluginCollectionOutput() GetConnectorPluginsConnectorPluginCollectionOutput {
+	return i.ToGetConnectorPluginsConnectorPluginCollectionOutputWithContext(context.Background())
+}
+
+func (i GetConnectorPluginsConnectorPluginCollectionArgs) ToGetConnectorPluginsConnectorPluginCollectionOutputWithContext(ctx context.Context) GetConnectorPluginsConnectorPluginCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectorPluginsConnectorPluginCollectionOutput)
+}
+
+// GetConnectorPluginsConnectorPluginCollectionArrayInput is an input type that accepts GetConnectorPluginsConnectorPluginCollectionArray and GetConnectorPluginsConnectorPluginCollectionArrayOutput values.
+// You can construct a concrete instance of `GetConnectorPluginsConnectorPluginCollectionArrayInput` via:
+//
+//	GetConnectorPluginsConnectorPluginCollectionArray{ GetConnectorPluginsConnectorPluginCollectionArgs{...} }
+type GetConnectorPluginsConnectorPluginCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectorPluginsConnectorPluginCollectionArrayOutput() GetConnectorPluginsConnectorPluginCollectionArrayOutput
+	ToGetConnectorPluginsConnectorPluginCollectionArrayOutputWithContext(context.Context) GetConnectorPluginsConnectorPluginCollectionArrayOutput
+}
+
+type GetConnectorPluginsConnectorPluginCollectionArray []GetConnectorPluginsConnectorPluginCollectionInput
+
+func (GetConnectorPluginsConnectorPluginCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectorPluginsConnectorPluginCollection)(nil)).Elem()
+}
+
+func (i GetConnectorPluginsConnectorPluginCollectionArray) ToGetConnectorPluginsConnectorPluginCollectionArrayOutput() GetConnectorPluginsConnectorPluginCollectionArrayOutput {
+	return i.ToGetConnectorPluginsConnectorPluginCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectorPluginsConnectorPluginCollectionArray) ToGetConnectorPluginsConnectorPluginCollectionArrayOutputWithContext(ctx context.Context) GetConnectorPluginsConnectorPluginCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectorPluginsConnectorPluginCollectionArrayOutput)
+}
+
+type GetConnectorPluginsConnectorPluginCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetConnectorPluginsConnectorPluginCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectorPluginsConnectorPluginCollection)(nil)).Elem()
+}
+
+func (o GetConnectorPluginsConnectorPluginCollectionOutput) ToGetConnectorPluginsConnectorPluginCollectionOutput() GetConnectorPluginsConnectorPluginCollectionOutput {
+	return o
+}
+
+func (o GetConnectorPluginsConnectorPluginCollectionOutput) ToGetConnectorPluginsConnectorPluginCollectionOutputWithContext(ctx context.Context) GetConnectorPluginsConnectorPluginCollectionOutput {
+	return o
+}
+
+func (o GetConnectorPluginsConnectorPluginCollectionOutput) Items() GetConnectorPluginsConnectorPluginCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetConnectorPluginsConnectorPluginCollection) []GetConnectorPluginsConnectorPluginCollectionItem {
+		return v.Items
+	}).(GetConnectorPluginsConnectorPluginCollectionItemArrayOutput)
+}
+
+type GetConnectorPluginsConnectorPluginCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectorPluginsConnectorPluginCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectorPluginsConnectorPluginCollection)(nil)).Elem()
+}
+
+func (o GetConnectorPluginsConnectorPluginCollectionArrayOutput) ToGetConnectorPluginsConnectorPluginCollectionArrayOutput() GetConnectorPluginsConnectorPluginCollectionArrayOutput {
+	return o
+}
+
+func (o GetConnectorPluginsConnectorPluginCollectionArrayOutput) ToGetConnectorPluginsConnectorPluginCollectionArrayOutputWithContext(ctx context.Context) GetConnectorPluginsConnectorPluginCollectionArrayOutput {
+	return o
+}
+
+func (o GetConnectorPluginsConnectorPluginCollectionArrayOutput) Index(i pulumi.IntInput) GetConnectorPluginsConnectorPluginCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectorPluginsConnectorPluginCollection {
+		return vs[0].([]GetConnectorPluginsConnectorPluginCollection)[vs[1].(int)]
+	}).(GetConnectorPluginsConnectorPluginCollectionOutput)
+}
+
+type GetConnectorPluginsConnectorPluginCollectionItem struct {
+	// A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
+	DisplayName string `pulumi:"displayName"`
+	// The estimated throughput range (LOW, MEDIUM, HIGH).
+	EstimatedThroughput string `pulumi:"estimatedThroughput"`
+	// The plugin type discriminator.
+	Kind string `pulumi:"kind"`
+	// The estimated maximum period of time the data will be kept at the source. The duration is specified as a string in ISO 8601 format (P1D for one day or P30D for thrity days).
+	MaxRetention string `pulumi:"maxRetention"`
+	// A filter to return only resources that match the given connector plugin name ignoring case.  Example: `QueueSource`
+	Name string `pulumi:"name"`
+	// Gets the specified connector plugin configuration information in OpenAPI specification format.
+	Schema string `pulumi:"schema"`
+	// A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
+	State string `pulumi:"state"`
+	// The date and time when this plugin became available. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2023-09-09T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetConnectorPluginsConnectorPluginCollectionItemInput is an input type that accepts GetConnectorPluginsConnectorPluginCollectionItemArgs and GetConnectorPluginsConnectorPluginCollectionItemOutput values.
+// You can construct a concrete instance of `GetConnectorPluginsConnectorPluginCollectionItemInput` via:
+//
+//	GetConnectorPluginsConnectorPluginCollectionItemArgs{...}
+type GetConnectorPluginsConnectorPluginCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetConnectorPluginsConnectorPluginCollectionItemOutput() GetConnectorPluginsConnectorPluginCollectionItemOutput
+	ToGetConnectorPluginsConnectorPluginCollectionItemOutputWithContext(context.Context) GetConnectorPluginsConnectorPluginCollectionItemOutput
+}
+
+type GetConnectorPluginsConnectorPluginCollectionItemArgs struct {
+	// A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated throughput range (LOW, MEDIUM, HIGH).
+	EstimatedThroughput pulumi.StringInput `pulumi:"estimatedThroughput"`
+	// The plugin type discriminator.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// The estimated maximum period of time the data will be kept at the source. The duration is specified as a string in ISO 8601 format (P1D for one day or P30D for thrity days).
+	MaxRetention pulumi.StringInput `pulumi:"maxRetention"`
+	// A filter to return only resources that match the given connector plugin name ignoring case.  Example: `QueueSource`
+	Name pulumi.StringInput `pulumi:"name"`
+	// Gets the specified connector plugin configuration information in OpenAPI specification format.
+	Schema pulumi.StringInput `pulumi:"schema"`
+	// A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time when this plugin became available. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2023-09-09T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetConnectorPluginsConnectorPluginCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectorPluginsConnectorPluginCollectionItem)(nil)).Elem()
+}
+
+func (i GetConnectorPluginsConnectorPluginCollectionItemArgs) ToGetConnectorPluginsConnectorPluginCollectionItemOutput() GetConnectorPluginsConnectorPluginCollectionItemOutput {
+	return i.ToGetConnectorPluginsConnectorPluginCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetConnectorPluginsConnectorPluginCollectionItemArgs) ToGetConnectorPluginsConnectorPluginCollectionItemOutputWithContext(ctx context.Context) GetConnectorPluginsConnectorPluginCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectorPluginsConnectorPluginCollectionItemOutput)
+}
+
+// GetConnectorPluginsConnectorPluginCollectionItemArrayInput is an input type that accepts GetConnectorPluginsConnectorPluginCollectionItemArray and GetConnectorPluginsConnectorPluginCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetConnectorPluginsConnectorPluginCollectionItemArrayInput` via:
+//
+//	GetConnectorPluginsConnectorPluginCollectionItemArray{ GetConnectorPluginsConnectorPluginCollectionItemArgs{...} }
+type GetConnectorPluginsConnectorPluginCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectorPluginsConnectorPluginCollectionItemArrayOutput() GetConnectorPluginsConnectorPluginCollectionItemArrayOutput
+	ToGetConnectorPluginsConnectorPluginCollectionItemArrayOutputWithContext(context.Context) GetConnectorPluginsConnectorPluginCollectionItemArrayOutput
+}
+
+type GetConnectorPluginsConnectorPluginCollectionItemArray []GetConnectorPluginsConnectorPluginCollectionItemInput
+
+func (GetConnectorPluginsConnectorPluginCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectorPluginsConnectorPluginCollectionItem)(nil)).Elem()
+}
+
+func (i GetConnectorPluginsConnectorPluginCollectionItemArray) ToGetConnectorPluginsConnectorPluginCollectionItemArrayOutput() GetConnectorPluginsConnectorPluginCollectionItemArrayOutput {
+	return i.ToGetConnectorPluginsConnectorPluginCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectorPluginsConnectorPluginCollectionItemArray) ToGetConnectorPluginsConnectorPluginCollectionItemArrayOutputWithContext(ctx context.Context) GetConnectorPluginsConnectorPluginCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectorPluginsConnectorPluginCollectionItemArrayOutput)
+}
+
+type GetConnectorPluginsConnectorPluginCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetConnectorPluginsConnectorPluginCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectorPluginsConnectorPluginCollectionItem)(nil)).Elem()
+}
+
+func (o GetConnectorPluginsConnectorPluginCollectionItemOutput) ToGetConnectorPluginsConnectorPluginCollectionItemOutput() GetConnectorPluginsConnectorPluginCollectionItemOutput {
+	return o
+}
+
+func (o GetConnectorPluginsConnectorPluginCollectionItemOutput) ToGetConnectorPluginsConnectorPluginCollectionItemOutputWithContext(ctx context.Context) GetConnectorPluginsConnectorPluginCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
+func (o GetConnectorPluginsConnectorPluginCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectorPluginsConnectorPluginCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The estimated throughput range (LOW, MEDIUM, HIGH).
+func (o GetConnectorPluginsConnectorPluginCollectionItemOutput) EstimatedThroughput() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectorPluginsConnectorPluginCollectionItem) string { return v.EstimatedThroughput }).(pulumi.StringOutput)
+}
+
+// The plugin type discriminator.
+func (o GetConnectorPluginsConnectorPluginCollectionItemOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectorPluginsConnectorPluginCollectionItem) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// The estimated maximum period of time the data will be kept at the source. The duration is specified as a string in ISO 8601 format (P1D for one day or P30D for thrity days).
+func (o GetConnectorPluginsConnectorPluginCollectionItemOutput) MaxRetention() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectorPluginsConnectorPluginCollectionItem) string { return v.MaxRetention }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given connector plugin name ignoring case.  Example: `QueueSource`
+func (o GetConnectorPluginsConnectorPluginCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectorPluginsConnectorPluginCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Gets the specified connector plugin configuration information in OpenAPI specification format.
+func (o GetConnectorPluginsConnectorPluginCollectionItemOutput) Schema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectorPluginsConnectorPluginCollectionItem) string { return v.Schema }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
+func (o GetConnectorPluginsConnectorPluginCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectorPluginsConnectorPluginCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time when this plugin became available. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2023-09-09T21:10:29.600Z`
+func (o GetConnectorPluginsConnectorPluginCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectorPluginsConnectorPluginCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetConnectorPluginsConnectorPluginCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectorPluginsConnectorPluginCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectorPluginsConnectorPluginCollectionItem)(nil)).Elem()
+}
+
+func (o GetConnectorPluginsConnectorPluginCollectionItemArrayOutput) ToGetConnectorPluginsConnectorPluginCollectionItemArrayOutput() GetConnectorPluginsConnectorPluginCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConnectorPluginsConnectorPluginCollectionItemArrayOutput) ToGetConnectorPluginsConnectorPluginCollectionItemArrayOutputWithContext(ctx context.Context) GetConnectorPluginsConnectorPluginCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConnectorPluginsConnectorPluginCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConnectorPluginsConnectorPluginCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectorPluginsConnectorPluginCollectionItem {
+		return vs[0].([]GetConnectorPluginsConnectorPluginCollectionItem)[vs[1].(int)]
+	}).(GetConnectorPluginsConnectorPluginCollectionItemOutput)
+}
+
+type GetConnectorPluginsFilter struct {
+	// A filter to return only resources that match the given connector plugin name ignoring case.  Example: `QueueSource`
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetConnectorPluginsFilterInput is an input type that accepts GetConnectorPluginsFilterArgs and GetConnectorPluginsFilterOutput values.
+// You can construct a concrete instance of `GetConnectorPluginsFilterInput` via:
+//
+//	GetConnectorPluginsFilterArgs{...}
+type GetConnectorPluginsFilterInput interface {
+	pulumi.Input
+
+	ToGetConnectorPluginsFilterOutput() GetConnectorPluginsFilterOutput
+	ToGetConnectorPluginsFilterOutputWithContext(context.Context) GetConnectorPluginsFilterOutput
+}
+
+type GetConnectorPluginsFilterArgs struct {
+	// A filter to return only resources that match the given connector plugin name ignoring case.  Example: `QueueSource`
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetConnectorPluginsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectorPluginsFilter)(nil)).Elem()
+}
+
+func (i GetConnectorPluginsFilterArgs) ToGetConnectorPluginsFilterOutput() GetConnectorPluginsFilterOutput {
+	return i.ToGetConnectorPluginsFilterOutputWithContext(context.Background())
+}
+
+func (i GetConnectorPluginsFilterArgs) ToGetConnectorPluginsFilterOutputWithContext(ctx context.Context) GetConnectorPluginsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectorPluginsFilterOutput)
+}
+
+// GetConnectorPluginsFilterArrayInput is an input type that accepts GetConnectorPluginsFilterArray and GetConnectorPluginsFilterArrayOutput values.
+// You can construct a concrete instance of `GetConnectorPluginsFilterArrayInput` via:
+//
+//	GetConnectorPluginsFilterArray{ GetConnectorPluginsFilterArgs{...} }
+type GetConnectorPluginsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectorPluginsFilterArrayOutput() GetConnectorPluginsFilterArrayOutput
+	ToGetConnectorPluginsFilterArrayOutputWithContext(context.Context) GetConnectorPluginsFilterArrayOutput
+}
+
+type GetConnectorPluginsFilterArray []GetConnectorPluginsFilterInput
+
+func (GetConnectorPluginsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectorPluginsFilter)(nil)).Elem()
+}
+
+func (i GetConnectorPluginsFilterArray) ToGetConnectorPluginsFilterArrayOutput() GetConnectorPluginsFilterArrayOutput {
+	return i.ToGetConnectorPluginsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectorPluginsFilterArray) ToGetConnectorPluginsFilterArrayOutputWithContext(ctx context.Context) GetConnectorPluginsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectorPluginsFilterArrayOutput)
+}
+
+type GetConnectorPluginsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetConnectorPluginsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectorPluginsFilter)(nil)).Elem()
+}
+
+func (o GetConnectorPluginsFilterOutput) ToGetConnectorPluginsFilterOutput() GetConnectorPluginsFilterOutput {
+	return o
+}
+
+func (o GetConnectorPluginsFilterOutput) ToGetConnectorPluginsFilterOutputWithContext(ctx context.Context) GetConnectorPluginsFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the given connector plugin name ignoring case.  Example: `QueueSource`
+func (o GetConnectorPluginsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectorPluginsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetConnectorPluginsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConnectorPluginsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetConnectorPluginsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectorPluginsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetConnectorPluginsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectorPluginsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectorPluginsFilter)(nil)).Elem()
+}
+
+func (o GetConnectorPluginsFilterArrayOutput) ToGetConnectorPluginsFilterArrayOutput() GetConnectorPluginsFilterArrayOutput {
+	return o
+}
+
+func (o GetConnectorPluginsFilterArrayOutput) ToGetConnectorPluginsFilterArrayOutputWithContext(ctx context.Context) GetConnectorPluginsFilterArrayOutput {
+	return o
+}
+
+func (o GetConnectorPluginsFilterArrayOutput) Index(i pulumi.IntInput) GetConnectorPluginsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectorPluginsFilter {
+		return vs[0].([]GetConnectorPluginsFilter)[vs[1].(int)]
+	}).(GetConnectorPluginsFilterOutput)
+}
+
 type GetServiceConnectorSource struct {
-	// The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	ConfigMap string `pulumi:"configMap"`
+	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors []GetServiceConnectorSourceCursor `pulumi:"cursors"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources []GetServiceConnectorSourceLogSource `pulumi:"logSources"`
-	// The list of metric namespaces to retrieve data from.
+	// One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources []GetServiceConnectorSourceMonitoringSource `pulumi:"monitoringSources"`
+	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	PluginName string `pulumi:"pluginName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId string `pulumi:"streamId"`
 }
@@ -1765,14 +2229,18 @@ type GetServiceConnectorSourceInput interface {
 }
 
 type GetServiceConnectorSourceArgs struct {
-	// The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	ConfigMap pulumi.StringInput `pulumi:"configMap"`
+	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors GetServiceConnectorSourceCursorArrayInput `pulumi:"cursors"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources GetServiceConnectorSourceLogSourceArrayInput `pulumi:"logSources"`
-	// The list of metric namespaces to retrieve data from.
+	// One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources GetServiceConnectorSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
+	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	PluginName pulumi.StringInput `pulumi:"pluginName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringInput `pulumi:"streamId"`
 }
@@ -1828,12 +2296,17 @@ func (o GetServiceConnectorSourceOutput) ToGetServiceConnectorSourceOutputWithCo
 	return o
 }
 
-// The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+func (o GetServiceConnectorSourceOutput) ConfigMap() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorSource) string { return v.ConfigMap }).(pulumi.StringOutput)
+}
+
+// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 func (o GetServiceConnectorSourceOutput) Cursors() GetServiceConnectorSourceCursorArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorSource) []GetServiceConnectorSourceCursor { return v.Cursors }).(GetServiceConnectorSourceCursorArrayOutput)
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorSourceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorSource) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -1843,11 +2316,16 @@ func (o GetServiceConnectorSourceOutput) LogSources() GetServiceConnectorSourceL
 	return o.ApplyT(func(v GetServiceConnectorSource) []GetServiceConnectorSourceLogSource { return v.LogSources }).(GetServiceConnectorSourceLogSourceArrayOutput)
 }
 
-// The list of metric namespaces to retrieve data from.
+// One or more compartment-specific lists of metric namespaces to retrieve data from.
 func (o GetServiceConnectorSourceOutput) MonitoringSources() GetServiceConnectorSourceMonitoringSourceArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorSource) []GetServiceConnectorSourceMonitoringSource {
 		return v.MonitoringSources
 	}).(GetServiceConnectorSourceMonitoringSourceArrayOutput)
+}
+
+// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+func (o GetServiceConnectorSourceOutput) PluginName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorSource) string { return v.PluginName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -1876,7 +2354,7 @@ func (o GetServiceConnectorSourceArrayOutput) Index(i pulumi.IntInput) GetServic
 }
 
 type GetServiceConnectorSourceCursor struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 }
 
@@ -1892,7 +2370,7 @@ type GetServiceConnectorSourceCursorInput interface {
 }
 
 type GetServiceConnectorSourceCursorArgs struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 }
 
@@ -1947,7 +2425,7 @@ func (o GetServiceConnectorSourceCursorOutput) ToGetServiceConnectorSourceCursor
 	return o
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorSourceCursorOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorSourceCursor) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -2196,7 +2674,7 @@ func (o GetServiceConnectorSourceMonitoringSourceArrayOutput) Index(i pulumi.Int
 }
 
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetail struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 	// The namespaces for the compartment-specific list.
 	Namespaces []GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace `pulumi:"namespaces"`
@@ -2214,7 +2692,7 @@ type GetServiceConnectorSourceMonitoringSourceNamespaceDetailInput interface {
 }
 
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The namespaces for the compartment-specific list.
 	Namespaces GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput `pulumi:"namespaces"`
@@ -2271,7 +2749,7 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) ToGetSer
 	return o
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorSourceMonitoringSourceNamespaceDetail) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -2412,7 +2890,7 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOu
 }
 
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 }
 
@@ -2428,7 +2906,7 @@ type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricInpu
 }
 
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 }
 
@@ -2483,7 +2961,7 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricO
 	return o
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -2513,21 +2991,27 @@ type GetServiceConnectorTarget struct {
 	BatchRolloverSizeInMbs int `pulumi:"batchRolloverSizeInMbs"`
 	// The batch rollover time in milliseconds.
 	BatchRolloverTimeInMs int `pulumi:"batchRolloverTimeInMs"`
-	// The name of the bucket. Avoid entering confidential information.
+	// Size limit (kilobytes) for batch sent to invoke the function.
+	BatchSizeInKbs int `pulumi:"batchSizeInKbs"`
+	// The batch rollover size in number of messages.
+	BatchSizeInNum int `pulumi:"batchSizeInNum"`
+	// Time limit (seconds) for batch sent to invoke the function.
+	BatchTimeInSec int `pulumi:"batchTimeInSec"`
+	// The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 	Bucket string `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
 	CompartmentId string `pulumi:"compartmentId"`
 	// List of dimension names and values.
 	Dimensions []GetServiceConnectorTargetDimension `pulumi:"dimensions"`
-	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 	EnableFormattedMessaging bool `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId string `pulumi:"functionId"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId string `pulumi:"logGroupId"`
-	// Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+	// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier string `pulumi:"logSourceIdentifier"`
 	// The name of the metric.  Example: `CpuUtilization`
 	Metric string `pulumi:"metric"`
@@ -2559,21 +3043,27 @@ type GetServiceConnectorTargetArgs struct {
 	BatchRolloverSizeInMbs pulumi.IntInput `pulumi:"batchRolloverSizeInMbs"`
 	// The batch rollover time in milliseconds.
 	BatchRolloverTimeInMs pulumi.IntInput `pulumi:"batchRolloverTimeInMs"`
-	// The name of the bucket. Avoid entering confidential information.
+	// Size limit (kilobytes) for batch sent to invoke the function.
+	BatchSizeInKbs pulumi.IntInput `pulumi:"batchSizeInKbs"`
+	// The batch rollover size in number of messages.
+	BatchSizeInNum pulumi.IntInput `pulumi:"batchSizeInNum"`
+	// Time limit (seconds) for batch sent to invoke the function.
+	BatchTimeInSec pulumi.IntInput `pulumi:"batchTimeInSec"`
+	// The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// List of dimension names and values.
 	Dimensions GetServiceConnectorTargetDimensionArrayInput `pulumi:"dimensions"`
-	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 	EnableFormattedMessaging pulumi.BoolInput `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
-	// Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+	// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier pulumi.StringInput `pulumi:"logSourceIdentifier"`
 	// The name of the metric.  Example: `CpuUtilization`
 	Metric pulumi.StringInput `pulumi:"metric"`
@@ -2650,7 +3140,22 @@ func (o GetServiceConnectorTargetOutput) BatchRolloverTimeInMs() pulumi.IntOutpu
 	return o.ApplyT(func(v GetServiceConnectorTarget) int { return v.BatchRolloverTimeInMs }).(pulumi.IntOutput)
 }
 
-// The name of the bucket. Avoid entering confidential information.
+// Size limit (kilobytes) for batch sent to invoke the function.
+func (o GetServiceConnectorTargetOutput) BatchSizeInKbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServiceConnectorTarget) int { return v.BatchSizeInKbs }).(pulumi.IntOutput)
+}
+
+// The batch rollover size in number of messages.
+func (o GetServiceConnectorTargetOutput) BatchSizeInNum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServiceConnectorTarget) int { return v.BatchSizeInNum }).(pulumi.IntOutput)
+}
+
+// Time limit (seconds) for batch sent to invoke the function.
+func (o GetServiceConnectorTargetOutput) BatchTimeInSec() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServiceConnectorTarget) int { return v.BatchTimeInSec }).(pulumi.IntOutput)
+}
+
+// The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 func (o GetServiceConnectorTargetOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -2665,7 +3170,7 @@ func (o GetServiceConnectorTargetOutput) Dimensions() GetServiceConnectorTargetD
 	return o.ApplyT(func(v GetServiceConnectorTarget) []GetServiceConnectorTargetDimension { return v.Dimensions }).(GetServiceConnectorTargetDimensionArrayOutput)
 }
 
-// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 func (o GetServiceConnectorTargetOutput) EnableFormattedMessaging() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) bool { return v.EnableFormattedMessaging }).(pulumi.BoolOutput)
 }
@@ -2675,7 +3180,7 @@ func (o GetServiceConnectorTargetOutput) FunctionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) string { return v.FunctionId }).(pulumi.StringOutput)
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorTargetOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -2685,7 +3190,7 @@ func (o GetServiceConnectorTargetOutput) LogGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) string { return v.LogGroupId }).(pulumi.StringOutput)
 }
 
-// Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 func (o GetServiceConnectorTargetOutput) LogSourceIdentifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) string { return v.LogSourceIdentifier }).(pulumi.StringOutput)
 }
@@ -2743,7 +3248,7 @@ func (o GetServiceConnectorTargetArrayOutput) Index(i pulumi.IntInput) GetServic
 type GetServiceConnectorTargetDimension struct {
 	// Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
 	DimensionValues []GetServiceConnectorTargetDimensionDimensionValue `pulumi:"dimensionValues"`
-	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 	Name string `pulumi:"name"`
 }
 
@@ -2761,7 +3266,7 @@ type GetServiceConnectorTargetDimensionInput interface {
 type GetServiceConnectorTargetDimensionArgs struct {
 	// Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
 	DimensionValues GetServiceConnectorTargetDimensionDimensionValueArrayInput `pulumi:"dimensionValues"`
-	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -2823,7 +3328,7 @@ func (o GetServiceConnectorTargetDimensionOutput) DimensionValues() GetServiceCo
 	}).(GetServiceConnectorTargetDimensionDimensionValueArrayOutput)
 }
 
-// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 func (o GetServiceConnectorTargetDimensionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTargetDimension) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -2849,7 +3354,7 @@ func (o GetServiceConnectorTargetDimensionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetServiceConnectorTargetDimensionDimensionValue struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path string `pulumi:"path"`
@@ -2869,7 +3374,7 @@ type GetServiceConnectorTargetDimensionDimensionValueInput interface {
 }
 
 type GetServiceConnectorTargetDimensionDimensionValueArgs struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path pulumi.StringInput `pulumi:"path"`
@@ -2928,7 +3433,7 @@ func (o GetServiceConnectorTargetDimensionDimensionValueOutput) ToGetServiceConn
 	return o
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorTargetDimensionDimensionValueOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTargetDimensionDimensionValue) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -2968,11 +3473,11 @@ type GetServiceConnectorTask struct {
 	BatchSizeInKbs int `pulumi:"batchSizeInKbs"`
 	// Time limit (seconds) for batch sent to invoke the function.
 	BatchTimeInSec int `pulumi:"batchTimeInSec"`
-	// A filter or mask to limit the source used in the flow defined by the service connector.
+	// A filter or mask to limit the source used in the flow defined by the connector.
 	Condition string `pulumi:"condition"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId string `pulumi:"functionId"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 }
 
@@ -2992,11 +3497,11 @@ type GetServiceConnectorTaskArgs struct {
 	BatchSizeInKbs pulumi.IntInput `pulumi:"batchSizeInKbs"`
 	// Time limit (seconds) for batch sent to invoke the function.
 	BatchTimeInSec pulumi.IntInput `pulumi:"batchTimeInSec"`
-	// A filter or mask to limit the source used in the flow defined by the service connector.
+	// A filter or mask to limit the source used in the flow defined by the connector.
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 }
 
@@ -3061,7 +3566,7 @@ func (o GetServiceConnectorTaskOutput) BatchTimeInSec() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServiceConnectorTask) int { return v.BatchTimeInSec }).(pulumi.IntOutput)
 }
 
-// A filter or mask to limit the source used in the flow defined by the service connector.
+// A filter or mask to limit the source used in the flow defined by the connector.
 func (o GetServiceConnectorTaskOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTask) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -3071,7 +3576,7 @@ func (o GetServiceConnectorTaskOutput) FunctionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTask) string { return v.FunctionId }).(pulumi.StringOutput)
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorTaskOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTask) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -3097,7 +3602,7 @@ func (o GetServiceConnectorTaskArrayOutput) Index(i pulumi.IntInput) GetServiceC
 }
 
 type GetServiceConnectorsFilter struct {
-	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -3115,7 +3620,7 @@ type GetServiceConnectorsFilterInput interface {
 }
 
 type GetServiceConnectorsFilterArgs struct {
-	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -3172,7 +3677,7 @@ func (o GetServiceConnectorsFilterOutput) ToGetServiceConnectorsFilterOutputWith
 	return o
 }
 
-// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 func (o GetServiceConnectorsFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -3312,23 +3817,23 @@ type GetServiceConnectorsServiceConnectorCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
 	LifecyleDetails string `pulumi:"lifecyleDetails"`
-	// An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+	// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 	Sources []GetServiceConnectorsServiceConnectorCollectionItemSource `pulumi:"sources"`
 	// A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+	// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 	Targets []GetServiceConnectorsServiceConnectorCollectionItemTarget `pulumi:"targets"`
 	// The list of tasks.
 	Tasks []GetServiceConnectorsServiceConnectorCollectionItemTask `pulumi:"tasks"`
-	// The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+	// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+	// The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -3354,23 +3859,23 @@ type GetServiceConnectorsServiceConnectorCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
 	LifecyleDetails pulumi.StringInput `pulumi:"lifecyleDetails"`
-	// An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+	// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 	Sources GetServiceConnectorsServiceConnectorCollectionItemSourceArrayInput `pulumi:"sources"`
 	// A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
 	State pulumi.StringInput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+	// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 	Targets GetServiceConnectorsServiceConnectorCollectionItemTargetArrayInput `pulumi:"targets"`
 	// The list of tasks.
 	Tasks GetServiceConnectorsServiceConnectorCollectionItemTaskArrayInput `pulumi:"tasks"`
-	// The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+	// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+	// The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -3454,7 +3959,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) FreeformTags()
 	}).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
 func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -3464,7 +3969,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) LifecyleDetail
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) string { return v.LifecyleDetails }).(pulumi.StringOutput)
 }
 
-// An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) Sources() GetServiceConnectorsServiceConnectorCollectionItemSourceArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) []GetServiceConnectorsServiceConnectorCollectionItemSource {
 		return v.Sources
@@ -3481,7 +3986,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) SystemTags() p
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) Targets() GetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) []GetServiceConnectorsServiceConnectorCollectionItemTarget {
 		return v.Targets
@@ -3495,12 +4000,12 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) Tasks() GetSer
 	}).(GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput)
 }
 
-// The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
 func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+// The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
 func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -3526,14 +4031,18 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemArrayOutput) Index(i p
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSource struct {
-	// The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	ConfigMap string `pulumi:"configMap"`
+	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors []GetServiceConnectorsServiceConnectorCollectionItemSourceCursor `pulumi:"cursors"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources []GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource `pulumi:"logSources"`
-	// The list of metric namespaces to retrieve data from.
+	// One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource `pulumi:"monitoringSources"`
+	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	PluginName string `pulumi:"pluginName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId string `pulumi:"streamId"`
 }
@@ -3550,14 +4059,18 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceInput interface {
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceArgs struct {
-	// The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+	// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+	ConfigMap pulumi.StringInput `pulumi:"configMap"`
+	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayInput `pulumi:"cursors"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayInput `pulumi:"logSources"`
-	// The list of metric namespaces to retrieve data from.
+	// One or more compartment-specific lists of metric namespaces to retrieve data from.
 	MonitoringSources GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
+	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+	PluginName pulumi.StringInput `pulumi:"pluginName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringInput `pulumi:"streamId"`
 }
@@ -3613,14 +4126,19 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) ToGetSer
 	return o
 }
 
-// The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) ConfigMap() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) string { return v.ConfigMap }).(pulumi.StringOutput)
+}
+
+// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) Cursors() GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) []GetServiceConnectorsServiceConnectorCollectionItemSourceCursor {
 		return v.Cursors
 	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutput)
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -3632,11 +4150,16 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) LogSourc
 	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutput)
 }
 
-// The list of metric namespaces to retrieve data from.
+// One or more compartment-specific lists of metric namespaces to retrieve data from.
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) MonitoringSources() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource {
 		return v.MonitoringSources
 	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput)
+}
+
+// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) PluginName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) string { return v.PluginName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -3665,7 +4188,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceArrayOutput) Ind
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceCursor struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 }
 
@@ -3681,7 +4204,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceCursorInput interfa
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArgs struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 }
 
@@ -3736,7 +4259,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput) To
 	return o
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceCursor) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -3989,7 +4512,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 	// The namespaces for the compartment-specific list.
 	Namespaces []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace `pulumi:"namespaces"`
@@ -4007,7 +4530,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNam
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The namespaces for the compartment-specific list.
 	Namespaces GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput `pulumi:"namespaces"`
@@ -4064,7 +4587,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return o
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail) string {
 		return v.Kind
@@ -4209,7 +4732,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 }
 
@@ -4225,7 +4748,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNam
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 }
 
@@ -4280,7 +4803,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return o
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric) string {
 		return v.Kind
@@ -4312,21 +4835,27 @@ type GetServiceConnectorsServiceConnectorCollectionItemTarget struct {
 	BatchRolloverSizeInMbs int `pulumi:"batchRolloverSizeInMbs"`
 	// The batch rollover time in milliseconds.
 	BatchRolloverTimeInMs int `pulumi:"batchRolloverTimeInMs"`
-	// The name of the bucket. Avoid entering confidential information.
+	// Size limit (kilobytes) for batch sent to invoke the function.
+	BatchSizeInKbs int `pulumi:"batchSizeInKbs"`
+	// The batch rollover size in number of messages.
+	BatchSizeInNum int `pulumi:"batchSizeInNum"`
+	// Time limit (seconds) for batch sent to invoke the function.
+	BatchTimeInSec int `pulumi:"batchTimeInSec"`
+	// The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 	Bucket string `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
 	CompartmentId string `pulumi:"compartmentId"`
 	// List of dimension names and values.
 	Dimensions []GetServiceConnectorsServiceConnectorCollectionItemTargetDimension `pulumi:"dimensions"`
-	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 	EnableFormattedMessaging bool `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId string `pulumi:"functionId"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId string `pulumi:"logGroupId"`
-	// Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+	// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier string `pulumi:"logSourceIdentifier"`
 	// The name of the metric.  Example: `CpuUtilization`
 	Metric string `pulumi:"metric"`
@@ -4358,21 +4887,27 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetArgs struct {
 	BatchRolloverSizeInMbs pulumi.IntInput `pulumi:"batchRolloverSizeInMbs"`
 	// The batch rollover time in milliseconds.
 	BatchRolloverTimeInMs pulumi.IntInput `pulumi:"batchRolloverTimeInMs"`
-	// The name of the bucket. Avoid entering confidential information.
+	// Size limit (kilobytes) for batch sent to invoke the function.
+	BatchSizeInKbs pulumi.IntInput `pulumi:"batchSizeInKbs"`
+	// The batch rollover size in number of messages.
+	BatchSizeInNum pulumi.IntInput `pulumi:"batchSizeInNum"`
+	// Time limit (seconds) for batch sent to invoke the function.
+	BatchTimeInSec pulumi.IntInput `pulumi:"batchTimeInSec"`
+	// The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// List of dimension names and values.
 	Dimensions GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayInput `pulumi:"dimensions"`
-	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+	// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 	EnableFormattedMessaging pulumi.BoolInput `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
-	// Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+	// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 	LogSourceIdentifier pulumi.StringInput `pulumi:"logSourceIdentifier"`
 	// The name of the metric.  Example: `CpuUtilization`
 	Metric pulumi.StringInput `pulumi:"metric"`
@@ -4449,7 +4984,22 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) BatchRol
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) int { return v.BatchRolloverTimeInMs }).(pulumi.IntOutput)
 }
 
-// The name of the bucket. Avoid entering confidential information.
+// Size limit (kilobytes) for batch sent to invoke the function.
+func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) BatchSizeInKbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) int { return v.BatchSizeInKbs }).(pulumi.IntOutput)
+}
+
+// The batch rollover size in number of messages.
+func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) BatchSizeInNum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) int { return v.BatchSizeInNum }).(pulumi.IntOutput)
+}
+
+// Time limit (seconds) for batch sent to invoke the function.
+func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) BatchTimeInSec() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) int { return v.BatchTimeInSec }).(pulumi.IntOutput)
+}
+
+// The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -4466,7 +5016,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) Dimensio
 	}).(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutput)
 }
 
-// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) EnableFormattedMessaging() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) bool {
 		return v.EnableFormattedMessaging
@@ -4478,7 +5028,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) Function
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) string { return v.FunctionId }).(pulumi.StringOutput)
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -4488,7 +5038,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) LogGroup
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) string { return v.LogGroupId }).(pulumi.StringOutput)
 }
 
-// Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) LogSourceIdentifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) string { return v.LogSourceIdentifier }).(pulumi.StringOutput)
 }
@@ -4546,7 +5096,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutput) Ind
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimension struct {
 	// Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
 	DimensionValues []GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue `pulumi:"dimensionValues"`
-	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 	Name string `pulumi:"name"`
 }
 
@@ -4564,7 +5114,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionInput inte
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs struct {
 	// Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
 	DimensionValues GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayInput `pulumi:"dimensionValues"`
-	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+	// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -4626,7 +5176,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput)
 	}).(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayOutput)
 }
 
-// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTargetDimension) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -4652,7 +5202,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOu
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path string `pulumi:"path"`
@@ -4672,7 +5222,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionV
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArgs struct {
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path pulumi.StringInput `pulumi:"path"`
@@ -4731,7 +5281,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensi
 	return o
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue) string {
 		return v.Kind
@@ -4777,11 +5327,11 @@ type GetServiceConnectorsServiceConnectorCollectionItemTask struct {
 	BatchSizeInKbs int `pulumi:"batchSizeInKbs"`
 	// Time limit (seconds) for batch sent to invoke the function.
 	BatchTimeInSec int `pulumi:"batchTimeInSec"`
-	// A filter or mask to limit the source used in the flow defined by the service connector.
+	// A filter or mask to limit the source used in the flow defined by the connector.
 	Condition string `pulumi:"condition"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId string `pulumi:"functionId"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind string `pulumi:"kind"`
 }
 
@@ -4801,11 +5351,11 @@ type GetServiceConnectorsServiceConnectorCollectionItemTaskArgs struct {
 	BatchSizeInKbs pulumi.IntInput `pulumi:"batchSizeInKbs"`
 	// Time limit (seconds) for batch sent to invoke the function.
 	BatchTimeInSec pulumi.IntInput `pulumi:"batchTimeInSec"`
-	// A filter or mask to limit the source used in the flow defined by the service connector.
+	// A filter or mask to limit the source used in the flow defined by the connector.
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
-	// The type descriminator.
+	// The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 }
 
@@ -4870,7 +5420,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTaskOutput) BatchTimeI
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTask) int { return v.BatchTimeInSec }).(pulumi.IntOutput)
 }
 
-// A filter or mask to limit the source used in the flow defined by the service connector.
+// A filter or mask to limit the source used in the flow defined by the connector.
 func (o GetServiceConnectorsServiceConnectorCollectionItemTaskOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTask) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -4880,7 +5430,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTaskOutput) FunctionId
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTask) string { return v.FunctionId }).(pulumi.StringOutput)
 }
 
-// The type descriminator.
+// The type discriminator.
 func (o GetServiceConnectorsServiceConnectorCollectionItemTaskOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTask) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -4927,6 +5477,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetDimensionDimensionValuePtrInput)(nil)).Elem(), ConnectorTargetDimensionDimensionValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTaskInput)(nil)).Elem(), ConnectorTaskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTaskArrayInput)(nil)).Elem(), ConnectorTaskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectorPluginsConnectorPluginCollectionInput)(nil)).Elem(), GetConnectorPluginsConnectorPluginCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectorPluginsConnectorPluginCollectionArrayInput)(nil)).Elem(), GetConnectorPluginsConnectorPluginCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectorPluginsConnectorPluginCollectionItemInput)(nil)).Elem(), GetConnectorPluginsConnectorPluginCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectorPluginsConnectorPluginCollectionItemArrayInput)(nil)).Elem(), GetConnectorPluginsConnectorPluginCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectorPluginsFilterInput)(nil)).Elem(), GetConnectorPluginsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectorPluginsFilterArrayInput)(nil)).Elem(), GetConnectorPluginsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceInput)(nil)).Elem(), GetServiceConnectorSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceArrayInput)(nil)).Elem(), GetServiceConnectorSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceCursorInput)(nil)).Elem(), GetServiceConnectorSourceCursorArgs{})
@@ -4998,6 +5554,12 @@ func init() {
 	pulumi.RegisterOutputType(ConnectorTargetDimensionDimensionValuePtrOutput{})
 	pulumi.RegisterOutputType(ConnectorTaskOutput{})
 	pulumi.RegisterOutputType(ConnectorTaskArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectorPluginsConnectorPluginCollectionOutput{})
+	pulumi.RegisterOutputType(GetConnectorPluginsConnectorPluginCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectorPluginsConnectorPluginCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetConnectorPluginsConnectorPluginCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectorPluginsFilterOutput{})
+	pulumi.RegisterOutputType(GetConnectorPluginsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorSourceOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorSourceCursorOutput{})

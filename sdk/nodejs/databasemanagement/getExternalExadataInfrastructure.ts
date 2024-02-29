@@ -62,12 +62,20 @@ export interface GetExternalExadataInfrastructureResult {
      */
     readonly databaseSystems: outputs.DatabaseManagement.GetExternalExadataInfrastructureDatabaseSystem[];
     readonly dbSystemIds: string[];
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    readonly definedTags: {[key: string]: any};
     readonly discoveryKey: string;
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
     readonly displayName: string;
     readonly externalExadataInfrastructureId: string;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    readonly freeformTags: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      */

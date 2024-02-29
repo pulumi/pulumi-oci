@@ -26,9 +26,17 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string? DatabaseType;
         /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        /// <summary>
         /// The infrastructure used to deploy the Oracle Database.
         /// </summary>
         public readonly string? DeploymentType;
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
         /// 
@@ -58,7 +66,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string? databaseType,
 
+            ImmutableDictionary<string, object>? definedTags,
+
             string? deploymentType,
+
+            ImmutableDictionary<string, object>? freeformTags,
 
             string? id,
 
@@ -71,7 +83,9 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             CompartmentId = compartmentId;
             DatabaseSubType = databaseSubType;
             DatabaseType = databaseType;
+            DefinedTags = definedTags;
             DeploymentType = deploymentType;
+            FreeformTags = freeformTags;
             Id = id;
             Name = name;
             TimeAdded = timeAdded;

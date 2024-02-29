@@ -57,6 +57,10 @@ export interface GetExternalClusterResult {
      */
     readonly componentName: string;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    readonly definedTags: {[key: string]: any};
+    /**
      * The user-friendly name for the external cluster. The name does not have to be unique.
      */
     readonly displayName: string;
@@ -69,6 +73,10 @@ export interface GetExternalClusterResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
      */
     readonly externalDbSystemId: string;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    readonly freeformTags: {[key: string]: any};
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */

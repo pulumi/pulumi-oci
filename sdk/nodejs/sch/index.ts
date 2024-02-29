@@ -10,6 +10,16 @@ export type Connector = import("./connector").Connector;
 export const Connector: typeof import("./connector").Connector = null as any;
 utilities.lazyLoad(exports, ["Connector"], () => require("./connector"));
 
+export { GetConnectorPluginArgs, GetConnectorPluginResult, GetConnectorPluginOutputArgs } from "./getConnectorPlugin";
+export const getConnectorPlugin: typeof import("./getConnectorPlugin").getConnectorPlugin = null as any;
+export const getConnectorPluginOutput: typeof import("./getConnectorPlugin").getConnectorPluginOutput = null as any;
+utilities.lazyLoad(exports, ["getConnectorPlugin","getConnectorPluginOutput"], () => require("./getConnectorPlugin"));
+
+export { GetConnectorPluginsArgs, GetConnectorPluginsResult, GetConnectorPluginsOutputArgs } from "./getConnectorPlugins";
+export const getConnectorPlugins: typeof import("./getConnectorPlugins").getConnectorPlugins = null as any;
+export const getConnectorPluginsOutput: typeof import("./getConnectorPlugins").getConnectorPluginsOutput = null as any;
+utilities.lazyLoad(exports, ["getConnectorPlugins","getConnectorPluginsOutput"], () => require("./getConnectorPlugins"));
+
 export { GetServiceConnectorArgs, GetServiceConnectorResult, GetServiceConnectorOutputArgs } from "./getServiceConnector";
 export const getServiceConnector: typeof import("./getServiceConnector").getServiceConnector = null as any;
 export const getServiceConnectorOutput: typeof import("./getServiceConnector").getServiceConnectorOutput = null as any;

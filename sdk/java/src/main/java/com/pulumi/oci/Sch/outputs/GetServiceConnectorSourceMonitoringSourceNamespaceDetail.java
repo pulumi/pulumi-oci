@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     private String kind;
@@ -25,7 +25,7 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
 
     private GetServiceConnectorSourceMonitoringSourceNamespaceDetail() {}
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     public String kind() {

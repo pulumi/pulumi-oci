@@ -66,6 +66,8 @@ type LookupKeyArgs struct {
 
 // A collection of values returned by getKey.
 type LookupKeyResult struct {
+	// The details of auto rotation schedule for the Key being create updated or imported.
+	AutoKeyRotationDetails []GetKeyAutoKeyRotationDetail `pulumi:"autoKeyRotationDetails"`
 	// The OCID of the compartment that contains this master encryption key.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
@@ -82,13 +84,15 @@ type LookupKeyResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the key.
 	Id string `pulumi:"id"`
+	// A parameter specifying whether the auto key rotation is enabled or not.
+	IsAutoRotationEnabled bool `pulumi:"isAutoRotationEnabled"`
 	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 	IsPrimary bool   `pulumi:"isPrimary"`
 	KeyId     string `pulumi:"keyId"`
 	// The cryptographic properties of a key.
 	KeyShapes          []GetKeyKeyShape `pulumi:"keyShapes"`
 	ManagementEndpoint string           `pulumi:"managementEndpoint"`
-	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
+	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 	ProtectionMode string `pulumi:"protectionMode"`
 	// Key replica details
 	ReplicaDetails []GetKeyReplicaDetail `pulumi:"replicaDetails"`
@@ -150,6 +154,11 @@ func (o LookupKeyResultOutput) ToLookupKeyResultOutputWithContext(ctx context.Co
 	return o
 }
 
+// The details of auto rotation schedule for the Key being create updated or imported.
+func (o LookupKeyResultOutput) AutoKeyRotationDetails() GetKeyAutoKeyRotationDetailArrayOutput {
+	return o.ApplyT(func(v LookupKeyResult) []GetKeyAutoKeyRotationDetail { return v.AutoKeyRotationDetails }).(GetKeyAutoKeyRotationDetailArrayOutput)
+}
+
 // The OCID of the compartment that contains this master encryption key.
 func (o LookupKeyResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -193,6 +202,11 @@ func (o LookupKeyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// A parameter specifying whether the auto key rotation is enabled or not.
+func (o LookupKeyResultOutput) IsAutoRotationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupKeyResult) bool { return v.IsAutoRotationEnabled }).(pulumi.BoolOutput)
+}
+
 // A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 func (o LookupKeyResultOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupKeyResult) bool { return v.IsPrimary }).(pulumi.BoolOutput)
@@ -211,7 +225,7 @@ func (o LookupKeyResultOutput) ManagementEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.ManagementEndpoint }).(pulumi.StringOutput)
 }
 
-// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
+// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 func (o LookupKeyResultOutput) ProtectionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.ProtectionMode }).(pulumi.StringOutput)
 }

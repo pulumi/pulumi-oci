@@ -55,6 +55,10 @@ export interface GetExternalDbHomeResult {
      */
     readonly componentName: string;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    readonly definedTags: {[key: string]: any};
+    /**
      * The user-friendly name for the external DB home. The name does not have to be unique.
      */
     readonly displayName: string;
@@ -64,11 +68,15 @@ export interface GetExternalDbHomeResult {
      */
     readonly externalDbSystemId: string;
     /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    readonly freeformTags: {[key: string]: any};
+    /**
      * The location of the DB home.
      */
     readonly homeDirectory: string;
     /**
-     * The provider-assigned unique ID for this managed resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
      */
     readonly id: string;
     /**

@@ -62,6 +62,10 @@ export interface GetCloudExadataInfrastructureResult {
     readonly availableStorageSizeInGbs: number;
     readonly cloudExadataInfrastructureId: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     */
+    readonly clusterPlacementGroupId: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;
@@ -165,6 +169,10 @@ export interface GetCloudExadataInfrastructureResult {
      * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */
     readonly storageServerVersion: string;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    readonly systemTags: {[key: string]: any};
     /**
      * The date and time the cloud Exadata infrastructure resource was created.
      */

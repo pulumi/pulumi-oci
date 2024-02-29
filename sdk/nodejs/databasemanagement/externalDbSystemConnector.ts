@@ -85,6 +85,10 @@ export class ExternalDbSystemConnector extends pulumi.CustomResource {
      */
     public readonly connectorType!: pulumi.Output<string>;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The user-friendly name for the external connector. The name does not have to be unique.
      */
     public readonly displayName!: pulumi.Output<string>;
@@ -96,6 +100,10 @@ export class ExternalDbSystemConnector extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly externalDbSystemId!: pulumi.Output<string>;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * Additional information about the current lifecycle state.
      */
@@ -136,8 +144,10 @@ export class ExternalDbSystemConnector extends pulumi.CustomResource {
             resourceInputs["connectionInfos"] = state ? state.connectionInfos : undefined;
             resourceInputs["connectionStatus"] = state ? state.connectionStatus : undefined;
             resourceInputs["connectorType"] = state ? state.connectorType : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["externalDbSystemId"] = state ? state.externalDbSystemId : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeConnectionStatusLastUpdated"] = state ? state.timeConnectionStatusLastUpdated : undefined;
@@ -154,8 +164,10 @@ export class ExternalDbSystemConnector extends pulumi.CustomResource {
             resourceInputs["agentId"] = args ? args.agentId : undefined;
             resourceInputs["connectionInfos"] = args ? args.connectionInfos : undefined;
             resourceInputs["connectorType"] = args ? args.connectorType : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["externalDbSystemId"] = args ? args.externalDbSystemId : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionFailureMessage"] = undefined /*out*/;
             resourceInputs["connectionStatus"] = undefined /*out*/;
@@ -199,6 +211,10 @@ export interface ExternalDbSystemConnectorState {
      */
     connectorType?: pulumi.Input<string>;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The user-friendly name for the external connector. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
@@ -210,6 +226,10 @@ export interface ExternalDbSystemConnectorState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     externalDbSystemId?: pulumi.Input<string>;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * Additional information about the current lifecycle state.
      */
@@ -249,6 +269,10 @@ export interface ExternalDbSystemConnectorArgs {
      */
     connectorType: pulumi.Input<string>;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The user-friendly name for the external connector. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
@@ -260,4 +284,8 @@ export interface ExternalDbSystemConnectorArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     externalDbSystemId: pulumi.Input<string>;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
 }

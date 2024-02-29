@@ -82,6 +82,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> ConnectorType { get; private set; } = null!;
 
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        [Output("definedTags")]
+        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
         /// The user-friendly name for the external connector. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
@@ -96,6 +102,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Output("externalDbSystemId")]
         public Output<string> ExternalDbSystemId { get; private set; } = null!;
+
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        [Output("freeformTags")]
+        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
@@ -197,6 +209,18 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("connectorType", required: true)]
         public Input<string> ConnectorType { get; set; } = null!;
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// The user-friendly name for the external connector. The name does not have to be unique.
         /// </summary>
@@ -212,6 +236,18 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("externalDbSystemId", required: true)]
         public Input<string> ExternalDbSystemId { get; set; } = null!;
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
 
         public ExternalDbSystemConnectorArgs()
         {
@@ -263,6 +299,18 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("connectorType")]
         public Input<string>? ConnectorType { get; set; }
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// The user-friendly name for the external connector. The name does not have to be unique.
         /// </summary>
@@ -278,6 +326,18 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("externalDbSystemId")]
         public Input<string>? ExternalDbSystemId { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// Additional information about the current lifecycle state.

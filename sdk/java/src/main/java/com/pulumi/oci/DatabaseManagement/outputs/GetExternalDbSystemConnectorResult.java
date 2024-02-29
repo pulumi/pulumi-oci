@@ -6,8 +6,10 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemConnectorConnectionInfo;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -43,6 +45,11 @@ public final class GetExternalDbSystemConnectorResult {
      */
     private String connectorType;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The user-friendly name for the external connector. The name does not have to be unique.
      * 
      */
@@ -53,6 +60,11 @@ public final class GetExternalDbSystemConnectorResult {
      * 
      */
     private String externalDbSystemId;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
      * 
@@ -128,6 +140,13 @@ public final class GetExternalDbSystemConnectorResult {
         return this.connectorType;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The user-friendly name for the external connector. The name does not have to be unique.
      * 
      */
@@ -143,6 +162,13 @@ public final class GetExternalDbSystemConnectorResult {
      */
     public String externalDbSystemId() {
         return this.externalDbSystemId;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
@@ -202,9 +228,11 @@ public final class GetExternalDbSystemConnectorResult {
         private List<GetExternalDbSystemConnectorConnectionInfo> connectionInfos;
         private String connectionStatus;
         private String connectorType;
+        private Map<String,Object> definedTags;
         private String displayName;
         private String externalDbSystemConnectorId;
         private String externalDbSystemId;
+        private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleDetails;
         private String state;
@@ -220,9 +248,11 @@ public final class GetExternalDbSystemConnectorResult {
     	      this.connectionInfos = defaults.connectionInfos;
     	      this.connectionStatus = defaults.connectionStatus;
     	      this.connectorType = defaults.connectorType;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.externalDbSystemConnectorId = defaults.externalDbSystemConnectorId;
     	      this.externalDbSystemId = defaults.externalDbSystemId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
@@ -283,6 +313,14 @@ public final class GetExternalDbSystemConnectorResult {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorResult", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorResult", "displayName");
@@ -304,6 +342,14 @@ public final class GetExternalDbSystemConnectorResult {
               throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorResult", "externalDbSystemId");
             }
             this.externalDbSystemId = externalDbSystemId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -362,9 +408,11 @@ public final class GetExternalDbSystemConnectorResult {
             _resultValue.connectionInfos = connectionInfos;
             _resultValue.connectionStatus = connectionStatus;
             _resultValue.connectorType = connectorType;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.externalDbSystemConnectorId = externalDbSystemConnectorId;
             _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;

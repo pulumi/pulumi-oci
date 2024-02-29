@@ -42,6 +42,7 @@ import (
 //				DefinedTags:                    pulumi.Any(_var.Operator_control_assignment_defined_tags),
 //				FreeformTags:                   pulumi.Any(_var.Operator_control_assignment_freeform_tags),
 //				IsAutoApproveDuringMaintenance: pulumi.Any(_var.Operator_control_assignment_is_auto_approve_during_maintenance),
+//				IsHypervisorLogForwarded:       pulumi.Any(_var.Operator_control_assignment_is_hypervisor_log_forwarded),
 //				IsLogForwarded:                 pulumi.Any(_var.Operator_control_assignment_is_log_forwarded),
 //				RemoteSyslogServerAddress:      pulumi.Any(_var.Operator_control_assignment_remote_syslog_server_address),
 //				RemoteSyslogServerCaCert:       pulumi.Any(_var.Operator_control_assignment_remote_syslog_server_ca_cert),
@@ -92,10 +93,14 @@ type OperatorControlAssignment struct {
 	IsDefaultAssignment pulumi.BoolOutput `pulumi:"isDefaultAssignment"`
 	// (Updatable) If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways pulumi.BoolOutput `pulumi:"isEnforcedAlways"`
+	// (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+	IsHypervisorLogForwarded pulumi.BoolOutput `pulumi:"isHypervisorLogForwarded"`
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
 	IsLogForwarded pulumi.BoolOutput `pulumi:"isLogForwarded"`
 	// More in detail about the lifeCycleState.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Name of the operator control name associated.
+	OpControlName pulumi.StringOutput `pulumi:"opControlName"`
 	// The OCID of the operator control that is being assigned to a target resource.
 	OperatorControlId pulumi.StringOutput `pulumi:"operatorControlId"`
 	// (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
@@ -117,9 +122,6 @@ type OperatorControlAssignment struct {
 	// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeAssignmentFrom pulumi.StringOutput `pulumi:"timeAssignmentFrom"`
 	// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeAssignmentTo pulumi.StringOutput `pulumi:"timeAssignmentTo"`
 	// Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeOfAssignment pulumi.StringOutput `pulumi:"timeOfAssignment"`
@@ -127,6 +129,11 @@ type OperatorControlAssignment struct {
 	TimeOfDeletion pulumi.StringOutput `pulumi:"timeOfDeletion"`
 	// User id who released the operatorControl.
 	UnassignerId pulumi.StringOutput `pulumi:"unassignerId"`
+	// (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ValidateAssignmentTrigger pulumi.IntPtrOutput `pulumi:"validateAssignmentTrigger"`
 }
 
 // NewOperatorControlAssignment registers a new resource with the given unique name, arguments, and options.
@@ -202,10 +209,14 @@ type operatorControlAssignmentState struct {
 	IsDefaultAssignment *bool `pulumi:"isDefaultAssignment"`
 	// (Updatable) If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways *bool `pulumi:"isEnforcedAlways"`
+	// (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+	IsHypervisorLogForwarded *bool `pulumi:"isHypervisorLogForwarded"`
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
 	IsLogForwarded *bool `pulumi:"isLogForwarded"`
 	// More in detail about the lifeCycleState.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Name of the operator control name associated.
+	OpControlName *string `pulumi:"opControlName"`
 	// The OCID of the operator control that is being assigned to a target resource.
 	OperatorControlId *string `pulumi:"operatorControlId"`
 	// (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
@@ -227,9 +238,6 @@ type operatorControlAssignmentState struct {
 	// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeAssignmentFrom *string `pulumi:"timeAssignmentFrom"`
 	// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeAssignmentTo *string `pulumi:"timeAssignmentTo"`
 	// Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeOfAssignment *string `pulumi:"timeOfAssignment"`
@@ -237,6 +245,11 @@ type operatorControlAssignmentState struct {
 	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// User id who released the operatorControl.
 	UnassignerId *string `pulumi:"unassignerId"`
+	// (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ValidateAssignmentTrigger *int `pulumi:"validateAssignmentTrigger"`
 }
 
 type OperatorControlAssignmentState struct {
@@ -262,10 +275,14 @@ type OperatorControlAssignmentState struct {
 	IsDefaultAssignment pulumi.BoolPtrInput
 	// (Updatable) If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways pulumi.BoolPtrInput
+	// (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+	IsHypervisorLogForwarded pulumi.BoolPtrInput
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
 	IsLogForwarded pulumi.BoolPtrInput
 	// More in detail about the lifeCycleState.
 	LifecycleDetails pulumi.StringPtrInput
+	// Name of the operator control name associated.
+	OpControlName pulumi.StringPtrInput
 	// The OCID of the operator control that is being assigned to a target resource.
 	OperatorControlId pulumi.StringPtrInput
 	// (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
@@ -287,9 +304,6 @@ type OperatorControlAssignmentState struct {
 	// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeAssignmentFrom pulumi.StringPtrInput
 	// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeAssignmentTo pulumi.StringPtrInput
 	// Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeOfAssignment pulumi.StringPtrInput
@@ -297,6 +311,11 @@ type OperatorControlAssignmentState struct {
 	TimeOfDeletion pulumi.StringPtrInput
 	// User id who released the operatorControl.
 	UnassignerId pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ValidateAssignmentTrigger pulumi.IntPtrInput
 }
 
 func (OperatorControlAssignmentState) ElementType() reflect.Type {
@@ -316,6 +335,8 @@ type operatorControlAssignmentArgs struct {
 	IsAutoApproveDuringMaintenance *bool `pulumi:"isAutoApproveDuringMaintenance"`
 	// (Updatable) If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways bool `pulumi:"isEnforcedAlways"`
+	// (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+	IsHypervisorLogForwarded *bool `pulumi:"isHypervisorLogForwarded"`
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
 	IsLogForwarded *bool `pulumi:"isLogForwarded"`
 	// The OCID of the operator control that is being assigned to a target resource.
@@ -337,10 +358,12 @@ type operatorControlAssignmentArgs struct {
 	// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeAssignmentFrom *string `pulumi:"timeAssignmentFrom"`
 	// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeAssignmentTo *string `pulumi:"timeAssignmentTo"`
+	// (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeAssignmentTo *string `pulumi:"timeAssignmentTo"`
+	ValidateAssignmentTrigger *int `pulumi:"validateAssignmentTrigger"`
 }
 
 // The set of arguments for constructing a OperatorControlAssignment resource.
@@ -357,6 +380,8 @@ type OperatorControlAssignmentArgs struct {
 	IsAutoApproveDuringMaintenance pulumi.BoolPtrInput
 	// (Updatable) If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways pulumi.BoolInput
+	// (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+	IsHypervisorLogForwarded pulumi.BoolPtrInput
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
 	IsLogForwarded pulumi.BoolPtrInput
 	// The OCID of the operator control that is being assigned to a target resource.
@@ -378,10 +403,12 @@ type OperatorControlAssignmentArgs struct {
 	// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeAssignmentFrom pulumi.StringPtrInput
 	// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	TimeAssignmentTo pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeAssignmentTo pulumi.StringPtrInput
+	ValidateAssignmentTrigger pulumi.IntPtrInput
 }
 
 func (OperatorControlAssignmentArgs) ElementType() reflect.Type {
@@ -526,6 +553,11 @@ func (o OperatorControlAssignmentOutput) IsEnforcedAlways() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.BoolOutput { return v.IsEnforcedAlways }).(pulumi.BoolOutput)
 }
 
+// (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+func (o OperatorControlAssignmentOutput) IsHypervisorLogForwarded() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.BoolOutput { return v.IsHypervisorLogForwarded }).(pulumi.BoolOutput)
+}
+
 // (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
 func (o OperatorControlAssignmentOutput) IsLogForwarded() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.BoolOutput { return v.IsLogForwarded }).(pulumi.BoolOutput)
@@ -534,6 +566,11 @@ func (o OperatorControlAssignmentOutput) IsLogForwarded() pulumi.BoolOutput {
 // More in detail about the lifeCycleState.
 func (o OperatorControlAssignmentOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Name of the operator control name associated.
+func (o OperatorControlAssignmentOutput) OpControlName() pulumi.StringOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.OpControlName }).(pulumi.StringOutput)
 }
 
 // The OCID of the operator control that is being assigned to a target resource.
@@ -587,9 +624,6 @@ func (o OperatorControlAssignmentOutput) TimeAssignmentFrom() pulumi.StringOutpu
 }
 
 // (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OperatorControlAssignmentOutput) TimeAssignmentTo() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.TimeAssignmentTo }).(pulumi.StringOutput)
 }
@@ -607,6 +641,14 @@ func (o OperatorControlAssignmentOutput) TimeOfDeletion() pulumi.StringOutput {
 // User id who released the operatorControl.
 func (o OperatorControlAssignmentOutput) UnassignerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.UnassignerId }).(pulumi.StringOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o OperatorControlAssignmentOutput) ValidateAssignmentTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.IntPtrOutput { return v.ValidateAssignmentTrigger }).(pulumi.IntPtrOutput)
 }
 
 type OperatorControlAssignmentArrayOutput struct{ *pulumi.OutputState }

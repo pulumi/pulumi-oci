@@ -6,6 +6,7 @@ package com.pulumi.oci.OperatorAccessControl.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -74,6 +75,11 @@ public final class GetControlResult {
      * 
      */
     private String lastModifiedInfo;
+    /**
+     * @return Number of approvers required to approve an access request.
+     * 
+     */
+    private Integer numberOfApprovers;
     private String operatorControlId;
     /**
      * @return Name of the operator control. The name must be unique.
@@ -201,6 +207,13 @@ public final class GetControlResult {
     public String lastModifiedInfo() {
         return this.lastModifiedInfo;
     }
+    /**
+     * @return Number of approvers required to approve an access request.
+     * 
+     */
+    public Integer numberOfApprovers() {
+        return this.numberOfApprovers;
+    }
     public String operatorControlId() {
         return this.operatorControlId;
     }
@@ -282,6 +295,7 @@ public final class GetControlResult {
         private Boolean isDefaultOperatorControl;
         private Boolean isFullyPreApproved;
         private String lastModifiedInfo;
+        private Integer numberOfApprovers;
         private String operatorControlId;
         private String operatorControlName;
         private List<String> preApprovedOpActionLists;
@@ -306,6 +320,7 @@ public final class GetControlResult {
     	      this.isDefaultOperatorControl = defaults.isDefaultOperatorControl;
     	      this.isFullyPreApproved = defaults.isFullyPreApproved;
     	      this.lastModifiedInfo = defaults.lastModifiedInfo;
+    	      this.numberOfApprovers = defaults.numberOfApprovers;
     	      this.operatorControlId = defaults.operatorControlId;
     	      this.operatorControlName = defaults.operatorControlName;
     	      this.preApprovedOpActionLists = defaults.preApprovedOpActionLists;
@@ -426,6 +441,14 @@ public final class GetControlResult {
             return this;
         }
         @CustomType.Setter
+        public Builder numberOfApprovers(Integer numberOfApprovers) {
+            if (numberOfApprovers == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "numberOfApprovers");
+            }
+            this.numberOfApprovers = numberOfApprovers;
+            return this;
+        }
+        @CustomType.Setter
         public Builder operatorControlId(String operatorControlId) {
             if (operatorControlId == null) {
               throw new MissingRequiredPropertyException("GetControlResult", "operatorControlId");
@@ -514,6 +537,7 @@ public final class GetControlResult {
             _resultValue.isDefaultOperatorControl = isDefaultOperatorControl;
             _resultValue.isFullyPreApproved = isFullyPreApproved;
             _resultValue.lastModifiedInfo = lastModifiedInfo;
+            _resultValue.numberOfApprovers = numberOfApprovers;
             _resultValue.operatorControlId = operatorControlId;
             _resultValue.operatorControlName = operatorControlName;
             _resultValue.preApprovedOpActionLists = preApprovedOpActionLists;

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string PeerAutonomousDatabaseId;
         /// <summary>
-        /// The current state of Autonomous Data Guard.
+        /// The current state of the Autonomous Database.
         /// </summary>
         public readonly string PeerAutonomousDatabaseLifeCycleState;
         /// <summary>

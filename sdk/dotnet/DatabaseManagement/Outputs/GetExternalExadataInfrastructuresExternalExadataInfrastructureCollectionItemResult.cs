@@ -30,11 +30,19 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemResult> DatabaseSystems;
         public readonly ImmutableArray<string> DbSystemIds;
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
         public readonly string DiscoveryKey;
         /// <summary>
         /// The optional single value query filter parameter on the entity display name.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         /// </summary>
@@ -93,9 +101,13 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             ImmutableArray<string> dbSystemIds,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string discoveryKey,
 
             string displayName,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -126,8 +138,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             DatabaseCompartments = databaseCompartments;
             DatabaseSystems = databaseSystems;
             DbSystemIds = dbSystemIds;
+            DefinedTags = definedTags;
             DiscoveryKey = discoveryKey;
             DisplayName = displayName;
+            FreeformTags = freeformTags;
             Id = id;
             InternalId = internalId;
             LicenseModel = licenseModel;

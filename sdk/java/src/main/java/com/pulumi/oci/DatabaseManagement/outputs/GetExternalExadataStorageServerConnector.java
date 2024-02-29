@@ -28,10 +28,20 @@ public final class GetExternalExadataStorageServerConnector {
      */
     private String connectionUri;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
     private String displayName;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
@@ -106,11 +116,25 @@ public final class GetExternalExadataStorageServerConnector {
         return this.connectionUri;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
@@ -195,7 +219,9 @@ public final class GetExternalExadataStorageServerConnector {
         private Map<String,Object> additionalDetails;
         private String agentId;
         private String connectionUri;
+        private Map<String,Object> definedTags;
         private String displayName;
+        private Map<String,Object> freeformTags;
         private String id;
         private String internalId;
         private String lifecycleDetails;
@@ -212,7 +238,9 @@ public final class GetExternalExadataStorageServerConnector {
     	      this.additionalDetails = defaults.additionalDetails;
     	      this.agentId = defaults.agentId;
     	      this.connectionUri = defaults.connectionUri;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.internalId = defaults.internalId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -250,11 +278,27 @@ public final class GetExternalExadataStorageServerConnector {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerConnector", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageServerConnector", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerConnector", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -342,7 +386,9 @@ public final class GetExternalExadataStorageServerConnector {
             _resultValue.additionalDetails = additionalDetails;
             _resultValue.agentId = agentId;
             _resultValue.connectionUri = connectionUri;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.internalId = internalId;
             _resultValue.lifecycleDetails = lifecycleDetails;

@@ -35,6 +35,11 @@ public final class GetKeyVersionsKeyVersion {
      */
     private String id;
     /**
+     * @return An optional property indicating whether this keyversion is generated from auto rotatation.
+     * 
+     */
+    private Boolean isAutoRotated;
+    /**
      * @return A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
@@ -119,6 +124,13 @@ public final class GetKeyVersionsKeyVersion {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return An optional property indicating whether this keyversion is generated from auto rotatation.
+     * 
+     */
+    public Boolean isAutoRotated() {
+        return this.isAutoRotated;
     }
     /**
      * @return A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
@@ -214,6 +226,7 @@ public final class GetKeyVersionsKeyVersion {
         private List<GetKeyVersionsKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails;
         private String externalKeyVersionId;
         private String id;
+        private Boolean isAutoRotated;
         private Boolean isPrimary;
         private String keyId;
         private String keyVersionId;
@@ -233,6 +246,7 @@ public final class GetKeyVersionsKeyVersion {
     	      this.externalKeyReferenceDetails = defaults.externalKeyReferenceDetails;
     	      this.externalKeyVersionId = defaults.externalKeyVersionId;
     	      this.id = defaults.id;
+    	      this.isAutoRotated = defaults.isAutoRotated;
     	      this.isPrimary = defaults.isPrimary;
     	      this.keyId = defaults.keyId;
     	      this.keyVersionId = defaults.keyVersionId;
@@ -280,6 +294,14 @@ public final class GetKeyVersionsKeyVersion {
               throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isAutoRotated(Boolean isAutoRotated) {
+            if (isAutoRotated == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "isAutoRotated");
+            }
+            this.isAutoRotated = isAutoRotated;
             return this;
         }
         @CustomType.Setter
@@ -387,6 +409,7 @@ public final class GetKeyVersionsKeyVersion {
             _resultValue.externalKeyReferenceDetails = externalKeyReferenceDetails;
             _resultValue.externalKeyVersionId = externalKeyVersionId;
             _resultValue.id = id;
+            _resultValue.isAutoRotated = isAutoRotated;
             _resultValue.isPrimary = isPrimary;
             _resultValue.keyId = keyId;
             _resultValue.keyVersionId = keyVersionId;

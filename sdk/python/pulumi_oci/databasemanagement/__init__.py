@@ -7,8 +7,10 @@ import typing
 # Export this package's modules as members:
 from .db_management_private_endpoint import *
 from .external_asm import *
+from .external_asm_instance import *
 from .external_cluster import *
 from .external_cluster_instance import *
+from .external_db_home import *
 from .external_db_node import *
 from .external_db_system import *
 from .external_db_system_connector import *
@@ -18,6 +20,8 @@ from .external_db_system_stack_monitorings_management import *
 from .external_exadata_infrastructure import *
 from .external_exadata_infrastructure_exadata_management import *
 from .external_exadata_storage_connector import *
+from .external_exadata_storage_grid import *
+from .external_exadata_storage_server import *
 from .external_listener import *
 from .get_db_management_private_endpoint import *
 from .get_db_management_private_endpoint_associated_database import *
@@ -119,6 +123,7 @@ from .get_managed_my_sql_database_sql_data import *
 from .get_managed_my_sql_databases import *
 from .get_named_credential import *
 from .get_named_credentials import *
+from .managed_database import *
 from .managed_database_group import *
 from .managed_databases_change_database_parameter import *
 from .managed_databases_reset_database_parameter import *

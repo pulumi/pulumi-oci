@@ -96,6 +96,21 @@ public final class ExternalExadataInfrastructureState extends com.pulumi.resourc
     }
 
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Import(name="definedTags")
+    private @Nullable Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> definedTags() {
+        return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
      * (Updatable) The unique key of the discovery request.
      * 
      */
@@ -123,6 +138,21 @@ public final class ExternalExadataInfrastructureState extends com.pulumi.resourc
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Import(name="freeformTags")
+    private @Nullable Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
     }
 
     /**
@@ -304,8 +334,10 @@ public final class ExternalExadataInfrastructureState extends com.pulumi.resourc
         this.databaseCompartments = $.databaseCompartments;
         this.databaseSystems = $.databaseSystems;
         this.dbSystemIds = $.dbSystemIds;
+        this.definedTags = $.definedTags;
         this.discoveryKey = $.discoveryKey;
         this.displayName = $.displayName;
+        this.freeformTags = $.freeformTags;
         this.internalId = $.internalId;
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -473,6 +505,27 @@ public final class ExternalExadataInfrastructureState extends com.pulumi.resourc
         }
 
         /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+            $.definedTags = definedTags;
+            return this;
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(Map<String,Object> definedTags) {
+            return definedTags(Output.of(definedTags));
+        }
+
+        /**
          * @param discoveryKey (Updatable) The unique key of the discovery request.
          * 
          * @return builder
@@ -512,6 +565,27 @@ public final class ExternalExadataInfrastructureState extends com.pulumi.resourc
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+            $.freeformTags = freeformTags;
+            return this;
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
         }
 
         /**

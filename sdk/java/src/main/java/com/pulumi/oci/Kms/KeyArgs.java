@@ -6,6 +6,7 @@ package com.pulumi.oci.Kms;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Kms.inputs.KeyAutoKeyRotationDetailsArgs;
 import com.pulumi.oci.Kms.inputs.KeyExternalKeyReferenceArgs;
 import com.pulumi.oci.Kms.inputs.KeyKeyShapeArgs;
 import com.pulumi.oci.Kms.inputs.KeyRestoreFromFileArgs;
@@ -22,6 +23,21 @@ import javax.annotation.Nullable;
 public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final KeyArgs Empty = new KeyArgs();
+
+    /**
+     * (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+     * 
+     */
+    @Import(name="autoKeyRotationDetails")
+    private @Nullable Output<KeyAutoKeyRotationDetailsArgs> autoKeyRotationDetails;
+
+    /**
+     * @return (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+     * 
+     */
+    public Optional<Output<KeyAutoKeyRotationDetailsArgs>> autoKeyRotationDetails() {
+        return Optional.ofNullable(this.autoKeyRotationDetails);
+    }
 
     /**
      * (Updatable) The OCID of the compartment where you want to create the master encryption key.
@@ -111,6 +127,21 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+     * 
+     */
+    @Import(name="isAutoRotationEnabled")
+    private @Nullable Output<Boolean> isAutoRotationEnabled;
+
+    /**
+     * @return (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+     * 
+     */
+    public Optional<Output<Boolean>> isAutoRotationEnabled() {
+        return Optional.ofNullable(this.isAutoRotationEnabled);
     }
 
     /**
@@ -227,12 +258,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     private KeyArgs() {}
 
     private KeyArgs(KeyArgs $) {
+        this.autoKeyRotationDetails = $.autoKeyRotationDetails;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.desiredState = $.desiredState;
         this.displayName = $.displayName;
         this.externalKeyReference = $.externalKeyReference;
         this.freeformTags = $.freeformTags;
+        this.isAutoRotationEnabled = $.isAutoRotationEnabled;
         this.keyShape = $.keyShape;
         this.managementEndpoint = $.managementEndpoint;
         this.protectionMode = $.protectionMode;
@@ -258,6 +291,27 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(KeyArgs defaults) {
             $ = new KeyArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param autoKeyRotationDetails (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoKeyRotationDetails(@Nullable Output<KeyAutoKeyRotationDetailsArgs> autoKeyRotationDetails) {
+            $.autoKeyRotationDetails = autoKeyRotationDetails;
+            return this;
+        }
+
+        /**
+         * @param autoKeyRotationDetails (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoKeyRotationDetails(KeyAutoKeyRotationDetailsArgs autoKeyRotationDetails) {
+            return autoKeyRotationDetails(Output.of(autoKeyRotationDetails));
         }
 
         /**
@@ -384,6 +438,27 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isAutoRotationEnabled (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoRotationEnabled(@Nullable Output<Boolean> isAutoRotationEnabled) {
+            $.isAutoRotationEnabled = isAutoRotationEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAutoRotationEnabled (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoRotationEnabled(Boolean isAutoRotationEnabled) {
+            return isAutoRotationEnabled(Output.of(isAutoRotationEnabled));
         }
 
         /**

@@ -707,6 +707,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
         return this.subnetId;
     }
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Output<Map<String,Object>> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * Operating system version of the image.
      * 
      */

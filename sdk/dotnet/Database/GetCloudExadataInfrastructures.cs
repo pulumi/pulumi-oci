@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Database
         ///     var testCloudExadataInfrastructures = Oci.Database.GetCloudExadataInfrastructures.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         ClusterPlacementGroupId = @var.Cloud_exadata_infrastructure_cluster_placement_group_id,
         ///         DisplayName = @var.Cloud_exadata_infrastructure_display_name,
         ///         State = @var.Cloud_exadata_infrastructure_state,
         ///     });
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.Database
         ///     var testCloudExadataInfrastructures = Oci.Database.GetCloudExadataInfrastructures.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         ClusterPlacementGroupId = @var.Cloud_exadata_infrastructure_cluster_placement_group_id,
         ///         DisplayName = @var.Cloud_exadata_infrastructure_display_name,
         ///         State = @var.Cloud_exadata_infrastructure_state,
         ///     });
@@ -81,6 +83,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetCloudExadataInfrastructuresArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A filter to return only resources that match the given cluster placement group ID exactly.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public string? ClusterPlacementGroupId { get; set; }
+
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -115,6 +123,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetCloudExadataInfrastructuresInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A filter to return only resources that match the given cluster placement group ID exactly.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
+
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -156,6 +170,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureResult> CloudExadataInfrastructures;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string? ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -177,6 +195,8 @@ namespace Pulumi.Oci.Database
         private GetCloudExadataInfrastructuresResult(
             ImmutableArray<Outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureResult> cloudExadataInfrastructures,
 
+            string? clusterPlacementGroupId,
+
             string compartmentId,
 
             string? displayName,
@@ -188,6 +208,7 @@ namespace Pulumi.Oci.Database
             string? state)
         {
             CloudExadataInfrastructures = cloudExadataInfrastructures;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DisplayName = displayName;
             Filters = filters;

@@ -12,22 +12,6 @@ import * as utilities from "../utilities";
  * operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
  * This operation is not supported for keys having protection mode `EXTERNAL`.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testSign = new oci.kms.Sign("testSign", {
- *     cryptoEndpoint: _var.sign_message_crypto_endpoint,
- *     keyId: oci_kms_key.test_key.id,
- *     message: _var.sign_message,
- *     signingAlgorithm: _var.sign_signing_algorithm,
- *     keyVersionId: oci_kms_key_version.test_key_version.id,
- *     messageType: _var.sign_message_type,
- * });
- * ```
- *
  * ## Import
  *
  * Sign can be imported using the `id`, e.g.

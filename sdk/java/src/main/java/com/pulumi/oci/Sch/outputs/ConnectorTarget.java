@@ -27,7 +27,22 @@ public final class ConnectorTarget {
      */
     private @Nullable Integer batchRolloverTimeInMs;
     /**
-     * @return (Updatable) The name of the bucket. Avoid entering confidential information.
+     * @return (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+     * 
+     */
+    private @Nullable Integer batchSizeInKbs;
+    /**
+     * @return (Updatable) The batch rollover size in number of messages.
+     * 
+     */
+    private @Nullable Integer batchSizeInNum;
+    /**
+     * @return (Updatable) Time limit (seconds) for batch sent to invoke the function.
+     * 
+     */
+    private @Nullable Integer batchTimeInSec;
+    /**
+     * @return (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
      * 
      */
     private @Nullable String bucket;
@@ -42,7 +57,7 @@ public final class ConnectorTarget {
      */
     private @Nullable List<ConnectorTargetDimension> dimensions;
     /**
-     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
      * 
      */
     private @Nullable Boolean enableFormattedMessaging;
@@ -62,7 +77,7 @@ public final class ConnectorTarget {
      */
     private @Nullable String logGroupId;
     /**
-     * @return (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * @return (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
      * 
      */
     private @Nullable String logSourceIdentifier;
@@ -113,7 +128,28 @@ public final class ConnectorTarget {
         return Optional.ofNullable(this.batchRolloverTimeInMs);
     }
     /**
-     * @return (Updatable) The name of the bucket. Avoid entering confidential information.
+     * @return (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+     * 
+     */
+    public Optional<Integer> batchSizeInKbs() {
+        return Optional.ofNullable(this.batchSizeInKbs);
+    }
+    /**
+     * @return (Updatable) The batch rollover size in number of messages.
+     * 
+     */
+    public Optional<Integer> batchSizeInNum() {
+        return Optional.ofNullable(this.batchSizeInNum);
+    }
+    /**
+     * @return (Updatable) Time limit (seconds) for batch sent to invoke the function.
+     * 
+     */
+    public Optional<Integer> batchTimeInSec() {
+        return Optional.ofNullable(this.batchTimeInSec);
+    }
+    /**
+     * @return (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
      * 
      */
     public Optional<String> bucket() {
@@ -134,7 +170,7 @@ public final class ConnectorTarget {
         return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
-     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
      * 
      */
     public Optional<Boolean> enableFormattedMessaging() {
@@ -162,7 +198,7 @@ public final class ConnectorTarget {
         return Optional.ofNullable(this.logGroupId);
     }
     /**
-     * @return (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * @return (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
      * 
      */
     public Optional<String> logSourceIdentifier() {
@@ -222,6 +258,9 @@ public final class ConnectorTarget {
     public static final class Builder {
         private @Nullable Integer batchRolloverSizeInMbs;
         private @Nullable Integer batchRolloverTimeInMs;
+        private @Nullable Integer batchSizeInKbs;
+        private @Nullable Integer batchSizeInNum;
+        private @Nullable Integer batchTimeInSec;
         private @Nullable String bucket;
         private @Nullable String compartmentId;
         private @Nullable List<ConnectorTargetDimension> dimensions;
@@ -241,6 +280,9 @@ public final class ConnectorTarget {
     	      Objects.requireNonNull(defaults);
     	      this.batchRolloverSizeInMbs = defaults.batchRolloverSizeInMbs;
     	      this.batchRolloverTimeInMs = defaults.batchRolloverTimeInMs;
+    	      this.batchSizeInKbs = defaults.batchSizeInKbs;
+    	      this.batchSizeInNum = defaults.batchSizeInNum;
+    	      this.batchTimeInSec = defaults.batchTimeInSec;
     	      this.bucket = defaults.bucket;
     	      this.compartmentId = defaults.compartmentId;
     	      this.dimensions = defaults.dimensions;
@@ -267,6 +309,24 @@ public final class ConnectorTarget {
         public Builder batchRolloverTimeInMs(@Nullable Integer batchRolloverTimeInMs) {
 
             this.batchRolloverTimeInMs = batchRolloverTimeInMs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder batchSizeInKbs(@Nullable Integer batchSizeInKbs) {
+
+            this.batchSizeInKbs = batchSizeInKbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder batchSizeInNum(@Nullable Integer batchSizeInNum) {
+
+            this.batchSizeInNum = batchSizeInNum;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder batchTimeInSec(@Nullable Integer batchTimeInSec) {
+
+            this.batchTimeInSec = batchTimeInSec;
             return this;
         }
         @CustomType.Setter
@@ -362,6 +422,9 @@ public final class ConnectorTarget {
             final var _resultValue = new ConnectorTarget();
             _resultValue.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
             _resultValue.batchRolloverTimeInMs = batchRolloverTimeInMs;
+            _resultValue.batchSizeInKbs = batchSizeInKbs;
+            _resultValue.batchSizeInNum = batchSizeInNum;
+            _resultValue.batchTimeInSec = batchTimeInSec;
             _resultValue.bucket = bucket;
             _resultValue.compartmentId = compartmentId;
             _resultValue.dimensions = dimensions;

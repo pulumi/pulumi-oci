@@ -20,7 +20,9 @@ class ExternalDbSystemConnectorArgs:
                  external_db_system_id: pulumi.Input[str],
                  agent_id: Optional[pulumi.Input[str]] = None,
                  connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]]] = None,
-                 display_name: Optional[pulumi.Input[str]] = None):
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a ExternalDbSystemConnector resource.
         :param pulumi.Input[str] connector_type: (Updatable) The type of connector.
@@ -31,7 +33,9 @@ class ExternalDbSystemConnectorArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]] connection_infos: The connection details required to connect to an external DB system component.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The user-friendly name for the external connector. The name does not have to be unique.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "connector_type", connector_type)
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
@@ -39,8 +43,12 @@ class ExternalDbSystemConnectorArgs:
             pulumi.set(__self__, "agent_id", agent_id)
         if connection_infos is not None:
             pulumi.set(__self__, "connection_infos", connection_infos)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="connectorType")
@@ -95,6 +103,18 @@ class ExternalDbSystemConnectorArgs:
         pulumi.set(self, "connection_infos", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -106,6 +126,18 @@ class ExternalDbSystemConnectorArgs:
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
 
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
 
 @pulumi.input_type
 class _ExternalDbSystemConnectorState:
@@ -116,8 +148,10 @@ class _ExternalDbSystemConnectorState:
                  connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]]] = None,
                  connection_status: Optional[pulumi.Input[str]] = None,
                  connector_type: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_db_system_id: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_connection_status_last_updated: Optional[pulumi.Input[str]] = None,
@@ -131,12 +165,14 @@ class _ExternalDbSystemConnectorState:
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]] connection_infos: The connection details required to connect to an external DB system component.
         :param pulumi.Input[str] connection_status: The status of connectivity to the external DB system component.
         :param pulumi.Input[str] connector_type: (Updatable) The type of connector.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The user-friendly name for the external connector. The name does not have to be unique.
         :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] state: The current lifecycle state of the external DB system connector.
         :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
@@ -155,10 +191,14 @@ class _ExternalDbSystemConnectorState:
             pulumi.set(__self__, "connection_status", connection_status)
         if connector_type is not None:
             pulumi.set(__self__, "connector_type", connector_type)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if external_db_system_id is not None:
             pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
@@ -243,6 +283,18 @@ class _ExternalDbSystemConnectorState:
         pulumi.set(self, "connector_type", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -269,6 +321,18 @@ class _ExternalDbSystemConnectorState:
     @external_db_system_id.setter
     def external_db_system_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "external_db_system_id", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -339,8 +403,10 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
                  agent_id: Optional[pulumi.Input[str]] = None,
                  connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]]] = None,
                  connector_type: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_db_system_id: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
         This resource provides the External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -372,12 +438,14 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
         :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]] connection_infos: The connection details required to connect to an external DB system component.
         :param pulumi.Input[str] connector_type: (Updatable) The type of connector.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The user-friendly name for the external connector. The name does not have to be unique.
         :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         ...
     @overload
@@ -428,8 +496,10 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
                  agent_id: Optional[pulumi.Input[str]] = None,
                  connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]]] = None,
                  connector_type: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_db_system_id: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -444,10 +514,12 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
             if connector_type is None and not opts.urn:
                 raise TypeError("Missing required property 'connector_type'")
             __props__.__dict__["connector_type"] = connector_type
+            __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             if external_db_system_id is None and not opts.urn:
                 raise TypeError("Missing required property 'external_db_system_id'")
             __props__.__dict__["external_db_system_id"] = external_db_system_id
+            __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["connection_failure_message"] = None
             __props__.__dict__["connection_status"] = None
@@ -472,8 +544,10 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
             connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]]] = None,
             connection_status: Optional[pulumi.Input[str]] = None,
             connector_type: Optional[pulumi.Input[str]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             external_db_system_id: Optional[pulumi.Input[str]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_connection_status_last_updated: Optional[pulumi.Input[str]] = None,
@@ -492,12 +566,14 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]] connection_infos: The connection details required to connect to an external DB system component.
         :param pulumi.Input[str] connection_status: The status of connectivity to the external DB system component.
         :param pulumi.Input[str] connector_type: (Updatable) The type of connector.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The user-friendly name for the external connector. The name does not have to be unique.
         :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] state: The current lifecycle state of the external DB system connector.
         :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
@@ -514,8 +590,10 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
         __props__.__dict__["connection_infos"] = connection_infos
         __props__.__dict__["connection_status"] = connection_status
         __props__.__dict__["connector_type"] = connector_type
+        __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["external_db_system_id"] = external_db_system_id
+        __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["state"] = state
         __props__.__dict__["time_connection_status_last_updated"] = time_connection_status_last_updated
@@ -572,6 +650,14 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
         return pulumi.get(self, "connector_type")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
@@ -590,6 +676,14 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

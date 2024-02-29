@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Sch.Outputs
     public sealed class GetServiceConnectorTargetDimensionDimensionValueResult
     {
         /// <summary>
-        /// The type descriminator.
+        /// The type discriminator.
         /// </summary>
         public readonly string Kind;
         /// <summary>

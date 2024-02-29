@@ -112,6 +112,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly ImmutableDictionary<string, object> AdditionalDetails;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         /// </summary>
         public readonly string DisplayName;
@@ -121,7 +125,11 @@ namespace Pulumi.Oci.DatabaseManagement
         public readonly string ExadataInfrastructureId;
         public readonly string ExternalExadataStorageGridId;
         /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -169,11 +177,15 @@ namespace Pulumi.Oci.DatabaseManagement
         private GetExternalExadataStorageGridResult(
             ImmutableDictionary<string, object> additionalDetails,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string displayName,
 
             string exadataInfrastructureId,
 
             string externalExadataStorageGridId,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -198,9 +210,11 @@ namespace Pulumi.Oci.DatabaseManagement
             string version)
         {
             AdditionalDetails = additionalDetails;
+            DefinedTags = definedTags;
             DisplayName = displayName;
             ExadataInfrastructureId = exadataInfrastructureId;
             ExternalExadataStorageGridId = externalExadataStorageGridId;
+            FreeformTags = freeformTags;
             Id = id;
             InternalId = internalId;
             LifecycleDetails = lifecycleDetails;

@@ -26,6 +26,11 @@ public final class GetExternalExadataStorageServersExternalExadataStorageServerC
      */
     private Double cpuCount;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The optional single value query filter parameter on the entity display name.
      * 
      */
@@ -35,6 +40,11 @@ public final class GetExternalExadataStorageServersExternalExadataStorageServerC
      * 
      */
     private String exadataInfrastructureId;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
@@ -140,6 +150,13 @@ public final class GetExternalExadataStorageServersExternalExadataStorageServerC
         return this.cpuCount;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The optional single value query filter parameter on the entity display name.
      * 
      */
@@ -152,6 +169,13 @@ public final class GetExternalExadataStorageServersExternalExadataStorageServerC
      */
     public String exadataInfrastructureId() {
         return this.exadataInfrastructureId;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
@@ -285,8 +309,10 @@ public final class GetExternalExadataStorageServersExternalExadataStorageServerC
         private Map<String,Object> additionalDetails;
         private String connectorId;
         private Double cpuCount;
+        private Map<String,Object> definedTags;
         private String displayName;
         private String exadataInfrastructureId;
+        private Map<String,Object> freeformTags;
         private String id;
         private String internalId;
         private String ipAddress;
@@ -310,8 +336,10 @@ public final class GetExternalExadataStorageServersExternalExadataStorageServerC
     	      this.additionalDetails = defaults.additionalDetails;
     	      this.connectorId = defaults.connectorId;
     	      this.cpuCount = defaults.cpuCount;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.internalId = defaults.internalId;
     	      this.ipAddress = defaults.ipAddress;
@@ -356,6 +384,14 @@ public final class GetExternalExadataStorageServersExternalExadataStorageServerC
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "displayName");
@@ -369,6 +405,14 @@ public final class GetExternalExadataStorageServersExternalExadataStorageServerC
               throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "exadataInfrastructureId");
             }
             this.exadataInfrastructureId = exadataInfrastructureId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -512,8 +556,10 @@ public final class GetExternalExadataStorageServersExternalExadataStorageServerC
             _resultValue.additionalDetails = additionalDetails;
             _resultValue.connectorId = connectorId;
             _resultValue.cpuCount = cpuCount;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.internalId = internalId;
             _resultValue.ipAddress = ipAddress;

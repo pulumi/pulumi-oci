@@ -42,7 +42,7 @@ public final class GetServiceConnectorResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      * 
      */
     private String id;
@@ -53,12 +53,12 @@ public final class GetServiceConnectorResult {
     private String lifecyleDetails;
     private String serviceConnectorId;
     /**
-     * @return An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+     * @return An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
      * 
      */
     private List<GetServiceConnectorSource> sources;
     /**
-     * @return The current state of the service connector.
+     * @return The current state of the connector.
      * 
      */
     private String state;
@@ -68,7 +68,7 @@ public final class GetServiceConnectorResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+     * @return An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
      * 
      */
     private List<GetServiceConnectorTarget> targets;
@@ -78,12 +78,12 @@ public final class GetServiceConnectorResult {
      */
     private List<GetServiceConnectorTask> tasks;
     /**
-     * @return The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+     * @return The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+     * @return The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     private String timeUpdated;
@@ -125,7 +125,7 @@ public final class GetServiceConnectorResult {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      * 
      */
     public String id() {
@@ -142,14 +142,14 @@ public final class GetServiceConnectorResult {
         return this.serviceConnectorId;
     }
     /**
-     * @return An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+     * @return An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
      * 
      */
     public List<GetServiceConnectorSource> sources() {
         return this.sources;
     }
     /**
-     * @return The current state of the service connector.
+     * @return The current state of the connector.
      * 
      */
     public String state() {
@@ -163,7 +163,7 @@ public final class GetServiceConnectorResult {
         return this.systemTags;
     }
     /**
-     * @return An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+     * @return An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
      * 
      */
     public List<GetServiceConnectorTarget> targets() {
@@ -177,14 +177,14 @@ public final class GetServiceConnectorResult {
         return this.tasks;
     }
     /**
-     * @return The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+     * @return The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+     * @return The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     public String timeUpdated() {

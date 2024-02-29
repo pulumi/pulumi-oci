@@ -8,8 +8,10 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -45,6 +47,11 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
      */
     private String dbUniqueName;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
@@ -59,6 +66,11 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
      * 
      */
     private String externalDbHomeId;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
@@ -124,6 +136,13 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
         return this.dbUniqueName;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
@@ -143,6 +162,13 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
      */
     public String externalDbHomeId() {
         return this.externalDbHomeId;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -188,9 +214,11 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
         private List<GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig> dbManagementConfigs;
         private List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo> dbSystemInfos;
         private String dbUniqueName;
+        private Map<String,Object> definedTags;
         private String displayName;
         private String externalContainerDatabaseId;
         private String externalDbHomeId;
+        private Map<String,Object> freeformTags;
         private String id;
         private List<GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail> instanceDetails;
         private String state;
@@ -204,9 +232,11 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
     	      this.dbManagementConfigs = defaults.dbManagementConfigs;
     	      this.dbSystemInfos = defaults.dbSystemInfos;
     	      this.dbUniqueName = defaults.dbUniqueName;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.externalContainerDatabaseId = defaults.externalContainerDatabaseId;
     	      this.externalDbHomeId = defaults.externalDbHomeId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.instanceDetails = defaults.instanceDetails;
     	      this.state = defaults.state;
@@ -268,6 +298,14 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItem", "displayName");
@@ -289,6 +327,14 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
               throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItem", "externalDbHomeId");
             }
             this.externalDbHomeId = externalDbHomeId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -334,9 +380,11 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
             _resultValue.dbManagementConfigs = dbManagementConfigs;
             _resultValue.dbSystemInfos = dbSystemInfos;
             _resultValue.dbUniqueName = dbUniqueName;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.externalContainerDatabaseId = externalContainerDatabaseId;
             _resultValue.externalDbHomeId = externalDbHomeId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.instanceDetails = instanceDetails;
             _resultValue.state = state;

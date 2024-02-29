@@ -26,9 +26,17 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string ConnectionUri;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         /// </summary>
@@ -78,7 +86,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string connectionUri,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string displayName,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -103,7 +115,9 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             AdditionalDetails = additionalDetails;
             AgentId = agentId;
             ConnectionUri = connectionUri;
+            DefinedTags = definedTags;
             DisplayName = displayName;
+            FreeformTags = freeformTags;
             Id = id;
             InternalId = internalId;
             LifecycleDetails = lifecycleDetails;

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly int? BatchTimeInSec;
         /// <summary>
-        /// (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+        /// (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
         /// </summary>
         public readonly string? Condition;
         /// <summary>

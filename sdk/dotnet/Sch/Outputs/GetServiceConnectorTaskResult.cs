@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly int BatchTimeInSec;
         /// <summary>
-        /// A filter or mask to limit the source used in the flow defined by the service connector.
+        /// A filter or mask to limit the source used in the flow defined by the connector.
         /// </summary>
         public readonly string Condition;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string FunctionId;
         /// <summary>
-        /// The type descriminator.
+        /// The type discriminator.
         /// </summary>
         public readonly string Kind;
 

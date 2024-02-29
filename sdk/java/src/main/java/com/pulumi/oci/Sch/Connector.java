@@ -22,26 +22,26 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
  * 
- * Creates a new service connector in the specified compartment.
- * A service connector is a logically defined flow for moving data from
+ * Creates a new connector in the specified compartment.
+ * A connector is a logically defined flow for moving data from
  * a source service to a destination service in Oracle Cloud Infrastructure.
- * For instructions, see
- * [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
- * For general information about service connectors, see
- * [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
+ * For more information, see
+ * [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+ * For general information about connectors, see
+ * [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm).
  * 
  * For purposes of access control, you must provide the
  * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where
- * you want the service connector to reside. Notice that the service connector
+ * you want the connector to reside. Notice that the connector
  * doesn&#39;t have to be in the same compartment as the source or target services.
  * For information about access control and compartments, see
  * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
  * 
- * After you send your request, the new service connector&#39;s state is temporarily
+ * After you send your request, the new connector&#39;s state is temporarily
  * CREATING. When the state changes to ACTIVE, data begins transferring from the
  * source service to the target service. For instructions on deactivating and
- * activating service connectors, see
- * [To activate or deactivate a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
+ * activating connectors, see
+ * [Activating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/activate-service-connector.htm).
  * 
  * ## Example Usage
  * ```java
@@ -74,6 +74,7 @@ import javax.annotation.Nullable;
  *             .displayName(var_.service_connector_display_name())
  *             .source(ConnectorSourceArgs.builder()
  *                 .kind(var_.service_connector_source_kind())
+ *                 .configMap(var_.service_connector_source_config_map())
  *                 .cursor(ConnectorSourceCursorArgs.builder()
  *                     .kind(var_.service_connector_source_cursor_kind())
  *                     .build())
@@ -94,12 +95,16 @@ import javax.annotation.Nullable;
  *                             .build())
  *                         .build())
  *                     .build())
+ *                 .pluginName(var_.service_connector_source_plugin_name())
  *                 .streamId(oci_streaming_stream.test_stream().id())
  *                 .build())
  *             .target(ConnectorTargetArgs.builder()
  *                 .kind(var_.service_connector_target_kind())
  *                 .batchRolloverSizeInMbs(var_.service_connector_target_batch_rollover_size_in_mbs())
  *                 .batchRolloverTimeInMs(var_.service_connector_target_batch_rollover_time_in_ms())
+ *                 .batchSizeInKbs(var_.service_connector_target_batch_size_in_kbs())
+ *                 .batchSizeInNum(var_.service_connector_target_batch_size_in_num())
+ *                 .batchTimeInSec(var_.service_connector_target_batch_time_in_sec())
  *                 .bucket(var_.service_connector_target_bucket())
  *                 .compartmentId(var_.compartment_id())
  *                 .dimensions(ConnectorTargetDimensionArgs.builder()
@@ -233,14 +238,14 @@ public class Connector extends com.pulumi.resources.CustomResource {
         return this.lifecyleDetails;
     }
     /**
-     * (Updatable) An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+     * (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
      * 
      */
     @Export(name="source", refs={ConnectorSource.class}, tree="[0]")
     private Output<ConnectorSource> source;
 
     /**
-     * @return (Updatable) An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+     * @return (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
      * 
      */
     public Output<ConnectorSource> source() {
@@ -281,14 +286,14 @@ public class Connector extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * (Updatable) An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+     * (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
      * 
      */
     @Export(name="target", refs={ConnectorTarget.class}, tree="[0]")
     private Output<ConnectorTarget> target;
 
     /**
-     * @return (Updatable) An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+     * @return (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
      * 
      */
     public Output<ConnectorTarget> target() {
@@ -309,28 +314,28 @@ public class Connector extends com.pulumi.resources.CustomResource {
         return this.tasks;
     }
     /**
-     * The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+     * The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+     * @return The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+     * The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+     * @return The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeUpdated() {

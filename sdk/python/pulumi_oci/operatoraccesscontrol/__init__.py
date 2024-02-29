@@ -6,6 +6,7 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .get_access_request import *
+from .get_access_request_audit_log_report import *
 from .get_access_request_history import *
 from .get_access_requests import *
 from .get_action import *

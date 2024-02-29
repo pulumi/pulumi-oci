@@ -35,7 +35,6 @@ namespace Pulumi.Oci.Database
     ///     {
     ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
     ///         PeerAutonomousContainerDatabaseDisplayName = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name,
-    ///         PeerCloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
     ///         ProtectionMode = @var.Autonomous_container_database_dataguard_association_protection_mode,
     ///         FastStartFailOverLagLimitInSeconds = @var.Autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds,
     ///         IsAutomaticFailoverEnabled = @var.Autonomous_container_database_dataguard_association_is_automatic_failover_enabled,
@@ -56,6 +55,9 @@ namespace Pulumi.Oci.Database
     ///             RecoveryWindowInDays = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days,
     ///         },
     ///         PeerAutonomousContainerDatabaseCompartmentId = oci_identity_compartment.Test_compartment.Id,
+    ///         PeerAutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
+    ///         PeerCloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
+    ///         PeerDbUniqueName = @var.Autonomous_container_database_dataguard_association_peer_db_unique_name,
     ///         StandbyMaintenanceBufferInDays = @var.Autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days,
     ///     });
     /// 
@@ -86,7 +88,7 @@ namespace Pulumi.Oci.Database
         public Output<string> ApplyRate { get; private set; } = null!;
 
         [Output("autonomousContainerDatabaseDataguardAssociationId")]
-        public Output<int> AutonomousContainerDatabaseDataguardAssociationId { get; private set; } = null!;
+        public Output<string> AutonomousContainerDatabaseDataguardAssociationId { get; private set; } = null!;
 
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -143,13 +145,25 @@ namespace Pulumi.Oci.Database
         public Output<string> PeerAutonomousContainerDatabaseId { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+        /// </summary>
+        [Output("peerAutonomousVmClusterId")]
+        public Output<string> PeerAutonomousVmClusterId { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         /// </summary>
         [Output("peerCloudAutonomousVmClusterId")]
         public Output<string> PeerCloudAutonomousVmClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of Autonomous Data Guard.
+        /// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+        /// </summary>
+        [Output("peerDbUniqueName")]
+        public Output<string> PeerDbUniqueName { get; private set; } = null!;
+
+        /// <summary>
+        /// The current state of the Autonomous Container Database.
         /// </summary>
         [Output("peerLifecycleState")]
         public Output<string> PeerLifecycleState { get; private set; } = null!;
@@ -260,7 +274,7 @@ namespace Pulumi.Oci.Database
     public sealed class AutonomousContainerDatabaseDataguardAssociationArgs : global::Pulumi.ResourceArgs
     {
         [Input("autonomousContainerDatabaseDataguardAssociationId")]
-        public Input<int>? AutonomousContainerDatabaseDataguardAssociationId { get; set; }
+        public Input<string>? AutonomousContainerDatabaseDataguardAssociationId { get; set; }
 
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -299,10 +313,22 @@ namespace Pulumi.Oci.Database
         public Input<string> PeerAutonomousContainerDatabaseDisplayName { get; set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+        /// </summary>
+        [Input("peerAutonomousVmClusterId")]
+        public Input<string>? PeerAutonomousVmClusterId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         /// </summary>
-        [Input("peerCloudAutonomousVmClusterId", required: true)]
-        public Input<string> PeerCloudAutonomousVmClusterId { get; set; } = null!;
+        [Input("peerCloudAutonomousVmClusterId")]
+        public Input<string>? PeerCloudAutonomousVmClusterId { get; set; }
+
+        /// <summary>
+        /// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+        /// </summary>
+        [Input("peerDbUniqueName")]
+        public Input<string>? PeerDbUniqueName { get; set; }
 
         /// <summary>
         /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
@@ -342,7 +368,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ApplyRate { get; set; }
 
         [Input("autonomousContainerDatabaseDataguardAssociationId")]
-        public Input<int>? AutonomousContainerDatabaseDataguardAssociationId { get; set; }
+        public Input<string>? AutonomousContainerDatabaseDataguardAssociationId { get; set; }
 
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -399,13 +425,25 @@ namespace Pulumi.Oci.Database
         public Input<string>? PeerAutonomousContainerDatabaseId { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+        /// </summary>
+        [Input("peerAutonomousVmClusterId")]
+        public Input<string>? PeerAutonomousVmClusterId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         /// </summary>
         [Input("peerCloudAutonomousVmClusterId")]
         public Input<string>? PeerCloudAutonomousVmClusterId { get; set; }
 
         /// <summary>
-        /// The current state of Autonomous Data Guard.
+        /// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+        /// </summary>
+        [Input("peerDbUniqueName")]
+        public Input<string>? PeerDbUniqueName { get; set; }
+
+        /// <summary>
+        /// The current state of the Autonomous Container Database.
         /// </summary>
         [Input("peerLifecycleState")]
         public Input<string>? PeerLifecycleState { get; set; }

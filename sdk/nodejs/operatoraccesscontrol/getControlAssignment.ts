@@ -91,6 +91,10 @@ export interface GetControlAssignmentResult {
      */
     readonly isEnforcedAlways: boolean;
     /**
+     * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     */
+    readonly isHypervisorLogForwarded: boolean;
+    /**
      * If set indicates that the audit logs are being forwarded to the relevant remote logging server
      */
     readonly isLogForwarded: boolean;
@@ -98,6 +102,10 @@ export interface GetControlAssignmentResult {
      * More in detail about the lifeCycleState.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Name of the operator control name associated.
+     */
+    readonly opControlName: string;
     readonly operatorControlAssignmentId: string;
     /**
      * The OCID of the operator control.
@@ -155,6 +163,7 @@ export interface GetControlAssignmentResult {
      * User id who released the operatorControl.
      */
     readonly unassignerId: string;
+    readonly validateAssignmentTrigger: number;
 }
 /**
  * This data source provides details about a specific Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.

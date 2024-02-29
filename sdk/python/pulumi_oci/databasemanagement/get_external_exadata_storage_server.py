@@ -22,7 +22,7 @@ class GetExternalExadataStorageServerResult:
     """
     A collection of values returned by getExternalExadataStorageServer.
     """
-    def __init__(__self__, additional_details=None, connectors=None, cpu_count=None, display_name=None, exadata_infrastructure_id=None, external_exadata_storage_server_id=None, id=None, internal_id=None, ip_address=None, lifecycle_details=None, make_model=None, max_flash_disk_iops=None, max_flash_disk_throughput=None, max_hard_disk_iops=None, max_hard_disk_throughput=None, memory_gb=None, resource_type=None, state=None, status=None, storage_grid_id=None, time_created=None, time_updated=None, version=None):
+    def __init__(__self__, additional_details=None, connectors=None, cpu_count=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, external_exadata_storage_server_id=None, freeform_tags=None, id=None, internal_id=None, ip_address=None, lifecycle_details=None, make_model=None, max_flash_disk_iops=None, max_flash_disk_throughput=None, max_hard_disk_iops=None, max_hard_disk_throughput=None, memory_gb=None, resource_type=None, state=None, status=None, storage_grid_id=None, time_created=None, time_updated=None, version=None):
         if additional_details and not isinstance(additional_details, dict):
             raise TypeError("Expected argument 'additional_details' to be a dict")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -32,6 +32,9 @@ class GetExternalExadataStorageServerResult:
         if cpu_count and not isinstance(cpu_count, float):
             raise TypeError("Expected argument 'cpu_count' to be a float")
         pulumi.set(__self__, "cpu_count", cpu_count)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -41,6 +44,9 @@ class GetExternalExadataStorageServerResult:
         if external_exadata_storage_server_id and not isinstance(external_exadata_storage_server_id, str):
             raise TypeError("Expected argument 'external_exadata_storage_server_id' to be a str")
         pulumi.set(__self__, "external_exadata_storage_server_id", external_exadata_storage_server_id)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -118,6 +124,14 @@ class GetExternalExadataStorageServerResult:
         return pulumi.get(self, "cpu_count")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -139,10 +153,18 @@ class GetExternalExadataStorageServerResult:
         return pulumi.get(self, "external_exadata_storage_server_id")
 
     @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
-        The provider-assigned unique ID for this managed resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         """
         return pulumi.get(self, "id")
 
@@ -284,9 +306,11 @@ class AwaitableGetExternalExadataStorageServerResult(GetExternalExadataStorageSe
             additional_details=self.additional_details,
             connectors=self.connectors,
             cpu_count=self.cpu_count,
+            defined_tags=self.defined_tags,
             display_name=self.display_name,
             exadata_infrastructure_id=self.exadata_infrastructure_id,
             external_exadata_storage_server_id=self.external_exadata_storage_server_id,
+            freeform_tags=self.freeform_tags,
             id=self.id,
             internal_id=self.internal_id,
             ip_address=self.ip_address,
@@ -334,9 +358,11 @@ def get_external_exadata_storage_server(external_exadata_storage_server_id: Opti
         additional_details=pulumi.get(__ret__, 'additional_details'),
         connectors=pulumi.get(__ret__, 'connectors'),
         cpu_count=pulumi.get(__ret__, 'cpu_count'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
         external_exadata_storage_server_id=pulumi.get(__ret__, 'external_exadata_storage_server_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         internal_id=pulumi.get(__ret__, 'internal_id'),
         ip_address=pulumi.get(__ret__, 'ip_address'),

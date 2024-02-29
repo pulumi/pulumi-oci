@@ -53,6 +53,10 @@ export interface GetExternalDbSystemDiscoveryResult {
      */
     readonly compartmentId: string;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    readonly definedTags: {[key: string]: any};
+    /**
      * The list of DB system components that were found in the DB system discovery.
      */
     readonly discoveredComponents: outputs.DatabaseManagement.GetExternalDbSystemDiscoveryDiscoveredComponent[];
@@ -61,6 +65,10 @@ export interface GetExternalDbSystemDiscoveryResult {
      */
     readonly displayName: string;
     readonly externalDbSystemDiscoveryId: string;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    readonly freeformTags: {[key: string]: any};
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */

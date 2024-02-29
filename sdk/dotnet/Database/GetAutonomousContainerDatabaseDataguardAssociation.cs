@@ -161,9 +161,11 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
         /// </summary>
         public readonly string PeerAutonomousContainerDatabaseId;
+        public readonly string PeerAutonomousVmClusterId;
         public readonly string PeerCloudAutonomousVmClusterId;
+        public readonly string PeerDbUniqueName;
         /// <summary>
-        /// The current state of Autonomous Data Guard.
+        /// The current state of the Autonomous Container Database.
         /// </summary>
         public readonly string PeerLifecycleState;
         /// <summary>
@@ -228,7 +230,11 @@ namespace Pulumi.Oci.Database
 
             string peerAutonomousContainerDatabaseId,
 
+            string peerAutonomousVmClusterId,
+
             string peerCloudAutonomousVmClusterId,
+
+            string peerDbUniqueName,
 
             string peerLifecycleState,
 
@@ -263,7 +269,9 @@ namespace Pulumi.Oci.Database
             PeerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;
             PeerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
             PeerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
+            PeerAutonomousVmClusterId = peerAutonomousVmClusterId;
             PeerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
+            PeerDbUniqueName = peerDbUniqueName;
             PeerLifecycleState = peerLifecycleState;
             PeerRole = peerRole;
             ProtectionMode = protectionMode;

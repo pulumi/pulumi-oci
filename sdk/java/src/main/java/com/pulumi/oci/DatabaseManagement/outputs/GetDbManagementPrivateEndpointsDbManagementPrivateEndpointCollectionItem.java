@@ -6,8 +6,10 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -18,10 +20,20 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
      */
     private String compartmentId;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The description of the Database Management private endpoint.
      * 
      */
     private String description;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
      * 
@@ -77,11 +89,25 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
         return this.compartmentId;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The description of the Database Management private endpoint.
      * 
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
@@ -157,7 +183,9 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private Map<String,Object> definedTags;
         private String description;
+        private Map<String,Object> freeformTags;
         private String id;
         private Boolean isCluster;
         private String name;
@@ -171,7 +199,9 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
         public Builder(GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isCluster = defaults.isCluster;
     	      this.name = defaults.name;
@@ -192,11 +222,27 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder description(String description) {
             if (description == null) {
               throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem", "description");
             }
             this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -277,7 +323,9 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
         public GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem build() {
             final var _resultValue = new GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
             _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isCluster = isCluster;
             _resultValue.name = name;

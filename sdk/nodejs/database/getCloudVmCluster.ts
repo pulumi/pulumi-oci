@@ -213,6 +213,10 @@ export interface GetCloudVmClusterResult {
      */
     readonly subnetId: string;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    readonly systemTags: {[key: string]: any};
+    /**
      * Operating system version of the image.
      */
     readonly systemVersion: string;

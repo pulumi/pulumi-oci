@@ -22,7 +22,7 @@ class GetExternalExadataStorageConnectorResult:
     """
     A collection of values returned by getExternalExadataStorageConnector.
     """
-    def __init__(__self__, additional_details=None, agent_id=None, connection_uri=None, connector_name=None, credential_infos=None, display_name=None, exadata_infrastructure_id=None, external_exadata_storage_connector_id=None, id=None, internal_id=None, lifecycle_details=None, state=None, status=None, storage_server_id=None, time_created=None, time_updated=None, version=None):
+    def __init__(__self__, additional_details=None, agent_id=None, connection_uri=None, connector_name=None, credential_infos=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, external_exadata_storage_connector_id=None, freeform_tags=None, id=None, internal_id=None, lifecycle_details=None, state=None, status=None, storage_server_id=None, time_created=None, time_updated=None, version=None):
         if additional_details and not isinstance(additional_details, dict):
             raise TypeError("Expected argument 'additional_details' to be a dict")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -38,6 +38,9 @@ class GetExternalExadataStorageConnectorResult:
         if credential_infos and not isinstance(credential_infos, list):
             raise TypeError("Expected argument 'credential_infos' to be a list")
         pulumi.set(__self__, "credential_infos", credential_infos)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -47,6 +50,9 @@ class GetExternalExadataStorageConnectorResult:
         if external_exadata_storage_connector_id and not isinstance(external_exadata_storage_connector_id, str):
             raise TypeError("Expected argument 'external_exadata_storage_connector_id' to be a str")
         pulumi.set(__self__, "external_exadata_storage_connector_id", external_exadata_storage_connector_id)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -110,6 +116,14 @@ class GetExternalExadataStorageConnectorResult:
         return pulumi.get(self, "credential_infos")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -129,6 +143,14 @@ class GetExternalExadataStorageConnectorResult:
     @pulumi.getter(name="externalExadataStorageConnectorId")
     def external_exadata_storage_connector_id(self) -> str:
         return pulumi.get(self, "external_exadata_storage_connector_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -214,9 +236,11 @@ class AwaitableGetExternalExadataStorageConnectorResult(GetExternalExadataStorag
             connection_uri=self.connection_uri,
             connector_name=self.connector_name,
             credential_infos=self.credential_infos,
+            defined_tags=self.defined_tags,
             display_name=self.display_name,
             exadata_infrastructure_id=self.exadata_infrastructure_id,
             external_exadata_storage_connector_id=self.external_exadata_storage_connector_id,
+            freeform_tags=self.freeform_tags,
             id=self.id,
             internal_id=self.internal_id,
             lifecycle_details=self.lifecycle_details,
@@ -258,9 +282,11 @@ def get_external_exadata_storage_connector(external_exadata_storage_connector_id
         connection_uri=pulumi.get(__ret__, 'connection_uri'),
         connector_name=pulumi.get(__ret__, 'connector_name'),
         credential_infos=pulumi.get(__ret__, 'credential_infos'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
         external_exadata_storage_connector_id=pulumi.get(__ret__, 'external_exadata_storage_connector_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         internal_id=pulumi.get(__ret__, 'internal_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),

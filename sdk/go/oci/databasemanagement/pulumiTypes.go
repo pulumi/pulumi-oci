@@ -6891,6 +6891,542 @@ func (o ExternalExadataStorageConnectorCredentialInfoPtrOutput) Username() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
+type ExternalExadataStorageGridStorageServer struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+	ConnectorId *string `pulumi:"connectorId"`
+	// The CPU count of the Exadata storage server.
+	CpuCount *float64 `pulumi:"cpuCount"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id *string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId *string `pulumi:"internalId"`
+	// The IP address of the Exadata storage server.
+	IpAddress *string `pulumi:"ipAddress"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The make model of the Exadata storage server.
+	MakeModel *string `pulumi:"makeModel"`
+	// The maximum flash disk IO operations per second of the Exadata storage server.
+	MaxFlashDiskIops *int `pulumi:"maxFlashDiskIops"`
+	// The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+	MaxFlashDiskThroughput *int `pulumi:"maxFlashDiskThroughput"`
+	// The maximum hard disk IO operations per second of the Exadata storage server.
+	MaxHardDiskIops *int `pulumi:"maxHardDiskIops"`
+	// The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+	MaxHardDiskThroughput *int `pulumi:"maxHardDiskThroughput"`
+	// The Exadata storage server memory size in GB.
+	MemoryGb *float64 `pulumi:"memoryGb"`
+	// The type of Exadata resource.
+	ResourceType *string `pulumi:"resourceType"`
+	// The current lifecycle state of the database resource.
+	State *string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status *string `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version *string `pulumi:"version"`
+}
+
+// ExternalExadataStorageGridStorageServerInput is an input type that accepts ExternalExadataStorageGridStorageServerArgs and ExternalExadataStorageGridStorageServerOutput values.
+// You can construct a concrete instance of `ExternalExadataStorageGridStorageServerInput` via:
+//
+//	ExternalExadataStorageGridStorageServerArgs{...}
+type ExternalExadataStorageGridStorageServerInput interface {
+	pulumi.Input
+
+	ToExternalExadataStorageGridStorageServerOutput() ExternalExadataStorageGridStorageServerOutput
+	ToExternalExadataStorageGridStorageServerOutputWithContext(context.Context) ExternalExadataStorageGridStorageServerOutput
+}
+
+type ExternalExadataStorageGridStorageServerArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+	ConnectorId pulumi.StringPtrInput `pulumi:"connectorId"`
+	// The CPU count of the Exadata storage server.
+	CpuCount pulumi.Float64PtrInput `pulumi:"cpuCount"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringPtrInput `pulumi:"internalId"`
+	// The IP address of the Exadata storage server.
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// The make model of the Exadata storage server.
+	MakeModel pulumi.StringPtrInput `pulumi:"makeModel"`
+	// The maximum flash disk IO operations per second of the Exadata storage server.
+	MaxFlashDiskIops pulumi.IntPtrInput `pulumi:"maxFlashDiskIops"`
+	// The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+	MaxFlashDiskThroughput pulumi.IntPtrInput `pulumi:"maxFlashDiskThroughput"`
+	// The maximum hard disk IO operations per second of the Exadata storage server.
+	MaxHardDiskIops pulumi.IntPtrInput `pulumi:"maxHardDiskIops"`
+	// The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+	MaxHardDiskThroughput pulumi.IntPtrInput `pulumi:"maxHardDiskThroughput"`
+	// The Exadata storage server memory size in GB.
+	MemoryGb pulumi.Float64PtrInput `pulumi:"memoryGb"`
+	// The type of Exadata resource.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringPtrInput `pulumi:"version"`
+}
+
+func (ExternalExadataStorageGridStorageServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalExadataStorageGridStorageServer)(nil)).Elem()
+}
+
+func (i ExternalExadataStorageGridStorageServerArgs) ToExternalExadataStorageGridStorageServerOutput() ExternalExadataStorageGridStorageServerOutput {
+	return i.ToExternalExadataStorageGridStorageServerOutputWithContext(context.Background())
+}
+
+func (i ExternalExadataStorageGridStorageServerArgs) ToExternalExadataStorageGridStorageServerOutputWithContext(ctx context.Context) ExternalExadataStorageGridStorageServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageGridStorageServerOutput)
+}
+
+// ExternalExadataStorageGridStorageServerArrayInput is an input type that accepts ExternalExadataStorageGridStorageServerArray and ExternalExadataStorageGridStorageServerArrayOutput values.
+// You can construct a concrete instance of `ExternalExadataStorageGridStorageServerArrayInput` via:
+//
+//	ExternalExadataStorageGridStorageServerArray{ ExternalExadataStorageGridStorageServerArgs{...} }
+type ExternalExadataStorageGridStorageServerArrayInput interface {
+	pulumi.Input
+
+	ToExternalExadataStorageGridStorageServerArrayOutput() ExternalExadataStorageGridStorageServerArrayOutput
+	ToExternalExadataStorageGridStorageServerArrayOutputWithContext(context.Context) ExternalExadataStorageGridStorageServerArrayOutput
+}
+
+type ExternalExadataStorageGridStorageServerArray []ExternalExadataStorageGridStorageServerInput
+
+func (ExternalExadataStorageGridStorageServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalExadataStorageGridStorageServer)(nil)).Elem()
+}
+
+func (i ExternalExadataStorageGridStorageServerArray) ToExternalExadataStorageGridStorageServerArrayOutput() ExternalExadataStorageGridStorageServerArrayOutput {
+	return i.ToExternalExadataStorageGridStorageServerArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalExadataStorageGridStorageServerArray) ToExternalExadataStorageGridStorageServerArrayOutputWithContext(ctx context.Context) ExternalExadataStorageGridStorageServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageGridStorageServerArrayOutput)
+}
+
+type ExternalExadataStorageGridStorageServerOutput struct{ *pulumi.OutputState }
+
+func (ExternalExadataStorageGridStorageServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalExadataStorageGridStorageServer)(nil)).Elem()
+}
+
+func (o ExternalExadataStorageGridStorageServerOutput) ToExternalExadataStorageGridStorageServerOutput() ExternalExadataStorageGridStorageServerOutput {
+	return o
+}
+
+func (o ExternalExadataStorageGridStorageServerOutput) ToExternalExadataStorageGridStorageServerOutputWithContext(ctx context.Context) ExternalExadataStorageGridStorageServerOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o ExternalExadataStorageGridStorageServerOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+func (o ExternalExadataStorageGridStorageServerOutput) ConnectorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.ConnectorId }).(pulumi.StringPtrOutput)
+}
+
+// The CPU count of the Exadata storage server.
+func (o ExternalExadataStorageGridStorageServerOutput) CpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *float64 { return v.CpuCount }).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ExternalExadataStorageGridStorageServerOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+func (o ExternalExadataStorageGridStorageServerOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ExternalExadataStorageGridStorageServerOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o ExternalExadataStorageGridStorageServerOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o ExternalExadataStorageGridStorageServerOutput) InternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.InternalId }).(pulumi.StringPtrOutput)
+}
+
+// The IP address of the Exadata storage server.
+func (o ExternalExadataStorageGridStorageServerOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o ExternalExadataStorageGridStorageServerOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// The make model of the Exadata storage server.
+func (o ExternalExadataStorageGridStorageServerOutput) MakeModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.MakeModel }).(pulumi.StringPtrOutput)
+}
+
+// The maximum flash disk IO operations per second of the Exadata storage server.
+func (o ExternalExadataStorageGridStorageServerOutput) MaxFlashDiskIops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *int { return v.MaxFlashDiskIops }).(pulumi.IntPtrOutput)
+}
+
+// The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+func (o ExternalExadataStorageGridStorageServerOutput) MaxFlashDiskThroughput() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *int { return v.MaxFlashDiskThroughput }).(pulumi.IntPtrOutput)
+}
+
+// The maximum hard disk IO operations per second of the Exadata storage server.
+func (o ExternalExadataStorageGridStorageServerOutput) MaxHardDiskIops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *int { return v.MaxHardDiskIops }).(pulumi.IntPtrOutput)
+}
+
+// The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+func (o ExternalExadataStorageGridStorageServerOutput) MaxHardDiskThroughput() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *int { return v.MaxHardDiskThroughput }).(pulumi.IntPtrOutput)
+}
+
+// The Exadata storage server memory size in GB.
+func (o ExternalExadataStorageGridStorageServerOutput) MemoryGb() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *float64 { return v.MemoryGb }).(pulumi.Float64PtrOutput)
+}
+
+// The type of Exadata resource.
+func (o ExternalExadataStorageGridStorageServerOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+// The current lifecycle state of the database resource.
+func (o ExternalExadataStorageGridStorageServerOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The status of the Exadata resource.
+func (o ExternalExadataStorageGridStorageServerOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o ExternalExadataStorageGridStorageServerOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o ExternalExadataStorageGridStorageServerOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// The version of the Exadata resource.
+func (o ExternalExadataStorageGridStorageServerOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageGridStorageServer) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+type ExternalExadataStorageGridStorageServerArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalExadataStorageGridStorageServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalExadataStorageGridStorageServer)(nil)).Elem()
+}
+
+func (o ExternalExadataStorageGridStorageServerArrayOutput) ToExternalExadataStorageGridStorageServerArrayOutput() ExternalExadataStorageGridStorageServerArrayOutput {
+	return o
+}
+
+func (o ExternalExadataStorageGridStorageServerArrayOutput) ToExternalExadataStorageGridStorageServerArrayOutputWithContext(ctx context.Context) ExternalExadataStorageGridStorageServerArrayOutput {
+	return o
+}
+
+func (o ExternalExadataStorageGridStorageServerArrayOutput) Index(i pulumi.IntInput) ExternalExadataStorageGridStorageServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalExadataStorageGridStorageServer {
+		return vs[0].([]ExternalExadataStorageGridStorageServer)[vs[1].(int)]
+	}).(ExternalExadataStorageGridStorageServerOutput)
+}
+
+type ExternalExadataStorageServerConnector struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+	AgentId *string `pulumi:"agentId"`
+	// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+	ConnectionUri *string `pulumi:"connectionUri"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id *string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId *string `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The type of Exadata resource.
+	ResourceType *string `pulumi:"resourceType"`
+	// The current lifecycle state of the database resource.
+	State *string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status *string `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+	StorageServerId *string `pulumi:"storageServerId"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version *string `pulumi:"version"`
+}
+
+// ExternalExadataStorageServerConnectorInput is an input type that accepts ExternalExadataStorageServerConnectorArgs and ExternalExadataStorageServerConnectorOutput values.
+// You can construct a concrete instance of `ExternalExadataStorageServerConnectorInput` via:
+//
+//	ExternalExadataStorageServerConnectorArgs{...}
+type ExternalExadataStorageServerConnectorInput interface {
+	pulumi.Input
+
+	ToExternalExadataStorageServerConnectorOutput() ExternalExadataStorageServerConnectorOutput
+	ToExternalExadataStorageServerConnectorOutputWithContext(context.Context) ExternalExadataStorageServerConnectorOutput
+}
+
+type ExternalExadataStorageServerConnectorArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+	AgentId pulumi.StringPtrInput `pulumi:"agentId"`
+	// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+	ConnectionUri pulumi.StringPtrInput `pulumi:"connectionUri"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringPtrInput `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// The type of Exadata resource.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+	StorageServerId pulumi.StringPtrInput `pulumi:"storageServerId"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringPtrInput `pulumi:"version"`
+}
+
+func (ExternalExadataStorageServerConnectorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalExadataStorageServerConnector)(nil)).Elem()
+}
+
+func (i ExternalExadataStorageServerConnectorArgs) ToExternalExadataStorageServerConnectorOutput() ExternalExadataStorageServerConnectorOutput {
+	return i.ToExternalExadataStorageServerConnectorOutputWithContext(context.Background())
+}
+
+func (i ExternalExadataStorageServerConnectorArgs) ToExternalExadataStorageServerConnectorOutputWithContext(ctx context.Context) ExternalExadataStorageServerConnectorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageServerConnectorOutput)
+}
+
+// ExternalExadataStorageServerConnectorArrayInput is an input type that accepts ExternalExadataStorageServerConnectorArray and ExternalExadataStorageServerConnectorArrayOutput values.
+// You can construct a concrete instance of `ExternalExadataStorageServerConnectorArrayInput` via:
+//
+//	ExternalExadataStorageServerConnectorArray{ ExternalExadataStorageServerConnectorArgs{...} }
+type ExternalExadataStorageServerConnectorArrayInput interface {
+	pulumi.Input
+
+	ToExternalExadataStorageServerConnectorArrayOutput() ExternalExadataStorageServerConnectorArrayOutput
+	ToExternalExadataStorageServerConnectorArrayOutputWithContext(context.Context) ExternalExadataStorageServerConnectorArrayOutput
+}
+
+type ExternalExadataStorageServerConnectorArray []ExternalExadataStorageServerConnectorInput
+
+func (ExternalExadataStorageServerConnectorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalExadataStorageServerConnector)(nil)).Elem()
+}
+
+func (i ExternalExadataStorageServerConnectorArray) ToExternalExadataStorageServerConnectorArrayOutput() ExternalExadataStorageServerConnectorArrayOutput {
+	return i.ToExternalExadataStorageServerConnectorArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalExadataStorageServerConnectorArray) ToExternalExadataStorageServerConnectorArrayOutputWithContext(ctx context.Context) ExternalExadataStorageServerConnectorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageServerConnectorArrayOutput)
+}
+
+type ExternalExadataStorageServerConnectorOutput struct{ *pulumi.OutputState }
+
+func (ExternalExadataStorageServerConnectorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalExadataStorageServerConnector)(nil)).Elem()
+}
+
+func (o ExternalExadataStorageServerConnectorOutput) ToExternalExadataStorageServerConnectorOutput() ExternalExadataStorageServerConnectorOutput {
+	return o
+}
+
+func (o ExternalExadataStorageServerConnectorOutput) ToExternalExadataStorageServerConnectorOutputWithContext(ctx context.Context) ExternalExadataStorageServerConnectorOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o ExternalExadataStorageServerConnectorOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+func (o ExternalExadataStorageServerConnectorOutput) AgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.AgentId }).(pulumi.StringPtrOutput)
+}
+
+// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+func (o ExternalExadataStorageServerConnectorOutput) ConnectionUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.ConnectionUri }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ExternalExadataStorageServerConnectorOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+func (o ExternalExadataStorageServerConnectorOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ExternalExadataStorageServerConnectorOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o ExternalExadataStorageServerConnectorOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o ExternalExadataStorageServerConnectorOutput) InternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.InternalId }).(pulumi.StringPtrOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o ExternalExadataStorageServerConnectorOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// The type of Exadata resource.
+func (o ExternalExadataStorageServerConnectorOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+// The current lifecycle state of the database resource.
+func (o ExternalExadataStorageServerConnectorOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The status of the Exadata resource.
+func (o ExternalExadataStorageServerConnectorOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+func (o ExternalExadataStorageServerConnectorOutput) StorageServerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.StorageServerId }).(pulumi.StringPtrOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o ExternalExadataStorageServerConnectorOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o ExternalExadataStorageServerConnectorOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// The version of the Exadata resource.
+func (o ExternalExadataStorageServerConnectorOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageServerConnector) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+type ExternalExadataStorageServerConnectorArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalExadataStorageServerConnectorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalExadataStorageServerConnector)(nil)).Elem()
+}
+
+func (o ExternalExadataStorageServerConnectorArrayOutput) ToExternalExadataStorageServerConnectorArrayOutput() ExternalExadataStorageServerConnectorArrayOutput {
+	return o
+}
+
+func (o ExternalExadataStorageServerConnectorArrayOutput) ToExternalExadataStorageServerConnectorArrayOutputWithContext(ctx context.Context) ExternalExadataStorageServerConnectorArrayOutput {
+	return o
+}
+
+func (o ExternalExadataStorageServerConnectorArrayOutput) Index(i pulumi.IntInput) ExternalExadataStorageServerConnectorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalExadataStorageServerConnector {
+		return vs[0].([]ExternalExadataStorageServerConnector)[vs[1].(int)]
+	}).(ExternalExadataStorageServerConnectorOutput)
+}
+
 type ExternalListenerEndpoint struct {
 	// The host name or IP address.
 	Host *string `pulumi:"host"`
@@ -7297,8 +7833,12 @@ type ManagedDatabaseGroupManagedDatabase struct {
 	DatabaseSubType *string `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
 	DatabaseType *string `pulumi:"databaseType"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType *string `pulumi:"deploymentType"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
 	//
 	// ** IMPORTANT **
@@ -7330,8 +7870,12 @@ type ManagedDatabaseGroupManagedDatabaseArgs struct {
 	DatabaseSubType pulumi.StringPtrInput `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
 	DatabaseType pulumi.StringPtrInput `pulumi:"databaseType"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
 	//
 	// ** IMPORTANT **
@@ -7411,9 +7955,19 @@ func (o ManagedDatabaseGroupManagedDatabaseOutput) DatabaseType() pulumi.StringP
 	return o.ApplyT(func(v ManagedDatabaseGroupManagedDatabase) *string { return v.DatabaseType }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ManagedDatabaseGroupManagedDatabaseOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ManagedDatabaseGroupManagedDatabase) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The infrastructure used to deploy the Oracle Database.
 func (o ManagedDatabaseGroupManagedDatabaseOutput) DeploymentType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagedDatabaseGroupManagedDatabase) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o ManagedDatabaseGroupManagedDatabaseOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ManagedDatabaseGroupManagedDatabase) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
@@ -7457,6 +8011,121 @@ func (o ManagedDatabaseGroupManagedDatabaseArrayOutput) Index(i pulumi.IntInput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagedDatabaseGroupManagedDatabase {
 		return vs[0].([]ManagedDatabaseGroupManagedDatabase)[vs[1].(int)]
 	}).(ManagedDatabaseGroupManagedDatabaseOutput)
+}
+
+type ManagedDatabaseManagedDatabaseGroup struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+	Id *string `pulumi:"id"`
+	// The name of the Managed Database.
+	Name *string `pulumi:"name"`
+}
+
+// ManagedDatabaseManagedDatabaseGroupInput is an input type that accepts ManagedDatabaseManagedDatabaseGroupArgs and ManagedDatabaseManagedDatabaseGroupOutput values.
+// You can construct a concrete instance of `ManagedDatabaseManagedDatabaseGroupInput` via:
+//
+//	ManagedDatabaseManagedDatabaseGroupArgs{...}
+type ManagedDatabaseManagedDatabaseGroupInput interface {
+	pulumi.Input
+
+	ToManagedDatabaseManagedDatabaseGroupOutput() ManagedDatabaseManagedDatabaseGroupOutput
+	ToManagedDatabaseManagedDatabaseGroupOutputWithContext(context.Context) ManagedDatabaseManagedDatabaseGroupOutput
+}
+
+type ManagedDatabaseManagedDatabaseGroupArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The name of the Managed Database.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (ManagedDatabaseManagedDatabaseGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedDatabaseManagedDatabaseGroup)(nil)).Elem()
+}
+
+func (i ManagedDatabaseManagedDatabaseGroupArgs) ToManagedDatabaseManagedDatabaseGroupOutput() ManagedDatabaseManagedDatabaseGroupOutput {
+	return i.ToManagedDatabaseManagedDatabaseGroupOutputWithContext(context.Background())
+}
+
+func (i ManagedDatabaseManagedDatabaseGroupArgs) ToManagedDatabaseManagedDatabaseGroupOutputWithContext(ctx context.Context) ManagedDatabaseManagedDatabaseGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabaseManagedDatabaseGroupOutput)
+}
+
+// ManagedDatabaseManagedDatabaseGroupArrayInput is an input type that accepts ManagedDatabaseManagedDatabaseGroupArray and ManagedDatabaseManagedDatabaseGroupArrayOutput values.
+// You can construct a concrete instance of `ManagedDatabaseManagedDatabaseGroupArrayInput` via:
+//
+//	ManagedDatabaseManagedDatabaseGroupArray{ ManagedDatabaseManagedDatabaseGroupArgs{...} }
+type ManagedDatabaseManagedDatabaseGroupArrayInput interface {
+	pulumi.Input
+
+	ToManagedDatabaseManagedDatabaseGroupArrayOutput() ManagedDatabaseManagedDatabaseGroupArrayOutput
+	ToManagedDatabaseManagedDatabaseGroupArrayOutputWithContext(context.Context) ManagedDatabaseManagedDatabaseGroupArrayOutput
+}
+
+type ManagedDatabaseManagedDatabaseGroupArray []ManagedDatabaseManagedDatabaseGroupInput
+
+func (ManagedDatabaseManagedDatabaseGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagedDatabaseManagedDatabaseGroup)(nil)).Elem()
+}
+
+func (i ManagedDatabaseManagedDatabaseGroupArray) ToManagedDatabaseManagedDatabaseGroupArrayOutput() ManagedDatabaseManagedDatabaseGroupArrayOutput {
+	return i.ToManagedDatabaseManagedDatabaseGroupArrayOutputWithContext(context.Background())
+}
+
+func (i ManagedDatabaseManagedDatabaseGroupArray) ToManagedDatabaseManagedDatabaseGroupArrayOutputWithContext(ctx context.Context) ManagedDatabaseManagedDatabaseGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabaseManagedDatabaseGroupArrayOutput)
+}
+
+type ManagedDatabaseManagedDatabaseGroupOutput struct{ *pulumi.OutputState }
+
+func (ManagedDatabaseManagedDatabaseGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedDatabaseManagedDatabaseGroup)(nil)).Elem()
+}
+
+func (o ManagedDatabaseManagedDatabaseGroupOutput) ToManagedDatabaseManagedDatabaseGroupOutput() ManagedDatabaseManagedDatabaseGroupOutput {
+	return o
+}
+
+func (o ManagedDatabaseManagedDatabaseGroupOutput) ToManagedDatabaseManagedDatabaseGroupOutputWithContext(ctx context.Context) ManagedDatabaseManagedDatabaseGroupOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+func (o ManagedDatabaseManagedDatabaseGroupOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabaseManagedDatabaseGroup) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+func (o ManagedDatabaseManagedDatabaseGroupOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabaseManagedDatabaseGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The name of the Managed Database.
+func (o ManagedDatabaseManagedDatabaseGroupOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedDatabaseManagedDatabaseGroup) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type ManagedDatabaseManagedDatabaseGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagedDatabaseManagedDatabaseGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagedDatabaseManagedDatabaseGroup)(nil)).Elem()
+}
+
+func (o ManagedDatabaseManagedDatabaseGroupArrayOutput) ToManagedDatabaseManagedDatabaseGroupArrayOutput() ManagedDatabaseManagedDatabaseGroupArrayOutput {
+	return o
+}
+
+func (o ManagedDatabaseManagedDatabaseGroupArrayOutput) ToManagedDatabaseManagedDatabaseGroupArrayOutputWithContext(ctx context.Context) ManagedDatabaseManagedDatabaseGroupArrayOutput {
+	return o
+}
+
+func (o ManagedDatabaseManagedDatabaseGroupArrayOutput) Index(i pulumi.IntInput) ManagedDatabaseManagedDatabaseGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagedDatabaseManagedDatabaseGroup {
+		return vs[0].([]ManagedDatabaseManagedDatabaseGroup)[vs[1].(int)]
+	}).(ManagedDatabaseManagedDatabaseGroupOutput)
 }
 
 type ManagedDatabasesChangeDatabaseParameterCredentials struct {
@@ -9202,8 +9871,12 @@ func (o GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArra
 type GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the Database Management private endpoint.
 	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
 	Id string `pulumi:"id"`
 	// The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
@@ -9238,8 +9911,12 @@ type GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemInp
 type GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the Database Management private endpoint.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
@@ -9318,11 +9995,25 @@ func (o GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem
 	}).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // The description of the Database Management private endpoint.
 func (o GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem) string {
 		return v.Description
 	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
@@ -10137,14 +10828,19 @@ type GetExternalAsmInstancesExternalAsmInstanceCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the external ASM instance.
 	ComponentName string `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
-	ExternalAsmId string `pulumi:"externalAsmId"`
+	ExternalAsmId         string `pulumi:"externalAsmId"`
+	ExternalAsmInstanceId string `pulumi:"externalAsmInstanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node on which the ASM instance is running.
 	ExternalDbNodeId string `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM instance is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the host on which the ASM instance is running.
 	HostName string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
@@ -10177,14 +10873,19 @@ type GetExternalAsmInstancesExternalAsmInstanceCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The name of the external ASM instance.
 	ComponentName pulumi.StringInput `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
-	ExternalAsmId pulumi.StringInput `pulumi:"externalAsmId"`
+	ExternalAsmId         pulumi.StringInput `pulumi:"externalAsmId"`
+	ExternalAsmInstanceId pulumi.StringInput `pulumi:"externalAsmInstanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node on which the ASM instance is running.
 	ExternalDbNodeId pulumi.StringInput `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM instance is a part of.
 	ExternalDbSystemId pulumi.StringInput `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The name of the host on which the ASM instance is running.
 	HostName pulumi.StringInput `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
@@ -10265,6 +10966,13 @@ func (o GetExternalAsmInstancesExternalAsmInstanceCollectionItemOutput) Componen
 	return o.ApplyT(func(v GetExternalAsmInstancesExternalAsmInstanceCollectionItem) string { return v.ComponentName }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalAsmInstancesExternalAsmInstanceCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalAsmInstancesExternalAsmInstanceCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // A filter to only return the resources that match the entire display name.
 func (o GetExternalAsmInstancesExternalAsmInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalAsmInstancesExternalAsmInstanceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -10275,6 +10983,12 @@ func (o GetExternalAsmInstancesExternalAsmInstanceCollectionItemOutput) External
 	return o.ApplyT(func(v GetExternalAsmInstancesExternalAsmInstanceCollectionItem) string { return v.ExternalAsmId }).(pulumi.StringOutput)
 }
 
+func (o GetExternalAsmInstancesExternalAsmInstanceCollectionItemOutput) ExternalAsmInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalAsmInstancesExternalAsmInstanceCollectionItem) string {
+		return v.ExternalAsmInstanceId
+	}).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node on which the ASM instance is running.
 func (o GetExternalAsmInstancesExternalAsmInstanceCollectionItemOutput) ExternalDbNodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalAsmInstancesExternalAsmInstanceCollectionItem) string { return v.ExternalDbNodeId }).(pulumi.StringOutput)
@@ -10283,6 +10997,13 @@ func (o GetExternalAsmInstancesExternalAsmInstanceCollectionItemOutput) External
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM instance is a part of.
 func (o GetExternalAsmInstancesExternalAsmInstanceCollectionItemOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalAsmInstancesExternalAsmInstanceCollectionItem) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalAsmInstancesExternalAsmInstanceCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalAsmInstancesExternalAsmInstanceCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The name of the host on which the ASM instance is running.
@@ -11027,6 +11748,8 @@ type GetExternalAsmsExternalAsmCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the external ASM.
 	ComponentName string `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName   string `pulumi:"displayName"`
 	ExternalAsmId string `pulumi:"externalAsmId"`
@@ -11034,6 +11757,8 @@ type GetExternalAsmsExternalAsmCollectionItem struct {
 	ExternalConnectorId string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
 	GridHome string `pulumi:"gridHome"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
@@ -11074,6 +11799,8 @@ type GetExternalAsmsExternalAsmCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The name of the external ASM.
 	ComponentName pulumi.StringInput `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName   pulumi.StringInput `pulumi:"displayName"`
 	ExternalAsmId pulumi.StringInput `pulumi:"externalAsmId"`
@@ -11081,6 +11808,8 @@ type GetExternalAsmsExternalAsmCollectionItemArgs struct {
 	ExternalConnectorId pulumi.StringInput `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId pulumi.StringInput `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
 	GridHome pulumi.StringInput `pulumi:"gridHome"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
@@ -11169,6 +11898,11 @@ func (o GetExternalAsmsExternalAsmCollectionItemOutput) ComponentName() pulumi.S
 	return o.ApplyT(func(v GetExternalAsmsExternalAsmCollectionItem) string { return v.ComponentName }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalAsmsExternalAsmCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalAsmsExternalAsmCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // A filter to only return the resources that match the entire display name.
 func (o GetExternalAsmsExternalAsmCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalAsmsExternalAsmCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -11186,6 +11920,11 @@ func (o GetExternalAsmsExternalAsmCollectionItemOutput) ExternalConnectorId() pu
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 func (o GetExternalAsmsExternalAsmCollectionItemOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalAsmsExternalAsmCollectionItem) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalAsmsExternalAsmCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalAsmsExternalAsmCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
@@ -11631,6 +12370,8 @@ type GetExternalClusterInstancesExternalClusterInstanceCollectionItem struct {
 	ComponentName string `pulumi:"componentName"`
 	// The Oracle base location of Cluster Ready Services (CRS).
 	CrsBaseDirectory string `pulumi:"crsBaseDirectory"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
@@ -11642,6 +12383,8 @@ type GetExternalClusterInstancesExternalClusterInstanceCollectionItem struct {
 	ExternalDbNodeId string `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the host on which the cluster instance is running.
 	HostName string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
@@ -11678,6 +12421,8 @@ type GetExternalClusterInstancesExternalClusterInstanceCollectionItemArgs struct
 	ComponentName pulumi.StringInput `pulumi:"componentName"`
 	// The Oracle base location of Cluster Ready Services (CRS).
 	CrsBaseDirectory pulumi.StringInput `pulumi:"crsBaseDirectory"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
@@ -11689,6 +12434,8 @@ type GetExternalClusterInstancesExternalClusterInstanceCollectionItemArgs struct
 	ExternalDbNodeId pulumi.StringInput `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
 	ExternalDbSystemId pulumi.StringInput `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The name of the host on which the cluster instance is running.
 	HostName pulumi.StringInput `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
@@ -11784,6 +12531,13 @@ func (o GetExternalClusterInstancesExternalClusterInstanceCollectionItemOutput) 
 	}).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalClusterInstancesExternalClusterInstanceCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalClusterInstancesExternalClusterInstanceCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // A filter to only return the resources that match the entire display name.
 func (o GetExternalClusterInstancesExternalClusterInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalClusterInstancesExternalClusterInstanceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -11821,6 +12575,13 @@ func (o GetExternalClusterInstancesExternalClusterInstanceCollectionItemOutput) 
 	return o.ApplyT(func(v GetExternalClusterInstancesExternalClusterInstanceCollectionItem) string {
 		return v.ExternalDbSystemId
 	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalClusterInstancesExternalClusterInstanceCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalClusterInstancesExternalClusterInstanceCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The name of the host on which the cluster instance is running.
@@ -12443,6 +13204,8 @@ type GetExternalClustersExternalClusterCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the external cluster.
 	ComponentName string `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName       string `pulumi:"displayName"`
 	ExternalClusterId string `pulumi:"externalClusterId"`
@@ -12450,6 +13213,8 @@ type GetExternalClustersExternalClusterCollectionItem struct {
 	ExternalConnectorId string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The directory in which Oracle Grid Infrastructure is installed.
 	GridHome string `pulumi:"gridHome"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
@@ -12494,6 +13259,8 @@ type GetExternalClustersExternalClusterCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The name of the external cluster.
 	ComponentName pulumi.StringInput `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName       pulumi.StringInput `pulumi:"displayName"`
 	ExternalClusterId pulumi.StringInput `pulumi:"externalClusterId"`
@@ -12501,6 +13268,8 @@ type GetExternalClustersExternalClusterCollectionItemArgs struct {
 	ExternalConnectorId pulumi.StringInput `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId pulumi.StringInput `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The directory in which Oracle Grid Infrastructure is installed.
 	GridHome pulumi.StringInput `pulumi:"gridHome"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
@@ -12595,6 +13364,11 @@ func (o GetExternalClustersExternalClusterCollectionItemOutput) ComponentName() 
 	return o.ApplyT(func(v GetExternalClustersExternalClusterCollectionItem) string { return v.ComponentName }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalClustersExternalClusterCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalClustersExternalClusterCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // A filter to only return the resources that match the entire display name.
 func (o GetExternalClustersExternalClusterCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalClustersExternalClusterCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -12612,6 +13386,11 @@ func (o GetExternalClustersExternalClusterCollectionItemOutput) ExternalConnecto
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 func (o GetExternalClustersExternalClusterCollectionItemOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalClustersExternalClusterCollectionItem) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalClustersExternalClusterCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalClustersExternalClusterCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The directory in which Oracle Grid Infrastructure is installed.
@@ -13278,12 +14057,16 @@ type GetExternalDatabasesExternalDatabaseCollectionItem struct {
 	DbSystemInfos []GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo `pulumi:"dbSystemInfos"`
 	// The `DB_UNIQUE_NAME` of the external database.
 	DbUniqueName string `pulumi:"dbUniqueName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database (CDB) if this is a Pluggable Database (PDB).
 	ExternalContainerDatabaseId string `pulumi:"externalContainerDatabaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
 	ExternalDbHomeId string `pulumi:"externalDbHomeId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	Id string `pulumi:"id"`
 	// The list of database instances if the database is a RAC database.
@@ -13318,12 +14101,16 @@ type GetExternalDatabasesExternalDatabaseCollectionItemArgs struct {
 	DbSystemInfos GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoArrayInput `pulumi:"dbSystemInfos"`
 	// The `DB_UNIQUE_NAME` of the external database.
 	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database (CDB) if this is a Pluggable Database (PDB).
 	ExternalContainerDatabaseId pulumi.StringInput `pulumi:"externalContainerDatabaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
 	ExternalDbHomeId pulumi.StringInput `pulumi:"externalDbHomeId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The list of database instances if the database is a RAC database.
@@ -13419,6 +14206,13 @@ func (o GetExternalDatabasesExternalDatabaseCollectionItemOutput) DbUniqueName()
 	return o.ApplyT(func(v GetExternalDatabasesExternalDatabaseCollectionItem) string { return v.DbUniqueName }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalDatabasesExternalDatabaseCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDatabasesExternalDatabaseCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // A filter to only return the resources that match the entire display name.
 func (o GetExternalDatabasesExternalDatabaseCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDatabasesExternalDatabaseCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -13434,6 +14228,13 @@ func (o GetExternalDatabasesExternalDatabaseCollectionItemOutput) ExternalContai
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
 func (o GetExternalDatabasesExternalDatabaseCollectionItemOutput) ExternalDbHomeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDatabasesExternalDatabaseCollectionItem) string { return v.ExternalDbHomeId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalDatabasesExternalDatabaseCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDatabasesExternalDatabaseCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -14170,10 +14971,15 @@ type GetExternalDbHomesExternalDbHomeCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the external DB home.
 	ComponentName string `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName      string `pulumi:"displayName"`
+	ExternalDbHomeId string `pulumi:"externalDbHomeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The location of the DB home.
 	HomeDirectory string `pulumi:"homeDirectory"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
@@ -14206,10 +15012,15 @@ type GetExternalDbHomesExternalDbHomeCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The name of the external DB home.
 	ComponentName pulumi.StringInput `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName      pulumi.StringInput `pulumi:"displayName"`
+	ExternalDbHomeId pulumi.StringInput `pulumi:"externalDbHomeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId pulumi.StringInput `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The location of the DB home.
 	HomeDirectory pulumi.StringInput `pulumi:"homeDirectory"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
@@ -14292,14 +15103,28 @@ func (o GetExternalDbHomesExternalDbHomeCollectionItemOutput) ComponentName() pu
 	return o.ApplyT(func(v GetExternalDbHomesExternalDbHomeCollectionItem) string { return v.ComponentName }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalDbHomesExternalDbHomeCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDbHomesExternalDbHomeCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // A filter to only return the resources that match the entire display name.
 func (o GetExternalDbHomesExternalDbHomeCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbHomesExternalDbHomeCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+func (o GetExternalDbHomesExternalDbHomeCollectionItemOutput) ExternalDbHomeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbHomesExternalDbHomeCollectionItem) string { return v.ExternalDbHomeId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 func (o GetExternalDbHomesExternalDbHomeCollectionItemOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbHomesExternalDbHomeCollectionItem) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalDbHomesExternalDbHomeCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDbHomesExternalDbHomeCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The location of the DB home.
@@ -14563,6 +15388,8 @@ type GetExternalDbNodesExternalDbNodeCollectionItem struct {
 	ComponentName string `pulumi:"componentName"`
 	// The number of CPU cores available on the DB node.
 	CpuCoreCount float64 `pulumi:"cpuCoreCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Name of the domain.
@@ -14572,6 +15399,8 @@ type GetExternalDbNodesExternalDbNodeCollectionItem struct {
 	ExternalDbNodeId    string `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The host name for the DB node.
 	HostName string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
@@ -14608,6 +15437,8 @@ type GetExternalDbNodesExternalDbNodeCollectionItemArgs struct {
 	ComponentName pulumi.StringInput `pulumi:"componentName"`
 	// The number of CPU cores available on the DB node.
 	CpuCoreCount pulumi.Float64Input `pulumi:"cpuCoreCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Name of the domain.
@@ -14617,6 +15448,8 @@ type GetExternalDbNodesExternalDbNodeCollectionItemArgs struct {
 	ExternalDbNodeId    pulumi.StringInput `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId pulumi.StringInput `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The host name for the DB node.
 	HostName pulumi.StringInput `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
@@ -14706,6 +15539,11 @@ func (o GetExternalDbNodesExternalDbNodeCollectionItemOutput) CpuCoreCount() pul
 	return o.ApplyT(func(v GetExternalDbNodesExternalDbNodeCollectionItem) float64 { return v.CpuCoreCount }).(pulumi.Float64Output)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalDbNodesExternalDbNodeCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDbNodesExternalDbNodeCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // A filter to only return the resources that match the entire display name.
 func (o GetExternalDbNodesExternalDbNodeCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbNodesExternalDbNodeCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -14728,6 +15566,11 @@ func (o GetExternalDbNodesExternalDbNodeCollectionItemOutput) ExternalDbNodeId()
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 func (o GetExternalDbNodesExternalDbNodeCollectionItemOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbNodesExternalDbNodeCollectionItem) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalDbNodesExternalDbNodeCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDbNodesExternalDbNodeCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The host name for the DB node.
@@ -15551,10 +16394,14 @@ type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem struct
 	ConnectionStatus string `pulumi:"connectionStatus"`
 	// The type of connector.
 	ConnectorType string `pulumi:"connectorType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
 	Id string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -15593,10 +16440,14 @@ type GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemArgs st
 	ConnectionStatus pulumi.StringInput `pulumi:"connectionStatus"`
 	// The type of connector.
 	ConnectorType pulumi.StringInput `pulumi:"connectorType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId pulumi.StringInput `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -15702,6 +16553,13 @@ func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemOutp
 	}).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // A filter to only return the resources that match the entire display name.
 func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem) string {
@@ -15714,6 +16572,13 @@ func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemOutp
 	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem) string {
 		return v.ExternalDbSystemId
 	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
@@ -16661,11 +17526,15 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItem struc
 	AgentId string `pulumi:"agentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The list of DB system components that were found in the DB system discovery.
 	DiscoveredComponents []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent `pulumi:"discoveredComponents"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName                 string `pulumi:"displayName"`
 	ExternalDbSystemDiscoveryId string `pulumi:"externalDbSystemDiscoveryId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The directory in which Oracle Grid Infrastructure is installed.
 	GridHome string `pulumi:"gridHome"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system discovery.
@@ -16699,11 +17568,15 @@ type GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemArgs s
 	AgentId pulumi.StringInput `pulumi:"agentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The list of DB system components that were found in the DB system discovery.
 	DiscoveredComponents GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentArrayInput `pulumi:"discoveredComponents"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName                 pulumi.StringInput `pulumi:"displayName"`
 	ExternalDbSystemDiscoveryId pulumi.StringInput `pulumi:"externalDbSystemDiscoveryId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The directory in which Oracle Grid Infrastructure is installed.
 	GridHome pulumi.StringInput `pulumi:"gridHome"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system discovery.
@@ -16784,6 +17657,13 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemOut
 	}).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // The list of DB system components that were found in the DB system discovery.
 func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemOutput) DiscoveredComponents() GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentArrayOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItem) []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent {
@@ -16802,6 +17682,13 @@ func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemOut
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItem) string {
 		return v.ExternalDbSystemDiscoveryId
 	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The directory in which Oracle Grid Infrastructure is installed.
@@ -26414,10 +27301,14 @@ type GetExternalDbSystemsExternalDbSystemCollectionItem struct {
 	DatabaseManagementConfigs []GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId string `pulumi:"dbSystemDiscoveryId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId string `pulumi:"discoveryAgentId"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory string `pulumi:"homeDirectory"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -26454,10 +27345,14 @@ type GetExternalDbSystemsExternalDbSystemCollectionItemArgs struct {
 	DatabaseManagementConfigs GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigArrayInput `pulumi:"databaseManagementConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId pulumi.StringInput `pulumi:"dbSystemDiscoveryId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId pulumi.StringInput `pulumi:"discoveryAgentId"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory pulumi.StringInput `pulumi:"homeDirectory"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -26544,6 +27439,13 @@ func (o GetExternalDbSystemsExternalDbSystemCollectionItemOutput) DbSystemDiscov
 	return o.ApplyT(func(v GetExternalDbSystemsExternalDbSystemCollectionItem) string { return v.DbSystemDiscoveryId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalDbSystemsExternalDbSystemCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDbSystemsExternalDbSystemCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 func (o GetExternalDbSystemsExternalDbSystemCollectionItemOutput) DiscoveryAgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemsExternalDbSystemCollectionItem) string { return v.DiscoveryAgentId }).(pulumi.StringOutput)
@@ -26552,6 +27454,13 @@ func (o GetExternalDbSystemsExternalDbSystemCollectionItemOutput) DiscoveryAgent
 // A filter to only return the resources that match the entire display name.
 func (o GetExternalDbSystemsExternalDbSystemCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemsExternalDbSystemCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalDbSystemsExternalDbSystemCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDbSystemsExternalDbSystemCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
@@ -27422,9 +28331,13 @@ type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIte
 	// A list of DB systems.
 	DatabaseSystems []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem `pulumi:"databaseSystems"`
 	DbSystemIds     []string                                                                                     `pulumi:"dbSystemIds"`
-	DiscoveryKey    string                                                                                       `pulumi:"discoveryKey"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags  map[string]interface{} `pulumi:"definedTags"`
+	DiscoveryKey string                 `pulumi:"discoveryKey"`
 	// The optional single value query filter parameter on the entity display name.
 	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id string `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -27471,9 +28384,13 @@ type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIte
 	// A list of DB systems.
 	DatabaseSystems GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayInput `pulumi:"databaseSystems"`
 	DbSystemIds     pulumi.StringArrayInput                                                                              `pulumi:"dbSystemIds"`
-	DiscoveryKey    pulumi.StringInput                                                                                   `pulumi:"discoveryKey"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags  pulumi.MapInput    `pulumi:"definedTags"`
+	DiscoveryKey pulumi.StringInput `pulumi:"discoveryKey"`
 	// The optional single value query filter parameter on the entity display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -27584,6 +28501,13 @@ func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection
 	}).(pulumi.StringArrayOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) DiscoveryKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
 		return v.DiscoveryKey
@@ -27595,6 +28519,13 @@ func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection
 	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
 		return v.DisplayName
 	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
@@ -28458,10 +29389,14 @@ type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectio
 	ConnectionUri   string                                                                                           `pulumi:"connectionUri"`
 	ConnectorName   string                                                                                           `pulumi:"connectorName"`
 	CredentialInfos []GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo `pulumi:"credentialInfos"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The optional single value query filter parameter on the entity display name.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id string `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -28502,10 +29437,14 @@ type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectio
 	ConnectionUri   pulumi.StringInput                                                                                       `pulumi:"connectionUri"`
 	ConnectorName   pulumi.StringInput                                                                                       `pulumi:"connectorName"`
 	CredentialInfos GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayInput `pulumi:"credentialInfos"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The optional single value query filter parameter on the entity display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -28610,6 +29549,13 @@ func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollec
 	}).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // The optional single value query filter parameter on the entity display name.
 func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
@@ -28622,6 +29568,13 @@ func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollec
 	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
 		return v.ExadataInfrastructureId
 	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
@@ -28948,8 +29901,12 @@ type GetExternalExadataStorageGridStorageServer struct {
 	ConnectorId string `pulumi:"connectorId"`
 	// The CPU count of the Exadata storage server.
 	CpuCount float64 `pulumi:"cpuCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id string `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -29002,8 +29959,12 @@ type GetExternalExadataStorageGridStorageServerArgs struct {
 	ConnectorId pulumi.StringInput `pulumi:"connectorId"`
 	// The CPU count of the Exadata storage server.
 	CpuCount pulumi.Float64Input `pulumi:"cpuCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -29104,9 +30065,19 @@ func (o GetExternalExadataStorageGridStorageServerOutput) CpuCount() pulumi.Floa
 	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) float64 { return v.CpuCount }).(pulumi.Float64Output)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalExadataStorageGridStorageServerOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 func (o GetExternalExadataStorageGridStorageServerOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalExadataStorageGridStorageServerOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
@@ -29216,8 +30187,12 @@ type GetExternalExadataStorageServerConnector struct {
 	AgentId string `pulumi:"agentId"`
 	// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
 	ConnectionUri string `pulumi:"connectionUri"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id string `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -29258,8 +30233,12 @@ type GetExternalExadataStorageServerConnectorArgs struct {
 	AgentId pulumi.StringInput `pulumi:"agentId"`
 	// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
 	ConnectionUri pulumi.StringInput `pulumi:"connectionUri"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -29348,9 +30327,19 @@ func (o GetExternalExadataStorageServerConnectorOutput) ConnectionUri() pulumi.S
 	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.ConnectionUri }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalExadataStorageServerConnectorOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 func (o GetExternalExadataStorageServerConnectorOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalExadataStorageServerConnectorOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
@@ -30116,10 +31105,14 @@ type GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem 
 	ConnectorId       string                 `pulumi:"connectorId"`
 	// The CPU count of the Exadata storage server.
 	CpuCount float64 `pulumi:"cpuCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The optional single value query filter parameter on the entity display name.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id string `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -30173,10 +31166,14 @@ type GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemA
 	ConnectorId       pulumi.StringInput `pulumi:"connectorId"`
 	// The CPU count of the Exadata storage server.
 	CpuCount pulumi.Float64Input `pulumi:"cpuCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The optional single value query filter parameter on the entity display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -30284,6 +31281,13 @@ func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionIt
 	}).(pulumi.Float64Output)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // The optional single value query filter parameter on the entity display name.
 func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
@@ -30296,6 +31300,13 @@ func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionIt
 	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
 		return v.ExadataInfrastructureId
 	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
@@ -31370,6 +32381,8 @@ type GetExternalListenersExternalListenerCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the external listener.
 	ComponentName string `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// The list of protocol addresses the listener is configured to listen on.
@@ -31383,6 +32396,8 @@ type GetExternalListenersExternalListenerCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
 	ExternalListenerId string `pulumi:"externalListenerId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the host on which the external listener is running.
 	HostName string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
@@ -31435,6 +32450,8 @@ type GetExternalListenersExternalListenerCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The name of the external listener.
 	ComponentName pulumi.StringInput `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The list of protocol addresses the listener is configured to listen on.
@@ -31448,6 +32465,8 @@ type GetExternalListenersExternalListenerCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId pulumi.StringInput `pulumi:"externalDbSystemId"`
 	ExternalListenerId pulumi.StringInput `pulumi:"externalListenerId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The name of the host on which the external listener is running.
 	HostName pulumi.StringInput `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
@@ -31553,6 +32572,13 @@ func (o GetExternalListenersExternalListenerCollectionItemOutput) ComponentName(
 	return o.ApplyT(func(v GetExternalListenersExternalListenerCollectionItem) string { return v.ComponentName }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetExternalListenersExternalListenerCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalListenersExternalListenerCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // A filter to only return the resources that match the entire display name.
 func (o GetExternalListenersExternalListenerCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalListenersExternalListenerCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -31587,6 +32613,13 @@ func (o GetExternalListenersExternalListenerCollectionItemOutput) ExternalDbSyst
 
 func (o GetExternalListenersExternalListenerCollectionItemOutput) ExternalListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalListenersExternalListenerCollectionItem) string { return v.ExternalListenerId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetExternalListenersExternalListenerCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalListenersExternalListenerCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The name of the host on which the external listener is running.
@@ -34387,8 +35420,12 @@ type GetManagedDatabaseGroupManagedDatabase struct {
 	DatabaseSubType string `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
 	DatabaseType string `pulumi:"databaseType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType string `pulumi:"deploymentType"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	Id string `pulumi:"id"`
 	// The name of the Managed Database Group.
@@ -34417,8 +35454,12 @@ type GetManagedDatabaseGroupManagedDatabaseArgs struct {
 	DatabaseSubType pulumi.StringInput `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
 	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The name of the Managed Database Group.
@@ -34495,9 +35536,19 @@ func (o GetManagedDatabaseGroupManagedDatabaseOutput) DatabaseType() pulumi.Stri
 	return o.ApplyT(func(v GetManagedDatabaseGroupManagedDatabase) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetManagedDatabaseGroupManagedDatabaseOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetManagedDatabaseGroupManagedDatabase) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The infrastructure used to deploy the Oracle Database.
 func (o GetManagedDatabaseGroupManagedDatabaseOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseGroupManagedDatabase) string { return v.DeploymentType }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetManagedDatabaseGroupManagedDatabaseOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetManagedDatabaseGroupManagedDatabase) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -34748,8 +35799,12 @@ func (o GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArrayOutput) Index
 type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The information specified by the user about the Managed Database Group.
 	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The identifier of the resource. Only one of the parameters, id or name should be provided.
 	Id string `pulumi:"id"`
 	// A list of Managed Databases in the Managed Database Group.
@@ -34778,8 +35833,12 @@ type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemInput interface {
 type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The information specified by the user about the Managed Database Group.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The identifier of the resource. Only one of the parameters, id or name should be provided.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A list of Managed Databases in the Managed Database Group.
@@ -34850,9 +35909,23 @@ func (o GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemOutput) Compar
 	return o.ApplyT(func(v GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // The information specified by the user about the Managed Database Group.
 func (o GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The identifier of the resource. Only one of the parameters, id or name should be provided.
@@ -34914,8 +35987,12 @@ type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase s
 	DatabaseSubType string `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
 	DatabaseType string `pulumi:"databaseType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType string `pulumi:"deploymentType"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The identifier of the resource. Only one of the parameters, id or name should be provided.
 	Id string `pulumi:"id"`
 	// A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
@@ -34944,8 +36021,12 @@ type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseAr
 	DatabaseSubType pulumi.StringInput `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
 	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The identifier of the resource. Only one of the parameters, id or name should be provided.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
@@ -35028,11 +36109,25 @@ func (o GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabas
 	}).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // The infrastructure used to deploy the Oracle Database.
 func (o GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase) string {
 		return v.DeploymentType
 	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The identifier of the resource. Only one of the parameters, id or name should be provided.
@@ -49390,10 +50485,16 @@ type GetManagedDatabasesManagedDatabaseCollectionItem struct {
 	DatabaseSubType string `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
 	DatabaseType string `pulumi:"databaseType"`
+	// The Oracle Database version.
+	DatabaseVersion string `pulumi:"databaseVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 	DbSystemId string `pulumi:"dbSystemId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return Managed Databases of the specified deployment type.
 	DeploymentType string `pulumi:"deploymentType"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The identifier of the resource.
 	Id string `pulumi:"id"`
 	// Indicates whether the Oracle Database is part of a cluster.
@@ -49436,10 +50537,16 @@ type GetManagedDatabasesManagedDatabaseCollectionItemArgs struct {
 	DatabaseSubType pulumi.StringInput `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
 	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// The Oracle Database version.
+	DatabaseVersion pulumi.StringInput `pulumi:"databaseVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return Managed Databases of the specified deployment type.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The identifier of the resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates whether the Oracle Database is part of a cluster.
@@ -49538,14 +50645,29 @@ func (o GetManagedDatabasesManagedDatabaseCollectionItemOutput) DatabaseType() p
 	return o.ApplyT(func(v GetManagedDatabasesManagedDatabaseCollectionItem) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
 
+// The Oracle Database version.
+func (o GetManagedDatabasesManagedDatabaseCollectionItemOutput) DatabaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabasesManagedDatabaseCollectionItem) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 func (o GetManagedDatabasesManagedDatabaseCollectionItemOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabasesManagedDatabaseCollectionItem) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetManagedDatabasesManagedDatabaseCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetManagedDatabasesManagedDatabaseCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // A filter to return Managed Databases of the specified deployment type.
 func (o GetManagedDatabasesManagedDatabaseCollectionItemOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabasesManagedDatabaseCollectionItem) string { return v.DeploymentType }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetManagedDatabasesManagedDatabaseCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetManagedDatabasesManagedDatabaseCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The identifier of the resource.
@@ -52388,8 +53510,12 @@ type GetNamedCredentialsNamedCredentialCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The details of the named credential.
 	Contents []GetNamedCredentialsNamedCredentialCollectionItemContent `pulumi:"contents"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The information specified by the user about the named credential.
 	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
 	Id string `pulumi:"id"`
 	// The details of the lifecycle state.
@@ -52426,8 +53552,12 @@ type GetNamedCredentialsNamedCredentialCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The details of the named credential.
 	Contents GetNamedCredentialsNamedCredentialCollectionItemContentArrayInput `pulumi:"contents"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The information specified by the user about the named credential.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The details of the lifecycle state.
@@ -52514,9 +53644,19 @@ func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Contents() GetNa
 	}).(GetNamedCredentialsNamedCredentialCollectionItemContentArrayOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The information specified by the user about the named credential.
 func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
@@ -52801,6 +53941,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataInfrastructureStorageGridArrayInput)(nil)).Elem(), ExternalExadataInfrastructureStorageGridArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataStorageConnectorCredentialInfoInput)(nil)).Elem(), ExternalExadataStorageConnectorCredentialInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataStorageConnectorCredentialInfoPtrInput)(nil)).Elem(), ExternalExadataStorageConnectorCredentialInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataStorageGridStorageServerInput)(nil)).Elem(), ExternalExadataStorageGridStorageServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataStorageGridStorageServerArrayInput)(nil)).Elem(), ExternalExadataStorageGridStorageServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataStorageServerConnectorInput)(nil)).Elem(), ExternalExadataStorageServerConnectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataStorageServerConnectorArrayInput)(nil)).Elem(), ExternalExadataStorageServerConnectorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalListenerEndpointInput)(nil)).Elem(), ExternalListenerEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalListenerEndpointArrayInput)(nil)).Elem(), ExternalListenerEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalListenerServicedAsmInput)(nil)).Elem(), ExternalListenerServicedAsmArgs{})
@@ -52809,6 +53953,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalListenerServicedDatabaseArrayInput)(nil)).Elem(), ExternalListenerServicedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabaseGroupManagedDatabaseInput)(nil)).Elem(), ManagedDatabaseGroupManagedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabaseGroupManagedDatabaseArrayInput)(nil)).Elem(), ManagedDatabaseGroupManagedDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabaseManagedDatabaseGroupInput)(nil)).Elem(), ManagedDatabaseManagedDatabaseGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabaseManagedDatabaseGroupArrayInput)(nil)).Elem(), ManagedDatabaseManagedDatabaseGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesChangeDatabaseParameterCredentialsInput)(nil)).Elem(), ManagedDatabasesChangeDatabaseParameterCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesChangeDatabaseParameterCredentialsPtrInput)(nil)).Elem(), ManagedDatabasesChangeDatabaseParameterCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedDatabasesChangeDatabaseParameterDatabaseCredentialInput)(nil)).Elem(), ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs{})
@@ -53537,6 +54683,10 @@ func init() {
 	pulumi.RegisterOutputType(ExternalExadataInfrastructureStorageGridArrayOutput{})
 	pulumi.RegisterOutputType(ExternalExadataStorageConnectorCredentialInfoOutput{})
 	pulumi.RegisterOutputType(ExternalExadataStorageConnectorCredentialInfoPtrOutput{})
+	pulumi.RegisterOutputType(ExternalExadataStorageGridStorageServerOutput{})
+	pulumi.RegisterOutputType(ExternalExadataStorageGridStorageServerArrayOutput{})
+	pulumi.RegisterOutputType(ExternalExadataStorageServerConnectorOutput{})
+	pulumi.RegisterOutputType(ExternalExadataStorageServerConnectorArrayOutput{})
 	pulumi.RegisterOutputType(ExternalListenerEndpointOutput{})
 	pulumi.RegisterOutputType(ExternalListenerEndpointArrayOutput{})
 	pulumi.RegisterOutputType(ExternalListenerServicedAsmOutput{})
@@ -53545,6 +54695,8 @@ func init() {
 	pulumi.RegisterOutputType(ExternalListenerServicedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(ManagedDatabaseGroupManagedDatabaseOutput{})
 	pulumi.RegisterOutputType(ManagedDatabaseGroupManagedDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(ManagedDatabaseManagedDatabaseGroupOutput{})
+	pulumi.RegisterOutputType(ManagedDatabaseManagedDatabaseGroupArrayOutput{})
 	pulumi.RegisterOutputType(ManagedDatabasesChangeDatabaseParameterCredentialsOutput{})
 	pulumi.RegisterOutputType(ManagedDatabasesChangeDatabaseParameterCredentialsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutput{})

@@ -61,8 +61,12 @@ type LookupDbManagementPrivateEndpointResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId                 string `pulumi:"compartmentId"`
 	DbManagementPrivateEndpointId string `pulumi:"dbManagementPrivateEndpointId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the Database Management private endpoint.
 	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
 	Id string `pulumi:"id"`
 	// Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
@@ -130,9 +134,19 @@ func (o LookupDbManagementPrivateEndpointResultOutput) DbManagementPrivateEndpoi
 	return o.ApplyT(func(v LookupDbManagementPrivateEndpointResult) string { return v.DbManagementPrivateEndpointId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupDbManagementPrivateEndpointResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupDbManagementPrivateEndpointResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The description of the Database Management private endpoint.
 func (o LookupDbManagementPrivateEndpointResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbManagementPrivateEndpointResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupDbManagementPrivateEndpointResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupDbManagementPrivateEndpointResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.

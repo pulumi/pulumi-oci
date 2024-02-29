@@ -19,6 +19,21 @@ public final class GetCloudExadataInfrastructuresArgs extends com.pulumi.resourc
     public static final GetCloudExadataInfrastructuresArgs Empty = new GetCloudExadataInfrastructuresArgs();
 
     /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -73,6 +88,7 @@ public final class GetCloudExadataInfrastructuresArgs extends com.pulumi.resourc
     private GetCloudExadataInfrastructuresArgs() {}
 
     private GetCloudExadataInfrastructuresArgs(GetCloudExadataInfrastructuresArgs $) {
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
@@ -95,6 +111,27 @@ public final class GetCloudExadataInfrastructuresArgs extends com.pulumi.resourc
 
         public Builder(GetCloudExadataInfrastructuresArgs defaults) {
             $ = new GetCloudExadataInfrastructuresArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param clusterPlacementGroupId A filter to return only resources that match the given cluster placement group ID exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId A filter to return only resources that match the given cluster placement group ID exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**

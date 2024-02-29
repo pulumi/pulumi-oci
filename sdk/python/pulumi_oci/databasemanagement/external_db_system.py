@@ -19,22 +19,30 @@ class ExternalDbSystemArgs:
                  compartment_id: pulumi.Input[str],
                  db_system_discovery_id: pulumi.Input[str],
                  database_management_config: Optional[pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs']] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  stack_monitoring_config: Optional[pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs']] = None):
         """
         The set of arguments for constructing a ExternalDbSystem resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
         :param pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs'] database_management_config: The details required to enable Database Management for an external DB system.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs'] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "db_system_discovery_id", db_system_discovery_id)
         if database_management_config is not None:
             pulumi.set(__self__, "database_management_config", database_management_config)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if stack_monitoring_config is not None:
             pulumi.set(__self__, "stack_monitoring_config", stack_monitoring_config)
 
@@ -75,6 +83,18 @@ class ExternalDbSystemArgs:
         pulumi.set(self, "database_management_config", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -85,6 +105,18 @@ class ExternalDbSystemArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter(name="stackMonitoringConfig")
@@ -105,8 +137,10 @@ class _ExternalDbSystemState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  database_management_config: Optional[pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs']] = None,
                  db_system_discovery_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  discovery_agent_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  home_directory: Optional[pulumi.Input[str]] = None,
                  is_cluster: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -119,8 +153,10 @@ class _ExternalDbSystemState:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         :param pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs'] database_management_config: The details required to enable Database Management for an external DB system.
         :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] discovery_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] home_directory: The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
         :param pulumi.Input[bool] is_cluster: Indicates whether the DB system is a cluster DB system or not.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
@@ -135,10 +171,14 @@ class _ExternalDbSystemState:
             pulumi.set(__self__, "database_management_config", database_management_config)
         if db_system_discovery_id is not None:
             pulumi.set(__self__, "db_system_discovery_id", db_system_discovery_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if discovery_agent_id is not None:
             pulumi.set(__self__, "discovery_agent_id", discovery_agent_id)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if home_directory is not None:
             pulumi.set(__self__, "home_directory", home_directory)
         if is_cluster is not None:
@@ -191,6 +231,18 @@ class _ExternalDbSystemState:
         pulumi.set(self, "db_system_discovery_id", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter(name="discoveryAgentId")
     def discovery_agent_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -213,6 +265,18 @@ class _ExternalDbSystemState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter(name="homeDirectory")
@@ -307,7 +371,9 @@ class ExternalDbSystem(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  database_management_config: Optional[pulumi.Input[pulumi.InputType['ExternalDbSystemDatabaseManagementConfigArgs']]] = None,
                  db_system_discovery_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  stack_monitoring_config: Optional[pulumi.Input[pulumi.InputType['ExternalDbSystemStackMonitoringConfigArgs']]] = None,
                  __props__=None):
         """
@@ -327,7 +393,13 @@ class ExternalDbSystem(pulumi.CustomResource):
             database_management_config=oci.database_management.ExternalDbSystemDatabaseManagementConfigArgs(
                 license_model=var["external_db_system_database_management_config_license_model"],
             ),
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
             display_name=var["external_db_system_display_name"],
+            freeform_tags={
+                "Department": "Finance",
+            },
             stack_monitoring_config=oci.database_management.ExternalDbSystemStackMonitoringConfigArgs(
                 is_enabled=var["external_db_system_stack_monitoring_config_is_enabled"],
                 metadata=var["external_db_system_stack_monitoring_config_metadata"],
@@ -347,7 +419,9 @@ class ExternalDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         :param pulumi.Input[pulumi.InputType['ExternalDbSystemDatabaseManagementConfigArgs']] database_management_config: The details required to enable Database Management for an external DB system.
         :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['ExternalDbSystemStackMonitoringConfigArgs']] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
         """
         ...
@@ -373,7 +447,13 @@ class ExternalDbSystem(pulumi.CustomResource):
             database_management_config=oci.database_management.ExternalDbSystemDatabaseManagementConfigArgs(
                 license_model=var["external_db_system_database_management_config_license_model"],
             ),
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
             display_name=var["external_db_system_display_name"],
+            freeform_tags={
+                "Department": "Finance",
+            },
             stack_monitoring_config=oci.database_management.ExternalDbSystemStackMonitoringConfigArgs(
                 is_enabled=var["external_db_system_stack_monitoring_config_is_enabled"],
                 metadata=var["external_db_system_stack_monitoring_config_metadata"],
@@ -406,7 +486,9 @@ class ExternalDbSystem(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  database_management_config: Optional[pulumi.Input[pulumi.InputType['ExternalDbSystemDatabaseManagementConfigArgs']]] = None,
                  db_system_discovery_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  stack_monitoring_config: Optional[pulumi.Input[pulumi.InputType['ExternalDbSystemStackMonitoringConfigArgs']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -424,7 +506,9 @@ class ExternalDbSystem(pulumi.CustomResource):
             if db_system_discovery_id is None and not opts.urn:
                 raise TypeError("Missing required property 'db_system_discovery_id'")
             __props__.__dict__["db_system_discovery_id"] = db_system_discovery_id
+            __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["stack_monitoring_config"] = stack_monitoring_config
             __props__.__dict__["discovery_agent_id"] = None
             __props__.__dict__["home_directory"] = None
@@ -446,8 +530,10 @@ class ExternalDbSystem(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             database_management_config: Optional[pulumi.Input[pulumi.InputType['ExternalDbSystemDatabaseManagementConfigArgs']]] = None,
             db_system_discovery_id: Optional[pulumi.Input[str]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             discovery_agent_id: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             home_directory: Optional[pulumi.Input[str]] = None,
             is_cluster: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -465,8 +551,10 @@ class ExternalDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         :param pulumi.Input[pulumi.InputType['ExternalDbSystemDatabaseManagementConfigArgs']] database_management_config: The details required to enable Database Management for an external DB system.
         :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] discovery_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] home_directory: The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
         :param pulumi.Input[bool] is_cluster: Indicates whether the DB system is a cluster DB system or not.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
@@ -482,8 +570,10 @@ class ExternalDbSystem(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["database_management_config"] = database_management_config
         __props__.__dict__["db_system_discovery_id"] = db_system_discovery_id
+        __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["discovery_agent_id"] = discovery_agent_id
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["home_directory"] = home_directory
         __props__.__dict__["is_cluster"] = is_cluster
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -518,6 +608,14 @@ class ExternalDbSystem(pulumi.CustomResource):
         return pulumi.get(self, "db_system_discovery_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="discoveryAgentId")
     def discovery_agent_id(self) -> pulumi.Output[str]:
         """
@@ -532,6 +630,14 @@ class ExternalDbSystem(pulumi.CustomResource):
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="homeDirectory")

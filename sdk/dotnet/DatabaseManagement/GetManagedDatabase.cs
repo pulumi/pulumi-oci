@@ -128,13 +128,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string DatabaseType;
         /// <summary>
+        /// The Oracle Database version.
+        /// </summary>
+        public readonly string DatabaseVersion;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
         /// </summary>
         public readonly string DbSystemId;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The infrastructure used to deploy the Oracle Database.
         /// </summary>
         public readonly string DeploymentType;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -185,9 +197,15 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string databaseType,
 
+            string databaseVersion,
+
             string dbSystemId,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string deploymentType,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -214,8 +232,11 @@ namespace Pulumi.Oci.DatabaseManagement
             DatabaseStatus = databaseStatus;
             DatabaseSubType = databaseSubType;
             DatabaseType = databaseType;
+            DatabaseVersion = databaseVersion;
             DbSystemId = dbSystemId;
+            DefinedTags = definedTags;
             DeploymentType = deploymentType;
+            FreeformTags = freeformTags;
             Id = id;
             IsCluster = isCluster;
             ManagedDatabaseGroups = managedDatabaseGroups;

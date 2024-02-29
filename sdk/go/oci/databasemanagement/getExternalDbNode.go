@@ -66,6 +66,8 @@ type LookupExternalDbNodeResult struct {
 	ComponentName string `pulumi:"componentName"`
 	// The number of CPU cores available on the DB node.
 	CpuCoreCount float64 `pulumi:"cpuCoreCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the external DB node. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// Name of the domain.
@@ -75,6 +77,8 @@ type LookupExternalDbNodeResult struct {
 	ExternalDbNodeId    string `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The host name for the DB node.
 	HostName string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
@@ -149,6 +153,11 @@ func (o LookupExternalDbNodeResultOutput) CpuCoreCount() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupExternalDbNodeResult) float64 { return v.CpuCoreCount }).(pulumi.Float64Output)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupExternalDbNodeResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The user-friendly name for the external DB node. The name does not have to be unique.
 func (o LookupExternalDbNodeResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -171,6 +180,11 @@ func (o LookupExternalDbNodeResultOutput) ExternalDbNodeId() pulumi.StringOutput
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
 func (o LookupExternalDbNodeResultOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupExternalDbNodeResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The host name for the DB node.

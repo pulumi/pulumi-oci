@@ -59,6 +59,10 @@ export interface GetExternalClusterInstanceResult {
      */
     readonly crsBaseDirectory: string;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    readonly definedTags: {[key: string]: any};
+    /**
      * The user-friendly name for the cluster instance. The name does not have to be unique.
      */
     readonly displayName: string;
@@ -79,6 +83,10 @@ export interface GetExternalClusterInstanceResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
      */
     readonly externalDbSystemId: string;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    readonly freeformTags: {[key: string]: any};
     /**
      * The name of the host on which the cluster instance is running.
      */

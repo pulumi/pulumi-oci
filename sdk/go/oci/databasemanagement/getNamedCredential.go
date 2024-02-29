@@ -64,8 +64,12 @@ type LookupNamedCredentialResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The details of the named credential.
 	Contents []GetNamedCredentialContent `pulumi:"contents"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The information specified by the user about the named credential.
 	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
 	Id string `pulumi:"id"`
 	// The details of the lifecycle state.
@@ -138,9 +142,19 @@ func (o LookupNamedCredentialResultOutput) Contents() GetNamedCredentialContentA
 	return o.ApplyT(func(v LookupNamedCredentialResult) []GetNamedCredentialContent { return v.Contents }).(GetNamedCredentialContentArrayOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupNamedCredentialResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupNamedCredentialResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The information specified by the user about the named credential.
 func (o LookupNamedCredentialResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamedCredentialResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupNamedCredentialResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupNamedCredentialResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.

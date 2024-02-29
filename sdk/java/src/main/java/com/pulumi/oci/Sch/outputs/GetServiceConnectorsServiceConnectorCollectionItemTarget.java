@@ -25,7 +25,22 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
      */
     private Integer batchRolloverTimeInMs;
     /**
-     * @return The name of the bucket. Avoid entering confidential information.
+     * @return Size limit (kilobytes) for batch sent to invoke the function.
+     * 
+     */
+    private Integer batchSizeInKbs;
+    /**
+     * @return The batch rollover size in number of messages.
+     * 
+     */
+    private Integer batchSizeInNum;
+    /**
+     * @return Time limit (seconds) for batch sent to invoke the function.
+     * 
+     */
+    private Integer batchTimeInSec;
+    /**
+     * @return The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
      * 
      */
     private String bucket;
@@ -40,7 +55,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
      */
     private List<GetServiceConnectorsServiceConnectorCollectionItemTargetDimension> dimensions;
     /**
-     * @return Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+     * @return Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
      * 
      */
     private Boolean enableFormattedMessaging;
@@ -50,7 +65,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
      */
     private String functionId;
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     private String kind;
@@ -60,7 +75,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
      */
     private String logGroupId;
     /**
-     * @return Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * @return Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
      * 
      */
     private String logSourceIdentifier;
@@ -111,7 +126,28 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
         return this.batchRolloverTimeInMs;
     }
     /**
-     * @return The name of the bucket. Avoid entering confidential information.
+     * @return Size limit (kilobytes) for batch sent to invoke the function.
+     * 
+     */
+    public Integer batchSizeInKbs() {
+        return this.batchSizeInKbs;
+    }
+    /**
+     * @return The batch rollover size in number of messages.
+     * 
+     */
+    public Integer batchSizeInNum() {
+        return this.batchSizeInNum;
+    }
+    /**
+     * @return Time limit (seconds) for batch sent to invoke the function.
+     * 
+     */
+    public Integer batchTimeInSec() {
+        return this.batchTimeInSec;
+    }
+    /**
+     * @return The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
      * 
      */
     public String bucket() {
@@ -132,7 +168,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
         return this.dimensions;
     }
     /**
-     * @return Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+     * @return Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
      * 
      */
     public Boolean enableFormattedMessaging() {
@@ -146,7 +182,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
         return this.functionId;
     }
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     public String kind() {
@@ -160,7 +196,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
         return this.logGroupId;
     }
     /**
-     * @return Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * @return Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
      * 
      */
     public String logSourceIdentifier() {
@@ -220,6 +256,9 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
     public static final class Builder {
         private Integer batchRolloverSizeInMbs;
         private Integer batchRolloverTimeInMs;
+        private Integer batchSizeInKbs;
+        private Integer batchSizeInNum;
+        private Integer batchTimeInSec;
         private String bucket;
         private String compartmentId;
         private List<GetServiceConnectorsServiceConnectorCollectionItemTargetDimension> dimensions;
@@ -239,6 +278,9 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
     	      Objects.requireNonNull(defaults);
     	      this.batchRolloverSizeInMbs = defaults.batchRolloverSizeInMbs;
     	      this.batchRolloverTimeInMs = defaults.batchRolloverTimeInMs;
+    	      this.batchSizeInKbs = defaults.batchSizeInKbs;
+    	      this.batchSizeInNum = defaults.batchSizeInNum;
+    	      this.batchTimeInSec = defaults.batchTimeInSec;
     	      this.bucket = defaults.bucket;
     	      this.compartmentId = defaults.compartmentId;
     	      this.dimensions = defaults.dimensions;
@@ -269,6 +311,30 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
               throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "batchRolloverTimeInMs");
             }
             this.batchRolloverTimeInMs = batchRolloverTimeInMs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder batchSizeInKbs(Integer batchSizeInKbs) {
+            if (batchSizeInKbs == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "batchSizeInKbs");
+            }
+            this.batchSizeInKbs = batchSizeInKbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder batchSizeInNum(Integer batchSizeInNum) {
+            if (batchSizeInNum == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "batchSizeInNum");
+            }
+            this.batchSizeInNum = batchSizeInNum;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder batchTimeInSec(Integer batchTimeInSec) {
+            if (batchTimeInSec == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "batchTimeInSec");
+            }
+            this.batchTimeInSec = batchTimeInSec;
             return this;
         }
         @CustomType.Setter
@@ -390,6 +456,9 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
             final var _resultValue = new GetServiceConnectorsServiceConnectorCollectionItemTarget();
             _resultValue.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
             _resultValue.batchRolloverTimeInMs = batchRolloverTimeInMs;
+            _resultValue.batchSizeInKbs = batchSizeInKbs;
+            _resultValue.batchSizeInNum = batchSizeInNum;
+            _resultValue.batchTimeInSec = batchTimeInSec;
             _resultValue.bucket = bucket;
             _resultValue.compartmentId = compartmentId;
             _resultValue.dimensions = dimensions;

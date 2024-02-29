@@ -11,9 +11,13 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'GetAccessRequestApproverDetailResult',
+    'GetAccessRequestExtensionApproverDetailResult',
     'GetAccessRequestHistoryItemResult',
     'GetAccessRequestsAccessRequestCollectionResult',
     'GetAccessRequestsAccessRequestCollectionItemResult',
+    'GetAccessRequestsAccessRequestCollectionItemApproverDetailResult',
+    'GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailResult',
     'GetAccessRequestsFilterResult',
     'GetActionPropertyResult',
     'GetActionsFilterResult',
@@ -27,6 +31,152 @@ __all__ = [
     'GetControlsOperatorControlCollectionResult',
     'GetControlsOperatorControlCollectionItemResult',
 ]
+
+@pulumi.output_type
+class GetAccessRequestApproverDetailResult(dict):
+    def __init__(__self__, *,
+                 approval_action: str,
+                 approval_additional_message: str,
+                 approval_comment: str,
+                 approver_id: str,
+                 time_approved_for_access: str,
+                 time_of_authorization: str):
+        """
+        :param str approval_action: The action done by the approver.
+        :param str approval_additional_message: Additional message specified by the approver of the request.
+        :param str approval_comment: Comment specified by the approver of the request.
+        :param str approver_id: The userId of the approver.
+        :param str time_approved_for_access: Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param str time_of_authorization: Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "approval_action", approval_action)
+        pulumi.set(__self__, "approval_additional_message", approval_additional_message)
+        pulumi.set(__self__, "approval_comment", approval_comment)
+        pulumi.set(__self__, "approver_id", approver_id)
+        pulumi.set(__self__, "time_approved_for_access", time_approved_for_access)
+        pulumi.set(__self__, "time_of_authorization", time_of_authorization)
+
+    @property
+    @pulumi.getter(name="approvalAction")
+    def approval_action(self) -> str:
+        """
+        The action done by the approver.
+        """
+        return pulumi.get(self, "approval_action")
+
+    @property
+    @pulumi.getter(name="approvalAdditionalMessage")
+    def approval_additional_message(self) -> str:
+        """
+        Additional message specified by the approver of the request.
+        """
+        return pulumi.get(self, "approval_additional_message")
+
+    @property
+    @pulumi.getter(name="approvalComment")
+    def approval_comment(self) -> str:
+        """
+        Comment specified by the approver of the request.
+        """
+        return pulumi.get(self, "approval_comment")
+
+    @property
+    @pulumi.getter(name="approverId")
+    def approver_id(self) -> str:
+        """
+        The userId of the approver.
+        """
+        return pulumi.get(self, "approver_id")
+
+    @property
+    @pulumi.getter(name="timeApprovedForAccess")
+    def time_approved_for_access(self) -> str:
+        """
+        Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_approved_for_access")
+
+    @property
+    @pulumi.getter(name="timeOfAuthorization")
+    def time_of_authorization(self) -> str:
+        """
+        Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_of_authorization")
+
+
+@pulumi.output_type
+class GetAccessRequestExtensionApproverDetailResult(dict):
+    def __init__(__self__, *,
+                 approval_action: str,
+                 approval_additional_message: str,
+                 approval_comment: str,
+                 approver_id: str,
+                 time_approved_for_access: str,
+                 time_of_authorization: str):
+        """
+        :param str approval_action: The action done by the approver.
+        :param str approval_additional_message: Additional message specified by the approver of the request.
+        :param str approval_comment: Comment specified by the approver of the request.
+        :param str approver_id: The userId of the approver.
+        :param str time_approved_for_access: Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param str time_of_authorization: Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "approval_action", approval_action)
+        pulumi.set(__self__, "approval_additional_message", approval_additional_message)
+        pulumi.set(__self__, "approval_comment", approval_comment)
+        pulumi.set(__self__, "approver_id", approver_id)
+        pulumi.set(__self__, "time_approved_for_access", time_approved_for_access)
+        pulumi.set(__self__, "time_of_authorization", time_of_authorization)
+
+    @property
+    @pulumi.getter(name="approvalAction")
+    def approval_action(self) -> str:
+        """
+        The action done by the approver.
+        """
+        return pulumi.get(self, "approval_action")
+
+    @property
+    @pulumi.getter(name="approvalAdditionalMessage")
+    def approval_additional_message(self) -> str:
+        """
+        Additional message specified by the approver of the request.
+        """
+        return pulumi.get(self, "approval_additional_message")
+
+    @property
+    @pulumi.getter(name="approvalComment")
+    def approval_comment(self) -> str:
+        """
+        Comment specified by the approver of the request.
+        """
+        return pulumi.get(self, "approval_comment")
+
+    @property
+    @pulumi.getter(name="approverId")
+    def approver_id(self) -> str:
+        """
+        The userId of the approver.
+        """
+        return pulumi.get(self, "approver_id")
+
+    @property
+    @pulumi.getter(name="timeApprovedForAccess")
+    def time_approved_for_access(self) -> str:
+        """
+        Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_approved_for_access")
+
+    @property
+    @pulumi.getter(name="timeOfAuthorization")
+    def time_of_authorization(self) -> str:
+        """
+        Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_of_authorization")
+
 
 @pulumi.output_type
 class GetAccessRequestHistoryItemResult(dict):
@@ -130,16 +280,22 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
                  access_reason_summary: str,
                  action_requests_lists: Sequence[str],
                  approver_comment: str,
+                 approver_details: Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemApproverDetailResult'],
                  audit_types: Sequence[str],
                  closure_comment: str,
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
                  duration: int,
                  extend_duration: int,
+                 extension_approver_details: Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailResult'],
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_auto_approved: bool,
+                 is_validate_assignment: bool,
                  lifecycle_details: str,
+                 number_of_approvers: int,
+                 number_of_approvers_required: int,
+                 number_of_extension_approvers: int,
                  opctl_additional_message: str,
                  opctl_id: str,
                  opctl_name: str,
@@ -156,22 +312,29 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
                  time_of_creation: str,
                  time_of_modification: str,
                  time_of_user_creation: str,
+                 time_requested_for_future_access: str,
                  user_id: str,
                  workflow_ids: Sequence[str]):
         """
         :param str access_reason_summary: Summary comment by the operator creating the access request.
         :param Sequence[str] action_requests_lists: List of operator actions for which approval is sought by the operator user.
         :param str approver_comment: The last recent Comment entered by the approver of the request.
+        :param Sequence['GetAccessRequestsAccessRequestCollectionItemApproverDetailArgs'] approver_details: Contains the user ids who have approved the accessRequest for extension.
         :param Sequence[str] audit_types: Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
         :param str closure_comment: The comment entered by the operator while closing the request.
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.
         :param int duration: Duration in hours for which access is sought on the target resource.
         :param int extend_duration: Duration in hours for which extension access is sought on the target resource.
+        :param Sequence['GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArgs'] extension_approver_details: Contains the user ids who have approved the accessRequest for extension.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param str id: The OCID of the access request.
         :param bool is_auto_approved: Whether the access request was automatically approved.
+        :param bool is_validate_assignment: Whether the access request was requested for Validate Assignment.
         :param str lifecycle_details: more in detail about the lifeCycleState.
+        :param int number_of_approvers: Number of approvers who have authorized an access request.
+        :param int number_of_approvers_required: Number of approvers required to approve an access request.
+        :param int number_of_extension_approvers: Number of approvers who have authorized an access request for extension.
         :param str opctl_additional_message: Additional message specific to the access request that can be specified by the approver at the time of approval.
         :param str opctl_id: The OCID of the operator control governing the target resource.
         :param str opctl_name: Name of the Operator control governing the target resource.
@@ -188,22 +351,29 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         :param str time_of_creation: Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
         :param str time_of_modification: Time when the access request was last modified in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
         :param str time_of_user_creation: The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param str time_requested_for_future_access: Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
         :param str user_id: The OCID of the user that last modified the access request.
         :param Sequence[str] workflow_ids: The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
         """
         pulumi.set(__self__, "access_reason_summary", access_reason_summary)
         pulumi.set(__self__, "action_requests_lists", action_requests_lists)
         pulumi.set(__self__, "approver_comment", approver_comment)
+        pulumi.set(__self__, "approver_details", approver_details)
         pulumi.set(__self__, "audit_types", audit_types)
         pulumi.set(__self__, "closure_comment", closure_comment)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "extend_duration", extend_duration)
+        pulumi.set(__self__, "extension_approver_details", extension_approver_details)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_auto_approved", is_auto_approved)
+        pulumi.set(__self__, "is_validate_assignment", is_validate_assignment)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "number_of_approvers", number_of_approvers)
+        pulumi.set(__self__, "number_of_approvers_required", number_of_approvers_required)
+        pulumi.set(__self__, "number_of_extension_approvers", number_of_extension_approvers)
         pulumi.set(__self__, "opctl_additional_message", opctl_additional_message)
         pulumi.set(__self__, "opctl_id", opctl_id)
         pulumi.set(__self__, "opctl_name", opctl_name)
@@ -220,6 +390,7 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         pulumi.set(__self__, "time_of_creation", time_of_creation)
         pulumi.set(__self__, "time_of_modification", time_of_modification)
         pulumi.set(__self__, "time_of_user_creation", time_of_user_creation)
+        pulumi.set(__self__, "time_requested_for_future_access", time_requested_for_future_access)
         pulumi.set(__self__, "user_id", user_id)
         pulumi.set(__self__, "workflow_ids", workflow_ids)
 
@@ -246,6 +417,14 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         The last recent Comment entered by the approver of the request.
         """
         return pulumi.get(self, "approver_comment")
+
+    @property
+    @pulumi.getter(name="approverDetails")
+    def approver_details(self) -> Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemApproverDetailResult']:
+        """
+        Contains the user ids who have approved the accessRequest for extension.
+        """
+        return pulumi.get(self, "approver_details")
 
     @property
     @pulumi.getter(name="auditTypes")
@@ -296,6 +475,14 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         return pulumi.get(self, "extend_duration")
 
     @property
+    @pulumi.getter(name="extensionApproverDetails")
+    def extension_approver_details(self) -> Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailResult']:
+        """
+        Contains the user ids who have approved the accessRequest for extension.
+        """
+        return pulumi.get(self, "extension_approver_details")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -320,12 +507,44 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         return pulumi.get(self, "is_auto_approved")
 
     @property
+    @pulumi.getter(name="isValidateAssignment")
+    def is_validate_assignment(self) -> bool:
+        """
+        Whether the access request was requested for Validate Assignment.
+        """
+        return pulumi.get(self, "is_validate_assignment")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
         more in detail about the lifeCycleState.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="numberOfApprovers")
+    def number_of_approvers(self) -> int:
+        """
+        Number of approvers who have authorized an access request.
+        """
+        return pulumi.get(self, "number_of_approvers")
+
+    @property
+    @pulumi.getter(name="numberOfApproversRequired")
+    def number_of_approvers_required(self) -> int:
+        """
+        Number of approvers required to approve an access request.
+        """
+        return pulumi.get(self, "number_of_approvers_required")
+
+    @property
+    @pulumi.getter(name="numberOfExtensionApprovers")
+    def number_of_extension_approvers(self) -> int:
+        """
+        Number of approvers who have authorized an access request for extension.
+        """
+        return pulumi.get(self, "number_of_extension_approvers")
 
     @property
     @pulumi.getter(name="opctlAdditionalMessage")
@@ -456,6 +675,14 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         return pulumi.get(self, "time_of_user_creation")
 
     @property
+    @pulumi.getter(name="timeRequestedForFutureAccess")
+    def time_requested_for_future_access(self) -> str:
+        """
+        Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_requested_for_future_access")
+
+    @property
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
         """
@@ -470,6 +697,152 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
         """
         return pulumi.get(self, "workflow_ids")
+
+
+@pulumi.output_type
+class GetAccessRequestsAccessRequestCollectionItemApproverDetailResult(dict):
+    def __init__(__self__, *,
+                 approval_action: str,
+                 approval_additional_message: str,
+                 approval_comment: str,
+                 approver_id: str,
+                 time_approved_for_access: str,
+                 time_of_authorization: str):
+        """
+        :param str approval_action: The action done by the approver.
+        :param str approval_additional_message: Additional message specified by the approver of the request.
+        :param str approval_comment: Comment specified by the approver of the request.
+        :param str approver_id: The userId of the approver.
+        :param str time_approved_for_access: Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param str time_of_authorization: Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "approval_action", approval_action)
+        pulumi.set(__self__, "approval_additional_message", approval_additional_message)
+        pulumi.set(__self__, "approval_comment", approval_comment)
+        pulumi.set(__self__, "approver_id", approver_id)
+        pulumi.set(__self__, "time_approved_for_access", time_approved_for_access)
+        pulumi.set(__self__, "time_of_authorization", time_of_authorization)
+
+    @property
+    @pulumi.getter(name="approvalAction")
+    def approval_action(self) -> str:
+        """
+        The action done by the approver.
+        """
+        return pulumi.get(self, "approval_action")
+
+    @property
+    @pulumi.getter(name="approvalAdditionalMessage")
+    def approval_additional_message(self) -> str:
+        """
+        Additional message specified by the approver of the request.
+        """
+        return pulumi.get(self, "approval_additional_message")
+
+    @property
+    @pulumi.getter(name="approvalComment")
+    def approval_comment(self) -> str:
+        """
+        Comment specified by the approver of the request.
+        """
+        return pulumi.get(self, "approval_comment")
+
+    @property
+    @pulumi.getter(name="approverId")
+    def approver_id(self) -> str:
+        """
+        The userId of the approver.
+        """
+        return pulumi.get(self, "approver_id")
+
+    @property
+    @pulumi.getter(name="timeApprovedForAccess")
+    def time_approved_for_access(self) -> str:
+        """
+        Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_approved_for_access")
+
+    @property
+    @pulumi.getter(name="timeOfAuthorization")
+    def time_of_authorization(self) -> str:
+        """
+        Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_of_authorization")
+
+
+@pulumi.output_type
+class GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailResult(dict):
+    def __init__(__self__, *,
+                 approval_action: str,
+                 approval_additional_message: str,
+                 approval_comment: str,
+                 approver_id: str,
+                 time_approved_for_access: str,
+                 time_of_authorization: str):
+        """
+        :param str approval_action: The action done by the approver.
+        :param str approval_additional_message: Additional message specified by the approver of the request.
+        :param str approval_comment: Comment specified by the approver of the request.
+        :param str approver_id: The userId of the approver.
+        :param str time_approved_for_access: Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param str time_of_authorization: Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "approval_action", approval_action)
+        pulumi.set(__self__, "approval_additional_message", approval_additional_message)
+        pulumi.set(__self__, "approval_comment", approval_comment)
+        pulumi.set(__self__, "approver_id", approver_id)
+        pulumi.set(__self__, "time_approved_for_access", time_approved_for_access)
+        pulumi.set(__self__, "time_of_authorization", time_of_authorization)
+
+    @property
+    @pulumi.getter(name="approvalAction")
+    def approval_action(self) -> str:
+        """
+        The action done by the approver.
+        """
+        return pulumi.get(self, "approval_action")
+
+    @property
+    @pulumi.getter(name="approvalAdditionalMessage")
+    def approval_additional_message(self) -> str:
+        """
+        Additional message specified by the approver of the request.
+        """
+        return pulumi.get(self, "approval_additional_message")
+
+    @property
+    @pulumi.getter(name="approvalComment")
+    def approval_comment(self) -> str:
+        """
+        Comment specified by the approver of the request.
+        """
+        return pulumi.get(self, "approval_comment")
+
+    @property
+    @pulumi.getter(name="approverId")
+    def approver_id(self) -> str:
+        """
+        The userId of the approver.
+        """
+        return pulumi.get(self, "approver_id")
+
+    @property
+    @pulumi.getter(name="timeApprovedForAccess")
+    def time_approved_for_access(self) -> str:
+        """
+        Time for when the access request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_approved_for_access")
+
+    @property
+    @pulumi.getter(name="timeOfAuthorization")
+    def time_of_authorization(self) -> str:
+        """
+        Time when the access request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_of_authorization")
 
 
 @pulumi.output_type
@@ -764,8 +1137,10 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
                  is_auto_approve_during_maintenance: bool,
                  is_default_assignment: bool,
                  is_enforced_always: bool,
+                 is_hypervisor_log_forwarded: bool,
                  is_log_forwarded: bool,
                  lifecycle_details: str,
+                 op_control_name: str,
                  operator_control_id: str,
                  remote_syslog_server_address: str,
                  remote_syslog_server_ca_cert: str,
@@ -779,7 +1154,8 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
                  time_assignment_to: str,
                  time_of_assignment: str,
                  time_of_deletion: str,
-                 unassigner_id: str):
+                 unassigner_id: str,
+                 validate_assignment_trigger: int):
         """
         :param str assigner_id: The OCID of the user who created this operator control assignment.
         :param str comment: Comment about the assignment of the operator control to this target resource.
@@ -793,8 +1169,10 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         :param bool is_auto_approve_during_maintenance: The boolean if true would autoApprove during maintenance.
         :param bool is_default_assignment: Whether the assignment is a default assignment.
         :param bool is_enforced_always: If set, then the target resource is always governed by the operator control.
+        :param bool is_hypervisor_log_forwarded: If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
         :param bool is_log_forwarded: If set indicates that the audit logs are being forwarded to the relevant remote logging server
         :param str lifecycle_details: More in detail about the lifeCycleState.
+        :param str op_control_name: Name of the operator control name associated.
         :param str operator_control_id: The OCID of the operator control.
         :param str remote_syslog_server_address: The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
         :param str remote_syslog_server_ca_cert: The CA certificate of the remote syslog server.
@@ -822,8 +1200,10 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         pulumi.set(__self__, "is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
         pulumi.set(__self__, "is_default_assignment", is_default_assignment)
         pulumi.set(__self__, "is_enforced_always", is_enforced_always)
+        pulumi.set(__self__, "is_hypervisor_log_forwarded", is_hypervisor_log_forwarded)
         pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "op_control_name", op_control_name)
         pulumi.set(__self__, "operator_control_id", operator_control_id)
         pulumi.set(__self__, "remote_syslog_server_address", remote_syslog_server_address)
         pulumi.set(__self__, "remote_syslog_server_ca_cert", remote_syslog_server_ca_cert)
@@ -838,6 +1218,7 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         pulumi.set(__self__, "time_of_assignment", time_of_assignment)
         pulumi.set(__self__, "time_of_deletion", time_of_deletion)
         pulumi.set(__self__, "unassigner_id", unassigner_id)
+        pulumi.set(__self__, "validate_assignment_trigger", validate_assignment_trigger)
 
     @property
     @pulumi.getter(name="assignerId")
@@ -936,6 +1317,14 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         return pulumi.get(self, "is_enforced_always")
 
     @property
+    @pulumi.getter(name="isHypervisorLogForwarded")
+    def is_hypervisor_log_forwarded(self) -> bool:
+        """
+        If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+        """
+        return pulumi.get(self, "is_hypervisor_log_forwarded")
+
+    @property
     @pulumi.getter(name="isLogForwarded")
     def is_log_forwarded(self) -> bool:
         """
@@ -950,6 +1339,14 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         More in detail about the lifeCycleState.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="opControlName")
+    def op_control_name(self) -> str:
+        """
+        Name of the operator control name associated.
+        """
+        return pulumi.get(self, "op_control_name")
 
     @property
     @pulumi.getter(name="operatorControlId")
@@ -1063,6 +1460,11 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         """
         return pulumi.get(self, "unassigner_id")
 
+    @property
+    @pulumi.getter(name="validateAssignmentTrigger")
+    def validate_assignment_trigger(self) -> int:
+        return pulumi.get(self, "validate_assignment_trigger")
+
 
 @pulumi.output_type
 class GetControlsFilterResult(dict):
@@ -1118,6 +1520,7 @@ class GetControlsOperatorControlCollectionItemResult(dict):
                  is_default_operator_control: bool,
                  is_fully_pre_approved: bool,
                  last_modified_info: str,
+                 number_of_approvers: int,
                  operator_control_name: str,
                  pre_approved_op_action_lists: Sequence[str],
                  resource_type: str,
@@ -1139,6 +1542,7 @@ class GetControlsOperatorControlCollectionItemResult(dict):
         :param bool is_default_operator_control: Whether the operator control is a default Operator Control.
         :param bool is_fully_pre_approved: Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param str last_modified_info: Description associated with the latest modification of the operator control.
+        :param int number_of_approvers: Number of approvers required to approve an access request.
         :param str operator_control_name: Name of the operator control. The name must be unique.
         :param Sequence[str] pre_approved_op_action_lists: List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
         :param str resource_type: A filter to return only lists of resources that match the entire given service type.
@@ -1160,6 +1564,7 @@ class GetControlsOperatorControlCollectionItemResult(dict):
         pulumi.set(__self__, "is_default_operator_control", is_default_operator_control)
         pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
         pulumi.set(__self__, "last_modified_info", last_modified_info)
+        pulumi.set(__self__, "number_of_approvers", number_of_approvers)
         pulumi.set(__self__, "operator_control_name", operator_control_name)
         pulumi.set(__self__, "pre_approved_op_action_lists", pre_approved_op_action_lists)
         pulumi.set(__self__, "resource_type", resource_type)
@@ -1264,6 +1669,14 @@ class GetControlsOperatorControlCollectionItemResult(dict):
         Description associated with the latest modification of the operator control.
         """
         return pulumi.get(self, "last_modified_info")
+
+    @property
+    @pulumi.getter(name="numberOfApprovers")
+    def number_of_approvers(self) -> int:
+        """
+        Number of approvers required to approve an access request.
+        """
+        return pulumi.get(self, "number_of_approvers")
 
     @property
     @pulumi.getter(name="operatorControlName")

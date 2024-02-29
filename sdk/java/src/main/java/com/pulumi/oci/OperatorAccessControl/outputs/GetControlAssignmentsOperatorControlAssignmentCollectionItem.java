@@ -75,6 +75,11 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
      */
     private Boolean isEnforcedAlways;
     /**
+     * @return If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     * 
+     */
+    private Boolean isHypervisorLogForwarded;
+    /**
      * @return If set indicates that the audit logs are being forwarded to the relevant remote logging server
      * 
      */
@@ -84,6 +89,11 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Name of the operator control name associated.
+     * 
+     */
+    private String opControlName;
     /**
      * @return The OCID of the operator control.
      * 
@@ -154,6 +164,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
      * 
      */
     private String unassignerId;
+    private Integer validateAssignmentTrigger;
 
     private GetControlAssignmentsOperatorControlAssignmentCollectionItem() {}
     /**
@@ -241,6 +252,13 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
         return this.isEnforcedAlways;
     }
     /**
+     * @return If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     * 
+     */
+    public Boolean isHypervisorLogForwarded() {
+        return this.isHypervisorLogForwarded;
+    }
+    /**
      * @return If set indicates that the audit logs are being forwarded to the relevant remote logging server
      * 
      */
@@ -253,6 +271,13 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Name of the operator control name associated.
+     * 
+     */
+    public String opControlName() {
+        return this.opControlName;
     }
     /**
      * @return The OCID of the operator control.
@@ -352,6 +377,9 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
     public String unassignerId() {
         return this.unassignerId;
     }
+    public Integer validateAssignmentTrigger() {
+        return this.validateAssignmentTrigger;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -374,8 +402,10 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
         private Boolean isAutoApproveDuringMaintenance;
         private Boolean isDefaultAssignment;
         private Boolean isEnforcedAlways;
+        private Boolean isHypervisorLogForwarded;
         private Boolean isLogForwarded;
         private String lifecycleDetails;
+        private String opControlName;
         private String operatorControlId;
         private String remoteSyslogServerAddress;
         private String remoteSyslogServerCaCert;
@@ -390,6 +420,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
         private String timeOfAssignment;
         private String timeOfDeletion;
         private String unassignerId;
+        private Integer validateAssignmentTrigger;
         public Builder() {}
         public Builder(GetControlAssignmentsOperatorControlAssignmentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -405,8 +436,10 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
     	      this.isAutoApproveDuringMaintenance = defaults.isAutoApproveDuringMaintenance;
     	      this.isDefaultAssignment = defaults.isDefaultAssignment;
     	      this.isEnforcedAlways = defaults.isEnforcedAlways;
+    	      this.isHypervisorLogForwarded = defaults.isHypervisorLogForwarded;
     	      this.isLogForwarded = defaults.isLogForwarded;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.opControlName = defaults.opControlName;
     	      this.operatorControlId = defaults.operatorControlId;
     	      this.remoteSyslogServerAddress = defaults.remoteSyslogServerAddress;
     	      this.remoteSyslogServerCaCert = defaults.remoteSyslogServerCaCert;
@@ -421,6 +454,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
     	      this.timeOfAssignment = defaults.timeOfAssignment;
     	      this.timeOfDeletion = defaults.timeOfDeletion;
     	      this.unassignerId = defaults.unassignerId;
+    	      this.validateAssignmentTrigger = defaults.validateAssignmentTrigger;
         }
 
         @CustomType.Setter
@@ -520,6 +554,14 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
             return this;
         }
         @CustomType.Setter
+        public Builder isHypervisorLogForwarded(Boolean isHypervisorLogForwarded) {
+            if (isHypervisorLogForwarded == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "isHypervisorLogForwarded");
+            }
+            this.isHypervisorLogForwarded = isHypervisorLogForwarded;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isLogForwarded(Boolean isLogForwarded) {
             if (isLogForwarded == null) {
               throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "isLogForwarded");
@@ -533,6 +575,14 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
               throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder opControlName(String opControlName) {
+            if (opControlName == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "opControlName");
+            }
+            this.opControlName = opControlName;
             return this;
         }
         @CustomType.Setter
@@ -647,6 +697,14 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
             this.unassignerId = unassignerId;
             return this;
         }
+        @CustomType.Setter
+        public Builder validateAssignmentTrigger(Integer validateAssignmentTrigger) {
+            if (validateAssignmentTrigger == null) {
+              throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "validateAssignmentTrigger");
+            }
+            this.validateAssignmentTrigger = validateAssignmentTrigger;
+            return this;
+        }
         public GetControlAssignmentsOperatorControlAssignmentCollectionItem build() {
             final var _resultValue = new GetControlAssignmentsOperatorControlAssignmentCollectionItem();
             _resultValue.assignerId = assignerId;
@@ -661,8 +719,10 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
             _resultValue.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
             _resultValue.isDefaultAssignment = isDefaultAssignment;
             _resultValue.isEnforcedAlways = isEnforcedAlways;
+            _resultValue.isHypervisorLogForwarded = isHypervisorLogForwarded;
             _resultValue.isLogForwarded = isLogForwarded;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.opControlName = opControlName;
             _resultValue.operatorControlId = operatorControlId;
             _resultValue.remoteSyslogServerAddress = remoteSyslogServerAddress;
             _resultValue.remoteSyslogServerCaCert = remoteSyslogServerCaCert;
@@ -677,6 +737,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
             _resultValue.timeOfAssignment = timeOfAssignment;
             _resultValue.timeOfDeletion = timeOfDeletion;
             _resultValue.unassignerId = unassignerId;
+            _resultValue.validateAssignmentTrigger = validateAssignmentTrigger;
             return _resultValue;
         }
     }

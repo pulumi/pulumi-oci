@@ -32,7 +32,15 @@ namespace Pulumi.Oci.DatabaseManagement
     ///         {
     ///             LicenseModel = @var.External_db_system_database_management_config_license_model,
     ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
     ///         DisplayName = @var.External_db_system_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
     ///         StackMonitoringConfig = new Oci.DatabaseManagement.Inputs.ExternalDbSystemStackMonitoringConfigArgs
     ///         {
     ///             IsEnabled = @var.External_db_system_stack_monitoring_config_is_enabled,
@@ -73,6 +81,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> DbSystemDiscoveryId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        [Output("definedTags")]
+        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
         /// </summary>
         [Output("discoveryAgentId")]
@@ -83,6 +97,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        [Output("freeformTags")]
+        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
@@ -190,11 +210,35 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("dbSystemDiscoveryId", required: true)]
         public Input<string> DbSystemDiscoveryId { get; set; } = null!;
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// The details of the associated service that will be enabled or disabled for an external DB System.
@@ -228,6 +272,18 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("dbSystemDiscoveryId")]
         public Input<string>? DbSystemDiscoveryId { get; set; }
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
         /// </summary>
@@ -239,6 +295,18 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.

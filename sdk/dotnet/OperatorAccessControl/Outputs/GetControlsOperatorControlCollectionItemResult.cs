@@ -62,6 +62,10 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         /// </summary>
         public readonly string LastModifiedInfo;
         /// <summary>
+        /// Number of approvers required to approve an access request.
+        /// </summary>
+        public readonly int NumberOfApprovers;
+        /// <summary>
         /// Name of the operator control. The name must be unique.
         /// </summary>
         public readonly string OperatorControlName;
@@ -120,6 +124,8 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
 
             string lastModifiedInfo,
 
+            int numberOfApprovers,
+
             string operatorControlName,
 
             ImmutableArray<string> preApprovedOpActionLists,
@@ -148,6 +154,7 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
             IsDefaultOperatorControl = isDefaultOperatorControl;
             IsFullyPreApproved = isFullyPreApproved;
             LastModifiedInfo = lastModifiedInfo;
+            NumberOfApprovers = numberOfApprovers;
             OperatorControlName = operatorControlName;
             PreApprovedOpActionLists = preApprovedOpActionLists;
             ResourceType = resourceType;

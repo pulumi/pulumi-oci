@@ -9,7 +9,9 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
  *
- * Gets the specified service connector's configuration information.
+ * Gets the specified connector's configuration information.
+ * For more information, see
+ * [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
  *
  * ## Example Usage
  *
@@ -35,7 +37,7 @@ export function getServiceConnector(args: GetServiceConnectorArgs, opts?: pulumi
  */
 export interface GetServiceConnectorArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      */
     serviceConnectorId: string;
 }
@@ -65,7 +67,7 @@ export interface GetServiceConnectorResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      */
     readonly id: string;
     /**
@@ -74,11 +76,11 @@ export interface GetServiceConnectorResult {
     readonly lifecyleDetails: string;
     readonly serviceConnectorId: string;
     /**
-     * An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+     * An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
      */
     readonly sources: outputs.Sch.GetServiceConnectorSource[];
     /**
-     * The current state of the service connector.
+     * The current state of the connector.
      */
     readonly state: string;
     /**
@@ -86,7 +88,7 @@ export interface GetServiceConnectorResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+     * An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
      */
     readonly targets: outputs.Sch.GetServiceConnectorTarget[];
     /**
@@ -94,18 +96,20 @@ export interface GetServiceConnectorResult {
      */
     readonly tasks: outputs.Sch.GetServiceConnectorTask[];
     /**
-     * The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+     * The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
     /**
-     * The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+     * The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
  *
- * Gets the specified service connector's configuration information.
+ * Gets the specified connector's configuration information.
+ * For more information, see
+ * [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
  *
  * ## Example Usage
  *
@@ -127,7 +131,7 @@ export function getServiceConnectorOutput(args: GetServiceConnectorOutputArgs, o
  */
 export interface GetServiceConnectorOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      */
     serviceConnectorId: pulumi.Input<string>;
 }

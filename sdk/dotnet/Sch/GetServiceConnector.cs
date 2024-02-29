@@ -14,7 +14,9 @@ namespace Pulumi.Oci.Sch
         /// <summary>
         /// This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
         /// 
-        /// Gets the specified service connector's configuration information.
+        /// Gets the specified connector's configuration information.
+        /// For more information, see
+        /// [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
         /// 
         /// 
         /// {{% examples %}}
@@ -45,7 +47,9 @@ namespace Pulumi.Oci.Sch
         /// <summary>
         /// This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
         /// 
-        /// Gets the specified service connector's configuration information.
+        /// Gets the specified connector's configuration information.
+        /// For more information, see
+        /// [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
         /// 
         /// 
         /// {{% examples %}}
@@ -78,7 +82,7 @@ namespace Pulumi.Oci.Sch
     public sealed class GetServiceConnectorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
         /// </summary>
         [Input("serviceConnectorId", required: true)]
         public string ServiceConnectorId { get; set; } = null!;
@@ -92,7 +96,7 @@ namespace Pulumi.Oci.Sch
     public sealed class GetServiceConnectorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
         /// </summary>
         [Input("serviceConnectorId", required: true)]
         public Input<string> ServiceConnectorId { get; set; } = null!;
@@ -128,7 +132,7 @@ namespace Pulumi.Oci.Sch
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -137,11 +141,11 @@ namespace Pulumi.Oci.Sch
         public readonly string LifecyleDetails;
         public readonly string ServiceConnectorId;
         /// <summary>
-        /// An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        /// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorSourceResult> Sources;
         /// <summary>
-        /// The current state of the service connector.
+        /// The current state of the connector.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -149,7 +153,7 @@ namespace Pulumi.Oci.Sch
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+        /// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorTargetResult> Targets;
         /// <summary>
@@ -157,11 +161,11 @@ namespace Pulumi.Oci.Sch
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorTaskResult> Tasks;
         /// <summary>
-        /// The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+        /// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+        /// The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
 

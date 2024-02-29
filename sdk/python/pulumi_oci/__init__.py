@@ -2752,6 +2752,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseManagement/externalAsmInstance",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance": "ExternalAsmInstance"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseManagement/externalCluster",
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
@@ -2764,6 +2772,14 @@ _utilities.register(
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
    "oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance": "ExternalClusterInstance"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalDbHome",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalDbHome:ExternalDbHome": "ExternalDbHome"
   }
  },
  {
@@ -2840,10 +2856,34 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseManagement/externalExadataStorageGrid",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid": "ExternalExadataStorageGrid"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalExadataStorageServer",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer": "ExternalExadataStorageServer"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseManagement/externalListener",
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
    "oci:DatabaseManagement/externalListener:ExternalListener": "ExternalListener"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/managedDatabase",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/managedDatabase:ManagedDatabase": "ManagedDatabase"
   }
  },
  {

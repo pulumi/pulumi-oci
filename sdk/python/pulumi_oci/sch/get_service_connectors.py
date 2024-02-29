@@ -84,7 +84,7 @@ class GetServiceConnectorsResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the service connector.
+        The current state of the connector.
         """
         return pulumi.get(self, "state")
 
@@ -111,7 +111,9 @@ def get_service_connectors(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
 
-    Lists service connectors in the specified compartment.
+    Lists connectors in the specified compartment.
+    For more information, see
+    [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
 
     ## Example Usage
 
@@ -155,7 +157,9 @@ def get_service_connectors_output(compartment_id: Optional[pulumi.Input[str]] = 
     """
     This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
 
-    Lists service connectors in the specified compartment.
+    Lists connectors in the specified compartment.
+    For more information, see
+    [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
 
     ## Example Usage
 

@@ -22,7 +22,7 @@ class GetCloudExadataInfrastructureResult:
     """
     A collection of values returned by getCloudExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, total_storage_size_in_gbs=None):
+    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_version=None, system_tags=None, time_created=None, total_storage_size_in_gbs=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -38,6 +38,9 @@ class GetCloudExadataInfrastructureResult:
         if cloud_exadata_infrastructure_id and not isinstance(cloud_exadata_infrastructure_id, str):
             raise TypeError("Expected argument 'cloud_exadata_infrastructure_id' to be a str")
         pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -116,6 +119,9 @@ class GetCloudExadataInfrastructureResult:
         if storage_server_version and not isinstance(storage_server_version, str):
             raise TypeError("Expected argument 'storage_server_version' to be a str")
         pulumi.set(__self__, "storage_server_version", storage_server_version)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -159,6 +165,14 @@ class GetCloudExadataInfrastructureResult:
     @pulumi.getter(name="cloudExadataInfrastructureId")
     def cloud_exadata_infrastructure_id(self) -> str:
         return pulumi.get(self, "cloud_exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -369,6 +383,14 @@ class GetCloudExadataInfrastructureResult:
         return pulumi.get(self, "storage_server_version")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -396,6 +418,7 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
             availability_domain=self.availability_domain,
             available_storage_size_in_gbs=self.available_storage_size_in_gbs,
             cloud_exadata_infrastructure_id=self.cloud_exadata_infrastructure_id,
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             compute_count=self.compute_count,
             cpu_count=self.cpu_count,
@@ -422,6 +445,7 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
             state=self.state,
             storage_count=self.storage_count,
             storage_server_version=self.storage_server_version,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             total_storage_size_in_gbs=self.total_storage_size_in_gbs)
 
@@ -456,6 +480,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         available_storage_size_in_gbs=pulumi.get(__ret__, 'available_storage_size_in_gbs'),
         cloud_exadata_infrastructure_id=pulumi.get(__ret__, 'cloud_exadata_infrastructure_id'),
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_count=pulumi.get(__ret__, 'compute_count'),
         cpu_count=pulumi.get(__ret__, 'cpu_count'),
@@ -482,6 +507,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
         state=pulumi.get(__ret__, 'state'),
         storage_count=pulumi.get(__ret__, 'storage_count'),
         storage_server_version=pulumi.get(__ret__, 'storage_server_version'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         total_storage_size_in_gbs=pulumi.get(__ret__, 'total_storage_size_in_gbs'))
 

@@ -7,10 +7,16 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.Sch.inputs.GetConnectorPluginArgs;
+import com.pulumi.oci.Sch.inputs.GetConnectorPluginPlainArgs;
+import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
+import com.pulumi.oci.Sch.inputs.GetConnectorPluginsPlainArgs;
 import com.pulumi.oci.Sch.inputs.GetServiceConnectorArgs;
 import com.pulumi.oci.Sch.inputs.GetServiceConnectorPlainArgs;
 import com.pulumi.oci.Sch.inputs.GetServiceConnectorsArgs;
 import com.pulumi.oci.Sch.inputs.GetServiceConnectorsPlainArgs;
+import com.pulumi.oci.Sch.outputs.GetConnectorPluginResult;
+import com.pulumi.oci.Sch.outputs.GetConnectorPluginsResult;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorResult;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorsResult;
 import com.pulumi.oci.Utilities;
@@ -18,9 +24,413 @@ import java.util.concurrent.CompletableFuture;
 
 public final class SchFunctions {
     /**
+     * This data source provides details about a specific Connector Plugin resource in Oracle Cloud Infrastructure Service Connector Hub service.
+     * 
+     * Gets the specified connector plugin configuration information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetConnectorPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
+     *             .connectorPluginName(oci_sch_connector_plugin.test_connector_plugin().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetConnectorPluginResult> getConnectorPlugin(GetConnectorPluginArgs args) {
+        return getConnectorPlugin(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Connector Plugin resource in Oracle Cloud Infrastructure Service Connector Hub service.
+     * 
+     * Gets the specified connector plugin configuration information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetConnectorPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
+     *             .connectorPluginName(oci_sch_connector_plugin.test_connector_plugin().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetConnectorPluginResult> getConnectorPluginPlain(GetConnectorPluginPlainArgs args) {
+        return getConnectorPluginPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Connector Plugin resource in Oracle Cloud Infrastructure Service Connector Hub service.
+     * 
+     * Gets the specified connector plugin configuration information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetConnectorPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
+     *             .connectorPluginName(oci_sch_connector_plugin.test_connector_plugin().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetConnectorPluginResult> getConnectorPlugin(GetConnectorPluginArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Sch/getConnectorPlugin:getConnectorPlugin", TypeShape.of(GetConnectorPluginResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Connector Plugin resource in Oracle Cloud Infrastructure Service Connector Hub service.
+     * 
+     * Gets the specified connector plugin configuration information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetConnectorPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
+     *             .connectorPluginName(oci_sch_connector_plugin.test_connector_plugin().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetConnectorPluginResult> getConnectorPluginPlain(GetConnectorPluginPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Sch/getConnectorPlugin:getConnectorPlugin", TypeShape.of(GetConnectorPluginResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Connector Plugins in Oracle Cloud Infrastructure Service Connector Hub service.
+     * 
+     * Lists connector plugins according to the specified filter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
+     *             .displayName(var_.connector_plugin_display_name())
+     *             .name(var_.connector_plugin_name())
+     *             .state(var_.connector_plugin_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetConnectorPluginsResult> getConnectorPlugins() {
+        return getConnectorPlugins(GetConnectorPluginsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Connector Plugins in Oracle Cloud Infrastructure Service Connector Hub service.
+     * 
+     * Lists connector plugins according to the specified filter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
+     *             .displayName(var_.connector_plugin_display_name())
+     *             .name(var_.connector_plugin_name())
+     *             .state(var_.connector_plugin_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetConnectorPluginsResult> getConnectorPluginsPlain() {
+        return getConnectorPluginsPlain(GetConnectorPluginsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Connector Plugins in Oracle Cloud Infrastructure Service Connector Hub service.
+     * 
+     * Lists connector plugins according to the specified filter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
+     *             .displayName(var_.connector_plugin_display_name())
+     *             .name(var_.connector_plugin_name())
+     *             .state(var_.connector_plugin_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetConnectorPluginsResult> getConnectorPlugins(GetConnectorPluginsArgs args) {
+        return getConnectorPlugins(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Connector Plugins in Oracle Cloud Infrastructure Service Connector Hub service.
+     * 
+     * Lists connector plugins according to the specified filter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
+     *             .displayName(var_.connector_plugin_display_name())
+     *             .name(var_.connector_plugin_name())
+     *             .state(var_.connector_plugin_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetConnectorPluginsResult> getConnectorPluginsPlain(GetConnectorPluginsPlainArgs args) {
+        return getConnectorPluginsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Connector Plugins in Oracle Cloud Infrastructure Service Connector Hub service.
+     * 
+     * Lists connector plugins according to the specified filter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
+     *             .displayName(var_.connector_plugin_display_name())
+     *             .name(var_.connector_plugin_name())
+     *             .state(var_.connector_plugin_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetConnectorPluginsResult> getConnectorPlugins(GetConnectorPluginsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Sch/getConnectorPlugins:getConnectorPlugins", TypeShape.of(GetConnectorPluginsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Connector Plugins in Oracle Cloud Infrastructure Service Connector Hub service.
+     * 
+     * Lists connector plugins according to the specified filter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetConnectorPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
+     *             .displayName(var_.connector_plugin_display_name())
+     *             .name(var_.connector_plugin_name())
+     *             .state(var_.connector_plugin_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetConnectorPluginsResult> getConnectorPluginsPlain(GetConnectorPluginsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Sch/getConnectorPlugins:getConnectorPlugins", TypeShape.of(GetConnectorPluginsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
      * 
-     * Gets the specified service connector&#39;s configuration information.
+     * Gets the specified connector&#39;s configuration information.
+     * For more information, see
+     * [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
      * 
      * ## Example Usage
      * ```java
@@ -59,7 +469,9 @@ public final class SchFunctions {
     /**
      * This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
      * 
-     * Gets the specified service connector&#39;s configuration information.
+     * Gets the specified connector&#39;s configuration information.
+     * For more information, see
+     * [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
      * 
      * ## Example Usage
      * ```java
@@ -98,7 +510,9 @@ public final class SchFunctions {
     /**
      * This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
      * 
-     * Gets the specified service connector&#39;s configuration information.
+     * Gets the specified connector&#39;s configuration information.
+     * For more information, see
+     * [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
      * 
      * ## Example Usage
      * ```java
@@ -137,7 +551,9 @@ public final class SchFunctions {
     /**
      * This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
      * 
-     * Gets the specified service connector&#39;s configuration information.
+     * Gets the specified connector&#39;s configuration information.
+     * For more information, see
+     * [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
      * 
      * ## Example Usage
      * ```java
@@ -176,7 +592,9 @@ public final class SchFunctions {
     /**
      * This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
      * 
-     * Lists service connectors in the specified compartment.
+     * Lists connectors in the specified compartment.
+     * For more information, see
+     * [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
      * 
      * ## Example Usage
      * ```java
@@ -217,7 +635,9 @@ public final class SchFunctions {
     /**
      * This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
      * 
-     * Lists service connectors in the specified compartment.
+     * Lists connectors in the specified compartment.
+     * For more information, see
+     * [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
      * 
      * ## Example Usage
      * ```java
@@ -258,7 +678,9 @@ public final class SchFunctions {
     /**
      * This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
      * 
-     * Lists service connectors in the specified compartment.
+     * Lists connectors in the specified compartment.
+     * For more information, see
+     * [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
      * 
      * ## Example Usage
      * ```java
@@ -299,7 +721,9 @@ public final class SchFunctions {
     /**
      * This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
      * 
-     * Lists service connectors in the specified compartment.
+     * Lists connectors in the specified compartment.
+     * For more information, see
+     * [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
      * 
      * ## Example Usage
      * ```java

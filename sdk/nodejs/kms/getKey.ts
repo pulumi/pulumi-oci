@@ -56,6 +56,10 @@ export interface GetKeyArgs {
  */
 export interface GetKeyResult {
     /**
+     * The details of auto rotation schedule for the Key being create updated or imported.
+     */
+    readonly autoKeyRotationDetails: outputs.Kms.GetKeyAutoKeyRotationDetail[];
+    /**
      * The OCID of the compartment that contains this master encryption key.
      */
     readonly compartmentId: string;
@@ -86,6 +90,10 @@ export interface GetKeyResult {
      */
     readonly id: string;
     /**
+     * A parameter specifying whether the auto key rotation is enabled or not.
+     */
+    readonly isAutoRotationEnabled: boolean;
+    /**
      * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      */
     readonly isPrimary: boolean;
@@ -96,7 +104,7 @@ export interface GetKeyResult {
     readonly keyShapes: outputs.Kms.GetKeyKeyShape[];
     readonly managementEndpoint: string;
     /**
-     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
+     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      */
     readonly protectionMode: string;
     /**

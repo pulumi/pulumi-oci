@@ -30,6 +30,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly double CpuCoreCount;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// A filter to only return the resources that match the entire display name.
         /// </summary>
         public readonly string DisplayName;
@@ -46,6 +50,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         /// </summary>
         public readonly string ExternalDbSystemId;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The host name for the DB node.
         /// </summary>
@@ -85,6 +93,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             double cpuCoreCount,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string displayName,
 
             string domainName,
@@ -94,6 +104,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             string externalDbNodeId,
 
             string externalDbSystemId,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string hostName,
 
@@ -113,11 +125,13 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             CompartmentId = compartmentId;
             ComponentName = componentName;
             CpuCoreCount = cpuCoreCount;
+            DefinedTags = definedTags;
             DisplayName = displayName;
             DomainName = domainName;
             ExternalConnectorId = externalConnectorId;
             ExternalDbNodeId = externalDbNodeId;
             ExternalDbSystemId = externalDbSystemId;
+            FreeformTags = freeformTags;
             HostName = hostName;
             Id = id;
             LifecycleDetails = lifecycleDetails;

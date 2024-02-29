@@ -68,10 +68,14 @@ type LookupExternalExadataInfrastructureResult struct {
 	// A list of DB systems.
 	DatabaseSystems []GetExternalExadataInfrastructureDatabaseSystem `pulumi:"databaseSystems"`
 	DbSystemIds     []string                                         `pulumi:"dbSystemIds"`
-	DiscoveryKey    string                                           `pulumi:"discoveryKey"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags  map[string]interface{} `pulumi:"definedTags"`
+	DiscoveryKey string                 `pulumi:"discoveryKey"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 	DisplayName                     string `pulumi:"displayName"`
 	ExternalExadataInfrastructureId string `pulumi:"externalExadataInfrastructureId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id string `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -161,6 +165,11 @@ func (o LookupExternalExadataInfrastructureResultOutput) DbSystemIds() pulumi.St
 	return o.ApplyT(func(v LookupExternalExadataInfrastructureResult) []string { return v.DbSystemIds }).(pulumi.StringArrayOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupExternalExadataInfrastructureResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalExadataInfrastructureResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 func (o LookupExternalExadataInfrastructureResultOutput) DiscoveryKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalExadataInfrastructureResult) string { return v.DiscoveryKey }).(pulumi.StringOutput)
 }
@@ -172,6 +181,11 @@ func (o LookupExternalExadataInfrastructureResultOutput) DisplayName() pulumi.St
 
 func (o LookupExternalExadataInfrastructureResultOutput) ExternalExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalExadataInfrastructureResult) string { return v.ExternalExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupExternalExadataInfrastructureResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalExadataInfrastructureResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.

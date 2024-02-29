@@ -65,6 +65,8 @@ type GetAccessRequestResult struct {
 	ActionRequestsLists []string `pulumi:"actionRequestsLists"`
 	// The last recent Comment entered by the approver of the request.
 	ApproverComment string `pulumi:"approverComment"`
+	// Contains the user ids who have approved the accessRequest for extension.
+	ApproverDetails []GetAccessRequestApproverDetail `pulumi:"approverDetails"`
 	// Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
 	AuditTypes []string `pulumi:"auditTypes"`
 	// The comment entered by the operator while closing the request.
@@ -77,14 +79,24 @@ type GetAccessRequestResult struct {
 	Duration int `pulumi:"duration"`
 	// Duration in hours for which extension access is sought on the target resource.
 	ExtendDuration int `pulumi:"extendDuration"`
+	// Contains the user ids who have approved the accessRequest for extension.
+	ExtensionApproverDetails []GetAccessRequestExtensionApproverDetail `pulumi:"extensionApproverDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Whether the access request was automatically approved.
 	IsAutoApproved bool `pulumi:"isAutoApproved"`
+	// Whether the access request was requested for Validate Assignment.
+	IsValidateAssignment bool `pulumi:"isValidateAssignment"`
 	// more in detail about the lifeCycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Number of approvers who have authorized an access request.
+	NumberOfApprovers int `pulumi:"numberOfApprovers"`
+	// Number of approvers required to approve an access request.
+	NumberOfApproversRequired int `pulumi:"numberOfApproversRequired"`
+	// Number of approvers who have authorized an access request for extension.
+	NumberOfExtensionApprovers int `pulumi:"numberOfExtensionApprovers"`
 	// Additional message specific to the access request that can be specified by the approver at the time of approval.
 	OpctlAdditionalMessage string `pulumi:"opctlAdditionalMessage"`
 	// The OCID of the operator control governing the target resource.
@@ -117,6 +129,8 @@ type GetAccessRequestResult struct {
 	TimeOfModification string `pulumi:"timeOfModification"`
 	// The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
 	TimeOfUserCreation string `pulumi:"timeOfUserCreation"`
+	// Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+	TimeRequestedForFutureAccess string `pulumi:"timeRequestedForFutureAccess"`
 	// The OCID of the user that last modified the access request.
 	UserId string `pulumi:"userId"`
 	// The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
@@ -180,6 +194,11 @@ func (o GetAccessRequestResultOutput) ApproverComment() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccessRequestResult) string { return v.ApproverComment }).(pulumi.StringOutput)
 }
 
+// Contains the user ids who have approved the accessRequest for extension.
+func (o GetAccessRequestResultOutput) ApproverDetails() GetAccessRequestApproverDetailArrayOutput {
+	return o.ApplyT(func(v GetAccessRequestResult) []GetAccessRequestApproverDetail { return v.ApproverDetails }).(GetAccessRequestApproverDetailArrayOutput)
+}
+
 // Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
 func (o GetAccessRequestResultOutput) AuditTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAccessRequestResult) []string { return v.AuditTypes }).(pulumi.StringArrayOutput)
@@ -210,6 +229,13 @@ func (o GetAccessRequestResultOutput) ExtendDuration() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAccessRequestResult) int { return v.ExtendDuration }).(pulumi.IntOutput)
 }
 
+// Contains the user ids who have approved the accessRequest for extension.
+func (o GetAccessRequestResultOutput) ExtensionApproverDetails() GetAccessRequestExtensionApproverDetailArrayOutput {
+	return o.ApplyT(func(v GetAccessRequestResult) []GetAccessRequestExtensionApproverDetail {
+		return v.ExtensionApproverDetails
+	}).(GetAccessRequestExtensionApproverDetailArrayOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 func (o GetAccessRequestResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetAccessRequestResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -225,9 +251,29 @@ func (o GetAccessRequestResultOutput) IsAutoApproved() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAccessRequestResult) bool { return v.IsAutoApproved }).(pulumi.BoolOutput)
 }
 
+// Whether the access request was requested for Validate Assignment.
+func (o GetAccessRequestResultOutput) IsValidateAssignment() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAccessRequestResult) bool { return v.IsValidateAssignment }).(pulumi.BoolOutput)
+}
+
 // more in detail about the lifeCycleState.
 func (o GetAccessRequestResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccessRequestResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Number of approvers who have authorized an access request.
+func (o GetAccessRequestResultOutput) NumberOfApprovers() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAccessRequestResult) int { return v.NumberOfApprovers }).(pulumi.IntOutput)
+}
+
+// Number of approvers required to approve an access request.
+func (o GetAccessRequestResultOutput) NumberOfApproversRequired() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAccessRequestResult) int { return v.NumberOfApproversRequired }).(pulumi.IntOutput)
+}
+
+// Number of approvers who have authorized an access request for extension.
+func (o GetAccessRequestResultOutput) NumberOfExtensionApprovers() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAccessRequestResult) int { return v.NumberOfExtensionApprovers }).(pulumi.IntOutput)
 }
 
 // Additional message specific to the access request that can be specified by the approver at the time of approval.
@@ -308,6 +354,11 @@ func (o GetAccessRequestResultOutput) TimeOfModification() pulumi.StringOutput {
 // The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
 func (o GetAccessRequestResultOutput) TimeOfUserCreation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccessRequestResult) string { return v.TimeOfUserCreation }).(pulumi.StringOutput)
+}
+
+// Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+func (o GetAccessRequestResultOutput) TimeRequestedForFutureAccess() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestResult) string { return v.TimeRequestedForFutureAccess }).(pulumi.StringOutput)
 }
 
 // The OCID of the user that last modified the access request.

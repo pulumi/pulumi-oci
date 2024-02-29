@@ -11,8 +11,10 @@ import com.pulumi.oci.DatabaseManagement.ManagedDatabaseGroupArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabaseGroupState;
 import com.pulumi.oci.DatabaseManagement.outputs.ManagedDatabaseGroupManagedDatabase;
 import com.pulumi.oci.Utilities;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
@@ -46,7 +48,9 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testManagedDatabaseGroup = new ManagedDatabaseGroup(&#34;testManagedDatabaseGroup&#34;, ManagedDatabaseGroupArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .description(var_.managed_database_group_description())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .managedDatabases(ManagedDatabaseGroupManagedDatabaseArgs.builder()
  *                 .id(var_.managed_database_id())
  *                 .build())
@@ -82,6 +86,20 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * (Updatable) The information specified by the user about the Managed Database Group.
      * 
      */
@@ -94,6 +112,20 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> description() {
         return this.description;
+    }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.

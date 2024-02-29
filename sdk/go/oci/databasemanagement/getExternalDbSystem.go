@@ -64,11 +64,15 @@ type LookupExternalDbSystemResult struct {
 	DatabaseManagementConfigs []GetExternalDbSystemDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId string `pulumi:"dbSystemDiscoveryId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId string `pulumi:"discoveryAgentId"`
 	// The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName        string `pulumi:"displayName"`
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory string `pulumi:"homeDirectory"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -142,6 +146,11 @@ func (o LookupExternalDbSystemResultOutput) DbSystemDiscoveryId() pulumi.StringO
 	return o.ApplyT(func(v LookupExternalDbSystemResult) string { return v.DbSystemDiscoveryId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupExternalDbSystemResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 func (o LookupExternalDbSystemResultOutput) DiscoveryAgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalDbSystemResult) string { return v.DiscoveryAgentId }).(pulumi.StringOutput)
@@ -154,6 +163,11 @@ func (o LookupExternalDbSystemResultOutput) DisplayName() pulumi.StringOutput {
 
 func (o LookupExternalDbSystemResultOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalDbSystemResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupExternalDbSystemResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.

@@ -82,6 +82,20 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
         return this.externalKeyVersionId;
     }
     /**
+     * An optional property indicating whether this keyversion is generated from auto rotatation.
+     * 
+     */
+    @Export(name="isAutoRotated", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isAutoRotated;
+
+    /**
+     * @return An optional property indicating whether this keyversion is generated from auto rotatation.
+     * 
+     */
+    public Output<Boolean> isAutoRotated() {
+        return this.isAutoRotated;
+    }
+    /**
      * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */

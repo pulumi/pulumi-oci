@@ -15,6 +15,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -56,6 +57,7 @@ import javax.annotation.Nullable;
  *             .definedTags(var_.operator_control_assignment_defined_tags())
  *             .freeformTags(var_.operator_control_assignment_freeform_tags())
  *             .isAutoApproveDuringMaintenance(var_.operator_control_assignment_is_auto_approve_during_maintenance())
+ *             .isHypervisorLogForwarded(var_.operator_control_assignment_is_hypervisor_log_forwarded())
  *             .isLogForwarded(var_.operator_control_assignment_is_log_forwarded())
  *             .remoteSyslogServerAddress(var_.operator_control_assignment_remote_syslog_server_address())
  *             .remoteSyslogServerCaCert(var_.operator_control_assignment_remote_syslog_server_ca_cert())
@@ -234,6 +236,20 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
         return this.isEnforcedAlways;
     }
     /**
+     * (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     * 
+     */
+    @Export(name="isHypervisorLogForwarded", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isHypervisorLogForwarded;
+
+    /**
+     * @return (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     * 
+     */
+    public Output<Boolean> isHypervisorLogForwarded() {
+        return this.isHypervisorLogForwarded;
+    }
+    /**
      * (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      * 
      */
@@ -260,6 +276,20 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Name of the operator control name associated.
+     * 
+     */
+    @Export(name="opControlName", refs={String.class}, tree="[0]")
+    private Output<String> opControlName;
+
+    /**
+     * @return Name of the operator control name associated.
+     * 
+     */
+    public Output<String> opControlName() {
+        return this.opControlName;
     }
     /**
      * The OCID of the operator control that is being assigned to a target resource.
@@ -404,18 +434,12 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
     /**
      * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="timeAssignmentTo", refs={String.class}, tree="[0]")
     private Output<String> timeAssignmentTo;
 
     /**
      * @return (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> timeAssignmentTo() {
@@ -462,6 +486,26 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      */
     public Output<String> unassignerId() {
         return this.unassignerId;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="validateAssignmentTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> validateAssignmentTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> validateAssignmentTrigger() {
+        return Codegen.optional(this.validateAssignmentTrigger);
     }
 
     /**

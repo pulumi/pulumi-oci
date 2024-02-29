@@ -42,7 +42,13 @@ import (
 //				Scope:              pulumi.Any(_var.Named_credential_scope),
 //				Type:               pulumi.Any(_var.Named_credential_type),
 //				AssociatedResource: pulumi.Any(_var.Named_credential_associated_resource),
-//				Description:        pulumi.Any(_var.Named_credential_description),
+//				DefinedTags: pulumi.Map{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Named_credential_description),
+//				FreeformTags: pulumi.Map{
+//					"Department": pulumi.Any("Finance"),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -66,13 +72,17 @@ type NamedCredential struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
-	AssociatedResource pulumi.StringOutput `pulumi:"associatedResource"`
+	AssociatedResource pulumi.StringPtrOutput `pulumi:"associatedResource"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The details of the named credential.
 	Content NamedCredentialContentOutput `pulumi:"content"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The information specified by the user about the named credential.
 	Description pulumi.StringOutput `pulumi:"description"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The details of the lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
@@ -140,8 +150,12 @@ type namedCredentialState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The details of the named credential.
 	Content *NamedCredentialContent `pulumi:"content"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The information specified by the user about the named credential.
 	Description *string `pulumi:"description"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The details of the lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
@@ -168,8 +182,12 @@ type NamedCredentialState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The details of the named credential.
 	Content NamedCredentialContentPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// (Updatable) The information specified by the user about the named credential.
 	Description pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput
 	// The details of the lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
@@ -200,8 +218,12 @@ type namedCredentialArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The details of the named credential.
 	Content NamedCredentialContent `pulumi:"content"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The information specified by the user about the named credential.
 	Description *string `pulumi:"description"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
 	Name *string `pulumi:"name"`
 	// (Updatable) The scope of the named credential.
@@ -221,8 +243,12 @@ type NamedCredentialArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) The details of the named credential.
 	Content NamedCredentialContentInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// (Updatable) The information specified by the user about the named credential.
 	Description pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput
 	// The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
 	Name pulumi.StringPtrInput
 	// (Updatable) The scope of the named credential.
@@ -322,8 +348,8 @@ func (o NamedCredentialOutput) ToNamedCredentialOutputWithContext(ctx context.Co
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
-func (o NamedCredentialOutput) AssociatedResource() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamedCredential) pulumi.StringOutput { return v.AssociatedResource }).(pulumi.StringOutput)
+func (o NamedCredentialOutput) AssociatedResource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamedCredential) pulumi.StringPtrOutput { return v.AssociatedResource }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
@@ -336,9 +362,19 @@ func (o NamedCredentialOutput) Content() NamedCredentialContentOutput {
 	return o.ApplyT(func(v *NamedCredential) NamedCredentialContentOutput { return v.Content }).(NamedCredentialContentOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o NamedCredentialOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *NamedCredential) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // (Updatable) The information specified by the user about the named credential.
 func (o NamedCredentialOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamedCredential) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o NamedCredentialOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *NamedCredential) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The details of the lifecycle state.

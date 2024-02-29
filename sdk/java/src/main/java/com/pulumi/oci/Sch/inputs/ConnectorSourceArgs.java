@@ -21,14 +21,29 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
     public static final ConnectorSourceArgs Empty = new ConnectorSourceArgs();
 
     /**
-     * (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+     * (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+     * 
+     */
+    @Import(name="configMap")
+    private @Nullable Output<String> configMap;
+
+    /**
+     * @return (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+     * 
+     */
+    public Optional<Output<String>> configMap() {
+        return Optional.ofNullable(this.configMap);
+    }
+
+    /**
+     * (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
      * 
      */
     @Import(name="cursor")
     private @Nullable Output<ConnectorSourceCursorArgs> cursor;
 
     /**
-     * @return (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+     * @return (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
      * 
      */
     public Optional<Output<ConnectorSourceCursorArgs>> cursor() {
@@ -66,18 +81,33 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The list of metric namespaces to retrieve data from.
+     * (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
      * 
      */
     @Import(name="monitoringSources")
     private @Nullable Output<List<ConnectorSourceMonitoringSourceArgs>> monitoringSources;
 
     /**
-     * @return (Updatable) The list of metric namespaces to retrieve data from.
+     * @return (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
      * 
      */
     public Optional<Output<List<ConnectorSourceMonitoringSourceArgs>>> monitoringSources() {
         return Optional.ofNullable(this.monitoringSources);
+    }
+
+    /**
+     * (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+     * 
+     */
+    @Import(name="pluginName")
+    private @Nullable Output<String> pluginName;
+
+    /**
+     * @return (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+     * 
+     */
+    public Optional<Output<String>> pluginName() {
+        return Optional.ofNullable(this.pluginName);
     }
 
     /**
@@ -98,10 +128,12 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
     private ConnectorSourceArgs() {}
 
     private ConnectorSourceArgs(ConnectorSourceArgs $) {
+        this.configMap = $.configMap;
         this.cursor = $.cursor;
         this.kind = $.kind;
         this.logSources = $.logSources;
         this.monitoringSources = $.monitoringSources;
+        this.pluginName = $.pluginName;
         this.streamId = $.streamId;
     }
 
@@ -124,7 +156,28 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param cursor (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+         * @param configMap (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configMap(@Nullable Output<String> configMap) {
+            $.configMap = configMap;
+            return this;
+        }
+
+        /**
+         * @param configMap (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configMap(String configMap) {
+            return configMap(Output.of(configMap));
+        }
+
+        /**
+         * @param cursor (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
          * 
          * @return builder
          * 
@@ -135,7 +188,7 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param cursor (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+         * @param cursor (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
          * 
          * @return builder
          * 
@@ -197,7 +250,7 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param monitoringSources (Updatable) The list of metric namespaces to retrieve data from.
+         * @param monitoringSources (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
          * 
          * @return builder
          * 
@@ -208,7 +261,7 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param monitoringSources (Updatable) The list of metric namespaces to retrieve data from.
+         * @param monitoringSources (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
          * 
          * @return builder
          * 
@@ -218,13 +271,34 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param monitoringSources (Updatable) The list of metric namespaces to retrieve data from.
+         * @param monitoringSources (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
          * 
          * @return builder
          * 
          */
         public Builder monitoringSources(ConnectorSourceMonitoringSourceArgs... monitoringSources) {
             return monitoringSources(List.of(monitoringSources));
+        }
+
+        /**
+         * @param pluginName (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluginName(@Nullable Output<String> pluginName) {
+            $.pluginName = pluginName;
+            return this;
+        }
+
+        /**
+         * @param pluginName (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluginName(String pluginName) {
+            return pluginName(Output.of(pluginName));
         }
 
         /**

@@ -31,6 +31,11 @@ public final class GetExternalAsmsExternalAsmCollectionItem {
      */
     private String componentName;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
@@ -46,6 +51,11 @@ public final class GetExternalAsmsExternalAsmCollectionItem {
      * 
      */
     private String externalDbSystemId;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
      * 
@@ -120,6 +130,13 @@ public final class GetExternalAsmsExternalAsmCollectionItem {
         return this.componentName;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
@@ -142,6 +159,13 @@ public final class GetExternalAsmsExternalAsmCollectionItem {
      */
     public String externalDbSystemId() {
         return this.externalDbSystemId;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
@@ -226,10 +250,12 @@ public final class GetExternalAsmsExternalAsmCollectionItem {
         private Map<String,Object> additionalDetails;
         private String compartmentId;
         private String componentName;
+        private Map<String,Object> definedTags;
         private String displayName;
         private String externalAsmId;
         private String externalConnectorId;
         private String externalDbSystemId;
+        private Map<String,Object> freeformTags;
         private String gridHome;
         private String id;
         private Boolean isCluster;
@@ -246,10 +272,12 @@ public final class GetExternalAsmsExternalAsmCollectionItem {
     	      this.additionalDetails = defaults.additionalDetails;
     	      this.compartmentId = defaults.compartmentId;
     	      this.componentName = defaults.componentName;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.externalAsmId = defaults.externalAsmId;
     	      this.externalConnectorId = defaults.externalConnectorId;
     	      this.externalDbSystemId = defaults.externalDbSystemId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.gridHome = defaults.gridHome;
     	      this.id = defaults.id;
     	      this.isCluster = defaults.isCluster;
@@ -287,6 +315,14 @@ public final class GetExternalAsmsExternalAsmCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmsExternalAsmCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetExternalAsmsExternalAsmCollectionItem", "displayName");
@@ -316,6 +352,14 @@ public final class GetExternalAsmsExternalAsmCollectionItem {
               throw new MissingRequiredPropertyException("GetExternalAsmsExternalAsmCollectionItem", "externalDbSystemId");
             }
             this.externalDbSystemId = externalDbSystemId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmsExternalAsmCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -406,10 +450,12 @@ public final class GetExternalAsmsExternalAsmCollectionItem {
             _resultValue.additionalDetails = additionalDetails;
             _resultValue.compartmentId = compartmentId;
             _resultValue.componentName = componentName;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.externalAsmId = externalAsmId;
             _resultValue.externalConnectorId = externalConnectorId;
             _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.gridHome = gridHome;
             _resultValue.id = id;
             _resultValue.isCluster = isCluster;

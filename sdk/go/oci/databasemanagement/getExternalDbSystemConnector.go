@@ -70,11 +70,15 @@ type LookupExternalDbSystemConnectorResult struct {
 	ConnectionStatus string `pulumi:"connectionStatus"`
 	// The type of connector.
 	ConnectorType string `pulumi:"connectorType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the external connector. The name does not have to be unique.
 	DisplayName                 string `pulumi:"displayName"`
 	ExternalDbSystemConnectorId string `pulumi:"externalDbSystemConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the connector is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
 	Id string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -159,6 +163,11 @@ func (o LookupExternalDbSystemConnectorResultOutput) ConnectorType() pulumi.Stri
 	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.ConnectorType }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupExternalDbSystemConnectorResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The user-friendly name for the external connector. The name does not have to be unique.
 func (o LookupExternalDbSystemConnectorResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -171,6 +180,11 @@ func (o LookupExternalDbSystemConnectorResultOutput) ExternalDbSystemConnectorId
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the connector is a part of.
 func (o LookupExternalDbSystemConnectorResultOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupExternalDbSystemConnectorResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemConnectorResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.

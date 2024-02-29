@@ -54,7 +54,6 @@ import javax.annotation.Nullable;
  *         var testAutonomousContainerDatabaseDataguardAssociation = new AutonomousContainerDatabaseDataguardAssociation(&#34;testAutonomousContainerDatabaseDataguardAssociation&#34;, AutonomousContainerDatabaseDataguardAssociationArgs.builder()        
  *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
  *             .peerAutonomousContainerDatabaseDisplayName(var_.autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name())
- *             .peerCloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
  *             .protectionMode(var_.autonomous_container_database_dataguard_association_protection_mode())
  *             .fastStartFailOverLagLimitInSeconds(var_.autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds())
  *             .isAutomaticFailoverEnabled(var_.autonomous_container_database_dataguard_association_is_automatic_failover_enabled())
@@ -70,6 +69,9 @@ import javax.annotation.Nullable;
  *                 .recoveryWindowInDays(var_.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days())
  *                 .build())
  *             .peerAutonomousContainerDatabaseCompartmentId(oci_identity_compartment.test_compartment().id())
+ *             .peerAutonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+ *             .peerCloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+ *             .peerDbUniqueName(var_.autonomous_container_database_dataguard_association_peer_db_unique_name())
  *             .standbyMaintenanceBufferInDays(var_.autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days())
  *             .build());
  * 
@@ -116,10 +118,10 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
     public Output<String> applyRate() {
         return this.applyRate;
     }
-    @Export(name="autonomousContainerDatabaseDataguardAssociationId", refs={Integer.class}, tree="[0]")
-    private Output<Integer> autonomousContainerDatabaseDataguardAssociationId;
+    @Export(name="autonomousContainerDatabaseDataguardAssociationId", refs={String.class}, tree="[0]")
+    private Output<String> autonomousContainerDatabaseDataguardAssociationId;
 
-    public Output<Integer> autonomousContainerDatabaseDataguardAssociationId() {
+    public Output<String> autonomousContainerDatabaseDataguardAssociationId() {
         return this.autonomousContainerDatabaseDataguardAssociationId;
     }
     /**
@@ -249,6 +251,20 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
         return this.peerAutonomousContainerDatabaseId;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+     * 
+     */
+    @Export(name="peerAutonomousVmClusterId", refs={String.class}, tree="[0]")
+    private Output<String> peerAutonomousVmClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+     * 
+     */
+    public Output<String> peerAutonomousVmClusterId() {
+        return this.peerAutonomousVmClusterId;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      * 
      */
@@ -263,14 +279,28 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
         return this.peerCloudAutonomousVmClusterId;
     }
     /**
-     * The current state of Autonomous Data Guard.
+     * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+     * 
+     */
+    @Export(name="peerDbUniqueName", refs={String.class}, tree="[0]")
+    private Output<String> peerDbUniqueName;
+
+    /**
+     * @return Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+     * 
+     */
+    public Output<String> peerDbUniqueName() {
+        return this.peerDbUniqueName;
+    }
+    /**
+     * The current state of the Autonomous Container Database.
      * 
      */
     @Export(name="peerLifecycleState", refs={String.class}, tree="[0]")
     private Output<String> peerLifecycleState;
 
     /**
-     * @return The current state of Autonomous Data Guard.
+     * @return The current state of the Autonomous Container Database.
      * 
      */
     public Output<String> peerLifecycleState() {

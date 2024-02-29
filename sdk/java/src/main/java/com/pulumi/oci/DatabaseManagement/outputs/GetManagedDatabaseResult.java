@@ -41,15 +41,30 @@ public final class GetManagedDatabaseResult {
      */
     private String databaseType;
     /**
+     * @return The Oracle Database version.
+     * 
+     */
+    private String databaseVersion;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
      * 
      */
     private String dbSystemId;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
     private String deploymentType;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -134,6 +149,13 @@ public final class GetManagedDatabaseResult {
         return this.databaseType;
     }
     /**
+     * @return The Oracle Database version.
+     * 
+     */
+    public String databaseVersion() {
+        return this.databaseVersion;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
      * 
      */
@@ -141,11 +163,25 @@ public final class GetManagedDatabaseResult {
         return this.dbSystemId;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
     public String deploymentType() {
         return this.deploymentType;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -228,8 +264,11 @@ public final class GetManagedDatabaseResult {
         private String databaseStatus;
         private String databaseSubType;
         private String databaseType;
+        private String databaseVersion;
         private String dbSystemId;
+        private Map<String,Object> definedTags;
         private String deploymentType;
+        private Map<String,Object> freeformTags;
         private String id;
         private Boolean isCluster;
         private List<GetManagedDatabaseManagedDatabaseGroup> managedDatabaseGroups;
@@ -248,8 +287,11 @@ public final class GetManagedDatabaseResult {
     	      this.databaseStatus = defaults.databaseStatus;
     	      this.databaseSubType = defaults.databaseSubType;
     	      this.databaseType = defaults.databaseType;
+    	      this.databaseVersion = defaults.databaseVersion;
     	      this.dbSystemId = defaults.dbSystemId;
+    	      this.definedTags = defaults.definedTags;
     	      this.deploymentType = defaults.deploymentType;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isCluster = defaults.isCluster;
     	      this.managedDatabaseGroups = defaults.managedDatabaseGroups;
@@ -303,6 +345,14 @@ public final class GetManagedDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder databaseVersion(String databaseVersion) {
+            if (databaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseResult", "databaseVersion");
+            }
+            this.databaseVersion = databaseVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             if (dbSystemId == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseResult", "dbSystemId");
@@ -311,11 +361,27 @@ public final class GetManagedDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseResult", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
             if (deploymentType == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseResult", "deploymentType");
             }
             this.deploymentType = deploymentType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -408,8 +474,11 @@ public final class GetManagedDatabaseResult {
             _resultValue.databaseStatus = databaseStatus;
             _resultValue.databaseSubType = databaseSubType;
             _resultValue.databaseType = databaseType;
+            _resultValue.databaseVersion = databaseVersion;
             _resultValue.dbSystemId = dbSystemId;
+            _resultValue.definedTags = definedTags;
             _resultValue.deploymentType = deploymentType;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isCluster = isCluster;
             _resultValue.managedDatabaseGroups = managedDatabaseGroups;

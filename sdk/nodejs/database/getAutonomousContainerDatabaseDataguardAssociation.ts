@@ -90,9 +90,11 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      */
     readonly peerAutonomousContainerDatabaseId: string;
+    readonly peerAutonomousVmClusterId: string;
     readonly peerCloudAutonomousVmClusterId: string;
+    readonly peerDbUniqueName: string;
     /**
-     * The current state of Autonomous Data Guard.
+     * The current state of the Autonomous Container Database.
      */
     readonly peerLifecycleState: string;
     /**

@@ -66,11 +66,15 @@ type LookupExternalExadataStorageConnectorResult struct {
 	ConnectionUri   string                                             `pulumi:"connectionUri"`
 	ConnectorName   string                                             `pulumi:"connectorName"`
 	CredentialInfos []GetExternalExadataStorageConnectorCredentialInfo `pulumi:"credentialInfos"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId           string `pulumi:"exadataInfrastructureId"`
 	ExternalExadataStorageConnectorId string `pulumi:"externalExadataStorageConnectorId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id string `pulumi:"id"`
 	// The internal ID of the Exadata resource.
@@ -154,6 +158,11 @@ func (o LookupExternalExadataStorageConnectorResultOutput) CredentialInfos() Get
 	}).(GetExternalExadataStorageConnectorCredentialInfoArrayOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupExternalExadataStorageConnectorResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 func (o LookupExternalExadataStorageConnectorResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -166,6 +175,11 @@ func (o LookupExternalExadataStorageConnectorResultOutput) ExadataInfrastructure
 
 func (o LookupExternalExadataStorageConnectorResultOutput) ExternalExadataStorageConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.ExternalExadataStorageConnectorId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupExternalExadataStorageConnectorResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.

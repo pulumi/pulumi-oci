@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetManagedDatabase(ctx *pulumi.Context, args *GetManagedDatabaseArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseResult, error) {
+func LookupManagedDatabase(ctx *pulumi.Context, args *LookupManagedDatabaseArgs, opts ...pulumi.InvokeOption) (*LookupManagedDatabaseResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetManagedDatabaseResult
+	var rv LookupManagedDatabaseResult
 	err := ctx.Invoke("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,13 +51,13 @@ func GetManagedDatabase(ctx *pulumi.Context, args *GetManagedDatabaseArgs, opts 
 }
 
 // A collection of arguments for invoking getManagedDatabase.
-type GetManagedDatabaseArgs struct {
+type LookupManagedDatabaseArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 }
 
 // A collection of values returned by getManagedDatabase.
-type GetManagedDatabaseResult struct {
+type LookupManagedDatabaseResult struct {
 	// The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
@@ -68,10 +68,16 @@ type GetManagedDatabaseResult struct {
 	DatabaseSubType string `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
 	DatabaseType string `pulumi:"databaseType"`
+	// The Oracle Database version.
+	DatabaseVersion string `pulumi:"databaseVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 	DbSystemId string `pulumi:"dbSystemId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType string `pulumi:"deploymentType"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Indicates whether the Oracle Database is part of a cluster.
@@ -93,130 +99,145 @@ type GetManagedDatabaseResult struct {
 	WorkloadType string `pulumi:"workloadType"`
 }
 
-func GetManagedDatabaseOutput(ctx *pulumi.Context, args GetManagedDatabaseOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseResultOutput {
+func LookupManagedDatabaseOutput(ctx *pulumi.Context, args LookupManagedDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupManagedDatabaseResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseResult, error) {
-			args := v.(GetManagedDatabaseArgs)
-			r, err := GetManagedDatabase(ctx, &args, opts...)
-			var s GetManagedDatabaseResult
+		ApplyT(func(v interface{}) (LookupManagedDatabaseResult, error) {
+			args := v.(LookupManagedDatabaseArgs)
+			r, err := LookupManagedDatabase(ctx, &args, opts...)
+			var s LookupManagedDatabaseResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetManagedDatabaseResultOutput)
+		}).(LookupManagedDatabaseResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabase.
-type GetManagedDatabaseOutputArgs struct {
+type LookupManagedDatabaseOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 }
 
-func (GetManagedDatabaseOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetManagedDatabaseArgs)(nil)).Elem()
+func (LookupManagedDatabaseOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupManagedDatabaseArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getManagedDatabase.
-type GetManagedDatabaseResultOutput struct{ *pulumi.OutputState }
+type LookupManagedDatabaseResultOutput struct{ *pulumi.OutputState }
 
-func (GetManagedDatabaseResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetManagedDatabaseResult)(nil)).Elem()
+func (LookupManagedDatabaseResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupManagedDatabaseResult)(nil)).Elem()
 }
 
-func (o GetManagedDatabaseResultOutput) ToGetManagedDatabaseResultOutput() GetManagedDatabaseResultOutput {
+func (o LookupManagedDatabaseResultOutput) ToLookupManagedDatabaseResultOutput() LookupManagedDatabaseResultOutput {
 	return o
 }
 
-func (o GetManagedDatabaseResultOutput) ToGetManagedDatabaseResultOutputWithContext(ctx context.Context) GetManagedDatabaseResultOutput {
+func (o LookupManagedDatabaseResultOutput) ToLookupManagedDatabaseResultOutputWithContext(ctx context.Context) LookupManagedDatabaseResultOutput {
 	return o
 }
 
 // The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-func (o GetManagedDatabaseResultOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o LookupManagedDatabaseResultOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-func (o GetManagedDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
-func (o GetManagedDatabaseResultOutput) DatabaseStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DatabaseStatus }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) DatabaseStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.DatabaseStatus }).(pulumi.StringOutput)
 }
 
 // The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-func (o GetManagedDatabaseResultOutput) DatabaseSubType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DatabaseSubType }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) DatabaseSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.DatabaseSubType }).(pulumi.StringOutput)
 }
 
 // The type of Oracle Database installation.
-func (o GetManagedDatabaseResultOutput) DatabaseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DatabaseType }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// The Oracle Database version.
+func (o LookupManagedDatabaseResultOutput) DatabaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.DatabaseVersion }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
-func (o GetManagedDatabaseResultOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupManagedDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // The infrastructure used to deploy the Oracle Database.
-func (o GetManagedDatabaseResultOutput) DeploymentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DeploymentType }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) DeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.DeploymentType }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupManagedDatabaseResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // Indicates whether the Oracle Database is part of a cluster.
-func (o GetManagedDatabaseResultOutput) IsCluster() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) bool { return v.IsCluster }).(pulumi.BoolOutput)
+func (o LookupManagedDatabaseResultOutput) IsCluster() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) bool { return v.IsCluster }).(pulumi.BoolOutput)
 }
 
 // A list of Managed Database Groups that the Managed Database belongs to.
-func (o GetManagedDatabaseResultOutput) ManagedDatabaseGroups() GetManagedDatabaseManagedDatabaseGroupArrayOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) []GetManagedDatabaseManagedDatabaseGroup {
+func (o LookupManagedDatabaseResultOutput) ManagedDatabaseGroups() GetManagedDatabaseManagedDatabaseGroupArrayOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) []GetManagedDatabaseManagedDatabaseGroup {
 		return v.ManagedDatabaseGroups
 	}).(GetManagedDatabaseManagedDatabaseGroupArrayOutput)
 }
 
-func (o GetManagedDatabaseResultOutput) ManagedDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.ManagedDatabaseId }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) ManagedDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.ManagedDatabaseId }).(pulumi.StringOutput)
 }
 
 // The management option used when enabling Database Management.
-func (o GetManagedDatabaseResultOutput) ManagementOption() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.ManagementOption }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) ManagementOption() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.ManagementOption }).(pulumi.StringOutput)
 }
 
 // The name of the Managed Database.
-func (o GetManagedDatabaseResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
-func (o GetManagedDatabaseResultOutput) ParentContainerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.ParentContainerId }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) ParentContainerId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.ParentContainerId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
-func (o GetManagedDatabaseResultOutput) StorageSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.StorageSystemId }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) StorageSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.StorageSystemId }).(pulumi.StringOutput)
 }
 
 // The date and time the Managed Database was created.
-func (o GetManagedDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The workload type of the Autonomous Database.
-func (o GetManagedDatabaseResultOutput) WorkloadType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.WorkloadType }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseResultOutput) WorkloadType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.WorkloadType }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetManagedDatabaseResultOutput{})
+	pulumi.RegisterOutputType(LookupManagedDatabaseResultOutput{})
 }

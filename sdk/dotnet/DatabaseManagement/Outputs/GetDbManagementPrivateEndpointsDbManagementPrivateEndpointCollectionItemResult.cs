@@ -18,9 +18,17 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The description of the Database Management private endpoint.
         /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
         /// </summary>
@@ -62,7 +70,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         private GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemResult(
             string compartmentId,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string description,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -83,7 +95,9 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             string vcnId)
         {
             CompartmentId = compartmentId;
+            DefinedTags = definedTags;
             Description = description;
+            FreeformTags = freeformTags;
             Id = id;
             IsCluster = isCluster;
             Name = name;

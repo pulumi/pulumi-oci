@@ -125,6 +125,10 @@ namespace Pulumi.Oci.Database
         public readonly int AvailableStorageSizeInGbs;
         public readonly string CloudExadataInfrastructureId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -229,6 +233,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string StorageServerVersion;
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// The date and time the cloud Exadata infrastructure resource was created.
         /// </summary>
         public readonly string TimeCreated;
@@ -248,6 +256,8 @@ namespace Pulumi.Oci.Database
             int availableStorageSizeInGbs,
 
             string cloudExadataInfrastructureId,
+
+            string clusterPlacementGroupId,
 
             string compartmentId,
 
@@ -301,6 +311,8 @@ namespace Pulumi.Oci.Database
 
             string storageServerVersion,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string timeCreated,
 
             int totalStorageSizeInGbs)
@@ -310,6 +322,7 @@ namespace Pulumi.Oci.Database
             AvailabilityDomain = availabilityDomain;
             AvailableStorageSizeInGbs = availableStorageSizeInGbs;
             CloudExadataInfrastructureId = cloudExadataInfrastructureId;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             ComputeCount = computeCount;
             CpuCount = cpuCount;
@@ -336,6 +349,7 @@ namespace Pulumi.Oci.Database
             State = state;
             StorageCount = storageCount;
             StorageServerVersion = storageServerVersion;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TotalStorageSizeInGbs = totalStorageSizeInGbs;
         }

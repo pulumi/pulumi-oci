@@ -15,12 +15,17 @@ import java.util.Objects;
 @CustomType
 public final class GetServiceConnectorSource {
     /**
-     * @return The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+     * @return The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+     * 
+     */
+    private String configMap;
+    /**
+     * @return The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
      * 
      */
     private List<GetServiceConnectorSourceCursor> cursors;
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     private String kind;
@@ -30,10 +35,15 @@ public final class GetServiceConnectorSource {
      */
     private List<GetServiceConnectorSourceLogSource> logSources;
     /**
-     * @return The list of metric namespaces to retrieve data from.
+     * @return One or more compartment-specific lists of metric namespaces to retrieve data from.
      * 
      */
     private List<GetServiceConnectorSourceMonitoringSource> monitoringSources;
+    /**
+     * @return The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+     * 
+     */
+    private String pluginName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
@@ -42,14 +52,21 @@ public final class GetServiceConnectorSource {
 
     private GetServiceConnectorSource() {}
     /**
-     * @return The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+     * @return The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+     * 
+     */
+    public String configMap() {
+        return this.configMap;
+    }
+    /**
+     * @return The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
      * 
      */
     public List<GetServiceConnectorSourceCursor> cursors() {
         return this.cursors;
     }
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     public String kind() {
@@ -63,11 +80,18 @@ public final class GetServiceConnectorSource {
         return this.logSources;
     }
     /**
-     * @return The list of metric namespaces to retrieve data from.
+     * @return One or more compartment-specific lists of metric namespaces to retrieve data from.
      * 
      */
     public List<GetServiceConnectorSourceMonitoringSource> monitoringSources() {
         return this.monitoringSources;
+    }
+    /**
+     * @return The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+     * 
+     */
+    public String pluginName() {
+        return this.pluginName;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -86,21 +110,33 @@ public final class GetServiceConnectorSource {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String configMap;
         private List<GetServiceConnectorSourceCursor> cursors;
         private String kind;
         private List<GetServiceConnectorSourceLogSource> logSources;
         private List<GetServiceConnectorSourceMonitoringSource> monitoringSources;
+        private String pluginName;
         private String streamId;
         public Builder() {}
         public Builder(GetServiceConnectorSource defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.configMap = defaults.configMap;
     	      this.cursors = defaults.cursors;
     	      this.kind = defaults.kind;
     	      this.logSources = defaults.logSources;
     	      this.monitoringSources = defaults.monitoringSources;
+    	      this.pluginName = defaults.pluginName;
     	      this.streamId = defaults.streamId;
         }
 
+        @CustomType.Setter
+        public Builder configMap(String configMap) {
+            if (configMap == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorSource", "configMap");
+            }
+            this.configMap = configMap;
+            return this;
+        }
         @CustomType.Setter
         public Builder cursors(List<GetServiceConnectorSourceCursor> cursors) {
             if (cursors == null) {
@@ -143,6 +179,14 @@ public final class GetServiceConnectorSource {
             return monitoringSources(List.of(monitoringSources));
         }
         @CustomType.Setter
+        public Builder pluginName(String pluginName) {
+            if (pluginName == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorSource", "pluginName");
+            }
+            this.pluginName = pluginName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder streamId(String streamId) {
             if (streamId == null) {
               throw new MissingRequiredPropertyException("GetServiceConnectorSource", "streamId");
@@ -152,10 +196,12 @@ public final class GetServiceConnectorSource {
         }
         public GetServiceConnectorSource build() {
             final var _resultValue = new GetServiceConnectorSource();
+            _resultValue.configMap = configMap;
             _resultValue.cursors = cursors;
             _resultValue.kind = kind;
             _resultValue.logSources = logSources;
             _resultValue.monitoringSources = monitoringSources;
+            _resultValue.pluginName = pluginName;
             _resultValue.streamId = streamId;
             return _resultValue;
         }

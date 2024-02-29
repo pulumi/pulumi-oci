@@ -22,7 +22,7 @@ class GetExternalListenerResult:
     """
     A collection of values returned by getExternalListener.
     """
-    def __init__(__self__, additional_details=None, adr_home_directory=None, compartment_id=None, component_name=None, display_name=None, endpoints=None, external_connector_id=None, external_db_home_id=None, external_db_node_id=None, external_db_system_id=None, external_listener_id=None, host_name=None, id=None, lifecycle_details=None, listener_alias=None, listener_ora_location=None, listener_type=None, log_directory=None, oracle_home=None, serviced_asms=None, serviced_databases=None, state=None, time_created=None, time_updated=None, trace_directory=None, version=None):
+    def __init__(__self__, additional_details=None, adr_home_directory=None, compartment_id=None, component_name=None, defined_tags=None, display_name=None, endpoints=None, external_connector_id=None, external_db_home_id=None, external_db_node_id=None, external_db_system_id=None, external_listener_id=None, freeform_tags=None, host_name=None, id=None, lifecycle_details=None, listener_alias=None, listener_ora_location=None, listener_type=None, log_directory=None, oracle_home=None, serviced_asms=None, serviced_databases=None, state=None, time_created=None, time_updated=None, trace_directory=None, version=None):
         if additional_details and not isinstance(additional_details, dict):
             raise TypeError("Expected argument 'additional_details' to be a dict")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -35,6 +35,9 @@ class GetExternalListenerResult:
         if component_name and not isinstance(component_name, str):
             raise TypeError("Expected argument 'component_name' to be a str")
         pulumi.set(__self__, "component_name", component_name)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -56,6 +59,9 @@ class GetExternalListenerResult:
         if external_listener_id and not isinstance(external_listener_id, str):
             raise TypeError("Expected argument 'external_listener_id' to be a str")
         pulumi.set(__self__, "external_listener_id", external_listener_id)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_name and not isinstance(host_name, str):
             raise TypeError("Expected argument 'host_name' to be a str")
         pulumi.set(__self__, "host_name", host_name)
@@ -135,6 +141,14 @@ class GetExternalListenerResult:
         return pulumi.get(self, "component_name")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -186,6 +200,14 @@ class GetExternalListenerResult:
     @pulumi.getter(name="externalListenerId")
     def external_listener_id(self) -> str:
         return pulumi.get(self, "external_listener_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostName")
@@ -318,6 +340,7 @@ class AwaitableGetExternalListenerResult(GetExternalListenerResult):
             adr_home_directory=self.adr_home_directory,
             compartment_id=self.compartment_id,
             component_name=self.component_name,
+            defined_tags=self.defined_tags,
             display_name=self.display_name,
             endpoints=self.endpoints,
             external_connector_id=self.external_connector_id,
@@ -325,6 +348,7 @@ class AwaitableGetExternalListenerResult(GetExternalListenerResult):
             external_db_node_id=self.external_db_node_id,
             external_db_system_id=self.external_db_system_id,
             external_listener_id=self.external_listener_id,
+            freeform_tags=self.freeform_tags,
             host_name=self.host_name,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
@@ -371,6 +395,7 @@ def get_external_listener(external_listener_id: Optional[str] = None,
         adr_home_directory=pulumi.get(__ret__, 'adr_home_directory'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         component_name=pulumi.get(__ret__, 'component_name'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         endpoints=pulumi.get(__ret__, 'endpoints'),
         external_connector_id=pulumi.get(__ret__, 'external_connector_id'),
@@ -378,6 +403,7 @@ def get_external_listener(external_listener_id: Optional[str] = None,
         external_db_node_id=pulumi.get(__ret__, 'external_db_node_id'),
         external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
         external_listener_id=pulumi.get(__ret__, 'external_listener_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         host_name=pulumi.get(__ret__, 'host_name'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),

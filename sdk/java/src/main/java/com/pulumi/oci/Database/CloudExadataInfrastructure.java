@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -54,6 +55,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .displayName(var_.cloud_exadata_infrastructure_display_name())
  *             .shape(var_.cloud_exadata_infrastructure_shape())
+ *             .clusterPlacementGroupId(var_.cloud_exadata_infrastructure_cluster_placement_group_id())
  *             .computeCount(var_.cloud_exadata_infrastructure_compute_count())
  *             .customerContacts(CloudExadataInfrastructureCustomerContactArgs.builder()
  *                 .email(var_.cloud_exadata_infrastructure_customer_contacts_email())
@@ -149,6 +151,20 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<Integer> availableStorageSizeInGbs() {
         return this.availableStorageSizeInGbs;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> clusterPlacementGroupId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    public Output<Optional<String>> clusterPlacementGroupId() {
+        return Codegen.optional(this.clusterPlacementGroupId);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -505,6 +521,20 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<String> storageServerVersion() {
         return this.storageServerVersion;
+    }
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Output<Map<String,Object>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The date and time the cloud Exadata infrastructure resource was created.

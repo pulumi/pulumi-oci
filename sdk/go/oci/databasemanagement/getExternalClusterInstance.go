@@ -66,6 +66,8 @@ type LookupExternalClusterInstanceResult struct {
 	ComponentName string `pulumi:"componentName"`
 	// The Oracle base location of Cluster Ready Services (CRS).
 	CrsBaseDirectory string `pulumi:"crsBaseDirectory"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the cluster instance. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
@@ -77,6 +79,8 @@ type LookupExternalClusterInstanceResult struct {
 	ExternalDbNodeId string `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the host on which the cluster instance is running.
 	HostName string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
@@ -151,6 +155,11 @@ func (o LookupExternalClusterInstanceResultOutput) CrsBaseDirectory() pulumi.Str
 	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.CrsBaseDirectory }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupExternalClusterInstanceResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The user-friendly name for the cluster instance. The name does not have to be unique.
 func (o LookupExternalClusterInstanceResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -178,6 +187,11 @@ func (o LookupExternalClusterInstanceResultOutput) ExternalDbNodeId() pulumi.Str
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
 func (o LookupExternalClusterInstanceResultOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupExternalClusterInstanceResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The name of the host on which the cluster instance is running.

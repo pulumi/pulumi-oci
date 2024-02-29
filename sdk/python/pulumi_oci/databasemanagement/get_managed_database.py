@@ -22,7 +22,7 @@ class GetManagedDatabaseResult:
     """
     A collection of values returned by getManagedDatabase.
     """
-    def __init__(__self__, additional_details=None, compartment_id=None, database_status=None, database_sub_type=None, database_type=None, db_system_id=None, deployment_type=None, id=None, is_cluster=None, managed_database_groups=None, managed_database_id=None, management_option=None, name=None, parent_container_id=None, storage_system_id=None, time_created=None, workload_type=None):
+    def __init__(__self__, additional_details=None, compartment_id=None, database_status=None, database_sub_type=None, database_type=None, database_version=None, db_system_id=None, defined_tags=None, deployment_type=None, freeform_tags=None, id=None, is_cluster=None, managed_database_groups=None, managed_database_id=None, management_option=None, name=None, parent_container_id=None, storage_system_id=None, time_created=None, workload_type=None):
         if additional_details and not isinstance(additional_details, dict):
             raise TypeError("Expected argument 'additional_details' to be a dict")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -38,12 +38,21 @@ class GetManagedDatabaseResult:
         if database_type and not isinstance(database_type, str):
             raise TypeError("Expected argument 'database_type' to be a str")
         pulumi.set(__self__, "database_type", database_type)
+        if database_version and not isinstance(database_version, str):
+            raise TypeError("Expected argument 'database_version' to be a str")
+        pulumi.set(__self__, "database_version", database_version)
         if db_system_id and not isinstance(db_system_id, str):
             raise TypeError("Expected argument 'db_system_id' to be a str")
         pulumi.set(__self__, "db_system_id", db_system_id)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if deployment_type and not isinstance(deployment_type, str):
             raise TypeError("Expected argument 'deployment_type' to be a str")
         pulumi.set(__self__, "deployment_type", deployment_type)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -116,6 +125,14 @@ class GetManagedDatabaseResult:
         return pulumi.get(self, "database_type")
 
     @property
+    @pulumi.getter(name="databaseVersion")
+    def database_version(self) -> str:
+        """
+        The Oracle Database version.
+        """
+        return pulumi.get(self, "database_version")
+
+    @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> str:
         """
@@ -124,12 +141,28 @@ class GetManagedDatabaseResult:
         return pulumi.get(self, "db_system_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> str:
         """
         The infrastructure used to deploy the Oracle Database.
         """
         return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -220,8 +253,11 @@ class AwaitableGetManagedDatabaseResult(GetManagedDatabaseResult):
             database_status=self.database_status,
             database_sub_type=self.database_sub_type,
             database_type=self.database_type,
+            database_version=self.database_version,
             db_system_id=self.db_system_id,
+            defined_tags=self.defined_tags,
             deployment_type=self.deployment_type,
+            freeform_tags=self.freeform_tags,
             id=self.id,
             is_cluster=self.is_cluster,
             managed_database_groups=self.managed_database_groups,
@@ -264,8 +300,11 @@ def get_managed_database(managed_database_id: Optional[str] = None,
         database_status=pulumi.get(__ret__, 'database_status'),
         database_sub_type=pulumi.get(__ret__, 'database_sub_type'),
         database_type=pulumi.get(__ret__, 'database_type'),
+        database_version=pulumi.get(__ret__, 'database_version'),
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         deployment_type=pulumi.get(__ret__, 'deployment_type'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_cluster=pulumi.get(__ret__, 'is_cluster'),
         managed_database_groups=pulumi.get(__ret__, 'managed_database_groups'),

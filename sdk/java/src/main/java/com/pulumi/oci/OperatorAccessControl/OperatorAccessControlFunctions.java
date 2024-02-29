@@ -8,6 +8,8 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
+import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
+import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportPlainArgs;
 import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryArgs;
 import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryPlainArgs;
 import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestPlainArgs;
@@ -25,6 +27,7 @@ import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentsPlainArg
 import com.pulumi.oci.OperatorAccessControl.inputs.GetControlPlainArgs;
 import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsArgs;
 import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsPlainArgs;
+import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestAuditLogReportResult;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestHistoryResult;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestResult;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestsResult;
@@ -193,6 +196,166 @@ public final class OperatorAccessControlFunctions {
      */
     public static CompletableFuture<GetAccessRequestResult> getAccessRequestPlain(GetAccessRequestPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", TypeShape.of(GetAccessRequestResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Access Request Audit Log Report resource in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Gets the Audit Log Report for the given access requestId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequestAuditLogReport = OperatorAccessControlFunctions.getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .enableProcessTree(var_.access_request_audit_log_report_enable_process_tree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAccessRequestAuditLogReportResult> getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs args) {
+        return getAccessRequestAuditLogReport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Access Request Audit Log Report resource in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Gets the Audit Log Report for the given access requestId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequestAuditLogReport = OperatorAccessControlFunctions.getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .enableProcessTree(var_.access_request_audit_log_report_enable_process_tree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAccessRequestAuditLogReportResult> getAccessRequestAuditLogReportPlain(GetAccessRequestAuditLogReportPlainArgs args) {
+        return getAccessRequestAuditLogReportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Access Request Audit Log Report resource in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Gets the Audit Log Report for the given access requestId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequestAuditLogReport = OperatorAccessControlFunctions.getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .enableProcessTree(var_.access_request_audit_log_report_enable_process_tree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAccessRequestAuditLogReportResult> getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", TypeShape.of(GetAccessRequestAuditLogReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Access Request Audit Log Report resource in Oracle Cloud Infrastructure Operator Access Control service.
+     * 
+     * Gets the Audit Log Report for the given access requestId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestAuditLogReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequestAuditLogReport = OperatorAccessControlFunctions.getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .enableProcessTree(var_.access_request_audit_log_report_enable_process_tree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAccessRequestAuditLogReportResult> getAccessRequestAuditLogReportPlain(GetAccessRequestAuditLogReportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", TypeShape.of(GetAccessRequestAuditLogReportResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Access Request History resource in Oracle Cloud Infrastructure Operator Access Control service.

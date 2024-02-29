@@ -11,6 +11,7 @@ import com.pulumi.oci.OperatorAccessControl.OperatorControlArgs;
 import com.pulumi.oci.OperatorAccessControl.inputs.OperatorControlState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -186,6 +187,20 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lastModifiedInfo() {
         return this.lastModifiedInfo;
+    }
+    /**
+     * (Updatable) Number of approvers required to approve an access request.
+     * 
+     */
+    @Export(name="numberOfApprovers", refs={Integer.class}, tree="[0]")
+    private Output<Integer> numberOfApprovers;
+
+    /**
+     * @return (Updatable) Number of approvers required to approve an access request.
+     * 
+     */
+    public Output<Integer> numberOfApprovers() {
+        return this.numberOfApprovers;
     }
     /**
      * (Updatable) Name of the operator control.

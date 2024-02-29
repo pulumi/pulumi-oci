@@ -25,7 +25,25 @@ namespace Pulumi.Oci.Sch.Inputs
         public Input<int>? BatchRolloverTimeInMs { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the bucket. Avoid entering confidential information.
+        /// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+        /// </summary>
+        [Input("batchSizeInKbs")]
+        public Input<int>? BatchSizeInKbs { get; set; }
+
+        /// <summary>
+        /// (Updatable) The batch rollover size in number of messages.
+        /// </summary>
+        [Input("batchSizeInNum")]
+        public Input<int>? BatchSizeInNum { get; set; }
+
+        /// <summary>
+        /// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+        /// </summary>
+        [Input("batchTimeInSec")]
+        public Input<int>? BatchTimeInSec { get; set; }
+
+        /// <summary>
+        /// (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
         /// </summary>
         [Input("bucket")]
         public Input<string>? Bucket { get; set; }
@@ -49,7 +67,7 @@ namespace Pulumi.Oci.Sch.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+        /// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
         /// </summary>
         [Input("enableFormattedMessaging")]
         public Input<bool>? EnableFormattedMessaging { get; set; }
@@ -73,7 +91,7 @@ namespace Pulumi.Oci.Sch.Inputs
         public Input<string>? LogGroupId { get; set; }
 
         /// <summary>
-        /// (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+        /// (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
         /// </summary>
         [Input("logSourceIdentifier")]
         public Input<string>? LogSourceIdentifier { get; set; }

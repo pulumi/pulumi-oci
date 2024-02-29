@@ -13,7 +13,9 @@ import (
 
 // This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
 //
-// Gets the specified service connector's configuration information.
+// Gets the specified connector's configuration information.
+// For more information, see
+// [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
 //
 // ## Example Usage
 //
@@ -52,7 +54,7 @@ func GetServiceConnector(ctx *pulumi.Context, args *GetServiceConnectorArgs, opt
 
 // A collection of arguments for invoking getServiceConnector.
 type GetServiceConnectorArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
 	ServiceConnectorId string `pulumi:"serviceConnectorId"`
 }
 
@@ -68,24 +70,24 @@ type GetServiceConnectorResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
 	LifecyleDetails    string `pulumi:"lifecyleDetails"`
 	ServiceConnectorId string `pulumi:"serviceConnectorId"`
-	// An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+	// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 	Sources []GetServiceConnectorSource `pulumi:"sources"`
-	// The current state of the service connector.
+	// The current state of the connector.
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+	// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 	Targets []GetServiceConnectorTarget `pulumi:"targets"`
 	// The list of tasks.
 	Tasks []GetServiceConnectorTask `pulumi:"tasks"`
-	// The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+	// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+	// The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -104,7 +106,7 @@ func GetServiceConnectorOutput(ctx *pulumi.Context, args GetServiceConnectorOutp
 
 // A collection of arguments for invoking getServiceConnector.
 type GetServiceConnectorOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
 	ServiceConnectorId pulumi.StringInput `pulumi:"serviceConnectorId"`
 }
 
@@ -152,7 +154,7 @@ func (o GetServiceConnectorResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
 func (o GetServiceConnectorResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -166,12 +168,12 @@ func (o GetServiceConnectorResultOutput) ServiceConnectorId() pulumi.StringOutpu
 	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.ServiceConnectorId }).(pulumi.StringOutput)
 }
 
-// An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+// An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 func (o GetServiceConnectorResultOutput) Sources() GetServiceConnectorSourceArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) []GetServiceConnectorSource { return v.Sources }).(GetServiceConnectorSourceArrayOutput)
 }
 
-// The current state of the service connector.
+// The current state of the connector.
 func (o GetServiceConnectorResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -181,7 +183,7 @@ func (o GetServiceConnectorResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 func (o GetServiceConnectorResultOutput) Targets() GetServiceConnectorTargetArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) []GetServiceConnectorTarget { return v.Targets }).(GetServiceConnectorTargetArrayOutput)
 }
@@ -191,12 +193,12 @@ func (o GetServiceConnectorResultOutput) Tasks() GetServiceConnectorTaskArrayOut
 	return o.ApplyT(func(v GetServiceConnectorResult) []GetServiceConnectorTask { return v.Tasks }).(GetServiceConnectorTaskArrayOutput)
 }
 
-// The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+// The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
 func (o GetServiceConnectorResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
+// The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
 func (o GetServiceConnectorResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

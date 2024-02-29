@@ -37,6 +37,11 @@ public final class GetExternalListenerResult {
      */
     private String componentName;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The user-friendly name for the database. The name does not have to be unique.
      * 
      */
@@ -67,6 +72,11 @@ public final class GetExternalListenerResult {
      */
     private String externalDbSystemId;
     private String externalListenerId;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The name of the host on which the external listener is running.
      * 
@@ -173,6 +183,13 @@ public final class GetExternalListenerResult {
         return this.componentName;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The user-friendly name for the database. The name does not have to be unique.
      * 
      */
@@ -216,6 +233,13 @@ public final class GetExternalListenerResult {
     }
     public String externalListenerId() {
         return this.externalListenerId;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The name of the host on which the external listener is running.
@@ -336,6 +360,7 @@ public final class GetExternalListenerResult {
         private String adrHomeDirectory;
         private String compartmentId;
         private String componentName;
+        private Map<String,Object> definedTags;
         private String displayName;
         private List<GetExternalListenerEndpoint> endpoints;
         private String externalConnectorId;
@@ -343,6 +368,7 @@ public final class GetExternalListenerResult {
         private String externalDbNodeId;
         private String externalDbSystemId;
         private String externalListenerId;
+        private Map<String,Object> freeformTags;
         private String hostName;
         private String id;
         private String lifecycleDetails;
@@ -365,6 +391,7 @@ public final class GetExternalListenerResult {
     	      this.adrHomeDirectory = defaults.adrHomeDirectory;
     	      this.compartmentId = defaults.compartmentId;
     	      this.componentName = defaults.componentName;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.endpoints = defaults.endpoints;
     	      this.externalConnectorId = defaults.externalConnectorId;
@@ -372,6 +399,7 @@ public final class GetExternalListenerResult {
     	      this.externalDbNodeId = defaults.externalDbNodeId;
     	      this.externalDbSystemId = defaults.externalDbSystemId;
     	      this.externalListenerId = defaults.externalListenerId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.hostName = defaults.hostName;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -419,6 +447,14 @@ public final class GetExternalListenerResult {
               throw new MissingRequiredPropertyException("GetExternalListenerResult", "componentName");
             }
             this.componentName = componentName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenerResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
@@ -478,6 +514,14 @@ public final class GetExternalListenerResult {
               throw new MissingRequiredPropertyException("GetExternalListenerResult", "externalListenerId");
             }
             this.externalListenerId = externalListenerId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenerResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -612,6 +656,7 @@ public final class GetExternalListenerResult {
             _resultValue.adrHomeDirectory = adrHomeDirectory;
             _resultValue.compartmentId = compartmentId;
             _resultValue.componentName = componentName;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.endpoints = endpoints;
             _resultValue.externalConnectorId = externalConnectorId;
@@ -619,6 +664,7 @@ public final class GetExternalListenerResult {
             _resultValue.externalDbNodeId = externalDbNodeId;
             _resultValue.externalDbSystemId = externalDbSystemId;
             _resultValue.externalListenerId = externalListenerId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.hostName = hostName;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;

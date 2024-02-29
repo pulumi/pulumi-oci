@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetAccessRequestResult',
@@ -21,7 +22,7 @@ class GetAccessRequestResult:
     """
     A collection of values returned by getAccessRequest.
     """
-    def __init__(__self__, access_reason_summary=None, access_request_id=None, action_requests_lists=None, approver_comment=None, audit_types=None, closure_comment=None, compartment_id=None, defined_tags=None, duration=None, extend_duration=None, freeform_tags=None, id=None, is_auto_approved=None, lifecycle_details=None, opctl_additional_message=None, opctl_id=None, opctl_name=None, operator_id=None, reason=None, request_id=None, resource_id=None, resource_name=None, resource_type=None, severity=None, state=None, sub_resource_lists=None, system_message=None, time_of_creation=None, time_of_modification=None, time_of_user_creation=None, user_id=None, workflow_ids=None):
+    def __init__(__self__, access_reason_summary=None, access_request_id=None, action_requests_lists=None, approver_comment=None, approver_details=None, audit_types=None, closure_comment=None, compartment_id=None, defined_tags=None, duration=None, extend_duration=None, extension_approver_details=None, freeform_tags=None, id=None, is_auto_approved=None, is_validate_assignment=None, lifecycle_details=None, number_of_approvers=None, number_of_approvers_required=None, number_of_extension_approvers=None, opctl_additional_message=None, opctl_id=None, opctl_name=None, operator_id=None, reason=None, request_id=None, resource_id=None, resource_name=None, resource_type=None, severity=None, state=None, sub_resource_lists=None, system_message=None, time_of_creation=None, time_of_modification=None, time_of_user_creation=None, time_requested_for_future_access=None, user_id=None, workflow_ids=None):
         if access_reason_summary and not isinstance(access_reason_summary, str):
             raise TypeError("Expected argument 'access_reason_summary' to be a str")
         pulumi.set(__self__, "access_reason_summary", access_reason_summary)
@@ -34,6 +35,9 @@ class GetAccessRequestResult:
         if approver_comment and not isinstance(approver_comment, str):
             raise TypeError("Expected argument 'approver_comment' to be a str")
         pulumi.set(__self__, "approver_comment", approver_comment)
+        if approver_details and not isinstance(approver_details, list):
+            raise TypeError("Expected argument 'approver_details' to be a list")
+        pulumi.set(__self__, "approver_details", approver_details)
         if audit_types and not isinstance(audit_types, list):
             raise TypeError("Expected argument 'audit_types' to be a list")
         pulumi.set(__self__, "audit_types", audit_types)
@@ -52,6 +56,9 @@ class GetAccessRequestResult:
         if extend_duration and not isinstance(extend_duration, int):
             raise TypeError("Expected argument 'extend_duration' to be a int")
         pulumi.set(__self__, "extend_duration", extend_duration)
+        if extension_approver_details and not isinstance(extension_approver_details, list):
+            raise TypeError("Expected argument 'extension_approver_details' to be a list")
+        pulumi.set(__self__, "extension_approver_details", extension_approver_details)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -61,9 +68,21 @@ class GetAccessRequestResult:
         if is_auto_approved and not isinstance(is_auto_approved, bool):
             raise TypeError("Expected argument 'is_auto_approved' to be a bool")
         pulumi.set(__self__, "is_auto_approved", is_auto_approved)
+        if is_validate_assignment and not isinstance(is_validate_assignment, bool):
+            raise TypeError("Expected argument 'is_validate_assignment' to be a bool")
+        pulumi.set(__self__, "is_validate_assignment", is_validate_assignment)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if number_of_approvers and not isinstance(number_of_approvers, int):
+            raise TypeError("Expected argument 'number_of_approvers' to be a int")
+        pulumi.set(__self__, "number_of_approvers", number_of_approvers)
+        if number_of_approvers_required and not isinstance(number_of_approvers_required, int):
+            raise TypeError("Expected argument 'number_of_approvers_required' to be a int")
+        pulumi.set(__self__, "number_of_approvers_required", number_of_approvers_required)
+        if number_of_extension_approvers and not isinstance(number_of_extension_approvers, int):
+            raise TypeError("Expected argument 'number_of_extension_approvers' to be a int")
+        pulumi.set(__self__, "number_of_extension_approvers", number_of_extension_approvers)
         if opctl_additional_message and not isinstance(opctl_additional_message, str):
             raise TypeError("Expected argument 'opctl_additional_message' to be a str")
         pulumi.set(__self__, "opctl_additional_message", opctl_additional_message)
@@ -112,6 +131,9 @@ class GetAccessRequestResult:
         if time_of_user_creation and not isinstance(time_of_user_creation, str):
             raise TypeError("Expected argument 'time_of_user_creation' to be a str")
         pulumi.set(__self__, "time_of_user_creation", time_of_user_creation)
+        if time_requested_for_future_access and not isinstance(time_requested_for_future_access, str):
+            raise TypeError("Expected argument 'time_requested_for_future_access' to be a str")
+        pulumi.set(__self__, "time_requested_for_future_access", time_requested_for_future_access)
         if user_id and not isinstance(user_id, str):
             raise TypeError("Expected argument 'user_id' to be a str")
         pulumi.set(__self__, "user_id", user_id)
@@ -147,6 +169,14 @@ class GetAccessRequestResult:
         The last recent Comment entered by the approver of the request.
         """
         return pulumi.get(self, "approver_comment")
+
+    @property
+    @pulumi.getter(name="approverDetails")
+    def approver_details(self) -> Sequence['outputs.GetAccessRequestApproverDetailResult']:
+        """
+        Contains the user ids who have approved the accessRequest for extension.
+        """
+        return pulumi.get(self, "approver_details")
 
     @property
     @pulumi.getter(name="auditTypes")
@@ -197,6 +227,14 @@ class GetAccessRequestResult:
         return pulumi.get(self, "extend_duration")
 
     @property
+    @pulumi.getter(name="extensionApproverDetails")
+    def extension_approver_details(self) -> Sequence['outputs.GetAccessRequestExtensionApproverDetailResult']:
+        """
+        Contains the user ids who have approved the accessRequest for extension.
+        """
+        return pulumi.get(self, "extension_approver_details")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -221,12 +259,44 @@ class GetAccessRequestResult:
         return pulumi.get(self, "is_auto_approved")
 
     @property
+    @pulumi.getter(name="isValidateAssignment")
+    def is_validate_assignment(self) -> bool:
+        """
+        Whether the access request was requested for Validate Assignment.
+        """
+        return pulumi.get(self, "is_validate_assignment")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
         more in detail about the lifeCycleState.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="numberOfApprovers")
+    def number_of_approvers(self) -> int:
+        """
+        Number of approvers who have authorized an access request.
+        """
+        return pulumi.get(self, "number_of_approvers")
+
+    @property
+    @pulumi.getter(name="numberOfApproversRequired")
+    def number_of_approvers_required(self) -> int:
+        """
+        Number of approvers required to approve an access request.
+        """
+        return pulumi.get(self, "number_of_approvers_required")
+
+    @property
+    @pulumi.getter(name="numberOfExtensionApprovers")
+    def number_of_extension_approvers(self) -> int:
+        """
+        Number of approvers who have authorized an access request for extension.
+        """
+        return pulumi.get(self, "number_of_extension_approvers")
 
     @property
     @pulumi.getter(name="opctlAdditionalMessage")
@@ -357,6 +427,14 @@ class GetAccessRequestResult:
         return pulumi.get(self, "time_of_user_creation")
 
     @property
+    @pulumi.getter(name="timeRequestedForFutureAccess")
+    def time_requested_for_future_access(self) -> str:
+        """
+        Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_requested_for_future_access")
+
+    @property
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
         """
@@ -383,16 +461,22 @@ class AwaitableGetAccessRequestResult(GetAccessRequestResult):
             access_request_id=self.access_request_id,
             action_requests_lists=self.action_requests_lists,
             approver_comment=self.approver_comment,
+            approver_details=self.approver_details,
             audit_types=self.audit_types,
             closure_comment=self.closure_comment,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             duration=self.duration,
             extend_duration=self.extend_duration,
+            extension_approver_details=self.extension_approver_details,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_auto_approved=self.is_auto_approved,
+            is_validate_assignment=self.is_validate_assignment,
             lifecycle_details=self.lifecycle_details,
+            number_of_approvers=self.number_of_approvers,
+            number_of_approvers_required=self.number_of_approvers_required,
+            number_of_extension_approvers=self.number_of_extension_approvers,
             opctl_additional_message=self.opctl_additional_message,
             opctl_id=self.opctl_id,
             opctl_name=self.opctl_name,
@@ -409,6 +493,7 @@ class AwaitableGetAccessRequestResult(GetAccessRequestResult):
             time_of_creation=self.time_of_creation,
             time_of_modification=self.time_of_modification,
             time_of_user_creation=self.time_of_user_creation,
+            time_requested_for_future_access=self.time_requested_for_future_access,
             user_id=self.user_id,
             workflow_ids=self.workflow_ids)
 
@@ -442,16 +527,22 @@ def get_access_request(access_request_id: Optional[str] = None,
         access_request_id=pulumi.get(__ret__, 'access_request_id'),
         action_requests_lists=pulumi.get(__ret__, 'action_requests_lists'),
         approver_comment=pulumi.get(__ret__, 'approver_comment'),
+        approver_details=pulumi.get(__ret__, 'approver_details'),
         audit_types=pulumi.get(__ret__, 'audit_types'),
         closure_comment=pulumi.get(__ret__, 'closure_comment'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         duration=pulumi.get(__ret__, 'duration'),
         extend_duration=pulumi.get(__ret__, 'extend_duration'),
+        extension_approver_details=pulumi.get(__ret__, 'extension_approver_details'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_auto_approved=pulumi.get(__ret__, 'is_auto_approved'),
+        is_validate_assignment=pulumi.get(__ret__, 'is_validate_assignment'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        number_of_approvers=pulumi.get(__ret__, 'number_of_approvers'),
+        number_of_approvers_required=pulumi.get(__ret__, 'number_of_approvers_required'),
+        number_of_extension_approvers=pulumi.get(__ret__, 'number_of_extension_approvers'),
         opctl_additional_message=pulumi.get(__ret__, 'opctl_additional_message'),
         opctl_id=pulumi.get(__ret__, 'opctl_id'),
         opctl_name=pulumi.get(__ret__, 'opctl_name'),
@@ -468,6 +559,7 @@ def get_access_request(access_request_id: Optional[str] = None,
         time_of_creation=pulumi.get(__ret__, 'time_of_creation'),
         time_of_modification=pulumi.get(__ret__, 'time_of_modification'),
         time_of_user_creation=pulumi.get(__ret__, 'time_of_user_creation'),
+        time_requested_for_future_access=pulumi.get(__ret__, 'time_requested_for_future_access'),
         user_id=pulumi.get(__ret__, 'user_id'),
         workflow_ids=pulumi.get(__ret__, 'workflow_ids'))
 

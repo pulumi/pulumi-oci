@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetExternalExadataStorageGrid(ctx *pulumi.Context, args *GetExternalExadataStorageGridArgs, opts ...pulumi.InvokeOption) (*GetExternalExadataStorageGridResult, error) {
+func LookupExternalExadataStorageGrid(ctx *pulumi.Context, args *LookupExternalExadataStorageGridArgs, opts ...pulumi.InvokeOption) (*LookupExternalExadataStorageGridResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetExternalExadataStorageGridResult
+	var rv LookupExternalExadataStorageGridResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,21 +51,25 @@ func GetExternalExadataStorageGrid(ctx *pulumi.Context, args *GetExternalExadata
 }
 
 // A collection of arguments for invoking getExternalExadataStorageGrid.
-type GetExternalExadataStorageGridArgs struct {
+type LookupExternalExadataStorageGridArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage grid.
 	ExternalExadataStorageGridId string `pulumi:"externalExadataStorageGridId"`
 }
 
 // A collection of values returned by getExternalExadataStorageGrid.
-type GetExternalExadataStorageGridResult struct {
+type LookupExternalExadataStorageGridResult struct {
 	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId      string `pulumi:"exadataInfrastructureId"`
 	ExternalExadataStorageGridId string `pulumi:"externalExadataStorageGridId"`
-	// The provider-assigned unique ID for this managed resource.
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
 	Id string `pulumi:"id"`
 	// The internal ID of the Exadata resource.
 	InternalId string `pulumi:"internalId"`
@@ -89,120 +93,130 @@ type GetExternalExadataStorageGridResult struct {
 	Version string `pulumi:"version"`
 }
 
-func GetExternalExadataStorageGridOutput(ctx *pulumi.Context, args GetExternalExadataStorageGridOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageGridResultOutput {
+func LookupExternalExadataStorageGridOutput(ctx *pulumi.Context, args LookupExternalExadataStorageGridOutputArgs, opts ...pulumi.InvokeOption) LookupExternalExadataStorageGridResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExternalExadataStorageGridResult, error) {
-			args := v.(GetExternalExadataStorageGridArgs)
-			r, err := GetExternalExadataStorageGrid(ctx, &args, opts...)
-			var s GetExternalExadataStorageGridResult
+		ApplyT(func(v interface{}) (LookupExternalExadataStorageGridResult, error) {
+			args := v.(LookupExternalExadataStorageGridArgs)
+			r, err := LookupExternalExadataStorageGrid(ctx, &args, opts...)
+			var s LookupExternalExadataStorageGridResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetExternalExadataStorageGridResultOutput)
+		}).(LookupExternalExadataStorageGridResultOutput)
 }
 
 // A collection of arguments for invoking getExternalExadataStorageGrid.
-type GetExternalExadataStorageGridOutputArgs struct {
+type LookupExternalExadataStorageGridOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage grid.
 	ExternalExadataStorageGridId pulumi.StringInput `pulumi:"externalExadataStorageGridId"`
 }
 
-func (GetExternalExadataStorageGridOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExternalExadataStorageGridArgs)(nil)).Elem()
+func (LookupExternalExadataStorageGridOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupExternalExadataStorageGridArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getExternalExadataStorageGrid.
-type GetExternalExadataStorageGridResultOutput struct{ *pulumi.OutputState }
+type LookupExternalExadataStorageGridResultOutput struct{ *pulumi.OutputState }
 
-func (GetExternalExadataStorageGridResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExternalExadataStorageGridResult)(nil)).Elem()
+func (LookupExternalExadataStorageGridResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupExternalExadataStorageGridResult)(nil)).Elem()
 }
 
-func (o GetExternalExadataStorageGridResultOutput) ToGetExternalExadataStorageGridResultOutput() GetExternalExadataStorageGridResultOutput {
+func (o LookupExternalExadataStorageGridResultOutput) ToLookupExternalExadataStorageGridResultOutput() LookupExternalExadataStorageGridResultOutput {
 	return o
 }
 
-func (o GetExternalExadataStorageGridResultOutput) ToGetExternalExadataStorageGridResultOutputWithContext(ctx context.Context) GetExternalExadataStorageGridResultOutput {
+func (o LookupExternalExadataStorageGridResultOutput) ToLookupExternalExadataStorageGridResultOutputWithContext(ctx context.Context) LookupExternalExadataStorageGridResultOutput {
 	return o
 }
 
 // The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-func (o GetExternalExadataStorageGridResultOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o LookupExternalExadataStorageGridResultOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupExternalExadataStorageGridResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-func (o GetExternalExadataStorageGridResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageGridResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-func (o GetExternalExadataStorageGridResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageGridResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
 }
 
-func (o GetExternalExadataStorageGridResultOutput) ExternalExadataStorageGridId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.ExternalExadataStorageGridId }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageGridResultOutput) ExternalExadataStorageGridId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.ExternalExadataStorageGridId }).(pulumi.StringOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
-func (o GetExternalExadataStorageGridResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.Id }).(pulumi.StringOutput)
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupExternalExadataStorageGridResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o LookupExternalExadataStorageGridResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // The internal ID of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) InternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.InternalId }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageGridResultOutput) InternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.InternalId }).(pulumi.StringOutput)
 }
 
 // The details of the lifecycle state of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageGridResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The type of Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageGridResultOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
 // The number of Exadata storage servers in the Exadata infrastructure.
-func (o GetExternalExadataStorageGridResultOutput) ServerCount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) float64 { return v.ServerCount }).(pulumi.Float64Output)
+func (o LookupExternalExadataStorageGridResultOutput) ServerCount() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) float64 { return v.ServerCount }).(pulumi.Float64Output)
 }
 
 // The current lifecycle state of the database resource.
-func (o GetExternalExadataStorageGridResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageGridResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 // The status of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageGridResultOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
 // A list of monitored Exadata storage servers.
-func (o GetExternalExadataStorageGridResultOutput) StorageServers() GetExternalExadataStorageGridStorageServerArrayOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) []GetExternalExadataStorageGridStorageServer {
+func (o LookupExternalExadataStorageGridResultOutput) StorageServers() GetExternalExadataStorageGridStorageServerArrayOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) []GetExternalExadataStorageGridStorageServer {
 		return v.StorageServers
 	}).(GetExternalExadataStorageGridStorageServerArrayOutput)
 }
 
 // The timestamp of the creation of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageGridResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The timestamp of the last update of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageGridResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 // The version of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.Version }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageGridResultOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageGridResult) string { return v.Version }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetExternalExadataStorageGridResultOutput{})
+	pulumi.RegisterOutputType(LookupExternalExadataStorageGridResultOutput{})
 }

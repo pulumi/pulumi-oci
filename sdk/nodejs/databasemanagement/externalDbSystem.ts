@@ -23,7 +23,13 @@ import * as utilities from "../utilities";
  *     databaseManagementConfig: {
  *         licenseModel: _var.external_db_system_database_management_config_license_model,
  *     },
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
  *     displayName: _var.external_db_system_display_name,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
  *     stackMonitoringConfig: {
  *         isEnabled: _var.external_db_system_stack_monitoring_config_is_enabled,
  *         metadata: _var.external_db_system_stack_monitoring_config_metadata,
@@ -80,6 +86,10 @@ export class ExternalDbSystem extends pulumi.CustomResource {
      */
     public readonly dbSystemDiscoveryId!: pulumi.Output<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      */
     public /*out*/ readonly discoveryAgentId!: pulumi.Output<string>;
@@ -87,6 +97,10 @@ export class ExternalDbSystem extends pulumi.CustomResource {
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      */
@@ -132,8 +146,10 @@ export class ExternalDbSystem extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["databaseManagementConfig"] = state ? state.databaseManagementConfig : undefined;
             resourceInputs["dbSystemDiscoveryId"] = state ? state.dbSystemDiscoveryId : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["discoveryAgentId"] = state ? state.discoveryAgentId : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["homeDirectory"] = state ? state.homeDirectory : undefined;
             resourceInputs["isCluster"] = state ? state.isCluster : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
@@ -152,7 +168,9 @@ export class ExternalDbSystem extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["databaseManagementConfig"] = args ? args.databaseManagementConfig : undefined;
             resourceInputs["dbSystemDiscoveryId"] = args ? args.dbSystemDiscoveryId : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["stackMonitoringConfig"] = args ? args.stackMonitoringConfig : undefined;
             resourceInputs["discoveryAgentId"] = undefined /*out*/;
             resourceInputs["homeDirectory"] = undefined /*out*/;
@@ -184,6 +202,10 @@ export interface ExternalDbSystemState {
      */
     dbSystemDiscoveryId?: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      */
     discoveryAgentId?: pulumi.Input<string>;
@@ -191,6 +213,10 @@ export interface ExternalDbSystemState {
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      */
@@ -238,9 +264,17 @@ export interface ExternalDbSystemArgs {
      */
     dbSystemDiscoveryId: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The details of the associated service that will be enabled or disabled for an external DB System.
      */

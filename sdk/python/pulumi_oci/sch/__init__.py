@@ -6,6 +6,8 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .connector import *
+from .get_connector_plugin import *
+from .get_connector_plugins import *
 from .get_service_connector import *
 from .get_service_connectors import *
 from ._inputs import *

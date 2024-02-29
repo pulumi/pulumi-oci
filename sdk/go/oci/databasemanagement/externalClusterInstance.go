@@ -36,6 +36,8 @@ type ExternalClusterInstance struct {
 	ComponentName pulumi.StringOutput `pulumi:"componentName"`
 	// The Oracle base location of Cluster Ready Services (CRS).
 	CrsBaseDirectory pulumi.StringOutput `pulumi:"crsBaseDirectory"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the cluster instance. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
@@ -43,14 +45,16 @@ type ExternalClusterInstance struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
 	ExternalClusterInstanceId pulumi.StringOutput `pulumi:"externalClusterInstanceId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalConnectorId pulumi.StringOutput `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
 	ExternalDbNodeId pulumi.StringOutput `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
 	ExternalDbSystemId pulumi.StringOutput `pulumi:"externalDbSystemId"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The name of the host on which the cluster instance is running.
 	HostName pulumi.StringOutput `pulumi:"hostName"`
 	// Additional information about the current lifecycle state.
@@ -106,6 +110,8 @@ type externalClusterInstanceState struct {
 	ComponentName *string `pulumi:"componentName"`
 	// The Oracle base location of Cluster Ready Services (CRS).
 	CrsBaseDirectory *string `pulumi:"crsBaseDirectory"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the cluster instance. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
@@ -113,14 +119,16 @@ type externalClusterInstanceState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
 	ExternalClusterInstanceId *string `pulumi:"externalClusterInstanceId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalConnectorId *string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
 	ExternalDbNodeId *string `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
 	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the host on which the cluster instance is running.
 	HostName *string `pulumi:"hostName"`
 	// Additional information about the current lifecycle state.
@@ -144,6 +152,8 @@ type ExternalClusterInstanceState struct {
 	ComponentName pulumi.StringPtrInput
 	// The Oracle base location of Cluster Ready Services (CRS).
 	CrsBaseDirectory pulumi.StringPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// The user-friendly name for the cluster instance. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
@@ -151,14 +161,16 @@ type ExternalClusterInstanceState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
 	ExternalClusterInstanceId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalConnectorId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
 	ExternalDbNodeId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
 	ExternalDbSystemId pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	FreeformTags pulumi.MapInput
 	// The name of the host on which the cluster instance is running.
 	HostName pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
@@ -178,24 +190,32 @@ func (ExternalClusterInstanceState) ElementType() reflect.Type {
 }
 
 type externalClusterInstanceArgs struct {
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
 	ExternalClusterInstanceId string `pulumi:"externalClusterInstanceId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+	ExternalConnectorId *string `pulumi:"externalConnectorId"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ExternalConnectorId *string `pulumi:"externalConnectorId"`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a ExternalClusterInstance resource.
 type ExternalClusterInstanceArgs struct {
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
 	ExternalClusterInstanceId pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+	ExternalConnectorId pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ExternalConnectorId pulumi.StringPtrInput
+	FreeformTags pulumi.MapInput
 }
 
 func (ExternalClusterInstanceArgs) ElementType() reflect.Type {
@@ -305,6 +325,11 @@ func (o ExternalClusterInstanceOutput) CrsBaseDirectory() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalClusterInstance) pulumi.StringOutput { return v.CrsBaseDirectory }).(pulumi.StringOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ExternalClusterInstanceOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ExternalClusterInstance) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The user-friendly name for the cluster instance. The name does not have to be unique.
 func (o ExternalClusterInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalClusterInstance) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
@@ -321,9 +346,6 @@ func (o ExternalClusterInstanceOutput) ExternalClusterInstanceId() pulumi.String
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalClusterInstanceOutput) ExternalConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalClusterInstance) pulumi.StringOutput { return v.ExternalConnectorId }).(pulumi.StringOutput)
 }
@@ -336,6 +358,14 @@ func (o ExternalClusterInstanceOutput) ExternalDbNodeId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
 func (o ExternalClusterInstanceOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalClusterInstance) pulumi.StringOutput { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ExternalClusterInstanceOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ExternalClusterInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The name of the host on which the cluster instance is running.

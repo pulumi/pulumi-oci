@@ -19,7 +19,9 @@ class ExternalExadataInfrastructureArgs:
                  compartment_id: pulumi.Input[str],
                  db_system_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
                  display_name: pulumi.Input[str],
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  discovery_key: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  storage_server_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
@@ -27,7 +29,9 @@ class ExternalExadataInfrastructureArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_system_ids: (Updatable) The list of DB systems in the Exadata infrastructure.
         :param pulumi.Input[str] display_name: (Updatable) The name of the Exadata infrastructure.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] discovery_key: (Updatable) The unique key of the discovery request.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the database management resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] storage_server_names: (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
                
@@ -38,8 +42,12 @@ class ExternalExadataInfrastructureArgs:
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "db_system_ids", db_system_ids)
         pulumi.set(__self__, "display_name", display_name)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if discovery_key is not None:
             pulumi.set(__self__, "discovery_key", discovery_key)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
         if storage_server_names is not None:
@@ -82,6 +90,18 @@ class ExternalExadataInfrastructureArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter(name="discoveryKey")
     def discovery_key(self) -> Optional[pulumi.Input[str]]:
         """
@@ -92,6 +112,18 @@ class ExternalExadataInfrastructureArgs:
     @discovery_key.setter
     def discovery_key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "discovery_key", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter(name="licenseModel")
@@ -130,8 +162,10 @@ class _ExternalExadataInfrastructureState:
                  database_compartments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  database_systems: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalExadataInfrastructureDatabaseSystemArgs']]]] = None,
                  db_system_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  discovery_key: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  internal_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -150,8 +184,10 @@ class _ExternalExadataInfrastructureState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] database_compartments: The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalExadataInfrastructureDatabaseSystemArgs']]] database_systems: A list of DB systems.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_system_ids: (Updatable) The list of DB systems in the Exadata infrastructure.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] discovery_key: (Updatable) The unique key of the discovery request.
         :param pulumi.Input[str] display_name: (Updatable) The name of the Exadata infrastructure.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the database management resources.
         :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
@@ -178,10 +214,14 @@ class _ExternalExadataInfrastructureState:
             pulumi.set(__self__, "database_systems", database_systems)
         if db_system_ids is not None:
             pulumi.set(__self__, "db_system_ids", db_system_ids)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if discovery_key is not None:
             pulumi.set(__self__, "discovery_key", discovery_key)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if internal_id is not None:
             pulumi.set(__self__, "internal_id", internal_id)
         if license_model is not None:
@@ -266,6 +306,18 @@ class _ExternalExadataInfrastructureState:
         pulumi.set(self, "db_system_ids", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter(name="discoveryKey")
     def discovery_key(self) -> Optional[pulumi.Input[str]]:
         """
@@ -288,6 +340,18 @@ class _ExternalExadataInfrastructureState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter(name="internalId")
@@ -433,8 +497,10 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  db_system_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  discovery_key: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  storage_server_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -458,7 +524,13 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             db_system_ids=var["external_exadata_infrastructure_db_system_ids"],
             display_name=var["external_exadata_infrastructure_display_name"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
             discovery_key=var["external_exadata_infrastructure_discovery_key"],
+            freeform_tags={
+                "Department": "Finance",
+            },
             license_model=var["external_exadata_infrastructure_license_model"],
             storage_server_names=var["external_exadata_infrastructure_storage_server_names"])
         ```
@@ -475,8 +547,10 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_system_ids: (Updatable) The list of DB systems in the Exadata infrastructure.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] discovery_key: (Updatable) The unique key of the discovery request.
         :param pulumi.Input[str] display_name: (Updatable) The name of the Exadata infrastructure.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the database management resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] storage_server_names: (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
                
@@ -510,7 +584,13 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             db_system_ids=var["external_exadata_infrastructure_db_system_ids"],
             display_name=var["external_exadata_infrastructure_display_name"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
             discovery_key=var["external_exadata_infrastructure_discovery_key"],
+            freeform_tags={
+                "Department": "Finance",
+            },
             license_model=var["external_exadata_infrastructure_license_model"],
             storage_server_names=var["external_exadata_infrastructure_storage_server_names"])
         ```
@@ -540,8 +620,10 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  db_system_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  discovery_key: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  storage_server_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -559,10 +641,12 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
             if db_system_ids is None and not opts.urn:
                 raise TypeError("Missing required property 'db_system_ids'")
             __props__.__dict__["db_system_ids"] = db_system_ids
+            __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["discovery_key"] = discovery_key
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["license_model"] = license_model
             __props__.__dict__["storage_server_names"] = storage_server_names
             __props__.__dict__["additional_details"] = None
@@ -592,8 +676,10 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
             database_compartments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             database_systems: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalExadataInfrastructureDatabaseSystemArgs']]]]] = None,
             db_system_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             discovery_key: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             internal_id: Optional[pulumi.Input[str]] = None,
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -617,8 +703,10 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] database_compartments: The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalExadataInfrastructureDatabaseSystemArgs']]]] database_systems: A list of DB systems.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_system_ids: (Updatable) The list of DB systems in the Exadata infrastructure.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] discovery_key: (Updatable) The unique key of the discovery request.
         :param pulumi.Input[str] display_name: (Updatable) The name of the Exadata infrastructure.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the database management resources.
         :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
@@ -644,8 +732,10 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["database_compartments"] = database_compartments
         __props__.__dict__["database_systems"] = database_systems
         __props__.__dict__["db_system_ids"] = db_system_ids
+        __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["discovery_key"] = discovery_key
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["internal_id"] = internal_id
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -700,6 +790,14 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         return pulumi.get(self, "db_system_ids")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="discoveryKey")
     def discovery_key(self) -> pulumi.Output[str]:
         """
@@ -714,6 +812,14 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         (Updatable) The name of the Exadata infrastructure.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="internalId")

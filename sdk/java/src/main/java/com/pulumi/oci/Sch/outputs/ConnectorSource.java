@@ -17,7 +17,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConnectorSource {
     /**
-     * @return (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+     * @return (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+     * 
+     */
+    private @Nullable String configMap;
+    /**
+     * @return (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
      * 
      */
     private @Nullable ConnectorSourceCursor cursor;
@@ -32,10 +37,15 @@ public final class ConnectorSource {
      */
     private @Nullable List<ConnectorSourceLogSource> logSources;
     /**
-     * @return (Updatable) The list of metric namespaces to retrieve data from.
+     * @return (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
      * 
      */
     private @Nullable List<ConnectorSourceMonitoringSource> monitoringSources;
+    /**
+     * @return (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+     * 
+     */
+    private @Nullable String pluginName;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
@@ -44,7 +54,14 @@ public final class ConnectorSource {
 
     private ConnectorSource() {}
     /**
-     * @return (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+     * @return (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+     * 
+     */
+    public Optional<String> configMap() {
+        return Optional.ofNullable(this.configMap);
+    }
+    /**
+     * @return (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
      * 
      */
     public Optional<ConnectorSourceCursor> cursor() {
@@ -65,11 +82,18 @@ public final class ConnectorSource {
         return this.logSources == null ? List.of() : this.logSources;
     }
     /**
-     * @return (Updatable) The list of metric namespaces to retrieve data from.
+     * @return (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
      * 
      */
     public List<ConnectorSourceMonitoringSource> monitoringSources() {
         return this.monitoringSources == null ? List.of() : this.monitoringSources;
+    }
+    /**
+     * @return (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+     * 
+     */
+    public Optional<String> pluginName() {
+        return Optional.ofNullable(this.pluginName);
     }
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -88,21 +112,31 @@ public final class ConnectorSource {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String configMap;
         private @Nullable ConnectorSourceCursor cursor;
         private String kind;
         private @Nullable List<ConnectorSourceLogSource> logSources;
         private @Nullable List<ConnectorSourceMonitoringSource> monitoringSources;
+        private @Nullable String pluginName;
         private @Nullable String streamId;
         public Builder() {}
         public Builder(ConnectorSource defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.configMap = defaults.configMap;
     	      this.cursor = defaults.cursor;
     	      this.kind = defaults.kind;
     	      this.logSources = defaults.logSources;
     	      this.monitoringSources = defaults.monitoringSources;
+    	      this.pluginName = defaults.pluginName;
     	      this.streamId = defaults.streamId;
         }
 
+        @CustomType.Setter
+        public Builder configMap(@Nullable String configMap) {
+
+            this.configMap = configMap;
+            return this;
+        }
         @CustomType.Setter
         public Builder cursor(@Nullable ConnectorSourceCursor cursor) {
 
@@ -136,6 +170,12 @@ public final class ConnectorSource {
             return monitoringSources(List.of(monitoringSources));
         }
         @CustomType.Setter
+        public Builder pluginName(@Nullable String pluginName) {
+
+            this.pluginName = pluginName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder streamId(@Nullable String streamId) {
 
             this.streamId = streamId;
@@ -143,10 +183,12 @@ public final class ConnectorSource {
         }
         public ConnectorSource build() {
             final var _resultValue = new ConnectorSource();
+            _resultValue.configMap = configMap;
             _resultValue.cursor = cursor;
             _resultValue.kind = kind;
             _resultValue.logSources = logSources;
             _resultValue.monitoringSources = monitoringSources;
+            _resultValue.pluginName = pluginName;
             _resultValue.streamId = streamId;
             return _resultValue;
         }

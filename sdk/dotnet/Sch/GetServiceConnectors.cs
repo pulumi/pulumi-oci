@@ -14,7 +14,9 @@ namespace Pulumi.Oci.Sch
         /// <summary>
         /// This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
         /// 
-        /// Lists service connectors in the specified compartment.
+        /// Lists connectors in the specified compartment.
+        /// For more information, see
+        /// [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
         /// 
         /// 
         /// {{% examples %}}
@@ -47,7 +49,9 @@ namespace Pulumi.Oci.Sch
         /// <summary>
         /// This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
         /// 
-        /// Lists service connectors in the specified compartment.
+        /// Lists connectors in the specified compartment.
+        /// For more information, see
+        /// [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
         /// 
         /// 
         /// {{% examples %}}
@@ -169,7 +173,7 @@ namespace Pulumi.Oci.Sch
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionResult> ServiceConnectorCollections;
         /// <summary>
-        /// The current state of the service connector.
+        /// The current state of the connector.
         /// </summary>
         public readonly string? State;
 

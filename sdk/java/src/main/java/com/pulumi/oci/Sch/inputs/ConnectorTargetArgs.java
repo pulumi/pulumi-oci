@@ -51,14 +51,59 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The name of the bucket. Avoid entering confidential information.
+     * (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+     * 
+     */
+    @Import(name="batchSizeInKbs")
+    private @Nullable Output<Integer> batchSizeInKbs;
+
+    /**
+     * @return (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+     * 
+     */
+    public Optional<Output<Integer>> batchSizeInKbs() {
+        return Optional.ofNullable(this.batchSizeInKbs);
+    }
+
+    /**
+     * (Updatable) The batch rollover size in number of messages.
+     * 
+     */
+    @Import(name="batchSizeInNum")
+    private @Nullable Output<Integer> batchSizeInNum;
+
+    /**
+     * @return (Updatable) The batch rollover size in number of messages.
+     * 
+     */
+    public Optional<Output<Integer>> batchSizeInNum() {
+        return Optional.ofNullable(this.batchSizeInNum);
+    }
+
+    /**
+     * (Updatable) Time limit (seconds) for batch sent to invoke the function.
+     * 
+     */
+    @Import(name="batchTimeInSec")
+    private @Nullable Output<Integer> batchTimeInSec;
+
+    /**
+     * @return (Updatable) Time limit (seconds) for batch sent to invoke the function.
+     * 
+     */
+    public Optional<Output<Integer>> batchTimeInSec() {
+        return Optional.ofNullable(this.batchTimeInSec);
+    }
+
+    /**
+     * (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
      * 
      */
     @Import(name="bucket")
     private @Nullable Output<String> bucket;
 
     /**
-     * @return (Updatable) The name of the bucket. Avoid entering confidential information.
+     * @return (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
      * 
      */
     public Optional<Output<String>> bucket() {
@@ -96,14 +141,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+     * (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
      * 
      */
     @Import(name="enableFormattedMessaging")
     private @Nullable Output<Boolean> enableFormattedMessaging;
 
     /**
-     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+     * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
      * 
      */
     public Optional<Output<Boolean>> enableFormattedMessaging() {
@@ -156,14 +201,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
      * 
      */
     @Import(name="logSourceIdentifier")
     private @Nullable Output<String> logSourceIdentifier;
 
     /**
-     * @return (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * @return (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
      * 
      */
     public Optional<Output<String>> logSourceIdentifier() {
@@ -265,6 +310,9 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     private ConnectorTargetArgs(ConnectorTargetArgs $) {
         this.batchRolloverSizeInMbs = $.batchRolloverSizeInMbs;
         this.batchRolloverTimeInMs = $.batchRolloverTimeInMs;
+        this.batchSizeInKbs = $.batchSizeInKbs;
+        this.batchSizeInNum = $.batchSizeInNum;
+        this.batchTimeInSec = $.batchTimeInSec;
         this.bucket = $.bucket;
         this.compartmentId = $.compartmentId;
         this.dimensions = $.dimensions;
@@ -342,7 +390,70 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param bucket (Updatable) The name of the bucket. Avoid entering confidential information.
+         * @param batchSizeInKbs (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder batchSizeInKbs(@Nullable Output<Integer> batchSizeInKbs) {
+            $.batchSizeInKbs = batchSizeInKbs;
+            return this;
+        }
+
+        /**
+         * @param batchSizeInKbs (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder batchSizeInKbs(Integer batchSizeInKbs) {
+            return batchSizeInKbs(Output.of(batchSizeInKbs));
+        }
+
+        /**
+         * @param batchSizeInNum (Updatable) The batch rollover size in number of messages.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder batchSizeInNum(@Nullable Output<Integer> batchSizeInNum) {
+            $.batchSizeInNum = batchSizeInNum;
+            return this;
+        }
+
+        /**
+         * @param batchSizeInNum (Updatable) The batch rollover size in number of messages.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder batchSizeInNum(Integer batchSizeInNum) {
+            return batchSizeInNum(Output.of(batchSizeInNum));
+        }
+
+        /**
+         * @param batchTimeInSec (Updatable) Time limit (seconds) for batch sent to invoke the function.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder batchTimeInSec(@Nullable Output<Integer> batchTimeInSec) {
+            $.batchTimeInSec = batchTimeInSec;
+            return this;
+        }
+
+        /**
+         * @param batchTimeInSec (Updatable) Time limit (seconds) for batch sent to invoke the function.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder batchTimeInSec(Integer batchTimeInSec) {
+            return batchTimeInSec(Output.of(batchTimeInSec));
+        }
+
+        /**
+         * @param bucket (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
          * 
          * @return builder
          * 
@@ -353,7 +464,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param bucket (Updatable) The name of the bucket. Avoid entering confidential information.
+         * @param bucket (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
          * 
          * @return builder
          * 
@@ -415,7 +526,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param enableFormattedMessaging (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+         * @param enableFormattedMessaging (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
          * 
          * @return builder
          * 
@@ -426,7 +537,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param enableFormattedMessaging (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
+         * @param enableFormattedMessaging (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
          * 
          * @return builder
          * 
@@ -499,7 +610,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param logSourceIdentifier (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+         * @param logSourceIdentifier (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
          * 
          * @return builder
          * 
@@ -510,7 +621,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param logSourceIdentifier (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+         * @param logSourceIdentifier (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
          * 
          * @return builder
          * 

@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Database
     ///         CompartmentId = @var.Compartment_id,
     ///         DisplayName = @var.Cloud_exadata_infrastructure_display_name,
     ///         Shape = @var.Cloud_exadata_infrastructure_shape,
+    ///         ClusterPlacementGroupId = @var.Cloud_exadata_infrastructure_cluster_placement_group_id,
     ///         ComputeCount = @var.Cloud_exadata_infrastructure_compute_count,
     ///         CustomerContacts = new[]
     ///         {
@@ -108,6 +109,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("availableStorageSizeInGbs")]
         public Output<int> AvailableStorageSizeInGbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        [Output("clusterPlacementGroupId")]
+        public Output<string?> ClusterPlacementGroupId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -264,6 +271,12 @@ namespace Pulumi.Oci.Database
         public Output<string> StorageServerVersion { get; private set; } = null!;
 
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time the cloud Exadata infrastructure resource was created.
         /// </summary>
         [Output("timeCreated")]
@@ -326,6 +339,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("availabilityDomain", required: true)]
         public Input<string> AvailabilityDomain { get; set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -434,6 +453,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("availableStorageSizeInGbs")]
         public Input<int>? AvailableStorageSizeInGbs { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -606,6 +631,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("storageServerVersion")]
         public Input<string>? StorageServerVersion { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<object>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public InputMap<object> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The date and time the cloud Exadata infrastructure resource was created.

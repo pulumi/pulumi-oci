@@ -12,8 +12,10 @@ import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryState;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscoveredComponent;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryPatchOperation;
 import com.pulumi.oci.Utilities;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
@@ -52,7 +54,9 @@ import javax.annotation.Nullable;
  *             .agentId(oci_cloud_bridge_agent.test_agent().id())
  *             .compartmentId(var_.compartment_id())
  *             .externalDbSystemDiscoveryId(var_.external_db_system_discovery_external_db_system_discovery_id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(var_.external_db_system_discovery_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .patchOperations(ExternalDbSystemDiscoveryPatchOperationArgs.builder()
  *                 .operation(var_.external_db_system_discovery_patch_operations_operation())
  *                 .selection(var_.external_db_system_discovery_patch_operations_selection())
@@ -104,6 +108,20 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
         return this.compartmentId;
     }
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * The list of DB system components that were found in the DB system discovery.
      * 
      */
@@ -136,6 +154,20 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
 
     public Output<String> externalDbSystemDiscoveryId() {
         return this.externalDbSystemDiscoveryId;
+    }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * The directory in which Oracle Grid Infrastructure is installed.

@@ -185,6 +185,21 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
     }
 
     /**
+     * (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     * 
+     */
+    @Import(name="isHypervisorLogForwarded")
+    private @Nullable Output<Boolean> isHypervisorLogForwarded;
+
+    /**
+     * @return (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     * 
+     */
+    public Optional<Output<Boolean>> isHypervisorLogForwarded() {
+        return Optional.ofNullable(this.isHypervisorLogForwarded);
+    }
+
+    /**
      * (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      * 
      */
@@ -212,6 +227,21 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * Name of the operator control name associated.
+     * 
+     */
+    @Import(name="opControlName")
+    private @Nullable Output<String> opControlName;
+
+    /**
+     * @return Name of the operator control name associated.
+     * 
+     */
+    public Optional<Output<String>> opControlName() {
+        return Optional.ofNullable(this.opControlName);
     }
 
     /**
@@ -367,18 +397,12 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
     /**
      * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="timeAssignmentTo")
     private @Nullable Output<String> timeAssignmentTo;
 
     /**
      * @return (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timeAssignmentTo() {
@@ -430,6 +454,27 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
         return Optional.ofNullable(this.unassignerId);
     }
 
+    /**
+     * (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="validateAssignmentTrigger")
+    private @Nullable Output<Integer> validateAssignmentTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> validateAssignmentTrigger() {
+        return Optional.ofNullable(this.validateAssignmentTrigger);
+    }
+
     private OperatorControlAssignmentState() {}
 
     private OperatorControlAssignmentState(OperatorControlAssignmentState $) {
@@ -444,8 +489,10 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
         this.isAutoApproveDuringMaintenance = $.isAutoApproveDuringMaintenance;
         this.isDefaultAssignment = $.isDefaultAssignment;
         this.isEnforcedAlways = $.isEnforcedAlways;
+        this.isHypervisorLogForwarded = $.isHypervisorLogForwarded;
         this.isLogForwarded = $.isLogForwarded;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.opControlName = $.opControlName;
         this.operatorControlId = $.operatorControlId;
         this.remoteSyslogServerAddress = $.remoteSyslogServerAddress;
         this.remoteSyslogServerCaCert = $.remoteSyslogServerCaCert;
@@ -460,6 +507,7 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
         this.timeOfAssignment = $.timeOfAssignment;
         this.timeOfDeletion = $.timeOfDeletion;
         this.unassignerId = $.unassignerId;
+        this.validateAssignmentTrigger = $.validateAssignmentTrigger;
     }
 
     public static Builder builder() {
@@ -712,6 +760,27 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
         }
 
         /**
+         * @param isHypervisorLogForwarded (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isHypervisorLogForwarded(@Nullable Output<Boolean> isHypervisorLogForwarded) {
+            $.isHypervisorLogForwarded = isHypervisorLogForwarded;
+            return this;
+        }
+
+        /**
+         * @param isHypervisorLogForwarded (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isHypervisorLogForwarded(Boolean isHypervisorLogForwarded) {
+            return isHypervisorLogForwarded(Output.of(isHypervisorLogForwarded));
+        }
+
+        /**
          * @param isLogForwarded (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
          * 
          * @return builder
@@ -751,6 +820,27 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param opControlName Name of the operator control name associated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opControlName(@Nullable Output<String> opControlName) {
+            $.opControlName = opControlName;
+            return this;
+        }
+
+        /**
+         * @param opControlName Name of the operator control name associated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opControlName(String opControlName) {
+            return opControlName(Output.of(opControlName));
         }
 
         /**
@@ -966,9 +1056,6 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
         /**
          * @param timeAssignmentTo (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -979,9 +1066,6 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
 
         /**
          * @param timeAssignmentTo (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -1051,6 +1135,33 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
          */
         public Builder unassignerId(String unassignerId) {
             return unassignerId(Output.of(unassignerId));
+        }
+
+        /**
+         * @param validateAssignmentTrigger (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validateAssignmentTrigger(@Nullable Output<Integer> validateAssignmentTrigger) {
+            $.validateAssignmentTrigger = validateAssignmentTrigger;
+            return this;
+        }
+
+        /**
+         * @param validateAssignmentTrigger (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validateAssignmentTrigger(Integer validateAssignmentTrigger) {
+            return validateAssignmentTrigger(Output.of(validateAssignmentTrigger));
         }
 
         public OperatorControlAssignmentState build() {

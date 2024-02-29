@@ -50,6 +50,12 @@ namespace Pulumi.Oci.Kms
         public Output<string> ExternalKeyVersionId { get; private set; } = null!;
 
         /// <summary>
+        /// An optional property indicating whether this keyversion is generated from auto rotatation.
+        /// </summary>
+        [Output("isAutoRotated")]
+        public Output<bool> IsAutoRotated { get; private set; } = null!;
+
+        /// <summary>
         /// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         /// </summary>
         [Output("isPrimary")]
@@ -222,6 +228,12 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         [Input("externalKeyVersionId")]
         public Input<string>? ExternalKeyVersionId { get; set; }
+
+        /// <summary>
+        /// An optional property indicating whether this keyversion is generated from auto rotatation.
+        /// </summary>
+        [Input("isAutoRotated")]
+        public Input<bool>? IsAutoRotated { get; set; }
 
         /// <summary>
         /// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.

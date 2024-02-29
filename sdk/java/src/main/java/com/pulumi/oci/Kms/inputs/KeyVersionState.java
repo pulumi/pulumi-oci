@@ -65,6 +65,21 @@ public final class KeyVersionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * An optional property indicating whether this keyversion is generated from auto rotatation.
+     * 
+     */
+    @Import(name="isAutoRotated")
+    private @Nullable Output<Boolean> isAutoRotated;
+
+    /**
+     * @return An optional property indicating whether this keyversion is generated from auto rotatation.
+     * 
+     */
+    public Optional<Output<Boolean>> isAutoRotated() {
+        return Optional.ofNullable(this.isAutoRotated);
+    }
+
+    /**
      * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
@@ -240,6 +255,7 @@ public final class KeyVersionState extends com.pulumi.resources.ResourceArgs {
         this.compartmentId = $.compartmentId;
         this.externalKeyReferenceDetails = $.externalKeyReferenceDetails;
         this.externalKeyVersionId = $.externalKeyVersionId;
+        this.isAutoRotated = $.isAutoRotated;
         this.isPrimary = $.isPrimary;
         this.keyId = $.keyId;
         this.keyVersionId = $.keyVersionId;
@@ -343,6 +359,27 @@ public final class KeyVersionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder externalKeyVersionId(String externalKeyVersionId) {
             return externalKeyVersionId(Output.of(externalKeyVersionId));
+        }
+
+        /**
+         * @param isAutoRotated An optional property indicating whether this keyversion is generated from auto rotatation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoRotated(@Nullable Output<Boolean> isAutoRotated) {
+            $.isAutoRotated = isAutoRotated;
+            return this;
+        }
+
+        /**
+         * @param isAutoRotated An optional property indicating whether this keyversion is generated from auto rotatation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoRotated(Boolean isAutoRotated) {
+            return isAutoRotated(Output.of(isAutoRotated));
         }
 
         /**

@@ -32,6 +32,11 @@ public final class GetExternalExadataStorageServerResult {
      */
     private Double cpuCount;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
@@ -43,7 +48,12 @@ public final class GetExternalExadataStorageServerResult {
     private String exadataInfrastructureId;
     private String externalExadataStorageServerId;
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
      */
     private String id;
@@ -151,6 +161,13 @@ public final class GetExternalExadataStorageServerResult {
         return this.cpuCount;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
@@ -168,7 +185,14 @@ public final class GetExternalExadataStorageServerResult {
         return this.externalExadataStorageServerId;
     }
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
      */
     public String id() {
@@ -299,9 +323,11 @@ public final class GetExternalExadataStorageServerResult {
         private Map<String,Object> additionalDetails;
         private List<GetExternalExadataStorageServerConnector> connectors;
         private Double cpuCount;
+        private Map<String,Object> definedTags;
         private String displayName;
         private String exadataInfrastructureId;
         private String externalExadataStorageServerId;
+        private Map<String,Object> freeformTags;
         private String id;
         private String internalId;
         private String ipAddress;
@@ -325,9 +351,11 @@ public final class GetExternalExadataStorageServerResult {
     	      this.additionalDetails = defaults.additionalDetails;
     	      this.connectors = defaults.connectors;
     	      this.cpuCount = defaults.cpuCount;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
     	      this.externalExadataStorageServerId = defaults.externalExadataStorageServerId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.internalId = defaults.internalId;
     	      this.ipAddress = defaults.ipAddress;
@@ -375,6 +403,14 @@ public final class GetExternalExadataStorageServerResult {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerResult", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageServerResult", "displayName");
@@ -396,6 +432,14 @@ public final class GetExternalExadataStorageServerResult {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageServerResult", "externalExadataStorageServerId");
             }
             this.externalExadataStorageServerId = externalExadataStorageServerId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -539,9 +583,11 @@ public final class GetExternalExadataStorageServerResult {
             _resultValue.additionalDetails = additionalDetails;
             _resultValue.connectors = connectors;
             _resultValue.cpuCount = cpuCount;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.exadataInfrastructureId = exadataInfrastructureId;
             _resultValue.externalExadataStorageServerId = externalExadataStorageServerId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.internalId = internalId;
             _resultValue.ipAddress = ipAddress;

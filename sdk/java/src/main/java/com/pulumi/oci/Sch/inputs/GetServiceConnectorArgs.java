@@ -15,14 +15,14 @@ public final class GetServiceConnectorArgs extends com.pulumi.resources.InvokeAr
     public static final GetServiceConnectorArgs Empty = new GetServiceConnectorArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      * 
      */
     @Import(name="serviceConnectorId", required=true)
     private Output<String> serviceConnectorId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      * 
      */
     public Output<String> serviceConnectorId() {
@@ -54,7 +54,7 @@ public final class GetServiceConnectorArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param serviceConnectorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+         * @param serviceConnectorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetServiceConnectorArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param serviceConnectorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+         * @param serviceConnectorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
          * 
          * @return builder
          * 

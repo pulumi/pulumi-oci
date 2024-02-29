@@ -21,7 +21,7 @@ class GetExternalDbNodeResult:
     """
     A collection of values returned by getExternalDbNode.
     """
-    def __init__(__self__, additional_details=None, compartment_id=None, component_name=None, cpu_core_count=None, display_name=None, domain_name=None, external_connector_id=None, external_db_node_id=None, external_db_system_id=None, host_name=None, id=None, lifecycle_details=None, memory_size_in_gbs=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, additional_details=None, compartment_id=None, component_name=None, cpu_core_count=None, defined_tags=None, display_name=None, domain_name=None, external_connector_id=None, external_db_node_id=None, external_db_system_id=None, freeform_tags=None, host_name=None, id=None, lifecycle_details=None, memory_size_in_gbs=None, state=None, time_created=None, time_updated=None):
         if additional_details and not isinstance(additional_details, dict):
             raise TypeError("Expected argument 'additional_details' to be a dict")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -34,6 +34,9 @@ class GetExternalDbNodeResult:
         if cpu_core_count and not isinstance(cpu_core_count, float):
             raise TypeError("Expected argument 'cpu_core_count' to be a float")
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -49,6 +52,9 @@ class GetExternalDbNodeResult:
         if external_db_system_id and not isinstance(external_db_system_id, str):
             raise TypeError("Expected argument 'external_db_system_id' to be a str")
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_name and not isinstance(host_name, str):
             raise TypeError("Expected argument 'host_name' to be a str")
         pulumi.set(__self__, "host_name", host_name)
@@ -104,6 +110,14 @@ class GetExternalDbNodeResult:
         return pulumi.get(self, "cpu_core_count")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -139,6 +153,14 @@ class GetExternalDbNodeResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
         """
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostName")
@@ -207,11 +229,13 @@ class AwaitableGetExternalDbNodeResult(GetExternalDbNodeResult):
             compartment_id=self.compartment_id,
             component_name=self.component_name,
             cpu_core_count=self.cpu_core_count,
+            defined_tags=self.defined_tags,
             display_name=self.display_name,
             domain_name=self.domain_name,
             external_connector_id=self.external_connector_id,
             external_db_node_id=self.external_db_node_id,
             external_db_system_id=self.external_db_system_id,
+            freeform_tags=self.freeform_tags,
             host_name=self.host_name,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
@@ -250,11 +274,13 @@ def get_external_db_node(external_db_node_id: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         component_name=pulumi.get(__ret__, 'component_name'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         domain_name=pulumi.get(__ret__, 'domain_name'),
         external_connector_id=pulumi.get(__ret__, 'external_connector_id'),
         external_db_node_id=pulumi.get(__ret__, 'external_db_node_id'),
         external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         host_name=pulumi.get(__ret__, 'host_name'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),

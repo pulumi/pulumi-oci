@@ -32,6 +32,11 @@ public final class GetExternalExadataStorageConnectorResult {
     private String connectorName;
     private List<GetExternalExadataStorageConnectorCredentialInfo> credentialInfos;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
@@ -42,6 +47,11 @@ public final class GetExternalExadataStorageConnectorResult {
      */
     private String exadataInfrastructureId;
     private String externalExadataStorageConnectorId;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
@@ -117,6 +127,13 @@ public final class GetExternalExadataStorageConnectorResult {
         return this.credentialInfos;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
@@ -132,6 +149,13 @@ public final class GetExternalExadataStorageConnectorResult {
     }
     public String externalExadataStorageConnectorId() {
         return this.externalExadataStorageConnectorId;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
@@ -211,9 +235,11 @@ public final class GetExternalExadataStorageConnectorResult {
         private String connectionUri;
         private String connectorName;
         private List<GetExternalExadataStorageConnectorCredentialInfo> credentialInfos;
+        private Map<String,Object> definedTags;
         private String displayName;
         private String exadataInfrastructureId;
         private String externalExadataStorageConnectorId;
+        private Map<String,Object> freeformTags;
         private String id;
         private String internalId;
         private String lifecycleDetails;
@@ -231,9 +257,11 @@ public final class GetExternalExadataStorageConnectorResult {
     	      this.connectionUri = defaults.connectionUri;
     	      this.connectorName = defaults.connectorName;
     	      this.credentialInfos = defaults.credentialInfos;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
     	      this.externalExadataStorageConnectorId = defaults.externalExadataStorageConnectorId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.internalId = defaults.internalId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -289,6 +317,14 @@ public final class GetExternalExadataStorageConnectorResult {
             return credentialInfos(List.of(credentialInfos));
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "displayName");
@@ -310,6 +346,14 @@ public final class GetExternalExadataStorageConnectorResult {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "externalExadataStorageConnectorId");
             }
             this.externalExadataStorageConnectorId = externalExadataStorageConnectorId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -391,9 +435,11 @@ public final class GetExternalExadataStorageConnectorResult {
             _resultValue.connectionUri = connectionUri;
             _resultValue.connectorName = connectorName;
             _resultValue.credentialInfos = credentialInfos;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.exadataInfrastructureId = exadataInfrastructureId;
             _resultValue.externalExadataStorageConnectorId = externalExadataStorageConnectorId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.internalId = internalId;
             _resultValue.lifecycleDetails = lifecycleDetails;

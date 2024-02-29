@@ -20,9 +20,9 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
     public static final AutonomousContainerDatabaseDataguardAssociationArgs Empty = new AutonomousContainerDatabaseDataguardAssociationArgs();
 
     @Import(name="autonomousContainerDatabaseDataguardAssociationId")
-    private @Nullable Output<Integer> autonomousContainerDatabaseDataguardAssociationId;
+    private @Nullable Output<String> autonomousContainerDatabaseDataguardAssociationId;
 
-    public Optional<Output<Integer>> autonomousContainerDatabaseDataguardAssociationId() {
+    public Optional<Output<String>> autonomousContainerDatabaseDataguardAssociationId() {
         return Optional.ofNullable(this.autonomousContainerDatabaseDataguardAssociationId);
     }
 
@@ -117,18 +117,48 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+     * 
+     */
+    @Import(name="peerAutonomousVmClusterId")
+    private @Nullable Output<String> peerAutonomousVmClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+     * 
+     */
+    public Optional<Output<String>> peerAutonomousVmClusterId() {
+        return Optional.ofNullable(this.peerAutonomousVmClusterId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      * 
      */
-    @Import(name="peerCloudAutonomousVmClusterId", required=true)
-    private Output<String> peerCloudAutonomousVmClusterId;
+    @Import(name="peerCloudAutonomousVmClusterId")
+    private @Nullable Output<String> peerCloudAutonomousVmClusterId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      * 
      */
-    public Output<String> peerCloudAutonomousVmClusterId() {
-        return this.peerCloudAutonomousVmClusterId;
+    public Optional<Output<String>> peerCloudAutonomousVmClusterId() {
+        return Optional.ofNullable(this.peerCloudAutonomousVmClusterId);
+    }
+
+    /**
+     * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+     * 
+     */
+    @Import(name="peerDbUniqueName")
+    private @Nullable Output<String> peerDbUniqueName;
+
+    /**
+     * @return Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+     * 
+     */
+    public Optional<Output<String>> peerDbUniqueName() {
+        return Optional.ofNullable(this.peerDbUniqueName);
     }
 
     /**
@@ -177,7 +207,9 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
         this.peerAutonomousContainerDatabaseBackupConfig = $.peerAutonomousContainerDatabaseBackupConfig;
         this.peerAutonomousContainerDatabaseCompartmentId = $.peerAutonomousContainerDatabaseCompartmentId;
         this.peerAutonomousContainerDatabaseDisplayName = $.peerAutonomousContainerDatabaseDisplayName;
+        this.peerAutonomousVmClusterId = $.peerAutonomousVmClusterId;
         this.peerCloudAutonomousVmClusterId = $.peerCloudAutonomousVmClusterId;
+        this.peerDbUniqueName = $.peerDbUniqueName;
         this.protectionMode = $.protectionMode;
         this.standbyMaintenanceBufferInDays = $.standbyMaintenanceBufferInDays;
     }
@@ -200,12 +232,12 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
             $ = new AutonomousContainerDatabaseDataguardAssociationArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder autonomousContainerDatabaseDataguardAssociationId(@Nullable Output<Integer> autonomousContainerDatabaseDataguardAssociationId) {
+        public Builder autonomousContainerDatabaseDataguardAssociationId(@Nullable Output<String> autonomousContainerDatabaseDataguardAssociationId) {
             $.autonomousContainerDatabaseDataguardAssociationId = autonomousContainerDatabaseDataguardAssociationId;
             return this;
         }
 
-        public Builder autonomousContainerDatabaseDataguardAssociationId(Integer autonomousContainerDatabaseDataguardAssociationId) {
+        public Builder autonomousContainerDatabaseDataguardAssociationId(String autonomousContainerDatabaseDataguardAssociationId) {
             return autonomousContainerDatabaseDataguardAssociationId(Output.of(autonomousContainerDatabaseDataguardAssociationId));
         }
 
@@ -336,12 +368,33 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
         }
 
         /**
+         * @param peerAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAutonomousVmClusterId(@Nullable Output<String> peerAutonomousVmClusterId) {
+            $.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
+            return this;
+        }
+
+        /**
+         * @param peerAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAutonomousVmClusterId(String peerAutonomousVmClusterId) {
+            return peerAutonomousVmClusterId(Output.of(peerAutonomousVmClusterId));
+        }
+
+        /**
          * @param peerCloudAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
          * 
          * @return builder
          * 
          */
-        public Builder peerCloudAutonomousVmClusterId(Output<String> peerCloudAutonomousVmClusterId) {
+        public Builder peerCloudAutonomousVmClusterId(@Nullable Output<String> peerCloudAutonomousVmClusterId) {
             $.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
             return this;
         }
@@ -354,6 +407,27 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
          */
         public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
             return peerCloudAutonomousVmClusterId(Output.of(peerCloudAutonomousVmClusterId));
+        }
+
+        /**
+         * @param peerDbUniqueName Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerDbUniqueName(@Nullable Output<String> peerDbUniqueName) {
+            $.peerDbUniqueName = peerDbUniqueName;
+            return this;
+        }
+
+        /**
+         * @param peerDbUniqueName Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerDbUniqueName(String peerDbUniqueName) {
+            return peerDbUniqueName(Output.of(peerDbUniqueName));
         }
 
         /**
@@ -410,9 +484,6 @@ public final class AutonomousContainerDatabaseDataguardAssociationArgs extends c
             }
             if ($.peerAutonomousContainerDatabaseDisplayName == null) {
                 throw new MissingRequiredPropertyException("AutonomousContainerDatabaseDataguardAssociationArgs", "peerAutonomousContainerDatabaseDisplayName");
-            }
-            if ($.peerCloudAutonomousVmClusterId == null) {
-                throw new MissingRequiredPropertyException("AutonomousContainerDatabaseDataguardAssociationArgs", "peerCloudAutonomousVmClusterId");
             }
             if ($.protectionMode == null) {
                 throw new MissingRequiredPropertyException("AutonomousContainerDatabaseDataguardAssociationArgs", "protectionMode");

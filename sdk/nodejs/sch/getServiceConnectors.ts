@@ -9,7 +9,9 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
  *
- * Lists service connectors in the specified compartment.
+ * Lists connectors in the specified compartment.
+ * For more information, see
+ * [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
  *
  * ## Example Usage
  *
@@ -76,14 +78,16 @@ export interface GetServiceConnectorsResult {
      */
     readonly serviceConnectorCollections: outputs.Sch.GetServiceConnectorsServiceConnectorCollection[];
     /**
-     * The current state of the service connector.
+     * The current state of the connector.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
  *
- * Lists service connectors in the specified compartment.
+ * Lists connectors in the specified compartment.
+ * For more information, see
+ * [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
  *
  * ## Example Usage
  *

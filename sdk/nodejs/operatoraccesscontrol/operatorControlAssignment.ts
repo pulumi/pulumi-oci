@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *     definedTags: _var.operator_control_assignment_defined_tags,
  *     freeformTags: _var.operator_control_assignment_freeform_tags,
  *     isAutoApproveDuringMaintenance: _var.operator_control_assignment_is_auto_approve_during_maintenance,
+ *     isHypervisorLogForwarded: _var.operator_control_assignment_is_hypervisor_log_forwarded,
  *     isLogForwarded: _var.operator_control_assignment_is_log_forwarded,
  *     remoteSyslogServerAddress: _var.operator_control_assignment_remote_syslog_server_address,
  *     remoteSyslogServerCaCert: _var.operator_control_assignment_remote_syslog_server_ca_cert,
@@ -117,6 +118,10 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
      */
     public readonly isEnforcedAlways!: pulumi.Output<boolean>;
     /**
+     * (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     */
+    public readonly isHypervisorLogForwarded!: pulumi.Output<boolean>;
+    /**
      * (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      */
     public readonly isLogForwarded!: pulumi.Output<boolean>;
@@ -124,6 +129,10 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
      * More in detail about the lifeCycleState.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * Name of the operator control name associated.
+     */
+    public /*out*/ readonly opControlName!: pulumi.Output<string>;
     /**
      * The OCID of the operator control that is being assigned to a target resource.
      */
@@ -165,11 +174,7 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
      */
     public readonly timeAssignmentFrom!: pulumi.Output<string>;
     /**
-     * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
      */
     public readonly timeAssignmentTo!: pulumi.Output<string>;
     /**
@@ -184,6 +189,14 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
      * User id who released the operatorControl.
      */
     public /*out*/ readonly unassignerId!: pulumi.Output<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly validateAssignmentTrigger!: pulumi.Output<number | undefined>;
 
     /**
      * Create a OperatorControlAssignment resource with the given unique name, arguments, and options.
@@ -209,8 +222,10 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
             resourceInputs["isAutoApproveDuringMaintenance"] = state ? state.isAutoApproveDuringMaintenance : undefined;
             resourceInputs["isDefaultAssignment"] = state ? state.isDefaultAssignment : undefined;
             resourceInputs["isEnforcedAlways"] = state ? state.isEnforcedAlways : undefined;
+            resourceInputs["isHypervisorLogForwarded"] = state ? state.isHypervisorLogForwarded : undefined;
             resourceInputs["isLogForwarded"] = state ? state.isLogForwarded : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["opControlName"] = state ? state.opControlName : undefined;
             resourceInputs["operatorControlId"] = state ? state.operatorControlId : undefined;
             resourceInputs["remoteSyslogServerAddress"] = state ? state.remoteSyslogServerAddress : undefined;
             resourceInputs["remoteSyslogServerCaCert"] = state ? state.remoteSyslogServerCaCert : undefined;
@@ -225,6 +240,7 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
             resourceInputs["timeOfAssignment"] = state ? state.timeOfAssignment : undefined;
             resourceInputs["timeOfDeletion"] = state ? state.timeOfDeletion : undefined;
             resourceInputs["unassignerId"] = state ? state.unassignerId : undefined;
+            resourceInputs["validateAssignmentTrigger"] = state ? state.validateAssignmentTrigger : undefined;
         } else {
             const args = argsOrState as OperatorControlAssignmentArgs | undefined;
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
@@ -254,6 +270,7 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAutoApproveDuringMaintenance"] = args ? args.isAutoApproveDuringMaintenance : undefined;
             resourceInputs["isEnforcedAlways"] = args ? args.isEnforcedAlways : undefined;
+            resourceInputs["isHypervisorLogForwarded"] = args ? args.isHypervisorLogForwarded : undefined;
             resourceInputs["isLogForwarded"] = args ? args.isLogForwarded : undefined;
             resourceInputs["operatorControlId"] = args ? args.operatorControlId : undefined;
             resourceInputs["remoteSyslogServerAddress"] = args ? args.remoteSyslogServerAddress : undefined;
@@ -265,12 +282,14 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
             resourceInputs["resourceType"] = args ? args.resourceType : undefined;
             resourceInputs["timeAssignmentFrom"] = args ? args.timeAssignmentFrom : undefined;
             resourceInputs["timeAssignmentTo"] = args ? args.timeAssignmentTo : undefined;
+            resourceInputs["validateAssignmentTrigger"] = args ? args.validateAssignmentTrigger : undefined;
             resourceInputs["assignerId"] = undefined /*out*/;
             resourceInputs["detachmentDescription"] = undefined /*out*/;
             resourceInputs["errorCode"] = undefined /*out*/;
             resourceInputs["errorMessage"] = undefined /*out*/;
             resourceInputs["isDefaultAssignment"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["opControlName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeOfAssignment"] = undefined /*out*/;
             resourceInputs["timeOfDeletion"] = undefined /*out*/;
@@ -330,6 +349,10 @@ export interface OperatorControlAssignmentState {
      */
     isEnforcedAlways?: pulumi.Input<boolean>;
     /**
+     * (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     */
+    isHypervisorLogForwarded?: pulumi.Input<boolean>;
+    /**
      * (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      */
     isLogForwarded?: pulumi.Input<boolean>;
@@ -337,6 +360,10 @@ export interface OperatorControlAssignmentState {
      * More in detail about the lifeCycleState.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Name of the operator control name associated.
+     */
+    opControlName?: pulumi.Input<string>;
     /**
      * The OCID of the operator control that is being assigned to a target resource.
      */
@@ -378,11 +405,7 @@ export interface OperatorControlAssignmentState {
      */
     timeAssignmentFrom?: pulumi.Input<string>;
     /**
-     * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
      */
     timeAssignmentTo?: pulumi.Input<string>;
     /**
@@ -397,6 +420,14 @@ export interface OperatorControlAssignmentState {
      * User id who released the operatorControl.
      */
     unassignerId?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    validateAssignmentTrigger?: pulumi.Input<number>;
 }
 
 /**
@@ -427,6 +458,10 @@ export interface OperatorControlAssignmentArgs {
      * (Updatable) If set, then the target resource is always governed by the operator control.
      */
     isEnforcedAlways: pulumi.Input<boolean>;
+    /**
+     * (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     */
+    isHypervisorLogForwarded?: pulumi.Input<boolean>;
     /**
      * (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      */
@@ -468,11 +503,15 @@ export interface OperatorControlAssignmentArgs {
      */
     timeAssignmentFrom?: pulumi.Input<string>;
     /**
-     * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+     * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+     */
+    timeAssignmentTo?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeAssignmentTo?: pulumi.Input<string>;
+    validateAssignmentTrigger?: pulumi.Input<number>;
 }

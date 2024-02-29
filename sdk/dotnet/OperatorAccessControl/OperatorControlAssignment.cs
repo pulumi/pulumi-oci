@@ -37,6 +37,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     ///         DefinedTags = @var.Operator_control_assignment_defined_tags,
     ///         FreeformTags = @var.Operator_control_assignment_freeform_tags,
     ///         IsAutoApproveDuringMaintenance = @var.Operator_control_assignment_is_auto_approve_during_maintenance,
+    ///         IsHypervisorLogForwarded = @var.Operator_control_assignment_is_hypervisor_log_forwarded,
     ///         IsLogForwarded = @var.Operator_control_assignment_is_log_forwarded,
     ///         RemoteSyslogServerAddress = @var.Operator_control_assignment_remote_syslog_server_address,
     ///         RemoteSyslogServerCaCert = @var.Operator_control_assignment_remote_syslog_server_ca_cert,
@@ -126,6 +127,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Output<bool> IsEnforcedAlways { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+        /// </summary>
+        [Output("isHypervisorLogForwarded")]
+        public Output<bool> IsHypervisorLogForwarded { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         /// </summary>
         [Output("isLogForwarded")]
@@ -136,6 +143,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Name of the operator control name associated.
+        /// </summary>
+        [Output("opControlName")]
+        public Output<string> OpControlName { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the operator control that is being assigned to a target resource.
@@ -198,11 +211,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Output<string> TimeAssignmentFrom { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
         [Output("timeAssignmentTo")]
         public Output<string> TimeAssignmentTo { get; private set; } = null!;
@@ -224,6 +233,16 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         [Output("unassignerId")]
         public Output<string> UnassignerId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("validateAssignmentTrigger")]
+        public Output<int?> ValidateAssignmentTrigger { get; private set; } = null!;
 
 
         /// <summary>
@@ -320,6 +339,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Input<bool> IsEnforcedAlways { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+        /// </summary>
+        [Input("isHypervisorLogForwarded")]
+        public Input<bool>? IsHypervisorLogForwarded { get; set; }
+
+        /// <summary>
         /// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         /// </summary>
         [Input("isLogForwarded")]
@@ -380,14 +405,20 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Input<string>? TimeAssignmentFrom { get; set; }
 
         /// <summary>
-        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        /// </summary>
+        [Input("timeAssignmentTo")]
+        public Input<string>? TimeAssignmentTo { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("timeAssignmentTo")]
-        public Input<string>? TimeAssignmentTo { get; set; }
+        [Input("validateAssignmentTrigger")]
+        public Input<int>? ValidateAssignmentTrigger { get; set; }
 
         public OperatorControlAssignmentArgs()
         {
@@ -476,6 +507,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Input<bool>? IsEnforcedAlways { get; set; }
 
         /// <summary>
+        /// (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+        /// </summary>
+        [Input("isHypervisorLogForwarded")]
+        public Input<bool>? IsHypervisorLogForwarded { get; set; }
+
+        /// <summary>
         /// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         /// </summary>
         [Input("isLogForwarded")]
@@ -486,6 +523,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// Name of the operator control name associated.
+        /// </summary>
+        [Input("opControlName")]
+        public Input<string>? OpControlName { get; set; }
 
         /// <summary>
         /// The OCID of the operator control that is being assigned to a target resource.
@@ -548,11 +591,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Input<string>? TimeAssignmentFrom { get; set; }
 
         /// <summary>
-        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
         [Input("timeAssignmentTo")]
         public Input<string>? TimeAssignmentTo { get; set; }
@@ -574,6 +613,16 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         [Input("unassignerId")]
         public Input<string>? UnassignerId { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("validateAssignmentTrigger")]
+        public Input<int>? ValidateAssignmentTrigger { get; set; }
 
         public OperatorControlAssignmentState()
         {

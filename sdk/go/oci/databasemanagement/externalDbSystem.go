@@ -36,7 +36,13 @@ import (
 //				DatabaseManagementConfig: &databasemanagement.ExternalDbSystemDatabaseManagementConfigArgs{
 //					LicenseModel: pulumi.Any(_var.External_db_system_database_management_config_license_model),
 //				},
+//				DefinedTags: pulumi.Map{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
 //				DisplayName: pulumi.Any(_var.External_db_system_display_name),
+//				FreeformTags: pulumi.Map{
+//					"Department": pulumi.Any("Finance"),
+//				},
 //				StackMonitoringConfig: &databasemanagement.ExternalDbSystemStackMonitoringConfigArgs{
 //					IsEnabled: pulumi.Any(_var.External_db_system_stack_monitoring_config_is_enabled),
 //					Metadata:  pulumi.Any(_var.External_db_system_stack_monitoring_config_metadata),
@@ -69,10 +75,14 @@ type ExternalDbSystem struct {
 	DatabaseManagementConfig ExternalDbSystemDatabaseManagementConfigOutput `pulumi:"databaseManagementConfig"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId pulumi.StringOutput `pulumi:"dbSystemDiscoveryId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId pulumi.StringOutput `pulumi:"discoveryAgentId"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory pulumi.StringOutput `pulumi:"homeDirectory"`
 	// Indicates whether the DB system is a cluster DB system or not.
@@ -131,10 +141,14 @@ type externalDbSystemState struct {
 	DatabaseManagementConfig *ExternalDbSystemDatabaseManagementConfig `pulumi:"databaseManagementConfig"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId *string `pulumi:"dbSystemDiscoveryId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId *string `pulumi:"discoveryAgentId"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory *string `pulumi:"homeDirectory"`
 	// Indicates whether the DB system is a cluster DB system or not.
@@ -158,10 +172,14 @@ type ExternalDbSystemState struct {
 	DatabaseManagementConfig ExternalDbSystemDatabaseManagementConfigPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId pulumi.StringPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory pulumi.StringPtrInput
 	// Indicates whether the DB system is a cluster DB system or not.
@@ -189,8 +207,12 @@ type externalDbSystemArgs struct {
 	DatabaseManagementConfig *ExternalDbSystemDatabaseManagementConfig `pulumi:"databaseManagementConfig"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId string `pulumi:"dbSystemDiscoveryId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The details of the associated service that will be enabled or disabled for an external DB System.
 	StackMonitoringConfig *ExternalDbSystemStackMonitoringConfig `pulumi:"stackMonitoringConfig"`
 }
@@ -203,8 +225,12 @@ type ExternalDbSystemArgs struct {
 	DatabaseManagementConfig ExternalDbSystemDatabaseManagementConfigPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId pulumi.StringInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput
 	// The details of the associated service that will be enabled or disabled for an external DB System.
 	StackMonitoringConfig ExternalDbSystemStackMonitoringConfigPtrInput
 }
@@ -313,6 +339,11 @@ func (o ExternalDbSystemOutput) DbSystemDiscoveryId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.DbSystemDiscoveryId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ExternalDbSystemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 func (o ExternalDbSystemOutput) DiscoveryAgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.DiscoveryAgentId }).(pulumi.StringOutput)
@@ -321,6 +352,11 @@ func (o ExternalDbSystemOutput) DiscoveryAgentId() pulumi.StringOutput {
 // (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
 func (o ExternalDbSystemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o ExternalDbSystemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.

@@ -26,6 +26,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string DbSystemDiscoveryId;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
         /// </summary>
         public readonly string DiscoveryAgentId;
@@ -33,6 +37,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// A filter to only return the resources that match the entire display name.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
         /// </summary>
@@ -74,9 +82,13 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string dbSystemDiscoveryId,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string discoveryAgentId,
 
             string displayName,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string homeDirectory,
 
@@ -97,8 +109,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             CompartmentId = compartmentId;
             DatabaseManagementConfigs = databaseManagementConfigs;
             DbSystemDiscoveryId = dbSystemDiscoveryId;
+            DefinedTags = definedTags;
             DiscoveryAgentId = discoveryAgentId;
             DisplayName = displayName;
+            FreeformTags = freeformTags;
             HomeDirectory = homeDirectory;
             Id = id;
             IsCluster = isCluster;

@@ -24,6 +24,7 @@ class OperatorControlArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 number_of_approvers: Optional[pulumi.Input[int]] = None,
                  pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  system_message: Optional[pulumi.Input[str]] = None):
         """
@@ -38,6 +39,7 @@ class OperatorControlArgs:
         :param pulumi.Input[str] description: (Updatable) Description of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_id_lists: (Updatable) List of emailId.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[int] number_of_approvers: (Updatable) Number of approvers required to approve an access request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         :param pulumi.Input[str] system_message: (Updatable) This is the message that will be displayed to the operator users while accessing the system.
                
@@ -60,6 +62,8 @@ class OperatorControlArgs:
             pulumi.set(__self__, "email_id_lists", email_id_lists)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if number_of_approvers is not None:
+            pulumi.set(__self__, "number_of_approvers", number_of_approvers)
         if pre_approved_op_action_lists is not None:
             pulumi.set(__self__, "pre_approved_op_action_lists", pre_approved_op_action_lists)
         if system_message is not None:
@@ -186,6 +190,18 @@ class OperatorControlArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="numberOfApprovers")
+    def number_of_approvers(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Number of approvers required to approve an access request.
+        """
+        return pulumi.get(self, "number_of_approvers")
+
+    @number_of_approvers.setter
+    def number_of_approvers(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "number_of_approvers", value)
+
+    @property
     @pulumi.getter(name="preApprovedOpActionLists")
     def pre_approved_op_action_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -228,6 +244,7 @@ class _OperatorControlState:
                  is_default_operator_control: Optional[pulumi.Input[bool]] = None,
                  is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
                  last_modified_info: Optional[pulumi.Input[str]] = None,
+                 number_of_approvers: Optional[pulumi.Input[int]] = None,
                  operator_control_name: Optional[pulumi.Input[str]] = None,
                  pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
@@ -249,6 +266,7 @@ class _OperatorControlState:
         :param pulumi.Input[bool] is_default_operator_control: Whether the operator control is a default Operator Control.
         :param pulumi.Input[bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param pulumi.Input[str] last_modified_info: Description associated with the latest modification of the operator control.
+        :param pulumi.Input[int] number_of_approvers: (Updatable) Number of approvers required to approve an access request.
         :param pulumi.Input[str] operator_control_name: (Updatable) Name of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         :param pulumi.Input[str] resource_type: resourceType for which the OperatorControl is applicable
@@ -284,6 +302,8 @@ class _OperatorControlState:
             pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
         if last_modified_info is not None:
             pulumi.set(__self__, "last_modified_info", last_modified_info)
+        if number_of_approvers is not None:
+            pulumi.set(__self__, "number_of_approvers", number_of_approvers)
         if operator_control_name is not None:
             pulumi.set(__self__, "operator_control_name", operator_control_name)
         if pre_approved_op_action_lists is not None:
@@ -434,6 +454,18 @@ class _OperatorControlState:
         pulumi.set(self, "last_modified_info", value)
 
     @property
+    @pulumi.getter(name="numberOfApprovers")
+    def number_of_approvers(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Number of approvers required to approve an access request.
+        """
+        return pulumi.get(self, "number_of_approvers")
+
+    @number_of_approvers.setter
+    def number_of_approvers(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "number_of_approvers", value)
+
+    @property
     @pulumi.getter(name="operatorControlName")
     def operator_control_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -547,6 +579,7 @@ class OperatorControl(pulumi.CustomResource):
                  email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
+                 number_of_approvers: Optional[pulumi.Input[int]] = None,
                  operator_control_name: Optional[pulumi.Input[str]] = None,
                  pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
@@ -575,6 +608,7 @@ class OperatorControl(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_id_lists: (Updatable) List of emailId.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
+        :param pulumi.Input[int] number_of_approvers: (Updatable) Number of approvers required to approve an access request.
         :param pulumi.Input[str] operator_control_name: (Updatable) Name of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         :param pulumi.Input[str] resource_type: resourceType for which the OperatorControl is applicable
@@ -626,6 +660,7 @@ class OperatorControl(pulumi.CustomResource):
                  email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
+                 number_of_approvers: Optional[pulumi.Input[int]] = None,
                  operator_control_name: Optional[pulumi.Input[str]] = None,
                  pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
@@ -653,6 +688,7 @@ class OperatorControl(pulumi.CustomResource):
             if is_fully_pre_approved is None and not opts.urn:
                 raise TypeError("Missing required property 'is_fully_pre_approved'")
             __props__.__dict__["is_fully_pre_approved"] = is_fully_pre_approved
+            __props__.__dict__["number_of_approvers"] = number_of_approvers
             if operator_control_name is None and not opts.urn:
                 raise TypeError("Missing required property 'operator_control_name'")
             __props__.__dict__["operator_control_name"] = operator_control_name
@@ -689,6 +725,7 @@ class OperatorControl(pulumi.CustomResource):
             is_default_operator_control: Optional[pulumi.Input[bool]] = None,
             is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
             last_modified_info: Optional[pulumi.Input[str]] = None,
+            number_of_approvers: Optional[pulumi.Input[int]] = None,
             operator_control_name: Optional[pulumi.Input[str]] = None,
             pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             resource_type: Optional[pulumi.Input[str]] = None,
@@ -715,6 +752,7 @@ class OperatorControl(pulumi.CustomResource):
         :param pulumi.Input[bool] is_default_operator_control: Whether the operator control is a default Operator Control.
         :param pulumi.Input[bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param pulumi.Input[str] last_modified_info: Description associated with the latest modification of the operator control.
+        :param pulumi.Input[int] number_of_approvers: (Updatable) Number of approvers required to approve an access request.
         :param pulumi.Input[str] operator_control_name: (Updatable) Name of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         :param pulumi.Input[str] resource_type: resourceType for which the OperatorControl is applicable
@@ -743,6 +781,7 @@ class OperatorControl(pulumi.CustomResource):
         __props__.__dict__["is_default_operator_control"] = is_default_operator_control
         __props__.__dict__["is_fully_pre_approved"] = is_fully_pre_approved
         __props__.__dict__["last_modified_info"] = last_modified_info
+        __props__.__dict__["number_of_approvers"] = number_of_approvers
         __props__.__dict__["operator_control_name"] = operator_control_name
         __props__.__dict__["pre_approved_op_action_lists"] = pre_approved_op_action_lists
         __props__.__dict__["resource_type"] = resource_type
@@ -840,6 +879,14 @@ class OperatorControl(pulumi.CustomResource):
         Description associated with the latest modification of the operator control.
         """
         return pulumi.get(self, "last_modified_info")
+
+    @property
+    @pulumi.getter(name="numberOfApprovers")
+    def number_of_approvers(self) -> pulumi.Output[int]:
+        """
+        (Updatable) Number of approvers required to approve an access request.
+        """
+        return pulumi.get(self, "number_of_approvers")
 
     @property
     @pulumi.getter(name="operatorControlName")

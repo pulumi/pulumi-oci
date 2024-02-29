@@ -29,7 +29,13 @@ import * as utilities from "../utilities";
  *     scope: _var.named_credential_scope,
  *     type: _var.named_credential_type,
  *     associatedResource: _var.named_credential_associated_resource,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
  *     description: _var.named_credential_description,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
  * });
  * ```
  *
@@ -72,7 +78,7 @@ export class NamedCredential extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
      */
-    public readonly associatedResource!: pulumi.Output<string>;
+    public readonly associatedResource!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
      */
@@ -82,9 +88,17 @@ export class NamedCredential extends pulumi.CustomResource {
      */
     public readonly content!: pulumi.Output<outputs.DatabaseManagement.NamedCredentialContent>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * (Updatable) The information specified by the user about the named credential.
      */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The details of the lifecycle state.
      */
@@ -134,7 +148,9 @@ export class NamedCredential extends pulumi.CustomResource {
             resourceInputs["associatedResource"] = state ? state.associatedResource : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["content"] = state ? state.content : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
@@ -159,7 +175,9 @@ export class NamedCredential extends pulumi.CustomResource {
             resourceInputs["associatedResource"] = args ? args.associatedResource : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["content"] = args ? args.content : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
@@ -190,9 +208,17 @@ export interface NamedCredentialState {
      */
     content?: pulumi.Input<inputs.DatabaseManagement.NamedCredentialContent>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The information specified by the user about the named credential.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The details of the lifecycle state.
      */
@@ -244,9 +270,17 @@ export interface NamedCredentialArgs {
      */
     content: pulumi.Input<inputs.DatabaseManagement.NamedCredentialContent>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The information specified by the user about the named credential.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The name of the named credential. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the named credential cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
      */

@@ -92,6 +92,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Output<string> LastModifiedInfo { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Number of approvers required to approve an access request.
+        /// </summary>
+        [Output("numberOfApprovers")]
+        public Output<int> NumberOfApprovers { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Name of the operator control.
         /// </summary>
         [Output("operatorControlName")]
@@ -268,6 +274,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Input<bool> IsFullyPreApproved { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Number of approvers required to approve an access request.
+        /// </summary>
+        [Input("numberOfApprovers")]
+        public Input<int>? NumberOfApprovers { get; set; }
+
+        /// <summary>
         /// (Updatable) Name of the operator control.
         /// </summary>
         [Input("operatorControlName", required: true)]
@@ -410,6 +422,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         [Input("lastModifiedInfo")]
         public Input<string>? LastModifiedInfo { get; set; }
+
+        /// <summary>
+        /// (Updatable) Number of approvers required to approve an access request.
+        /// </summary>
+        [Input("numberOfApprovers")]
+        public Input<int>? NumberOfApprovers { get; set; }
 
         /// <summary>
         /// (Updatable) Name of the operator control.

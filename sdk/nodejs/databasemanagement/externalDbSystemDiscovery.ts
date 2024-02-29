@@ -58,6 +58,10 @@ export class ExternalDbSystemDiscovery extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The list of DB system components that were found in the DB system discovery.
      */
     public /*out*/ readonly discoveredComponents!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemDiscoveryDiscoveredComponent[]>;
@@ -66,6 +70,10 @@ export class ExternalDbSystemDiscovery extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     public /*out*/ readonly externalDbSystemDiscoveryId!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */
@@ -110,9 +118,11 @@ export class ExternalDbSystemDiscovery extends pulumi.CustomResource {
             const state = argsOrState as ExternalDbSystemDiscoveryState | undefined;
             resourceInputs["agentId"] = state ? state.agentId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["discoveredComponents"] = state ? state.discoveredComponents : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["externalDbSystemDiscoveryId"] = state ? state.externalDbSystemDiscoveryId : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["gridHome"] = state ? state.gridHome : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["patchOperations"] = state ? state.patchOperations : undefined;
@@ -130,7 +140,9 @@ export class ExternalDbSystemDiscovery extends pulumi.CustomResource {
             }
             resourceInputs["agentId"] = args ? args.agentId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["patchOperations"] = args ? args.patchOperations : undefined;
             resourceInputs["discoveredComponents"] = undefined /*out*/;
             resourceInputs["externalDbSystemDiscoveryId"] = undefined /*out*/;
@@ -159,6 +171,10 @@ export interface ExternalDbSystemDiscoveryState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The list of DB system components that were found in the DB system discovery.
      */
     discoveredComponents?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemDiscoveryDiscoveredComponent>[]>;
@@ -167,6 +183,10 @@ export interface ExternalDbSystemDiscoveryState {
      */
     displayName?: pulumi.Input<string>;
     externalDbSystemDiscoveryId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */
@@ -210,9 +230,17 @@ export interface ExternalDbSystemDiscoveryArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable)
      */

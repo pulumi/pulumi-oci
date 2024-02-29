@@ -54,10 +54,13 @@ __all__ = [
     'ExternalExadataInfrastructureDatabaseSystem',
     'ExternalExadataInfrastructureStorageGrid',
     'ExternalExadataStorageConnectorCredentialInfo',
+    'ExternalExadataStorageGridStorageServer',
+    'ExternalExadataStorageServerConnector',
     'ExternalListenerEndpoint',
     'ExternalListenerServicedAsm',
     'ExternalListenerServicedDatabase',
     'ManagedDatabaseGroupManagedDatabase',
+    'ManagedDatabaseManagedDatabaseGroup',
     'ManagedDatabasesChangeDatabaseParameterCredentials',
     'ManagedDatabasesChangeDatabaseParameterDatabaseCredential',
     'ManagedDatabasesChangeDatabaseParameterParameter',
@@ -4753,6 +4756,582 @@ class ExternalExadataStorageConnectorCredentialInfo(dict):
 
 
 @pulumi.output_type
+class ExternalExadataStorageGridStorageServer(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "additionalDetails":
+            suggest = "additional_details"
+        elif key == "connectorId":
+            suggest = "connector_id"
+        elif key == "cpuCount":
+            suggest = "cpu_count"
+        elif key == "definedTags":
+            suggest = "defined_tags"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
+        elif key == "internalId":
+            suggest = "internal_id"
+        elif key == "ipAddress":
+            suggest = "ip_address"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "makeModel":
+            suggest = "make_model"
+        elif key == "maxFlashDiskIops":
+            suggest = "max_flash_disk_iops"
+        elif key == "maxFlashDiskThroughput":
+            suggest = "max_flash_disk_throughput"
+        elif key == "maxHardDiskIops":
+            suggest = "max_hard_disk_iops"
+        elif key == "maxHardDiskThroughput":
+            suggest = "max_hard_disk_throughput"
+        elif key == "memoryGb":
+            suggest = "memory_gb"
+        elif key == "resourceType":
+            suggest = "resource_type"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalExadataStorageGridStorageServer. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalExadataStorageGridStorageServer.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalExadataStorageGridStorageServer.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 additional_details: Optional[Mapping[str, Any]] = None,
+                 connector_id: Optional[str] = None,
+                 cpu_count: Optional[float] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 internal_id: Optional[str] = None,
+                 ip_address: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 make_model: Optional[str] = None,
+                 max_flash_disk_iops: Optional[int] = None,
+                 max_flash_disk_throughput: Optional[int] = None,
+                 max_hard_disk_iops: Optional[int] = None,
+                 max_hard_disk_throughput: Optional[int] = None,
+                 memory_gb: Optional[float] = None,
+                 resource_type: Optional[str] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 version: Optional[str] = None):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+        :param float cpu_count: The CPU count of the Exadata storage server.
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str ip_address: The IP address of the Exadata storage server.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param str make_model: The make model of the Exadata storage server.
+        :param int max_flash_disk_iops: The maximum flash disk IO operations per second of the Exadata storage server.
+        :param int max_flash_disk_throughput: The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+        :param int max_hard_disk_iops: The maximum hard disk IO operations per second of the Exadata storage server.
+        :param int max_hard_disk_throughput: The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+        :param float memory_gb: The Exadata storage server memory size in GB.
+        :param str resource_type: The type of Exadata resource.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        if additional_details is not None:
+            pulumi.set(__self__, "additional_details", additional_details)
+        if connector_id is not None:
+            pulumi.set(__self__, "connector_id", connector_id)
+        if cpu_count is not None:
+            pulumi.set(__self__, "cpu_count", cpu_count)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internal_id is not None:
+            pulumi.set(__self__, "internal_id", internal_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if make_model is not None:
+            pulumi.set(__self__, "make_model", make_model)
+        if max_flash_disk_iops is not None:
+            pulumi.set(__self__, "max_flash_disk_iops", max_flash_disk_iops)
+        if max_flash_disk_throughput is not None:
+            pulumi.set(__self__, "max_flash_disk_throughput", max_flash_disk_throughput)
+        if max_hard_disk_iops is not None:
+            pulumi.set(__self__, "max_hard_disk_iops", max_hard_disk_iops)
+        if max_hard_disk_throughput is not None:
+            pulumi.set(__self__, "max_hard_disk_throughput", max_hard_disk_throughput)
+        if memory_gb is not None:
+            pulumi.set(__self__, "memory_gb", memory_gb)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+        """
+        return pulumi.get(self, "connector_id")
+
+    @property
+    @pulumi.getter(name="cpuCount")
+    def cpu_count(self) -> Optional[float]:
+        """
+        The CPU count of the Exadata storage server.
+        """
+        return pulumi.get(self, "cpu_count")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> Optional[str]:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[str]:
+        """
+        The IP address of the Exadata storage server.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="makeModel")
+    def make_model(self) -> Optional[str]:
+        """
+        The make model of the Exadata storage server.
+        """
+        return pulumi.get(self, "make_model")
+
+    @property
+    @pulumi.getter(name="maxFlashDiskIops")
+    def max_flash_disk_iops(self) -> Optional[int]:
+        """
+        The maximum flash disk IO operations per second of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_flash_disk_iops")
+
+    @property
+    @pulumi.getter(name="maxFlashDiskThroughput")
+    def max_flash_disk_throughput(self) -> Optional[int]:
+        """
+        The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_flash_disk_throughput")
+
+    @property
+    @pulumi.getter(name="maxHardDiskIops")
+    def max_hard_disk_iops(self) -> Optional[int]:
+        """
+        The maximum hard disk IO operations per second of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_hard_disk_iops")
+
+    @property
+    @pulumi.getter(name="maxHardDiskThroughput")
+    def max_hard_disk_throughput(self) -> Optional[int]:
+        """
+        The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_hard_disk_throughput")
+
+    @property
+    @pulumi.getter(name="memoryGb")
+    def memory_gb(self) -> Optional[float]:
+        """
+        The Exadata storage server memory size in GB.
+        """
+        return pulumi.get(self, "memory_gb")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[str]:
+        """
+        The type of Exadata resource.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[str]:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class ExternalExadataStorageServerConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "additionalDetails":
+            suggest = "additional_details"
+        elif key == "agentId":
+            suggest = "agent_id"
+        elif key == "connectionUri":
+            suggest = "connection_uri"
+        elif key == "definedTags":
+            suggest = "defined_tags"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
+        elif key == "internalId":
+            suggest = "internal_id"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "resourceType":
+            suggest = "resource_type"
+        elif key == "storageServerId":
+            suggest = "storage_server_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalExadataStorageServerConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalExadataStorageServerConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalExadataStorageServerConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 additional_details: Optional[Mapping[str, Any]] = None,
+                 agent_id: Optional[str] = None,
+                 connection_uri: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 internal_id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 resource_type: Optional[str] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 storage_server_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 version: Optional[str] = None):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+        :param str connection_uri: The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param str resource_type: The type of Exadata resource.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        if additional_details is not None:
+            pulumi.set(__self__, "additional_details", additional_details)
+        if agent_id is not None:
+            pulumi.set(__self__, "agent_id", agent_id)
+        if connection_uri is not None:
+            pulumi.set(__self__, "connection_uri", connection_uri)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internal_id is not None:
+            pulumi.set(__self__, "internal_id", internal_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if storage_server_id is not None:
+            pulumi.set(__self__, "storage_server_id", storage_server_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @property
+    @pulumi.getter(name="connectionUri")
+    def connection_uri(self) -> Optional[str]:
+        """
+        The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+        """
+        return pulumi.get(self, "connection_uri")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> Optional[str]:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[str]:
+        """
+        The type of Exadata resource.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="storageServerId")
+    def storage_server_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        """
+        return pulumi.get(self, "storage_server_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[str]:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
 class ExternalListenerEndpoint(dict):
     def __init__(__self__, *,
                  host: Optional[str] = None,
@@ -5010,8 +5589,12 @@ class ManagedDatabaseGroupManagedDatabase(dict):
             suggest = "database_sub_type"
         elif key == "databaseType":
             suggest = "database_type"
+        elif key == "definedTags":
+            suggest = "defined_tags"
         elif key == "deploymentType":
             suggest = "deployment_type"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
         elif key == "timeAdded":
             suggest = "time_added"
         elif key == "workloadType":
@@ -5032,7 +5615,9 @@ class ManagedDatabaseGroupManagedDatabase(dict):
                  compartment_id: Optional[str] = None,
                  database_sub_type: Optional[str] = None,
                  database_type: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
                  deployment_type: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
                  id: Optional[str] = None,
                  name: Optional[str] = None,
                  time_added: Optional[str] = None,
@@ -5041,7 +5626,9 @@ class ManagedDatabaseGroupManagedDatabase(dict):
         :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
         :param str database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param str database_type: The type of Oracle Database installation.
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str deployment_type: The infrastructure used to deploy the Oracle Database.
+        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
                
                
@@ -5057,8 +5644,12 @@ class ManagedDatabaseGroupManagedDatabase(dict):
             pulumi.set(__self__, "database_sub_type", database_sub_type)
         if database_type is not None:
             pulumi.set(__self__, "database_type", database_type)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if deployment_type is not None:
             pulumi.set(__self__, "deployment_type", deployment_type)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if name is not None:
@@ -5093,12 +5684,28 @@ class ManagedDatabaseGroupManagedDatabase(dict):
         return pulumi.get(self, "database_type")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[str]:
         """
         The infrastructure used to deploy the Oracle Database.
         """
         return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -5135,6 +5742,66 @@ class ManagedDatabaseGroupManagedDatabase(dict):
         The workload type of the Autonomous Database.
         """
         return pulumi.get(self, "workload_type")
+
+
+@pulumi.output_type
+class ManagedDatabaseManagedDatabaseGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedDatabaseManagedDatabaseGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedDatabaseManagedDatabaseGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedDatabaseManagedDatabaseGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 name: Optional[str] = None):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+        :param str name: The name of the Managed Database.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        The name of the Managed Database.
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type
@@ -5795,7 +6462,9 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionResult
 class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
+                 defined_tags: Mapping[str, Any],
                  description: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  is_cluster: bool,
                  name: str,
@@ -5807,7 +6476,9 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
                  vcn_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the Database Management private endpoint.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
         :param bool is_cluster: The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
         :param str name: A filter to return only resources that match the entire name.
@@ -5819,7 +6490,9 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_cluster", is_cluster)
         pulumi.set(__self__, "name", name)
@@ -5839,12 +6512,28 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter
     def description(self) -> str:
         """
         The description of the Database Management private endpoint.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -6200,10 +6889,13 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
                  adr_home_directory: str,
                  compartment_id: str,
                  component_name: str,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
                  external_asm_id: str,
+                 external_asm_instance_id: str,
                  external_db_node_id: str,
                  external_db_system_id: str,
+                 freeform_tags: Mapping[str, Any],
                  host_name: str,
                  id: str,
                  lifecycle_details: str,
@@ -6214,10 +6906,12 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
         :param str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str component_name: The name of the external ASM instance.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to only return the resources that match the entire display name.
         :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
         :param str external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node on which the ASM instance is running.
         :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM instance is a part of.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str host_name: The name of the host on which the ASM instance is running.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -6228,10 +6922,13 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
         pulumi.set(__self__, "adr_home_directory", adr_home_directory)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "external_asm_id", external_asm_id)
+        pulumi.set(__self__, "external_asm_instance_id", external_asm_instance_id)
         pulumi.set(__self__, "external_db_node_id", external_db_node_id)
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "host_name", host_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -6264,6 +6961,14 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
         return pulumi.get(self, "component_name")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -6280,6 +6985,11 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
         return pulumi.get(self, "external_asm_id")
 
     @property
+    @pulumi.getter(name="externalAsmInstanceId")
+    def external_asm_instance_id(self) -> str:
+        return pulumi.get(self, "external_asm_instance_id")
+
+    @property
     @pulumi.getter(name="externalDbNodeId")
     def external_db_node_id(self) -> str:
         """
@@ -6294,6 +7004,14 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM instance is a part of.
         """
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostName")
@@ -6575,10 +7293,12 @@ class GetExternalAsmsExternalAsmCollectionItemResult(dict):
                  additional_details: Mapping[str, Any],
                  compartment_id: str,
                  component_name: str,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
                  external_asm_id: str,
                  external_connector_id: str,
                  external_db_system_id: str,
+                 freeform_tags: Mapping[str, Any],
                  grid_home: str,
                  id: str,
                  is_cluster: bool,
@@ -6593,9 +7313,11 @@ class GetExternalAsmsExternalAsmCollectionItemResult(dict):
         :param Mapping[str, Any] additional_details: The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str component_name: The name of the external ASM.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to only return the resources that match the entire display name.
         :param str external_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str grid_home: The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
         :param bool is_cluster: Indicates whether the ASM is a cluster ASM or not.
@@ -6610,10 +7332,12 @@ class GetExternalAsmsExternalAsmCollectionItemResult(dict):
         pulumi.set(__self__, "additional_details", additional_details)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "external_asm_id", external_asm_id)
         pulumi.set(__self__, "external_connector_id", external_connector_id)
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "grid_home", grid_home)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_cluster", is_cluster)
@@ -6650,6 +7374,14 @@ class GetExternalAsmsExternalAsmCollectionItemResult(dict):
         return pulumi.get(self, "component_name")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -6677,6 +7409,14 @@ class GetExternalAsmsExternalAsmCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         """
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gridHome")
@@ -6900,12 +7640,14 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(dic
                  compartment_id: str,
                  component_name: str,
                  crs_base_directory: str,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
                  external_cluster_id: str,
                  external_cluster_instance_id: str,
                  external_connector_id: str,
                  external_db_node_id: str,
                  external_db_system_id: str,
+                 freeform_tags: Mapping[str, Any],
                  host_name: str,
                  id: str,
                  lifecycle_details: str,
@@ -6918,11 +7660,13 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(dic
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str component_name: The name of the external cluster instance.
         :param str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to only return the resources that match the entire display name.
         :param str external_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
         :param str external_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         :param str external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
         :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str host_name: The name of the host on which the cluster instance is running.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -6935,12 +7679,14 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(dic
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "component_name", component_name)
         pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "external_cluster_id", external_cluster_id)
         pulumi.set(__self__, "external_cluster_instance_id", external_cluster_instance_id)
         pulumi.set(__self__, "external_connector_id", external_connector_id)
         pulumi.set(__self__, "external_db_node_id", external_db_node_id)
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "host_name", host_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -6980,6 +7726,14 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(dic
         The Oracle base location of Cluster Ready Services (CRS).
         """
         return pulumi.get(self, "crs_base_directory")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
@@ -7025,6 +7779,14 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(dic
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
         """
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostName")
@@ -7259,10 +8021,12 @@ class GetExternalClustersExternalClusterCollectionItemResult(dict):
                  additional_details: Mapping[str, Any],
                  compartment_id: str,
                  component_name: str,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
                  external_cluster_id: str,
                  external_connector_id: str,
                  external_db_system_id: str,
+                 freeform_tags: Mapping[str, Any],
                  grid_home: str,
                  id: str,
                  is_flex_cluster: bool,
@@ -7279,9 +8043,11 @@ class GetExternalClustersExternalClusterCollectionItemResult(dict):
         :param Mapping[str, Any] additional_details: The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str component_name: The name of the external cluster.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to only return the resources that match the entire display name.
         :param str external_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str grid_home: The directory in which Oracle Grid Infrastructure is installed.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
         :param bool is_flex_cluster: Indicates whether the cluster is Oracle Flex Cluster or not.
@@ -7298,10 +8064,12 @@ class GetExternalClustersExternalClusterCollectionItemResult(dict):
         pulumi.set(__self__, "additional_details", additional_details)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "external_cluster_id", external_cluster_id)
         pulumi.set(__self__, "external_connector_id", external_connector_id)
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "grid_home", grid_home)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_flex_cluster", is_flex_cluster)
@@ -7340,6 +8108,14 @@ class GetExternalClustersExternalClusterCollectionItemResult(dict):
         return pulumi.get(self, "component_name")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -7367,6 +8143,14 @@ class GetExternalClustersExternalClusterCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         """
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gridHome")
@@ -7650,9 +8434,11 @@ class GetExternalDatabasesExternalDatabaseCollectionItemResult(dict):
                  db_management_configs: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigResult'],
                  db_system_infos: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoResult'],
                  db_unique_name: str,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
                  external_container_database_id: str,
                  external_db_home_id: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  instance_details: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailResult'],
                  state: str,
@@ -7664,9 +8450,11 @@ class GetExternalDatabasesExternalDatabaseCollectionItemResult(dict):
         :param Sequence['GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigArgs'] db_management_configs: The configuration of the Database Management service.
         :param Sequence['GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoArgs'] db_system_infos: The basic information about an external DB system.
         :param str db_unique_name: The `DB_UNIQUE_NAME` of the external database.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to only return the resources that match the entire display name.
         :param str external_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database (CDB) if this is a Pluggable Database (PDB).
         :param str external_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         :param Sequence['GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailArgs'] instance_details: The list of database instances if the database is a RAC database.
         :param str state: The current lifecycle state of the external database resource.
@@ -7678,9 +8466,11 @@ class GetExternalDatabasesExternalDatabaseCollectionItemResult(dict):
         pulumi.set(__self__, "db_management_configs", db_management_configs)
         pulumi.set(__self__, "db_system_infos", db_system_infos)
         pulumi.set(__self__, "db_unique_name", db_unique_name)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "external_container_database_id", external_container_database_id)
         pulumi.set(__self__, "external_db_home_id", external_db_home_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_details", instance_details)
         pulumi.set(__self__, "state", state)
@@ -7735,6 +8525,14 @@ class GetExternalDatabasesExternalDatabaseCollectionItemResult(dict):
         return pulumi.get(self, "db_unique_name")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -7757,6 +8555,14 @@ class GetExternalDatabasesExternalDatabaseCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
         """
         return pulumi.get(self, "external_db_home_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -8007,8 +8813,11 @@ class GetExternalDbHomesExternalDbHomeCollectionItemResult(dict):
                  additional_details: Mapping[str, Any],
                  compartment_id: str,
                  component_name: str,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
+                 external_db_home_id: str,
                  external_db_system_id: str,
+                 freeform_tags: Mapping[str, Any],
                  home_directory: str,
                  id: str,
                  lifecycle_details: str,
@@ -8019,8 +8828,10 @@ class GetExternalDbHomesExternalDbHomeCollectionItemResult(dict):
         :param Mapping[str, Any] additional_details: The additional details of the DB home defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str component_name: The name of the external DB home.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to only return the resources that match the entire display name.
         :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str home_directory: The location of the DB home.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -8031,8 +8842,11 @@ class GetExternalDbHomesExternalDbHomeCollectionItemResult(dict):
         pulumi.set(__self__, "additional_details", additional_details)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "external_db_home_id", external_db_home_id)
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "home_directory", home_directory)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -8065,6 +8879,14 @@ class GetExternalDbHomesExternalDbHomeCollectionItemResult(dict):
         return pulumi.get(self, "component_name")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -8073,12 +8895,25 @@ class GetExternalDbHomesExternalDbHomeCollectionItemResult(dict):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="externalDbHomeId")
+    def external_db_home_id(self) -> str:
+        return pulumi.get(self, "external_db_home_id")
+
+    @property
     @pulumi.getter(name="externalDbSystemId")
     def external_db_system_id(self) -> str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         """
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="homeDirectory")
@@ -8175,11 +9010,13 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
                  compartment_id: str,
                  component_name: str,
                  cpu_core_count: float,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
                  domain_name: str,
                  external_connector_id: str,
                  external_db_node_id: str,
                  external_db_system_id: str,
+                 freeform_tags: Mapping[str, Any],
                  host_name: str,
                  id: str,
                  lifecycle_details: str,
@@ -8192,10 +9029,12 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str component_name: The name of the external DB node.
         :param float cpu_core_count: The number of CPU cores available on the DB node.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to only return the resources that match the entire display name.
         :param str domain_name: Name of the domain.
         :param str external_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str host_name: The host name for the DB node.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -8208,11 +9047,13 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "component_name", component_name)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "domain_name", domain_name)
         pulumi.set(__self__, "external_connector_id", external_connector_id)
         pulumi.set(__self__, "external_db_node_id", external_db_node_id)
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "host_name", host_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -8254,6 +9095,14 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
         return pulumi.get(self, "cpu_core_count")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -8289,6 +9138,14 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         """
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostName")
@@ -8654,8 +9511,10 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult
                  connection_infos: Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoResult'],
                  connection_status: str,
                  connector_type: str,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
                  external_db_system_id: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  lifecycle_details: str,
                  state: str,
@@ -8669,8 +9528,10 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult
         :param Sequence['GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoArgs'] connection_infos: The connection details required to connect to an external DB system component.
         :param str connection_status: The status of connectivity to the external DB system component.
         :param str connector_type: The type of connector.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to only return the resources that match the entire display name.
         :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current lifecycle state of the external DB system connector.
@@ -8684,8 +9545,10 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult
         pulumi.set(__self__, "connection_infos", connection_infos)
         pulumi.set(__self__, "connection_status", connection_status)
         pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
@@ -8742,6 +9605,14 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult
         return pulumi.get(self, "connector_type")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -8756,6 +9627,14 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         """
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -9127,9 +10006,11 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResul
     def __init__(__self__, *,
                  agent_id: str,
                  compartment_id: str,
+                 defined_tags: Mapping[str, Any],
                  discovered_components: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentResult'],
                  display_name: str,
                  external_db_system_discovery_id: str,
+                 freeform_tags: Mapping[str, Any],
                  grid_home: str,
                  id: str,
                  lifecycle_details: str,
@@ -9141,8 +10022,10 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResul
         """
         :param str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Sequence['GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentArgs'] discovered_components: The list of DB system components that were found in the DB system discovery.
         :param str display_name: A filter to only return the resources that match the entire display name.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str grid_home: The directory in which Oracle Grid Infrastructure is installed.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system discovery.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -9153,9 +10036,11 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResul
         """
         pulumi.set(__self__, "agent_id", agent_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "discovered_components", discovered_components)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "external_db_system_discovery_id", external_db_system_discovery_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "grid_home", grid_home)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -9182,6 +10067,14 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResul
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="discoveredComponents")
     def discovered_components(self) -> Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentResult']:
         """
@@ -9201,6 +10094,14 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResul
     @pulumi.getter(name="externalDbSystemDiscoveryId")
     def external_db_system_discovery_id(self) -> str:
         return pulumi.get(self, "external_db_system_discovery_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gridHome")
@@ -13828,8 +14729,10 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
                  compartment_id: str,
                  database_management_configs: Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigResult'],
                  db_system_discovery_id: str,
+                 defined_tags: Mapping[str, Any],
                  discovery_agent_id: str,
                  display_name: str,
+                 freeform_tags: Mapping[str, Any],
                  home_directory: str,
                  id: str,
                  is_cluster: bool,
@@ -13842,8 +14745,10 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Sequence['GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigArgs'] database_management_configs: The details required to enable Database Management for an external DB system.
         :param str db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str discovery_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
         :param str display_name: A filter to only return the resources that match the entire display name.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str home_directory: The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         :param bool is_cluster: Indicates whether the DB system is a cluster DB system or not.
@@ -13856,8 +14761,10 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "database_management_configs", database_management_configs)
         pulumi.set(__self__, "db_system_discovery_id", db_system_discovery_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "discovery_agent_id", discovery_agent_id)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "home_directory", home_directory)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_cluster", is_cluster)
@@ -13892,6 +14799,14 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
         return pulumi.get(self, "db_system_discovery_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="discoveryAgentId")
     def discovery_agent_id(self) -> str:
         """
@@ -13906,6 +14821,14 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
         A filter to only return the resources that match the entire display name.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="homeDirectory")
@@ -14333,8 +15256,10 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
                  database_compartments: Sequence[str],
                  database_systems: Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemResult'],
                  db_system_ids: Sequence[str],
+                 defined_tags: Mapping[str, Any],
                  discovery_key: str,
                  display_name: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  internal_id: str,
                  license_model: str,
@@ -14352,7 +15277,9 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Sequence[str] database_compartments: The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
         :param Sequence['GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArgs'] database_systems: A list of DB systems.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The optional single value query filter parameter on the entity display name.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         :param str internal_id: The internal ID of the Exadata resource.
         :param str license_model: The Oracle license model that applies to the database management resources.
@@ -14370,8 +15297,10 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
         pulumi.set(__self__, "database_compartments", database_compartments)
         pulumi.set(__self__, "database_systems", database_systems)
         pulumi.set(__self__, "db_system_ids", db_system_ids)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "discovery_key", discovery_key)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internal_id", internal_id)
         pulumi.set(__self__, "license_model", license_model)
@@ -14423,6 +15352,14 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
         return pulumi.get(self, "db_system_ids")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="discoveryKey")
     def discovery_key(self) -> str:
         return pulumi.get(self, "discovery_key")
@@ -14434,6 +15371,14 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
         The optional single value query filter parameter on the entity display name.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -14883,8 +15828,10 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
                  connection_uri: str,
                  connector_name: str,
                  credential_infos: Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoResult'],
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
                  exadata_infrastructure_id: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  internal_id: str,
                  lifecycle_details: str,
@@ -14898,8 +15845,10 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
         :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
         :param str connection_uri: The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The optional single value query filter parameter on the entity display name.
         :param str exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         :param str internal_id: The internal ID of the Exadata resource.
         :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
@@ -14915,8 +15864,10 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
         pulumi.set(__self__, "connection_uri", connection_uri)
         pulumi.set(__self__, "connector_name", connector_name)
         pulumi.set(__self__, "credential_infos", credential_infos)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internal_id", internal_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -14962,6 +15913,14 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
         return pulumi.get(self, "credential_infos")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -14976,6 +15935,14 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -15123,7 +16090,9 @@ class GetExternalExadataStorageGridStorageServerResult(dict):
                  additional_details: Mapping[str, Any],
                  connector_id: str,
                  cpu_count: float,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  internal_id: str,
                  ip_address: str,
@@ -15144,7 +16113,9 @@ class GetExternalExadataStorageGridStorageServerResult(dict):
         :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param str connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
         :param float cpu_count: The CPU count of the Exadata storage server.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         :param str internal_id: The internal ID of the Exadata resource.
         :param str ip_address: The IP address of the Exadata storage server.
@@ -15165,7 +16136,9 @@ class GetExternalExadataStorageGridStorageServerResult(dict):
         pulumi.set(__self__, "additional_details", additional_details)
         pulumi.set(__self__, "connector_id", connector_id)
         pulumi.set(__self__, "cpu_count", cpu_count)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internal_id", internal_id)
         pulumi.set(__self__, "ip_address", ip_address)
@@ -15208,12 +16181,28 @@ class GetExternalExadataStorageGridStorageServerResult(dict):
         return pulumi.get(self, "cpu_count")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
         The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -15350,7 +16339,9 @@ class GetExternalExadataStorageServerConnectorResult(dict):
                  additional_details: Mapping[str, Any],
                  agent_id: str,
                  connection_uri: str,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  internal_id: str,
                  lifecycle_details: str,
@@ -15365,7 +16356,9 @@ class GetExternalExadataStorageServerConnectorResult(dict):
         :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
         :param str connection_uri: The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         :param str internal_id: The internal ID of the Exadata resource.
         :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
@@ -15380,7 +16373,9 @@ class GetExternalExadataStorageServerConnectorResult(dict):
         pulumi.set(__self__, "additional_details", additional_details)
         pulumi.set(__self__, "agent_id", agent_id)
         pulumi.set(__self__, "connection_uri", connection_uri)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internal_id", internal_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -15417,12 +16412,28 @@ class GetExternalExadataStorageServerConnectorResult(dict):
         return pulumi.get(self, "connection_uri")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
         The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -15837,8 +16848,10 @@ class GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem
                  additional_details: Mapping[str, Any],
                  connector_id: str,
                  cpu_count: float,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
                  exadata_infrastructure_id: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  internal_id: str,
                  ip_address: str,
@@ -15859,8 +16872,10 @@ class GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem
         """
         :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param float cpu_count: The CPU count of the Exadata storage server.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The optional single value query filter parameter on the entity display name.
         :param str exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         :param str internal_id: The internal ID of the Exadata resource.
         :param str ip_address: The IP address of the Exadata storage server.
@@ -15882,8 +16897,10 @@ class GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem
         pulumi.set(__self__, "additional_details", additional_details)
         pulumi.set(__self__, "connector_id", connector_id)
         pulumi.set(__self__, "cpu_count", cpu_count)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "internal_id", internal_id)
         pulumi.set(__self__, "ip_address", ip_address)
@@ -15924,6 +16941,14 @@ class GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem
         return pulumi.get(self, "cpu_count")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -15938,6 +16963,14 @@ class GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -16399,6 +17432,7 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
                  adr_home_directory: str,
                  compartment_id: str,
                  component_name: str,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
                  endpoints: Sequence['outputs.GetExternalListenersExternalListenerCollectionItemEndpointResult'],
                  external_connector_id: str,
@@ -16406,6 +17440,7 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
                  external_db_node_id: str,
                  external_db_system_id: str,
                  external_listener_id: str,
+                 freeform_tags: Mapping[str, Any],
                  host_name: str,
                  id: str,
                  lifecycle_details: str,
@@ -16426,12 +17461,14 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
         :param str adr_home_directory: The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str component_name: The name of the external listener.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to only return the resources that match the entire display name.
         :param Sequence['GetExternalListenersExternalListenerCollectionItemEndpointArgs'] endpoints: The list of protocol addresses the listener is configured to listen on.
         :param str external_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         :param str external_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
         :param str external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
         :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str host_name: The name of the host on which the external listener is running.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -16452,6 +17489,7 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
         pulumi.set(__self__, "adr_home_directory", adr_home_directory)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "endpoints", endpoints)
         pulumi.set(__self__, "external_connector_id", external_connector_id)
@@ -16459,6 +17497,7 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
         pulumi.set(__self__, "external_db_node_id", external_db_node_id)
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
         pulumi.set(__self__, "external_listener_id", external_listener_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "host_name", host_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -16506,6 +17545,14 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
         The name of the external listener.
         """
         return pulumi.get(self, "component_name")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
@@ -16559,6 +17606,14 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
     @pulumi.getter(name="externalListenerId")
     def external_listener_id(self) -> str:
         return pulumi.get(self, "external_listener_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostName")
@@ -17623,7 +18678,9 @@ class GetManagedDatabaseGroupManagedDatabaseResult(dict):
                  compartment_id: str,
                  database_sub_type: str,
                  database_type: str,
+                 defined_tags: Mapping[str, Any],
                  deployment_type: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  name: str,
                  time_added: str,
@@ -17632,7 +18689,9 @@ class GetManagedDatabaseGroupManagedDatabaseResult(dict):
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
         :param str database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param str database_type: The type of Oracle Database installation.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str deployment_type: The infrastructure used to deploy the Oracle Database.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param str name: The name of the Managed Database Group.
         :param str time_added: The date and time the Managed Database was added to the group.
@@ -17641,7 +18700,9 @@ class GetManagedDatabaseGroupManagedDatabaseResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "database_sub_type", database_sub_type)
         pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "time_added", time_added)
@@ -17672,12 +18733,28 @@ class GetManagedDatabaseGroupManagedDatabaseResult(dict):
         return pulumi.get(self, "database_type")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> str:
         """
         The infrastructure used to deploy the Oracle Database.
         """
         return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -17761,7 +18838,9 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionResult(dict):
 class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
+                 defined_tags: Mapping[str, Any],
                  description: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  managed_databases: Sequence['outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseResult'],
                  name: str,
@@ -17770,7 +18849,9 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: The information specified by the user about the Managed Database Group.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The identifier of the resource. Only one of the parameters, id or name should be provided.
         :param Sequence['GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArgs'] managed_databases: A list of Managed Databases in the Managed Database Group.
         :param str name: A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
@@ -17779,7 +18860,9 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult(dict):
         :param str time_updated: The date and time the Managed Database Group was last updated.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "managed_databases", managed_databases)
         pulumi.set(__self__, "name", name)
@@ -17796,12 +18879,28 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult(dict):
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter
     def description(self) -> str:
         """
         The information specified by the user about the Managed Database Group.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -17858,7 +18957,9 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseR
                  compartment_id: str,
                  database_sub_type: str,
                  database_type: str,
+                 defined_tags: Mapping[str, Any],
                  deployment_type: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  name: str,
                  time_added: str,
@@ -17867,7 +18968,9 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseR
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param str database_type: The type of Oracle Database installation.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str deployment_type: The infrastructure used to deploy the Oracle Database.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The identifier of the resource. Only one of the parameters, id or name should be provided.
         :param str name: A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
         :param str time_added: The date and time the Managed Database was added to the group.
@@ -17876,7 +18979,9 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseR
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "database_sub_type", database_sub_type)
         pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "time_added", time_added)
@@ -17907,12 +19012,28 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseR
         return pulumi.get(self, "database_type")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> str:
         """
         The infrastructure used to deploy the Oracle Database.
         """
         return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -24178,8 +25299,11 @@ class GetManagedDatabasesManagedDatabaseCollectionItemResult(dict):
                  database_status: str,
                  database_sub_type: str,
                  database_type: str,
+                 database_version: str,
                  db_system_id: str,
+                 defined_tags: Mapping[str, Any],
                  deployment_type: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  is_cluster: bool,
                  managed_database_groups: Sequence['outputs.GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupResult'],
@@ -24195,8 +25319,11 @@ class GetManagedDatabasesManagedDatabaseCollectionItemResult(dict):
         :param str database_status: The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
         :param str database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param str database_type: The type of Oracle Database installation.
+        :param str database_version: The Oracle Database version.
         :param str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str deployment_type: A filter to return Managed Databases of the specified deployment type.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The identifier of the resource.
         :param bool is_cluster: Indicates whether the Oracle Database is part of a cluster.
         :param Sequence['GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArgs'] managed_database_groups: A list of Managed Database Groups that the Managed Database belongs to.
@@ -24212,8 +25339,11 @@ class GetManagedDatabasesManagedDatabaseCollectionItemResult(dict):
         pulumi.set(__self__, "database_status", database_status)
         pulumi.set(__self__, "database_sub_type", database_sub_type)
         pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "database_version", database_version)
         pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_cluster", is_cluster)
         pulumi.set(__self__, "managed_database_groups", managed_database_groups)
@@ -24265,6 +25395,14 @@ class GetManagedDatabasesManagedDatabaseCollectionItemResult(dict):
         return pulumi.get(self, "database_type")
 
     @property
+    @pulumi.getter(name="databaseVersion")
+    def database_version(self) -> str:
+        """
+        The Oracle Database version.
+        """
+        return pulumi.get(self, "database_version")
+
+    @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> str:
         """
@@ -24273,12 +25411,28 @@ class GetManagedDatabasesManagedDatabaseCollectionItemResult(dict):
         return pulumi.get(self, "db_system_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> str:
         """
         A filter to return Managed Databases of the specified deployment type.
         """
         return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -25557,7 +26711,9 @@ class GetNamedCredentialsNamedCredentialCollectionItemResult(dict):
                  associated_resource: str,
                  compartment_id: str,
                  contents: Sequence['outputs.GetNamedCredentialsNamedCredentialCollectionItemContentResult'],
+                 defined_tags: Mapping[str, Any],
                  description: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  lifecycle_details: str,
                  name: str,
@@ -25570,7 +26726,9 @@ class GetNamedCredentialsNamedCredentialCollectionItemResult(dict):
         :param str associated_resource: The resource associated to the named credential.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Sequence['GetNamedCredentialsNamedCredentialCollectionItemContentArgs'] contents: The details of the named credential.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: The information specified by the user about the named credential.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
         :param str lifecycle_details: The details of the lifecycle state.
         :param str name: The name of the named credential.
@@ -25583,7 +26741,9 @@ class GetNamedCredentialsNamedCredentialCollectionItemResult(dict):
         pulumi.set(__self__, "associated_resource", associated_resource)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "contents", contents)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "name", name)
@@ -25618,12 +26778,28 @@ class GetNamedCredentialsNamedCredentialCollectionItemResult(dict):
         return pulumi.get(self, "contents")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter
     def description(self) -> str:
         """
         The information specified by the user about the named credential.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter

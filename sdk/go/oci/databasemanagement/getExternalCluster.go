@@ -64,6 +64,8 @@ type LookupExternalClusterResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the external cluster.
 	ComponentName string `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the external cluster. The name does not have to be unique.
 	DisplayName       string `pulumi:"displayName"`
 	ExternalClusterId string `pulumi:"externalClusterId"`
@@ -71,6 +73,8 @@ type LookupExternalClusterResult struct {
 	ExternalConnectorId string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The directory in which Oracle Grid Infrastructure is installed.
 	GridHome string `pulumi:"gridHome"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
@@ -150,6 +154,11 @@ func (o LookupExternalClusterResultOutput) ComponentName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalClusterResult) string { return v.ComponentName }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupExternalClusterResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalClusterResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The user-friendly name for the external cluster. The name does not have to be unique.
 func (o LookupExternalClusterResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalClusterResult) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -167,6 +176,11 @@ func (o LookupExternalClusterResultOutput) ExternalConnectorId() pulumi.StringOu
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
 func (o LookupExternalClusterResultOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalClusterResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupExternalClusterResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalClusterResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The directory in which Oracle Grid Infrastructure is installed.

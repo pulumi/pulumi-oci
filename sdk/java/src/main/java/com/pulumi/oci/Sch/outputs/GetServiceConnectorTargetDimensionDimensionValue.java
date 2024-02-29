@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetServiceConnectorTargetDimensionDimensionValue {
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     private String kind;
@@ -28,7 +28,7 @@ public final class GetServiceConnectorTargetDimensionDimensionValue {
 
     private GetServiceConnectorTargetDimensionDimensionValue() {}
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     public String kind() {

@@ -34,11 +34,15 @@ type ExternalDbSystemDiscovery struct {
 	AgentId pulumi.StringOutput `pulumi:"agentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The list of DB system components that were found in the DB system discovery.
 	DiscoveredComponents ExternalDbSystemDiscoveryDiscoveredComponentArrayOutput `pulumi:"discoveredComponents"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName                 pulumi.StringOutput `pulumi:"displayName"`
 	ExternalDbSystemDiscoveryId pulumi.StringOutput `pulumi:"externalDbSystemDiscoveryId"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The directory in which Oracle Grid Infrastructure is installed.
 	GridHome pulumi.StringOutput `pulumi:"gridHome"`
 	// Additional information about the current lifecycle state.
@@ -95,11 +99,15 @@ type externalDbSystemDiscoveryState struct {
 	AgentId *string `pulumi:"agentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The list of DB system components that were found in the DB system discovery.
 	DiscoveredComponents []ExternalDbSystemDiscoveryDiscoveredComponent `pulumi:"discoveredComponents"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName                 *string `pulumi:"displayName"`
 	ExternalDbSystemDiscoveryId *string `pulumi:"externalDbSystemDiscoveryId"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The directory in which Oracle Grid Infrastructure is installed.
 	GridHome *string `pulumi:"gridHome"`
 	// Additional information about the current lifecycle state.
@@ -121,11 +129,15 @@ type ExternalDbSystemDiscoveryState struct {
 	AgentId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
 	CompartmentId pulumi.StringPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// The list of DB system components that were found in the DB system discovery.
 	DiscoveredComponents ExternalDbSystemDiscoveryDiscoveredComponentArrayInput
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName                 pulumi.StringPtrInput
 	ExternalDbSystemDiscoveryId pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput
 	// The directory in which Oracle Grid Infrastructure is installed.
 	GridHome pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
@@ -151,8 +163,12 @@ type externalDbSystemDiscoveryArgs struct {
 	AgentId string `pulumi:"agentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable)
 	PatchOperations []ExternalDbSystemDiscoveryPatchOperation `pulumi:"patchOperations"`
 }
@@ -163,8 +179,12 @@ type ExternalDbSystemDiscoveryArgs struct {
 	AgentId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
 	CompartmentId pulumi.StringInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput
 	// (Updatable)
 	PatchOperations ExternalDbSystemDiscoveryPatchOperationArrayInput
 }
@@ -266,6 +286,11 @@ func (o ExternalDbSystemDiscoveryOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ExternalDbSystemDiscoveryOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The list of DB system components that were found in the DB system discovery.
 func (o ExternalDbSystemDiscoveryOutput) DiscoveredComponents() ExternalDbSystemDiscoveryDiscoveredComponentArrayOutput {
 	return o.ApplyT(func(v *ExternalDbSystemDiscovery) ExternalDbSystemDiscoveryDiscoveredComponentArrayOutput {
@@ -280,6 +305,11 @@ func (o ExternalDbSystemDiscoveryOutput) DisplayName() pulumi.StringOutput {
 
 func (o ExternalDbSystemDiscoveryOutput) ExternalDbSystemDiscoveryId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.StringOutput { return v.ExternalDbSystemDiscoveryId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o ExternalDbSystemDiscoveryOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ExternalDbSystemDiscovery) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The directory in which Oracle Grid Infrastructure is installed.

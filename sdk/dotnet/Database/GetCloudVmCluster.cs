@@ -276,6 +276,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// Operating system version of the image.
         /// </summary>
         public readonly string SystemVersion;
@@ -386,6 +390,8 @@ namespace Pulumi.Oci.Database
 
             string subnetId,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string systemVersion,
 
             string timeCreated,
@@ -440,6 +446,7 @@ namespace Pulumi.Oci.Database
             State = state;
             StorageSizeInGbs = storageSizeInGbs;
             SubnetId = subnetId;
+            SystemTags = systemTags;
             SystemVersion = systemVersion;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

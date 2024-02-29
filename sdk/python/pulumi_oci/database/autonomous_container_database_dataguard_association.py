@@ -18,19 +18,20 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
     def __init__(__self__, *,
                  autonomous_container_database_id: pulumi.Input[str],
                  peer_autonomous_container_database_display_name: pulumi.Input[str],
-                 peer_cloud_autonomous_vm_cluster_id: pulumi.Input[str],
                  protection_mode: pulumi.Input[str],
-                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[int]] = None,
+                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                  fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  peer_autonomous_container_database_backup_config: Optional[pulumi.Input['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs']] = None,
                  peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[str]] = None,
+                 peer_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+                 peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+                 peer_db_unique_name: Optional[pulumi.Input[str]] = None,
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a AutonomousContainerDatabaseDataguardAssociation resource.
         :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
-        :param pulumi.Input[str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
                
                
@@ -41,11 +42,13 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
         :param pulumi.Input[bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         :param pulumi.Input['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs'] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
         :param pulumi.Input[str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
+        :param pulumi.Input[str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+        :param pulumi.Input[str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        :param pulumi.Input[str] peer_db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         :param pulumi.Input[int] standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         """
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
         pulumi.set(__self__, "peer_autonomous_container_database_display_name", peer_autonomous_container_database_display_name)
-        pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_id", peer_cloud_autonomous_vm_cluster_id)
         pulumi.set(__self__, "protection_mode", protection_mode)
         if autonomous_container_database_dataguard_association_id is not None:
             pulumi.set(__self__, "autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
@@ -57,6 +60,12 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
             pulumi.set(__self__, "peer_autonomous_container_database_backup_config", peer_autonomous_container_database_backup_config)
         if peer_autonomous_container_database_compartment_id is not None:
             pulumi.set(__self__, "peer_autonomous_container_database_compartment_id", peer_autonomous_container_database_compartment_id)
+        if peer_autonomous_vm_cluster_id is not None:
+            pulumi.set(__self__, "peer_autonomous_vm_cluster_id", peer_autonomous_vm_cluster_id)
+        if peer_cloud_autonomous_vm_cluster_id is not None:
+            pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_id", peer_cloud_autonomous_vm_cluster_id)
+        if peer_db_unique_name is not None:
+            pulumi.set(__self__, "peer_db_unique_name", peer_db_unique_name)
         if standby_maintenance_buffer_in_days is not None:
             pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
 
@@ -85,18 +94,6 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
         pulumi.set(self, "peer_autonomous_container_database_display_name", value)
 
     @property
-    @pulumi.getter(name="peerCloudAutonomousVmClusterId")
-    def peer_cloud_autonomous_vm_cluster_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
-        """
-        return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_id")
-
-    @peer_cloud_autonomous_vm_cluster_id.setter
-    def peer_cloud_autonomous_vm_cluster_id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "peer_cloud_autonomous_vm_cluster_id", value)
-
-    @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> pulumi.Input[str]:
         """
@@ -115,11 +112,11 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
-    def autonomous_container_database_dataguard_association_id(self) -> Optional[pulumi.Input[int]]:
+    def autonomous_container_database_dataguard_association_id(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "autonomous_container_database_dataguard_association_id")
 
     @autonomous_container_database_dataguard_association_id.setter
-    def autonomous_container_database_dataguard_association_id(self, value: Optional[pulumi.Input[int]]):
+    def autonomous_container_database_dataguard_association_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "autonomous_container_database_dataguard_association_id", value)
 
     @property
@@ -171,6 +168,42 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
         pulumi.set(self, "peer_autonomous_container_database_compartment_id", value)
 
     @property
+    @pulumi.getter(name="peerAutonomousVmClusterId")
+    def peer_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+        """
+        return pulumi.get(self, "peer_autonomous_vm_cluster_id")
+
+    @peer_autonomous_vm_cluster_id.setter
+    def peer_autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "peer_autonomous_vm_cluster_id", value)
+
+    @property
+    @pulumi.getter(name="peerCloudAutonomousVmClusterId")
+    def peer_cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        """
+        return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_id")
+
+    @peer_cloud_autonomous_vm_cluster_id.setter
+    def peer_cloud_autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "peer_cloud_autonomous_vm_cluster_id", value)
+
+    @property
+    @pulumi.getter(name="peerDbUniqueName")
+    def peer_db_unique_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+        """
+        return pulumi.get(self, "peer_db_unique_name")
+
+    @peer_db_unique_name.setter
+    def peer_db_unique_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "peer_db_unique_name", value)
+
+    @property
     @pulumi.getter(name="standbyMaintenanceBufferInDays")
     def standby_maintenance_buffer_in_days(self) -> Optional[pulumi.Input[int]]:
         """
@@ -188,7 +221,7 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
     def __init__(__self__, *,
                  apply_lag: Optional[pulumi.Input[str]] = None,
                  apply_rate: Optional[pulumi.Input[str]] = None,
-                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[int]] = None,
+                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                  autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
                  fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
@@ -198,7 +231,9 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
                  peer_autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+                 peer_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+                 peer_db_unique_name: Optional[pulumi.Input[str]] = None,
                  peer_lifecycle_state: Optional[pulumi.Input[str]] = None,
                  peer_role: Optional[pulumi.Input[str]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
@@ -222,8 +257,10 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
         :param pulumi.Input[str] peer_autonomous_container_database_dataguard_association_id: The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         :param pulumi.Input[str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
         :param pulumi.Input[str] peer_autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
+        :param pulumi.Input[str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
-        :param pulumi.Input[str] peer_lifecycle_state: The current state of Autonomous Data Guard.
+        :param pulumi.Input[str] peer_db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+        :param pulumi.Input[str] peer_lifecycle_state: The current state of the Autonomous Container Database.
         :param pulumi.Input[str] peer_role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
                
@@ -263,8 +300,12 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
             pulumi.set(__self__, "peer_autonomous_container_database_display_name", peer_autonomous_container_database_display_name)
         if peer_autonomous_container_database_id is not None:
             pulumi.set(__self__, "peer_autonomous_container_database_id", peer_autonomous_container_database_id)
+        if peer_autonomous_vm_cluster_id is not None:
+            pulumi.set(__self__, "peer_autonomous_vm_cluster_id", peer_autonomous_vm_cluster_id)
         if peer_cloud_autonomous_vm_cluster_id is not None:
             pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_id", peer_cloud_autonomous_vm_cluster_id)
+        if peer_db_unique_name is not None:
+            pulumi.set(__self__, "peer_db_unique_name", peer_db_unique_name)
         if peer_lifecycle_state is not None:
             pulumi.set(__self__, "peer_lifecycle_state", peer_lifecycle_state)
         if peer_role is not None:
@@ -312,11 +353,11 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
-    def autonomous_container_database_dataguard_association_id(self) -> Optional[pulumi.Input[int]]:
+    def autonomous_container_database_dataguard_association_id(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "autonomous_container_database_dataguard_association_id")
 
     @autonomous_container_database_dataguard_association_id.setter
-    def autonomous_container_database_dataguard_association_id(self, value: Optional[pulumi.Input[int]]):
+    def autonomous_container_database_dataguard_association_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "autonomous_container_database_dataguard_association_id", value)
 
     @property
@@ -428,6 +469,18 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
         pulumi.set(self, "peer_autonomous_container_database_id", value)
 
     @property
+    @pulumi.getter(name="peerAutonomousVmClusterId")
+    def peer_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+        """
+        return pulumi.get(self, "peer_autonomous_vm_cluster_id")
+
+    @peer_autonomous_vm_cluster_id.setter
+    def peer_autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "peer_autonomous_vm_cluster_id", value)
+
+    @property
     @pulumi.getter(name="peerCloudAutonomousVmClusterId")
     def peer_cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -440,10 +493,22 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
         pulumi.set(self, "peer_cloud_autonomous_vm_cluster_id", value)
 
     @property
+    @pulumi.getter(name="peerDbUniqueName")
+    def peer_db_unique_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+        """
+        return pulumi.get(self, "peer_db_unique_name")
+
+    @peer_db_unique_name.setter
+    def peer_db_unique_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "peer_db_unique_name", value)
+
+    @property
     @pulumi.getter(name="peerLifecycleState")
     def peer_lifecycle_state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of Autonomous Data Guard.
+        The current state of the Autonomous Container Database.
         """
         return pulumi.get(self, "peer_lifecycle_state")
 
@@ -570,14 +635,16 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[int]] = None,
+                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                  autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
                  fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  peer_autonomous_container_database_backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs']]] = None,
                  peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
+                 peer_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+                 peer_db_unique_name: Optional[pulumi.Input[str]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -602,7 +669,6 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         test_autonomous_container_database_dataguard_association = oci.database.AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation",
             autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
             peer_autonomous_container_database_display_name=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name"],
-            peer_cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
             protection_mode=var["autonomous_container_database_dataguard_association_protection_mode"],
             fast_start_fail_over_lag_limit_in_seconds=var["autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds"],
             is_automatic_failover_enabled=var["autonomous_container_database_dataguard_association_is_automatic_failover_enabled"],
@@ -618,6 +684,9 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                 recovery_window_in_days=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days"],
             ),
             peer_autonomous_container_database_compartment_id=oci_identity_compartment["test_compartment"]["id"],
+            peer_autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
+            peer_cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
+            peer_db_unique_name=var["autonomous_container_database_dataguard_association_peer_db_unique_name"],
             standby_maintenance_buffer_in_days=var["autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days"])
         ```
 
@@ -637,7 +706,9 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
         :param pulumi.Input[str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         :param pulumi.Input[str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
+        :param pulumi.Input[str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        :param pulumi.Input[str] peer_db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         :param pulumi.Input[str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
                
                
@@ -673,7 +744,6 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         test_autonomous_container_database_dataguard_association = oci.database.AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation",
             autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
             peer_autonomous_container_database_display_name=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name"],
-            peer_cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
             protection_mode=var["autonomous_container_database_dataguard_association_protection_mode"],
             fast_start_fail_over_lag_limit_in_seconds=var["autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds"],
             is_automatic_failover_enabled=var["autonomous_container_database_dataguard_association_is_automatic_failover_enabled"],
@@ -689,6 +759,9 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                 recovery_window_in_days=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days"],
             ),
             peer_autonomous_container_database_compartment_id=oci_identity_compartment["test_compartment"]["id"],
+            peer_autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
+            peer_cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
+            peer_db_unique_name=var["autonomous_container_database_dataguard_association_peer_db_unique_name"],
             standby_maintenance_buffer_in_days=var["autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days"])
         ```
 
@@ -715,14 +788,16 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[int]] = None,
+                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                  autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
                  fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  peer_autonomous_container_database_backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs']]] = None,
                  peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
+                 peer_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+                 peer_db_unique_name: Optional[pulumi.Input[str]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -745,9 +820,9 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             if peer_autonomous_container_database_display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'peer_autonomous_container_database_display_name'")
             __props__.__dict__["peer_autonomous_container_database_display_name"] = peer_autonomous_container_database_display_name
-            if peer_cloud_autonomous_vm_cluster_id is None and not opts.urn:
-                raise TypeError("Missing required property 'peer_cloud_autonomous_vm_cluster_id'")
+            __props__.__dict__["peer_autonomous_vm_cluster_id"] = peer_autonomous_vm_cluster_id
             __props__.__dict__["peer_cloud_autonomous_vm_cluster_id"] = peer_cloud_autonomous_vm_cluster_id
+            __props__.__dict__["peer_db_unique_name"] = peer_db_unique_name
             if protection_mode is None and not opts.urn:
                 raise TypeError("Missing required property 'protection_mode'")
             __props__.__dict__["protection_mode"] = protection_mode
@@ -777,7 +852,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             apply_lag: Optional[pulumi.Input[str]] = None,
             apply_rate: Optional[pulumi.Input[str]] = None,
-            autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[int]] = None,
+            autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
             autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
             fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
             is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
@@ -787,7 +862,9 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             peer_autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
             peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
             peer_autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+            peer_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
             peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+            peer_db_unique_name: Optional[pulumi.Input[str]] = None,
             peer_lifecycle_state: Optional[pulumi.Input[str]] = None,
             peer_role: Optional[pulumi.Input[str]] = None,
             protection_mode: Optional[pulumi.Input[str]] = None,
@@ -816,8 +893,10 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] peer_autonomous_container_database_dataguard_association_id: The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         :param pulumi.Input[str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
         :param pulumi.Input[str] peer_autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
+        :param pulumi.Input[str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
-        :param pulumi.Input[str] peer_lifecycle_state: The current state of Autonomous Data Guard.
+        :param pulumi.Input[str] peer_db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+        :param pulumi.Input[str] peer_lifecycle_state: The current state of the Autonomous Container Database.
         :param pulumi.Input[str] peer_role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
                
@@ -849,7 +928,9 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         __props__.__dict__["peer_autonomous_container_database_dataguard_association_id"] = peer_autonomous_container_database_dataguard_association_id
         __props__.__dict__["peer_autonomous_container_database_display_name"] = peer_autonomous_container_database_display_name
         __props__.__dict__["peer_autonomous_container_database_id"] = peer_autonomous_container_database_id
+        __props__.__dict__["peer_autonomous_vm_cluster_id"] = peer_autonomous_vm_cluster_id
         __props__.__dict__["peer_cloud_autonomous_vm_cluster_id"] = peer_cloud_autonomous_vm_cluster_id
+        __props__.__dict__["peer_db_unique_name"] = peer_db_unique_name
         __props__.__dict__["peer_lifecycle_state"] = peer_lifecycle_state
         __props__.__dict__["peer_role"] = peer_role
         __props__.__dict__["protection_mode"] = protection_mode
@@ -880,7 +961,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
-    def autonomous_container_database_dataguard_association_id(self) -> pulumi.Output[int]:
+    def autonomous_container_database_dataguard_association_id(self) -> pulumi.Output[str]:
         return pulumi.get(self, "autonomous_container_database_dataguard_association_id")
 
     @property
@@ -956,6 +1037,14 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         return pulumi.get(self, "peer_autonomous_container_database_id")
 
     @property
+    @pulumi.getter(name="peerAutonomousVmClusterId")
+    def peer_autonomous_vm_cluster_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+        """
+        return pulumi.get(self, "peer_autonomous_vm_cluster_id")
+
+    @property
     @pulumi.getter(name="peerCloudAutonomousVmClusterId")
     def peer_cloud_autonomous_vm_cluster_id(self) -> pulumi.Output[str]:
         """
@@ -964,10 +1053,18 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_id")
 
     @property
+    @pulumi.getter(name="peerDbUniqueName")
+    def peer_db_unique_name(self) -> pulumi.Output[str]:
+        """
+        Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+        """
+        return pulumi.get(self, "peer_db_unique_name")
+
+    @property
     @pulumi.getter(name="peerLifecycleState")
     def peer_lifecycle_state(self) -> pulumi.Output[str]:
         """
-        The current state of Autonomous Data Guard.
+        The current state of the Autonomous Container Database.
         """
         return pulumi.get(self, "peer_lifecycle_state")
 

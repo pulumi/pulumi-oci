@@ -267,21 +267,6 @@ class Sign(pulumi.CustomResource):
         operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
         This operation is not supported for keys having protection mode `EXTERNAL`.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_sign = oci.kms.Sign("testSign",
-            crypto_endpoint=var["sign_message_crypto_endpoint"],
-            key_id=oci_kms_key["test_key"]["id"],
-            message=var["sign_message"],
-            signing_algorithm=var["sign_signing_algorithm"],
-            key_version_id=oci_kms_key_version["test_key_version"]["id"],
-            message_type=var["sign_message_type"])
-        ```
-
         ## Import
 
         Sign can be imported using the `id`, e.g.
@@ -316,21 +301,6 @@ class Sign(pulumi.CustomResource):
         also known as an asymmetric key. To verify the generated signature, you can use the [Verify](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/VerifiedData/Verify)
         operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
         This operation is not supported for keys having protection mode `EXTERNAL`.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_sign = oci.kms.Sign("testSign",
-            crypto_endpoint=var["sign_message_crypto_endpoint"],
-            key_id=oci_kms_key["test_key"]["id"],
-            message=var["sign_message"],
-            signing_algorithm=var["sign_signing_algorithm"],
-            key_version_id=oci_kms_key_version["test_key_version"]["id"],
-            message_type=var["sign_message_type"])
-        ```
 
         ## Import
 

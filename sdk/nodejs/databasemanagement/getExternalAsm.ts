@@ -57,6 +57,10 @@ export interface GetExternalAsmResult {
      */
     readonly componentName: string;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    readonly definedTags: {[key: string]: any};
+    /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
     readonly displayName: string;
@@ -69,6 +73,10 @@ export interface GetExternalAsmResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
      */
     readonly externalDbSystemId: string;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    readonly freeformTags: {[key: string]: any};
     /**
      * The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
      */

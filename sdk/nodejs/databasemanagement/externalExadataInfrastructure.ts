@@ -26,7 +26,13 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     dbSystemIds: _var.external_exadata_infrastructure_db_system_ids,
  *     displayName: _var.external_exadata_infrastructure_display_name,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
  *     discoveryKey: _var.external_exadata_infrastructure_discovery_key,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
  *     licenseModel: _var.external_exadata_infrastructure_license_model,
  *     storageServerNames: _var.external_exadata_infrastructure_storage_server_names,
  * });
@@ -89,6 +95,10 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly dbSystemIds!: pulumi.Output<string[]>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * (Updatable) The unique key of the discovery request.
      */
     public readonly discoveryKey!: pulumi.Output<string>;
@@ -96,6 +106,10 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
      * (Updatable) The name of the Exadata infrastructure.
      */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The internal ID of the Exadata resource.
      */
@@ -163,8 +177,10 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["databaseCompartments"] = state ? state.databaseCompartments : undefined;
             resourceInputs["databaseSystems"] = state ? state.databaseSystems : undefined;
             resourceInputs["dbSystemIds"] = state ? state.dbSystemIds : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["discoveryKey"] = state ? state.discoveryKey : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["internalId"] = state ? state.internalId : undefined;
             resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
@@ -189,8 +205,10 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["dbSystemIds"] = args ? args.dbSystemIds : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["discoveryKey"] = args ? args.discoveryKey : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
             resourceInputs["storageServerNames"] = args ? args.storageServerNames : undefined;
             resourceInputs["additionalDetails"] = undefined /*out*/;
@@ -236,6 +254,10 @@ export interface ExternalExadataInfrastructureState {
      */
     dbSystemIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The unique key of the discovery request.
      */
     discoveryKey?: pulumi.Input<string>;
@@ -243,6 +265,10 @@ export interface ExternalExadataInfrastructureState {
      * (Updatable) The name of the Exadata infrastructure.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The internal ID of the Exadata resource.
      */
@@ -306,6 +332,10 @@ export interface ExternalExadataInfrastructureArgs {
      */
     dbSystemIds: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The unique key of the discovery request.
      */
     discoveryKey?: pulumi.Input<string>;
@@ -313,6 +343,10 @@ export interface ExternalExadataInfrastructureArgs {
      * (Updatable) The name of the Exadata infrastructure.
      */
     displayName: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) The Oracle license model that applies to the database management resources.
      */

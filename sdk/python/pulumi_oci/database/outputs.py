@@ -11722,7 +11722,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
     def __init__(__self__, *,
                  apply_lag: str,
                  apply_rate: str,
-                 autonomous_container_database_dataguard_association_id: int,
+                 autonomous_container_database_dataguard_association_id: str,
                  autonomous_container_database_id: str,
                  fast_start_fail_over_lag_limit_in_seconds: int,
                  id: str,
@@ -11733,7 +11733,9 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
                  peer_autonomous_container_database_dataguard_association_id: str,
                  peer_autonomous_container_database_display_name: str,
                  peer_autonomous_container_database_id: str,
+                 peer_autonomous_vm_cluster_id: str,
                  peer_cloud_autonomous_vm_cluster_id: str,
+                 peer_db_unique_name: str,
                  peer_lifecycle_state: str,
                  peer_role: str,
                  protection_mode: str,
@@ -11754,7 +11756,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
         :param str lifecycle_details: Additional information about the current lifecycleState, if available.
         :param str peer_autonomous_container_database_dataguard_association_id: The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         :param str peer_autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
-        :param str peer_lifecycle_state: The current state of Autonomous Data Guard.
+        :param str peer_lifecycle_state: The current state of the Autonomous Container Database.
         :param str peer_role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
@@ -11777,7 +11779,9 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
         pulumi.set(__self__, "peer_autonomous_container_database_dataguard_association_id", peer_autonomous_container_database_dataguard_association_id)
         pulumi.set(__self__, "peer_autonomous_container_database_display_name", peer_autonomous_container_database_display_name)
         pulumi.set(__self__, "peer_autonomous_container_database_id", peer_autonomous_container_database_id)
+        pulumi.set(__self__, "peer_autonomous_vm_cluster_id", peer_autonomous_vm_cluster_id)
         pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_id", peer_cloud_autonomous_vm_cluster_id)
+        pulumi.set(__self__, "peer_db_unique_name", peer_db_unique_name)
         pulumi.set(__self__, "peer_lifecycle_state", peer_lifecycle_state)
         pulumi.set(__self__, "peer_role", peer_role)
         pulumi.set(__self__, "protection_mode", protection_mode)
@@ -11807,7 +11811,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
-    def autonomous_container_database_dataguard_association_id(self) -> int:
+    def autonomous_container_database_dataguard_association_id(self) -> str:
         return pulumi.get(self, "autonomous_container_database_dataguard_association_id")
 
     @property
@@ -11882,15 +11886,25 @@ class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerData
         return pulumi.get(self, "peer_autonomous_container_database_id")
 
     @property
+    @pulumi.getter(name="peerAutonomousVmClusterId")
+    def peer_autonomous_vm_cluster_id(self) -> str:
+        return pulumi.get(self, "peer_autonomous_vm_cluster_id")
+
+    @property
     @pulumi.getter(name="peerCloudAutonomousVmClusterId")
     def peer_cloud_autonomous_vm_cluster_id(self) -> str:
         return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_id")
 
     @property
+    @pulumi.getter(name="peerDbUniqueName")
+    def peer_db_unique_name(self) -> str:
+        return pulumi.get(self, "peer_db_unique_name")
+
+    @property
     @pulumi.getter(name="peerLifecycleState")
     def peer_lifecycle_state(self) -> str:
         """
-        The current state of Autonomous Data Guard.
+        The current state of the Autonomous Container Database.
         """
         return pulumi.get(self, "peer_lifecycle_state")
 
@@ -14792,7 +14806,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
         :param bool is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         :param str lifecycle_details: Additional information about the current lifecycleState, if available.
         :param str peer_autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
-        :param str peer_autonomous_database_life_cycle_state: The current state of Autonomous Data Guard.
+        :param str peer_autonomous_database_life_cycle_state: The current state of the Autonomous Database.
         :param str peer_role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
@@ -14879,7 +14893,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
     @pulumi.getter(name="peerAutonomousDatabaseLifeCycleState")
     def peer_autonomous_database_life_cycle_state(self) -> str:
         """
-        The current state of Autonomous Data Guard.
+        The current state of the Autonomous Database.
         """
         return pulumi.get(self, "peer_autonomous_database_life_cycle_state")
 
@@ -25043,6 +25057,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  additional_storage_count: int,
                  availability_domain: str,
                  available_storage_size_in_gbs: int,
+                 cluster_placement_group_id: str,
                  compartment_id: str,
                  compute_count: int,
                  cpu_count: int,
@@ -25069,6 +25084,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  state: str,
                  storage_count: int,
                  storage_server_version: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  total_storage_size_in_gbs: int):
         """
@@ -25076,6 +25092,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param int additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param str availability_domain: The name of the availability domain that the cloud Exadata infrastructure resource is located in.
         :param int available_storage_size_in_gbs: The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+        :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int compute_count: The number of compute servers for the cloud Exadata infrastructure.
         :param int cpu_count: The total number of CPU cores allocated.
@@ -25102,6 +25119,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param int storage_count: The number of storage servers for the cloud Exadata infrastructure.
         :param str storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param int total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
@@ -25109,6 +25127,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         pulumi.set(__self__, "additional_storage_count", additional_storage_count)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "available_storage_size_in_gbs", available_storage_size_in_gbs)
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_count", compute_count)
         pulumi.set(__self__, "cpu_count", cpu_count)
@@ -25135,6 +25154,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_count", storage_count)
         pulumi.set(__self__, "storage_server_version", storage_server_version)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "total_storage_size_in_gbs", total_storage_size_in_gbs)
 
@@ -25169,6 +25189,14 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
         return pulumi.get(self, "available_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> str:
+        """
+        A filter to return only resources that match the given cluster placement group ID exactly.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -25377,6 +25405,14 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         """
         return pulumi.get(self, "storage_server_version")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -25818,6 +25854,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  state: str,
                  storage_size_in_gbs: int,
                  subnet_id: str,
+                 system_tags: Mapping[str, Any],
                  system_version: str,
                  time_created: str,
                  time_zone: str,
@@ -25865,6 +25902,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param str state: A filter to return only cloud VM clusters that match the given lifecycle state exactly.
         :param int storage_size_in_gbs: The storage allocation for the disk group, in gigabytes (GB).
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str system_version: Operating system version of the image.
         :param str time_created: The date and time that the cloud VM cluster was created.
         :param str time_zone: The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -25914,6 +25952,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "system_version", system_version)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
@@ -26255,6 +26294,14 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="systemVersion")

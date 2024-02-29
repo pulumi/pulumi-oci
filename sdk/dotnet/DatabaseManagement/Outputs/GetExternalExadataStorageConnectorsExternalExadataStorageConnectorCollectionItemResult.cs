@@ -28,6 +28,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         public readonly string ConnectorName;
         public readonly ImmutableArray<Outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoResult> CredentialInfos;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The optional single value query filter parameter on the entity display name.
         /// </summary>
         public readonly string DisplayName;
@@ -35,6 +39,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         /// </summary>
         public readonly string ExadataInfrastructureId;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         /// </summary>
@@ -84,9 +92,13 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             ImmutableArray<Outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoResult> credentialInfos,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string displayName,
 
             string exadataInfrastructureId,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -111,8 +123,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             ConnectionUri = connectionUri;
             ConnectorName = connectorName;
             CredentialInfos = credentialInfos;
+            DefinedTags = definedTags;
             DisplayName = displayName;
             ExadataInfrastructureId = exadataInfrastructureId;
+            FreeformTags = freeformTags;
             Id = id;
             InternalId = internalId;
             LifecycleDetails = lifecycleDetails;

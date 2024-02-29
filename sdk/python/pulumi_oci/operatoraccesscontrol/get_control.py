@@ -21,7 +21,7 @@ class GetControlResult:
     """
     A collection of values returned by getControl.
     """
-    def __init__(__self__, approval_required_op_action_lists=None, approver_groups_lists=None, approvers_lists=None, compartment_id=None, defined_tags=None, description=None, email_id_lists=None, freeform_tags=None, id=None, is_default_operator_control=None, is_fully_pre_approved=None, last_modified_info=None, operator_control_id=None, operator_control_name=None, pre_approved_op_action_lists=None, resource_type=None, state=None, system_message=None, time_of_creation=None, time_of_deletion=None, time_of_modification=None):
+    def __init__(__self__, approval_required_op_action_lists=None, approver_groups_lists=None, approvers_lists=None, compartment_id=None, defined_tags=None, description=None, email_id_lists=None, freeform_tags=None, id=None, is_default_operator_control=None, is_fully_pre_approved=None, last_modified_info=None, number_of_approvers=None, operator_control_id=None, operator_control_name=None, pre_approved_op_action_lists=None, resource_type=None, state=None, system_message=None, time_of_creation=None, time_of_deletion=None, time_of_modification=None):
         if approval_required_op_action_lists and not isinstance(approval_required_op_action_lists, list):
             raise TypeError("Expected argument 'approval_required_op_action_lists' to be a list")
         pulumi.set(__self__, "approval_required_op_action_lists", approval_required_op_action_lists)
@@ -58,6 +58,9 @@ class GetControlResult:
         if last_modified_info and not isinstance(last_modified_info, str):
             raise TypeError("Expected argument 'last_modified_info' to be a str")
         pulumi.set(__self__, "last_modified_info", last_modified_info)
+        if number_of_approvers and not isinstance(number_of_approvers, int):
+            raise TypeError("Expected argument 'number_of_approvers' to be a int")
+        pulumi.set(__self__, "number_of_approvers", number_of_approvers)
         if operator_control_id and not isinstance(operator_control_id, str):
             raise TypeError("Expected argument 'operator_control_id' to be a str")
         pulumi.set(__self__, "operator_control_id", operator_control_id)
@@ -183,6 +186,14 @@ class GetControlResult:
         return pulumi.get(self, "last_modified_info")
 
     @property
+    @pulumi.getter(name="numberOfApprovers")
+    def number_of_approvers(self) -> int:
+        """
+        Number of approvers required to approve an access request.
+        """
+        return pulumi.get(self, "number_of_approvers")
+
+    @property
     @pulumi.getter(name="operatorControlId")
     def operator_control_id(self) -> str:
         return pulumi.get(self, "operator_control_id")
@@ -270,6 +281,7 @@ class AwaitableGetControlResult(GetControlResult):
             is_default_operator_control=self.is_default_operator_control,
             is_fully_pre_approved=self.is_fully_pre_approved,
             last_modified_info=self.last_modified_info,
+            number_of_approvers=self.number_of_approvers,
             operator_control_id=self.operator_control_id,
             operator_control_name=self.operator_control_name,
             pre_approved_op_action_lists=self.pre_approved_op_action_lists,
@@ -318,6 +330,7 @@ def get_control(operator_control_id: Optional[str] = None,
         is_default_operator_control=pulumi.get(__ret__, 'is_default_operator_control'),
         is_fully_pre_approved=pulumi.get(__ret__, 'is_fully_pre_approved'),
         last_modified_info=pulumi.get(__ret__, 'last_modified_info'),
+        number_of_approvers=pulumi.get(__ret__, 'number_of_approvers'),
         operator_control_id=pulumi.get(__ret__, 'operator_control_id'),
         operator_control_name=pulumi.get(__ret__, 'operator_control_name'),
         pre_approved_op_action_lists=pulumi.get(__ret__, 'pre_approved_op_action_lists'),

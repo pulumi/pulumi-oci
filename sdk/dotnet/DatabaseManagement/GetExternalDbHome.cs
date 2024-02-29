@@ -120,6 +120,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string ComponentName;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The user-friendly name for the external DB home. The name does not have to be unique.
         /// </summary>
         public readonly string DisplayName;
@@ -129,11 +133,15 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string ExternalDbSystemId;
         /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
+        /// <summary>
         /// The location of the DB home.
         /// </summary>
         public readonly string HomeDirectory;
         /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -161,11 +169,15 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string componentName,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string displayName,
 
             string externalDbHomeId,
 
             string externalDbSystemId,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string homeDirectory,
 
@@ -182,9 +194,11 @@ namespace Pulumi.Oci.DatabaseManagement
             AdditionalDetails = additionalDetails;
             CompartmentId = compartmentId;
             ComponentName = componentName;
+            DefinedTags = definedTags;
             DisplayName = displayName;
             ExternalDbHomeId = externalDbHomeId;
             ExternalDbSystemId = externalDbSystemId;
+            FreeformTags = freeformTags;
             HomeDirectory = homeDirectory;
             Id = id;
             LifecycleDetails = lifecycleDetails;

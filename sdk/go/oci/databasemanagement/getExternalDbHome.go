@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetExternalDbHome(ctx *pulumi.Context, args *GetExternalDbHomeArgs, opts ...pulumi.InvokeOption) (*GetExternalDbHomeResult, error) {
+func LookupExternalDbHome(ctx *pulumi.Context, args *LookupExternalDbHomeArgs, opts ...pulumi.InvokeOption) (*LookupExternalDbHomeResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetExternalDbHomeResult
+	var rv LookupExternalDbHomeResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,27 +51,31 @@ func GetExternalDbHome(ctx *pulumi.Context, args *GetExternalDbHomeArgs, opts ..
 }
 
 // A collection of arguments for invoking getExternalDbHome.
-type GetExternalDbHomeArgs struct {
+type LookupExternalDbHomeArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database home.
 	ExternalDbHomeId string `pulumi:"externalDbHomeId"`
 }
 
 // A collection of values returned by getExternalDbHome.
-type GetExternalDbHomeResult struct {
+type LookupExternalDbHomeResult struct {
 	// The additional details of the DB home defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the external DB home.
 	ComponentName string `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the external DB home. The name does not have to be unique.
 	DisplayName      string `pulumi:"displayName"`
 	ExternalDbHomeId string `pulumi:"externalDbHomeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB home is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The location of the DB home.
 	HomeDirectory string `pulumi:"homeDirectory"`
-	// The provider-assigned unique ID for this managed resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
 	Id string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -83,103 +87,113 @@ type GetExternalDbHomeResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
-func GetExternalDbHomeOutput(ctx *pulumi.Context, args GetExternalDbHomeOutputArgs, opts ...pulumi.InvokeOption) GetExternalDbHomeResultOutput {
+func LookupExternalDbHomeOutput(ctx *pulumi.Context, args LookupExternalDbHomeOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDbHomeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetExternalDbHomeResult, error) {
-			args := v.(GetExternalDbHomeArgs)
-			r, err := GetExternalDbHome(ctx, &args, opts...)
-			var s GetExternalDbHomeResult
+		ApplyT(func(v interface{}) (LookupExternalDbHomeResult, error) {
+			args := v.(LookupExternalDbHomeArgs)
+			r, err := LookupExternalDbHome(ctx, &args, opts...)
+			var s LookupExternalDbHomeResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetExternalDbHomeResultOutput)
+		}).(LookupExternalDbHomeResultOutput)
 }
 
 // A collection of arguments for invoking getExternalDbHome.
-type GetExternalDbHomeOutputArgs struct {
+type LookupExternalDbHomeOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database home.
 	ExternalDbHomeId pulumi.StringInput `pulumi:"externalDbHomeId"`
 }
 
-func (GetExternalDbHomeOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExternalDbHomeArgs)(nil)).Elem()
+func (LookupExternalDbHomeOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupExternalDbHomeArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getExternalDbHome.
-type GetExternalDbHomeResultOutput struct{ *pulumi.OutputState }
+type LookupExternalDbHomeResultOutput struct{ *pulumi.OutputState }
 
-func (GetExternalDbHomeResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExternalDbHomeResult)(nil)).Elem()
+func (LookupExternalDbHomeResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupExternalDbHomeResult)(nil)).Elem()
 }
 
-func (o GetExternalDbHomeResultOutput) ToGetExternalDbHomeResultOutput() GetExternalDbHomeResultOutput {
+func (o LookupExternalDbHomeResultOutput) ToLookupExternalDbHomeResultOutput() LookupExternalDbHomeResultOutput {
 	return o
 }
 
-func (o GetExternalDbHomeResultOutput) ToGetExternalDbHomeResultOutputWithContext(ctx context.Context) GetExternalDbHomeResultOutput {
+func (o LookupExternalDbHomeResultOutput) ToLookupExternalDbHomeResultOutputWithContext(ctx context.Context) LookupExternalDbHomeResultOutput {
 	return o
 }
 
 // The additional details of the DB home defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-func (o GetExternalDbHomeResultOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o LookupExternalDbHomeResultOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetExternalDbHomeResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupExternalDbHomeResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The name of the external DB home.
-func (o GetExternalDbHomeResultOutput) ComponentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.ComponentName }).(pulumi.StringOutput)
+func (o LookupExternalDbHomeResultOutput) ComponentName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) string { return v.ComponentName }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupExternalDbHomeResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // The user-friendly name for the external DB home. The name does not have to be unique.
-func (o GetExternalDbHomeResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupExternalDbHomeResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-func (o GetExternalDbHomeResultOutput) ExternalDbHomeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.ExternalDbHomeId }).(pulumi.StringOutput)
+func (o LookupExternalDbHomeResultOutput) ExternalDbHomeId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) string { return v.ExternalDbHomeId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB home is a part of.
-func (o GetExternalDbHomeResultOutput) ExternalDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+func (o LookupExternalDbHomeResultOutput) ExternalDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupExternalDbHomeResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The location of the DB home.
-func (o GetExternalDbHomeResultOutput) HomeDirectory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.HomeDirectory }).(pulumi.StringOutput)
+func (o LookupExternalDbHomeResultOutput) HomeDirectory() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) string { return v.HomeDirectory }).(pulumi.StringOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
-func (o GetExternalDbHomeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.Id }).(pulumi.StringOutput)
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
+func (o LookupExternalDbHomeResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o GetExternalDbHomeResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExternalDbHomeResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The current lifecycle state of the external DB home.
-func (o GetExternalDbHomeResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExternalDbHomeResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 // The date and time the external DB home was created.
-func (o GetExternalDbHomeResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupExternalDbHomeResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The date and time the external DB home was last updated.
-func (o GetExternalDbHomeResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupExternalDbHomeResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbHomeResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetExternalDbHomeResultOutput{})
+	pulumi.RegisterOutputType(LookupExternalDbHomeResultOutput{})
 }

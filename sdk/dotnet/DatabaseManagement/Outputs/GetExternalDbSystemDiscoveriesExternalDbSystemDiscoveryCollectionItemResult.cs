@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The list of DB system components that were found in the DB system discovery.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentResult> DiscoveredComponents;
@@ -30,6 +34,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string DisplayName;
         public readonly string ExternalDbSystemDiscoveryId;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The directory in which Oracle Grid Infrastructure is installed.
         /// </summary>
@@ -66,11 +74,15 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string compartmentId,
 
+            ImmutableDictionary<string, object> definedTags,
+
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentResult> discoveredComponents,
 
             string displayName,
 
             string externalDbSystemDiscoveryId,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string gridHome,
 
@@ -90,9 +102,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         {
             AgentId = agentId;
             CompartmentId = compartmentId;
+            DefinedTags = definedTags;
             DiscoveredComponents = discoveredComponents;
             DisplayName = displayName;
             ExternalDbSystemDiscoveryId = externalDbSystemDiscoveryId;
+            FreeformTags = freeformTags;
             GridHome = gridHome;
             Id = id;
             LifecycleDetails = lifecycleDetails;

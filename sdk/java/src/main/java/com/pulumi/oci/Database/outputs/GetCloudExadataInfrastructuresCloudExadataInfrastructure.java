@@ -38,6 +38,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     private Integer availableStorageSizeInGbs;
     /**
+     * @return A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -168,6 +173,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     private String storageServerVersion;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return The date and time the cloud Exadata infrastructure resource was created.
      * 
      */
@@ -206,6 +216,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     public Integer availableStorageSizeInGbs() {
         return this.availableStorageSizeInGbs;
+    }
+    /**
+     * @return A filter to return only resources that match the given cluster placement group ID exactly.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -390,6 +407,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         return this.storageServerVersion;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the cloud Exadata infrastructure resource was created.
      * 
      */
@@ -417,6 +441,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         private Integer additionalStorageCount;
         private String availabilityDomain;
         private Integer availableStorageSizeInGbs;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private Integer computeCount;
         private Integer cpuCount;
@@ -443,6 +468,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         private String state;
         private Integer storageCount;
         private String storageServerVersion;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         private Integer totalStorageSizeInGbs;
         public Builder() {}
@@ -452,6 +478,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.additionalStorageCount = defaults.additionalStorageCount;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availableStorageSizeInGbs = defaults.availableStorageSizeInGbs;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeCount = defaults.computeCount;
     	      this.cpuCount = defaults.cpuCount;
@@ -478,6 +505,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.state = defaults.state;
     	      this.storageCount = defaults.storageCount;
     	      this.storageServerVersion = defaults.storageServerVersion;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.totalStorageSizeInGbs = defaults.totalStorageSizeInGbs;
         }
@@ -512,6 +540,14 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
               throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "availableStorageSizeInGbs");
             }
             this.availableStorageSizeInGbs = availableStorageSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -729,6 +765,14 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "timeCreated");
@@ -750,6 +794,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             _resultValue.additionalStorageCount = additionalStorageCount;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.availableStorageSizeInGbs = availableStorageSizeInGbs;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeCount = computeCount;
             _resultValue.cpuCount = cpuCount;
@@ -776,6 +821,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             _resultValue.state = state;
             _resultValue.storageCount = storageCount;
             _resultValue.storageServerVersion = storageServerVersion;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.totalStorageSizeInGbs = totalStorageSizeInGbs;
             return _resultValue;

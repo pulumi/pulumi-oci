@@ -22,7 +22,7 @@ class GetKeyVersionResult:
     """
     A collection of values returned by getKeyVersion.
     """
-    def __init__(__self__, compartment_id=None, external_key_reference_details=None, external_key_version_id=None, id=None, is_primary=None, key_id=None, key_version_id=None, management_endpoint=None, public_key=None, replica_details=None, restored_from_key_id=None, restored_from_key_version_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None):
+    def __init__(__self__, compartment_id=None, external_key_reference_details=None, external_key_version_id=None, id=None, is_auto_rotated=None, is_primary=None, key_id=None, key_version_id=None, management_endpoint=None, public_key=None, replica_details=None, restored_from_key_id=None, restored_from_key_version_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -35,6 +35,9 @@ class GetKeyVersionResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_auto_rotated and not isinstance(is_auto_rotated, bool):
+            raise TypeError("Expected argument 'is_auto_rotated' to be a bool")
+        pulumi.set(__self__, "is_auto_rotated", is_auto_rotated)
         if is_primary and not isinstance(is_primary, bool):
             raise TypeError("Expected argument 'is_primary' to be a bool")
         pulumi.set(__self__, "is_primary", is_primary)
@@ -103,6 +106,14 @@ class GetKeyVersionResult:
         The OCID of the key version.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isAutoRotated")
+    def is_auto_rotated(self) -> bool:
+        """
+        An optional property indicating whether this keyversion is generated from auto rotatation.
+        """
+        return pulumi.get(self, "is_auto_rotated")
 
     @property
     @pulumi.getter(name="isPrimary")
@@ -205,6 +216,7 @@ class AwaitableGetKeyVersionResult(GetKeyVersionResult):
             external_key_reference_details=self.external_key_reference_details,
             external_key_version_id=self.external_key_version_id,
             id=self.id,
+            is_auto_rotated=self.is_auto_rotated,
             is_primary=self.is_primary,
             key_id=self.key_id,
             key_version_id=self.key_version_id,
@@ -261,6 +273,7 @@ def get_key_version(key_id: Optional[str] = None,
         external_key_reference_details=pulumi.get(__ret__, 'external_key_reference_details'),
         external_key_version_id=pulumi.get(__ret__, 'external_key_version_id'),
         id=pulumi.get(__ret__, 'id'),
+        is_auto_rotated=pulumi.get(__ret__, 'is_auto_rotated'),
         is_primary=pulumi.get(__ret__, 'is_primary'),
         key_id=pulumi.get(__ret__, 'key_id'),
         key_version_id=pulumi.get(__ret__, 'key_version_id'),

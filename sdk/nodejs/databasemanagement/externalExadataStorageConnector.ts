@@ -29,6 +29,12 @@ import * as utilities from "../utilities";
  *         sslTrustStoreType: _var.external_exadata_storage_connector_credential_info_ssl_trust_store_type,
  *     },
  *     storageServerId: oci_database_management_storage_server.test_storage_server.id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
  * });
  * ```
  *
@@ -89,6 +95,10 @@ export class ExternalExadataStorageConnector extends pulumi.CustomResource {
      */
     public readonly credentialInfo!: pulumi.Output<outputs.DatabaseManagement.ExternalExadataStorageConnectorCredentialInfo>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
     public /*out*/ readonly displayName!: pulumi.Output<string>;
@@ -96,6 +106,10 @@ export class ExternalExadataStorageConnector extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     public /*out*/ readonly exadataInfrastructureId!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The internal ID of the Exadata resource.
      */
@@ -151,8 +165,10 @@ export class ExternalExadataStorageConnector extends pulumi.CustomResource {
             resourceInputs["connectionUri"] = state ? state.connectionUri : undefined;
             resourceInputs["connectorName"] = state ? state.connectorName : undefined;
             resourceInputs["credentialInfo"] = state ? state.credentialInfo : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["internalId"] = state ? state.internalId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -182,6 +198,8 @@ export class ExternalExadataStorageConnector extends pulumi.CustomResource {
             resourceInputs["connectionUri"] = args ? args.connectionUri : undefined;
             resourceInputs["connectorName"] = args ? args.connectorName : undefined;
             resourceInputs["credentialInfo"] = args ? args.credentialInfo : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["storageServerId"] = args ? args.storageServerId : undefined;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
@@ -224,6 +242,10 @@ export interface ExternalExadataStorageConnectorState {
      */
     credentialInfo?: pulumi.Input<inputs.DatabaseManagement.ExternalExadataStorageConnectorCredentialInfo>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
     displayName?: pulumi.Input<string>;
@@ -231,6 +253,10 @@ export interface ExternalExadataStorageConnectorState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     exadataInfrastructureId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The internal ID of the Exadata resource.
      */
@@ -289,6 +315,14 @@ export interface ExternalExadataStorageConnectorArgs {
      * (Updatable) The user credential information.
      */
     credentialInfo: pulumi.Input<inputs.DatabaseManagement.ExternalExadataStorageConnectorCredentialInfo>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
      *

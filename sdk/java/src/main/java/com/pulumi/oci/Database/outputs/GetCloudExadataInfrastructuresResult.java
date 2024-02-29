@@ -21,6 +21,11 @@ public final class GetCloudExadataInfrastructuresResult {
      */
     private List<GetCloudExadataInfrastructuresCloudExadataInfrastructure> cloudExadataInfrastructures;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    private @Nullable String clusterPlacementGroupId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -49,6 +54,13 @@ public final class GetCloudExadataInfrastructuresResult {
      */
     public List<GetCloudExadataInfrastructuresCloudExadataInfrastructure> cloudExadataInfrastructures() {
         return this.cloudExadataInfrastructures;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    public Optional<String> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -92,6 +104,7 @@ public final class GetCloudExadataInfrastructuresResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetCloudExadataInfrastructuresCloudExadataInfrastructure> cloudExadataInfrastructures;
+        private @Nullable String clusterPlacementGroupId;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetCloudExadataInfrastructuresFilter> filters;
@@ -101,6 +114,7 @@ public final class GetCloudExadataInfrastructuresResult {
         public Builder(GetCloudExadataInfrastructuresResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cloudExadataInfrastructures = defaults.cloudExadataInfrastructures;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
@@ -118,6 +132,12 @@ public final class GetCloudExadataInfrastructuresResult {
         }
         public Builder cloudExadataInfrastructures(GetCloudExadataInfrastructuresCloudExadataInfrastructure... cloudExadataInfrastructures) {
             return cloudExadataInfrastructures(List.of(cloudExadataInfrastructures));
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(@Nullable String clusterPlacementGroupId) {
+
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -159,6 +179,7 @@ public final class GetCloudExadataInfrastructuresResult {
         public GetCloudExadataInfrastructuresResult build() {
             final var _resultValue = new GetCloudExadataInfrastructuresResult();
             _resultValue.cloudExadataInfrastructures = cloudExadataInfrastructures;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;

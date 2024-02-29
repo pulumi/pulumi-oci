@@ -12,6 +12,7 @@ from . import outputs
 
 __all__ = [
     'GeneratedKeyKeyShape',
+    'KeyAutoKeyRotationDetails',
     'KeyExternalKeyReference',
     'KeyExternalKeyReferenceDetail',
     'KeyKeyShape',
@@ -29,6 +30,7 @@ __all__ = [
     'VaultRestoreFromObjectStore',
     'GetEkmsPrivateEndpointsEkmsPrivateEndpointResult',
     'GetEkmsPrivateEndpointsFilterResult',
+    'GetKeyAutoKeyRotationDetailResult',
     'GetKeyExternalKeyReferenceResult',
     'GetKeyExternalKeyReferenceDetailResult',
     'GetKeyKeyShapeResult',
@@ -43,6 +45,7 @@ __all__ = [
     'GetKeyVersionsKeyVersionReplicaDetailResult',
     'GetKeysFilterResult',
     'GetKeysKeyResult',
+    'GetKeysKeyAutoKeyRotationDetailResult',
     'GetKeysKeyExternalKeyReferenceResult',
     'GetKeysKeyExternalKeyReferenceDetailResult',
     'GetKeysKeyKeyShapeResult',
@@ -132,6 +135,112 @@ class GeneratedKeyKeyShape(dict):
         Supported curve IDs for ECDSA keys.
         """
         return pulumi.get(self, "curve_id")
+
+
+@pulumi.output_type
+class KeyAutoKeyRotationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "lastRotationMessage":
+            suggest = "last_rotation_message"
+        elif key == "lastRotationStatus":
+            suggest = "last_rotation_status"
+        elif key == "rotationIntervalInDays":
+            suggest = "rotation_interval_in_days"
+        elif key == "timeOfLastRotation":
+            suggest = "time_of_last_rotation"
+        elif key == "timeOfNextRotation":
+            suggest = "time_of_next_rotation"
+        elif key == "timeOfScheduleStart":
+            suggest = "time_of_schedule_start"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in KeyAutoKeyRotationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        KeyAutoKeyRotationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        KeyAutoKeyRotationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 last_rotation_message: Optional[str] = None,
+                 last_rotation_status: Optional[str] = None,
+                 rotation_interval_in_days: Optional[int] = None,
+                 time_of_last_rotation: Optional[str] = None,
+                 time_of_next_rotation: Optional[str] = None,
+                 time_of_schedule_start: Optional[str] = None):
+        """
+        :param str last_rotation_message: (Updatable) The last execution status message.
+        :param str last_rotation_status: (Updatable) The status of last execution of auto key rotation.
+        :param int rotation_interval_in_days: (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+        :param str time_of_last_rotation: (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+        :param str time_of_next_rotation: (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        :param str time_of_schedule_start: (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        if last_rotation_message is not None:
+            pulumi.set(__self__, "last_rotation_message", last_rotation_message)
+        if last_rotation_status is not None:
+            pulumi.set(__self__, "last_rotation_status", last_rotation_status)
+        if rotation_interval_in_days is not None:
+            pulumi.set(__self__, "rotation_interval_in_days", rotation_interval_in_days)
+        if time_of_last_rotation is not None:
+            pulumi.set(__self__, "time_of_last_rotation", time_of_last_rotation)
+        if time_of_next_rotation is not None:
+            pulumi.set(__self__, "time_of_next_rotation", time_of_next_rotation)
+        if time_of_schedule_start is not None:
+            pulumi.set(__self__, "time_of_schedule_start", time_of_schedule_start)
+
+    @property
+    @pulumi.getter(name="lastRotationMessage")
+    def last_rotation_message(self) -> Optional[str]:
+        """
+        (Updatable) The last execution status message.
+        """
+        return pulumi.get(self, "last_rotation_message")
+
+    @property
+    @pulumi.getter(name="lastRotationStatus")
+    def last_rotation_status(self) -> Optional[str]:
+        """
+        (Updatable) The status of last execution of auto key rotation.
+        """
+        return pulumi.get(self, "last_rotation_status")
+
+    @property
+    @pulumi.getter(name="rotationIntervalInDays")
+    def rotation_interval_in_days(self) -> Optional[int]:
+        """
+        (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+        """
+        return pulumi.get(self, "rotation_interval_in_days")
+
+    @property
+    @pulumi.getter(name="timeOfLastRotation")
+    def time_of_last_rotation(self) -> Optional[str]:
+        """
+        (Updatable) A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+        """
+        return pulumi.get(self, "time_of_last_rotation")
+
+    @property
+    @pulumi.getter(name="timeOfNextRotation")
+    def time_of_next_rotation(self) -> Optional[str]:
+        """
+        (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        return pulumi.get(self, "time_of_next_rotation")
+
+    @property
+    @pulumi.getter(name="timeOfScheduleStart")
+    def time_of_schedule_start(self) -> Optional[str]:
+        """
+        (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        return pulumi.get(self, "time_of_schedule_start")
 
 
 @pulumi.output_type
@@ -1134,6 +1243,79 @@ class GetEkmsPrivateEndpointsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetKeyAutoKeyRotationDetailResult(dict):
+    def __init__(__self__, *,
+                 last_rotation_message: str,
+                 last_rotation_status: str,
+                 rotation_interval_in_days: int,
+                 time_of_last_rotation: str,
+                 time_of_next_rotation: str,
+                 time_of_schedule_start: str):
+        """
+        :param str last_rotation_message: The last execution status message.
+        :param str last_rotation_status: The status of last execution of auto key rotation.
+        :param int rotation_interval_in_days: The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+        :param str time_of_last_rotation: A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+        :param str time_of_next_rotation: A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        :param str time_of_schedule_start: A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        pulumi.set(__self__, "last_rotation_message", last_rotation_message)
+        pulumi.set(__self__, "last_rotation_status", last_rotation_status)
+        pulumi.set(__self__, "rotation_interval_in_days", rotation_interval_in_days)
+        pulumi.set(__self__, "time_of_last_rotation", time_of_last_rotation)
+        pulumi.set(__self__, "time_of_next_rotation", time_of_next_rotation)
+        pulumi.set(__self__, "time_of_schedule_start", time_of_schedule_start)
+
+    @property
+    @pulumi.getter(name="lastRotationMessage")
+    def last_rotation_message(self) -> str:
+        """
+        The last execution status message.
+        """
+        return pulumi.get(self, "last_rotation_message")
+
+    @property
+    @pulumi.getter(name="lastRotationStatus")
+    def last_rotation_status(self) -> str:
+        """
+        The status of last execution of auto key rotation.
+        """
+        return pulumi.get(self, "last_rotation_status")
+
+    @property
+    @pulumi.getter(name="rotationIntervalInDays")
+    def rotation_interval_in_days(self) -> int:
+        """
+        The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+        """
+        return pulumi.get(self, "rotation_interval_in_days")
+
+    @property
+    @pulumi.getter(name="timeOfLastRotation")
+    def time_of_last_rotation(self) -> str:
+        """
+        A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+        """
+        return pulumi.get(self, "time_of_last_rotation")
+
+    @property
+    @pulumi.getter(name="timeOfNextRotation")
+    def time_of_next_rotation(self) -> str:
+        """
+        A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        return pulumi.get(self, "time_of_next_rotation")
+
+    @property
+    @pulumi.getter(name="timeOfScheduleStart")
+    def time_of_schedule_start(self) -> str:
+        """
+        A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        return pulumi.get(self, "time_of_schedule_start")
+
+
+@pulumi.output_type
 class GetKeyExternalKeyReferenceResult(dict):
     def __init__(__self__, *,
                  external_key_id: str):
@@ -1427,6 +1609,7 @@ class GetKeyVersionsKeyVersionResult(dict):
                  external_key_reference_details: Sequence['outputs.GetKeyVersionsKeyVersionExternalKeyReferenceDetailResult'],
                  external_key_version_id: str,
                  id: str,
+                 is_auto_rotated: bool,
                  is_primary: bool,
                  key_id: str,
                  key_version_id: str,
@@ -1444,6 +1627,7 @@ class GetKeyVersionsKeyVersionResult(dict):
         :param Sequence['GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs'] external_key_reference_details: Key reference data to be returned to the customer as a response.
         :param str external_key_version_id: Key version ID associated with the external key.
         :param str id: The OCID of the key version.
+        :param bool is_auto_rotated: An optional property indicating whether this keyversion is generated from auto rotatation.
         :param bool is_primary: A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         :param str key_id: The OCID of the key.
         :param str key_version_id: The OCID of the key version.
@@ -1460,6 +1644,7 @@ class GetKeyVersionsKeyVersionResult(dict):
         pulumi.set(__self__, "external_key_reference_details", external_key_reference_details)
         pulumi.set(__self__, "external_key_version_id", external_key_version_id)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_auto_rotated", is_auto_rotated)
         pulumi.set(__self__, "is_primary", is_primary)
         pulumi.set(__self__, "key_id", key_id)
         pulumi.set(__self__, "key_version_id", key_version_id)
@@ -1504,6 +1689,14 @@ class GetKeyVersionsKeyVersionResult(dict):
         The OCID of the key version.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isAutoRotated")
+    def is_auto_rotated(self) -> bool:
+        """
+        An optional property indicating whether this keyversion is generated from auto rotatation.
+        """
+        return pulumi.get(self, "is_auto_rotated")
 
     @property
     @pulumi.getter(name="isPrimary")
@@ -1676,6 +1869,7 @@ class GetKeysFilterResult(dict):
 @pulumi.output_type
 class GetKeysKeyResult(dict):
     def __init__(__self__, *,
+                 auto_key_rotation_details: Sequence['outputs.GetKeysKeyAutoKeyRotationDetailResult'],
                  compartment_id: str,
                  current_key_version: str,
                  defined_tags: Mapping[str, Any],
@@ -1685,6 +1879,7 @@ class GetKeysKeyResult(dict):
                  external_key_references: Sequence['outputs.GetKeysKeyExternalKeyReferenceResult'],
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_auto_rotation_enabled: bool,
                  is_primary: bool,
                  key_shapes: Sequence['outputs.GetKeysKeyKeyShapeResult'],
                  management_endpoint: str,
@@ -1699,6 +1894,7 @@ class GetKeysKeyResult(dict):
                  time_of_deletion: str,
                  vault_id: str):
         """
+        :param Sequence['GetKeysKeyAutoKeyRotationDetailArgs'] auto_key_rotation_details: The details of auto rotation schedule for the Key being create updated or imported.
         :param str compartment_id: The OCID of the compartment.
         :param str current_key_version: The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -1706,6 +1902,7 @@ class GetKeysKeyResult(dict):
         :param Sequence['GetKeysKeyExternalKeyReferenceDetailArgs'] external_key_reference_details: Key reference data to be returned to the customer as a response.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the key.
+        :param bool is_auto_rotation_enabled: A parameter specifying whether the auto key rotation is enabled or not.
         :param bool is_primary: A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         :param Sequence['GetKeysKeyKeyShapeArgs'] key_shapes: The cryptographic properties of a key.
         :param str management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
@@ -1716,6 +1913,7 @@ class GetKeysKeyResult(dict):
         :param str time_of_deletion: An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str vault_id: The OCID of the vault that contains this key.
         """
+        pulumi.set(__self__, "auto_key_rotation_details", auto_key_rotation_details)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "current_key_version", current_key_version)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1725,6 +1923,7 @@ class GetKeysKeyResult(dict):
         pulumi.set(__self__, "external_key_references", external_key_references)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_auto_rotation_enabled", is_auto_rotation_enabled)
         pulumi.set(__self__, "is_primary", is_primary)
         pulumi.set(__self__, "key_shapes", key_shapes)
         pulumi.set(__self__, "management_endpoint", management_endpoint)
@@ -1738,6 +1937,14 @@ class GetKeysKeyResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_of_deletion", time_of_deletion)
         pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="autoKeyRotationDetails")
+    def auto_key_rotation_details(self) -> Sequence['outputs.GetKeysKeyAutoKeyRotationDetailResult']:
+        """
+        The details of auto rotation schedule for the Key being create updated or imported.
+        """
+        return pulumi.get(self, "auto_key_rotation_details")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1804,6 +2011,14 @@ class GetKeysKeyResult(dict):
         The OCID of the key.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isAutoRotationEnabled")
+    def is_auto_rotation_enabled(self) -> bool:
+        """
+        A parameter specifying whether the auto key rotation is enabled or not.
+        """
+        return pulumi.get(self, "is_auto_rotation_enabled")
 
     @property
     @pulumi.getter(name="isPrimary")
@@ -1896,6 +2111,79 @@ class GetKeysKeyResult(dict):
         The OCID of the vault that contains this key.
         """
         return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetKeysKeyAutoKeyRotationDetailResult(dict):
+    def __init__(__self__, *,
+                 last_rotation_message: str,
+                 last_rotation_status: str,
+                 rotation_interval_in_days: int,
+                 time_of_last_rotation: str,
+                 time_of_next_rotation: str,
+                 time_of_schedule_start: str):
+        """
+        :param str last_rotation_message: The last execution status message.
+        :param str last_rotation_status: The status of last execution of auto key rotation.
+        :param int rotation_interval_in_days: The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+        :param str time_of_last_rotation: A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+        :param str time_of_next_rotation: A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        :param str time_of_schedule_start: A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        pulumi.set(__self__, "last_rotation_message", last_rotation_message)
+        pulumi.set(__self__, "last_rotation_status", last_rotation_status)
+        pulumi.set(__self__, "rotation_interval_in_days", rotation_interval_in_days)
+        pulumi.set(__self__, "time_of_last_rotation", time_of_last_rotation)
+        pulumi.set(__self__, "time_of_next_rotation", time_of_next_rotation)
+        pulumi.set(__self__, "time_of_schedule_start", time_of_schedule_start)
+
+    @property
+    @pulumi.getter(name="lastRotationMessage")
+    def last_rotation_message(self) -> str:
+        """
+        The last execution status message.
+        """
+        return pulumi.get(self, "last_rotation_message")
+
+    @property
+    @pulumi.getter(name="lastRotationStatus")
+    def last_rotation_status(self) -> str:
+        """
+        The status of last execution of auto key rotation.
+        """
+        return pulumi.get(self, "last_rotation_status")
+
+    @property
+    @pulumi.getter(name="rotationIntervalInDays")
+    def rotation_interval_in_days(self) -> int:
+        """
+        The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+        """
+        return pulumi.get(self, "rotation_interval_in_days")
+
+    @property
+    @pulumi.getter(name="timeOfLastRotation")
+    def time_of_last_rotation(self) -> str:
+        """
+        A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+        """
+        return pulumi.get(self, "time_of_last_rotation")
+
+    @property
+    @pulumi.getter(name="timeOfNextRotation")
+    def time_of_next_rotation(self) -> str:
+        """
+        A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        return pulumi.get(self, "time_of_next_rotation")
+
+    @property
+    @pulumi.getter(name="timeOfScheduleStart")
+    def time_of_schedule_start(self) -> str:
+        """
+        A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        """
+        return pulumi.get(self, "time_of_schedule_start")
 
 
 @pulumi.output_type

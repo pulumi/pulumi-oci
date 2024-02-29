@@ -7725,6 +7725,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .clusterPlacementGroupId(var_.cloud_exadata_infrastructure_cluster_placement_group_id())
      *             .displayName(var_.cloud_exadata_infrastructure_display_name())
      *             .state(var_.cloud_exadata_infrastructure_state())
      *             .build());
@@ -7766,6 +7767,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .clusterPlacementGroupId(var_.cloud_exadata_infrastructure_cluster_placement_group_id())
      *             .displayName(var_.cloud_exadata_infrastructure_display_name())
      *             .state(var_.cloud_exadata_infrastructure_state())
      *             .build());
@@ -7807,6 +7809,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .clusterPlacementGroupId(var_.cloud_exadata_infrastructure_cluster_placement_group_id())
      *             .displayName(var_.cloud_exadata_infrastructure_display_name())
      *             .state(var_.cloud_exadata_infrastructure_state())
      *             .build());
@@ -7848,6 +7851,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .clusterPlacementGroupId(var_.cloud_exadata_infrastructure_cluster_placement_group_id())
      *             .displayName(var_.cloud_exadata_infrastructure_display_name())
      *             .state(var_.cloud_exadata_infrastructure_state())
      *             .build());

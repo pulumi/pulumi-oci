@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -56,6 +58,10 @@ export interface GetAccessRequestResult {
      */
     readonly approverComment: string;
     /**
+     * Contains the user ids who have approved the accessRequest for extension.
+     */
+    readonly approverDetails: outputs.OperatorAccessControl.GetAccessRequestApproverDetail[];
+    /**
      * Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
      */
     readonly auditTypes: string[];
@@ -80,6 +86,10 @@ export interface GetAccessRequestResult {
      */
     readonly extendDuration: number;
     /**
+     * Contains the user ids who have approved the accessRequest for extension.
+     */
+    readonly extensionApproverDetails: outputs.OperatorAccessControl.GetAccessRequestExtensionApproverDetail[];
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
     readonly freeformTags: {[key: string]: any};
@@ -92,9 +102,25 @@ export interface GetAccessRequestResult {
      */
     readonly isAutoApproved: boolean;
     /**
+     * Whether the access request was requested for Validate Assignment.
+     */
+    readonly isValidateAssignment: boolean;
+    /**
      * more in detail about the lifeCycleState.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Number of approvers who have authorized an access request.
+     */
+    readonly numberOfApprovers: number;
+    /**
+     * Number of approvers required to approve an access request.
+     */
+    readonly numberOfApproversRequired: number;
+    /**
+     * Number of approvers who have authorized an access request for extension.
+     */
+    readonly numberOfExtensionApprovers: number;
     /**
      * Additional message specific to the access request that can be specified by the approver at the time of approval.
      */
@@ -159,6 +185,10 @@ export interface GetAccessRequestResult {
      * The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
      */
     readonly timeOfUserCreation: string;
+    /**
+     * Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+     */
+    readonly timeRequestedForFutureAccess: string;
     /**
      * The OCID of the user that last modified the access request.
      */

@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  * const testAutonomousContainerDatabaseDataguardAssociation = new oci.database.AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation", {
  *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
  *     peerAutonomousContainerDatabaseDisplayName: _var.autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name,
- *     peerCloudAutonomousVmClusterId: oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster.id,
  *     protectionMode: _var.autonomous_container_database_dataguard_association_protection_mode,
  *     fastStartFailOverLagLimitInSeconds: _var.autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds,
  *     isAutomaticFailoverEnabled: _var.autonomous_container_database_dataguard_association_is_automatic_failover_enabled,
@@ -43,6 +42,9 @@ import * as utilities from "../utilities";
  *         recoveryWindowInDays: _var.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days,
  *     },
  *     peerAutonomousContainerDatabaseCompartmentId: oci_identity_compartment.test_compartment.id,
+ *     peerAutonomousVmClusterId: oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster.id,
+ *     peerCloudAutonomousVmClusterId: oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster.id,
+ *     peerDbUniqueName: _var.autonomous_container_database_dataguard_association_peer_db_unique_name,
  *     standbyMaintenanceBufferInDays: _var.autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days,
  * });
  * ```
@@ -91,7 +93,7 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
      * The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      */
     public /*out*/ readonly applyRate!: pulumi.Output<string>;
-    public readonly autonomousContainerDatabaseDataguardAssociationId!: pulumi.Output<number>;
+    public readonly autonomousContainerDatabaseDataguardAssociationId!: pulumi.Output<string>;
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -129,11 +131,19 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
      */
     public /*out*/ readonly peerAutonomousContainerDatabaseId!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+     */
+    public readonly peerAutonomousVmClusterId!: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
     public readonly peerCloudAutonomousVmClusterId!: pulumi.Output<string>;
     /**
-     * The current state of Autonomous Data Guard.
+     * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+     */
+    public readonly peerDbUniqueName!: pulumi.Output<string>;
+    /**
+     * The current state of the Autonomous Container Database.
      */
     public /*out*/ readonly peerLifecycleState!: pulumi.Output<string>;
     /**
@@ -203,7 +213,9 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
             resourceInputs["peerAutonomousContainerDatabaseDataguardAssociationId"] = state ? state.peerAutonomousContainerDatabaseDataguardAssociationId : undefined;
             resourceInputs["peerAutonomousContainerDatabaseDisplayName"] = state ? state.peerAutonomousContainerDatabaseDisplayName : undefined;
             resourceInputs["peerAutonomousContainerDatabaseId"] = state ? state.peerAutonomousContainerDatabaseId : undefined;
+            resourceInputs["peerAutonomousVmClusterId"] = state ? state.peerAutonomousVmClusterId : undefined;
             resourceInputs["peerCloudAutonomousVmClusterId"] = state ? state.peerCloudAutonomousVmClusterId : undefined;
+            resourceInputs["peerDbUniqueName"] = state ? state.peerDbUniqueName : undefined;
             resourceInputs["peerLifecycleState"] = state ? state.peerLifecycleState : undefined;
             resourceInputs["peerRole"] = state ? state.peerRole : undefined;
             resourceInputs["protectionMode"] = state ? state.protectionMode : undefined;
@@ -222,9 +234,6 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
             if ((!args || args.peerAutonomousContainerDatabaseDisplayName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'peerAutonomousContainerDatabaseDisplayName'");
             }
-            if ((!args || args.peerCloudAutonomousVmClusterId === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'peerCloudAutonomousVmClusterId'");
-            }
             if ((!args || args.protectionMode === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'protectionMode'");
             }
@@ -235,7 +244,9 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
             resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = args ? args.peerAutonomousContainerDatabaseBackupConfig : undefined;
             resourceInputs["peerAutonomousContainerDatabaseCompartmentId"] = args ? args.peerAutonomousContainerDatabaseCompartmentId : undefined;
             resourceInputs["peerAutonomousContainerDatabaseDisplayName"] = args ? args.peerAutonomousContainerDatabaseDisplayName : undefined;
+            resourceInputs["peerAutonomousVmClusterId"] = args ? args.peerAutonomousVmClusterId : undefined;
             resourceInputs["peerCloudAutonomousVmClusterId"] = args ? args.peerCloudAutonomousVmClusterId : undefined;
+            resourceInputs["peerDbUniqueName"] = args ? args.peerDbUniqueName : undefined;
             resourceInputs["protectionMode"] = args ? args.protectionMode : undefined;
             resourceInputs["standbyMaintenanceBufferInDays"] = args ? args.standbyMaintenanceBufferInDays : undefined;
             resourceInputs["applyLag"] = undefined /*out*/;
@@ -269,7 +280,7 @@ export interface AutonomousContainerDatabaseDataguardAssociationState {
      * The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      */
     applyRate?: pulumi.Input<string>;
-    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<number>;
+    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string>;
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -307,11 +318,19 @@ export interface AutonomousContainerDatabaseDataguardAssociationState {
      */
     peerAutonomousContainerDatabaseId?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+     */
+    peerAutonomousVmClusterId?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
     peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
     /**
-     * The current state of Autonomous Data Guard.
+     * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+     */
+    peerDbUniqueName?: pulumi.Input<string>;
+    /**
+     * The current state of the Autonomous Container Database.
      */
     peerLifecycleState?: pulumi.Input<string>;
     /**
@@ -361,7 +380,7 @@ export interface AutonomousContainerDatabaseDataguardAssociationState {
  * The set of arguments for constructing a AutonomousContainerDatabaseDataguardAssociation resource.
  */
 export interface AutonomousContainerDatabaseDataguardAssociationArgs {
-    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<number>;
+    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string>;
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -387,9 +406,17 @@ export interface AutonomousContainerDatabaseDataguardAssociationArgs {
      */
     peerAutonomousContainerDatabaseDisplayName: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+     */
+    peerAutonomousVmClusterId?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
-    peerCloudAutonomousVmClusterId: pulumi.Input<string>;
+    peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
+    /**
+     * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+     */
+    peerDbUniqueName?: pulumi.Input<string>;
     /**
      * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
      *

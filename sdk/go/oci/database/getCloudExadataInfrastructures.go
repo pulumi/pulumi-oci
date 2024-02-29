@@ -30,9 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetCloudExadataInfrastructures(ctx, &database.GetCloudExadataInfrastructuresArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Cloud_exadata_infrastructure_display_name),
-//				State:         pulumi.StringRef(_var.Cloud_exadata_infrastructure_state),
+//				CompartmentId:           _var.Compartment_id,
+//				ClusterPlacementGroupId: pulumi.StringRef(_var.Cloud_exadata_infrastructure_cluster_placement_group_id),
+//				DisplayName:             pulumi.StringRef(_var.Cloud_exadata_infrastructure_display_name),
+//				State:                   pulumi.StringRef(_var.Cloud_exadata_infrastructure_state),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -54,6 +55,8 @@ func GetCloudExadataInfrastructures(ctx *pulumi.Context, args *GetCloudExadataIn
 
 // A collection of arguments for invoking getCloudExadataInfrastructures.
 type GetCloudExadataInfrastructuresArgs struct {
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -67,6 +70,8 @@ type GetCloudExadataInfrastructuresArgs struct {
 type GetCloudExadataInfrastructuresResult struct {
 	// The list of cloud_exadata_infrastructures.
 	CloudExadataInfrastructures []GetCloudExadataInfrastructuresCloudExadataInfrastructure `pulumi:"cloudExadataInfrastructures"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -93,6 +98,8 @@ func GetCloudExadataInfrastructuresOutput(ctx *pulumi.Context, args GetCloudExad
 
 // A collection of arguments for invoking getCloudExadataInfrastructures.
 type GetCloudExadataInfrastructuresOutputArgs struct {
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId pulumi.StringPtrInput `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -126,6 +133,11 @@ func (o GetCloudExadataInfrastructuresResultOutput) CloudExadataInfrastructures(
 	return o.ApplyT(func(v GetCloudExadataInfrastructuresResult) []GetCloudExadataInfrastructuresCloudExadataInfrastructure {
 		return v.CloudExadataInfrastructures
 	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+func (o GetCloudExadataInfrastructuresResultOutput) ClusterPlacementGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresResult) *string { return v.ClusterPlacementGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

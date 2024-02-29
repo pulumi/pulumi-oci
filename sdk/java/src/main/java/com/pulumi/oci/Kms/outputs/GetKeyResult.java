@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Kms.outputs.GetKeyAutoKeyRotationDetail;
 import com.pulumi.oci.Kms.outputs.GetKeyExternalKeyReference;
 import com.pulumi.oci.Kms.outputs.GetKeyExternalKeyReferenceDetail;
 import com.pulumi.oci.Kms.outputs.GetKeyKeyShape;
@@ -20,6 +21,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetKeyResult {
+    /**
+     * @return The details of auto rotation schedule for the Key being create updated or imported.
+     * 
+     */
+    private List<GetKeyAutoKeyRotationDetail> autoKeyRotationDetails;
     /**
      * @return The OCID of the compartment that contains this master encryption key.
      * 
@@ -58,6 +64,11 @@ public final class GetKeyResult {
      */
     private String id;
     /**
+     * @return A parameter specifying whether the auto key rotation is enabled or not.
+     * 
+     */
+    private Boolean isAutoRotationEnabled;
+    /**
      * @return A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      * 
      */
@@ -70,7 +81,7 @@ public final class GetKeyResult {
     private List<GetKeyKeyShape> keyShapes;
     private String managementEndpoint;
     /**
-     * @return The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
+     * @return The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      * 
      */
     private String protectionMode;
@@ -121,6 +132,13 @@ public final class GetKeyResult {
     private String vaultId;
 
     private GetKeyResult() {}
+    /**
+     * @return The details of auto rotation schedule for the Key being create updated or imported.
+     * 
+     */
+    public List<GetKeyAutoKeyRotationDetail> autoKeyRotationDetails() {
+        return this.autoKeyRotationDetails;
+    }
     /**
      * @return The OCID of the compartment that contains this master encryption key.
      * 
@@ -177,6 +195,13 @@ public final class GetKeyResult {
         return this.id;
     }
     /**
+     * @return A parameter specifying whether the auto key rotation is enabled or not.
+     * 
+     */
+    public Boolean isAutoRotationEnabled() {
+        return this.isAutoRotationEnabled;
+    }
+    /**
      * @return A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      * 
      */
@@ -197,7 +222,7 @@ public final class GetKeyResult {
         return this.managementEndpoint;
     }
     /**
-     * @return The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
+     * @return The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      * 
      */
     public String protectionMode() {
@@ -276,6 +301,7 @@ public final class GetKeyResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetKeyAutoKeyRotationDetail> autoKeyRotationDetails;
         private String compartmentId;
         private String currentKeyVersion;
         private Map<String,Object> definedTags;
@@ -285,6 +311,7 @@ public final class GetKeyResult {
         private List<GetKeyExternalKeyReference> externalKeyReferences;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isAutoRotationEnabled;
         private Boolean isPrimary;
         private String keyId;
         private List<GetKeyKeyShape> keyShapes;
@@ -302,6 +329,7 @@ public final class GetKeyResult {
         public Builder() {}
         public Builder(GetKeyResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.autoKeyRotationDetails = defaults.autoKeyRotationDetails;
     	      this.compartmentId = defaults.compartmentId;
     	      this.currentKeyVersion = defaults.currentKeyVersion;
     	      this.definedTags = defaults.definedTags;
@@ -311,6 +339,7 @@ public final class GetKeyResult {
     	      this.externalKeyReferences = defaults.externalKeyReferences;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isAutoRotationEnabled = defaults.isAutoRotationEnabled;
     	      this.isPrimary = defaults.isPrimary;
     	      this.keyId = defaults.keyId;
     	      this.keyShapes = defaults.keyShapes;
@@ -327,6 +356,17 @@ public final class GetKeyResult {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
+        public Builder autoKeyRotationDetails(List<GetKeyAutoKeyRotationDetail> autoKeyRotationDetails) {
+            if (autoKeyRotationDetails == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "autoKeyRotationDetails");
+            }
+            this.autoKeyRotationDetails = autoKeyRotationDetails;
+            return this;
+        }
+        public Builder autoKeyRotationDetails(GetKeyAutoKeyRotationDetail... autoKeyRotationDetails) {
+            return autoKeyRotationDetails(List.of(autoKeyRotationDetails));
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -403,6 +443,14 @@ public final class GetKeyResult {
               throw new MissingRequiredPropertyException("GetKeyResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isAutoRotationEnabled(Boolean isAutoRotationEnabled) {
+            if (isAutoRotationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "isAutoRotationEnabled");
+            }
+            this.isAutoRotationEnabled = isAutoRotationEnabled;
             return this;
         }
         @CustomType.Setter
@@ -531,6 +579,7 @@ public final class GetKeyResult {
         }
         public GetKeyResult build() {
             final var _resultValue = new GetKeyResult();
+            _resultValue.autoKeyRotationDetails = autoKeyRotationDetails;
             _resultValue.compartmentId = compartmentId;
             _resultValue.currentKeyVersion = currentKeyVersion;
             _resultValue.definedTags = definedTags;
@@ -540,6 +589,7 @@ public final class GetKeyResult {
             _resultValue.externalKeyReferences = externalKeyReferences;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isAutoRotationEnabled = isAutoRotationEnabled;
             _resultValue.isPrimary = isPrimary;
             _resultValue.keyId = keyId;
             _resultValue.keyShapes = keyShapes;

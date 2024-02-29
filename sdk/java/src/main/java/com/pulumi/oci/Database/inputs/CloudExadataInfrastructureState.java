@@ -83,6 +83,21 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -464,6 +479,21 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,Object>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The date and time the cloud Exadata infrastructure resource was created.
      * 
      */
@@ -500,6 +530,7 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         this.additionalStorageCount = $.additionalStorageCount;
         this.availabilityDomain = $.availabilityDomain;
         this.availableStorageSizeInGbs = $.availableStorageSizeInGbs;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.computeCount = $.computeCount;
         this.cpuCount = $.cpuCount;
@@ -525,6 +556,7 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         this.state = $.state;
         this.storageCount = $.storageCount;
         this.storageServerVersion = $.storageServerVersion;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.totalStorageSizeInGbs = $.totalStorageSizeInGbs;
     }
@@ -629,6 +661,27 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
          */
         public Builder availableStorageSizeInGbs(Integer availableStorageSizeInGbs) {
             return availableStorageSizeInGbs(Output.of(availableStorageSizeInGbs));
+        }
+
+        /**
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**
@@ -1170,6 +1223,27 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
          */
         public Builder storageServerVersion(String storageServerVersion) {
             return storageServerVersion(Output.of(storageServerVersion));
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,Object>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,Object> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

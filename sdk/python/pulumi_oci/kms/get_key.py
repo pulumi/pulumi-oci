@@ -22,7 +22,10 @@ class GetKeyResult:
     """
     A collection of values returned by getKey.
     """
-    def __init__(__self__, compartment_id=None, current_key_version=None, defined_tags=None, desired_state=None, display_name=None, external_key_reference_details=None, external_key_references=None, freeform_tags=None, id=None, is_primary=None, key_id=None, key_shapes=None, management_endpoint=None, protection_mode=None, replica_details=None, restore_from_files=None, restore_from_object_stores=None, restore_trigger=None, restored_from_key_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None):
+    def __init__(__self__, auto_key_rotation_details=None, compartment_id=None, current_key_version=None, defined_tags=None, desired_state=None, display_name=None, external_key_reference_details=None, external_key_references=None, freeform_tags=None, id=None, is_auto_rotation_enabled=None, is_primary=None, key_id=None, key_shapes=None, management_endpoint=None, protection_mode=None, replica_details=None, restore_from_files=None, restore_from_object_stores=None, restore_trigger=None, restored_from_key_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None):
+        if auto_key_rotation_details and not isinstance(auto_key_rotation_details, list):
+            raise TypeError("Expected argument 'auto_key_rotation_details' to be a list")
+        pulumi.set(__self__, "auto_key_rotation_details", auto_key_rotation_details)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,6 +53,9 @@ class GetKeyResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_auto_rotation_enabled and not isinstance(is_auto_rotation_enabled, bool):
+            raise TypeError("Expected argument 'is_auto_rotation_enabled' to be a bool")
+        pulumi.set(__self__, "is_auto_rotation_enabled", is_auto_rotation_enabled)
         if is_primary and not isinstance(is_primary, bool):
             raise TypeError("Expected argument 'is_primary' to be a bool")
         pulumi.set(__self__, "is_primary", is_primary)
@@ -92,6 +98,14 @@ class GetKeyResult:
         if vault_id and not isinstance(vault_id, str):
             raise TypeError("Expected argument 'vault_id' to be a str")
         pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="autoKeyRotationDetails")
+    def auto_key_rotation_details(self) -> Sequence['outputs.GetKeyAutoKeyRotationDetailResult']:
+        """
+        The details of auto rotation schedule for the Key being create updated or imported.
+        """
+        return pulumi.get(self, "auto_key_rotation_details")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -160,6 +174,14 @@ class GetKeyResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isAutoRotationEnabled")
+    def is_auto_rotation_enabled(self) -> bool:
+        """
+        A parameter specifying whether the auto key rotation is enabled or not.
+        """
+        return pulumi.get(self, "is_auto_rotation_enabled")
+
+    @property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> bool:
         """
@@ -189,7 +211,7 @@ class GetKeyResult:
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> str:
         """
-        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
+        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         """
         return pulumi.get(self, "protection_mode")
 
@@ -272,6 +294,7 @@ class AwaitableGetKeyResult(GetKeyResult):
         if False:
             yield self
         return GetKeyResult(
+            auto_key_rotation_details=self.auto_key_rotation_details,
             compartment_id=self.compartment_id,
             current_key_version=self.current_key_version,
             defined_tags=self.defined_tags,
@@ -281,6 +304,7 @@ class AwaitableGetKeyResult(GetKeyResult):
             external_key_references=self.external_key_references,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_auto_rotation_enabled=self.is_auto_rotation_enabled,
             is_primary=self.is_primary,
             key_id=self.key_id,
             key_shapes=self.key_shapes,
@@ -331,6 +355,7 @@ def get_key(key_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Kms/getKey:getKey', __args__, opts=opts, typ=GetKeyResult).value
 
     return AwaitableGetKeyResult(
+        auto_key_rotation_details=pulumi.get(__ret__, 'auto_key_rotation_details'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         current_key_version=pulumi.get(__ret__, 'current_key_version'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -340,6 +365,7 @@ def get_key(key_id: Optional[str] = None,
         external_key_references=pulumi.get(__ret__, 'external_key_references'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_auto_rotation_enabled=pulumi.get(__ret__, 'is_auto_rotation_enabled'),
         is_primary=pulumi.get(__ret__, 'is_primary'),
         key_id=pulumi.get(__ret__, 'key_id'),
         key_shapes=pulumi.get(__ret__, 'key_shapes'),

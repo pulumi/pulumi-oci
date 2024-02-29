@@ -20,7 +20,9 @@ class ExternalExadataStorageConnectorArgs:
                  connection_uri: pulumi.Input[str],
                  connector_name: pulumi.Input[str],
                  credential_info: pulumi.Input['ExternalExadataStorageConnectorCredentialInfoArgs'],
-                 storage_server_id: pulumi.Input[str]):
+                 storage_server_id: pulumi.Input[str],
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a ExternalExadataStorageConnector resource.
         :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
@@ -32,12 +34,18 @@ class ExternalExadataStorageConnectorArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "agent_id", agent_id)
         pulumi.set(__self__, "connection_uri", connection_uri)
         pulumi.set(__self__, "connector_name", connector_name)
         pulumi.set(__self__, "credential_info", credential_info)
         pulumi.set(__self__, "storage_server_id", storage_server_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="agentId")
@@ -103,6 +111,30 @@ class ExternalExadataStorageConnectorArgs:
     def storage_server_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "storage_server_id", value)
 
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
 
 @pulumi.input_type
 class _ExternalExadataStorageConnectorState:
@@ -112,8 +144,10 @@ class _ExternalExadataStorageConnectorState:
                  connection_uri: Optional[pulumi.Input[str]] = None,
                  connector_name: Optional[pulumi.Input[str]] = None,
                  credential_info: Optional[pulumi.Input['ExternalExadataStorageConnectorCredentialInfoArgs']] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  internal_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -129,8 +163,10 @@ class _ExternalExadataStorageConnectorState:
         :param pulumi.Input[str] connection_uri: (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
         :param pulumi.Input[str] connector_name: (Updatable) The name of the Exadata storage server connector.
         :param pulumi.Input['ExternalExadataStorageConnectorCredentialInfoArgs'] credential_info: (Updatable) The user credential information.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
         :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
         :param pulumi.Input[str] state: The current lifecycle state of the database resource.
@@ -154,10 +190,14 @@ class _ExternalExadataStorageConnectorState:
             pulumi.set(__self__, "connector_name", connector_name)
         if credential_info is not None:
             pulumi.set(__self__, "credential_info", credential_info)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if exadata_infrastructure_id is not None:
             pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if internal_id is not None:
             pulumi.set(__self__, "internal_id", internal_id)
         if lifecycle_details is not None:
@@ -236,6 +276,18 @@ class _ExternalExadataStorageConnectorState:
         pulumi.set(self, "credential_info", value)
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -258,6 +310,18 @@ class _ExternalExadataStorageConnectorState:
     @exadata_infrastructure_id.setter
     def exadata_infrastructure_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "exadata_infrastructure_id", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter(name="internalId")
@@ -369,6 +433,8 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                  connection_uri: Optional[pulumi.Input[str]] = None,
                  connector_name: Optional[pulumi.Input[str]] = None,
                  credential_info: Optional[pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  storage_server_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -393,7 +459,13 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                 ssl_trust_store_password=var["external_exadata_storage_connector_credential_info_ssl_trust_store_password"],
                 ssl_trust_store_type=var["external_exadata_storage_connector_credential_info_ssl_trust_store_type"],
             ),
-            storage_server_id=oci_database_management_storage_server["test_storage_server"]["id"])
+            storage_server_id=oci_database_management_storage_server["test_storage_server"]["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            freeform_tags={
+                "Department": "Finance",
+            })
         ```
 
         ## Import
@@ -410,6 +482,8 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         :param pulumi.Input[str] connection_uri: (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
         :param pulumi.Input[str] connector_name: (Updatable) The name of the Exadata storage server connector.
         :param pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']] credential_info: (Updatable) The user credential information.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
                
                
@@ -444,7 +518,13 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                 ssl_trust_store_password=var["external_exadata_storage_connector_credential_info_ssl_trust_store_password"],
                 ssl_trust_store_type=var["external_exadata_storage_connector_credential_info_ssl_trust_store_type"],
             ),
-            storage_server_id=oci_database_management_storage_server["test_storage_server"]["id"])
+            storage_server_id=oci_database_management_storage_server["test_storage_server"]["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            freeform_tags={
+                "Department": "Finance",
+            })
         ```
 
         ## Import
@@ -474,6 +554,8 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                  connection_uri: Optional[pulumi.Input[str]] = None,
                  connector_name: Optional[pulumi.Input[str]] = None,
                  credential_info: Optional[pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  storage_server_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -496,6 +578,8 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
             if credential_info is None and not opts.urn:
                 raise TypeError("Missing required property 'credential_info'")
             __props__.__dict__["credential_info"] = credential_info
+            __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["freeform_tags"] = freeform_tags
             if storage_server_id is None and not opts.urn:
                 raise TypeError("Missing required property 'storage_server_id'")
             __props__.__dict__["storage_server_id"] = storage_server_id
@@ -524,8 +608,10 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
             connection_uri: Optional[pulumi.Input[str]] = None,
             connector_name: Optional[pulumi.Input[str]] = None,
             credential_info: Optional[pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             internal_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -546,8 +632,10 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         :param pulumi.Input[str] connection_uri: (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
         :param pulumi.Input[str] connector_name: (Updatable) The name of the Exadata storage server connector.
         :param pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']] credential_info: (Updatable) The user credential information.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
         :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
         :param pulumi.Input[str] state: The current lifecycle state of the database resource.
@@ -570,8 +658,10 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         __props__.__dict__["connection_uri"] = connection_uri
         __props__.__dict__["connector_name"] = connector_name
         __props__.__dict__["credential_info"] = credential_info
+        __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
+        __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["internal_id"] = internal_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["state"] = state
@@ -623,6 +713,14 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         return pulumi.get(self, "credential_info")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
@@ -637,6 +735,14 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="internalId")

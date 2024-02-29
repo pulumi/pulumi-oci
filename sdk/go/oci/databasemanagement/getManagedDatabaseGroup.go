@@ -60,8 +60,12 @@ type LookupManagedDatabaseGroupArgs struct {
 type LookupManagedDatabaseGroupResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The information specified by the user about the Managed Database Group.
 	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	Id                     string `pulumi:"id"`
 	ManagedDatabaseGroupId string `pulumi:"managedDatabaseGroupId"`
@@ -120,9 +124,19 @@ func (o LookupManagedDatabaseGroupResultOutput) CompartmentId() pulumi.StringOut
 	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupManagedDatabaseGroupResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The information specified by the user about the Managed Database Group.
 func (o LookupManagedDatabaseGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupManagedDatabaseGroupResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

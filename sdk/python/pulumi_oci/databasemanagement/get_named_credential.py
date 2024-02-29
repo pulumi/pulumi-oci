@@ -22,7 +22,7 @@ class GetNamedCredentialResult:
     """
     A collection of values returned by getNamedCredential.
     """
-    def __init__(__self__, associated_resource=None, compartment_id=None, contents=None, description=None, id=None, lifecycle_details=None, name=None, named_credential_id=None, scope=None, state=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, associated_resource=None, compartment_id=None, contents=None, defined_tags=None, description=None, freeform_tags=None, id=None, lifecycle_details=None, name=None, named_credential_id=None, scope=None, state=None, time_created=None, time_updated=None, type=None):
         if associated_resource and not isinstance(associated_resource, str):
             raise TypeError("Expected argument 'associated_resource' to be a str")
         pulumi.set(__self__, "associated_resource", associated_resource)
@@ -32,9 +32,15 @@ class GetNamedCredentialResult:
         if contents and not isinstance(contents, list):
             raise TypeError("Expected argument 'contents' to be a list")
         pulumi.set(__self__, "contents", contents)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -88,12 +94,28 @@ class GetNamedCredentialResult:
         return pulumi.get(self, "contents")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter
     def description(self) -> str:
         """
         The information specified by the user about the named credential.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -174,7 +196,9 @@ class AwaitableGetNamedCredentialResult(GetNamedCredentialResult):
             associated_resource=self.associated_resource,
             compartment_id=self.compartment_id,
             contents=self.contents,
+            defined_tags=self.defined_tags,
             description=self.description,
+            freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             name=self.name,
@@ -214,7 +238,9 @@ def get_named_credential(named_credential_id: Optional[str] = None,
         associated_resource=pulumi.get(__ret__, 'associated_resource'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         contents=pulumi.get(__ret__, 'contents'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         name=pulumi.get(__ret__, 'name'),

@@ -37,7 +37,7 @@ public final class GetServiceConnectorsResult {
      */
     private List<GetServiceConnectorsServiceConnectorCollection> serviceConnectorCollections;
     /**
-     * @return The current state of the service connector.
+     * @return The current state of the connector.
      * 
      */
     private @Nullable String state;
@@ -75,7 +75,7 @@ public final class GetServiceConnectorsResult {
         return this.serviceConnectorCollections;
     }
     /**
-     * @return The current state of the service connector.
+     * @return The current state of the connector.
      * 
      */
     public Optional<String> state() {

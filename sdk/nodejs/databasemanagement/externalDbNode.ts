@@ -62,6 +62,10 @@ export class ExternalDbNode extends pulumi.CustomResource {
      */
     public /*out*/ readonly cpuCoreCount!: pulumi.Output<number>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The user-friendly name for the external DB node. The name does not have to be unique.
      */
     public /*out*/ readonly displayName!: pulumi.Output<string>;
@@ -75,16 +79,20 @@ export class ExternalDbNode extends pulumi.CustomResource {
     public readonly externalConnectorId!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly externalDbNodeId!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
      */
     public /*out*/ readonly externalDbSystemId!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The host name for the DB node.
      */
@@ -127,11 +135,13 @@ export class ExternalDbNode extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["componentName"] = state ? state.componentName : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["domainName"] = state ? state.domainName : undefined;
             resourceInputs["externalConnectorId"] = state ? state.externalConnectorId : undefined;
             resourceInputs["externalDbNodeId"] = state ? state.externalDbNodeId : undefined;
             resourceInputs["externalDbSystemId"] = state ? state.externalDbSystemId : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["hostName"] = state ? state.hostName : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
@@ -143,8 +153,10 @@ export class ExternalDbNode extends pulumi.CustomResource {
             if ((!args || args.externalDbNodeId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'externalDbNodeId'");
             }
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["externalConnectorId"] = args ? args.externalConnectorId : undefined;
             resourceInputs["externalDbNodeId"] = args ? args.externalDbNodeId : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["componentName"] = undefined /*out*/;
@@ -185,6 +197,10 @@ export interface ExternalDbNodeState {
      */
     cpuCoreCount?: pulumi.Input<number>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The user-friendly name for the external DB node. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
@@ -198,16 +214,20 @@ export interface ExternalDbNodeState {
     externalConnectorId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     externalDbNodeId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
      */
     externalDbSystemId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The host name for the DB node.
      */
@@ -239,15 +259,23 @@ export interface ExternalDbNodeState {
  */
 export interface ExternalDbNodeArgs {
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
     externalConnectorId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+     */
+    externalDbNodeId: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    externalDbNodeId: pulumi.Input<string>;
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
 }

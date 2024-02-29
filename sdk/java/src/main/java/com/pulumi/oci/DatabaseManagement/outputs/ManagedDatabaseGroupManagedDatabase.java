@@ -4,7 +4,9 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -27,10 +29,20 @@ public final class ManagedDatabaseGroupManagedDatabase {
      */
     private @Nullable String databaseType;
     /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private @Nullable Map<String,Object> definedTags;
+    /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
     private @Nullable String deploymentType;
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
      * 
@@ -78,11 +90,25 @@ public final class ManagedDatabaseGroupManagedDatabase {
         return Optional.ofNullable(this.databaseType);
     }
     /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags == null ? Map.of() : this.definedTags;
+    }
+    /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
     public Optional<String> deploymentType() {
         return Optional.ofNullable(this.deploymentType);
+    }
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
@@ -128,7 +154,9 @@ public final class ManagedDatabaseGroupManagedDatabase {
         private @Nullable String compartmentId;
         private @Nullable String databaseSubType;
         private @Nullable String databaseType;
+        private @Nullable Map<String,Object> definedTags;
         private @Nullable String deploymentType;
+        private @Nullable Map<String,Object> freeformTags;
         private @Nullable String id;
         private @Nullable String name;
         private @Nullable String timeAdded;
@@ -139,7 +167,9 @@ public final class ManagedDatabaseGroupManagedDatabase {
     	      this.compartmentId = defaults.compartmentId;
     	      this.databaseSubType = defaults.databaseSubType;
     	      this.databaseType = defaults.databaseType;
+    	      this.definedTags = defaults.definedTags;
     	      this.deploymentType = defaults.deploymentType;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.timeAdded = defaults.timeAdded;
@@ -165,9 +195,21 @@ public final class ManagedDatabaseGroupManagedDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder deploymentType(@Nullable String deploymentType) {
 
             this.deploymentType = deploymentType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -199,7 +241,9 @@ public final class ManagedDatabaseGroupManagedDatabase {
             _resultValue.compartmentId = compartmentId;
             _resultValue.databaseSubType = databaseSubType;
             _resultValue.databaseType = databaseType;
+            _resultValue.definedTags = definedTags;
             _resultValue.deploymentType = deploymentType;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.name = name;
             _resultValue.timeAdded = timeAdded;

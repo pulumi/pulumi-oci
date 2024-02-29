@@ -83,8 +83,10 @@ type LookupAutonomousContainerDatabaseDataguardAssociationResult struct {
 	PeerAutonomousContainerDatabaseDisplayName            string `pulumi:"peerAutonomousContainerDatabaseDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseId string `pulumi:"peerAutonomousContainerDatabaseId"`
+	PeerAutonomousVmClusterId         string `pulumi:"peerAutonomousVmClusterId"`
 	PeerCloudAutonomousVmClusterId    string `pulumi:"peerCloudAutonomousVmClusterId"`
-	// The current state of Autonomous Data Guard.
+	PeerDbUniqueName                  string `pulumi:"peerDbUniqueName"`
+	// The current state of the Autonomous Container Database.
 	PeerLifecycleState string `pulumi:"peerLifecycleState"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	PeerRole string `pulumi:"peerRole"`
@@ -224,13 +226,23 @@ func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerA
 	}).(pulumi.StringOutput)
 }
 
+func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerAutonomousVmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string {
+		return v.PeerAutonomousVmClusterId
+	}).(pulumi.StringOutput)
+}
+
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerCloudAutonomousVmClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string {
 		return v.PeerCloudAutonomousVmClusterId
 	}).(pulumi.StringOutput)
 }
 
-// The current state of Autonomous Data Guard.
+func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerDbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string { return v.PeerDbUniqueName }).(pulumi.StringOutput)
+}
+
+// The current state of the Autonomous Container Database.
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerLifecycleState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string {
 		return v.PeerLifecycleState

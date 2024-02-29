@@ -14,11 +14,15 @@ namespace Pulumi.Oci.Sch.Outputs
     public sealed class GetServiceConnectorsServiceConnectorCollectionItemSourceResult
     {
         /// <summary>
-        /// The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
+        /// The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+        /// </summary>
+        public readonly string ConfigMap;
+        /// <summary>
+        /// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult> Cursors;
         /// <summary>
-        /// The type descriminator.
+        /// The type discriminator.
         /// </summary>
         public readonly string Kind;
         /// <summary>
@@ -26,9 +30,13 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceResult> LogSources;
         /// <summary>
-        /// The list of metric namespaces to retrieve data from.
+        /// One or more compartment-specific lists of metric namespaces to retrieve data from.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceResult> MonitoringSources;
+        /// <summary>
+        /// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+        /// </summary>
+        public readonly string PluginName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         /// </summary>
@@ -36,6 +44,8 @@ namespace Pulumi.Oci.Sch.Outputs
 
         [OutputConstructor]
         private GetServiceConnectorsServiceConnectorCollectionItemSourceResult(
+            string configMap,
+
             ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult> cursors,
 
             string kind,
@@ -44,12 +54,16 @@ namespace Pulumi.Oci.Sch.Outputs
 
             ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceResult> monitoringSources,
 
+            string pluginName,
+
             string streamId)
         {
+            ConfigMap = configMap;
             Cursors = cursors;
             Kind = kind;
             LogSources = logSources;
             MonitoringSources = monitoringSources;
+            PluginName = pluginName;
             StreamId = streamId;
         }
     }

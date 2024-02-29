@@ -120,6 +120,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string ComponentName;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The user-friendly name for the database. The name does not have to be unique.
         /// </summary>
         public readonly string DisplayName;
@@ -132,6 +136,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
         /// </summary>
         public readonly string ExternalDbSystemId;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
         /// </summary>
@@ -181,6 +189,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string componentName,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string displayName,
 
             string externalAsmId,
@@ -188,6 +198,8 @@ namespace Pulumi.Oci.DatabaseManagement
             string externalConnectorId,
 
             string externalDbSystemId,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string gridHome,
 
@@ -212,10 +224,12 @@ namespace Pulumi.Oci.DatabaseManagement
             AdditionalDetails = additionalDetails;
             CompartmentId = compartmentId;
             ComponentName = componentName;
+            DefinedTags = definedTags;
             DisplayName = displayName;
             ExternalAsmId = externalAsmId;
             ExternalConnectorId = externalConnectorId;
             ExternalDbSystemId = externalDbSystemId;
+            FreeformTags = freeformTags;
             GridHome = gridHome;
             Id = id;
             IsCluster = isCluster;

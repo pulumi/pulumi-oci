@@ -21,6 +21,11 @@ public final class GetExternalExadataStorageGridResult {
      */
     private Map<String,Object> additionalDetails;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
@@ -32,7 +37,12 @@ public final class GetExternalExadataStorageGridResult {
     private String exadataInfrastructureId;
     private String externalExadataStorageGridId;
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
      */
     private String id;
@@ -96,6 +106,13 @@ public final class GetExternalExadataStorageGridResult {
         return this.additionalDetails;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
@@ -113,7 +130,14 @@ public final class GetExternalExadataStorageGridResult {
         return this.externalExadataStorageGridId;
     }
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
      */
     public String id() {
@@ -200,9 +224,11 @@ public final class GetExternalExadataStorageGridResult {
     @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> additionalDetails;
+        private Map<String,Object> definedTags;
         private String displayName;
         private String exadataInfrastructureId;
         private String externalExadataStorageGridId;
+        private Map<String,Object> freeformTags;
         private String id;
         private String internalId;
         private String lifecycleDetails;
@@ -218,9 +244,11 @@ public final class GetExternalExadataStorageGridResult {
         public Builder(GetExternalExadataStorageGridResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalDetails = defaults.additionalDetails;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
     	      this.externalExadataStorageGridId = defaults.externalExadataStorageGridId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.internalId = defaults.internalId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -240,6 +268,14 @@ public final class GetExternalExadataStorageGridResult {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "additionalDetails");
             }
             this.additionalDetails = additionalDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
@@ -264,6 +300,14 @@ public final class GetExternalExadataStorageGridResult {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "externalExadataStorageGridId");
             }
             this.externalExadataStorageGridId = externalExadataStorageGridId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageGridResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -360,9 +404,11 @@ public final class GetExternalExadataStorageGridResult {
         public GetExternalExadataStorageGridResult build() {
             final var _resultValue = new GetExternalExadataStorageGridResult();
             _resultValue.additionalDetails = additionalDetails;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.exadataInfrastructureId = exadataInfrastructureId;
             _resultValue.externalExadataStorageGridId = externalExadataStorageGridId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.internalId = internalId;
             _resultValue.lifecycleDetails = lifecycleDetails;

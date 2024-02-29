@@ -40,6 +40,8 @@ type KeyVersion struct {
 	ExternalKeyReferenceDetails KeyVersionExternalKeyReferenceDetailArrayOutput `pulumi:"externalKeyReferenceDetails"`
 	// Key version ID associated with the external key.
 	ExternalKeyVersionId pulumi.StringOutput `pulumi:"externalKeyVersionId"`
+	// An optional property indicating whether this keyversion is generated from auto rotatation.
+	IsAutoRotated pulumi.BoolOutput `pulumi:"isAutoRotated"`
 	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary pulumi.BoolOutput `pulumi:"isPrimary"`
 	// The OCID of the key.
@@ -109,6 +111,8 @@ type keyVersionState struct {
 	ExternalKeyReferenceDetails []KeyVersionExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
 	// Key version ID associated with the external key.
 	ExternalKeyVersionId *string `pulumi:"externalKeyVersionId"`
+	// An optional property indicating whether this keyversion is generated from auto rotatation.
+	IsAutoRotated *bool `pulumi:"isAutoRotated"`
 	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary *bool `pulumi:"isPrimary"`
 	// The OCID of the key.
@@ -143,6 +147,8 @@ type KeyVersionState struct {
 	ExternalKeyReferenceDetails KeyVersionExternalKeyReferenceDetailArrayInput
 	// Key version ID associated with the external key.
 	ExternalKeyVersionId pulumi.StringPtrInput
+	// An optional property indicating whether this keyversion is generated from auto rotatation.
+	IsAutoRotated pulumi.BoolPtrInput
 	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary pulumi.BoolPtrInput
 	// The OCID of the key.
@@ -305,6 +311,11 @@ func (o KeyVersionOutput) ExternalKeyReferenceDetails() KeyVersionExternalKeyRef
 // Key version ID associated with the external key.
 func (o KeyVersionOutput) ExternalKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.ExternalKeyVersionId }).(pulumi.StringOutput)
+}
+
+// An optional property indicating whether this keyversion is generated from auto rotatation.
+func (o KeyVersionOutput) IsAutoRotated() pulumi.BoolOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.BoolOutput { return v.IsAutoRotated }).(pulumi.BoolOutput)
 }
 
 // A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.

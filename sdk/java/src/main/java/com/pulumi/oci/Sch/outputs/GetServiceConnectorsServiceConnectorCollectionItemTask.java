@@ -22,7 +22,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
      */
     private Integer batchTimeInSec;
     /**
-     * @return A filter or mask to limit the source used in the flow defined by the service connector.
+     * @return A filter or mask to limit the source used in the flow defined by the connector.
      * 
      */
     private String condition;
@@ -32,7 +32,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
      */
     private String functionId;
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     private String kind;
@@ -53,7 +53,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
         return this.batchTimeInSec;
     }
     /**
-     * @return A filter or mask to limit the source used in the flow defined by the service connector.
+     * @return A filter or mask to limit the source used in the flow defined by the connector.
      * 
      */
     public String condition() {
@@ -67,7 +67,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
         return this.functionId;
     }
     /**
-     * @return The type descriminator.
+     * @return The type discriminator.
      * 
      */
     public String kind() {

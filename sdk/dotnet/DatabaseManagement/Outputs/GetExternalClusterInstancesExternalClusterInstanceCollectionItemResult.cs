@@ -30,6 +30,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string CrsBaseDirectory;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// A filter to only return the resources that match the entire display name.
         /// </summary>
         public readonly string DisplayName;
@@ -50,6 +54,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
         /// </summary>
         public readonly string ExternalDbSystemId;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The name of the host on which the cluster instance is running.
         /// </summary>
@@ -89,6 +97,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string crsBaseDirectory,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string displayName,
 
             string externalClusterId,
@@ -100,6 +110,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             string externalDbNodeId,
 
             string externalDbSystemId,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string hostName,
 
@@ -119,12 +131,14 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             CompartmentId = compartmentId;
             ComponentName = componentName;
             CrsBaseDirectory = crsBaseDirectory;
+            DefinedTags = definedTags;
             DisplayName = displayName;
             ExternalClusterId = externalClusterId;
             ExternalClusterInstanceId = externalClusterInstanceId;
             ExternalConnectorId = externalConnectorId;
             ExternalDbNodeId = externalDbNodeId;
             ExternalDbSystemId = externalDbSystemId;
+            FreeformTags = freeformTags;
             HostName = hostName;
             Id = id;
             LifecycleDetails = lifecycleDetails;

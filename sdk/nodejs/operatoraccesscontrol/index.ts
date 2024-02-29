@@ -10,6 +10,11 @@ export const getAccessRequest: typeof import("./getAccessRequest").getAccessRequ
 export const getAccessRequestOutput: typeof import("./getAccessRequest").getAccessRequestOutput = null as any;
 utilities.lazyLoad(exports, ["getAccessRequest","getAccessRequestOutput"], () => require("./getAccessRequest"));
 
+export { GetAccessRequestAuditLogReportArgs, GetAccessRequestAuditLogReportResult, GetAccessRequestAuditLogReportOutputArgs } from "./getAccessRequestAuditLogReport";
+export const getAccessRequestAuditLogReport: typeof import("./getAccessRequestAuditLogReport").getAccessRequestAuditLogReport = null as any;
+export const getAccessRequestAuditLogReportOutput: typeof import("./getAccessRequestAuditLogReport").getAccessRequestAuditLogReportOutput = null as any;
+utilities.lazyLoad(exports, ["getAccessRequestAuditLogReport","getAccessRequestAuditLogReportOutput"], () => require("./getAccessRequestAuditLogReport"));
+
 export { GetAccessRequestHistoryArgs, GetAccessRequestHistoryResult, GetAccessRequestHistoryOutputArgs } from "./getAccessRequestHistory";
 export const getAccessRequestHistory: typeof import("./getAccessRequestHistory").getAccessRequestHistory = null as any;
 export const getAccessRequestHistoryOutput: typeof import("./getAccessRequestHistory").getAccessRequestHistoryOutput = null as any;

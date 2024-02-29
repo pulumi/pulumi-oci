@@ -23,10 +23,13 @@ class GetCloudExadataInfrastructuresResult:
     """
     A collection of values returned by getCloudExadataInfrastructures.
     """
-    def __init__(__self__, cloud_exadata_infrastructures=None, compartment_id=None, display_name=None, filters=None, id=None, state=None):
+    def __init__(__self__, cloud_exadata_infrastructures=None, cluster_placement_group_id=None, compartment_id=None, display_name=None, filters=None, id=None, state=None):
         if cloud_exadata_infrastructures and not isinstance(cloud_exadata_infrastructures, list):
             raise TypeError("Expected argument 'cloud_exadata_infrastructures' to be a list")
         pulumi.set(__self__, "cloud_exadata_infrastructures", cloud_exadata_infrastructures)
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,6 +53,14 @@ class GetCloudExadataInfrastructuresResult:
         The list of cloud_exadata_infrastructures.
         """
         return pulumi.get(self, "cloud_exadata_infrastructures")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -96,6 +107,7 @@ class AwaitableGetCloudExadataInfrastructuresResult(GetCloudExadataInfrastructur
             yield self
         return GetCloudExadataInfrastructuresResult(
             cloud_exadata_infrastructures=self.cloud_exadata_infrastructures,
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             display_name=self.display_name,
             filters=self.filters,
@@ -103,7 +115,8 @@ class AwaitableGetCloudExadataInfrastructuresResult(GetCloudExadataInfrastructur
             state=self.state)
 
 
-def get_cloud_exadata_infrastructures(compartment_id: Optional[str] = None,
+def get_cloud_exadata_infrastructures(cluster_placement_group_id: Optional[str] = None,
+                                      compartment_id: Optional[str] = None,
                                       display_name: Optional[str] = None,
                                       filters: Optional[Sequence[pulumi.InputType['GetCloudExadataInfrastructuresFilterArgs']]] = None,
                                       state: Optional[str] = None,
@@ -120,16 +133,19 @@ def get_cloud_exadata_infrastructures(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_cloud_exadata_infrastructures = oci.Database.get_cloud_exadata_infrastructures(compartment_id=var["compartment_id"],
+        cluster_placement_group_id=var["cloud_exadata_infrastructure_cluster_placement_group_id"],
         display_name=var["cloud_exadata_infrastructure_display_name"],
         state=var["cloud_exadata_infrastructure_state"])
     ```
 
 
+    :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
     """
     __args__ = dict()
+    __args__['clusterPlacementGroupId'] = cluster_placement_group_id
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -139,6 +155,7 @@ def get_cloud_exadata_infrastructures(compartment_id: Optional[str] = None,
 
     return AwaitableGetCloudExadataInfrastructuresResult(
         cloud_exadata_infrastructures=pulumi.get(__ret__, 'cloud_exadata_infrastructures'),
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
@@ -147,7 +164,8 @@ def get_cloud_exadata_infrastructures(compartment_id: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_cloud_exadata_infrastructures)
-def get_cloud_exadata_infrastructures_output(compartment_id: Optional[pulumi.Input[str]] = None,
+def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                             compartment_id: Optional[pulumi.Input[str]] = None,
                                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudExadataInfrastructuresFilterArgs']]]]] = None,
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -164,11 +182,13 @@ def get_cloud_exadata_infrastructures_output(compartment_id: Optional[pulumi.Inp
     import pulumi_oci as oci
 
     test_cloud_exadata_infrastructures = oci.Database.get_cloud_exadata_infrastructures(compartment_id=var["compartment_id"],
+        cluster_placement_group_id=var["cloud_exadata_infrastructure_cluster_placement_group_id"],
         display_name=var["cloud_exadata_infrastructure_display_name"],
         state=var["cloud_exadata_infrastructure_state"])
     ```
 
 
+    :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.

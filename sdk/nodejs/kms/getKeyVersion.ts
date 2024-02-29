@@ -78,6 +78,10 @@ export interface GetKeyVersionResult {
      */
     readonly id: string;
     /**
+     * An optional property indicating whether this keyversion is generated from auto rotatation.
+     */
+    readonly isAutoRotated: boolean;
+    /**
      * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      */
     readonly isPrimary: boolean;

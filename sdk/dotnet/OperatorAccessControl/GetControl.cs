@@ -153,6 +153,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// Description associated with the latest modification of the operator control.
         /// </summary>
         public readonly string LastModifiedInfo;
+        /// <summary>
+        /// Number of approvers required to approve an access request.
+        /// </summary>
+        public readonly int NumberOfApprovers;
         public readonly string OperatorControlId;
         /// <summary>
         /// Name of the operator control. The name must be unique.
@@ -213,6 +217,8 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             string lastModifiedInfo,
 
+            int numberOfApprovers,
+
             string operatorControlId,
 
             string operatorControlName,
@@ -243,6 +249,7 @@ namespace Pulumi.Oci.OperatorAccessControl
             IsDefaultOperatorControl = isDefaultOperatorControl;
             IsFullyPreApproved = isFullyPreApproved;
             LastModifiedInfo = lastModifiedInfo;
+            NumberOfApprovers = numberOfApprovers;
             OperatorControlId = operatorControlId;
             OperatorControlName = operatorControlName;
             PreApprovedOpActionLists = preApprovedOpActionLists;

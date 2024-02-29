@@ -13,7 +13,9 @@ import (
 
 // This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
 //
-// Lists service connectors in the specified compartment.
+// Lists connectors in the specified compartment.
+// For more information, see
+// [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
 //
 // ## Example Usage
 //
@@ -74,7 +76,7 @@ type GetServiceConnectorsResult struct {
 	Id string `pulumi:"id"`
 	// The list of service_connector_collection.
 	ServiceConnectorCollections []GetServiceConnectorsServiceConnectorCollection `pulumi:"serviceConnectorCollections"`
-	// The current state of the service connector.
+	// The current state of the connector.
 	State *string `pulumi:"state"`
 }
 
@@ -147,7 +149,7 @@ func (o GetServiceConnectorsResultOutput) ServiceConnectorCollections() GetServi
 	}).(GetServiceConnectorsServiceConnectorCollectionArrayOutput)
 }
 
-// The current state of the service connector.
+// The current state of the connector.
 func (o GetServiceConnectorsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetServiceConnectorsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

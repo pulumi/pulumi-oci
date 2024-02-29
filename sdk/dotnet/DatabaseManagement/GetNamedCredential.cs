@@ -120,9 +120,17 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNamedCredentialContentResult> Contents;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The information specified by the user about the named credential.
         /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
         /// </summary>
@@ -165,7 +173,11 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetNamedCredentialContentResult> contents,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string description,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -188,7 +200,9 @@ namespace Pulumi.Oci.DatabaseManagement
             AssociatedResource = associatedResource;
             CompartmentId = compartmentId;
             Contents = contents;
+            DefinedTags = definedTags;
             Description = description;
+            FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
             Name = name;

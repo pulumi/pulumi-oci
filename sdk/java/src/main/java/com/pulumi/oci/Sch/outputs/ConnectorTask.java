@@ -24,7 +24,7 @@ public final class ConnectorTask {
      */
     private @Nullable Integer batchTimeInSec;
     /**
-     * @return (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+     * @return (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
      * 
      */
     private @Nullable String condition;
@@ -55,7 +55,7 @@ public final class ConnectorTask {
         return Optional.ofNullable(this.batchTimeInSec);
     }
     /**
-     * @return (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
+     * @return (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
      * 
      */
     public Optional<String> condition() {

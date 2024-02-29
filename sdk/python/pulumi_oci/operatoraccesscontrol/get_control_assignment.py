@@ -21,7 +21,7 @@ class GetControlAssignmentResult:
     """
     A collection of values returned by getControlAssignment.
     """
-    def __init__(__self__, assigner_id=None, comment=None, compartment_id=None, defined_tags=None, detachment_description=None, error_code=None, error_message=None, freeform_tags=None, id=None, is_auto_approve_during_maintenance=None, is_default_assignment=None, is_enforced_always=None, is_log_forwarded=None, lifecycle_details=None, operator_control_assignment_id=None, operator_control_id=None, remote_syslog_server_address=None, remote_syslog_server_ca_cert=None, remote_syslog_server_port=None, resource_compartment_id=None, resource_id=None, resource_name=None, resource_type=None, state=None, time_assignment_from=None, time_assignment_to=None, time_of_assignment=None, time_of_deletion=None, unassigner_id=None):
+    def __init__(__self__, assigner_id=None, comment=None, compartment_id=None, defined_tags=None, detachment_description=None, error_code=None, error_message=None, freeform_tags=None, id=None, is_auto_approve_during_maintenance=None, is_default_assignment=None, is_enforced_always=None, is_hypervisor_log_forwarded=None, is_log_forwarded=None, lifecycle_details=None, op_control_name=None, operator_control_assignment_id=None, operator_control_id=None, remote_syslog_server_address=None, remote_syslog_server_ca_cert=None, remote_syslog_server_port=None, resource_compartment_id=None, resource_id=None, resource_name=None, resource_type=None, state=None, time_assignment_from=None, time_assignment_to=None, time_of_assignment=None, time_of_deletion=None, unassigner_id=None, validate_assignment_trigger=None):
         if assigner_id and not isinstance(assigner_id, str):
             raise TypeError("Expected argument 'assigner_id' to be a str")
         pulumi.set(__self__, "assigner_id", assigner_id)
@@ -58,12 +58,18 @@ class GetControlAssignmentResult:
         if is_enforced_always and not isinstance(is_enforced_always, bool):
             raise TypeError("Expected argument 'is_enforced_always' to be a bool")
         pulumi.set(__self__, "is_enforced_always", is_enforced_always)
+        if is_hypervisor_log_forwarded and not isinstance(is_hypervisor_log_forwarded, bool):
+            raise TypeError("Expected argument 'is_hypervisor_log_forwarded' to be a bool")
+        pulumi.set(__self__, "is_hypervisor_log_forwarded", is_hypervisor_log_forwarded)
         if is_log_forwarded and not isinstance(is_log_forwarded, bool):
             raise TypeError("Expected argument 'is_log_forwarded' to be a bool")
         pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if op_control_name and not isinstance(op_control_name, str):
+            raise TypeError("Expected argument 'op_control_name' to be a str")
+        pulumi.set(__self__, "op_control_name", op_control_name)
         if operator_control_assignment_id and not isinstance(operator_control_assignment_id, str):
             raise TypeError("Expected argument 'operator_control_assignment_id' to be a str")
         pulumi.set(__self__, "operator_control_assignment_id", operator_control_assignment_id)
@@ -109,6 +115,9 @@ class GetControlAssignmentResult:
         if unassigner_id and not isinstance(unassigner_id, str):
             raise TypeError("Expected argument 'unassigner_id' to be a str")
         pulumi.set(__self__, "unassigner_id", unassigner_id)
+        if validate_assignment_trigger and not isinstance(validate_assignment_trigger, int):
+            raise TypeError("Expected argument 'validate_assignment_trigger' to be a int")
+        pulumi.set(__self__, "validate_assignment_trigger", validate_assignment_trigger)
 
     @property
     @pulumi.getter(name="assignerId")
@@ -207,6 +216,14 @@ class GetControlAssignmentResult:
         return pulumi.get(self, "is_enforced_always")
 
     @property
+    @pulumi.getter(name="isHypervisorLogForwarded")
+    def is_hypervisor_log_forwarded(self) -> bool:
+        """
+        If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+        """
+        return pulumi.get(self, "is_hypervisor_log_forwarded")
+
+    @property
     @pulumi.getter(name="isLogForwarded")
     def is_log_forwarded(self) -> bool:
         """
@@ -221,6 +238,14 @@ class GetControlAssignmentResult:
         More in detail about the lifeCycleState.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="opControlName")
+    def op_control_name(self) -> str:
+        """
+        Name of the operator control name associated.
+        """
+        return pulumi.get(self, "op_control_name")
 
     @property
     @pulumi.getter(name="operatorControlAssignmentId")
@@ -339,6 +364,11 @@ class GetControlAssignmentResult:
         """
         return pulumi.get(self, "unassigner_id")
 
+    @property
+    @pulumi.getter(name="validateAssignmentTrigger")
+    def validate_assignment_trigger(self) -> int:
+        return pulumi.get(self, "validate_assignment_trigger")
+
 
 class AwaitableGetControlAssignmentResult(GetControlAssignmentResult):
     # pylint: disable=using-constant-test
@@ -358,8 +388,10 @@ class AwaitableGetControlAssignmentResult(GetControlAssignmentResult):
             is_auto_approve_during_maintenance=self.is_auto_approve_during_maintenance,
             is_default_assignment=self.is_default_assignment,
             is_enforced_always=self.is_enforced_always,
+            is_hypervisor_log_forwarded=self.is_hypervisor_log_forwarded,
             is_log_forwarded=self.is_log_forwarded,
             lifecycle_details=self.lifecycle_details,
+            op_control_name=self.op_control_name,
             operator_control_assignment_id=self.operator_control_assignment_id,
             operator_control_id=self.operator_control_id,
             remote_syslog_server_address=self.remote_syslog_server_address,
@@ -374,7 +406,8 @@ class AwaitableGetControlAssignmentResult(GetControlAssignmentResult):
             time_assignment_to=self.time_assignment_to,
             time_of_assignment=self.time_of_assignment,
             time_of_deletion=self.time_of_deletion,
-            unassigner_id=self.unassigner_id)
+            unassigner_id=self.unassigner_id,
+            validate_assignment_trigger=self.validate_assignment_trigger)
 
 
 def get_control_assignment(operator_control_assignment_id: Optional[str] = None,
@@ -414,8 +447,10 @@ def get_control_assignment(operator_control_assignment_id: Optional[str] = None,
         is_auto_approve_during_maintenance=pulumi.get(__ret__, 'is_auto_approve_during_maintenance'),
         is_default_assignment=pulumi.get(__ret__, 'is_default_assignment'),
         is_enforced_always=pulumi.get(__ret__, 'is_enforced_always'),
+        is_hypervisor_log_forwarded=pulumi.get(__ret__, 'is_hypervisor_log_forwarded'),
         is_log_forwarded=pulumi.get(__ret__, 'is_log_forwarded'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        op_control_name=pulumi.get(__ret__, 'op_control_name'),
         operator_control_assignment_id=pulumi.get(__ret__, 'operator_control_assignment_id'),
         operator_control_id=pulumi.get(__ret__, 'operator_control_id'),
         remote_syslog_server_address=pulumi.get(__ret__, 'remote_syslog_server_address'),
@@ -430,7 +465,8 @@ def get_control_assignment(operator_control_assignment_id: Optional[str] = None,
         time_assignment_to=pulumi.get(__ret__, 'time_assignment_to'),
         time_of_assignment=pulumi.get(__ret__, 'time_of_assignment'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
-        unassigner_id=pulumi.get(__ret__, 'unassigner_id'))
+        unassigner_id=pulumi.get(__ret__, 'unassigner_id'),
+        validate_assignment_trigger=pulumi.get(__ret__, 'validate_assignment_trigger'))
 
 
 @_utilities.lift_output_func(get_control_assignment)

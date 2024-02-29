@@ -95,6 +95,7 @@ class _KeyVersionState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]] = None,
                  external_key_version_id: Optional[pulumi.Input[str]] = None,
+                 is_auto_rotated: Optional[pulumi.Input[bool]] = None,
                  is_primary: Optional[pulumi.Input[bool]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_version_id: Optional[pulumi.Input[str]] = None,
@@ -112,6 +113,7 @@ class _KeyVersionState:
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains this key version.
         :param pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]] external_key_reference_details: Key reference data to be returned to the customer as a response.
         :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
+        :param pulumi.Input[bool] is_auto_rotated: An optional property indicating whether this keyversion is generated from auto rotatation.
         :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         :param pulumi.Input[str] key_id: The OCID of the key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
@@ -132,6 +134,8 @@ class _KeyVersionState:
             pulumi.set(__self__, "external_key_reference_details", external_key_reference_details)
         if external_key_version_id is not None:
             pulumi.set(__self__, "external_key_version_id", external_key_version_id)
+        if is_auto_rotated is not None:
+            pulumi.set(__self__, "is_auto_rotated", is_auto_rotated)
         if is_primary is not None:
             pulumi.set(__self__, "is_primary", is_primary)
         if key_id is not None:
@@ -192,6 +196,18 @@ class _KeyVersionState:
     @external_key_version_id.setter
     def external_key_version_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "external_key_version_id", value)
+
+    @property
+    @pulumi.getter(name="isAutoRotated")
+    def is_auto_rotated(self) -> Optional[pulumi.Input[bool]]:
+        """
+        An optional property indicating whether this keyversion is generated from auto rotatation.
+        """
+        return pulumi.get(self, "is_auto_rotated")
+
+    @is_auto_rotated.setter
+    def is_auto_rotated(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_auto_rotated", value)
 
     @property
     @pulumi.getter(name="isPrimary")
@@ -437,6 +453,7 @@ class KeyVersion(pulumi.CustomResource):
             __props__.__dict__["time_of_deletion"] = time_of_deletion
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["external_key_reference_details"] = None
+            __props__.__dict__["is_auto_rotated"] = None
             __props__.__dict__["is_primary"] = None
             __props__.__dict__["key_version_id"] = None
             __props__.__dict__["public_key"] = None
@@ -459,6 +476,7 @@ class KeyVersion(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyVersionExternalKeyReferenceDetailArgs']]]]] = None,
             external_key_version_id: Optional[pulumi.Input[str]] = None,
+            is_auto_rotated: Optional[pulumi.Input[bool]] = None,
             is_primary: Optional[pulumi.Input[bool]] = None,
             key_id: Optional[pulumi.Input[str]] = None,
             key_version_id: Optional[pulumi.Input[str]] = None,
@@ -481,6 +499,7 @@ class KeyVersion(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains this key version.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyVersionExternalKeyReferenceDetailArgs']]]] external_key_reference_details: Key reference data to be returned to the customer as a response.
         :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
+        :param pulumi.Input[bool] is_auto_rotated: An optional property indicating whether this keyversion is generated from auto rotatation.
         :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         :param pulumi.Input[str] key_id: The OCID of the key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
@@ -502,6 +521,7 @@ class KeyVersion(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["external_key_reference_details"] = external_key_reference_details
         __props__.__dict__["external_key_version_id"] = external_key_version_id
+        __props__.__dict__["is_auto_rotated"] = is_auto_rotated
         __props__.__dict__["is_primary"] = is_primary
         __props__.__dict__["key_id"] = key_id
         __props__.__dict__["key_version_id"] = key_version_id
@@ -539,6 +559,14 @@ class KeyVersion(pulumi.CustomResource):
         Key version ID associated with the external key.
         """
         return pulumi.get(self, "external_key_version_id")
+
+    @property
+    @pulumi.getter(name="isAutoRotated")
+    def is_auto_rotated(self) -> pulumi.Output[bool]:
+        """
+        An optional property indicating whether this keyversion is generated from auto rotatation.
+        """
+        return pulumi.get(self, "is_auto_rotated")
 
     @property
     @pulumi.getter(name="isPrimary")

@@ -154,6 +154,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         public readonly bool IsEnforcedAlways;
         /// <summary>
+        /// If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+        /// </summary>
+        public readonly bool IsHypervisorLogForwarded;
+        /// <summary>
         /// If set indicates that the audit logs are being forwarded to the relevant remote logging server
         /// </summary>
         public readonly bool IsLogForwarded;
@@ -161,6 +165,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// More in detail about the lifeCycleState.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Name of the operator control name associated.
+        /// </summary>
+        public readonly string OpControlName;
         public readonly string OperatorControlAssignmentId;
         /// <summary>
         /// The OCID of the operator control.
@@ -218,6 +226,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// User id who released the operatorControl.
         /// </summary>
         public readonly string UnassignerId;
+        public readonly int ValidateAssignmentTrigger;
 
         [OutputConstructor]
         private GetControlAssignmentResult(
@@ -245,9 +254,13 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             bool isEnforcedAlways,
 
+            bool isHypervisorLogForwarded,
+
             bool isLogForwarded,
 
             string lifecycleDetails,
+
+            string opControlName,
 
             string operatorControlAssignmentId,
 
@@ -277,7 +290,9 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             string timeOfDeletion,
 
-            string unassignerId)
+            string unassignerId,
+
+            int validateAssignmentTrigger)
         {
             AssignerId = assignerId;
             Comment = comment;
@@ -291,8 +306,10 @@ namespace Pulumi.Oci.OperatorAccessControl
             IsAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
             IsDefaultAssignment = isDefaultAssignment;
             IsEnforcedAlways = isEnforcedAlways;
+            IsHypervisorLogForwarded = isHypervisorLogForwarded;
             IsLogForwarded = isLogForwarded;
             LifecycleDetails = lifecycleDetails;
+            OpControlName = opControlName;
             OperatorControlAssignmentId = operatorControlAssignmentId;
             OperatorControlId = operatorControlId;
             RemoteSyslogServerAddress = remoteSyslogServerAddress;
@@ -308,6 +325,7 @@ namespace Pulumi.Oci.OperatorAccessControl
             TimeOfAssignment = timeOfAssignment;
             TimeOfDeletion = timeOfDeletion;
             UnassignerId = unassignerId;
+            ValidateAssignmentTrigger = validateAssignmentTrigger;
         }
     }
 }

@@ -49,9 +49,9 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
     }
 
     @Import(name="autonomousContainerDatabaseDataguardAssociationId")
-    private @Nullable Output<Integer> autonomousContainerDatabaseDataguardAssociationId;
+    private @Nullable Output<String> autonomousContainerDatabaseDataguardAssociationId;
 
-    public Optional<Output<Integer>> autonomousContainerDatabaseDataguardAssociationId() {
+    public Optional<Output<String>> autonomousContainerDatabaseDataguardAssociationId() {
         return Optional.ofNullable(this.autonomousContainerDatabaseDataguardAssociationId);
     }
 
@@ -191,6 +191,21 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+     * 
+     */
+    @Import(name="peerAutonomousVmClusterId")
+    private @Nullable Output<String> peerAutonomousVmClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+     * 
+     */
+    public Optional<Output<String>> peerAutonomousVmClusterId() {
+        return Optional.ofNullable(this.peerAutonomousVmClusterId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      * 
      */
@@ -206,14 +221,29 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
     }
 
     /**
-     * The current state of Autonomous Data Guard.
+     * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+     * 
+     */
+    @Import(name="peerDbUniqueName")
+    private @Nullable Output<String> peerDbUniqueName;
+
+    /**
+     * @return Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+     * 
+     */
+    public Optional<Output<String>> peerDbUniqueName() {
+        return Optional.ofNullable(this.peerDbUniqueName);
+    }
+
+    /**
+     * The current state of the Autonomous Container Database.
      * 
      */
     @Import(name="peerLifecycleState")
     private @Nullable Output<String> peerLifecycleState;
 
     /**
-     * @return The current state of Autonomous Data Guard.
+     * @return The current state of the Autonomous Container Database.
      * 
      */
     public Optional<Output<String>> peerLifecycleState() {
@@ -376,7 +406,9 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         this.peerAutonomousContainerDatabaseDataguardAssociationId = $.peerAutonomousContainerDatabaseDataguardAssociationId;
         this.peerAutonomousContainerDatabaseDisplayName = $.peerAutonomousContainerDatabaseDisplayName;
         this.peerAutonomousContainerDatabaseId = $.peerAutonomousContainerDatabaseId;
+        this.peerAutonomousVmClusterId = $.peerAutonomousVmClusterId;
         this.peerCloudAutonomousVmClusterId = $.peerCloudAutonomousVmClusterId;
+        this.peerDbUniqueName = $.peerDbUniqueName;
         this.peerLifecycleState = $.peerLifecycleState;
         this.peerRole = $.peerRole;
         this.protectionMode = $.protectionMode;
@@ -449,12 +481,12 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
             return applyRate(Output.of(applyRate));
         }
 
-        public Builder autonomousContainerDatabaseDataguardAssociationId(@Nullable Output<Integer> autonomousContainerDatabaseDataguardAssociationId) {
+        public Builder autonomousContainerDatabaseDataguardAssociationId(@Nullable Output<String> autonomousContainerDatabaseDataguardAssociationId) {
             $.autonomousContainerDatabaseDataguardAssociationId = autonomousContainerDatabaseDataguardAssociationId;
             return this;
         }
 
-        public Builder autonomousContainerDatabaseDataguardAssociationId(Integer autonomousContainerDatabaseDataguardAssociationId) {
+        public Builder autonomousContainerDatabaseDataguardAssociationId(String autonomousContainerDatabaseDataguardAssociationId) {
             return autonomousContainerDatabaseDataguardAssociationId(Output.of(autonomousContainerDatabaseDataguardAssociationId));
         }
 
@@ -648,6 +680,27 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         }
 
         /**
+         * @param peerAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAutonomousVmClusterId(@Nullable Output<String> peerAutonomousVmClusterId) {
+            $.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
+            return this;
+        }
+
+        /**
+         * @param peerAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAutonomousVmClusterId(String peerAutonomousVmClusterId) {
+            return peerAutonomousVmClusterId(Output.of(peerAutonomousVmClusterId));
+        }
+
+        /**
          * @param peerCloudAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
          * 
          * @return builder
@@ -669,7 +722,28 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         }
 
         /**
-         * @param peerLifecycleState The current state of Autonomous Data Guard.
+         * @param peerDbUniqueName Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerDbUniqueName(@Nullable Output<String> peerDbUniqueName) {
+            $.peerDbUniqueName = peerDbUniqueName;
+            return this;
+        }
+
+        /**
+         * @param peerDbUniqueName Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerDbUniqueName(String peerDbUniqueName) {
+            return peerDbUniqueName(Output.of(peerDbUniqueName));
+        }
+
+        /**
+         * @param peerLifecycleState The current state of the Autonomous Container Database.
          * 
          * @return builder
          * 
@@ -680,7 +754,7 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         }
 
         /**
-         * @param peerLifecycleState The current state of Autonomous Data Guard.
+         * @param peerLifecycleState The current state of the Autonomous Container Database.
          * 
          * @return builder
          * 

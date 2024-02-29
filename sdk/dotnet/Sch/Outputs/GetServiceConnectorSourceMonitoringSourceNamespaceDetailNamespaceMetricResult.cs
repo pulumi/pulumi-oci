@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Sch.Outputs
     public sealed class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricResult
     {
         /// <summary>
-        /// The type descriminator.
+        /// The type discriminator.
         /// </summary>
         public readonly string Kind;
 

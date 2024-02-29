@@ -90,6 +90,10 @@ export class OperatorControl extends pulumi.CustomResource {
      */
     public /*out*/ readonly lastModifiedInfo!: pulumi.Output<string>;
     /**
+     * (Updatable) Number of approvers required to approve an access request.
+     */
+    public readonly numberOfApprovers!: pulumi.Output<number>;
+    /**
      * (Updatable) Name of the operator control.
      */
     public readonly operatorControlName!: pulumi.Output<string>;
@@ -150,6 +154,7 @@ export class OperatorControl extends pulumi.CustomResource {
             resourceInputs["isDefaultOperatorControl"] = state ? state.isDefaultOperatorControl : undefined;
             resourceInputs["isFullyPreApproved"] = state ? state.isFullyPreApproved : undefined;
             resourceInputs["lastModifiedInfo"] = state ? state.lastModifiedInfo : undefined;
+            resourceInputs["numberOfApprovers"] = state ? state.numberOfApprovers : undefined;
             resourceInputs["operatorControlName"] = state ? state.operatorControlName : undefined;
             resourceInputs["preApprovedOpActionLists"] = state ? state.preApprovedOpActionLists : undefined;
             resourceInputs["resourceType"] = state ? state.resourceType : undefined;
@@ -183,6 +188,7 @@ export class OperatorControl extends pulumi.CustomResource {
             resourceInputs["emailIdLists"] = args ? args.emailIdLists : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isFullyPreApproved"] = args ? args.isFullyPreApproved : undefined;
+            resourceInputs["numberOfApprovers"] = args ? args.numberOfApprovers : undefined;
             resourceInputs["operatorControlName"] = args ? args.operatorControlName : undefined;
             resourceInputs["preApprovedOpActionLists"] = args ? args.preApprovedOpActionLists : undefined;
             resourceInputs["resourceType"] = args ? args.resourceType : undefined;
@@ -248,6 +254,10 @@ export interface OperatorControlState {
      * Description associated with the latest modification of the operator control.
      */
     lastModifiedInfo?: pulumi.Input<string>;
+    /**
+     * (Updatable) Number of approvers required to approve an access request.
+     */
+    numberOfApprovers?: pulumi.Input<number>;
     /**
      * (Updatable) Name of the operator control.
      */
@@ -322,6 +332,10 @@ export interface OperatorControlArgs {
      * (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      */
     isFullyPreApproved: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Number of approvers required to approve an access request.
+     */
+    numberOfApprovers?: pulumi.Input<number>;
     /**
      * (Updatable) Name of the operator control.
      */

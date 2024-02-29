@@ -11,7 +11,10 @@ import com.pulumi.oci.DatabaseManagement.NamedCredentialArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.NamedCredentialState;
 import com.pulumi.oci.DatabaseManagement.outputs.NamedCredentialContent;
 import com.pulumi.oci.Utilities;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -54,7 +57,9 @@ import javax.annotation.Nullable;
  *             .scope(var_.named_credential_scope())
  *             .type(var_.named_credential_type())
  *             .associatedResource(var_.named_credential_associated_resource())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .description(var_.named_credential_description())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 
  *     }
@@ -77,14 +82,14 @@ public class NamedCredential extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="associatedResource", refs={String.class}, tree="[0]")
-    private Output<String> associatedResource;
+    private Output</* @Nullable */ String> associatedResource;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
      * 
      */
-    public Output<String> associatedResource() {
-        return this.associatedResource;
+    public Output<Optional<String>> associatedResource() {
+        return Codegen.optional(this.associatedResource);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
@@ -115,6 +120,20 @@ public class NamedCredential extends com.pulumi.resources.CustomResource {
         return this.content;
     }
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * (Updatable) The information specified by the user about the named credential.
      * 
      */
@@ -127,6 +146,20 @@ public class NamedCredential extends com.pulumi.resources.CustomResource {
      */
     public Output<String> description() {
         return this.description;
+    }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * The details of the lifecycle state.

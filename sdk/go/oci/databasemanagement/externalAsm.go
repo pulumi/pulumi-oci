@@ -34,17 +34,21 @@ type ExternalAsm struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The name of the external ASM.
 	ComponentName pulumi.StringOutput `pulumi:"componentName"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the database. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
 	ExternalAsmId pulumi.StringOutput `pulumi:"externalAsmId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalConnectorId pulumi.StringOutput `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
 	ExternalDbSystemId pulumi.StringOutput `pulumi:"externalDbSystemId"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
 	GridHome pulumi.StringOutput `pulumi:"gridHome"`
 	// Indicates whether the ASM is a cluster ASM or not.
@@ -104,17 +108,21 @@ type externalAsmState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The name of the external ASM.
 	ComponentName *string `pulumi:"componentName"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the database. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
 	ExternalAsmId *string `pulumi:"externalAsmId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalConnectorId *string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
 	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
 	GridHome *string `pulumi:"gridHome"`
 	// Indicates whether the ASM is a cluster ASM or not.
@@ -142,17 +150,21 @@ type ExternalAsmState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The name of the external ASM.
 	ComponentName pulumi.StringPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// The user-friendly name for the database. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
 	ExternalAsmId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalConnectorId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
 	ExternalDbSystemId pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	FreeformTags pulumi.MapInput
 	// The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
 	GridHome pulumi.StringPtrInput
 	// Indicates whether the ASM is a cluster ASM or not.
@@ -178,24 +190,32 @@ func (ExternalAsmState) ElementType() reflect.Type {
 }
 
 type externalAsmArgs struct {
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
 	ExternalAsmId string `pulumi:"externalAsmId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+	ExternalConnectorId *string `pulumi:"externalConnectorId"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ExternalConnectorId *string `pulumi:"externalConnectorId"`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a ExternalAsm resource.
 type ExternalAsmArgs struct {
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
 	ExternalAsmId pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+	ExternalConnectorId pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ExternalConnectorId pulumi.StringPtrInput
+	FreeformTags pulumi.MapInput
 }
 
 func (ExternalAsmArgs) ElementType() reflect.Type {
@@ -300,6 +320,11 @@ func (o ExternalAsmOutput) ComponentName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalAsm) pulumi.StringOutput { return v.ComponentName }).(pulumi.StringOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ExternalAsmOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ExternalAsm) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The user-friendly name for the database. The name does not have to be unique.
 func (o ExternalAsmOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalAsm) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
@@ -311,9 +336,6 @@ func (o ExternalAsmOutput) ExternalAsmId() pulumi.StringOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalAsmOutput) ExternalConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalAsm) pulumi.StringOutput { return v.ExternalConnectorId }).(pulumi.StringOutput)
 }
@@ -321,6 +343,14 @@ func (o ExternalAsmOutput) ExternalConnectorId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
 func (o ExternalAsmOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalAsm) pulumi.StringOutput { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ExternalAsmOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ExternalAsm) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.

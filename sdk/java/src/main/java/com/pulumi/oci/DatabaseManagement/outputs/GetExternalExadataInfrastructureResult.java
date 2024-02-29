@@ -36,6 +36,11 @@ public final class GetExternalExadataInfrastructureResult {
      */
     private List<GetExternalExadataInfrastructureDatabaseSystem> databaseSystems;
     private List<String> dbSystemIds;
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
     private String discoveryKey;
     /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
@@ -43,6 +48,11 @@ public final class GetExternalExadataInfrastructureResult {
      */
     private String displayName;
     private String externalExadataInfrastructureId;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
@@ -132,6 +142,13 @@ public final class GetExternalExadataInfrastructureResult {
     public List<String> dbSystemIds() {
         return this.dbSystemIds;
     }
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
     public String discoveryKey() {
         return this.discoveryKey;
     }
@@ -144,6 +161,13 @@ public final class GetExternalExadataInfrastructureResult {
     }
     public String externalExadataInfrastructureId() {
         return this.externalExadataInfrastructureId;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
@@ -240,9 +264,11 @@ public final class GetExternalExadataInfrastructureResult {
         private List<String> databaseCompartments;
         private List<GetExternalExadataInfrastructureDatabaseSystem> databaseSystems;
         private List<String> dbSystemIds;
+        private Map<String,Object> definedTags;
         private String discoveryKey;
         private String displayName;
         private String externalExadataInfrastructureId;
+        private Map<String,Object> freeformTags;
         private String id;
         private String internalId;
         private String licenseModel;
@@ -263,9 +289,11 @@ public final class GetExternalExadataInfrastructureResult {
     	      this.databaseCompartments = defaults.databaseCompartments;
     	      this.databaseSystems = defaults.databaseSystems;
     	      this.dbSystemIds = defaults.dbSystemIds;
+    	      this.definedTags = defaults.definedTags;
     	      this.discoveryKey = defaults.discoveryKey;
     	      this.displayName = defaults.displayName;
     	      this.externalExadataInfrastructureId = defaults.externalExadataInfrastructureId;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.internalId = defaults.internalId;
     	      this.licenseModel = defaults.licenseModel;
@@ -330,6 +358,14 @@ public final class GetExternalExadataInfrastructureResult {
             return dbSystemIds(List.of(dbSystemIds));
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataInfrastructureResult", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder discoveryKey(String discoveryKey) {
             if (discoveryKey == null) {
               throw new MissingRequiredPropertyException("GetExternalExadataInfrastructureResult", "discoveryKey");
@@ -351,6 +387,14 @@ public final class GetExternalExadataInfrastructureResult {
               throw new MissingRequiredPropertyException("GetExternalExadataInfrastructureResult", "externalExadataInfrastructureId");
             }
             this.externalExadataInfrastructureId = externalExadataInfrastructureId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataInfrastructureResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -462,9 +506,11 @@ public final class GetExternalExadataInfrastructureResult {
             _resultValue.databaseCompartments = databaseCompartments;
             _resultValue.databaseSystems = databaseSystems;
             _resultValue.dbSystemIds = dbSystemIds;
+            _resultValue.definedTags = definedTags;
             _resultValue.discoveryKey = discoveryKey;
             _resultValue.displayName = displayName;
             _resultValue.externalExadataInfrastructureId = externalExadataInfrastructureId;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.internalId = internalId;
             _resultValue.licenseModel = licenseModel;

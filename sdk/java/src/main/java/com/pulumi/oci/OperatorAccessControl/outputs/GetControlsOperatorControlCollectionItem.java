@@ -6,6 +6,7 @@ package com.pulumi.oci.OperatorAccessControl.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -74,6 +75,11 @@ public final class GetControlsOperatorControlCollectionItem {
      * 
      */
     private String lastModifiedInfo;
+    /**
+     * @return Number of approvers required to approve an access request.
+     * 
+     */
+    private Integer numberOfApprovers;
     /**
      * @return Name of the operator control. The name must be unique.
      * 
@@ -201,6 +207,13 @@ public final class GetControlsOperatorControlCollectionItem {
         return this.lastModifiedInfo;
     }
     /**
+     * @return Number of approvers required to approve an access request.
+     * 
+     */
+    public Integer numberOfApprovers() {
+        return this.numberOfApprovers;
+    }
+    /**
      * @return Name of the operator control. The name must be unique.
      * 
      */
@@ -278,6 +291,7 @@ public final class GetControlsOperatorControlCollectionItem {
         private Boolean isDefaultOperatorControl;
         private Boolean isFullyPreApproved;
         private String lastModifiedInfo;
+        private Integer numberOfApprovers;
         private String operatorControlName;
         private List<String> preApprovedOpActionLists;
         private String resourceType;
@@ -301,6 +315,7 @@ public final class GetControlsOperatorControlCollectionItem {
     	      this.isDefaultOperatorControl = defaults.isDefaultOperatorControl;
     	      this.isFullyPreApproved = defaults.isFullyPreApproved;
     	      this.lastModifiedInfo = defaults.lastModifiedInfo;
+    	      this.numberOfApprovers = defaults.numberOfApprovers;
     	      this.operatorControlName = defaults.operatorControlName;
     	      this.preApprovedOpActionLists = defaults.preApprovedOpActionLists;
     	      this.resourceType = defaults.resourceType;
@@ -420,6 +435,14 @@ public final class GetControlsOperatorControlCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder numberOfApprovers(Integer numberOfApprovers) {
+            if (numberOfApprovers == null) {
+              throw new MissingRequiredPropertyException("GetControlsOperatorControlCollectionItem", "numberOfApprovers");
+            }
+            this.numberOfApprovers = numberOfApprovers;
+            return this;
+        }
+        @CustomType.Setter
         public Builder operatorControlName(String operatorControlName) {
             if (operatorControlName == null) {
               throw new MissingRequiredPropertyException("GetControlsOperatorControlCollectionItem", "operatorControlName");
@@ -500,6 +523,7 @@ public final class GetControlsOperatorControlCollectionItem {
             _resultValue.isDefaultOperatorControl = isDefaultOperatorControl;
             _resultValue.isFullyPreApproved = isFullyPreApproved;
             _resultValue.lastModifiedInfo = lastModifiedInfo;
+            _resultValue.numberOfApprovers = numberOfApprovers;
             _resultValue.operatorControlName = operatorControlName;
             _resultValue.preApprovedOpActionLists = preApprovedOpActionLists;
             _resultValue.resourceType = resourceType;

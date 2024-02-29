@@ -11,8 +11,10 @@ import com.pulumi.oci.DatabaseManagement.ExternalDbSystemConnectorArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemConnectorState;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemConnectorConnectionInfo;
 import com.pulumi.oci.Utilities;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
@@ -148,6 +150,20 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
         return this.connectorType;
     }
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * The user-friendly name for the external connector. The name does not have to be unique.
      * 
      */
@@ -180,6 +196,20 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      */
     public Output<String> externalDbSystemId() {
         return this.externalDbSystemId;
+    }
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * Additional information about the current lifecycle state.

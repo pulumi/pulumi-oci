@@ -82,10 +82,14 @@ type GetControlAssignmentResult struct {
 	IsDefaultAssignment bool `pulumi:"isDefaultAssignment"`
 	// If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways bool `pulumi:"isEnforcedAlways"`
+	// If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+	IsHypervisorLogForwarded bool `pulumi:"isHypervisorLogForwarded"`
 	// If set indicates that the audit logs are being forwarded to the relevant remote logging server
 	IsLogForwarded bool `pulumi:"isLogForwarded"`
 	// More in detail about the lifeCycleState.
-	LifecycleDetails            string `pulumi:"lifecycleDetails"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Name of the operator control name associated.
+	OpControlName               string `pulumi:"opControlName"`
 	OperatorControlAssignmentId string `pulumi:"operatorControlAssignmentId"`
 	// The OCID of the operator control.
 	OperatorControlId string `pulumi:"operatorControlId"`
@@ -114,7 +118,8 @@ type GetControlAssignmentResult struct {
 	// Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
 	TimeOfDeletion string `pulumi:"timeOfDeletion"`
 	// User id who released the operatorControl.
-	UnassignerId string `pulumi:"unassignerId"`
+	UnassignerId              string `pulumi:"unassignerId"`
+	ValidateAssignmentTrigger int    `pulumi:"validateAssignmentTrigger"`
 }
 
 func GetControlAssignmentOutput(ctx *pulumi.Context, args GetControlAssignmentOutputArgs, opts ...pulumi.InvokeOption) GetControlAssignmentResultOutput {
@@ -215,6 +220,11 @@ func (o GetControlAssignmentResultOutput) IsEnforcedAlways() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetControlAssignmentResult) bool { return v.IsEnforcedAlways }).(pulumi.BoolOutput)
 }
 
+// If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+func (o GetControlAssignmentResultOutput) IsHypervisorLogForwarded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetControlAssignmentResult) bool { return v.IsHypervisorLogForwarded }).(pulumi.BoolOutput)
+}
+
 // If set indicates that the audit logs are being forwarded to the relevant remote logging server
 func (o GetControlAssignmentResultOutput) IsLogForwarded() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetControlAssignmentResult) bool { return v.IsLogForwarded }).(pulumi.BoolOutput)
@@ -223,6 +233,11 @@ func (o GetControlAssignmentResultOutput) IsLogForwarded() pulumi.BoolOutput {
 // More in detail about the lifeCycleState.
 func (o GetControlAssignmentResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlAssignmentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Name of the operator control name associated.
+func (o GetControlAssignmentResultOutput) OpControlName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlAssignmentResult) string { return v.OpControlName }).(pulumi.StringOutput)
 }
 
 func (o GetControlAssignmentResultOutput) OperatorControlAssignmentId() pulumi.StringOutput {
@@ -297,6 +312,10 @@ func (o GetControlAssignmentResultOutput) TimeOfDeletion() pulumi.StringOutput {
 // User id who released the operatorControl.
 func (o GetControlAssignmentResultOutput) UnassignerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlAssignmentResult) string { return v.UnassignerId }).(pulumi.StringOutput)
+}
+
+func (o GetControlAssignmentResultOutput) ValidateAssignmentTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetControlAssignmentResult) int { return v.ValidateAssignmentTrigger }).(pulumi.IntOutput)
 }
 
 func init() {

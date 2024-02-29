@@ -66,6 +66,8 @@ type LookupExternalListenerResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the external listener.
 	ComponentName string `pulumi:"componentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the database. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The list of protocol addresses the listener is configured to listen on.
@@ -79,6 +81,8 @@ type LookupExternalListenerResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
 	ExternalListenerId string `pulumi:"externalListenerId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the host on which the external listener is running.
 	HostName string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
@@ -169,6 +173,11 @@ func (o LookupExternalListenerResultOutput) ComponentName() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupExternalListenerResult) string { return v.ComponentName }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o LookupExternalListenerResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalListenerResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The user-friendly name for the database. The name does not have to be unique.
 func (o LookupExternalListenerResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalListenerResult) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -201,6 +210,11 @@ func (o LookupExternalListenerResultOutput) ExternalDbSystemId() pulumi.StringOu
 
 func (o LookupExternalListenerResultOutput) ExternalListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalListenerResult) string { return v.ExternalListenerId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o LookupExternalListenerResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalListenerResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The name of the host on which the external listener is running.

@@ -119,6 +119,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         public readonly string ApproverComment;
         /// <summary>
+        /// Contains the user ids who have approved the accessRequest for extension.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAccessRequestApproverDetailResult> ApproverDetails;
+        /// <summary>
         /// Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
         /// </summary>
         public readonly ImmutableArray<string> AuditTypes;
@@ -143,6 +147,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         public readonly int ExtendDuration;
         /// <summary>
+        /// Contains the user ids who have approved the accessRequest for extension.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAccessRequestExtensionApproverDetailResult> ExtensionApproverDetails;
+        /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
@@ -155,9 +163,25 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         public readonly bool IsAutoApproved;
         /// <summary>
+        /// Whether the access request was requested for Validate Assignment.
+        /// </summary>
+        public readonly bool IsValidateAssignment;
+        /// <summary>
         /// more in detail about the lifeCycleState.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Number of approvers who have authorized an access request.
+        /// </summary>
+        public readonly int NumberOfApprovers;
+        /// <summary>
+        /// Number of approvers required to approve an access request.
+        /// </summary>
+        public readonly int NumberOfApproversRequired;
+        /// <summary>
+        /// Number of approvers who have authorized an access request for extension.
+        /// </summary>
+        public readonly int NumberOfExtensionApprovers;
         /// <summary>
         /// Additional message specific to the access request that can be specified by the approver at the time of approval.
         /// </summary>
@@ -223,6 +247,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         public readonly string TimeOfUserCreation;
         /// <summary>
+        /// Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+        /// </summary>
+        public readonly string TimeRequestedForFutureAccess;
+        /// <summary>
         /// The OCID of the user that last modified the access request.
         /// </summary>
         public readonly string UserId;
@@ -241,6 +269,8 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             string approverComment,
 
+            ImmutableArray<Outputs.GetAccessRequestApproverDetailResult> approverDetails,
+
             ImmutableArray<string> auditTypes,
 
             string closureComment,
@@ -253,13 +283,23 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             int extendDuration,
 
+            ImmutableArray<Outputs.GetAccessRequestExtensionApproverDetailResult> extensionApproverDetails,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
             bool isAutoApproved,
 
+            bool isValidateAssignment,
+
             string lifecycleDetails,
+
+            int numberOfApprovers,
+
+            int numberOfApproversRequired,
+
+            int numberOfExtensionApprovers,
 
             string opctlAdditionalMessage,
 
@@ -293,6 +333,8 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             string timeOfUserCreation,
 
+            string timeRequestedForFutureAccess,
+
             string userId,
 
             ImmutableArray<string> workflowIds)
@@ -301,16 +343,22 @@ namespace Pulumi.Oci.OperatorAccessControl
             AccessRequestId = accessRequestId;
             ActionRequestsLists = actionRequestsLists;
             ApproverComment = approverComment;
+            ApproverDetails = approverDetails;
             AuditTypes = auditTypes;
             ClosureComment = closureComment;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Duration = duration;
             ExtendDuration = extendDuration;
+            ExtensionApproverDetails = extensionApproverDetails;
             FreeformTags = freeformTags;
             Id = id;
             IsAutoApproved = isAutoApproved;
+            IsValidateAssignment = isValidateAssignment;
             LifecycleDetails = lifecycleDetails;
+            NumberOfApprovers = numberOfApprovers;
+            NumberOfApproversRequired = numberOfApproversRequired;
+            NumberOfExtensionApprovers = numberOfExtensionApprovers;
             OpctlAdditionalMessage = opctlAdditionalMessage;
             OpctlId = opctlId;
             OpctlName = opctlName;
@@ -327,6 +375,7 @@ namespace Pulumi.Oci.OperatorAccessControl
             TimeOfCreation = timeOfCreation;
             TimeOfModification = timeOfModification;
             TimeOfUserCreation = timeOfUserCreation;
+            TimeRequestedForFutureAccess = timeRequestedForFutureAccess;
             UserId = userId;
             WorkflowIds = workflowIds;
         }

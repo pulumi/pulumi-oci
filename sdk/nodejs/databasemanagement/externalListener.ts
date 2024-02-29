@@ -64,6 +64,10 @@ export class ExternalListener extends pulumi.CustomResource {
      */
     public /*out*/ readonly componentName!: pulumi.Output<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
     public /*out*/ readonly displayName!: pulumi.Output<string>;
@@ -89,12 +93,16 @@ export class ExternalListener extends pulumi.CustomResource {
     public /*out*/ readonly externalDbSystemId!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+     */
+    public readonly externalListenerId!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly externalListenerId!: pulumi.Output<string>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The name of the host on which the external listener is running.
      */
@@ -169,6 +177,7 @@ export class ExternalListener extends pulumi.CustomResource {
             resourceInputs["adrHomeDirectory"] = state ? state.adrHomeDirectory : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["componentName"] = state ? state.componentName : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["endpoints"] = state ? state.endpoints : undefined;
             resourceInputs["externalConnectorId"] = state ? state.externalConnectorId : undefined;
@@ -176,6 +185,7 @@ export class ExternalListener extends pulumi.CustomResource {
             resourceInputs["externalDbNodeId"] = state ? state.externalDbNodeId : undefined;
             resourceInputs["externalDbSystemId"] = state ? state.externalDbSystemId : undefined;
             resourceInputs["externalListenerId"] = state ? state.externalListenerId : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["hostName"] = state ? state.hostName : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["listenerAlias"] = state ? state.listenerAlias : undefined;
@@ -195,8 +205,10 @@ export class ExternalListener extends pulumi.CustomResource {
             if ((!args || args.externalListenerId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'externalListenerId'");
             }
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["externalConnectorId"] = args ? args.externalConnectorId : undefined;
             resourceInputs["externalListenerId"] = args ? args.externalListenerId : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["adrHomeDirectory"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
@@ -247,6 +259,10 @@ export interface ExternalListenerState {
      */
     componentName?: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
@@ -272,12 +288,16 @@ export interface ExternalListenerState {
     externalDbSystemId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+     */
+    externalListenerId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    externalListenerId?: pulumi.Input<string>;
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The name of the host on which the external listener is running.
      */
@@ -341,15 +361,23 @@ export interface ExternalListenerState {
  */
 export interface ExternalListenerArgs {
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
     externalConnectorId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+     */
+    externalListenerId: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    externalListenerId: pulumi.Input<string>;
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
 }

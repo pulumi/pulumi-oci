@@ -22,7 +22,7 @@ class GetExternalDbSystemResult:
     """
     A collection of values returned by getExternalDbSystem.
     """
-    def __init__(__self__, compartment_id=None, database_management_configs=None, db_system_discovery_id=None, discovery_agent_id=None, display_name=None, external_db_system_id=None, home_directory=None, id=None, is_cluster=None, lifecycle_details=None, stack_monitoring_configs=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, database_management_configs=None, db_system_discovery_id=None, defined_tags=None, discovery_agent_id=None, display_name=None, external_db_system_id=None, freeform_tags=None, home_directory=None, id=None, is_cluster=None, lifecycle_details=None, stack_monitoring_configs=None, state=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -32,6 +32,9 @@ class GetExternalDbSystemResult:
         if db_system_discovery_id and not isinstance(db_system_discovery_id, str):
             raise TypeError("Expected argument 'db_system_discovery_id' to be a str")
         pulumi.set(__self__, "db_system_discovery_id", db_system_discovery_id)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if discovery_agent_id and not isinstance(discovery_agent_id, str):
             raise TypeError("Expected argument 'discovery_agent_id' to be a str")
         pulumi.set(__self__, "discovery_agent_id", discovery_agent_id)
@@ -41,6 +44,9 @@ class GetExternalDbSystemResult:
         if external_db_system_id and not isinstance(external_db_system_id, str):
             raise TypeError("Expected argument 'external_db_system_id' to be a str")
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if home_directory and not isinstance(home_directory, str):
             raise TypeError("Expected argument 'home_directory' to be a str")
         pulumi.set(__self__, "home_directory", home_directory)
@@ -91,6 +97,14 @@ class GetExternalDbSystemResult:
         return pulumi.get(self, "db_system_discovery_id")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="discoveryAgentId")
     def discovery_agent_id(self) -> str:
         """
@@ -110,6 +124,14 @@ class GetExternalDbSystemResult:
     @pulumi.getter(name="externalDbSystemId")
     def external_db_system_id(self) -> str:
         return pulumi.get(self, "external_db_system_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="homeDirectory")
@@ -185,9 +207,11 @@ class AwaitableGetExternalDbSystemResult(GetExternalDbSystemResult):
             compartment_id=self.compartment_id,
             database_management_configs=self.database_management_configs,
             db_system_discovery_id=self.db_system_discovery_id,
+            defined_tags=self.defined_tags,
             discovery_agent_id=self.discovery_agent_id,
             display_name=self.display_name,
             external_db_system_id=self.external_db_system_id,
+            freeform_tags=self.freeform_tags,
             home_directory=self.home_directory,
             id=self.id,
             is_cluster=self.is_cluster,
@@ -226,9 +250,11 @@ def get_external_db_system(external_db_system_id: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         database_management_configs=pulumi.get(__ret__, 'database_management_configs'),
         db_system_discovery_id=pulumi.get(__ret__, 'db_system_discovery_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         discovery_agent_id=pulumi.get(__ret__, 'discovery_agent_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
         external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         home_directory=pulumi.get(__ret__, 'home_directory'),
         id=pulumi.get(__ret__, 'id'),
         is_cluster=pulumi.get(__ret__, 'is_cluster'),

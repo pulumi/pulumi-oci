@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Kms.outputs.GetKeysKeyAutoKeyRotationDetail;
 import com.pulumi.oci.Kms.outputs.GetKeysKeyExternalKeyReference;
 import com.pulumi.oci.Kms.outputs.GetKeysKeyExternalKeyReferenceDetail;
 import com.pulumi.oci.Kms.outputs.GetKeysKeyKeyShape;
@@ -20,6 +21,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetKeysKey {
+    /**
+     * @return The details of auto rotation schedule for the Key being create updated or imported.
+     * 
+     */
+    private List<GetKeysKeyAutoKeyRotationDetail> autoKeyRotationDetails;
     /**
      * @return The OCID of the compartment.
      * 
@@ -57,6 +63,11 @@ public final class GetKeysKey {
      * 
      */
     private String id;
+    /**
+     * @return A parameter specifying whether the auto key rotation is enabled or not.
+     * 
+     */
+    private Boolean isAutoRotationEnabled;
     /**
      * @return A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      * 
@@ -108,6 +119,13 @@ public final class GetKeysKey {
     private String vaultId;
 
     private GetKeysKey() {}
+    /**
+     * @return The details of auto rotation schedule for the Key being create updated or imported.
+     * 
+     */
+    public List<GetKeysKeyAutoKeyRotationDetail> autoKeyRotationDetails() {
+        return this.autoKeyRotationDetails;
+    }
     /**
      * @return The OCID of the compartment.
      * 
@@ -162,6 +180,13 @@ public final class GetKeysKey {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return A parameter specifying whether the auto key rotation is enabled or not.
+     * 
+     */
+    public Boolean isAutoRotationEnabled() {
+        return this.isAutoRotationEnabled;
     }
     /**
      * @return A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
@@ -248,6 +273,7 @@ public final class GetKeysKey {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetKeysKeyAutoKeyRotationDetail> autoKeyRotationDetails;
         private String compartmentId;
         private String currentKeyVersion;
         private Map<String,Object> definedTags;
@@ -257,6 +283,7 @@ public final class GetKeysKey {
         private List<GetKeysKeyExternalKeyReference> externalKeyReferences;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isAutoRotationEnabled;
         private Boolean isPrimary;
         private List<GetKeysKeyKeyShape> keyShapes;
         private String managementEndpoint;
@@ -273,6 +300,7 @@ public final class GetKeysKey {
         public Builder() {}
         public Builder(GetKeysKey defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.autoKeyRotationDetails = defaults.autoKeyRotationDetails;
     	      this.compartmentId = defaults.compartmentId;
     	      this.currentKeyVersion = defaults.currentKeyVersion;
     	      this.definedTags = defaults.definedTags;
@@ -282,6 +310,7 @@ public final class GetKeysKey {
     	      this.externalKeyReferences = defaults.externalKeyReferences;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isAutoRotationEnabled = defaults.isAutoRotationEnabled;
     	      this.isPrimary = defaults.isPrimary;
     	      this.keyShapes = defaults.keyShapes;
     	      this.managementEndpoint = defaults.managementEndpoint;
@@ -297,6 +326,17 @@ public final class GetKeysKey {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
+        public Builder autoKeyRotationDetails(List<GetKeysKeyAutoKeyRotationDetail> autoKeyRotationDetails) {
+            if (autoKeyRotationDetails == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "autoKeyRotationDetails");
+            }
+            this.autoKeyRotationDetails = autoKeyRotationDetails;
+            return this;
+        }
+        public Builder autoKeyRotationDetails(GetKeysKeyAutoKeyRotationDetail... autoKeyRotationDetails) {
+            return autoKeyRotationDetails(List.of(autoKeyRotationDetails));
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -373,6 +413,14 @@ public final class GetKeysKey {
               throw new MissingRequiredPropertyException("GetKeysKey", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isAutoRotationEnabled(Boolean isAutoRotationEnabled) {
+            if (isAutoRotationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetKeysKey", "isAutoRotationEnabled");
+            }
+            this.isAutoRotationEnabled = isAutoRotationEnabled;
             return this;
         }
         @CustomType.Setter
@@ -493,6 +541,7 @@ public final class GetKeysKey {
         }
         public GetKeysKey build() {
             final var _resultValue = new GetKeysKey();
+            _resultValue.autoKeyRotationDetails = autoKeyRotationDetails;
             _resultValue.compartmentId = compartmentId;
             _resultValue.currentKeyVersion = currentKeyVersion;
             _resultValue.definedTags = definedTags;
@@ -502,6 +551,7 @@ public final class GetKeysKey {
             _resultValue.externalKeyReferences = externalKeyReferences;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isAutoRotationEnabled = isAutoRotationEnabled;
             _resultValue.isPrimary = isPrimary;
             _resultValue.keyShapes = keyShapes;
             _resultValue.managementEndpoint = managementEndpoint;

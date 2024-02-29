@@ -77,6 +77,8 @@ type LookupKeyVersionResult struct {
 	ExternalKeyVersionId string `pulumi:"externalKeyVersionId"`
 	// The OCID of the key version.
 	Id string `pulumi:"id"`
+	// An optional property indicating whether this keyversion is generated from auto rotatation.
+	IsAutoRotated bool `pulumi:"isAutoRotated"`
 	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary bool `pulumi:"isPrimary"`
 	// The OCID of the master encryption key associated with this key version.
@@ -163,6 +165,11 @@ func (o LookupKeyVersionResultOutput) ExternalKeyVersionId() pulumi.StringOutput
 // The OCID of the key version.
 func (o LookupKeyVersionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// An optional property indicating whether this keyversion is generated from auto rotatation.
+func (o LookupKeyVersionResultOutput) IsAutoRotated() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) bool { return v.IsAutoRotated }).(pulumi.BoolOutput)
 }
 
 // A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.

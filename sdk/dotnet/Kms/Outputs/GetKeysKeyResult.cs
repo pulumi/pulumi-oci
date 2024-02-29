@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Kms.Outputs
     public sealed class GetKeysKeyResult
     {
         /// <summary>
+        /// The details of auto rotation schedule for the Key being create updated or imported.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetKeysKeyAutoKeyRotationDetailResult> AutoKeyRotationDetails;
+        /// <summary>
         /// The OCID of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -43,6 +47,10 @@ namespace Pulumi.Oci.Kms.Outputs
         /// The OCID of the key.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// A parameter specifying whether the auto key rotation is enabled or not.
+        /// </summary>
+        public readonly bool IsAutoRotationEnabled;
         /// <summary>
         /// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         /// </summary>
@@ -86,6 +94,8 @@ namespace Pulumi.Oci.Kms.Outputs
 
         [OutputConstructor]
         private GetKeysKeyResult(
+            ImmutableArray<Outputs.GetKeysKeyAutoKeyRotationDetailResult> autoKeyRotationDetails,
+
             string compartmentId,
 
             string currentKeyVersion,
@@ -103,6 +113,8 @@ namespace Pulumi.Oci.Kms.Outputs
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
+
+            bool isAutoRotationEnabled,
 
             bool isPrimary,
 
@@ -130,6 +142,7 @@ namespace Pulumi.Oci.Kms.Outputs
 
             string vaultId)
         {
+            AutoKeyRotationDetails = autoKeyRotationDetails;
             CompartmentId = compartmentId;
             CurrentKeyVersion = currentKeyVersion;
             DefinedTags = definedTags;
@@ -139,6 +152,7 @@ namespace Pulumi.Oci.Kms.Outputs
             ExternalKeyReferences = externalKeyReferences;
             FreeformTags = freeformTags;
             Id = id;
+            IsAutoRotationEnabled = isAutoRotationEnabled;
             IsPrimary = isPrimary;
             KeyShapes = keyShapes;
             ManagementEndpoint = managementEndpoint;

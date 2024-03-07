@@ -22,13 +22,19 @@ class GetNewsReportResult:
     """
     A collection of values returned by getNewsReport.
     """
-    def __init__(__self__, compartment_id=None, content_types=None, defined_tags=None, description=None, freeform_tags=None, id=None, lifecycle_details=None, locale=None, name=None, news_frequency=None, news_report_id=None, ons_topic_id=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, are_child_compartments_included=None, compartment_id=None, content_types=None, day_of_week=None, defined_tags=None, description=None, freeform_tags=None, id=None, lifecycle_details=None, locale=None, name=None, news_frequency=None, news_report_id=None, ons_topic_id=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
+        if are_child_compartments_included and not isinstance(are_child_compartments_included, bool):
+            raise TypeError("Expected argument 'are_child_compartments_included' to be a bool")
+        pulumi.set(__self__, "are_child_compartments_included", are_child_compartments_included)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if content_types and not isinstance(content_types, list):
             raise TypeError("Expected argument 'content_types' to be a list")
         pulumi.set(__self__, "content_types", content_types)
+        if day_of_week and not isinstance(day_of_week, str):
+            raise TypeError("Expected argument 'day_of_week' to be a str")
+        pulumi.set(__self__, "day_of_week", day_of_week)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -76,6 +82,14 @@ class GetNewsReportResult:
         pulumi.set(__self__, "time_updated", time_updated)
 
     @property
+    @pulumi.getter(name="areChildCompartmentsIncluded")
+    def are_child_compartments_included(self) -> bool:
+        """
+        A flag to consider the resources within a given compartment and all sub-compartments.
+        """
+        return pulumi.get(self, "are_child_compartments_included")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
@@ -90,6 +104,14 @@ class GetNewsReportResult:
         Content types that the news report can handle.
         """
         return pulumi.get(self, "content_types")
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> str:
+        """
+        Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+        """
+        return pulumi.get(self, "day_of_week")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -215,8 +237,10 @@ class AwaitableGetNewsReportResult(GetNewsReportResult):
         if False:
             yield self
         return GetNewsReportResult(
+            are_child_compartments_included=self.are_child_compartments_included,
             compartment_id=self.compartment_id,
             content_types=self.content_types,
+            day_of_week=self.day_of_week,
             defined_tags=self.defined_tags,
             description=self.description,
             freeform_tags=self.freeform_tags,
@@ -259,8 +283,10 @@ def get_news_report(news_report_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getNewsReport:getNewsReport', __args__, opts=opts, typ=GetNewsReportResult).value
 
     return AwaitableGetNewsReportResult(
+        are_child_compartments_included=pulumi.get(__ret__, 'are_child_compartments_included'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         content_types=pulumi.get(__ret__, 'content_types'),
+        day_of_week=pulumi.get(__ret__, 'day_of_week'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),

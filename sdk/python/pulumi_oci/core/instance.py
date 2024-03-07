@@ -37,10 +37,12 @@ class InstanceArgs:
                  ipxe_script: Optional[pulumi.Input[str]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
+                 launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
+                 preserve_data_volumes_created_at_launch: Optional[pulumi.Input[bool]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['InstanceShapeConfigArgs']] = None,
                  source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
@@ -58,7 +60,7 @@ class InstanceArgs:
         :param pulumi.Input['InstanceCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -86,6 +88,9 @@ class InstanceArgs:
                For more information about iPXE, see http://ipxe.org.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         :param pulumi.Input['InstanceLaunchOptionsArgs'] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
+               
+               **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
         :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -188,6 +193,8 @@ class InstanceArgs:
             pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if launch_options is not None:
             pulumi.set(__self__, "launch_options", launch_options)
+        if launch_volume_attachments is not None:
+            pulumi.set(__self__, "launch_volume_attachments", launch_volume_attachments)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
         if platform_config is not None:
@@ -196,6 +203,8 @@ class InstanceArgs:
             pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
         if preserve_boot_volume is not None:
             pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
+        if preserve_data_volumes_created_at_launch is not None:
+            pulumi.set(__self__, "preserve_data_volumes_created_at_launch", preserve_data_volumes_created_at_launch)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
@@ -333,7 +342,7 @@ class InstanceArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -483,6 +492,20 @@ class InstanceArgs:
         pulumi.set(self, "launch_options", value)
 
     @property
+    @pulumi.getter(name="launchVolumeAttachments")
+    def launch_volume_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]:
+        """
+        Volume attachments to create as part of the launch instance operation.
+
+        **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+        """
+        return pulumi.get(self, "launch_volume_attachments")
+
+    @launch_volume_attachments.setter
+    def launch_volume_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]):
+        pulumi.set(self, "launch_volume_attachments", value)
+
+    @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -566,6 +589,15 @@ class InstanceArgs:
     @preserve_boot_volume.setter
     def preserve_boot_volume(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "preserve_boot_volume", value)
+
+    @property
+    @pulumi.getter(name="preserveDataVolumesCreatedAtLaunch")
+    def preserve_data_volumes_created_at_launch(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "preserve_data_volumes_created_at_launch")
+
+    @preserve_data_volumes_created_at_launch.setter
+    def preserve_data_volumes_created_at_launch(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "preserve_data_volumes_created_at_launch", value)
 
     @property
     @pulumi.getter
@@ -676,10 +708,12 @@ class _InstanceState:
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_mode: Optional[pulumi.Input[str]] = None,
                  launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
+                 launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
+                 preserve_data_volumes_created_at_launch: Optional[pulumi.Input[bool]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
                  public_ip: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
@@ -704,7 +738,7 @@ class _InstanceState:
         :param pulumi.Input['InstanceCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -734,6 +768,9 @@ class _InstanceState:
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         :param pulumi.Input['InstanceLaunchOptionsArgs'] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
+               
+               **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
         :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -854,6 +891,8 @@ class _InstanceState:
             pulumi.set(__self__, "launch_mode", launch_mode)
         if launch_options is not None:
             pulumi.set(__self__, "launch_options", launch_options)
+        if launch_volume_attachments is not None:
+            pulumi.set(__self__, "launch_volume_attachments", launch_volume_attachments)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
         if platform_config is not None:
@@ -862,6 +901,8 @@ class _InstanceState:
             pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
         if preserve_boot_volume is not None:
             pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
+        if preserve_data_volumes_created_at_launch is not None:
+            pulumi.set(__self__, "preserve_data_volumes_created_at_launch", preserve_data_volumes_created_at_launch)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
         if public_ip is not None:
@@ -1023,7 +1064,7 @@ class _InstanceState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -1197,6 +1238,20 @@ class _InstanceState:
         pulumi.set(self, "launch_options", value)
 
     @property
+    @pulumi.getter(name="launchVolumeAttachments")
+    def launch_volume_attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]:
+        """
+        Volume attachments to create as part of the launch instance operation.
+
+        **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+        """
+        return pulumi.get(self, "launch_volume_attachments")
+
+    @launch_volume_attachments.setter
+    def launch_volume_attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]]):
+        pulumi.set(self, "launch_volume_attachments", value)
+
+    @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -1280,6 +1335,15 @@ class _InstanceState:
     @preserve_boot_volume.setter
     def preserve_boot_volume(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "preserve_boot_volume", value)
+
+    @property
+    @pulumi.getter(name="preserveDataVolumesCreatedAtLaunch")
+    def preserve_data_volumes_created_at_launch(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "preserve_data_volumes_created_at_launch")
+
+    @preserve_data_volumes_created_at_launch.setter
+    def preserve_data_volumes_created_at_launch(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "preserve_data_volumes_created_at_launch", value)
 
     @property
     @pulumi.getter(name="privateIp")
@@ -1465,10 +1529,12 @@ class Instance(pulumi.CustomResource):
                  ipxe_script: Optional[pulumi.Input[str]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_options: Optional[pulumi.Input[pulumi.InputType['InstanceLaunchOptionsArgs']]] = None,
+                 launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstanceLaunchVolumeAttachmentArgs']]]]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  platform_config: Optional[pulumi.Input[pulumi.InputType['InstancePlatformConfigArgs']]] = None,
                  preemptible_instance_config: Optional[pulumi.Input[pulumi.InputType['InstancePreemptibleInstanceConfigArgs']]] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
+                 preserve_data_volumes_created_at_launch: Optional[pulumi.Input[bool]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input[pulumi.InputType['InstanceShapeConfigArgs']]] = None,
                  source_details: Optional[pulumi.Input[pulumi.InputType['InstanceSourceDetailsArgs']]] = None,
@@ -1542,7 +1608,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -1570,6 +1636,9 @@ class Instance(pulumi.CustomResource):
                For more information about iPXE, see http://ipxe.org.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         :param pulumi.Input[pulumi.InputType['InstanceLaunchOptionsArgs']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstanceLaunchVolumeAttachmentArgs']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
+               
+               **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
         :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -1723,10 +1792,12 @@ class Instance(pulumi.CustomResource):
                  ipxe_script: Optional[pulumi.Input[str]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_options: Optional[pulumi.Input[pulumi.InputType['InstanceLaunchOptionsArgs']]] = None,
+                 launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstanceLaunchVolumeAttachmentArgs']]]]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  platform_config: Optional[pulumi.Input[pulumi.InputType['InstancePlatformConfigArgs']]] = None,
                  preemptible_instance_config: Optional[pulumi.Input[pulumi.InputType['InstancePreemptibleInstanceConfigArgs']]] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
+                 preserve_data_volumes_created_at_launch: Optional[pulumi.Input[bool]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input[pulumi.InputType['InstanceShapeConfigArgs']]] = None,
                  source_details: Optional[pulumi.Input[pulumi.InputType['InstanceSourceDetailsArgs']]] = None,
@@ -1767,10 +1838,12 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["ipxe_script"] = ipxe_script
             __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
             __props__.__dict__["launch_options"] = launch_options
+            __props__.__dict__["launch_volume_attachments"] = launch_volume_attachments
             __props__.__dict__["metadata"] = metadata
             __props__.__dict__["platform_config"] = platform_config
             __props__.__dict__["preemptible_instance_config"] = preemptible_instance_config
             __props__.__dict__["preserve_boot_volume"] = preserve_boot_volume
+            __props__.__dict__["preserve_data_volumes_created_at_launch"] = preserve_data_volumes_created_at_launch
             __props__.__dict__["shape"] = shape
             __props__.__dict__["shape_config"] = shape_config
             __props__.__dict__["source_details"] = source_details
@@ -1820,10 +1893,12 @@ class Instance(pulumi.CustomResource):
             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
             launch_mode: Optional[pulumi.Input[str]] = None,
             launch_options: Optional[pulumi.Input[pulumi.InputType['InstanceLaunchOptionsArgs']]] = None,
+            launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstanceLaunchVolumeAttachmentArgs']]]]] = None,
             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             platform_config: Optional[pulumi.Input[pulumi.InputType['InstancePlatformConfigArgs']]] = None,
             preemptible_instance_config: Optional[pulumi.Input[pulumi.InputType['InstancePreemptibleInstanceConfigArgs']]] = None,
             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
+            preserve_data_volumes_created_at_launch: Optional[pulumi.Input[bool]] = None,
             private_ip: Optional[pulumi.Input[str]] = None,
             public_ip: Optional[pulumi.Input[str]] = None,
             region: Optional[pulumi.Input[str]] = None,
@@ -1853,7 +1928,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -1883,6 +1958,9 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         :param pulumi.Input[pulumi.InputType['InstanceLaunchOptionsArgs']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstanceLaunchVolumeAttachmentArgs']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
+               
+               **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
         :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -1977,10 +2055,12 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
         __props__.__dict__["launch_mode"] = launch_mode
         __props__.__dict__["launch_options"] = launch_options
+        __props__.__dict__["launch_volume_attachments"] = launch_volume_attachments
         __props__.__dict__["metadata"] = metadata
         __props__.__dict__["platform_config"] = platform_config
         __props__.__dict__["preemptible_instance_config"] = preemptible_instance_config
         __props__.__dict__["preserve_boot_volume"] = preserve_boot_volume
+        __props__.__dict__["preserve_data_volumes_created_at_launch"] = preserve_data_volumes_created_at_launch
         __props__.__dict__["private_ip"] = private_ip
         __props__.__dict__["public_ip"] = public_ip
         __props__.__dict__["region"] = region
@@ -2084,7 +2164,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -2206,6 +2286,16 @@ class Instance(pulumi.CustomResource):
         return pulumi.get(self, "launch_options")
 
     @property
+    @pulumi.getter(name="launchVolumeAttachments")
+    def launch_volume_attachments(self) -> pulumi.Output[Sequence['outputs.InstanceLaunchVolumeAttachment']]:
+        """
+        Volume attachments to create as part of the launch instance operation.
+
+        **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+        """
+        return pulumi.get(self, "launch_volume_attachments")
+
+    @property
     @pulumi.getter
     def metadata(self) -> pulumi.Output[Mapping[str, Any]]:
         """
@@ -2273,6 +2363,11 @@ class Instance(pulumi.CustomResource):
         Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
         return pulumi.get(self, "preserve_boot_volume")
+
+    @property
+    @pulumi.getter(name="preserveDataVolumesCreatedAtLaunch")
+    def preserve_data_volumes_created_at_launch(self) -> pulumi.Output[Optional[bool]]:
+        return pulumi.get(self, "preserve_data_volumes_created_at_launch")
 
     @property
     @pulumi.getter(name="privateIp")

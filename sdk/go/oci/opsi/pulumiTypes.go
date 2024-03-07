@@ -1686,6 +1686,18 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 type NewsReportContentTypes struct {
 	// (Updatable) Supported resources for capacity planning content type.
 	CapacityPlanningResources []string `pulumi:"capacityPlanningResources"`
+	// (Updatable) Supported resources for SQL insights - fleet analysis content type.
+	SqlInsightsFleetAnalysisResources []string `pulumi:"sqlInsightsFleetAnalysisResources"`
+	// (Updatable) Supported resources for SQL insights - performance degradation content type.
+	SqlInsightsPerformanceDegradationResources []string `pulumi:"sqlInsightsPerformanceDegradationResources"`
+	// (Updatable) Supported resources for SQL insights - plan changes content type.
+	SqlInsightsPlanChangesResources []string `pulumi:"sqlInsightsPlanChangesResources"`
+	// (Updatable) Supported resources for SQL insights - top databases content type.
+	SqlInsightsTopDatabasesResources []string `pulumi:"sqlInsightsTopDatabasesResources"`
+	// (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+	SqlInsightsTopSqlByInsightsResources []string `pulumi:"sqlInsightsTopSqlByInsightsResources"`
+	// (Updatable) Supported resources for SQL insights - top SQL content type.
+	SqlInsightsTopSqlResources []string `pulumi:"sqlInsightsTopSqlResources"`
 }
 
 // NewsReportContentTypesInput is an input type that accepts NewsReportContentTypesArgs and NewsReportContentTypesOutput values.
@@ -1702,6 +1714,18 @@ type NewsReportContentTypesInput interface {
 type NewsReportContentTypesArgs struct {
 	// (Updatable) Supported resources for capacity planning content type.
 	CapacityPlanningResources pulumi.StringArrayInput `pulumi:"capacityPlanningResources"`
+	// (Updatable) Supported resources for SQL insights - fleet analysis content type.
+	SqlInsightsFleetAnalysisResources pulumi.StringArrayInput `pulumi:"sqlInsightsFleetAnalysisResources"`
+	// (Updatable) Supported resources for SQL insights - performance degradation content type.
+	SqlInsightsPerformanceDegradationResources pulumi.StringArrayInput `pulumi:"sqlInsightsPerformanceDegradationResources"`
+	// (Updatable) Supported resources for SQL insights - plan changes content type.
+	SqlInsightsPlanChangesResources pulumi.StringArrayInput `pulumi:"sqlInsightsPlanChangesResources"`
+	// (Updatable) Supported resources for SQL insights - top databases content type.
+	SqlInsightsTopDatabasesResources pulumi.StringArrayInput `pulumi:"sqlInsightsTopDatabasesResources"`
+	// (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+	SqlInsightsTopSqlByInsightsResources pulumi.StringArrayInput `pulumi:"sqlInsightsTopSqlByInsightsResources"`
+	// (Updatable) Supported resources for SQL insights - top SQL content type.
+	SqlInsightsTopSqlResources pulumi.StringArrayInput `pulumi:"sqlInsightsTopSqlResources"`
 }
 
 func (NewsReportContentTypesArgs) ElementType() reflect.Type {
@@ -1786,6 +1810,36 @@ func (o NewsReportContentTypesOutput) CapacityPlanningResources() pulumi.StringA
 	return o.ApplyT(func(v NewsReportContentTypes) []string { return v.CapacityPlanningResources }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) Supported resources for SQL insights - fleet analysis content type.
+func (o NewsReportContentTypesOutput) SqlInsightsFleetAnalysisResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NewsReportContentTypes) []string { return v.SqlInsightsFleetAnalysisResources }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Supported resources for SQL insights - performance degradation content type.
+func (o NewsReportContentTypesOutput) SqlInsightsPerformanceDegradationResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NewsReportContentTypes) []string { return v.SqlInsightsPerformanceDegradationResources }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Supported resources for SQL insights - plan changes content type.
+func (o NewsReportContentTypesOutput) SqlInsightsPlanChangesResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NewsReportContentTypes) []string { return v.SqlInsightsPlanChangesResources }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Supported resources for SQL insights - top databases content type.
+func (o NewsReportContentTypesOutput) SqlInsightsTopDatabasesResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NewsReportContentTypes) []string { return v.SqlInsightsTopDatabasesResources }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+func (o NewsReportContentTypesOutput) SqlInsightsTopSqlByInsightsResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NewsReportContentTypes) []string { return v.SqlInsightsTopSqlByInsightsResources }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Supported resources for SQL insights - top SQL content type.
+func (o NewsReportContentTypesOutput) SqlInsightsTopSqlResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NewsReportContentTypes) []string { return v.SqlInsightsTopSqlResources }).(pulumi.StringArrayOutput)
+}
+
 type NewsReportContentTypesPtrOutput struct{ *pulumi.OutputState }
 
 func (NewsReportContentTypesPtrOutput) ElementType() reflect.Type {
@@ -1817,6 +1871,66 @@ func (o NewsReportContentTypesPtrOutput) CapacityPlanningResources() pulumi.Stri
 			return nil
 		}
 		return v.CapacityPlanningResources
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Supported resources for SQL insights - fleet analysis content type.
+func (o NewsReportContentTypesPtrOutput) SqlInsightsFleetAnalysisResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NewsReportContentTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SqlInsightsFleetAnalysisResources
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Supported resources for SQL insights - performance degradation content type.
+func (o NewsReportContentTypesPtrOutput) SqlInsightsPerformanceDegradationResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NewsReportContentTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SqlInsightsPerformanceDegradationResources
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Supported resources for SQL insights - plan changes content type.
+func (o NewsReportContentTypesPtrOutput) SqlInsightsPlanChangesResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NewsReportContentTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SqlInsightsPlanChangesResources
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Supported resources for SQL insights - top databases content type.
+func (o NewsReportContentTypesPtrOutput) SqlInsightsTopDatabasesResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NewsReportContentTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SqlInsightsTopDatabasesResources
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+func (o NewsReportContentTypesPtrOutput) SqlInsightsTopSqlByInsightsResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NewsReportContentTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SqlInsightsTopSqlByInsightsResources
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Supported resources for SQL insights - top SQL content type.
+func (o NewsReportContentTypesPtrOutput) SqlInsightsTopSqlResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NewsReportContentTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SqlInsightsTopSqlResources
 	}).(pulumi.StringArrayOutput)
 }
 
@@ -9143,6 +9257,18 @@ func (o GetImportableComputeEntityItemArrayOutput) Index(i pulumi.IntInput) GetI
 type GetNewsReportContentType struct {
 	// Supported resources for capacity planning content type.
 	CapacityPlanningResources []string `pulumi:"capacityPlanningResources"`
+	// Supported resources for SQL insights - fleet analysis content type.
+	SqlInsightsFleetAnalysisResources []string `pulumi:"sqlInsightsFleetAnalysisResources"`
+	// Supported resources for SQL insights - performance degradation content type.
+	SqlInsightsPerformanceDegradationResources []string `pulumi:"sqlInsightsPerformanceDegradationResources"`
+	// Supported resources for SQL insights - plan changes content type.
+	SqlInsightsPlanChangesResources []string `pulumi:"sqlInsightsPlanChangesResources"`
+	// Supported resources for SQL insights - top databases content type.
+	SqlInsightsTopDatabasesResources []string `pulumi:"sqlInsightsTopDatabasesResources"`
+	// Supported resources for SQL insights - top SQL by insights content type.
+	SqlInsightsTopSqlByInsightsResources []string `pulumi:"sqlInsightsTopSqlByInsightsResources"`
+	// Supported resources for SQL insights - top SQL content type.
+	SqlInsightsTopSqlResources []string `pulumi:"sqlInsightsTopSqlResources"`
 }
 
 // GetNewsReportContentTypeInput is an input type that accepts GetNewsReportContentTypeArgs and GetNewsReportContentTypeOutput values.
@@ -9159,6 +9285,18 @@ type GetNewsReportContentTypeInput interface {
 type GetNewsReportContentTypeArgs struct {
 	// Supported resources for capacity planning content type.
 	CapacityPlanningResources pulumi.StringArrayInput `pulumi:"capacityPlanningResources"`
+	// Supported resources for SQL insights - fleet analysis content type.
+	SqlInsightsFleetAnalysisResources pulumi.StringArrayInput `pulumi:"sqlInsightsFleetAnalysisResources"`
+	// Supported resources for SQL insights - performance degradation content type.
+	SqlInsightsPerformanceDegradationResources pulumi.StringArrayInput `pulumi:"sqlInsightsPerformanceDegradationResources"`
+	// Supported resources for SQL insights - plan changes content type.
+	SqlInsightsPlanChangesResources pulumi.StringArrayInput `pulumi:"sqlInsightsPlanChangesResources"`
+	// Supported resources for SQL insights - top databases content type.
+	SqlInsightsTopDatabasesResources pulumi.StringArrayInput `pulumi:"sqlInsightsTopDatabasesResources"`
+	// Supported resources for SQL insights - top SQL by insights content type.
+	SqlInsightsTopSqlByInsightsResources pulumi.StringArrayInput `pulumi:"sqlInsightsTopSqlByInsightsResources"`
+	// Supported resources for SQL insights - top SQL content type.
+	SqlInsightsTopSqlResources pulumi.StringArrayInput `pulumi:"sqlInsightsTopSqlResources"`
 }
 
 func (GetNewsReportContentTypeArgs) ElementType() reflect.Type {
@@ -9215,6 +9353,36 @@ func (o GetNewsReportContentTypeOutput) ToGetNewsReportContentTypeOutputWithCont
 // Supported resources for capacity planning content type.
 func (o GetNewsReportContentTypeOutput) CapacityPlanningResources() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNewsReportContentType) []string { return v.CapacityPlanningResources }).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - fleet analysis content type.
+func (o GetNewsReportContentTypeOutput) SqlInsightsFleetAnalysisResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportContentType) []string { return v.SqlInsightsFleetAnalysisResources }).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - performance degradation content type.
+func (o GetNewsReportContentTypeOutput) SqlInsightsPerformanceDegradationResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportContentType) []string { return v.SqlInsightsPerformanceDegradationResources }).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - plan changes content type.
+func (o GetNewsReportContentTypeOutput) SqlInsightsPlanChangesResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportContentType) []string { return v.SqlInsightsPlanChangesResources }).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - top databases content type.
+func (o GetNewsReportContentTypeOutput) SqlInsightsTopDatabasesResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportContentType) []string { return v.SqlInsightsTopDatabasesResources }).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - top SQL by insights content type.
+func (o GetNewsReportContentTypeOutput) SqlInsightsTopSqlByInsightsResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportContentType) []string { return v.SqlInsightsTopSqlByInsightsResources }).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - top SQL content type.
+func (o GetNewsReportContentTypeOutput) SqlInsightsTopSqlResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportContentType) []string { return v.SqlInsightsTopSqlResources }).(pulumi.StringArrayOutput)
 }
 
 type GetNewsReportContentTypeArrayOutput struct{ *pulumi.OutputState }
@@ -9441,10 +9609,14 @@ func (o GetNewsReportsNewsReportCollectionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetNewsReportsNewsReportCollectionItem struct {
+	// A flag to consider the resources within a given compartment and all sub-compartments.
+	AreChildCompartmentsIncluded bool `pulumi:"areChildCompartmentsIncluded"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Content types that the news report can handle.
 	ContentTypes []GetNewsReportsNewsReportCollectionItemContentType `pulumi:"contentTypes"`
+	// Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+	DayOfWeek string `pulumi:"dayOfWeek"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the news report.
@@ -9487,10 +9659,14 @@ type GetNewsReportsNewsReportCollectionItemInput interface {
 }
 
 type GetNewsReportsNewsReportCollectionItemArgs struct {
+	// A flag to consider the resources within a given compartment and all sub-compartments.
+	AreChildCompartmentsIncluded pulumi.BoolInput `pulumi:"areChildCompartmentsIncluded"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Content types that the news report can handle.
 	ContentTypes GetNewsReportsNewsReportCollectionItemContentTypeArrayInput `pulumi:"contentTypes"`
+	// Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the news report.
@@ -9572,6 +9748,11 @@ func (o GetNewsReportsNewsReportCollectionItemOutput) ToGetNewsReportsNewsReport
 	return o
 }
 
+// A flag to consider the resources within a given compartment and all sub-compartments.
+func (o GetNewsReportsNewsReportCollectionItemOutput) AreChildCompartmentsIncluded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) bool { return v.AreChildCompartmentsIncluded }).(pulumi.BoolOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetNewsReportsNewsReportCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -9582,6 +9763,11 @@ func (o GetNewsReportsNewsReportCollectionItemOutput) ContentTypes() GetNewsRepo
 	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) []GetNewsReportsNewsReportCollectionItemContentType {
 		return v.ContentTypes
 	}).(GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput)
+}
+
+// Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+func (o GetNewsReportsNewsReportCollectionItemOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.DayOfWeek }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -9677,6 +9863,18 @@ func (o GetNewsReportsNewsReportCollectionItemArrayOutput) Index(i pulumi.IntInp
 type GetNewsReportsNewsReportCollectionItemContentType struct {
 	// Supported resources for capacity planning content type.
 	CapacityPlanningResources []string `pulumi:"capacityPlanningResources"`
+	// Supported resources for SQL insights - fleet analysis content type.
+	SqlInsightsFleetAnalysisResources []string `pulumi:"sqlInsightsFleetAnalysisResources"`
+	// Supported resources for SQL insights - performance degradation content type.
+	SqlInsightsPerformanceDegradationResources []string `pulumi:"sqlInsightsPerformanceDegradationResources"`
+	// Supported resources for SQL insights - plan changes content type.
+	SqlInsightsPlanChangesResources []string `pulumi:"sqlInsightsPlanChangesResources"`
+	// Supported resources for SQL insights - top databases content type.
+	SqlInsightsTopDatabasesResources []string `pulumi:"sqlInsightsTopDatabasesResources"`
+	// Supported resources for SQL insights - top SQL by insights content type.
+	SqlInsightsTopSqlByInsightsResources []string `pulumi:"sqlInsightsTopSqlByInsightsResources"`
+	// Supported resources for SQL insights - top SQL content type.
+	SqlInsightsTopSqlResources []string `pulumi:"sqlInsightsTopSqlResources"`
 }
 
 // GetNewsReportsNewsReportCollectionItemContentTypeInput is an input type that accepts GetNewsReportsNewsReportCollectionItemContentTypeArgs and GetNewsReportsNewsReportCollectionItemContentTypeOutput values.
@@ -9693,6 +9891,18 @@ type GetNewsReportsNewsReportCollectionItemContentTypeInput interface {
 type GetNewsReportsNewsReportCollectionItemContentTypeArgs struct {
 	// Supported resources for capacity planning content type.
 	CapacityPlanningResources pulumi.StringArrayInput `pulumi:"capacityPlanningResources"`
+	// Supported resources for SQL insights - fleet analysis content type.
+	SqlInsightsFleetAnalysisResources pulumi.StringArrayInput `pulumi:"sqlInsightsFleetAnalysisResources"`
+	// Supported resources for SQL insights - performance degradation content type.
+	SqlInsightsPerformanceDegradationResources pulumi.StringArrayInput `pulumi:"sqlInsightsPerformanceDegradationResources"`
+	// Supported resources for SQL insights - plan changes content type.
+	SqlInsightsPlanChangesResources pulumi.StringArrayInput `pulumi:"sqlInsightsPlanChangesResources"`
+	// Supported resources for SQL insights - top databases content type.
+	SqlInsightsTopDatabasesResources pulumi.StringArrayInput `pulumi:"sqlInsightsTopDatabasesResources"`
+	// Supported resources for SQL insights - top SQL by insights content type.
+	SqlInsightsTopSqlByInsightsResources pulumi.StringArrayInput `pulumi:"sqlInsightsTopSqlByInsightsResources"`
+	// Supported resources for SQL insights - top SQL content type.
+	SqlInsightsTopSqlResources pulumi.StringArrayInput `pulumi:"sqlInsightsTopSqlResources"`
 }
 
 func (GetNewsReportsNewsReportCollectionItemContentTypeArgs) ElementType() reflect.Type {
@@ -9749,6 +9959,48 @@ func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) ToGetNewsReport
 // Supported resources for capacity planning content type.
 func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) CapacityPlanningResources() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItemContentType) []string { return v.CapacityPlanningResources }).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - fleet analysis content type.
+func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) SqlInsightsFleetAnalysisResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItemContentType) []string {
+		return v.SqlInsightsFleetAnalysisResources
+	}).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - performance degradation content type.
+func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) SqlInsightsPerformanceDegradationResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItemContentType) []string {
+		return v.SqlInsightsPerformanceDegradationResources
+	}).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - plan changes content type.
+func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) SqlInsightsPlanChangesResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItemContentType) []string {
+		return v.SqlInsightsPlanChangesResources
+	}).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - top databases content type.
+func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) SqlInsightsTopDatabasesResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItemContentType) []string {
+		return v.SqlInsightsTopDatabasesResources
+	}).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - top SQL by insights content type.
+func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) SqlInsightsTopSqlByInsightsResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItemContentType) []string {
+		return v.SqlInsightsTopSqlByInsightsResources
+	}).(pulumi.StringArrayOutput)
+}
+
+// Supported resources for SQL insights - top SQL content type.
+func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) SqlInsightsTopSqlResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItemContentType) []string {
+		return v.SqlInsightsTopSqlResources
+	}).(pulumi.StringArrayOutput)
 }
 
 type GetNewsReportsNewsReportCollectionItemContentTypeArrayOutput struct{ *pulumi.OutputState }

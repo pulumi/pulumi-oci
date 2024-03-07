@@ -143,6 +143,7 @@ export interface GetInstanceResult {
      * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      */
     readonly launchOptions: outputs.Core.GetInstanceLaunchOption[];
+    readonly launchVolumeAttachments: outputs.Core.GetInstanceLaunchVolumeAttachment[];
     /**
      * Custom metadata that you provide.
      */
@@ -159,6 +160,7 @@ export interface GetInstanceResult {
      * (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      */
     readonly preserveBootVolume: boolean;
+    readonly preserveDataVolumesCreatedAtLaunch: boolean;
     /**
      * The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
      */

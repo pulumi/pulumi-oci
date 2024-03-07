@@ -33,12 +33,20 @@ import (
 //			_, err := Opsi.NewNewsReport(ctx, "testNewsReport", &Opsi.NewsReportArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				ContentTypes: &opsi.NewsReportContentTypesArgs{
-//					CapacityPlanningResources: pulumi.Any(_var.News_report_content_types_capacity_planning_resources),
+//					CapacityPlanningResources:                  pulumi.Any(_var.News_report_content_types_capacity_planning_resources),
+//					SqlInsightsFleetAnalysisResources:          pulumi.Any(_var.News_report_content_types_sql_insights_fleet_analysis_resources),
+//					SqlInsightsPerformanceDegradationResources: pulumi.Any(_var.News_report_content_types_sql_insights_performance_degradation_resources),
+//					SqlInsightsPlanChangesResources:            pulumi.Any(_var.News_report_content_types_sql_insights_plan_changes_resources),
+//					SqlInsightsTopDatabasesResources:           pulumi.Any(_var.News_report_content_types_sql_insights_top_databases_resources),
+//					SqlInsightsTopSqlByInsightsResources:       pulumi.Any(_var.News_report_content_types_sql_insights_top_sql_by_insights_resources),
+//					SqlInsightsTopSqlResources:                 pulumi.Any(_var.News_report_content_types_sql_insights_top_sql_resources),
 //				},
-//				Description:   pulumi.Any(_var.News_report_description),
-//				Locale:        pulumi.Any(_var.News_report_locale),
-//				NewsFrequency: pulumi.Any(_var.News_report_news_frequency),
-//				OnsTopicId:    pulumi.Any(oci_opsi_ons_topic.Test_ons_topic.Id),
+//				Description:                  pulumi.Any(_var.News_report_description),
+//				Locale:                       pulumi.Any(_var.News_report_locale),
+//				NewsFrequency:                pulumi.Any(_var.News_report_news_frequency),
+//				OnsTopicId:                   pulumi.Any(oci_opsi_ons_topic.Test_ons_topic.Id),
+//				AreChildCompartmentsIncluded: pulumi.Any(_var.News_report_are_child_compartments_included),
+//				DayOfWeek:                    pulumi.Any(_var.News_report_day_of_week),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -68,13 +76,17 @@ import (
 type NewsReport struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+	AreChildCompartmentsIncluded pulumi.BoolOutput `pulumi:"areChildCompartmentsIncluded"`
 	// (Updatable) Compartment Identifier where the news report will be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Content types that the news report can handle.
 	ContentTypes NewsReportContentTypesOutput `pulumi:"contentTypes"`
+	// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+	DayOfWeek pulumi.StringOutput `pulumi:"dayOfWeek"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// The description of the news report.
+	// (Updatable) The description of the news report.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -82,7 +94,7 @@ type NewsReport struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Language of the news report.
 	Locale pulumi.StringOutput `pulumi:"locale"`
-	// The news report name.
+	// (Updatable) The news report name.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) News report frequency.
 	NewsFrequency pulumi.StringOutput `pulumi:"newsFrequency"`
@@ -151,13 +163,17 @@ func GetNewsReport(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NewsReport resources.
 type newsReportState struct {
+	// (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+	AreChildCompartmentsIncluded *bool `pulumi:"areChildCompartmentsIncluded"`
 	// (Updatable) Compartment Identifier where the news report will be created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Content types that the news report can handle.
 	ContentTypes *NewsReportContentTypes `pulumi:"contentTypes"`
+	// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+	DayOfWeek *string `pulumi:"dayOfWeek"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The description of the news report.
+	// (Updatable) The description of the news report.
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -165,7 +181,7 @@ type newsReportState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Language of the news report.
 	Locale *string `pulumi:"locale"`
-	// The news report name.
+	// (Updatable) The news report name.
 	Name *string `pulumi:"name"`
 	// (Updatable) News report frequency.
 	NewsFrequency *string `pulumi:"newsFrequency"`
@@ -187,13 +203,17 @@ type newsReportState struct {
 }
 
 type NewsReportState struct {
+	// (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+	AreChildCompartmentsIncluded pulumi.BoolPtrInput
 	// (Updatable) Compartment Identifier where the news report will be created.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Content types that the news report can handle.
 	ContentTypes NewsReportContentTypesPtrInput
+	// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+	DayOfWeek pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// The description of the news report.
+	// (Updatable) The description of the news report.
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -201,7 +221,7 @@ type NewsReportState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Language of the news report.
 	Locale pulumi.StringPtrInput
-	// The news report name.
+	// (Updatable) The news report name.
 	Name pulumi.StringPtrInput
 	// (Updatable) News report frequency.
 	NewsFrequency pulumi.StringPtrInput
@@ -227,19 +247,23 @@ func (NewsReportState) ElementType() reflect.Type {
 }
 
 type newsReportArgs struct {
+	// (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+	AreChildCompartmentsIncluded *bool `pulumi:"areChildCompartmentsIncluded"`
 	// (Updatable) Compartment Identifier where the news report will be created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Content types that the news report can handle.
 	ContentTypes NewsReportContentTypes `pulumi:"contentTypes"`
+	// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+	DayOfWeek *string `pulumi:"dayOfWeek"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The description of the news report.
+	// (Updatable) The description of the news report.
 	Description string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Language of the news report.
 	Locale string `pulumi:"locale"`
-	// The news report name.
+	// (Updatable) The news report name.
 	Name *string `pulumi:"name"`
 	// (Updatable) News report frequency.
 	NewsFrequency string `pulumi:"newsFrequency"`
@@ -254,19 +278,23 @@ type newsReportArgs struct {
 
 // The set of arguments for constructing a NewsReport resource.
 type NewsReportArgs struct {
+	// (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+	AreChildCompartmentsIncluded pulumi.BoolPtrInput
 	// (Updatable) Compartment Identifier where the news report will be created.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Content types that the news report can handle.
 	ContentTypes NewsReportContentTypesInput
+	// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+	DayOfWeek pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// The description of the news report.
+	// (Updatable) The description of the news report.
 	Description pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Language of the news report.
 	Locale pulumi.StringInput
-	// The news report name.
+	// (Updatable) The news report name.
 	Name pulumi.StringPtrInput
 	// (Updatable) News report frequency.
 	NewsFrequency pulumi.StringInput
@@ -366,6 +394,11 @@ func (o NewsReportOutput) ToNewsReportOutputWithContext(ctx context.Context) New
 	return o
 }
 
+// (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+func (o NewsReportOutput) AreChildCompartmentsIncluded() pulumi.BoolOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.BoolOutput { return v.AreChildCompartmentsIncluded }).(pulumi.BoolOutput)
+}
+
 // (Updatable) Compartment Identifier where the news report will be created.
 func (o NewsReportOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -376,12 +409,17 @@ func (o NewsReportOutput) ContentTypes() NewsReportContentTypesOutput {
 	return o.ApplyT(func(v *NewsReport) NewsReportContentTypesOutput { return v.ContentTypes }).(NewsReportContentTypesOutput)
 }
 
+// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+func (o NewsReportOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.DayOfWeek }).(pulumi.StringOutput)
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o NewsReportOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *NewsReport) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// The description of the news report.
+// (Updatable) The description of the news report.
 func (o NewsReportOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -401,7 +439,7 @@ func (o NewsReportOutput) Locale() pulumi.StringOutput {
 	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.Locale }).(pulumi.StringOutput)
 }
 
-// The news report name.
+// (Updatable) The news report name.
 func (o NewsReportOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

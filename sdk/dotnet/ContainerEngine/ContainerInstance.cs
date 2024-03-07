@@ -72,6 +72,11 @@ namespace Pulumi.Oci.ContainerEngine
     ///                 },
     ///                 SecurityContext = new Oci.ContainerEngine.Inputs.ContainerInstanceContainerSecurityContextArgs
     ///                 {
+    ///                     Capabilities = new Oci.ContainerEngine.Inputs.ContainerInstanceContainerSecurityContextCapabilitiesArgs
+    ///                     {
+    ///                         AddCapabilities = @var.Container_instance_containers_security_context_capabilities_add_capabilities,
+    ///                         DropCapabilities = @var.Container_instance_containers_security_context_capabilities_drop_capabilities,
+    ///                     },
     ///                     IsNonRootUserCheckEnabled = @var.Container_instance_containers_security_context_is_non_root_user_check_enabled,
     ///                     IsRootFileSystemReadonly = @var.Container_instance_containers_security_context_is_root_file_system_readonly,
     ///                     RunAsGroup = @var.Container_instance_containers_security_context_run_as_group,

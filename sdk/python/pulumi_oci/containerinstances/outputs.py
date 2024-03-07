@@ -16,6 +16,7 @@ __all__ = [
     'GetContainerInstanceContainerHealthCheckHeaderResult',
     'GetContainerInstanceContainerResourceConfigResult',
     'GetContainerInstanceContainerSecurityContextResult',
+    'GetContainerInstanceContainerSecurityContextCapabilityResult',
     'GetContainerInstanceContainerVolumeMountResult',
     'GetContainerInstanceDnsConfigResult',
     'GetContainerInstanceImagePullSecretResult',
@@ -40,6 +41,7 @@ __all__ = [
     'GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult',
     'GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult',
     'GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult',
+    'GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextCapabilityResult',
     'GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult',
     'GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult',
     'GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult',
@@ -444,16 +446,23 @@ class GetContainerInstanceContainerResourceConfigResult(dict):
 @pulumi.output_type
 class GetContainerInstanceContainerSecurityContextResult(dict):
     def __init__(__self__, *,
+                 capabilities: Sequence['outputs.GetContainerInstanceContainerSecurityContextCapabilityResult'],
                  is_non_root_user_check_enabled: bool,
                  is_root_file_system_readonly: bool,
                  run_as_group: int,
                  run_as_user: int,
                  security_context_type: str):
+        pulumi.set(__self__, "capabilities", capabilities)
         pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
         pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
         pulumi.set(__self__, "run_as_group", run_as_group)
         pulumi.set(__self__, "run_as_user", run_as_user)
         pulumi.set(__self__, "security_context_type", security_context_type)
+
+    @property
+    @pulumi.getter
+    def capabilities(self) -> Sequence['outputs.GetContainerInstanceContainerSecurityContextCapabilityResult']:
+        return pulumi.get(self, "capabilities")
 
     @property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
@@ -479,6 +488,25 @@ class GetContainerInstanceContainerSecurityContextResult(dict):
     @pulumi.getter(name="securityContextType")
     def security_context_type(self) -> str:
         return pulumi.get(self, "security_context_type")
+
+
+@pulumi.output_type
+class GetContainerInstanceContainerSecurityContextCapabilityResult(dict):
+    def __init__(__self__, *,
+                 add_capabilities: Sequence[str],
+                 drop_capabilities: Sequence[str]):
+        pulumi.set(__self__, "add_capabilities", add_capabilities)
+        pulumi.set(__self__, "drop_capabilities", drop_capabilities)
+
+    @property
+    @pulumi.getter(name="addCapabilities")
+    def add_capabilities(self) -> Sequence[str]:
+        return pulumi.get(self, "add_capabilities")
+
+    @property
+    @pulumi.getter(name="dropCapabilities")
+    def drop_capabilities(self) -> Sequence[str]:
+        return pulumi.get(self, "drop_capabilities")
 
 
 @pulumi.output_type
@@ -1949,16 +1977,23 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfi
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult(dict):
     def __init__(__self__, *,
+                 capabilities: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextCapabilityResult'],
                  is_non_root_user_check_enabled: bool,
                  is_root_file_system_readonly: bool,
                  run_as_group: int,
                  run_as_user: int,
                  security_context_type: str):
+        pulumi.set(__self__, "capabilities", capabilities)
         pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
         pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
         pulumi.set(__self__, "run_as_group", run_as_group)
         pulumi.set(__self__, "run_as_user", run_as_user)
         pulumi.set(__self__, "security_context_type", security_context_type)
+
+    @property
+    @pulumi.getter
+    def capabilities(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextCapabilityResult']:
+        return pulumi.get(self, "capabilities")
 
     @property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
@@ -1984,6 +2019,25 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerSecurityConte
     @pulumi.getter(name="securityContextType")
     def security_context_type(self) -> str:
         return pulumi.get(self, "security_context_type")
+
+
+@pulumi.output_type
+class GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextCapabilityResult(dict):
+    def __init__(__self__, *,
+                 add_capabilities: Sequence[str],
+                 drop_capabilities: Sequence[str]):
+        pulumi.set(__self__, "add_capabilities", add_capabilities)
+        pulumi.set(__self__, "drop_capabilities", drop_capabilities)
+
+    @property
+    @pulumi.getter(name="addCapabilities")
+    def add_capabilities(self) -> Sequence[str]:
+        return pulumi.get(self, "add_capabilities")
+
+    @property
+    @pulumi.getter(name="dropCapabilities")
+    def drop_capabilities(self) -> Sequence[str]:
+        return pulumi.get(self, "drop_capabilities")
 
 
 @pulumi.output_type

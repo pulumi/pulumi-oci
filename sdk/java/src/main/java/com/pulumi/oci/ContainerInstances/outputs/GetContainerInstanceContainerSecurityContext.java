@@ -5,13 +5,16 @@ package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceContainerSecurityContextCapability;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetContainerInstanceContainerSecurityContext {
+    private List<GetContainerInstanceContainerSecurityContextCapability> capabilities;
     private Boolean isNonRootUserCheckEnabled;
     private Boolean isRootFileSystemReadonly;
     private Integer runAsGroup;
@@ -19,6 +22,9 @@ public final class GetContainerInstanceContainerSecurityContext {
     private String securityContextType;
 
     private GetContainerInstanceContainerSecurityContext() {}
+    public List<GetContainerInstanceContainerSecurityContextCapability> capabilities() {
+        return this.capabilities;
+    }
     public Boolean isNonRootUserCheckEnabled() {
         return this.isNonRootUserCheckEnabled;
     }
@@ -44,6 +50,7 @@ public final class GetContainerInstanceContainerSecurityContext {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetContainerInstanceContainerSecurityContextCapability> capabilities;
         private Boolean isNonRootUserCheckEnabled;
         private Boolean isRootFileSystemReadonly;
         private Integer runAsGroup;
@@ -52,6 +59,7 @@ public final class GetContainerInstanceContainerSecurityContext {
         public Builder() {}
         public Builder(GetContainerInstanceContainerSecurityContext defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.capabilities = defaults.capabilities;
     	      this.isNonRootUserCheckEnabled = defaults.isNonRootUserCheckEnabled;
     	      this.isRootFileSystemReadonly = defaults.isRootFileSystemReadonly;
     	      this.runAsGroup = defaults.runAsGroup;
@@ -59,6 +67,17 @@ public final class GetContainerInstanceContainerSecurityContext {
     	      this.securityContextType = defaults.securityContextType;
         }
 
+        @CustomType.Setter
+        public Builder capabilities(List<GetContainerInstanceContainerSecurityContextCapability> capabilities) {
+            if (capabilities == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceContainerSecurityContext", "capabilities");
+            }
+            this.capabilities = capabilities;
+            return this;
+        }
+        public Builder capabilities(GetContainerInstanceContainerSecurityContextCapability... capabilities) {
+            return capabilities(List.of(capabilities));
+        }
         @CustomType.Setter
         public Builder isNonRootUserCheckEnabled(Boolean isNonRootUserCheckEnabled) {
             if (isNonRootUserCheckEnabled == null) {
@@ -101,6 +120,7 @@ public final class GetContainerInstanceContainerSecurityContext {
         }
         public GetContainerInstanceContainerSecurityContext build() {
             final var _resultValue = new GetContainerInstanceContainerSecurityContext();
+            _resultValue.capabilities = capabilities;
             _resultValue.isNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
             _resultValue.isRootFileSystemReadonly = isRootFileSystemReadonly;
             _resultValue.runAsGroup = runAsGroup;

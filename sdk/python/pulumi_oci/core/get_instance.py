@@ -22,7 +22,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_configuration_id=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
+    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_configuration_id=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, launch_volume_attachments=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, preserve_data_volumes_created_at_launch=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
         if agent_configs and not isinstance(agent_configs, list):
             raise TypeError("Expected argument 'agent_configs' to be a list")
         pulumi.set(__self__, "agent_configs", agent_configs)
@@ -101,6 +101,9 @@ class GetInstanceResult:
         if launch_options and not isinstance(launch_options, list):
             raise TypeError("Expected argument 'launch_options' to be a list")
         pulumi.set(__self__, "launch_options", launch_options)
+        if launch_volume_attachments and not isinstance(launch_volume_attachments, list):
+            raise TypeError("Expected argument 'launch_volume_attachments' to be a list")
+        pulumi.set(__self__, "launch_volume_attachments", launch_volume_attachments)
         if metadata and not isinstance(metadata, dict):
             raise TypeError("Expected argument 'metadata' to be a dict")
         pulumi.set(__self__, "metadata", metadata)
@@ -113,6 +116,9 @@ class GetInstanceResult:
         if preserve_boot_volume and not isinstance(preserve_boot_volume, bool):
             raise TypeError("Expected argument 'preserve_boot_volume' to be a bool")
         pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
+        if preserve_data_volumes_created_at_launch and not isinstance(preserve_data_volumes_created_at_launch, bool):
+            raise TypeError("Expected argument 'preserve_data_volumes_created_at_launch' to be a bool")
+        pulumi.set(__self__, "preserve_data_volumes_created_at_launch", preserve_data_volumes_created_at_launch)
         if private_ip and not isinstance(private_ip, str):
             raise TypeError("Expected argument 'private_ip' to be a str")
         pulumi.set(__self__, "private_ip", private_ip)
@@ -353,6 +359,11 @@ class GetInstanceResult:
         return pulumi.get(self, "launch_options")
 
     @property
+    @pulumi.getter(name="launchVolumeAttachments")
+    def launch_volume_attachments(self) -> Sequence['outputs.GetInstanceLaunchVolumeAttachmentResult']:
+        return pulumi.get(self, "launch_volume_attachments")
+
+    @property
     @pulumi.getter
     def metadata(self) -> Mapping[str, Any]:
         """
@@ -383,6 +394,11 @@ class GetInstanceResult:
         (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
         return pulumi.get(self, "preserve_boot_volume")
+
+    @property
+    @pulumi.getter(name="preserveDataVolumesCreatedAtLaunch")
+    def preserve_data_volumes_created_at_launch(self) -> bool:
+        return pulumi.get(self, "preserve_data_volumes_created_at_launch")
 
     @property
     @pulumi.getter(name="privateIp")
@@ -507,10 +523,12 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             is_pv_encryption_in_transit_enabled=self.is_pv_encryption_in_transit_enabled,
             launch_mode=self.launch_mode,
             launch_options=self.launch_options,
+            launch_volume_attachments=self.launch_volume_attachments,
             metadata=self.metadata,
             platform_configs=self.platform_configs,
             preemptible_instance_configs=self.preemptible_instance_configs,
             preserve_boot_volume=self.preserve_boot_volume,
+            preserve_data_volumes_created_at_launch=self.preserve_data_volumes_created_at_launch,
             private_ip=self.private_ip,
             public_ip=self.public_ip,
             region=self.region,
@@ -579,10 +597,12 @@ def get_instance(instance_id: Optional[str] = None,
         is_pv_encryption_in_transit_enabled=pulumi.get(__ret__, 'is_pv_encryption_in_transit_enabled'),
         launch_mode=pulumi.get(__ret__, 'launch_mode'),
         launch_options=pulumi.get(__ret__, 'launch_options'),
+        launch_volume_attachments=pulumi.get(__ret__, 'launch_volume_attachments'),
         metadata=pulumi.get(__ret__, 'metadata'),
         platform_configs=pulumi.get(__ret__, 'platform_configs'),
         preemptible_instance_configs=pulumi.get(__ret__, 'preemptible_instance_configs'),
         preserve_boot_volume=pulumi.get(__ret__, 'preserve_boot_volume'),
+        preserve_data_volumes_created_at_launch=pulumi.get(__ret__, 'preserve_data_volumes_created_at_launch'),
         private_ip=pulumi.get(__ret__, 'private_ip'),
         public_ip=pulumi.get(__ret__, 'public_ip'),
         region=pulumi.get(__ret__, 'region'),

@@ -5,10 +5,11 @@ package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class NewsReportContentTypesArgs extends com.pulumi.resources.ResourceArgs {
@@ -19,21 +20,117 @@ public final class NewsReportContentTypesArgs extends com.pulumi.resources.Resou
      * (Updatable) Supported resources for capacity planning content type.
      * 
      */
-    @Import(name="capacityPlanningResources", required=true)
-    private Output<List<String>> capacityPlanningResources;
+    @Import(name="capacityPlanningResources")
+    private @Nullable Output<List<String>> capacityPlanningResources;
 
     /**
      * @return (Updatable) Supported resources for capacity planning content type.
      * 
      */
-    public Output<List<String>> capacityPlanningResources() {
-        return this.capacityPlanningResources;
+    public Optional<Output<List<String>>> capacityPlanningResources() {
+        return Optional.ofNullable(this.capacityPlanningResources);
+    }
+
+    /**
+     * (Updatable) Supported resources for SQL insights - fleet analysis content type.
+     * 
+     */
+    @Import(name="sqlInsightsFleetAnalysisResources")
+    private @Nullable Output<List<String>> sqlInsightsFleetAnalysisResources;
+
+    /**
+     * @return (Updatable) Supported resources for SQL insights - fleet analysis content type.
+     * 
+     */
+    public Optional<Output<List<String>>> sqlInsightsFleetAnalysisResources() {
+        return Optional.ofNullable(this.sqlInsightsFleetAnalysisResources);
+    }
+
+    /**
+     * (Updatable) Supported resources for SQL insights - performance degradation content type.
+     * 
+     */
+    @Import(name="sqlInsightsPerformanceDegradationResources")
+    private @Nullable Output<List<String>> sqlInsightsPerformanceDegradationResources;
+
+    /**
+     * @return (Updatable) Supported resources for SQL insights - performance degradation content type.
+     * 
+     */
+    public Optional<Output<List<String>>> sqlInsightsPerformanceDegradationResources() {
+        return Optional.ofNullable(this.sqlInsightsPerformanceDegradationResources);
+    }
+
+    /**
+     * (Updatable) Supported resources for SQL insights - plan changes content type.
+     * 
+     */
+    @Import(name="sqlInsightsPlanChangesResources")
+    private @Nullable Output<List<String>> sqlInsightsPlanChangesResources;
+
+    /**
+     * @return (Updatable) Supported resources for SQL insights - plan changes content type.
+     * 
+     */
+    public Optional<Output<List<String>>> sqlInsightsPlanChangesResources() {
+        return Optional.ofNullable(this.sqlInsightsPlanChangesResources);
+    }
+
+    /**
+     * (Updatable) Supported resources for SQL insights - top databases content type.
+     * 
+     */
+    @Import(name="sqlInsightsTopDatabasesResources")
+    private @Nullable Output<List<String>> sqlInsightsTopDatabasesResources;
+
+    /**
+     * @return (Updatable) Supported resources for SQL insights - top databases content type.
+     * 
+     */
+    public Optional<Output<List<String>>> sqlInsightsTopDatabasesResources() {
+        return Optional.ofNullable(this.sqlInsightsTopDatabasesResources);
+    }
+
+    /**
+     * (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+     * 
+     */
+    @Import(name="sqlInsightsTopSqlByInsightsResources")
+    private @Nullable Output<List<String>> sqlInsightsTopSqlByInsightsResources;
+
+    /**
+     * @return (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+     * 
+     */
+    public Optional<Output<List<String>>> sqlInsightsTopSqlByInsightsResources() {
+        return Optional.ofNullable(this.sqlInsightsTopSqlByInsightsResources);
+    }
+
+    /**
+     * (Updatable) Supported resources for SQL insights - top SQL content type.
+     * 
+     */
+    @Import(name="sqlInsightsTopSqlResources")
+    private @Nullable Output<List<String>> sqlInsightsTopSqlResources;
+
+    /**
+     * @return (Updatable) Supported resources for SQL insights - top SQL content type.
+     * 
+     */
+    public Optional<Output<List<String>>> sqlInsightsTopSqlResources() {
+        return Optional.ofNullable(this.sqlInsightsTopSqlResources);
     }
 
     private NewsReportContentTypesArgs() {}
 
     private NewsReportContentTypesArgs(NewsReportContentTypesArgs $) {
         this.capacityPlanningResources = $.capacityPlanningResources;
+        this.sqlInsightsFleetAnalysisResources = $.sqlInsightsFleetAnalysisResources;
+        this.sqlInsightsPerformanceDegradationResources = $.sqlInsightsPerformanceDegradationResources;
+        this.sqlInsightsPlanChangesResources = $.sqlInsightsPlanChangesResources;
+        this.sqlInsightsTopDatabasesResources = $.sqlInsightsTopDatabasesResources;
+        this.sqlInsightsTopSqlByInsightsResources = $.sqlInsightsTopSqlByInsightsResources;
+        this.sqlInsightsTopSqlResources = $.sqlInsightsTopSqlResources;
     }
 
     public static Builder builder() {
@@ -60,7 +157,7 @@ public final class NewsReportContentTypesArgs extends com.pulumi.resources.Resou
          * @return builder
          * 
          */
-        public Builder capacityPlanningResources(Output<List<String>> capacityPlanningResources) {
+        public Builder capacityPlanningResources(@Nullable Output<List<String>> capacityPlanningResources) {
             $.capacityPlanningResources = capacityPlanningResources;
             return this;
         }
@@ -85,10 +182,193 @@ public final class NewsReportContentTypesArgs extends com.pulumi.resources.Resou
             return capacityPlanningResources(List.of(capacityPlanningResources));
         }
 
+        /**
+         * @param sqlInsightsFleetAnalysisResources (Updatable) Supported resources for SQL insights - fleet analysis content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsFleetAnalysisResources(@Nullable Output<List<String>> sqlInsightsFleetAnalysisResources) {
+            $.sqlInsightsFleetAnalysisResources = sqlInsightsFleetAnalysisResources;
+            return this;
+        }
+
+        /**
+         * @param sqlInsightsFleetAnalysisResources (Updatable) Supported resources for SQL insights - fleet analysis content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsFleetAnalysisResources(List<String> sqlInsightsFleetAnalysisResources) {
+            return sqlInsightsFleetAnalysisResources(Output.of(sqlInsightsFleetAnalysisResources));
+        }
+
+        /**
+         * @param sqlInsightsFleetAnalysisResources (Updatable) Supported resources for SQL insights - fleet analysis content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsFleetAnalysisResources(String... sqlInsightsFleetAnalysisResources) {
+            return sqlInsightsFleetAnalysisResources(List.of(sqlInsightsFleetAnalysisResources));
+        }
+
+        /**
+         * @param sqlInsightsPerformanceDegradationResources (Updatable) Supported resources for SQL insights - performance degradation content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsPerformanceDegradationResources(@Nullable Output<List<String>> sqlInsightsPerformanceDegradationResources) {
+            $.sqlInsightsPerformanceDegradationResources = sqlInsightsPerformanceDegradationResources;
+            return this;
+        }
+
+        /**
+         * @param sqlInsightsPerformanceDegradationResources (Updatable) Supported resources for SQL insights - performance degradation content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsPerformanceDegradationResources(List<String> sqlInsightsPerformanceDegradationResources) {
+            return sqlInsightsPerformanceDegradationResources(Output.of(sqlInsightsPerformanceDegradationResources));
+        }
+
+        /**
+         * @param sqlInsightsPerformanceDegradationResources (Updatable) Supported resources for SQL insights - performance degradation content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsPerformanceDegradationResources(String... sqlInsightsPerformanceDegradationResources) {
+            return sqlInsightsPerformanceDegradationResources(List.of(sqlInsightsPerformanceDegradationResources));
+        }
+
+        /**
+         * @param sqlInsightsPlanChangesResources (Updatable) Supported resources for SQL insights - plan changes content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsPlanChangesResources(@Nullable Output<List<String>> sqlInsightsPlanChangesResources) {
+            $.sqlInsightsPlanChangesResources = sqlInsightsPlanChangesResources;
+            return this;
+        }
+
+        /**
+         * @param sqlInsightsPlanChangesResources (Updatable) Supported resources for SQL insights - plan changes content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsPlanChangesResources(List<String> sqlInsightsPlanChangesResources) {
+            return sqlInsightsPlanChangesResources(Output.of(sqlInsightsPlanChangesResources));
+        }
+
+        /**
+         * @param sqlInsightsPlanChangesResources (Updatable) Supported resources for SQL insights - plan changes content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsPlanChangesResources(String... sqlInsightsPlanChangesResources) {
+            return sqlInsightsPlanChangesResources(List.of(sqlInsightsPlanChangesResources));
+        }
+
+        /**
+         * @param sqlInsightsTopDatabasesResources (Updatable) Supported resources for SQL insights - top databases content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsTopDatabasesResources(@Nullable Output<List<String>> sqlInsightsTopDatabasesResources) {
+            $.sqlInsightsTopDatabasesResources = sqlInsightsTopDatabasesResources;
+            return this;
+        }
+
+        /**
+         * @param sqlInsightsTopDatabasesResources (Updatable) Supported resources for SQL insights - top databases content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsTopDatabasesResources(List<String> sqlInsightsTopDatabasesResources) {
+            return sqlInsightsTopDatabasesResources(Output.of(sqlInsightsTopDatabasesResources));
+        }
+
+        /**
+         * @param sqlInsightsTopDatabasesResources (Updatable) Supported resources for SQL insights - top databases content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsTopDatabasesResources(String... sqlInsightsTopDatabasesResources) {
+            return sqlInsightsTopDatabasesResources(List.of(sqlInsightsTopDatabasesResources));
+        }
+
+        /**
+         * @param sqlInsightsTopSqlByInsightsResources (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsTopSqlByInsightsResources(@Nullable Output<List<String>> sqlInsightsTopSqlByInsightsResources) {
+            $.sqlInsightsTopSqlByInsightsResources = sqlInsightsTopSqlByInsightsResources;
+            return this;
+        }
+
+        /**
+         * @param sqlInsightsTopSqlByInsightsResources (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsTopSqlByInsightsResources(List<String> sqlInsightsTopSqlByInsightsResources) {
+            return sqlInsightsTopSqlByInsightsResources(Output.of(sqlInsightsTopSqlByInsightsResources));
+        }
+
+        /**
+         * @param sqlInsightsTopSqlByInsightsResources (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsTopSqlByInsightsResources(String... sqlInsightsTopSqlByInsightsResources) {
+            return sqlInsightsTopSqlByInsightsResources(List.of(sqlInsightsTopSqlByInsightsResources));
+        }
+
+        /**
+         * @param sqlInsightsTopSqlResources (Updatable) Supported resources for SQL insights - top SQL content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsTopSqlResources(@Nullable Output<List<String>> sqlInsightsTopSqlResources) {
+            $.sqlInsightsTopSqlResources = sqlInsightsTopSqlResources;
+            return this;
+        }
+
+        /**
+         * @param sqlInsightsTopSqlResources (Updatable) Supported resources for SQL insights - top SQL content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsTopSqlResources(List<String> sqlInsightsTopSqlResources) {
+            return sqlInsightsTopSqlResources(Output.of(sqlInsightsTopSqlResources));
+        }
+
+        /**
+         * @param sqlInsightsTopSqlResources (Updatable) Supported resources for SQL insights - top SQL content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sqlInsightsTopSqlResources(String... sqlInsightsTopSqlResources) {
+            return sqlInsightsTopSqlResources(List.of(sqlInsightsTopSqlResources));
+        }
+
         public NewsReportContentTypesArgs build() {
-            if ($.capacityPlanningResources == null) {
-                throw new MissingRequiredPropertyException("NewsReportContentTypesArgs", "capacityPlanningResources");
-            }
             return $;
         }
     }

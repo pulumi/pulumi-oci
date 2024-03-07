@@ -45,6 +45,10 @@ export interface GetNewsReportArgs {
  */
 export interface GetNewsReportResult {
     /**
+     * A flag to consider the resources within a given compartment and all sub-compartments.
+     */
+    readonly areChildCompartmentsIncluded: boolean;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;
@@ -52,6 +56,10 @@ export interface GetNewsReportResult {
      * Content types that the news report can handle.
      */
     readonly contentTypes: outputs.Opsi.GetNewsReportContentType[];
+    /**
+     * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     */
+    readonly dayOfWeek: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */

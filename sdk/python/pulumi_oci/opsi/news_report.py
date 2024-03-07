@@ -22,6 +22,8 @@ class NewsReportArgs:
                  locale: pulumi.Input[str],
                  news_frequency: pulumi.Input[str],
                  ons_topic_id: pulumi.Input[str],
+                 are_child_compartments_included: Optional[pulumi.Input[bool]] = None,
+                 day_of_week: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -30,13 +32,15 @@ class NewsReportArgs:
         The set of arguments for constructing a NewsReport resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
         :param pulumi.Input['NewsReportContentTypesArgs'] content_types: (Updatable) Content types that the news report can handle.
-        :param pulumi.Input[str] description: The description of the news report.
+        :param pulumi.Input[str] description: (Updatable) The description of the news report.
         :param pulumi.Input[str] locale: (Updatable) Language of the news report.
         :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
         :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
+        :param pulumi.Input[bool] are_child_compartments_included: (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+        :param pulumi.Input[str] day_of_week: (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: The news report name.
+        :param pulumi.Input[str] name: (Updatable) The news report name.
         :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
                
                
@@ -49,6 +53,10 @@ class NewsReportArgs:
         pulumi.set(__self__, "locale", locale)
         pulumi.set(__self__, "news_frequency", news_frequency)
         pulumi.set(__self__, "ons_topic_id", ons_topic_id)
+        if are_child_compartments_included is not None:
+            pulumi.set(__self__, "are_child_compartments_included", are_child_compartments_included)
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -86,7 +94,7 @@ class NewsReportArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
         """
-        The description of the news report.
+        (Updatable) The description of the news report.
         """
         return pulumi.get(self, "description")
 
@@ -131,6 +139,30 @@ class NewsReportArgs:
         pulumi.set(self, "ons_topic_id", value)
 
     @property
+    @pulumi.getter(name="areChildCompartmentsIncluded")
+    def are_child_compartments_included(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+        """
+        return pulumi.get(self, "are_child_compartments_included")
+
+    @are_child_compartments_included.setter
+    def are_child_compartments_included(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_child_compartments_included", value)
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @day_of_week.setter
+    def day_of_week(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "day_of_week", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -158,7 +190,7 @@ class NewsReportArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The news report name.
+        (Updatable) The news report name.
         """
         return pulumi.get(self, "name")
 
@@ -186,8 +218,10 @@ class NewsReportArgs:
 @pulumi.input_type
 class _NewsReportState:
     def __init__(__self__, *,
+                 are_child_compartments_included: Optional[pulumi.Input[bool]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  content_types: Optional[pulumi.Input['NewsReportContentTypesArgs']] = None,
+                 day_of_week: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -203,14 +237,16 @@ class _NewsReportState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NewsReport resources.
+        :param pulumi.Input[bool] are_child_compartments_included: (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
         :param pulumi.Input['NewsReportContentTypesArgs'] content_types: (Updatable) Content types that the news report can handle.
+        :param pulumi.Input[str] day_of_week: (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: The description of the news report.
+        :param pulumi.Input[str] description: (Updatable) The description of the news report.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] locale: (Updatable) Language of the news report.
-        :param pulumi.Input[str] name: The news report name.
+        :param pulumi.Input[str] name: (Updatable) The news report name.
         :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
         :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
         :param pulumi.Input[str] state: The current state of the news report.
@@ -223,10 +259,14 @@ class _NewsReportState:
         :param pulumi.Input[str] time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
         """
+        if are_child_compartments_included is not None:
+            pulumi.set(__self__, "are_child_compartments_included", are_child_compartments_included)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if content_types is not None:
             pulumi.set(__self__, "content_types", content_types)
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -255,6 +295,18 @@ class _NewsReportState:
             pulumi.set(__self__, "time_updated", time_updated)
 
     @property
+    @pulumi.getter(name="areChildCompartmentsIncluded")
+    def are_child_compartments_included(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+        """
+        return pulumi.get(self, "are_child_compartments_included")
+
+    @are_child_compartments_included.setter
+    def are_child_compartments_included(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_child_compartments_included", value)
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -279,6 +331,18 @@ class _NewsReportState:
         pulumi.set(self, "content_types", value)
 
     @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @day_of_week.setter
+    def day_of_week(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "day_of_week", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -294,7 +358,7 @@ class _NewsReportState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        The description of the news report.
+        (Updatable) The description of the news report.
         """
         return pulumi.get(self, "description")
 
@@ -342,7 +406,7 @@ class _NewsReportState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The news report name.
+        (Updatable) The news report name.
         """
         return pulumi.get(self, "name")
 
@@ -444,8 +508,10 @@ class NewsReport(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 are_child_compartments_included: Optional[pulumi.Input[bool]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  content_types: Optional[pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']]] = None,
+                 day_of_week: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -470,11 +536,19 @@ class NewsReport(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             content_types=oci.opsi.NewsReportContentTypesArgs(
                 capacity_planning_resources=var["news_report_content_types_capacity_planning_resources"],
+                sql_insights_fleet_analysis_resources=var["news_report_content_types_sql_insights_fleet_analysis_resources"],
+                sql_insights_performance_degradation_resources=var["news_report_content_types_sql_insights_performance_degradation_resources"],
+                sql_insights_plan_changes_resources=var["news_report_content_types_sql_insights_plan_changes_resources"],
+                sql_insights_top_databases_resources=var["news_report_content_types_sql_insights_top_databases_resources"],
+                sql_insights_top_sql_by_insights_resources=var["news_report_content_types_sql_insights_top_sql_by_insights_resources"],
+                sql_insights_top_sql_resources=var["news_report_content_types_sql_insights_top_sql_resources"],
             ),
             description=var["news_report_description"],
             locale=var["news_report_locale"],
             news_frequency=var["news_report_news_frequency"],
             ons_topic_id=oci_opsi_ons_topic["test_ons_topic"]["id"],
+            are_child_compartments_included=var["news_report_are_child_compartments_included"],
+            day_of_week=var["news_report_day_of_week"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -494,13 +568,15 @@ class NewsReport(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] are_child_compartments_included: (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
         :param pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']] content_types: (Updatable) Content types that the news report can handle.
+        :param pulumi.Input[str] day_of_week: (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: The description of the news report.
+        :param pulumi.Input[str] description: (Updatable) The description of the news report.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] locale: (Updatable) Language of the news report.
-        :param pulumi.Input[str] name: The news report name.
+        :param pulumi.Input[str] name: (Updatable) The news report name.
         :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
         :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
         :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
@@ -530,11 +606,19 @@ class NewsReport(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             content_types=oci.opsi.NewsReportContentTypesArgs(
                 capacity_planning_resources=var["news_report_content_types_capacity_planning_resources"],
+                sql_insights_fleet_analysis_resources=var["news_report_content_types_sql_insights_fleet_analysis_resources"],
+                sql_insights_performance_degradation_resources=var["news_report_content_types_sql_insights_performance_degradation_resources"],
+                sql_insights_plan_changes_resources=var["news_report_content_types_sql_insights_plan_changes_resources"],
+                sql_insights_top_databases_resources=var["news_report_content_types_sql_insights_top_databases_resources"],
+                sql_insights_top_sql_by_insights_resources=var["news_report_content_types_sql_insights_top_sql_by_insights_resources"],
+                sql_insights_top_sql_resources=var["news_report_content_types_sql_insights_top_sql_resources"],
             ),
             description=var["news_report_description"],
             locale=var["news_report_locale"],
             news_frequency=var["news_report_news_frequency"],
             ons_topic_id=oci_opsi_ons_topic["test_ons_topic"]["id"],
+            are_child_compartments_included=var["news_report_are_child_compartments_included"],
+            day_of_week=var["news_report_day_of_week"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -567,8 +651,10 @@ class NewsReport(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 are_child_compartments_included: Optional[pulumi.Input[bool]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  content_types: Optional[pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']]] = None,
+                 day_of_week: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -586,12 +672,14 @@ class NewsReport(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NewsReportArgs.__new__(NewsReportArgs)
 
+            __props__.__dict__["are_child_compartments_included"] = are_child_compartments_included
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             if content_types is None and not opts.urn:
                 raise TypeError("Missing required property 'content_types'")
             __props__.__dict__["content_types"] = content_types
+            __props__.__dict__["day_of_week"] = day_of_week
             __props__.__dict__["defined_tags"] = defined_tags
             if description is None and not opts.urn:
                 raise TypeError("Missing required property 'description'")
@@ -623,8 +711,10 @@ class NewsReport(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            are_child_compartments_included: Optional[pulumi.Input[bool]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             content_types: Optional[pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']]] = None,
+            day_of_week: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -645,14 +735,16 @@ class NewsReport(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] are_child_compartments_included: (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
         :param pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']] content_types: (Updatable) Content types that the news report can handle.
+        :param pulumi.Input[str] day_of_week: (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: The description of the news report.
+        :param pulumi.Input[str] description: (Updatable) The description of the news report.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] locale: (Updatable) Language of the news report.
-        :param pulumi.Input[str] name: The news report name.
+        :param pulumi.Input[str] name: (Updatable) The news report name.
         :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
         :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
         :param pulumi.Input[str] state: The current state of the news report.
@@ -669,8 +761,10 @@ class NewsReport(pulumi.CustomResource):
 
         __props__ = _NewsReportState.__new__(_NewsReportState)
 
+        __props__.__dict__["are_child_compartments_included"] = are_child_compartments_included
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["content_types"] = content_types
+        __props__.__dict__["day_of_week"] = day_of_week
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -685,6 +779,14 @@ class NewsReport(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return NewsReport(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="areChildCompartmentsIncluded")
+    def are_child_compartments_included(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+        """
+        return pulumi.get(self, "are_child_compartments_included")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -703,6 +805,14 @@ class NewsReport(pulumi.CustomResource):
         return pulumi.get(self, "content_types")
 
     @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
@@ -714,7 +824,7 @@ class NewsReport(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        The description of the news report.
+        (Updatable) The description of the news report.
         """
         return pulumi.get(self, "description")
 
@@ -746,7 +856,7 @@ class NewsReport(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The news report name.
+        (Updatable) The news report name.
         """
         return pulumi.get(self, "name")
 

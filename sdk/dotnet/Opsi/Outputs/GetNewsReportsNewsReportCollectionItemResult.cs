@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Opsi.Outputs
     public sealed class GetNewsReportsNewsReportCollectionItemResult
     {
         /// <summary>
+        /// A flag to consider the resources within a given compartment and all sub-compartments.
+        /// </summary>
+        public readonly bool AreChildCompartmentsIncluded;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -21,6 +25,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// Content types that the news report can handle.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNewsReportsNewsReportCollectionItemContentTypeResult> ContentTypes;
+        /// <summary>
+        /// Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+        /// </summary>
+        public readonly string DayOfWeek;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -80,9 +88,13 @@ namespace Pulumi.Oci.Opsi.Outputs
 
         [OutputConstructor]
         private GetNewsReportsNewsReportCollectionItemResult(
+            bool areChildCompartmentsIncluded,
+
             string compartmentId,
 
             ImmutableArray<Outputs.GetNewsReportsNewsReportCollectionItemContentTypeResult> contentTypes,
+
+            string dayOfWeek,
 
             ImmutableDictionary<string, object> definedTags,
 
@@ -112,8 +124,10 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string timeUpdated)
         {
+            AreChildCompartmentsIncluded = areChildCompartmentsIncluded;
             CompartmentId = compartmentId;
             ContentTypes = contentTypes;
+            DayOfWeek = dayOfWeek;
             DefinedTags = definedTags;
             Description = description;
             FreeformTags = freeformTags;

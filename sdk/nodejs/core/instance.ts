@@ -131,7 +131,7 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     public readonly extendedMetadata!: pulumi.Output<{[key: string]: any}>;
@@ -202,6 +202,12 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly launchOptions!: pulumi.Output<outputs.Core.InstanceLaunchOptions>;
     /**
+     * Volume attachments to create as part of the launch instance operation.
+     *
+     * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+     */
+    public readonly launchVolumeAttachments!: pulumi.Output<outputs.Core.InstanceLaunchVolumeAttachment[]>;
+    /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      *
      * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -254,6 +260,7 @@ export class Instance extends pulumi.CustomResource {
      * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      */
     public readonly preserveBootVolume!: pulumi.Output<boolean | undefined>;
+    public readonly preserveDataVolumesCreatedAtLaunch!: pulumi.Output<boolean | undefined>;
     /**
      * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
      *
@@ -352,10 +359,12 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["isPvEncryptionInTransitEnabled"] = state ? state.isPvEncryptionInTransitEnabled : undefined;
             resourceInputs["launchMode"] = state ? state.launchMode : undefined;
             resourceInputs["launchOptions"] = state ? state.launchOptions : undefined;
+            resourceInputs["launchVolumeAttachments"] = state ? state.launchVolumeAttachments : undefined;
             resourceInputs["metadata"] = state ? state.metadata : undefined;
             resourceInputs["platformConfig"] = state ? state.platformConfig : undefined;
             resourceInputs["preemptibleInstanceConfig"] = state ? state.preemptibleInstanceConfig : undefined;
             resourceInputs["preserveBootVolume"] = state ? state.preserveBootVolume : undefined;
+            resourceInputs["preserveDataVolumesCreatedAtLaunch"] = state ? state.preserveDataVolumesCreatedAtLaunch : undefined;
             resourceInputs["privateIp"] = state ? state.privateIp : undefined;
             resourceInputs["publicIp"] = state ? state.publicIp : undefined;
             resourceInputs["region"] = state ? state.region : undefined;
@@ -397,10 +406,12 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["ipxeScript"] = args ? args.ipxeScript : undefined;
             resourceInputs["isPvEncryptionInTransitEnabled"] = args ? args.isPvEncryptionInTransitEnabled : undefined;
             resourceInputs["launchOptions"] = args ? args.launchOptions : undefined;
+            resourceInputs["launchVolumeAttachments"] = args ? args.launchVolumeAttachments : undefined;
             resourceInputs["metadata"] = args ? args.metadata : undefined;
             resourceInputs["platformConfig"] = args ? args.platformConfig : undefined;
             resourceInputs["preemptibleInstanceConfig"] = args ? args.preemptibleInstanceConfig : undefined;
             resourceInputs["preserveBootVolume"] = args ? args.preserveBootVolume : undefined;
+            resourceInputs["preserveDataVolumesCreatedAtLaunch"] = args ? args.preserveDataVolumesCreatedAtLaunch : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["shapeConfig"] = args ? args.shapeConfig : undefined;
             resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
@@ -468,7 +479,7 @@ export interface InstanceState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     extendedMetadata?: pulumi.Input<{[key: string]: any}>;
@@ -539,6 +550,12 @@ export interface InstanceState {
      */
     launchOptions?: pulumi.Input<inputs.Core.InstanceLaunchOptions>;
     /**
+     * Volume attachments to create as part of the launch instance operation.
+     *
+     * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+     */
+    launchVolumeAttachments?: pulumi.Input<pulumi.Input<inputs.Core.InstanceLaunchVolumeAttachment>[]>;
+    /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      *
      * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -591,6 +608,7 @@ export interface InstanceState {
      * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      */
     preserveBootVolume?: pulumi.Input<boolean>;
+    preserveDataVolumesCreatedAtLaunch?: pulumi.Input<boolean>;
     /**
      * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
      *
@@ -695,7 +713,7 @@ export interface InstanceArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     extendedMetadata?: pulumi.Input<{[key: string]: any}>;
@@ -758,6 +776,12 @@ export interface InstanceArgs {
      */
     launchOptions?: pulumi.Input<inputs.Core.InstanceLaunchOptions>;
     /**
+     * Volume attachments to create as part of the launch instance operation.
+     *
+     * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+     */
+    launchVolumeAttachments?: pulumi.Input<pulumi.Input<inputs.Core.InstanceLaunchVolumeAttachment>[]>;
+    /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      *
      * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -810,6 +834,7 @@ export interface InstanceArgs {
      * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      */
     preserveBootVolume?: pulumi.Input<boolean>;
+    preserveDataVolumesCreatedAtLaunch?: pulumi.Input<boolean>;
     /**
      * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      *

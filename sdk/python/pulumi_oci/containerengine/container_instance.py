@@ -722,6 +722,10 @@ class ContainerInstance(pulumi.CustomResource):
                     vcpus_limit=var["container_instance_containers_resource_config_vcpus_limit"],
                 ),
                 security_context=oci.container_engine.ContainerInstanceContainerSecurityContextArgs(
+                    capabilities=oci.container_engine.ContainerInstanceContainerSecurityContextCapabilitiesArgs(
+                        add_capabilities=var["container_instance_containers_security_context_capabilities_add_capabilities"],
+                        drop_capabilities=var["container_instance_containers_security_context_capabilities_drop_capabilities"],
+                    ),
                     is_non_root_user_check_enabled=var["container_instance_containers_security_context_is_non_root_user_check_enabled"],
                     is_root_file_system_readonly=var["container_instance_containers_security_context_is_root_file_system_readonly"],
                     run_as_group=var["container_instance_containers_security_context_run_as_group"],
@@ -871,6 +875,10 @@ class ContainerInstance(pulumi.CustomResource):
                     vcpus_limit=var["container_instance_containers_resource_config_vcpus_limit"],
                 ),
                 security_context=oci.container_engine.ContainerInstanceContainerSecurityContextArgs(
+                    capabilities=oci.container_engine.ContainerInstanceContainerSecurityContextCapabilitiesArgs(
+                        add_capabilities=var["container_instance_containers_security_context_capabilities_add_capabilities"],
+                        drop_capabilities=var["container_instance_containers_security_context_capabilities_drop_capabilities"],
+                    ),
                     is_non_root_user_check_enabled=var["container_instance_containers_security_context_is_non_root_user_check_enabled"],
                     is_root_file_system_readonly=var["container_instance_containers_security_context_is_root_file_system_readonly"],
                     run_as_group=var["container_instance_containers_security_context_run_as_group"],

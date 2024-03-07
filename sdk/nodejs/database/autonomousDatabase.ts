@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Creates a new Autonomous Database.
  *
+ * This API must be called on the remote region where the peer needs to be created.
+ *
  * ## Import
  *
  * AutonomousDatabases can be imported using the `id`, e.g.
@@ -52,7 +54,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly actualUsedDataStorageSizeInTbs!: pulumi.Output<number>;
     /**
-     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
+     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE" and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
      */
     public readonly adminPassword!: pulumi.Output<string>;
     /**
@@ -168,7 +170,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly databaseManagementStatus!: pulumi.Output<string>;
     /**
-     * The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
+     * **Deprecated** (Optional) The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary (`PRIMARY_DG_REGION`) and standby (`REMOTE_STANDBY_DG_REGION`) regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
      */
     public /*out*/ readonly dataguardRegionType!: pulumi.Output<string>;
     /**
@@ -200,7 +202,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * **Deprecated** The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary (`PRIMARY`) and standby (`REMOTE`) regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      */
     public /*out*/ readonly disasterRecoveryRegionType!: pulumi.Output<string>;
     /**
@@ -254,7 +256,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly isFreeTier!: pulumi.Output<boolean>;
     /**
-     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. It takes boolean values. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     public readonly isLocalDataGuardEnabled!: pulumi.Output<boolean>;
     /**
@@ -278,7 +280,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly isRefreshableClone!: pulumi.Output<boolean>;
     /**
-     * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. It takes boolean values. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     public /*out*/ readonly isRemoteDataGuardEnabled!: pulumi.Output<boolean>;
     /**
@@ -331,11 +333,11 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly localAdgAutoFailoverMaxDataLossLimit!: pulumi.Output<number>;
     /**
-     * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     public /*out*/ readonly localDisasterRecoveryType!: pulumi.Output<string>;
     /**
-     * Autonomous Data Guard standby database details.
+     * Autonomous Data Guard local (same region) standby database details.
      */
     public /*out*/ readonly localStandbyDbs!: pulumi.Output<outputs.Database.AutonomousDatabaseLocalStandbyDb[]>;
     /**
@@ -420,7 +422,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly remoteDisasterRecoveryConfigurations!: pulumi.Output<outputs.Database.AutonomousDatabaseRemoteDisasterRecoveryConfiguration[]>;
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     public readonly remoteDisasterRecoveryType!: pulumi.Output<string>;
     public readonly resourcePoolLeaderId!: pulumi.Output<string>;
@@ -502,7 +504,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly switchoverTo!: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
+     * (Updatable) It is applicable only when `role` is set, and `isDedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
      */
     public readonly switchoverToRemotePeerId!: pulumi.Output<string | undefined>;
     /**
@@ -891,7 +893,7 @@ export interface AutonomousDatabaseState {
      */
     actualUsedDataStorageSizeInTbs?: pulumi.Input<number>;
     /**
-     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
+     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE" and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
      */
     adminPassword?: pulumi.Input<string>;
     /**
@@ -1007,7 +1009,7 @@ export interface AutonomousDatabaseState {
      */
     databaseManagementStatus?: pulumi.Input<string>;
     /**
-     * The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
+     * **Deprecated** (Optional) The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary (`PRIMARY_DG_REGION`) and standby (`REMOTE_STANDBY_DG_REGION`) regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
      */
     dataguardRegionType?: pulumi.Input<string>;
     /**
@@ -1039,7 +1041,7 @@ export interface AutonomousDatabaseState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * **Deprecated** The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary (`PRIMARY`) and standby (`REMOTE`) regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      */
     disasterRecoveryRegionType?: pulumi.Input<string>;
     /**
@@ -1093,7 +1095,7 @@ export interface AutonomousDatabaseState {
      */
     isFreeTier?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. It takes boolean values. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     isLocalDataGuardEnabled?: pulumi.Input<boolean>;
     /**
@@ -1117,7 +1119,7 @@ export interface AutonomousDatabaseState {
      */
     isRefreshableClone?: pulumi.Input<boolean>;
     /**
-     * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. It takes boolean values. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     isRemoteDataGuardEnabled?: pulumi.Input<boolean>;
     /**
@@ -1170,11 +1172,11 @@ export interface AutonomousDatabaseState {
      */
     localAdgAutoFailoverMaxDataLossLimit?: pulumi.Input<number>;
     /**
-     * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     localDisasterRecoveryType?: pulumi.Input<string>;
     /**
-     * Autonomous Data Guard standby database details.
+     * Autonomous Data Guard local (same region) standby database details.
      */
     localStandbyDbs?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseLocalStandbyDb>[]>;
     /**
@@ -1259,7 +1261,7 @@ export interface AutonomousDatabaseState {
      */
     remoteDisasterRecoveryConfigurations?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseRemoteDisasterRecoveryConfiguration>[]>;
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     remoteDisasterRecoveryType?: pulumi.Input<string>;
     resourcePoolLeaderId?: pulumi.Input<string>;
@@ -1341,7 +1343,7 @@ export interface AutonomousDatabaseState {
      */
     switchoverTo?: pulumi.Input<string>;
     /**
-     * (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
+     * (Updatable) It is applicable only when `role` is set, and `isDedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
      */
     switchoverToRemotePeerId?: pulumi.Input<string>;
     /**
@@ -1448,7 +1450,7 @@ export interface AutonomousDatabaseState {
  */
 export interface AutonomousDatabaseArgs {
     /**
-     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
+     * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE" and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
      */
     adminPassword?: pulumi.Input<string>;
     /**
@@ -1606,7 +1608,7 @@ export interface AutonomousDatabaseArgs {
      */
     isFreeTier?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. It takes boolean values. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     isLocalDataGuardEnabled?: pulumi.Input<boolean>;
     /**
@@ -1700,7 +1702,7 @@ export interface AutonomousDatabaseArgs {
      */
     refreshableMode?: pulumi.Input<string>;
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (`ADG`) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based (`BACKUP_BASED`) DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     remoteDisasterRecoveryType?: pulumi.Input<string>;
     resourcePoolLeaderId?: pulumi.Input<string>;
@@ -1766,7 +1768,7 @@ export interface AutonomousDatabaseArgs {
      */
     switchoverTo?: pulumi.Input<string>;
     /**
-     * (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
+     * (Updatable) It is applicable only when `role` is set, and `isDedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
      */
     switchoverToRemotePeerId?: pulumi.Input<string>;
     /**

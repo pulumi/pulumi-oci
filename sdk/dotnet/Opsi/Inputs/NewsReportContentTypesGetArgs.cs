@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Opsi.Inputs
 
     public sealed class NewsReportContentTypesGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("capacityPlanningResources", required: true)]
+        [Input("capacityPlanningResources")]
         private InputList<string>? _capacityPlanningResources;
 
         /// <summary>
@@ -22,6 +22,78 @@ namespace Pulumi.Oci.Opsi.Inputs
         {
             get => _capacityPlanningResources ?? (_capacityPlanningResources = new InputList<string>());
             set => _capacityPlanningResources = value;
+        }
+
+        [Input("sqlInsightsFleetAnalysisResources")]
+        private InputList<string>? _sqlInsightsFleetAnalysisResources;
+
+        /// <summary>
+        /// (Updatable) Supported resources for SQL insights - fleet analysis content type.
+        /// </summary>
+        public InputList<string> SqlInsightsFleetAnalysisResources
+        {
+            get => _sqlInsightsFleetAnalysisResources ?? (_sqlInsightsFleetAnalysisResources = new InputList<string>());
+            set => _sqlInsightsFleetAnalysisResources = value;
+        }
+
+        [Input("sqlInsightsPerformanceDegradationResources")]
+        private InputList<string>? _sqlInsightsPerformanceDegradationResources;
+
+        /// <summary>
+        /// (Updatable) Supported resources for SQL insights - performance degradation content type.
+        /// </summary>
+        public InputList<string> SqlInsightsPerformanceDegradationResources
+        {
+            get => _sqlInsightsPerformanceDegradationResources ?? (_sqlInsightsPerformanceDegradationResources = new InputList<string>());
+            set => _sqlInsightsPerformanceDegradationResources = value;
+        }
+
+        [Input("sqlInsightsPlanChangesResources")]
+        private InputList<string>? _sqlInsightsPlanChangesResources;
+
+        /// <summary>
+        /// (Updatable) Supported resources for SQL insights - plan changes content type.
+        /// </summary>
+        public InputList<string> SqlInsightsPlanChangesResources
+        {
+            get => _sqlInsightsPlanChangesResources ?? (_sqlInsightsPlanChangesResources = new InputList<string>());
+            set => _sqlInsightsPlanChangesResources = value;
+        }
+
+        [Input("sqlInsightsTopDatabasesResources")]
+        private InputList<string>? _sqlInsightsTopDatabasesResources;
+
+        /// <summary>
+        /// (Updatable) Supported resources for SQL insights - top databases content type.
+        /// </summary>
+        public InputList<string> SqlInsightsTopDatabasesResources
+        {
+            get => _sqlInsightsTopDatabasesResources ?? (_sqlInsightsTopDatabasesResources = new InputList<string>());
+            set => _sqlInsightsTopDatabasesResources = value;
+        }
+
+        [Input("sqlInsightsTopSqlByInsightsResources")]
+        private InputList<string>? _sqlInsightsTopSqlByInsightsResources;
+
+        /// <summary>
+        /// (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+        /// </summary>
+        public InputList<string> SqlInsightsTopSqlByInsightsResources
+        {
+            get => _sqlInsightsTopSqlByInsightsResources ?? (_sqlInsightsTopSqlByInsightsResources = new InputList<string>());
+            set => _sqlInsightsTopSqlByInsightsResources = value;
+        }
+
+        [Input("sqlInsightsTopSqlResources")]
+        private InputList<string>? _sqlInsightsTopSqlResources;
+
+        /// <summary>
+        /// (Updatable) Supported resources for SQL insights - top SQL content type.
+        /// </summary>
+        public InputList<string> SqlInsightsTopSqlResources
+        {
+            get => _sqlInsightsTopSqlResources ?? (_sqlInsightsTopSqlResources = new InputList<string>());
+            set => _sqlInsightsTopSqlResources = value;
         }
 
         public NewsReportContentTypesGetArgs()

@@ -13,6 +13,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     [OutputType]
     public sealed class GetContainerInstanceContainerSecurityContextResult
     {
+        public readonly ImmutableArray<Outputs.GetContainerInstanceContainerSecurityContextCapabilityResult> Capabilities;
         public readonly bool IsNonRootUserCheckEnabled;
         public readonly bool IsRootFileSystemReadonly;
         public readonly int RunAsGroup;
@@ -21,6 +22,8 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
         [OutputConstructor]
         private GetContainerInstanceContainerSecurityContextResult(
+            ImmutableArray<Outputs.GetContainerInstanceContainerSecurityContextCapabilityResult> capabilities,
+
             bool isNonRootUserCheckEnabled,
 
             bool isRootFileSystemReadonly,
@@ -31,6 +34,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
             string securityContextType)
         {
+            Capabilities = capabilities;
             IsNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
             IsRootFileSystemReadonly = isRootFileSystemReadonly;
             RunAsGroup = runAsGroup;

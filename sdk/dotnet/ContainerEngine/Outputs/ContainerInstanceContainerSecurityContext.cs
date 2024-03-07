@@ -14,6 +14,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class ContainerInstanceContainerSecurityContext
     {
         /// <summary>
+        /// Linux Container capabilities to configure capabilities of container.
+        /// </summary>
+        public readonly Outputs.ContainerInstanceContainerSecurityContextCapabilities? Capabilities;
+        /// <summary>
         /// Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
         /// </summary>
         public readonly bool? IsNonRootUserCheckEnabled;
@@ -36,6 +40,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
         [OutputConstructor]
         private ContainerInstanceContainerSecurityContext(
+            Outputs.ContainerInstanceContainerSecurityContextCapabilities? capabilities,
+
             bool? isNonRootUserCheckEnabled,
 
             bool? isRootFileSystemReadonly,
@@ -46,6 +52,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string? securityContextType)
         {
+            Capabilities = capabilities;
             IsNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
             IsRootFileSystemReadonly = isRootFileSystemReadonly;
             RunAsGroup = runAsGroup;

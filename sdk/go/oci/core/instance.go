@@ -91,7 +91,7 @@ type Instance struct {
 	DedicatedVmHostId pulumi.StringOutput `pulumi:"dedicatedVmHostId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName      pulumi.StringOutput `pulumi:"displayName"`
 	ExtendedMetadata pulumi.MapOutput    `pulumi:"extendedMetadata"`
 	// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -138,6 +138,10 @@ type Instance struct {
 	LaunchMode pulumi.StringOutput `pulumi:"launchMode"`
 	// (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions InstanceLaunchOptionsOutput `pulumi:"launchOptions"`
+	// Volume attachments to create as part of the launch instance operation.
+	//
+	// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+	LaunchVolumeAttachments InstanceLaunchVolumeAttachmentArrayOutput `pulumi:"launchVolumeAttachments"`
 	// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 	//
 	// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -191,7 +195,8 @@ type Instance struct {
 	// Configuration options for preemptible instances.
 	PreemptibleInstanceConfig InstancePreemptibleInstanceConfigOutput `pulumi:"preemptibleInstanceConfig"`
 	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume pulumi.BoolPtrOutput `pulumi:"preserveBootVolume"`
+	PreserveBootVolume                 pulumi.BoolPtrOutput `pulumi:"preserveBootVolume"`
+	PreserveDataVolumesCreatedAtLaunch pulumi.BoolPtrOutput `pulumi:"preserveDataVolumesCreatedAtLaunch"`
 	// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
 	//
 	// If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -289,7 +294,7 @@ type instanceState struct {
 	DedicatedVmHostId *string `pulumi:"dedicatedVmHostId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName      *string                `pulumi:"displayName"`
 	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
 	// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -336,6 +341,10 @@ type instanceState struct {
 	LaunchMode *string `pulumi:"launchMode"`
 	// (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions *InstanceLaunchOptions `pulumi:"launchOptions"`
+	// Volume attachments to create as part of the launch instance operation.
+	//
+	// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+	LaunchVolumeAttachments []InstanceLaunchVolumeAttachment `pulumi:"launchVolumeAttachments"`
 	// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 	//
 	// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -389,7 +398,8 @@ type instanceState struct {
 	// Configuration options for preemptible instances.
 	PreemptibleInstanceConfig *InstancePreemptibleInstanceConfig `pulumi:"preemptibleInstanceConfig"`
 	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume *bool `pulumi:"preserveBootVolume"`
+	PreserveBootVolume                 *bool `pulumi:"preserveBootVolume"`
+	PreserveDataVolumesCreatedAtLaunch *bool `pulumi:"preserveDataVolumesCreatedAtLaunch"`
 	// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
 	//
 	// If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -452,7 +462,7 @@ type InstanceState struct {
 	DedicatedVmHostId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName      pulumi.StringPtrInput
 	ExtendedMetadata pulumi.MapInput
 	// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -499,6 +509,10 @@ type InstanceState struct {
 	LaunchMode pulumi.StringPtrInput
 	// (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions InstanceLaunchOptionsPtrInput
+	// Volume attachments to create as part of the launch instance operation.
+	//
+	// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+	LaunchVolumeAttachments InstanceLaunchVolumeAttachmentArrayInput
 	// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 	//
 	// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -552,7 +566,8 @@ type InstanceState struct {
 	// Configuration options for preemptible instances.
 	PreemptibleInstanceConfig InstancePreemptibleInstanceConfigPtrInput
 	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume pulumi.BoolPtrInput
+	PreserveBootVolume                 pulumi.BoolPtrInput
+	PreserveDataVolumesCreatedAtLaunch pulumi.BoolPtrInput
 	// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
 	//
 	// If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -617,7 +632,7 @@ type instanceArgs struct {
 	DedicatedVmHostId *string `pulumi:"dedicatedVmHostId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName      *string                `pulumi:"displayName"`
 	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
 	// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -660,6 +675,10 @@ type instanceArgs struct {
 	IsPvEncryptionInTransitEnabled *bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions *InstanceLaunchOptions `pulumi:"launchOptions"`
+	// Volume attachments to create as part of the launch instance operation.
+	//
+	// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+	LaunchVolumeAttachments []InstanceLaunchVolumeAttachment `pulumi:"launchVolumeAttachments"`
 	// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 	//
 	// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -713,7 +732,8 @@ type instanceArgs struct {
 	// Configuration options for preemptible instances.
 	PreemptibleInstanceConfig *InstancePreemptibleInstanceConfig `pulumi:"preemptibleInstanceConfig"`
 	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume *bool `pulumi:"preserveBootVolume"`
+	PreserveBootVolume                 *bool `pulumi:"preserveBootVolume"`
+	PreserveDataVolumesCreatedAtLaunch *bool `pulumi:"preserveDataVolumesCreatedAtLaunch"`
 	// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	//
 	// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -759,7 +779,7 @@ type InstanceArgs struct {
 	DedicatedVmHostId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName      pulumi.StringPtrInput
 	ExtendedMetadata pulumi.MapInput
 	// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -802,6 +822,10 @@ type InstanceArgs struct {
 	IsPvEncryptionInTransitEnabled pulumi.BoolPtrInput
 	// (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions InstanceLaunchOptionsPtrInput
+	// Volume attachments to create as part of the launch instance operation.
+	//
+	// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+	LaunchVolumeAttachments InstanceLaunchVolumeAttachmentArrayInput
 	// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 	//
 	// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -855,7 +879,8 @@ type InstanceArgs struct {
 	// Configuration options for preemptible instances.
 	PreemptibleInstanceConfig InstancePreemptibleInstanceConfigPtrInput
 	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume pulumi.BoolPtrInput
+	PreserveBootVolume                 pulumi.BoolPtrInput
+	PreserveDataVolumesCreatedAtLaunch pulumi.BoolPtrInput
 	// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	//
 	// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -1021,7 +1046,7 @@ func (o InstanceOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Instance) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o InstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -1107,6 +1132,13 @@ func (o InstanceOutput) LaunchOptions() InstanceLaunchOptionsOutput {
 	return o.ApplyT(func(v *Instance) InstanceLaunchOptionsOutput { return v.LaunchOptions }).(InstanceLaunchOptionsOutput)
 }
 
+// Volume attachments to create as part of the launch instance operation.
+//
+// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+func (o InstanceOutput) LaunchVolumeAttachments() InstanceLaunchVolumeAttachmentArrayOutput {
+	return o.ApplyT(func(v *Instance) InstanceLaunchVolumeAttachmentArrayOutput { return v.LaunchVolumeAttachments }).(InstanceLaunchVolumeAttachmentArrayOutput)
+}
+
 // (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 //
 // A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -1174,6 +1206,10 @@ func (o InstanceOutput) PreemptibleInstanceConfig() InstancePreemptibleInstanceC
 // Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
 func (o InstanceOutput) PreserveBootVolume() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolPtrOutput { return v.PreserveBootVolume }).(pulumi.BoolPtrOutput)
+}
+
+func (o InstanceOutput) PreserveDataVolumesCreatedAtLaunch() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Instance) pulumi.BoolPtrOutput { return v.PreserveDataVolumesCreatedAtLaunch }).(pulumi.BoolPtrOutput)
 }
 
 // A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).

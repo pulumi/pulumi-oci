@@ -112,7 +112,8 @@ type LookupInstanceResult struct {
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
 	LaunchMode string `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-	LaunchOptions []GetInstanceLaunchOption `pulumi:"launchOptions"`
+	LaunchOptions           []GetInstanceLaunchOption           `pulumi:"launchOptions"`
+	LaunchVolumeAttachments []GetInstanceLaunchVolumeAttachment `pulumi:"launchVolumeAttachments"`
 	// Custom metadata that you provide.
 	Metadata map[string]interface{} `pulumi:"metadata"`
 	// The platform configuration for the instance.
@@ -120,7 +121,8 @@ type LookupInstanceResult struct {
 	// (Optional) Configuration options for preemptible instances.
 	PreemptibleInstanceConfigs []GetInstancePreemptibleInstanceConfig `pulumi:"preemptibleInstanceConfigs"`
 	// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume bool `pulumi:"preserveBootVolume"`
+	PreserveBootVolume                 bool `pulumi:"preserveBootVolume"`
+	PreserveDataVolumesCreatedAtLaunch bool `pulumi:"preserveDataVolumesCreatedAtLaunch"`
 	// The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
 	PrivateIp string `pulumi:"privateIp"`
 	// The public IP address of instance VNIC (if enabled).
@@ -313,6 +315,10 @@ func (o LookupInstanceResultOutput) LaunchOptions() GetInstanceLaunchOptionArray
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceLaunchOption { return v.LaunchOptions }).(GetInstanceLaunchOptionArrayOutput)
 }
 
+func (o LookupInstanceResultOutput) LaunchVolumeAttachments() GetInstanceLaunchVolumeAttachmentArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceLaunchVolumeAttachment { return v.LaunchVolumeAttachments }).(GetInstanceLaunchVolumeAttachmentArrayOutput)
+}
+
 // Custom metadata that you provide.
 func (o LookupInstanceResultOutput) Metadata() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupInstanceResult) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
@@ -333,6 +339,10 @@ func (o LookupInstanceResultOutput) PreemptibleInstanceConfigs() GetInstancePree
 // (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
 func (o LookupInstanceResultOutput) PreserveBootVolume() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupInstanceResult) bool { return v.PreserveBootVolume }).(pulumi.BoolOutput)
+}
+
+func (o LookupInstanceResultOutput) PreserveDataVolumesCreatedAtLaunch() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupInstanceResult) bool { return v.PreserveDataVolumesCreatedAtLaunch }).(pulumi.BoolOutput)
 }
 
 // The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.

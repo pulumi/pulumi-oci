@@ -69,6 +69,10 @@ import (
 //							VcpusLimit:       pulumi.Any(_var.Container_instance_containers_resource_config_vcpus_limit),
 //						},
 //						SecurityContext: &containerengine.ContainerInstanceContainerSecurityContextArgs{
+//							Capabilities: &containerengine.ContainerInstanceContainerSecurityContextCapabilitiesArgs{
+//								AddCapabilities:  pulumi.Any(_var.Container_instance_containers_security_context_capabilities_add_capabilities),
+//								DropCapabilities: pulumi.Any(_var.Container_instance_containers_security_context_capabilities_drop_capabilities),
+//							},
 //							IsNonRootUserCheckEnabled: pulumi.Any(_var.Container_instance_containers_security_context_is_non_root_user_check_enabled),
 //							IsRootFileSystemReadonly:  pulumi.Any(_var.Container_instance_containers_security_context_is_root_file_system_readonly),
 //							RunAsGroup:                pulumi.Any(_var.Container_instance_containers_security_context_run_as_group),

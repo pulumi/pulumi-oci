@@ -957,6 +957,18 @@ class NewsReportContentTypes(dict):
         suggest = None
         if key == "capacityPlanningResources":
             suggest = "capacity_planning_resources"
+        elif key == "sqlInsightsFleetAnalysisResources":
+            suggest = "sql_insights_fleet_analysis_resources"
+        elif key == "sqlInsightsPerformanceDegradationResources":
+            suggest = "sql_insights_performance_degradation_resources"
+        elif key == "sqlInsightsPlanChangesResources":
+            suggest = "sql_insights_plan_changes_resources"
+        elif key == "sqlInsightsTopDatabasesResources":
+            suggest = "sql_insights_top_databases_resources"
+        elif key == "sqlInsightsTopSqlByInsightsResources":
+            suggest = "sql_insights_top_sql_by_insights_resources"
+        elif key == "sqlInsightsTopSqlResources":
+            suggest = "sql_insights_top_sql_resources"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in NewsReportContentTypes. Access the value via the '{suggest}' property getter instead.")
@@ -970,19 +982,92 @@ class NewsReportContentTypes(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 capacity_planning_resources: Sequence[str]):
+                 capacity_planning_resources: Optional[Sequence[str]] = None,
+                 sql_insights_fleet_analysis_resources: Optional[Sequence[str]] = None,
+                 sql_insights_performance_degradation_resources: Optional[Sequence[str]] = None,
+                 sql_insights_plan_changes_resources: Optional[Sequence[str]] = None,
+                 sql_insights_top_databases_resources: Optional[Sequence[str]] = None,
+                 sql_insights_top_sql_by_insights_resources: Optional[Sequence[str]] = None,
+                 sql_insights_top_sql_resources: Optional[Sequence[str]] = None):
         """
         :param Sequence[str] capacity_planning_resources: (Updatable) Supported resources for capacity planning content type.
+        :param Sequence[str] sql_insights_fleet_analysis_resources: (Updatable) Supported resources for SQL insights - fleet analysis content type.
+        :param Sequence[str] sql_insights_performance_degradation_resources: (Updatable) Supported resources for SQL insights - performance degradation content type.
+        :param Sequence[str] sql_insights_plan_changes_resources: (Updatable) Supported resources for SQL insights - plan changes content type.
+        :param Sequence[str] sql_insights_top_databases_resources: (Updatable) Supported resources for SQL insights - top databases content type.
+        :param Sequence[str] sql_insights_top_sql_by_insights_resources: (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+        :param Sequence[str] sql_insights_top_sql_resources: (Updatable) Supported resources for SQL insights - top SQL content type.
         """
-        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+        if capacity_planning_resources is not None:
+            pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+        if sql_insights_fleet_analysis_resources is not None:
+            pulumi.set(__self__, "sql_insights_fleet_analysis_resources", sql_insights_fleet_analysis_resources)
+        if sql_insights_performance_degradation_resources is not None:
+            pulumi.set(__self__, "sql_insights_performance_degradation_resources", sql_insights_performance_degradation_resources)
+        if sql_insights_plan_changes_resources is not None:
+            pulumi.set(__self__, "sql_insights_plan_changes_resources", sql_insights_plan_changes_resources)
+        if sql_insights_top_databases_resources is not None:
+            pulumi.set(__self__, "sql_insights_top_databases_resources", sql_insights_top_databases_resources)
+        if sql_insights_top_sql_by_insights_resources is not None:
+            pulumi.set(__self__, "sql_insights_top_sql_by_insights_resources", sql_insights_top_sql_by_insights_resources)
+        if sql_insights_top_sql_resources is not None:
+            pulumi.set(__self__, "sql_insights_top_sql_resources", sql_insights_top_sql_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
-    def capacity_planning_resources(self) -> Sequence[str]:
+    def capacity_planning_resources(self) -> Optional[Sequence[str]]:
         """
         (Updatable) Supported resources for capacity planning content type.
         """
         return pulumi.get(self, "capacity_planning_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsFleetAnalysisResources")
+    def sql_insights_fleet_analysis_resources(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Supported resources for SQL insights - fleet analysis content type.
+        """
+        return pulumi.get(self, "sql_insights_fleet_analysis_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsPerformanceDegradationResources")
+    def sql_insights_performance_degradation_resources(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Supported resources for SQL insights - performance degradation content type.
+        """
+        return pulumi.get(self, "sql_insights_performance_degradation_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsPlanChangesResources")
+    def sql_insights_plan_changes_resources(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Supported resources for SQL insights - plan changes content type.
+        """
+        return pulumi.get(self, "sql_insights_plan_changes_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopDatabasesResources")
+    def sql_insights_top_databases_resources(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Supported resources for SQL insights - top databases content type.
+        """
+        return pulumi.get(self, "sql_insights_top_databases_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopSqlByInsightsResources")
+    def sql_insights_top_sql_by_insights_resources(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+        """
+        return pulumi.get(self, "sql_insights_top_sql_by_insights_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopSqlResources")
+    def sql_insights_top_sql_resources(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Supported resources for SQL insights - top SQL content type.
+        """
+        return pulumi.get(self, "sql_insights_top_sql_resources")
 
 
 @pulumi.output_type
@@ -4716,11 +4801,29 @@ class GetImportableComputeEntityItemResult(dict):
 @pulumi.output_type
 class GetNewsReportContentTypeResult(dict):
     def __init__(__self__, *,
-                 capacity_planning_resources: Sequence[str]):
+                 capacity_planning_resources: Sequence[str],
+                 sql_insights_fleet_analysis_resources: Sequence[str],
+                 sql_insights_performance_degradation_resources: Sequence[str],
+                 sql_insights_plan_changes_resources: Sequence[str],
+                 sql_insights_top_databases_resources: Sequence[str],
+                 sql_insights_top_sql_by_insights_resources: Sequence[str],
+                 sql_insights_top_sql_resources: Sequence[str]):
         """
         :param Sequence[str] capacity_planning_resources: Supported resources for capacity planning content type.
+        :param Sequence[str] sql_insights_fleet_analysis_resources: Supported resources for SQL insights - fleet analysis content type.
+        :param Sequence[str] sql_insights_performance_degradation_resources: Supported resources for SQL insights - performance degradation content type.
+        :param Sequence[str] sql_insights_plan_changes_resources: Supported resources for SQL insights - plan changes content type.
+        :param Sequence[str] sql_insights_top_databases_resources: Supported resources for SQL insights - top databases content type.
+        :param Sequence[str] sql_insights_top_sql_by_insights_resources: Supported resources for SQL insights - top SQL by insights content type.
+        :param Sequence[str] sql_insights_top_sql_resources: Supported resources for SQL insights - top SQL content type.
         """
         pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+        pulumi.set(__self__, "sql_insights_fleet_analysis_resources", sql_insights_fleet_analysis_resources)
+        pulumi.set(__self__, "sql_insights_performance_degradation_resources", sql_insights_performance_degradation_resources)
+        pulumi.set(__self__, "sql_insights_plan_changes_resources", sql_insights_plan_changes_resources)
+        pulumi.set(__self__, "sql_insights_top_databases_resources", sql_insights_top_databases_resources)
+        pulumi.set(__self__, "sql_insights_top_sql_by_insights_resources", sql_insights_top_sql_by_insights_resources)
+        pulumi.set(__self__, "sql_insights_top_sql_resources", sql_insights_top_sql_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
@@ -4729,6 +4832,54 @@ class GetNewsReportContentTypeResult(dict):
         Supported resources for capacity planning content type.
         """
         return pulumi.get(self, "capacity_planning_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsFleetAnalysisResources")
+    def sql_insights_fleet_analysis_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - fleet analysis content type.
+        """
+        return pulumi.get(self, "sql_insights_fleet_analysis_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsPerformanceDegradationResources")
+    def sql_insights_performance_degradation_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - performance degradation content type.
+        """
+        return pulumi.get(self, "sql_insights_performance_degradation_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsPlanChangesResources")
+    def sql_insights_plan_changes_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - plan changes content type.
+        """
+        return pulumi.get(self, "sql_insights_plan_changes_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopDatabasesResources")
+    def sql_insights_top_databases_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - top databases content type.
+        """
+        return pulumi.get(self, "sql_insights_top_databases_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopSqlByInsightsResources")
+    def sql_insights_top_sql_by_insights_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - top SQL by insights content type.
+        """
+        return pulumi.get(self, "sql_insights_top_sql_by_insights_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopSqlResources")
+    def sql_insights_top_sql_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - top SQL content type.
+        """
+        return pulumi.get(self, "sql_insights_top_sql_resources")
 
 
 @pulumi.output_type
@@ -4779,8 +4930,10 @@ class GetNewsReportsNewsReportCollectionResult(dict):
 @pulumi.output_type
 class GetNewsReportsNewsReportCollectionItemResult(dict):
     def __init__(__self__, *,
+                 are_child_compartments_included: bool,
                  compartment_id: str,
                  content_types: Sequence['outputs.GetNewsReportsNewsReportCollectionItemContentTypeResult'],
+                 day_of_week: str,
                  defined_tags: Mapping[str, Any],
                  description: str,
                  freeform_tags: Mapping[str, Any],
@@ -4796,8 +4949,10 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
+        :param bool are_child_compartments_included: A flag to consider the resources within a given compartment and all sub-compartments.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Sequence['GetNewsReportsNewsReportCollectionItemContentTypeArgs'] content_types: Content types that the news report can handle.
+        :param str day_of_week: Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: The description of the news report.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -4813,8 +4968,10 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
         :param str time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
         :param str time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
         """
+        pulumi.set(__self__, "are_child_compartments_included", are_child_compartments_included)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "content_types", content_types)
+        pulumi.set(__self__, "day_of_week", day_of_week)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -4831,6 +4988,14 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
         pulumi.set(__self__, "time_updated", time_updated)
 
     @property
+    @pulumi.getter(name="areChildCompartmentsIncluded")
+    def are_child_compartments_included(self) -> bool:
+        """
+        A flag to consider the resources within a given compartment and all sub-compartments.
+        """
+        return pulumi.get(self, "are_child_compartments_included")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
@@ -4845,6 +5010,14 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
         Content types that the news report can handle.
         """
         return pulumi.get(self, "content_types")
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> str:
+        """
+        Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+        """
+        return pulumi.get(self, "day_of_week")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -4962,11 +5135,29 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
 @pulumi.output_type
 class GetNewsReportsNewsReportCollectionItemContentTypeResult(dict):
     def __init__(__self__, *,
-                 capacity_planning_resources: Sequence[str]):
+                 capacity_planning_resources: Sequence[str],
+                 sql_insights_fleet_analysis_resources: Sequence[str],
+                 sql_insights_performance_degradation_resources: Sequence[str],
+                 sql_insights_plan_changes_resources: Sequence[str],
+                 sql_insights_top_databases_resources: Sequence[str],
+                 sql_insights_top_sql_by_insights_resources: Sequence[str],
+                 sql_insights_top_sql_resources: Sequence[str]):
         """
         :param Sequence[str] capacity_planning_resources: Supported resources for capacity planning content type.
+        :param Sequence[str] sql_insights_fleet_analysis_resources: Supported resources for SQL insights - fleet analysis content type.
+        :param Sequence[str] sql_insights_performance_degradation_resources: Supported resources for SQL insights - performance degradation content type.
+        :param Sequence[str] sql_insights_plan_changes_resources: Supported resources for SQL insights - plan changes content type.
+        :param Sequence[str] sql_insights_top_databases_resources: Supported resources for SQL insights - top databases content type.
+        :param Sequence[str] sql_insights_top_sql_by_insights_resources: Supported resources for SQL insights - top SQL by insights content type.
+        :param Sequence[str] sql_insights_top_sql_resources: Supported resources for SQL insights - top SQL content type.
         """
         pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+        pulumi.set(__self__, "sql_insights_fleet_analysis_resources", sql_insights_fleet_analysis_resources)
+        pulumi.set(__self__, "sql_insights_performance_degradation_resources", sql_insights_performance_degradation_resources)
+        pulumi.set(__self__, "sql_insights_plan_changes_resources", sql_insights_plan_changes_resources)
+        pulumi.set(__self__, "sql_insights_top_databases_resources", sql_insights_top_databases_resources)
+        pulumi.set(__self__, "sql_insights_top_sql_by_insights_resources", sql_insights_top_sql_by_insights_resources)
+        pulumi.set(__self__, "sql_insights_top_sql_resources", sql_insights_top_sql_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
@@ -4975,6 +5166,54 @@ class GetNewsReportsNewsReportCollectionItemContentTypeResult(dict):
         Supported resources for capacity planning content type.
         """
         return pulumi.get(self, "capacity_planning_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsFleetAnalysisResources")
+    def sql_insights_fleet_analysis_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - fleet analysis content type.
+        """
+        return pulumi.get(self, "sql_insights_fleet_analysis_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsPerformanceDegradationResources")
+    def sql_insights_performance_degradation_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - performance degradation content type.
+        """
+        return pulumi.get(self, "sql_insights_performance_degradation_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsPlanChangesResources")
+    def sql_insights_plan_changes_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - plan changes content type.
+        """
+        return pulumi.get(self, "sql_insights_plan_changes_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopDatabasesResources")
+    def sql_insights_top_databases_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - top databases content type.
+        """
+        return pulumi.get(self, "sql_insights_top_databases_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopSqlByInsightsResources")
+    def sql_insights_top_sql_by_insights_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - top SQL by insights content type.
+        """
+        return pulumi.get(self, "sql_insights_top_sql_by_insights_resources")
+
+    @property
+    @pulumi.getter(name="sqlInsightsTopSqlResources")
+    def sql_insights_top_sql_resources(self) -> Sequence[str]:
+        """
+        Supported resources for SQL insights - top SQL content type.
+        """
+        return pulumi.get(self, "sql_insights_top_sql_resources")
 
 
 @pulumi.output_type

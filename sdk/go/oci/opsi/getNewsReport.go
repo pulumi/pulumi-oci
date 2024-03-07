@@ -58,10 +58,14 @@ type LookupNewsReportArgs struct {
 
 // A collection of values returned by getNewsReport.
 type LookupNewsReportResult struct {
+	// A flag to consider the resources within a given compartment and all sub-compartments.
+	AreChildCompartmentsIncluded bool `pulumi:"areChildCompartmentsIncluded"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Content types that the news report can handle.
 	ContentTypes []GetNewsReportContentType `pulumi:"contentTypes"`
+	// Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+	DayOfWeek string `pulumi:"dayOfWeek"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the news report.
@@ -131,6 +135,11 @@ func (o LookupNewsReportResultOutput) ToLookupNewsReportResultOutputWithContext(
 	return o
 }
 
+// A flag to consider the resources within a given compartment and all sub-compartments.
+func (o LookupNewsReportResultOutput) AreChildCompartmentsIncluded() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) bool { return v.AreChildCompartmentsIncluded }).(pulumi.BoolOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o LookupNewsReportResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNewsReportResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -139,6 +148,11 @@ func (o LookupNewsReportResultOutput) CompartmentId() pulumi.StringOutput {
 // Content types that the news report can handle.
 func (o LookupNewsReportResultOutput) ContentTypes() GetNewsReportContentTypeArrayOutput {
 	return o.ApplyT(func(v LookupNewsReportResult) []GetNewsReportContentType { return v.ContentTypes }).(GetNewsReportContentTypeArrayOutput)
+}
+
+// Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+func (o LookupNewsReportResultOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) string { return v.DayOfWeek }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

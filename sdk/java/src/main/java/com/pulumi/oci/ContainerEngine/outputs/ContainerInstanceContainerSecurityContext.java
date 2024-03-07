@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainerSecurityContextCapabilities;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -13,6 +14,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ContainerInstanceContainerSecurityContext {
+    /**
+     * @return Linux Container capabilities to configure capabilities of container.
+     * 
+     */
+    private @Nullable ContainerInstanceContainerSecurityContextCapabilities capabilities;
     /**
      * @return Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
      * 
@@ -40,6 +46,13 @@ public final class ContainerInstanceContainerSecurityContext {
     private @Nullable String securityContextType;
 
     private ContainerInstanceContainerSecurityContext() {}
+    /**
+     * @return Linux Container capabilities to configure capabilities of container.
+     * 
+     */
+    public Optional<ContainerInstanceContainerSecurityContextCapabilities> capabilities() {
+        return Optional.ofNullable(this.capabilities);
+    }
     /**
      * @return Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
      * 
@@ -85,6 +98,7 @@ public final class ContainerInstanceContainerSecurityContext {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable ContainerInstanceContainerSecurityContextCapabilities capabilities;
         private @Nullable Boolean isNonRootUserCheckEnabled;
         private @Nullable Boolean isRootFileSystemReadonly;
         private @Nullable Integer runAsGroup;
@@ -93,6 +107,7 @@ public final class ContainerInstanceContainerSecurityContext {
         public Builder() {}
         public Builder(ContainerInstanceContainerSecurityContext defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.capabilities = defaults.capabilities;
     	      this.isNonRootUserCheckEnabled = defaults.isNonRootUserCheckEnabled;
     	      this.isRootFileSystemReadonly = defaults.isRootFileSystemReadonly;
     	      this.runAsGroup = defaults.runAsGroup;
@@ -100,6 +115,12 @@ public final class ContainerInstanceContainerSecurityContext {
     	      this.securityContextType = defaults.securityContextType;
         }
 
+        @CustomType.Setter
+        public Builder capabilities(@Nullable ContainerInstanceContainerSecurityContextCapabilities capabilities) {
+
+            this.capabilities = capabilities;
+            return this;
+        }
         @CustomType.Setter
         public Builder isNonRootUserCheckEnabled(@Nullable Boolean isNonRootUserCheckEnabled) {
 
@@ -132,6 +153,7 @@ public final class ContainerInstanceContainerSecurityContext {
         }
         public ContainerInstanceContainerSecurityContext build() {
             final var _resultValue = new ContainerInstanceContainerSecurityContext();
+            _resultValue.capabilities = capabilities;
             _resultValue.isNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
             _resultValue.isRootFileSystemReadonly = isRootFileSystemReadonly;
             _resultValue.runAsGroup = runAsGroup;

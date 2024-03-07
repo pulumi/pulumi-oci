@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.inputs.NewsReportContentTypesArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -18,6 +19,21 @@ import javax.annotation.Nullable;
 public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final NewsReportArgs Empty = new NewsReportArgs();
+
+    /**
+     * (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+     * 
+     */
+    @Import(name="areChildCompartmentsIncluded")
+    private @Nullable Output<Boolean> areChildCompartmentsIncluded;
+
+    /**
+     * @return (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+     * 
+     */
+    public Optional<Output<Boolean>> areChildCompartmentsIncluded() {
+        return Optional.ofNullable(this.areChildCompartmentsIncluded);
+    }
 
     /**
      * (Updatable) Compartment Identifier where the news report will be created.
@@ -50,6 +66,21 @@ public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     * 
+     */
+    @Import(name="dayOfWeek")
+    private @Nullable Output<String> dayOfWeek;
+
+    /**
+     * @return (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     * 
+     */
+    public Optional<Output<String>> dayOfWeek() {
+        return Optional.ofNullable(this.dayOfWeek);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -65,14 +96,14 @@ public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The description of the news report.
+     * (Updatable) The description of the news report.
      * 
      */
     @Import(name="description", required=true)
     private Output<String> description;
 
     /**
-     * @return The description of the news report.
+     * @return (Updatable) The description of the news report.
      * 
      */
     public Output<String> description() {
@@ -110,14 +141,14 @@ public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The news report name.
+     * (Updatable) The news report name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The news report name.
+     * @return (Updatable) The news report name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -178,8 +209,10 @@ public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
     private NewsReportArgs() {}
 
     private NewsReportArgs(NewsReportArgs $) {
+        this.areChildCompartmentsIncluded = $.areChildCompartmentsIncluded;
         this.compartmentId = $.compartmentId;
         this.contentTypes = $.contentTypes;
+        this.dayOfWeek = $.dayOfWeek;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.freeformTags = $.freeformTags;
@@ -206,6 +239,27 @@ public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(NewsReportArgs defaults) {
             $ = new NewsReportArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param areChildCompartmentsIncluded (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areChildCompartmentsIncluded(@Nullable Output<Boolean> areChildCompartmentsIncluded) {
+            $.areChildCompartmentsIncluded = areChildCompartmentsIncluded;
+            return this;
+        }
+
+        /**
+         * @param areChildCompartmentsIncluded (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areChildCompartmentsIncluded(Boolean areChildCompartmentsIncluded) {
+            return areChildCompartmentsIncluded(Output.of(areChildCompartmentsIncluded));
         }
 
         /**
@@ -251,6 +305,27 @@ public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param dayOfWeek (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dayOfWeek(@Nullable Output<String> dayOfWeek) {
+            $.dayOfWeek = dayOfWeek;
+            return this;
+        }
+
+        /**
+         * @param dayOfWeek (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dayOfWeek(String dayOfWeek) {
+            return dayOfWeek(Output.of(dayOfWeek));
+        }
+
+        /**
          * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
@@ -272,7 +347,7 @@ public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The description of the news report.
+         * @param description (Updatable) The description of the news report.
          * 
          * @return builder
          * 
@@ -283,7 +358,7 @@ public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The description of the news report.
+         * @param description (Updatable) The description of the news report.
          * 
          * @return builder
          * 
@@ -335,7 +410,7 @@ public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The news report name.
+         * @param name (Updatable) The news report name.
          * 
          * @return builder
          * 
@@ -346,7 +421,7 @@ public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The news report name.
+         * @param name (Updatable) The news report name.
          * 
          * @return builder
          * 

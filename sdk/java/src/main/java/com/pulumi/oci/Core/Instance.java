@@ -14,6 +14,7 @@ import com.pulumi.oci.Core.outputs.InstanceAvailabilityConfig;
 import com.pulumi.oci.Core.outputs.InstanceCreateVnicDetails;
 import com.pulumi.oci.Core.outputs.InstanceInstanceOptions;
 import com.pulumi.oci.Core.outputs.InstanceLaunchOptions;
+import com.pulumi.oci.Core.outputs.InstanceLaunchVolumeAttachment;
 import com.pulumi.oci.Core.outputs.InstancePlatformConfig;
 import com.pulumi.oci.Core.outputs.InstancePreemptibleInstanceConfig;
 import com.pulumi.oci.Core.outputs.InstanceShapeConfig;
@@ -22,6 +23,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -231,14 +233,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -449,6 +451,24 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.launchOptions;
     }
     /**
+     * Volume attachments to create as part of the launch instance operation.
+     * 
+     * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+     * 
+     */
+    @Export(name="launchVolumeAttachments", refs={List.class,InstanceLaunchVolumeAttachment.class}, tree="[0,1]")
+    private Output<List<InstanceLaunchVolumeAttachment>> launchVolumeAttachments;
+
+    /**
+     * @return Volume attachments to create as part of the launch instance operation.
+     * 
+     * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
+     * 
+     */
+    public Output<List<InstanceLaunchVolumeAttachment>> launchVolumeAttachments() {
+        return this.launchVolumeAttachments;
+    }
+    /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -611,6 +631,12 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<Boolean>> preserveBootVolume() {
         return Codegen.optional(this.preserveBootVolume);
+    }
+    @Export(name="preserveDataVolumesCreatedAtLaunch", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> preserveDataVolumesCreatedAtLaunch;
+
+    public Output<Optional<Boolean>> preserveDataVolumesCreatedAtLaunch() {
+        return Codegen.optional(this.preserveDataVolumesCreatedAtLaunch);
     }
     /**
      * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
